@@ -260,7 +260,8 @@ def refresh() -> dict:
     """Rebuild skills/feed.json from the merged item set."""
     items = apply_editorial(load_items())
     visible = [it for it in items.values() if not it.get("hide")]
-    visible.sort(key=lambda x: (-int(bool(x.get("pick"))), -x.get("fun_score", 0), -x.get("stars", 0)))
+    # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars
+    visible.sort(key=lambda x: (x.get("added_at", ""), x.get("fun_score", 0), x.get("stars", 0)), reverse=True)
     t = today()
     feed = {
         "generated_at": now_iso(),
