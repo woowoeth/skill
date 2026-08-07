@@ -235,8 +235,8 @@ LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/
 LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")
 
 ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写货架文案。要求：
-- tagline_zh：一句钩子（≤40字），写场景/痛点/反差，让人想点开；不要空话。
-- tagline_en：英文钩子，同样风格。
+- tagline_zh：一句钩子（45~60字，需在卡片上占满两行），写场景/痛点/反差 + 一个具体细节；不要空话。
+- tagline_en：英文钩子（80~115 字符），同样风格。
 - why_zh：一句点评（≤55字），说清这个 skill 到底好在哪（机制/差异点），诚实、具体、不吹。
 - why_en：英文点评。
 - title_zh：≤8字的中文名（贴切、可有趣，不生造成语）。
