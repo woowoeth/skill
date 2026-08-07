@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skill Store shelf item",
+  "type": "object",
+  "required": ["id", "kind", "name", "repo", "category"],
+  "properties": {
+    "id":         {"type": "string"},
+    "kind":       {"enum": ["skill", "collection"]},
+    "name":       {"type": "string"},
+    "title_zh":   {"type": "string"},
+    "tagline_zh": {"type": "string"},
+    "tagline_en": {"type": "string"},
+    "desc_en":    {"type": "string"},
+    "why_zh":     {"type": "string"},
+    "why_en":     {"type": "string"},
+    "repo":       {"type": "string"},
+    "owner":      {"type": "string"},
+    "path":       {"type": "string"},
+    "url":        {"type": "string"},
+    "homepage":   {"type": "string"},
+    "stars":      {"type": "integer"},
+    "pushed_at":  {"type": "string"},
+    "skill_count":{"type": "integer"},
+    "category":   {"enum": ["creative","fun","writing","life","docs","work","dev","meta"]},
+    "fun_score":  {"type": "number"},
+    "pick":       {"type": "boolean"},
+    "hide":       {"type": "boolean"},
+    "source":     {"type": "string"},
+    "added_at":   {"type": "string"},
+    "install":    {"type": "object", "properties": {"clone":{"type":"string"},"copy":{"type":"string"},"dir":{"type":"string"}}}
+  }
+}

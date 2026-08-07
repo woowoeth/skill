@@ -1,0 +1,276 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Skill 商店 — the daily scout (进货员).
+
+Daily run (GitHub Actions):
+  1. Restock: refresh stars / pushed_at for every repo already on the shelves.
+  2. Discover: GitHub search (topics + fun keywords) for skill repos pushed
+     in the last ~14 days that we don't stock yet.
+  3. Ingest: shallow-clone each new repo, find SKILL.md files, parse
+     frontmatter, and put items on the right shelf. Big packs become one
+     "collection" card instead of flooding the store.
+  4. Rebuild skills/feed.json.
+
+Seed run (local): python scouts/skill_scout.py --seed /path/to/clones
+
+Fault-tolerant: any single repo/skill failure is skipped, never aborts.
+No third-party deps — stdlib + git only.
+"""
+from __future__ import annotations
+import os, re, sys, json, time, shutil, argparse, tempfile, subprocess as sp, urllib.parse
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import scout_lib as lib  # noqa: E402
+
+MAX_NEW_REPOS_PER_RUN = int(os.environ.get("MAX_NEW_REPOS", "10"))
+MAX_ITEMS_PER_REPO = 3          # individual cards sampled from one multi-skill repo
+COLLECTION_MIN = 6              # >= this many skills → also gets a collection card
+COLLECTION_ONLY = 26            # >= this many skills → collection card ONLY
+MIN_STARS_DISCOVER = 40         # noise floor for brand-new repos
+CLONE_TIMEOUT = 90
+
+SEARCH_QUERIES = [
+    "topic:claude-skills sort:updated",
+    "topic:claude-code-skills sort:updated",
+    "topic:agent-skills sort:updated",
+    "claude skill game OR fun OR creative in:name,description sort:updated",
+    "SKILL.md skill in:readme claude sort:updated",
+]
+
+SKIP_REPO_PAT = re.compile(
+    r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$", re.I)
+
+
+# ------------------------------------------------------------------ git ----
+def shallow_clone(repo: str, dest: str) -> bool:
+    try:
+        sp.run(["git", "clone", "-q", "--depth", "1",
+                f"https://github.com/{repo}.git", dest],
+               check=True, timeout=CLONE_TIMEOUT,
+               stdout=sp.DEVNULL, stderr=sp.DEVNULL)
+        return True
+    except Exception as e:
+        print(f"[scout] clone failed {repo}: {e}")
+        return False
+
+
+def find_skill_mds(root: str) -> list[str]:
+    out = []
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [d for d in dirnames if d not in
+                       (".git", "node_modules", "vendor", "dist", "build")]
+        if "SKILL.md" in filenames:
+            out.append(os.path.join(dirpath, "SKILL.md"))
+    return sorted(out)
+
+
+# --------------------------------------------------------------- ingest ----
+def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
+    """Turn one cloned repo into shelf items. Returns new items (not yet saved)."""
+    mds = find_skill_mds(local)
+    if not mds:
+        return []
+    stars = int(meta.get("stars", 0))
+    repo_desc = (meta.get("description") or "").strip()
+    pushed = meta.get("pushed_at", "")
+    homepage = meta.get("homepage") or ""
+    items: list[dict] = []
+
+    root_md = os.path.join(local, "SKILL.md")
+    if root_md in mds:
+        # single-product repo (extras inside are internals of the same product)
+        text = open(root_md, encoding="utf-8", errors="replace").read()
+        fm = lib.parse_skill_md(text)
+        name = fm["name"] or lib.first_heading(text) or repo.split("/")[-1]
+        items.append(lib.make_item(kind="skill", name=name,
+                                   desc_en=fm["description"] or repo_desc,
+                                   repo=repo, path="", stars=stars,
+                                   repo_desc=repo_desc, pushed_at=pushed,
+                                   homepage=homepage, skill_count=len(mds),
+                                   source=source))
+        return items
+
+    parsed = []
+    for md in mds:
+        try:
+            text = open(md, encoding="utf-8", errors="replace").read()
+            fm = lib.parse_skill_md(text)
+            rel = os.path.relpath(os.path.dirname(md), local).replace(os.sep, "/")
+            name = fm["name"] or lib.first_heading(text) or rel.split("/")[-1]
+            if name.lower() in ("template", "example", "sample"):
+                continue
+            if re.search(r"-v\d+$", name):        # drop versioned duplicates
+                continue
+            parsed.append((name, fm["description"], rel))
+        except Exception as e:
+            print(f"[scout] bad SKILL.md {md}: {e}")
+    if not parsed:
+        return []
+    n = len(parsed)
+
+    # Official shelf: stock every Anthropic skill individually, no collection card.
+    if repo == "anthropics/skills":
+        for name, desc, rel in parsed:
+            items.append(lib.make_item(kind="skill", name=name, desc_en=desc,
+                                       repo=repo, path=rel, stars=stars,
+                                       repo_desc=repo_desc, pushed_at=pushed,
+                                       homepage=homepage, skill_count=1, source=source))
+        return items
+
+    # Flagship rule: a sub-skill named like the repo means "one product with
+    # add-ons" (caveman, ponytail, i-have-adhd...) → one product card only.
+    tail = lib.slug(repo.split("/")[-1])
+    flag = next((p for p in parsed if lib.slug(p[0]) == tail), None)
+    if flag:
+        items.append(lib.make_item(kind="skill", name=flag[0],
+                                   desc_en=flag[1] or repo_desc, repo=repo,
+                                   path=flag[2], stars=stars, repo_desc=repo_desc,
+                                   pushed_at=pushed, homepage=homepage,
+                                   skill_count=n, source=source))
+        return items
+
+    if n >= COLLECTION_MIN:
+        items.append(lib.make_item(kind="collection", name=repo.split("/")[-1],
+                                   desc_en=repo_desc or f"A pack of {n} skills.",
+                                   repo=repo, path="", stars=stars,
+                                   repo_desc=repo_desc, pushed_at=pushed,
+                                   homepage=homepage, skill_count=n, source=source))
+    if n < COLLECTION_ONLY:
+        scored = sorted(parsed,
+                        key=lambda p: -lib.fun_score(p[0], p[1] or "", stars))
+        take = parsed if n < COLLECTION_MIN else scored[:MAX_ITEMS_PER_REPO]
+        for name, desc, rel in take:
+            items.append(lib.make_item(kind="skill", name=name,
+                                       desc_en=desc or repo_desc, repo=repo,
+                                       path=rel, stars=stars, repo_desc=repo_desc,
+                                       pushed_at=pushed, homepage=homepage,
+                                       skill_count=1, source=source))
+    return items
+
+
+def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dict) -> int:
+    added = 0
+    for it in items:
+        if it["id"] in existing:
+            continue
+        lib.save_item(it)
+        existing[it["id"]] = it
+        added += 1
+        print(f"[scout] + {it['kind']:<10} {it['id']}  ({it['category']}, fun {it['fun_score']})")
+    sources["repos"][repo] = {"stars": meta.get("stars", 0),
+                              "pushed_at": meta.get("pushed_at", ""),
+                              "description": (meta.get("description") or "")[:200],
+                              "last_seen": lib.today()}
+    return added
+
+
+# -------------------------------------------------------------- restock ----
+def restock_existing(existing: dict, sources: dict) -> None:
+    """Refresh stars / pushed_at for repos already on the shelves (cheap, 1 call/repo)."""
+    repos = sorted({it["repo"] for it in existing.values()})
+    for repo in repos:
+        try:
+            d = lib.gh_json(f"https://api.github.com/repos/{repo}")
+            stars, pushed = d.get("stargazers_count", 0), d.get("pushed_at", "")
+            for it in existing.values():
+                if it["repo"] == repo:
+                    it["stars"], it["pushed_at"] = stars, pushed
+                    it["fun_score"] = lib.fun_score(it["name"], it.get("desc_en", ""), stars)
+                    lib.save_item(it)
+            sources["repos"].setdefault(repo, {})
+            sources["repos"][repo].update({"stars": stars, "pushed_at": pushed,
+                                           "last_seen": lib.today()})
+            time.sleep(0.35)
+        except Exception as e:
+            print(f"[scout] restock skip {repo}: {e}")
+
+
+# ------------------------------------------------------------- discover ----
+def discover(existing: dict, sources: dict) -> int:
+    known = set(sources["repos"]) | {it["repo"] for it in existing.values()}
+    candidates: dict[str, dict] = {}
+    for q in SEARCH_QUERIES:
+        try:
+            url = ("https://api.github.com/search/repositories?q="
+                   + urllib.parse.quote(q) + "&order=desc&per_page=20")
+            for it in lib.gh_json(url).get("items", []):
+                full = it["full_name"]
+                if full in known or full in candidates:
+                    continue
+                if SKIP_REPO_PAT.search(full):
+                    continue
+                if it.get("stargazers_count", 0) < MIN_STARS_DISCOVER:
+                    continue
+                if it.get("fork"):
+                    continue
+                candidates[full] = {"stars": it.get("stargazers_count", 0),
+                                    "description": it.get("description") or "",
+                                    "pushed_at": it.get("pushed_at", ""),
+                                    "homepage": it.get("homepage") or ""}
+            time.sleep(3 if lib.GH_TOKEN else 8)
+        except Exception as e:
+            print(f"[scout] search skip [{q[:40]}]: {e}")
+
+    ranked = sorted(candidates.items(),
+                    key=lambda kv: -lib.fun_score(kv[0], kv[1]["description"], kv[1]["stars"]))
+    added_total, tried = 0, 0
+    for repo, meta in ranked:
+        if tried >= MAX_NEW_REPOS_PER_RUN:
+            break
+        tried += 1
+        tmp = tempfile.mkdtemp(prefix="ss_")
+        try:
+            if not shallow_clone(repo, tmp):
+                continue
+            items = ingest_repo(tmp, repo, meta, source="daily-scout")
+            added_total += stock(items, existing, sources, repo, meta)
+        except Exception as e:
+            print(f"[scout] ingest skip {repo}: {e}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+    print(f"[scout] discover: {len(candidates)} candidates, {tried} tried, {added_total} items added")
+    return added_total
+
+
+# ----------------------------------------------------------------- seed ----
+def seed(seed_dir: str, meta_file: str) -> None:
+    """Local bootstrap from pre-cloned repos. dir names: owner--repo or owner_repo."""
+    metas = json.load(open(meta_file, encoding="utf-8")) if os.path.exists(meta_file) else {}
+    existing, sources = lib.load_items(), lib.load_sources()
+    for d in sorted(os.listdir(seed_dir)):
+        local = os.path.join(seed_dir, d)
+        if not os.path.isdir(local):
+            continue
+        repo = d.replace("--", "/", 1) if "--" in d else d.replace("_", "/", 1)
+        meta = metas.get(repo, {})
+        try:
+            items = ingest_repo(local, repo, meta, source="seed")
+            stock(items, existing, sources, repo, meta)
+        except Exception as e:
+            print(f"[seed] skip {repo}: {e}")
+    lib.save_sources(sources)
+    lib.refresh()
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seed", help="seed from a directory of pre-cloned repos")
+    ap.add_argument("--meta", default="", help="json map full_name -> {stars,description,pushed_at}")
+    ap.add_argument("--no-discover", action="store_true")
+    ap.add_argument("--no-restock", action="store_true")
+    a = ap.parse_args()
+    if a.seed:
+        seed(a.seed, a.meta)
+        return
+    existing, sources = lib.load_items(), lib.load_sources()
+    if not a.no_restock:
+        restock_existing(existing, sources)
+    if not a.no_discover:
+        discover(existing, sources)
+    lib.save_sources(sources)
+    lib.refresh()
+
+
+if __name__ == "__main__":
+    main()

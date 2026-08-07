@@ -1,0 +1,18 @@
+# Skill 商店 · Skill Store
+
+> A bilingual (中文/English) curated store of fun Agent Skills (SKILL.md format, Claude Code / claude.ai / Codex compatible), restocked daily from GitHub by an automated scout with a human editorial layer.
+
+## For agents
+
+- Machine-readable inventory: https://ourword-ai.github.io/skill-store/skills/feed.json
+  JSON: {generated_at, count, new_today, picks, categories[], skills[]}
+  Each skill: {id, kind: skill|collection, name, title_zh, tagline_zh, tagline_en, desc_en, repo, path, url, stars, category, fun_score, pick, install:{clone, copy, dir}, added_at}
+- Human storefront: https://ourword-ai.github.io/skill-store/  (?lang=en for English)
+- Restock protocol: https://ourword-ai.github.io/skill-store/docs/PROTOCOL.md
+- Source: https://github.com/ourword-ai/skill-store (MIT)
+
+## Install pattern (Claude Code)
+
+git clone --depth 1 <repo> && cp -r <repo>/<path> ~/.claude/skills/<name>
+
+Safety: skills execute instructions in the user's environment — read SKILL.md before installing.
