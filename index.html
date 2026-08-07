@@ -1,351 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Skill 商店 — 每天上新的好玩 Agent Skill 精选店 | Skill Store</title>
-<meta name="description" content="Skill 商店是一家中英双语的 Agent Skill 精选小店：每天从 GitHub 进货，只上架好玩、有用、值得一装的 Claude / Agent Skills。原始人模式、小说变游戏、网文全家桶、算法生成艺术……全部 ¥0 开源。">
-<meta name="keywords" content="Claude Skills, Agent Skills, SKILL.md, Claude Code, skill store, 技能商店, 好玩的skill, AI技能, anthropic skills, 开源">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store</title>
+<meta name="description" content="每天上新的好玩 Agent Skill 精选。A curated, daily-updated list of fun agent skills (SKILL.md) for Claude Code / claude.ai.">
 <link rel="canonical" href="https://ourword.ai/skill-store/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Skill 商店">
-<meta property="og:title" content="Skill 商店 — 每天上新的好玩 Agent Skill 精选店">
-<meta property="og:description" content="只上架好玩的 Agent Skills：每天从 GitHub 进货，中英双语导购，全部 ¥0 开源。">
+<meta property="og:title" content="Skill 商店 · Skill Store">
+<meta property="og:description" content="每天上新的好玩 Agent Skill 精选 · fun agent skills, updated daily">
 <meta property="og:url" content="https://ourword.ai/skill-store/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="%231f4f9e"/><rect x="5" y="11" width="22" height="15" rx="2" fill="%23fffefb"/><path d="M5 13 q5.5-7 11-2 q5.5-5 11 2" fill="none" stroke="%23fffefb" stroke-width="3.4" stroke-linecap="round"/><rect x="9" y="15" width="14" height="2.4" rx="1.2" fill="%231f4f9e"/><rect x="9" y="19.6" width="14" height="2.4" rx="1.2" fill="%23d9432f"/></svg>'>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/ourword-ai/skill-store">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Skill 商店 · Skill Store","url":"https://ourword.ai/skill-store/","description":"A bilingual corner store of fun Agent Skills, restocked daily from GitHub.","inLanguage":["zh-CN","en"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Skill 商店 · Skill Store","url":"https://ourword.ai/skill-store/","description":"每天上新的好玩 Agent Skill 精选 · a curated, daily-updated list of fun agent skills."}
 </script>
 <style>
-:root{
-  --paper:#f5f3ee; --card:#fffefb; --ink:#22271f; --ink-70:#4a5044; --ink-50:#7b8073; --ink-30:#aeb2a5;
-  --enamel:#1f4f9e; --enamel-deep:#173c78; --enamel-lite:#e8eef9;
-  --sticker:#d9432f; --sticker-bg:#fbeae6;
-  --shelf:#cfc7b4; --line:rgba(34,39,31,.10); --line-2:rgba(34,39,31,.05); --tint:rgba(34,39,31,.035);
-  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;
-  --disp:"ZCOOL KuaiLe",-apple-system,"PingFang SC","Noto Sans SC",sans-serif;
-  --shadow:0 1px 2px rgba(34,39,31,.05),0 6px 18px rgba(34,39,31,.06);
-  --shadow-up:0 2px 4px rgba(34,39,31,.06),0 12px 28px rgba(34,39,31,.10);
-  --ease:cubic-bezier(.22,1,.36,1);
-}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{background:var(--paper);scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif;color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
-a{color:var(--enamel);text-decoration:none}a:hover{text-decoration:underline}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-:focus-visible{outline:2px solid var(--enamel);outline-offset:2px;border-radius:4px}
-[hidden]{display:none!important}
-
-/* ── signboard ─────────────────────────────────────────── */
-.sign{background:linear-gradient(178deg,var(--enamel) 0%,var(--enamel-deep) 100%);color:#fffefb;position:relative;overflow:hidden}
-.sign::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 12% -20%,rgba(255,255,255,.22),transparent 55%);pointer-events:none}
-.sign-in{max-width:1060px;margin:0 auto;padding:26px 20px 22px;position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-family:var(--disp);font-size:clamp(30px,6vw,44px);line-height:1.1;letter-spacing:.02em;text-shadow:0 2px 0 rgba(0,0,0,.18)}
-.logo small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.28em;opacity:.85;margin-top:6px;text-transform:uppercase;text-shadow:none}
-.sign-side{display:flex;align-items:center;gap:10px}
-.lang,.gh{border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#fffefb;transition:background .15s var(--ease)}
-.lang:hover,.gh:hover{background:rgba(255,255,255,.14);text-decoration:none}
-.lang b{opacity:1}.lang span{opacity:.55}
-.awning{height:14px;background:repeating-linear-gradient(90deg,var(--sticker) 0 26px,#fffefb 26px 52px);border-bottom:1px solid rgba(34,39,31,.15)}
-
-/* ── status strip ──────────────────────────────────────── */
-.strip{max-width:1060px;margin:0 auto;padding:12px 20px;font-size:12.5px;color:var(--ink-50);display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center}
-.strip b{color:var(--ink-70);font-weight:600}
-.dot{width:7px;height:7px;border-radius:50%;background:#5c8a4e;display:inline-block;margin-right:6px;animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-
-main{max-width:1060px;margin:0 auto;padding:6px 20px 60px}
-
-/* ── section labels ────────────────────────────────────── */
-.shelf-label{display:flex;align-items:baseline;gap:10px;margin:34px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--shelf);position:relative}
-.shelf-label::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:3px;background:linear-gradient(180deg,rgba(34,39,31,.10),transparent)}
-.shelf-label h2{font-family:var(--disp);font-size:21px;font-weight:400;letter-spacing:.02em}
-.shelf-label .en{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-50);text-transform:uppercase}
-.shelf-label .n{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink-50)}
-
-/* ── controls ──────────────────────────────────────────── */
-.controls{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin:18px -20px 4px;padding:10px 20px;border-bottom:1px solid var(--line-2)}
-.controls-in{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.search{flex:1;min-width:180px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;box-shadow:var(--shadow)}
-.search svg{flex:none;opacity:.4}
-.search input{border:0;outline:0;background:none;font:inherit;width:100%;color:var(--ink)}
-.chips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px}
+:root{--fg:#111;--muted:#666;--faint:#999;--line:#e5e5e5;--bg:#fff;--soft:#f6f6f6}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:baseline;gap:14px;padding:18px 0}
+.hd h1{font-size:16px;font-weight:650;margin:0;letter-spacing:.2px}
+.hd .sub{color:var(--muted);font-size:13px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hd nav{display:flex;gap:14px;font-size:13px}
+.hd nav a,.hd nav button{color:var(--muted);text-decoration:none;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.hd nav a:hover,.hd nav button:hover{color:var(--fg)}
+.status{color:var(--faint);font-size:12.5px;padding:10px 0 2px}
+.toolbar{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5;padding:12px 0}
+.toolbar input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14px;outline:none;background:var(--bg)}
+.toolbar input:focus{border-color:var(--faint)}
+.chips{display:flex;gap:8px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--ink-70);transition:all .15s var(--ease);white-space:nowrap}
-.chip:hover{border-color:var(--ink-30)}
-.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.chip .c{opacity:.5;font-family:var(--mono);font-size:10.5px;margin-left:3px}
-
-/* ── cards ─────────────────────────────────────────────── */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(270px,300px);gap:14px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:thin}
-.card{position:relative;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 13px;box-shadow:var(--shadow);transition:transform .18s var(--ease),box-shadow .18s var(--ease);display:flex;flex-direction:column;gap:8px;cursor:pointer}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-up)}
-.card:active{transform:translateY(-1px)}
-.price{position:absolute;top:-8px;right:12px;background:var(--sticker);color:#fffefb;font-family:var(--mono);font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;transform:rotate(3deg);box-shadow:0 2px 4px rgba(34,39,31,.18);letter-spacing:.03em}
-.badge-new{position:absolute;top:-8px;left:12px;background:#fffefb;color:var(--sticker);border:1.5px solid var(--sticker);font-family:var(--disp);font-size:12px;padding:2px 9px;border-radius:6px;transform:rotate(-3deg)}
-.c-head{display:flex;align-items:flex-start;gap:8px}
-.c-title{font-size:16.5px;font-weight:700;line-height:1.35}
-.c-sub{font-family:var(--mono);font-size:10.5px;color:var(--ink-50);margin-top:2px;word-break:break-all}
-.star{margin-left:auto;flex:none;color:var(--sticker);font-size:15px}
-.c-tag{font-size:13.5px;color:var(--ink-70);line-height:1.6;flex:1}
-.c-why{font-size:12.5px;color:var(--enamel-deep);background:var(--enamel-lite);border-radius:8px;padding:8px 10px;line-height:1.55}
-.c-foot{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--ink-50);border-top:1px dashed var(--line);padding-top:9px;flex-wrap:wrap}
-.kind{border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:10px;color:var(--ink-70);background:var(--tint)}
-.kind.coll{border-color:var(--enamel);color:var(--enamel)}
-.c-cat{margin-left:auto}
-
-/* ── empty / loading ───────────────────────────────────── */
-.empty{padding:52px 20px;text-align:center;color:var(--ink-50)}
-.empty .big{font-family:var(--disp);font-size:22px;color:var(--ink-70);margin-bottom:8px}
-.skel{height:150px;border-radius:12px;background:linear-gradient(100deg,var(--tint) 40%,rgba(34,39,31,.07) 50%,var(--tint) 60%);background-size:200% 100%;animation:sk 1.2s infinite}
-@keyframes sk{to{background-position:-200% 0}}
-
-/* ── receipt modal (signature) ─────────────────────────── */
-.veil{position:fixed;inset:0;background:rgba(24,28,22,.45);z-index:60;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .2s var(--ease)}
-.veil.show{opacity:1;pointer-events:auto}
-.receipt{width:min(420px,100%);max-height:88vh;overflow-y:auto;background:#fffef8;color:#26291f;font-family:var(--mono);font-size:12.5px;line-height:1.7;padding:26px 22px 18px;box-shadow:0 24px 60px rgba(0,0,0,.35);transform:translateY(14px) rotate(.4deg);transition:transform .22s var(--ease);
- -webkit-mask:linear-gradient(#000 0 0) padding-box, radial-gradient(circle at 8px 0,transparent 5px,#000 5px) top/16px 8px repeat-x, radial-gradient(circle at 8px 8px,transparent 5px,#000 5px) bottom/16px 8px repeat-x;
- mask:linear-gradient(#000,#000) padding-box;
- clip-path:polygon(0 6px,3% 0,6% 6px,9% 0,12% 6px,15% 0,18% 6px,21% 0,24% 6px,27% 0,30% 6px,33% 0,36% 6px,39% 0,42% 6px,45% 0,48% 6px,51% 0,54% 6px,57% 0,60% 6px,63% 0,66% 6px,69% 0,72% 6px,75% 0,78% 6px,81% 0,84% 6px,87% 0,90% 6px,93% 0,96% 6px,100% 0,100% calc(100% - 6px),97% 100%,94% calc(100% - 6px),91% 100%,88% calc(100% - 6px),85% 100%,82% calc(100% - 6px),79% 100%,76% calc(100% - 6px),73% 100%,70% calc(100% - 6px),67% 100%,64% calc(100% - 6px),61% 100%,58% calc(100% - 6px),55% 100%,52% calc(100% - 6px),49% 100%,46% calc(100% - 6px),43% 100%,40% calc(100% - 6px),37% 100%,34% calc(100% - 6px),31% 100%,28% calc(100% - 6px),25% 100%,22% calc(100% - 6px),19% 100%,16% calc(100% - 6px),13% 100%,10% calc(100% - 6px),7% 100%,4% calc(100% - 6px),1% 100%,0 calc(100% - 6px))}
-.veil.show .receipt{transform:translateY(0) rotate(.4deg)}
-.r-head{text-align:center;border-bottom:1px dashed #b9b6a6;padding-bottom:10px;margin-bottom:12px}
-.r-head .shop{font-family:var(--disp);font-size:19px;letter-spacing:.06em}
-.r-head .tiny{font-size:10px;color:#8a8878;letter-spacing:.2em}
-.r-line{display:flex;justify-content:space-between;gap:12px}
-.r-line b{font-weight:700}
-.r-sep{border-top:1px dashed #b9b6a6;margin:11px 0}
-.r-item-zh{font-size:14px;font-weight:700}
-.r-item-en{color:#6d6b5c;font-size:11px;word-break:break-all}
-.r-desc{margin-top:6px;color:#4d4c40;white-space:pre-wrap}
-.r-step{margin:9px 0 3px;font-weight:700}
-.cmd{position:relative;background:#26291f;color:#e9e7d8;border-radius:6px;padding:9px 34px 9px 11px;margin:6px 0;font-size:11px;word-break:break-all;line-height:1.55}
-.copy{position:absolute;top:6px;right:6px;background:rgba(255,255,255,.12);border-radius:5px;padding:3px 7px;font-size:10px;color:#e9e7d8;transition:background .15s}
-.copy:hover{background:rgba(255,255,255,.24)}
-.copy.ok{background:#5c8a4e}
-.r-note{font-size:11px;color:#6d6b5c;margin-top:4px}
-.r-actions{display:flex;gap:8px;margin-top:13px}
-.r-btn{flex:1;text-align:center;border:1.5px solid #26291f;border-radius:8px;padding:8px 10px;font-family:var(--mono);font-size:12px;color:#26291f;transition:all .15s}
-.r-btn:hover{background:#26291f;color:#fffef8;text-decoration:none}
-.r-btn.solid{background:var(--sticker);border-color:var(--sticker);color:#fffef8}
-.r-btn.solid:hover{filter:brightness(.93)}
-.barcode{height:34px;margin:15px auto 5px;width:200px;background:repeating-linear-gradient(90deg,#26291f 0 2px,transparent 2px 4px,#26291f 4px 7px,transparent 7px 9px,#26291f 9px 10px,transparent 10px 13px)}
-.r-thanks{text-align:center;font-family:var(--disp);font-size:14px;margin-top:6px}
-.r-close{position:sticky;top:0;float:right;font-size:20px;line-height:1;color:#8a8878;padding:2px 6px}
-.r-close:hover{color:#26291f}
-
-/* ── footer ────────────────────────────────────────────── */
-footer{border-top:2px solid var(--shelf);margin-top:56px;padding:26px 20px 40px;font-size:12.5px;color:var(--ink-50)}
-.foot-in{max-width:1060px;margin:0 auto;display:flex;gap:10px 26px;flex-wrap:wrap;align-items:center}
-.foot-in .sep{opacity:.4}
-
-@media(max-width:640px){
-  body{font-size:14px}
-  .sign-in{padding:20px 16px 16px}
-  main{padding:6px 14px 48px}
-  .controls{margin:14px -14px 2px;padding:9px 14px}
-  .grid{grid-template-columns:1fr}
-  .row{grid-auto-columns:minmax(240px,270px)}
-}
+.chip{flex:0 0 auto;font-size:12.5px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg);cursor:pointer;color:var(--muted);font-family:inherit}
+.chip:hover{color:var(--fg)}
+.chip.on{background:var(--fg);border-color:var(--fg);color:#fff}
+.chip small{opacity:.6;margin-left:3px}
+section{margin:26px 0}
+section h2{font-size:14px;font-weight:650;margin:0 0 12px;display:flex;justify-content:space-between;align-items:baseline}
+section h2 small{color:var(--faint);font-weight:400;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);cursor:pointer;transition:border-color .12s}
+.card:hover{border-color:var(--faint)}
+.cover{aspect-ratio:2/1;background:var(--soft);display:block;width:100%}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cbody{padding:12px 14px 13px}
+.cbody h3{margin:0 0 4px;font-size:14.5px;font-weight:600;line-height:1.4}
+.cbody h3 span{color:var(--faint);font-weight:400;font-size:12.5px;margin-left:6px}
+.tag{margin:0;color:var(--muted);font-size:13px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{margin-top:9px;display:flex;justify-content:space-between;gap:10px;color:var(--faint);font-size:12px}
+.meta .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.empty{color:var(--faint);padding:40px 0;text-align:center}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 0 40px;color:var(--faint);font-size:12.5px}
+footer a{color:var(--muted);text-decoration:none;margin-right:14px}
+footer a:hover{color:var(--fg)}
+/* modal */
+.veil{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:20;overflow-y:auto;padding:40px 16px}
+.veil.open{display:block}
+.panel{max-width:620px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:22px 24px 24px;position:relative}
+.panel .x{position:absolute;top:10px;right:12px;border:0;background:none;font-size:20px;color:var(--faint);cursor:pointer;line-height:1;padding:6px}
+.panel .x:hover{color:var(--fg)}
+.panel h3{margin:0 0 2px;font-size:17px}
+.panel .repo{font-size:12.5px;color:var(--muted)}
+.panel .repo a{color:var(--muted)}
+.panel p{color:#333;font-size:13.5px}
+.panel .en{color:var(--muted)}
+.panel .why{color:var(--muted);border-left:2px solid var(--line);padding-left:10px;font-size:13px}
+.panel h4{font-size:13px;margin:20px 0 8px}
+.step{font-size:12.5px;color:var(--muted);margin:12px 0 6px}
+.cmd{position:relative;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:10px 66px 10px 12px;font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all;margin:6px 0}
+.cmd button{position:absolute;top:6px;right:6px;font-size:11.5px;padding:3px 9px;border:1px solid var(--line);background:var(--bg);border-radius:5px;cursor:pointer;color:var(--muted);font-family:inherit}
+.cmd button:hover{color:var(--fg);border-color:var(--faint)}
+.safety{font-size:12.5px;color:var(--muted);margin-top:16px}
+@media (max-width:640px){.hd{flex-wrap:wrap;gap:6px 14px}.hd .sub{order:3;flex-basis:100%;white-space:normal}}
 </style>
 </head>
 <body>
-
-<header class="sign">
-  <div class="sign-in">
-    <h1 class="logo">🏪 Skill 商店<small>SKILL STORE · FUN SKILLS, RESTOCKED DAILY</small></h1>
-    <div class="sign-side">
-      <button class="lang" id="langBtn" aria-label="切换语言 / switch language"><b id="langZh">中</b><span> / </span><span id="langEn">EN</span></button>
-      <a class="gh" href="https://github.com/ourword-ai/skill-store" target="_blank" rel="noopener">GitHub ↗</a>
-    </div>
+<header>
+  <div class="wrap hd">
+    <h1>Skill 商店</h1>
+    <div class="sub" id="sub"></div>
+    <nav>
+      <button id="langBtn" type="button">EN</button>
+      <a href="https://github.com/ourword-ai/skill-store" target="_blank" rel="noopener">GitHub</a>
+    </nav>
   </div>
 </header>
-<div class="awning" aria-hidden="true"></div>
 
-<div class="strip" id="strip"><span><span class="dot"></span><span data-i18n="loading">正在开门营业…</span></span></div>
-
-<main>
-  <div class="controls"><div class="controls-in">
-    <label class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="搜点好玩的… / search the shelves" autocomplete="off"></label>
-    <div class="chips" id="chips" role="tablist"></div>
-  </div></div>
-
-  <div id="app"><div class="grid" style="margin-top:22px"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
-</main>
-
-<div class="veil" id="veil" role="dialog" aria-modal="true" aria-label="安装小票 install receipt">
-  <div class="receipt" id="receipt"></div>
+<div class="wrap">
+  <div class="status" id="status"></div>
+  <div class="toolbar">
+    <input id="q" type="search" autocomplete="off">
+    <div class="chips" id="chips"></div>
+  </div>
+  <main id="main"></main>
 </div>
 
-<footer><div class="foot-in">
-  <span id="footAbout">🏪 一家只卖好玩 Skill 的小店 · 每天从 GitHub 进货 · 全部 ¥0 开源</span>
-  <span class="sep">·</span><a href="skills/feed.json">feed.json</a>
-  <span class="sep">·</span><a href="llms.txt">llms.txt</a>
-  <span class="sep">·</span><a href="docs/PROTOCOL.md" id="footProto">进货协议</a>
-  <span class="sep">·</span><a href="https://ourword.ai/idea/" target="_blank" rel="noopener">姊妹站 Idea ↗</a>
-  <span class="sep">·</span><span>MIT</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <a href="skills/feed.json">feed.json</a>
+    <a href="docs/PROTOCOL.md">协议 / protocol</a>
+    <a href="llms.txt">llms.txt</a>
+    <a href="https://ourword.ai/idea/" target="_blank" rel="noopener">idea</a>
+    <a href="https://github.com/ourword-ai/skill-store" target="_blank" rel="noopener">MIT · GitHub</a>
+  </div>
+</footer>
+
+<div class="veil" id="veil"><div class="panel" id="panel"></div></div>
 
 <script>
 (function(){
 "use strict";
-var FEED="skills/feed.json";
-var state={lang:(new URLSearchParams(location.search).get("lang")==="en")?"en":"zh",cat:"all",q:"",data:null};
-
 var I18N={
- zh:{loading:"正在开门营业…",newToday:"今日上新",items:"件",total:"在售",picks:"店长推荐",updated:"更新于",searchEmptyBig:"货架翻遍了也没找到",searchEmpty:"换个词试试，或者明天再来看新货。",newShelf:"🧧 今日上新",picksShelf:"★ 店长推荐",all:"全部",single:"单品",coll:"合集",skills:"件装",stars:"星",installTitle:"如何安装",stepCode:"① Claude Code（终端）",stepAi:"② claude.ai 网页版",aiNote:"设置 → Capabilities → Skills → 上传整个技能文件夹（zip）。",stepTrust:"③ 装前必读",trustNote:"Skill 会在你的环境里执行指令。先读 SKILL.md，只装看得懂、信得过的。",viewSrc:"查看源码",copyAll:"复制安装命令",copied:"已复制",thanks:"谢 谢 惠 顾",free:"¥0 开源",newTag:"新",about:"🏪 一家只卖好玩 Skill 的小店 · 每天从 GitHub 进货 · 全部 ¥0 开源",proto:"进货协议",why:"店长说",emptyShelf:"这排货架空着，等明天进货。"},
- en:{loading:"Opening up shop…",newToday:"New today",items:"",total:"in stock",picks:"picks",updated:"updated",searchEmptyBig:"Searched every shelf, nothing here",searchEmpty:"Try another word — or come back tomorrow for fresh stock.",newShelf:"🧧 Fresh today",picksShelf:"★ Shopkeeper's picks",all:"All",single:"skill",coll:"pack",skills:"inside",stars:"stars",installTitle:"HOW TO INSTALL",stepCode:"① Claude Code (terminal)",stepAi:"② claude.ai (web)",aiNote:"Settings → Capabilities → Skills → upload the skill folder (zip).",stepTrust:"③ Before you install",trustNote:"Skills run instructions in your environment. Read the SKILL.md first; only install what you understand and trust.",viewSrc:"View source",copyAll:"Copy install commands",copied:"Copied",thanks:"T H A N K   Y O U",free:"$0 OSS",newTag:"NEW",about:"🏪 A tiny store that only stocks fun skills · restocked daily from GitHub · everything $0 open source",proto:"Restock protocol",why:"Shopkeeper says",emptyShelf:"This shelf is empty — restocking tomorrow."}
+ zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"推荐语",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
+ en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
 };
-function t(k){return I18N[state.lang][k]||k}
-function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
-function el(html){var d=document.createElement("div");d.innerHTML=html.trim();return d.firstChild}
+var params=new URLSearchParams(location.search);
+var lang=params.get("lang")==="en"?"en":"zh";
+var t=function(k){return I18N[lang][k]||k};
+var D=null, state={q:"",cat:"all"};
 
-function title(s){return state.lang==="zh"?(s.title_zh||s.name):(s.name)}
-function tagline(s){
- if(state.lang==="zh")return s.tagline_zh||"";
- return s.tagline_en||s.desc_en||"";
-}
-function why(s){return state.lang==="zh"?s.why_zh:s.why_en}
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function fmt(n){n=n||0;return n>=1000?(n/1000).toFixed(1).replace(/\.0$/,"")+"k":String(n)}
+function today(){return (D&&D.generated_at?D.generated_at:"").slice(0,10)}
+function name(it){return lang==="zh"?(it.title_zh||it.name):it.name}
+function tag(it){var s=lang==="zh"?(it.tagline_zh||it.tagline_en):(it.tagline_en||it.desc_en);return s||""}
+function catName(id){var c=(D.categories||[]).find(function(x){return x.id===id});return c?(lang==="zh"?c.zh:c.en):id}
+function cover(it){return "https://opengraph.githubassets.com/1/"+it.repo}
 
-function card(s,fresh){
- var picks=s.pick?'<span class="star" title="店长推荐">★</span>':"";
- var kind=s.kind==="collection"?'<span class="kind coll">'+t("coll")+" ×"+s.skill_count+"</span>":(s.skill_count>1?'<span class="kind">'+t("single")+" · "+s.skill_count+" "+t("skills")+"</span>":'<span class="kind">'+t("single")+"</span>");
- var whyHtml=(s.pick&&why(s))?'<div class="c-why">💬 '+esc(why(s))+"</div>":"";
- var sub=state.lang==="zh"?esc(s.name):esc(s.repo);
- var cat=catMeta(s.category);
- return el('<button class="card" data-id="'+esc(s.id)+'" aria-haspopup="dialog">'+
-   '<span class="price">'+t("free")+"</span>"+(fresh?'<span class="badge-new">'+t("newTag")+"</span>":"")+
-   '<div class="c-head"><div><div class="c-title">'+esc(title(s))+'</div><div class="c-sub">'+sub+"</div></div>"+picks+"</div>"+
-   '<div class="c-tag">'+esc(tagline(s))+"</div>"+whyHtml+
-   '<div class="c-foot">'+kind+"<span>⭐ "+fmtStars(s.stars)+'</span><span class="c-cat">'+cat.emoji+" "+(state.lang==="zh"?cat.zh:cat.en)+"</span></div></button>");
+function chrome(){
+  document.documentElement.lang=lang==="zh"?"zh-CN":"en";
+  document.title=t("title");
+  el("sub").textContent=t("sub");
+  el("langBtn").textContent=t("btn");
+  el("q").placeholder=t("search");
+  var s="<span>"+D.count+" "+t("items")+"</span>";
+  if(D.new_today&&D.new_today<D.count)s+=" · <span>"+t("fresh")+" "+D.new_today+"</span>";
+  s+=" · <span>"+t("updated")+" "+esc((D.generated_at||"").slice(0,10))+"</span>";
+  el("status").innerHTML=s;
+  var chips='<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'+t("all")+"<small>"+D.count+"</small></button>";
+  (D.categories||[]).forEach(function(c){
+    if(!c.count)return;
+    chips+='<button class="chip'+(state.cat===c.id?" on":"")+'" data-cat="'+esc(c.id)+'">'+esc(lang==="zh"?c.zh:c.en)+"<small>"+c.count+"</small></button>";
+  });
+  el("chips").innerHTML=chips;
 }
-function fmtStars(n){return n>=1000?(n/1000).toFixed(n>=10000?0:1)+"k":String(n)}
-function catMeta(id){var c=(state.data.categories||[]).find(function(x){return x.id===id});return c||{emoji:"📦",zh:id,en:id}}
 
-function matches(s){
- if(state.cat!=="all"&&s.category!==state.cat)return false;
- if(!state.q)return true;
- var q=state.q.toLowerCase();
- return [s.name,s.title_zh,s.tagline_zh,s.tagline_en,s.desc_en,s.repo,s.owner].join(" ").toLowerCase().indexOf(q)>=0;
+function card(it){
+  var extra=it.kind==="collection"?(lang==="zh"?"合集 ×"+(it.skill_count||"?"):"pack ×"+(it.skill_count||"?")):"";
+  return '<article class="card" data-id="'+esc(it.id)+'">'
+    +'<div class="cover"><img loading="lazy" alt="" src="'+esc(cover(it))+'" onerror="this.parentNode.removeChild(this)"></div>'
+    +'<div class="cbody"><h3>'+esc(name(it))+(lang==="zh"&&it.title_zh?"<span>"+esc(it.name)+"</span>":"")+"</h3>"
+    +'<p class="tag">'+esc(tag(it))+"</p>"
+    +'<div class="meta"><div class="l">★ '+fmt(it.stars)+" · "+esc(it.repo)+(extra?" · "+esc(extra):"")+'</div><div>'+esc(catName(it.category))+"</div></div>"
+    +"</div></article>";
 }
+function grid(list){return '<div class="grid">'+list.map(card).join("")+"</div>"}
 
 function render(){
- var d=state.data;if(!d)return;
- document.documentElement.lang=state.lang==="zh"?"zh-CN":"en";
- document.getElementById("langZh").style.opacity=state.lang==="zh"?1:.55;
- document.getElementById("langEn").style.opacity=state.lang==="en"?1:.55;
- document.getElementById("footAbout").textContent=t("about");
- document.getElementById("footProto").textContent=t("proto");
- document.getElementById("q").placeholder=state.lang==="zh"?"搜点好玩的… / search":"Search the shelves…";
-
- // status strip
- var day=(d.generated_at||"").slice(0,10);
- document.getElementById("strip").innerHTML='<span><span class="dot"></span><b>'+d.count+"</b> "+t("total")+"</span>"+
-   ((d.new_today&&d.new_today<d.count)?('<span>🧧 '+t("newToday")+" <b>"+d.new_today+"</b> "+t("items")+"</span>"):"")+
-   "<span>★ "+d.picks+" "+t("picks")+"</span><span>"+t("updated")+" "+esc(day)+" UTC</span>";
-
- // chips
- var chips=document.getElementById("chips");chips.innerHTML="";
- var mk=function(id,label,n){var b=el('<button class="chip'+(state.cat===id?" on":"")+'" role="tab">'+label+(n!=null?' <span class="c">'+n+"</span>":"")+"</button>");b.onclick=function(){state.cat=id;render()};chips.appendChild(b)};
- mk("all",t("all"),d.count);
- d.categories.forEach(function(c){if(c.count>0)mk(c.id,c.emoji+" "+(state.lang==="zh"?c.zh:c.en),c.count)});
-
- var app=document.getElementById("app");app.innerHTML="";
- var list=d.skills.filter(matches);
- var todayStr=day;
- var isFresh=function(s){return s.added_at===todayStr&&d.new_today>0&&d.new_today<d.count};
-
- if(!list.length){app.appendChild(el('<div class="empty"><div class="big">'+t("searchEmptyBig")+'</div><div>'+t("searchEmpty")+"</div></div>"));return}
-
- var noFilter=(state.cat==="all"&&!state.q);
- if(noFilter){
-  var freshOnes=d.skills.filter(isFresh);
-  if(freshOnes.length){
-   app.appendChild(el('<div class="shelf-label"><h2>'+t("newShelf")+'</h2><span class="n">'+freshOnes.length+"</span></div>"));
-   var row=el('<div class="row"></div>');freshOnes.forEach(function(s){row.appendChild(card(s,true))});app.appendChild(row);
-  }
-  var picks=d.skills.filter(function(s){return s.pick});
-  if(picks.length){
-   app.appendChild(el('<div class="shelf-label"><h2>'+t("picksShelf")+'</h2><span class="n">'+picks.length+"</span></div>"));
-   var g=el('<div class="grid"></div>');picks.forEach(function(s){g.appendChild(card(s,false))});app.appendChild(g);
-  }
-  d.categories.forEach(function(c){
-   var items=d.skills.filter(function(s){return s.category===c.id&&!s.pick});
-   if(!items.length)return;
-   app.appendChild(el('<div class="shelf-label"><h2>'+c.emoji+" "+(state.lang==="zh"?c.zh:c.en)+'</h2><span class="en">'+(state.lang==="zh"?c.en:c.zh)+'</span><span class="n">'+items.length+"</span></div>"));
-   var g2=el('<div class="grid"></div>');items.forEach(function(s){g2.appendChild(card(s,isFresh(s)))});app.appendChild(g2);
+  chrome();
+  var all=D.skills||[];
+  var q=state.q.trim().toLowerCase();
+  var list=all.filter(function(it){
+    if(state.cat!=="all"&&it.category!==state.cat)return false;
+    if(!q)return true;
+    return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.desc_en,it.repo].join(" ").toLowerCase().indexOf(q)>=0;
   });
- }else{
-  var g3=el('<div class="grid" style="margin-top:20px"></div>');list.forEach(function(s){g3.appendChild(card(s,false))});app.appendChild(g3);
- }
+  var h="";
+  if(q||state.cat!=="all"){
+    h=list.length?('<section><h2>'+t("results")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>")
+                 :('<div class="empty">'+t("empty")+"</div>");
+  }else{
+    var picks=list.filter(function(x){return x.pick});
+    var td=today();
+    var fresh=list.filter(function(x){return (x.added_at||"").slice(0,10)===td});
+    if(picks.length)h+='<section><h2>'+t("picks")+"<small>"+picks.length+"</small></h2>"+grid(picks)+"</section>";
+    if(fresh.length&&fresh.length<list.length)h+='<section><h2>'+t("fresh")+"<small>"+fresh.length+"</small></h2>"+grid(fresh)+"</section>";
+    (D.categories||[]).forEach(function(c){
+      var xs=list.filter(function(x){return x.category===c.id});
+      if(xs.length)h+='<section><h2>'+esc(lang==="zh"?c.zh:c.en)+"<small>"+xs.length+"</small></h2>"+grid(xs)+"</section>";
+    });
+  }
+  el("main").innerHTML=h;
 }
 
-/* receipt */
-function openReceipt(s){
- var r=document.getElementById("receipt");
- var now=new Date();var stamp=now.toISOString().slice(0,16).replace("T"," ");
- var no=(s.id.split("").reduce(function(a,c){return a+c.charCodeAt(0)},0)%9000+1000);
- var cmds=[s.install.clone,s.install.copy];
- r.innerHTML='<button class="r-close" aria-label="close">✕</button>'+
-  '<div class="r-head"><div class="shop">🏪 Skill 商店</div><div class="tiny">SKILL STORE · RECEIPT №'+no+"</div></div>"+
-  '<div class="r-line"><span class="r-item-zh">'+esc(title(s))+'</span><b>'+t("free")+"</b></div>"+
-  '<div class="r-item-en">'+esc(s.repo)+(s.path?" / "+esc(s.path):"")+"</div>"+
-  '<div class="r-desc">'+esc(tagline(s))+(state.lang==="zh"&&s.desc_en?"\n\n"+esc(s.desc_en):"")+"</div>"+
-  ((s.pick&&why(s))?'<div class="r-sep"></div><div class="r-desc">💬 '+t("why")+"："+esc(why(s))+"</div>":"")+
-  '<div class="r-sep"></div><div style="text-align:center;font-weight:700;letter-spacing:.18em">'+t("installTitle")+"</div>"+
-  '<div class="r-step">'+t("stepCode")+"</div>"+
-  cmds.map(function(c){return '<div class="cmd">'+esc(c)+'<button class="copy" data-c="'+esc(c)+'">copy</button></div>'}).join("")+
-  '<div class="r-note">→ '+esc(s.install.dir)+"</div>"+
-  '<div class="r-step">'+t("stepAi")+'</div><div class="r-note">'+t("aiNote")+"</div>"+
-  '<div class="r-step">'+t("stepTrust")+'</div><div class="r-note">⚠️ '+t("trustNote")+"</div>"+
-  '<div class="r-actions"><a class="r-btn" target="_blank" rel="noopener" href="'+esc(s.url)+'">'+t("viewSrc")+' ↗</a><button class="r-btn solid" id="copyAll">'+t("copyAll")+"</button></div>"+
-  '<div class="barcode" aria-hidden="true"></div><div style="text-align:center;font-size:10px;color:#8a8878">'+stamp+" UTC · ⭐"+fmtStars(s.stars)+'</div><div class="r-thanks">'+t("thanks")+"</div>";
- document.getElementById("veil").classList.add("show");
- document.body.style.overflow="hidden";
- r.querySelector(".r-close").onclick=closeReceipt;
- r.querySelectorAll(".copy").forEach(function(b){b.onclick=function(){copy(b.dataset.c,b)}});
- r.querySelector("#copyAll").onclick=function(){copy(cmds.join(" && \\\n"),this)};
+function copyText(txt,btn){
+  function done(){var o=btn.textContent;btn.textContent=t("copied");setTimeout(function(){btn.textContent=o},1200)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback()})}else fallback();
+  function fallback(){var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done()}catch(e){}document.body.removeChild(ta)}
 }
-function closeReceipt(){document.getElementById("veil").classList.remove("show");document.body.style.overflow=""}
-function copy(text,btn){
- var done=function(){var o=btn.textContent;btn.textContent=t("copied");btn.classList.add("ok");setTimeout(function(){btn.textContent=o;btn.classList.remove("ok")},1200)};
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){fallbackCopy(text);done()})}
- else{fallbackCopy(text);done()}
-}
-function fallbackCopy(text){var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")}catch(e){}document.body.removeChild(ta)}
 
-/* events */
-document.getElementById("veil").addEventListener("click",function(e){if(e.target===this)closeReceipt()});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeReceipt()});
-document.getElementById("app").addEventListener("click",function(e){
- var c=e.target.closest(".card");if(!c)return;
- var s=state.data.skills.find(function(x){return x.id===c.dataset.id});if(s)openReceipt(s);
+function openModal(it){
+  var ins=it.install||{};
+  var h='<button class="x" aria-label="close">×</button>'
+    +"<h3>"+esc(name(it))+"</h3>"
+    +'<div class="repo"><a href="'+esc(it.url||("https://github.com/"+it.repo))+'" target="_blank" rel="noopener">'+esc(it.repo)+(it.path?" / "+esc(it.path):"")+"</a> · ★ "+fmt(it.stars)+"</div>";
+  if(lang==="zh"&&it.tagline_zh)h+="<p>"+esc(it.tagline_zh)+"</p>";
+  if(it.desc_en)h+='<p class="en">'+esc(it.desc_en)+"</p>";
+  var why=lang==="zh"?it.why_zh:it.why_en;
+  if(it.pick&&why)h+='<p class="why">'+t("why")+"："+esc(why)+"</p>";
+  h+="<h4>"+t("install")+"</h4>";
+  if(ins.clone||ins.copy){
+    h+='<div class="step">1 · '+t("step1")+"</div>";
+    if(ins.clone)h+='<div class="cmd">'+esc(ins.clone)+'<button data-c="'+esc(ins.clone)+'">'+t("copy")+"</button></div>";
+    if(ins.copy)h+='<div class="cmd">'+esc(ins.copy)+'<button data-c="'+esc(ins.copy)+'">'+t("copy")+"</button></div>";
+  }
+  h+='<div class="step">2 · '+t("step2")+"</div>";
+  h+='<div class="safety">'+t("safety")+"</div>";
+  el("panel").innerHTML=h;
+  el("veil").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeModal(){el("veil").classList.remove("open");document.body.style.overflow=""}
+
+function jsonld(){
+  try{
+    var items=(D.skills||[]).slice(0,30).map(function(it,i){
+      return {"@type":"ListItem","position":i+1,"item":{"@type":"SoftwareApplication","name":it.name,"description":it.tagline_en||it.desc_en||"","url":it.url||("https://github.com/"+it.repo),"applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}};
+    });
+    var s=document.createElement("script");s.type="application/ld+json";
+    s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","itemListElement":items});
+    document.head.appendChild(s);
+  }catch(e){}
+}
+
+document.addEventListener("click",function(e){
+  var chip=e.target.closest(".chip");
+  if(chip){state.cat=chip.getAttribute("data-cat");render();return}
+  var cp=e.target.closest(".cmd button");
+  if(cp){copyText(cp.getAttribute("data-c"),cp);return}
+  if(e.target.closest(".panel .x")){closeModal();return}
+  if(e.target===el("veil")){closeModal();return}
+  var c=e.target.closest(".card");
+  if(c&&D){var it=(D.skills||[]).find(function(x){return x.id===c.getAttribute("data-id")});if(it)openModal(it)}
 });
-document.getElementById("q").addEventListener("input",function(){state.q=this.value.trim();render()});
-document.getElementById("langBtn").onclick=function(){
- state.lang=state.lang==="zh"?"en":"zh";
- var u=new URL(location.href);u.searchParams.set("lang",state.lang);history.replaceState(null,"",u);
- render();
-};
-
-/* boot */
-fetch(FEED).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){
- state.data=d;render();
- // JSON-LD ItemList for search & answer engines
- try{
-  var ld={"@context":"https://schema.org","@type":"ItemList","name":"Skill 商店 inventory","numberOfItems":d.count,
-   "itemListElement":d.skills.slice(0,30).map(function(s,i){return{"@type":"ListItem","position":i+1,"item":{"@type":"SoftwareApplication","name":s.name,"alternateName":s.title_zh||undefined,"description":s.tagline_en||s.desc_en,"applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":s.url}}})};
-  var sc=document.createElement("script");sc.type="application/ld+json";sc.textContent=JSON.stringify(ld);document.head.appendChild(sc);
- }catch(e){}
-}).catch(function(e){
- document.getElementById("app").innerHTML='<div class="empty"><div class="big">🏪 …</div><div>feed.json '+esc(String(e))+'<br>The shop opens once the first scout run lands.</div></div>';
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
+el("q").addEventListener("input",function(){state.q=this.value;render()});
+el("langBtn").addEventListener("click",function(){
+  lang=lang==="zh"?"en":"zh";
+  var u=new URL(location.href);
+  if(lang==="en")u.searchParams.set("lang","en");else u.searchParams.delete("lang");
+  history.replaceState(null,"",u);
+  render();
 });
+
+fetch("skills/feed.json").then(function(r){return r.json()}).then(function(d){D=d;render();jsonld()})
+.catch(function(){el("main").innerHTML='<div class="empty">feed.json load failed</div>'});
 })();
 </script>
 </body>

@@ -18,8 +18,8 @@
 
 **Skill Store** does one thing: it picks the **fun, worth-installing** Agent Skills (the `SKILL.md` kind) off GitHub, writes bilingual shelf copy for them, and puts them on display. It is not an exhaustive index — those exist. It's a small shop with a shopkeeper's taste, **restocked daily, fun items only**.
 
-商店隐喻贯穿到底：商品全部「¥0 · 开源」，点开任何一件会打印一张**安装小票**（收据式的安装说明）。
-Everything is "$0 · open source", and clicking any item prints an **install receipt**.
+界面极简、内容优先：卡片带仓库封面，点开任何一件是安装说明。
+Minimal, content-first UI: cards carry repo covers; clicking any item shows install instructions.
 
 ## 怎么运转 / How it works
 
@@ -65,7 +65,7 @@ python3 -m http.server 8080              # open http://localhost:8080
 
 ## 安全提示 / A word on safety
 
-Skill 会在你的环境里执行指令。**装之前先读 `SKILL.md`**，只装你看得懂、信得过的 —— 每张小票底部都印着这句话。
+Skill 会在你的环境里执行指令。**装之前先读 `SKILL.md`**，只装你看得懂、信得过的。
 Skills run instructions in your environment. **Read the `SKILL.md` before installing**; every receipt says so.
 
 ## License
