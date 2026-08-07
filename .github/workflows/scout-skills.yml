@@ -25,6 +25,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           MAX_NEW_REPOS: ${{ github.event.inputs.max_new_repos || '10' }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: python scouts/skill_scout.py
       - name: Commit (conflict-safe; feed regenerated from merged set)
         run: |

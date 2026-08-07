@@ -149,6 +149,9 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
     return items
 
 
+NEW_IDS: list[str] = []
+
+
 def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dict) -> int:
     added = 0
     for it in items:
@@ -156,6 +159,7 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
             continue
         lib.save_item(it)
         existing[it["id"]] = it
+        NEW_IDS.append(it["id"])
         added += 1
         print(f"[scout] + {it['kind']:<10} {it['id']}  ({it['category']}, fun {it['fun_score']})")
     sources["repos"][repo] = {"stars": meta.get("stars", 0),
@@ -163,6 +167,68 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
                               "description": (meta.get("description") or "")[:200],
                               "last_seen": lib.today()}
     return added
+
+
+
+
+# ---------------------------------------------------------------- enrich ----
+LLM_KEY = os.environ.get("LLM_API_KEY", "")
+LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")
+
+ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写货架文案。要求：
+- tagline_zh：一句钩子（≤40字），写场景/痛点/反差，让人想点开；不要空话。
+- tagline_en：英文钩子，同样风格。
+- why_zh：一句点评（≤55字），说清这个 skill 到底好在哪（机制/差异点），诚实、具体、不吹。
+- why_en：英文点评。
+- title_zh：≤8字的中文名（贴切、可有趣，不生造成语）。
+只输出一个 JSON 对象，含这5个键，别的什么都不要。
+
+商品信息：
+name: {name}
+repo: {repo}
+kind: {kind}
+description: {desc}"""
+
+
+def enrich_items(ids: list[str], existing: dict) -> None:
+    """LLM copywriting for newly stocked items. No-op unless LLM_API_KEY is set.
+    Writes into the machine layer (item files); editorial still overrides everything."""
+    if not LLM_KEY or not ids:
+        if ids:
+            print(f"[scout] enrich: skipped ({len(ids)} new items, LLM_API_KEY not set)")
+        return
+    import urllib.request
+    done = 0
+    for sid in ids:
+        it = existing.get(sid)
+        if not it:
+            continue
+        prompt = ENRICH_PROMPT.format(name=it.get("name", ""), repo=it.get("repo", ""),
+                                      kind=it.get("kind", ""), desc=(it.get("desc_en") or "")[:600])
+        body = json.dumps({"model": LLM_MODEL, "temperature": 0.4,
+                           "response_format": {"type": "json_object"},
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        req = urllib.request.Request(LLM_BASE + "/chat/completions", data=body, method="POST",
+                                     headers={"Authorization": "Bearer " + LLM_KEY,
+                                              "Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                txt = json.loads(r.read())["choices"][0]["message"]["content"]
+            txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+            c = json.loads(txt)
+            patch = {k: str(c[k]).strip() for k in
+                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en")
+                     if c.get(k) and str(c[k]).strip()}
+            if patch:
+                it.update(patch)
+                lib.save_item(it)
+                done += 1
+        except Exception as e:  # never let copywriting break the restock
+            print(f"[scout] enrich {sid}: {e}")
+    print(f"[scout] enrich: {done}/{len(ids)} items copywritten by {LLM_MODEL}")
+
+
 
 
 # -------------------------------------------------------------- restock ----
@@ -268,6 +334,7 @@ def main() -> None:
         restock_existing(existing, sources)
     if not a.no_discover:
         discover(existing, sources)
+    enrich_items(NEW_IDS, existing)
     lib.save_sources(sources)
     lib.refresh()
 

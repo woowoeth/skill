@@ -55,6 +55,13 @@ skills/feed.json → GitHub Pages 静态店面（this site）
 | GitHub search（fun/game/creative 关键词） | live |
 | 已上架仓库的星数/更新回访（restock） | live |
 
+## 新货自动文案 / Auto copy for new stock
+
+每日进货的新商品会先套用占位文案；在仓库 Settings → Secrets 配置以下三项后，scout 会用 LLM 按「钩子 + 点评」的店内风格自动写中英文案（editorial 层始终优先）：
+`LLM_API_KEY` · `LLM_BASE_URL`（OpenAI 兼容，默认 api.openai.com/v1）· `LLM_MODEL`
+
+New items get placeholder copy by default. Set the three secrets above and the daily scout writes bilingual hook + review copy for them (the editorial layer always wins).
+
 ## 本地跑 / Run locally
 
 ```bash
