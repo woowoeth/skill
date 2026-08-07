@@ -154,9 +154,12 @@ NEW_IDS: list[str] = []
 
 def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dict) -> int:
     added = 0
+    cover = resolve_cover(repo) if items else ""
     for it in items:
         if it["id"] in existing:
             continue
+        if cover:
+            it["cover"] = cover
         lib.save_item(it)
         existing[it["id"]] = it
         NEW_IDS.append(it["id"])
@@ -169,6 +172,61 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
     return added
 
 
+
+
+# ---------------------------------------------------------------- covers ----
+BADGE_PAT = re.compile(
+    r"shields\.io|badgen?\b|badge|codecov|travis|circleci|appveyor|visitor|hits\.|"
+    r"counter|actions/workflows|deepwiki|colab|\.svg(\?|$)|star-history", re.I)
+
+
+def _img_ok(url: str) -> bool:
+    import urllib.request
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "skill-store-scout"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            ct = r.headers.get("Content-Type", "")
+            cl = int(r.headers.get("Content-Length") or 0)
+            return r.status == 200 and ct.startswith("image/") and cl < 4_500_000
+    except Exception:
+        return False
+
+
+def resolve_cover(repo: str) -> str:
+    """Best real image for a repo: author's social-preview > first non-badge
+    README image (usually an actual screenshot/demo). '' -> UI falls back to
+    GitHub's opengraph stats card."""
+    import urllib.request
+    # 1) custom social preview set by the author
+    try:
+        req = urllib.request.Request("https://github.com/" + repo,
+                                     headers={"User-Agent": "Mozilla/5.0 (skill-store)"})
+        html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
+        m = (re.search(r'property="og:image"\s+content="([^"]+)"', html)
+             or re.search(r'content="([^"]+)"\s+property="og:image"', html))
+        if m and "repository-images.githubusercontent.com" in m.group(1):
+            return m.group(1)
+    except Exception:
+        pass
+    # 2) first meaningful image in rendered README
+    try:
+        hdr = {"Accept": "application/vnd.github.html", "User-Agent": "skill-store-scout"}
+        tok = os.environ.get("GH_TOKEN", "")
+        if tok:
+            hdr["Authorization"] = "Bearer " + tok
+        req = urllib.request.Request(f"https://api.github.com/repos/{repo}/readme", headers=hdr)
+        h = urllib.request.urlopen(req, timeout=25).read().decode("utf-8", "ignore")
+        for n, m in enumerate(re.finditer(r'<img[^>]+src="([^"]+)"', h)):
+            if n >= 8:
+                break
+            src = m.group(1)
+            if not src.startswith("http") or BADGE_PAT.search(src):
+                continue
+            if _img_ok(src):
+                return src
+    except Exception:
+        pass
+    return ""
 
 
 # ---------------------------------------------------------------- enrich ----

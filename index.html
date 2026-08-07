@@ -133,7 +133,8 @@ function today(){return (D&&D.generated_at?D.generated_at:"").slice(0,10)}
 function name(it){return lang==="zh"?(it.title_zh||it.name):it.name}
 function tag(it){var s=lang==="zh"?(it.tagline_zh||it.tagline_en):(it.tagline_en||it.desc_en);return s||""}
 function catName(id){var c=(D.categories||[]).find(function(x){return x.id===id});return c?(lang==="zh"?c.zh:c.en):id}
-function cover(it){return "https://opengraph.githubassets.com/1/"+it.repo}
+function cover(it){return it.cover||og(it)}
+function og(it){return "https://opengraph.githubassets.com/1/"+it.repo}
 
 function chrome(){
   document.documentElement.lang=lang==="zh"?"zh-CN":"en";
@@ -158,7 +159,7 @@ function chrome(){
 function card(it){
   var extra=it.kind==="collection"?(lang==="zh"?"合集 ×"+(it.skill_count||"?"):"pack ×"+(it.skill_count||"?")):"";
   return '<article class="card" data-id="'+esc(it.id)+'">'
-    +'<div class="cover"><img loading="lazy" alt="" src="'+esc(cover(it))+'" onerror="this.parentNode.removeChild(this)"></div>'
+    +'<div class="cover"><img loading="lazy" alt="" src="'+esc(cover(it))+'" data-og="'+esc(og(it))+'" onerror="if(this.dataset.f||this.src===this.dataset.og){this.parentNode.removeChild(this)}else{this.dataset.f=1;this.src=this.dataset.og}"></div>'
     +'<div class="cbody"><h3>'+esc(name(it))+(lang==="zh"&&it.title_zh?"<span>"+esc(it.name)+"</span>":"")+"</h3>"
     +'<p class="tag">'+esc(tag(it))+"</p>"
     +(function(){var w=lang==="zh"?it.why_zh:it.why_en;return w?('<p class="rev"><b>'+t("why")+"</b> · "+esc(w)+"</p>"):""})()

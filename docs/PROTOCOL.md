@@ -19,6 +19,7 @@ The repo is the database. One JSON per shelf item in `skills/`, aggregated into 
 | `pick` | ★ 店长推荐 |
 | `hide` | 下架但保留记录 |
 | `skill_count` | 合集里有几件 / 单品附带几个子技能 |
+| `cover` | 封面图 URL：作者社交预览图 > README 首张真实截图 > 空（前端回退 GitHub 信息卡）。店长可在 editorial 置空否决 |
 | `install` | `{clone, copy, dir}` — 安装命令 |
 | `source` `added_at` | who stocked it, when |
 
