@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="https://ourword-ai.github.io/skill-store/">进店逛逛 / Live store</a> ·
+  🌐 <a href="https://ourword.ai/skill-store/">进店逛逛 / Live store</a> ·
   🤖 <a href="./llms.txt">llms.txt (for AI agents)</a> ·
   📦 <a href="./skills/feed.json">feed.json</a> ·
   📄 <a href="./docs/PROTOCOL.md">进货协议 / Protocol</a>
