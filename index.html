@@ -116,8 +116,8 @@ footer a:hover{color:var(--fg)}
 (function(){
 "use strict";
 var I18N={
- zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
- en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
+ zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
+ en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
 };
 var params=new URLSearchParams(location.search);
 var lang=params.get("lang")==="en"?"en":"zh";
@@ -178,19 +178,19 @@ function render(){
     return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.desc_en,it.repo].join(" ").toLowerCase().indexOf(q)>=0;
   });
   var h="";
-  if(q||state.cat!=="all"){
-    h=list.length?('<section><h2>'+t("results")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>")
-                 :('<div class="empty">'+t("empty")+"</div>");
-  }else{
+  if(!list.length){
+    el("main").innerHTML='<div class="empty">'+t("empty")+"</div>";return;
+  }
+  if(q){                                    // 文字搜索 → 结果
+    h='<section><h2>'+t("results")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+  }else if(state.cat!=="all"){              // 频道页 → 频道名做标题
+    var c=(D.categories||[]).find(function(x){return x.id===state.cat});
+    var name=c?((c.emoji?c.emoji+" ":"")+(lang==="zh"?c.zh:c.en)):state.cat;
+    h='<section><h2>'+esc(name)+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+  }else{                                    // 首页 → 推荐 + 信息流（新→旧）
     var picks=list.filter(function(x){return x.pick});
-    var td=today();
-    var fresh=list.filter(function(x){return (x.added_at||"").slice(0,10)===td});
     if(picks.length)h+='<section><h2>'+t("picks")+"<small>"+picks.length+"</small></h2>"+grid(picks)+"</section>";
-    if(fresh.length&&fresh.length<list.length)h+='<section><h2>'+t("fresh")+"<small>"+fresh.length+"</small></h2>"+grid(fresh)+"</section>";
-    (D.categories||[]).forEach(function(c){
-      var xs=list.filter(function(x){return x.category===c.id});
-      if(xs.length)h+='<section><h2>'+esc((c.emoji?c.emoji+" ":"")+(lang==="zh"?c.zh:c.en))+"<small>"+xs.length+"</small></h2>"+grid(xs)+"</section>";
-    });
+    h+='<section><h2>'+t("latest")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
   }
   el("main").innerHTML=h;
 }
