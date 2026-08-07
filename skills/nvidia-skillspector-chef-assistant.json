@@ -1,0 +1,30 @@
+{
+ "id": "nvidia-skillspector-chef-assistant",
+ "kind": "skill",
+ "name": "chef-assistant",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：chef-assistant。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Use when cooking or planning meals, troubleshooting recipes, learning culinary techniques",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "NVIDIA/SkillSpector",
+ "owner": "NVIDIA",
+ "path": "tests/fixtures/malicious_skill",
+ "url": "https://github.com/NVIDIA/SkillSpector/tree/HEAD/tests/fixtures/malicious_skill",
+ "homepage": "",
+ "stars": 14336,
+ "pushed_at": "2026-08-07",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.74,
+ "pick": false,
+ "hide": false,
+ "source": "scout-manual-0807",
+ "added_at": "2026-08-07",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/NVIDIA/SkillSpector.git",
+  "copy": "cp -r SkillSpector/tests/fixtures/malicious_skill ~/.claude/skills/malicious_skill",
+  "dir": "~/.claude/skills/malicious_skill"
+ }
+}

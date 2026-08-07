@@ -415,6 +415,334 @@
    "tagline_en": "Classic frameworks from business, marketing and UX bestsellers — 50 installable skills.",
    "why_zh": "「读过书」和「用上书」之间差的那一步它替你做了：每个框架都带引导式流程，不是名词卡片。",
    "why_en": "Bridges \"read the book\" and \"use the book\": each framework ships as a guided flow, not a flashcard."
+  },
+  "affaan-m-ecc": {
+   "title_zh": "ECC 重装底盘",
+   "category": "meta",
+   "tagline_zh": "给你的 agent 换一套重装底盘：技能、直觉、记忆、安全，一次到位。",
+   "tagline_en": "A heavy-duty chassis for your agent: skills, instincts, memory, security in one system.",
+   "why_zh": "生态里星数最高的综合方案：它把「让 agent 更强」当成系统工程来做，适合想一步到位的重度用户。",
+   "why_en": "The highest-starred all-in system around — treats agent performance as systems engineering, for power users."
+  },
+  "multica-ai-andrej-karpathy-skills-karpathy-guidelines": {
+   "title_zh": "Karpathy 避坑守则",
+   "category": "dev",
+   "tagline_zh": "把 Karpathy 总结的「LLM 写码坏习惯」做成一份常驻守则。",
+   "tagline_en": "Karpathy's observations on LLM coding pitfalls, distilled into standing guidelines.",
+   "why_zh": "就一个文件，但每条都打在痛处：过度防御、乱加抽象、假装测试过——AI 写码的通病它全点名了。",
+   "why_en": "One file, every line lands: over-defensiveness, needless abstraction, pretend-testing — all the classic AI coding sins, named."
+  },
+  "thedotmack-claude-mem": {
+   "title_zh": "跨会话记忆",
+   "category": "meta",
+   "tagline_zh": "给 agent 装上长期记忆：干过什么全存档，下次开聊自动想起来。",
+   "tagline_en": "Long-term memory for your agent: everything archived, auto-recalled next session.",
+   "why_zh": "「每次都从零开始」是 agent 最大的浪费，它用压缩存档+按需注入解决得很干净，装完像换了个懂你的助手。",
+   "why_en": "Starting from zero every session is the biggest waste in agent work; this fixes it with compressed archives and on-demand recall."
+  },
+  "thedotmack-claude-mem-weekly-digests": {
+   "title_zh": "项目周记生成器",
+   "tagline_zh": "把项目的全部记忆时间线，按周切开写成连载「项目周记」。",
+   "tagline_en": "Slices your project's memory timeline into a week-by-week serial digest.",
+   "why_zh": "复盘神器：一个子代理写一周，前情提要自动衔接，读起来像项目的连载小说。",
+   "why_en": "One subagent per week with running context — your project history reads like a serial."
+  },
+  "thedotmack-claude-mem-design-is": {
+   "title_zh": "Rams 十诫审计",
+   "category": "creative",
+   "tagline_zh": "用 Dieter Rams 的「好设计十原则」逐条审你的设计，然后给出改造方案。",
+   "tagline_en": "Audits your design against Rams' ten principles, then hands you a plan.",
+   "why_zh": "审美有了可执行的标尺：不是「感觉不好看」，而是十条原则逐项打分，输出直接接改稿流程。",
+   "why_en": "Taste with a rubric — ten principles scored one by one, output flows straight into a redesign plan."
+  },
+  "nexu-io-open-design": {
+   "title_zh": "开源设计引擎",
+   "category": "creative",
+   "tagline_zh": "开源版「Claude Design」：本地桌面应用，让你的编码 agent 直接当设计引擎。",
+   "tagline_en": "The open-source Claude Design: a local-first app that turns your coding agent into a design engine.",
+   "why_zh": "原型、落地页、仪表盘一条龙，全部本地跑；想要「AI 设计工作台」又不想交钱上云的，这是目前最完整的答案。",
+   "why_en": "Prototypes, landing pages, dashboards — all local. The most complete free answer to an AI design workbench."
+  },
+  "egonex-ai-understand-anything": {
+   "title_zh": "万物知识图谱",
+   "category": "dev",
+   "tagline_zh": "把任何代码库变成能逛、能搜、能提问的交互式知识图谱。",
+   "tagline_en": "Turn any codebase into an explorable, searchable, askable knowledge graph.",
+   "why_zh": "口号是「教人的图 > 唬人的图」：接手陌生项目时先跑它一遍，比读三天代码有用。",
+   "why_en": "\"Graphs that teach beat graphs that impress\" — run it before diving into an unfamiliar repo."
+  },
+  "egonex-ai-understand-anything-understand-figma": {
+   "title_zh": "Figma 拆解图",
+   "tagline_zh": "接上 Figma API，把设计稿拆成页面、组件、令牌的知识图谱。",
+   "tagline_en": "Hooks the Figma API and maps a file into pages, components and tokens.",
+   "why_zh": "设计交接的痛点被它按住了：设计系统长什么样，一张图谱看明白。",
+   "why_en": "Design handoff, solved visually — the whole system in one graph."
+  },
+  "egonex-ai-understand-anything-understand-chat": {
+   "title_zh": "图谱问答",
+   "tagline_zh": "对着代码库的知识图谱直接提问：这段逻辑在哪、谁调用谁。",
+   "tagline_en": "Ask questions against the codebase graph: where's this logic, who calls whom.",
+   "why_zh": "比全文搜索聪明一档——它按结构找答案，不是按字符串。",
+   "why_en": "A tier above grep: answers by structure, not string match."
+  },
+  "egonex-ai-understand-anything-understand-dashboard": {
+   "title_zh": "图谱仪表盘",
+   "tagline_zh": "一条命令拉起网页仪表盘，代码库的图谱可视化任你逛。",
+   "tagline_en": "One command spins up a web dashboard to wander your codebase graph.",
+   "why_zh": "给「看代码」加了个上帝视角，演示和 onboarding 时格外好用。",
+   "why_en": "A god-view for code — great for demos and onboarding."
+  },
+  "imbad0202-academic-research-skills-academic-paper-reviewer": {
+   "title_zh": "论文审稿人",
+   "category": "writing",
+   "tagline_zh": "把你的论文当投稿审：方法、论证、引用，逐节挑刺。",
+   "tagline_en": "Reviews your paper like a submission: methods, argument, citations, section by section.",
+   "why_zh": "投稿前先被它虐一遍，比收到真审稿意见时才发现问题体面得多。",
+   "why_en": "Get savaged here first — cheaper than discovering it in the real reviews."
+  },
+  "imbad0202-academic-research-skills-academic-paper": {
+   "title_zh": "论文写作台",
+   "category": "writing",
+   "tagline_zh": "从提纲到成稿的学术写作流水线，格式引用一并管好。",
+   "tagline_en": "An outline-to-draft academic writing line, formatting and citations included.",
+   "why_zh": "它管的是学术写作最磨人的部分——结构规范和引用一致性，让你只操心观点。",
+   "why_en": "Handles the grind — structure and citation consistency — so you only sweat the ideas."
+  },
+  "imbad0202-academic-research-skills-academic-pipeline": {
+   "title_zh": "科研全流程",
+   "category": "writing",
+   "tagline_zh": "research → write → review → revise → finalize，学术生产一条龙。",
+   "tagline_en": "Research → write → review → revise → finalize, the whole academic line.",
+   "why_zh": "把散装的科研步骤串成有交接的流程，适合从零开一篇新论文。",
+   "why_en": "Turns loose steps into a hand-off pipeline — ideal for starting a paper from zero."
+  },
+  "imbad0202-academic-research-skills-deep-research": {
+   "title_zh": "13 人研究团",
+   "category": "docs",
+   "tagline_zh": "13 个子代理组队做严肃研究：综述、事实核查、三路文献扫描，8 种模式。",
+   "tagline_en": "A 13-agent research team: lit reviews, fact-checks, three-way scans — 8 modes.",
+   "why_zh": "这是「把 deep research 开源自建」的认真尝试，分工和交叉验证的设计相当讲究。",
+   "why_en": "A serious open-source take on deep research — the division of labor and cross-checks are well designed."
+  },
+  "wshobson-agents": {
+   "title_zh": "多平台插件市场",
+   "category": "meta",
+   "tagline_zh": "横跨 Claude Code、Codex、Cursor、Copilot 的 agent 插件市场，一站备齐。",
+   "tagline_en": "An agent plugin marketplace spanning Claude Code, Codex, Cursor and Copilot.",
+   "why_zh": "生态老牌仓库：跨平台这件事它做得最早也最全，换工具不用重配武器库。",
+   "why_en": "The veteran cross-harness repo — switch tools without rebuilding your arsenal."
+  },
+  "k-dense-ai-scientific-agent-skills": {
+   "title_zh": "AI 科学家全套",
+   "category": "docs",
+   "tagline_zh": "158 个科研 skill：把任何 agent 武装成能查、能算、能写的 AI 科学家。",
+   "tagline_en": "158 science skills that turn any agent into a working AI scientist.",
+   "why_zh": "号称 17 万科研人在用的库，覆盖面惊人；对口专业的人翻一遍目录就知道值不值。",
+   "why_en": "Claims 170k scientists as users; the sheer coverage speaks for itself — skim the index and judge."
+  },
+  "mukul975-anthropic-cybersecurity-skills": {
+   "title_zh": "安全技能军火库",
+   "category": "dev",
+   "tagline_zh": "817 个结构化安全技能，映射 MITRE ATT&CK、NIST 等 6 大防御框架。",
+   "tagline_en": "817 structured security skills mapped to MITRE ATT&CK, NIST and 4 more frameworks.",
+   "why_zh": "价值在「映射」二字：每个技能都挂到标准框架坐标上，安全团队做能力盘点和培训特别顺手。",
+   "why_en": "The mapping is the value — every skill pinned to framework coordinates; great for capability audits and training."
+  },
+  "phuryn-pm-skills": {
+   "title_zh": "产品经理武器库",
+   "category": "work",
+   "tagline_zh": "100+ 产品技能：从需求发现、战略到发布与增长，PM 全生命周期。",
+   "tagline_en": "100+ PM skills across discovery, strategy, launch and growth.",
+   "why_zh": "按 PM 工作流组织而不是按名词堆砌，找「明天要用的那一个」很快。",
+   "why_en": "Organized by workflow, not buzzword — you find tomorrow's tool fast."
+  },
+  "alirezarezvani-claude-skills": {
+   "title_zh": "345 件大杂院",
+   "category": "meta",
+   "tagline_zh": "345 个 skill + 70 命令 + 30 agent 的巨型仓库，自带脚本和参考。",
+   "tagline_en": "A mega-repo: 345 skills, 70 commands, 30 agents, scripts and references included.",
+   "why_zh": "本店原则是不倒货车，但这车太大值得单独一提：当索引用很好，别指望件件精品。",
+   "why_en": "We don't dump trucks here, but this truck deserves a card — great as an index, don't expect uniform quality."
+  },
+  "kkkkhazix-khazix-skills": {
+   "title_zh": "卡兹克技能包",
+   "category": "writing",
+   "tagline_zh": "数字生命卡兹克开源的自用合集：定目标、写长文、追热点、做研究。",
+   "tagline_en": "Khazix's open personal kit: goal-setting, longform writing, AI news, research.",
+   "why_zh": "中文自媒体顶流的生产工具直接开源，方法论都是他号上验证过的。",
+   "why_en": "A top Chinese creator open-sourcing his actual production tools — methods proven on his own channel."
+  },
+  "kkkkhazix-khazix-skills-hv-analysis": {
+   "title_zh": "横纵分析法",
+   "category": "docs",
+   "tagline_zh": "研究一个产品或人物：纵轴讲完整生命史，横轴跟同类横向对比。",
+   "tagline_en": "Study anything on two axes: its full life story, and a cross-section against peers.",
+   "why_zh": "把索绪尔的历时-共时、商学院案例法揉成一个可执行套路，产出的研究有骨架不散。",
+   "why_en": "Saussure's diachronic/synchronic lens fused with case-study method — research with a spine."
+  },
+  "kkkkhazix-khazix-skills-khazix-writer": {
+   "title_zh": "卡兹克文风",
+   "category": "writing",
+   "tagline_zh": "丢素材进去，按卡兹克的公众号风格产出长文。",
+   "tagline_en": "Feed it material; get longform in Khazix's signature style.",
+   "why_zh": "风格迁移做到了「像本人」的程度，学他写作的人可以直接拆这份提示词。",
+   "why_en": "Style transfer good enough to pass — worth dissecting if you study his writing."
+  },
+  "kkkkhazix-khazix-skills-aihot": {
+   "title_zh": "AI 热点日报",
+   "category": "work",
+   "tagline_zh": "问一句「今天 AI 圈有什么事」，实时拉中文 AI 资讯和日报。",
+   "tagline_en": "Ask \"what happened in AI today\" — it pulls live Chinese AI news and digests.",
+   "why_zh": "接的是实时 API 而不是凭记忆编新闻，免 Key 匿名可用，这点很清爽。",
+   "why_en": "Pulls a live API instead of hallucinating headlines; anonymous, no key needed."
+  },
+  "othmanadi-planning-with-files-planning-with-files": {
+   "title_zh": "文件化施工图",
+   "category": "meta",
+   "tagline_zh": "把计划写成 Markdown 文件常驻磁盘：崩溃、清上下文都不丢进度。",
+   "tagline_en": "Plans live as Markdown on disk — survive crashes, /clear and compaction.",
+   "why_zh": "长任务的命根子是「状态不丢」，它用最朴素的文件方案解决，比花哨的记忆系统皮实。",
+   "why_en": "Long tasks live or die on durable state; plain files beat fancy memory systems for robustness."
+  },
+  "nutlope-hallmark-hallmark": {
+   "title_zh": "反 AI 味设计",
+   "category": "creative",
+   "tagline_zh": "Nutlope 出品的 anti-slop 设计 skill：把「一眼 AI」的页面救回来。",
+   "tagline_en": "Nutlope's anti-slop design skill — rescues pages from that instant-AI look.",
+   "why_zh": "作者是产出过一堆爆款开源应用的老手，这份审美清单是他 ship 出来的经验，不是理论。",
+   "why_en": "From a builder with a string of viral open-source apps — shipped taste, not theory."
+  },
+  "teng-lin-notebooklm-py": {
+   "title_zh": "NotebookLM 全接口",
+   "category": "docs",
+   "tagline_zh": "NotebookLM 的完整编程接口：建笔记本、喂资料、生成播客，连网页版没有的功能都有。",
+   "tagline_en": "Full programmatic NotebookLM: notebooks, sources, every artifact — even features the web UI lacks.",
+   "why_zh": "「比官方 UI 能做的还多」是它最狠的卖点，批量喂资料、自动出播客这类活从此可脚本化。",
+   "why_en": "\"More than the web UI\" is the killer line — bulk sources and podcast generation become scriptable."
+  },
+  "virgiliojr94-book-to-skill": {
+   "title_zh": "读书变技能",
+   "category": "meta",
+   "tagline_zh": "把一本书（PDF/EPUB/DOCX 都行）拆成框架、模型、原则，装进 agent 当技能。",
+   "tagline_en": "Turns a book (PDF/EPUB/DOCX…) into frameworks and principles your agent can use.",
+   "why_zh": "「书读完就忘」的解法：知识不进脑子没关系，进 agent 也行——这个立意本身就值一颗星。",
+   "why_en": "If the book won't stay in your head, put it in your agent — the premise alone earns a star."
+  },
+  "op7418-humanizer-zh": {
+   "title_zh": "去 AI 味·中文版",
+   "category": "writing",
+   "tagline_zh": "歸藏汉化的 Humanizer：专治中文里的 AI 腔——「值得注意的是」再见。",
+   "tagline_en": "The Chinese-localized Humanizer — kills Mandarin AI-isms at the root.",
+   "why_zh": "直译版对中文水土不服，这版把「AI 臭味清单」本地化成了中文写作者真会踩的坑。",
+   "why_en": "A straight translation wouldn't work; this localizes the smell-list to real Chinese writing sins."
+  },
+  "yusufkaraaslan-skill_seekers": {
+   "title_zh": "文档变技能",
+   "category": "meta",
+   "tagline_zh": "把文档站、GitHub 仓库、PDF 自动转成 Claude 技能，还带冲突检测。",
+   "tagline_en": "Converts doc sites, repos and PDFs into skills — with conflict detection.",
+   "why_zh": "团队知识库落进 agent 的最短路径；冲突检测这个细节说明作者真在生产里用。",
+   "why_en": "The shortest path from team docs to agent skills; conflict detection says the author actually uses it."
+  },
+  "wanshuiyin-auto-claude-code-research-in-sleep": {
+   "title_zh": "睡后研究所",
+   "category": "meta",
+   "tagline_zh": "你睡觉，它做 ML 研究：跨模型互审、找 idea、跑实验，纯 Markdown 驱动。",
+   "tagline_en": "You sleep; it does ML research — cross-model reviews, idea mining, experiments. Markdown-only.",
+   "why_zh": "「让几个模型半夜互相审稿」这个画面太有意思了，轻量到只用 Markdown 也是种审美。",
+   "why_en": "Models peer-reviewing each other at 3am is a great picture; Markdown-only minimalism is taste."
+  },
+  "nvidia-skillspector": {
+   "title_zh": "技能安检仪",
+   "category": "meta",
+   "tagline_zh": "NVIDIA 出的 skill 安全扫描器：装之前查后门、提示注入、数据外传。",
+   "tagline_en": "NVIDIA's security scanner for skills: backdoors, prompt injection, exfiltration — checked before install.",
+   "why_zh": "本店天天喊「装前先读 SKILL.md」，它把这句忠告做成了自动化工具——供应链安全该有的样子。",
+   "why_en": "We keep saying \"read the SKILL.md first\"; this automates the advice. Supply-chain hygiene done right."
+  },
+  "agricidaniel-claude-seo": {
+   "title_zh": "SEO 军团",
+   "category": "work",
+   "tagline_zh": "25 个子技能 + 18 个子代理：技术 SEO、结构化数据、GEO/AEO 全覆盖。",
+   "tagline_en": "25 sub-skills + 18 sub-agents covering technical SEO, schema, GEO/AEO.",
+   "why_zh": "难得把「AI 搜索时代的 SEO」（GEO/AEO）也纳进来的包，思路比只盯 Google 的新一代。",
+   "why_en": "One of the few packs covering AI-search-era SEO (GEO/AEO), not just Google."
+  },
+  "agricidaniel-claude-obsidian": {
+   "title_zh": "Obsidian 第二大脑",
+   "category": "work",
+   "tagline_zh": "丢任何资料进来，它读完、连线、归档进你的 Obsidian 知识图谱。",
+   "tagline_en": "Drop in anything; it reads, links and files it into your Obsidian graph.",
+   "why_zh": "「自组织」不是噱头：它真的按你的库结构做归档决策，笔记洁癖患者的解药。",
+   "why_en": "Self-organizing for real — filing decisions follow your vault's structure. Balm for note perfectionists."
+  },
+  "agricidaniel-claude-obsidian-canvas": {
+   "title_zh": "白板画布手",
+   "category": "work",
+   "tagline_zh": "直接创建、改写 Obsidian 的 JSON Canvas 白板：节点、分区、连线全会。",
+   "tagline_en": "Creates and edits Obsidian JSON Canvas boards — nodes, zones, edges, all of it.",
+   "why_zh": "Canvas 手排节点很费时间，让 AI 来摆空间布局是个被低估的用法。",
+   "why_en": "Hand-arranging canvas nodes is tedious; AI-driven spatial layout is underrated."
+  },
+  "agricidaniel-claude-obsidian-autoresearch": {
+   "title_zh": "资料自动研究",
+   "category": "docs",
+   "tagline_zh": "跑一轮有边界、有出处的研究，产出带引用的档案，再问你要不要入库。",
+   "tagline_en": "Runs a bounded, cited research loop, then asks before merging into your vault.",
+   "why_zh": "「先出报告、入库要单独确认」这个分寸感很好，自动化没有越过你的知识库主权。",
+   "why_en": "Report first, merge only with consent — automation that respects vault sovereignty."
+  },
+  "agricidaniel-claude-obsidian-defuddle": {
+   "title_zh": "网页去杂质",
+   "category": "docs",
+   "tagline_zh": "把满是弹窗广告的网页，榨成干净的 Markdown 正文。",
+   "tagline_en": "Squeezes cluttered web pages into clean Markdown.",
+   "why_zh": "用的是 Obsidian 官方同源的 Defuddle 提取器，剪藏质量比一般爬虫干净一截。",
+   "why_en": "Built on the same Defuddle extractor Obsidian uses — cleaner clips than generic scrapers."
+  },
+  "nexu-io-html-anything": {
+   "title_zh": "HTML 万物编辑器",
+   "category": "creative",
+   "tagline_zh": "75 个技能 × 9 种版面：杂志、海报、卡片、小红书图，AI 写 HTML 你直接发。",
+   "tagline_en": "75 skills × 9 surfaces — magazines, posters, cards, XHS images. The agent writes HTML; you ship.",
+   "why_zh": "「一切皆可 HTML」的极致演绎，尤其适合中文自媒体：小红书图和公众号排版都在射程内。",
+   "why_en": "\"Everything is HTML\" taken seriously — XHS images and WeChat layouts are in range."
+  },
+  "samuraigpt-generative-media-skills": {
+   "title_zh": "生成媒体全家桶",
+   "category": "creative",
+   "tagline_zh": "图、视频、音频三修的生成技能包，接主流模型一站出片。",
+   "tagline_en": "Image, video and audio generation skills in one pack, wired to mainstream models.",
+   "why_zh": "多模态生成的接口碎得要命，它统一封装成 skill 语法，创作流水线省心不少。",
+   "why_en": "Multimodal APIs are a mess of fragments; this unifies them behind one skill grammar."
+  },
+  "glitternetwork-pinme-pinme": {
+   "title_zh": "一键上链发布",
+   "category": "dev",
+   "tagline_zh": "一条命令把前端发到 IPFS：不买服务器、不配域名，链接直接给人。",
+   "tagline_en": "One command deploys your frontend to IPFS — no server, no domain, just a link.",
+   "why_zh": "「写完就想给人看」的最短路径；发去中心化网络这点还免了托管账号那套麻烦。",
+   "why_en": "The shortest path from built to shareable — and decentralized hosting skips the account dance."
+  },
+  "juneyaooo-nihaisha-nishi-tcm": {
+   "title_zh": "倪海厦学习助手",
+   "category": "life",
+   "tagline_zh": "倪海厦中医课程的随身助教：查课程、辨方证穴位、整理笔记带板书截图。",
+   "tagline_en": "A study companion for Ni Haisha's TCM courses: search lectures, look up formulas and acupoints, organize notes.",
+   "why_zh": "垂直领域 skill 的好样本：把一套课程资料做成可检索、有截图证据的学习系统，思路可以照搬到任何课上。",
+   "why_en": "A model vertical skill — one course corpus turned into a searchable, evidence-linked study system. Steal the pattern for any course."
+  },
+  "nvidia-skillspector-creative-writing-coach": {
+   "hide": true
+  },
+  "nvidia-skillspector-chef-assistant": {
+   "hide": true
+  },
+  "nvidia-skillspector-code-formatter": {
+   "hide": true
+  },
+  "thedotmack-claude-mem-claude-mem-openclaw-plugin-setup-guide": {
+   "hide": true
   }
  }
 }
