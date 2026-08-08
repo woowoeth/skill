@@ -23,7 +23,7 @@ import os, re, sys, json, time, shutil, argparse, tempfile, subprocess as sp, ur
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import scout_lib as lib  # noqa: E402
 
-MAX_NEW_REPOS_PER_RUN = int(os.environ.get("MAX_NEW_REPOS", "10"))
+MAX_NEW_REPOS_PER_RUN = int(os.environ.get("MAX_NEW_REPOS", "5"))
 MAX_SINGLES_SMALL = 3
 MAX_ITEMS_PER_REPO = 3          # individual cards sampled from one multi-skill repo
 COLLECTION_MIN = 6              # >= this many skills → also gets a collection card

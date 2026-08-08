@@ -12,6 +12,7 @@ on:
     inputs:
       max_new_repos:
         description: "Max new repos to ingest this run"
+        default: "5"
         default: "10"
 permissions:
   contents: write
@@ -29,7 +30,7 @@ jobs:
       - name: Run the scout (进货)
         env:
           GH_TOKEN: ${{ github.token }}
-          MAX_NEW_REPOS: ${{ github.event.inputs.max_new_repos || '10' }}
+          MAX_NEW_REPOS: ${{ github.event.inputs.max_new_repos || '5' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
