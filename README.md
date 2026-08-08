@@ -58,7 +58,10 @@ skills/feed.json → GitHub Pages 静态店面（this site）
 ## 新货自动文案 / Auto copy for new stock
 
 每日进货的新商品会先套用占位文案；在仓库 Settings → Secrets 配置以下三项后，scout 会用 LLM 按「钩子 + 点评」的店内风格自动写中英文案（editorial 层始终优先）：
-`LLM_API_KEY` · `LLM_BASE_URL`（OpenAI 兼容，默认 api.openai.com/v1）· `LLM_MODEL`
+只需 `LLM_API_KEY` 一项（可选 `LLM_BASE_URL`、`LLM_MODEL`），OpenAI 兼容协议与 Anthropic 原生协议自动识别：
+- Anthropic：`LLM_API_KEY=sk-ant-…`（默认模型 claude-haiku-4-5）
+- DeepSeek：`LLM_API_KEY=sk-…` + `LLM_BASE_URL=https://api.deepseek.com` + `LLM_MODEL=deepseek-chat`
+- OpenAI / OpenRouter 等：填对应 base 与 model 即可
 
 New items get placeholder copy by default. Set the three secrets above and the daily scout writes bilingual hook + review copy for them (the editorial layer always wins).
 

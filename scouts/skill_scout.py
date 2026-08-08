@@ -265,15 +265,27 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             continue
         prompt = ENRICH_PROMPT.format(name=it.get("name", ""), repo=it.get("repo", ""),
                                       kind=it.get("kind", ""), desc=(it.get("desc_en") or "")[:600])
-        body = json.dumps({"model": LLM_MODEL, "temperature": 0.4,
-                           "response_format": {"type": "json_object"},
-                           "messages": [{"role": "user", "content": prompt}]}).encode()
-        req = urllib.request.Request(LLM_BASE + "/chat/completions", data=body, method="POST",
-                                     headers={"Authorization": "Bearer " + LLM_KEY,
-                                              "Content-Type": "application/json"})
+        anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+        if anthropic:
+            model = os.environ.get("LLM_MODEL") or "claude-haiku-4-5"
+            base = LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com"
+            body = json.dumps({"model": model, "max_tokens": 800,
+                               "messages": [{"role": "user", "content": prompt}]}).encode()
+            req = urllib.request.Request(base + "/v1/messages", data=body, method="POST",
+                                         headers={"x-api-key": LLM_KEY,
+                                                  "anthropic-version": "2023-06-01",
+                                                  "Content-Type": "application/json"})
+        else:
+            body = json.dumps({"model": LLM_MODEL, "temperature": 0.4,
+                               "messages": [{"role": "user", "content": prompt}]}).encode()
+            req = urllib.request.Request(LLM_BASE + "/chat/completions", data=body, method="POST",
+                                         headers={"Authorization": "Bearer " + LLM_KEY,
+                                                  "Content-Type": "application/json"})
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
-                txt = json.loads(r.read())["choices"][0]["message"]["content"]
+                resp = json.loads(r.read())
+                txt = (resp["content"][0]["text"] if anthropic
+                       else resp["choices"][0]["message"]["content"])
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             c = json.loads(txt)
             patch = {k: str(c[k]).strip() for k in
