@@ -55,6 +55,14 @@ skills/feed.json → GitHub Pages 静态店面（this site）
 | GitHub search（fun/game/creative 关键词） | live |
 | 已上架仓库的星数/更新回访（restock） | live |
 
+## 日常巡货 / Daily curation
+
+进货员（GitHub Actions）每天自动上货，新货先挂**占位文案**（形如「写代码的顺手工具：xxx。英文简介见下」）。把占位货变成正式商品这一步是人工巡货：挑出值得留的写钩子+点评、该下架的置 `hide`。
+
+**触发方式**：在对话里说一句「今天巡货」，即对当天（或积压）的占位新货做一次编辑过堂。攒几天一起补也行——占位文案在信息流里一眼可辨，不会遗漏。
+
+> 想省掉人工这步？配一个 `LLM_API_KEY`（见下），进货当刻即自动出文案。
+
 ## 新货自动文案 / Auto copy for new stock
 
 每日进货的新商品会先套用占位文案；在仓库 Settings → Secrets 配置以下三项后，scout 会用 LLM 按「钩子 + 点评」的店内风格自动写中英文案（editorial 层始终优先）：
