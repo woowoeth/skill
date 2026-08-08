@@ -25,7 +25,7 @@
    "tagline_en": "A web-fiction production line: chart-scanning, deconstruction, writing, de-AI-flavoring, covers — 13 pieces.",
    "why_zh": "中文互联网最生猛的 skill 包之一：不是教你写作，是直接把网文生产线搬进 Claude Code。",
    "why_en": "One of the most ambitious packs on the Chinese internet — it installs the production line, not writing tips.",
-   "pick": true,
+   "pick": false,
    "hide": true
   },
   "alchaincyf-huashu-design": {
@@ -42,7 +42,7 @@
    "tagline_en": "Say \"cyber landscape\" and watch it write p5.js that paints one live — flow fields, particles and noise seeds pre-wired; tweak a param, new piece.",
    "why_zh": "官方 skill 里最好玩的一个：流场、粒子、种子随机都封装好了，体验的是「AI 亲手作画」，不是调图库。",
    "why_en": "The most playful official skill — flow fields, particles and seeded randomness pre-wired; real generative art, not stock images.",
-   "pick": true,
+   "pick": false,
    "cover": ""
   },
   "anthropics-skills-slack-gif-creator": {
@@ -61,7 +61,7 @@
    "tagline_en": "Inject taste into your agent — design sense, aesthetic judgment and restraint; a readable creed paired with rules the agent actually follows.",
    "why_zh": "它赌品味可以被写下来——那份审美守则读完你会点头，装完输出确实不土了。",
    "why_en": "Bets that taste can be written down. Read its rules and you'll nod; install it and outputs stop looking cheap.",
-   "pick": true,
+   "pick": false,
    "hide": true
   },
   "blader-humanizer": {
@@ -78,7 +78,7 @@
    "tagline_en": "One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.",
    "why_zh": "游戏素材是独立开发最大的坑之一，它把「画小人」变成了一句话的事，产物直接进引擎。",
    "why_en": "Art is indie dev's biggest wall; this turns \"draw me a sprite\" into a one-liner with engine-ready output.",
-   "pick": true
+   "pick": false
   },
   "vincentwei1021-video-shotcraft": {
    "title_zh": "产品大片工坊",
@@ -86,7 +86,7 @@
    "tagline_en": "Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.",
    "why_zh": "把「拍产品宣传片」这种要外包的活变成了本地技能，分镜卡的设计尤其讲究。",
    "why_en": "Turns \"hire a studio\" into a local skill; the shot recipe cards are unusually well crafted.",
-   "pick": true
+   "pick": false
   },
   "dietrichgebert-ponytail-ponytail": {
    "title_zh": "躺平资深工程师",
@@ -116,7 +116,7 @@
    "title_zh": "宝玉技能合集",
    "tagline_zh": "宝玉老师的日常工具箱一次打包：翻译、配图、漫画、图表、排版，全是他自己每天真在用的家伙事。",
    "tagline_en": "Baoyu's daily toolbox in one bundle — translation, illustrations, comics, diagrams and layout; all tools he actually uses every day.",
-   "pick": true,
+   "pick": false,
    "why_zh": "中文 AI 圈最勤快的实践者之一，每件都是他自己天天在用的东西，密度极高。",
    "why_en": "From one of the most prolific practitioners in the Chinese AI scene — tools he actually uses daily.",
    "hide": true
@@ -214,7 +214,7 @@
    "title_zh": "技能制造机",
    "tagline_zh": "让 Claude 自己写 skill 的 skill：触发词、结构、反例的最佳实践固化成引导流程——套娃，但真的有用。",
    "tagline_en": "The skill that writes skills — best practices for triggers, structure and anti-patterns baked into a guided flow. Recursive, genuinely useful.",
-   "pick": true,
+   "pick": false,
    "why_zh": "把写 skill 的最佳实践（触发词、结构、反例）固化成流程，是整个生态的元工具：想做自己的 skill，先装它。",
    "why_en": "Best practices for triggers, structure and anti-patterns, baked in — the meta-tool of this whole ecosystem.",
    "cover": ""
@@ -295,7 +295,7 @@
    "tagline_en": "Frontend taste, itemized — tracking, whitespace, hierarchy and shadows as hard rules; \"looks expensive\" decomposed into followable steps.",
    "why_zh": "把「看起来贵」拆成可执行规则，照着改三处，页面气质就不一样。",
    "why_en": "Decomposes \"looks expensive\" into executable rules — change three things and feel the difference.",
-   "pick": true
+   "pick": false
   },
   "worldwonderer-oh-story-claudecode-story-cover": {
    "title_zh": "网文封面图",
@@ -424,25 +424,21 @@
    "why_zh": "任务切分与回收的协议写得很清楚，是学 multi-agent 编排的好范本。",
    "why_en": "Clean dispatch-and-collect protocol — a solid template for multi-agent orchestration."
   },
-  "worldwonderer-novel-to-game": {
-   "tagline_zh": "喂它一本小说，按原著拆世界观、出美术方向，直接把游戏做出来——真的能玩。",
-   "tagline_en": "Feed it a novel; it extracts the world, art-directs it, and ships a playable game.",
-   "why_zh": "「把喜欢的小说做成能玩的游戏」是很多人的童年梦想，这个 skill 把整条流水线打包好了，交给 Claude Code 就能开工。",
-   "why_en": "Turning a beloved book into a playable game is a childhood dream — this packages the whole pipeline."
-  },
   "specstoryai-getspecstory-lore": {
    "title_zh": "项目正史",
    "tagline_zh": "把你散落各处的 AI 编程会话挖成可检索的「项目正史」：可复用的工作流带出处证据，聊天记录第一次变成资产。",
    "tagline_en": "Mines your scattered AI coding sessions into searchable project lore — reproducible workflows with receipts; transcripts become an asset.",
    "why_zh": "思路很妙：你和 agent 的聊天记录本身就是资产，它负责把这堆金矿筛出有证据、可复用的工作流。",
-   "why_en": "Your agent transcripts are an asset; this sifts the gold — reproducible workflows with receipts."
+   "why_en": "Your agent transcripts are an asset; this sifts the gold — reproducible workflows with receipts.",
+   "cover": ""
   },
   "specstoryai-getspecstory-workthreads": {
    "title_zh": "团队线索周报",
    "tagline_zh": "把全组一周的 AI 编程会话自动卷成线索周报：谁在推进什么、卡在哪一步，周会材料自己就长出来了。",
    "tagline_en": "Rolls a team's week of AI coding sessions into who's-doing-what threads — progress and blockers surfaced; standup material writes itself.",
    "why_zh": "管理者视角的好东西：不数代码行，看真实工作线程，周会材料自动就有了。",
-   "why_en": "A manager's tool that counts threads of real work, not lines of code — standup material writes itself."
+   "why_en": "A manager's tool that counts threads of real work, not lines of code — standup material writes itself.",
+   "cover": ""
   },
   "wondelai-skills": {
    "title_zh": "畅销书框架合集",
@@ -803,7 +799,7 @@
    "tagline_en": "Long-form web-fiction writing desk — worldbuilding, character cards and plot threads managed from outline to daily chapters.",
    "why_zh": "长篇最难的是几十万字不崩人设不断线，它把状态管理做成了基建，是这套流水线的主力机床。",
    "why_en": "The hard part of long serials is state over 500k words; this makes continuity infrastructure, the pack's main lathe.",
-   "pick": true
+   "pick": false
   },
   "worldwonderer-oh-story-claudecode-story-short-write": {
    "title_zh": "短篇爆款机",
@@ -891,7 +887,7 @@
    "tagline_en": "Baoyu's translation workflow — literal pass, free pass, polish pass; consistent terminology and natural cadence throughout.",
    "why_zh": "他译过的技术长文是中文圈公认的质量标杆，这套流程就是那个质量的配方。",
    "why_en": "His long-form translations are the Chinese community's quality benchmark; this is the recipe behind them.",
-   "pick": true
+   "pick": false
   },
   "jimliu-baoyu-skills-baoyu-infographic": {
    "title_zh": "信息图工厂",
@@ -1364,7 +1360,8 @@
    "tagline_zh": "歸藏风格社交卡片全家桶：小红书轮播、微信 21:9+1:1 封面对、Live Photo 动卡，28 版式 10 主题。",
    "tagline_en": "Guizang-style social cards — XHS carousels, WeChat cover pairs, Live Photo motion cards; 28 layouts, 10 themes.",
    "why_zh": "歸藏是中文 AI 设计内容的头部创作者，这套编辑部×瑞士风的版式体系就是他的招牌。",
-   "why_en": "Guizang is a top Chinese AI-design creator; this editorial-Swiss layout system is his signature."
+   "why_en": "Guizang is a top Chinese AI-design creator; this editorial-Swiss layout system is his signature.",
+   "cover": ""
   },
   "eugeniughelbur-obsidian-second-brain": {
    "title_zh": "自更新第二大脑",
@@ -1774,7 +1771,8 @@
    "hide": true
   },
   "zebbern-claude-code-guide": {
-   "hide": true
+   "hide": true,
+   "cover": ""
   },
   "costiash-claude-code-docs-claude-docs": {
    "hide": true
