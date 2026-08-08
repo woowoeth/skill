@@ -62,6 +62,10 @@ def plain(s, limit=None):
     return s[:limit].rstrip() if limit else s
 
 
+def _plural(noun, n):
+    return noun if n == 1 else (noun + ("es" if noun.endswith(("s", "x", "ch")) else "s"))
+
+
 def _write(path, text):
     """Write only when changed, so reruns produce no commit noise."""
     d = os.path.dirname(path)
@@ -86,7 +90,8 @@ class Item(object):
     """
 
     def __init__(self, slug, title, summary, blocks=None, title_zh="", summary_zh="",
-                 blocks_zh=None, source_url="", updated="", tags=None, extra=None):
+                 blocks_zh=None, source_url="", updated="", tags=None, extra=None,
+                 url_override=""):
         self.slug = slugify(slug, "item")
         self.title = plain(title)
         self.summary = plain(summary)
@@ -98,9 +103,16 @@ class Item(object):
         self.updated = (updated or "")[:10]
         self.tags = [plain(t) for t in (tags or []) if t]
         self.extra = extra or {}
+        # A single-document site has no /i/ page: point every reference at the page itself.
+        self.url_override = url_override
 
     def has_zh(self):
         return bool(self.summary_zh or self.blocks_zh)
+
+    def page(self, site, zh=False):
+        if self.url_override:
+            return self.url_override
+        return site.url(("zh/i/%s/" if zh else "i/%s/") % self.slug)
 
     def t(self, zh):
         return (self.title_zh or self.title) if zh else (self.title or self.title_zh)
@@ -191,11 +203,23 @@ def head_block(site, page_url, title, description, zh=False, alt_url="",
     return "".join(out)
 
 
+LEGACY_HOST = re.compile(r"https?://ourword-ai\.github\.io/")
+
+
+def canonicalise_host(src):
+    """The project sites were built against the github.io host — canonical tags, share
+    links and in-page JS constants all pointed there, which is what split the site from
+    its own domain. Rewrite every one of them to ourword.ai."""
+    return LEGACY_HOST.sub(SITE + "/", src)
+
+
 def patch_index(path, site, items, zh=False, extra_ld=None):
     """Rewrite an existing hand-built index.html's head + inject a <noscript> index."""
     if not os.path.exists(path):
         return False
-    src = open(path, encoding="utf-8").read()
+    src = canonicalise_host(open(path, encoding="utf-8").read())
+    # A stale SEO block may sit in the body, outside the head we clean below.
+    src = re.sub(r"<!--SEO:START-->.*?<!--SEO:END-->", "", src, flags=re.S)
     m = re.search(r"(<head[^>]*>)(.*?)(</head>)", src, flags=re.S | re.I)
     if not m:
         return False
@@ -226,7 +250,7 @@ def noscript_index(site, items):
     """A crawlable table of contents that JS-less agents (i.e. all of them) can read."""
     rows = []
     for it in items:
-        u = site.url("i/%s/" % it.slug)
+        u = it.page(site)
         rows.append('<li><a href="%s">%s</a> — %s</li>'
                     % (esc(u), esc(it.title or it.title_zh),
                        esc(plain(it.summary or it.summary_zh, 220))))
@@ -470,9 +494,9 @@ def write_llms(site, items, root=".", how_built="", cite_as=""):
           cite_as or ("Cite the individual page URL, not the homepage — each %s page is "
                       "stable and dated. Attribute to \"%s (OurWord AI)\"."
                       % (site.item_noun, site.name)), "",
-          "## Index (%d %s)" % (len(items), site.item_noun + "s"), ""]
+          "## Index (%d %s)" % (len(items), _plural(site.item_noun, len(items))), ""]
     for it in items:
-        L.append("- [%s](%s): %s" % (it.title or it.title_zh, site.url("i/%s/" % it.slug),
+        L.append("- [%s](%s): %s" % (it.title or it.title_zh, it.page(site),
                                      plain(it.summary or it.summary_zh, 200)))
     L.append("")
     ok = _write(os.path.join(root, "llms.txt"), "\n".join(L))
@@ -480,13 +504,13 @@ def write_llms(site, items, root=".", how_built="", cite_as=""):
     F = ["# %s — %s" % (site.name, site.tagline),
          "# %s — %s" % (site.name_zh, site.tagline_zh),
          "# %s" % site.base,
-         "# Full corpus, plain text. %d %ss." % (len(items), site.item_noun), ""]
+         "# Full corpus, plain text. %d %s." % (len(items), _plural(site.item_noun, len(items))), ""]
     for it in items:
         F += ["=" * 72, "## %s" % (it.title or it.title_zh)]
         if it.title_zh and it.title and it.title_zh != it.title:
             F.append("## %s" % it.title_zh)
-        F.append("URL: %s" % site.url("i/%s/" % it.slug))
-        if it.has_zh():
+        F.append("URL: %s" % it.page(site))
+        if it.has_zh() and not it.url_override:
             F.append("URL (中文): %s" % site.url("zh/i/%s/" % it.slug))
         if it.source_url:
             F.append("Source: %s" % it.source_url)
@@ -512,7 +536,7 @@ def write_llms(site, items, root=".", how_built="", cite_as=""):
 def write_rss(site, items, root=".", limit=50):
     xs = []
     for it in items[:limit]:
-        u = site.url("i/%s/" % it.slug)
+        u = it.page(site)
         xs.append("    <item><title>%s</title><link>%s</link><guid isPermaLink=\"true\">%s"
                   "</guid><description>%s</description></item>"
                   % (esc(it.title or it.title_zh), esc(u), esc(u),
@@ -565,13 +589,14 @@ def article_ld(site, url, title, description, sections, zh=True, updated=""):
 # ----------------------------------------------------------------------- one call
 def build(site, items, root=".", index_files=("index.html",), today="",
           how_built="", cite_as="", extra_urls=(), extra_sitemaps=(),
-          item_pages=True, extra_ld=None):
+          item_pages=True, extra_ld=None, robots=True, sitemap=True):
     """Everything, in the right order. Returns a small report dict."""
     rep = {"items": len(items),
            "zh_items": sum(1 for i in items if i.has_zh()),
            "pages": write_item_pages(site, items, root) if item_pages else 0,
-           "robots": write_robots(site, root, extra_sitemaps),
-           "sitemap": write_sitemap(site, items if item_pages else [], root, today, extra_urls),
+           "robots": write_robots(site, root, extra_sitemaps) if robots else False,
+           "sitemap": (write_sitemap(site, items if item_pages else [], root, today, extra_urls)
+                       if sitemap else False),
            "llms": write_llms(site, items, root, how_built, cite_as),
            "rss": write_rss(site, items, root)}
     rep["index"] = sum(1 for f in index_files
