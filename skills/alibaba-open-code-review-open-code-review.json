@@ -1,0 +1,31 @@
+{
+ "id": "alibaba-open-code-review-open-code-review",
+ "kind": "skill",
+ "name": "open-code-review",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：open-code-review。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Performs AI-powered code review on Git changes using the `ocr` CLI from alibaba/open-code-review. Use when the user asks to review code, review a pull request, review staged/unstaged changes, review a commit, or compare branches for code quality issues. Produces line-level review comments and can automatically apply fixes when requested. With appropriate review rules, can detect various types of i",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "alibaba/open-code-review",
+ "owner": "alibaba",
+ "path": "plugins/open-code-review/skills/open-code-review",
+ "url": "https://github.com/alibaba/open-code-review/tree/HEAD/plugins/open-code-review/skills/open-code-review",
+ "homepage": "https://open-codereview.ai",
+ "stars": 19594,
+ "pushed_at": "2026-08-08T03:11:17Z",
+ "skill_count": 4,
+ "category": "dev",
+ "fun_score": 5.36,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-08",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/alibaba/open-code-review.git",
+  "copy": "cp -r open-code-review/plugins/open-code-review/skills/open-code-review ~/.claude/skills/open-code-review",
+  "dir": "~/.claude/skills/open-code-review"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1241960226/27bf01cb-17df-44d5-9b7b-bcf17c970c6d"
+}

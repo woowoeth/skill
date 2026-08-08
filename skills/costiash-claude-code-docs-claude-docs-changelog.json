@@ -1,0 +1,31 @@
+{
+ "id": "costiash-claude-code-docs-claude-docs-changelog",
+ "kind": "skill",
+ "name": "claude-docs-changelog",
+ "title_zh": "",
+ "tagline_zh": "正经办公文档：claude-docs-changelog。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Generate a self-contained HTML changelog report showing recent documentation changes with interactive course generation buttons. Use this skill when the user asks for a docs changelog, documentation report, what changed recently, recent doc updates as a report, or runs `/docs --report`. Discovers changes via git history, categorizes them, summarizes what's new, and produces a stunning Obsidian & A",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "costiash/claude-code-docs",
+ "owner": "costiash",
+ "path": "plugin/skills/claude-docs-changelog",
+ "url": "https://github.com/costiash/claude-code-docs/tree/HEAD/plugin/skills/claude-docs-changelog",
+ "homepage": "https://costiash.github.io/claude-code-docs/",
+ "stars": 50,
+ "pushed_at": "2026-08-08T00:19:35Z",
+ "skill_count": 1,
+ "category": "docs",
+ "fun_score": 3.03,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-08",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/costiash/claude-code-docs.git",
+  "copy": "cp -r claude-code-docs/plugin/skills/claude-docs-changelog ~/.claude/skills/claude-docs-changelog",
+  "dir": "~/.claude/skills/claude-docs-changelog"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1088856497/f5af0e24-6920-483a-b847-9626767743b1"
+}
