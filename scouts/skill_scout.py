@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import scout_lib as lib  # noqa: E402
 
 MAX_NEW_REPOS_PER_RUN = int(os.environ.get("MAX_NEW_REPOS", "10"))
+MAX_SINGLES_SMALL = 3
 MAX_ITEMS_PER_REPO = 3          # individual cards sampled from one multi-skill repo
 COLLECTION_MIN = 6              # >= this many skills → also gets a collection card
 COLLECTION_ONLY = 26            # >= this many skills → collection card ONLY
@@ -39,7 +40,7 @@ SEARCH_QUERIES = [
 ]
 
 SKIP_REPO_PAT = re.compile(
-    r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$", re.I)
+    r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$|guide|tutorial|handbook|cookbook|cheatsheet|-docs?$", re.I)
 
 
 # ------------------------------------------------------------------ git ----
@@ -139,7 +140,7 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
     if n < COLLECTION_ONLY:
         scored = sorted(parsed,
                         key=lambda p: -lib.fun_score(p[0], p[1] or "", stars))
-        take = parsed if n < COLLECTION_MIN else scored[:MAX_ITEMS_PER_REPO]
+        take = scored[:MAX_SINGLES_SMALL] if n < COLLECTION_MIN else scored[:MAX_ITEMS_PER_REPO]
         for name, desc, rel in take:
             items.append(lib.make_item(kind="skill", name=name,
                                        desc_en=desc or repo_desc, repo=repo,

@@ -1609,6 +1609,131 @@
    "tagline_en": "Craft messages with the SUCCESs framework — simple, unexpected, concrete, credible, emotional, story — heard once, retold often.",
    "why_zh": "《Made to Stick》是传播学的常青经典，六要素清单拿来逐条对稿非常顺手。",
    "why_en": "An evergreen communication classic; the six-trait checklist is perfect for auditing any draft."
+  },
+  "alibaba-open-code-review-open-code-review": {
+   "title_zh": "阿里代码评审",
+   "tagline_zh": "阿里开源的 AI 代码评审：ocr 一条命令审 Git 变更、PR、暂存区改动，评审意见直接落到行。",
+   "tagline_en": "Alibaba's open AI code review — one `ocr` command reviews Git changes, PRs and staged diffs, comments landing on exact lines.",
+   "why_zh": "大厂把内部评审工具开源出来本身就是信号：工程化程度和规则库的厚度都不是玩具级。",
+   "why_en": "A big company open-sourcing its internal reviewer is the signal — the engineering and rule depth aren't toy-grade."
+  },
+  "blockrunai-clawrouter-clawrouter": {
+   "title_zh": "模型省钱路由",
+   "tagline_zh": "本地代理把每个请求路由到「最便宜的够用模型」：号称省 87% 推理费——注意流量走它家网关。",
+   "tagline_en": "A local proxy routing each request to the cheapest capable model — claims 87% savings; note traffic goes via their gateway.",
+   "why_zh": "token 账单是真痛点，路由思路也对；「经过第三方网关」这点我们直说，你自己权衡。",
+   "why_en": "Token bills are a real pain and routing is the right idea; we're upfront that a third-party gateway sits in the path."
+  },
+  "kyanitelabs-kinocut-kinocut": {
+   "title_zh": "守护式剪辑台",
+   "tagline_zh": "有护栏的 AI 视频剪辑：FFmpeg 操作、素材分析、字幕、音频、成片改编，每一步都有据可查。",
+   "tagline_en": "Guarded AI video editing — FFmpeg ops, media analysis, subtitles, audio and repurposing, every step source-backed.",
+   "why_zh": "「guarded」是它的灵魂：剪辑指令先规划后执行、可回溯，不会一刀把素材剪废。",
+   "why_en": "The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage."
+  },
+  "dimetron-pi-go-design-review": {
+   "title_zh": "Go 设计评审",
+   "tagline_zh": "给 Go 代码库做深度设计评审：命名、结构、一致性、接口、错误处理逐维打分，附可执行修法。",
+   "tagline_en": "Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.",
+   "why_zh": "Go 圈「能跑」和「地道」差得远，这件按维度打分的方式让评审意见特别可落地。",
+   "why_en": "In Go, \"works\" and \"idiomatic\" are far apart; per-dimension scoring makes the feedback actionable."
+  },
+  "dimetron-pi-go-bubbletea-testing": {
+   "title_zh": "TUI 测试手册",
+   "category": "dev",
+   "tagline_zh": "给 Bubble Tea 终端应用写测试的专门手册：teatest、模型断言、快照对比，Go TUI 圈的刚需冷门件。",
+   "tagline_en": "The dedicated manual for testing Bubble Tea TUIs — teatest, model assertions and snapshot diffs; niche but essential in Go.",
+   "why_zh": "TUI 测试资料少得可怜，这份垂直手册对写 charmbracelet 应用的人是雪中送炭。",
+   "why_en": "TUI testing docs are scarce; for charmbracelet builders this vertical manual is rain in a drought."
+  },
+  "vanillagreencom-vstack-trading-design": {
+   "title_zh": "交易界面设计系",
+   "tagline_zh": "专业交易软件的 UI 设计系统：面板布局、数据密度、行情配色、交互规范，盯盘界面的门道全在里面。",
+   "tagline_en": "A design system for trading software — panel layouts, data density, market color semantics and interaction rules.",
+   "why_zh": "交易 UI 是设计里的特种兵领域（红绿语义、毫秒级信息密度），成体系的资料很罕见。",
+   "why_en": "Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare."
+  },
+  "vanillagreencom-vstack-iced-rs": {
+   "title_zh": "Iced 图形老手",
+   "tagline_zh": "Rust Iced 0.14 GUI 框架专家：自定义组件、overlay、Canvas、Shader、主题化，Elm 架构疑难都接。",
+   "tagline_en": "An Iced 0.14 expert for Rust GUIs — custom widgets, overlays, Canvas, shaders, theming and Elm-architecture puzzles.",
+   "why_zh": "Rust 桌面开发资料零散，Iced 尤甚；有个装进 agent 的老手，踩坑速度完全不同。",
+   "why_en": "Rust desktop knowledge is scattered and Iced doubly so; an in-agent veteran changes your pace entirely."
+  },
+  "vanillagreencom-vstack-decider": {
+   "title_zh": "ADR 决策档案",
+   "category": "meta",
+   "tagline_zh": "架构决策记录（ADR）全流程管理：模板、创建、检索、废止追踪、索引维护，让「当初为什么这么做」有档可查。",
+   "tagline_en": "Full ADR lifecycle management — templates, creation, search, supersession tracking and index upkeep; \"why did we do this\" gets an answer.",
+   "why_zh": "团队最贵的失忆就是决策依据失传，ADR 是解药，这件把仪式成本降到几乎为零。",
+   "why_en": "The costliest amnesia is lost decision rationale; ADRs are the cure and this drops the ritual cost to nearly zero."
+  },
+  "nowork-studio-notfair": {
+   "title_zh": "营销永动机",
+   "category": "work",
+   "tagline_zh": "目标驱动、循环执行的营销 agent 组：给定业务目标后 24/7 连轴转——起名就叫 NotFair，不讲武德。",
+   "tagline_en": "Goal-driven, loop-powered marketing agents grinding your targets 24/7 — it's called NotFair for a reason.",
+   "why_zh": "「循环体 + 明确目标」是营销 agent 的正确形态，比一次性生成物料的思路高一档。",
+   "why_en": "Loops plus explicit goals is the right shape for marketing agents — a tier above one-shot asset generation."
+  },
+  "costiash-claude-code-docs-docs": {
+   "title_zh": "Claude 文档台",
+   "category": "docs",
+   "tagline_zh": "本地镜像的 Claude 全套文档随叫随查：白话提问、生成交互式课程和变更报告、检查新鲜度，一个 /docs 入口全包。",
+   "tagline_en": "A local mirror of all Claude docs behind one /docs router — plain-English Q&A, interactive courses, changelog reports, freshness checks.",
+   "why_zh": "官方文档更新快、翻起来碎，本地镜像+路由入口把「查文档」变成一句话；一张卡顶它全家五件。",
+   "why_en": "Official docs move fast and fragment; a local mirror behind one router turns lookup into a sentence. One card covers the whole set."
+  },
+  "bingo-taiwan-taiwan-student-benefits": {
+   "title_zh": "台湾学生羊毛",
+   "category": "life",
+   "tagline_zh": "追踪并提醒台湾 .edu.tw 学生专属福利：50+ 免费订阅和额度（正版软件、云服务、AI 工具），到期前喊你续。",
+   "tagline_en": "Tracks 50+ free subscriptions and credits for Taiwan .edu.tw students — software, cloud and AI perks, with expiry reminders.",
+   "why_zh": "垂直到一个群体但需求真实：学生邮箱能薅的羊毛比想象多，有人替你盯到期日更是贴心。",
+   "why_en": "Hyper-vertical but genuinely needed — .edu perks run deeper than people think, and expiry-watching is the thoughtful part."
+  },
+  "arbiterforge-codearbiter": {
+   "title_zh": "代码仲裁庭",
+   "tagline_zh": "「信不过自己就信仲裁」：一组守门 agent 对你的代码库做多方会审，改动过堂之后才准落地。",
+   "tagline_en": "\"Can't trust yourself with the codebase? Trust the Arbiter\" — gatekeeper agents that tribunal every change before it lands.",
+   "why_zh": "vibe coding 时代的自我防护装置：把「冲动提交」和「主分支」之间加了一道庭审。",
+   "why_en": "Self-defense for the vibe-coding era — a courtroom between your impulse and the main branch."
+  },
+  "cherryhq-cherry-studio": {
+   "hide": true
+  },
+  "cherryhq-cherry-studio-cherry-electron-dev": {
+   "hide": true
+  },
+  "cherryhq-cherry-studio-cherry-pr-test": {
+   "hide": true
+  },
+  "cherryhq-cherry-studio-create-skill": {
+   "hide": true
+  },
+  "dimetron-pi-go": {
+   "hide": true
+  },
+  "dimetron-pi-go-ponytail": {
+   "hide": true
+  },
+  "vanillagreencom-vstack": {
+   "hide": true
+  },
+  "zebbern-claude-code-guide": {
+   "hide": true
+  },
+  "costiash-claude-code-docs-claude-docs": {
+   "hide": true
+  },
+  "costiash-claude-code-docs-claude-docs-changelog": {
+   "hide": true
+  },
+  "costiash-claude-code-docs-claude-docs-course": {
+   "hide": true
+  },
+  "costiash-claude-code-docs-claude-docs-validate": {
+   "hide": true
   }
  }
 }
