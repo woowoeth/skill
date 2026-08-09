@@ -55,6 +55,8 @@ skills/feed.json → GitHub Pages 静态店面（this site）
 | GitHub search（fun/game/creative 关键词） | live |
 | 已上架仓库的星数/更新回访（restock） | live |
 
+> 选品标准见 [docs/CURATION.md](./docs/CURATION.md)。
+
 ## 日常巡货 / Daily curation
 
 进货员（GitHub Actions）每天自动上货，新货先挂**占位文案**（形如「写代码的顺手工具：xxx。英文简介见下」）。把占位货变成正式商品这一步是人工巡货：挑出值得留的写钩子+点评、该下架的置 `hide`。
