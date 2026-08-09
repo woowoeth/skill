@@ -1,0 +1,30 @@
+{
+ "id": "fvadicamo-dev-agent-skills-github-pr-merge",
+ "kind": "skill",
+ "name": "github-pr-merge",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：github-pr-merge。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Merges GitHub Pull Requests after validating pre-merge checklist. Use when user wants to merge PR, close PR, finalize PR, complete merge, approve and merge, or execute merge. Runs pre-merge validation (tests, lint, CI, comments), confirms with user, merges with proper format, handles post-merge cleanup.",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "fvadicamo/dev-agent-skills",
+ "owner": "fvadicamo",
+ "path": "plugins/github-workflow/skills/github-pr-merge",
+ "url": "https://github.com/fvadicamo/dev-agent-skills/tree/HEAD/plugins/github-workflow/skills/github-pr-merge",
+ "homepage": "",
+ "stars": 69,
+ "pushed_at": "2026-08-09T07:30:09Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.15,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-09",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/fvadicamo/dev-agent-skills.git",
+  "copy": "cp -r dev-agent-skills/plugins/github-workflow/skills/github-pr-merge ~/.claude/skills/github-pr-merge",
+  "dir": "~/.claude/skills/github-pr-merge"
+ }
+}

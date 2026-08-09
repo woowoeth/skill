@@ -1,0 +1,30 @@
+{
+ "id": "fvadicamo-dev-agent-skills-github-pr-creation",
+ "kind": "skill",
+ "name": "github-pr-creation",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：github-pr-creation。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Creates GitHub Pull Requests with automated validation and task tracking. Use when user wants to create PR, open pull request, submit for review, or check if ready for PR. Analyzes commits, validates task completion, generates Conventional Commits title and description, suggests labels. NOTE - for merging existing PRs, use github-pr-merge instead.",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "fvadicamo/dev-agent-skills",
+ "owner": "fvadicamo",
+ "path": "plugins/github-workflow/skills/github-pr-creation",
+ "url": "https://github.com/fvadicamo/dev-agent-skills/tree/HEAD/plugins/github-workflow/skills/github-pr-creation",
+ "homepage": "",
+ "stars": 69,
+ "pushed_at": "2026-08-09T07:30:09Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.15,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-09",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/fvadicamo/dev-agent-skills.git",
+  "copy": "cp -r dev-agent-skills/plugins/github-workflow/skills/github-pr-creation ~/.claude/skills/github-pr-creation",
+  "dir": "~/.claude/skills/github-pr-creation"
+ }
+}
