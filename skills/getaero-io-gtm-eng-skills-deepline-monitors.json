@@ -1,0 +1,30 @@
+{
+ "id": "getaero-io-gtm-eng-skills-deepline-monitors",
+ "kind": "skill",
+ "name": "deepline-monitors",
+ "title_zh": "深线监控",
+ "tagline_zh": "当职位、邮件、融资信号实时涌入数仓，你的下一步动作自动触发。先跑 status 确认权限，没权限？别硬用。",
+ "tagline_en": "Live job, email, funding signals stream into your warehouse and trigger plays. Check access first—no access?",
+ "desc_en": "ACCESS-GATED beta. Deepline Monitors are provider event feeds (job posts, email replies, funding, intent) that stream into your warehouse and trigger plays. Only use if you have monitor access: run `deepline monitors status` first; if it reports no access, do NOT use this recipe — tell the user to contact the Deepline team.",
+ "why_zh": "同类工具只给通知，它把事件流直接接进数仓并触发动作，且用权限门禁避免误用，机制更闭环。",
+ "why_en": "Unlike notifiers, it pipes events into your warehouse and triggers plays, with an access gate to prevent misuse—truly closed-loop.",
+ "repo": "getaero-io/gtm-eng-skills",
+ "owner": "getaero-io",
+ "path": "skills/deepline-monitors",
+ "url": "https://github.com/getaero-io/gtm-eng-skills/tree/HEAD/skills/deepline-monitors",
+ "homepage": "https://code.deepline.com",
+ "stars": 49,
+ "pushed_at": "2026-08-10T14:38:31Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 5.02,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-10",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/getaero-io/gtm-eng-skills.git",
+  "copy": "cp -r gtm-eng-skills/skills/deepline-monitors ~/.claude/skills/deepline-monitors",
+  "dir": "~/.claude/skills/deepline-monitors"
+ }
+}
