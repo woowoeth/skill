@@ -1,0 +1,30 @@
+{
+ "id": "snailsploit-claude-red",
+ "kind": "collection",
+ "name": "Claude-Red",
+ "title_zh": "红队技能库",
+ "tagline_zh": "从SQL注入到免杀，每个攻击面都配好专家级打法。不是零散脚本，是Claude能直接调用的结构化攻击手册。",
+ "tagline_en": "From SQLi to evasion, every attack surface gets expert playbooks. Not scattered scripts—structured offensive.",
+ "desc_en": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+ "why_zh": "同类工具只给payload，它给完整方法论。每个SKILL.md把Claude调教成对应领域的攻击专家。",
+ "why_en": "Others hand you payloads; this hands Claude a full methodology per skill, turning it into an instant expert for each attack.",
+ "repo": "SnailSploit/Claude-Red",
+ "owner": "SnailSploit",
+ "path": "",
+ "url": "https://github.com/SnailSploit/Claude-Red",
+ "homepage": "",
+ "stars": 2876,
+ "pushed_at": "2026-05-08T16:05:21Z",
+ "skill_count": 58,
+ "category": "dev",
+ "fun_score": 3.11,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-10",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/SnailSploit/Claude-Red.git",
+  "copy": "mv Claude-Red ~/.claude/skills/Claude-Red",
+  "dir": "~/.claude/skills/Claude-Red"
+ }
+}
