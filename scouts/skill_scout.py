@@ -286,9 +286,9 @@ def resolve_cover(repo: str) -> str:
 
 
 # ---------------------------------------------------------------- enrich ----
-LLM_KEY = os.environ.get("LLM_API_KEY", "")
-LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/")
-LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")
+LLM_KEY = os.environ.get("LLM_API_KEY", "").strip()
+LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").strip().rstrip("/")
+LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini").strip()
 
 ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写中英双语货架文案。这是一家只留精品的小店，文案要让人「一眼想试」，不要正确的废话。
 
@@ -363,7 +363,7 @@ def enrich_items(ids: list[str], existing: dict) -> None:
                                       kind=it.get("kind", ""), desc=(it.get("desc_en") or "")[:600])
         anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
         if anthropic:
-            model = os.environ.get("LLM_MODEL") or "claude-haiku-4-5"
+            model = (os.environ.get("LLM_MODEL") or "claude-haiku-4-5").strip()
             base = LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com"
             body = json.dumps({"model": model, "max_tokens": 800,
                                "messages": [{"role": "user", "content": prompt}]}).encode()
