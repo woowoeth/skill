@@ -530,11 +530,20 @@ def main() -> None:
     ap.add_argument("--no-restock", action="store_true")
     ap.add_argument("--suggest", nargs="+", metavar="owner/repo",
                     help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
+    ap.add_argument("--enrich-missing", action="store_true",
+                    help="给所有在架、仍是占位/缺文案的商品补写文案（用 LLM_* secrets）")
     a = ap.parse_args()
     if a.seed:
         seed(a.seed, a.meta)
         return
     existing, sources = lib.load_items(), lib.load_sources()
+    if a.enrich_missing:
+        miss = [sid for sid, it in existing.items()
+                if not it.get("hide") and (not it.get("why_zh") or "见下" in it.get("tagline_zh", ""))]
+        print(f"[scout] enrich-missing: {len(miss)} 件在架占位货待补")
+        enrich_items(miss, existing)
+        lib.refresh()
+        return
     if a.suggest:
         suggest_repos(a.suggest, existing, sources)
         enrich_items(NEW_IDS, existing)

@@ -16,7 +16,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: ${{ github.workflow }}
+  group: skill-store-write
   cancel-in-progress: false
 jobs:
   restock:
