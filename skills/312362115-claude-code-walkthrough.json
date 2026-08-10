@@ -1,0 +1,30 @@
+{
+ "id": "312362115-claude-code-walkthrough",
+ "kind": "skill",
+ "name": "code-walkthrough",
+ "title_zh": "代码导读",
+ "tagline_zh": "接手陌生项目像读天书？别从第一行硬啃。这个技能帮你从全局架构到核心流程，层层拆解，直接告诉你每段代码为何存在。",
+ "tagline_en": "New codebase feels like hieroglyphs? Stop line-by-line. This skill maps architecture to core flows, revealing why.",
+ "desc_en": "代码导读技能：帮助快速理解不熟悉的项目或模块，建立心智模型。 从全局架构到核心流程再到关键设计决策，分层递进地梳理代码。 不是简单地读文件列目录，而是提炼出\"这段代码在做什么、为什么这么做、和其他部分怎么连接\"。 触发词：帮我梳理一下、这块代码怎么运作的、导读、接手项目、看看这个模块、代码走读、walkthrough。 触发场景：接手新项目、进入不熟悉的模块、重构前理解现状、Code Review 需要理解上下文。 即使用户没有说\"导读\"，只要意图是\"理解一段不熟悉的代码\"，都应触发此技能。",
+ "why_zh": "它不列目录，而是提炼设计决策和模块间的因果链，像有个老程序员在耳边讲重点。",
+ "why_en": "It skips file listings to surface design decisions and causal links, like a senior dev whispering the key context.",
+ "repo": "312362115/claude",
+ "owner": "312362115",
+ "path": "skills/code-walkthrough",
+ "url": "https://github.com/312362115/claude/tree/HEAD/skills/code-walkthrough",
+ "homepage": "",
+ "stars": 109,
+ "pushed_at": "2026-05-14T02:19:52Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.83,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-10",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/312362115/claude.git",
+  "copy": "cp -r claude/skills/code-walkthrough ~/.claude/skills/code-walkthrough",
+  "dir": "~/.claude/skills/code-walkthrough"
+ }
+}
