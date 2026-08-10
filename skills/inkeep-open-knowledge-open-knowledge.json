@@ -1,0 +1,30 @@
+{
+ "id": "inkeep-open-knowledge-open-knowledge",
+ "kind": "skill",
+ "name": "open-knowledge",
+ "title_zh": "知识库管家",
+ "tagline_zh": "在 OpenKnowledge 项目里读写 .md 文件前，先让这个 skill 接管——它懂 CRDT 合并。",
+ "tagline_en": "Before touching any .md in an OpenKnowledge project, let this skill handle it—CRDT-aware, search/edit/lint, no.",
+ "desc_en": "Authoritative agent-runtime contract for working inside an OpenKnowledge project — a markdown-CRDT knowledge base exposed over MCP. Use whenever reading, listing, searching, editing, or linting any `.md` or `.mdx` file in the project, and before any `mcp__open-knowledge__*` tool call (`exec`, `search`, `write`, `edit`, `lint`, and the rest). Installed by `ok init`, so its presence means this is an",
+ "why_zh": "同类工具只会调 MCP，它却把 CRDT 合并规则内化，每次写入前自动检查冲突，省去你手动 diff 。",
+ "why_en": "Unlike plain MCP wrappers, it bakes in CRDT merge rules, auto-checking conflicts before every write—no manual diffing needed.",
+ "repo": "inkeep/open-knowledge",
+ "owner": "inkeep",
+ "path": "packages/server/assets/skills/project",
+ "url": "https://github.com/inkeep/open-knowledge/tree/HEAD/packages/server/assets/skills/project",
+ "homepage": "https://openknowledge.ai",
+ "stars": 3334,
+ "pushed_at": "2026-08-10T08:05:24Z",
+ "skill_count": 18,
+ "category": "writing",
+ "fun_score": 4.67,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-10",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/inkeep/open-knowledge.git",
+  "copy": "cp -r open-knowledge/packages/server/assets/skills/project ~/.claude/skills/project",
+  "dir": "~/.claude/skills/project"
+ }
+}
