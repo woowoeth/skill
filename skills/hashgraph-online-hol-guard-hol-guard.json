@@ -1,0 +1,30 @@
+{
+ "id": "hashgraph-online-hol-guard-hol-guard",
+ "kind": "skill",
+ "name": "hol-guard",
+ "title_zh": "HOL 守卫",
+ "tagline_zh": "本地 AI 插件乱装怕中毒？一条命令扫描 MCP/Skill 的安全与合规，还能自动修复。别处没有的：直接跑 uv。",
+ "tagline_en": "Scan MCP/skills for security & compliance, auto-fix issues—all via one uv command. No setup, just guard.",
+ "desc_en": "Run HOL Guard scanner and guard operations via `uv run hol-guard`. Use when the user asks to scan plugins/MCP/skills for security, quality, or ecosystem compliance, or when they ask to run guard detect/install/protect workflows for local AI harnesses.",
+ "why_zh": "同类要装半天依赖，它用 uv 秒跑；不只报错，还能直接 install/protect 修复。",
+ "why_en": "Unlike scanners that just report, hol-guard fixes via uv—zero setup, instant detect-to-protect workflow.",
+ "repo": "hashgraph-online/hol-guard",
+ "owner": "hashgraph-online",
+ "path": ".factory/skills/hol-guard",
+ "url": "https://github.com/hashgraph-online/hol-guard/tree/HEAD/.factory/skills/hol-guard",
+ "homepage": "https://hol.org/guard",
+ "stars": 430,
+ "pushed_at": "2026-08-10T14:32:33Z",
+ "skill_count": 8,
+ "category": "dev",
+ "fun_score": 3.87,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-10",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/hashgraph-online/hol-guard.git",
+  "copy": "cp -r hol-guard/.factory/skills/hol-guard ~/.claude/skills/hol-guard",
+  "dir": "~/.claude/skills/hol-guard"
+ }
+}
