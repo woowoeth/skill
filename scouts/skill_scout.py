@@ -28,7 +28,57 @@ MAX_SINGLES_SMALL = 3
 MAX_ITEMS_PER_REPO = 3          # individual cards sampled from one multi-skill repo
 COLLECTION_MIN = 6              # >= this many skills → also gets a collection card
 COLLECTION_ONLY = 26            # >= this many skills → collection card ONLY
-MIN_STARS_DISCOVER = 40         # noise floor for brand-new repos
+# ---- admission: 相信新鲜度 + 认真程度 + 人的判断，而非人气存量 ----
+MIN_STARS_ESTABLISHED = 40      # 老仓库（>30 天）的人气底线
+MIN_STARS_NEWCOMER = 3          # 新品快车道：近 7 天发布，几乎不看星
+NEWCOMER_WINDOW_DAYS = 7        # “新”的定义
+FAST_RISER_STARS = 25           # 星速度：14 天内涨到这个数即视为正在被认可
+FAST_RISER_WINDOW_DAYS = 14
+MIN_STARS_DISCOVER = MIN_STARS_ESTABLISHED   # 向后兼容旧引用
+
+
+def _days_since(iso: str) -> float:
+    """天数距今；解析失败返回一个大数（当作很旧）。"""
+    if not iso:
+        return 1e9
+    try:
+        from datetime import datetime, timezone
+        dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        return (datetime.now(timezone.utc) - dt).total_seconds() / 86400.0
+    except Exception:
+        return 1e9
+
+
+def _admit(item: dict) -> tuple[bool, str]:
+    """多信号准入。召回优先——进来的杂质靠人工巡货删，漏掉的好货无法追回。
+    返回 (是否放行, 命中通道)。fork 一律拒。"""
+    if item.get("fork"):
+        return False, "fork"
+    stars = item.get("stargazers_count", 0)
+    created_age = _days_since(item.get("created_at", ""))
+    pushed_age = _days_since(item.get("pushed_at", ""))
+
+    # 通道一：新品快车道 —— 刚出生几天，还没来得及积累星，给它被看见的机会
+    if created_age <= NEWCOMER_WINDOW_DAYS and stars >= MIN_STARS_NEWCOMER:
+        return True, "newcomer"
+    # 通道二：星速度 —— 短期内爬升快，比存量更能抓住“正在被认可”的新星
+    if created_age <= FAST_RISER_WINDOW_DAYS and stars >= FAST_RISER_STARS:
+        return True, "fast-riser"
+    # 通道三：认真程度信号 —— 星未达标，但仓库“看起来是认真做的”，放进来让人工再判
+    #   （有主页/演示、描述够长、近期仍在维护）——任一强信号 + 一点点星
+    serious = 0
+    if item.get("homepage"):
+        serious += 1
+    if len(item.get("description") or "") >= 60:
+        serious += 1
+    if pushed_age <= 30:
+        serious += 1
+    if stars >= 10 and serious >= 2:
+        return True, "serious-signal"
+    # 通道四（老仓库常规线）：站住了一段时间，用较高星兜底
+    if stars >= MIN_STARS_ESTABLISHED:
+        return True, "established"
+    return False, "below-floor"
 CLONE_TIMEOUT = 90
 
 SEARCH_QUERIES = [
@@ -37,6 +87,11 @@ SEARCH_QUERIES = [
     "topic:agent-skills sort:updated",
     "claude skill game OR fun OR creative in:name,description sort:updated",
     "SKILL.md skill in:readme claude sort:updated",
+    # 新品/新星专用：按创建时间倒序，让刚出生、还没积累星的好货进入结果
+    "topic:claude-skills sort:created",
+    "topic:agent-skills sort:created",
+    "SKILL.md agent skill in:readme sort:created",
+    "claude skill in:name,description sort:created",
 ]
 
 SKIP_REPO_PAT = re.compile(
@@ -337,14 +392,15 @@ def discover(existing: dict, sources: dict) -> int:
                     continue
                 if SKIP_REPO_PAT.search(full):
                     continue
-                if it.get("stargazers_count", 0) < MIN_STARS_DISCOVER:
-                    continue
-                if it.get("fork"):
+                ok, lane = _admit(it)
+                if not ok:
                     continue
                 candidates[full] = {"stars": it.get("stargazers_count", 0),
                                     "description": it.get("description") or "",
                                     "pushed_at": it.get("pushed_at", ""),
-                                    "homepage": it.get("homepage") or ""}
+                                    "created_at": it.get("created_at", ""),
+                                    "homepage": it.get("homepage") or "",
+                                    "lane": lane}
             time.sleep(3 if lib.GH_TOKEN else 8)
         except Exception as e:
             print(f"[scout] search skip [{q[:40]}]: {e}")
@@ -356,6 +412,7 @@ def discover(existing: dict, sources: dict) -> int:
         if tried >= MAX_NEW_REPOS_PER_RUN:
             break
         tried += 1
+        print(f"[scout] candidate {repo} (★{meta['stars']}, via {meta.get('lane','?')})")
         tmp = tempfile.mkdtemp(prefix="ss_")
         try:
             if not shallow_clone(repo, tmp):
@@ -390,17 +447,58 @@ def seed(seed_dir: str, meta_file: str) -> None:
     lib.refresh()
 
 
+def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
+    """人工通道：一个真人觉得值得推荐，本身就是最高质量的信号。
+    直接 clone + 收录，绕过星门槛；仍尊重 fork/命名黑名单，避免明显垃圾。"""
+    for repo in repos:
+        repo = repo.strip().removeprefix("https://github.com/").rstrip("/")
+        if SKIP_REPO_PAT.search(repo):
+            print(f"[scout] suggest 拒绝（命名黑名单）: {repo}")
+            continue
+        meta = {"stars": 0, "description": "", "pushed_at": ""}
+        try:
+            info = lib.gh_json(f"https://api.github.com/repos/{repo}")
+            if info.get("fork"):
+                print(f"[scout] suggest 拒绝（fork）: {repo}")
+                continue
+            meta = {"stars": info.get("stargazers_count", 0),
+                    "description": info.get("description") or "",
+                    "pushed_at": info.get("pushed_at", "")}
+        except Exception as e:
+            print(f"[scout] suggest 无法读取元数据 {repo}: {e}")
+        tmp = tempfile.mkdtemp(prefix="sg_")
+        try:
+            if not shallow_clone(repo, tmp):
+                print(f"[scout] suggest clone 失败: {repo}")
+                continue
+            items = ingest_repo(tmp, repo, meta, source="human-suggested")
+            n = stock(items, existing, sources, repo, meta)
+            print(f"[scout] suggest 收录 {repo}: +{n} 件（★{meta['stars']}，绕过星门槛）")
+        except Exception as e:
+            print(f"[scout] suggest 失败 {repo}: {e}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", help="seed from a directory of pre-cloned repos")
     ap.add_argument("--meta", default="", help="json map full_name -> {stars,description,pushed_at}")
     ap.add_argument("--no-discover", action="store_true")
     ap.add_argument("--no-restock", action="store_true")
+    ap.add_argument("--suggest", nargs="+", metavar="owner/repo",
+                    help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
     a = ap.parse_args()
     if a.seed:
         seed(a.seed, a.meta)
         return
     existing, sources = lib.load_items(), lib.load_sources()
+    if a.suggest:
+        suggest_repos(a.suggest, existing, sources)
+        enrich_items(NEW_IDS, existing)
+        lib.save_sources(sources)
+        lib.refresh()
+        return
     if not a.no_restock:
         restock_existing(existing, sources)
     if not a.no_discover:
