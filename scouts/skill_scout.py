@@ -290,19 +290,60 @@ LLM_KEY = os.environ.get("LLM_API_KEY", "")
 LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/")
 LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini")
 
-ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写货架文案。要求：
-- tagline_zh：一句钩子（45~60字，需在卡片上占满两行），写场景/痛点/反差 + 一个具体细节；不要空话。
-- tagline_en：英文钩子（80~115 字符），同样风格。
-- why_zh：一句点评（≤55字），说清这个 skill 到底好在哪（机制/差异点），诚实、具体、不吹。
-- why_en：英文点评。
-- title_zh：≤8字的中文名（贴切、可有趣，不生造成语）。
-只输出一个 JSON 对象，含这5个键，别的什么都不要。
+ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写中英双语货架文案。这是一家只留精品的小店，文案要让人「一眼想试」，不要正确的废话。
+
+硬性要求（超限即失败）：
+- title_zh：中文名，≤8 个汉字。贴切、可有趣，不生造成语。
+- tagline_zh：一句钩子，中文 40~58 字（务必两行、不超 58）。写「具体场景/痛点/反差 + 一个别处没有的细节」，禁止「实用利器」「效率神器」「必备工具」这类空话。
+- tagline_en：英文钩子，严格 ≤115 个英文字符（含空格；宁短勿超）。与中文同义但地道，不要逐字翻译。
+- why_zh：一句点评，中文 30~52 字。只说「它到底比同类强在哪」——机制或差异点，诚实具体，不吹不堆形容词。
+- why_en：英文点评，≤130 个英文字符。
+
+只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en 五个键，不要 markdown、不要解释。
 
 商品信息：
 name: {name}
 repo: {repo}
 kind: {kind}
 description: {desc}"""
+
+
+def _clamp_cjk(text: str, limit: int) -> str:
+    """中文超限时截到 limit，尽量切在标点处，末尾补句号。"""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit - 1]
+    for i in range(len(cut) - 1, max(0, len(cut) - 12), -1):
+        if cut[i] in "，。；、！？":
+            return cut[:i + 1] if cut[i] in "。！？" else cut[:i] + "。"
+    return cut.rstrip("，、；") + "。"
+
+
+def _clamp_en(text: str, limit: int) -> str:
+    """英文超限时截到 limit，切在词边界，末尾补句号。"""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit - 1].rsplit(" ", 1)[0].rstrip(",;:—- ")
+    if not cut.endswith((".", "!", "?")):
+        cut += "."
+    return cut
+
+
+def _clamp_patch(patch: dict) -> dict:
+    """把模型产出的文案硬性压进规范长度——模型不听字数指令，代码兜底。"""
+    if patch.get("title_zh"):
+        patch["title_zh"] = patch["title_zh"][:8]
+    if patch.get("tagline_zh"):
+        patch["tagline_zh"] = _clamp_cjk(patch["tagline_zh"], 58)
+    if patch.get("why_zh"):
+        patch["why_zh"] = _clamp_cjk(patch["why_zh"], 52)
+    if patch.get("tagline_en"):
+        patch["tagline_en"] = _clamp_en(patch["tagline_en"], 115)
+    if patch.get("why_en"):
+        patch["why_en"] = _clamp_en(patch["why_en"], 130)
+    return patch
 
 
 def enrich_items(ids: list[str], existing: dict) -> None:
@@ -346,6 +387,7 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             patch = {k: str(c[k]).strip() for k in
                      ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en")
                      if c.get(k) and str(c[k]).strip()}
+            patch = _clamp_patch(patch)
             if patch:
                 it.update(patch)
                 lib.save_item(it)
