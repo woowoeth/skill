@@ -1,0 +1,31 @@
+{
+ "id": "topoteretes-cognee-diff-risk-explainer",
+ "kind": "skill",
+ "name": "diff-risk-explainer",
+ "title_zh": "差异解读器",
+ "tagline_zh": "代码改动看得头晕？粘贴 diff，三秒讲清改了什么、为什么改，还附风险提示，像同事帮你 review。",
+ "tagline_en": "Paste a diff, get a plain-English summary of what changed and why, plus risk flags—like a quick code review buddy.",
+ "desc_en": "Use to briefly explain small code diffs.",
+ "why_zh": "同类工具只列变更，它却结合上下文推理意图，并标出潜在破坏点，省去逐行猜测。",
+ "why_en": "Others list changes; this one infers intent from context and flags breakage risks, saving you line-by-line guesswork.",
+ "repo": "topoteretes/cognee",
+ "owner": "topoteretes",
+ "path": "examples/demos/skill_feedback_loop/skills/diff-risk-explainer",
+ "url": "https://github.com/topoteretes/cognee/tree/HEAD/examples/demos/skill_feedback_loop/skills/diff-risk-explainer",
+ "homepage": "https://www.cognee.ai",
+ "stars": 29952,
+ "pushed_at": "2026-08-11T14:39:31Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 5.53,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/topoteretes/cognee.git",
+  "copy": "cp -r cognee/examples/demos/skill_feedback_loop/skills/diff-risk-explainer ~/.claude/skills/diff-risk-explainer",
+  "dir": "~/.claude/skills/diff-risk-explainer"
+ },
+ "cover": "https://raw.githubusercontent.com/topoteretes/cognee/refs/heads/dev/assets/cognee-logo-transparent.png"
+}

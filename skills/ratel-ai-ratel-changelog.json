@@ -1,0 +1,31 @@
+{
+ "id": "ratel-ai-ratel-changelog",
+ "kind": "skill",
+ "name": "changelog",
+ "title_zh": "更新日志管家",
+ "tagline_zh": "发版前还在手写每个包的 CHANGELOG？它用 git-cliff 按包起草，你只管筛选，RC 转正自动合并。",
+ "tagline_en": "Tired of hand-writing per-package changelogs? It drafts with git-cliff, you curate, and RC-to-GA collapse is.",
+ "desc_en": "Update per-package CHANGELOG.md files for a Ratel release. Drafts entries with git-cliff (scoped per package), lets you curate, then writes the CHANGELOGs. Handles both RC entries and GA-graduation collapse (merging X.Y.Z-rc.* sections into a single X.Y.Z section). Invoke before tagging a release.",
+ "why_zh": "同类工具只生成单个文件，它按包拆分并处理 RC 合并，专为 Ratel 发版设计，别处没有。",
+ "why_en": "Unlike generic tools, it scopes per package and collapses RC sections into GA—built for Ratel releases.",
+ "repo": "ratel-ai/ratel",
+ "owner": "ratel-ai",
+ "path": ".claude/skills/changelog",
+ "url": "https://github.com/ratel-ai/ratel/tree/HEAD/.claude/skills/changelog",
+ "homepage": "https://www.ratel.sh/",
+ "stars": 419,
+ "pushed_at": "2026-08-11T14:42:36Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.86,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/ratel-ai/ratel.git",
+  "copy": "cp -r ratel/.claude/skills/changelog ~/.claude/skills/changelog",
+  "dir": "~/.claude/skills/changelog"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1095081803/7361ba5b-6739-4a2d-a18e-a3a97efc2b37"
+}

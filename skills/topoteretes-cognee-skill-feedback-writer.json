@@ -1,0 +1,31 @@
+{
+ "id": "topoteretes-cognee-skill-feedback-writer",
+ "kind": "skill",
+ "name": "skill-feedback-writer",
+ "title_zh": "挑刺师",
+ "tagline_zh": "你的技能输出总差一步？让它自检漏洞。输入结果，它反向揪出缺失指令，连「忘了说保存」这种坑都给你标出来。",
+ "tagline_en": "Feed it your skill's output, it reverse-engineers the missing instructions—even the 'forgot to save' trap. Try.",
+ "desc_en": "Use to identify missing instructions in another skill based on its output.",
+ "why_zh": "同类工具只测功能，它专测「指令完整性」——从结果反推缺口，连隐性假设都挖出来，像给技能做X光。",
+ "why_en": "Others test if it works; this one tests if your instructions are complete—reverse-maps gaps from output, exposing hidden.",
+ "repo": "topoteretes/cognee",
+ "owner": "topoteretes",
+ "path": "examples/demos/skill_feedback_loop/skills/skill-feedback-writer",
+ "url": "https://github.com/topoteretes/cognee/tree/HEAD/examples/demos/skill_feedback_loop/skills/skill-feedback-writer",
+ "homepage": "https://www.cognee.ai",
+ "stars": 29952,
+ "pushed_at": "2026-08-11T14:39:31Z",
+ "skill_count": 1,
+ "category": "writing",
+ "fun_score": 5.53,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/topoteretes/cognee.git",
+  "copy": "cp -r cognee/examples/demos/skill_feedback_loop/skills/skill-feedback-writer ~/.claude/skills/skill-feedback-writer",
+  "dir": "~/.claude/skills/skill-feedback-writer"
+ },
+ "cover": "https://raw.githubusercontent.com/topoteretes/cognee/refs/heads/dev/assets/cognee-logo-transparent.png"
+}

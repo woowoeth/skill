@@ -1,0 +1,31 @@
+{
+ "id": "topoteretes-cognee-pr-comment-evaluator",
+ "kind": "skill",
+ "name": "pr-comment-evaluator",
+ "title_zh": "评语温度计",
+ "tagline_zh": "PR 评论太冲？同事看了想拉黑？用这个 skill 测出每条评论的「礼貌分」，还能指出哪句最伤人。",
+ "tagline_en": "Is your PR comment too harsh? This skill scores politeness, flags the sharpest line, and turns snark into smooth.",
+ "desc_en": "Use to judge whether a PR review comment sounds polite.",
+ "why_zh": "它不只看关键词，而是分析语气转折和上下文，连反讽都能识别，比简单词库准一个量级。",
+ "why_en": "Goes beyond keywords—detects sarcasm and tone shifts in context, outperforming simple word lists by a clear margin.",
+ "repo": "topoteretes/cognee",
+ "owner": "topoteretes",
+ "path": "examples/demos/skill_feedback_loop/skills/pr-comment-evaluator",
+ "url": "https://github.com/topoteretes/cognee/tree/HEAD/examples/demos/skill_feedback_loop/skills/pr-comment-evaluator",
+ "homepage": "https://www.cognee.ai",
+ "stars": 29952,
+ "pushed_at": "2026-08-11T14:39:31Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 5.53,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/topoteretes/cognee.git",
+  "copy": "cp -r cognee/examples/demos/skill_feedback_loop/skills/pr-comment-evaluator ~/.claude/skills/pr-comment-evaluator",
+  "dir": "~/.claude/skills/pr-comment-evaluator"
+ },
+ "cover": "https://raw.githubusercontent.com/topoteretes/cognee/refs/heads/dev/assets/cognee-logo-transparent.png"
+}
