@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-08-11T16:09:46Z",
- "count": 293,
+ "generated_at": "2026-08-11T16:10:20Z",
+ "count": 291,
  "new_today": 64,
  "picks": 6,
  "categories": [
@@ -51,7 +51,7 @@
    "zh": "开发五金",
    "en": "Dev Hardware",
    "emoji": "🔧",
-   "count": 73
+   "count": 71
   },
   {
    "id": "meta",
@@ -2741,36 +2741,6 @@
    }
   },
   {
-   "id": "snailsploit-claude-red",
-   "kind": "collection",
-   "name": "Claude-Red",
-   "title_zh": "红队技能库",
-   "tagline_zh": "从SQL注入到免杀，每个攻击面都配好专家级打法。不是零散脚本，是Claude能直接调用的结构化攻击手册。",
-   "tagline_en": "From SQLi to evasion, every attack surface gets expert playbooks. Not scattered scripts—structured offensive.",
-   "desc_en": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-   "why_zh": "同类工具只给payload，它给完整方法论。每个SKILL.md把Claude调教成对应领域的攻击专家。",
-   "why_en": "Others hand you payloads; this hands Claude a full methodology per skill, turning it into an instant expert for each attack.",
-   "repo": "SnailSploit/Claude-Red",
-   "owner": "SnailSploit",
-   "path": "",
-   "url": "https://github.com/SnailSploit/Claude-Red",
-   "homepage": "",
-   "stars": 2895,
-   "pushed_at": "2026-05-08T16:05:21Z",
-   "skill_count": 58,
-   "category": "dev",
-   "fun_score": 3.12,
-   "pick": false,
-   "hide": false,
-   "source": "daily-scout",
-   "added_at": "2026-08-10",
-   "install": {
-    "clone": "git clone --depth 1 https://github.com/SnailSploit/Claude-Red.git",
-    "copy": "mv Claude-Red ~/.claude/skills/Claude-Red",
-    "dir": "~/.claude/skills/Claude-Red"
-   }
-  },
-  {
    "id": "op7418-claude-to-im-skill",
    "kind": "skill",
    "name": "claude-to-im",
@@ -2798,36 +2768,6 @@
     "clone": "git clone --depth 1 https://github.com/op7418/Claude-to-IM-skill.git",
     "copy": "mv Claude-to-IM-skill ~/.claude/skills/Claude-to-IM-skill",
     "dir": "~/.claude/skills/Claude-to-IM-skill"
-   }
-  },
-  {
-   "id": "tradermonty-claude-trading-skills",
-   "kind": "collection",
-   "name": "claude-trading-skills",
-   "title_zh": "交易军火库",
-   "tagline_zh": "散户看盘像开盲盒？这套技能把行情、日历、选股器焊进 Claude Code，连 K 线形态都帮你画好。",
-   "tagline_en": "Stop trading blind. This skill pack wires live markets, econ calendars, screeners, and chart patterns into Claude.",
-   "desc_en": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
-   "why_zh": "同类多是单点工具，它是一整套交易工作流，从数据到策略闭环，且每个技能都带 CLI 接口，可自由组合。",
-   "why_en": "Unlike scattered single-purpose tools, this is a full trading workflow—data to strategy—with CLI-friendly skills that chain.",
-   "repo": "tradermonty/claude-trading-skills",
-   "owner": "tradermonty",
-   "path": "",
-   "url": "https://github.com/tradermonty/claude-trading-skills",
-   "homepage": "https://tradermonty.github.io/claude-trading-skills/",
-   "stars": 2613,
-   "pushed_at": "2026-08-11T10:06:15Z",
-   "skill_count": 91,
-   "category": "dev",
-   "fun_score": 3.08,
-   "pick": false,
-   "hide": false,
-   "source": "daily-scout",
-   "added_at": "2026-08-10",
-   "install": {
-    "clone": "git clone --depth 1 https://github.com/tradermonty/claude-trading-skills.git",
-    "copy": "mv claude-trading-skills ~/.claude/skills/claude-trading-skills",
-    "dir": "~/.claude/skills/claude-trading-skills"
    }
   },
   {
