@@ -1,0 +1,30 @@
+{
+ "id": "pinvou-pinvou-agent-visualizer",
+ "kind": "skill",
+ "name": "visualizer",
+ "title_zh": "图表工坊",
+ "tagline_zh": "扔进Excel或CSV，秒变交互图表与看板。预算、销售、运营指标，自动挑最合适的图表类型，连颜色都替你配好。",
+ "tagline_en": "Drop in Excel/CSV, get interactive charts & dashboards. Auto-picks best chart type and colors for budgets, sales.",
+ "desc_en": "当用户要求数据可视化、做图表、生成看板、数据仪表盘、可视化报告、Excel/CSV 转图表、预算/销售/运营等指标分析页面、Chart.js 可视化时使用。只处理数据可视化任务；纯网页、banner、海报、简历等非数据图表设计任务应交给 visual-design。",
+ "why_zh": "同类工具要你手动选图表类型，它却能根据数据语义自动匹配，连配色都按品牌调性生成，省掉一半调整时间。",
+ "why_en": "Unlike tools that make you pick chart types, it auto-matches based on data semantics and generates brand-aware palettes, saving.",
+ "repo": "Pinvou/pinvou-agent",
+ "owner": "Pinvou",
+ "path": "pinvou3-app/src-tauri/resources/common/skill-marketplace/visualizer",
+ "url": "https://github.com/Pinvou/pinvou-agent/tree/HEAD/pinvou3-app/src-tauri/resources/common/skill-marketplace/visualizer",
+ "homepage": "https://pinvou.com/",
+ "stars": 587,
+ "pushed_at": "2026-08-11T03:12:58Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 10.99,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/Pinvou/pinvou-agent.git",
+  "copy": "cp -r pinvou-agent/pinvou3-app/src-tauri/resources/common/skill-marketplace/visualizer ~/.claude/skills/visualizer",
+  "dir": "~/.claude/skills/visualizer"
+ }
+}

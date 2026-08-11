@@ -1,0 +1,30 @@
+{
+ "id": "ctxrs-ctx-ctx-agent-history-search",
+ "kind": "skill",
+ "name": "ctx-agent-history-search",
+ "title_zh": "历史检索",
+ "tagline_zh": "新任务卡壳？先翻旧账。检索本地编码代理的历史会话，找出之前的决策、尝试和坑，别让AI重复踩雷。",
+ "tagline_en": "Stuck? Search past agent sessions for decisions, attempts, and pitfalls—don't let AI repeat old mistakes.",
+ "desc_en": "Use ctx to search local coding-agent history before acting. Use when prior agent sessions may contain relevant insights, decisions, attempts, or transcript context.",
+ "why_zh": "同类工具只搜代码，它搜的是代理的完整思考轨迹，连失败尝试都保留，让你站在历史肩膀上。",
+ "why_en": "Unlike code search, it indexes full agent reasoning trails, including failed attempts—so you build on past context, not repeat it.",
+ "repo": "ctxrs/ctx",
+ "owner": "ctxrs",
+ "path": "plugins/ctx-agent-history-search/skills/ctx-agent-history-search",
+ "url": "https://github.com/ctxrs/ctx/tree/HEAD/plugins/ctx-agent-history-search/skills/ctx-agent-history-search",
+ "homepage": "https://ctx.rs",
+ "stars": 1021,
+ "pushed_at": "2026-08-11T03:08:07Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.21,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/ctxrs/ctx.git",
+  "copy": "cp -r ctx/plugins/ctx-agent-history-search/skills/ctx-agent-history-search ~/.claude/skills/ctx-agent-history-search",
+  "dir": "~/.claude/skills/ctx-agent-history-search"
+ }
+}

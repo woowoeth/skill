@@ -1,0 +1,30 @@
+{
+ "id": "ai4s-research-open-science-verify",
+ "kind": "skill",
+ "name": "verify",
+ "title_zh": "免启视检",
+ "tagline_zh": "改前端界面却不想每次启动 Tauri 应用或加载模型？这个技能直接静态渲染截图，秒看改动效果，省下等待时间。",
+ "tagline_en": "Preview frontend changes without launching Tauri or a live model—static renders, instant visual check.",
+ "desc_en": "Verify apps/desktop frontend changes visually without launching the Tauri app or a live model",
+ "why_zh": "同类工具多需跑完整环境，它独辟蹊径，用静态渲染绕开启动开销，让视觉验证快一个数量级。",
+ "why_en": "Unlike tools that need full runtime, it uses static rendering to skip boot overhead—visual checks in a fraction of the time.",
+ "repo": "ai4s-research/open-science",
+ "owner": "ai4s-research",
+ "path": "apps/desktop/.claude/skills/verify",
+ "url": "https://github.com/ai4s-research/open-science/tree/HEAD/apps/desktop/.claude/skills/verify",
+ "homepage": "https://openedscience.com/",
+ "stars": 1287,
+ "pushed_at": "2026-08-11T03:09:44Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.3,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/ai4s-research/open-science.git",
+  "copy": "cp -r open-science/apps/desktop/.claude/skills/verify ~/.claude/skills/verify",
+  "dir": "~/.claude/skills/verify"
+ }
+}
