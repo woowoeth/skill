@@ -78,7 +78,8 @@
    "tagline_en": "One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.",
    "why_zh": "游戏素材是独立开发最大的坑之一，它把「画小人」变成了一句话的事，产物直接进引擎。",
    "why_en": "Art is indie dev's biggest wall; this turns \"draw me a sprite\" into a one-liner with engine-ready output.",
-   "pick": false
+   "pick": false,
+   "category": "fun"
   },
   "vincentwei1021-video-shotcraft": {
    "title_zh": "产品大片工坊",
@@ -134,14 +135,16 @@
    "tagline_zh": "文字进，示意图出：流程图、架构图、对比图都行，信息密度控制得当，是能直接放进正式文档的那种图。",
    "tagline_en": "Text in, diagrams out — flows, architectures and comparisons with density tuned right; the kind of figure you ship in real docs.",
    "why_zh": "图的信息密度控制得好，是「能放进正式文档」的那种图。",
-   "why_en": "Information density done right — diagrams you can ship in real docs."
+   "why_en": "Information density done right — diagrams you can ship in real docs.",
+   "hide": true
   },
   "jimliu-baoyu-skills-baoyu-image-gen": {
    "title_zh": "宝玉·配图生成",
    "tagline_zh": "宝玉调教过的配图提示词：风格词表现成可抄，出图自带编辑部审美，省掉自己试错的那几十轮迭代。",
    "tagline_en": "Baoyu-tuned image prompts with an editor's eye baked in — a ready style vocabulary that saves you dozens of trial-and-error rounds.",
    "why_zh": "省掉自己试提示词的几十轮迭代，那份风格词表本身就值得收藏。",
-   "why_en": "Skips your dozens of prompt iterations; the style vocabulary alone is worth keeping."
+   "why_en": "Skips your dozens of prompt iterations; the style vocabulary alone is worth keeping.",
+   "hide": true
   },
   "anthropics-skills-canvas-design": {
    "title_zh": "海报画布设计",
@@ -280,7 +283,8 @@
    "tagline_zh": "说清楚架构，它直接产出可编辑的 draw.io 源文件：流程图、系统图、网络拓扑都行，画完你还能拖着继续改。",
    "tagline_en": "Describe the architecture and get an editable .drawio source file back — flows, systems, network topologies; keep dragging and editing after.",
    "why_zh": "输出是真源文件而不是截图，画完还能自己拖着改——这是它和「AI 画图」最大的区别。",
-   "why_en": "Real source files, not screenshots — you keep editing after it draws. That's the difference."
+   "why_en": "Real source files, not screenshots — you keep editing after it draws. That's the difference.",
+   "hide": true
   },
   "leonxlnx-taste-skill-image-to-code": {
    "title_zh": "截图变代码",
@@ -295,7 +299,8 @@
    "tagline_en": "Frontend taste, itemized — tracking, whitespace, hierarchy and shadows as hard rules; \"looks expensive\" decomposed into followable steps.",
    "why_zh": "把「看起来贵」拆成可执行规则，照着改三处，页面气质就不一样。",
    "why_en": "Decomposes \"looks expensive\" into executable rules — change three things and feel the difference.",
-   "pick": false
+   "pick": false,
+   "hide": true
   },
   "worldwonderer-oh-story-claudecode-story-cover": {
    "title_zh": "网文封面图",
@@ -327,7 +332,7 @@
    "why_en": "Short-form craft hides in structure; dissecting ten beats writing a hundred blind — this is the scalpel."
   },
   "leonxlnx-taste-skill-stitch-design-taste": {
-   "hide": false,
+   "hide": true,
    "title_zh": "Stitch 品味注入",
    "category": "creative",
    "tagline_zh": "给 Google Stitch 生成的界面注入品味：同一套审美守则适配 Stitch 工作流，AI 设计稿不再千篇一律。",
@@ -487,7 +492,8 @@
    "tagline_zh": "用 Dieter Rams 的「好设计十原则」逐条审你的设计：打完分直接交接改造方案——新做、微调还是推倒重来。",
    "tagline_en": "Audits your design against Rams' ten principles, scores each one, then hands off a plan — new design, refinement, or full redesign.",
    "why_zh": "审美有了可执行的标尺：不是「感觉不好看」，而是十条原则逐项打分，输出直接接改稿流程。",
-   "why_en": "Taste with a rubric — ten principles scored one by one, output flows straight into a redesign plan."
+   "why_en": "Taste with a rubric — ten principles scored one by one, output flows straight into a redesign plan.",
+   "hide": true
   },
   "nexu-io-open-design": {
    "title_zh": "开源设计引擎",
@@ -586,7 +592,8 @@
    "tagline_zh": "817 个结构化安全技能，映射 MITRE ATT&CK、NIST 等 6 大防御框架。",
    "tagline_en": "817 structured security skills mapped to MITRE ATT&CK, NIST and 4 more frameworks.",
    "why_zh": "价值在「映射」二字：每个技能都挂到标准框架坐标上，安全团队做能力盘点和培训特别顺手。",
-   "why_en": "The mapping is the value — every skill pinned to framework coordinates; great for capability audits and training."
+   "why_en": "The mapping is the value — every skill pinned to framework coordinates; great for capability audits and training.",
+   "hide": true
   },
   "phuryn-pm-skills": {
    "title_zh": "产品经理武器库",
@@ -941,21 +948,24 @@
    "tagline_zh": "一次只问一个问题，把你「以为想要的」问成「真正想要的」，问到约 95% 确信才允许动手开工。",
    "tagline_en": "One question at a time until ~95% confidence — extracting what you actually want, not what you think you should want.",
    "why_zh": "需求错了后面全白干，这个「先逼问再动手」的纪律省下的是整个项目的返工。",
-   "why_en": "Wrong requirements waste everything downstream; interrogation-first saves the whole project's rework."
+   "why_en": "Wrong requirements waste everything downstream; interrogation-first saves the whole project's rework.",
+   "hide": true
   },
   "addyosmani-agent-skills-doubt-driven-development": {
    "title_zh": "怀疑驱动开发",
    "tagline_zh": "每个非平凡决策都要过一遍「新上下文对抗审查」：换一个干净脑子来挑刺攻击，站得住的方案才算数。",
    "tagline_en": "Every non-trivial decision faces a fresh-context adversarial review — a clean mind attacks it; only survivors stand.",
    "why_zh": "对抗自己确认偏误的聪明设计：正确性优先的场景里，这一步价值极高。",
-   "why_en": "A clever weapon against your own confirmation bias — invaluable when correctness beats speed."
+   "why_en": "A clever weapon against your own confirmation bias — invaluable when correctness beats speed.",
+   "hide": true
   },
   "addyosmani-agent-skills-code-review-and-quality": {
    "title_zh": "多轴代码评审",
    "tagline_zh": "合并任何改动前的多维评审：正确性、可读性、性能、安全逐轴过一遍，人写的、机器写的一律照审。",
    "tagline_en": "Multi-axis review before any merge — correctness, readability, performance and security, whether human- or agent-written.",
    "why_zh": "把大厂 code review 的检查维度固化下来，评审质量不再取决于当天谁有空。",
-   "why_en": "Big-co review dimensions, codified — quality stops depending on who's free that day."
+   "why_en": "Big-co review dimensions, codified — quality stops depending on who's free that day.",
+   "hide": true
   },
   "addyosmani-agent-skills-security-and-hardening": {
    "title_zh": "安全加固清单",
@@ -970,7 +980,8 @@
    "tagline_zh": "小红书风格知识卡片：多张联排可滑动浏览，HTML 直出 PNG，排版细节全按平台审美调过。",
    "tagline_en": "Xiaohongshu-style knowledge cards — swipeable multi-card sets, HTML rendered to PNG, typography tuned to platform taste.",
    "why_zh": "HTML 排版的精度远超画图工具，批量出卡还能保持风格完全一致。",
-   "why_en": "HTML precision beats drawing tools, and batch output stays perfectly on-style."
+   "why_en": "HTML precision beats drawing tools, and batch output stays perfectly on-style.",
+   "hide": true
   },
   "nexu-io-html-anything-deck-pitch": {
    "title_zh": "十页融资 Deck",
@@ -1042,7 +1053,8 @@
    "tagline_zh": "红队你的 PRD、路线图或战略：先钢人再攻击每条承重假设，按失败概率排序，赶在现实动手之前。",
    "tagline_en": "Red-teams your PRD or strategy — steelmans then attacks each load-bearing assumption, ranked by failure odds, before reality does.",
    "why_zh": "「先钢人再攻击」保证批评有质量，比开会互相客气有用得多。",
-   "why_en": "Steelman-then-attack guarantees quality criticism — far better than a polite meeting."
+   "why_en": "Steelman-then-attack guarantees quality criticism — far better than a polite meeting.",
+   "hide": true
   },
   "phuryn-pm-skills-opportunity-solution-tree": {
    "title_zh": "机会解法树",
@@ -1050,7 +1062,8 @@
    "tagline_zh": "用 Teresa Torres 的 OST 结构化产品发现：期望结果→机会→解法→实验，一棵树理清整个探索。",
    "tagline_en": "Structures discovery with Teresa Torres' Opportunity Solution Tree — outcome to opportunities to solutions to experiments.",
    "why_zh": "OST 是当代产品发现的事实标准，这件把画树的方法论直接内置了。",
-   "why_en": "The OST is modern discovery's de facto standard; the methodology comes built in."
+   "why_en": "The OST is modern discovery's de facto standard; the methodology comes built in.",
+   "hide": true
   },
   "coreyhaines31-marketingskills-cold-email": {
    "title_zh": "冷邮件写手",
@@ -1058,7 +1071,8 @@
    "tagline_zh": "写真能收到回复的 B2B 冷邮件和跟进序列：钩子、个性化、CTA 的配比全按实战回复率调过。",
    "tagline_en": "B2B cold emails and follow-up sequences that actually get replies — hooks, personalization and CTAs tuned on real response data.",
    "why_zh": "冷邮件是回复率的游戏，这套模板来自发过成千上万封的实操者。",
-   "why_en": "Cold email is a reply-rate game; these templates come from someone who's sent thousands."
+   "why_en": "Cold email is a reply-rate game; these templates come from someone who's sent thousands.",
+   "hide": true
   },
   "coreyhaines31-marketingskills-copywriting": {
    "title_zh": "营销文案手",
@@ -1066,7 +1080,8 @@
    "tagline_zh": "写或重写任何营销页文案：首页、落地页、定价页、功能页，痛点—收益—证据的骨架现成套用不跑偏。",
    "tagline_en": "Write or rewrite copy for any marketing page — home, landing, pricing, features — on the pain-benefit-proof skeleton.",
    "why_zh": "文案的骨架比辞藻重要，它先把结构立对，再谈句子漂不漂亮。",
-   "why_en": "Copy is structure first, sentences second; this gets the skeleton right before polish."
+   "why_en": "Copy is structure first, sentences second; this gets the skeleton right before polish.",
+   "hide": true
   },
   "coreyhaines31-marketingskills-launch": {
    "title_zh": "发布作战图",
@@ -1074,7 +1089,8 @@
    "tagline_zh": "产品发布的完整作战计划：Product Hunt、邮件、社媒、社区的节奏编排，倒计时清单一张表。",
    "tagline_en": "A full launch battle plan — Product Hunt, email, social and community sequenced on one countdown checklist.",
    "why_zh": "发布是编排问题不是灵感问题，这张作战图把该踩的点全排好了。",
-   "why_en": "Launches are choreography, not inspiration; every beat is already on the sheet."
+   "why_en": "Launches are choreography, not inspiration; every beat is already on the sheet.",
+   "hide": true
   },
   "coreyhaines31-marketingskills-pricing": {
    "title_zh": "定价参谋",
@@ -1106,7 +1122,8 @@
    "tagline_zh": "按 Hormozi 的价值方程设计报价：堆奖励、逆转风险、道德稀缺，把「贵」变成「不买亏了」。",
    "tagline_en": "Offers by Hormozi's Value Equation — bonus stacking, risk reversal, ethical scarcity; \"expensive\" becomes \"can't-miss\".",
    "why_zh": "这本书的方法论以「照做就涨转化」著称，做成 skill 后连表格都替你画好了。",
-   "why_en": "The book is famous for working as-written; as a skill it even draws the worksheets for you."
+   "why_en": "The book is famous for working as-written; as a skill it even draws the worksheets for you.",
+   "hide": true
   },
   "wondelai-skills-negotiation": {
    "title_zh": "谈判教练",
@@ -1122,7 +1139,8 @@
    "tagline_zh": "用乔布斯的标准审你的设计和产品：无情的简化、极致的聚焦、端到端的苛刻，说「不」说到只剩下本质。",
    "tagline_en": "Your design reviewed to Jobs' standards — ruthless simplification, focus, end-to-end excellence, \"no\" until only essence remains.",
    "why_zh": "半玩梗半真刀：被它砍完一轮，产品里那些「舍不得删」的东西基本都暴露了。",
-   "why_en": "Half homage, half scalpel — one pass exposes everything you kept out of sentiment."
+   "why_en": "Half homage, half scalpel — one pass exposes everything you kept out of sentiment.",
+   "hide": true
   },
   "wondelai-skills-refactoring-ui": {
    "title_zh": "UI 急诊室",
@@ -1130,7 +1148,8 @@
    "tagline_zh": "照《Refactoring UI》审并修你的界面：层级、间距、颜色、深度逐项体检，「说不上哪不对」有救了。",
    "tagline_en": "UI triage by the Refactoring UI playbook — hierarchy, spacing, color and depth examined; \"something feels off\" gets fixed.",
    "why_zh": "Tailwind 作者的书是前端审美第一入门，做成 skill 等于随叫随到的会诊。",
-   "why_en": "The Tailwind authors' book is the first stop for frontend taste; as a skill it's a consult on call."
+   "why_en": "The Tailwind authors' book is the first stop for frontend taste; as a skill it's a consult on call.",
+   "hide": true
   },
   "k-dense-ai-scientific-agent-skills-citation-management": {
    "title_zh": "引用管家",
@@ -1235,7 +1254,8 @@
    "tagline_zh": "先做一轮品牌身份访谈（配色、字体、形状语言），再生成并反复迭代一整张真正有品牌感的落地页。",
    "tagline_en": "Runs a brand-identity interview — colors, type, shape language — then generates and iterates a landing page that feels like you.",
    "why_zh": "先访谈再生成的顺序很对：页面不是模板换字，而是从品牌人格长出来的。",
-   "why_en": "Interview-first is the right order; the page grows from brand identity instead of template swapping."
+   "why_en": "Interview-first is the right order; the page grows from brand identity instead of template swapping.",
+   "hide": true
   },
   "samuraigpt-generative-media-skills-muapi-action-figure-generator": {
    "title_zh": "手办制造机",
@@ -1291,7 +1311,8 @@
    "tagline_zh": "生成小红书风格封面图：鲜亮的生活感画面配平台审美的字效排版，笔记的点开率就赢在这张图上。",
    "tagline_en": "Xiaohongshu-style covers — vibrant lifestyle imagery with platform-native typography; the click happens on this image.",
    "why_zh": "小红书是封面决定命运的平台，这件专攻那 0.5 秒的第一眼。",
-   "why_en": "On XHS the cover decides your fate; this attacks exactly that half-second."
+   "why_en": "On XHS the cover decides your fate; this attacks exactly that half-second.",
+   "hide": true
   },
   "mattpocock-skills": {
    "title_zh": "Matt Pocock 工具箱",
@@ -1329,7 +1350,8 @@
    "tagline_zh": "社媒、广告、网站 hero、印刷物的 banner 设计：多套美术方向备选，AI 生成视觉素材直接可用。",
    "tagline_en": "Banners for social, ads, website heroes and print — multiple art directions with AI-generated visuals ready to ship.",
    "why_zh": "banner 是设计需求里频次最高的杂活，它把「多方向提案」这步也自动化了。",
-   "why_en": "Banners are design's highest-frequency chore; even the multi-direction pitch is automated."
+   "why_en": "Banners are design's highest-frequency chore; even the multi-direction pitch is automated.",
+   "hide": true
   },
   "msitarzewski-agency-agents": {
    "title_zh": "一人广告公司",
@@ -1427,7 +1449,8 @@
    "tagline_zh": "agent 原生的设计系统基建：浏览、安装、预览 tinte.dev 上的主题和设计系统，换肤像装包一样。",
    "tagline_en": "Agent-native design-system infrastructure — browse, install and preview themes from tinte.dev; reskinning like a package manager.",
    "why_zh": "把「换主题」做成了包管理体验，设计系统的分发从此有了正经渠道。",
-   "why_en": "Theming as package management — design systems finally get a proper distribution channel."
+   "why_en": "Theming as package management — design systems finally get a proper distribution channel.",
+   "hide": true
   },
   "hao0321-claude-skill-social-post-social-post": {
    "title_zh": "社媒代笔人",
@@ -1442,7 +1465,8 @@
    "tagline_zh": "拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。",
    "tagline_en": "Photograph your handwriting, get a real installable font (TTF/WOFF) — free, open source, fully local, nothing uploaded.",
    "why_zh": "「拥有自己笔迹的字体」是很多人想过没做过的浪漫，本地处理这点尤其体面。",
-   "why_en": "A font of your own hand is a romance most people never act on; the local-only processing is the classy touch."
+   "why_en": "A font of your own hand is a romance most people never act on; the local-only processing is the classy touch.",
+   "category": "fun"
   },
   "feichanggege-ecommerce-visual-copywriting-skill": {
    "title_zh": "电商主图军师",
@@ -1480,14 +1504,16 @@
    "tagline_zh": "人机协作的 Suno 音乐生产流：风格模板、歌词工作流、混音清单，把「玩 Suno」升级成「做音乐」。",
    "tagline_en": "A human-plus-AI Suno production line — style templates, lyric workflows and mix checklists; from toying to producing.",
    "why_zh": "Suno 玩家众多但成品率低，这套流程补的正是「从段子到作品」的那段路。",
-   "why_en": "Plenty of Suno players, few finished tracks — this pack covers exactly that gap."
+   "why_en": "Plenty of Suno players, few finished tracks — this pack covers exactly that gap.",
+   "category": "fun"
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
    "tagline_zh": "在 Superdesign 画布上设计或重设计前端：页面、流程、全新产品都能来，出的是能交付的品味前端。",
    "tagline_en": "Design or redesign frontend on the Superdesign canvas — pages, flows or brand-new products; shippable, tasteful output.",
    "why_zh": "canvas 交互 + anti-slop 立场的组合拳，是「AI 设计工具」里完成度很高的一派。",
-   "why_en": "Canvas interaction plus an anti-slop stance — one of the more finished schools of AI design tooling."
+   "why_en": "Canvas interaction plus an anti-slop stance — one of the more finished schools of AI design tooling.",
+   "hide": true
   },
   "agent-sh-agnix-agnix": {
    "title_zh": "配置检察官",
@@ -1658,7 +1684,8 @@
    "tagline_zh": "用 SUCCESs 框架打磨信息：简单、意外、具体、可信、情感、故事——让人听一遍就记住还愿意转述。",
    "tagline_en": "Craft messages with the SUCCESs framework — simple, unexpected, concrete, credible, emotional, story — heard once, retold often.",
    "why_zh": "《Made to Stick》是传播学的常青经典，六要素清单拿来逐条对稿非常顺手。",
-   "why_en": "An evergreen communication classic; the six-trait checklist is perfect for auditing any draft."
+   "why_en": "An evergreen communication classic; the six-trait checklist is perfect for auditing any draft.",
+   "hide": true
   },
   "alibaba-open-code-review-open-code-review": {
    "title_zh": "阿里代码评审",
@@ -1881,7 +1908,8 @@
    "tagline_zh": "用评分量规批改 Canvas LMS 作业：单份、批量、代码执行三种策略，先跑 dry-run 再落库，安全优先不误伤成绩。",
    "tagline_en": "Rubric-based grading for Canvas LMS — single, batch and code-execution strategies, with safety-first dry runs before anything is written.",
    "why_zh": "「先 dry-run 再落库」这个安全设计对碰学生成绩的工具至关重要，敢放心批量用。",
-   "why_en": "The dry-run-before-write safety design is exactly what a tool touching real grades needs — batch with confidence."
+   "why_en": "The dry-run-before-write safety design is exactly what a tool touching real grades needs — batch with confidence.",
+   "hide": true
   },
   "axoviq-ai-synthadoc": {
    "title_zh": "文档编译成 Wiki",
@@ -2076,7 +2104,8 @@
    "tagline_zh": "把编码任务后台派给另一个 agent CLI（Antigravity / Codex / Claude），它实现、你审 diff、你自己落 commit——一个实现者一张卡。",
    "tagline_en": "Delegate a coding task to a background agent CLI (Antigravity / Codex / Claude) — it implements, you review the diff, you land the commit yourself; one card per implementer.",
    "why_zh": "「派活但保留落地权」的分工很清醒：让便宜的 agent 干体力活，关键的审查和提交始终在你手里，多 agent 协作里少见的克制设计。",
-   "why_en": "Delegate-but-keep-control is a clear-headed split — cheap agents do the grunt work while review and commit stay in your hands; a rare restraint in multi-agent setups."
+   "why_en": "Delegate-but-keep-control is a clear-headed split — cheap agents do the grunt work while review and commit stay in your hands; a rare restraint in multi-agent setups.",
+   "hide": true
   },
   "masriyan-claude-code-cybersecurity-skill": {
    "hide": true
@@ -2404,7 +2433,8 @@
    "tagline_zh": "拿着设计简报和代码库逐项评审你的界面：视觉层级、间距、一致性、可用性挨个打分，评审意见对得上原始需求。",
    "tagline_en": "Reviews your interface against the brief and the codebase — visual hierarchy, spacing, consistency and usability scored, critique tied back to intent.",
    "why_zh": "关键在「对着简报审」：不是泛泛说好看不好看，而是回答「这版有没有实现当初要解决的问题」。",
-   "why_en": "Reviewing against the brief is the point — not vague taste talk, but whether this build solves what it set out to."
+   "why_en": "Reviewing against the brief is the point — not vague taste talk, but whether this build solves what it set out to.",
+   "hide": true
   },
   "boraoztunc-skills": {
    "title_zh": "设计军械库",
@@ -2468,6 +2498,303 @@
   },
   "tradermonty-claude-trading-skills": {
    "hide": true
+  },
+  "kepano-obsidian-skills-obsidian-cli": {
+   "title_zh": "Obsidian 命令行",
+   "category": "work",
+   "tagline_zh": "用命令行直接操作 Obsidian 库：读写笔记、搜索、管理任务和属性——Obsidian 官方作者 kepano 亲手做的，权威一手。",
+   "tagline_en": "Drive your Obsidian vault from the CLI — read, create, search notes and manage tasks and properties. Built by kepano, Obsidian's own creator.",
+   "why_zh": "作者是 Obsidian 的 CEO，比任何第三方封装都懂这个库的数据模型；agent 从此能真正读写你的第二大脑。",
+   "why_en": "Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly."
+  },
+  "greensock-gsap-skills": {
+   "title_zh": "GSAP 官方动效",
+   "category": "creative",
+   "kind": "collection",
+   "tagline_zh": "GSAP 官方出品的 AI 技能包：教 agent 正确使用这套业界标准动画库——时间轴、缓动、ScrollTrigger 的正确姿势全在里面。",
+   "tagline_en": "Official AI skills from GreenSock, teaching agents to use the industry-standard animation library correctly — timelines, easing and ScrollTrigger done right.",
+   "why_zh": "动画库最怕 AI 凭记忆瞎写 API，官方亲自出的技能包等于把正确答案直接给了 agent，出的动效能跑还符合规范。",
+   "why_en": "Animation libraries suffer most from AI writing APIs from memory; an official skill pack hands the agent the right answers."
+  },
+  "huggingface-skills": {
+   "title_zh": "抱抱脸生态",
+   "category": "dev",
+   "kind": "collection",
+   "tagline_zh": "Hugging Face 官方技能包：让 agent 直接用上模型库、数据集、Spaces 和推理接口，开源 AI 的整个生态一次接通。",
+   "tagline_en": "Official Hugging Face skills that plug your agent into models, datasets, Spaces and inference — the whole open-source AI ecosystem in one connection.",
+   "why_zh": "开源模型生态的入口就是 HF，官方亲自封装比第三方包装靠谱；找模型、跑推理、拉数据集从此是一句话的事。",
+   "why_en": "HF is the front door to open models, and first-party packaging beats third-party wrappers — finding models and running inference in one sentence."
+  },
+  "jnmetacode-superpowers-zh": {
+   "title_zh": "超能力中文版",
+   "category": "meta",
+   "kind": "collection",
+   "tagline_zh": "把 11 万星的 superpowers 全套汉化，另加 6 个中国团队原创技能：中文 commit 规范、中文 code review 话术、国内团队反模式应对。",
+   "tagline_en": "A full Chinese localization of the 116k-star superpowers, plus six China-originated skills — Chinese commit conventions, review phrasing and local team anti-patterns.",
+   "why_zh": "原版的方法论很好但全英文，中文团队用起来隔一层；这版不只是翻译，还补了国内协作场景的原创件。",
+   "why_en": "The original methodology is strong but English-only; this isn't just translation — it adds originals for how Chinese teams actually collaborate."
+  },
+  "xiaomacoltai-math-modeling-skill": {
+   "title_zh": "数学建模竞赛",
+   "category": "life",
+   "tagline_zh": "数学建模竞赛全流程助教：选题建模、代码求解、结果可视化到写出论文，三阶段分工还带独立质检 subagent 把关。",
+   "tagline_en": "A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.",
+   "why_zh": "建模竞赛最难的是三天内把建模、编程、写作三件事同时做完，它按角色分工还自带质检，是真按竞赛节奏设计的。",
+   "why_en": "Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm."
+  },
+  "khendzel-skills-janitor": {
+   "title_zh": "技能断舍离",
+   "category": "meta",
+   "tagline_zh": "给你装的技能库做体检：左滑扔掉浪费上下文的、扫描提示注入风险、给出诚实的 token 占用账单——自称技能界的 Tinder。",
+   "tagline_en": "A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.",
+   "why_zh": "装得多不等于装得好：它同时管三件事——省上下文、防注入、看清成本，是这个生态少见的「减法」工具。",
+   "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem."
+  },
+  "312362115-claude-diagram": {
+   "title_zh": "29 种图表",
+   "category": "docs",
+   "tagline_zh": "按需求自动选对图表类型再出图：流程图、泳道图、时序图、ER 图、甘特图、Kanban、Git Graph 等 29 种，直出符合规范的 PNG。",
+   "tagline_en": "Picks the right chart type for your need and renders it — 29 kinds including swimlanes, sequence, ER, Gantt, Kanban and Git graphs, straight to spec-compliant PNG.",
+   "why_zh": "多数人卡在「该用哪种图」而不是「怎么画」，它先替你选型再出图，这个顺序比给一堆模板实用。",
+   "why_en": "Most people stall on which chart, not how to draw it; choosing the type before rendering is more useful than handing over templates."
+  },
+  "312362115-claude-code-walkthrough": {
+   "title_zh": "代码导读",
+   "category": "dev",
+   "tagline_zh": "接手陌生项目时的导游：从全局架构到核心流程再到关键设计决策分层讲解，回答「这段代码为什么这么写」而不是列目录。",
+   "tagline_en": "A guide for unfamiliar codebases — architecture, then core flows, then key design decisions, answering why the code is written this way instead of listing files.",
+   "why_zh": "「建立心智模型」这个目标定得很对：读代码的难点从来不是看不懂语法，而是不知道各部分为什么这样连。",
+   "why_en": "Building a mental model is the right goal — reading code is hard not because of syntax but because you can't see why parts connect."
+  },
+  "anbeime-skill-antinet-four-color-cards": {
+   "title_zh": "四色分析卡",
+   "category": "docs",
+   "tagline_zh": "把一份文档拆成四种颜色的卡片：事实蓝卡、解释绿卡、风险黄卡、行动红卡——读完一份材料后该记什么、该防什么、该做什么一目了然。",
+   "tagline_en": "Breaks a document into four colored cards — blue facts, green interpretation, yellow risks, red actions — so what to note, guard against and do is immediately clear.",
+   "why_zh": "这个颜色分层的输出格式很聪明：把「读完了」变成「能行动」，尤其适合看合同、报告、竞品资料。",
+   "why_en": "The color-layered output is clever — it converts \"I read it\" into \"I can act\", especially for contracts, reports and competitor material."
+  },
+  "wanshuiyin-anti-autoresearch-anti-autoresearch": {
+   "title_zh": "论文打假",
+   "category": "docs",
+   "tagline_zh": "对一篇论文做实质性诚信取证：专查 AI 生成研究（AI-Scientist 那类）的漏洞——数据对不上、引用编造、结论超出证据。",
+   "tagline_en": "Runs a substantive-integrity forensic sweep on a paper, aimed at AI-generated research — mismatched data, fabricated citations, conclusions outstripping evidence.",
+   "why_zh": "AI 写论文越来越多，专门反向做诚信取证的工具却极少；立意站在学术诚信这边，做法也具体。",
+   "why_en": "AI-written papers keep multiplying while integrity forensics stays rare; this stands on the right side and does it concretely."
+  },
+  "prisma-prisma": {
+   "hide": true
+  },
+  "nanocoai-nanoclaw": {
+   "hide": true
+  },
+  "topoteretes-cognee-diff-risk-explainer": {
+   "hide": true
+  },
+  "topoteretes-cognee-pr-comment-evaluator": {
+   "hide": true
+  },
+  "topoteretes-cognee-skill-feedback-writer": {
+   "hide": true
+  },
+  "thinkinaixyz-deepchat": {
+   "hide": true
+  },
+  "thinkinaixyz-deepchat-deepchat-cli": {
+   "hide": true
+  },
+  "aiko-it-systems-discatsharp-maintain-discatsharp": {
+   "hide": true
+  },
+  "aiko-it-systems-discatsharp-use-discatsharp": {
+   "hide": true
+  },
+  "aelfproject-aelf-skills": {
+   "hide": true
+  },
+  "ratel-ai-ratel-changelog": {
+   "hide": true
+  },
+  "revylai-revyl-cli-revyl-cli": {
+   "hide": true
+  },
+  "hashgraph-online-hol-guard-hol-guard": {
+   "hide": true
+  },
+  "agentlas-ai-agentlas-os": {
+   "hide": true
+  },
+  "tommy0103-obelisk": {
+   "hide": true
+  },
+  "0xsline-openchatcut-openchatcut": {
+   "hide": true
+  },
+  "pinvou-pinvou-agent": {
+   "hide": true
+  },
+  "pinvou-pinvou-agent-visual-design": {
+   "hide": true
+  },
+  "pinvou-pinvou-agent-visualizer": {
+   "hide": true
+  },
+  "pinvou-pinvou-agent-lark-doc": {
+   "hide": true
+  },
+  "inkeep-open-knowledge-open-knowledge": {
+   "hide": true
+  },
+  "y49-tlive-tlive": {
+   "hide": true
+  },
+  "yuting0624-antigravity-for-claude-code-antigravity": {
+   "hide": true
+  },
+  "skyf0xx-hedgehog": {
+   "hide": true
+  },
+  "turki-sh-foreman-foreman": {
+   "hide": true
+  },
+  "iapro-community-orquestrador-maestro-orquestrador-ma": {
+   "hide": true
+  },
+  "ai4s-research-open-science": {
+   "hide": true
+  },
+  "ai4s-research-open-science-verify": {
+   "hide": true
+  },
+  "ai4s-research-open-science-publication-figures": {
+   "hide": true
+  },
+  "ai4s-research-open-science-my-skill": {
+   "hide": true
+  },
+  "pattern-ai-labs-agentcall": {
+   "hide": true
+  },
+  "mariusyvard-nulltohero-inspect": {
+   "hide": true
+  },
+  "mariusyvard-nulltohero-audit": {
+   "hide": true
+  },
+  "mariusyvard-nulltohero-siteasy": {
+   "hide": true
+  },
+  "getaero-io-gtm-eng-skills": {
+   "hide": true
+  },
+  "getaero-io-gtm-eng-skills-build-tam": {
+   "hide": true
+  },
+  "getaero-io-gtm-eng-skills-deepline-monitors": {
+   "hide": true
+  },
+  "getaero-io-gtm-eng-skills-deepline-quickstart": {
+   "hide": true
+  },
+  "cagatayuncu-marketing-machine-marketing-machine": {
+   "hide": true
+  },
+  "microsoft-power-platform-skills": {
+   "hide": true
+  },
+  "oliver-kriska-claude-elixir-phoenix": {
+   "hide": true
+  },
+  "jeffallan-claude-skills": {
+   "hide": true
+  },
+  "mohitagw15856-pm-claude-skills": {
+   "hide": true
+  },
+  "naveedharri-benai-skills": {
+   "hide": true
+  },
+  "mrgoonie-claudekit-skills": {
+   "hide": true
+  },
+  "aaaaqwq-agi-super-team": {
+   "hide": true
+  },
+  "lyndonkl-claude": {
+   "hide": true
+  },
+  "312362115-claude": {
+   "hide": true
+  },
+  "scdenney-open-science-skills": {
+   "hide": true
+  },
+  "jnmetacode-superpowers-zh-brainstorming": {
+   "hide": true
+  },
+  "jnmetacode-superpowers-zh-chinese-commit-conventions": {
+   "hide": true
+  },
+  "jnmetacode-superpowers-zh-chinese-code-review": {
+   "hide": true
+  },
+  "thinkinaixyz-deepchat-algorithmic-art": {
+   "hide": true
+  },
+  "thinkinaixyz-deepchat-frontend-design": {
+   "hide": true
+  },
+  "ctxrs-ctx-ctx-agent-history-search": {
+   "hide": true
+  },
+  "crabbuild-compass-compass": {
+   "hide": true
+  },
+  "312362115-claude-writing": {
+   "hide": true
+  },
+  "khendzel-skills-janitor-janitor-discover": {
+   "hide": true
+  },
+  "khendzel-skills-janitor-janitor-report": {
+   "hide": true
+  },
+  "khendzel-skills-janitor-janitor-fix": {
+   "hide": true
+  },
+  "anbeime-skill-antinet-doc-parse": {
+   "hide": true
+  },
+  "anbeime-skill-antinet-provenance": {
+   "hide": true
+  },
+  "seanj1ang-design-judge-skills": {
+   "hide": true
+  },
+  "marmbiz-humanizer-de": {
+   "hide": true
+  },
+  "m13v-s4l": {
+   "hide": true
+  },
+  "iapro-community-orquestrador-maestro-orquestrador-maestro": {
+   "hide": true
+  },
+  "komal-skynet-claude-skill-homeassistant-home-assistant-manager": {
+   "title_zh": "智能家居管家",
+   "category": "life",
+   "tagline_zh": "用对话管理整个 Home Assistant：安全地改自动化 YAML、部署脚本蓝图、排查设备失联——家里那套智能设备终于不用手写配置了。",
+   "tagline_en": "Manage all of Home Assistant by conversation — safely edit automation YAML, deploy scripts and blueprints, debug offline devices. No more hand-written config.",
+   "why_zh": "HA 的 YAML 配置是智能家居爱好者共同的痛，改错一行整屋自动化就哑掉；它带安全校验再部署，敢让 AI 碰真设备。",
+   "why_en": "HA's YAML is the smart-home hobbyist's shared pain — one wrong line silences the house; this validates before deploying, so letting AI touch real devices is safe."
+  },
+  "borski-travel-hacking-toolkit": {
+   "title_zh": "里程玩家工具箱",
+   "category": "life",
+   "tagline_zh": "用现金、积分、里程和兑换机票四路比价找出最省的飞法：搜奖励座位、算兑换比、盯放票——把「里程玩家」的手艺变成一句话。",
+   "tagline_en": "Finds the cheapest way to fly across cash, points, miles and award tickets — searching award seats, computing redemption value and watching availability.",
+   "why_zh": "里程兑换的门道深、信息碎，行家和小白的机票差价能到几千块；它把那套需要泡论坛才学会的手艺自动化了。",
+   "why_en": "Award travel is deep and fragmented — experts and novices can pay thousands apart for the same seat; this automates craft you'd otherwise learn on forums."
   }
  }
 }
