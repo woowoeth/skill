@@ -1,0 +1,30 @@
+{
+ "id": "revylai-revyl-cli-revyl-cli",
+ "kind": "skill",
+ "name": "revyl-cli",
+ "title_zh": "命令管家",
+ "tagline_zh": "当你想让AI直接跑命令、写测试、排查运行问题，却不想折腾MCP配置时，Revyl CLI一句指令就上手。",
+ "tagline_en": "Skip MCP setup—just say the command, and Revyl CLI handles shell env, test writing, and run triage in one go.",
+ "desc_en": "Base CLI skill for Revyl command-driven workflows. Use when users want shell-command setup, execution, test authoring, or run triage without MCP tool calls.",
+ "why_zh": "同类要配MCP或写插件，它直接吃自然语言指令，自动搭shell环境，测试和排错一条龙，省掉中间层。",
+ "why_en": "No MCP glue—parses plain commands, auto-provisions shell env, and bundles test authoring with run triage.",
+ "repo": "RevylAI/revyl-cli",
+ "owner": "RevylAI",
+ "path": "skills/revyl-cli",
+ "url": "https://github.com/RevylAI/revyl-cli/tree/HEAD/skills/revyl-cli",
+ "homepage": "",
+ "stars": 502,
+ "pushed_at": "2026-08-11T03:24:35Z",
+ "skill_count": 19,
+ "category": "dev",
+ "fun_score": 3.93,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/RevylAI/revyl-cli.git",
+  "copy": "cp -r revyl-cli/skills/revyl-cli ~/.claude/skills/revyl-cli",
+  "dir": "~/.claude/skills/revyl-cli"
+ }
+}
