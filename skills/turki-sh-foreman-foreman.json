@@ -1,0 +1,30 @@
+{
+ "id": "turki-sh-foreman-foreman",
+ "kind": "skill",
+ "name": "foreman",
+ "title_zh": "包工头",
+ "tagline_zh": "你只想随便做个网站？它偏要追问到底，逼你定风格、锁范围，再写一份能直接开工的施工图，让AI照着盖，最后验收上线。",
+ "tagline_en": "Skipping design decisions? It interviews you, locks scope & style, writes a build brief, then hands off to a.",
+ "desc_en": "Run a website build as the brain agent. Interview the user, force the scope and design decisions they would otherwise skip, lock a visual system, write one high-quality build brief, hand it to a coding agent (Codex, Claude Code, or any harness), then verify and ship it live. Use this for any web build or rebuild, including a portfolio, personal site, landing page, docs site, launch page, or a full",
+ "why_zh": "别家只写代码，它先逼你拍板。把模糊想法变成可执行蓝图，省下返工时间，这是它最狠的差异。",
+ "why_en": "Unlike tools that just code, it forces scope & design upfront, turning vague ideas into a build-ready brief—saving you from.",
+ "repo": "Turki-Sh/Foreman",
+ "owner": "Turki-Sh",
+ "path": "plugins/foreman/skills/foreman",
+ "url": "https://github.com/Turki-Sh/Foreman/tree/HEAD/plugins/foreman/skills/foreman",
+ "homepage": "http://foreman.turkialshuaibi.com",
+ "stars": 4,
+ "pushed_at": "2026-08-11T07:31:52Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 6.04,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/Turki-Sh/Foreman.git",
+  "copy": "cp -r Foreman/plugins/foreman/skills/foreman ~/.claude/skills/foreman",
+  "dir": "~/.claude/skills/foreman"
+ }
+}

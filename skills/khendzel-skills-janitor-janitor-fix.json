@@ -1,0 +1,30 @@
+{
+ "id": "khendzel-skills-janitor-janitor-fix",
+ "kind": "skill",
+ "name": "janitor-fix",
+ "title_zh": "技能清道夫",
+ "tagline_zh": "技能库乱成一团？斜杠命令一键体检，先安全预览再修复，还能顺手清掉坏链接、空文件夹和孤儿技能，不留后患。",
+ "tagline_en": "Slash command to audit & fix skills safely—preview first, then repair, prune broken links, empty dirs, and orphans.",
+ "desc_en": "Automatically fix skill problems (safe preview first). Also use with --prune to find and remove broken symlinks, empty directories, and orphaned skills. Trigger with '/janitor-fix'.",
+ "why_zh": "同类工具只报错，它先给安全预览再动手，还能精准清理三类垃圾，修复不误伤。",
+ "why_en": "Unlike others, it previews before fixing and prunes broken links, empty dirs, and orphans without collateral damage.",
+ "repo": "khendzel/skills-janitor",
+ "owner": "khendzel",
+ "path": "skills/janitor-fix",
+ "url": "https://github.com/khendzel/skills-janitor/tree/HEAD/skills/janitor-fix",
+ "homepage": "",
+ "stars": 114,
+ "pushed_at": "2026-08-11T07:34:31Z",
+ "skill_count": 1,
+ "category": "meta",
+ "fun_score": 3.35,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/khendzel/skills-janitor.git",
+  "copy": "cp -r skills-janitor/skills/janitor-fix ~/.claude/skills/janitor-fix",
+  "dir": "~/.claude/skills/janitor-fix"
+ }
+}

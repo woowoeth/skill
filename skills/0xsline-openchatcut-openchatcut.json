@@ -1,0 +1,30 @@
+{
+ "id": "0xsline-openchatcut-openchatcut",
+ "kind": "skill",
+ "name": "openchatcut",
+ "title_zh": "剪片管家",
+ "tagline_zh": "让AI直接上手你的剪辑工程，改字幕、调时间线、导出成片。不用再手动翻找素材，说句话就搞定。",
+ "tagline_en": "Let AI edit your local video project directly—timeline, captions, export. No manual digging, just ask.",
+ "desc_en": "Connect an MCP-capable coding agent to OpenChatCut and edit local video projects. Use when the user asks to install, connect, or set up OpenChatCut; inspect or edit an OpenChatCut project; work with its timeline, transcript, captions, media, generation, motion graphics, audio, color, or export tools; or recover from an OpenChatCut MCP error.",
+ "why_zh": "同类工具只给API，它把MCP接进OpenChatCut，让AI能读能改工程文件，真正动手剪。",
+ "why_en": "Others just offer APIs; this wires MCP into OpenChatCut, letting AI read and modify real project files.",
+ "repo": "0xsline/OpenChatCut",
+ "owner": "0xsline",
+ "path": "skills/openchatcut",
+ "url": "https://github.com/0xsline/OpenChatCut/tree/HEAD/skills/openchatcut",
+ "homepage": "https://openchatcut.com",
+ "stars": 950,
+ "pushed_at": "2026-08-11T07:35:31Z",
+ "skill_count": 27,
+ "category": "dev",
+ "fun_score": 7.18,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/0xsline/OpenChatCut.git",
+  "copy": "cp -r OpenChatCut/skills/openchatcut ~/.claude/skills/openchatcut",
+  "dir": "~/.claude/skills/openchatcut"
+ }
+}

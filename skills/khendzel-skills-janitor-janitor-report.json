@@ -1,0 +1,30 @@
+{
+ "id": "khendzel-skills-janitor-janitor-report",
+ "kind": "skill",
+ "name": "janitor-report",
+ "title_zh": "技能体检",
+ "tagline_zh": "你的技能库乱成一团？一条命令扫出全部错误、重复和坏技能。连隐藏的僵尸技能都揪出来，还附修复建议。",
+ "tagline_en": "One command to scan all your skills for errors, duplicates, and breakage. Even finds zombie skills, with fix tips.",
+ "desc_en": "Full health check of all your skills in one report. Use when the user wants to check for errors, find duplicates, detect broken skills, or get a complete overview of skill health. Pass --brief for inventory only. Trigger with '/janitor-report'.",
+ "why_zh": "同类只查表面，它深挖依赖和冲突，并给出具体修复步骤，而非笼统警告。",
+ "why_en": "Unlike shallow scanners, it digs into dependencies and conflicts, offering concrete fixes, not vague alerts.",
+ "repo": "khendzel/skills-janitor",
+ "owner": "khendzel",
+ "path": "skills/janitor-report",
+ "url": "https://github.com/khendzel/skills-janitor/tree/HEAD/skills/janitor-report",
+ "homepage": "",
+ "stars": 114,
+ "pushed_at": "2026-08-11T07:34:31Z",
+ "skill_count": 1,
+ "category": "life",
+ "fun_score": 3.35,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/khendzel/skills-janitor.git",
+  "copy": "cp -r skills-janitor/skills/janitor-report ~/.claude/skills/janitor-report",
+  "dir": "~/.claude/skills/janitor-report"
+ }
+}
