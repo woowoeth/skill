@@ -1,0 +1,30 @@
+{
+ "id": "mariusyvard-nulltohero-inspect",
+ "kind": "skill",
+ "name": "inspect",
+ "title_zh": "设计急诊",
+ "tagline_zh": "截图前先扫雷：焦点环缺失、下拉被裁、z-index 乱、动效残废——真 Chromium 多视口截图。",
+ "tagline_en": "Scan for focus rings, clipped dropdowns, z-index crimes—then real Chromium screenshots on mobile/desktop to catch.",
+ "desc_en": "Use when the user wants to scan for design anti-patterns, take a browser screenshot, or do a design engineering code review. Covers: missing focus rings, clipped dropdowns, bad z-index, placeholder-as-label, missing reduced-motion (detect); real Chromium screenshots, mobile/desktop viewports, visual bug fixing (preview); motion crimes, accessibility violations, forbidden CSS patterns, token misuse",
+ "why_zh": "同类只会静态检查，它真开浏览器截图，把动效和遮挡问题直接拍成证据，修 bug 不用靠猜。",
+ "why_en": "Others just lint; this one drives real Chromium, screenshots both viewports, and turns motion/overlay bugs into visual proof.",
+ "repo": "MariusYvard/NullToHero",
+ "owner": "MariusYvard",
+ "path": "skills/inspect",
+ "url": "https://github.com/MariusYvard/NullToHero/tree/HEAD/skills/inspect",
+ "homepage": "https://nulltohero.netlify.app/",
+ "stars": 41,
+ "pushed_at": "2026-08-11T14:32:54Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.95,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/MariusYvard/NullToHero.git",
+  "copy": "cp -r NullToHero/skills/inspect ~/.claude/skills/inspect",
+  "dir": "~/.claude/skills/inspect"
+ }
+}

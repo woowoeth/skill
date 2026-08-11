@@ -1,0 +1,30 @@
+{
+ "id": "tommy0103-obelisk",
+ "kind": "skill",
+ "name": "obelisk-installer",
+ "title_zh": "方尖碑装",
+ "tagline_zh": "电脑里没装 obelisk？一条命令帮你装好 CLI 和技能，顺带修复坏掉的安装。不用翻文档，不用猜路径。",
+ "tagline_en": "Missing obelisk? One command installs CLI + skill, even repairs broken setups. No docs, no path guessing, ready.",
+ "desc_en": "Install the official Obelisk CLI and then install the Obelisk agent skill. Use only for initial setup or repair when the `obelisk` command is missing.",
+ "why_zh": "同类安装器只装文件，它连技能一起装好，还能检测并修复缺失命令，省掉手动排查的麻烦。",
+ "why_en": "Unlike plain installers, it bundles the skill and auto-repairs missing commands, saving manual troubleshooting.",
+ "repo": "tommy0103/obelisk",
+ "owner": "tommy0103",
+ "path": "",
+ "url": "https://github.com/tommy0103/obelisk",
+ "homepage": "https://obelisk.antinomie.org",
+ "stars": 313,
+ "pushed_at": "2026-08-11T14:33:26Z",
+ "skill_count": 2,
+ "category": "meta",
+ "fun_score": 3.75,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/tommy0103/obelisk.git",
+  "copy": "mv obelisk ~/.claude/skills/obelisk",
+  "dir": "~/.claude/skills/obelisk"
+ }
+}

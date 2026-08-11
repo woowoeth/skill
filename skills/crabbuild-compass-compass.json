@@ -1,0 +1,30 @@
+{
+ "id": "crabbuild-compass-compass",
+ "kind": "skill",
+ "name": "compass",
+ "title_zh": "代码罗盘",
+ "tagline_zh": "代码库像迷宫？用图导航，依赖、调用、影响一目了然。还能查PR风险、历史改动，甚至用CompassQL问问题——别的。",
+ "tagline_en": "Lost in code? Navigate with graphs—deps, calls, impact. Review PR risks, diffs, ask CompassQL. No other tool does.",
+ "desc_en": "Use for graph-first codebase navigation and repository analysis: architecture maps, dependency or call-graph tracing, symbol and repository search, pull-request risk review, change-impact review, historical diffs, CompassQL, graph refreshes, exports, MCP serving, or project artifacts. Also use when the user invokes /compass or asks about Compass.",
+ "why_zh": "它把代码库变成活地图，用图查询语言直接问架构，而非靠静态索引或猜。",
+ "why_en": "Turns your codebase into a live graph, queryable via CompassQL—not just static index, but real architectural answers.",
+ "repo": "crabbuild/compass",
+ "owner": "crabbuild",
+ "path": "crates/compass-cli/assets/compass-skill",
+ "url": "https://github.com/crabbuild/compass/tree/HEAD/crates/compass-cli/assets/compass-skill",
+ "homepage": "https://compass.crab.build",
+ "stars": 121,
+ "pushed_at": "2026-08-11T14:16:07Z",
+ "skill_count": 2,
+ "category": "dev",
+ "fun_score": 3.37,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-11",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/crabbuild/compass.git",
+  "copy": "cp -r compass/crates/compass-cli/assets/compass-skill ~/.claude/skills/compass-skill",
+  "dir": "~/.claude/skills/compass-skill"
+ }
+}
