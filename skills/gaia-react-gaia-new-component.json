@@ -1,0 +1,30 @@
+{
+ "id": "gaia-react-gaia-new-component",
+ "kind": "skill",
+ "name": "new-component",
+ "title_zh": "组件脚手架",
+ "tagline_zh": "说一句“建个按钮”，它立刻生成组件、测试和Storybook故事。不用记目录结构，自动匹配你项目的PascalCa。",
+ "tagline_en": "Say \"make a button\" and get component, test & Storybook files instantly, matching your project's PascalCase.",
+ "desc_en": "Scaffold a new React component with optional Storybook story and Vitest test files. Use this skill whenever the user asks to \"create a component\", \"make a button\", \"scaffold a card\", \"add a new component\", or asks for a new file under `app/components/` following the project's component pattern (PascalCase folder, index.tsx, tests/).",
+ "why_zh": "它不只是生成文件，而是按你项目现有组件模式定制，连测试和故事都一并配好，省去手动对齐的麻烦。",
+ "why_en": "It scaffolds files matching your existing component pattern, including tests and stories, so you skip manual alignment.",
+ "repo": "gaia-react/gaia",
+ "owner": "gaia-react",
+ "path": ".claude/skills/new-component",
+ "url": "https://github.com/gaia-react/gaia/tree/HEAD/.claude/skills/new-component",
+ "homepage": "https://gaiareact.com/",
+ "stars": 21,
+ "pushed_at": "2026-08-12T03:25:32Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 6.69,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/gaia-react/gaia.git",
+  "copy": "cp -r gaia/.claude/skills/new-component ~/.claude/skills/new-component",
+  "dir": "~/.claude/skills/new-component"
+ }
+}

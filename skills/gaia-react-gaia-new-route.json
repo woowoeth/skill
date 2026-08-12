@@ -1,0 +1,30 @@
+{
+ "id": "gaia-react-gaia-new-route",
+ "kind": "skill",
+ "name": "new-route",
+ "title_zh": "新路由速建",
+ "tagline_zh": "说句“加个页面”，它立刻生成路由、组件、测试和 Story，连 i18n 键都备好——不用再手动建五个文件。",
+ "tagline_en": "Say \"add a page\" and get route, component, test, Story, and i18n keys in one shot—no more hand-creating five files.",
+ "desc_en": "Scaffold a new route with its page component, test, story, and optional i18n keys. Use this skill whenever the user asks to \"create a route\", \"add a new page\", \"scaffold /dashboard\", \"wire up a new route under _public+ or _session+\", or anything that implies adding a file under `app/routes/` with a matching `app/pages/{Group}/{PascalName}Page/` folder.",
+ "why_zh": "同类只建路由，它连测试和 Story 一起搭好，且自动匹配 _public+ 或 _session+ 。",
+ "why_en": "Others just scaffold routes; this one also adds test and Story, auto-matching _public+ or _session+ prefixes—saves you.",
+ "repo": "gaia-react/gaia",
+ "owner": "gaia-react",
+ "path": ".claude/skills/new-route",
+ "url": "https://github.com/gaia-react/gaia/tree/HEAD/.claude/skills/new-route",
+ "homepage": "https://gaiareact.com/",
+ "stars": 21,
+ "pushed_at": "2026-08-12T03:25:32Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 6.69,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/gaia-react/gaia.git",
+  "copy": "cp -r gaia/.claude/skills/new-route ~/.claude/skills/new-route",
+  "dir": "~/.claude/skills/new-route"
+ }
+}

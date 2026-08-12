@@ -1,0 +1,31 @@
+{
+ "id": "aigorahub-elves",
+ "kind": "skill",
+ "name": "elves",
+ "title_zh": "夜行精灵",
+ "tagline_zh": "你说“我下线了”，它连夜拆解计划、分批实现、自动提PR过审，醒来就是已合并的代码。支持Fugu/Manus等快捷切。",
+ "tagline_en": "Say \"I'm offline\" and it codes overnight: splits plans, lands reviewed PRs, resumes from checkpoints. Swappable.",
+ "desc_en": "Autonomous multi-batch development agent for long unattended runs, reviewed-PR landing, Cobbler-first orchestration, and optional Fugu, Manus, Grok, Devin, or Oh My Pi (omp) provider shortcuts. Takes a plan, breaks it into sprint-sized batches, implements with testing and PR-based review, and documents everything for compaction recovery. Use when user says \"run overnight\", \"I'm going offline\", \"im",
+ "why_zh": "同类里唯一把“PR评审”写进自动化闭环的，且支持多后端一键切换，断点文档化恢复，不是跑完就忘的脚本。",
+ "why_en": "The only agent that bakes PR review into its loop, swaps providers on the fly, and recovers from documented checkpoints—not a.",
+ "repo": "aigorahub/elves",
+ "owner": "aigorahub",
+ "path": "",
+ "url": "https://github.com/aigorahub/elves",
+ "homepage": "https://aigorahub.github.io/elves/",
+ "stars": 203,
+ "pushed_at": "2026-08-12T03:31:47Z",
+ "skill_count": 13,
+ "category": "dev",
+ "fun_score": 3.58,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/aigorahub/elves.git",
+  "copy": "mv elves ~/.claude/skills/elves",
+  "dir": "~/.claude/skills/elves"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1187939789/4c29b8d0-6a3a-40bf-b405-40dc00f2f512"
+}

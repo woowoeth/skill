@@ -1,0 +1,30 @@
+{
+ "id": "hashgraph-online-seltz-codex-plugin-seltz",
+ "kind": "skill",
+ "name": "seltz",
+ "title_zh": "搜证员",
+ "tagline_zh": "写代码时查资料总怕过时？Seltz 直接搜官方源，带日期和出处，不翻墙不切窗口，答案像代码注释一样干净。",
+ "tagline_en": "Tired of stale web answers while coding? Seltz pulls current, source-backed facts with dates—no tab-hopping, no.",
+ "desc_en": "Use Seltz's official MCP search tool for current, source-backed web research in Codex.",
+ "why_zh": "同类工具只给链接，它把来源和时效直接嵌进回答，省去二次核验，像给搜索装了证据链。",
+ "why_en": "Unlike link-dump tools, it embeds source and timeliness into each answer, cutting verification steps—search with a built-in.",
+ "repo": "hashgraph-online/seltz-codex-plugin",
+ "owner": "hashgraph-online",
+ "path": "skills/seltz",
+ "url": "https://github.com/hashgraph-online/seltz-codex-plugin/tree/HEAD/skills/seltz",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-11T22:46:11Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/hashgraph-online/seltz-codex-plugin.git",
+  "copy": "cp -r seltz-codex-plugin/skills/seltz ~/.claude/skills/seltz",
+  "dir": "~/.claude/skills/seltz"
+ }
+}
