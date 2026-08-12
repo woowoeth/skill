@@ -1,0 +1,31 @@
+{
+ "id": "aipoch-open-science-ligandmpnn",
+ "kind": "skill",
+ "name": "ligandmpnn",
+ "title_zh": "逆折叠设计",
+ "tagline_zh": "给定骨架和配体，重排结合口袋残基，或设计金属配位点。直接输出带设计序列的PDB，几何约束严格保留。",
+ "tagline_en": "Redesign binding pockets around ligands, metals, or nucleic acids from a backbone. Get threaded PDBs directly.",
+ "desc_en": "Inverse-fold a backbone with ligand, nucleic-acid, and metal context using LigandMPNN (Dauparas et al. 2023, github.com/dauparas/LigandMPNN). Reach for this skill to redesign the residues lining a binding pocket around a bound small molecule or cofactor, to design metal-coordinating sites where the geometry must be respected, or to get threaded designed-sequence PDBs out of any MPNN run.",
+ "why_zh": "同类工具多只做蛋白序列，它原生支持配体、核酸、金属，且输出PDB可直接用，省去对接步骤。",
+ "why_en": "Unlike protein-only baselines, it natively handles ligand, nucleic acid, and metal contexts, outputting ready-to-use PDBs.",
+ "repo": "aipoch/open-science",
+ "owner": "aipoch",
+ "path": "resources/skills/ligandmpnn",
+ "url": "https://github.com/aipoch/open-science/tree/HEAD/resources/skills/ligandmpnn",
+ "homepage": "https://www.aipoch.com",
+ "stars": 2051,
+ "pushed_at": "2026-08-12T08:08:42Z",
+ "skill_count": 1,
+ "category": "meta",
+ "fun_score": 7.48,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/aipoch/open-science.git",
+  "copy": "cp -r open-science/resources/skills/ligandmpnn ~/.claude/skills/ligandmpnn",
+  "dir": "~/.claude/skills/ligandmpnn"
+ },
+ "cover": "https://private-user-images.githubusercontent.com/258999481/624830984-df59db19-98d7-4071-81f2-c682fbecdf86.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY1MjI0NjcsIm5iZiI6MTc4NjUyMjE2NywicGF0aCI6Ii8yNTg5OTk0ODEvNjI0ODMwOTg0LWRmNTlkYjE5LTk4ZDctNDA3MS04MWYyLWM2ODJmYmVjZGY4Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwODEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDgxMlQwODA5MjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZDBhNzNlZDUzZWI5NDAxZGQ5NjJlMTNmMjY3ZjIwZTVhY2U1ZTI5MDkwNTZlYzg5YjAxYjMyZjRiYzJiMWQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.gQVdO7mJv9TFXbnlvYfRJTZxID9hB5Kf0uX-Q4Z3QM0"
+}

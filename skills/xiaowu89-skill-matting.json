@@ -1,0 +1,30 @@
+{
+ "id": "xiaowu89-skill-matting",
+ "kind": "skill",
+ "name": "nx-matting",
+ "title_zh": "一键抠图",
+ "tagline_zh": "本地 BiRefNet 模型，图片视频都能抠，输出透明 PNG/MOV/WebM。不用装 Python，不用显卡。",
+ "tagline_en": "Local BiRefNet matting for images & video, outputting transparent PNG/MOV/WebM. No Python, no GPU, just drop and.",
+ "desc_en": "使用本地 BiRefNet GGUF 模型完成图片或视频抠图、人物抠图、主体分割和背景移除，并输出透明 PNG、MOV 或 WebM。适用于用户提到图片抠图、照片去背景、人像透明图、视频抠图、透明视频、BiRefNet、JPG/PNG/BMP/WebP 图片，或 MP4/MOV/WebM 视频的场景；无需 Python、PyTorch 或 CUDA。",
+ "why_zh": "同类要配环境，它开箱即用；视频透明输出是独门，且模型跑在本地，隐私不愁。",
+ "why_en": "No setup, no GPU, transparent video output—runs locally, so your files never leave your machine.",
+ "repo": "xiaowu89/skill-matting",
+ "owner": "xiaowu89",
+ "path": "",
+ "url": "https://github.com/xiaowu89/skill-matting",
+ "homepage": "",
+ "stars": 13,
+ "pushed_at": "2026-08-12T08:06:32Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 5.5,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/xiaowu89/skill-matting.git",
+  "copy": "mv skill-matting ~/.claude/skills/skill-matting",
+  "dir": "~/.claude/skills/skill-matting"
+ }
+}

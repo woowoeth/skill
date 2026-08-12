@@ -1,0 +1,31 @@
+{
+ "id": "aipoch-open-science-alphafold2",
+ "kind": "skill",
+ "name": "alphafold2",
+ "title_zh": "蛋白折叠师",
+ "tagline_zh": "粘贴序列，一键预测蛋白结构。单体复合物都行，自带pLDDT和ipTM评分，验证设计序列是否靠谱。",
+ "tagline_en": "Paste a sequence, get a folded structure. Handles monomers and multimers with pLDDT/ipTM scores—no AlphaFold.",
+ "desc_en": "Predict protein structure for monomers and multimers with AlphaFold2 via the ColabFold runner (Mirdita et al. 2022, github.com/sokrypton/ColabFold; AlphaFold2 Jumper et al. 2021). Reach for this skill to fold a sequence or complex with the AF2/AF2-Multimer evoformer, to validate designed sequences by self-consistency pLDDT, ipTM, and RMSD, or to run a quick MSA-backed prediction using the public M",
+ "why_zh": "直接用ColabFold跑AF2，省去装环境配GPU的麻烦，还能批量验证设计，评分指标齐全。",
+ "why_en": "Runs AF2 via ColabFold—no setup hassle, supports multimers, and outputs all key metrics for design validation in one go.",
+ "repo": "aipoch/open-science",
+ "owner": "aipoch",
+ "path": "resources/skills/alphafold2",
+ "url": "https://github.com/aipoch/open-science/tree/HEAD/resources/skills/alphafold2",
+ "homepage": "https://www.aipoch.com",
+ "stars": 2051,
+ "pushed_at": "2026-08-12T08:08:42Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.48,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/aipoch/open-science.git",
+  "copy": "cp -r open-science/resources/skills/alphafold2 ~/.claude/skills/alphafold2",
+  "dir": "~/.claude/skills/alphafold2"
+ },
+ "cover": "https://private-user-images.githubusercontent.com/258999481/624830984-df59db19-98d7-4071-81f2-c682fbecdf86.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY1MjI0NjcsIm5iZiI6MTc4NjUyMjE2NywicGF0aCI6Ii8yNTg5OTk0ODEvNjI0ODMwOTg0LWRmNTlkYjE5LTk4ZDctNDA3MS04MWYyLWM2ODJmYmVjZGY4Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwODEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDgxMlQwODA5MjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZDBhNzNlZDUzZWI5NDAxZGQ5NjJlMTNmMjY3ZjIwZTVhY2U1ZTI5MDkwNTZlYzg5YjAxYjMyZjRiYzJiMWQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.gQVdO7mJv9TFXbnlvYfRJTZxID9hB5Kf0uX-Q4Z3QM0"
+}
