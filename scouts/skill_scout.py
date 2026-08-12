@@ -489,6 +489,46 @@ def seed(seed_dir: str, meta_file: str) -> None:
     lib.refresh()
 
 
+
+# ------------------------------------------------------- 作者雷达 ----
+def watch_authors(existing: dict, sources: dict, limit_per_author: int = 5) -> list[str]:
+    """已验证作者雷达：店里每上架一个作者，就盯住他之后发的新仓库。
+    好作者会持续产出好东西 —— 这条线的信噪比远高于关键词搜索，
+    也是唯一能在「刚发布、零星、没打 topic」阶段就发现新品的自动通道。"""
+    from datetime import datetime, timezone
+    authors = sorted({r.split("/")[0] for r in sources.get("repos", {})})
+    have = {r.lower() for r in sources.get("repos", {})}
+    found = []
+    for u in authors:
+        try:
+            items = lib.gh_json(
+                f"https://api.github.com/users/{u}/repos?sort=created&direction=desc&per_page={limit_per_author}")
+        except Exception:
+            continue
+        for it in items or []:
+            full = it.get("full_name", "")
+            if not full or full.lower() in have or it.get("fork"):
+                continue
+            if SKIP_REPO_PAT.search(full):
+                continue
+            name = full.split("/")[-1].lower()
+            if name in (".github", full.split("/")[0].lower()) or name.endswith(("-site", "-website", "-releases", "-templates")):
+                continue                       # 门面/发布通道仓库，不是商品
+            age = _days_since(it.get("created_at", ""))
+            if age > 60:
+                continue
+            desc = (it.get("description") or "").lower()
+            signal = it.get("stargazers_count", 0) >= 5 or any(
+                k in desc for k in ("skill", "agent", "claude", "codex", "mcp"))
+            if not signal:
+                continue
+            found.append((full, it.get("stargazers_count", 0), age,
+                          (it.get("description") or "")[:90]))
+    found.sort(key=lambda x: x[2])            # 越新越靠前
+    for full, st, age, desc in found:
+        print(f"[radar] 已验证作者新作 {full} (★{st}, {age:.0f}天前) {desc}")
+    return [f[0] for f in found]
+
 def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
     """人工通道：一个真人觉得值得推荐，本身就是最高质量的信号。
     直接 clone + 收录，绕过星门槛；仍尊重 fork/命名黑名单，避免明显垃圾。"""
@@ -553,6 +593,9 @@ def main() -> None:
     if not a.no_restock:
         restock_existing(existing, sources)
     if not a.no_discover:
+        radar = watch_authors(existing, sources)
+        if radar:
+            suggest_repos(radar[:4], existing, sources)   # 已验证作者的新作，绕过星门槛
         discover(existing, sources)
     enrich_items(NEW_IDS, existing)
     lib.save_sources(sources)
