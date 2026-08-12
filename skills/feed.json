@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-11T16:30:11Z",
- "count": 205,
- "new_today": 33,
+ "generated_at": "2026-08-12T02:35:25Z",
+ "count": 206,
+ "new_today": 1,
  "picks": 6,
  "categories": [
   {
@@ -16,7 +16,7 @@
    "zh": "玩乐杂货",
    "en": "Fun & Games",
    "emoji": "🎮",
-   "count": 17
+   "count": 18
   },
   {
    "id": "writing",
@@ -62,6 +62,37 @@
   }
  ],
  "skills": [
+  {
+   "id": "ourword-ai-pixelpad",
+   "kind": "skill",
+   "name": "pixelpad",
+   "title_zh": "像素画板",
+   "tagline_zh": "在 24×24 画布上画原生像素图：逐像素落调色板索引而不是生成大图再降采样，出透明底 PNG 和一格格蹦出来的显影动画。",
+   "tagline_en": "Native 24x24 pixel art — every pixel is a palette index placed on purpose, not a downscaled render; exports transparent PNG plus a pixel-by-pixel reveal GIF.",
+   "desc_en": "Draw native 24x24 pixel art by placing palette indices per pixel (never downscaling a big image); exports transparent PNG plus a pixel-by-pixel reveal GIF.",
+   "why_zh": "本店自制。它不靠一次成型，而是教 agent「画→渲染→自己看一眼→改」，两轮就能从一团色变成能用的精灵图；全本地跑，不调图像 API。",
+   "why_en": "Made in-house. Quality comes not from one-shot generation but from teaching the agent to draw, render, actually look, and fix — usually two rounds from blob to usable sprite. Fully local.",
+   "repo": "ourword-ai/pixelpad",
+   "owner": "ourword-ai",
+   "path": "",
+   "url": "https://github.com/ourword-ai/pixelpad",
+   "homepage": "",
+   "stars": 0,
+   "pushed_at": "2026-08-12",
+   "skill_count": 1,
+   "category": "fun",
+   "fun_score": 13.0,
+   "pick": false,
+   "hide": false,
+   "source": "ourword-ai-original",
+   "added_at": "2026-08-12",
+   "install": {
+    "clone": "git clone --depth 1 https://github.com/ourword-ai/pixelpad.git",
+    "copy": "mv pixelpad ~/.claude/skills/pixelpad",
+    "dir": "~/.claude/skills/pixelpad"
+   },
+   "cover": ""
+  },
   {
    "id": "geekjourneyx-hyperframes-motion-director-hyperframes-motion-director",
    "kind": "skill",
