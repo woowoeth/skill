@@ -1,0 +1,30 @@
+{
+ "id": "tt-a1i-codex-task-messenger",
+ "kind": "skill",
+ "name": "codex-task-messenger",
+ "title_zh": "任务传话筒",
+ "tagline_zh": "多个 Codex 任务挤在同一目录各干各的，互不搭理？现在你喊一嗓子，隔壁任务就能接话、传结果、等回音。",
+ "tagline_en": "Multiple Codex tasks in one folder, each in its own bubble? Now you can ping, hand off context, wait for replies.",
+ "desc_en": "Communicate between existing local Codex App tasks that share one working directory. Use when the user asks to list or inspect same-directory tasks, send one a message or context handoff, ask a task to return a result, wait for that result, continue a request that needs user input, present an inbound task reply, or explicitly broadcast a one-way notice. Also use for Codex delegations that invoke $",
+ "why_zh": "它不靠外部队列或数据库，直接在同目录任务间传话，零配置，且能同步等待结果，这是别的 skill 做不到。",
+ "why_en": "No external queue or DB—it talks directly between same-directory tasks, zero setup, and can synchronously wait for results.",
+ "repo": "tt-a1i/codex-task-messenger",
+ "owner": "tt-a1i",
+ "path": "",
+ "url": "https://github.com/tt-a1i/codex-task-messenger",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-11T15:42:58Z",
+ "skill_count": 1,
+ "category": "meta",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/tt-a1i/codex-task-messenger.git",
+  "copy": "mv codex-task-messenger ~/.claude/skills/codex-task-messenger",
+  "dir": "~/.claude/skills/codex-task-messenger"
+ }
+}

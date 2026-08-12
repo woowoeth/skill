@@ -1,0 +1,31 @@
+{
+ "id": "clacky-ai-openclacky-commit",
+ "kind": "skill",
+ "name": "commit",
+ "title_zh": "提交小助手",
+ "tagline_zh": "改完代码懒得写提交信息？它自动分析 diff，生成规范语义提交，连类型和范围都帮你定好，省下敲键盘的功夫。",
+ "tagline_en": "Tired of writing commit messages? It reads your diff and crafts semantic commits, auto-detecting type and scope.",
+ "desc_en": "Smart Git commit helper that analyzes changes and creates semantic commits",
+ "why_zh": "同类工具多只套模板，它真正理解改动内容，按 Conventional Commits 精准分类。",
+ "why_en": "Unlike template-fillers, it truly understands your changes, classifying per Conventional Commits and flagging breaking changes.",
+ "repo": "clacky-ai/openclacky",
+ "owner": "clacky-ai",
+ "path": ".clacky/skills/commit",
+ "url": "https://github.com/clacky-ai/openclacky/tree/HEAD/.clacky/skills/commit",
+ "homepage": "https://www.openclacky.com/",
+ "stars": 1156,
+ "pushed_at": "2026-08-12T03:53:27Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.26,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/clacky-ai/openclacky.git",
+  "copy": "cp -r openclacky/.clacky/skills/commit ~/.claude/skills/commit",
+  "dir": "~/.claude/skills/commit"
+ },
+ "cover": "https://contrib.rocks/image?repo=clacky-ai/openclacky"
+}
