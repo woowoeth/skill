@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-12T02:35:25Z",
- "count": 206,
- "new_today": 1,
+ "generated_at": "2026-08-12T03:16:48Z",
+ "count": 207,
+ "new_today": 2,
  "picks": 6,
  "categories": [
   {
@@ -30,7 +30,7 @@
    "zh": "生活日用",
    "en": "Daily Life",
    "emoji": "🧺",
-   "count": 10
+   "count": 11
   },
   {
    "id": "docs",
@@ -90,6 +90,37 @@
     "clone": "git clone --depth 1 https://github.com/ourword-ai/pixelpad.git",
     "copy": "mv pixelpad ~/.claude/skills/pixelpad",
     "dir": "~/.claude/skills/pixelpad"
+   },
+   "cover": ""
+  },
+  {
+   "id": "lincwang123-bot-moonlit-stories-moonlit-book-workflow",
+   "kind": "skill",
+   "name": "moonlit-book-workflow",
+   "title_zh": "给孩子做绘本",
+   "tagline_zh": "给自家孩子做一本 12 页英文绘本：固定水彩画风 + 每本专属角色设定图保证 12 页长得像同一个人，再用家长本人的声音朗读，最后出一个能直接发出去的单文件。",
+   "tagline_en": "Makes a 12-page personalized English picture book for your kid — a fixed watercolor house style plus a per-book character sheet keeps the child looking like the same character across all pages, narrated in a parent's own cloned voice, shipped as one sendable HTML file.",
+   "desc_en": "Build or resume a reusable 12-page personalized English picture book in a fixed watercolor house style, with a per-book character sheet for illustration consistency and local authorized-adult voice cloning for narration.",
+   "why_zh": "难点它都啃了：AI 插画最容易「每页换个人」，它用画风锚点+角色设定图锁死一致性；声音克隆只收成人授权音、监护人确认才继续，私密音频永不进成品——技术和分寸都在线。限 Apple Silicon Mac + Codex，本地模型约 3.2G。",
+   "why_en": "It solves the hard parts: AI illustration usually drifts into a different-looking child each page, so it locks consistency with a style anchor plus a character sheet; voice cloning accepts only authorized adult recordings with guardian checkpoints, and private audio never ships in the output. Apple Silicon Mac + Codex only, ~3.2GB local model.",
+   "repo": "lincwang123-bot/moonlit-stories",
+   "owner": "lincwang123-bot",
+   "path": "skills/moonlit-book-workflow",
+   "url": "https://github.com/lincwang123-bot/moonlit-stories/tree/HEAD/skills/moonlit-book-workflow",
+   "homepage": "",
+   "stars": 158,
+   "pushed_at": "2026-08-04",
+   "skill_count": 1,
+   "category": "life",
+   "fun_score": 1.98,
+   "pick": false,
+   "hide": false,
+   "source": "user-suggested-0812",
+   "added_at": "2026-08-12",
+   "install": {
+    "clone": "git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git",
+    "copy": "cp -r moonlit-stories/skills/moonlit-book-workflow ~/.claude/skills/moonlit-book-workflow",
+    "dir": "~/.claude/skills/moonlit-book-workflow"
    },
    "cover": ""
   },
