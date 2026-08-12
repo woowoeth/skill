@@ -1,7 +1,159 @@
 # Skill Store — agent skills worth installing, restocked daily
 # Skill 商店 — 每天上新的好玩 Agent Skill 精选店
 # https://ourword.ai/skill-store/
-# Full corpus, plain text. 465 skills.
+# Full corpus, plain text. 476 skills.
+
+========================================================================
+## k12-lesson-differentiation
+URL: https://ourword.ai/skill-store/i/anthropics-k12-teacher-skills-k12-lesson-differentiation/
+Source: https://github.com/anthropics/k12-teacher-skills/tree/HEAD/plugin/skills/k12-lesson-differentiation
+Updated: 2026-08-12
+Tags: development, skill, anthropics
+
+Adapts an existing K-12 lesson (math, ELA, science, or social studies) for students at different proficiency levels (below / at / above grade level). Load this skill BEFORE asking the teacher any clarifying question about the lesson, tiers,
+
+### What does this skill do?
+Adapts an existing K-12 lesson (math, ELA, science, or social studies) for students at different proficiency levels (below / at / above grade level). Load this skill BEFORE asking the teacher any clarifying question about the lesson, tiers, or student levels. Triggers on explicit asks to differentiate, tier, or scaffold a lesson, and on implicit signals like "my students are at different levels".
+
+### How do you install it?
+git clone --depth 1 https://github.com/anthropics/k12-teacher-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: anthropics/k12-teacher-skills 356 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## k12-lesson-planning
+URL: https://ourword.ai/skill-store/i/anthropics-k12-teacher-skills-k12-lesson-planning/
+Source: https://github.com/anthropics/k12-teacher-skills/tree/HEAD/plugin/skills/k12-lesson-planning
+Updated: 2026-08-12
+Tags: fun, skill, anthropics
+
+Creates a lesson plan, student-facing materials, and observation template. Load this skill BEFORE asking the teacher any clarifying question about grade, subject, topic, standard, or timing. Use when a K-12 teacher needs a math, ELA, scienc
+
+### What does this skill do?
+Creates a lesson plan, student-facing materials, and observation template. Load this skill BEFORE asking the teacher any clarifying question about grade, subject, topic, standard, or timing. Use when a K-12 teacher needs a math, ELA, science, or social studies lesson built from scratch — even if grade, subject, or topic isn't yet stated. Do NOT load for grading, a rubric, assessment feedback, a qu
+
+### How do you install it?
+git clone --depth 1 https://github.com/anthropics/k12-teacher-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: anthropics/k12-teacher-skills 356 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## 风格包
+URL: https://ourword.ai/skill-store/i/irenerachel-style-pack-skill/
+URL (中文): https://ourword.ai/skill-store/zh/i/irenerachel-style-pack-skill/
+Source: https://github.com/irenerachel/style-pack-skill
+Updated: 2026-08-12
+Tags: creative, skill, irenerachel
+
+从一组参考图、电影剧照、视频截图或用户给定文件夹中提取可复用的视觉风格 DNA，打包成中文风格包；提取模式强制为每个视觉分组同时生成统一 10 色标注色卡和完全无文字纯色色卡，并生成两套色卡总览与可复用色值 JSON。也可读取已有风格包的 design.md 和提示词模板，把剧本、脚本表格或创意需求拆成文生图提示词 + 视频提示词表格文档。触发词包括“风格包”“提取某电影风格包”“按这个风格包生成提示词”“读取这个文件夹的风格 DNA”“用风格包拆剧本”“生成色卡”“生成文生
+
+### What does this skill do?
+从一组参考图、电影剧照、视频截图或用户给定文件夹中提取可复用的视觉风格 DNA，打包成中文风格包；提取模式强制为每个视觉分组同时生成统一 10 色标注色卡和完全无文字纯色色卡，并生成两套色卡总览与可复用色值 JSON。也可读取已有风格包的 design.md 和提示词模板，把剧本、脚本表格或创意需求拆成文生图提示词 + 视频提示词表格文档。触发词包括“风格包”“提取某电影风格包”“按这个风格包生成提示词”“读取这个文件夹的风格 DNA”“用风格包拆剧本”“生成色卡”“生成文生图和视频提示词表格”。核心原则：只参考视觉语法，绝对避免场景和元素雷同。
+
+### How do you install it?
+git clone --depth 1 https://github.com/irenerachel/style-pack-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: irenerachel/style-pack-skill 45 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+--- 中文 ---
+让 Claude 帮你搞创作：风格包。英文简介见下。
+
+### Q：这个 skill 做什么？
+从一组参考图、电影剧照、视频截图或用户给定文件夹中提取可复用的视觉风格 DNA，打包成中文风格包；提取模式强制为每个视觉分组同时生成统一 10 色标注色卡和完全无文字纯色色卡，并生成两套色卡总览与可复用色值 JSON。也可读取已有风格包的 design.md 和提示词模板，把剧本、脚本表格或创意需求拆成文生图提示词 + 视频提示词表格文档。触发词包括“风格包”“提取某电影风格包”“按这个风格包生成提示词”“读取这个文件夹的风格 DNA”“用风格包拆剧本”“生成色卡”“生成文生图和视频提示词表格”。核心原则：只参考视觉语法，绝对避免场景和元素雷同。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/irenerachel/style-pack-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: irenerachel/style-pack-skill 45 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## qiaomu-learning
+URL: https://ourword.ai/skill-store/i/joeseesun-qiaomu-learning/
+URL (中文): https://ourword.ai/skill-store/zh/i/joeseesun-qiaomu-learning/
+Source: https://github.com/joeseesun/qiaomu-learning
+Updated: 2026-08-12
+Tags: documentation, skill, joeseesun
+
+用苏格拉底式逐问学习把教材、截图、PDF、笔记、题目或一个主题变成主动推导对话。Use when the learner明确要求“苏格拉底式学习”“逐问带我学”“一次只问一个问题”“先别告诉我答案”“边问边引导我推出来”、interactive quiz、active recall or question-led tutoring。宽泛主题默认先进入关键词定向：列出 12 个关键词及白话解释，推荐专家和专业书籍，并提供“扩展关键词”的入口，再让学习者选起点。正式学习中每个活跃
+
+### What does this skill do?
+用苏格拉底式逐问学习把教材、截图、PDF、笔记、题目或一个主题变成主动推导对话。Use when the learner明确要求“苏格拉底式学习”“逐问带我学”“一次只问一个问题”“先别告诉我答案”“边问边引导我推出来”、interactive quiz、active recall or question-led tutoring。宽泛主题默认先进入关键词定向：列出 12 个关键词及白话解释，推荐专家和专业书籍，并提供“扩展关键词”的入口，再让学习者选起点。正式学习中每个活跃回合只问一个简短、可回答的问题，并根据学习者上一步的推理调整难度；回答要接住学习者原话，像真人老师一样温和纠错，并在数学、物理、流程或图形内容中用累积黑板逐步画出推理。学习者说“太抽象”“不理解”“想象不出来”“枯燥”或要求图解，且当前台阶可视觉化时，必须立即切换为问题承载型图示并提供文字替代，空间、相对运动、流程和几
+
+### How do you install it?
+git clone --depth 1 https://github.com/joeseesun/qiaomu-learning.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: joeseesun/qiaomu-learning 2 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+--- 中文 ---
+正经办公文档：qiaomu-learning。英文简介见下。
+
+### Q：这个 skill 做什么？
+用苏格拉底式逐问学习把教材、截图、PDF、笔记、题目或一个主题变成主动推导对话。Use when the learner明确要求“苏格拉底式学习”“逐问带我学”“一次只问一个问题”“先别告诉我答案”“边问边引导我推出来”、interactive quiz、active recall or question-led tutoring。宽泛主题默认先进入关键词定向：列出 12 个关键词及白话解释，推荐专家和专业书籍，并提供“扩展关键词”的入口，再让学习者选起点。正式学习中每个活跃回合只问一个简短、可回答的问题，并根据学习者上一步的推理调整难度；回答要接住学习者原话，像真人老师一样温和纠错，并在数学、物理、流程或图形内容中用累积黑板逐步画出推理。学习者说“太抽象”“不理解”“想象不出来”“枯燥”或要求图解，且当前台阶可视觉化时，必须立即切换为问题承载型图示并提供文字替代，空间、相对运动、流程和几
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/joeseesun/qiaomu-learning.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: joeseesun/qiaomu-learning 2 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## unlazy
+URL: https://ourword.ai/skill-store/i/leonxlnx-unlazy/
+Source: https://github.com/Leonxlnx/unlazy
+Updated: 2026-08-12
+Tags: development, skill, Leonxlnx
+
+Anti-laziness execution discipline for substantial tasks. Use when work keeps coming back half done, when an agent reports done before it is done, when output must be exhaustive rather than fast, on long autonomous runs that tend to stall a
+
+### What does this skill do?
+Anti-laziness execution discipline for substantial tasks. Use when work keeps coming back half done, when an agent reports done before it is done, when output must be exhaustive rather than fast, on long autonomous runs that tend to stall at 80 percent, or on any invocation like /unlazy, "tree N", "gates", or "do not stop until it is done". v2 enforces completion through gate files and runnable ch
+
+### How do you install it?
+git clone --depth 1 https://github.com/Leonxlnx/unlazy.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Leonxlnx/unlazy 18 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## guizang-material-illustration
+URL: https://ourword.ai/skill-store/i/op7418-guizang-material-illustration/
+Source: https://github.com/op7418/guizang-material-illustration
+Updated: 2026-08-12
+Tags: creative, skill, op7418
+
+Generate Guizang-style material illustrations, labeled explanatory visuals, material-styled chart illustrations, and data-first editorial images from articles, notes, product concepts, workplace reports, creator posts, tutorials, school mat
+
+### What does this skill do?
+Generate Guizang-style material illustrations, labeled explanatory visuals, material-styled chart illustrations, and data-first editorial images from articles, notes, product concepts, workplace reports, creator posts, tutorials, school materials, humanities topics, science explanations, screenshots, or chart data. Use when the user asks for 配图, 带字插图, 解释图, 图解插画, 概念拆解图, 图表美化, 数据图美化, 3D 图表, 汇报配图, 内容
+
+### How do you install it?
+git clone --depth 1 https://github.com/op7418/guizang-material-illustration.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: op7418/guizang-material-illustration 989 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## fit-ride-studio
+URL: https://ourword.ai/skill-store/i/op7418-guizang-sports-skill/
+Source: https://github.com/op7418/guizang-sports-skill
+Updated: 2026-08-12
+Tags: documentation, skill, op7418
+
+Analyze one or more cycling, running, or hiking FIT/KML activity tracks, generate evidence-based single or aggregate reports, open the bundled local Ride Relief report page when the environment supports it, enrich results with user-confirme
+
+### What does this skill do?
+Analyze one or more cycling, running, or hiking FIT/KML activity tracks, generate evidence-based single or aggregate reports, open the bundled local Ride Relief report page when the environment supports it, enrich results with user-confirmed public location context, and create shareable PNG or H.264 MP4 route stories on request. Use whenever a user wants to analyze, compare, visualize, or export .
+
+### How do you install it?
+git clone --depth 1 https://github.com/op7418/guizang-sports-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: op7418/guizang-sports-skill 83 stars on GitHub at the time of listing. The repository ships 1 skills in total.
 
 ========================================================================
 ## pixelpad
@@ -20,6 +172,117 @@ git clone --depth 1 https://github.com/ourword-ai/pixelpad.git Then point your a
 
 ### Where does it come from?
 Repository: ourword-ai/pixelpad The repository ships 1 skills in total.
+
+========================================================================
+## short-drama-develop
+URL: https://ourword.ai/skill-store/i/worldwonderer-drama-skills-short-drama-develop/
+URL (中文): https://ourword.ai/skill-store/zh/i/worldwonderer-drama-skills-short-drama-develop/
+Source: https://github.com/worldwonderer/drama-skills/tree/HEAD/skills/short-drama-develop
+Updated: 2026-08-12
+Tags: writing, skill, worldwonderer
+
+将中文小说、短剧或漫剧想法、梗概、改编材料或已有系列笔记发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述”“这个题材怎么写”“定画风/制作形态”“把这个点子变成短剧”或需要梳理人物冲突与集间交接时使用；已有剧本可直接进入写作、资产或审查流程，不强制补开发文件。
+
+### What does this skill do?
+将中文小说、短剧或漫剧想法、梗概、改编材料或已有系列笔记发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述”“这个题材怎么写”“定画风/制作形态”“把这个点子变成短剧”或需要梳理人物冲突与集间交接时使用；已有剧本可直接进入写作、资产或审查流程，不强制补开发文件。
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+--- 中文 ---
+写字的人会喜欢：short-drama-develop。英文简介见下。
+
+### Q：这个 skill 做什么？
+将中文小说、短剧或漫剧想法、梗概、改编材料或已有系列笔记发展成可追溯的改编方案、戏剧方向、创作简报、导演阐述、故事引擎与分集地图，并按题材与制作形态（画风）选择写法。用户提出“导入小说做短剧”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述”“这个题材怎么写”“定画风/制作形态”“把这个点子变成短剧”或需要梳理人物冲突与集间交接时使用；已有剧本可直接进入写作、资产或审查流程，不强制补开发文件。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## short-drama-novel-analyze
+URL: https://ourword.ai/skill-store/i/worldwonderer-drama-skills-short-drama-novel-analyze/
+URL (中文): https://ourword.ai/skill-store/zh/i/worldwonderer-drama-skills-short-drama-novel-analyze/
+Source: https://github.com/worldwonderer/drama-skills/tree/HEAD/skills/short-drama-novel-analyze
+Updated: 2026-08-12
+Tags: writing, skill, worldwonderer
+
+把长篇小说、连载网文或多集散稿拆成可追溯的原著分析：章节索引、改编价值快评、逐章功能提取、剧情单元与节奏聚合、人物与设定归并，最后给出改编价值判定与分集候选，交给 $short-drama-develop 立契约。用户说“导入这本小说”“拆这本书”“分析原著”“这本书能不能改短剧”“先看看值不值得拆”“把长篇拆成分集候选”，或直接给出小说文件路径时使用。只做只读的结构化分析，不写剧本、不建资产、不生成媒体，也不替创作者决定改编方案。
+
+### What does this skill do?
+把长篇小说、连载网文或多集散稿拆成可追溯的原著分析：章节索引、改编价值快评、逐章功能提取、剧情单元与节奏聚合、人物与设定归并，最后给出改编价值判定与分集候选，交给 $short-drama-develop 立契约。用户说“导入这本小说”“拆这本书”“分析原著”“这本书能不能改短剧”“先看看值不值得拆”“把长篇拆成分集候选”，或直接给出小说文件路径时使用。只做只读的结构化分析，不写剧本、不建资产、不生成媒体，也不替创作者决定改编方案。
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+--- 中文 ---
+写字的人会喜欢：short-drama-novel-analyze。英文简介见下。
+
+### Q：这个 skill 做什么？
+把长篇小说、连载网文或多集散稿拆成可追溯的原著分析：章节索引、改编价值快评、逐章功能提取、剧情单元与节奏聚合、人物与设定归并，最后给出改编价值判定与分集候选，交给 $short-drama-develop 立契约。用户说“导入这本小说”“拆这本书”“分析原著”“这本书能不能改短剧”“先看看值不值得拆”“把长篇拆成分集候选”，或直接给出小说文件路径时使用。只做只读的结构化分析，不写剧本、不建资产、不生成媒体，也不替创作者决定改编方案。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## short-drama-storyboard
+URL: https://ourword.ai/skill-store/i/worldwonderer-drama-skills-short-drama-storyboard/
+URL (中文): https://ourword.ai/skill-store/zh/i/worldwonderer-drama-skills-short-drama-storyboard/
+Source: https://github.com/worldwonderer/drama-skills/tree/HEAD/skills/short-drama-storyboard
+Updated: 2026-08-12
+Tags: creative, skill, worldwonderer
+
+把已接受的中文短剧剧本和资产转成原文落实表、有戏剧动机的镜头、连续性边界与冻结关键帧提示词；关键场次可先做场次视觉计划或 Coverage Audition 比较真正不同的导演方案。用户提出“拆分镜/设计镜头/做镜头表”“场次视觉计划/调度故事板”“比较导演方案/Coverage Audition”“写首帧/关键帧提示词”“检查轴线、站位、视线、持物连续性”，或需要在不生成媒体的前提下把竖屏短剧、漫剧的剧本内容转成可拍的画面时使用。
+
+### What does this skill do?
+把已接受的中文短剧剧本和资产转成原文落实表、有戏剧动机的镜头、连续性边界与冻结关键帧提示词；关键场次可先做场次视觉计划或 Coverage Audition 比较真正不同的导演方案。用户提出“拆分镜/设计镜头/做镜头表”“场次视觉计划/调度故事板”“比较导演方案/Coverage Audition”“写首帧/关键帧提示词”“检查轴线、站位、视线、持物连续性”，或需要在不生成媒体的前提下把竖屏短剧、漫剧的剧本内容转成可拍的画面时使用。
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+--- 中文 ---
+让 Claude 帮你搞创作：short-drama-storyboard。英文简介见下。
+
+### Q：这个 skill 做什么？
+把已接受的中文短剧剧本和资产转成原文落实表、有戏剧动机的镜头、连续性边界与冻结关键帧提示词；关键场次可先做场次视觉计划或 Coverage Audition 比较真正不同的导演方案。用户提出“拆分镜/设计镜头/做镜头表”“场次视觉计划/调度故事板”“比较导演方案/Coverage Audition”“写首帧/关键帧提示词”“检查轴线、站位、视线、持物连续性”，或需要在不生成媒体的前提下把竖屏短剧、漫剧的剧本内容转成可拍的画面时使用。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 1 skills in total.
+
+========================================================================
+## drama-skills
+URL: https://ourword.ai/skill-store/i/worldwonderer-drama-skills/
+Source: https://github.com/worldwonderer/drama-skills
+Updated: 2026-08-12
+Tags: development, collection, worldwonderer
+
+A pack of 10 skills.
+
+### What does this skill do?
+A pack of 10 skills.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/drama-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/drama-skills 652 stars on GitHub at the time of listing. The repository ships 10 skills in total.
 
 ========================================================================
 ## openchatcut
