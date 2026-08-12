@@ -1,0 +1,30 @@
+{
+ "id": "openonion-connectonion-dashboard",
+ "kind": "skill",
+ "name": "dashboard",
+ "title_zh": "仪表盘焕新",
+ "tagline_zh": "你说“把X放上首页”，它立刻重排卡片、调布局、改样式。不用翻代码，不用拖组件，一句话让仪表盘变你想要的样子。",
+ "tagline_en": "Say \"put X on my dashboard\" and it rearranges cards, tweaks layout, restyles. No code, no dragging—just words.",
+ "desc_en": "Update the agent's Home dashboard. Use when the user says \"update my dashboard\", \"redesign my home\", \"put X on the dashboard\", or \"/dashboard\".",
+ "why_zh": "同类工具要你描述布局，它直接理解你的意图并动手改，连卡片优先级都替你想到。",
+ "why_en": "Others ask you to describe layout; it infers intent and edits, even prioritizing cards for you.",
+ "repo": "openonion/connectonion",
+ "owner": "openonion",
+ "path": "connectonion/cli/co_ai/skills/builtin/dashboard",
+ "url": "https://github.com/openonion/connectonion/tree/HEAD/connectonion/cli/co_ai/skills/builtin/dashboard",
+ "homepage": "https://docs.connectonion.com",
+ "stars": 1329,
+ "pushed_at": "2026-08-12T07:58:33Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.31,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/openonion/connectonion.git",
+  "copy": "cp -r connectonion/connectonion/cli/co_ai/skills/builtin/dashboard ~/.claude/skills/dashboard",
+  "dir": "~/.claude/skills/dashboard"
+ }
+}

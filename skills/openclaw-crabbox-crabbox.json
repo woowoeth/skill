@@ -1,0 +1,30 @@
+{
+ "id": "openclaw-crabbox-crabbox",
+ "kind": "skill",
+ "name": "crabbox",
+ "title_zh": "蟹盒测试员",
+ "tagline_zh": "远程跑测试总翻车？CrabBox 一键拉起干净环境，自动检测配置，留下可审计执行证据，连平台覆盖都替你操心。",
+ "tagline_en": "Remote tests flaky? CrabBox spins clean environments, auto-detects configs, logs auditable runs, and covers.",
+ "desc_en": "Detect and use Crabbox for repository tests and validation on remote runners. Use when crabbox.yaml or .crabbox.yaml exists, the crabbox CLI is available, or work needs remote compute, a clean or reusable environment, target-platform coverage, or auditable execution evidence.",
+ "why_zh": "同类工具要你手动配环境，它却自动读 crabbox.yaml，连执行证据都存好，省心到像雇了个测试助理。",
+ "why_en": "Unlike manual env setup, it auto-reads crabbox.yaml and archives run evidence—like a QA assistant built-in.",
+ "repo": "openclaw/crabbox",
+ "owner": "openclaw",
+ "path": ".agents/skills/crabbox",
+ "url": "https://github.com/openclaw/crabbox/tree/HEAD/.agents/skills/crabbox",
+ "homepage": "http://crabbox.sh",
+ "stars": 1290,
+ "pushed_at": "2026-08-12T07:55:49Z",
+ "skill_count": 3,
+ "category": "dev",
+ "fun_score": 4.3,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-12",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/openclaw/crabbox.git",
+  "copy": "cp -r crabbox/.agents/skills/crabbox ~/.claude/skills/crabbox",
+  "dir": "~/.claude/skills/crabbox"
+ }
+}
