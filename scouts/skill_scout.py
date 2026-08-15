@@ -82,16 +82,31 @@ def _admit(item: dict) -> tuple[bool, str]:
 CLONE_TIMEOUT = 90
 
 SEARCH_QUERIES = [
+    # —— 生态主干 ——
     "topic:claude-skills sort:updated",
     "topic:claude-code-skills sort:updated",
     "topic:agent-skills sort:updated",
     "claude skill game OR fun OR creative in:name,description sort:updated",
     "SKILL.md skill in:readme claude sort:updated",
-    # 新品/新星专用：按创建时间倒序，让刚出生、还没积累星的好货进入结果
+    # —— 新品快车道（按创建时间倒序，接住刚发布还没积累星的）——
     "topic:claude-skills sort:created",
     "topic:agent-skills sort:created",
     "SKILL.md agent skill in:readme sort:created",
     "claude skill in:name,description sort:created",
+    # —— Codex 生态：曾经的盲区（gc-minimal-zine-poster 5.7k 星就在这里）——
+    "codex skill in:name,description sort:created",
+    "codex skill in:name,description sort:stars",
+    ".codex/skills in:readme sort:updated",
+    # —— 研究型：YouMind 画廊显示这类需求量远超预估（他们 328 个，我们曾只有 33）——
+    "skill in:name,description deep research report sort:stars",
+    "claude OR codex skill in:name,description competitor OR market-research sort:stars",
+    "agent skill in:name,description fact-check OR citation OR source-verify sort:stars",
+    "claude OR codex skill in:name,description 调研 OR 竞品 OR 分析报告",
+    # —— 单一视觉风格：好的图像 skill 卖的是一种具体风格，不是"设计工具"——
+    "codex skill in:name,description poster OR collage OR halftone OR risograph",
+    "codex OR claude skill in:name,description watercolor OR paper-cut OR hand-drawn",
+    "claude OR codex skill in:name,description 插画 OR 海报 OR 手绘 OR 水彩 OR 剪纸",
+    "skill in:name,description retro OR brutalist OR editorial poster sort:stars",
 ]
 
 SKIP_REPO_PAT = re.compile(
