@@ -1,0 +1,30 @@
+{
+ "id": "wshuyi-zettel-builder",
+ "kind": "skill",
+ "name": "zettel-builder",
+ "title_zh": "",
+ "tagline_zh": "写字的人会喜欢：zettel-builder。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "自底向上生长的 Zettelkasten 卡片笔记系统。从笔记/已发表文章/收藏素材持续消化为原子卡, 用户价值观重述,自动链接,周期性巡检文章就绪簇,缺口处可调 deep-research 补卡。 与\"自顶向下选题\"或\"长文写作 Skill\"不重叠:那些是\"等到要写时再生产\",本 skill 是\"素材进来就长卡\"。 触发词: - \"/zettel\"、\"/zettel-builder\" - \"卡片笔记\"、\"zettelkasten\"、\"原子卡\"、\"二级大脑\" - \"巡检卡片\"、\"长出来一篇\"、\"卡片就绪了吗\" - \"把这段切卡\"、\"做成卡片\" 四种模式(由用户调用语义路由): - ingest:把指定素材(文本/路径/URL/本会话片段)切原子卡 → 价值观重述 → 候选链接 - scan:消化 _queue/ 里 mechanical scan 积累的 llm-wiki 新增素材 - i",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "wshuyi/zettel-builder",
+ "owner": "wshuyi",
+ "path": "",
+ "url": "https://github.com/wshuyi/zettel-builder",
+ "homepage": "",
+ "stars": 58,
+ "pushed_at": "2026-08-12",
+ "skill_count": 1,
+ "category": "writing",
+ "fun_score": 2.59,
+ "pick": false,
+ "hide": false,
+ "source": "gap-0812",
+ "added_at": "2026-08-15",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/wshuyi/zettel-builder.git",
+  "copy": "mv zettel-builder ~/.claude/skills/zettel-builder",
+  "dir": "~/.claude/skills/zettel-builder"
+ }
+}
