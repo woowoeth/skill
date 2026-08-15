@@ -41,7 +41,11 @@ section h2 small{color:var(--faint);font-weight:400;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);cursor:pointer;transition:border-color .12s}
 .card:hover{border-color:var(--faint)}
-.cover{aspect-ratio:2/1;background:var(--soft);display:block;width:100%}
+.cover{aspect-ratio:2/1;background:var(--soft);display:block;width:100%;position:relative;overflow:hidden}
+.cover .gen{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px 14px;gap:6px}
+.cover .gen b{font-size:19px;font-weight:600;letter-spacing:.5px;line-height:1.25;opacity:.92}
+.cover .gen span{font:11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:.5;word-break:break-all}
+.cover img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;display:block}
 .cover img{width:100%;height:100%;object-fit:cover;display:block}
 .cbody{padding:12px 14px 13px}
 .cbody h3{margin:0 0 4px;font-size:16px;font-weight:600;line-height:1.4}
@@ -139,8 +143,15 @@ function today(){return (D&&D.generated_at?D.generated_at:"").slice(0,10)}
 function name(it){return lang==="zh"?(it.title_zh||it.name):it.name}
 function tag(it){var s=lang==="zh"?(it.tagline_zh||it.tagline_en):(it.tagline_en||it.desc_en);return s||""}
 function catName(id){var c=(D.categories||[]).find(function(x){return x.id===id});return c?(lang==="zh"?c.zh:c.en):id}
-function cover(it){return it.cover||og(it)}
-function og(it){return "https://opengraph.githubassets.com/1/"+it.repo}
+function cover(it){return it.cover||""}
+function hashNum(s){var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0}return Math.abs(h)}
+function genCover(it){
+  var col=catCol(it.category), h=hashNum(it.id||it.repo);
+  var ang=(h%4)*45, tint=col[0], ink=col[1];
+  var bg="linear-gradient("+ang+"deg,"+tint+" 0%,#ffffff 78%)";
+  var name=esc(lang==="zh"?(it.title_zh||it.name):it.name);
+  return '<div class="gen" style="background:'+bg+';color:'+ink+'"><b>'+name+"</b><span>"+esc(it.repo)+"</span></div>";
+}
 
 function chrome(){
   document.documentElement.lang=lang==="zh"?"zh-CN":"en";
@@ -165,7 +176,7 @@ function chrome(){
 function card(it){
   var extra=it.kind==="collection"?(lang==="zh"?"合集 ×"+(it.skill_count||"?"):"pack ×"+(it.skill_count||"?")):"";
   return '<article class="card" data-id="'+esc(it.id)+'">'
-    +'<div class="cover"><img loading="lazy" alt="" src="'+esc(cover(it))+'" data-og="'+esc(og(it))+'" onerror="if(this.dataset.f||this.src===this.dataset.og){this.parentNode.removeChild(this)}else{this.dataset.f=1;this.src=this.dataset.og}"></div>'
+    +'<div class="cover">'+genCover(it)+(it.cover?('<img loading="lazy" alt="" src="'+esc(it.cover)+'" onerror="this.remove()" onload="var g=this.parentNode.querySelector(\'.gen\');if(g)g.style.display=\'none\'">'):"")+"</div>"
     +'<div class="cbody"><h3>'+esc(name(it))+(lang==="zh"&&it.title_zh?"<span>"+esc(it.name)+"</span>":"")+"</h3>"
     +'<p class="tag">'+esc(tag(it))+"</p>"
     +(function(){var w=lang==="zh"?it.why_zh:it.why_en;return w?('<p class="rev"><b>'+t("why")+"</b> · "+esc(w)+"</p>"):""})()

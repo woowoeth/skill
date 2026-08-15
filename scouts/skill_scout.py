@@ -278,8 +278,7 @@ def resolve_cover(repo: str) -> str:
             src = m.group(1)
             if not src.startswith("http") or BADGE_PAT.search(src):
                 continue
-            if _img_ok(src):
-                return src
+            return src   # 不再用脚本 UA 验证：GitHub 对非浏览器 UA 返 403，会误杀浏览器能正常加载的图
     except Exception:
         pass
     return ""
