@@ -1,0 +1,30 @@
+{
+ "id": "dhicoc-dsh-mcp-plugin",
+ "kind": "skill",
+ "name": "dsh-mcp-plugin",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：dsh-mcp-plugin。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "把一个 MCP server（stdio/HTTP，任意语言，含 Rust/Go 独立二进制、Node/Python 脚本）封装成可 `dsh plugin add` 安装的 DeepSeek Harness (dsh) Cordis 插件。当用户想把某个 MCP server「做成 dsh 插件 / 封装成 dsh 插件 / 接入 dsh」时使用。注意：这与 dsh-skill-pack-plugin（把 SKILL.md 技能包封装成插件）是两条不同路线，本技能只处理 MCP server。",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "dhicoc/dsh-mcp-plugin",
+ "owner": "dhicoc",
+ "path": "",
+ "url": "https://github.com/dhicoc/dsh-mcp-plugin",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-16T13:03:18Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-08-16",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/dhicoc/dsh-mcp-plugin.git",
+  "copy": "mv dsh-mcp-plugin ~/.claude/skills/dsh-mcp-plugin",
+  "dir": "~/.claude/skills/dsh-mcp-plugin"
+ }
+}

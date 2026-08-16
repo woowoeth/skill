@@ -1,0 +1,31 @@
+{
+ "id": "vercel-labs-eve-software-factory-template-triaging-issues",
+ "kind": "skill",
+ "name": "Triaging Issues",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：Triaging Issues。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Grounding a GitHub work item before running the factory pipeline: checking for duplicates, working with the repo's existing labels, deciding whether to ask for clarification or proceed, and asking for reproduction details well. Load whenever a work item arrives from a GitHub issue or mention, and whenever asked to triage, label, dedupe, or close issues. Not needed for work items that arrive as pla",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "vercel-labs/eve-software-factory-template",
+ "owner": "vercel-labs",
+ "path": "agent/skills/triaging-issues",
+ "url": "https://github.com/vercel-labs/eve-software-factory-template/tree/HEAD/agent/skills/triaging-issues",
+ "homepage": "",
+ "stars": 822,
+ "pushed_at": "2026-08-14T08:03:33Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.12,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-08-16",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/vercel-labs/eve-software-factory-template.git",
+  "copy": "cp -r eve-software-factory-template/agent/skills/triaging-issues ~/.claude/skills/triaging-issues",
+  "dir": "~/.claude/skills/triaging-issues"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7"
+}
