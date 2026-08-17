@@ -136,6 +136,10 @@ header{border-bottom:1px solid var(--hairline);background:var(--bg)}
 .panel{border:0;background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow-pop);
   padding:var(--sp-6)}
 .status{color:var(--ink-50)}
+
+/* 触达底线：文字型链接视觉尺寸不变，靠行高补到 24px */
+footer a,.status a,.card a{display:inline-block;min-height:24px;line-height:24px}
+a{overflow-wrap:anywhere}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHD3WEXQ8T"></script>
