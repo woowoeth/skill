@@ -38,11 +38,8 @@ SITES = [
     ("", "OurWord AI", "OurWord AI"),
     ("idea", "Idea", "灵感看板"),
     ("skill-store", "Skill Store", "Skill 商店"),
-    ("ai-bubble-detector", "AI Bubble Monitor", "AI 泡沫检测仪"),
-    ("ai-jobs-20yr-report", "The Restructuring of Work", "工作的重构"),
-    ("HumanWorld", "Human World", "人类世界生存法则"),
+    ("ai-bubble", "AI Bubble Monitor", "AI 泡沫检测仪"),
     ("zouni", "Zouni", "走你"),
-    ("portfolio-tracker", "Market Watch", "投资观察仪表盘"),
 ]
 
 AI_AGENTS = [
@@ -425,7 +422,7 @@ def org_ld():
     return {"@context": "https://schema.org", "@type": "Organization", "name": "OurWord AI",
             "alternateName": "用 AI 触摸这个世界", "url": SITE + "/",
             "logo": SITE + "/og.png",
-            "sameAs": ["https://github.com/ourword-ai"]
+            "sameAs": ["https://github.com/woowoeth"]
                       + [SITE + "/" + p + "/" for p, _e, _c in SITES if p]}
 
 

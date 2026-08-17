@@ -21,7 +21,7 @@ EDITORIAL = os.path.join(ROOT, "editorial", "curation.json")
 SOURCES = os.path.join(ROOT, "scouts", "sources.json")
 
 GH_TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
-UA = "skill-store-scout/1.0 (+https://github.com/ourword-ai/skill-store)"
+UA = "skill-store-scout/1.0 (+https://github.com/woowoeth/skill-store)"
 
 # ---------------------------------------------------------------- shelves ---
 CATEGORIES = [
