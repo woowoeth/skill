@@ -1,0 +1,62 @@
+{
+  "_note": "非 skill 的原料：数据集、模型、素材库。不上货架，独立 tab 显示，必须明示不可直接安装。",
+  "generated_at": "2026-08-18",
+  "items": [
+    {
+      "id": "hasaneyldrm-exercises-dataset",
+      "kind": "dataset",
+      "kind_zh": "数据集",
+      "title_zh": "1324 个健身动作的动图与多语言说明库",
+      "title_en": "1,324-exercise fitness dataset with animation GIFs",
+      "tagline_zh": "做健身类 skill 最难的一步是攒动作库：每个动作要有演示图、肌群、器械、分步说明。这套 128MB 的数据把这步省了，还带六种语言。",
+      "tagline_en": "The hardest part of building a fitness skill is the exercise corpus — GIFs, muscle groups, equipment, step-by-step instructions. This is 128MB of it, in six languages.",
+      "why_zh": "它是 LogPress 那个 App 背后的数据层，所以数据是被真产品用过的、不是凑数的。想做「排一周训练计划并配演示图」这类 skill，这就是现成底座。",
+      "why_en": "It's the data layer behind the LogPress app, so the corpus has been used in production rather than assembled for show.",
+      "repo": "hasaneyldrm/exercises-dataset",
+      "url": "https://github.com/hasaneyldrm/exercises-dataset",
+      "stars": 20011,
+      "size_mb": 125,
+      "license": "NOASSERTION",
+      "caveat_zh": "License 为 NOASSERTION 并带 NOTICE.md，非标准开源许可 —— 商用前必须先弄清授权范围。",
+      "caveat_en": "License is NOASSERTION with a NOTICE.md — clarify the terms before any commercial use.",
+      "use_for_zh": "健身 / 康复 / 运动计划类 skill 的动作数据源"
+    },
+    {
+      "id": "unstonio-pixelgpt-24x24",
+      "kind": "model",
+      "kind_zh": "模型",
+      "title_zh": "68M 参数的本地 24×24 像素图生成模型",
+      "title_en": "A 68M-param local model that generates native 24×24 pixel art",
+      "tagline_zh": "它不是把大图缩小，而是直接预测 576 个像素各自的调色板索引，所以出的是原生像素画，还能看着像素一格格蹦出来。单张 RTX 5090 训练 30 分钟。",
+      "tagline_en": "It doesn't downscale a big image — it predicts a palette index for each of 576 pixels, so the output is natively low-res. Trained in 30 minutes on one RTX 5090.",
+      "why_zh": "本店自制的 pixelpad 就是学它这个内核（不降采样、逐像素落索引），用另一条路（agent 写绘图原语）实现的。想理解「原生像素画」为什么和缩图不同，读它的 README 最快。",
+      "why_en": "Our own pixelpad skill borrows exactly this kernel — no downscaling, index per pixel — implemented via a different route.",
+      "repo": "unstonio/pixelgpt-24x24",
+      "url": "https://github.com/unstonio/pixelgpt-24x24",
+      "stars": 65,
+      "license": "none",
+      "caveat_zh": "仓库是模型权重加网页 demo，没有 SKILL.md，无法直接安装。",
+      "caveat_en": "Model weights plus a web demo; no SKILL.md, not installable as a skill.",
+      "use_for_zh": "像素画 / 游戏素材类 skill 的生成后端",
+      "related_skill": "ourword-ai-pixelpad"
+    },
+    {
+      "id": "unstonio-pixelgpt-autoresearch",
+      "kind": "code",
+      "kind_zh": "研究代码",
+      "title_zh": "用视觉模型反馈自动调优像素模型的训练脚本",
+      "title_en": "Autonomous training loop that tunes a pixel model via VLM feedback",
+      "tagline_zh": "让视觉模型看生成结果、给反馈、再回去调训练——「自己看一眼再改」的自动化版本，MacBook 规模就能跑。",
+      "tagline_en": "A vision model looks at the output, gives feedback, and the training adjusts — the automated form of \"look at it, then fix it\", at MacBook scale.",
+      "why_zh": "pixelpad 里那条「画→渲染→自己看一眼→改」的回环，设计思路来自这里。它证明了视觉反馈闭环对小模型有效。",
+      "why_en": "The draw-render-look-fix loop in pixelpad takes its design from here; it demonstrates that a visual feedback loop works at small scale.",
+      "repo": "unstonio/pixelGPT-autoresearch",
+      "url": "https://github.com/unstonio/pixelGPT-autoresearch",
+      "stars": 0,
+      "license": "MIT",
+      "caveat_zh": "训练与研究脚本，不是可安装的 skill。",
+      "caveat_en": "Training and research scripts, not an installable skill.",
+      "use_for_zh": "任何需要「生成→评估→迭代」闭环的自制 skill"
+    }
+  ]
+}

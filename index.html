@@ -187,13 +187,13 @@ a{overflow-wrap:anywhere}
 (function(){
 "use strict";
 var I18N={
- zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
- en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
+ zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",materials:"原料",matHint:"这些不是 skill，装不上——它们是做 skill 的原料（数据集/模型/素材库）",notInstallable:"不可直接安装",useFor:"能拿来做",caveat:"注意",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
+ en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",materials:"Materials",matHint:"Not skills, so you cannot install these. They are raw material for building skills: datasets, models, asset libraries.",notInstallable:"Not directly installable",useFor:"Use for",caveat:"Caveat",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
 };
 var params=new URLSearchParams(location.search);
 var lang=params.get("lang")==="en"?"en":"zh";
 var t=function(k){return I18N[lang][k]||k};
-var D=null, state={q:"",cat:"all"};
+var D=null, M=[], state={q:"",cat:"all"};
 var CAT={creative:["#fdf0e7","#b45309"],fun:["#f3edfd","#7c3aed"],writing:["#e8f3ec","#15803d"],life:["#e6f7f5","#0f766e"],docs:["#eef2f6","#526071"],work:["#fdecec","#b0403c"],dev:["#e9f0fb","#2b5cd9"],meta:["#f6ebf8","#a03bb5"]};
 function catCol(id){return CAT[id]||["#f2f2f2","#555"]}
 
@@ -225,6 +225,7 @@ function chrome(){
   s+=" · <span>"+t("updated")+" "+esc((D.generated_at||"").slice(0,10))+"</span>";
   el("status").innerHTML=s;
   var chips='<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'+t("all")+"<small>"+D.count+"</small></button>"
+    +'<button class="chip'+(state.cat==="mat"?" on":"")+'" data-cat="mat" style="'+(state.cat==="mat"?"background:#8a6b1f;color:#fff;border-color:#8a6b1f":"background:#fdf6e3;color:#8a6b1f;border-color:transparent")+'">\ud83e\uddf1 '+t("materials")+"<small>"+M.length+"</small></button>"
     +'<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick" style="'+(state.cat==="pick"?"background:#111;color:#fff;border-color:#111":"")+'">★ '+t("picks")+"<small>"+D.picks+"</small></button>";
   (D.categories||[]).forEach(function(c){
     if(!c.count)return;
@@ -246,6 +247,26 @@ function card(it){
     +"</div></article>";
 }
 function grid(list){return '<div class="grid">'+list.map(card).join("")+"</div>"}
+function matCard(it){
+  var name=esc(lang==="zh"?it.title_zh:(it.title_en||it.title_zh));
+  var gen='<div class="gen" style="background:linear-gradient(135deg,#fdf6e3 0%,#ffffff 78%);color:#8a6b1f"><b>'+name+"</b><span>"+esc(it.repo)+"</span></div>";
+  var tag=esc(lang==="zh"?it.tagline_zh:(it.tagline_en||it.tagline_zh));
+  var why=esc(lang==="zh"?it.why_zh:(it.why_en||it.why_zh));
+  var cav=esc(lang==="zh"?(it.caveat_zh||""):(it.caveat_en||it.caveat_zh||""));
+  var kind=esc(it.kind_zh||it.kind);
+  return '<article class="card mat" data-mat="'+esc(it.id)+'">'
+    +'<div class="cover">'+gen+"</div>"
+    +'<div class="cbody"><span class="notinst">\u26a0 '+t("notInstallable")+" \u00b7 "+kind+"</span>"
+    +"<h3>"+name+"</h3>"
+    +'<p class="tag">'+tag+"</p>"
+    +'<p class="rev"><b>'+t("why")+'</b> \u00b7 '+why+"</p>"
+    +'<div class="matmeta">'+(it.use_for_zh?("<b>"+t("useFor")+"\uff1a</b>"+esc(it.use_for_zh)+"<br>"):"")
+    +(cav?("<b>"+t("caveat")+"\uff1a</b>"+cav):"")+"</div>"
+    +'<div class="meta"><div class="l">\u2605 '+fmt(it.stars)+" \u00b7 "+esc(it.repo)+(it.size_mb?(" \u00b7 "+it.size_mb+"MB"):"")+'</div><span class="cat" style="background:#fdf1d6;color:#8a6b1f">'+kind+"</span></div>"
+    +"</div></article>";
+}
+function matGrid(list){return '<div class="grid">'+list.map(matCard).join("")+"</div>"}
+
 
 function render(){
   chrome();
@@ -258,9 +279,12 @@ function render(){
     return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.desc_en,it.repo].join(" ").toLowerCase().indexOf(q)>=0;
   });
   var h="";
-  if(!list.length){el("main").innerHTML='<div class="empty">'+t("empty")+"</div>";return}
+  if(state.cat!=="mat"&&!list.length){el("main").innerHTML='<div class="empty">'+t("empty")+"</div>";return}
   if(q){
     h='<section><h2>'+t("results")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+  }else if(state.cat==="mat"){
+    h='<p class="mathint">\ud83e\uddf1 '+t("matHint")+"</p>"
+      +'<section><h2>'+t("materials")+"<small>"+M.length+"</small></h2>"+matGrid(M)+"</section>";
   }else if(state.cat==="pick"){
     h='<section><h2>'+t("picks")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
   }else if(state.cat!=="all"){
@@ -321,6 +345,8 @@ document.addEventListener("click",function(e){
   if(cp){copyText(cp.getAttribute("data-c"),cp);return}
   if(e.target.closest(".panel .x")){closeModal();return}
   if(e.target===el("veil")){closeModal();return}
+  var mc=e.target.closest(".card.mat");
+  if(mc){var mi=M.filter(function(x){return x.id===mc.getAttribute("data-mat")})[0];if(mi){window.open(mi.url,"_blank","noopener");return}}
   var c=e.target.closest(".card");
   if(c&&D){var it=(D.skills||[]).find(function(x){return x.id===c.getAttribute("data-id")});if(it)openModal(it)}
 });
@@ -334,7 +360,9 @@ el("langBtn").addEventListener("click",function(){
   render();
 });
 
-fetch("skills/feed.json").then(function(r){return r.json()}).then(function(d){D=d;render();jsonld()})
+fetch("skills/feed.json").then(function(r){return r.json()}).then(function(d){D=d;
+  fetch("materials/materials.json").then(function(r){return r.json()}).then(function(m){M=m.items||[];render();jsonld()})
+   .catch(function(){M=[];render();jsonld()})})
 .catch(function(){el("main").innerHTML='<div class="empty">feed.json load failed</div>'});
 })();
 </script>
