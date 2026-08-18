@@ -187,8 +187,8 @@ a{overflow-wrap:anywhere}
 (function(){
 "use strict";
 var I18N={
- zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",materials:"原料",matHint:"这些不是 skill，装不上——它们是做 skill 的原料（数据集/模型/素材库）",notInstallable:"不可直接安装",useFor:"能拿来做",caveat:"注意",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
- en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",materials:"Materials",matHint:"Not skills, so you cannot install these. They are raw material for building skills: datasets, models, asset libraries.",notInstallable:"Not directly installable",useFor:"Use for",caveat:"Caveat",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
+ zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",flag:"标记这条不吸引人",materials:"原料",matHint:"这些不是 skill，装不上——它们是做 skill 的原料（数据集/模型/素材库）",notInstallable:"不可直接安装",useFor:"能拿来做",caveat:"注意",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
+ en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",flag:"Flag as unappealing",materials:"Materials",matHint:"Not skills, so you cannot install these. They are raw material for building skills: datasets, models, asset libraries.",notInstallable:"Not directly installable",useFor:"Use for",caveat:"Caveat",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
 };
 var params=new URLSearchParams(location.search);
 var lang=params.get("lang")==="en"?"en":"zh";
@@ -239,6 +239,7 @@ function chrome(){
 function card(it){
   var extra=it.kind==="collection"?(lang==="zh"?"合集 ×"+(it.skill_count||"?"):"pack ×"+(it.skill_count||"?")):"";
   return '<article class="card" data-id="'+esc(it.id)+'">'
+    +'<button class="flagbtn" data-flag="'+esc(it.id)+'" title="'+t("flag")+'" aria-label="'+t("flag")+'">\u2691</button>'
     +'<div class="cover">'+genCover(it)+(it.cover?('<img loading="lazy" alt="" src="'+esc(it.cover)+'" onerror="this.remove()" onload="var g=this.parentNode.querySelector(\'.gen\');if(g)g.style.display=\'none\'">'):"")+"</div>"
     +'<div class="cbody"><h3>'+esc(name(it))+"</h3>"
     +'<p class="tag">'+esc(tag(it))+"</p>"
@@ -298,6 +299,29 @@ function render(){
   el("main").innerHTML=h;
 }
 
+function flagItem(id){
+  var it=(D.skills||[]).filter(function(x){return x.id===id})[0];
+  if(!it)return;
+  var title="\u6807\u8bb0\uff1a"+(it.title_zh||it.name);
+  var body=[
+    "**\u5546\u54c1**\uff1a"+(it.title_zh||it.name),
+    "**id**\uff1a`"+it.id+"`",
+    "**\u4ed3\u5e93**\uff1ahttps://github.com/"+it.repo,
+    "",
+    "**\u54ea\u91cc\u4e0d\u5438\u5f15\u4eba\uff1f**\uff08\u52fe\u4e00\u4e2a\u6216\u591a\u4e2a\uff09",
+    "- [ ] \u6807\u9898\u6ca1\u8bf4\u6e05\u695a\u8fd9\u662f\u4ec0\u4e48",
+    "- [ ] \u7b80\u4ecb\u6ca1\u56de\u7b54\u300c\u6211\u4e3a\u4ec0\u4e48\u8981\u88c5\u300d",
+    "- [ ] \u70b9\u8bc4\u8bf4\u4e86\u7b49\u4e8e\u6ca1\u8bf4",
+    "- [ ] \u5927\u8def\u8d27\uff0c\u522b\u5904\u90fd\u67e5\u5f97\u5230",
+    "- [ ] \u6839\u672c\u4e0d\u5e94\u8be5\u4e0a\u67b6",
+    "- [ ] \u5176\u4ed6\uff1a",
+    "",
+    "\u8865\u5145\u8bf4\u660e\uff1a"
+  ].join("\n");
+  var u="https://github.com/woowoeth/skill/issues/new?labels=%E4%B8%8D%E5%90%B8%E5%BC%95%E4%BA%BA&title="
+        +encodeURIComponent(title)+"&body="+encodeURIComponent(body);
+  window.open(u,"_blank","noopener");
+}
 function copyText(txt,btn){
   function done(){var o=btn.textContent;btn.textContent=t("copied");setTimeout(function(){btn.textContent=o},1200)}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback()})}else fallback();
@@ -345,6 +369,8 @@ document.addEventListener("click",function(e){
   if(cp){copyText(cp.getAttribute("data-c"),cp);return}
   if(e.target.closest(".panel .x")){closeModal();return}
   if(e.target===el("veil")){closeModal();return}
+  var fb=e.target.closest(".flagbtn");
+  if(fb){e.preventDefault();e.stopPropagation();flagItem(fb.getAttribute("data-flag"));return}
   var mc=e.target.closest(".card.mat");
   if(mc){var mi=M.filter(function(x){return x.id===mc.getAttribute("data-mat")})[0];if(mi){window.open(mi.url,"_blank","noopener");return}}
   var c=e.target.closest(".card");
