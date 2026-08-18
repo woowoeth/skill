@@ -304,22 +304,27 @@ LLM_KEY = os.environ.get("LLM_API_KEY", "").strip()
 LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").strip().rstrip("/")
 LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini").strip()
 
-ENRICH_PROMPT = """你是「Skill 商店」店长，为一件新上架的 Agent Skill 写中英双语货架文案。这是一家只留精品的小店，文案要让人「一眼想试」，不要正确的废话。
+ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 写货架文案。这家店只留精品，文案要让人"一眼想装"。
 
-硬性要求（超限即失败）：
-- title_zh：中文名，≤8 个汉字。贴切、可有趣，不生造成语。
-- tagline_zh：一句钩子，中文 40~58 字（务必两行、不超 58）。写「具体场景/痛点/反差 + 一个别处没有的细节」，禁止「实用利器」「效率神器」「必备工具」这类空话。
-- tagline_en：英文钩子，严格 ≤115 个英文字符（含空格；宁短勿超）。与中文同义但地道，不要逐字翻译。
-- why_zh：一句点评，中文 30~52 字。只说「它到底比同类强在哪」——机制或差异点，诚实具体，不吹不堆形容词。
-- why_en：英文点评，≤130 个英文字符。
+三个字段各司其职，**不许互相重复**：
 
-只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en 五个键，不要 markdown、不要解释。
+- title_zh：**一句话说清这是什么**（12~24 个汉字）。不是外号、不是产品名。
+  ✗ 错：「女娲造 skill」「技能饕餮」——用户不知道那是啥
+  ✓ 对：「把任何人的思维方式蒸馏成一个能装的 skill」
+- tagline_zh：**用户为什么要装**（40~58 字，占满两行）。写痛点/场景/反差 + 一个别处没有的具体细节。
+  禁止复述功能列表，禁止「实用利器」「效率神器」这类空话。
+- why_zh：**它到底好在哪**（30~52 字）。机制上的差异点、诚实的局限、平台限制。可以有态度。
+- tagline_en / why_en：英文版，同义但地道，各 ≤115 / ≤130 字符。
+
+如果这件东西你写不出有钩子的文案 —— 说明它不值得上架。这时把 title_zh 设为 "SKIP" 并留空其余字段。
 
 商品信息：
 name: {name}
 repo: {repo}
 kind: {kind}
-description: {desc}"""
+description: {desc}
+
+只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en 五个键。"""
 
 
 def _clamp_cjk(text: str, limit: int) -> str:
@@ -348,7 +353,7 @@ def _clamp_en(text: str, limit: int) -> str:
 def _clamp_patch(patch: dict) -> dict:
     """把模型产出的文案硬性压进规范长度——模型不听字数指令，代码兜底。"""
     if patch.get("title_zh"):
-        patch["title_zh"] = patch["title_zh"][:8]
+        patch["title_zh"] = patch["title_zh"][:26]
     if patch.get("tagline_zh"):
         patch["tagline_zh"] = _clamp_cjk(patch["tagline_zh"], 58)
     if patch.get("why_zh"):
@@ -402,6 +407,11 @@ def enrich_items(ids: list[str], existing: dict) -> None:
                      ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en")
                      if c.get(k) and str(c[k]).strip()}
             patch = _clamp_patch(patch)
+            if patch.get("title_zh", "").strip().upper() == "SKIP":
+                it["hide"] = True
+                lib.save_item(it)
+                print(f"[scout] {sid}: 文案写不出 → 按标准不上架")
+                continue
             if patch:
                 it.update(patch)
                 lib.save_item(it)

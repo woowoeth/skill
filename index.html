@@ -74,6 +74,7 @@ section h2 small{color:var(--faint);font-weight:400;font-size:var(--fs-body)}
 .cover .gen span{font:11px/1.3 var(--font);opacity:.5;word-break:break-all}
 .cover img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;display:block}
 .cover img{width:100%;height:100%;object-fit:cover;display:block}
+<<<<<<< HEAD
 .cbody{padding:var(--sp-3) var(--sp-3) var(--sp-3)}
 .cbody h3{margin:0 0 var(--sp-1);font-size:var(--fs-heading);font-weight:600;line-height:1.4}
 .cbody h3 span{color:var(--faint);font-weight:400;font-size:var(--fs-body);margin-left:var(--sp-1)}
@@ -81,6 +82,15 @@ section h2 small{color:var(--faint);font-weight:400;font-size:var(--fs-body)}
 .rev{margin:var(--sp-2) 0 0;color:var(--muted);font-size:var(--fs-body);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rev b{font-weight:600;color:var(--ink-70)}
 .meta{margin-top:var(--sp-2);display:flex;justify-content:space-between;gap:var(--sp-2);color:var(--faint);font-size:var(--fs-body)}
+=======
+.cbody{padding:12px 14px 13px}
+.cbody h3{margin:0 0 6px;font-size:16.5px;font-weight:650;line-height:1.42;letter-spacing:.1px}
+.cbody h3 span{color:var(--faint);font-weight:400;font-size:13px;margin-left:6px}
+.tag{margin:0;color:#3d3d3d;font-size:14px;line-height:1.6;min-height:3.2em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rev{margin:7px 0 0;color:var(--muted);font-size:13.5px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rev b{font-weight:600;color:#555}
+.meta{margin-top:10px;display:flex;justify-content:space-between;gap:10px;color:var(--faint);font-size:12.5px}
+>>>>>>> 83f05424 (重构: 选品标准三问写死 / 大砍 115 件大路货与装修配置 / 标题改为一句话说清是什么 / 首页=最新，推荐进 tab / 抓取即写文案，写不出不上架 / 定时降为一班)
 .meta .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cat{font-size:var(--fs-caption);padding:var(--sp-1) var(--sp-2);border-radius:999px;white-space:nowrap;align-self:center}
 .empty{color:var(--faint);padding:var(--sp-6) 0;text-align:center;font-size:var(--fs-strong)}
@@ -224,7 +234,8 @@ function chrome(){
   if(D.new_today&&D.new_today<D.count)s+=" · <span>"+t("fresh")+" "+D.new_today+"</span>";
   s+=" · <span>"+t("updated")+" "+esc((D.generated_at||"").slice(0,10))+"</span>";
   el("status").innerHTML=s;
-  var chips='<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'+t("all")+"<small>"+D.count+"</small></button>";
+  var chips='<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'+t("all")+"<small>"+D.count+"</small></button>"
+    +'<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick" style="'+(state.cat==="pick"?"background:#111;color:#fff;border-color:#111":"")+'">★ '+t("picks")+"<small>"+D.picks+"</small></button>";
   (D.categories||[]).forEach(function(c){
     if(!c.count)return;
     var col=catCol(c.id), on=state.cat===c.id;
@@ -238,7 +249,7 @@ function card(it){
   var extra=it.kind==="collection"?(lang==="zh"?"合集 ×"+(it.skill_count||"?"):"pack ×"+(it.skill_count||"?")):"";
   return '<article class="card" data-id="'+esc(it.id)+'">'
     +'<div class="cover">'+genCover(it)+(it.cover?('<img loading="lazy" alt="" src="'+esc(it.cover)+'" onerror="this.remove()" onload="var g=this.parentNode.querySelector(\'.gen\');if(g)g.style.display=\'none\'">'):"")+"</div>"
-    +'<div class="cbody"><h3>'+esc(name(it))+(lang==="zh"&&it.title_zh?"<span>"+esc(it.name)+"</span>":"")+"</h3>"
+    +'<div class="cbody"><h3>'+esc(name(it))+"</h3>"
     +'<p class="tag">'+esc(tag(it))+"</p>"
     +(function(){var w=lang==="zh"?it.why_zh:it.why_en;return w?('<p class="rev"><b>'+t("why")+"</b> · "+esc(w)+"</p>"):""})()
     +'<div class="meta"><div class="l">★ '+fmt(it.stars)+" · "+esc(it.repo)+(extra?" · "+esc(extra):"")+'</div><span class="cat" style="background:'+catCol(it.category)[0]+';color:'+catCol(it.category)[1]+'">'+esc(catName(it.category))+"</span></div>"
@@ -251,24 +262,24 @@ function render(){
   var all=D.skills||[];
   var q=state.q.trim().toLowerCase();
   var list=all.filter(function(it){
-    if(state.cat!=="all"&&it.category!==state.cat)return false;
+    if(state.cat==="pick"&&!it.pick)return false;
+    if(state.cat!=="all"&&state.cat!=="pick"&&it.category!==state.cat)return false;
     if(!q)return true;
     return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.desc_en,it.repo].join(" ").toLowerCase().indexOf(q)>=0;
   });
   var h="";
-  if(!list.length){
-    el("main").innerHTML='<div class="empty">'+t("empty")+"</div>";return;
-  }
-  if(q){                                    // 文字搜索 → 结果
+  if(!list.length){el("main").innerHTML='<div class="empty">'+t("empty")+"</div>";return}
+  if(q){
     h='<section><h2>'+t("results")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
-  }else if(state.cat!=="all"){              // 频道页 → 频道名做标题
+  }else if(state.cat==="pick"){
+    h='<section><h2>'+t("picks")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+  }else if(state.cat!=="all"){
     var c=(D.categories||[]).find(function(x){return x.id===state.cat});
-    var name=c?((c.emoji?c.emoji+" ":"")+(lang==="zh"?c.zh:c.en)):state.cat;
-    h='<section><h2>'+esc(name)+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
-  }else{                                    // 首页 → 推荐 + 信息流（新→旧）
-    var picks=list.filter(function(x){return x.pick});
-    if(picks.length)h+='<section><h2>'+t("picks")+"<small>"+picks.length+"</small></h2>"+grid(picks)+"</section>";
-    h+='<section><h2>'+t("latest")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+    var nm=c?((c.emoji?c.emoji+" ":"")+(lang==="zh"?c.zh:c.en)):state.cat;
+    h='<section><h2>'+esc(nm)+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
+  }else{
+    // 首页 = 最新（信息流），推荐不再占首页，挪进 tab
+    h='<section><h2>'+t("latest")+"<small>"+list.length+"</small></h2>"+grid(list)+"</section>";
   }
   el("main").innerHTML=h;
 }
