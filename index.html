@@ -374,9 +374,13 @@ header.top{padding:var(--s5) 0 var(--s4)}
 .heart[aria-pressed="true"] svg path{fill:currentColor}
 .chip.heartchip{border-color:#e3c4bd;color:#b8452f}
 .chip.heartchip.on{background:#b8452f;border-color:#b8452f;color:#fff}
+/* ⚠️ 间距规矩：任何直接落在 #main 里的块，上边距一律 var(--s4)，
+   手机断点里一律 var(--s3) —— 跟 .todayline / .flow 对齐。
+   加新块时先看这两个兄弟怎么排的，别只顾着自己跟下面的距离。
+   （这条是补出来的：心选说明条当初写成 margin-top:0，紧贴 sticky 分割线。） */
 .sendbar{
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  margin:0 0 var(--s4);padding:12px 14px;background:var(--soft);
+  margin:var(--s4) 0 0;padding:12px 14px;background:var(--soft);
   border:1px solid var(--line);border-radius:10px;
   font:var(--t-cap)/1.6 var(--sans);color:var(--ink-2);
 }
@@ -530,6 +534,7 @@ header.top{padding:var(--s5) 0 var(--s4)}
   .bar:after{margin-top:var(--s2)}
   .chips{margin-top:var(--s2)}
   .todayline{margin-top:var(--s3)}
+  .sendbar{margin-top:var(--s3)}
   .flow{margin-top:var(--s3)}
   /* 手机是第一现场：详情从底部推上来，不是居中弹窗 */
   .veil{align-items:flex-end;padding:0}
