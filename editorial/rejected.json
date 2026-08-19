@@ -1,16 +1,57 @@
 {
-  "_说明": "拒收榜。公开「今天扫了多少、收了几件、拒了这些、每条一句为什么」。这是筛子为真的唯一证据——收录量抄得走，拒收理由抄不走。结构见 schema/rejected.schema.json。",
-  "_用法": "往 entries 里 append。repo 是去重键，同一个 repo 只留最新一条。reject_rule 五选一：问一/问二/问三/红线/门槛，对应 docs/CURATION.md 的条款。写完跑 python3 scouts/check_curation.py 校验。",
-  "_写法": "reject_reason_zh 要具体到这一件东西（「第 N 个 commit 规范，架上已有更好的」），不要复述条款本身（「不满足问二」）。挂不上任何一条条款 = 标准没写清，去改 CURATION.md，不要硬塞。",
-  "_example": {
-    "repo": "owner/name",
-    "name": "SKILL.md 里的 name",
-    "desc": "原始英文简介，原文照抄",
-    "reject_reason_zh": "一句话说清为什么不收，30 字以内",
-    "reject_rule": "问二",
-    "reject_clause": "通用开发工具",
-    "stars": 1200,
-    "rejected_at": "2026-08-19"
+ "_说明": "拒收榜。公开「今天扫了多少、收了几件、拒了这些、每条一句为什么」。这是筛子为真的唯一证据——收录量抄得走，拒收理由抄不走。结构见 schema/rejected.schema.json。",
+ "_用法": "往 entries 里 append。repo 是去重键，同一个 repo 只留最新一条。reject_rule 五选一：问一/问二/问三/红线/门槛，对应 docs/CURATION.md 的条款。写完跑 python3 scouts/check_curation.py 校验。",
+ "_写法": "reject_reason_zh 要具体到这一件东西（「第 N 个 commit 规范，架上已有更好的」），不要复述条款本身（「不满足问二」）。挂不上任何一条条款 = 标准没写清，去改 CURATION.md，不要硬塞。",
+ "_example": {
+  "repo": "owner/name",
+  "name": "SKILL.md 里的 name",
+  "desc": "原始英文简介，原文照抄",
+  "reject_reason_zh": "一句话说清为什么不收，30 字以内",
+  "reject_rule": "问二",
+  "reject_clause": "通用开发工具",
+  "stars": 1200,
+  "rejected_at": "2026-08-19"
+ },
+ "entries": [
+  {
+   "repo": "hoolulu/deep-research",
+   "name": "deep-research",
+   "desc": "Professional deep research report generation — multi-agent collaboration with parallel chapter writing, automatic latest-data targeting, multilingual output, and built-in quality checks.",
+   "reject_reason_zh": "随件附带反检测抓取脚本，作者自述用于绕过 Cloudflare/WAF 防护的站点",
+   "reject_rule": "红线",
+   "reject_clause": "绕反爬",
+   "stars": 517,
+   "rejected_at": "2026-08-19"
   },
-  "entries": []
+  {
+   "repo": "Cocoon-AI/architecture-diagram-generator",
+   "name": "architecture-diagram",
+   "desc": "Create polished dark-themed architecture diagrams as self-contained HTML+SVG files. Use when the user asks for system, infrastructure, cloud, security, or network topology diagrams.",
+   "reject_reason_zh": "架上的 archify 自述 based_on 这个仓库，已做到 v2.15 且功能是超集",
+   "reject_rule": "问二",
+   "reject_clause": "已有更好同类在架",
+   "stars": 6958,
+   "rejected_at": "2026-08-19"
+  },
+  {
+   "repo": "coffeefuelbump/csv-data-summarizer-claude-skill",
+   "name": "csv-data-summarizer",
+   "desc": "Analyzes CSV files, generates summary stats, and plots quick visualizations using Python and pandas.",
+   "reject_reason_zh": "pandas 出 CSV 摘要，任何目录站都有；正文大半在处理提示词服从性不是方法",
+   "reject_rule": "问二",
+   "reject_clause": "通用开发工具",
+   "stars": 451,
+   "rejected_at": "2026-08-19"
+  },
+  {
+   "repo": "op7418/logo-generator-skill",
+   "name": "logo-generator",
+   "desc": "Generate professional SVG logos and high-end showcase images. Use when the user wants to: (1) Create a logo or icon for their product/brand, (2) Generate logo design concepts based on product information, (3) Create professional logo showcase presentations with multiple background styles, (4) Export logos in various formats (SVG, PNG), or (5) Iterate on logo designs with different visual styles. S",
+   "reject_reason_zh": "同作者已有两件角度更独占的在架，logo 生成是 AI 生图最拥挤的品类",
+   "reject_rule": "问二",
+   "reject_clause": "已有更好同类在架",
+   "stars": 1803,
+   "rejected_at": "2026-08-19"
+  }
+ ]
 }

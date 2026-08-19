@@ -19,12 +19,14 @@
  "category": "dev",
  "fun_score": 3.44,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "daily-scout",
  "added_at": "2026-08-08",
  "install": {
   "clone": "git clone --depth 1 https://github.com/BlockRunAI/ClawRouter.git",
   "copy": "cp -r ClawRouter/skills/clawrouter ~/.claude/skills/clawrouter",
   "dir": "~/.claude/skills/clawrouter"
- }
+ },
+ "unshelve_reason": "红线 · 金融执行 + 凭据风险。随件的 blockrun_polymarket 用**自动生成、明文落盘的 EVM 私钥**在 Polymarket 上下真金白银的注，并默认走东京出口以绕开地域封锁。CURATION 红线含「金融荐股/交易信号预测」，实际下单比荐股更进一步。**我们自己的 limit_zh 早已把这句话写全了，却让它当了一行卖诚实的文案**——这是流程漏点，不是眼力漏点。",
+ "unshelved_at": "2026-08-19"
 }

@@ -19,7 +19,7 @@
  "category": "dev",
  "fun_score": 1.54,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "daily-scout",
  "added_at": "2026-08-08",
  "install": {
@@ -27,5 +27,7 @@
   "copy": "cp -r claude-code-docs/plugin/skills/docs ~/.claude/skills/docs",
   "dir": "~/.claude/skills/docs"
  },
- "cover": "https://repository-images.githubusercontent.com/1088856497/f5af0e24-6920-483a-b847-9626767743b1"
+ "cover": "https://repository-images.githubusercontent.com/1088856497/f5af0e24-6920-483a-b847-9626767743b1",
+ "unshelve_reason": "问二 · Anthropic 官方文档镜像，用户自己会去官网；且 disable-model-invocation: true，本质是别人插件的内部分发器。",
+ "unshelved_at": "2026-08-19"
 }

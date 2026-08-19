@@ -19,12 +19,13 @@
  "category": "writing",
  "fun_score": 2.39,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "hunt-0808",
  "added_at": "2026-08-10",
  "install": {
   "clone": "git clone --depth 1 https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill.git",
   "copy": "mv csv-data-summarizer-claude-skill ~/.claude/skills/csv-data-summarizer-claude-skill",
   "dir": "~/.claude/skills/csv-data-summarizer-claude-skill"
- }
+ },
+ "unshelve_reason": "问二 · 通用工具，用户在别处拿得到。pandas + matplotlib + seaborn 出 CSV 摘要和图，任何目录站、任何一篇「必装清单」里都有同类。5.6KB 正文里相当篇幅是对模型喊话的全大写指令（DO NOT ASK THE USER / DO NOT OFFER OPTIONS / DO NOT LIST POSSIBLE ANALYSES），解决的是提示词服从性，不是方法上的独到。写不出让人想装的一句话 —— 问三也没过。"
 }

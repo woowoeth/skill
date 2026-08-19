@@ -19,12 +19,13 @@
  "category": "creative",
  "fun_score": 4.46,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "hunt-0808",
  "added_at": "2026-08-10",
  "install": {
   "clone": "git clone --depth 1 https://github.com/Cocoon-AI/architecture-diagram-generator.git",
   "copy": "cp -r architecture-diagram-generator/architecture-diagram ~/.claude/skills/architecture-diagram",
   "dir": "~/.claude/skills/architecture-diagram"
- }
+ },
+ "unshelve_reason": "问二 · 已有更好同类在架，且没有「它独有」的理由。架上的 tt-a1i/archify 在自己的 frontmatter 里写着 `based_on: Cocoon-AI/architecture-diagram-generator (MIT, v1.0)` —— 它就是这件的衍生版，已做到 v2.15，多出明暗主题、trace motion、PNG/JPEG/WebP/SVG/WebM 导出、Mermaid 输入转换、以及读仓库代码取证。这不是两个角度，是同一件东西的两代，后一代是超集。"
 }

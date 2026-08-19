@@ -19,7 +19,7 @@
  "category": "docs",
  "fun_score": 2.44,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "gap-0812",
  "added_at": "2026-08-15",
  "install": {
@@ -27,5 +27,6 @@
   "copy": "mv deep-research ~/.claude/skills/deep-research",
   "dir": "~/.claude/skills/deep-research"
  },
- "cover": "https://private-user-images.githubusercontent.com/84072841/604819597-736b0113-f054-4dba-b018-e656a51a9fb4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY3NzcxNDUsIm5iZiI6MTc4Njc3Njg0NSwicGF0aCI6Ii84NDA3Mjg0MS82MDQ4MTk1OTctNzM2YjAxMTMtZjA1NC00ZGJhLWIwMTgtZTY1NmE1MWE5ZmI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE1VDA2NTQwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0OWNiMGVjZmIwYjEyOGY4MGZhZDUyZmEwMTA4NDljZTEyMjY5YTRlNzVhY2UxYzg3Y2RjYTg1M2UzZmVjZDQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.tLNwptHU_j6t8K6cpYc4oOvDJSoENbnkCiVXGXHDmeA"
+ "cover": "https://private-user-images.githubusercontent.com/84072841/604819597-736b0113-f054-4dba-b018-e656a51a9fb4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY3NzcxNDUsIm5iZiI6MTc4Njc3Njg0NSwicGF0aCI6Ii84NDA3Mjg0MS82MDQ4MTk1OTctNzM2YjAxMTMtZjA1NC00ZGJhLWIwMTgtZTY1NmE1MWE5ZmI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE1VDA2NTQwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ0OWNiMGVjZmIwYjEyOGY4MGZhZDUyZmEwMTA4NDljZTEyMjY5YTRlNzVhY2UxYzg3Y2RjYTg1M2UzZmVjZDQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.tLNwptHU_j6t8K6cpYc4oOvDJSoENbnkCiVXGXHDmeA",
+ "unshelve_reason": "红线 · 绕反爬。仓库同目录的 scrapling-mcp-server.py 第 52 行自述：`批量抓取网页全文（反检测模式，适合有 Cloudflare/WAF 防护的网站）`；SKILL.md 前置条件写着「Playwright（可选，用于 JS 渲染和反检测抓取）」，工具表列 scrapling_bulk_stealthy_fetch。随件附带专门绕过目标站防抓措施的脚本 —— 与 story-long-scan 同形状，目的正当（做调研）和如实披露都不豁免行为本身。方法论本身很好（12 条支付级质量标准、强制反方视角、零套话），作者若把 stealthy 那条路径拿掉，随时可以翻回。"
 }

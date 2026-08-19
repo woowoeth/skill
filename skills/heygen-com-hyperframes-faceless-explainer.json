@@ -19,7 +19,7 @@
  "category": "creative",
  "fun_score": 7.16,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "curated-from-list-0808",
  "added_at": "2026-08-11",
  "install": {
@@ -27,5 +27,6 @@
   "copy": "cp -r hyperframes/skills/faceless-explainer ~/.claude/skills/faceless-explainer",
   "dir": "~/.claude/skills/faceless-explainer"
  },
- "cover": ""
+ "cover": "",
+ "unshelve_reason": "问一 · 不是拿走就能用的商品。SKILL.md 第一行就要求跑 `npx hyperframes skills update faceless-explainer` 去拉核心依赖，产图前还要调 `/media-use` 取 HeyGen 素材目录，description 里直接路由到兄弟 skill （`/product-launch-video`、`/hyperframes`）。它是 hyperframes 这套 npm CLI 的一条路由分支，不是单品。同仓库的合集卡 heygen-com-hyperframes 已在架，一个仓库不该占三个位。"
 }

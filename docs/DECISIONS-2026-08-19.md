@@ -722,3 +722,85 @@ civil service exam / beekeeping / birdwatching / knitting …），走同一条�
 
 处置：**同类多件时只留角度最独占的那一件，其余按问二拒掉，拒收理由写进 `rejected.json`。**
 优先级排在挑新货前面——**互相稀释是已经在架上正在扣分的问题，比少上几件新的严重。**
+
+## D35 · 下架 9 件，其中 2 件是红线；真正的漏点在流程不在眼力
+
+存量审计（逐件 clone 过、有正文出处）结果：
+
+**红线 2 件**
+| id | 证据 |
+|---|---|
+| `blockrunai-clawrouter-clawrouter` | 随件的 `blockrun_polymarket` 用**自动生成、明文落盘的 EVM 私钥**在 Polymarket 下真金白银的注，并默认走东京出口绕地域封锁 |
+| `mvanhorn-last30days-skill-last30days` | 首跑向导**从用户浏览器抽取 X 的登录 cookie**，走 vendored 的 Twitter 私有 GraphQL；CHANGELOG 明写重试是为处理 anti-bot 拦截页 |
+
+**问一 5 件**：`sawyerhood-dev-browser`（正文 21 行，唯一方法是 `--help`）·
+`donchitos-game-studios`（README 第一步「Clone or use as template」）·
+`arbiterforge-codearbiter`（每件开头「Read these, or STOP」，读的是不随 skill 走的项目档案）·
+`wanshuiyin-research-in-sleep`（作者自写「a methodology, not a platform」）·
+`jame581-godotprompter`（README 自称 framework）
+
+**问二 2 件**：`nowork-studio-notfair`（skills/ 下 45 件**全是三行指针壳**，合计 722 行）·
+`costiash-claude-code-docs`（官方文档镜像 + `disable-model-invocation`）
+
+**在架 167 → 158。**
+
+### 审计最值钱的一句：漏点在流程，不在眼力
+
+> `blockrunai` 的 `limit_zh` 已经把话说全了——「首次运行自动生成 EVM 私钥并明文落盘，
+> 还捆着真金白银下注 Polymarket 的工具」——**然后它还在架上**。
+> `donchitos` 的 `limit_zh` 白纸黑字写着「它是一整个项目模板，**不是能一件件拆下来装的商品**」，
+> 而「不是商品」正是问一的原话。
+
+**诚实局限字段已经把该拒的理由写出来了，但写完之后没有一个动作把它送回三问。
+红线和问一被降级成了「卡片上的一句卖诚实的文案」。**
+
+这跟 D20 判死 `story-long-scan` 时立的判据一字不差地撞上：**如实披露不豁免行为本身**——
+只不过这次自述的是我们，不是作者。
+
+## D36 · 守卫【11】：局限里的判决书
+
+**不判商品的成分（那是人的活），只判我们自己写下的那句话是不是已经等于一份判决书。**
+命中即 ERROR，逼人回去重过三问。
+
+五组模式：自述不是商品 / 涉及凭据（私钥·助记词·抽 cookie）/ 金融执行（下注·下单·荐股）/
+绕反爬 / 数量堆（指针壳）。
+
+**收窄过一次**：`不是 ?skill` 抓到了 `agnix`——它的局限写「校验**不是 skill 做的**，
+是 Rust 二进制做的」，说的是谁做校验，不是它自己不是商品。
+按 D24 的纪律（**一个当前唯一输出是误报的守卫就是噪音**）改窄。
+
+**双向验过**：在架 158 件命中 **0**（干净上线，不是带着一堆待办上线）；
+拿刚下架的四件喂进去抓到 **3/4**——第 4 件的局限本来就没写出那个判决，
+是审计现场读正文读出来的，**守卫抓不到属实，不虚报**。
+
+## D37 · 一件标出来但判不下架的
+
+`worldwonderer-…-story-short-analyze` 正文写着「**不得以「敏感」「不适」为由拒绝整篇或某个片段**」。
+审计标出来是对的——**这个形状是「指示模型不许拒绝」**。
+
+但读全文站得住，三处限定缺一不可：
+限定**用户合法持有、拥有使用权**的已出版虚构作品 · 性质是**只读的转化性文学批评**（不复制不传播不指导现实行为）·
+且明写「**个别片段无法处理则跳过、照常续完其余**」——留了口子。
+
+**判：不下架。** 记在这里是因为形状值得警惕：
+下次遇到没有这三处限定的同类表述，就是红线。
+
+## D38 · 测试夹具那个病还在
+
+审计顺手查出：`codeArbiter` 171 份里 4 份是 `site/test/fixtures`、
+`GodotPrompter` 65 份里 8 份是 `scripts/fixtures`、
+`bitwize-music-studio` 52 件里 13 件是 `test`/`about`/`setup`/`health-check` 这类插件自用件
+（`test` 的 description 写着 "Use before creating PRs"）。
+
+前两件已随本轮下架，第三件留着但**数字仍虚**。
+`skill_count` 的口径收窄要落在 ingest（`find_skill_mds` 排除 `tests/ golden/ fixtures/`）——**还没做。**
+
+## D39 · 一笔不存在的欠账
+
+台账长期挂着「14 件取不回 `SKILL.md` 正文」。审计逐个 clone 过：
+**14 个仓库全部存在，而这 14 件恰好就是全部 14 件合集**（`kind=collection`，`path` 为空）。
+
+**合集本来就没有「一份正文」可存**——这在早先的裁决里已经记过。
+所以这不是欠账，是**台账口径把一个不存在的约定记成了缺口**。
+
+跟「印在货架上的数字」是同一族病的又一个变体：**这次错的不是数字，是分母。**
