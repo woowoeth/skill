@@ -473,21 +473,14 @@ header.top{padding:var(--s5) 0 var(--s4)}
    竖线属于「点评」，不属于这一对 —— 20 件没写「但是」的，整块照样闭合，
    不留空槽、不写「暂无」。「但是」是加上去的一笔，不是撑结构的柱子。 */
 .judge{margin:var(--s4) 0 0;border-left:2px solid var(--ink);padding-left:16px}
+.judge .lb2{margin-top:var(--s4)}
 .judge .lb{
   display:block;margin-bottom:7px;
   font:600 var(--t-micro)/1 var(--sans);letter-spacing:.3em;color:var(--ink-4);
 }
-.judge .v{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--sans);color:var(--ink)}
-.judge .b{
-  margin:.8em 0 0;padding-left:1.3em;position:relative;
-  font:400 var(--t-body)/var(--lh-long) var(--sans);color:var(--ink-2);
-}
-/* 悬挂的朱笔「但」，负位移压在竖线上，像纸上的一记批注 */
-/* 悬挂的「但」，负位移压在竖线上，像纸上的一记批注 */
-.judge .b .mk{
-  position:absolute;left:-17px;top:.06em;width:19px;text-align:center;
-  font:600 var(--t-lead)/1.4 var(--sans);color:var(--ink);background:var(--card);
-}
+.judge .v,
+.judge .b{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--sans);color:var(--ink)}
+.judge .b{margin-top:var(--s4)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 .sheet h4{
@@ -546,8 +539,6 @@ header.top{padding:var(--s5) 0 var(--s4)}
     border-radius:var(--r-card) var(--r-card) 0 0;padding:var(--s4);
   }
   .judge{padding-left:13px}
-  .judge .b{padding-left:0}
-  .judge .b .mk{position:static;background:none;display:inline;margin-right:.2em}
 }
 
 footer{border-top:1px solid var(--line);margin-top:var(--s6);padding:var(--s5) 0 var(--s7)}
@@ -767,7 +758,11 @@ function mix(s){
 }
 
 function clean(s){ return String(s==null?"":s).replace(/^\s*>\s*/,"").trim(); }
-function nameOf(it){ return lang==="zh" ? (it.title_zh||it.name) : (it.name||it.title_zh); }
+/* 英文标题优先用人写的 title_en；没有才回落到 skill 名 ——
+   回落到 name 会在英文版印出 city-salary / codex-ppt 这种仓库标识符，
+   那不是标题，是文件名。 */
+function nameOf(it){ return lang==="zh" ? (it.title_zh||it.name)
+                                        : (clean(it.title_en) || it.name || it.title_zh); }
 function tagOf(it){
   if(lang==="zh") return clean(it.tagline_zh);
   return clean(it.tagline_en) || clean(it.tagline_zh);
@@ -1083,10 +1078,13 @@ function sheetHTML(it){
 
   // 判断块：竖线属于「点评」。「但是」缺席时整块照样闭合，不留空槽。
   if(why || lim){
-    h += '<div class="judge"><span class="lb">'+esc(t("verdict"))+'</span>'
-       + (why ? '<p class="v">'+zhChip(it)+mix(why)+'</p>' : '')
-       + (lim ? '<p class="b"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
-              + '<span class="sr">'+esc(t("butFull"))+'</span>'+mix(lim)+'</p>' : '')
+    /* 点评和但是是**平行的两条**，同字号同墨色同标签样式 ——
+       它们是一件事的两面，不该一条重一条轻。 */
+    h += '<div class="judge">'
+       + (why ? '<span class="lb">'+esc(t("verdict"))+'</span>'
+              + '<p class="v">'+zhChip(it)+mix(why)+'</p>' : '')
+       + (lim ? '<span class="lb lb2">'+esc(t("butFull"))+'</span>'
+              + '<p class="b">'+mix(lim)+'</p>' : '')
        + '</div>';
   }
 
