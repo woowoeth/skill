@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-08-18T07:27:30Z",
- "count": 142,
- "new_today": 0,
- "picks": 6,
+ "generated_at": "2026-08-19T02:11:20Z",
+ "count": 143,
+ "new_today": 1,
+ "picks": 7,
  "categories": [
   {
    "id": "creative",
@@ -58,10 +58,41 @@
    "zh": "元技能",
    "en": "Meta Skills",
    "emoji": "🧬",
-   "count": 18
+   "count": 19
   }
  ],
  "skills": [
+  {
+   "id": "woowoeth-find-reusable",
+   "kind": "skill",
+   "name": "find-reusable",
+   "title_zh": "造轮子之前先查一遍有什么能复用",
+   "tagline_zh": "准备动手做一个东西时，最贵的浪费是别人早就做过了。说一句大白话「我想做 X」，它当场查库告诉你有没有、能用到什么程度。",
+   "tagline_en": "The costliest waste is building what already exists. Say what you want to make in plain words and it tells you what's out there and how far you can reuse it.",
+   "desc_en": "Before building anything, check what already exists and can be reused — skills, prompts, datasets, models — with an honest reuse verdict and a gap list of what nobody has built.",
+   "why_zh": "本店自制，也是这家店真正想解决的问题。它标三档复用度（直接能用/要改一半/只能抄思路），查不到就直说没有——而所有查不到的需求会攒成缺口清单，那本身就是选题库。",
+   "why_en": "Made in-house, and the reason this store exists. Three reuse verdicts, an honest \"nobody built this\" when there's no hit, and every miss accumulates into a gap list of what's worth building.",
+   "repo": "woowoeth/find-reusable",
+   "owner": "woowoeth",
+   "path": "",
+   "url": "https://github.com/woowoeth/find-reusable",
+   "homepage": "",
+   "stars": 0,
+   "pushed_at": "2026-08-18",
+   "skill_count": 1,
+   "category": "meta",
+   "fun_score": 0.0,
+   "pick": true,
+   "hide": false,
+   "source": "ourword-original",
+   "added_at": "2026-08-19",
+   "install": {
+    "clone": "git clone --depth 1 https://github.com/woowoeth/find-reusable.git",
+    "copy": "mv find-reusable ~/.claude/skills/find-reusable",
+    "dir": "~/.claude/skills/find-reusable"
+   },
+   "cover": ""
+  },
   {
    "id": "wshuyi-remotion-video-skill",
    "kind": "skill",
