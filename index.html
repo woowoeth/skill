@@ -356,7 +356,33 @@ header.top{padding:var(--s5) 0 var(--s4)}
 }
 .tagn{
   font:var(--t-micro)/1 var(--sans);color:var(--ink-4);letter-spacing:.04em;
-  margin-right:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;
+}
+/* ---- 心标 ----------------------------------------------------------
+   店主的手动信号，凌驾于一切机器信号之上：他点了，就是最高等级。
+   站是纯静态没有后端，所以点心只写 localStorage、不产生任何请求；
+   攒够了在「心选」里一次性提交成一个预填的 GitHub Issue。
+   这是全站唯一一处彩色 —— 它不是装饰，是唯一一个「你的状态」。 */
+.heart{
+  flex:0 0 auto;margin-right:auto;background:none;border:0;padding:2px 4px;
+  line-height:1;cursor:pointer;color:var(--ink-4);
+  transition:transform .12s ease, color .12s ease;
+}
+.heart:hover{color:#b8452f;transform:scale(1.15)}
+.heart svg{display:block;width:14px;height:14px}
+.heart[aria-pressed="true"]{color:#b8452f}
+.heart[aria-pressed="true"] svg path{fill:currentColor}
+.chip.heartchip{border-color:#e3c4bd;color:#b8452f}
+.chip.heartchip.on{background:#b8452f;border-color:#b8452f;color:#fff}
+.sendbar{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin:0 0 var(--s4);padding:12px 14px;background:var(--soft);
+  border:1px solid var(--line);border-radius:10px;
+  font:var(--t-cap)/1.6 var(--sans);color:var(--ink-2);
+}
+.sendbar button{
+  margin-left:auto;font:600 var(--t-cap)/1 var(--sans);cursor:pointer;
+  background:var(--ink);color:var(--card);border:0;padding:9px 14px;border-radius:7px;
 }
 .badge{
   flex:0 0 auto;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.06em;
@@ -603,7 +629,7 @@ var I18N = {
   capHero:"作者自制的头图，<b>不是产出示例</b>",
   capDiagram:"机制示意图，<b>不是产出示例</b>",
   capOther:"作者仓库里的图，<b>不是产出示例</b>",
-  prep:"备料齐", read:"店长读过", picked:"精选", newBadge:"上新", pack:"合集 skill %s",
+  prep:"备料齐", read:"店长读过", picked:"精选", newBadge:"上新", heart:"标记为好东西", hearted:"已标记", mine:"心选", sendTip:"这 %s 件是你标的。它们是最高等级的信号 —— 提交后我会据此改选品标准。", send:"提交给店长", pack:"合集 skill %s",
   prepWhy:"备料齐，凭这几样：",
   install:"安装", step1:"Claude Code（终端）",
   step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",
@@ -631,7 +657,7 @@ var I18N = {
   capHero:"The author's own header image, <b>not an output sample</b>",
   capDiagram:"A diagram of how it works, <b>not an output sample</b>",
   capOther:"An image from the author's repo, <b>not an output sample</b>",
-  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", pack:"pack · %s skills",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", heart:"Mark as good", hearted:"Marked", mine:"Hearted", sendTip:"You marked these %s. Highest-priority signal.", send:"Send to the editor", pack:"pack · %s skills",
   prepWhy:"Well prepped, on this evidence:",
   install:"Install", step1:"Claude Code (terminal)",
   step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
@@ -817,6 +843,9 @@ function renderTally(){
 function renderChips(all){
   var h = '<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'
         + esc(t("all"))+'<i class="cnt">'+all.length+'</i></button>';
+  var nh = hearts().length;
+  if(nh) h += '<button class="chip heartchip'+(state.cat==="heart"?" on":"")+'" data-cat="heart">'
+            + '♥ '+esc(t("mine"))+'<i class="cnt">'+nh+'</i></button>';
   var np = all.filter(function(x){return x.pick}).length;
   if(np) h += '<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick">'
             + esc(t("pick"))+'<i class="cnt">'+np+'</i></button>';
@@ -884,8 +913,31 @@ function shotHTML(it, forSheet){
        + '</span>';
 }
 
+/* 心选：只落 localStorage。站是静态的，没有后端，也不该有 ——
+   点心不产生任何网络请求，读者的偏好不出他自己的浏览器。 */
+var HK = "pinwei.hearts";
+function hearts(){
+  try { return JSON.parse(localStorage.getItem(HK) || "[]"); } catch(e){ return []; }
+}
+function isHeart(id){ return hearts().indexOf(id) >= 0; }
+function toggleHeart(id){
+  var a = hearts(), i = a.indexOf(id);
+  if(i >= 0) a.splice(i,1); else a.push(id);
+  try { localStorage.setItem(HK, JSON.stringify(a)); } catch(e){}
+  return i < 0;
+}
+var HEART_SVG = '<svg viewBox="0 0 16 16" aria-hidden="true">'
+  + '<path d="M8 14S1.5 9.9 1.5 5.6A3.6 3.6 0 0 1 8 3.5a3.6 3.6 0 0 1 6.5 2.1C14.5 9.9 8 14 8 14Z" '
+  + 'fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+function heartHTML(it){
+  var on = isHeart(it.id);
+  return '<button class="heart" type="button" data-heart="'+esc(it.id)+'" aria-pressed="'+on+'" '
+       + 'title="'+esc(t(on?"hearted":"heart"))+'" aria-label="'+esc(t(on?"hearted":"heart"))+'">'
+       + HEART_SVG + '</button>';
+}
+
 function badgesHTML(it, isNew){
-  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>';
+  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>' + heartHTML(it);
   if(isNew) h += '<span class="newdot">'+esc(t("newBadge"))+'</span>';
   // prep_badge 由功能开发那边从 methods/ 存档本地算（≥3 条证据）。
   // 字段没到就什么都不印 —— 不猜、不估。
@@ -928,7 +980,8 @@ function cardHTML(it, isNew){
 function filterList(all){
   var q = state.q.trim().toLowerCase();
   return all.filter(function(it){
-    if(state.cat==="pick"){ if(!it.pick) return false; }
+    if(state.cat==="heart"){ if(!isHeart(it.id)) return false; }
+    else if(state.cat==="pick"){ if(!it.pick) return false; }
     else if(state.cat!=="all" && it.category!==state.cat) return false;
     if(!q) return true;
     return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.why_zh,it.why_en,it.repo,it.owner]
@@ -951,6 +1004,11 @@ function renderFlow(all){
   } else if(q){
     head = '<div class="todayline"><span class="dot"></span>'
          + esc(sprintf(t("results"), list.length))+'</div>';
+  } else if(state.cat==="heart" && list.length){
+    /* 心选是店主的手动信号，凌驾于机器信号之上。这里给一个一次性汇总的出口：
+       点心只写 localStorage，攒够了在这儿开一个预填的 Issue 交上来。 */
+    head = '<div class="sendbar"><span>'+esc(sprintf(t("sendTip"), list.length))+'</span>'
+         + '<button id="sendHearts" type="button">'+esc(t("send"))+'</button></div>';
   }
 
   if(!list.length) return head + '<div class="empty">'+esc(t("empty"))+'</div>';
@@ -1099,8 +1157,39 @@ document.addEventListener("click", function(e){
   if(e.target.closest(".sheet .x")){ closeSheet(); return; }
   if(e.target.id==="veil"){ closeSheet(); return; }
 
+  var hb = e.target.closest(".heart");
+  if(hb){
+    e.stopPropagation(); e.preventDefault();
+    var on = toggleHeart(hb.getAttribute("data-heart"));
+    hb.setAttribute("aria-pressed", on);
+    hb.setAttribute("title", t(on?"hearted":"heart"));
+    var hc = document.querySelector(".chip.heartchip");
+    if(hc) hc.querySelector(".cnt").textContent = hearts().length;
+    else renderChips(D.skills||[]);
+    if(state.cat === "heart") renderShelf();
+    return;
+  }
+
   var chip = e.target.closest("#chips .chip");
   if(chip){ state.cat = chip.getAttribute("data-cat"); state.limit = 60; renderShelf(); window.scrollTo(0,0); return; }
+
+  if(e.target.closest("#sendHearts")){
+    e.stopPropagation();
+    var ids = hearts();
+    var picked = (D.skills||[]).filter(function(x){ return ids.indexOf(x.id)>=0 });
+    var body = "店主标记的「好东西」，共 " + picked.length + " 件。\n"
+             + "这是最高等级的信号：它高于任何机器信号，应据此回头改选品标准。\n\n"
+             + picked.map(function(x){
+                 return "- [ ] **"+(x.title_zh||x.name)+"**  `"+x.repo+"`\n"
+                      + "      https://ourword.ai/skill/i/"+x.id+"/";
+               }).join("\n")
+             + "\n\n（由站内「心选 → 提交给店长」生成，无服务端，数据只在浏览器里）";
+    var url = "https://github.com/woowoeth/skill/issues/new"
+            + "?title=" + encodeURIComponent("心选 "+picked.length+" 件")
+            + "&body="  + encodeURIComponent(body);
+    window.open(url, "_blank", "noopener");
+    return;
+  }
 
   if(e.target.closest("#more")){ state.limit += 60; renderShelf(true); return; }
 
