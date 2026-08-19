@@ -293,12 +293,78 @@ header.top{padding:var(--s5) 0 var(--s4)}
 
 .cbody{padding:var(--s4)}
 
-/* 标题：两行截断。实测标题中位 12 字、最长 27 字，
-   手机两列会截掉 14/152（9%），桌面五列 1/152 —— 可以用。 */
+/* 标题：两行截断。
+   ⚠️ **下面这两行旧账已经不成立了，留着是为了让人看见它怎么过期的：**
+     「实测标题中位 12 字、最长 27 字，手机两列会截掉 14/152（9%），桌面五列 1/152」
+   那是 152 件时候的数。157 件的今天重量（Chromium、浅色、真机，feed 2026-08-19T12:07Z）：
+     title_zh 中位 **19 字**、最长 36 字（数据侧复算：feed.json）
+     375px 两列（文字宽 135px）：**72/157 真掉了字**（中位掉 4 字、最多掉 13 字），
+       另有 10 条差 1–2px 的临界
+     1280px 四列：0/157
+   掉的同样是句尾那几个字，跟英文那边一模一样：
+     「把「要高级要有质感」变成能确认的方 ⟦向稿⟧」
+     「禁止「结尾再掏出一件磨损物件」的荒诞 ⟦超短篇写手⟧」
+     「禁止说「我听到了」和「需要我都在」的 ⟦自省镜子⟧」
+   —— 露出来的半句读着像说完了，而它已经不是原来那句判断。
+
+   **这一条我没有自己改，因为它不是缺陷，是手感取舍，该店主定。**
+   英文那两处补行的代价是 7 张卡长高；中文补到 3 行要 82 张卡长高（还剩 5 条被夹），
+   补到 4 行才 0 条被夹 —— 那是整条流的节奏变了，不是我一个人能拍的板。
+   已改成 3 行（产品 2026-08-19 拍板）。判据：157 件里 72 件在 2 行下掉了字，
+   而**掉的是句尾那个名词**——剩下半句读起来像说完了，可它已经不是原来那句判断。
+   这跟「诚实变成营销」是同一个形状，只不过发生在标题上。
+   我们刚花一整轮把钩子写进 60 条标题里，46% 被夹掉句尾等于那轮白做。
+
+   为什么不是 4 行：4 行才 0 条被夹，但那要 82 张卡长高一档，整条流的节奏就变了。
+   3 行让版式吸收掉绝大多数，**剩下的几条按文案缩短，不让版式迁就个例**。 */
 .card h3{
   margin:0;font:500 var(--t-h3)/var(--lh-tight) var(--sans);color:var(--ink);
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
+/* ---- 英文标题多给一行（手机再多一行）--------------------------------
+   **两行这个数是按中文的字宽定的，拉丁字母装不下。** 同样的框：
+   中文一行约 9 个字，英文一行约 3.5 个词。title_en 中位 8 词、最长 13 词。
+   （下面这组两行的实测是 171 件那一版的，货架已降到 157，比例照样成立，
+     没重量是因为结论不靠它 —— 靠的是下面那组按当前 feed 重量过的数。）
+     375px 两列（文字宽 134.5px）  4/171 = 2%     中文同处 142/171
+     414px 两列（154px）          26/171 = 15%
+     1280px 四列（264.5px）      165/171 = 96%
+     1440px 五列（233.5px）      141/171 = 82%   ← 列多反而更窄
+   而这批标题的判断**全落在末尾**（"…that flags its own unverified claims"），
+   砍掉的三个词正是那句判断本身：375px 下「A school that leaves the…」
+   ——leaves the 什么，一个字都没剩。这不是难看，是这一格不再是判断，
+   跟 D3 讲的「诚实被砍成钩子」是同一类错。
+
+   所以按字宽差异补行，不改文案：
+     桌面四行 → 157/157 完整
+     手机五行 → 157/157 完整
+   （D23：夹行留省略号是允许的；这里做的是把「夹掉判断」降回「一个字都不夹」。）
+
+   ---- 上一版停在「桌面 3 行 / 手机 4 行」，那两个数不够，实测补上 ----
+   上一版把剩下的 7 条判成「title_en 超出 4–9 词上限」的数据欠账，不补行。
+   （那 7 条一条没少：157 件这一版下架的 14 件是「非 C 端」，不是这 7 条。）
+   我把这 7 条逐条量了一遍被夹掉的**具体是哪几个词**，这个判断不成立：
+
+     Kusama for loneliness, Miró for warmth — a daily five-senses │ wallpaper
+     A noir interrogation game that hashes the killer before you  │ start
+     The absurdist flash-fiction writer banned from ending on a worn │ object
+     Count how many times you said please, then sentence you to   │ 2126
+     An ADHD CBT coach that shrinks the homework when confidence  │ drops below 7
+     Pull the narration hidden inside graded-reader PDFs, page by │ page
+     A 0–13 parenting advisor that will not take one source's word for │ it
+
+   **掉一个词比掉三个词更坏**：掉三个词读者看得出话没说完；
+   掉的是句末那个名词（wallpaper / object / start），剩下那半句读起来像说完了，
+   而它已经不是原来那句判断了 —— 这正是上面那段自己写的「夹掉判断」。
+
+   代价实测为零，所以没有理由不补（157 件这一版重量过）：
+     375px 两列：7 条各需**恰好一行**，157 条里只有这 7 条长高，其余 150 条一像素不动
+     800px 三列（最窄的桌面档）：3 行时 ADHD 那条掉「drops below 7」；4 行后 0 条被夹，
+       且只有那 1 条长高
+     1280px / 1440px：3 行和 4 行渲染完全一致（没有任何标题需要第 4 行）
+   已知未解：320px 两列（文字宽 107px）五行仍夹约 10 条（171 件那版量的是 11 条）。
+   320 不是设计目标宽度，记在这儿不假装它不存在。 */
+html[lang="en"] .card h3{-webkit-line-clamp:4}
 
 /* ---- 点评 ------------------------------------------------------
    **这一块是我加回去的，产品的稿里没有。**
@@ -380,7 +446,14 @@ header.top{padding:var(--s5) 0 var(--s4)}
 /* ⚠️ 间距规矩：任何直接落在 #main 里的块，上边距一律 var(--s4)，
    手机断点里一律 var(--s3) —— 跟 .todayline / .flow 对齐。
    加新块时先看这两个兄弟怎么排的，别只顾着自己跟下面的距离。
-   （这条是补出来的：心选说明条当初写成 margin-top:0，紧贴 sticky 分割线。） */
+   （这条是补出来的：心选说明条当初写成 margin-top:0，紧贴 sticky 分割线。）
+
+   落在 #main 里的块一共五个，现在的账：
+     .todayline · .sendbar · .flow · .empty  —— 都守这条规矩
+     .more                                   —— 例外，见它自己那节
+   `.empty` 原来也是 margin-top:0，而且**真的复现了这条规矩要防的那件事**：
+   心选里把最后一件取消心标 → head 为空串 → .empty 成为 #main 唯一的孩子，
+   实测（375px）它的上沿离 sticky 分割线**恰好 0px**。补上。 */
 .sendbar{
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
   margin:var(--s4) 0 0;padding:12px 14px;background:var(--soft);
@@ -423,13 +496,16 @@ header.top{padding:var(--s5) 0 var(--s4)}
 }
 .card.noimg .packtag{position:static;display:inline-block;margin:var(--s4) 0 0 var(--s4);background:var(--ink)}
 
+/* `.more` 是上面那条 #main 间距规矩的**唯一例外**，s5 不是 s4：
+   它不开一个段落，它是流的收尾键，前面那张卡还带着 var(--gut) 的下沿。
+   规矩要防的是「贴着 sticky 分割线」，28px 不是那件事。刻意留着，不是漏改。 */
 .more{
   display:block;width:100%;margin:var(--s5) 0 0;padding:15px 0;
   background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);
   font:var(--t-meta)/1 var(--sans);letter-spacing:.1em;cursor:pointer;border-radius:var(--r-chip);
 }
 .more:hover{border-color:var(--ink);color:var(--ink)}
-.empty{padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--sans);text-align:center}
+.empty{margin:var(--s4) 0 0;padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--sans);text-align:center}
 
 /* ============ 详情：手机是底部抽屉，桌面是居中卡 ============ */
 .veil{
@@ -480,7 +556,12 @@ header.top{padding:var(--s5) 0 var(--s4)}
 }
 .judge .v,
 .judge .b{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--sans);color:var(--ink)}
-.judge .b{margin-top:var(--s4)}
+/* .b 原来也带 margin-top:var(--s4)，它和 .lb 的 margin-bottom:7px 相邻折叠成 18px，
+   于是「但是」这个标签上下各 18px —— **等距，也就是不归属任何一段**。
+   实测（1100px 浅色）：Verdict 标签到它自己那段 7px，But 标签到它自己那段 18px。
+   两个标签样式一模一样、间距却不一样，D2 要的「两条平行」在版式上没成立。
+   段间距由 .lb2 的 margin-top 单独负责，标签一律贴着自己那段。
+   中文两个字的标签看不太出来，英文是一个词，一眼就散。 */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 .sheet h4{
@@ -532,6 +613,9 @@ header.top{padding:var(--s5) 0 var(--s4)}
   .todayline{margin-top:var(--s3)}
   .sendbar{margin-top:var(--s3)}
   .flow{margin-top:var(--s3)}
+  .empty{margin-top:var(--s3)}
+  /* 手机两列的框最窄（375px 下只有 134.5px），英文标题再多一行 —— 见上面那节 */
+  html[lang="en"] .card h3{-webkit-line-clamp:5}
   /* 手机是第一现场：详情从底部推上来，不是居中弹窗 */
   .veil{align-items:flex-end;padding:0}
   .sheet{
@@ -619,6 +703,8 @@ var I18N = {
   today:"今天上新 <b>%s</b> 件", todayNone:"今天还没上新。不硬凑数。",
   all:"全部", pick:"店长推荐",
   results:"搜到 %s 件", empty:"没有匹配的。换个词试试。",
+  // 心选清空是唯一一个「不是搜出来的空」。用搜索那句会让人去改一个他没打的词。
+  emptyHeart:"心选是空的。在卡片上点一下心，标出你觉得好的东西。",
   moreN:"再看 %s 件", noMore:"到底了",
   verdict:"点评", but:"但", butFull:"但是", butNone:"这一件还没写「但是」",
   // 详情页必须写清这张图是什么。最怕的失败模式是「被漂亮头图骗进去，装完发现
@@ -650,13 +736,16 @@ var I18N = {
   today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
   all:"All", pick:"Editor's picks",
   results:"%s found", empty:"Nothing matches. Try another word.",
+  emptyHeart:"Nothing hearted yet. Tap the heart on a card to mark something good.",
   moreN:"%s more", noMore:"End of the shelf",
   verdict:"Verdict", but:"But", butFull:"But", butNone:"No limitation written yet",
   capArtwork:"Output sample from the author's own repo — this is what it makes",
   capHero:"The author's own header image, <b>not an output sample</b>",
   capDiagram:"A diagram of how it works, <b>not an output sample</b>",
   capOther:"An image from the author's repo, <b>not an output sample</b>",
-  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", heart:"Mark as good", hearted:"Marked", mine:"Hearted", sendTip:"You marked these %s. Highest-priority signal.", send:"Send to the editor", pack:"pack · %s skills",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", heart:"Mark as good", hearted:"Marked", mine:"Hearted", /* 中文那句可以写「这 %s 件」，英文不能 —— %s 是 1 的时候「These 1 are」不成句。
+   所以英文这句写成不依赖单复数的形状，别去做一套复数规则。 */
+sendTip:"%s marked by you. Your marks outrank every machine signal — send them in and we change what gets shelved.", send:"Send to the editor", pack:"pack · %s skills",
   prepWhy:"Well prepped, on this evidence:",
   install:"Install", step1:"Claude Code (terminal)",
   step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
@@ -847,8 +936,13 @@ function renderChips(all){
   var h = '<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'
         + esc(t("all"))+'<i class="cnt">'+all.length+'</i></button>';
   var nh = hearts().length;
-  if(nh) h += '<button class="chip heartchip'+(state.cat==="heart"?" on":"")+'" data-cat="heart">'
-            + '♥ '+esc(t("mine"))+'<i class="cnt">'+nh+'</i></button>';
+  /* 0 件时通常不出这个胶囊 —— 没标过东西的人不需要看见它。
+     **但正站在心选里的时候必须留着**：取消最后一个心标之后它一消失，
+     胶囊行就没有任何一个是选中的，而货架是空的，人不知道自己在哪儿、
+     也没有一个明显的出口。留着它（计数 0）就是那个出口。 */
+  if(nh || state.cat==="heart")
+    h += '<button class="chip heartchip'+(state.cat==="heart"?" on":"")+'" data-cat="heart">'
+       + '♥ '+esc(t("mine"))+'<i class="cnt">'+nh+'</i></button>';
   var np = all.filter(function(x){return x.pick}).length;
   if(np) h += '<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick">'
             + esc(t("pick"))+'<i class="cnt">'+np+'</i></button>';
@@ -1014,7 +1108,13 @@ function renderFlow(all){
          + '<button id="sendHearts" type="button">'+esc(t("send"))+'</button></div>';
   }
 
-  if(!list.length) return head + '<div class="empty">'+esc(t("empty"))+'</div>';
+  /* 空态分两种，说的不是一件事。
+     心选被清空时 head 是空串、搜索框也是空的 —— 这时候印「换个词试试」，
+     是在让人去改一个他根本没打过的词。取消最后一个心标就会走到这儿。 */
+  if(!list.length){
+    var msg = (!q && state.cat==="heart") ? t("emptyHeart") : t("empty");
+    return head + '<div class="empty">'+esc(msg)+'</div>';
+  }
 
   var shown = list.slice(0, state.limit);
   var flow = '<div class="flow">'
@@ -1183,15 +1283,32 @@ document.addEventListener("click", function(e){
     e.stopPropagation();
     var ids = hearts();
     var picked = (D.skills||[]).filter(function(x){ return ids.indexOf(x.id)>=0 });
-    var body = "店主标记的「好东西」，共 " + picked.length + " 件。\n"
-             + "这是最高等级的信号：它高于任何机器信号，应据此回头改选品标准。\n\n"
-             + picked.map(function(x){
-                 return "- [ ] **"+(x.title_zh||x.name)+"**  `"+x.repo+"`\n"
-                      + "      https://ourword.ai/skill/i/"+x.id+"/";
-               }).join("\n")
-             + "\n\n（由站内「心选 → 提交给店长」生成，无服务端，数据只在浏览器里）";
+    /* 提交件跟着界面语言走。**这一段原来是写死中文的**：英文读者走完
+       Mark as good → Hearted → Send to the editor 三步，最后被扔进一个
+       标题「心选 3 件」、正文全中文、连商品名都换成 title_zh 的 issue 表单 ——
+       那三件他在站上从头到尾看到的是英文标题，提交出去却变成他读不懂的字。
+       这是全站唯一一条「读者交东西给我们」的路，断在最后一步，也是最贵的一步。
+       条目名用 nameOf()，跟他刚才在卡片上读到的那一行完全一致。 */
+    var isEn = lang === "en";
+    var nEn = picked.length + (picked.length===1 ? " item" : " items");
+    var body = (isEn
+        ? "Marked as good by a reader — " + nEn + ".\n"
+        + "This is the highest-priority signal: it outranks any machine signal,\n"
+        + "and the curation standard should be revisited against it.\n\n"
+        : "标记为「好东西」，共 " + picked.length + " 件。\n"
+        + "这是最高等级的信号：它高于任何机器信号，应据此回头改选品标准。\n\n")
+      + picked.map(function(x){
+          /* URL 不加 ?lang= —— i/ 那批是静态 SEO 页，没有语言开关，
+             加了是个不生效的参数，等于对提交人撒一次小谎。 */
+          return "- [ ] **"+nameOf(x)+"**  `"+x.repo+"`\n"
+               + "      https://ourword.ai/skill/i/"+x.id+"/";
+        }).join("\n")
+      + (isEn
+        ? "\n\n(Generated in the browser by Hearted → Send to the editor. No server; the marks never left this browser until now.)"
+        : "\n\n（由站内「心选 → 提交给店长」生成，无服务端，数据只在浏览器里）");
     var url = "https://github.com/woowoeth/skill/issues/new"
-            + "?title=" + encodeURIComponent("心选 "+picked.length+" 件")
+            + "?title=" + encodeURIComponent(isEn ? "Hearted "+nEn
+                                                  : "心选 "+picked.length+" 件")
             + "&body="  + encodeURIComponent(body);
     window.open(url, "_blank", "noopener");
     return;
