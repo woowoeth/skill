@@ -263,7 +263,19 @@ def make_item(*, kind: str, name: str, desc_en: str, repo: str, path: str = "",
     owner = repo.split("/")[0]
     sid = slug(f"{repo.replace('/', '-')}" + (f"-{name}" if kind == "skill" and path else ""))
     url = f"https://github.com/{repo}" + (f"/tree/HEAD/{path}" if path else "")
-    dirname = (path.rstrip("/").split("/")[-1] if path else repo.split("/")[-1]) or slug(name)
+    # 安装目录名：**优先用 frontmatter 的 name**，路径末段只当兜底。
+    #
+    # 原来是反过来的（路径末段优先），后果不是名字难看，是**静默覆盖**：
+    # skill 放在 `skill/`、`skills/`、`packages/cli/skill/` 这种通用目录里时，
+    # 安装目标就成了 `~/.claude/skills/skill`。在架 6 件中招，其中 4 件都指向
+    # 同一个目录 —— 装了 refly 再装 pinchbench，后者**把前者盖掉，用户不会收到任何提示**。
+    #
+    # 兜底顺序：name → 路径末段（且不是 skill/skills/src/lib 这类通用词）→ 仓库名。
+    GENERIC_DIRS = {"skill", "skills", "src", "lib", "packages", "dist", "app", "plugin", "plugins"}
+    tail = path.rstrip("/").split("/")[-1] if path else ""
+    dirname = (slug(name)
+               or (tail if tail and tail.lower() not in GENERIC_DIRS else "")
+               or slug(repo.split("/")[-1]))
     install = {
         "clone": f"git clone --depth 1 https://github.com/{repo}.git",
         "copy":  (f"cp -r {repo.split('/')[-1]}/{path} ~/.claude/skills/{dirname}" if path

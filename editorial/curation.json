@@ -5304,6 +5304,58 @@
    "tagline_en": "Models write the same parable every time: an order comes down, everyone complies, the poor pay, an old man weeps. This lists those beats as a template checklist and forces two dimensions to change on a hit.",
    "why_en": "It refuses to imitate any named author's voice, translating such requests into transferable craft instead — deadpan, absurd causality, restraint at the close.",
    "limit_en": "Chinese flash fiction only, capped at 3,000 characters. It outputs a title and the story and nothing else — no moral, no craft notes, no self-assessment unless asked. The author's own lines: no real person or institution cast as the perpetrator; no shortcut jokes off region, occupation, poverty or disability; no death or serious illness added late to land an emotional hit."
+  },
+  "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
+   "title_zh": "按你的训练记录算下一次该练什么",
+   "title_en": "Reads your training log and decides your next session",
+   "tagline_zh": "健身 skill 大多发你一张通用计划表。它要的是你的训记、CSV 或截图，然后只答一件事：下次练什么、加多少、要不要减量。",
+   "tagline_en": "Most fitness skills hand you a generic template. This one wants your actual log — CSV, JSON, or a screenshot — and answers one question: what to do next session, how much to add, whether to deload.",
+   "why_zh": "它把胸痛、晕厥、放射性麻木写成硬停止条件，还默认只读、不回显任何 key——一个健身件肯写这两条，作者是认真的。",
+   "why_en": "Chest pain, fainting and radiating numbness are hard stop conditions in the file itself, and it defaults to read-only, never echoing keys. A fitness skill bothering with either is a sign the author is serious.",
+   "limit_zh": "没有训练记录它就退化成通用建议——它全部的价值建立在你手上已经有训记、CSV 或 JSON。作者明写不做医疗诊断、不接与训练无关的营养查询；出现胸痛晕厥这类信号它会停下让你去看急诊，不会继续排计划。",
+   "limit_en": "Without a training log it degrades into generic advice — its whole value rests on you already having data (Xunji, CSV or JSON). The author states plainly it does not diagnose, refuses nutrition-only questions, and stops programming entirely on emergency symptoms.",
+   "limit_brief_zh": "没有训练记录，它只能给通用建议。",
+   "limit_brief_en": "With no training log, it can only give generic advice.",
+   "category": "life"
+  },
+  "zhlmi-moodboard-alignment": {
+   "title_zh": "把「要高级要有质感」变成能确认的方向稿",
+   "title_en": "Turns \"make it feel premium\" into something you can sign off on",
+   "tagline_zh": "客户说要高级、要电影感，你不知道他到底要什么。它先把这些词转成一页可确认的方向稿，双方点头了才出图——省的是返工，不是时间。",
+   "tagline_en": "The client says \"premium, cinematic, clean\" and you have no idea what that means. It converts those words into a one-page direction you both sign off on before any image exists — it saves rework, not time.",
+   "why_zh": "它给自己写了 FAIL FAST：方向没确认就出方案、分镜或 HTML，一律判失败。肯拦住自己的 skill 少见。",
+   "why_en": "It ships its own FAIL FAST list: emitting option-A/option-B, storyboards or HTML before the direction is confirmed counts as failure. Skills that hold themselves back are rare.",
+   "limit_zh": "它强制三段确认（方向稿 → 文档 → 出图），一句话出不了结果，急着要图的人会被它拦住。可以说「不用确认直接生成」跳过，但那样也就没有「共识」这件事了。触发词写死中文审美词。",
+   "limit_en": "It forces a three-stage handshake (direction → document → render), so you cannot get an image in one message; anyone in a hurry will be blocked. You can say \"skip confirmation\" — but then the whole point is gone. Its triggers are hardcoded Chinese aesthetic words.",
+   "limit_brief_zh": "方向没确认它就不出图，急着要图会被拦。",
+   "limit_brief_en": "No image until the direction is confirmed.",
+   "category": "creative"
+  },
+  "cclank-recipe-generator": {
+   "title_zh": "每一步都告诉你怎么算做好了的菜谱",
+   "title_en": "A recipe that tells you how to know each step is done",
+   "tagline_zh": "菜谱最坑的是「炒至断生」这种话。它按阶段给火候和时长，每一步附一条「怎么看这步完成了」，末尾再出一张菜谱海报的生图提示词。",
+   "tagline_en": "The worst thing in a recipe is \"stir-fry until done.\" This one splits cooking into stages with heat and timing, and attaches a \"how you know this step finished\" line to each, then hands you an image prompt for a recipe poster.",
+   "why_zh": "把「判断标准」写进每一步，正是新手和菜谱之间缺的那一层——不是配方不够细，是不知道什么时候该进下一步。",
+   "why_en": "Putting a completion test on every step fills the gap a beginner actually falls into — the recipe was detailed enough; you just could not tell when to move on.",
+   "limit_zh": "它靠 search_web 现查权威做法，没有联网工具就退化成模型自己编。检索源写死在中文站点（米其林指南、舌尖上的中国、下厨房），做西餐日料会明显变弱；末尾的海报提示词也写死「传统中式风格」。",
+   "limit_en": "It looks up authoritative methods with search_web at run time — without a web tool it degrades to the model making things up. Its sources are hardcoded Chinese ones, so western or Japanese dishes come out visibly weaker, and the closing poster prompt is fixed to a traditional Chinese style.",
+   "limit_brief_zh": "不联网它就退化成模型自己编。",
+   "limit_brief_en": "Offline it degrades to the model inventing steps.",
+   "category": "life"
+  },
+  "liyue-aigc-outfit-director-outfit-director": {
+   "title_zh": "一次拍出多套造型的换装视频脚本",
+   "title_en": "Outfit-change video scripts that keep the same subject",
+   "tagline_zh": "换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。",
+   "tagline_en": "Outfit-change videos fail when the person stops looking like the same person. This one builds a collage first frame as the structural master, then forces the video timeline to inherit subject identity and sticker positions. Works for people and pets.",
+   "why_zh": "把「身份一致性」当成硬约束而不是碰运气——先定首帧再派生视频，这个顺序就是它和一堆换装提示词的全部区别。",
+   "why_en": "It treats identity consistency as a hard constraint rather than a hope: first frame first, video derived from it. That ordering is the entire difference between this and a pile of outfit prompts.",
+   "limit_zh": "它交付的是提示词和时间轴，不是视频——真出片要你自己拿去生视频模型跑，成片效果取决于那个模型不取决于它。参数预设、转场库、服装方案分散在三个 references 文件里，正文只给路由。",
+   "limit_en": "It delivers prompts and a timeline, not a video — you still have to run them through a video model, and the result depends on that model, not on this. Parameter presets, the transition library and outfit plans live in three separate reference files; the main file is only a router.",
+   "limit_brief_zh": "它出的是提示词和时间轴，不是视频。",
+   "limit_brief_en": "It outputs prompts and a timeline, not a video.",
+   "category": "creative"
   }
  }
 }

@@ -850,3 +850,39 @@ def check_verdict_in_limits(items):
         print(f"      {why}")
         print(f"      limit_zh: {lim}…")
     return hits
+
+
+# ---------------------------------------------------------------------------
+# 【12】安装目录碰撞
+#
+# 生态是**扁平命名空间**：两件来自不同仓库的 skill 可以在 frontmatter 里叫同一个名字
+# （实测有两件都叫 deep-research）。装了一个再装另一个，**前一个被静默覆盖，
+# 用户不会收到任何提示**。
+#
+# 这不是我们的 bug，但受伤的是照我们的安装命令抄的人，所以我们得管：
+# 碰撞的一律加作者前缀消歧，并在 install.note_zh 里说明「跟原名不一致是故意的」。
+#
+# 另有一类是我们自己造的：安装目录取了路径末段，而末段是 skill/ skills/ src/
+# 这种通用词——曾有 4 件都指向 ~/.claude/skills/skill。根因已在
+# scout_lib.make_item 修掉（优先用 frontmatter 的 name），这里做回归防线。
+# ---------------------------------------------------------------------------
+GENERIC_INSTALL_DIRS = {"skill", "skills", "src", "lib", "packages", "dist",
+                        "app", "plugin", "plugins", "template"}
+
+def check_install_dirs(items):
+    from collections import Counter
+    live = [it for it in items if not it.get("hide")]
+    dirs = [((it.get("install") or {}).get("dir") or "", it) for it in live]
+    generic = [(it.get("id"), d) for d, it in dirs
+               if d.rstrip("/").split("/")[-1].lower() in GENERIC_INSTALL_DIRS]
+    cnt = Counter(d for d, _ in dirs if d)
+    clash = {d: [it.get("id") for dd, it in dirs if dd == d] for d, n in cnt.items() if n > 1}
+    print("\n【12】安装目录碰撞")
+    print(f"  在架 {len(live)} 件 · 装进通用目录 {len(generic)} 件 · 目录重名 {len(clash)} 组")
+    for i, d in generic:
+        print(f"  [通用目录] {i} → {d}")
+    for d, ids in clash.items():
+        print(f"  [碰撞] {d}")
+        for i in ids:
+            print(f"      {i}")
+    return generic, clash
