@@ -5,19 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>品味 — 中文 Agent Skill 精选</title>
 <meta name="description" content="生态里有 266 万条 Agent Skill。我们只挑值得装的，并且把挑它的理由写下来。">
-<!--GEO:HEAD:START--><!--GEO:HEAD:END-->
-<!-- 站点统计沿用旧首页的配置，原样搬过来。要不要留是产品的决定，不是版式的。 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHD3WEXQ8T"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-gtag('js',new Date());gtag('config','G-DHD3WEXQ8T');</script>
-
 
 <!-- ================================================================
      早启动。首屏不等任何 fetch —— 报头和搜索条是静态 HTML，
      feed 是唯一必需的数据，其余全是后到的增强。
      ================================================================ -->
 <script>
-window.__FEED__ = fetch("skills/feed.json").then(function(r){
+window.__FEED__ = fetch("../skills/feed.json").then(function(r){
   if(!r.ok) throw new Error("feed "+r.status); return r.json();
 });
 // 封面的一切都在 feed 里了：cover / cover_kind / cover_real / cover_w / cover_h。
@@ -28,7 +22,7 @@ window.__FEED__ = fetch("skills/feed.json").then(function(r){
 /* ============================================================
    品味 · 版式原型 v4 「流」
    店主定的方向：小红书式信息流，不是编辑部杂志。
-   杂志版留在 design/archive-editorial.html（相对仓库根）。
+   杂志版留在 design/archive-editorial.html。
 
    照搬小红书的地方：瀑布流不等高卡、圆角白卡、浅灰底、图片主导、
    标题两行截断、横滑分类胶囊、手机两列是第一现场。
@@ -568,14 +562,12 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
     <p id="colo1"></p>
     <p id="colo2"></p>
     <div class="links">
-      <a href="skills/feed.json">feed.json</a>
-      <a href="docs/CURATION.md">选品标准</a>
-      <a href="llms.txt">llms.txt</a>
+      <a href="../skills/feed.json">feed.json</a>
+      <a href="../docs/CURATION.md">选品标准</a>
+      <a href="../llms.txt">llms.txt</a>
       <a href="https://github.com/woowoeth/skill" target="_blank" rel="noopener">GitHub · MIT</a>
     </div>
   </footer>
-  <!-- 生成器写「可爬取层」的落点。SEO_PATCH_INDEX=1 打开后 seo/build_seo.py 往这里写。 -->
-  <!--GEO:BODY:START--><!--GEO:BODY:END-->
 </div>
 
 <div class="veil" id="veil"><div class="sheet" id="sheet"></div></div>

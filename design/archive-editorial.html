@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>品味 — 中文 Agent Skill 精选</title>
+<meta name="description" content="生态里有 266 万条 Agent Skill。我们只挑值得装的，并且把挑它的理由写下来。">
+
+<!-- ================================================================
+     早启动：feed.json 是唯一真正必需的数据，在样式和脚本解析之前就发出去。
+     covers.json 是过渡期的封面来源（低优先级），拿不到也不影响任何东西。
+     ▸ 版式的一条硬规矩：**首屏不等任何 fetch**。见下面「起飞」一节。
+     ================================================================ -->
+<script>
+window.__FEED__ = fetch("../skills/feed.json").then(function(r){
+  if(!r.ok) throw new Error("feed "+r.status); return r.json();
+});
+window.__COVERS__ = (function(){
+  try{
+    return fetch("../editorial/covers.json", {priority:"low"})
+      .then(function(r){ return r.ok ? r.json() : null })
+      .catch(function(){ return null });
+  }catch(e){ return Promise.resolve(null) }
+})();
+</script>
+
+<style>
+/* ============================================================
+   品味 · 版式原型 v3 「排字间」
+   设计立场：这不是货架，是专栏。单位不是卡片，是判断。
+
+   v3 相对 v2 改了四件事（都有实测依据，见各处注释）：
+   1 首屏不再等 fetch —— 报头与立场句是静态 HTML，货架后填
+   2 拒收榜整块撤掉 —— 数据是 0 条，展示样张等于自伤诚实
+   3 封面按「真产出物图」筛，OG 卡不上站；画幅随自然比例，不裁切
+   4「点评 / 但是」重排 —— 实测「但是」中位 106 字、比「点评」长得多，
+     不能再当小字脚注排。层级靠字体和颜色分，不靠缩小。
+
+   配色：纸 + 墨 + 朱。**底色方案仍在等店主拍板，这一版没有动任何色值。**
+   ============================================================ */
+
+:root{
+  /* —— 纸 —— 暖白，不是 #fafafa 那种屏幕灰。印刷物的底 —— */
+  --paper:      #f6f3ec;
+  --paper-2:    #efeade;
+  --sheet:      #fffefb;
+
+  /* —— 墨 —— 不用纯黑，用带一点暖的炭黑，长文更耐读 —— */
+  --ink:        #191613;
+  --ink-2:      #3b3630;
+  --ink-3:      #6d665c;
+  --ink-4:      #9a9287;
+
+  /* —— 线 —— */
+  --rule:       #ddd6c8;
+  --rule-2:     #c6bdaa;
+  --rule-ink:   #191613;
+
+  /* —— 朱 —— 唯一的彩色。只给编辑动作用：期号、但是、上新 —— */
+  --seal:       #a4342a;
+  --seal-2:     #c9564a;
+  --seal-wash:  #f0e2dd;
+
+  /* —— 字 —— 零外部依赖，全系统字体 —— */
+  --serif: 'Songti SC','Source Han Serif SC','Noto Serif CJK SC','STSong','SimSun',
+           'Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --sans:  -apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC',
+           'Noto Sans CJK SC','Microsoft YaHei',system-ui,sans-serif;
+  --mono:  'SF Mono',ui-monospace,Menlo,Consolas,'Liberation Mono',monospace;
+
+  /* ---- 字号阶梯 ----------------------------------------------
+     1.28 倍率，九级封顶。中文没有 x-height 可借，级差小于 1.2 就分不出来，
+     所以宁可少几级、级级看得出差别。 */
+  --t-micro: 11px;
+  --t-cap:   12.5px;
+  --t-meta:  13px;
+  --t-body:  15px;
+  --t-lead:  17px;
+  --t-h3:    19px;
+  --t-h2:    27px;
+  --t-h1:    38px;
+  --t-hero:  56px;
+
+  /* ---- 行高 --------------------------------------------------
+     中文方块字没有升降部，行距要比西文松：正文 1.85，长文 1.95，标题 1.2–1.4。
+     这三个值是全站唯一的行高来源，别在局部另发明。 */
+  --lh-tight: 1.22;
+  --lh-title: 1.38;
+  --lh-body:  1.85;
+  --lh-long:  1.95;
+
+  /* —— 留白节奏：4 起步，段落 20，栏目 56，章节 88 —— */
+  --s1:4px; --s2:8px; --s3:12px; --s4:20px; --s5:32px; --s6:56px; --s7:88px;
+
+  /* 中文正文单行 34 字左右最耐读。em 在中文里就等于「字」，所以这个值直接读作字数 */
+  --measure: 34em;
+  --measure-long: 36em;   /* 头条长判断专用，最长 800 字也就 24 行 */
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#15130f; --paper-2:#1c1915; --sheet:#1a1713;
+    --ink:#eee8dc; --ink-2:#c8c1b4; --ink-3:#968f82; --ink-4:#6b655b;
+    --rule:#332e26; --rule-2:#4a4338; --rule-ink:#eee8dc;
+    --seal:#d9776a; --seal-2:#e08d80; --seal-wash:#2c1e1b;
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:var(--t-body)/var(--lh-body) var(--sans);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  /* 行末标点悬挂 —— 中文排版里句号顶到边线上很难看，能悬就悬。
+     Safari 支持，其余浏览器忽略，没有副作用。 */
+  hanging-punctuation: allow-end;
+}
+/* 中文标点前后的空隙压缩。支持的浏览器（Chrome 123+）会把连续标点挤紧，
+   不支持的原样显示 —— 属于「能做到就做，做不到不假装」。 */
+@supports (text-spacing-trim: space-first){
+  body{ text-spacing-trim: space-first }
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper)}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+img{max-width:100%}
+
+/* ---- 中英混排的那一口气 --------------------------------------
+   「用 GB/T 9704 写公文」里 CJK 和拉丁之间该有约四分之一字的空隙，
+   浏览器不会自己加。JS 在边界插一个空的 <i class="g">，靠 margin 造缝——
+   不插真空格，复制出去还是干净的原文。
+   这是英文站不会做、也没必要做的事，正好是我们该做到的地方。 */
+i.g{font-style:normal;display:inline;margin:0 .09em}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* 通用小铅字标签：栏目名、字段名 */
+.label{
+  font:600 var(--t-micro)/1 var(--sans);
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--ink-4);
+}
+.label.zh{letter-spacing:.36em;text-transform:none}
+
+/* ============ 报头 ============
+   整块是静态 HTML，第一次绘制就有内容。只有三个数字要等 feed，
+   数字缺的时候整句话照样读得通 —— 这就是「不阻塞」在版式上的样子。 */
+header.masthead{padding-top:var(--s5)}
+.mast-top{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s4)}
+.logo{display:flex;align-items:baseline;gap:12px;min-width:0}
+.logo b{font:400 44px/1 var(--serif);letter-spacing:.1em;color:var(--ink);display:block}
+.logo i{
+  font:400 var(--t-micro)/1 var(--sans); font-style:normal;
+  letter-spacing:.42em; text-transform:uppercase; color:var(--ink-4);
+  white-space:nowrap;
+}
+.mast-right{
+  display:flex;align-items:center;gap:var(--s3);
+  font:var(--t-cap)/1 var(--mono); color:var(--ink-3); white-space:nowrap;
+}
+.mast-right .sep{color:var(--rule-2)}
+#langBtn{
+  font:600 var(--t-micro)/1 var(--sans); letter-spacing:.14em;
+  background:none;border:1px solid var(--rule-2);color:var(--ink-3);
+  padding:6px 10px;border-radius:2px;cursor:pointer;transition:.15s;
+}
+#langBtn:hover{border-color:var(--ink);color:var(--ink)}
+
+.mast-rule{margin:var(--s4) 0 0;height:2px;background:var(--rule-ink)}
+.mast-rule-thin{height:1px;background:var(--rule-ink);margin-top:2px;opacity:.35}
+
+/* 立场句 —— 全站唯一的「主张」，不是 hero 文案 */
+.creed{padding:var(--s5) 0 var(--s5);max-width:44em}
+.creed p.say{
+  margin:0; font:400 clamp(19px,2.6vw,25px)/1.72 var(--serif);
+  color:var(--ink); letter-spacing:.01em;
+}
+.creed p.say em{font-style:normal;color:var(--seal)}
+
+/* 三个真数。**这一行只放核过的数**：过手 / 上架 / 未上架。
+   将来「已写理由 N 条」就挂在这一行末尾 —— 位置留着，数没有就不显示，
+   不用 0 去占位，也不用样张凑数。 */
+.tally{
+  margin:var(--s3) 0 0; min-height:1.6em;
+  font:var(--t-cap)/1.6 var(--mono); color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:2px 14px;
+}
+.tally .k{color:var(--ink-4)}
+.tally .sep{color:var(--rule-2)}
+.tally b{font-weight:400;color:var(--ink)}
+
+.creed .sub{
+  margin-top:var(--s3); font:var(--t-meta)/1.75 var(--sans); color:var(--ink-3);
+  max-width:38em;
+}
+.creed .sub a{border-bottom:1px solid var(--rule-2)}
+.creed .sub a:hover{border-color:var(--ink)}
+
+/* ============ 栏目头 ============ */
+.sec-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:var(--s3);padding-bottom:var(--s4);
+}
+.sec-head .t{display:flex;align-items:baseline;gap:14px;min-width:0}
+.sec-head h2{margin:0;font:400 var(--t-h3)/1 var(--serif);letter-spacing:.18em;color:var(--ink)}
+.sec-head .note{font:var(--t-cap)/1.5 var(--sans);color:var(--ink-4);text-align:right}
+
+/* ============ 头条 ============ */
+.headline{padding:var(--s6) 0 var(--s6);border-top:1px solid var(--rule)}
+
+/* 左正文 / 右图版。图版 sticky —— 长判断 800 字时，图不会被拉成一根细条，
+   而是钉住陪着正文滚。这是「版式吃得下 800 字」的关键一手。 */
+.hl-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:start}
+.hl-grid.solo{grid-template-columns:minmax(0,1fr);gap:var(--s5)}
+.hl-grid.solo>div:first-child{max-width:var(--measure-long)}
+.hl-grid.solo .plate{max-width:var(--measure-long)}
+.hl-grid.solo .past{border-top:0;padding-top:0;margin-top:0}
+.plate-hold{position:sticky;top:var(--s4)}
+
+.hl-kicker{display:flex;align-items:center;gap:10px;margin-bottom:var(--s4)}
+.hl-kicker .no{font:400 var(--t-h2)/1 var(--serif);color:var(--seal)}
+.hl-kicker .cat{font:var(--t-cap)/1 var(--sans);color:var(--ink-3);letter-spacing:.14em}
+.hl-title{
+  margin:0 0 var(--s4);
+  font:400 clamp(31px,4.6vw,var(--t-hero))/var(--lh-tight) var(--serif);
+  letter-spacing:.005em; color:var(--ink);
+}
+.hl-title a:hover{color:var(--seal)}
+.hl-lead{
+  margin:0 0 var(--s5); font:400 var(--t-lead)/1.88 var(--sans);
+  color:var(--ink-2); max-width:30em;
+}
+
+/* ---- 长判断 ----------------------------------------------------
+   story_zh 范围 120–800 字，是全站唯一的长文位，也是「我们卖判断」
+   最集中的地方。所以它按**正文**排，不按加长版简介排：
+   宋体、1.95 行距、36 字行长、段间 1 字高。 */
+.story{max-width:var(--measure-long)}
+.story .label{color:var(--seal);display:block;margin-bottom:12px}
+.story p{
+  margin:0 0 1.05em; font:400 var(--t-lead)/var(--lh-long) var(--serif); color:var(--ink);
+}
+.story p:last-child{margin-bottom:0}
+/* 段间只用一种信号。中文书里是「缩进 + 不留空行」，屏幕上反过来更清楚：
+   留一字高的空行、不缩进。两样都上会让窄栏的左边缘看起来是破的。 */
+
+.byline{margin:var(--s4) 0 0;font:var(--t-cap)/1.7 var(--sans);color:var(--ink-4);letter-spacing:.06em}
+.byline b{font-weight:600;color:var(--ink-3)}
+
+.hl-meta{
+  margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:6px 16px;
+  font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);
+}
+.hl-meta a{border-bottom:1px solid var(--rule-2)}
+.hl-meta a:hover{border-color:var(--ink);color:var(--ink)}
+.hl-meta .k{color:var(--ink-4)}
+
+/* ---- 徽章：只有正向档 --------------------------------------------
+   星数已彻底离开前端（见 CURATION 四「加分项，不是门槛」）。
+   替代信号两个，都只在「有」的时候出现，没有就什么都不印——
+   给极简 skill 印「备料少」，是把星数的错误换个马甲再犯一次。 */
+.badges{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0 0 var(--s4)}
+.badge{
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.1em;
+  border:1px solid var(--rule-2);color:var(--ink-3);
+  padding:5px 7px;border-radius:2px;white-space:nowrap;
+}
+.badge.read{border-color:var(--seal);color:var(--seal)}
+
+/* 「中文」标 —— 英文版遇到没英文文案的商品时挂在简介前。
+   中文创作者的东西在英文目录站里搜不到，这正是本店存在的理由，
+   所以它是标签，不是错误提示。 */
+.zhchip{
+  display:inline-block;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.1em;
+  color:var(--seal);border:1px solid var(--seal);border-radius:2px;
+  padding:3px 5px;margin-right:2px;vertical-align:1px;white-space:nowrap;
+}
+
+/* ============ 图版 ============
+   ---- 封面三条硬规矩（实测出来的，不是想出来的）----------------
+   1 只上**真产出物图**。GitHub 自动生成的 OG 卡片一律不上站——
+     那就是「把标题又写一遍」，跟渐变占位块是同一种罪。
+   2 **不裁切。** 抽验 30 张真产出物图，宽高比从 0.77 一路到 4.21
+     （2560×608 的横幅、400×520 的竖版海报都真实存在）。
+     一刀 16/10 + cover 会把横幅裁掉大半、把竖版海报砍头。
+   3 **不跳版。** 数据里还没有宽高，所以先用 3/2 衬底裱框占位，
+     图 onload 后把真比例写回去。一次重排，换零裁切。
+   ------------------------------------------------------------ */
+.frame{
+  display:block; aspect-ratio:3/2; background:var(--sheet);
+  border:1px solid var(--rule); overflow:hidden;
+}
+.frame img{width:100%;height:100%;object-fit:contain;display:block}
+/* 已知真实比例后：脱掉裱框，按原比例满幅 */
+.frame.nat{aspect-ratio:auto}
+.frame.nat img{height:auto;object-fit:fill}
+/* 竖版和方图给个高度上限，别让一张海报把整屏吃掉 */
+.frame.nat.tall img{max-height:min(74vh,660px);width:auto;margin:0 auto}
+figure.fig{margin:0 0 var(--s4)}
+figure.fig figcaption,.plate figcaption{
+  margin-top:9px;font:var(--t-micro)/1.6 var(--sans);color:var(--ink-4);letter-spacing:.02em;
+}
+
+/* 正文摘录：没有产出物图时，拿真东西当图 —— 这就是你要装的东西 */
+.excerpt{
+  position:relative;background:var(--sheet);border:1px solid var(--rule);
+  padding:22px 22px 0;max-height:400px;overflow:hidden;
+}
+.excerpt pre{
+  margin:0;font:400 11.5px/1.95 var(--mono);color:var(--ink-3);
+  white-space:pre-wrap;word-break:break-word;
+}
+.excerpt:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:130px;
+  background:linear-gradient(to bottom,transparent,var(--sheet));pointer-events:none;
+}
+
+/* 往期头条 —— 专栏靠「还有上一期」活着 */
+.past{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--rule)}
+.past .label{display:block;margin-bottom:12px}
+.past ol{margin:0;padding:0;list-style:none}
+.past li{padding:8px 0;border-bottom:1px solid var(--rule)}
+.past li:last-child{border-bottom:0}
+.past li a{display:flex;gap:12px;align-items:baseline}
+.past .pd{font:var(--t-micro)/1.6 var(--mono);color:var(--ink-4);flex:0 0 auto;width:52px}
+.past .pt{font:400 var(--t-meta)/1.6 var(--serif);color:var(--ink-2);min-width:0}
+.past a:hover .pt{color:var(--seal)}
+
+/* ============================================================
+   判断块 ——「点评 / 但是」
+   全站最重要的信息结构，所以单独一节写。
+
+   实测（153 件在架）：
+     点评 中位 39 字，最长 100
+     但是 中位 106 字，最长 120，**153 件里 125 件有，28 件没有**
+   两件事由此定下来：
+
+   甲 「但是」比「点评」长得多，不能当小字脚注排。层级靠**字体和颜色**
+      分（宋体墨色 = 断言，黑体次墨 = 反证），**不靠缩小**。
+      v2 把它排成 13px 次灰，等于让最长的字段最难读。
+
+   乙 那 28 件没有「但是」的**不能看起来像残废**。所以竖线属于「点评」，
+      不属于这一对：缺「但是」时整块照样闭合，不留空槽、不写「暂无」。
+      「但是」是加上去的一笔，不是撑结构的柱子。
+
+   丙 朱色的「但」字**悬挂在竖线上**（负位移出栏），像纸上批注的一记朱笔。
+      这是中文排版才有的手法，也是英文站抄不动的地方。
+   ============================================================ */
+.judge{border-left:2px solid var(--rule-2);padding-left:18px;margin:0 0 var(--s4)}
+.judge>.label{display:block;margin-bottom:8px;color:var(--ink-4)}
+.judge .v{                       /* 点评：断言。宋体，墨色，比正文大一级 */
+  margin:0; font:400 var(--t-lead)/var(--lh-body) var(--serif); color:var(--ink);
+}
+.judge .b{                       /* 但是：反证。黑体，次墨色，正文级——不缩小 */
+  margin:.85em 0 0; padding-left:1.35em; position:relative;
+  font:400 var(--t-body)/var(--lh-body) var(--sans); color:var(--ink-2);
+}
+/* 悬挂的「但」是视觉记号（aria-hidden），读屏器读的是这一句完整的「但是」 */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.judge .b .mk{                   /* 悬挂的朱笔「但」 */
+  position:absolute; left:-19px; top:.02em;
+  width:20px; text-align:center;
+  font:400 var(--t-lead)/1.35 var(--serif); color:var(--seal);
+  background:var(--paper);       /* 压住竖线，让它像盖在线上 */
+}
+/* 头条里的判断块用大一号，且竖线换成朱色 —— 它是主角 */
+.headline .judge{border-left-color:var(--seal)}
+
+/* ============ 精选 ============
+   层级：头条 1 件（大幅）→ 精选第 1 件（跨两栏、大画幅）→ 其余小卡。
+   154 件全平铺就没有推荐，有主角才有节奏。 */
+.featured{padding:var(--s6) 0;border-top:1px solid var(--rule)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--s5);row-gap:0}
+.item{
+  padding:var(--s5) 0 var(--s5);border-top:1px solid var(--rule);
+  display:flex;flex-direction:column;
+  /* 卡片自然高。不再用 margin-top:auto 把页脚拉齐——
+     图的比例各不相同，硬拉齐只会在页脚上方留一片说不清的空白。
+     杂志版式本来就允许一栏比一栏短，靠**栏线**对齐，不靠拉伸。 */
+}
+.item.lead{grid-column:span 2}
+/* 第 1 件跨两栏，所以三栏时第一行只装得下 2 件 —— 顶边由栏目线代替的也就这 2 件。
+   写成 -n+3 会把第二行头一件的分隔线一起吃掉，那条线是行与行之间的对齐依据。 */
+.feat-grid .item:nth-child(-n+2){border-top:0;padding-top:0}
+.item-no{font:400 var(--t-cap)/1 var(--mono);color:var(--ink-4);margin-bottom:12px;letter-spacing:.1em}
+.item h3{margin:0 0 12px;font:400 var(--t-h2)/var(--lh-title) var(--serif);letter-spacing:.005em}
+.item.lead h3{font-size:var(--t-h1)}
+.item h3 a:hover{color:var(--seal)}
+.item .tag{margin:0 0 var(--s4);font:var(--t-body)/var(--lh-body) var(--sans);color:var(--ink-2)}
+.item.lead .tag{font-size:var(--t-lead);max-width:34em}
+.item.lead .judge .v{font-size:var(--t-h3)}
+.item .foot{
+  padding-top:var(--s3);margin-top:var(--s2);border-top:1px solid var(--rule);
+  font:var(--t-micro)/1.6 var(--mono);color:var(--ink-4);
+  display:flex;flex-wrap:wrap;gap:4px 12px;
+}
+.item .foot a:hover{color:var(--ink)}
+
+/* 有图 / 无图的统一节奏 ------------------------------------------
+   槽位次序固定不变：序号 → 标题 → 图（可缺）→ 简介 → 判断 → 页脚。
+   图缺了不补任何东西、也不换次序，所以两种卡片的**节拍是同一个**；
+   판断块那根竖线是每张卡共同的垂直锚点，有图无图都在。
+   56 件没有真产出物图，无图必须是一等公民，不是降级态。 */
+.item.noimg .judge{border-left-width:3px}   /* 无图时把判断块的分量顶上来一点 */
+
+/* ============ 名录 ============ */
+.index{padding:var(--s6) 0 var(--s7)}
+.idx-tools{
+  position:sticky;top:0;z-index:9;background:var(--paper);
+  padding:var(--s3) 0;border-bottom:1px solid var(--rule);margin-bottom:var(--s5);
+}
+.idx-tools input{
+  width:100%;background:transparent;border:0;border-bottom:1px solid var(--rule-2);
+  font:400 var(--t-h3)/1.5 var(--serif);color:var(--ink);padding:6px 0 10px;outline:none;
+}
+.idx-tools input::placeholder{color:var(--ink-4);font-family:var(--sans);font-size:var(--t-body)}
+.idx-tools input:focus{border-color:var(--ink)}
+.filters{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:14px}
+.filters button{
+  background:none;border:0;padding:2px 0;cursor:pointer;
+  font:var(--t-meta)/1.5 var(--sans);color:var(--ink-3);
+  border-bottom:1px solid transparent;transition:.14s;
+}
+.filters button:hover{color:var(--ink)}
+.filters button.on{color:var(--ink);border-bottom-color:var(--seal);font-weight:600}
+.filters button sup{font:var(--t-micro)/1 var(--mono);color:var(--ink-4);margin-left:3px;vertical-align:super}
+
+.daygroup{margin-bottom:var(--s5)}
+.dayhead{display:flex;align-items:baseline;gap:14px;padding:var(--s3) 0 10px;border-bottom:1px solid var(--rule-ink)}
+.dayhead .d{font:400 var(--t-h3)/1 var(--serif);letter-spacing:.06em}
+.dayhead .c{font:var(--t-cap)/1 var(--mono);color:var(--ink-4)}
+.dayhead .new{
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.14em;color:var(--paper);
+  background:var(--seal);padding:4px 7px;border-radius:2px;
+}
+
+/* 名录行：60 行同时在 DOM 里，靠 content-visibility 让没滚到的行不参与排版。
+   收起态的行高固定，所以 contain-intrinsic-size 给得准，滚动条不会乱跳。 */
+.row{border-bottom:1px solid var(--rule);content-visibility:auto;contain-intrinsic-size:auto 58px}
+.row.open{content-visibility:visible}
+.row>button{
+  width:100%;background:none;border:0;padding:14px 0;cursor:pointer;text-align:left;
+  display:grid;grid-template-columns:46px minmax(0,1fr) minmax(0,1.5fr) 92px;
+  gap:var(--s4);align-items:baseline;font:inherit;color:inherit;
+}
+.row>button:hover .rt{color:var(--seal)}
+.row .rn{font:400 var(--t-cap)/1.6 var(--mono);color:var(--ink-4)}
+.row .rt{font:400 var(--t-h3)/1.5 var(--serif);color:var(--ink);transition:color .14s;overflow-wrap:anywhere}
+.row .rg{
+  font:var(--t-meta)/1.65 var(--sans);color:var(--ink-3);
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+}
+.row .rc{font:var(--t-micro)/1.6 var(--sans);color:var(--ink-4);text-align:right;letter-spacing:.08em;white-space:nowrap}
+.row.open .rt{color:var(--seal)}
+
+.drawer{display:none;padding:0 0 var(--s5)}
+.row.open .drawer{display:block}
+.drawer-in{display:grid;grid-template-columns:46px minmax(0,1fr) minmax(0,320px);gap:var(--s4)}
+.drawer .body{max-width:var(--measure)}
+/* 抽屉是唯一能放开比例的地方：极端宽高比的图在小卡里裱着，在这里按原样看 */
+.drawer .aside{min-width:0}
+.drawer .judge{border-left-color:var(--seal)}
+.cmd{
+  position:relative;background:var(--sheet);border:1px solid var(--rule);
+  padding:11px 62px 11px 13px;margin:0 0 8px;
+  font:11.5px/1.7 var(--mono);color:var(--ink-2);
+  white-space:pre-wrap;overflow-wrap:anywhere;
+}
+.cmd button{
+  position:absolute;top:7px;right:7px;background:var(--paper);border:1px solid var(--rule);
+  color:var(--ink-3);font:var(--t-micro)/1 var(--sans);padding:5px 8px;cursor:pointer;border-radius:2px;
+}
+.cmd button:hover{border-color:var(--ink);color:var(--ink)}
+.drawer .links{
+  margin-top:var(--s3);display:flex;flex-wrap:wrap;gap:6px 18px;
+  font:var(--t-cap)/1.6 var(--mono);color:var(--ink-4);
+}
+.drawer .links a{border-bottom:1px solid var(--rule-2);color:var(--ink-3)}
+.drawer .links a:hover{color:var(--ink);border-color:var(--ink)}
+
+.more{
+  display:block;width:100%;margin-top:var(--s5);padding:16px 0;
+  background:none;border:1px solid var(--rule-2);color:var(--ink-2);
+  font:var(--t-meta)/1 var(--sans);letter-spacing:.14em;cursor:pointer;border-radius:2px;
+}
+.more:hover{border-color:var(--ink);color:var(--ink)}
+.empty{padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.6 var(--serif)}
+.empty.slim{padding:var(--s5) 0}
+
+/* ============ 版权页 ============ */
+footer{border-top:2px solid var(--rule-ink);padding:var(--s5) 0 var(--s7);margin-top:var(--s6)}
+.colophon{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s5)}
+.colophon p{margin:0 0 10px;font:var(--t-cap)/1.85 var(--sans);color:var(--ink-3);max-width:32em}
+.colophon .links{display:flex;flex-wrap:wrap;gap:8px 18px;font:var(--t-cap)/1.6 var(--mono)}
+.colophon .links a{color:var(--ink-3);border-bottom:1px solid var(--rule)}
+.colophon .links a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ============ 断点 ============ */
+@media (max-width:1000px){
+  .hl-grid{grid-template-columns:1fr;gap:var(--s5)}
+  .plate-hold{position:static}
+  .feat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .item.lead{grid-column:span 2}
+  .feat-grid .item:nth-child(-n+3){border-top:1px solid var(--rule);padding-top:var(--s5)}
+  .feat-grid .item:nth-child(-n+1){border-top:0;padding-top:0}
+  .row>button{grid-template-columns:40px minmax(0,1fr) 82px}
+  .row .rg{display:none}
+  .drawer-in{grid-template-columns:40px minmax(0,1fr)}
+  .drawer .aside{display:none}
+}
+@media (max-width:680px){
+  :root{--t-hero:33px;--t-h1:27px;--t-h2:21px;--t-h3:17px;--s6:40px;--s7:56px}
+  .wrap{padding:0 18px}
+  .logo{gap:0;flex-wrap:wrap}
+  .logo b{font-size:32px;white-space:nowrap}
+  .logo i{flex-basis:100%;margin-top:6px;letter-spacing:.3em;font-size:9.5px}
+  .mast-top{flex-wrap:wrap;align-items:baseline;gap:var(--s3)}
+  .mast-right{width:100%;justify-content:flex-start;gap:var(--s2);font-size:var(--t-micro)}
+  .mast-right #langBtn{margin-left:auto}
+  .creed{padding:var(--s4) 0 var(--s5)}
+  .creed p.say{font-size:20px;line-height:1.75}
+  .feat-grid{grid-template-columns:1fr;column-gap:0}
+  .item.lead{grid-column:span 1}
+  .feat-grid .item{border-top:1px solid var(--rule);padding-top:var(--s5)}
+  .feat-grid .item:first-child{border-top:0;padding-top:0}
+  .row>button{grid-template-columns:34px minmax(0,1fr);gap:var(--s3)}
+  .row .rc{display:none}
+  .drawer-in{grid-template-columns:1fr}
+  .excerpt{max-height:260px;padding:16px 16px 0}
+  .sec-head{flex-direction:column;gap:6px}
+  .sec-head .note{text-align:left}
+  /* 悬挂的「但」在窄屏里没有栏外可挂，收回行内 */
+  .judge{padding-left:14px}
+  .judge .b{padding-left:1.5em}
+  .judge .b .mk{position:static;background:none;display:inline;margin-right:.15em}
+  .judge .b{padding-left:0;text-indent:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     报头到立场句全是静态 HTML：第一次绘制就是一屏真内容，
+     不等 feed.json、不显示「读取中…」的空页。
+     三个数字（过手 / 上架 / 未上架）落在 #tally，数据到了才填；
+     没填的时候上面那句主张照样读得通。
+     ================================================================ -->
+<div class="wrap">
+  <header class="masthead">
+    <div class="mast-top">
+      <div class="logo"><b id="brand">品味</b><i id="brandSub">Taste · curated agent skills</i></div>
+      <div class="mast-right">
+        <span id="issue"></span>
+        <span class="sep">/</span>
+        <span id="dateline"></span>
+        <button id="langBtn" type="button">EN</button>
+      </div>
+    </div>
+    <div class="mast-rule"></div>
+    <div class="mast-rule-thin"></div>
+    <div class="creed">
+      <p class="say" id="creed">生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。</p>
+      <!-- 三个真数的位置。「已写理由 N 条」将来挂在这一行末尾；
+           现在数据是 0 条，所以整项不显示 —— 不用 0 占位，不拿样张凑数。 -->
+      <p class="tally" id="tally"></p>
+      <div class="sub" id="creedSub"></div>
+    </div>
+  </header>
+</div>
+
+<main id="main"></main>
+
+<div class="wrap">
+  <footer>
+    <div class="colophon">
+      <div>
+        <p id="colo1"></p>
+        <p id="colo2"></p>
+      </div>
+      <div>
+        <div class="links">
+          <a href="../skills/feed.json">feed.json</a>
+          <a href="../docs/CURATION.md">选品标准</a>
+          <a href="../llms.txt">llms.txt</a>
+          <a href="https://github.com/woowoeth/skill" target="_blank" rel="noopener">GitHub · MIT</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ------------------------------------------------------------------
+   0 · 文案
+   ------------------------------------------------------------------ */
+var ECOSYSTEM_TEXT = {zh:"266 万", en:"2.66 million"};   // 生态在册总量，将来应由数据层提供
+
+var I18N = {
+ zh:{
+  brand:"品味", brandSub:"Taste · curated agent skills",
+  title:"品味 — 中文 Agent Skill 精选",
+  btn:"EN", issue:"第 %s 期",
+  creed:"生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。",
+  creedSub:'我们只做一件事：把值得装的挑出来，并且把挑它的理由写下来。<a href="../docs/CURATION.md">选品标准</a>',
+  tSeen:"过手", tIn:"上架", tOut:"未上架", tNew:"今日上新", tWhy:"已写拒收理由",
+  hl:"今日头条", hlNote:"每天一件。理由写满，不写满就不上。",
+  featured:"本期精选", featNote:"店长挑的，不是热度排的。",
+  index:"名录", idxNote:"按收录日排。点开看点评与安装法。",
+  verdict:"点评", but:"但", butFull:"但是", excerpt:"SKILL.md 正文 · 这就是你要装的东西",
+  figcap:"作者仓库里的产出示例",
+  chosenBy:"%B 选 · %D", past:"往期头条",
+  noHeadline:"今天还没写头条。写不出长判断的，就不配当头条。",
+  search:"搜标题、简介、仓库…", all:"全部",
+  results:"搜到 %s 件", empty:"没有匹配的。换个词试试。",
+  moreN:"再看 %s 件", noMore:"名录到底了",
+  copy:"复制", copied:"已复制",
+  gh:"GitHub", added:"收于", alsoN:"同作者在架 %s 件", zhOnly:"中文",
+  prep:"备料齐", read:"店长读过",
+  loading:"货架在装…", failed:"feed.json 读取失败，货架这次没装上。",
+  colo1:"「品味」不是目录站。目录站解决“有没有”，我们解决“值不值”。所有点评由人写，所有下架可翻回。",
+  colo2:"生态在册 266 万 · 在架 %N% 件 · 更新于 %D%",
+  dfmt:function(y,m,d){return m+" 月 "+d+" 日"},
+  newBadge:"上新"
+ },
+ en:{
+  brand:"品味", brandSub:"Taste · curated agent skills",
+  title:"Taste — curated Chinese agent skills",
+  btn:"中", issue:"No. %s",
+  creed:"There are <em>2.66 million</em> agent skills out there. Finding them stopped being the problem long ago. Judging them is the problem.",
+  creedSub:'We do one thing: pick what is worth installing, and write down why. <a href="../docs/CURATION.md">Our standard</a>',
+  tSeen:"handled", tIn:"shelved", tOut:"left outside", tNew:"added today", tWhy:"reasons written",
+  hl:"THE LEAD", hlNote:"One a day. If we cannot make the case, it does not run.",
+  featured:"THIS ISSUE", featNote:"Picked by an editor, not sorted by heat.",
+  index:"THE INDEX", idxNote:"By date acquired. Open a row for the verdict.",
+  verdict:"Verdict", but:"But", butFull:"But", excerpt:"SKILL.md — this is literally what you install",
+  figcap:"Output sample from the author's own repo",
+  chosenBy:"Chosen by %B · %D", past:"Previously",
+  noHeadline:"No lead written today. If we cannot make the long case, it does not lead.",
+  search:"Search titles, blurbs, repos…", all:"All",
+  results:"%s found", empty:"Nothing matches. Try another word.",
+  moreN:"%s more", noMore:"End of the index",
+  copy:"copy", copied:"copied",
+  gh:"GitHub", added:"added", alsoN:"%s more by this author", zhOnly:"中文 ZH",
+  prep:"WELL PREPPED", read:"EDITOR READ IT",
+  loading:"Stocking the shelf…", failed:"feed.json failed to load; the shelf did not stock this time.",
+  colo1:"Taste is not a directory. Directories answer “does it exist”. We answer “is it worth it”. Every verdict is written by a person; nothing is deleted, only hidden.",
+  colo2:"2.66M in the wild · %N% carried · updated %D%",
+  dfmt:function(y,m,d){return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]+" "+d},
+  newBadge:"NEW"
+ }
+};
+
+/* ------------------------------------------------------------------
+   1 · 封面判断
+   ------------------------------------------------------------------
+   只上真产出物图。三层来源，优先级从高到低：
+     甲 feed 自带 is_real_artwork（内容那边正在把这个字段并进 feed）
+     乙 过渡期：直接读 editorial/covers.json，只取 is_real_artwork===true
+     丙 feed 自带 cover 且不在黑名单（多为 existing 层，已验活）
+   OG 卡（is_real_artwork===false）一律不上站。理由写在 PRODUCT.md
+  「杀掉重复封面」：GitHub 自动生成的仓库名片就是「把标题又写一遍」。
+   ------------------------------------------------------------------ */
+var COVER_DENY = /opengraph\.githubassets\.com|private-user-images\.githubusercontent\.com|buymeacoffee|hackingwithswift|shields\.io|badge|images\.weserv\.nl|gcdn\.moonshot\.cn/i;
+
+function coverOf(it){
+  if(!it) return "";
+  // 甲：feed 已经带上判断了就直接信它
+  if(it.is_real_artwork === false) return "";
+  if(it.is_real_artwork === true && it.cover && !COVER_DENY.test(it.cover)) return it.cover;
+  // 乙：过渡期从 covers.json 取
+  var c = COVERS && COVERS[it.id];
+  if(c && c.is_real_artwork === true && c.cover_url && !COVER_DENY.test(c.cover_url)) return c.cover_url;
+  if(c && c.is_real_artwork === false) return "";
+  // 丙：feed 自带的老封面
+  var f = it.cover;
+  return (f && !COVER_DENY.test(f)) ? f : "";
+}
+
+/* ------------------------------------------------------------------
+   2 · 工具
+   ------------------------------------------------------------------ */
+var params = new URLSearchParams(location.search);
+var lang = params.get("lang")==="en" ? "en" : "zh";
+var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
+var D=null, HL=null, HL_PAST=[], METHOD="", COVERS=null, SHELF=false;
+var byAuthor={};
+var state={ q:"", cat:"all", limit:60, open:{} };
+
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function pad(n){return n<10?"00"+n:(n<100?"0"+n:""+n)}
+function sprintf(s,v){return String(s).replace("%s",v)}
+
+/* ---- 中英混排：在 CJK 和拉丁/数字的边界插一个空的 <i class="g"> ----
+   先在原文里打一个 U+0000 记号，转义之后再换成标签 —— 顺序反了会把实体
+  （&quot; &#39;）的分号也当成边界，插出莫名其妙的缝。
+   插的是标签不是空格，用户复制走的还是干净原文。 */
+var CJK = "\\u2e80-\\u2fff\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff\\uff00-\\uffef";
+var GAP_A = new RegExp("(["+CJK+"])([A-Za-z0-9@#$%&+=/\\\\])","g");
+var GAP_B = new RegExp("([A-Za-z0-9!?.,:;%)\\]}+=/\\\\])(["+CJK+"])","g");
+function mix(s){
+  var x = String(s==null?"":s).replace(GAP_A,"$1\u0000$2").replace(GAP_B,"$1\u0000$2");
+  return esc(x).split("\u0000").join('<i class="g"></i>');
+}
+
+function clean(s){ return String(s==null?"":s).replace(/^\s*>\s*/,"").trim(); }
+function nameOf(it){ return lang==="zh" ? (it.title_zh||it.name) : (it.name||it.title_zh); }
+function tagOf(it){
+  if(lang==="zh") return clean(it.tagline_zh);
+  return clean(it.tagline_en) || clean(it.tagline_zh);
+}
+function isZhOnly(it){ return lang==="en" && !clean(it.tagline_en) && !!clean(it.tagline_zh); }
+function zhChip(it){ return isZhOnly(it) ? '<span class="zhchip">'+esc(t("zhOnly"))+'</span> ' : ""; }
+function whyOf(it){ return lang==="zh" ? clean(it.why_zh) : (clean(it.why_en) || clean(it.why_zh)); }
+/* 「但是」只认真数据。读不到就没有这一句 —— 空着是诚实。 */
+function limitOf(it){ return lang==="zh" ? clean(it.limit_zh) : (clean(it.limit_en) || clean(it.limit_zh)); }
+
+function catName(id){
+  var c=((D&&D.categories)||[]).find(function(x){return x.id===id});
+  return c ? (lang==="zh"?c.zh:c.en) : id;
+}
+function fmtDate(iso){
+  var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(iso||"");
+  if(!m) return iso||"";
+  return I18N[lang].dfmt(+m[1],+m[2],+m[3]);
+}
+function urlOf(it){ return it.url || ("https://github.com/"+it.repo); }
+
+/* --- 头条挑选 ------------------------------------------------------
+   date <= 今天里最新的一条，且 id 在架上找得到。未来日期是排期，不显示；
+   id 指不到东西的条目直接跳过，不让版面开天窗。
+   **没有真头条就说没有**，不上样张。
+   ------------------------------------------------------------------ */
+function pickHeadline(skills){
+  if(D.headline && D.headline.story_zh && D.headline.item){
+    HL_PAST = (D.headline_history||[])
+      .filter(function(h){ return h && h.id && h.id!==D.headline.id && h.date; })
+      .sort(function(a,b){ return b.date.localeCompare(a.date) })
+      .slice(0,3)
+      .map(function(h){ return {h:h, it:h.item || byIdOf(skills)[h.id]}; })
+      .filter(function(x){ return x.it });
+    return {h:D.headline, it:D.headline.item};
+  }
+  return null;
+}
+function byIdOf(skills){ var m={}; skills.forEach(function(s){ m[s.id]=s }); return m; }
+
+function issueNo(){
+  // 期号 = 从店开张那天算起的天数。让它像一份连续出版物。
+  var start=Date.UTC(2026,5,1);
+  var now=Date.parse((D&&D.generated_at)||new Date().toISOString());
+  return Math.max(1, Math.round((now-start)/864e5));
+}
+
+/* ------------------------------------------------------------------
+   3 · 报头（不需要任何数据，脚本一进来就渲染）
+   ------------------------------------------------------------------ */
+function renderChrome(){
+  document.documentElement.lang = lang==="zh" ? "zh-CN" : "en";
+  document.title = t("title");
+  el("brand").textContent = t("brand");
+  el("brandSub").textContent = t("brandSub");
+  el("langBtn").textContent = t("btn");
+  el("creed").innerHTML = t("creed");
+  el("creedSub").innerHTML = t("creedSub");
+  el("colo1").textContent = t("colo1");
+  if(!D){
+    el("issue").textContent = "";
+    el("dateline").textContent = "";
+    el("colo2").textContent = "";
+  }
+}
+
+/* 三个真数。一个都不算、一个都不编：过手 = 上架 + 未上架，全部来自 feed。
+   拿不到就整行不显示。 */
+function renderTally(){
+  if(!D) return;
+  var st = D.rejected_summary || {};
+  var bits = [];
+  function put(k, v){
+    if(v==null) return;
+    bits.push('<span><span class="k">'+esc(t(k))+'</span> <b>'+esc(String(v))+'</b></span>');
+  }
+  if(st.shelved!=null && st.unshelved!=null) put("tSeen", st.shelved + st.unshelved);
+  put("tIn",  st.shelved!=null ? st.shelved : D.count);
+  if(st.unshelved!=null) put("tOut", st.unshelved);
+  if(D.new_today) put("tNew", D.new_today);
+  // 「已写拒收理由」等真有条目了再出现。0 条就是不显示，不用 0 占位。
+  if(st.rejected_documented) put("tWhy", st.rejected_documented);
+  el("tally").innerHTML = bits.join('<span class="sep">·</span>');
+
+  el("issue").textContent = sprintf(t("issue"), issueNo());
+  el("dateline").textContent = fmtDate(D.generated_at);
+  el("colo2").textContent = t("colo2")
+      .replace("%N%", D.count||0)
+      .replace("%D%", fmtDate(D.generated_at));
+}
+
+/* ------------------------------------------------------------------
+   4 · 版面零件
+   ------------------------------------------------------------------ */
+function secHeadRaw(title, note){
+  return '<div class="sec-head"><div class="t"><h2>'+esc(title)+'</h2></div>'
+       + '<div class="note">'+esc(note)+'</div></div>';
+}
+function secHead(titleKey, noteKey){ return secHeadRaw(t(titleKey), t(noteKey)); }
+
+/* 图版。eager=true 给头条用（首屏那一张不该懒加载）。 */
+function figHTML(it, opts){
+  var cov = coverOf(it);
+  if(!cov) return "";
+  var o = opts || {};
+  return '<figure class="fig" data-cid="'+esc(it.id)+'">'
+       +   '<span class="frame"><img src="'+esc(cov)+'" alt=""'
+       +     ' loading="'+(o.eager?"eager":"lazy")+'" decoding="async"'
+       +     ' onerror="this.closest(\'figure\').remove()"></span>'
+       +   '<figcaption>'+esc(t("figcap"))+'</figcaption>'
+       + '</figure>';
+}
+
+/* ---- 徽章：只有正向档，没有负向档 --------------------------------
+   prep_badge 由功能开发那边从 methods/ 存档本地算（≥3 条证据）。
+   字段还没到就什么都不印 —— 不猜、不估。 */
+function badgesHTML(it){
+  var b = [];
+  if(it.prep_badge) b.push('<span class="badge">'+esc(t("prep"))+'</span>');
+  if(clean(it.limit_zh)) b.push('<span class="badge read">'+esc(t("read"))+'</span>');
+  return b.length ? '<div class="badges">'+b.join("")+'</div>' : "";
+}
+
+function metaBits(it){
+  var bits = [];
+  bits.push('<a href="'+esc(urlOf(it))+'" target="_blank" rel="noopener">'+esc(it.repo)+'</a>');
+  bits.push('<span><span class="k">'+esc(t("added"))+'</span> '+esc(fmtDate(it.added_at))+'</span>');
+  var also = (byAuthor[it.owner]||1) - 1;
+  if(also>0) bits.push('<span>'+esc(sprintf(t("alsoN"), also))+'</span>');
+  bits.push('<span>'+esc(catName(it.category))+'</span>');
+  return bits.join("");
+}
+
+/* ---- 判断块：点评 + 但是 ------------------------------------------
+   竖线属于「点评」。「但是」缺席时整块照样闭合 —— 不留空槽、不写「暂无」。
+   28 件还没写「但是」，它们不该看起来像残废。 */
+function judgeHTML(it, opts){
+  var why = whyOf(it), lim = limitOf(it);
+  if(!why && !lim) return "";
+  var o = opts || {};
+  return '<div class="judge">'
+    + (o.label===false ? "" : '<span class="label zh">'+esc(t("verdict"))+'</span>')
+    + (why ? '<p class="v">'+mix(why)+'</p>' : "")
+    + (lim ? '<p class="b"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+           + '<span class="sr">'+esc(t("butFull"))+'</span>'+mix(lim)+'</p>' : "")
+    + '</div>';
+}
+
+/* ---- 头条 ---- */
+function storyHTML(h, it){
+  // story_zh 是 120–800 字的长判断，不是加长版点评。分段落排，让它像正文。
+  var raw = (lang==="en" && h && h.story_en) ? h.story_en : (h && h.story_zh);
+  if(!raw) raw = whyOf(it);
+  return String(raw).split(/\n{2,}/).map(function(p){
+    return "<p>"+mix(p.trim())+"</p>";
+  }).join("");
+}
+
+function pastHTML(){
+  if(!HL_PAST.length) return "";
+  return '<div class="past"><span class="label zh">'+esc(t("past"))+'</span><ol>'
+    + HL_PAST.map(function(p){
+        return '<li><a href="'+esc(urlOf(p.it))+'" target="_blank" rel="noopener">'
+          + '<span class="pd">'+esc(fmtDate(p.h.date))+'</span>'
+          + '<span class="pt">'+mix(nameOf(p.it))+'</span></a></li>';
+      }).join("")
+    + '</ol></div>';
+}
+
+function renderHeadline(rec){
+  if(!rec) return '<section class="headline"><div class="wrap">'
+    + secHead("hl","hlNote")
+    + '<div class="empty">'+esc(t("noHeadline"))+'</div></div></section>';
+
+  var h = rec.h, it = rec.it;
+
+  /* 图版三选一，按「有没有真东西」降级：
+     1 作者自己的产出物图  2 SKILL.md 正文当图版  3 什么都不放，版心收成单栏。
+     没有第四种。绝不拿标题再写一遍当图。 */
+  var plate = figHTML(it, {eager:true});
+  if(!plate && METHOD){
+    plate = '<div class="excerpt"><pre>'+esc(METHOD.slice(0,1500))+'</pre></div>'
+          + '<figcaption>'+esc(t("excerpt"))+'</figcaption>';
+  }
+  var solo = plate ? "" : " solo";
+  var secTitle = (lang==="zh" && h.kicker_zh) ? h.kicker_zh : t("hl");
+
+  return '<section class="headline"><div class="wrap">'
+    + secHeadRaw(secTitle, t("hlNote"))
+    + '<div class="hl-grid'+solo+'">'
+    +   '<div>'
+    +     '<div class="hl-kicker"><span class="no">01</span>'
+    +       '<span class="cat">'+esc(catName(it.category))+'</span></div>'
+    +     '<h1 class="hl-title"><a href="'+esc(urlOf(it))+'" target="_blank" rel="noopener">'+mix(nameOf(it))+'</a></h1>'
+    +     '<p class="hl-lead">'+zhChip(it)+mix(tagOf(it))+'</p>'
+    +     badgesHTML(it)
+    +     '<div class="story judge">'
+    +       '<span class="label zh">'+esc(t("verdict"))+'</span>'
+    +       storyHTML(h, it)
+    +     '</div>'
+    +     (limitOf(it) ? '<div class="judge">'
+    +        '<p class="b"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+    +          '<span class="sr">'+esc(t("butFull"))+'</span>'+mix(limitOf(it))+'</p>'
+    +      '</div>' : "")
+    +     '<p class="byline">'+esc(t("chosenBy").replace("%B", h.by||"店长").replace("%D", fmtDate(h.date)))+'</p>'
+    +     '<div class="hl-meta">'+metaBits(it)+'</div>'
+    +   '</div>'
+    +   '<div class="plate"><div class="plate-hold">'+plate+pastHTML()+'</div></div>'
+    + '</div>'
+    + '</div></section>';
+}
+
+/* ---- 精选 ----
+   第 1 件跨两栏、大画幅（有主角才有节奏），其余 3 栏小卡。
+   槽位次序对所有卡片一样，图缺了不补别的东西、也不换次序。 */
+function featItem(it, i){
+  var lead = i===0;
+  var fig = figHTML(it);
+  return '<article class="item'+(lead?" lead":"")+(fig?"":" noimg")+'">'
+    + '<div class="item-no">'+pad(i+2)+'</div>'
+    + '<h3><a href="'+esc(urlOf(it))+'" target="_blank" rel="noopener">'+mix(nameOf(it))+'</a></h3>'
+    + fig
+    + '<p class="tag">'+zhChip(it)+mix(tagOf(it))+'</p>'
+    + badgesHTML(it)
+    + judgeHTML(it)
+    + '<div class="foot">'+metaBits(it)+'</div>'
+    + '</article>';
+}
+function renderFeatured(list){
+  if(!list.length) return "";
+  return '<section class="featured"><div class="wrap">'
+    + secHead("featured","featNote")
+    + '<div class="feat-grid">'+list.map(featItem).join("")+'</div>'
+    + '</div></section>';
+}
+
+/* ---- 名录 ---- */
+function filterList(all){
+  var q = state.q.trim().toLowerCase();
+  return all.filter(function(it){
+    if(state.cat!=="all" && it.category!==state.cat) return false;
+    if(!q) return true;
+    return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.desc_en,it.repo,it.owner]
+      .join(" ").toLowerCase().indexOf(q) >= 0;
+  });
+}
+function rowHTML(it, n){
+  return '<div class="row'+(state.open[it.id]?" open":"")+'" data-id="'+esc(it.id)+'">'
+    + '<button type="button" aria-expanded="'+(state.open[it.id]?"true":"false")+'">'
+    +   '<span class="rn">'+pad(n)+'</span>'
+    +   '<span class="rt">'+mix(nameOf(it))+'</span>'
+    +   '<span class="rg">'+zhChip(it)+mix(tagOf(it))+'</span>'
+    +   '<span class="rc">'+esc(catName(it.category))+'</span>'
+    + '</button>'
+    + '<div class="drawer">'+(state.open[it.id]?drawerHTML(it):"")+'</div>'
+    + '</div>';
+}
+function drawerHTML(it){
+  var ins = it.install||{};
+  var cmds = "";
+  if(ins.clone) cmds += '<div class="cmd">'+esc(ins.clone)+'<button data-c="'+esc(ins.clone)+'">'+esc(t("copy"))+'</button></div>';
+  if(ins.copy)  cmds += '<div class="cmd">'+esc(ins.copy)+'<button data-c="'+esc(ins.copy)+'">'+esc(t("copy"))+'</button></div>';
+  // 抽屉是唯一放开比例的地方：小卡里裱着的极端比例图，这里按原样看
+  var fig = figHTML(it);
+  return '<div class="drawer-in"><div></div><div class="body">'
+    + badgesHTML(it)
+    + judgeHTML(it)
+    + cmds
+    + '<div class="links">'+metaBits(it)+'</div>'
+    + '</div><div class="aside">'+fig+'</div></div>';
+}
+
+function renderIndex(all){
+  var list = filterList(all);
+  var q = state.q.trim();
+
+  var filters = '<button data-cat="all"'+(state.cat==="all"?' class="on"':'')+'>'+esc(t("all"))+'<sup>'+all.length+'</sup></button>';
+  (D.categories||[]).forEach(function(c){
+    if(!c.count) return;
+    filters += '<button data-cat="'+esc(c.id)+'"'+(state.cat===c.id?' class="on"':'')+'>'
+             + esc(lang==="zh"?c.zh:c.en)+'<sup>'+c.count+'</sup></button>';
+  });
+
+  var head = '<section class="index"><div class="wrap">'
+    + secHead("index","idxNote")
+    + '<div class="idx-tools">'
+    +   '<input id="q" type="search" autocomplete="off" value="'+esc(state.q)+'" placeholder="'+esc(t("search"))+'">'
+    +   '<div class="filters" id="filters">'+filters+'</div>'
+    + '</div>';
+
+  if(!list.length) return head + '<div class="empty">'+esc(t("empty"))+'</div></div></section>';
+
+  var body="", shown = list.slice(0, state.limit), n=0;
+
+  if(q){
+    body += '<div class="daygroup"><div class="dayhead"><span class="d">'
+         +  esc(sprintf(t("results"), list.length))+'</span></div>'
+         +  shown.map(function(it){ return rowHTML(it, ++n); }).join("")
+         +  '</div>';
+  } else {
+    // 名录是一本收录日志，不是商品目录。按收录日分组。
+    var groups=[], cur=null;
+    shown.forEach(function(it){
+      if(!cur || cur.d!==it.added_at){ cur={d:it.added_at, items:[]}; groups.push(cur); }
+      cur.items.push(it);
+    });
+    var newest = (D.generated_at||"").slice(0,10);
+    body += groups.map(function(g){
+      return '<div class="daygroup"><div class="dayhead">'
+        + '<span class="d">'+esc(fmtDate(g.d))+'</span>'
+        + '<span class="c">'+g.items.length+'</span>'
+        + (g.d===newest ? '<span class="new">'+esc(t("newBadge"))+'</span>' : '')
+        + '</div>'
+        + g.items.map(function(it){ return rowHTML(it, ++n); }).join("")
+        + '</div>';
+    }).join("");
+  }
+
+  var rest = list.length - shown.length;
+  body += rest>0
+    ? '<button class="more" id="more">'+esc(sprintf(t("moreN"), rest))+'</button>'
+    : '<div class="more" style="cursor:default;opacity:.5">'+esc(t("noMore"))+'</div>';
+
+  return head + body + '</div></section>';
+}
+
+/* ------------------------------------------------------------------
+   5 · 主渲染
+   ------------------------------------------------------------------ */
+function renderShelf(keepScroll){
+  if(!D) return;
+  var y = keepScroll ? window.scrollY : null;
+  renderChrome();
+  renderTally();
+
+  var all = (D.skills||[]).filter(function(x){return !x.hide});
+  // 名录按收录日倒序 —— 「今天挑了什么」是这一页的主语
+  var sorted = all.slice().sort(function(a,b){
+    return (b.added_at||"").localeCompare(a.added_at||"") || (a.title_zh||"").localeCompare(b.title_zh||"");
+  });
+
+  var head = HL ? HL.it : null, headId = head ? head.id : null;
+  var picks = all.filter(function(x){ return x.pick && x.id!==headId });
+  var feats = picks.slice(0,6);
+  if(feats.length<6){
+    sorted.forEach(function(x){
+      if(feats.length<6 && x.id!==headId && feats.indexOf(x)<0) feats.push(x);
+    });
+  }
+
+  el("main").innerHTML =
+      renderHeadline(HL)
+    + renderFeatured(feats)
+    + renderIndex(sorted);
+
+  wireIndex();
+  fitFrames(el("main"));
+  SHELF = true;
+  if(y!=null) window.scrollTo(0,y);
+}
+
+/* ---- 图片落地后把真比例写回裱框 ----------------------------------
+   数据里还没有宽高（covers.json 只有 URL），所以先用 3/2 占位、
+   onload 后改成自然比例。一次重排换零裁切；等 covers.json 带上
+   width/height，这段就可以在 HTML 里直接写死，重排也一起省掉。 */
+function fitFrame(img){
+  var w = img.naturalWidth, h = img.naturalHeight;
+  if(!w || !h) return;
+  var fr = img.parentNode;
+  if(!fr || fr.className.indexOf("frame")<0) return;
+  fr.style.aspectRatio = w+" / "+h;
+  fr.className = "frame nat" + (w/h < 1.25 ? " tall" : "");
+}
+function fitFrames(root){
+  (root||document).querySelectorAll(".frame img").forEach(function(img){
+    if(img.complete) fitFrame(img);
+    else img.addEventListener("load", function(){ fitFrame(img) }, {once:true});
+  });
+}
+
+function wireIndex(){
+  var q = el("q");
+  if(q){
+    q.addEventListener("input", function(){
+      state.q = this.value; state.limit = 60;
+      renderShelf(true);
+      var n = el("q"); if(n){ n.focus(); n.setSelectionRange(n.value.length, n.value.length); }
+    });
+  }
+}
+
+/* ------------------------------------------------------------------
+   6 · 交互
+   ------------------------------------------------------------------ */
+function copyText(txt, btn){
+  var old = btn.textContent;
+  function done(){ btn.textContent = t("copied"); setTimeout(function(){btn.textContent=old},1400); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done, fallback);
+  } else fallback();
+  function fallback(){
+    var ta=document.createElement("textarea"); ta.value=txt;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+
+document.addEventListener("click", function(e){
+  var cp = e.target.closest(".cmd button");
+  if(cp){ copyText(cp.getAttribute("data-c"), cp); return; }
+
+  var f = e.target.closest("#filters button");
+  if(f){ state.cat = f.getAttribute("data-cat"); state.limit = 60; renderShelf(true); return; }
+
+  if(e.target.closest("#more")){ state.limit += 60; renderShelf(true); return; }
+
+  var rb = e.target.closest(".row > button");
+  if(rb){
+    var row = rb.parentNode, id = row.getAttribute("data-id");
+    var it = (D.skills||[]).find(function(x){return x.id===id});
+    if(!it) return;
+    if(state.open[id]){
+      delete state.open[id];
+      row.classList.remove("open"); rb.setAttribute("aria-expanded","false");
+      row.querySelector(".drawer").innerHTML = "";
+    } else {
+      state.open[id] = 1;
+      row.classList.add("open"); rb.setAttribute("aria-expanded","true");
+      var dr = row.querySelector(".drawer");
+      dr.innerHTML = drawerHTML(it);
+      fitFrames(dr);
+    }
+    return;
+  }
+});
+
+el("langBtn").addEventListener("click", function(){
+  lang = lang==="zh" ? "en" : "zh";
+  var u = new URL(location.href);
+  if(lang==="en") u.searchParams.set("lang","en"); else u.searchParams.delete("lang");
+  history.replaceState(null,"",u);
+  if(SHELF) renderShelf(true); else renderChrome();
+});
+
+/* ------------------------------------------------------------------
+   7 · 起飞
+   ------------------------------------------------------------------
+   一条硬规矩：**首屏不等任何 fetch。**
+   报头和立场句是静态 HTML，脚本一进来先把文案补齐（renderChrome），
+   然后才等 feed。feed 是唯一的必需数据，其余全是后到的增强：
+
+     feed.json      必需 · 到了就排货架
+     covers.json    可选 · 后到就补图，拿不到就当无图（低优先级请求）
+     methods/*.md   可选 · 只在头条没有产出物图时才要，永不挡首屏
+
+   v2 是四个 fetch 一起 Promise.all，再串一个 methods/*.md ——
+   五个往返之前整页是空的。这一版把它们全挪到首屏之后。
+   ------------------------------------------------------------------ */
+renderChrome();
+el("main").innerHTML = '<div class="wrap"><div class="empty slim">'+esc(t("loading"))+'</div></div>';
+
+// 封面先到就先记下，不单独触发重排
+window.__COVERS__.then(function(c){
+  COVERS = (c && c.covers) || null;
+  if(SHELF && COVERS) renderShelf(true);   // 货架已经排好了才需要补图重排
+});
+
+window.__FEED__.then(function(feed){
+  D = feed;
+  var live = (D.skills||[]).filter(function(x){ return !x.hide });
+  live.forEach(function(x){ byAuthor[x.owner] = (byAuthor[x.owner]||0)+1; });
+  HL = pickHeadline(live);
+  renderShelf();          // ← 这里就已经是完整版面了，下面两件都是补丁
+
+  // 头条没有产出物图时，才去拿 SKILL.md 正文当图版。晚到就补，不重排整页。
+  if(HL && !coverOf(HL.it)){
+    fetch("../methods/"+HL.it.id+".md")
+      .then(function(r){ if(!r.ok) throw 0; return r.text() })
+      .then(function(txt){
+        METHOD = txt.replace(/^---[\s\S]*?\n---\s*\n/, "").trim();
+        if(METHOD) renderShelf(true);
+      })
+      .catch(function(){ /* 没有存档就没有图版，版心自己收成单栏 */ });
+  }
+}).catch(function(e){
+  el("main").innerHTML = '<div class="wrap"><div class="empty">'+esc(t("failed"))+'</div></div>';
+  if(window.console) console.error(e);
+});
+
+})();
+</script>
+</body>
+</html>
