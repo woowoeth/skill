@@ -1,3 +1,10 @@
 __pycache__/
 *.pyc
 .DS_Store
+scouts/.cache/
+
+# 抓取中间产物（体积大、易变、不是真相来源）
+scouts/.funnel/
+editorial/*.bak
+# 违规来源数据：经 robots Disallow 的 /api/ 抓取所得，见 D15，不入库
+editorial/funnel_raw.json
