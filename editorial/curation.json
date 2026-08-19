@@ -1947,9 +1947,11 @@
    "cover": "",
    "cover_kind": "og",
    "cover_real": false,
-   "limit_zh": "歌不是它生成的：音频得你自己去 Suno 出、把 stems 拿回来，它管概念、歌词、Suno 提示词、母带压到 -14 LUFS 和发行。装法是 /plugin marketplace add 不是复制目录，还要装 Python 依赖跑 setup。",
-   "limit_en": "It does not make the audio — you generate on Suno and bring the stems back. It covers concept, lyrics, Suno prompts, mastering to -14 LUFS and release prep. Installs via /plugin marketplace add, plus Python deps and a setup command.",
-   "title_en": "Turns Suno noodling into finished, mixed tracks"
+   "limit_zh": "歌不是它生成的：音频得你自己去 Suno 出、把 stems 拿回来，它管概念、歌词、Suno 提示词、母带和发行。52 件里 8 件是插件自用件（about/help/setup/test 等），真能用的 44 件。",
+   "limit_en": "It does not make the audio — you generate on Suno and bring the stems back; it covers concept, lyrics, Suno prompts, mastering and release prep. Of its 52 skills, 8 are plugin housekeeping (about/help/setup/test/health-check); 44 are actually usable.",
+   "title_en": "Turns Suno noodling into finished, mixed tracks",
+   "limit_brief_zh": "歌不是它生成的，音频要你去 Suno 出。",
+   "limit_brief_en": "It does not make the audio; you generate that on Suno."
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
@@ -3860,7 +3862,7 @@
    "tagline_en": "Makes a 12-page personalized English picture book for your kid — a fixed watercolor house style plus a per-book character sheet keeps the child looking like the same character across all pages, narrated in a parent's own cloned voice, shipped as one sendable HTML file.",
    "why_zh": "难点它都啃了：AI 插画最容易每页换个人，它用画风锚点+角色设定图锁死；声音只收成人授权音、监护人确认才继续，私密音频永不进成品。限 Apple Silicon + Codex，本地模型约 3.2G。",
    "why_en": "It solves the hard parts: AI illustration usually drifts into a different-looking child each page, so it locks consistency with a style anchor plus a character sheet; voice cloning accepts only authorized adult recordings with guardian checkpoints, and private audio never ships in the output. Apple Silicon Mac + Codex only, ~3.2GB local model.",
-   "pick": true,
+   "pick": false,
    "limit_zh": "出的是英文绘本，中文得自己再转一道。要调生图模型和 TTS，成本随页数走；风格靠 style key 加角色设定图锁住，改任一项就得整本重生成。",
    "limit_en": "It produces an English picture book — Chinese needs another pass. Costs scale with pages since it calls an image model and TTS; changing the style key or character sheet forces a full regeneration.",
    "cover": "",
@@ -4802,7 +4804,7 @@
    "category": "fun",
    "tagline_zh": "生辰八字最怕排盘错——一步错整盘废。它先把四柱排准，再谈解读，还能生成命盘图。",
    "why_zh": "和店里的紫微排盘同一个作者，一个人把中文命理这块认真做全了：排盘用算法、解读才用模型。",
-   "pick": true,
+   "pick": false,
    "limit_zh": "排盘是 scripts/bazi_calc.py 算的，解读仍由模型生成，没有本店周易那件的事后对账机制。正文全繁体，用语偏港台。",
    "limit_en": "The chart is computed by scripts/bazi_calc.py, but the reading is still model-generated, with none of the after-the-fact reconciliation the I Ching one has. Written entirely in traditional Chinese, Hong Kong/Taiwan usage.",
    "cover": "https://raw.githubusercontent.com/wolke/bazi-mingli/HEAD/assets/banner.png",
@@ -5163,7 +5165,8 @@
    "title_en": "The cat advisor that will not hand you a dose",
    "tagline_en": "Vomiting, litter-box protests, biting — the folk remedies circulating online make it worse. This runs an emergency red-flag pass first, then answers from AAFP/ISFM welfare guidance.",
    "why_en": "The refusal is hard-coded: no doses, and it names the loopholes it will not accept — \"my vet already told me\", \"it's just for an article\", \"convert it by weight\".",
-   "limit_en": "The file bars every drug dose, frequency and course, and will not fill gaps even when the user says a vet gave instructions. It names Yunnan Baiyao, Huoxiang Zhengqi and smectite as home remedies it refuses. Cats only. Offline, it gives principles and the official channels to check rather than current recall or regional vaccine rules."
+   "limit_en": "The file bars every drug dose, frequency and course, and will not fill gaps even when the user says a vet gave instructions. It names Yunnan Baiyao, Huoxiang Zhengqi and smectite as home remedies it refuses. Cats only. Offline, it gives principles and the official channels to check rather than current recall or regional vaccine rules.",
+   "pick": true
   },
   "r0ses1r-dev-birdsight": {
    "title_zh": "查稀有鸟最近落在哪，顺带说清中文名是台湾译名",
@@ -5183,7 +5186,8 @@
    "title_en": "Wet-bulb math that puts 48°C in Turpan below 35°C in Changsha",
    "tagline_en": "Deciding whether it is safe to run, drill or work outside today — air temperature will mislead you. This pulls a seven-day open-meteo forecast, computes wet-bulb, and grades five risk levels.",
    "why_en": "It swaps out the scale people actually use: above 31°C wet-bulb all outdoor activity is dangerous, and 35°C is the theoretical survival limit, cited to Sherwood & Huber, PNAS 2010.",
-   "limit_en": "It grades risk and stops there — the file's closing line sends anyone with high fever without sweating, or confusion, straight to a hospital. Chinese city names that miss have to be retyped in pinyin (the worked example is Dunhuang). One data source only: the open-meteo seven-day forecast, with no station correction."
+   "limit_en": "It grades risk and stops there — the file's closing line sends anyone with high fever without sweating, or confusion, straight to a hospital. Chinese city names that miss have to be retyped in pinyin (the worked example is Dunhuang). One data source only: the open-meteo seven-day forecast, with no station correction.",
+   "pick": true
   },
   "fxw-labs-beachcombing": {
    "title_zh": "把你必须几点前撤离滩涂顶在报告最前面的赶海参谋",
@@ -5203,7 +5207,8 @@
    "title_en": "A 0–13 parenting advisor that will not take one source's word for it",
    "tagline_en": "Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.",
    "why_en": "It keeps a table of the excuses an AI is likely to make. \"The symptoms are textbook, I can basically confirm it\" is listed there as a signal to stop, not to proceed.",
-   "limit_en": "Profiles are written to a fixed Obsidian-style vault path, so without a vault you must nominate a local directory first. Ages 0–13. It says \"this symptom has been associated with X\", never \"your child has X\", and recommends no drug or dose. Words like breathing difficulty or seizure skip every workflow and return only a go-to-hospital message."
+   "limit_en": "Profiles are written to a fixed Obsidian-style vault path, so without a vault you must nominate a local directory first. Ages 0–13. It says \"this symptom has been associated with X\", never \"your child has X\", and recommends no drug or dose. Words like breathing difficulty or seizure skip every workflow and return only a go-to-hospital message.",
+   "pick": true
   },
   "violasi-reading-diary": {
    "title_zh": "把分级读物 PDF 里嵌的真人音频一页页抠出来",
@@ -5283,7 +5288,8 @@
    "title_en": "A noir interrogation game that hashes the killer before you start",
    "tagline_en": "What ruins AI mysteries is talking the model out of its own answer. Here the solution is SHA-256 committed in the opening briefing, and every suspect is played strictly off a card the script hands over.",
    "why_en": "Hard mode plants a second witness who names the wrong person, and the model playing that suspect is not told the statement is false either.",
-   "limit_en": "One case runs 5–15 minutes and ends there; no campaigns. Noir only — fantasy or sci-fi requests are declined — in two settings, 1940s America and 1930s Shanghai. The file forbids the agent from ever reading or cat-ing the case JSON, since bypassing the script defeats the whole design."
+   "limit_en": "One case runs 5–15 minutes and ends there; no campaigns. Noir only — fantasy or sci-fi requests are declined — in two settings, 1940s America and 1930s Shanghai. The file forbids the agent from ever reading or cat-ing the case JSON, since bypassing the script defeats the whole design.",
+   "pick": true
   },
   "rubyzhu26-see-life-wallpaper-skill": {
    "title_zh": "用草间弥生画孤独、米罗画温暖的每日五感壁纸",
@@ -5303,7 +5309,8 @@
    "title_en": "The absurdist flash-fiction writer banned from ending on a worn object",
    "tagline_en": "Models write the same parable every time: an order comes down, everyone complies, the poor pay, an old man weeps. This lists those beats as a template checklist and forces two dimensions to change on a hit.",
    "why_en": "It refuses to imitate any named author's voice, translating such requests into transferable craft instead — deadpan, absurd causality, restraint at the close.",
-   "limit_en": "Chinese flash fiction only, capped at 3,000 characters. It outputs a title and the story and nothing else — no moral, no craft notes, no self-assessment unless asked. The author's own lines: no real person or institution cast as the perpetrator; no shortcut jokes off region, occupation, poverty or disability; no death or serious illness added late to land an emotional hit."
+   "limit_en": "Chinese flash fiction only, capped at 3,000 characters. It outputs a title and the story and nothing else — no moral, no craft notes, no self-assessment unless asked. The author's own lines: no real person or institution cast as the perpetrator; no shortcut jokes off region, occupation, poverty or disability; no death or serious illness added late to land an emotional hit.",
+   "pick": true
   },
   "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
    "title_zh": "按你的训练记录算下一次该练什么",

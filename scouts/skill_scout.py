@@ -682,6 +682,42 @@ def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+# 探路候选。**顺序即优先级**，前面的先试。
+# 为什么要有这张表：`path` 记错时，光报错不给候选，人还是得一个个 clone 去找。
+# `.claude/skills/<name>` 排在很前面是实测出来的 —— 作者把 skill 装在自己项目里
+# 是最常见的布局之一，而它以点开头，肉眼扫仓库首页根本看不见。
+PATH_CANDIDATES = (
+    "", "{name}", "skills/{name}", ".claude/skills/{name}", ".agents/skills/{name}",
+    "plugin/skills/{name}", "plugins/{name}/skills/{name}", "skill", "skills",
+    "src/skills/{name}", "packages/cli/skill", "claude-runtime/skills/{name}",
+)
+
+
+def probe_path(repo: str, name: str, timeout: int = 15) -> list[str]:
+    """挨个试候选位置，返回**所有**能取回 SKILL.md 的路径。
+
+    返回全部而不是第一个 —— 一个仓库里同名 skill 出现在多处（`.claude/skills/x`
+    和 `plugins/y/skills/x`）是常态，机器判不了哪个是这张卡指的那件。
+    给人一张候选清单去选，比替人挑一个然后可能挑错强。
+    """
+    import urllib.request
+    seen, hits = set(), []
+    for tpl in PATH_CANDIDATES:
+        rel = tpl.format(name=name).strip("/")
+        if rel in seen:
+            continue
+        seen.add(rel)
+        url = (f"https://raw.githubusercontent.com/{repo}/HEAD/"
+               + (rel + "/SKILL.md" if rel else "SKILL.md"))
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            urllib.request.urlopen(req, timeout=timeout).read(1)
+            hits.append(rel)
+        except Exception:
+            pass
+    return hits
+
+
 def verify_paths() -> int:
     """复核每件在架商品的 path 是否真能取回 SKILL.md。
 
@@ -711,6 +747,12 @@ def verify_paths() -> int:
     for it, why in bad:
         print(f"[verify] ✗ {it['id']}  repo={it['repo']} path={it.get('path','')!r} ({why})")
         print(f"           install.copy = {it.get('install', {}).get('copy', '')}")
+        hits = probe_path(it["repo"], it.get("name", ""))
+        if hits:
+            print(f"           候选位置（探到 {len(hits)} 处，**要人选，不自动改**）: "
+                  + " | ".join(repr(h) for h in hits))
+        else:
+            print("           候选位置：一处都探不到 —— 多半是仓库没了或改名了")
     print(f"[verify] 单品里取不回正文的 {len(bad)} 件"
           + ("（这些的 install.copy 不可信）" if bad else "，全部可取"))
     print(f"[verify] 合集 {len(cols)} 件不参与本项 —— 合集没有单一 SKILL.md，"
