@@ -3,17 +3,18 @@
 """
 品味 — 编辑层体检 / editorial layer check.
 
-回答十个问题，全部基于仓库里的真实文件，不估算：
+回答十一个问题，全部基于仓库里的真实文件，不估算：
   1. 上架的每一件，局限（limit_zh）写了没有？缺多少件？
   2. editorial/rejected.json 合不合 schema/rejected.schema.json？
   3. editorial/headline.json 选的 id 真的在架上吗？有没有一天两条？
   4. feed.json 和 rejected-feed.json 是不是当前 skills/*.json 重建出来的？
   5. 备料徽章命中多少？有多少件因为我们没存下正文而算不出来？
   6. install.copy 抄下来真能装上吗？（单品必须有；合集刻意留空）
-  7. 印在卡片上的 skill_count 有没有大到不可信？（口径含测试夹具，尚未收窄）
+  7. 可爬层印出的 skill_count 有没有大到该重过一遍选品？（数字已核过，等的是判断）
   8. 卡片上那行短版局限是完整句还是伪装的截断？年龄口径和数据对得上吗？
   9. 上站的封面里有没有混进按 D4/D10 不该上站的（og / logo / 二维码 / 空白）？
   10. 我们自己写的推荐语里，有没有在替某件东西宣传红线行为？
+  13. 英文四件套齐不齐？英文文案里有没有星数、有没有回落成仓库文件名、有没有漏翻或被截断？
 
 用法:
   python3 scouts/check_curation.py                # 报告，不改任何文件
@@ -691,11 +692,28 @@ def check_brief_and_age(items: dict) -> dict:
 # 星数、evals、skill_count 已经是同一个病的第三次发作：**印给用户看的数字没有核过来源。**
 # 规矩写在 editorial/feedback.json 的 patterns 里，这里是它的可执行部分。
 #
-# skill_count 是唯一还印在货架上的数字（星数已经断了前端出口）。它现在的口径是
-# 「仓库里 SKILL.md 的总数」—— 这个口径把测试夹具、示例、模板全算进来了。
-# 本机核不了仓库里那些 SKILL.md 到底是什么（要 clone），所以这里只做能本机做的事：
-# 把大到不可信的数字揪出来点名。它们要么是口径错了，要么这件货本身就该按
-# 「问二·大而全的数量堆」拒掉 —— 两条路都得有人看一眼，不能就这么印在卡片上。
+# skill_count 是唯一还对外印出的数字（星数已经断了前端出口）。
+#
+# **这段话被自己纠正过两次，两次错的都不是数字是措辞** —— 同 D39/D43 那一族病，
+# 所以订正过程留在这里，比结论有用：
+#
+#   一、「印在卡片上」是错的。首页 `index.html` 里 `skill_count` 一次都没出现。
+#       真正的出口是**可爬层**：详情页 `i/<id>/index.html` 和 `llms.txt` /
+#       `llms-full.txt` 里那句 `The repository ships N skills in total.`
+#       （`seo/build_seo.py`）。说错出口 = 让人去改一个根本没印它的地方。
+#
+#   二、「含测试夹具，尚未收窄」是过期的。`skill_scout.find_skill_mds` 早就带着
+#       `FIXTURE_DIRS`（tests / golden / fixtures / testdata …）排除了。
+#       它只对新进的货生效，存量不重算 —— 但那是「存量待刷」，不是「口径没定」。
+#
+#   三、「没人核过」是错的，而且错得最重。`docs/DEBT.md` 记着：在架合集**逐个
+#       `git clone --filter=blob:none --depth 1` 数过真实的 SKILL.md**，订正了 11 件，
+#       **其中 3 件是往上改的**（原来的数不只虚高，是两个方向都错）。
+#
+# 所以这条 WARN 剩下的真内容只有一句：**数字核过了，选品判断还没做。**
+# 一件印着几十件的合集，按 `CURATION.md` 问二「大而全的数量堆」该不该留，
+# 要人读了仓库内容才判得了 —— **那是需要人判断的事，不是我们的欠账。**
+# 把「等人判」写成「没人核」，就是把一件已经做完的工作重新记成缺口。
 COUNT_SUSPECT = 40
 
 def check_counts(items: dict) -> dict:
@@ -705,15 +723,19 @@ def check_counts(items: dict) -> dict:
                  key=lambda x: -(x.get("skill_count") or 0))
     zero = [it for it in shelved if not (it.get("skill_count") or 0)]
     total = sum(it.get("skill_count") or 0 for it in shelved)
-    print(f"  在架 {len(shelved)} 件，卡片上印的 skill 数合计 {total}"
-          f"（口径：仓库里 SKILL.md 的总数 —— 含测试夹具和示例，尚未收窄）")
+    print(f"  在架 {len(shelved)} 件，对外印出的 skill 数合计 {total}"
+          f"（口径：仓库里 SKILL.md 的总数，ingest 已排除 tests/golden/fixtures，存量不重算）")
+    print(f"  出口不是首页卡片，是可爬层：详情页 i/<id>/ 和 llms.txt 里那句 "
+          f"「The repository ships N skills in total.」")
     if fat:
-        warn(f"{len(fat)} 件的 skill_count 大于 {COUNT_SUSPECT} —— 这个数印在卡片上，"
-             f"但没人核过里面有多少是测试夹具/示例。要么收窄口径，要么按「问二·数量堆」拒掉")
+        warn(f"{len(fat)} 件的 skill_count 大于 {COUNT_SUSPECT} —— **数字本身已经核过**"
+             f"（docs/DEBT.md：在架合集逐个 clone 数过，订正 11 件，其中 3 件是往上改的），"
+             f"这里不是数据欠账。剩下的是**选品判断**：一件印着几十件的合集，"
+             f"按 CURATION 问二「大而全的数量堆」该不该留，要人读了仓库内容才判得了")
         for it in fat[:8]:
-            print(f"    [{it.get('skill_count'):>4} 件] {it['id']}")
+            print(f"    [{it.get('skill_count'):>4} 件] {it['id']}  ←（等人判，不是等人核）")
     if zero:
-        warn(f"{len(zero)} 件的 skill_count 是 0 或缺失 —— 卡片上会印出「0 件」")
+        warn(f"{len(zero)} 件的 skill_count 是 0 或缺失 —— 可爬层那句会印出「0 skills」")
         for it in zero[:5]:
             print(f"    [0] {it['id']}")
     return {"total_printed": total, "suspect": len(fat), "zero": len(zero),
@@ -772,6 +794,181 @@ def check_prep(items: dict) -> dict:
     return st
 
 
+# --------------------------------------------------- 13. 英文一等公民 ---
+# 转向全球 C 端之后，英文版必须能**独立成立**：它不是中文的回落，回落一次
+# 就是给英文读者一张缺角的卡片。前十二项守卫里没有一项管英文 —— 这一节补上。
+#
+# 四条，每条对应一次真实发作，不是照着「应该查什么」想出来的：
+#
+#   A. 四件套缺失。title_en / tagline_en / why_en / limit_en 是英文卡片的全部内容，
+#      缺任何一条，英文读者看到的就是空行或中文。逐件点名，ERROR。
+#
+#   B. 英文文案里的星数。产品的四条设计硬判断第一条就是「杀掉星数」——
+#      星数是滞后且有偏的指标，会亏待新发布、垂直、非英语、无营销的好项目，
+#      而我们自己的选品标准正是靠这一条才收得下那些 ★0 的中文垂直货。
+#      **这条已经复发过一次**：中文侧清干净之后，英文侧还留着 5 处，
+#      是人工一条条读出来的。人读得出来的东西，机器就该替人读。
+#
+#      只抓**带数字的星数**，不抓 `star` 这个词本身。理由是实测的，不是推想的：
+#        - `Flying Star`  —— 玄空飞星的英译，在架的风水那件正文里就有
+#        - `earns a star` —— 「值一颗星」的比喻
+#        - `start / restart / starts / starting` —— 在架 20 多处，全是正常英文
+#      抓词 = 至少 20 条误报；抓「数字 + star」= 5 条全中、0 误报。
+#      **一个当前唯一输出是误报的守卫就是噪音（D24）**，所以口径必须窄到只剩那个被禁的东西。
+#
+#   C. 标题回落成标识符。前端曾经在英文版印出 `city-salary`、`codex-ppt` 这种
+#      **仓库文件名**当标题 —— 那是 `name` 字段，不是标题。它不会触发 A（字段非空），
+#      也不会触发任何长度检查（长度正常），**从数据上唯一能认出来的痕迹就是它的形状**：
+#      跟 `name` / `id` 一模一样，或者全小写 + 连字符 + 没有空格。
+#
+#   D. 英文里的中文字符。说明漏翻了 —— 但**不是所有中文都是漏翻**：
+#      在架实测的 3 处 CJK 全部是**原样引用**（`情绪模块.md` / `节奏.md` 是这件 skill
+#      要读的真实文件名，`[待补` 是它往大纲里写的字面标记）。把这三处报成「漏翻」，
+#      错的不是数字是**性质** —— 同 D39/D43 那一族病。
+#      所以文件名（后接 .md/.json/…）、反引号内、方括号/引号内的中文一律先摘出去，
+#      单列成一行陈述让人自己看；**剩下的散文才报 WARN**。
+#
+#   E.（顺手，同一次扫描里发现的）英文文案被截断。三条英文局限停在 240 字整、
+#      末尾没有句末标点，其中 `liamgvchi` 中文写的是「还不像就**直说没做到**」，
+#      英文切在 `then say` —— **被切掉的正好是那句诚实话**。
+#      这就是 D23/D26 那个失败模式的英文版：诚实变成营销，而且连破绽都没有了。
+#      中文侧的 `limit_brief_zh` 已经有「是不是完整句」这一档 ERROR，英文侧一直没有。
+EN_FIELDS = ("title_en", "tagline_en", "why_en", "limit_en")
+
+# 只匹配「数字挨着 star」和星号本身。`\d` 是这条规则的全部精度来源。
+EN_STARS = re.compile(
+    r"★|☆"
+    r"|\b\d[\d,.]*\s*[kKmM]?[\s‐-―-]*stars?\b"
+    r"|\bstars?\b\s*[:：]?\s*\d",
+    re.I)
+
+# 全小写 + 至少一个 . _ - 分隔 + 没有空格 = 仓库文件名的形状，不是标题的形状。
+EN_IDENT = re.compile(r"^[a-z0-9]+([._-][a-z0-9]+)+$")
+
+_CJK = re.compile(r"[㐀-䶿一-鿿豈-﫿]+")
+# 原样引用的三种形态：后接扩展名 / 反引号内 / 方括号·引号内
+_FILE_EXT = re.compile(r"^\s*\.(md|markdown|json|ya?ml|txt|py|js|ts|csv|html?|xlsx?|toml|ini)\b", re.I)
+_SENT_END_EN = ".!?\"”』」)】"
+
+
+def _cjk_literal_reason(text: str, m: re.Match) -> str:
+    """这一段中文是不是**原样引用**（文件名 / 字面标记）？是就返回理由，不是就返回 ""。"""
+    after = text[m.end():]
+    if _FILE_EXT.match(after):
+        return "文件名"
+    before = text[:m.start()]
+    if before.count("`") % 2 == 1:                     # 落在一对反引号中间
+        return "反引号内的字面量"
+    # `before[-1:] in "…"` 会在 before 为空时返回 True（空串是任何串的子串）——
+    # 那样一整段纯中文文案会被当成「字面标记」放过，正是这条守卫最该抓的东西。
+    # 造假数据时抓到的，所以这里必须先判非空。
+    if (before and before[-1] in "[【「“\"'（(") or (after and after[0] in "]】」”\"'）)"):
+        return "方括号/引号里的字面标记"
+    return ""
+
+
+def check_english(items: dict) -> dict:
+    print("\n【13】英文一等公民 title_en / tagline_en / why_en / limit_en")
+    shelved = [it for it in items.values() if not it.get("hide")]
+    print(f"  在架 {len(shelved)} 件")
+
+    # --- A. 四件套缺失 ---
+    missing: dict[str, list[str]] = {}
+    for f in EN_FIELDS:
+        gone = [it["id"] for it in shelved if not (it.get(f) or "").strip()]
+        if gone:
+            missing[f] = gone
+    if missing:
+        for f, ids in missing.items():
+            err(f"{len(ids)} 件缺 {f} —— 英文版这一行是空的，英文读者拿到的是缺角的卡片")
+            for i in ids:
+                print(f"    [缺 {f}] {i}")
+    else:
+        print(f"  四件套：{ ' · '.join(f + ' 齐' for f in EN_FIELDS) }")
+
+    # --- B. 星数 ---
+    stars = []
+    for it in shelved:
+        for f in EN_FIELDS:
+            v = it.get(f) or ""
+            for m in EN_STARS.finditer(v):
+                stars.append((it["id"], f, m.group(0),
+                              v[max(0, m.start() - 30):m.end() + 30]))
+    if stars:
+        err(f"{len(stars)} 处英文文案里印着星数 —— 「杀掉星数」是产品的设计硬判断，"
+            f"中文侧清干净之后英文侧复发过一次，这里逐处点名")
+        for i, f, hit, ctx in stars:
+            print(f"    [星数] {i} · {f} · {hit!r}")
+            print(f"           …{ctx}…")
+    else:
+        print("  星数：0 处 —— 干净")
+
+    # --- C. 标题回落成标识符 ---
+    ident = []
+    for it in shelved:
+        t = (it.get("title_en") or "").strip()
+        if not t:
+            continue
+        why = ""
+        if t.lower() == (it.get("name") or "").strip().lower():
+            why = "跟 name 一模一样"
+        elif t.lower() == (it.get("id") or "").strip().lower():
+            why = "跟 id 一模一样"
+        elif EN_IDENT.match(t):
+            why = "全小写 + 连字符 + 无空格，是仓库文件名的形状"
+        if why:
+            ident.append((it["id"], t, why))
+    if ident:
+        err(f"{len(ident)} 件的 title_en 回落成了标识符 —— 那是仓库文件名，不是标题。"
+            f"英文读者看到的是 `city-salary` 这种东西，它不回答「这是什么」")
+        for i, t, why in ident:
+            print(f"    [标识符标题] {i}: {t!r} —— {why}")
+    else:
+        print("  标题回落：0 件")
+
+    # --- D. 中文残留 ---
+    leak, quoted = [], []
+    for it in shelved:
+        for f in EN_FIELDS:
+            v = it.get(f) or ""
+            for m in _CJK.finditer(v):
+                reason = _cjk_literal_reason(v, m)
+                row = (it["id"], f, m.group(0), reason)
+                (quoted if reason else leak).append(row)
+    if quoted:
+        print(f"  英文里的中文：{len(quoted)} 处是原样引用（不是漏翻，不报）：")
+        for i, f, s, reason in quoted:
+            print(f"    [{reason}] {i} · {f} · {s!r}")
+    if leak:
+        warn(f"{len(leak)} 处英文文案里残留中文散文 —— 漏翻了，英文读者读不懂这一段")
+        for i, f, s, _ in leak:
+            print(f"    [漏翻] {i} · {f} · {s!r}")
+    elif not quoted:
+        print("  英文里的中文：0 处")
+
+    # --- E. 被截断 ---
+    # 标题不在此列：英文标题本来就不带句号。
+    cut = []
+    for it in shelved:
+        for f in ("tagline_en", "why_en", "limit_en"):
+            v = (it.get(f) or "").strip()
+            if v and v[-1] not in _SENT_END_EN:
+                cut.append((it["id"], f, len(v), v[-34:]))
+    if cut:
+        err(f"{len(cut)} 处英文文案没有英文句末标点 —— 要么是被截断（不是写完了），"
+            f"要么句末标点还留着中文的。中文侧 limit_brief_zh 早就有这一档，"
+            f"英文侧一直没有；被切掉的往往正好是最后那句诚实话")
+        for i, f, n, tail in cut:
+            print(f"    [截断] {i} · {f} · {n} 字 · 结尾 …{tail!r}")
+    else:
+        print("  截断：0 处")
+
+    return {"shelved": len(shelved),
+            "missing": {f: len(v) for f, v in missing.items()},
+            "stars": len(stars), "ident_titles": len(ident),
+            "cjk_leak": len(leak), "cjk_quoted": len(quoted), "truncated": len(cut)}
+
+
 def main() -> None:
     show_list = "--list" in sys.argv
     as_json = "--json" in sys.argv
@@ -790,6 +987,20 @@ def main() -> None:
     brief = check_brief_and_age(items)
     cov = check_covers(items)
     red = check_red_lines(items)
+    eng = check_english(items)
+    shelf = [it for it in items.values() if not it.get("hide")]
+    verdicts = check_verdict_in_limits(shelf)
+    gen_dirs, clashes = check_install_dirs(list(items.values()))
+    # 【11】的严重程度是 D36 定的：「命中即 ERROR，逼人回去重过三问」。
+    # 【12】D46 没写档位 —— 不替产品发明一个，按点名处理。
+    if verdicts:
+        err(f"{len(verdicts)} 件的 limit_zh 已经等于一份判决书 —— "
+            f"诚实局限写出了该拒的理由，然后这件还在架上。回去重过三问")
+    if gen_dirs:
+        warn(f"{len(gen_dirs)} 件装进了通用目录（skill/ skills/ src/ …）—— "
+             f"安装目标会互相静默覆盖，用户不会收到任何提示")
+    if clashes:
+        warn(f"{len(clashes)} 组安装目录重名 —— 装了后一个，前一个被静默覆盖")
 
     print("\n" + "=" * 60)
     for m in ERRORS:
@@ -799,13 +1010,10 @@ def main() -> None:
     print(f"\n{len(ERRORS)} error / {len(WARNS)} warn")
 
     if as_json:
-        print(json.dumps({"limits": lim, "rejected": rej, "headline": hl, "prep": prep, "install": inst, "counts": cnts, "brief_age": brief, "covers": cov, "red_lines": red,
+        print(json.dumps({"limits": lim, "rejected": rej, "headline": hl, "prep": prep, "install": inst, "counts": cnts, "brief_age": brief, "covers": cov, "red_lines": red, "english": eng,
                           "errors": ERRORS, "warns": WARNS}, ensure_ascii=False, indent=1))
     sys.exit(1 if (ERRORS and strict) else 0)
 
-
-if __name__ == "__main__":
-    main()
 
 # ---------------------------------------------------------------------------
 # 【11】局限里的判决书 —— 查我们自己的嘴，不是查它的成分
@@ -838,7 +1046,11 @@ def check_verdict_in_limits(items):
     for it in items:
         lim = (it.get("limit_zh") or "")
         for pat, why in VERDICT_PATTERNS:
-            if re.search(pat, lim):
+            m = re.search(pat, lim)
+            # 否认句不算判决书 —— 「它明写**不**绕反爬」说的是它不干那件事，
+            # 那正是我们要的局限写法，罚它就是在罚诚实。【10】早就有这一档
+            # （RED_NEGATED），【11】一直没接上；接上线之前造假数据试出来的。
+            if m and not re.search(RED_NEGATED, lim[max(0, m.start() - 12):m.start()]):
                 hits.append((it.get("id"), why, lim[:90]))
                 break
     print("\n【11】局限里的判决书（我们自己写下的、已等于判决的话）")
@@ -886,3 +1098,12 @@ def check_install_dirs(items):
         for i in ids:
             print(f"      {i}")
     return generic, clash
+
+
+# 入口必须留在文件最末。【11】【12】是后来追加在 main() 之后的，而
+# `if __name__ == "__main__": main()` 原本卡在它们前面 —— 于是当脚本跑的时候
+# main() 执行时这两个函数还没定义，两条守卫**从来没有跑过一次**，
+# 而 D36 / D46 的裁决都写着它们「在架 N 件命中 0，干净上线」。
+# 一个从不执行的守卫比没有守卫更糟：它让人以为那一面已经有人看着了。
+if __name__ == "__main__":
+    main()

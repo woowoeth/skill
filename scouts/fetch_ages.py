@@ -156,15 +156,30 @@ def main() -> None:
     raw = lib.load_items()
     merged = lib.apply_editorial(lib.load_items())
     shelved = [it for it in merged.values() if not it.get("hide")]
-    todo = [it for it in shelved if not (it.get("repo_created_at") or "").strip()]
+    # 「还差什么」要**逐字段问**，不能只问 repo_created_at。
+    #
+    # 原来的判据是「没有 repo_created_at 就要填」。它对第一轮成立，对第二轮就漏：
+    # 一件子目录货的仓库日期取到了、而 commits 那两次调用失败（配额边界 / 502 / 空历史），
+    # `skill_first_seen` 留空 —— 它从此**永远进不了 todo**，因为 repo_created_at 有值了。
+    # 结果是 `age_source` 落到第三档 `""`（不显示），前端安静地不显示年龄，
+    # 而报告会说「待填 0 件」。**那正是「留空」和「填完了」被混成一句话**。
+    def _needs(it: dict) -> bool:
+        if not (it.get("repo_created_at") or "").strip():
+            return True
+        # 仓库日期不回答子目录货的问题（D19），所以它还欠自己的那一个日期。
+        return bool((it.get("path") or "").strip()) and not (it.get("skill_first_seen") or "").strip()
+
+    todo = [it for it in shelved if _needs(it)]
     todo.sort(key=lambda x: x.get("id", ""))          # 确定性，分批跑不会漏也不会重
     if "--limit" in argv:
         todo = todo[:int(argv[argv.index("--limit") + 1])]
-    repos = sorted({it["repo"] for it in todo})
-    subdir = [it for it in todo if (it.get("path") or "").strip()]
+    # 已经有仓库日期的不必再问一次 /repos —— 只有真缺的那些才算进配额。
+    repos = sorted({it["repo"] for it in todo if not (it.get("repo_created_at") or "").strip()})
+    subdir = [it for it in todo if (it.get("path") or "").strip()
+              and not (it.get("skill_first_seen") or "").strip()]
     need = len(repos) + 2 * len(subdir)
     left = rate_left(force=True)
-    print(f"待填 {len(todo)} 件 · 去重仓库 {len(repos)} 个 · 子目录件 {len(subdir)} 个")
+    print(f"待填 {len(todo)} 件 · 缺仓库日期的去重仓库 {len(repos)} 个 · 缺自身日期的子目录件 {len(subdir)} 个")
     print(f"需要约 {need} 次调用（仓库各 1 次 + 子目录件各 2 次）")
     print(f"当前配额剩 " + (f"{left} 次" if left is not None else "**问不出来**")
           + ("（带 token）" if lib.GH_TOKEN else "（未认证，上限 60/小时）"))
@@ -184,14 +199,21 @@ def main() -> None:
             skipped = len(todo) - done
             break
         sid, r, path = it["id"], it["repo"], (it.get("path") or "").strip()
-        created = cache[r] if r in cache else cache.setdefault(r, repo_created(r))
-        first = path_first_commit(r, path) if path else ""
         target = raw.get(sid)
         if target is None:                            # 只在 editorial 里存在，没有原件可写
             print(f"  [跳过] {sid} 在 skills/ 里没有对应文件")
             continue
-        target["repo_created_at"] = created
-        if path:
+        # 手上已经有的日期不重取（省配额），也**不许被一次失败的取数覆盖成空**：
+        # 取不到就留着旧值，而不是把一个真实日期擦掉换成 ""。
+        created = (target.get("repo_created_at") or "").strip()
+        if not created:
+            created = cache[r] if r in cache else cache.setdefault(r, repo_created(r))
+        first = (target.get("skill_first_seen") or "").strip()
+        if path and not first:
+            first = path_first_commit(r, path)
+        if created:
+            target["repo_created_at"] = created
+        if path and first:
             target["skill_first_seen"] = first
         target["age_source"] = lib.age_source(target)
         lib.save_item(target)
