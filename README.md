@@ -33,9 +33,9 @@ Agent Skill 的生态已经有 **266 万条**，平均质量分 6.2/12。检索�
 
 
 
-**Skill 商店**只做一件事：把 GitHub 上**好玩、值得一装**的 Agent Skills（`SKILL.md` 那种）挑出来，配上中英双语导购文案，摆上货架。不追求大而全 —— 全网索引已经有人做了；这里是一家有店长口味的小店，**每天进货，只上架有意思的**。
+**品味**只做一件事：把 GitHub 上**好玩、值得一装**的 Agent Skills（`SKILL.md` 那种）挑出来，配上中英双语导购文案，摆上货架。不追求大而全 —— 全网索引已经有人做了；这里是一家有店长口味的小店，**每天进货，只上架有意思的**。
 
-**Skill Store** does one thing: it picks the **fun, worth-installing** Agent Skills (the `SKILL.md` kind) off GitHub, writes bilingual shelf copy for them, and puts them on display. It is not an exhaustive index — those exist. It's a small shop with a shopkeeper's taste, **restocked daily, fun items only**.
+**Pinwei (品味)** does one thing: it picks the **fun, worth-installing** Agent Skills (the `SKILL.md` kind) off GitHub, writes bilingual shelf copy for them, and puts them on display. It is not an exhaustive index — those exist. It's a small shop with a shopkeeper's taste, **restocked daily, fun items only**.
 
 界面极简、内容优先：卡片带仓库封面，点开任何一件是安装说明。
 Minimal, content-first UI: cards carry repo covers; clicking any item shows install instructions.
@@ -98,7 +98,8 @@ New items get placeholder copy by default. Set the three secrets above and the d
 
 ```bash
 python3 scouts/skill_scout.py            # daily mode: restock + discover (uses GH_TOKEN if set)
-python3 scouts/scout_lib.py              # rebuild skills/feed.json only
+python3 scouts/scout_lib.py              # rebuild skills/feed.json + skills/rejected-feed.json
+python3 scouts/check_curation.py --list  # 体检：缺局限的、拒收榜/头条写错的，一次报全
 python3 -m http.server 8080              # open http://localhost:8080
 ```
 

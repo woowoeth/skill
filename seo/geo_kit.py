@@ -37,7 +37,7 @@ SITE = "https://ourword.ai"
 SITES = [
     ("", "OurWord AI", "OurWord AI"),
     ("idea", "Idea", "灵感看板"),
-    ("skill-store", "Skill Store", "Skill 商店"),
+    ("skill", "Pinwei", "品味"),
     ("ai-bubble", "AI Bubble Monitor", "AI 泡沫检测仪"),
     ("zouni", "Zouni", "走你"),
 ]

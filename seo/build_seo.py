@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""SEO/GEO build for Skill 商店. Run from the repo root: python seo/build_seo.py"""
+"""SEO/GEO build for 品味 (Pinwei). Run from the repo root: python seo/build_seo.py"""
 import datetime
 import glob
 import json
@@ -8,11 +8,16 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scouts"))
 import geo_kit as G
+import prep_signals as prep
 
 SITE = G.Site(
-    path="skill-store",
-    name="Skill Store", name_zh="Skill 商店",
+    # 线上是 https://ourword.ai/skill/ 。曾经写成 skill-store，那个地址现在 404，
+    # 而 canonical / og:url / sitemap / llms.txt 全部从这一行派生 —— 改错一个字，
+    # 全站 800 多个页面一起指向 404。改动前先确认线上路径。
+    path="skill",
+    name="Pinwei", name_zh="品味",
     tagline="agent skills worth installing, restocked daily",
     tagline_zh="每天上新的好玩 Agent Skill 精选店",
     description=(
@@ -25,18 +30,23 @@ SITE = G.Site(
         "每一条都写清楚它到底做什么、适合谁、以及一行安装命令。所有 skill 从公开仓库人工挑选，"
         "偏好「好玩」或者「真有用」的，而不是「存在」的。"),
     keywords=("claude code skills, agent skills, claude skills, codex skills, MCP skills, "
-              "AI agent plugins, skill 商店, agent skill 推荐, claude code 技能, 智能体插件"),
+              "AI agent plugins, 品味, agent skill 推荐, claude code 技能, 智能体插件"),
     item_type="SoftwareApplication", item_noun="skill", item_noun_zh="skill",
     changefreq="daily",
 )
 
+# 星数刻意不出现在任何面向读者的页面上：本店自己的选品标准写着星数会亏待新发布、
+# 垂直、非英语的好项目，那就不能拿它当门面。替代的是「作者做到哪一步」——
+# 从 skill 正文里读得出、能指出出处的备料证据。见 scouts/prep_signals.py。
 HOW = ("Scouts crawl public GitHub repositories for skill definitions every day; each candidate "
-       "is checked by hand before it goes on the shelf. Star counts and last-push dates come "
-       "straight from the GitHub API.")
+       "is checked by hand before it goes on the shelf. Star counts are deliberately not shown: "
+       "they lag, and they penalise newly published, narrowly vertical and non-English work. "
+       "Where the shelf note says what prep work is visible, that is read off the skill's own "
+       "text — reference files, runnable scripts, bundled assets, stated boundaries.")
 
 CITE = ("Cite the individual skill page. The skill itself belongs to its author — the repository "
         "link on each page is the authoritative source. Attribute the shelf note to "
-        "\"Skill Store (OurWord AI)\".")
+        "\"Pinwei 品味 (OurWord AI)\".")
 
 CAT_EN = {"dev": "development", "creative": "creative", "writing": "writing", "work": "work",
           "docs": "documentation", "meta": "meta", "fun": "fun", "life": "life"}
@@ -44,14 +54,25 @@ CAT_ZH = {"dev": "写代码", "creative": "创作", "writing": "写字", "work":
           "docs": "文档", "meta": "元技能", "fun": "好玩", "life": "生活"}
 
 
+# skills/ 里这几个是聚合产物，不是货。它们没有 id，会被当成一件 slug 为空的商品
+# 写出 i//index.html 这种垃圾页，并且混进 sitemap 和 llms.txt。
+AGGREGATES = {"feed.json", "rejected-feed.json"}
+
+
+# 备料证据：进程启动时从 methods/ 本地算一次，不发网络请求。
+PREP_EVIDENCE = prep.load_all()
+
+
 def load_items():
     items = []
     for p in sorted(glob.glob("skills/*.json")):
+        if os.path.basename(p) in AGGREGATES:
+            continue
         try:
             s = json.load(open(p, encoding="utf-8"))
         except Exception:
             continue
-        if s.get("hide"):
+        if s.get("hide") or not (s.get("id") or s.get("name")):
             continue
         name = s.get("name") or s.get("id") or ""
         title = s.get("title_zh") or name
@@ -82,8 +103,11 @@ def load_items():
         prov = []
         if repo:
             prov.append("Repository: %s" % repo)
-        if stars:
-            prov.append("%s stars on GitHub at the time of listing." % stars)
+        # 星数不进页面（见 HOW 上方注释）。它仍在 skills/*.json 里供排序和门槛用。
+        _badge, _ev = prep.badge_for(PREP_EVIDENCE.get(s.get("id") or ""))
+        if _badge == "ready":
+            prov.append("Prep work visible in the skill's own text: %s."
+                        % ", ".join(prep.SIGNAL_LABELS[x][1] for x in _ev))
         if s.get("skill_count"):
             prov.append("The repository ships %s skills in total." % s["skill_count"])
         if s.get("homepage"):
@@ -108,10 +132,16 @@ def load_items():
 
 def main():
     items = load_items()
+    # index.html 暂不由生成器改写：首页正在重做，生成器往 GEO marker 块里写内容会和
+    # 改版撞车。index_files=() 让 G.build 完全跳过它（其余 800+ 页照常生成）。
+    # 首页改版落地后，设 SEO_PATCH_INDEX=1 或把默认值改回 ("index.html",) 即可恢复。
+    index_files = ("index.html",) if os.environ.get("SEO_PATCH_INDEX") == "1" else ()
     rep = G.build(SITE, items, root=".", today=datetime.date.today().isoformat(),
-                  how_built=HOW, cite_as=CITE,
+                  how_built=HOW, cite_as=CITE, index_files=index_files,
                   extra_sitemaps=["https://ourword.ai/sitemap.xml"])
-    print("skill-store seo/geo:", json.dumps(rep, ensure_ascii=False))
+    if not index_files:
+        rep["index"] = "skipped (UX 正在重做首页；SEO_PATCH_INDEX=1 可恢复)"
+    print("pinwei seo/geo:", json.dumps(rep, ensure_ascii=False))
     return rep
 
 
