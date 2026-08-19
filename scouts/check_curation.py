@@ -732,10 +732,23 @@ def check_prep(items: dict) -> dict:
           f"（占有存档的 {100*st['ready']/max(st['archived'],1):.0f}%，占上架的 {100*st['ready']/max(st['shelved'],1):.0f}%）")
     print("  逐条命中（分母 = 有存档的件数）：" + " · ".join(
         f"{prep.SIGNAL_LABELS[s][0]} {st['per_signal'][s]}" for s in prep.SIGNAL_ORDER))
-    if st["no_archive"]:
-        warn(f"{st['no_archive']}/{st['shelved']} 件取不回 SKILL.md 正文，算不出备料证据 —— "
-             f"这是我们自己的存档欠账（path 记错 / 抓来没存），不是商品的问题。"
+    # 无存档要分两种，混在一起报会把一个结构性事实报成本店欠账：
+    #   合集（kind=collection）本来就没有「一份正文」可存 —— 全店至今 0 件合集有存档，
+    #     这个约定从来不存在，不是漏了。审计逐个 clone 验过：仓库全在，是 404 在根目录的 SKILL.md。
+    #   单品缺档才是真欠账（path 记错 / 抓来没存）。
+    no_arch = [it for it in items.values()
+               if not it.get("hide") and ev.get(it["id"]) is None]
+    coll_na = [it for it in no_arch if it.get("kind") == "collection"]
+    solo_na = [it for it in no_arch if it.get("kind") != "collection"]
+    if coll_na:
+        print(f"  其中 {len(coll_na)} 件是合集，合集没有「一份正文」可存 —— "
+              f"结构性事实，不是欠账，不必修")
+    if solo_na:
+        warn(f"{len(solo_na)}/{st['shelved']} 件**单品**取不回 SKILL.md 正文 —— "
+             f"这才是我们自己的存档欠账（path 记错 / 抓来没存）。"
              f"它们和「证据不足」在前端不可区分，所以不会被惩罚，但也拿不到本该拿到的徽章")
+    elif st["no_archive"]:
+        print(f"  单品缺档 0 件 —— 本店在这一项上没有欠账")
     # 徽章会不会只是星数换个马甲？这里把它算出来，不猜。
     buckets = {"0": [], "1-99": [], "100+": []}
     for it in items.values():

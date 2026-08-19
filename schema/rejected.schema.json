@@ -1,56 +1,110 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://ourword.ai/skill/schema/rejected.schema.json",
-  "title": "拒收榜 / Rejection ledger (editorial/rejected.json)",
-  "description": "人写的拒收记录。公开「今天扫了多少、收了几件、拒了这些、每条一句为什么」。每一条拒收都必须挂到 docs/CURATION.md 的具体条款上——说不出挂哪一条，说明标准没写清，去改标准，不要硬塞一条。",
-  "type": "object",
-  "required": ["entries"],
-  "properties": {
-    "_说明":  {"type": "string"},
-    "_用法":  {"type": "string"},
-    "_example": {"type": "object", "description": "形状示例，构建时按下划线前缀跳过，不会进 feed"},
-    "entries": {
-      "type": "array",
-      "items": {"$ref": "#/$defs/entry"}
-    }
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://ourword.ai/skill/schema/rejected.schema.json",
+ "title": "拒收榜 / Rejection ledger (editorial/rejected.json)",
+ "description": "人写的拒收记录。公开「今天扫了多少、收了几件、拒了这些、每条一句为什么」。每一条拒收都必须挂到 docs/CURATION.md 的具体条款上——说不出挂哪一条，说明标准没写清，去改标准，不要硬塞一条。",
+ "type": "object",
+ "required": [
+  "entries"
+ ],
+ "properties": {
+  "_说明": {
+   "type": "string"
   },
-  "$defs": {
-    "reject_rule": {
-      "description": "对应 docs/CURATION.md 的条款。五选一。",
-      "enum": ["问一", "问二", "问三", "红线", "门槛"],
-      "$comment": "问一=不是拿走就能用的商品（框架/教程/脚手架/别人项目的装修配置）；问二=用户在别处拿得到（官方目录/通用开发件/数量堆/已有更好同类）；问三=写不出让人想装的文案；红线=攻击赋能/灰产/荐股/价值观有害，无条件拒；门槛=机器初筛未过（星数/fork/命名黑名单），人工可推翻"
-    },
-    "entry": {
-      "type": "object",
-      "required": ["repo", "reject_reason_zh", "reject_rule"],
-      "additionalProperties": false,
-      "properties": {
-        "repo": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
-          "description": "owner/repo。可追溯的唯一身份，也是去重键。"
-        },
-        "name": {"type": "string", "description": "SKILL.md frontmatter name 或仓库名"},
-        "desc": {"type": "string", "description": "原始英文简介，原文照抄，不改写", "maxLength": 400},
-        "reject_reason_zh": {
-          "type": "string",
-          "description": "一句话说清为什么不收。要具体到这一件东西（「第 N 个 commit 规范，架上已有更好的」），不要复述条款本身（「不满足问二」）。",
-          "minLength": 6,
-          "maxLength": 80
-        },
-        "reject_reason_en": {"type": "string", "maxLength": 200},
-        "reject_rule": {"$ref": "#/$defs/reject_rule"},
-        "reject_clause": {
-          "type": "string",
-          "description": "可选：条款内的具体子项，用于分面统计。如「官方厂商目录」「通用开发工具」「数量堆」「框架/底座」「教程」「攻击赋能」。",
-          "maxLength": 40
-        },
-        "stars": {"type": "integer", "minimum": 0, "description": "拒收当时的星数。拒万星货是这张榜最有说服力的部分。"},
-        "url": {"type": "string", "description": "留空则由构建管线按 repo 补 https://github.com/<repo>"},
-        "rejected_at": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "留空则按构建当天记；补录旧条目时请写真实日期"},
-        "by": {"type": "string", "description": "谁拒的。默认「店长」"},
-        "hide": {"type": "boolean", "description": "true = 不公开这一条（写错了/涉及具体个人），记录保留"}
-      }
-    }
+  "_用法": {
+   "type": "string"
+  },
+  "_example": {
+   "type": "object",
+   "description": "形状示例，构建时按下划线前缀跳过，不会进 feed"
+  },
+  "entries": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/entry"
+   }
   }
+ },
+ "$defs": {
+  "reject_rule": {
+   "description": "对应 docs/CURATION.md 的条款。五选一。",
+   "enum": [
+    "问一",
+    "问二",
+    "问三",
+    "红线",
+    "门槛"
+   ],
+   "$comment": "问一=不是拿走就能用的商品（框架/教程/脚手架/别人项目的装修配置）；问二=用户在别处拿得到（官方目录/通用开发件/数量堆/已有更好同类）；问三=写不出让人想装的文案；红线=攻击赋能/灰产/荐股/价值观有害，无条件拒；门槛=机器初筛未过（星数/fork/命名黑名单），人工可推翻"
+  },
+  "entry": {
+   "type": "object",
+   "required": [
+    "repo",
+    "reject_reason_zh",
+    "reject_rule"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "repo": {
+     "type": "string",
+     "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+     "description": "owner/repo。可追溯的唯一身份，也是去重键。"
+    },
+    "name": {
+     "type": "string",
+     "description": "SKILL.md frontmatter name 或仓库名"
+    },
+    "desc": {
+     "type": "string",
+     "description": "原始英文简介，原文照抄，不改写",
+     "maxLength": 400
+    },
+    "reject_reason_zh": {
+     "type": "string",
+     "description": "一句话说清为什么不收。要具体到这一件东西（「第 N 个 commit 规范，架上已有更好的」），不要复述条款本身（「不满足问二」）。",
+     "minLength": 6,
+     "maxLength": 80
+    },
+    "reject_reason_en": {
+     "type": "string",
+     "maxLength": 200
+    },
+    "reject_rule": {
+     "$ref": "#/$defs/reject_rule"
+    },
+    "reject_clause": {
+     "type": "string",
+     "description": "可选：条款内的具体子项，用于分面统计。如「官方厂商目录」「通用开发工具」「数量堆」「框架/底座」「教程」「攻击赋能」。",
+     "maxLength": 40
+    },
+    "stars": {
+     "type": "integer",
+     "minimum": 0,
+     "description": "拒收当时的星数。拒万星货是这张榜最有说服力的部分。"
+    },
+    "url": {
+     "type": "string",
+     "description": "留空则由构建管线按 repo 补 https://github.com/<repo>"
+    },
+    "rejected_at": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+     "description": "留空则按构建当天记；补录旧条目时请写真实日期"
+    },
+    "by": {
+     "type": "string",
+     "description": "谁拒的。默认「店长」"
+    },
+    "hide": {
+     "type": "boolean",
+     "description": "true = 不公开这一条（写错了/涉及具体个人），记录保留"
+    },
+    "skill": {
+     "type": "string",
+     "description": "可选。子技能名。**同一个 repo 可能一部分上架、一部分被拒**——heygen-com/hyperframes 的合集卡在架，而它的两个路由分支被拒。去重键因此是 (repo, skill) 而不是 repo；skill 为空表示整个仓库被拒。"
+    }
+   }
+  }
+ }
 }
