@@ -19,7 +19,7 @@
  "category": "writing",
  "fun_score": 12.38,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "handpick-0807",
  "added_at": "2026-08-07",
  "install": {
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2026-04-22",
  "skill_first_seen": "2026-05-12",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（worldwonderer 网文套件（在架 10 件：oh-story 7 + novel-to-game 3））。自我声明是薄封装：拆解方法论完全外借 analyze，自己只做目录迁移。没有独占机制。 正文原话：原则 2：复用不重复 —— 深度分析阶段调用现成的拆解管道，不重新发明：长篇运行 `/story-long-analyze` 的完整拆解管道，短篇运行 `/story-short-analyze` 的拆解管道。拆解方法论与输出模板由对应 analyze skill 自带，story-import 不执行拆解方法论、不维护这些文件。"
 }

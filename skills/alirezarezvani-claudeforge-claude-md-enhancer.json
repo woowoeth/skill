@@ -19,7 +19,7 @@
  "category": "dev",
  "fun_score": 2.36,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "scout-manual-0807b",
  "added_at": "2026-08-07",
  "install": {
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2025-11-12",
  "skill_first_seen": "2025-11-12",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（CLAUDE.md / agent 配置治理）。正文对自己的核心主张自相矛盾：同一份文档里 CLAUDE.md 的长度上限出现 150 / 300 / 400 三个互斥数字。它唯一称得上判断的东西就是「根文件要短、超了就拆模块」，而这个数字它自己没定下来。其余是 JSON 输入输出规格 + 5 个未随正文交付的 py 脚本（quality_score 0-100 的分数构成无依据）。 正文原话：\"message\": \"File exceeds recommended 300 lines (320 lines)\" ／ `validate_length()` - Check file length (hard cap: 150 lines; warn from 120) ／ **Critical** - Missing required sections, file too long (>400 lines)"
 }

@@ -19,7 +19,7 @@
  "category": "creative",
  "fun_score": 5.48,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "curated-from-list-0808",
  "added_at": "2026-08-11",
  "install": {
@@ -30,5 +30,7 @@
  "cover": "",
  "repo_created_at": "2026-04-18",
  "skill_first_seen": "2026-04-18",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（簇A：视频生成 / hyperframes 生态）。与店里已下架的两件 heygen 分支同形状：它不是能独立拿走的单品，而是 hyperframes 官方能力的下游包装。三重硬证据：(1) 官方合集里已经有同名同职能的工作流 `/product-launch-video`，README 描述为『Any **website** — marketing / launching / promoting a product (from its URL, a brief, or a script)』，与本件的『Capture a website, then produce a professional video from it.』完全重合；(2) 正文自己承认核心逻辑在上游：第 6 步写『**Read:** The `/hyperframes` skill (invoke it — every rule matters)』；(3) 它的最终验收命令用的是上游已废弃的别名，说明是滞后的下游拷贝——上游 hyperframes-cli 正文明说『`validate`, `inspect`, and `layout` remain aliases for compatibility but must not appear in new instructions or scripts.』 正文原话：**Gate:** `npx hyperframes lint` and `npx hyperframes validate` pass with zero errors."
 }

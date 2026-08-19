@@ -19,7 +19,7 @@
  "category": "creative",
  "fun_score": 2.5,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "user-suggested-0808",
  "added_at": "2026-08-09",
  "install": {
@@ -30,5 +30,7 @@
  "cover": "https://opengraph.githubassets.com/d19b0dfe874bbf8140ca626ac1112f68111cd7aad045b608f2c01b4d73f32fe7/adrianpunk/Punk-Skill",
  "repo_created_at": "2026-06-12",
  "skill_first_seen": "2026-06-17",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（簇 B：文章封面 / 配图 / 社交卡）。与 punk-cover 是同一套编译器逐字换词的两份：同一句核心规则、同一组三输入、同一个确认闸门、同一个保存与生图流程，差别只在输出光圈（1:1 vs 平台比例）和从共享 styles/ 库里放行哪几个风格。说不清「为什么是它不是 punk-cover」在机制层的独占——肖像保真只是 blueprint 里的一个字段，不是一套机制。同一作者已占三位，这一位应让给真正独占的 punk-ip-illustrations 和 punk-cover。 正文原话：punk-cover 正文：「`punk-cover` is a cover-generation workflow, not a style owner. Select exactly one reusable style from the repository-level `styles/` library, then compile that style atom into the cover shape. The final image prompt is not a loose concatenation of \"cover instructions + style instructions\". It must be one integrated, cover-specific prompt that applies the selected style to the cover format.」／ punk-avatar 正文：「`punk-avatar` is an avatar-shape workflow, not a style owner. Select exactly one reusable style from the repository-level `styles/` library, then compile that style atom into the avatar shape. The final image prompt is not a loose concatenation of \"avatar instructions + style instructions\". It must be one integrated, avatar-specific prompt that applies the selected style to a profile image...」"
 }

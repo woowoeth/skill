@@ -19,7 +19,7 @@
  "category": "creative",
  "fun_score": 3.33,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "gap-0812",
  "added_at": "2026-08-15",
  "install": {
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2026-04-26",
  "skill_first_seen": "2026-04-26",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（PPT）。与 juneyaooo 是同一条赛道的同一种产物：都是「每页一张整页 16:9 生成图 → 拼成 .pptx」。它自己把能力边界写死在纯图片页，明确放弃可编辑；而 juneyaooo 在同一条路线上多出两个它没有的机制（用户 .pptx 模板克隆 + 整页图反向重建成原生 PPT 对象），并自带 265 套现成风格库。它剩下的独占点只是编排卫生（每页派一个 subagent、用脚本记录 dispatch/record 状态、审批 gate），这是流程差异不是能力角度，说不出「为什么是它不是 juneyaooo」。 正文原话：This skill creates image-based PowerPoint decks from source material. Each slide is a complete 16:9 generated image. Final images are assembled into `.pptx` with `scripts/assemble_ppt.py`.\n\nUse this when the user wants a visually unified presentation and accepts full-slide image pages. Do not use it when every textbox, chart, or shape must remain separately editable."
 }

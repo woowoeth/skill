@@ -19,7 +19,7 @@
  "category": "dev",
  "fun_score": 5.15,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "scout-manual-0807b",
  "added_at": "2026-08-07",
  "install": {
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2026-04-22",
  "skill_first_seen": "2026-04-23",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（把 X 变成 skill（造 skill 工厂））。它不是一件被挑出来的单品，是生成器 K-Dense-AI/mimeo 的自动产物之一。feed 里它的 path 就写着 output/andrej-karpathy；该仓库 output/ 目录下共有 22 份同样自动生成的人物 skill（hinton / lecun / bengio / fei-fei-li / sutskever …）。同时它与 kaiming-he 是同一模板的两次填空——两份正文的章节骨架逐字相同（Core principles / How X reasons / Applying the frameworks / Anti-patterns … push against / Heuristics and rules of thumb / How to use this skill in conversation），references/ 文件名也完全一致（principles / mental-models / frameworks / anti-patterns / heuristics），结尾都写「不许扮演本人」。这与 D40 判死 archify 上游是同一形状的反面：那次是收了两代同一件东西，这次是从一个数量堆里抽了两件当单品。真正该过问二的是生成器本体 mimeo——它与女娲同轴（README：Clone an expert's way of thinking into your coding agent），但机制独占（Parallel Search 八类意图检索 + 引文逐条回原文核验、核不上的剔除并留 quote_verification.md 审计、对抗式评审迭代到 8 分才收）。 正文原话：**mimeo automates that project.** Point it at a name and it goes off and reads the internet on your behalf: surfaces the canonical sources, pulls full transcripts and articles, distills each one with a frontier model, clusters the recurring ideas across dozens of sources, and emits a production-ready artifact your agent can load."
 }

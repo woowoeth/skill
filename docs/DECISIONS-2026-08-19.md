@@ -1135,3 +1135,80 @@ D33 说的是什么时候该起疑，这条说的是起疑之后先查什么。
 **验证方式值得记**：拿 `git show HEAD` 的旧代码跑同一组假数据，
 「仓库日期有、自身日期缺」那例报「待填 0 件」，**失败**——
 **证明这个漏是真的，不是想出来的。**（同 D27「并且我证明了它会失败」。）
+
+## D56 · 同类聚簇审查：19 簇 / 83 件，下架 14
+
+**这个病已经发作三次，前两次都是别人指出来的**（四批文案作者独立说「画图类拥挤」·
+D40 我据此误判「四条都在稀释」）。这次让人**逐件读正文**再判，不靠二手信号。
+
+**在架 171 → 157。**
+
+### 最重的一条：我们把一个数量堆当单品收了两件
+
+`k-dense-ai-mimeo-*` 那两件（Karpathy 视角 / 何恺明视角）——
+**feed 里它们的 `path` 就写着 `output/andrej-karpathy`、`output/kaiming-he`。**
+
+我拉了该仓库的 `output/` 目录：**22 份同样自动生成的人物 skill**
+（Hinton、LeCun、Bengio、Fei-Fei Li、Sutskever、Judea Pearl、Jeff Dean……）。
+两份 SKILL.md 的章节骨架**逐字相同**，`references/` 文件名也完全一致。
+
+**说不出「为什么是这两位、不是另外 20 位」。**
+
+而 mimeo 本体的定位是「point it at a name and it goes off and reads the internet on your behalf」——
+**那就是女娲那条轴**，而且它的独占点很硬（Parallel Search 八类意图检索 + 引文逐条回原文核验、
+核不上的剔除并留审计文件 + 对抗式评审迭代到 8 分才收）。
+
+> **轴上最好的那件没收，收了它数量堆里的两件当单品。**
+
+**这是 D40 的镜像**：那次是收了同一件东西的两代，这次是把数量堆当单品。
+
+### 其余 12 件，每条都有正文出处
+
+- `nateherkai-…-website-to-hyperframes`：官方合集里已有同名同职能的工作流，且它的验收门
+  用的是上游**明令「must not appear in new instructions」的废弃别名**
+- `ningzimu-codex-ppt`：自己把边界写死——「Each slide is a complete 16:9 generated image」
+  「Do not use it when every textbox must remain separately editable」，
+  同赛道的另一件在同路线上多出模板克隆和可编辑重建
+- `dongbeixiaohuo-…-workflow-producer`：同仓占两位，且**把去 AI 味整个外包**——
+  「然后立即调用 humanizer 子代理」，而 humanizer 不在架
+- `adrianpunk-punk-avatar`：与 punk-cover 是**同一编译器逐字换词**，核心句只把 cover 换成 avatar
+- `agnix`：正文是外部 Rust 二进制的 CLI 说明书，**448 条规则全在 `agnix-cli` 里**，
+  用户拿到正文本身得不到任何可迁移的判断
+- `claude-md-enhancer`：**对自己唯一的主张给了三个互斥数字**（CLAUDE.md 上限 150 / 300 / 400 行）
+- `superpowers-zh`：作者自承逐节汉化搬运，20 件里 14 件明确承诺不改动上游，增量只有 2 处
+- `worldwonderer` 三件：流水线中间工序，正文明写缺上游文件就停，单独装必然空转
+- `wolke-bazi-mingli`：被 `dzcmemory` 在范围上严格覆盖（后者同样有算法层，还整块多出紫微斗数）
+
+**审查自己纠正了两处子代理的错**，并写进更正字段：
+拒 wolke 的原始理由说它「让模型自己算」与正文不符（第 428 行写着「執行 scripts/bazi_calc.py」），
+**改后的理由比原报告软**；网文簇报「在架 8 件」有误，实际 7 件（一件 D20 已按红线拒了）。
+
+### 四家中医的理由，复核站得住，而且有作者自证
+
+吴鞠通那件的 frontmatter **主动让位**：「不适用于伤寒/经方派（用倪海厦/胡希恕）」。
+第 5 件与倪海厦同一个人但不同物种：**一件让倪师开口，一件让倪师的板书作证**
+（回 PDF 页码、明说不给诊断剂量）。
+
+## D57 · 下架我们自己的东西：`woowoeth/find-reusable`
+
+**不是质量问题，是利益冲突。**
+
+作者 `woowoeth` 就是本站所有者（仓库 `woowoeth/skill`），
+而这件 skill 的数据源**就是品味自己的 feed**——自家的检索客户端，上自家的精选榜。
+
+**选品问二问的是「用户在别处拿不到吗」，而自家出品必然拿不到——
+这个问题在它身上是循环的，我们没法用自己的标准判自己的货。**
+
+（它当初还占着推荐位。今早的审计里「自家货占推荐位」就被标出来过，只撤了推荐位，没撤上架。）
+
+恢复路径两条，**都不该由我们自己说了算**：
+① 有独立第三方愿意把它当好东西推荐；
+② 我们做出「自家出品」这个显式货位，让读者一眼分得出哪些是我们自己的。
+
+## D58 · 两件该披露但不该下架的
+
+- **`hugohe3-ppt-master`**：带一个强制闸门「Any non-zero result stops the Skill immediately;
+  do not inspect, repair, or bypass the integrity gate.」——**不是判重问题，是文案该说的事**。
+- **`blader-humanizer`**（唯一的作者自承证据）：frontmatter 和正文两处写
+  「Based on Wikipedia's "Signs of AI writing."」——**判据整体来自一份公开维基条目**。
+  仍留（有事实守恒不变式和不许误杀清单），但**文案里该如实交代出处**。

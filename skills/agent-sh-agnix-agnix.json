@@ -19,7 +19,7 @@
  "category": "dev",
  "fun_score": 2.33,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "scout-manual-0807b",
  "added_at": "2026-08-07",
  "install": {
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2026-01-30",
  "skill_first_seen": "2026-02-21",
- "age_source": "file"
+ "age_source": "file",
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "问二 · 同类聚簇审查（CLAUDE.md / agent 配置治理）。正文不是方法，是外部 Rust 二进制的 CLI 说明书。全部判断（448 条规则）都在 `agnix-cli` 里，skill 正文只有参数表和命令表；用户拿到正文本身得不到任何可迁移的判断。与 claude-md-enhancer 不重复（一个 lint 一个生成），但它自己不构成一件方法。 正文原话：## Prerequisites\n\nagnix must be installed. Check with:\n```bash\nagnix --version\n```\n\nIf not installed:\n```bash\ncargo install agnix-cli\n```"
 }
