@@ -187,13 +187,13 @@ a{overflow-wrap:anywhere}
 (function(){
 "use strict";
 var I18N={
- zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",flag:"标记这条不吸引人",materials:"原料",matHint:"这些不是 skill，装不上——它们是做 skill 的原料（数据集/模型/素材库）",notInstallable:"不可直接安装",useFor:"能拿来做",caveat:"注意",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
- en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",flag:"Flag as unappealing",materials:"Materials",matHint:"Not skills, so you cannot install these. They are raw material for building skills: datasets, models, asset libraries.",notInstallable:"Not directly installable",useFor:"Use for",caveat:"Caveat",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
+ zh:{sub:"每天上新的好玩 Agent Skill 精选",items:"件",updated:"更新于",picks:"推荐",latest:"最新",method:"方法正文",methodHint:"这就是这个 skill 的全部内容。不想安装？直接复制粘给 ChatGPT / Claude 网页版，一样能用。",copyMethod:"复制方法",copiedMethod:"已复制，粘给任何模型即可",expand:"展开全文",collapse:"收起",loadingM:"读取中…",noMethod:"这件的正文暂未收录，可到仓库查看",flag:"标记这条不吸引人",materials:"原料",matHint:"这些不是 skill，装不上——它们是做 skill 的原料（数据集/模型/素材库）",notInstallable:"不可直接安装",useFor:"能拿来做",caveat:"注意",fresh:"今日上新",all:"全部",search:"搜索 skill、仓库、关键词…",collection:"合集",results:"结果",empty:"没有匹配的结果",install:"安装",step1:"Claude Code（终端）",step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",safety:"提示：Skill 会在你的环境中执行指令，安装前请先阅读 SKILL.md，只装你信得过的。",copy:"复制",copied:"已复制",why:"点评",gh:"在 GitHub 查看",title:"Skill 商店 — 每天上新的好玩 Agent Skill | Skill Store",btn:"EN"},
+ en:{sub:"fun agent skills, updated daily",items:"items",updated:"updated",picks:"Picks",latest:"Latest",method:"The method",methodHint:"This is the entire skill. Don't want to install it? Copy and paste it into ChatGPT or Claude on the web and it works just the same.",copyMethod:"Copy the method",copiedMethod:"Copied. Paste into any model.",expand:"Show all",collapse:"Collapse",loadingM:"Loading…",noMethod:"Method text not archived yet; see the repo",flag:"Flag as unappealing",materials:"Materials",matHint:"Not skills, so you cannot install these. They are raw material for building skills: datasets, models, asset libraries.",notInstallable:"Not directly installable",useFor:"Use for",caveat:"Caveat",fresh:"New today",all:"All",search:"Search skills, repos, keywords…",collection:"pack",results:"Results",empty:"No matches",install:"Install",step1:"Claude Code (terminal)",step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",safety:"Note: skills execute instructions in your environment. Read the SKILL.md before installing.",copy:"copy",copied:"copied",why:"Why",gh:"View on GitHub",title:"Skill Store — fun agent skills, updated daily",btn:"中"}
 };
 var params=new URLSearchParams(location.search);
 var lang=params.get("lang")==="en"?"en":"zh";
 var t=function(k){return I18N[lang][k]||k};
-var D=null, M=[], state={q:"",cat:"all"};
+var D=null, M=[], METHOD_TEXT="", state={q:"",cat:"all"};
 var CAT={creative:["#fdf0e7","#b45309"],fun:["#f3edfd","#7c3aed"],writing:["#e8f3ec","#15803d"],life:["#e6f7f5","#0f766e"],docs:["#eef2f6","#526071"],work:["#fdecec","#b0403c"],dev:["#e9f0fb","#2b5cd9"],meta:["#f6ebf8","#a03bb5"]};
 function catCol(id){return CAT[id]||["#f2f2f2","#555"]}
 
@@ -337,6 +337,10 @@ function openModal(it){
   if(it.desc_en)h+='<p class="en">'+esc(it.desc_en)+"</p>";
   var why=lang==="zh"?it.why_zh:it.why_en;
   if(why)h+='<p class="why">'+t("why")+" · "+esc(why)+"</p>";
+  h+='<div class="mbox" id="mbox"><div class="mhead"><b>'+t("method")+'</b><span class="sp"></span>'
+   +'<button id="mcopy">'+t("copyMethod")+'</button><button id="mtoggle">'+t("expand")+'</button></div>'
+   +'<div class="mhint">'+t("methodHint")+'</div>'
+   +'<pre class="mbody" id="mbody">'+t("loadingM")+'</pre></div>';
   h+="<h4>"+t("install")+"</h4>";
   if(ins.clone||ins.copy){
     h+='<div class="step">1 · '+t("step1")+"</div>";
@@ -348,6 +352,28 @@ function openModal(it){
   el("panel").innerHTML=h;
   el("veil").classList.add("open");
   document.body.style.overflow="hidden";
+  (function(){
+    var body=el("mbody"); if(!body)return;
+    fetch("methods/"+it.id+".md").then(function(r){
+      if(!r.ok)throw 0; return r.text();
+    }).then(function(txt){
+      METHOD_TEXT=txt; body.textContent=txt;
+    }).catch(function(){
+      METHOD_TEXT=""; body.textContent=t("noMethod");
+      var mb=el("mbox"); if(mb)mb.style.opacity=".65";
+    });
+    var cp=el("mcopy"), tg=el("mtoggle");
+    if(cp)cp.onclick=function(e){e.stopPropagation();
+      if(!METHOD_TEXT)return;
+      copyText(METHOD_TEXT,cp);
+      cp.textContent=t("copiedMethod");
+      setTimeout(function(){cp.textContent=t("copyMethod")},1800);
+    };
+    if(tg)tg.onclick=function(e){e.stopPropagation();
+      var b=el("mbody"); b.classList.toggle("full");
+      tg.textContent=b.classList.contains("full")?t("collapse"):t("expand");
+    };
+  })();
 }
 function closeModal(){el("veil").classList.remove("open");document.body.style.overflow=""}
 

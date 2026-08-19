@@ -231,6 +231,7 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
             continue
         if cover:
             it["cover"] = cover
+        save_method(it)
         lib.save_item(it)
         existing[it["id"]] = it
         NEW_IDS.append(it["id"])
@@ -552,6 +553,29 @@ def watch_authors(existing: dict, sources: dict, limit_per_author: int = 5) -> l
     for full, st, age, desc in found:
         print(f"[radar] 已验证作者新作 {full} (★{st}, {age:.0f}天前) {desc}")
     return [f[0] for f in found]
+
+
+def save_method(it: dict) -> bool:
+    """把 SKILL.md 正文存到 methods/<id>.md —— 让"方法"在站上可见、可复制。
+    这是本店和普通目录站的核心差别：不只告诉你有这个东西，而是把方法本身摊开。
+    走 raw CDN，不消耗 API 配额。"""
+    import urllib.request
+    path = it.get("path", "").rstrip("/")
+    url = f"https://raw.githubusercontent.com/{it['repo']}/HEAD/" + (path + "/SKILL.md" if path else "SKILL.md")
+    dst = os.path.join("methods", it["id"] + ".md")
+    os.makedirs("methods", exist_ok=True)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            txt = r.read().decode("utf-8", "ignore")
+        if len(txt) > 60000:
+            txt = txt[:60000] + "\n\n…（正文过长，已截断，完整版见仓库）"
+        with open(dst, "w", encoding="utf-8") as f:
+            f.write(txt)
+        return True
+    except Exception:
+        return False
+
 
 def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
     """人工通道：一个真人觉得值得推荐，本身就是最高质量的信号。
