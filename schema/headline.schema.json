@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ourword.ai/skill/schema/headline.schema.json",
+  "title": "头条 / Daily headline (editorial/headline.json)",
+  "description": "每日一件头条。人选人写，机器不碰——scout 只读不写这个文件。append-only 数组，历史头条永不删除，归档页直接读它。",
+  "type": "object",
+  "required": ["headlines"],
+  "properties": {
+    "_说明": {"type": "string"},
+    "_用法": {"type": "string"},
+    "headlines": {
+      "type": "array",
+      "description": "按 date 排序无所谓，构建时会排。date 可以写未来——到那天自动上位，可以提前排期。",
+      "items": {"$ref": "#/$defs/headline"}
+    }
+  },
+  "$defs": {
+    "headline": {
+      "type": "object",
+      "required": ["date", "id", "story_zh"],
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "这条头条生效的日期（UTC）。同一天只允许一条；写未来日期即排期。"
+        },
+        "id": {
+          "type": "string",
+          "description": "被选中的 skill id，必须是 skills/<id>.json 里真实存在且未 hide 的一件。"
+        },
+        "story_zh": {
+          "type": "string",
+          "description": "三百字左右的长判断。不是加长版点评——要说清为什么是今天这一件：它解决的问题、它的机制为什么对、它的局限在哪、什么人不该装。",
+          "minLength": 120,
+          "maxLength": 800
+        },
+        "story_en": {"type": "string", "maxLength": 2000},
+        "kicker_zh": {"type": "string", "description": "可选：头条上方的小标签，如「今日头条」「重读」", "maxLength": 16},
+        "by": {"type": "string", "description": "谁选的。默认「店长」"}
+      }
+    }
+  }
+}

@@ -126,11 +126,20 @@ def shallow_clone(repo: str, dest: str) -> bool:
         return False
 
 
+# 测试夹具目录。仓库自己的单测里常放一堆 SKILL.md（故意写坏的 frontmatter、
+# golden 快照），它们不是商品，但过去被一并数进 skill_count —— 于是合集卡上
+# 印出来的"几十件"里有一大半是别人的测试数据。实测：yusufkaraaslan/Skill_Seekers
+# 26 件里 24 件是 tests/golden/phase2 的夹具，真货只有 2 件（连合集线都够不上）。
+FIXTURE_DIRS = {"tests", "test", "__tests__", "fixtures", "__fixtures__",
+                "spec", "golden", "testdata"}
+
+
 def find_skill_mds(root: str) -> list[str]:
     out = []
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in
-                       (".git", "node_modules", "vendor", "dist", "build")]
+                       (".git", "node_modules", "vendor", "dist", "build")
+                       and d not in FIXTURE_DIRS]
         if "SKILL.md" in filenames:
             out.append(os.path.join(dirpath, "SKILL.md"))
     return sorted(out)
@@ -202,11 +211,13 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
         return items
 
     if n >= COLLECTION_MIN:
-        items.append(lib.make_item(kind="collection", name=repo.split("/")[-1],
-                                   desc_en=repo_desc or f"A pack of {n} skills.",
-                                   repo=repo, path="", stars=stars,
-                                   repo_desc=repo_desc, pushed_at=pushed,
-                                   homepage=homepage, skill_count=n, source=source))
+        col = lib.make_item(kind="collection", name=repo.split("/")[-1],
+                            desc_en=repo_desc or f"A pack of {n} skills.",
+                            repo=repo, path="", stars=stars,
+                            repo_desc=repo_desc, pushed_at=pushed,
+                            homepage=homepage, skill_count=n, source=source)
+        col["install"] = collection_install(repo, [p[2] for p in parsed])
+        items.append(col)
     if n < COLLECTION_ONLY:
         scored = sorted(parsed,
                         key=lambda p: -lib.fun_score(p[0], p[1] or "", stars))
@@ -220,6 +231,49 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
     return items
 
 
+COLLECTION_NOTE = ("clone 下来，挑你要的那件复制进 ~/.claude/skills/。"
+                   "这是一个合集，没有「装它」这个动作。")
+
+
+def skills_root(rels: list[str]) -> str:
+    """合集里那些 skill 的共同上级目录 —— 覆盖不到八成就返回空（指仓库根）。
+
+    合集卡指向仓库首页几乎没用；指向 `skills/` 这类真正装着技能的目录，
+    点进去就是一份清单。但**很多仓库根本没有这么一个目录**：实测 16 件合集里
+    5 件的 skill 散在 3–11 个不同的根下（open-design 11 个、codeArbiter 9 个），
+    硬凑一个出来就是编。凑不出来就老实指仓库根。
+    """
+    from collections import Counter
+    parents = [os.path.dirname(r) for r in rels]
+    cnt: Counter = Counter()
+    for pa in parents:
+        parts = pa.split("/") if pa else []
+        for i in range(len(parts) + 1):
+            cnt["/".join(parts[:i])] += 1
+    for cand in sorted((c for c in cnt if c), key=lambda c: -len(c.split("/"))):
+        if cnt[cand] / len(rels) >= 0.8:
+            return cand
+    return ""
+
+
+def collection_install(repo: str, rels: list[str]) -> dict:
+    """合集不给 copy 命令 —— 给了就是骗人。
+
+    `~/.claude/skills/<X>/SKILL.md` 才是被发现的路径。合集 clone 下来那一层
+    没有 SKILL.md，`mv <repo> ~/.claude/skills/<repo>` 装了等于没装；
+    而「把 skills/ 底下全倒进去」更糟 —— 有的合集是 519 件。
+    所以只给 clone + 一个能点进去挑的指针，外加一句话说清这张卡为什么不一样。
+    """
+    root = skills_root(rels)
+    return {
+        "clone": f"git clone --depth 1 https://github.com/{repo}.git",
+        "copy": "",
+        "dir": "",
+        "browse": f"https://github.com/{repo}" + (f"/tree/HEAD/{root}" if root else ""),
+        "note": COLLECTION_NOTE,
+    }
+
+
 NEW_IDS: list[str] = []
 
 
@@ -231,7 +285,11 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
             continue
         if cover:
             it["cover"] = cover
-        save_method(it)
+        if not save_method(it):
+            # 取不回正文 = path 多半记错了（或仓库没了）。过去这里是静默的，
+            # 于是错的 install.copy 一路上架，用户照抄装不上都没人知道。
+            print(f"[scout] ! 取不回正文 {it['id']}  path={it.get('path','')!r} "
+                  f"—— install.copy 可能是错的，跑 --verify-paths 复核")
         lib.save_item(it)
         existing[it["id"]] = it
         NEW_IDS.append(it["id"])
@@ -288,13 +346,27 @@ def resolve_cover(repo: str) -> str:
             hdr["Authorization"] = "Bearer " + tok
         req = urllib.request.Request(f"https://api.github.com/repos/{repo}/readme", headers=hdr)
         h = urllib.request.urlopen(req, timeout=25).read().decode("utf-8", "ignore")
+        cands = []
         for n, m in enumerate(re.finditer(r'<img[^>]+src="([^"]+)"', h)):
             if n >= 8:
                 break
             src = m.group(1)
             if not src.startswith("http") or BADGE_PAT.search(src):
                 continue
-            return src   # 不再用脚本 UA 验证：GitHub 对非浏览器 UA 返 403，会误杀浏览器能正常加载的图
+            cands.append(src)   # 不用脚本 UA 验证：GitHub 对非浏览器 UA 返 403，会误杀浏览器能正常加载的图
+        if cands:
+            # **不能直接取第一张。** 创意类 skill 的 examples/ 里常是「原片 → 成品」
+            # 成对存放（04b-two-kids-original.jpg / 04b-two-kids-poster.jpg），
+            # 按文件名顺序取第一张拿到的是**用户自己拍的原照片**，不是产出物 ——
+            # photo-distill 就是这么把一张原片送上今日头条的。封面的全部意义是
+            # 「产出物即证据」，放原片等于什么都没证明。
+            try:
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                from enrich import prefer_output_images
+                cands = prefer_output_images(cands)
+            except Exception:
+                pass
+            return cands[0]
     except Exception:
         pass
     return ""
@@ -610,6 +682,42 @@ def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+def verify_paths() -> int:
+    """复核每件在架商品的 path 是否真能取回 SKILL.md。
+
+    只报告，**不自动改**。探到"真实位置"是猜的（一个仓库里可能有几十个
+    SKILL.md，哪个才是这张卡指的那件，机器判不了），猜错比不改更糟 ——
+    用户照抄一条看起来对的命令装到错的东西，比装不上更难发现。
+    合集（kind=collection）本来就没有单一 SKILL.md，不算欠账，单列。
+    """
+    import urllib.request
+    # 必须过一遍编辑层：hide 大多写在 editorial/curation.json 里，
+    # 只读 skills/*.json 会把 559 件未上架的也当成在架。
+    items = lib.apply_editorial(lib.load_items())
+    shelved = [it for it in items.values() if not it.get("hide")]
+    bad, cols = [], []
+    for it in sorted(shelved, key=lambda x: x["id"]):
+        if it.get("kind") == "collection":
+            cols.append(it); continue
+        path = (it.get("path") or "").rstrip("/")
+        url = (f"https://raw.githubusercontent.com/{it['repo']}/HEAD/"
+               + (path + "/SKILL.md" if path else "SKILL.md"))
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            urllib.request.urlopen(req, timeout=20).read(1)
+        except Exception as e:
+            bad.append((it, getattr(e, "code", str(e))))
+    print(f"[verify] 在架 {len(shelved)} 件：单品 {len(shelved)-len(cols)} · 合集 {len(cols)}")
+    for it, why in bad:
+        print(f"[verify] ✗ {it['id']}  repo={it['repo']} path={it.get('path','')!r} ({why})")
+        print(f"           install.copy = {it.get('install', {}).get('copy', '')}")
+    print(f"[verify] 单品里取不回正文的 {len(bad)} 件"
+          + ("（这些的 install.copy 不可信）" if bad else "，全部可取"))
+    print(f"[verify] 合集 {len(cols)} 件不参与本项 —— 合集没有单一 SKILL.md，"
+          "它们的 install.copy 是另一个问题，见 docs/PROTOCOL.md")
+    return 1 if bad else 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", help="seed from a directory of pre-cloned repos")
@@ -618,9 +726,13 @@ def main() -> None:
     ap.add_argument("--no-restock", action="store_true")
     ap.add_argument("--suggest", nargs="+", metavar="owner/repo",
                     help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
+    ap.add_argument("--verify-paths", action="store_true",
+                    help="复核在架商品的 path 能不能取回 SKILL.md（只报告，不改数据）")
     ap.add_argument("--enrich-missing", action="store_true",
                     help="给所有在架、仍是占位/缺文案的商品补写文案（用 LLM_* secrets）")
     a = ap.parse_args()
+    if a.verify_paths:
+        sys.exit(verify_paths())
     if a.seed:
         seed(a.seed, a.meta)
         return

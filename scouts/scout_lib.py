@@ -1,40 +1,93 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Skill 商店 — shared scout library.
+品味 (Pinwei) — shared scout library.
 
 The repo is the database:
-  skills/<id>.json   one file per shelf item (a skill or a collection)
-  skills/feed.json   aggregated feed the static site reads
+  skills/<id>.json          one file per shelf item (a skill or a collection)
+  skills/feed.json          aggregated feed the static site reads
+  skills/rejected-feed.json 拒收榜: what got turned away, and why
+  editorial/curation.json   店长文案，永远覆盖机器字段
+  editorial/headline.json   每日头条，人写，机器只读
+  editorial/rejected.json   人写的拒收理由，挂 docs/CURATION.md 的条款
+  scouts/scan_log.json      机器扫描留痕，网站上的统计数字来自这里
 
 Design mirrors ourword-ai/idea: scouts are fault-tolerant, every helper
 swallows single-item failures, and feed.json is always regenerated from
 the merged set of skills/*.json (conflict-safe).
 """
 from __future__ import annotations
-import os, re, json, time, glob, hashlib, urllib.request, urllib.error, datetime
+import os, re, sys, json, time, glob, hashlib, urllib.request, urllib.error, datetime
+
+# 备料徽章：从 methods/ 本地正文算，零网络。
+# 显式把 scouts/ 放进 path —— seo/ 和仓库根都会 import scout_lib，不能假定调用方的 cwd。
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import prep_signals as prep  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SKILLS_DIR = os.path.join(ROOT, "skills")
 FEED = os.path.join(SKILLS_DIR, "feed.json")
+REJECTED_FEED = os.path.join(SKILLS_DIR, "rejected-feed.json")
 EDITORIAL = os.path.join(ROOT, "editorial", "curation.json")
+HEADLINE = os.path.join(ROOT, "editorial", "headline.json")
+REJECTED = os.path.join(ROOT, "editorial", "rejected.json")
 SOURCES = os.path.join(ROOT, "scouts", "sources.json")
+SCAN_LOG = os.path.join(ROOT, "scouts", "scan_log.json")
+
+# feed.json 之外，skills/ 里所有以 -feed.json 结尾的都是聚合产物，不是货
+AGGREGATE_FILES = {"feed.json", "rejected-feed.json"}
 
 GH_TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
-UA = "skill-store-scout/1.0 (+https://github.com/woowoeth/skill-store)"
+UA = "pinwei-skill-scout/1.0 (+https://github.com/woowoeth/skill)"
 
 # ---------------------------------------------------------------- shelves ---
 CATEGORIES = [
-    ("creative", "创意画室", "Creative Studio", "🎨"),
-    ("fun",      "玩乐杂货", "Fun & Games",     "🎮"),
-    ("writing",  "文房小铺", "Writing Desk",    "✍️"),
-    ("life",     "生活日用", "Daily Life",      "🧺"),
-    ("docs",     "文档柜台", "Documents",       "📄"),
-    ("work",     "打工必备", "Work & Growth",   "💼"),
-    ("dev",      "开发五金", "Dev Hardware",    "🔧"),
-    ("meta",     "元技能",   "Meta Skills",     "🧬"),
+    ("creative", "做图",       "Images",     "🎨"),
+    ("fun",      "玩",         "Play",       "🎲"),
+    ("writing",  "写文章",     "Writing",    "✍️"),
+    ("life",     "过日子",     "Everyday",   "🧺"),
+    ("docs",     "做文档",     "Documents",  "📄"),
+    ("work",     "上班用",     "At Work",    "💼"),
+    ("dev",      "写代码",     "Code",       "🔧"),
+    ("meta",     "调教 agent", "Tune Agents","🧬"),
 ]
 CAT_IDS = [c[0] for c in CATEGORIES]
+
+# ---------------------------------------------------------- editorial layer ---
+# 人写的字段。机器只在这些字段"没有值"时填默认空串，永远不覆盖已有内容。
+# 新增字段加到这里就够了 —— refresh() 会自动保证 feed 里每件都带这些键。
+EDITORIAL_TEXT_FIELDS = (
+    "title_zh", "tagline_zh", "tagline_en",
+    "why_zh", "why_en",
+    "limit_zh", "limit_en",     # 诚实的局限：机制短板 / 平台限制 / 适用边界
+    # 卡片上那一行短版局限（≤30 字，必须完整句）。**不是 limit_zh 的截断**——
+    # 一句完整的诚实短处被砍成前 24 字，读起来就成了勾人往下点的钩子，诚实变成营销。
+    # 详情页仍用完整的 limit_zh，两者是同一件事的两种说法，不是摘要关系。
+    "limit_brief_zh", "limit_brief_en",
+)
+
+# 机器取的字段，人不写。和 EDITORIAL_TEXT_FIELDS 一样只 setdefault，不覆盖。
+MACHINE_TEXT_FIELDS = (
+    "repo_created_at",      # 仓库创建日 —— GET /repos/{repo}
+    "skill_first_seen",     # 这个 path 下最早一次提交 —— 才是「这一件」的年龄
+)
+
+# ---------------------------------------------------------- 拒收条款 ---
+# 对应 docs/CURATION.md。reject_rule 只能是这五个之一 —— 挂不上任何一条，
+# 说明标准没写清，去改 CURATION.md，不要新造一条规则。
+REJECT_RULES = [
+    ("问一", "不是拿走就能用的商品",   "Not a take-and-use product",
+     "框架/底座、教程、脚手架、别人项目自己的装修配置"),
+    ("问二", "用户在别处拿得到",       "No increment over any other directory",
+     "官方厂商目录、通用开发件、数量堆、已有更好同类在架"),
+    ("问三", "写不出让人想装的文案",   "No copy worth writing",
+     "只能憋出「一个不错的 X 工具」= 它没有值得说的点"),
+    ("红线", "无条件拒",               "Hard red line",
+     "攻击赋能安全工具、灰产、荐股/交易信号、价值观有害"),
+    ("门槛", "机器初筛未过",           "Below the machine floor",
+     "fork、命名黑名单、四条准入通道全不命中。人工可推翻"),
+]
+REJECT_RULE_IDS = [r[0] for r in REJECT_RULES]
 
 CAT_KW = {
     "creative": ["art", "design", "draw", "svg", "canvas", "image", "sprite", "pixel",
@@ -76,6 +129,12 @@ FUN_KW = {  # what makes something 好玩 — weighted
 # ------------------------------------------------------------- utilities ---
 def now_iso() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+def round_id() -> str:
+    """Unique id for one scan round. now_iso() alone collides — two runs inside
+    the same second would merge into one round and the counts would be wrong."""
+    return now_iso() + "-" + hashlib.md5(
+        f"{os.getpid()}{time.time_ns()}".encode()).hexdigest()[:6]
 
 def today() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
@@ -216,6 +275,8 @@ def make_item(*, kind: str, name: str, desc_en: str, repo: str, path: str = "",
         "title_zh": "", "tagline_zh": zh_fallback(name, desc_en, cat), "tagline_en": "",
         "desc_en": (desc_en or repo_desc or "").strip()[:400],
         "why_zh": "", "why_en": "",
+        # 诚实的局限。机器写不出来，留空等人写 —— 空串在 check_curation.py 里会被点名。
+        "limit_zh": "", "limit_en": "",
         "repo": repo, "owner": owner, "path": path, "url": url, "homepage": homepage,
         "stars": stars, "pushed_at": pushed_at, "skill_count": skill_count,
         "category": cat, "fun_score": fs, "pick": False, "hide": False,
@@ -223,10 +284,26 @@ def make_item(*, kind: str, name: str, desc_en: str, repo: str, path: str = "",
     }
 
 # --------------------------------------------------------------- storage ---
+def read_json(path: str, default):
+    """Never let a missing/broken sidecar file take the build down."""
+    if not os.path.exists(path):
+        return default
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"[lib] unreadable {os.path.relpath(path, ROOT)}: {e}")
+        return default
+
+def write_json(path: str, data) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+
 def load_items() -> dict:
     items = {}
     for p in glob.glob(os.path.join(SKILLS_DIR, "*.json")):
-        if os.path.basename(p) == "feed.json":
+        if os.path.basename(p) in AGGREGATE_FILES:
             continue
         try:
             with open(p, encoding="utf-8") as f:
@@ -243,31 +320,315 @@ def save_item(it: dict) -> None:
 
 def apply_editorial(items: dict) -> dict:
     """editorial/curation.json overrides win over scouted fields, always."""
-    if not os.path.exists(EDITORIAL):
-        return items
-    try:
-        with open(EDITORIAL, encoding="utf-8") as f:
-            cur = json.load(f)
-    except Exception as e:
-        print(f"[lib] editorial unreadable: {e}")
+    cur = read_json(EDITORIAL, None)
+    if not cur:
         return items
     for sid, patch in cur.get("items", {}).items():
         if sid in items:
-            items[sid].update({k: v for k, v in patch.items() if k != "id"})
+            items[sid].update({k: v for k, v in patch.items()
+                               if k != "id" and not k.startswith("_")})
     return items
 
-def refresh() -> dict:
-    """Rebuild skills/feed.json from the merged item set."""
-    items = apply_editorial(load_items())
+def age_source(it: dict) -> str:
+    """这件商品的「年龄」该报哪个日期 —— **本地零网络就能定的口径**。
+
+    店主问的是「**这件 skill** 什么时候出现的」。仓库创建时间只在一种情况下等于它：
+    这件 skill 就是仓库本体（`path` 为空）。skill 长在子目录里时，仓库可能先建了几个月，
+    skill 是后加的 —— 实测样本（6 件子目录货）差 1 / 2 / 4 / 25 / 101 / 111 天。
+
+    111 天听着不多，但**它和我们自己的时间窗同阶**：`CURATION.md` 的准入通道写着
+    「新品快车道：创建 ≤7 天」「星速度：创建 ≤14 天」。拿仓库年龄当 skill 年龄，
+    一个 111 天前建的仓库里上周新加的 skill 会被当成老货，它其实正命中新品快车道。
+
+      "file"  —— 拿到了 skill_first_seen，这一件自己的首次出现时间。最准，显示。
+      "repo"  —— path 为空，这件就是仓库本体，仓库创建时间就是它的年龄。显示。
+      ""      —— 只有 repo_created_at 而这件长在子目录里：那是**仓库**的年龄不是
+                 **它**的年龄，答非所问。**前端不显示**，而不是显示一个近似值。
+
+    第三档是这个函数存在的理由。少了它，一半的货（在架 152 件里 78 件是子目录货）
+    会顶着「repo」这个口径标签印出一个不回答问题的日期 —— 那正是
+    「印在货架上的数字没核过来源」那个病的下一次发作。
+    """
+    if (it.get("skill_first_seen") or "").strip():
+        return "file"
+    if not (it.get("path") or "").strip():
+        return "repo" if (it.get("repo_created_at") or "").strip() else ""
+    return ""
+
+
+def normalize_item(it: dict) -> dict:
+    """Guarantee every shelf item carries the full editorial key set.
+
+    setdefault, never assignment: a field the editorial layer (or an older
+    scout run) already filled in is left exactly as it was. This is what makes
+    it safe to add a new copy field — 713 files on disk predate limit_zh and
+    must not be rewritten to get it.
+    """
+    for k in EDITORIAL_TEXT_FIELDS:
+        it.setdefault(k, "")
+    for k in MACHINE_TEXT_FIELDS:
+        it.setdefault(k, "")
+    # 派生，每次重建都重算 —— 补上了日期，口径自动跟着变，没有第二份真相。
+    it["age_source"] = age_source(it)
+    return it
+
+# ------------------------------------------------------------- 头条 / headline ---
+def build_headline(items: dict, when: str | None = None) -> tuple[dict | None, list]:
+    """Resolve today's headline + the archive trail from editorial/headline.json.
+
+    Why the history lives as an append-only array in the editorial layer:
+      - 人选人写，机器不碰 —— scout 只读这个文件，永远不写，所以没有覆盖风险
+      - append-only 数组天然就是归档：第 N 天的头条永远还在第 N 个位置
+      - date 可以写未来 —— 到那天自动上位，头条可以提前排期
+      - 只存 id 不存文案副本：商品文案改了，头条跟着改，没有第二份真相
+    Returns (headline_or_None, history_list).
+    """
+    doc = read_json(HEADLINE, None) or {}
+    rows = [h for h in doc.get("headlines", []) if isinstance(h, dict) and h.get("date") and h.get("id")]
+    rows.sort(key=lambda h: h["date"])
+    day = when or today()
+
+    hist, current = [], None
+    for h in rows:
+        it = items.get(h["id"])
+        rec = {
+            "date": h["date"],
+            "id": h["id"],
+            "kicker_zh": h.get("kicker_zh", ""),
+            "story_zh": h.get("story_zh", ""),
+            "story_en": h.get("story_en", ""),
+            "by": h.get("by", "店长"),
+            # 冗余一点点展示字段，归档页不用再去 feed.json 里查
+            "title_zh": (it or {}).get("title_zh", ""),
+            "name": (it or {}).get("name", ""),
+            "repo": (it or {}).get("repo", ""),
+            "resolved": bool(it) and not (it or {}).get("hide"),
+        }
+        hist.append(rec)
+        if h["date"] <= day and rec["resolved"]:
+            current = dict(rec, item=it)      # 当日头条内联整件商品，首页零查找
+    hist.reverse()                            # 最新在前
+    if current is None and rows:
+        print("[lib] headline: no usable entry for today (id missing/hidden or all dates in the future)")
+    return current, hist
+
+# ------------------------------------------------------- 拒收榜 / reject ledger ---
+# 机器扫描留痕。skill_scout.discover() 里被 SKIP_REPO_PAT / _admit() 刷掉的仓库
+# 原来是 `continue` 直接丢掉的，一行痕迹都没有 —— 这三个函数是给它的留痕口。
+_ROUND: dict = {"scanned": 0, "admitted": [], "rejects": [], "started_at": None}
+
+def note_scanned(n: int = 1) -> None:
+    """每从搜索结果里看到一条仓库就记一次。这个数就是网站上那个「今天扫了多少」。"""
+    if _ROUND["started_at"] is None:
+        _ROUND["started_at"] = round_id()
+    _ROUND["scanned"] += n
+
+def note_admitted(repo: str) -> None:
+    if _ROUND["started_at"] is None:
+        _ROUND["started_at"] = round_id()
+    if repo not in _ROUND["admitted"]:
+        _ROUND["admitted"].append(repo)
+
+def record_reject(repo: str, reason: str, rule: str = "门槛", *,
+                  name: str = "", desc: str = "", stars: int = 0) -> None:
+    """留痕一次机器拒收。缓存在内存里，flush_round() 时一次性落盘。"""
+    if _ROUND["started_at"] is None:
+        _ROUND["started_at"] = round_id()
+    _ROUND["rejects"].append({
+        "repo": repo, "name": name, "desc": (desc or "")[:200],
+        "reject_reason_zh": reason,
+        "reject_rule": rule if rule in REJECT_RULE_IDS else "门槛",
+        "stars": stars, "by": "机器", "rejected_at": today(),
+    })
+
+def flush_round(note: str = "", keep_rounds: int = 400, keep_rejects: int = 600) -> dict:
+    """Persist this run's scan trail to scouts/scan_log.json. Returns the round."""
+    by_rule: dict = {}
+    for r in _ROUND["rejects"]:
+        by_rule[r["reject_rule"]] = by_rule.get(r["reject_rule"], 0) + 1
+    rnd = {
+        "round_id": _ROUND["started_at"] or round_id(),
+        "date": today(),
+        "finished_at": now_iso(),
+        "scanned": _ROUND["scanned"],
+        "admitted": len(_ROUND["admitted"]),
+        "rejected": len(_ROUND["rejects"]),
+        "by_rule": by_rule,
+        "source": "scout-instrumented",   # 数字来自 scout 进程本身，可追溯
+        "note": note,
+    }
+    log = read_json(SCAN_LOG, None) or {"_说明": "机器扫描留痕。每轮进货扫了多少、收了多少、拒了哪些。网站上的统计数字来自这里。", "rounds": [], "rejects": []}
+    log.setdefault("rounds", []).append(rnd)
+    log["rounds"] = log["rounds"][-keep_rounds:]
+    for r in _ROUND["rejects"]:
+        r["round_id"] = rnd["round_id"]
+    log.setdefault("rejects", []).extend(_ROUND["rejects"])
+    log["rejects"] = log["rejects"][-keep_rejects:]
+    write_json(SCAN_LOG, log)
+    print(f"[lib] scan round: scanned {rnd['scanned']}, admitted {rnd['admitted']}, "
+          f"rejected {rnd['rejected']} {by_rule or ''}")
+    _ROUND.update({"scanned": 0, "admitted": [], "rejects": [], "started_at": None})
+    return rnd
+
+_LOG_DISCOVER = re.compile(r"\[scout\] discover:\s*(\d+)\s*candidates,\s*(\d+)\s*tried,\s*(\d+)\s*items added")
+
+def record_round_from_log(text: str, note: str = "") -> dict | None:
+    """Fallback trail: recover real numbers from the scout's own stdout.
+
+    Used until skill_scout.py calls note_scanned/record_reject directly. It is
+    weaker on purpose — the scout only prints post-gate candidates, so `scanned`
+    stays unknown rather than being guessed. `complete: false` marks that.
+    """
+    m = None
+    for m in _LOG_DISCOVER.finditer(text or ""):
+        pass
+    if not m:
+        return None
+    cands, tried, added = (int(m.group(i)) for i in (1, 2, 3))
+    rnd = {
+        "round_id": round_id(), "date": today(), "finished_at": now_iso(),
+        # 未插桩的量一律 null，不猜：scout 只打印过了门槛的候选数，
+        # 搜索结果总条数和逐条拒收理由都没打印，估不出来就不写数字。
+        "scanned": None, "rejected": None, "by_rule": {},
+        "passed_gate": cands, "tried": tried, "admitted": added,
+        "source": "scout-log-parse", "complete": False, "note": note,
+    }
+    log = read_json(SCAN_LOG, None) or {"rounds": [], "rejects": []}
+    log.setdefault("rounds", []).append(rnd)
+    log["rounds"] = log["rounds"][-400:]
+    write_json(SCAN_LOG, log)
+    return rnd
+
+def build_rejected_feed(items: dict) -> dict:
+    """Aggregate the rejection ledger into skills/rejected-feed.json.
+
+    Separate file, not a branch of feed.json, because: feed.json is fetched on
+    every page view and the 拒收榜 is a second page; the two have different
+    owners and cadences; and a rejection list grows without bound while the
+    shelf deliberately does not. feed.json still carries a small
+    `rejected_summary` so the front page can print the three numbers without a
+    second request.
+
+    Every number here is computed from a file in the repo. Nothing is estimated:
+    a count that is not instrumented yet comes out as null, not as a guess.
+    """
+    doc = read_json(REJECTED, None) or {}
+    seen, human = set(), []
+    for e in reversed(doc.get("entries", [])):        # 后写的覆盖先写的
+        if not isinstance(e, dict) or e.get("hide"):
+            continue
+        repo = (e.get("repo") or "").strip()
+        if not repo or repo in seen:
+            continue
+        seen.add(repo)
+        rule = e.get("reject_rule", "")
+        human.append({
+            "repo": repo,
+            "name": e.get("name", "") or repo.split("/")[-1],
+            "desc": (e.get("desc") or "")[:400],
+            "reject_reason_zh": e.get("reject_reason_zh", ""),
+            "reject_reason_en": e.get("reject_reason_en", ""),
+            "reject_rule": rule if rule in REJECT_RULE_IDS else "",
+            "reject_clause": e.get("reject_clause", ""),
+            "stars": e.get("stars", 0),
+            "url": e.get("url") or f"https://github.com/{repo}",
+            "rejected_at": e.get("rejected_at", ""),
+            "by": e.get("by", "店长"),
+        })
+    human.sort(key=lambda r: (r.get("rejected_at", ""), r.get("stars", 0)), reverse=True)
+
+    log = read_json(SCAN_LOG, None) or {}
+    rounds = [r for r in log.get("rounds", []) if isinstance(r, dict)]
+    machine = [r for r in log.get("rejects", []) if isinstance(r, dict) and r.get("repo") not in seen]
+    machine.sort(key=lambda r: r.get("rejected_at", ""), reverse=True)
+
+    def _sum(key):
+        vals = [r.get(key) for r in rounds if isinstance(r.get(key), int)]
+        return sum(vals) if vals else None
+
+    counts = {rid: 0 for rid in REJECT_RULE_IDS}
+    for r in human + machine:
+        if r.get("reject_rule") in counts:
+            counts[r["reject_rule"]] += 1
+
     visible = [it for it in items.values() if not it.get("hide")]
-    # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars
+    hidden = [it for it in items.values() if it.get("hide")]
+    latest = rounds[-1] if rounds else None
+
+    out = {
+        "generated_at": now_iso(),
+        "sources": {
+            "human": "editorial/rejected.json",
+            "machine": "scouts/scan_log.json",
+            "standard": "docs/CURATION.md",
+        },
+        "stats": {
+            "shelved": len(visible),
+            "unshelved": len(hidden),          # 抓来了、没上架/已下架，记录仍在 skills/*.json
+            "known_items": len(items),
+            "known_repos": len({it.get("repo") for it in items.values() if it.get("repo")}),
+            "rejected_documented": len(human),
+            "rejected_machine_logged": len(machine),
+            "rounds_logged": len(rounds),
+            "latest_round": latest,
+            "all_rounds": {"scanned": _sum("scanned"),
+                           "admitted": _sum("admitted"),
+                           "rejected": _sum("rejected")},
+        },
+        "rules": [{"rule": rid, "zh": zh, "en": en, "detail": detail, "count": counts[rid]}
+                  for rid, zh, en, detail in REJECT_RULES],
+        "rejected": human,
+        "machine_rejects": machine,
+        "unshelved_trail": sorted(
+            [{"id": it.get("id"), "repo": it.get("repo"), "name": it.get("name"),
+              "added_at": it.get("added_at", ""), "stars": it.get("stars", 0)}
+             for it in hidden],
+            key=lambda r: r.get("added_at", ""), reverse=True),
+    }
+    write_json(REJECTED_FEED, out)
+    print(f"[lib] rejected-feed: {len(human)} written up, {len(machine)} machine-logged, "
+          f"{len(hidden)} unshelved, {len(rounds)} rounds")
+    return out
+
+def refresh() -> dict:
+    """Rebuild skills/feed.json (+ skills/rejected-feed.json) from the merged set."""
+    items = apply_editorial(load_items())
+    # normalize AFTER editorial so a human-written limit_zh can never be blanked
+    for it in items.values():
+        normalize_item(it)
+    # 备料徽章：派生字段，构建时算，不落 skills/*.json。
+    # 放在 editorial 之后 —— 徽章是事实（正文里有没有那些东西），不是文案，
+    # 店长不该也不需要手写它；存档补齐后重建一次就自动更新，没有第二份真相。
+    prep_ev = prep.load_all()
+    prep.annotate(items, prep_ev)
+    visible = [it for it in items.values() if not it.get("hide")]
+    # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars.
+    # 完全并列的再按 id —— 否则并列项的先后取决于 glob() 的文件系统顺序，同一份数据
+    # 在不同机器上会重排出不同的 feed.json，白白制造 diff 和 push 冲突。
+    visible.sort(key=lambda x: x.get("id", ""))
     visible.sort(key=lambda x: (x.get("added_at", ""), x.get("fun_score", 0), x.get("stars", 0)), reverse=True)
     t = today()
+    headline, headline_history = build_headline(items)
+    rejected = build_rejected_feed(items)
+    rstats = rejected["stats"]
     feed = {
         "generated_at": now_iso(),
         "count": len(visible),
         "new_today": sum(1 for it in visible if it.get("added_at") == t),
         "picks": sum(1 for it in visible if it.get("pick")),
+        "with_limit": sum(1 for it in visible if (it.get("limit_zh") or "").strip()),
+        # 备料徽章的聚合数。逐件的证据条数**刻意**不进商品 —— 见 prep_signals 模块头。
+        # no_archive 是我们自己的 path 欠账指标，盯着它变小，不是拿来显示的。
+        "prep_stats": prep.prep_stats(items, prep_ev),
+        "headline": headline,
+        "headline_history": headline_history,
+        "rejected_summary": {
+            "feed": "rejected-feed.json",
+            "shelved": rstats["shelved"],
+            "unshelved": rstats["unshelved"],
+            "rejected_documented": rstats["rejected_documented"],
+            "latest_round": rstats["latest_round"],
+        },
         "categories": [{"id": c, "zh": z, "en": e, "emoji": m,
                         "count": sum(1 for it in visible if it.get("category") == c)}
                        for c, z, e, m in CATEGORIES],
@@ -276,7 +637,10 @@ def refresh() -> dict:
     os.makedirs(SKILLS_DIR, exist_ok=True)
     with open(FEED, "w", encoding="utf-8") as f:
         json.dump(feed, f, ensure_ascii=False, indent=1)
-    print(f"[lib] feed: {len(visible)} items ({feed['new_today']} new today, {feed['picks']} picks)")
+    ps = feed["prep_stats"]
+    print(f"[lib] feed: {len(visible)} items ({feed['new_today']} new today, {feed['picks']} picks, "
+          f"{feed['with_limit']} with 局限, headline={'yes' if headline else 'none'})")
+    print(f"[lib] 备料齐 {ps['ready']} 件 / 有存档 {ps['archived']} / 无存档 {ps['no_archive']}")
     return feed
 
 def load_sources() -> dict:
@@ -291,4 +655,14 @@ def save_sources(src: dict) -> None:
         json.dump(src, f, ensure_ascii=False, indent=1)
 
 if __name__ == "__main__":
+    import sys
+    # `--from-log FILE` 把 scout 自己的 stdout 解析成一轮扫描留痕，然后照常重建。
+    if "--from-log" in sys.argv:
+        p = sys.argv[sys.argv.index("--from-log") + 1]
+        try:
+            with open(p, encoding="utf-8", errors="replace") as f:
+                r = record_round_from_log(f.read(), note=os.path.basename(p))
+            print(f"[lib] scan round from log: {r}" if r else "[lib] no discover line in log; no round recorded")
+        except Exception as e:
+            print(f"[lib] log parse skipped: {e}")
     refresh()
