@@ -135,7 +135,7 @@ i.g{font-style:normal;display:inline;margin:0 .085em}
 /* ============ 报头 ============
    整块静态 HTML。三个真数（过手 / 上架 / 未上架）落在 #tally，
    数据到了才填；没填的时候上面那句主张照样读得通。 */
-header.top{padding:var(--s5) 0 var(--s3)}
+header.top{padding:var(--s5) 0 var(--s4)}
 .brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 /* ---- 标识 ---- brand/BRAND.md 定稿，数值一个都不许改 ----------------
    viewBox 必须是 14 4 33 55（不是 0 0 64 64）—— 笔画只落在 x∈[14,47]、
@@ -149,8 +149,10 @@ header.top{padding:var(--s5) 0 var(--s3)}
   font-size:1em;line-height:1;color:var(--ink);
 }
 .brandrow i{
-  font:400 var(--t-micro)/1 var(--sans);font-style:normal;letter-spacing:.34em;
-  text-transform:uppercase;color:var(--ink-4);
+  /* slogan 跟在「品味」后面。宋体、正常字距 —— 它是句子不是标签，
+     原来那套 uppercase + .34em 字距是给英文副标的，会把中文拉散。 */
+  font:600 var(--t-cap)/1 var(--serif);font-style:normal;
+  letter-spacing:.02em;color:var(--ink-3);align-self:flex-end;padding-bottom:2px;
 }
 #langBtn{
   margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--ink-3);
@@ -160,7 +162,8 @@ header.top{padding:var(--s5) 0 var(--s3)}
 #langBtn:hover{border-color:var(--ink);color:var(--ink)}
 
 .say{
-  margin:var(--s4) 0 0;max-width:36em;
+  /* 店主：logo 和下面那行贴太近。这里拉开一档。 */
+  margin:var(--s5) 0 0;max-width:36em;
   font:400 clamp(17px,2.1vw,21px)/1.68 var(--sans);color:var(--ink);
 }
 /* 数字不靠颜色跳出来，靠字重和墨度 —— 周围的字退一档，它就自然是重音 */
@@ -168,7 +171,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
 /* 三个真数。一个都不算、一个都不编，全部来自 feed；拿不到就整行不显示。
    将来「已写拒收理由 N 条」挂在这一行末尾 —— 位置留着，0 条就不出现。 */
 .tally{
-  margin:var(--s2) 0 0;min-height:1.5em;
+  margin:var(--s4) 0 0;min-height:1.5em;
   font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);
   display:flex;flex-wrap:wrap;gap:2px 12px;
 }
@@ -491,10 +494,10 @@ header.top{padding:var(--s5) 0 var(--s3)}
          桌面保留完整那句。
        · 报头上下留白压掉一档
      ---------------------------------------------------------------- */
-  .brandrow i{display:none}
+  .brandrow i{font-size:var(--t-cap)}
   .say{display:none}
   header.top{padding:var(--s4) 0 var(--s2)}
-  .tally{margin-top:0;font-size:var(--t-meta)}
+  .tally{margin-top:var(--s3);font-size:var(--t-meta)}
   .tally .bar{display:none}
   .tally .slog{flex-basis:100%;margin-top:2px;font-size:var(--t-body)}
   .bar{padding-top:var(--s2)}
@@ -538,7 +541,7 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
         </svg>
         <b id="brand">品味</b>
       </span>
-      <i id="brandSub">Taste · curated agent skills</i>
+      <i id="brandSub">挑得少，是因为看得多</i>
       <button id="langBtn" type="button">EN</button>
     </div>
     <p class="say" id="say">生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。</p>
@@ -560,12 +563,8 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
   <main id="main"></main>
 
   <footer>
-    <p id="colo1"></p>
-    <p id="colo2"></p>
+      <p id="colo2"></p>
     <div class="links">
-      <a href="skills/feed.json">feed.json</a>
-      <a href="docs/CURATION.md">选品标准</a>
-      <a href="llms.txt">llms.txt</a>
       <a href="https://github.com/woowoeth/skill" target="_blank" rel="noopener">GitHub · MIT</a>
     </div>
   </footer>
@@ -584,7 +583,7 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
    ------------------------------------------------------------------ */
 var I18N = {
  zh:{
-  brand:"品味", brandSub:"Taste · curated agent skills", btn:"EN",
+  brand:"品味", brandSub:"挑得少，是因为看得多", btn:"EN",
   title:"品味 — 中文 Agent Skill 精选",
   say:'生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。',
   search:"搜标题、点评、仓库…",
@@ -604,7 +603,7 @@ var I18N = {
   capHero:"作者自制的头图，<b>不是产出示例</b>",
   capDiagram:"机制示意图，<b>不是产出示例</b>",
   capOther:"作者仓库里的图，<b>不是产出示例</b>",
-  prep:"备料齐", read:"店长读过", picked:"精选", newBadge:"上新", pack:"合集 ×%s",
+  prep:"备料齐", read:"店长读过", picked:"精选", newBadge:"上新", pack:"一个仓库 %s 件",
   prepWhy:"备料齐，凭这几样：",
   install:"安装", step1:"Claude Code（终端）",
   step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",
@@ -618,7 +617,7 @@ var I18N = {
   dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
  },
  en:{
-  brand:"品味", brandSub:"Taste · curated agent skills", btn:"中",
+  brand:"品味", brandSub:"We pick few because we look at many", btn:"中",
   title:"Taste — curated Chinese agent skills",
   say:'There are <em>2.66 million</em> agent skills out there. Finding them stopped being the problem long ago. Judging them is the problem.',
   search:"Search titles, verdicts, repos…",
@@ -633,7 +632,7 @@ var I18N = {
   capHero:"The author's own header image, <b>not an output sample</b>",
   capDiagram:"A diagram of how it works, <b>not an output sample</b>",
   capOther:"An image from the author's repo, <b>not an output sample</b>",
-  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", pack:"pack ×%s",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", pack:"%s in one repo",
   prepWhy:"Well prepped, on this evidence:",
   install:"Install", step1:"Claude Code (terminal)",
   step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
@@ -792,7 +791,6 @@ function renderChrome(){
   el("langBtn").textContent = t("btn");
   el("say").innerHTML = t("say");
   el("q").placeholder = t("search");
-  el("colo1").textContent = t("colo1");
   if(!D) el("colo2").textContent = "";
 }
 
@@ -810,7 +808,7 @@ function renderTally(){
   if(st.rejected_documented) put("tWhy", st.rejected_documented);
   // slogan 跟在三个数字后面，一道竖线隔开。它是注脚，所以只在数字出来了才出现。
   var line = bits.join('<span class="sep">·</span>');
-  if(bits.length) line += '<span class="bar">｜</span><b class="slog">'+esc(t("slogan"))+'</b>';
+  /* slogan 已移到品牌行「品味」之后，不再占数字行。 */
   el("tally").innerHTML = line;
   el("colo2").textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
 }
