@@ -1,0 +1,30 @@
+{
+ "id": "jimliu-baocut-baocut",
+ "kind": "skill",
+ "name": "baocut",
+ "title_zh": "",
+ "tagline_zh": "让 Claude 帮你搞创作：baocut。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "BaoCut-only operator for the installed `bcut` CLI and `.bcut` projects. Implicitly trigger only when the request explicitly names BaoCut or `bcut`, targets a `.bcut` project or BaoCut Subtitle Studio, or continues a BaoCut workflow already established in the conversation. Do not trigger solely for generic audio or video, transcription, subtitles, translation, editing, animation, review, rendering ",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "JimLiu/baocut",
+ "owner": "JimLiu",
+ "path": "skills/baocut",
+ "url": "https://github.com/JimLiu/baocut/tree/HEAD/skills/baocut",
+ "homepage": "https://baocut.app",
+ "stars": 449,
+ "pushed_at": "2026-08-19T02:36:08Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 9.89,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-19",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/JimLiu/baocut.git",
+  "copy": "cp -r baocut/skills/baocut ~/.claude/skills/baocut",
+  "dir": "~/.claude/skills/baocut"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "id": "necmttn-ax-ax-narrate",
+ "kind": "skill",
+ "name": "ax-narrate",
+ "title_zh": "",
+ "tagline_zh": "写字的人会喜欢：ax-narrate。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Write the agent-generated narration of the current session - the reviewable story of what changed, including what never reaches a PR (user corrections, abandoned attempts, tool failures). Triggers on \"narrate this session\", \"summarize what changed\", \"write the session story\", \"narrate what we did\", \"session narration\". Output is .ax/narrations/<session-id>.json for the ax studio narration view. Do",
+ "why_zh": "",
+ "why_en": "",
+ "repo": "Necmttn/ax",
+ "owner": "Necmttn",
+ "path": "skills/narrate",
+ "url": "https://github.com/Necmttn/ax/tree/HEAD/skills/narrate",
+ "homepage": "",
+ "stars": 95,
+ "pushed_at": "2026-08-19T02:37:14Z",
+ "skill_count": 1,
+ "category": "writing",
+ "fun_score": 7.28,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-19",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/Necmttn/ax.git",
+  "copy": "cp -r ax/skills/narrate ~/.claude/skills/narrate",
+  "dir": "~/.claude/skills/narrate"
+ },
+ "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9"
+}
