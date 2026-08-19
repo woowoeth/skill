@@ -49,9 +49,11 @@ window.__FEED__ = fetch("skills/feed.json").then(function(r){
 
 :root{
   /* —— 底 —— 浅灰底 + 白卡，小红书的基本盘 —— */
-  --bg:      #f4f4f5;
+  /* 店主定：白色或奶色，深色看久了累。所以本站**只有浅色**，
+     不跟随系统深色 —— 下面那个 prefers-color-scheme 块已删。 */
+  --bg:      #faf8f3;   /* 奶 */
   --card:    #ffffff;
-  --soft:    #f7f7f8;
+  --soft:    #f5f1e9;
 
   /* —— 墨 —— 带一点暖的炭黑，中文长文更耐读 —— */
   --ink:     #1b1a19;
@@ -106,14 +108,7 @@ window.__FEED__ = fetch("skills/feed.json").then(function(r){
   --cols: 5;             /* 桌面五列，断点逐级降到手机两列 */
 }
 
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#121211; --card:#1c1b1a; --soft:#232221;
-    --ink:#ece8e2; --ink-2:#c5c0b8; --ink-3:#938d85; --ink-4:#6c665f;
-    --line:#2e2c2a; --line-2:#403d3a;
-    --stamp:#ece8e2; --stamp-fg:#141312;
-  }
-}
+/* 深色跟随已移除：店主判断「深色太压抑，看久了会很累」。 */
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -166,7 +161,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
 
 .say{
   margin:var(--s4) 0 0;max-width:36em;
-  font:400 clamp(17px,2.1vw,21px)/1.68 var(--serif);color:var(--ink);
+  font:400 clamp(17px,2.1vw,21px)/1.68 var(--sans);color:var(--ink);
 }
 /* 数字不靠颜色跳出来，靠字重和墨度 —— 周围的字退一档，它就自然是重音 */
 .say em{font-style:normal;font-weight:600;color:var(--ink)}
@@ -223,8 +218,8 @@ header.top{padding:var(--s5) 0 var(--s3)}
 }
 .chip:hover{border-color:var(--line-2)}
 .chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.chip sup{font:var(--t-micro)/1 var(--mono);opacity:.6;margin-left:4px;vertical-align:super}
-.chip.on sup{opacity:.75}
+.chip .cnt{font:var(--t-micro)/1 var(--mono);font-style:normal;opacity:.55;margin-left:5px}
+.chip.on .cnt{opacity:.7}
 
 /* 今日上新一条窄带。瀑布流没法按天分组（多列会把日期打散），
    所以「今天挑了什么」提到流的上面单独说一句，不塞进流里。 */
@@ -295,7 +290,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
 /* 标题：两行截断。实测标题中位 12 字、最长 27 字，
    手机两列会截掉 14/152（9%），桌面五列 1/152 —— 可以用。 */
 .card h3{
-  margin:0;font:400 var(--t-h3)/var(--lh-tight) var(--serif);color:var(--ink);
+  margin:0;font:500 var(--t-h3)/var(--lh-tight) var(--sans);color:var(--ink);
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
 }
 
@@ -331,7 +326,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
 }
 /* 「但」：宋体、比正文重一档、墨色。不靠颜色，靠笔法和位置。 */
 .but .mk{
-  flex:0 0 auto;font:600 var(--t-body)/1.45 var(--serif);color:var(--ink);
+  flex:0 0 auto;font:600 var(--t-body)/1.45 var(--sans);color:var(--ink);
 }
 .but .tx{
   min-width:0;
@@ -398,7 +393,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
   font:var(--t-meta)/1 var(--sans);letter-spacing:.1em;cursor:pointer;border-radius:var(--r-chip);
 }
 .more:hover{border-color:var(--ink);color:var(--ink)}
-.empty{padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--serif);text-align:center}
+.empty{padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--sans);text-align:center}
 
 /* ============ 详情：手机是底部抽屉，桌面是居中卡 ============ */
 .veil{
@@ -418,7 +413,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
   cursor:pointer;font-size:17px;line-height:1;color:var(--ink-3);
 }
 .sheet .x:hover{color:var(--ink);border-color:var(--line-2)}
-.sheet h3{margin:0 var(--s5) var(--s2) 0;font:400 var(--t-h2)/var(--lh-tight) var(--serif)}
+.sheet h3{margin:0 var(--s5) var(--s2) 0;font:500 var(--t-h2)/var(--lh-tight) var(--sans)}
 .sheet .repo{font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);word-break:break-all}
 .sheet .repo a{border-bottom:1px solid var(--line-2)}
 .sheet .repo a:hover{color:var(--ink);border-color:var(--ink)}
@@ -446,7 +441,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
   display:block;margin-bottom:7px;
   font:600 var(--t-micro)/1 var(--sans);letter-spacing:.3em;color:var(--ink-4);
 }
-.judge .v{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--serif);color:var(--ink)}
+.judge .v{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--sans);color:var(--ink)}
 .judge .b{
   margin:.8em 0 0;padding-left:1.3em;position:relative;
   font:400 var(--t-body)/var(--lh-long) var(--sans);color:var(--ink-2);
@@ -455,7 +450,7 @@ header.top{padding:var(--s5) 0 var(--s3)}
 /* 悬挂的「但」，负位移压在竖线上，像纸上的一记批注 */
 .judge .b .mk{
   position:absolute;left:-17px;top:.06em;width:19px;text-align:center;
-  font:600 var(--t-lead)/1.4 var(--serif);color:var(--ink);background:var(--card);
+  font:600 var(--t-lead)/1.4 var(--sans);color:var(--ink);background:var(--card);
 }
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
@@ -609,7 +604,7 @@ var I18N = {
   capHero:"作者自制的头图，<b>不是产出示例</b>",
   capDiagram:"机制示意图，<b>不是产出示例</b>",
   capOther:"作者仓库里的图，<b>不是产出示例</b>",
-  prep:"备料齐", read:"店长读过", newBadge:"上新", pack:"合集 ×%s",
+  prep:"备料齐", read:"店长读过", picked:"精选", newBadge:"上新", pack:"合集 ×%s",
   prepWhy:"备料齐，凭这几样：",
   install:"安装", step1:"Claude Code（终端）",
   step2:"claude.ai 网页版：设置 → Capabilities → Skills → 上传技能文件夹（zip）",
@@ -638,7 +633,7 @@ var I18N = {
   capHero:"The author's own header image, <b>not an output sample</b>",
   capDiagram:"A diagram of how it works, <b>not an output sample</b>",
   capOther:"An image from the author's repo, <b>not an output sample</b>",
-  prep:"WELL PREPPED", read:"EDITOR READ IT", newBadge:"NEW", pack:"pack ×%s",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", pack:"pack ×%s",
   prepWhy:"Well prepped, on this evidence:",
   install:"Install", step1:"Claude Code (terminal)",
   step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
@@ -825,14 +820,14 @@ function renderTally(){
    ------------------------------------------------------------------ */
 function renderChips(all){
   var h = '<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'
-        + esc(t("all"))+'<sup>'+all.length+'</sup></button>';
+        + esc(t("all"))+'<i class="cnt">'+all.length+'</i></button>';
   var np = all.filter(function(x){return x.pick}).length;
   if(np) h += '<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick">'
-            + esc(t("pick"))+'<sup>'+np+'</sup></button>';
+            + esc(t("pick"))+'<i class="cnt">'+np+'</i></button>';
   (D.categories||[]).forEach(function(c){
     if(!c.count) return;
     h += '<button class="chip'+(state.cat===c.id?" on":"")+'" data-cat="'+esc(c.id)+'">'
-       + esc(lang==="zh"?c.zh:c.en)+'<sup>'+c.count+'</sup></button>';
+       + esc(lang==="zh"?c.zh:c.en)+'<i class="cnt">'+c.count+'</i></button>';
   });
   el("chips").innerHTML = h;
 }
@@ -898,8 +893,9 @@ function badgesHTML(it, isNew){
   if(isNew) h += '<span class="newdot">'+esc(t("newBadge"))+'</span>';
   // prep_badge 由功能开发那边从 methods/ 存档本地算（≥3 条证据）。
   // 字段没到就什么都不印 —— 不猜、不估。
-  if(it.prep_badge) h += '<span class="badge">'+esc(t("prep"))+'</span>';
-  if(limitOf(it))   h += '<span class="badge read">'+esc(t("read"))+'</span>';
+  /* 「备料齐」「店长读过」已撤：它们是我们内部的词，读者看不懂，
+     而卡片上没有地方解释。prep_badge 字段留着当选品内部工具。 */
+  if(it.pick) h += '<span class="badge">'+esc(t("picked"))+'</span>';
   return '<div class="foot">'+h+'</div>';
 }
 
@@ -924,7 +920,7 @@ function cardHTML(it, isNew){
     + '<div class="cbody">'
     +   '<h3>'+mix(nameOf(it))+'</h3>'
     +   (why ? '<p class="rev">'+zhChip(it)+mix(why)+'</p>' : '')
-    +   butHTML(it)
+    /* 「但是」不进流：店主定「换成点评」。完整局限在详情页，不截断、不夹行。 */
     +   badgesHTML(it, isNew)
     + '</div>'
     + '</article>';
