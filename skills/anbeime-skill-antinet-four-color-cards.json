@@ -19,12 +19,14 @@
  "category": "docs",
  "fun_score": 3.36,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "daily-scout",
  "added_at": "2026-08-11",
  "install": {
   "clone": "git clone --depth 1 https://github.com/anbeime/skill.git",
   "copy": "cp -r skill/skills/antinet-four-color-cards ~/.claude/skills/antinet-four-color-cards",
   "dir": "~/.claude/skills/antinet-four-color-cards"
- }
+ },
+ "unshelve_reason": "问一 · 别人框架里的零件：正文自称「复赛代码包」，三个阶段分别调用 comm.tongzhengsi / audit.jichayuan / strategy.chengxiangfu 三个 agent 类，黄卡依赖监察院规则集、红卡依赖丞相府补全。拿走装不上。且我们原文案写「看合同、报告尤其顺」，与实现不符。",
+ "unshelved_at": "2026-08-19"
 }

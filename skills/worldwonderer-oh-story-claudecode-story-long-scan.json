@@ -19,12 +19,14 @@
  "category": "writing",
  "fun_score": 11.38,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "handpick-0807",
  "added_at": "2026-08-07",
  "install": {
   "clone": "git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git",
   "copy": "cp -r oh-story-claudecode/skills/story-long-scan ~/.claude/skills/story-long-scan",
   "dir": "~/.claude/skills/story-long-scan"
- }
+ },
+ "unshelved_at": "2026-08-19",
+ "unshelve_reason": "红线 · 绕反爬。它随件附带 scripts/fanqie-rank-scraper.js，专门解码番茄列表页的字体反爬（正文第 91 行：「番茄列表页有字体反爬，须用 scripts/fanqie-rank-scraper.js 从详情页多策略解码」）。目的正当不改变行为性质：字体混淆是比 robots.txt 更明确的「别抓」信号，而我们同日刚因 robots 的一行字停用了自己的抓取口（D15）——不能对自己用严标准、对货架用宽标准。局限里如实披露是好事，但诚实地描述一件红线禁止的事，不等于那件事可收。可恢复：作者去掉那个解码脚本、或改为只采不设反爬的平台（起点/晋江/七猫仍可用），即可重新上架。同仓库其余 7 件不受影响。"
 }

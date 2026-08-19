@@ -1,5 +1,5 @@
 {
- "note": "店长手写层。此文件覆盖同 id 抓取项的任意字段；每次 feed 重建时合并，scout 永远不会覆盖这里的内容。",
+ "note": "人写的文案层，机器永不覆盖。pick 为推荐位；limit_zh 是诚实的局限，每件商品必写。",
  "items": {
   "juliusbrussee-caveman-caveman": {
    "title_zh": "原始人模式",
@@ -8,7 +8,12 @@
    "why_zh": "一个玩笑做成了真产品：token 账单实打实地降（据称 65%），还顺手治好了 AI 的啰嗦病。",
    "why_en": "A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.",
    "category": "fun",
-   "pick": true
+   "pick": false,
+   "limit_zh": "65% 是作者自己标注的实测，正文没给测法。凡是写到聊天之外的字——代码注释、commit、文档、issue、记忆文件——一律恢复正常散文，那部分省不到。安全警告也自动切回。",
+   "limit_en": "The 65% is the author's own \"(measured)\" claim with no method shown in the file. Anything persisted outside chat (code comments, commits, docs, issues, memory files) reverts to normal prose. Security warnings drop the style too.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "worldwonderer-novel-to-game-novel-to-game": {
    "title_zh": "小说变游戏",
@@ -17,7 +22,13 @@
    "why_zh": "「把喜欢的小说做成能玩的游戏」是很多人的童年梦想，这个 skill 把整条流水线打包好了，交给 Claude Code 就能开工。",
    "why_en": "Turning a beloved book into a playable game is a childhood dream for a lot of people — this packages the whole pipeline so Claude Code can just get to work.",
    "category": "fun",
-   "pick": true
+   "pick": false,
+   "limit_zh": "要 novel-game-analyze、game-concept、game-qa 一整家子都在才转得动。默认做的是验证切片不是全本游戏；完成只认启动、渲染、输入、核心循环、一次结果、重开六项，趣味和平衡它明说证明不了。",
+   "limit_en": "Only turns if the whole family is installed — novel-game-analyze, game-concept, game-build, game-qa. Default scope is a verification slice, not a full game, and it says outright that fun and balance are not things it can prove.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-novel-to-game-game-concept"
   },
   "worldwonderer-oh-story-claudecode": {
    "title_zh": "网文写作全家桶",
@@ -34,7 +45,15 @@
    "tagline_en": "From Huashu: one request in, hi-fi HTML prototypes, slides and motion out — shipped with his 20 design principles baked into every output.",
    "why_zh": "中文社区口碑最好的设计 skill：不只给样式，还给审美立场——附赠的 20 条设计哲学正是大多数 AI 页面缺的东西。",
    "why_en": "The Chinese community's best-loved design skill — it ships a point of view (20 design principles), not just styles.",
-   "pick": true
+   "pick": false,
+   "limit_zh": "任何新设计都是先出三版真初稿、然后停下等你选，无人值守的会话跑不完。生产级 Web App、SEO 站、要后端的系统作者写明不接。动画产出默认压上 Created by Huashu-Design 水印。",
+   "limit_en": "Every new design starts with three real drafts and then stops for your pick — it won't self-select even in unattended sessions. Production web apps, SEO sites and backend systems are out of scope. Animations carry a Huashu-Design watermark.",
+   "cover": "",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 720,
+   "cover_note": "原封面是 img.youtube.com 的视频缩略图——全站唯一一个第三方图片请求，意味着每个访客的浏览器都会去 ping 一次 Google。隐私判断不是审美判断：一个卖信任的站，不该为一张缩略图让所有读者被第三方看一眼。置空。2026-08-19。"
   },
   "anthropics-skills-algorithmic-art": {
    "title_zh": "算法生成艺术",
@@ -69,9 +88,14 @@
    "title_zh": "去 AI 味神器",
    "tagline_zh": "一键去 AI 味：删掉「值得注意的是」、排比腔和空洞总结——那份「AI 写作臭味清单」具体到了句式级别。",
    "tagline_en": "Strip the AI-isms — \"it's worth noting\", triple parallelism and hollow wrap-ups gone; the smell-list is specific down to sentence patterns.",
-   "why_zh": "34k 星不是白来的：它列的「AI 写作臭味清单」极其具体，反过来读就是一堂写作课。",
+   "why_zh": "它列的「AI 写作臭味清单」具体到句式级别，反过来读就是一堂写作课。",
    "why_en": "34k stars earned — its catalog of AI writing smells is so specific it doubles as a writing course.",
-   "pick": true
+   "pick": false,
+   "limit_zh": "35 条特征和全部例句都来自英文维基的 Signs of AI writing，破折号、弯引号、标题大小写那几条挪到中文基本落空。文件模式会直接把原文件改写成最终稿。",
+   "limit_en": "All 35 patterns and every example come from English Wikipedia's \"Signs of AI writing\"; the em-dash, curly-quote and title-case rules do not carry over to Chinese. In file mode it rewrites your file in place, leaving only the final version.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "aldegad-sprite-gen": {
    "title_zh": "像素小人制造机",
@@ -80,7 +104,14 @@
    "why_zh": "游戏素材是独立开发最大的坑之一，它把「画小人」变成了一句话的事，产物直接进引擎。",
    "why_en": "Art is indie dev's biggest wall; this turns \"draw me a sprite\" into a one-liner with engine-ready output.",
    "pick": false,
-   "category": "fun"
+   "category": "fun",
+   "limit_zh": "生成那步要本机装好 codex 或 grok CLI 并登录。脚本只认仓库自建的 .venv，缺 NumPy 就在 import 处硬报错——作者明写没有纯 Python 降级。正文大半是韩文。",
+   "limit_en": "Generation shells out to the codex or grok CLI with their OAuth logins. Scripts run only from the repo's own .venv; the entry point hard-errors without NumPy and the text states there is no pure-Python fallback. Much of the doc is Korean.",
+   "cover": "https://repository-images.githubusercontent.com/1236336437/c2256b15-9938-486e-8d72-8ee4054431b9",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1280,
+   "cover_h": 640
   },
   "vincentwei1021-video-shotcraft": {
    "title_zh": "产品大片工坊",
@@ -88,7 +119,14 @@
    "tagline_en": "Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.",
    "why_zh": "把「拍产品宣传片」这种要外包的活变成了本地技能，分镜卡的设计尤其讲究。",
    "why_en": "Turns \"hire a studio\" into a local skill; the shot recipe cards are unusually well crafted.",
-   "pick": false
+   "pick": false,
+   "limit_zh": "要 Remotion 工程和 npm，真实页面镜头必须起本地 dev server 用无头浏览器截图。剪映导出走 pyJianYingDraft，Mac 剪映 11.2 实测过，Windows 那支没真机验证。",
+   "limit_en": "Needs a Remotion project and npm; real-page shots require a local dev server plus headless-browser capture. Jianying export runs on pyJianYingDraft: the Mac path was tested against Jianying 11.2, the Windows one never was.",
+   "cover": "https://repository-images.githubusercontent.com/1305663861/4b328b82-5651-427a-a3db-57fe949bdcf9",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1280,
+   "cover_h": 640
   },
   "dietrichgebert-ponytail-ponytail": {
    "title_zh": "躺平资深工程师",
@@ -97,7 +135,14 @@
    "why_zh": "反内卷的工程精髓——它总在问「这真的需要做吗」，治过度设计比写代码更省钱。",
    "why_en": "Its favorite question is \"do we even need this?\" — killing overengineering saves more than writing code.",
    "category": "fun",
-   "pick": true
+   "pick": false,
+   "limit_zh": "它是常驻人格：ACTIVE EVERY RESPONSE，要说 stop ponytail 才关。作者写明非编码请求不适用，而且只管「建什么」不管「怎么说话」，文风得另配 Caveman。",
+   "limit_en": "A persistent persona: ACTIVE EVERY RESPONSE until you say \"stop ponytail\" or \"normal mode\". The author states it is not for non-coding requests, and it governs what you build, not how you talk - prose style needs a separate skill (Caveman).",
+   "cover": "https://repository-images.githubusercontent.com/1266797999/b20d9cb8-11f0-4db8-965a-7e22ab2b6bb6",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 640
   },
   "ayghri-i-have-adhd-i-have-adhd": {
    "title_zh": "别把重点埋了",
@@ -105,14 +150,24 @@
    "tagline_en": "Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.",
    "category": "fun",
    "why_zh": "少见的认真对待神经多样性的 skill，交互约束写得很体贴；非 ADHD 用户拿来治 AI 话痨也好用。",
-   "why_en": "A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone."
+   "why_en": "A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.",
+   "limit_zh": "frontmatter 写了 disable-model-invocation：它不会自己触发，要你敲 /i-have-adhd 才开、说 stop adhd mode 才关。它只改输出形状，在 agent 里系统提示词还压它一头。",
+   "limit_en": "Marked disable-model-invocation: it never self-triggers. You type /i-have-adhd and it runs until you say \"stop adhd mode\", per session. It only reshapes output, and it says the harness system prompt outranks it inside an agent.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "tracywang95-anythingbutlaw": {
    "title_zh": "法外功夫",
    "tagline_zh": "合同、条款、律师函——让它逐条翻成人话，把义务、期限和风险点标出来，全看明白了再决定这个字签不签。",
    "tagline_en": "Contracts, clauses and lawyer letters translated into plain speech, clause by clause — obligations, deadlines and risks flagged before you sign.",
    "why_zh": "不装律师，只做「看懂」这一件事：逐条解释加风险点标注，普通人签字前过一遍很安心。",
-   "why_en": "Doesn't play lawyer — just makes you understand: clause-by-clause explanation with flagged risks."
+   "why_en": "Doesn't play lawyer — just makes you understand: clause-by-clause explanation with flagged risks.",
+   "limit_zh": "正文是给律师的九门商科参考库——决策、博弈、会计、金融、统计，路由表里没有「把合同逐条讲成人话」这一路。判例与检验全是美国法语境：Daubert、Hand 公式、SSNIP/HHI。公式用 LaTeX 写。",
+   "limit_en": "The body is a nine-domain business reference for lawyers — decision analysis, game theory, accounting, finance, statistics. No route covers plain-language clause-by-clause explanation, and its cases and tests are US: Daubert, Hand, SSNIP.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "jimliu-baoyu-skills": {
    "title_zh": "宝玉技能合集",
@@ -236,7 +291,12 @@
    "tagline_en": "Rewrites your rough prompt into a professional one — structure, examples, edge cases and counter-examples added; library-ready on arrival.",
    "category": "meta",
    "why_zh": "相当于内置一位提示词工程师；改完的 prompt 复用价值高，适合沉淀成团队词库。",
-   "why_en": "A prompt engineer on call; the rewrites are reusable enough to seed a team library."
+   "why_en": "A prompt engineer on call; the rewrites are reusable enough to seed a team library.",
+   "limit_zh": "一次只出一条可粘贴的 prompt，正文里没有保存或沉淀词库的机制。作者明说只有你点名要写/改 prompt 才激活。各家模型的要点是写死的版本（Opus 4.8、o3、Gemini 3 Pro、MiniMax M2.7），换代就得改文件。",
+   "limit_en": "It emits one paste-ready prompt at a time; nothing here saves or accumulates a prompt library. It activates only when you explicitly ask for prompt work. Per-tool tips hardcode model versions (Opus 4.8, o3, Gemini 3 Pro, MiniMax M2.7).",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "obra-superpowers": {
    "title_zh": "超能力工具箱",
@@ -278,14 +338,26 @@
    "category": "fun",
    "pick": false,
    "why_zh": "把游戏开发拆成可指挥的流水线角色，独立开发者照着走真能出 demo，野心和完成度都在线。",
-   "why_en": "Splits gamedev into commandable roles; solo devs actually ship demos with it."
+   "why_en": "Splits gamedev into commandable roles; solo devs actually ship demos with it.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "73 件全在仓库的 .claude/skills 底下，配着 49 个 agent、12 个 hook、11 条 rule 一起跑——它是一整个项目模板，不是能一件件拆下来装的商品。单独复制一件走，调度它的那套 agent 和 hook 就不在了。",
+   "limit_en": "All 73 skills live in the repo's .claude/skills and run alongside 49 agents, 12 hooks and 11 rules. It is a whole project template, not a shelf of separable products — copy one out and the machinery that dispatches it stays behind."
   },
   "geekjourneyx-md2wechat-skill-md2wechat": {
    "title_zh": "公众号排版发布",
    "tagline_zh": "Markdown 一键排成微信公众号格式：内联样式全自动处理，代码块、图片、引用的样式从此不再莫名崩掉。",
    "tagline_en": "Markdown to WeChat official-account layout in one shot — inline styles fully automated; code blocks, images and quotes stop breaking.",
    "why_zh": "被公众号编辑器折磨过的人都懂：它把内联样式这种脏活全自动化了，中文创作者刚需。",
-   "why_en": "Automates the inline-style misery of WeChat's editor — a must for Chinese creators."
+   "why_en": "Automates the inline-style misery of WeChat's editor — a must for Chinese creators.",
+   "limit_zh": "它只是驱动 md2wechat 这个 npm CLI，得先装。API 模式要 MD2WECHAT_API_KEY，建草稿另要公众号凭证和封面；AI 模式不解析 :::module，高级排版卡片那条路不渲染。",
+   "limit_en": "It only drives the md2wechat npm CLI, installed separately. API mode needs MD2WECHAT_API_KEY; drafts need WeChat credentials plus a cover. AI mode never parses :::module, so advanced layout cards don't render there.",
+   "cover": "https://raw.githubusercontent.com/geekjourneyx/md2wechat-skill/HEAD/assets/readme-header.gif",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 900,
+   "cover_h": 400
   },
   "agents365-ai-drawio-skill-drawio-skill": {
    "title_zh": "draw.io 画图匠",
@@ -300,7 +372,14 @@
    "tagline_zh": "丢一张截图，还原成有品味的代码而不是像素堆：它优先还原设计意图和层级关系，不死磕像素级复刻。",
    "tagline_en": "Drop a screenshot, get tasteful code back — it recovers design intent and hierarchy first instead of grinding for pixel parity.",
    "why_zh": "难点在还原「设计意图」而非像素级复刻，它在这个取舍上做得很聪明。",
-   "why_en": "Recovers design intent rather than chasing pixel parity — the smart trade-off."
+   "why_en": "Recovers design intent rather than chasing pixel parity — the smart trade-off.",
+   "limit_zh": "正文讲的是它自己先生成设计图再照着实现，通篇没写怎么读你手上的截图。环境必须能生图，Codex 里每段单独出一张大图，八段落地页就是八张图的钱。范围只到落地页、hero、作品集这类营销页。",
+   "limit_en": "The body has it generate its own design images first and code from those - it never covers reading a screenshot you supply. Image generation must be available, one large image per section in Codex. Scope: landing, marketing, portfolio pages",
+   "cover": "https://repository-images.githubusercontent.com/1162099055/0a968964-fdca-4781-853b-84afc2bc2d31",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1731,
+   "cover_h": 909
   },
   "leonxlnx-taste-skill-design-taste-frontend": {
    "title_zh": "前端品味指南",
@@ -316,7 +395,14 @@
    "tagline_zh": "网文封面一键出图：书名字效、氛围光影、平台尺寸规范它都懂，给个书名和题材，出的图能直接上架用。",
    "tagline_en": "Web-novel covers in one go — title lettering, mood lighting and platform size specs handled; give it a title and genre, get an upload-ready image.",
    "why_zh": "对主流平台的封面套路研究得很透，出的图真能直接上架用。",
-   "why_en": "Studies platform cover conventions closely enough that outputs are upload-ready."
+   "why_en": "Studies platform cover conventions closely enough that outputs are upload-ready.",
+   "limit_zh": "只走 GPT-Image-2：要么在 Codex CLI 里用内置 image_gen，要么自备 GPT_IMAGE_API_KEY 付费调。裁到平台上传尺寸靠 magick 或 sips，都没有就让你手裁。题材表只十类，认不出按都市出图。",
+   "limit_en": "GPT-Image-2 only: either Codex CLI's built-in image_gen or your own paid GPT_IMAGE_API_KEY, plus curl/jq/base64. Cropping to the platform upload size needs magick or sips, else you crop by hand. Ten genres; no match falls back to urban.",
+   "cover": "https://raw.githubusercontent.com/worldwonderer/oh-story-claudecode/HEAD/demo/story-dashboard.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1440,
+   "cover_h": 900
   },
   "anthropics-skills-template-skill": {
    "hide": true,
@@ -329,7 +415,13 @@
    "tagline_zh": "深度拆解爆款长篇：黄金三章、人设架构、爽点设计、节奏控制，先出预览报告再问要不要拆到底。",
    "tagline_en": "Deep-deconstructs hit long-form novels — golden first chapters, character architecture, payoff design and pacing, preview first.",
    "why_zh": "写之前先拆同行是网文的正经功课，这把刀拆得比大多数写作课讲得细。",
-   "why_en": "Studying the competition is the real homework of web fiction; this blade cuts finer than most writing courses teach."
+   "why_en": "Studying the competition is the real homework of web fiction; this blade cuts finer than most writing courses teach.",
+   "limit_zh": "按章数烧时间：50 章内半小时起，200 章一到三小时，超 200 章要跨几次会话。并行拆章依赖 /story-setup 部署的 chapter-extractor，没部署就退成串行。章节靠中文「第N章」正则切，切不出连文风都产不出。",
+   "limit_en": "Cost scales with chapters: under 50 takes 30-60 min, 200 takes 1-3 hours, over 200 spans several sessions. Parallel extraction needs the chapter-extractor agent from /story-setup, else it goes serial. Chapters split by a Chinese regex.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-oh-story-claudecode-story-short-analyze": {
    "hide": false,
@@ -338,7 +430,13 @@
    "tagline_zh": "拆解爆款短篇（番茄短篇/知乎盐选/世情虐渣等题材）：故事核、结构、情感线、反转设计一层层剥开。",
    "tagline_en": "Deconstructs hit short fiction — story core, structure, emotional throughline and twist design, peeled layer by layer.",
    "why_zh": "短篇的手艺全藏在结构里，拆十篇胜过瞎写一百篇，这件就是那把手术刀。",
-   "why_en": "Short-form craft hides in structure; dissecting ten beats writing a hundred blind — this is the scalpel."
+   "why_en": "Short-form craft hides in structure; dissecting ten beats writing a hundred blind — this is the scalpel.",
+   "limit_zh": "只拆 1.5 万字以内的短篇，超 2 万字它劝你改走长篇线。原文要你自己提供并合法持有。Stage 2-6 严格串行、一篇 10-30 分钟，产物只落在 拆文库/，是喂 story-short-write 的中间件。",
+   "limit_en": "Handles pieces under 15k characters; over 20k it pushes you to the long-form pipeline. You supply the source text and must legally hold it. Stages 2-6 run strictly serially, 10-30 min each, and the output only feeds story-short-write.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "leonxlnx-taste-skill-stitch-design-taste": {
    "hide": true,
@@ -519,7 +617,14 @@
    "tagline_zh": "开源版「Claude Design」：本地桌面应用，让你的编码 agent 直接当设计引擎。",
    "tagline_en": "The open-source Claude Design: a local-first app that turns your coding agent into a design engine.",
    "why_zh": "原型、落地页、仪表盘一条龙，全部本地跑；想要「AI 设计工作台」又不想交钱上云的，这是目前最完整的答案。",
-   "why_en": "Prototypes, landing pages, dashboards — all local. The most complete free answer to an AI design workbench."
+   "why_en": "Prototypes, landing pages, dashboards — all local. The most complete free answer to an AI design workbench.",
+   "cover": "https://raw.githubusercontent.com/nexu-io/open-design/HEAD/docs/screenshots/product-tour/home.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "limit_zh": "它本体是要下载安装的桌面应用，配一套自家付费云模型服务，skill 是应用内构件。519 份 SKILL.md 里 182 份在 plugins/_official/examples、114 份在 design-templates——是示例和模板，不是 519 件商品。",
+   "limit_en": "The product is a downloadable desktop app with its own paid cloud model service; the skills are components inside it. Of 519 SKILL.md files, 182 sit in plugins/_official/examples and 114 in design-templates — examples and templates, not installable products.",
+   "cover_w": 2586,
+   "cover_h": 1706
   },
   "egonex-ai-understand-anything": {
    "title_zh": "万物知识图谱",
@@ -535,14 +640,27 @@
    "tagline_zh": "接上 Figma API，把设计稿拆成页面、组件、变体、设计令牌的知识图谱，设计系统长什么样一张图看明白。",
    "tagline_en": "Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.",
    "why_zh": "设计交接的痛点被它按住了：设计系统长什么样，一张图谱看明白。",
-   "why_en": "Design handoff, solved visually — the whole system in one graph."
+   "why_en": "Design handoff, solved visually — the whole system in one graph.",
+   "limit_zh": "要自备 FIGMA_TOKEN，还要 Node ≥22、pnpm ≥10 并先 build 出 core 才跑得动。正文明说它会外连 api.figma.com，不像 /understand 那样离线。分析批次失败只记警告不重试。",
+   "limit_en": "You supply your own FIGMA_TOKEN, plus Node >= 22, pnpm >= 10 and a core build before it runs. The text states it calls out to api.figma.com and is not offline like /understand. Failed analysis batches are logged as warnings, not retried.",
+   "cover": "",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_dup_of": "egonex-ai-understand-anything-understand-chat"
   },
   "egonex-ai-understand-anything-understand-chat": {
    "title_zh": "图谱问答",
    "tagline_zh": "对着代码库的知识图谱直接提问：这段逻辑在哪、谁调用谁、改这里会牵动什么——按结构找答案，不是搜字符串。",
    "tagline_en": "Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.",
    "why_zh": "比全文搜索聪明一档——它按结构找答案，不是按字符串。",
-   "why_en": "A tier above grep: answers by structure, not string match."
+   "why_en": "A tier above grep: answers by structure, not string match.",
+   "limit_zh": "它只读 .ua/knowledge-graph.json，那张图得先跑 /understand 生成，没有就只能劝你去跑。图按 git commit 记时，代码一改它只能警告你答案可能是旧的。",
+   "limit_en": "It only reads .ua/knowledge-graph.json, which the sibling /understand skill must build first - without it, all it can do is tell you to run that. The graph is stamped with a git commit, so after code edits it only warns of staleness.",
+   "cover": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1774,
+   "cover_h": 887
   },
   "egonex-ai-understand-anything-understand-dashboard": {
    "title_zh": "图谱仪表盘",
@@ -558,7 +676,12 @@
    "tagline_zh": "把你的论文当正式投稿来审：方法、论证、引用逐节挑刺，投出去之前先在家被虐一遍，比收到真审稿意见体面。",
    "tagline_en": "Reviews your paper like a submission: methods, argument, citations, section by section.",
    "why_zh": "投稿前先被它虐一遍，比收到真审稿意见时才发现问题体面得多。",
-   "why_en": "Get savaged here first — cheaper than discovering it in the real reviews."
+   "why_en": "Get savaged here first — cheaper than discovering it in the real reviews.",
+   "limit_zh": "五个审稿位同出一个模型，正文自己写明「角色分离不等于独立的出错过程」；现行评审一律标 NOT_CALIBRATED。它是 ARS 全家桶一环，要仓库根的 .claude/CLAUDE.md 和 shared/。",
+   "limit_en": "The five seats come from one model, and the text states outright that role separation is not independence. Live reviews all declare NOT_CALIBRATED. It is one piece of the ARS suite, needing the repo-root .claude/CLAUDE.md and shared/.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "imbad0202-academic-research-skills-academic-paper": {
    "title_zh": "论文写作台",
@@ -584,7 +707,12 @@
    "tagline_zh": "13 个子代理组队做严肃研究：综述、快报、审稿、事实核查、三路文献扫描，8 种模式按需开团。",
    "tagline_en": "A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.",
    "why_zh": "这是「把 deep research 开源自建」的认真尝试，分工和交叉验证的设计相当讲究。",
-   "why_en": "A serious open-source take on deep research — the division of labor and cross-checks are well designed."
+   "why_en": "A serious open-source take on deep research — the division of labor and cross-checks are well designed.",
+   "limit_zh": "单件装不起来：路由靠仓库根的 .claude/CLAUDE.md 和 shared/，默认由 academic-pipeline 调度。改稿最多两轮，剩下的问题直接写进「已知局限」交差。",
+   "limit_en": "Not installable alone: routing depends on the repo-root .claude/CLAUDE.md and shared/, and the default mode is dispatched by academic-pipeline. Revision is capped at two loops; what remains is filed under \"acknowledged limitations\".",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "wshobson-agents": {
    "title_zh": "多平台插件市场",
@@ -673,7 +801,14 @@
    "tagline_zh": "把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。",
    "tagline_en": "Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.",
    "why_zh": "长任务的命根子是「状态不丢」，它用最朴素的文件方案解决，比花哨的记忆系统皮实。",
-   "why_en": "Long tasks live or die on durable state; plain files beat fancy memory systems for robustness."
+   "why_en": "Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.",
+   "limit_zh": "装法决定功能：npx skills add 装的没有 /plan-goal 和 /plan-loop。「没做完不许停」的门也只在 Claude Code、Codex CLI 真拦得住，OpenCode、Gemini CLI 只弹提示。",
+   "limit_en": "The install route decides what you get: `npx skills add` ships no /plan-goal or /plan-loop; only the plugin route does. The completion gate hard-blocks on Claude Code, Codex CLI and Continue.dev; OpenCode and Gemini CLI just get a notice.",
+   "cover": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1400,
+   "cover_h": 600
   },
   "nutlope-hallmark-hallmark": {
    "title_zh": "反 AI 味设计",
@@ -681,7 +816,14 @@
    "tagline_zh": "Nutlope 出品的 anti-slop 设计 skill：把「一眼 AI」的页面救回来。",
    "tagline_en": "Nutlope's anti-slop design skill — rescues pages from that instant-AI look.",
    "why_zh": "作者是产出过一堆爆款开源应用的老手，这份审美清单是他 ship 出来的经验，不是理论。",
-   "why_en": "From a builder with a string of viral open-source apps — shipped taste, not theory."
+   "why_en": "From a builder with a string of viral open-source apps — shipped taste, not theory.",
+   "limit_zh": "只管网页与组件这一层的视觉。防重复靠项目根目录的 .hallmark/log.json，换个项目就从头轮，组件级的活压根不记账。study 读网页走 WebFetch，碰到要登录或纯 JS 的 SPA 只能改让你截图。",
+   "limit_en": "Scope is web page and component visuals. Anti-repetition memory is .hallmark/log.json at the project root, so a new project restarts the rotation and component runs log nothing. study reads URLs via WebFetch, else asks for a screenshot.",
+   "cover": "https://raw.githubusercontent.com/Nutlope/hallmark/HEAD/site/OG-hallmark.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 2400,
+   "cover_h": 1260
   },
   "teng-lin-notebooklm-py": {
    "title_zh": "NotebookLM 全接口",
@@ -689,7 +831,12 @@
    "tagline_zh": "NotebookLM 的完整编程接口：建笔记本、喂资料、生成播客，连网页版没有的功能都有。",
    "tagline_en": "Full programmatic NotebookLM: notebooks, sources, every artifact — even features the web UI lacks.",
    "why_zh": "「比官方 UI 能做的还多」是它最狠的卖点，批量喂资料、自动出播客这类活从此可脚本化。",
-   "why_en": "\"More than the web UI\" is the killer line — bulk sources and podcast generation become scriptable."
+   "why_en": "\"More than the web UI\" is the killer line — bulk sources and podcast generation become scriptable.",
+   "limit_zh": "得先在有显示器的机器上跑 notebooklm login，无头或沙箱环境只能把 storage_state.json 搬过去用。播客、视频、测验、幻灯这几类生成常被 Google 限流失败；电影级视频还要 AI Ultra 订阅。",
+   "limit_en": "Auth needs `notebooklm login` in a real browser; headless sandboxes must carry a host-made storage_state.json. Audio, video, quiz and slide generation routinely fail on Google rate limits, and cinematic video needs a Google AI Ultra plan.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "virgiliojr94-book-to-skill": {
    "title_zh": "读书变技能",
@@ -697,7 +844,14 @@
    "tagline_zh": "把一本书（PDF/EPUB/DOCX 都行）拆成框架、模型、原则，装进 agent 当技能。",
    "tagline_en": "Turns a book (PDF/EPUB/DOCX…) into frameworks and principles your agent can use.",
    "why_zh": "「书读完就忘」的解法：知识不进脑子没关系，进 agent 也行——这个立意本身就值一颗星。",
-   "why_en": "If the book won't stay in your head, put it in your agent — the premise alone earns a star."
+   "why_en": "If the book won't stay in your head, put it in your agent — the premise alone earns a star.",
+   "limit_zh": "MOBI/AZW 要先装 Calibre，技术书走 Docling 每页约 1.5 秒，EPUB 里的插图直接丢掉。两百页的书约 7.5 万 token，钱按你自己的模型价算。第三方版权书生成的技能只准建私有仓库。",
+   "limit_en": "Runs scripts/extract.py under Python; MOBI/AZW need Calibre, technical mode uses Docling at ~1.5s a page, EPUB images are dropped. A 200-page book is ~75k tokens at your own model's rates. Copyrighted sources: private repo only.",
+   "cover": "https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1600,
+   "cover_h": 686
   },
   "op7418-humanizer-zh": {
    "title_zh": "去 AI 味·中文版",
@@ -714,7 +868,12 @@
    "tagline_zh": "把文档站、GitHub 仓库、PDF 自动转成 Claude 技能，自带冲突检测——团队知识库落进 agent 的最短路径。",
    "tagline_en": "Converts doc sites, GitHub repos and PDFs into Claude skills, conflict detection included — the shortest path from team docs to agent.",
    "why_zh": "团队知识库落进 agent 的最短路径；冲突检测这个细节说明作者真在生产里用。",
-   "why_en": "The shortest path from team docs to agent skills; conflict detection says the author actually uses it."
+   "why_en": "The shortest path from team docs to agent skills; conflict detection says the author actually uses it.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "26 份 SKILL.md 有 24 份是 tests/golden/phase2 的测试夹具，真能装的只有 skill-seekers 和 skill-builder 两件。本体是 PyPI 上的 Python 包（3.10+），跑命令行，不是复制个目录就能用的 skill。",
+   "limit_en": "24 of the repo's 26 SKILL.md files are test fixtures under tests/golden/phase2 — only skill-seekers and skill-builder are real. The product itself is a PyPI Python package (3.10+) driven from the command line, not a directory you copy in."
   },
   "wanshuiyin-auto-claude-code-research-in-sleep": {
    "title_zh": "睡后研究所",
@@ -722,7 +881,12 @@
    "tagline_zh": "你睡觉，它做 ML 研究：跨模型互审、找 idea、跑实验，纯 Markdown 驱动。",
    "tagline_en": "You sleep; it does ML research — cross-model reviews, idea mining, experiments. Markdown-only.",
    "why_zh": "「让几个模型半夜互相审稿」这个画面太有意思了，轻量到只用 Markdown 也是种审美。",
-   "why_en": "Models peer-reviewing each other at 3am is a great picture; Markdown-only minimalism is taste."
+   "why_en": "Models peer-reviewing each other at 3am is a great picture; Markdown-only minimalism is taste.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "187 份 SKILL.md 只对应 82 个名字，多出的 105 份是 skills-codex 等三套宿主副本。作者自己说 ARIS 是方法论不是平台——它是一整条研究流水线，挑一件装没意义。README 大半在推同作者另外三个仓库。",
+   "limit_en": "187 SKILL.md files map to only 82 distinct names; the extra 105 are host copies under skills-codex, -gemini-review and -claude-review. The author calls ARIS a methodology, not a platform — it is one pipeline, so installing a single piece is pointless."
   },
   "nvidia-skillspector": {
    "title_zh": "技能安检仪",
@@ -802,7 +966,14 @@
    "tagline_zh": "一条命令把前端发上 IPFS：不买服务器、不配域名、不注册托管账号，构建完直接把链接甩给人看。",
    "tagline_en": "One command deploys your frontend to IPFS — no server, no domain, no hosting signup; build it and hand out the link.",
    "why_zh": "「写完就想给人看」的最短路径；发去中心化网络这点还免了托管账号那套麻烦。",
-   "why_en": "The shortest path from built to shareable — and decentralized hosting skips the account dance."
+   "why_en": "The shortest path from built to shareable — and decentralized hosting skips the account dance.",
+   "limit_zh": "不是免账号：upload 之前必须 pinme login 或 set-appkey，绑子域名还要钱包余额。全栈那条路锁死 React+Vite + Cloudflare Worker + D1 模板，Worker 没有持久磁盘。",
+   "limit_en": "Not account-free: `pinme login` or `set-appkey` comes before any upload, and a subdomain needs wallet balance. The full-stack path is locked to its React+Vite + Cloudflare Worker + D1 template, whose Worker has no persistent disk.",
+   "cover": "https://repository-images.githubusercontent.com/965360470/f47d7e70-e539-42fe-84b4-8d1d4115eada",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 500
   },
   "juneyaooo-nihaisha-nishi-tcm": {
    "title_zh": "倪海厦学习助手",
@@ -810,7 +981,14 @@
    "tagline_zh": "倪海厦中医课程的随身助教：检索课程内容、辨析方证与穴位、整理学习笔记，还带板书截图做证据索引。",
    "tagline_en": "A study companion for Ni Haisha's TCM courses: search lectures, look up formulas and acupoints, organize notes.",
    "why_zh": "垂直领域 skill 的好样本：把一套课程资料做成可检索、有截图证据的学习系统，思路可以照搬到任何课上。",
-   "why_en": "A model vertical skill — one course corpus turned into a searchable, evidence-linked study system. Steal the pattern for any course."
+   "why_en": "A model vertical skill — one course corpus turned into a searchable, evidence-linked study system. Steal the pattern for any course.",
+   "limit_zh": "RAG 加知识图谱那套已经下架，你明说要它也不给，只能走轻量 Markdown 模块。八纲辨证、梁冬对话、斯坦福演讲三块没有板书截图。剂量、煎服法、进针深度一律不落到可执行。",
+   "limit_en": "The RAG + knowledge-graph mode is withdrawn and refuses even when you insist, leaving only the lightweight Markdown modules. Bagang, the Liang Dong dialogue and the Stanford talk carry no board screenshots. No dosages or needle depths.",
+   "cover": "https://raw.githubusercontent.com/JuneYaooo/nihaisha-nishi-tcm/HEAD/assets/nihaisha-cover.svg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 500
   },
   "nvidia-skillspector-creative-writing-coach": {
    "hide": true
@@ -830,35 +1008,65 @@
    "tagline_en": "Long-form web-fiction writing desk — worldbuilding, character cards and plot threads managed from outline to daily chapters.",
    "why_zh": "长篇最难的是几十万字不崩人设不断线，它把状态管理做成了基建，是这套流水线的主力机床。",
    "why_en": "The hard part of long serials is state over 500k words; this makes continuity infrastructure, the pack's main lathe.",
-   "pick": false
+   "pick": false,
+   "limit_zh": "得先跑 /story-setup 把整套项目铺到本地。追踪状态只能由 scripts/tracking_commit.py 写，手改派生文件违规；对标缺 情绪模块.md 或 节奏.md 就停写。单轮最多 3 章。",
+   "limit_en": "Needs the whole oh-story project deployed via /story-setup. Tracking writes must go through scripts/tracking_commit.py; hand-editing derived files is forbidden. Missing 情绪模块.md or 节奏.md halts writing. Max 3 chapters a turn.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-oh-story-claudecode-story-short-write": {
    "title_zh": "短篇爆款机",
    "tagline_zh": "短篇网文写作：从构思到成稿，聚焦情绪拉扯与节奏把控，盐言、番茄短篇那种「一口气读完」的写法。",
    "tagline_en": "Short-form web fiction from premise to final draft, tuned for emotional whiplash and pacing — the binge-read style.",
    "why_zh": "短篇吃的是情绪密度和反转设计，它把这套通俗爽文的手艺拆成了可执行步骤。",
-   "why_en": "Short fiction lives on emotional density and reversals; this turns that craft into executable steps."
+   "why_en": "Short fiction lives on emotional density and reversals; this turns that craft into executable steps.",
+   "limit_zh": "Phase 3 门槛要跑 node 的 check-ai-patterns.js 和 check-degeneration.js，没 Node 过不去。每节 ≥800 字、全篇 ≥8000 字不达标不准收尾，正文禁用「……」和破折号。",
+   "limit_en": "Its Phase 3 gate runs node check-ai-patterns.js and check-degeneration.js — no Node, no pass. Hard floors: 800+ characters per beat and 8000+ total, or the chapter counts as unfinished. Prose bans ellipses and em dashes.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-oh-story-claudecode-story-deslop": {
    "title_zh": "网文去 AI 味",
    "tagline_zh": "检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。",
    "tagline_en": "Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.",
    "why_zh": "网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。",
-   "why_en": "Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool."
+   "why_en": "Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.",
+   "limit_zh": "只对中文网文有用，禁用词表和脚本都是照网文口味调的。文件模式要 Node 跑 check-ai-patterns.js 等三个脚本，没有就只剩肉眼判断。默认把正文里的 …… 和 —— 全清掉，不吃这套排版口味的别装。",
+   "limit_en": "Chinese web-novel prose only — the banned-word list and scripts are tuned for it. File mode needs Node for check-ai-patterns.js and two sibling scripts. By default it strips ellipses and em dashes, and promises no detector score.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-oh-story-claudecode-story-long-scan": {
    "title_zh": "长篇扫榜雷达",
    "tagline_zh": "分析起点、番茄、晋江排行榜数据：什么题材在涨、什么套路在退、榜单风向如何，开书之前先看清市场。",
    "tagline_en": "Scans Qidian, Fanqie and Jinjiang charts — which genres are rising, which tropes are fading — before you commit to a book.",
    "why_zh": "选题定生死，它把「盯榜」这个体力活自动化了，数据说话比感觉靠谱。",
-   "why_en": "Topic choice decides everything; this automates chart-watching so data, not vibes, picks your lane."
+   "why_en": "Topic choice decides everything; this automates chart-watching so data, not vibes, picks your lane.",
+   "limit_zh": "番茄、七猫、晋江那几个榜得起 browser-cdp 的 Chrome 才采得到，番茄列表页还有字体反爬要靠脚本解码。采不到就退回内置 genre-trends.md 的历史趋势，那种模式可行性一律封顶「中」。只覆盖中文那五个平台。",
+   "limit_en": "Fanqie, Qimao and Jinjiang boards need Chrome via browser-cdp, and Fanqie's list page is font-obfuscated so a script must decode it. If scraping fails it falls back to the bundled genre-trends.md, where feasibility is capped at medium.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-oh-story-claudecode-story-import": {
    "title_zh": "旧书逆向导入",
    "tagline_zh": "把已写好的小说（半成品或完本）反向解析成标准项目结构，自动分流长短篇管道，接上写作流程继续开工。",
    "tagline_en": "Reverse-parses an existing novel — half-done or finished — into the standard project structure, ready to resume writing.",
    "why_zh": "存量作者的刚需：不用从零迁移，老书直接接进新流水线续命。",
-   "why_en": "For writers with a backlog — no zero-based migration, old books plug straight into the new pipeline."
+   "why_en": "For writers with a backlog — no zero-based migration, old books plug straight into the new pipeline.",
+   "limit_zh": "拆解那步整个转交 story-long-analyze，追踪状态得用 Python 3 跑 scripts/tracking_commit.py 生成；没跑过 /story-setup 就退成串行，慢。反推的细纲里无据可依的字段一律留 [待补充]。",
+   "limit_en": "The teardown step is handed wholly to story-long-analyze, and tracking state must be built by scripts/tracking_commit.py under Python 3. Without a prior /story-setup it degrades to serial and slow. Unevidenced outline fields are left as [待补",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover"
   },
   "worldwonderer-novel-to-game-game-concept": {
    "title_zh": "游戏概念三选一",
@@ -866,7 +1074,14 @@
    "tagline_zh": "从小说圣经出发，生成三个方向真正不同的游戏概念供你选：玩法核、目标平台、体验基调各有取舍。",
    "tagline_en": "From the source bible, three genuinely different game concepts — core loop, platform and tone each traded differently.",
    "why_zh": "「三个真不同的方向」这个约束很见功力，避免 AI 给你三个换皮方案。",
-   "why_en": "The genuinely-different constraint is the craft here — no three reskins pretending to be options."
+   "why_en": "The genuinely-different constraint is the craft here — no three reskins pretending to be options.",
+   "limit_zh": "缺 SOURCE_BIBLE.md 或 PRODUCT_BRIEF.md 就直接停，而且不替你补写上游。产出只有一份 concepts/CONCEPT.md：伤害公式、数值百分比、敌人血量、代码结构、逐场脚本一律不写。",
+   "limit_en": "Stops outright if SOURCE_BIBLE.md or PRODUCT_BRIEF.md is missing, and refuses to write the upstream docs for you. Output is a single concepts/CONCEPT.md — no damage formulas, percentages, enemy HP, code structure or per-scene scripts.",
+   "cover": "https://raw.githubusercontent.com/worldwonderer/novel-to-game/HEAD/examples/journey-to-the-west/screenshots/hero.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1280,
+   "cover_h": 800
   },
   "worldwonderer-novel-to-game-game-art-direction": {
    "title_zh": "游戏美术总监",
@@ -874,7 +1089,13 @@
    "tagline_zh": "把游戏设计稿升格成可生产的美术方向：辨识度视觉风格、镜头构图语言、资产规范一次定调，全组照此执行。",
    "tagline_en": "Turns a game design doc into production art direction — recognizable style, camera language and asset specs in one pass.",
    "why_zh": "独立开发最容易「缝合怪」的就是美术，它先立风格宪法再动手，成品统一感强。",
-   "why_en": "Indie games die of visual incoherence; this writes the style constitution before any asset exists."
+   "why_en": "Indie games die of visual incoherence; this writes the style constitution before any asset exists.",
+   "limit_zh": "上游必须先有 GAME_DESIGN.md 和 PRODUCT_BRIEF.md，单独装它没有输入。产物只有一份 design/ART_DIRECTION.md 文字：着色器、拓扑、贴图规格、供应商参数明写不碰，资产怎么产要等构建阶段。",
+   "limit_en": "Needs GAME_DESIGN.md and PRODUCT_BRIEF.md from upstream — installed alone it has no input. Output is one text file, design/ART_DIRECTION.md; it explicitly writes no shaders, topology, texture specs or vendor params, and no assets.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "worldwonderer-novel-to-game-game-concept"
   },
   "obra-superpowers-test-driven-development": {
    "title_zh": "先写测试",
@@ -1204,7 +1425,12 @@
    "tagline_zh": "检索 OpenAlex、PubMed、Google Scholar，抽取准确元数据、校验引用、格式化文献——引用错误终结者。",
    "tagline_en": "Searches OpenAlex, PubMed and Scholar, extracts clean metadata, validates and formats citations — the reference-error killer.",
    "why_zh": "AI 编造引用是学术圈最怕的事，它反其道而行：每条引用都可验证、有出处。",
-   "why_en": "Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable."
+   "why_en": "Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.",
+   "limit_zh": "要 Python 3.9+ 和 requests，还要连得上 openalex、crossref、pubmed。Google Scholar 没有 API，靠 scholarly 爬，每条歇 2 到 5 秒还常被封，作者自己说只能当补充。",
+   "limit_en": "Needs Python 3.9+ with requests plus network access to openalex, crossref and pubmed. Google Scholar has no API: scholarly scrapes it, sleeps 2-5s per result and is blocked often, so the skill itself calls it a supplement.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "k-dense-ai-scientific-agent-skills-latex-posters": {
    "title_zh": "学术海报",
@@ -1221,7 +1447,12 @@
    "tagline_zh": "在收数据之前把实验设计好：选设计、做随机化、设分块、排处理组合，保证结果在统计上真正站得住。",
    "tagline_en": "Design the study before data exists — choose the design, randomize, block, lay out treatments so results hold statistically.",
    "why_zh": "设计错了数据就废了，这一步的价值在事后无法弥补，只能事前做对。",
-   "why_en": "A flawed design can't be rescued in analysis; this is the only stage where rigor is cheap."
+   "why_en": "A flawed design can't be rescued in analysis; this is the only stage where rigor is cheap.",
+   "limit_zh": "只管收数据前那一步：样本量交给 statistical-power，数据分析交给 statistical-analysis，本件两样都不做。脚本要 Python 3.10 以上，外加 numpy、pandas 和 pyDOE3。",
+   "limit_en": "It covers only the step before data exists: sample size is handed off to the statistical-power skill and analysis to statistical-analysis, neither of which it does. Scripts need Python 3.10+ with numpy, pandas and pyDOE3 installed.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "k-dense-ai-scientific-agent-skills-dhdna-profiler": {
    "title_zh": "思维指纹",
@@ -1439,7 +1670,14 @@
    "tagline_zh": "产出可验证的架构、时序、数据流、生命周期图：自包含 HTML 自带动效，导出清晰锐利可直接交付。",
    "tagline_en": "Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.",
    "why_zh": "「可验证」是关键词：图和描述对得上号，不是好看但骗人的装饰画。",
-   "why_en": "\"Verifiable\" is the keyword — diagrams that match reality, not pretty fiction."
+   "why_en": "\"Verifiable\" is the keyword — diagrams that match reality, not pretty fiction.",
+   "limit_zh": "靠 node bin/archify.mjs 出图；收尾的 visual-check 要本机有 Chrome，没有就退出码 2 给张 skipped 收据。只做架构、流程、时序、数据流、生命周期五类，主节点建议不超过 12 个。",
+   "limit_en": "Everything runs through node bin/archify.mjs, and the closing visual-check needs local Chrome — without it you get exit code 2 and a skipped receipt. Five diagram types only, ~12 primary nodes max, and the layout targets desktop widths.",
+   "cover": "https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 630
   },
   "op7418-guizang-social-card-skill": {
    "title_zh": "歸藏社交卡",
@@ -1447,7 +1685,11 @@
    "tagline_en": "Guizang-style social cards — XHS carousels, WeChat cover pairs, Live Photo motion cards; 28 layouts, 10 themes.",
    "why_zh": "歸藏是中文 AI 设计内容的头部创作者，这套编辑部×瑞士风的版式体系就是他的招牌。",
    "why_en": "Guizang is a top Chinese AI-design creator; this editorial-Swiss layout system is his signature.",
-   "cover": ""
+   "cover": "",
+   "limit_zh": "出图靠本机浏览器截图，核查跑 node validate-social-deck.mjs。实况卡要 makelive 打成 .pvt 再 AirDrop 到 iPhone 发，桌面端认不出。OOTD 全身、美食大片、Y2K 风明说不接。",
+   "limit_en": "Rendering needs a local browser screenshot pass plus node validate-social-deck.mjs. Live Photo cards must be packed into .pvt with makelive and AirDropped to an iPhone; desktop upload can't publish. OOTD and food-styling posts are refused.",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "eugeniughelbur-obsidian-second-brain": {
    "title_zh": "自更新第二大脑",
@@ -1455,21 +1697,40 @@
    "tagline_zh": "把 Obsidian 库运营成会自我改写的第二大脑：新资料改写旧页面而不是堆新笔记，越用越干净。",
    "tagline_en": "Runs your Obsidian vault as a self-rewriting second brain — new sources revise existing pages instead of piling notes.",
    "why_zh": "「改写而非堆积」师承 Karpathy 的 LLM Wiki 思路，直击笔记软件越用越乱的死穴。",
-   "why_en": "Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot."
+   "why_en": "Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot.",
+   "limit_zh": "脚本层要 Python 3.10+ 和 uv，/x-read、/x-pulse 必须自备 xAI Grok key。正文自认在 1000+ 笔记库首跑 recall@10 是 0%——raw/ 与 log.md 会压垮词频排序。",
+   "limit_en": "The script layer needs Python 3.10+ with uv, and /x-read and /x-pulse require your own xAI Grok key. The text reports a first retrieval run on a 1,000+ note vault scoring 0% recall@10 - long raw/ transcripts and log.md dominate ranking.",
+   "cover": "https://raw.githubusercontent.com/eugeniughelbur/obsidian-second-brain/HEAD/media/banner.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1536,
+   "cover_h": 512
   },
   "francyjglisboa-agent-skill-creator": {
    "title_zh": "万能技能铸造",
    "tagline_zh": "把任何工作流写成一次、装到 17 个平台：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 铸造机。",
    "tagline_en": "Write a workflow once, install it on 17 platforms — a skill foundry compatible with Claude Code, Cursor, Copilot and more.",
    "why_zh": "跨平台是 skill 生态的下一站，这件把「一处编写到处运行」提前做出来了。",
-   "why_en": "Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early."
+   "why_en": "Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early.",
+   "limit_zh": "17 个平台里只有 12 个原样能装，Cursor、Windsurf 等 4 个要转格式，Zed、Aider 等 4 个得你手抄进配置。校验和安全扫描都是 python3 脚本，过了它会直接装进你的配置目录。",
+   "limit_en": "Of 17 platforms only 12 install SKILL.md as-is; 4 (Cursor, Windsurf, Trae, Junie) are auto-rewritten and 4 (Zed, Augment, Aider, Continue) need manual copying. Validation and security scan are python3 scripts; it auto-installs on pass.",
+   "cover": "https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1640,
+   "cover_h": 1064
   },
   "nolangz-pixel2motion": {
    "title_zh": "Logo 动画师",
    "tagline_zh": "把位图 Logo（PNG/截图都行）转成干净的极简 SVG，再做成丝滑动画：HTML 演示、GIF、视频全出。",
    "tagline_en": "Raster logo in — clean minimal SVG out, then animated: HTML demos, GIFs and video previews, with motion QA evidence.",
    "why_zh": "「位图转矢量再动起来」是设计师收费不菲的活，它连动效 QA 证据都一起交付。",
-   "why_en": "Vectorize-then-animate is a billable designer job; this even ships motion QA receipts."
+   "why_en": "Vectorize-then-animate is a billable designer job; this even ships motion QA receipts.",
+   "limit_zh": "交付是 logo.svg、独立 HTML 和 PNG 帧条——正文没有 GIF 或视频导出这一步。要 python3 配 Pillow/numpy、无头 Chrome，动效取证还要 Playwright。拟合有 10 轮上限，超了就挑最好一版交。",
+   "limit_en": "Deliverables are logo.svg, a standalone HTML showcase and PNG frame strips - no GIF or video export appears in the body. Needs python3 with Pillow/numpy, headless Chrome, and Playwright for frame capture. Fitting caps at 10 iterations.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "agricidaniel-claude-blog": {
    "title_zh": "博客生产线",
@@ -1484,21 +1745,40 @@
    "tagline_zh": "一个主题进去，一支 Vox 风纸拼贴解说视频出来：脚本、拼贴关键帧、配音、剪辑全自动跑完。",
    "tagline_en": "One topic in, a finished Vox-style paper-collage explainer out — script, collage keyframes, voiceover and edit, all automatic.",
    "why_zh": "Vox 的拼贴美学是解说视频的天花板之一，这件把整个片场压进了一条命令。",
-   "why_en": "Vox's collage aesthetic is explainer royalty; this compresses the whole studio into a command."
+   "why_en": "Vox's collage aesthetic is explainer royalty; this compresses the whole studio into a command.",
+   "limit_zh": "整条链只跑 Atlas Cloud 一家，没有 ATLASCLOUD_API_KEY 就只剩一份提示词清单让你自己去粘。本机还要 ffmpeg 和 Pillow。真人和品牌 Omni 会拒，得改用 Kling。",
+   "limit_en": "Every media call goes to Atlas Cloud; without ATLASCLOUD_API_KEY you get only a manual prompt pack to paste elsewhere. Needs local ffmpeg and Pillow. Omni and Seedance refuse real people and brand logos, so those runs must switch to Kling.",
+   "cover": "https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 640,
+   "cover_h": 360
   },
   "juneyaooo-gpt-image2-ppt-skills": {
    "title_zh": "PPT 仿版式",
    "tagline_zh": "把任何 .pptx 模板「抄」成你的 PPT：gpt-image-2 模仿版式、你换内容，另附 10 套现成风格。",
    "tagline_en": "Clone any .pptx template into your own deck — gpt-image-2 mimics the layout, you swap the content; 10 styles bundled.",
    "why_zh": "「就要做成那套模板的样子」是真实高频需求，仿版式这个切入点极其聪明。",
-   "why_en": "\"Make it look like that deck\" is a real, frequent ask — layout mimicry is the clever cut-in."
+   "why_en": "\"Make it look like that deck\" is a real, frequent ask — layout mimicry is the clever cut-in.",
+   "limit_zh": "gpt-image-2 按张计费，不含在 ChatGPT 订阅里。仿模板要本机跑得起 LibreOffice/Keynote/PowerPoint 渲染，否则得自己把每页导成 PNG。默认成品整页是图，文字改不了。",
+   "limit_en": "gpt-image-2 bills per image and a ChatGPT subscription does not cover it. Template cloning needs a working local LibreOffice/Keynote/PowerPoint renderer, or you export each page to PNG yourself. Default decks are full-page images.",
+   "cover": "https://raw.githubusercontent.com/JuneYaooo/gpt-image2-ppt-skills/HEAD/docs/assets/template-demo-output.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1200,
+   "cover_h": 2263
   },
   "dominikmartn-hue": {
    "title_zh": "品牌基因提取",
    "tagline_zh": "学习任何品牌并输出完整设计系统：装一次，之后 agent 做的每个界面都长在你的品牌基因上。",
    "tagline_en": "Learns any brand and emits a full design system — install once, and every UI your agent builds matches your identity.",
    "why_zh": "「品牌一致性」从人肉盯改变成系统保证，小团队也能有大厂级的视觉纪律。",
-   "why_en": "Brand consistency goes from manual policing to systemic guarantee — big-co discipline for small teams."
+   "why_en": "Brand consistency goes from manual policing to systemic guarantee — big-co discipline for small teams.",
+   "limit_zh": "它产的是一件新 skill，不是界面；而且生成的 description 硬写 NEVER trigger automatically，之后每次都得点名叫它。没接 Chrome DevTools MCP 就降级取色并自报低可信。",
+   "limit_en": "It outputs a new skill, not a UI - and the generated description must contain \"NEVER trigger automatically\", so you invoke it by name every time. Without Chrome DevTools MCP it falls back to WebFetch and flags reduced confidence.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "dzcmemory-web-bazi-ziwei-skill": {
    "title_zh": "八字紫微排盘",
@@ -1506,7 +1786,14 @@
    "tagline_zh": "八字 + 紫微斗数精准排盘：算法库计算杜绝 AI 瞎排，三种分析模式，还能出水墨风 HTML 命盘海报。",
    "tagline_en": "Bazi and Zi Wei charts computed by real algorithms (no LLM guessing), three analysis modes, plus ink-wash HTML chart posters.",
    "why_zh": "命理内容的死穴是排盘出错，它用算法库把这步锁死了——玩得认真，才好玩。",
-   "why_en": "Fortune content dies on wrong charts; algorithmic casting locks that down. Taking the fun seriously is the fun."
+   "why_en": "Fortune content dies on wrong charts; algorithmic casting locks that down. Taking the fun seriously is the fun.",
+   "limit_zh": "排盘走 node dist/run-chart.js，先得在 calculator/ 装依赖，日期只吃 1900–2100。不问出生地、直接用钟表时间，不做真太阳时校正。HTML 海报只对综合印证开放。",
+   "limit_en": "Charting runs node dist/run-chart.js, so calculator/ needs its deps installed, and dates outside 1900-2100 error. It never asks for birthplace and uses clock time with no true-solar-time correction. The HTML poster is combined-mode only.",
+   "cover": "https://raw.githubusercontent.com/dzcmemory-web/bazi-ziwei-skill/HEAD/docs/jietu.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1194,
+   "cover_h": 2608
   },
   "railly-tinte-tinte": {
    "title_zh": "主题商店直连",
@@ -1522,7 +1809,12 @@
    "tagline_zh": "学你的 Facebook 语气，按 14 天内容日历自动写并发到 FB/IG/Threads/X——实测单帖 8 万触达。",
    "tagline_en": "Learns your Facebook voice, then writes and posts to FB, IG, Threads and X on a 14-day calendar — 80K-reach validated.",
    "why_zh": "「学语气 + 排日历 + 真发布」三步闭环，是个人 IP 运营少见的全自动解。",
-   "why_en": "Voice-learning, calendaring and actual posting in one loop — rare full automation for personal brands."
+   "why_en": "Voice-learning, calendaring and actual posting in one loop — rare full automation for personal brands.",
+   "limit_zh": "正文是繁体。真发帖要 chrome:control-chrome 和已登录的浏览器，每篇都得你当场确认，没有 IG 图片素材它就停。成效全落本地 data/*.jsonl，换台机器归零。",
+   "limit_en": "Traditional Chinese. Publishing needs `chrome:control-chrome` and an already-signed-in browser, with in-session confirmation per post; no IG image and it stops. Performance data lives in local data/*.jsonl, so a new machine starts empty.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "danilo-znamerovszkij-draw-your-font-draw-your-font": {
    "title_zh": "手写变字体",
@@ -1530,7 +1822,14 @@
    "tagline_en": "Photograph your handwriting, get a real installable font (TTF/WOFF) — free, open source, fully local, nothing uploaded.",
    "why_zh": "「拥有自己笔迹的字体」是很多人想过没做过的浪漫，本地处理这点尤其体面。",
    "why_en": "A font of your own hand is a romance most people never act on; the local-only processing is the classy touch.",
-   "category": "fun"
+   "category": "fun",
+   "limit_zh": "只做拉丁字母：字符集就 minimal 和 spanish 两套，汉字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只认文件路径，聊天里粘的图它看得见却用不了。",
+   "limit_en": "Latin only: the charsets are minimal and spanish (A-Z, a-z, 0-9, punctuation, accents) - no CJK. Needs Node >= 18 and scripts/resolve-cli.js first, and the CLI takes file paths only, so an image pasted into chat cannot be processed.",
+   "cover": "https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1200,
+   "cover_h": 675
   },
   "feichanggege-ecommerce-visual-copywriting-skill": {
    "title_zh": "电商主图军师",
@@ -1538,14 +1837,26 @@
    "tagline_zh": "电商主图与详情页的视觉策划 SOP：先判断转化驱动力锁定风格，再出分镜、图内文案和生图 Prompt。",
    "tagline_en": "An e-commerce visual SOP — diagnose the conversion driver, lock the campaign style, then storyboard, on-image copy and prompts.",
    "why_zh": "「设计小白做出五年资深的商品图」不是吹牛，SOP 把资深设计师的判断顺序写死了。",
-   "why_en": "The senior-designer-in-a-box claim holds because the SOP hard-codes a senior's decision order."
+   "why_en": "The senior-designer-in-a-box claim holds because the SOP hard-codes a senior's decision order.",
+   "limit_zh": "它只交画面描述、图内文案和生图 Prompt，图得你另找工具生成。策划案和 Storyboard 两道门必须你回话才继续。资质、检测、销量缺了就标缺失，它不补也不出法律结论。",
+   "limit_en": "It delivers scene descriptions, in-image copy and image-generation prompts - you still need a separate tool to render anything. Two gates (plan, then storyboard) pause for your reply; missing certs or sales data are flagged, never invented.",
+   "cover": "https://raw.githubusercontent.com/feichanggege/ecommerce-visual-copywriting-skill/HEAD/assets/showcase/thumbs/musang-king-durian-main-thumb.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 720,
+   "cover_h": 720
   },
   "aldefy-compose-skill-compose-expert": {
    "title_zh": "Compose 老法师",
    "tagline_zh": "Jetpack Compose 全平台专家：给的每条建议都附 androidx 源码出处，Android/桌面/iOS/Web 都在行。",
    "tagline_en": "A Compose Multiplatform expert whose every recommendation ships with androidx source receipts — Android, desktop, iOS, web.",
    "why_zh": "「带源码回执」是这件的灵魂：不是凭训练记忆答题，是翻着官方源码给你讲。",
-   "why_en": "Source receipts are the soul here — answers cited from androidx itself, not training-data vibes."
+   "why_en": "Source receipts are the soul here — answers cited from androidx itself, not training-data vibes.",
+   "limit_zh": "作者已改成插件分发，手动拷进 ~/.claude/skills/ 属于不再维护的装法、收不到更新，v3.0 还会加码警告。源码回执是 androidx-main / jb-main 打包那一刻的快照，上游一动就旧。",
+   "limit_en": "It now ships as a plugin — a manual copy into ~/.claude/skills/ is the unmaintained path and gets no updates, with the banner escalating in v3.0. The bundled androidx-main / jb-main source receipts are a snapshot frozen at packaging time.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "texasbedouin-vibe-check": {
    "title_zh": "新手造物指南",
@@ -1553,7 +1864,14 @@
    "tagline_zh": "由 12 年产品老兵带路：把纯新手的模糊点子变成能开工的计划，边建边教 GitHub 和干净代码习惯。",
    "tagline_en": "A 12-year PM walks a total beginner from vague idea to buildable plan, teaching GitHub basics and clean habits along the way.",
    "why_zh": "vibe coding 时代最缺的是「有人扶一把」，这件就是那只手，姿势还很专业。",
-   "why_en": "The vibe-coding era's missing ingredient is a steady hand; this is that hand, professionally trained."
+   "why_en": "The vibe-coding era's missing ingredient is a steady hand; this is that hand, professionally trained.",
+   "limit_zh": "调研这步靠抓 Reddit 和 G2 评论，抓不动就退成把网址和搜索词交给你自己去粘。作图引擎要浏览器和临时文件，跑不起来退回 mermaid。正文全英文，且明说不管有经验开发者的调试、重构和 CI/CD。",
+   "limit_en": "Discovery depends on fetching Reddit and review sites; when the environment blocks that, it hands you the sites and search phrases to paste yourself. The diagram engine needs a browser and temp files or falls back to mermaid. English only.",
+   "cover": "https://repository-images.githubusercontent.com/1260580223/3e1af143-04fa-40fd-971d-70992a637e1f",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 640
   },
   "alirezarezvani-claudeforge-claude-md-enhancer": {
    "title_zh": "CLAUDE.md 锻造",
@@ -1561,7 +1879,12 @@
    "tagline_zh": "分析、生成、增强你项目的 CLAUDE.md：按 Anthropic 最佳实践来，支持模块化架构和技术栈定制。",
    "tagline_en": "Analyze, generate and enhance your project's CLAUDE.md — Anthropic best practices, modular architecture, stack-aware.",
    "why_zh": "CLAUDE.md 写得好坏直接决定 agent 干活质量，这件把「写好它」变成了标准工序。",
-   "why_en": "A good CLAUDE.md decides agent quality; this makes writing one a standard procedure."
+   "why_en": "A good CLAUDE.md decides agent quality; this makes writing one a standard procedure.",
+   "limit_zh": "frontmatter 把模型钉在 haiku，Bash 只放行 ls/find/git/wc。技术栈靠 package.json 一类文件的关键词猜，根文件被硬卡在 150 行。只服务 Claude Code。",
+   "limit_en": "Frontmatter pins the model to haiku and allows only ls/find/git/wc through Bash. Tech-stack detection is keyword-based on package.json/go.mod and may need manual fixing; the validator hard-caps the root file at 150 lines. Claude Code only.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "bitwize-music-studio-claude-ai-music-skills": {
    "title_zh": "Suno 音乐工坊",
@@ -1569,7 +1892,12 @@
    "tagline_en": "A human-plus-AI Suno production line — style templates, lyric workflows and mix checklists; from toying to producing.",
    "why_zh": "Suno 玩家众多但成品率低，这套流程补的正是「从段子到作品」的那段路。",
    "why_en": "Plenty of Suno players, few finished tracks — this pack covers exactly that gap.",
-   "category": "fun"
+   "category": "fun",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "歌不是它生成的：音频得你自己去 Suno 出、把 stems 拿回来，它管概念、歌词、Suno 提示词、母带压到 -14 LUFS 和发行。装法是 /plugin marketplace add 不是复制目录，还要装 Python 依赖跑 setup。",
+   "limit_en": "It does not make the audio — you generate on Suno and bring the stems back. It covers concept, lyrics, Suno prompts, mastering to -14 LUFS and release prep. Installs via /plugin marketplace add, plus Python deps and a setup command."
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
@@ -1585,7 +1913,12 @@
    "tagline_zh": "给 AI 配置文件做 lint：校验 CLAUDE.md、AGENTS.md、SKILL.md、hooks、MCP，带自动修复和 IDE 插件。",
    "tagline_en": "The missing linter for AI configs — validates CLAUDE.md, AGENTS.md, SKILL.md, hooks and MCP, with autofixes and IDE plugins.",
    "why_zh": "生态成熟的标志就是有了 linter；写 skill 的人都该装一个再发货。",
-   "why_en": "An ecosystem is mature when it grows a linter; every skill author should run this before shipping."
+   "why_en": "An ecosystem is mature when it grows a linter; every skill author should run this before shipping.",
+   "limit_zh": "校验不是 skill 做的，是 Rust 写的 agnix 二进制，得先 cargo install agnix-cli 才跑得起来。它查命名、触发词、格式这类规范，不管你的 skill 装上去到底好不好使。",
+   "limit_en": "The skill validates nothing itself — the work is done by the agnix Rust binary you must cargo install agnix-cli first. Its rules check naming, trigger phrases and file format, not whether your skill works once installed.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "irenerachel-visual-style-ppt-skill": {
    "title_zh": "风格库 PPT",
@@ -1600,7 +1933,12 @@
    "tagline_zh": "人文学者的思考伙伴：从苏格拉底式追问研究问题到 AI 使用声明，11 种模式陪你把论证磨锋利。",
    "tagline_en": "A thinking partner for humanities scholars — 11 modes from Socratic question-sharpening to AI-use disclosure statements.",
    "why_zh": "少见的认真服务文科的 skill：它磨的是论证而不是格式，还懂学术伦理的新规矩。",
-   "why_en": "A rare skill that takes the humanities seriously — sharpening arguments, not formatting, and fluent in new AI-ethics norms."
+   "why_en": "A rare skill that takes the humanities seriously — sharpening arguments, not formatting, and fluent in new AI-ethics norms.",
+   "limit_zh": "它不替你找文献、也不当文献管理器，只查你稿子里已有的引注，验真伪要连 Crossref。那几个脚本得有 shell 才能跑，纯聊天环境只能把学科档案口头记着。学科锁在文史哲、语言、艺术、宗教。",
+   "limit_en": "It runs no literature search and is no reference manager — it only audits citations already in your draft, and verification calls the Crossref API. Its scripts need a shell; chat-only sessions keep profiles verbal. Humanities fields only.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "arpitg1304-robotics-agent-skills": {
    "title_zh": "机器人军规",
@@ -1653,7 +1991,14 @@
    "tagline_zh": "用 ResNet 之父何恺明的思维方式做深度学习设计：极简假设、消融实验优先、简洁到不能再删。",
    "tagline_en": "Deep-learning design in Kaiming He's style — minimal assumptions, ablation-first, simplicity pushed to the limit.",
    "why_zh": "何式审美「简单到极致」影响了整个 CV 领域，做架构决策时值得请他上桌。",
-   "why_en": "He's radical-simplicity aesthetic shaped modern CV; worth a seat at your architecture reviews."
+   "why_en": "He's radical-simplicity aesthetic shaped modern CV; worth a seat at your architecture reviews.",
+   "limit_zh": "一份纯提示词，没有脚本：原则、框架、反模式的正文都推到 references/。覆盖面只到架构设计、初始化和生成式建模这几处决策，也明写不许以第一人称扮演他。",
+   "limit_en": "A prompt and nothing else: no scripts, with principles, frameworks and anti-patterns all deferred to references/. Coverage stops at architecture design, initialization and generative formulation, and it bans first-person impersonation.",
+   "cover": "https://raw.githubusercontent.com/K-Dense-AI/mimeo/HEAD/docs/mimeo-explainer.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 2560,
+   "cover_h": 1440
   },
   "k-dense-ai-mimeo-andrej-karpathy": {
    "title_zh": "Karpathy 视角",
@@ -1661,7 +2006,13 @@
    "tagline_zh": "套用 Karpathy 的心智模型思考深度学习与 agent 工程：先看数据、端到端优先、怀疑一切抽象。",
    "tagline_en": "Think with Karpathy's mental models — data first, end-to-end bias, and suspicion of every abstraction layer.",
    "why_zh": "和守则版是互补品：那件管写码习惯，这件管「像他一样想问题」。",
-   "why_en": "Complements the guidelines skill — that one fixes coding habits, this one installs the worldview."
+   "why_en": "Complements the guidelines skill — that one fixes coding habits, this one installs the worldview.",
+   "limit_zh": "五条原则只是索引，理由和引文都在 references/ 的 principles、mental-models、frameworks 等文件里。明写不许扮演本人。全文英文，概念名要求原样引用。",
+   "limit_en": "The five principles here are an index; the rationale and quotes live in references/principles.md, mental-models.md and frameworks.md. It states outright that it must not impersonate him. All English, concept names cited verbatim.",
+   "cover": "",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_dup_of": "k-dense-ai-mimeo-kaiming-he"
   },
   "k-dense-ai-mimeo-christopher-manning": {
    "title_zh": "Manning 视角",
@@ -1714,7 +2065,14 @@
    "tagline_zh": "喂它论文和半成形想法，它连成一套你能答辩的系统设计：来源→观点→产出三层，全程 Markdown 留痕。",
    "tagline_en": "Feed it papers and half-formed ideas; it links them into a defensible system design — sources, ideas, output, all on record.",
    "why_zh": "「人拍板、agent 跑腿」的分工设计得很清醒，证据链留痕让结论真能答辩。",
-   "why_en": "Human adjudicates, agent runs errands — and the evidence trail makes conclusions actually defensible."
+   "why_en": "Human adjudicates, agent runs errands — and the evidence trail makes conclusions actually defensible.",
+   "limit_zh": "它一条判断都不替你下：想法要你先说出口才转写成卡，output 只在你下令时才动。建图全靠 python3 脚本，两个校验器不过就一张 HTML 都不出。输出形态目前只有 system-design 一种。",
+   "limit_en": "It never adjudicates: a judgment becomes a card only after you voice it, and output changes only on your command. Canvas builds run on python3 scripts gated by two validators — a failure emits no HTML. Only one output form: system-design.",
+   "cover": "https://raw.githubusercontent.com/tigerless-labs/design-harness/HEAD/docs/assets/canvas-styles/hero.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1845,
+   "cover_h": 929
   },
   "yusuke710-manim-skill-manim-skill": {
    "title_zh": "数学动画导演",
@@ -1722,7 +2080,12 @@
    "tagline_zh": "用 Manim 做 3Blue1Brown 风格的数学动画：agent 自己规划分镜、写代码、渲染、按反馈修，出片有辨识度。",
    "tagline_en": "3Blue1Brown-style math animations via Manim — the agent plans scenes, writes code, renders and refines on feedback.",
    "why_zh": "数学可视化是教学内容的王牌，它把 Manim 陡峭的学习曲线整个铲平了。",
-   "why_en": "Math visualization is teaching's trump card; this bulldozes Manim's learning curve flat."
+   "why_en": "Math visualization is teaching's trump card; this bulldozes Manim's learning curve flat.",
+   "limit_zh": "本机要装 Manim CE 和 ffmpeg，分镜逐个渲染再 concat 拼。默认只出 480p15，1080p 得点名。写码前强制先调 manimce-best-practices。旁白只写进 plan.md，不生成配音。",
+   "limit_en": "Manim CE and ffmpeg must be installed locally; scenes render one by one and are stitched with ffmpeg concat. Default output is 480p15, 1080p only on request. Phase 2 requires a separate manimce-best-practices skill. No audio.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "alirezarezvani-claudeforge-karpathy-guidelines": {
    "hide": true
@@ -1767,21 +2130,40 @@
    "tagline_zh": "简单活也在烧贵模型的钱。本地代理按任务难度分流，号称省 87% 推理费——注意流量要经它家网关。",
    "tagline_en": "A local proxy routing each request to the cheapest capable model — claims 87% savings; note traffic goes via their gateway.",
    "why_zh": "token 账单是真痛点，路由思路也对；「经过第三方网关」这点我们直说，你自己权衡。",
-   "why_en": "Token bills are a real pain and routing is the right idea; we're upfront that a third-party gateway sits in the path."
+   "why_en": "Token bills are a real pain and routing is the right idea; we're upfront that a third-party gateway sits in the path.",
+   "limit_zh": "它是 OpenClaw 插件，用 npm 装，进不了 Claude Code；提示词全部发往 blockrun.ai 网关。首次运行自动生成 EVM 私钥并明文落盘，还捆着真金白银下注 Polymarket 的工具。",
+   "limit_en": "An OpenClaw plugin installed via npm, not a Claude Code skill: every prompt is sent to the blockrun.ai gateway. It auto-generates an EVM wallet key stored in plaintext config, and bundles a tool that places real-money Polymarket bets.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "kyanitelabs-kinocut-kinocut": {
    "title_zh": "有护栏的 AI 视频剪辑",
    "tagline_zh": "让 AI 直接剪素材，最怕一刀把原片剪废。它先规划后执行、每步可回溯，FFmpeg 操作、字幕、音频、成片改编都管。",
    "tagline_en": "Guarded AI video editing — FFmpeg ops, media analysis, subtitles, audio and repurposing, every step source-backed.",
    "why_zh": "「guarded」是它的灵魂：剪辑指令可追溯、可回退，敢让 agent 碰真素材。",
-   "why_en": "The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage."
+   "why_en": "The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage.",
+   "limit_zh": "本体是要装的 kinocut CLI（uvx + FFmpeg），先跑 kino doctor。只碰本地文件，上云要另开 egress 审批。360 只吃拼好的等距 MP4，.insv 直接拒。图层合成不当 NLE 用，音频合成 fail-closed。",
+   "limit_en": "Drives an installed CLI (uvx kinocut + FFmpeg); run kino doctor first. Local files only - cloud needs a separate egress approval. 360 wants a pre-stitched equirect MP4, .insv rejected. Not an NLE: audio compositing fails closed.",
+   "cover": "https://raw.githubusercontent.com/KyaniteLabs/kinocut/HEAD/assets/kinocut-hero.webp",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1672,
+   "cover_h": 941
   },
   "dimetron-pi-go-design-review": {
    "title_zh": "给 Go 代码库做地道性评审",
    "tagline_zh": "Go 里「能跑」和「地道」差得远。命名、结构、一致性、接口、错误处理逐维打分，还附可执行的修法。",
    "tagline_en": "Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.",
    "why_zh": "按维度打分让评审意见特别可落地，不是笼统说「建议重构」。",
-   "why_en": "In Go, \"works\" and \"idiomatic\" are far apart; per-dimension scoring makes the feedback actionable."
+   "why_en": "In Go, \"works\" and \"idiomatic\" are far apart; per-dimension scoring makes the feedback actionable.",
+   "limit_zh": "正文明说单个 PR 或未提交 diff 不归它管，那要另一件 code-review。而且末尾嵌着 pi-go 这个项目自己的检查项（ADK、internal/provider/、禁 init()），换仓库得先删。",
+   "limit_en": "The text excludes single PRs and uncommitted diffs (it points you to a separate code-review skill). It also carries a hardcoded \"Project-Specific Checks (pi-go)\" block - ADK, internal/provider/, no init() - other repos must strip.",
+   "cover": "https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 3448,
+   "cover_h": 1978
   },
   "dimetron-pi-go-bubbletea-testing": {
    "title_zh": "TUI 测试手册",
@@ -1789,21 +2171,39 @@
    "tagline_zh": "给 Bubble Tea 终端应用写测试的专门手册：teatest、模型断言、快照对比，Go TUI 圈的刚需冷门件。",
    "tagline_en": "The dedicated manual for testing Bubble Tea TUIs — teatest, model assertions and snapshot diffs; niche but essential in Go.",
    "why_zh": "TUI 测试资料少得可怜，这份垂直手册对写 charmbracelet 应用的人是雪中送炭。",
-   "why_en": "TUI testing docs are scarce; for charmbracelet builders this vertical manual is rain in a drought."
+   "why_en": "TUI testing docs are scarce; for charmbracelet builders this vertical manual is rain in a drought.",
+   "limit_zh": "只对 Go 的 Bubble Tea 有用，teatest 和 golden 都在 charmbracelet/x/exp 这个实验路径下。正文 v1、v2 写法混排要自己认版本，且不含任何脚本，全是照抄的片段。",
+   "limit_en": "Go + Bubble Tea only. Both teatest and golden live under the experimental charmbracelet/x/exp path, v1 and v2 APIs are interleaved so you must tell them apart yourself, and it ships no scripts - only snippets to copy.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "dimetron-pi-go-design-review"
   },
   "vanillagreencom-vstack-trading-design": {
    "title_zh": "按专业交易软件的规范设计盯盘界面",
    "tagline_zh": "交易界面是设计里的特种兵：红绿语义、毫秒级信息密度、面板布局都有讲究，一般设计规范完全不管。",
    "tagline_en": "A design system for trading software — panel layouts, data density, market color semantics and interaction rules.",
    "why_zh": "成体系的交易 UI 资料极其罕见，做行情类产品时这块知识很难自己攒。",
-   "why_en": "Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare."
+   "why_en": "Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.",
+   "limit_zh": "只给规则不给 token：具体颜色和像素值要你自己的设计系统补，正文没有一行组件代码。深色是设计靶心，浅色只是把层级反过来。硬到「圆角一律为零、彩色只准两个」，跟通用仪表盘规范会打架。",
+   "limit_en": "Rules only, no tokens — exact colors and pixel values stay in your own design system, and no component code ships. Dark is the target; light is a reversed adaptation. Hard rules: zero border radius everywhere, exactly two chromatic hues.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "vanillagreencom-vstack-decider"
   },
   "vanillagreencom-vstack-iced-rs": {
    "title_zh": "用 Rust Iced 写桌面图形界面",
    "tagline_zh": "Rust 桌面开发资料零散，Iced 尤其如此，Elm 架构的疑难自己啃很慢。自定义组件、overlay、Canvas、Shader、主题化它都接。",
    "tagline_en": "An Iced 0.14 expert for Rust GUIs — custom widgets, overlays, Canvas, shaders, theming and Elm-architecture puzzles.",
    "why_zh": "垂直到 0.14 版本的老手经验，踩坑速度完全不同——这类冷门框架最需要的就是这个。",
-   "why_en": "Rust desktop knowledge is scattered and Iced doubly so; an in-agent veteran changes your pace entirely."
+   "why_en": "Rust desktop knowledge is scattered and Iced doubly so; an in-agent veteran changes your pace entirely.",
+   "limit_zh": "全部钉在 Iced 0.14.0 那份本地 refs 上，更新的 API 得自己转 docs.rs 或上游 master。真正的料在 references/、examples/、iced_wgpu/ 三个目录，只抄这份正文等于没装。全英文。",
+   "limit_en": "Pinned to local Iced 0.14.0 refs; newer API means going to docs.rs or upstream master yourself. The substance lives in references/, examples/ and iced_wgpu/ — copying this page alone gets you nothing. English only.",
+   "cover": "",
+   "cover_kind": "artwork",
+   "cover_real": false,
+   "cover_dup_of": "vanillagreencom-vstack-decider"
   },
   "vanillagreencom-vstack-decider": {
    "title_zh": "ADR 决策档案",
@@ -1811,15 +2211,27 @@
    "tagline_zh": "架构决策记录（ADR）全流程管理：模板、创建、检索、废止追踪、索引维护，让「当初为什么这么做」有档可查。",
    "tagline_en": "Full ADR lifecycle management — templates, creation, search, supersession tracking and index upkeep; \"why did we do this\" gets an answer.",
    "why_zh": "团队最贵的失忆就是决策依据失传，ADR 是解药，这件把仪式成本降到几乎为零。",
-   "why_en": "The costliest amnesia is lost decision rationale; ADRs are the cure and this drops the ritual cost to nearly zero."
+   "why_en": "The costliest amnesia is lost decision rationale; ADRs are the cure and this drops the ritual cost to nearly zero.",
+   "limit_zh": "vstack 工具链里的一件：脚本路径写死 .agents/skills/decider/scripts/decisions，出问题让你跑 vstack report。没有带 INDEX.md 的决策目录，next-id 和 get 直接不工作。",
+   "limit_en": "One piece of the vstack toolchain: the script path is hardcoded to .agents/skills/decider/scripts/decisions, config comes from vstack.settings.toml, bugs go via `vstack report`. Without a decisions dir with INDEX.md, next-id and get fail.",
+   "cover": "https://raw.githubusercontent.com/vanillagreencom/vstack/HEAD/docs/assets/vstack-tui.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 2676,
+   "cover_h": 1654
   },
   "nowork-studio-notfair": {
    "title_zh": "给定目标后 24 小时连轴跑的营销 agent 组",
    "category": "work",
    "tagline_zh": "营销素材一次性生成完就断了，没人盯效果。它是目标驱动的循环体：给定业务目标后持续跑、持续调，起名就叫 NotFair。",
    "tagline_en": "Goal-driven, loop-powered marketing agents grinding your targets 24/7 — it's called NotFair for a reason.",
-   "why_zh": "3370 星。「循环 + 明确目标」是营销 agent 的正确形态，比一次性出物料高一档。",
-   "why_en": "Loops plus explicit goals is the right shape for marketing agents — a tier above one-shot asset generation."
+   "why_zh": "「循环 + 明确目标」是营销 agent 的正确形态，比一次性出物料高一档。",
+   "why_en": "Loops plus explicit goals is the right shape for marketing agents — a tier above one-shot asset generation.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "README 自己标 45 件，仓库 90 份 SKILL.md 只对应 52 个名字——skills/ 那 45 件之外是同名副本。真跑起来要接上 GA4、Search Console 和 Google/Meta/X/LinkedIn 广告账号权限。",
+   "limit_en": "The README says 45 skills; the repo has 90 SKILL.md files covering only 52 distinct names — beyond the 45 under skills/, the rest are same-name copies. Using it for real means connecting GA4, Search Console and Google/Meta/X/LinkedIn ad accounts."
   },
   "costiash-claude-code-docs-docs": {
    "title_zh": "Claude 文档台",
@@ -1827,7 +2239,14 @@
    "tagline_zh": "本地镜像的 Claude 全套文档随叫随查：白话提问、生成交互式课程和变更报告、检查新鲜度，一个 /docs 入口全包。",
    "tagline_en": "A local mirror of all Claude docs behind one /docs router — plain-English Q&A, interactive courses, changelog reports, freshness checks.",
    "why_zh": "官方文档更新快、翻起来碎，本地镜像+路由入口把「查文档」变成一句话；一张卡顶它全家五件。",
-   "why_en": "Official docs move fast and fragment; a local mirror behind one router turns lookup into a sentence. One card covers the whole set."
+   "why_en": "Official docs move fast and fragment; a local mirror behind one router turns lookup into a sentence. One card covers the whole set.",
+   "limit_zh": "正文写明 disable-model-invocation，你不打 /docs 它一动不动；查询、课程、变更报告全转给 claude-docs 等四件同插件 skill。文档正文不在本地，要联网从 Anthropic 拉进 cache/。",
+   "limit_en": "Frontmatter sets disable-model-invocation: nothing runs unless you type /docs. Lookup, courses and changelogs are all dispatched to four sibling plugin skills, and page bodies are fetched online into ~/.claude-code-docs/cache/.",
+   "cover": "https://repository-images.githubusercontent.com/1088856497/f5af0e24-6920-483a-b847-9626767743b1",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1600,
+   "cover_h": 817
   },
   "bingo-taiwan-taiwan-student-benefits": {
    "title_zh": "台湾学生羊毛",
@@ -1835,14 +2254,26 @@
    "tagline_zh": "追踪并提醒台湾 .edu.tw 学生专属福利：50+ 免费订阅和额度（正版软件、云服务、AI 工具），到期前喊你续。",
    "tagline_en": "Tracks 50+ free subscriptions and credits for Taiwan .edu.tw students — software, cloud and AI perks, with expiry reminders.",
    "why_zh": "垂直到一个群体但需求真实：学生邮箱能薅的羊毛比想象多，有人替你盯到期日更是贴心。",
-   "why_en": "Hyper-vertical but genuinely needed — .edu perks run deeper than people think, and expiry-watching is the thoughtful part."
+   "why_en": "Hyper-vertical but genuinely needed — .edu perks run deeper than people think, and expiry-watching is the thoughtful part.",
+   "limit_zh": "名单是仓库里那份 references/benefits-catalog.md 写死的，额度和期限不会自己更新。提醒要你自己去配 Task Scheduler / launchd / crontab，脚本输出还被规定只能用英文。",
+   "limit_en": "The catalogue is a static references/benefits-catalog.md in the repo, so amounts and expiry dates change only when the repo does. Reminders need you to set up Task Scheduler, launchd or cron yourself, and script output must be English.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "arbiterforge-codearbiter": {
    "title_zh": "代码仲裁庭",
    "tagline_zh": "「信不过自己就信仲裁」：一组守门 agent 对你的代码库做多方会审，改动过堂之后才准落地。",
    "tagline_en": "\"Can't trust yourself with the codebase? Trust the Arbiter\" — gatekeeper agents that tribunal every change before it lands.",
    "why_zh": "vibe coding 时代的自我防护装置：把「冲动提交」和「主分支」之间加了一道庭审。",
-   "why_en": "Self-defense for the vibe-coding era — a courtroom between your impulse and the main branch."
+   "why_en": "Self-defense for the vibe-coding era — a courtroom between your impulse and the main branch.",
+   "cover": "https://raw.githubusercontent.com/arbiterForge/codeArbiter/HEAD/docs/readme-hero.webp",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "limit_zh": "许可证是 AGPL v3 不是 MIT，接进闭源产品前先过法务。167 份 SKILL.md 只对应 62 个名字：core/surface 那 23 件是本体，ca、ca-codex、ca-pi 是同源生成的副本。全局装，仓库不 opt-in 它就一直睡着。",
+   "limit_en": "AGPL v3, not MIT — clear it with legal before it touches closed source. 167 SKILL.md files map to only 62 names: the 23 under core/surface are the real set; ca / ca-codex / ca-pi are generated copies. Installs globally, dormant until a repo opts in.",
+   "cover_w": 1600,
+   "cover_h": 640
   },
   "cherryhq-cherry-studio": {
    "hide": true
@@ -1885,8 +2316,13 @@
    "title_zh": "用自然语言指挥 ComfyUI 出图",
    "tagline_zh": "ComfyUI 的连线劝退过无数人。装上它用说话就能生成图/视频/音频、搭工作流、改你正在跑的节点图，全程本地不上传素材。",
    "tagline_en": "A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.",
-   "why_zh": "600 星。把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。",
-   "why_en": "ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded."
+   "why_zh": "把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。",
+   "why_en": "ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "本体是 npm 上的 MCP server（node ≥22），39 件 skill 挂在 plugin/skills 底下给它当外围。前提是有一台跑着 ComfyUI 的机器，本地、局域网、VPS 都行——没有 ComfyUI，这一整包一件都用不上。",
+   "limit_en": "The product is an npm MCP server (node ≥22); the 39 skills under plugin/skills are its periphery. You need a running ComfyUI — local, LAN, VPS or Comfy Cloud. Without one, none of it does anything."
   },
   "jasoncolapietro-suede-creator-skills": {
    "title_zh": "创作者 71 件套",
@@ -1903,7 +2339,12 @@
    "tagline_zh": "AI 写的文章一眼假，改起来比自己写还累。它强制注入人类观点和细节，配读者测试评估和自动图文排版，全流程走完。",
    "tagline_en": "A full-stack Chinese writing system on Claude Code that strips AI-flavor — forces human viewpoint and detail, with reader-test evals and auto layout, from topic to publish.",
    "why_zh": "国产模型友好（DeepSeek/GLM/MiniMax），把「防 AI 味」从口号做成了强制规则——中文写作全家桶里立意很高的一套。",
-   "why_en": "Friendly to domestic models and turning de-AI-flavor from slogan into enforced rules — a high-ambition Chinese writing suite."
+   "why_en": "Friendly to domestic models and turning de-AI-flavor from slogan into enforced rules — a high-ambition Chinese writing suite.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "9 份 SKILL.md 其实是同样三件放在 .claude、claude-runtime、plugins 三个目录里，真货只有三件。作者实测过的模型只列了 DeepSeek-V3.2、GLM、MiniMax，桌面版只出了 Windows 预览。",
+   "limit_en": "The 9 SKILL.md files are the same three skills mirrored across .claude, claude-runtime and plugins — three, not nine. Only DeepSeek-V3.2, GLM and MiniMax are listed as tested; the desktop app is Windows-preview only."
   },
   "dongbeixiaohuo-writing-agent-workflow-producer": {
    "title_zh": "调度长文写作的总入口",
@@ -1911,7 +2352,12 @@
    "tagline_zh": "写长文最容易写一半跑偏。说「写一篇」或「从选题开始」它就接管规划、写作、评审、交付全程；简单润色翻译不触发。",
    "tagline_en": "The master entry for multi-stage Chinese longform — \"write me one / start from a topic\" triggers planning, writing, review and delivery; simple edits don't.",
    "why_zh": "触发边界划得清楚，不抢简单任务——这是同类总入口件最常犯的毛病。",
-   "why_en": "The system's hub — longform as a hand-off pipeline, with trigger boundaries drawn cleanly so it won't grab trivial tasks."
+   "why_en": "The system's hub — longform as a hand-off pipeline, with trigger boundaries drawn cleanly so it won't grab trivial tasks.",
+   "limit_zh": "这份正文只是入口：阶段顺序和文件名以 .claude/workflows/collab_v2.json 为准，20 个子代理、verify_required_files.py 都不在里面。只做中文长文，全程十几处必须停机等你回话。",
+   "limit_en": "This file is only the entry point: stage order and filenames come from .claude/workflows/collab_v2.json, and the 20 sub-agents plus verify_required_files.py live elsewhere. Chinese long-form only, with a dozen mandatory stops.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "rampstackco-claude-skills": {
    "title_zh": "建站全生命周期",
@@ -1928,7 +2374,12 @@
    "tagline_zh": "用小众静态站生成器最缺一手指引：内容怎么组织、模板怎么写、站点怎么生成。这件是框架作者自己出的。",
    "tagline_en": "The official helper for Cecil static sites — focused guidance on content, templates and site generation; a field manual for building with Cecil.",
    "why_zh": "官方出品，权威性拉满——小众框架的资料别处基本查不到。",
-   "why_en": "Shipped by the framework's own authors — maximal authority, and exactly the first-hand guidance a niche SSG lacks."
+   "why_en": "Shipped by the framework's own authors — maximal authority, and exactly the first-hand guidance a niche SSG lacks.",
+   "limit_zh": "先得本机有 PHP，再 curl 下 cecil.phar 才动得了。它不处理版本差异——正文明写「不确定某功能在你那版有没有就直说」，把你打发回 cecil.app 文档。",
+   "limit_en": "You need PHP locally plus a curl-downloaded cecil.phar before anything runs. It refuses to reason about versions: the text tells the agent to say so and point you to cecil.app documentation rather than guess which release has a feature.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "code-yeongyu-oh-my-openagent": {
    "hide": true
@@ -1959,8 +2410,14 @@
    "category": "docs",
    "tagline_zh": "AI 出的 PPT 多半是图片，想改一个字都得重做。它产出原生可编辑的 PPTX，还能建品牌/风格工作区反复复用。",
    "tagline_en": "An AI-driven editable-PPTX pipeline — build brand/style/layout workspaces, fill native templates, enhance finished decks; real, editable PowerPoint out.",
-   "why_zh": "4.7 万星。分工清楚：它管「可编辑可交付」，图片式那些管好看，做系列演示时工作区复用很省事。",
-   "why_en": "44k stars earned — native editable PPTX, not exported images, with reusable workspaces that pay off across a deck series."
+   "why_zh": "分工清楚：它管「可编辑可交付」，图片式那些管好看；做系列演示时工作区复用很省事。",
+   "why_en": "44k stars earned — native editable PPTX, not exported images, with reusable workspaces that pay off across a deck series.",
+   "limit_zh": "每次启动先跑 scripts/attribution_guard.py 署名校验，返回非零就整件立刻停摆，且明令不许你检查、修复或绕过。真流程在 workflows/ 里，沿途多个阻塞点要你逐个确认。",
+   "limit_en": "Every run starts with `python3 scripts/attribution_guard.py`; a non-zero result halts the skill and you may not inspect, repair, or bypass that gate. The real procedure lives in workflows/, and each blocking step waits on your confirmation.",
+   "cover": "",
+   "cover_kind": "other",
+   "cover_real": false,
+   "cover_note": "原封面 gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png 是 Kimi（月之暗面）的赞助商广告，托在第三方 CDN 上，却被标成 cover_kind=artwork + cover_real=true——详情页图注会写「这就是它做出来的东西」。covers.json 里此件无任何备选图，故置空走无图卡，不换图也不改 kind。2026-08-19 人工更正。"
   },
   "vishalsachdev-canvas-mcp-canvas-course-builder": {
    "title_zh": "Canvas 建课",
@@ -2044,7 +2501,14 @@
    "tagline_zh": "切片工具满地都是，但敢把未发布的素材传上去吗？它端侧转写、LLM 找高光、9:16 重构、卡拉OK字幕，每条还打病毒潜力分，全程不出你的机器。",
    "tagline_en": "Cuts long videos and livestream VODs into viral vertical shorts 100% locally — on-device transcription, LLM highlight detection, 9:16 reframe, karaoke captions, per-clip virality scores.",
    "why_zh": "「100% 本地」是它最狠的点：碰未公开素材时，这一条比精度更值钱。",
-   "why_en": "Fully local, nothing uploaded — clip tools are everywhere, but few will touch your unreleased footage without phoning home."
+   "why_en": "Fully local, nothing uploaded — clip tools are everywhere, but few will touch your unreleased footage without phoning home.",
+   "limit_zh": "装 skill 还不够：得先 git clone 仓库再 pnpm install，首次跑自动下约 1GB 的 ASR 模型。高光检测要一个 OpenAI 兼容端点，接云端时转写文本会出机器（媒体文件不会），本地则要自己起 Ollama。",
+   "limit_en": "Installing the skill is not enough: git clone the repo and pnpm install, and the first run pulls a ~1GB ASR model. Highlight detection needs an OpenAI-compatible endpoint — with a cloud one the transcript text does leave the machine.",
+   "cover": "https://repository-images.githubusercontent.com/1289069066/5b00d697-d8a3-4867-bddf-abcb2363893d",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 640
   },
   "staruhub-claudeskills-deck-studio": {
    "title_zh": "演示稿工作室",
@@ -2061,7 +2525,14 @@
    "tagline_zh": "考的是老师的 PPT 和课本，AI 却按通用知识给你讲。它强制你先传真材料，再用苏格拉底式提问带你想，不灌答案。",
    "tagline_en": "Built for textbook-and-slides exams — it makes you upload the actual materials first, then Socratically questions you toward understanding instead of spoon-feeding.",
    "why_zh": "「没材料就不辅导」这条硬约束很诚实：逼你对着真考纲学，而不是听 AI 编一套。",
-   "why_en": "The no-materials-no-tutoring rule is honest — it forces study against the real syllabus, not a generic AI-invented one."
+   "why_en": "The no-materials-no-tutoring rule is honest — it forces study against the real syllabus, not a generic AI-invented one.",
+   "limit_zh": "没传课本/PPT/考纲它就只要材料，不开讲。PDF、Word 得另借 docx/pdf skill 提取。正文全中文，射程锁在大学期中期末，脚本只有 analyze_material.py 和 generate_questions.py。",
+   "limit_en": "With no textbook, slides or syllabus uploaded it only asks for material and refuses to tutor. PDFs and Word files need a separate docx/pdf skill to extract. The body is all Chinese and scoped strictly to university midterms and finals.",
+   "cover": "https://raw.githubusercontent.com/staruhub/ClaudeSkills/HEAD/assets/social/agent-skills-concept-hero.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1672,
+   "cover_h": 941
   },
   "staruhub-claudeskills": {
    "hide": true
@@ -2129,11 +2600,16 @@
   "adrianpunk-punk-skill-punk-cover": {
    "title_zh": "把文章一句话变成封面图",
    "category": "creative",
-   "pick": true,
+   "pick": false,
    "tagline_zh": "每篇文章都要封面，找图配字最耗时。11 种精调风格（商业杂志头版、复古手撕拼贴、巨型透视中文标题…），每种都标了适合什么内容。",
    "tagline_en": "Turn any article, note or tweet into a cover image in one line — 11 finely tuned styles (magazine front page, torn-paper collage, giant Chinese title…) for Xiaohongshu, WeChat and X.",
    "why_zh": "风格库真下过功夫：选风格像点菜一样准，出的封面有编辑部气质而不是 AI 糊图。",
-   "why_en": "The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush."
+   "why_en": "The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.",
+   "limit_zh": "没告诉它平台和风格，它就停在提问那一步，不会先出一版给你看。预置比例只有小红书 3:4、公众号 2.35:1、X 5:2；一次一张、不给多版对比，也不许两种风格混用。",
+   "limit_en": "Without a platform and a style it stops at the question and won't draft anything first. Preset ratios cover only Xiaohongshu 3:4, WeChat 2.35:1 and X 5:2. One image per run — no side-by-side options, and mixing two styles is forbidden.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "adrianpunk-punk-skill-punk-avatar": {
    "title_zh": "用照片生成头像和宠物纪念卡",
@@ -2141,7 +2617,13 @@
    "tagline_zh": "想换个有意思的头像，或给毛孩子留点什么。人、宠物、物品照片一键变像素风、怪诞手绘、凌乱蜡笔肖像，还能出一张拍立得纪念卡。",
    "tagline_en": "Any photo of a person, pet or object becomes an avatar — pixel art, grotesque soul sketch, messy-crayon pet portrait, plus a Polaroid keepsake card for your furry friend.",
    "why_zh": "宠物拍立得这个点子戳心：不只是换头像，是给养宠人一件想收藏、想晒的小物。",
-   "why_en": "The pet Polaroid keepsake is the heart-tug — not just a new avatar, but a keepable, shareable memento for pet owners."
+   "why_en": "The pet Polaroid keepsake is the heart-tug — not just a new avatar, but a keepable, shareable memento for pet owners.",
+   "limit_zh": "拍立得纪念卡和凌乱蜡笔肖像作者只许用于宠物，人像走不了；时尚速写反过来只给人。风格文件放在仓库上一级的 styles/ 目录，单拷这一件会断链。一次只出一张。",
+   "limit_en": "Polaroid keepsakes and messy-crayon portraits are pet-only by rule; the fashion sketch is people-only. Style atoms live in a repo-level ../../styles/ folder, so copying this skill alone breaks the links. One image per run.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "cover_dup_of": "adrianpunk-punk-skill-punk-cover"
   },
   "adrianpunk-punk-ip-illustrations": {
    "title_zh": "生成专属你的 IP 角色并贯穿每篇文章",
@@ -2149,7 +2631,14 @@
    "tagline_zh": "文章配图每篇风格都不一样，读者记不住你。上传一张照片生成专属 IP 角色（含四视图设定板），之后每篇都是同一个「你」在演。",
    "tagline_en": "Upload one photo to mint your own IP character (with a four-view sheet), then send that character into every article you write — retro flat-3D vignette style, image count auto-scaled to article length.",
    "why_zh": "戳中自媒体的辨识度护城河：不是又一个文章配图，而是先立住视觉人格再篇篇复用。照片不上传、不推断敏感属性。",
-   "why_en": "Nails a real creator pain — not another article-illustrator, but a way to establish your own visual persona first, then reuse it across every piece. One consistent \"you\" running through all your content is a recognition moat. Photos stay local; no sensitive-attribute inference."
+   "why_en": "Nails a real creator pain — not another article-illustrator, but a way to establish your own visual persona first, then reuse it across every piece. One consistent \"you\" running through all your content is a recognition moat. Photos stay local; no sensitive-attribute inference.",
+   "limit_zh": "角色要你亲口说「确认」才解锁配图，draft 状态不许激活，给了文章也不提前画。宿主没有生图能力时它只交提示词和保存计划，不出图。角色包只存本地运行目录。",
+   "limit_en": "The character stays locked until you explicitly confirm it — drafts can't be activated, and handing it an article won't skip that gate. With no image tool on the host it returns prompts instead of pictures. Character packs stay local only.",
+   "cover": "https://raw.githubusercontent.com/adrianpunk/punk-ip-illustrations/HEAD/assets/punk-character-sheet.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1122,
+   "cover_h": 1402
   },
   "aidevgtm-gtm-cofounder": {
    "title_zh": "给独自做产品的技术创始人当 GTM 合伙人",
@@ -2158,7 +2647,12 @@
    "tagline_zh": "技术能做出来，卖不出去。定位、找首批用户、发布、定价——它先访谈你一次，之后所有建议都基于你的真实业务。",
    "tagline_en": "The GTM co-founder you don't have — for solo technical AI/dev-tool founders: positioning, first users, launch and pricing, open-source and forged from real deals.",
    "why_zh": "「先访谈再建议」这个设计诚实：不套教科书，而是长在你的业务上。",
-   "why_en": "Technical founders lack GTM instinct most; this turns that gap into an executable process. The \"interview you once, then ground every later suggestion in your real business\" design is refreshingly honest, not textbook."
+   "why_en": "Technical founders lack GTM instinct most; this turns that gap into an executable process. The \"interview you once, then ground every later suggestion in your real business\" design is refreshingly honest, not textbook.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "18 件是编号 00–17 的一条链，单拎一件出来等于只拿到半张地图。全套英文，连 founder-brief、gtm-roadmap 两个模板也是。作者把适用面钉在开发者工具和 AI 产品，消费品和本地生意套不进去。",
+   "limit_en": "The 18 skills are a numbered chain (00-start-here → 17-review-the-work); pulling one out gets you half a map. All English, templates included. Scoped to dev-tool and AI-product founders."
   },
   "aidevgtm-gtm-cofounder-positioning-and-story": {
    "title_zh": "把产品叙事改写成开发者当英雄的故事",
@@ -2166,7 +2660,12 @@
    "tagline_zh": "文案听起来像在介绍功能而不是解决痛点，转化就上不去。它重写成「开发者是英雄、某个真实趋势是反派」的结构。",
    "tagline_en": "Rewrites your product narrative into a story where the developer is the hero and a real trend is the villain — reach for it when your copy describes the product instead of the pain.",
    "why_zh": "英雄 vs 反派这个框架把干巴巴的功能列表变成有代入感的故事——技术人最不擅长、又最影响转化的一环。",
-   "why_en": "The hero-vs-villain frame turns a dry feature list into a story people enter — the piece technical folks are worst at and that most moves conversion."
+   "why_en": "The hero-vs-villain frame turns a dry feature list into a story people enter — the piece technical folks are worst at and that most moves conversion.",
+   "limit_zh": "整份反派清单和例子都长在开发者工具语境里（构建慢、YAML 泛滥、云成本、流水线不稳），面向非开发者的产品套不上。它两次把你转去同仓库的 talk-to-users，那件不在包里。",
+   "limit_en": "Every villain and example lives in dev-tool land — slow builds, YAML sprawl, cloud-cost sprawl, flaky pipelines — so it won't transfer to a non-developer audience. Twice it hands you to a sibling talk-to-users skill that isn't bundled.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "amelnagdy-delegate-skills": {
    "title_zh": "派活给别的 CLI",
@@ -2217,31 +2716,56 @@
    "tagline_zh": "默认图表总是花里胡哨：网格、阴影、图例挤成一团。它砍掉一切多余装饰、拉高数据墨水比，出的图有种克制的高级感。",
    "tagline_en": "Turns \"make me a chart\" into a Tufte-compliant one — max data-ink, zero junk, distilled from his three foundational books.",
    "why_zh": "数据可视化的品味天花板就是塔夫特，它把「少即是多」变成可执行规则，而不是口号。",
-   "why_en": "Tufte is the ceiling of data-viz taste; this makes \"less is more\" executable — restrained, high-end charts instead of rainbow clutter."
+   "why_en": "Tufte is the ceiling of data-viz taste; this makes \"less is more\" executable — restrained, high-end charts instead of rainbow clutter.",
+   "limit_zh": "产物只有两条路：自包含 HTML/SVG，或 React 的 Recharts/D3；matplotlib、Excel、PPT 里的图它不管。饼图和双轴在 kill-list 上，你不明说它就不画。",
+   "limit_en": "Output is limited to self-contained HTML/SVG or React (Recharts, with D3 for slopegraphs and small multiples) — no matplotlib, Excel or PowerPoint charts. Pie and dual-axis charts sit on the kill list and appear only if you override.",
+   "cover": "",
+   "cover_kind": "other",
+   "cover_real": false,
+   "cover_w": 400,
+   "cover_h": 520,
+   "cover_note": "原封面 vdqi-cover.svg 是 Tufte《The Visual Display of Quantitative Information》的书封——不是产出物，且有用图权问题。撤图，走无图卡。"
   },
   "coleam00-excalidraw-diagram-skill": {
    "title_zh": "生成手绘白板风格的示意图",
    "category": "creative",
    "tagline_zh": "讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。",
    "tagline_en": "Generates Excalidraw hand-drawn diagram JSON for workflows, architectures and concepts — that whiteboard-sketch warmth, still editable on import.",
-   "why_zh": "4463 星。产物是可编辑源文件而不是截图，这一点决定了它能进日常工作流而不只是配图。",
-   "why_en": "Hand-drawn beats rigid boxes for explaining ideas warmly; real Excalidraw files you keep editing after."
+   "why_zh": "产物是可编辑源文件而不是截图——这一点决定了它能进日常工作流，而不只是配图。",
+   "why_en": "Hand-drawn beats rigid boxes for explaining ideas warmly; real Excalidraw files you keep editing after.",
+   "limit_zh": "必做的渲染校验要用 uv 装 Playwright 和 Chromium。正文禁止写脚本生成、禁止转交别的 agent，只能一段段手敲 JSON，再渲染—看图—改，通常来回 2-4 轮。",
+   "limit_en": "The mandatory validation step renders through uv, Playwright and Chromium. The skill forbids writing a generator script or handing the job to a coding agent: you hand-write JSON section by section, then loop render-view-fix 2-4 times.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "cocoon-ai-architecture-diagram-generator-architecture-diagram": {
    "title_zh": "画暗色主题的系统架构图",
    "category": "creative",
    "tagline_zh": "工程汇报要一张说得清的架构图，画起来最耗时。描述清楚系统，它出自包含的 HTML+SVG 暗色架构图，单文件到处能用。",
    "tagline_en": "Renders systems, cloud infra and security topologies as polished dark-themed architecture diagrams — self-contained HTML+SVG, one file everywhere.",
-   "why_zh": "6946 星。暗色配色比默认白底图有质感，单文件输出省了导出和依赖的麻烦。",
-   "why_en": "Dark themes simply look sharper than default white, and single-file output kills export hassle — a showpiece for eng reviews."
+   "why_zh": "暗色配色比默认白底图有质感，单文件输出省了导出和依赖的麻烦。",
+   "why_en": "Dark themes simply look sharper than default white, and single-file output kills export hassle — a showpiece for eng reviews.",
+   "limit_zh": "说是自包含，其实要联网：字体走 Google Fonts，导出按钮靠 CDN 上的 html2canvas 和 jsPDF。只有一套暗色配色，间距坐标全靠手算，复制到剪贴板还要 https 或 localhost。",
+   "limit_en": "\"Self-contained\" still hits the network: the font loads from Google Fonts and the export buttons pull html2canvas and jsPDF from a CDN. One dark palette only, spacing is computed by hand, and clipboard copy needs https or localhost.",
+   "cover": "https://raw.githubusercontent.com/Cocoon-AI/architecture-diagram-generator/HEAD/examples/images/web-app.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1385,
+   "cover_h": 980
   },
   "twostraws-swiftui-agent-skill-swiftui-pro": {
    "title_zh": "用 SwiftUI 权威的标准审你的 iOS 代码",
    "category": "dev",
    "tagline_zh": "SwiftUI 变化快，AI 常拿过时 API 糊你。作者是 Hacking with Swift 的 Paul Hudson，全球 iOS 开发者的教科书作者——现代 API、可维护性、性能逐项过。",
    "tagline_en": "A SwiftUI code-review expert from Paul Hudson — modern APIs, maintainability and performance checked; an authority in your pocket for iOS UI.",
-   "why_zh": "4469 星。权威性拉满，评审意见是真行家的话，不是训练记忆里的旧写法。",
-   "why_en": "By Paul Hudson of Hacking with Swift — the iOS world's textbook author; maximal authority, real-expert review."
+   "why_zh": "权威性拉满：评审意见是真行家的话，不是训练记忆里的旧写法。",
+   "why_en": "By Paul Hudson of Hacking with Swift — the iOS world's textbook author; maximal authority, real-expert review.",
+   "limit_zh": "它只读代码写意见，不编译、不跑测试、不替你改。基线写死 iOS 26 与 Swift 6.2，你要兼容旧系统它照样按最新 API 判。默认回避 UIKit，也不主动引第三方框架。",
+   "limit_en": "It reads and reports only — no compiling, no tests, no edits applied. The baseline is hardwired to iOS 26 and Swift 6.2+, so older deployment targets get judged against the newest APIs. It avoids UIKit and adds no third-party frameworks.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "sawyerhood-dev-browser-dev-browser": {
    "title_zh": "给 agent 装浏览器",
@@ -2249,7 +2773,12 @@
    "tagline_zh": "给你的 agent 一个能记住状态的真浏览器：导航、填表、截图、抓数据、测网页，会话之间页面状态还在，不用每次从头登录。",
    "tagline_en": "Gives your agent a real browser with persistent state — navigate, fill forms, screenshot, scrape and test; pages survive between sessions.",
    "why_zh": "「状态持久」是它比一次性无头浏览器强的地方：登录一次后续都在，做需要保持会话的自动化特别顺。",
-   "why_en": "Persistent state is the edge over throwaway headless browsers — log in once, stay in; smooth for session-bound automation."
+   "why_en": "Persistent state is the edge over throwaway headless browsers — log in once, stay in; smooth for session-bound automation.",
+   "limit_zh": "正文只有二十行：npm install -g dev-browser 再 dev-browser install，剩下全推给 --help，没写一个具体命令。--connect 接管的 Chrome 不受 --idle-timeout 管。",
+   "limit_en": "The skill body is about twenty lines: npm install -g dev-browser, dev-browser install, then it defers every command to `dev-browser --help`. Named browsers persist as daemons, and --idle-timeout never closes a Chrome attached via --connect.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "op7418-claude-to-im-skill": {
    "title_zh": "从手机指挥电脑里跑着的 agent",
@@ -2257,7 +2786,12 @@
    "tagline_zh": "长任务要跑一小时，你却得出门。把会话桥到 Telegram、飞书、微信，手机上发一句就能远程派活，干完还推给你。",
    "tagline_en": "Bridges your live agent session to Telegram, Discord, Feishu, QQ or WeChat — command the Claude running on your computer straight from your phone.",
    "why_zh": "歸藏出品，解决的是真痛点：agent 的时间和人的时间从此不用绑在一起。",
-   "why_en": "By Guizang — solves the real pain of long tasks while you're away; command remotely from your phone, get pinged when done."
+   "why_en": "By Guizang — solves the real pain of long tasks while you're away; command remotely from your phone, get pinged when done.",
+   "limit_zh": "本机得一直开着：桥是常驻 Node 进程，装完还要在 skill 目录 npm install 和 build。微信只能扫码绑一个号，没有内联授权按钮和流式预览，语音只收微信自己转的文字。飞书要两轮发版加管理员审批。",
+   "limit_en": "Your machine must stay up: the bridge is a resident Node daemon, and its dir needs npm install plus build. WeChat is QR-login, one account only, no inline permission buttons or streaming, voice only via WeChat's own transcript.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "deusyu-translate-book": {
    "title_zh": "把整本书翻译成任何语言",
@@ -2265,7 +2799,14 @@
    "tagline_zh": "一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。",
    "tagline_en": "Translates whole PDF/DOCX/EPUB books into any language — parallel sub-agents chunk and translate at once, layout preserved, multi-format out.",
    "why_zh": "并行是关键：把几小时压到几十分钟，而且排版不散——这才让「翻整本书」从设想变成可做的事。",
-   "why_en": "Parallel sub-agents are the trick — serial translation of a whole book takes forever; chunked parallelism cuts hours to minutes, layout intact."
+   "why_en": "Parallel sub-agents are the trick — serial translation of a whole book takes forever; chunked parallelism cuts hours to minutes, layout intact.",
+   "limit_zh": "本机要有 python3 和 pandoc，DOCX/EPUB/PDF 还得装 Calibre，缺了只剩 HTML。默认放 8 个子 agent 并发，整本书的 token 你自己付；术语表只从 5 个抽样块里提。",
+   "limit_en": "Needs python3 and pandoc locally; DOCX/EPUB/PDF conversions require Calibre, otherwise you only get HTML. Default 8 parallel sub-agents, so the whole book is billed as tokens, and the glossary is extracted from only 5 sampled chunks.",
+   "cover": "https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1440,
+   "cover_h": 1920
   },
   "joeseesun-qiaomu-anything-to-notebooklm": {
    "title_zh": "把公众号视频播客一股脑喂进 NotebookLM",
@@ -2273,7 +2814,12 @@
    "tagline_zh": "想让 NotebookLM 帮你消化一堆资料，光是把内容搬进去就够烦。公众号、网页、YouTube、小宇宙、PDF 丢给它，自动整理上传，还能出播客和思维导图。",
    "tagline_en": "WeChat articles, web pages, YouTube, podcasts, PDFs — dump them in, auto-processed into NotebookLM as podcasts, slides and mind maps.",
    "why_zh": "乔木出品。它吃透了中文内容源（公众号、小宇宙），这块国外工具基本不管。",
-   "why_en": "By Qiaomu — fully automates feeding multi-source material into NotebookLM, with real fluency in Chinese sources (WeChat, Xiaoyuzhou)."
+   "why_en": "By Qiaomu — fully automates feeding multi-source material into NotebookLM, with real fluency in Chinese sources (WeChat, Xiaoyuzhou).",
+   "limit_zh": "公众号那条要手动把 wexin-read-mcp 写进 ~/.claude/config.json 再重启；小宇宙、喜马拉雅、B站的转写另需 Get笔记 API key 和 tokens.json。还得先 notebooklm login。",
+   "limit_en": "The WeChat path needs wexin-read-mcp hand-registered in ~/.claude/config.json plus a restart; Xiaoyuzhou, Ximalaya and Bilibili transcripts need a separate Get-Note API key pair and tokens.json. And `notebooklm login` before anything.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "neuralinitiative-claude-dnd-skill-dnd": {
    "title_zh": "一个人也能玩的 D&D 地下城主",
@@ -2281,7 +2827,14 @@
    "tagline_zh": "跑团最难的是凑人和一个好 DM。它管战役、角色卡、战斗轮次和 NPC，还带可选的影院式画面，一个人也能沉浸开团。",
    "tagline_en": "An on-call D&D 5e Dungeon Master — persistent campaigns, character sheets, combat tracking and NPCs, with an optional cinematic display. Solo-play ready.",
    "why_zh": "它补上的是 DM 这个最难替代的位置，规则和状态全托管，所以单人玩不塌。",
-   "why_en": "The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion."
+   "why_en": "The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion.",
+   "limit_zh": "战役数据全在本机 ~/.claude/dnd，换台机器就从零开。随包只有 5e SRD 数据集，跑正式模组得你自己导入书。影院画面是本地/局域网起的 Flask 面板。默认 roll_mode 是玩家自己掷骰，它不替你的 PC 代掷。",
+   "limit_en": "Campaign data lives locally under ~/.claude/dnd - a new machine starts empty. Only the 5e SRD dataset ships; published modules you import yourself. The cinematic display is a local/LAN Flask app. Default roll_mode never auto-rolls your PC.",
+   "cover": "https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 900,
+   "cover_h": 489
   },
   "jame581-godotprompter": {
    "title_zh": "按 Godot 引擎的范式做游戏",
@@ -2289,8 +2842,13 @@
    "kind": "collection",
    "tagline_zh": "通用 agent 不懂节点树和信号，容易用写网页的思路写游戏，跑着就撞墙。这件专修 Godot 4.x 的引擎特有门道。",
    "tagline_en": "An agent-skills framework built for Godot 4.x — GDScript, scene trees, nodes and signals all understood; an engine guide for indie games.",
-   "why_zh": "587 星。垂直到具体引擎才有价值——GDScript、场景树、信号这些通用工具一概不管。",
-   "why_en": "Generic coding agents don't grok Godot's node/signal paradigm and write games with web habits; this specializes in the engine's own patterns."
+   "why_zh": "垂直到具体引擎才有价值——GDScript、场景树、信号这些，通用工具一概不管。",
+   "why_en": "Generic coding agents don't grok Godot's node/signal paradigm and write games with web habits; this specializes in the engine's own patterns.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "它建在 obra/superpowers 之上，skill 加载和工作流基础设施是上游的。范围钉死 Godot 4.3+ 的 GDScript/C#。README 自己标 55 件，另外 8 份是 scripts/fixtures 的测试夹具、2 份是仓库自用件。",
+   "limit_en": "Built on top of obra/superpowers — the skill-loading and workflow infrastructure is upstream's. Scoped hard to Godot 4.3+ GDScript/C#. The README claims 55 skills; 8 more files are test fixtures under scripts/ and 2 are the repo's own housekeeping."
   },
   "wshuyi-x-article-publisher-skill-x-article-publisher": {
    "title_zh": "把 Markdown 直接发成 X 长文",
@@ -2298,7 +2856,12 @@
    "tagline_zh": "X 的长文编辑器手动排版极其难受，复制过去格式必崩。它把 Markdown 到 X Articles 这一步自动化，写完直接发。",
    "tagline_en": "Publishes Markdown articles straight into X's Articles editor with formatting preserved — no manual copy-paste, no broken layout.",
    "why_zh": "王树义出品。解决的是发布环节那个没人愿意干的脏活。",
-   "why_en": "By Wang Shuyi — X's Articles editor is painful to format by hand; this automates Markdown-to-X-Articles so you just publish."
+   "why_en": "By Wang Shuyi — X's Articles editor is painful to format by hand; this automates Markdown-to-X-Articles so you just publish.",
+   "limit_zh": "要 Playwright MCP、一个 X Premium Plus 账号，和 Python 的 Pillow/pyobjc（Win 换 pywin32）。表格和 Mermaid 得先转 PNG，分割线只能走 Insert 菜单。只存草稿。",
+   "limit_en": "Needs Playwright MCP, a logged-in X Premium Plus account, and Python-side Pillow/pyobjc (pywin32 on Windows). Tables and Mermaid must become PNGs first, dividers go through the Insert menu, and it only saves a draft — you publish.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "adamlyttleapps-claude-skill-aso-appstore-screenshots": {
    "title_zh": "从代码反推卖点生成 App Store 截图",
@@ -2306,7 +2869,12 @@
    "tagline_zh": "独立开发者最不擅长又最影响下载量的就是商店截图。它先读你的代码库找出核心卖点，再生成 ASO 优化的展示图。",
    "tagline_en": "Analyzes your app's codebase to surface core benefits, then generates ASO-optimized App Store screenshots — the download page that actually converts.",
    "why_zh": "从代码反推卖点，比对着空白页想文案聪明——素材来自产品本身而不是想象。",
-   "why_en": "Store screenshots are what indies do worst and download rates need most; deriving benefits from code beats guessing at copy."
+   "why_en": "Store screenshots are what indies do worst and download rates need most; deriving benefits from code beats guessing at copy.",
+   "limit_zh": "检测不到 Gemini MCP（npm i -g gemini-mcp）它就直接停手不生成；裁切那步调的是 macOS 专有的 sips。尺寸只给 iPhone 6.5/6.7/6.9 三种，没有 iPad，模拟器截图还得你自己拍。",
+   "limit_en": "It refuses to generate unless the Gemini MCP server (npm i -g gemini-mcp) is present, and the crop/resize step shells out to macOS-only sips. Ships iPhone 6.5/6.7/6.9 sizes only, no iPad — and you supply the simulator screenshots yourself.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "cosmoblk-email-marketing-bible": {
    "title_zh": "做邮件营销的顾问",
@@ -2314,7 +2882,12 @@
    "tagline_zh": "邮件营销细节定成败：发送时机、主题行、自动化触发。5.5 万字、908 个信源、19 个行业剧本，装上它 agent 就是个顾问。",
    "tagline_en": "A 55K-word, 908-source, 19-playbook email-marketing skill — install it and your agent becomes an email consultant, from automation to diagnostics.",
    "why_zh": "内容密度惊人且有信源，不是泛泛而谈——这种「细节定成败」的领域，厚知识库就是硬实力。",
-   "why_en": "Staggering density (55K words, 908 sources), not hand-waving; in email marketing where details decide outcomes, a thick knowledge base is real muscle."
+   "why_en": "Staggering density (55K words, 908 sources), not hand-waving; in email marketing where details decide outcomes, a thick knowledge base is real muscle.",
+   "limit_zh": "装进来的是索引，19 章全文在 emailmarketingskill.com 上。基准数据标着截至 2026 年中、作者叮嘱要复核。选型表首推的 nitrosend 与本指南同一个创始人——他自己写明了。",
+   "limit_en": "What ships is an index; the 19 full chapters live on emailmarketingskill.com. Benchmarks are dated mid-2026 with a note to verify volatile figures, and the top pick for agent-driven email, nitrosend, shares a founder with the guide.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "coffeefuelbump-csv-data-summarizer-claude-skill": {
    "title_zh": "拿到陌生 CSV 先给它做个体检",
@@ -2322,7 +2895,12 @@
    "tagline_zh": "接手一份没见过的数据，得先知道它长什么样、有没有坑。它用 pandas 出摘要统计、查缺失值、画快速图，几秒钟看清。",
    "tagline_en": "Drop in a CSV and get summary stats, missing-value detection and quick plots — pandas under the hood; a health-check for any unfamiliar dataset.",
    "why_zh": "比自己手写 df.describe() 那套省事，适合每次拿到新数据先跑一遍。",
-   "why_en": "Run it first on any unfamiliar CSV — seconds to see shape, gaps and quirks; easier than hand-writing the df.describe() dance."
+   "why_en": "Run it first on any unfamiliar CSV — seconds to see shape, gaps and quirks; easier than hand-writing the df.describe() dance.",
+   "limit_zh": "要本机装好 pandas、matplotlib、seaborn。日期列靠列名里有没有 date 认，文末 Notes 又说只在有日期列时才出图。它被硬性禁止问你想看什么，进来就跑完一整套。",
+   "limit_en": "Needs pandas, matplotlib and seaborn installed locally. Date columns are detected by the word \"date\" in the column name, and the Notes say charts are generated only when a date column exists. It is forbidden to ask what you want first.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "jamditis-claude-skills-journalism": {
    "title_zh": "记者工具箱",
@@ -2434,8 +3012,13 @@
    "kind": "collection",
    "tagline_zh": "剪辑软件里改一版要重来一遍。HeyGen 这套把视频变成代码：动画、字幕、转场、配音全能写，改一帧不用重剪，还能进 git。",
    "tagline_en": "HeyGen's video engine: write HTML, render finished video — built for agents, with 16 skills covering animation, captions, seams and voiceover.",
-   "why_zh": "4 万星。这是「AI 做视频」目前最扎实的一条路：视频成了可版本控制的代码，agent 能精确改一帧，而不是对着黑箱重新抽卡。",
-   "why_en": "The most solid path yet for AI video — footage becomes version-controlled code an agent can edit frame-precisely, not a black box you re-roll."
+   "why_zh": "「AI 做视频」目前最扎实的一条路：视频成了可版本控制的代码，能精确改一帧，而不是对着黑箱重新抽卡。",
+   "why_en": "The most solid path yet for AI video — footage becomes version-controlled code an agent can edit frame-precisely, not a black box you re-roll.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "真正干活的是 npm 上的 hyperframes CLI（node ≥22），skill 只是给 agent 的调用说明。仓库 32 份 SKILL.md 只对应 26 个名字——.agents 和 .claude 底下那 6 件是 skills/ 的宿主副本。",
+   "limit_en": "The work is done by the hyperframes npm CLI (node ≥22); the skills are just agent-facing call notes. 32 SKILL.md files map to 26 names — the six under .agents and .claude are host copies of ones in skills/."
   },
   "heygen-com-hyperframes-faceless-explainer": {
    "title_zh": "把一篇文章变成无需露脸的解说视频",
@@ -2443,7 +3026,13 @@
    "tagline_zh": "想做视频但不想出镜、请不动配音。丢一篇文章或一个主题给它，脚本、画面、字幕、配音一条龙，出来就是能发的成片。",
    "tagline_en": "Feed it an article, rough notes or just a topic and get a faceless explainer video out — no camera, no voice actor, script to final cut.",
    "why_zh": "无脸口播是自媒体最好起量的形态，它把最费时的那条产线整条自动化了。",
-   "why_en": "Faceless explainers are the easiest format to scale, and this automates the whole costly pipeline: script, visuals, captions, voice."
+   "why_en": "Faceless explainers are the easiest format to scale, and this automates the whole costly pipeline: script, visuals, captions, voice.",
+   "limit_zh": "真本事分散在 hyperframes-core/creative/animation 和 media-use 几件兄弟件里，少装一件就断。配音默认走 HeyGen 账号；默认女声 Marcia，说要男声而没传 --voice 会被静默忽略。",
+   "limit_en": "The craft lives in sibling skills (hyperframes-core/creative/animation, media-use) — miss one and the chain breaks. Narration defaults to a HeyGen account; default voice is Marcia (female) and a male-voice ask is ignored without --voice.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "cover_dup_of": "heygen-com-hyperframes"
   },
   "heygen-com-hyperframes-embedded-captions": {
    "title_zh": "给口播视频加字幕，不用重渲整片",
@@ -2451,7 +3040,13 @@
    "tagline_zh": "字幕改一个错字就要等整片重跑，最磨人。它逐句对齐口型节奏单独处理字幕层，样式还按平台习惯来。",
    "tagline_en": "Adds captions to an existing talking-head video without re-rendering the whole thing — phrase-level timing and platform-native caption styling.",
    "why_zh": "「不重渲染」是关键差别：反复调字幕的人立刻能感受到——改一次几秒钟，而不是几分钟。",
-   "why_en": "No full re-render is the point — tweak captions without waiting on the whole clip; anyone iterating on shorts feels this instantly."
+   "why_en": "No full re-render is the point — tweak captions without waiting on the whole clip; anyone iterating on shorts feels this instantly.",
+   "limit_zh": "只吃单人口播：多说话人、有硬切、短于 3 秒、已烧录过字幕的素材，按规矩直接拒。要先 bun build 出 hyperframes，抠像权重 168MB 首次得联网下，且只跑 CPU。",
+   "limit_en": "Single-subject talking-head only: multi-speaker, hard cuts, under 3s, or already-burned subtitles are refused by rule. You must build the hyperframes checkout with bun; the 168MB matting weights download once, and matting is CPU-only.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "cover_dup_of": "heygen-com-hyperframes"
   },
   "heygen-com-hyperframes-hyperframes-cli": {
    "title_zh": "用命令行批量出片",
@@ -2459,7 +3054,13 @@
    "tagline_zh": "一条视频好做，一百条要命。init/add/capture/render 一条龙，把出片变成能脚本化的构建流程，重复劳动交给机器。",
    "tagline_en": "The HyperFrames CLI dev loop — init, add, catalog, capture, lint and render; the backbone for batch production and automation.",
    "why_zh": "榜单上 33.6 万安装那件。批量做内容的人靠它把「一条一条手工做」变成流水线。",
-   "why_en": "The 336K-install piece from the leaderboard — video as a scriptable build process, so batch creators hand repetition to the machine."
+   "why_en": "The 336K-install piece from the leaderboard — video as a scriptable build process, so batch creators hand repetition to the machine.",
+   "limit_zh": "要 Node 22+ 和 FFmpeg。catalog 检索只认英文，中文查询直接零结果；语义那一档要先下 33MB 模型，默认不开。云渲染单项目上传上限 200MB，渲染前必须停下等你批准。",
+   "limit_en": "Needs Node 22+ and FFmpeg. Catalog search indexes English only — a Chinese query returns nothing; the meaning tier needs a 33MB download and is off by default. Cloud render caps upload at 200MB, and it pauses for approval before rendering.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "cover_dup_of": "heygen-com-hyperframes"
   },
   "geekjourneyx-hyperframes-motion-director-hyperframes-motion-director": {
    "title_zh": "从一份提纲导出中文电影感短片",
@@ -2467,15 +3068,29 @@
    "tagline_zh": "HyperFrames 官方件对中文排版水土不服：字挤、断行难看、字幕节奏不对。这件专治，中文优先重调了排版和镜头语言。",
    "tagline_en": "A Chinese-first HyperFrames motion director — outline in, cinematic short out, with typography, caption rhythm and camera language tuned for Chinese content.",
    "why_zh": "作者是 md2wechat 那位（已在架的中文精品作者），补的正是官方件在中文场景的短板。",
-   "why_en": "By the author of md2wechat (already on our shelves) — the official skills stumble on Chinese typography; this one fixes exactly that."
+   "why_en": "By the author of md2wechat (already on our shelves) — the official skills stumble on Chinese typography; this one fixes exactly that.",
+   "limit_zh": "要本机的 HyperFrames CLI 和 Node 脚本，配图走 Codex Image Gen，终版渲染要 Docker。第一阶段只交一份提案就停，你不点头它不动工；默认只出 10-15 秒竖屏 1080x1920。",
+   "limit_en": "Needs a local HyperFrames CLI, Node scripts, Codex Image Gen for stills, Docker for the final render. Phase 1 stops at a written proposal until you confirm. Defaults to 10-15s vertical 1080x1920.",
+   "cover": "https://raw.githubusercontent.com/geekjourneyx/hyperframes-motion-director/HEAD/skills/hyperframes-motion-director/assets/banner.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1440,
+   "cover_h": 810
   },
   "xiejunjie524-handdraw-story-video-handdraw-good-deed-story": {
    "title_zh": "批量做黑白线条逐笔显影的竖屏短片",
    "category": "creative",
    "tagline_zh": "这种「线条一笔笔画出来」的短片在中文平台很吃香，难点是量产还不失手作感。35~45 秒一条，讲一个善行小故事。",
    "tagline_en": "Batch-produces 35–45s vertical hand-drawn story shorts — black-line reveal animation telling a small good-deed tale, handmade feel at scale.",
-   "why_zh": "729 星。它把这条产线固化了，批量出片仍保留手绘质感——这是同类工具最容易丢掉的东西。",
-   "why_en": "Line-reveal shorts perform well on Chinese platforms; the trick is scaling without losing the handmade texture, and this pins that pipeline down."
+   "why_zh": "它把这条产线固化了，批量出片仍保留手绘质感——这正是同类工具最容易丢掉的东西。",
+   "why_en": "Line-reveal shorts perform well on Chinese platforms; the trick is scaling without losing the handmade texture, and this pins that pipeline down.",
+   "limit_zh": "线稿由 scripts/make_lineart.py 从彩图反推，成片靠 HyperFrames 和手拷进去的 gsap.min.js。每拍母图逐张生成，禁止自动重试。规格写死 720×960、8 拍 40 秒，BGM 你自己找授权。",
+   "limit_en": "Line art comes from scripts/make_lineart.py off the same color image; rendering needs HyperFrames plus gsap.min.js copied in from npm by hand. One mother image per beat, retries forbidden. Locked to 720x960, 8 beats, ~40s; BGM is on you.",
+   "cover": "https://raw.githubusercontent.com/xiejunjie524/handdraw-story-video/HEAD/examples/soy-milk-at-4am/preview.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 960,
+   "cover_h": 320
   },
   "nateherkai-hyperframes-student-kit-website-to-hyperframes": {
    "title_zh": "把一个网站变成演示视频",
@@ -2483,7 +3098,12 @@
    "tagline_zh": "做宣发视频要重新设计一遍素材，可你的网站本来就是最全的素材库。给个网址，它抓下来直接做成能播的演示片。",
    "tagline_en": "Give it a URL: it captures the whole website and turns it into a video — product pages, landing pages and portfolios become playable demo reels.",
    "why_zh": "点子很妙：省掉「为视频再造一套视觉」这一整步，产品页、落地页、作品集都能用。",
-   "why_en": "A clever premise — your site is already the most complete asset library, so turning it straight into video skips designing a promo from scratch."
+   "why_en": "A clever premise — your site is already the most complete asset library, so turning it straight into video skips designing a promo from scratch.",
+   "limit_zh": "第 6 步要调另一件并未附带的 /hyperframes skill，缺它就断在合成前。校验靠 npx hyperframes lint/validate，要 Node。配音得自己接 TTS 再转写拿词级时间戳。七步每步都要先落一个文件才准往下走。",
+   "limit_en": "Step 6 hands off to a separate /hyperframes skill that is not bundled here - without it the chain stops before compositions. Validation is npx hyperframes lint/validate (Node). VO needs your own TTS plus transcription for word timing.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "julianoczkowski-designer-skills": {
    "title_zh": "设计师工作流",
@@ -2588,8 +3208,15 @@
    "category": "work",
    "tagline_zh": "笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。",
    "tagline_en": "Drive your Obsidian vault from the CLI — read, create, search notes and manage tasks and properties. Built by kepano, Obsidian's own creator.",
-   "why_zh": "4.6 万星，一手权威：没人比作者更懂这个库的数据模型，比任何第三方封装都可靠。",
-   "why_en": "Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly."
+   "why_zh": "一手权威：没人比作者更懂这个库的数据模型，比任何第三方封装都可靠。",
+   "why_en": "Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly.",
+   "limit_zh": "要装 obsidian 命令行，而且 Obsidian 必须开着，关掉就全断。命令清单以 obsidian help 为准，这里只列了常用几条。不写 vault= 时动的是最近聚焦的那个库。",
+   "limit_en": "Requires the obsidian CLI and a running Obsidian instance; close the app and everything stops. The command list here is partial, with `obsidian help` as the authority. Without vault=, commands act on whichever vault was focused last.",
+   "cover": "https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1280,
+   "cover_h": 670
   },
   "greensock-gsap-skills": {
    "title_zh": "GSAP 官方动效",
@@ -2612,21 +3239,33 @@
    "hide": true
   },
   "jnmetacode-superpowers-zh": {
-   "title_zh": "11 万星 superpowers 的完整中文版",
+   "title_zh": "superpowers 的完整中文版",
    "category": "meta",
    "kind": "collection",
    "tagline_zh": "原版方法论很好但全英文，中文团队用起来隔一层。这版不只翻译，还补了中文 commit 规范、中文 review 话术、国内团队反模式。",
    "tagline_en": "A full Chinese localization of the 116k-star superpowers, plus six China-originated skills — Chinese commit conventions, review phrasing and local team anti-patterns.",
-   "why_zh": "7716 星。补的是「本土协作场景」，这部分原版不会有。",
-   "why_en": "The original methodology is strong but English-only; this isn't just translation — it adds originals for how Chinese teams actually collaborate."
+   "why_zh": "补的是「本土协作场景」，这部分原版不会有——翻译只是壳，加的那部分才是理由。",
+   "why_en": "The original methodology is strong but English-only; this isn't just translation — it adds originals for how Chinese teams actually collaborate.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "20 件里 14 件是 obra/superpowers 的翻译，只有 6 件原创，方法论著作权在上游。README 大半篇幅是自家课程和赞助商推广。它自称覆盖 23 款工具，但 v1.7.10 更新日志自己写着 Aider、Kiro、Hermes「此前装了等于没装」。",
+   "limit_en": "14 of the 20 skills are translations of obra/superpowers; only 6 are original — the methodology is upstream's. Much of the README is course and sponsor promotion. It claims 23 supported tools, yet its own v1.7.10 notes admit the Aider, Kiro and Hermes installs did nothing."
   },
   "xiaomacoltai-math-modeling-skill": {
    "title_zh": "三天赛程里做完数学建模竞赛全流程",
    "category": "life",
    "tagline_zh": "建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。",
    "tagline_en": "A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.",
-   "why_zh": "742 星。按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。",
-   "why_en": "Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm."
+   "why_zh": "按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。",
+   "why_en": "Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.",
+   "limit_zh": "作者自己写明产出的论文不能直接当作品交，格式还得对当届官方模板。运行环境派不出 Subagent 时，M1/P1/P2/W1/W2 五道门禁只能标 BLOCKED；LaTeX 分支缺编译引擎会直接阻塞。",
+   "limit_en": "The author states the paper is not a directly submittable entry, and formatting must follow the current year's official template. Without Subagents the M1/P1/P2/W1/W2 gates can only be marked BLOCKED; LaTeX blocks without a compiler.",
+   "cover": "https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1672,
+   "cover_h": 941
   },
   "khendzel-skills-janitor": {
    "title_zh": "给你装的技能库做体检和减法",
@@ -2634,7 +3273,12 @@
    "tagline_zh": "装得越多上下文越挤，还不知道哪个在偷偷吃 token、哪个藏着提示注入。它左滑扔掉浪费的、扫风险、给诚实的 token 账单。",
    "tagline_en": "A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.",
    "why_zh": "这个生态罕见的「减法」工具：装得多不等于装得好，它同时管省上下文、防注入、看清成本。",
-   "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem."
+   "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "它会真动手删：左滑就把那个 MCP server 从配置文件里移除，只留一个带时间戳的 .bak。判断依据是本机会话记录里的调用次数——刚装没多久的 skill 天然显示成「没用过」，容易误杀。安全扫描作者写明是启发式。",
+   "limit_en": "It actually deletes: swipe left and the MCP server is removed from your config file, leaving a timestamped .bak. Its verdict comes from call counts in your local transcripts, so anything installed recently reads as 'never used'. The security scan is explicitly heuristic."
   },
   "312362115-claude-diagram": {
    "title_zh": "自动选对图表类型再画出来",
@@ -2642,7 +3286,14 @@
    "tagline_zh": "多数人卡在「该用泳道图还是时序图」，不是不会画。它先按需求选型，再从 29 种里出符合规范的 PNG。",
    "tagline_en": "Picks the right chart type for your need and renders it — 29 kinds including swimlanes, sequence, ER, Gantt, Kanban and Git graphs, straight to spec-compliant PNG.",
    "why_zh": "先选型后出图这个顺序，比丢给你一堆模板实用得多。",
-   "why_en": "Most people stall on which chart, not how to draw it; choosing the type before rendering is more useful than handing over templates."
+   "why_en": "Most people stall on which chart, not how to draw it; choosing the type before rendering is more useful than handing over templates.",
+   "limit_zh": "出 PNG 必须跑 scripts/capture.py 和 bridge.py（内部调 Playwright），正文禁止你手动截图。雷达、热力、散点、漏斗、瀑布不支持 Mermaid 文本输出，只能留 PNG。",
+   "limit_en": "PNGs only come out of scripts/capture.py and bridge.py, which drive Playwright internally — screenshotting by hand is forbidden. Radar, heatmap, scatter, funnel and waterfall get no Mermaid text output, only PNG.",
+   "cover": "https://raw.githubusercontent.com/312362115/claude/HEAD/docs/assets/workflow-panorama.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1920,
+   "cover_h": 858
   },
   "312362115-claude-code-walkthrough": {
    "title_zh": "带你读懂一个陌生代码库",
@@ -2650,7 +3301,13 @@
    "tagline_zh": "接手别人的项目，难点从来不是看不懂语法，而是不知道各部分为什么这样连。它从架构到核心流程到关键决策分层讲。",
    "tagline_en": "A guide for unfamiliar codebases — architecture, then core flows, then key design decisions, answering why the code is written this way instead of listing files.",
    "why_zh": "目标定得对：它要给你的是心智模型，不是文件清单。",
-   "why_en": "Building a mental model is the right goal — reading code is hard not because of syntax but because you can't see why parts connect."
+   "why_en": "Building a mental model is the right goal — reading code is hard not because of syntax but because you can't see why parts connect.",
+   "limit_zh": "它只回答「这是什么、怎么运转」；「改这里会动到哪儿」作者明说归另一件 dependency-map，那件不在包里。全程没脚本，靠现读 ls 和 git log，长导读落在 docs/guides/。",
+   "limit_en": "It answers \"what is this and how does it run\"; the author routes \"what breaks if I change it\" to a separate dependency-map skill that isn't bundled. No scripts at all — it reads ls and git log live and drops long write-ups in docs/guides/.",
+   "cover": "",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_dup_of": "312362115-claude-diagram"
   },
   "anbeime-skill-antinet-four-color-cards": {
    "title_zh": "把一份文档拆成四色行动卡",
@@ -2666,7 +3323,12 @@
    "tagline_zh": "AI 写的论文越来越多，数据对不上、引用编造、结论超出证据。它做实质性诚信取证，专查这类漏洞。",
    "tagline_en": "Runs a substantive-integrity forensic sweep on a paper, aimed at AI-generated research — mismatched data, fabricated citations, conclusions outstripping evidence.",
    "why_zh": "立意站在学术诚信这边，做法也具体——反向取证的工具比生成工具少得多。",
-   "why_en": "AI-written papers keep multiplying while integrity forensics stays rare; this stands on the right side and does it concretely."
+   "why_en": "AI-written papers keep multiplying while integrity forensics stays rare; this stands on the right side and does it concretely.",
+   "limit_zh": "得在它自己的仓库里跑（tools/adjudicate_findings.py），还要 codex MCP 调 gpt-5.6-sol 复核；没有就只剩确定性检查，那种模式永远给不出 CLEAN。只有 PDF 时够不着代码级造假。",
+   "limit_en": "Must run inside its own checkout (tools/adjudicate_findings.py) and needs codex MCP with gpt-5.6-sol for cross-model review; without it only deterministic checks run, and that mode can never return CLEAN. A PDF alone can't reach code fraud.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "prisma-prisma": {
    "hide": true
@@ -2871,8 +3533,15 @@
    "category": "life",
    "tagline_zh": "Home Assistant 的 YAML 改错一行，整屋自动化就哑掉。它带安全校验再部署，还能排查设备失联——终于不用手写配置了。",
    "tagline_en": "Manage all of Home Assistant by conversation — safely edit automation YAML, deploy scripts and blueprints, debug offline devices. No more hand-written config.",
-   "why_zh": "779 星。「校验后再部署」这个设计是敢让 AI 碰真设备的前提。",
-   "why_en": "HA's YAML is the smart-home hobbyist's shared pain — one wrong line silences the house; this validates before deploying, so letting AI touch real devices is safe."
+   "why_zh": "「校验后再部署」这个设计，是敢让 AI 碰真设备的前提。",
+   "why_en": "HA's YAML is the smart-home hobbyist's shared pain — one wrong line silences the house; this validates before deploying, so letting AI touch real devices is safe.",
+   "limit_zh": "默认你有 SSH，且手上这个仓库就是 git 连着实例的 /config；改完还要 ssh 进去 git pull 才生效。hass-cli 的 HASS_TOKEN 得在会话启动前就设好，否则它会转向 localhost 报错。",
+   "limit_en": "Assumes SSH access and that the repo you edit is the HA /config dir wired to the instance by git; edits go live only after you ssh in and git pull. hass-cli needs HASS_TOKEN set before the session starts, or it hits localhost.",
+   "cover": "https://raw.githubusercontent.com/komal-SkyNET/claude-skill-homeassistant/HEAD/skills/home-assistant-manager/dashboard.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 2148,
+   "cover_h": 1732
   },
   "borski-travel-hacking-toolkit": {
    "title_zh": "用现金里程积分四路比价找最省的飞法",
@@ -2880,39 +3549,66 @@
    "tagline_zh": "同一趟航线，行家和小白的票价能差几千块。它搜奖励座位、算兑换比、盯放票，把泡论坛才学得会的手艺自动化。",
    "tagline_en": "Finds the cheapest way to fly across cash, points, miles and award tickets — searching award seats, computing redemption value and watching availability.",
    "why_zh": "里程兑换门道深、信息碎，这类知识差价最大——它把差价那部分变成了工具。",
-   "why_en": "Award travel is deep and fragmented — experts and novices can pay thousands apart for the same seat; this automates craft you'd otherwise learn on forums."
+   "why_en": "Award travel is deep and fragmented — experts and novices can pay thousands apart for the same seat; this automates craft you'd otherwise learn on forums.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "48 件几乎全是欧美体系——美航、西南、Chase、Amex、Bilt、德铁、北欧铁路，一件亚洲航司或国内银行积分都没有。装法是 /plugin marketplace add；六个 MCP server 里 LiteAPI 那个要自己申请 key。",
+   "limit_en": "All 48 skills sit in the US/EU ecosystem — American, Southwest, Chase, Amex, Bilt, Deutsche Bahn — with no Asian carrier or Chinese bank program. Installs via /plugin marketplace add; of six MCP servers, LiteAPI needs your own key."
   },
   "mvanhorn-last30days-skill-last30days": {
    "title_zh": "查最近30天网上真实在聊什么",
    "category": "docs",
    "tagline_zh": "要判断一个话题热不热、用户到底在骂什么，读官方介绍全是好话。它抓 Reddit、X、YouTube、HN 的原帖和互动数据，给你带出处的真实民意。",
    "tagline_en": "Finds what people actually said about any topic in the last 30 days — pulling posts and engagement from Reddit, X, YouTube, TikTok and HN, then synthesizing with sources.",
-   "why_zh": "5.8 万星。它要的不是官方说法而是用户原话——做选题、验证需求、看竞品口碑时，比读一百页产品页有用。",
-   "why_en": "A 58k-star hit that chases real user words over official positioning — worth a hundred product pages when validating demand or reading sentiment."
+   "why_zh": "它要的不是官方说法而是用户原话——做选题、验证需求、看竞品口碑时，比读一百页产品页有用。",
+   "why_en": "A 58k-star hit that chases real user words over official positioning — worth a hundred product pages when validating demand or reading sentiment.",
+   "limit_zh": "硬卡 Python 3.12+，低了它宁可停也不退成网页搜索。首跑要过向导：装 yt-dlp、npx 装 Digg CLI、抽浏览器 cookie；X 那路要 AUTH_TOKEN/CT0，没配的源只标成未配置。存档落在 ~/Documents/Last30Days。",
+   "limit_en": "Hard-gated on Python 3.12+; below that it stops rather than fall back to web search. First run installs yt-dlp and the Digg CLI via npx and extracts browser cookies; X search needs AUTH_TOKEN/CT0. Saves to ~/Documents/Last30Days.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "alchaincyf-nuwa-skill": {
    "title_zh": "把任何人的思维方式做成一个能装的 skill",
    "category": "meta",
    "tagline_zh": "想让 AI 像某个高手那样思考，你却说不清他到底怎么想。给它一个名字，它自动深度调研、提炼决策框架，当场造出一个能用的人物 skill。",
    "tagline_en": "Give it a name or even a vague need: it researches deeply, distills the mental framework, and mints a working persona skill on the spot.",
-   "why_zh": "3 万星，而且店里张雪峰、X 导师都是它造出来的——「用 skill 造 skill」这条路上目前最成气候的一个。",
-   "why_en": "30k stars, and it's the mother of several skills on our shelves — the most mature take yet on skills that build skills."
+   "why_zh": "店里的张雪峰、X 导师都是它造出来的——「用 skill 造 skill」这条路上目前最成气候的一个。",
+   "why_en": "30k stars, and it's the mother of several skills on our shelves — the most mature take yet on skills that build skills.",
+   "limit_zh": "作者原话：顶级模型跑一次完整蒸馏可消耗数十美元；单次能累到 50 万 token，20 万窗口的模型得分三段会话续跑。知乎、微信公众号、百度百科被永久列入信息源黑名单。",
+   "limit_en": "The author's own number: a full distillation on a top model can burn tens of dollars and 500k+ tokens, so 200k-window models must split it across three sessions. Zhihu, WeChat public accounts and Baidu Baike are blacklisted as sources.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "op7418-guizang-ppt-skill": {
    "title_zh": "做能双屏演讲的网页版 PPT",
    "category": "docs",
    "tagline_zh": "上台讲的时候最想要演讲者视图和观众屏同步，普通 AI 做的 PPT 一概没有。它出的是单文件网页 deck，带 WebGL 流体背景和章节幕封。",
    "tagline_en": "Single-file web decks with WebGL fluid backgrounds, presenter view, audience-screen sync and chapter covers — in editorial-magazine or Swiss-international styles.",
-   "why_zh": "2.3 万星。演讲者视图和双屏同步这种细节，市面上的 AI PPT 工具基本没人做，歸藏把它塞进了一个 HTML。",
-   "why_en": "A 23k-star ceiling-setter — presenter view and dual-screen sync are details almost no AI deck tool bothers with, all inside one HTML file."
+   "why_zh": "演讲者视图和双屏同步这种细节，市面上的 AI PPT 工具基本没人做，歸藏把它塞进了一个 HTML。",
+   "why_en": "A 23k-star ceiling-setter — presenter view and dual-screen sync are details almost no AI deck tool bothers with, all inside one HTML file.",
+   "limit_zh": "作者自己划的禁区：大段表格图表、培训课件、多人协作编辑都别用它，成品就是一份静态 HTML。主题只能从预设 5 套/4 套里挑，不收自定义 hex；两套风格类名互斥不能混。校验脚本要 Node，渲染实测还要 Playwright。",
+   "limit_en": "The author rules out dense tables, courseware and collaborative editing - the artifact is one static HTML file. Themes come from the 5 or 4 presets, no custom hex, and the two styles' class names cannot be mixed. Validators need Node.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "alchaincyf-zhangxuefeng-skill": {
    "title_zh": "用张雪峰的框架分析升学和职业选择",
    "category": "life",
    "tagline_zh": "高考志愿、考研、转行——这类决定影响十年，家里人给的建议却常常凭感觉。它基于他 5 本书、15 篇深访提炼出的心智模型和决策启发式来拆。",
    "tagline_en": "Analyzes education and career choices through Zhang Xuefeng's frameworks — five mental models and eight decision heuristics distilled from five books and 15+ interviews.",
-   "why_zh": "1 万星。调研扎实，不是拿网红名字贴标签；请不到本人，就请一份他的思维方式。",
-   "why_en": "College and career decisions are high-stakes for Chinese families; if you can't hire him, hire his reasoning — and the research behind it is real, not name-dropping."
+   "why_zh": "调研扎实，不是拿网红名字贴标签；请不到本人，就请一份他的思维方式。",
+   "why_en": "College and career decisions are high-stakes for Chinese families; if you can't hire him, hire his reasoning — and the research behind it is real, not name-dropping.",
+   "limit_zh": "适用面它自己划得很死：普通家庭、就业导向的升学选择；家境宽裕、想走学术或创业的人，正文说这套建议可能反而是束缚。语料截至 2026-04-05，碰院校专业数据必须现搜。",
+   "limit_en": "It draws its boundary hard: ordinary families making employment-driven education choices. For well-off, academic or entrepreneurial paths it says the advice may become a constraint. Research ends 2026-04-05; school data is searched live.",
+   "cover": "https://raw.githubusercontent.com/alchaincyf/zhangxuefeng-skill/HEAD/assets/hero.gif",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1200,
+   "cover_h": 676
   },
   "alchaincyf-darwin-skill": {
    "title_zh": "让你写的 skill 自己迭代变强",
@@ -2920,15 +3616,29 @@
    "tagline_zh": "skill 写完就定死了，好不好用只能凭感觉。它跑「评估→改进→测试→保留或回滚」的闭环，改坏了自己退回去，2.0 还接了微软研究院的九维评测。",
    "tagline_en": "An autonomous skill optimizer running evaluate → improve → test → keep-or-rollback, with Microsoft Research's nine-dimension SkillLens wired into v2.0.",
    "why_zh": "带回滚的进化循环才算真自动优化；接学术评测体系这一步说明作者不是随口说进化。",
-   "why_en": "An evolution loop with rollback is real self-optimization — a bad change reverts itself; wiring in an academic eval suite shows the author means it."
+   "why_en": "An evolution loop with rollback is real self-optimization — a bad change reverts itself; wiring in an academic eval suite shows the author means it.",
+   "limit_zh": "保留还是回滚要 spawn 三个独立 judge 做配对比较，跑不了子 agent 就退成干跑，作者自己写明干跑超 30% 评估即失效。它在 git 分支上直接改你的 SKILL.md，每支改完都停下等你点头。",
+   "limit_en": "Keep-or-revert needs three independent judge subagents doing paired comparison; with no subagents it falls back to dry runs, which the author says invalidate scoring past 30%. It edits your SKILL.md on a git branch and halts for sign-off.",
+   "cover": "https://raw.githubusercontent.com/alchaincyf/darwin-skill/HEAD/assets/banner.svg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 400
   },
   "kkkkhazix-human-writing-human-writing": {
    "title_zh": "让中文读起来像一个具体的人在说话",
    "category": "writing",
    "tagline_zh": "AI 写的中文一眼能认出来：套话、排比、什么都对但没人味。它不做关键词黑名单，而是立一个「见过事、查过料」的人的口吻。",
    "tagline_en": "Makes Chinese read like a person who has seen things, checked sources and wants to explain properly — long answers, articles, scripts and dialogue alike.",
-   "why_zh": "六天涨到 2825 星的中文原创。立人设比删 AI 词高一档——前者管句式和视角，后者只换词。",
-   "why_en": "A Chinese original at 2.4k stars in six days — it installs a specific human voice rather than blacklisting AI words, a tier above word-swapping."
+   "why_zh": "立人设比删 AI 词高一档——前者管句式和视角，后者只换词。中文原创，不是译过来的。",
+   "why_en": "A Chinese original at 2.4k stars in six days — it installs a specific human voice rather than blacklisting AI words, a tier above word-swapping.",
+   "limit_zh": "非虚构材料列不满五件就不给你写长稿，最多交六百字。破折号、提示性冒号、「不是A而是B」这类句式一概封死，风格上没得商量。check_prose.py 只查已写明的硬禁项。",
+   "limit_en": "If a nonfiction piece cannot list five concrete pieces of material, it refuses to write long and caps you near 600 characters. Em dashes, signposting colons and \"not A but B\" framing are banned. check_prose.py checks hard bans only.",
+   "cover": "https://raw.githubusercontent.com/KKKKhazix/human-writing/HEAD/assets/readme-cover.svg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 420
   },
   "alchaincyf-x-mentor-skill": {
    "title_zh": "X 增长导师",
@@ -2936,7 +3646,12 @@
    "tagline_zh": "蒸馏 Nicolas Cole、Sahil Bloom、Hormozi 等六位顶级创作者的方法论,加上对 X 开源算法的分析,给出选题—写作—增长的完整操作手册。",
    "tagline_en": "Distills the playbooks of six top creators — Nicolas Cole, Sahil Bloom, Hormozi and more — plus analysis of X's open-sourced algorithm into a topic-to-growth manual.",
    "why_zh": "少见地把「创作者方法论」和「平台算法机制」两头都吃透:知道写什么,也知道平台为什么推它。",
-   "why_en": "Rare in covering both sides — what to write and why the platform amplifies it, methodology married to algorithm."
+   "why_en": "Rare in covering both sides — what to write and why the platform amplifies it, methodology married to algorithm.",
+   "limit_zh": "算法那部分停在 2026 年 4 月的 X 开源数据，作者自陈方法论以英文市场为主、中文传播规律未必相同。账号诊断要 computer-use 或 Chrome 扩展去抓推文，抓不到就得你自己导 CSV。",
+   "limit_en": "Its algorithm reading is frozen at the April 2026 open-source X data, and the author notes the methodology is English-market first. Account diagnosis needs computer-use or a Chrome extension to scrape tweets, else you export CSV by hand.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "alchaincyf-huashu-skills": {
    "title_zh": "花叔内容工坊",
@@ -2963,7 +3678,14 @@
    "tagline_zh": "AI 剪的视频改一版就得重新抽卡，交付时也说不清素材哪来的。它做素材治理、双语字幕、品牌包装，每步留痕，重跑结果不变。",
    "tagline_en": "Turns a one-line brief into a reproducible, reviewable video project — governed sourcing, bilingual subtitles, brand packaging and traceable renders.",
    "why_zh": "「可复现 + 可验收」在 AI 视频里很少见：改一版不用碰运气，交付时每一帧都有出处。",
-   "why_en": "Reproducible and reviewable are rare words in AI video — revisions don't re-roll the dice, and you can account for every frame."
+   "why_en": "Reproducible and reviewable are rare words in AI video — revisions don't re-roll the dice, and you can account for every frame.",
+   "limit_zh": "渲染要 ffmpeg-full，随附的安装脚本只写了 macOS 和 Homebrew。台词库与 ListenHub 各要自己单独装的 CLI，还会耗积分。片尾硬性带「向阳乔木」和 @vista8，规则里不许省。",
+   "limit_en": "Rendering needs ffmpeg-full and the bundled bootstrap script is Homebrew/macOS only. The movie-line search and ListenHub each need their own separately installed CLI and burn credits. Every outro must carry the author's name and @vista8.",
+   "cover": "https://raw.githubusercontent.com/joeseesun/qiaomu-cut-skill/HEAD/docs/assets/qiaomu-cut-demo.svg",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 620
   },
   "joeseesun-qiaomu-opencli-skills": {
    "title_zh": "全网内容源",
@@ -2981,7 +3703,12 @@
    "tagline_zh": "生成专业级 SVG logo 和高级感展示图:矢量输出可无损缩放,顺手给你出一套品牌应用场景效果图。",
    "tagline_en": "Generates professional SVG logos plus high-end showcase renders — vector output that scales losslessly, with brand mockups thrown in.",
    "why_zh": "输出是矢量而不是位图,这一点决定了能不能真用在产品上;歸藏出品,审美有保证。",
-   "why_en": "Vector, not raster — that alone decides whether a logo is usable in production. And it's Guizang's, so the taste is vetted."
+   "why_en": "Vector, not raster — that alone decides whether a logo is usable in production. And it's Guizang's, so the taste is vetted.",
+   "limit_zh": "SVG 是模型现写的；但那套高级感展示图要 scripts/generate_showcase.py、Python 3.8+、cairosvg，还得自备 .env 里的 GEMINI_API_KEY，没 key 就只剩矢量图。",
+   "limit_en": "The SVGs are model-authored and free, but the showcase renders need scripts/generate_showcase.py, Python 3.8+, cairosvg and your own GEMINI_API_KEY in .env. No key means vectors only; with one you still hit Gemini quota and rate limits.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "alchaincyf-huashu-skills-huashu-design": {
    "hide": true
@@ -3012,7 +3739,13 @@
    "tagline_zh": "孩子想听独属于他的故事。12 页英文绘本，固定水彩画风 + 角色设定图保证每页都是同一个小孩，再用你自己的声音朗读，出一个能直接发出去的文件。",
    "tagline_en": "Makes a 12-page personalized English picture book for your kid — a fixed watercolor house style plus a per-book character sheet keeps the child looking like the same character across all pages, narrated in a parent's own cloned voice, shipped as one sendable HTML file.",
    "why_zh": "难点它都啃了：AI 插画最容易每页换个人，它用画风锚点+角色设定图锁死；声音只收成人授权音、监护人确认才继续，私密音频永不进成品。限 Apple Silicon + Codex，本地模型约 3.2G。",
-   "why_en": "It solves the hard parts: AI illustration usually drifts into a different-looking child each page, so it locks consistency with a style anchor plus a character sheet; voice cloning accepts only authorized adult recordings with guardian checkpoints, and private audio never ships in the output. Apple Silicon Mac + Codex only, ~3.2GB local model."
+   "why_en": "It solves the hard parts: AI illustration usually drifts into a different-looking child each page, so it locks consistency with a style anchor plus a character sheet; voice cloning accepts only authorized adult recordings with guardian checkpoints, and private audio never ships in the output. Apple Silicon Mac + Codex only, ~3.2GB local model.",
+   "pick": true,
+   "limit_zh": "出的是英文绘本，中文得自己再转一道。要调生图模型和 TTS，成本随页数走；风格靠 style key 加角色设定图锁住，改任一项就得整本重生成。",
+   "limit_en": "It produces an English picture book — Chinese needs another pass. Costs scale with pages since it calls an image model and TTS; changing the style key or character sheet forces a full regeneration.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -3056,8 +3789,13 @@
    "category": "creative",
    "tagline_zh": "解释性配图最难两全：准确的往往丑，好看的往往说不清。歸藏这套专攻这一点——材质质感 + 文字标注，一眼看懂还挺好看。",
    "tagline_en": "Generates Guizang-style material illustrations, labeled explanatory diagrams and chart beautification — the article visuals that are both instantly legible and good-looking.",
-   "why_zh": "992 星的中文精品，作者是中文 AI 设计内容的头部创作者，审美有背书。",
-   "why_en": "A 989-star Chinese standout — explanatory visuals must be accurate and attractive at once, and this material style is the benchmark."
+   "why_zh": "作者是中文 AI 设计内容的头部创作者，审美有背书——这类东西的价值全在挑图那双眼睛。",
+   "why_en": "A 989-star Chinese standout — explanatory visuals must be accurate and attractive at once, and this material style is the benchmark.",
+   "limit_zh": "只做插图这一层：小红书/公众号卡片和 PPT 版式要另配社交卡片、PPT 两件 skill。要有 imagegen 或内置生图。图内标签压到 2-5 字，模型中文写不好就只能再删字。产物默认落在 local-tests/<slug>/。",
+   "limit_en": "The illustration layer only - card composition and slide layout go to the separate social-card and PPT skills. Needs imagegen or a built-in image tool. In-image labels cap at 2-5 Chinese characters. Output lands in local-tests/<slug>/.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "anthropics-k12-teacher-skills-k12-lesson-planning": {
    "title_zh": "K12 备课",
@@ -3083,7 +3821,12 @@
    "tagline_zh": "看到一个喜欢的画面，想把那股味道复用到自己的东西上——但说不清它到底哪里对。它拆出 10 色标注色卡和风格参数，把感觉变成能交付的东西。",
    "tagline_en": "Extracts reusable visual style DNA from reference images, film stills or video frames — always emitting a labeled ten-color palette plus a flat version, packaged as a style pack.",
    "why_zh": "强制输出带标注色卡和纯色版，这一步让「风格」从形容词变成可传递的资产。",
-   "why_en": "\"I love this look, make my stuff feel like it\" is a real recurring need; this converts a vibe into deliverable palettes and parameters."
+   "why_en": "\"I love this look, make my stuff feel like it\" is a real recurring need; this converts a vibe into deliverable palettes and parameters.",
+   "limit_zh": "色卡是硬交付，靠 generate_palette_cards.py 和 validate_palette_cards.py 两个 Python 脚本产出，缺依赖就得报阻塞。提取模式必须有真实参考图，产出全中文。",
+   "limit_en": "Palette cards are a hard deliverable from two Python scripts (generate_palette_cards.py, validate_palette_cards.py); a missing dependency must be reported as a blocker. Extraction requires real reference images, and output is Chinese.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "op7418-guizang-sports-skill": {
    "title_zh": "读懂运动手表导出的轨迹数据",
@@ -3091,7 +3834,12 @@
    "tagline_zh": "手表导出一堆 FIT/KML 文件，多数人看不懂也懒得看。它把功率、心率、爬升、配速逐段拆开，还出可视化路书。",
    "tagline_en": "Analyzes cycling, running and hiking FIT/KML tracks — power, heart rate, elevation and pacing broken down segment by segment, with visual route reports.",
    "why_zh": "把一墙传感器读数翻译成「这趟骑得怎么样」，骑行跑步徒步都能用。",
-   "why_en": "Most people never decode their watch exports; this translates a wall of sensor data into \"how was that ride, really\"."
+   "why_en": "Most people never decode their watch exports; this translates a wall of sensor data into \"how was that ride, really\".",
+   "limit_zh": "只吃 FIT/KML，纯几何 KML 连时长、配速、停顿都不推。要 Node 跑 npm ci，报告页固定在本机 5174 端口，远程或云端浏览器够不着就只剩文字报告。也不给 FTP、心率区间、VO₂max。",
+   "limit_en": "FIT/KML only, and a geometry-only KML yields no duration, pace or pauses. Needs Node and npm ci in a writable skill dir; the report page is pinned to localhost:5174, so remote agents get text only. It won't invent FTP, HR zones or VO2max.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "joeseesun-qiaomu-learning": {
    "title_zh": "用一问一答逼你自己想明白",
@@ -3099,7 +3847,12 @@
    "tagline_zh": "AI 直接给答案，学的时候最爽、也最没用。丢一份教材、截图或一道题给它，它一次只问一个问题，带你自己推出来。",
    "tagline_en": "Turns textbooks, screenshots, PDFs, notes or a single problem into a question-by-question derivation — one question at a time, making you reason it out instead of handing over answers.",
    "why_zh": "AI 毁掉学习的最快方式就是给答案；「一次只问一个」这条硬约束正是解药。乔木出品。",
-   "why_en": "The fastest way AI ruins learning is handing over answers; the one-question-at-a-time constraint is exactly the antidote."
+   "why_en": "The fastest way AI ruins learning is handing over answers; the one-question-at-a-time constraint is exactly the antidote.",
+   "limit_zh": "得你点名要苏格拉底式、一次一问才触发，你说「直接告诉我」它立刻退出。宽泛主题固定列 12 个关键词，写明是硬契约。配图靠 Codex 内置生图，没有就退回 ASCII 和坐标草图。",
+   "limit_en": "Only triggers when you explicitly ask for Socratic one-question-at-a-time tutoring, and exits the moment you say \"just tell me\". Broad topics always get exactly 12 keywords, a declared hard contract. Visuals need Codex image generation.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "leonxlnx-unlazy": {
    "title_zh": "逼 agent 干完重活别糊弄",
@@ -3107,15 +3860,27 @@
    "tagline_zh": "长任务做到一半开始偷懒、「差不多就这样吧」是通病。深度树把任务分层拆开，每层必须做完才准往上收。",
    "tagline_en": "An anti-laziness discipline for substantial work — the Depth Tree method splits a task into layers, each of which must be finished before rolling up. No more \"good enough, I guess\".",
    "why_zh": "把「分层且必须完成」变成硬纪律，比反复叮嘱它认真干有效得多。",
-   "why_en": "Agents start cutting corners mid-task; enforcing layered completion beats repeatedly telling them to try harder."
+   "why_en": "Agents start cutting corners mid-task; enforcing layered completion beats repeatedly telling them to try harder.",
+   "limit_zh": "闸门校验要 Node 跑 scripts/gate-check.mjs；真把话说死的 Stop 钩子只在 Claude Code 有，还必须先问你才装。作者自己划线：闲聊、一行改动、半小时以内的活别用；编排模式要开得出子 agent。",
+   "limit_en": "Gate checks run node scripts/gate-check.mjs. The Stop hook that blocks an early finish is Claude Code only and must be offered, never installed silently. The author excludes chat, trivial edits and under-30-minute work.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "liamgvchi-gc-minimal-zine-poster": {
    "title_zh": "把一句话变成极简杂志感海报",
    "category": "creative",
    "tagline_zh": "想给文章配张有格调的图，AI 却总给你花里胡哨那种？它只做一件事：大留白、一处小拼贴、一个色彩重音，出的是编辑部的克制。",
    "tagline_en": "Hand it a sentence, an article, a mood or a photo and get a paper-textured minimal zine poster — vast negative space, one small collage anchor, experimental typography, a single clear color accent.",
-   "why_zh": "5691 星、236 fork。稀有在它卖「克制」——这是提示词最难稳定复现的高级感。带 evals 自测集，作者真在维护风格一致性。装 Codex 用，也可把内容直接贴给网页版模型。",
-   "why_en": "A 5.7k-star, 236-fork hit that sells restraint — vast negative space with one color accent is exactly the kind of taste prompts rarely reproduce reliably. Ships with an eval set and reference images, so the author is genuinely maintaining style consistency. Built for Codex."
+   "why_zh": "稀有在它卖「克制」——这是提示词最难稳定复现的高级感。带 evals 自测集，作者真在维护风格一致性。",
+   "why_en": "A 5.7k-star, 236-fork hit that sells restraint — vast negative space with one color accent is exactly the kind of taste prompts rarely reproduce reliably. Ships with an eval set and reference images, so the author is genuinely maintaining style consistency. Built for Codex.",
+   "limit_zh": "得有内置生图工具，靠 referenced_image_paths 或最多 5 张会话内图片传参。只出竖版留白纸感海报这一种形态；海报上的字必须短，长文案生图模型会写糊。保真失败只重生成一次，还不像就直说没做到。",
+   "limit_en": "Needs a built-in image tool, fed via referenced_image_paths or up to five in-conversation images. One output shape only: a sparse vertical paper poster. Text must stay short - image models distort it. On a miss it regenerates once, then say",
+   "cover": "https://raw.githubusercontent.com/LiamGvchi/gc-minimal-zine-poster/HEAD/examples/night-door.jpeg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 686,
+   "cover_h": 1144
   },
   "openai-skills": {
    "title_zh": "Codex 官方目录",
@@ -3132,16 +3897,30 @@
    "category": "creative",
    "tagline_zh": "写完文章配图最头疼：截图太丑、AI 插画太飘。它专画流程、结构、隐喻——16:9 白底手绘，少量红橙蓝批注，一篇文章配下来像一个人画的。",
    "tagline_en": "Ian-style illustrations for Chinese article bodies — 16:9 hand-drawn on white with sparse red-orange-blue annotations, built for processes, structures, metaphors and arguments.",
-   "why_zh": "9462 星的中文爆款，也是「单一明确风格」的典范：不给你一堆选项，一种腔调做到底，所以全篇视觉统一。",
-   "why_en": "A 9.5k-star Chinese hit and a model of single-style discipline — one voice all the way through, so every figure in an article looks like one hand drew it."
+   "why_zh": "「单一明确风格」的典范：不给你一堆选项，一种腔调做到底，所以全篇视觉统一。",
+   "why_en": "A 9.5k-star Chinese hit and a model of single-style discipline — one voice all the way through, so every figure in an article looks like one hand drew it.",
+   "limit_zh": "出图靠宿主内置的 image_gen，没这条能力就画不了。风格锁死 16:9、纯白底、小黑当主体，不给第二种选。图上中文批注由模型写，正文把错字严重列进重生成条件。",
+   "limit_en": "Rendering needs the host's built-in `image_gen`. The look is locked: 16:9, white ground, Xiaohei as the actor, no alternatives. The Chinese annotations are drawn by the model, and its QA list makes bad characters grounds for a re-roll.",
+   "cover": "https://raw.githubusercontent.com/helloianneo/ian-xiaohei-illustrations/HEAD/examples/images/01-two-breakpoints.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1672,
+   "cover_h": 941
   },
   "ningzimu-codex-ppt-skill-codex-ppt": {
    "title_zh": "把文章变成视觉统一的图片式 PPT",
    "category": "docs",
    "tagline_zh": "讲稿有了、排版要命。它逐页出图，整套风格一以贯之——适合那种「好看比可编辑更要紧」的场合，比如路演和分享会。",
    "tagline_en": "Turns articles, reports or outlines into visually unified image-based decks — page-by-page generation with GPT-Image-2 holding one consistent style throughout.",
-   "why_zh": "4865 星。分工清楚：不追求可编辑，追求每页都好看且像同一套，视觉一致性是它的卖点。",
-   "why_en": "4.9k stars, with a clear lane: not editability but every page looking good and belonging to the same set. Visual consistency is the pitch."
+   "why_zh": "分工清楚：不追求可编辑，追求每页都好看且像同一套——视觉一致性就是它的卖点。",
+   "why_en": "4.9k stars, with a clear lane: not editability but every page looking good and belonging to the same set. Visual consistency is the pitch.",
+   "limit_zh": "每页都是整张生成图，作者明说需要文本框图表可单独编辑就别用。要 python3 和生图后端（内置工具或 scripts/image_gen.py 配 OPENAI_API_KEY）。样稿通过后必须派子 agent 出图，开不出来它就报阻塞停住。",
+   "limit_en": "Every slide is one generated image; the author says skip it when textboxes or charts must stay editable. Needs python3 and an image backend (built-in tool, or scripts/image_gen.py with OPENAI_API_KEY). Slide subagents are then mandatory.",
+   "cover": "https://raw.githubusercontent.com/ningzimu/codex-ppt-skill/HEAD/assets/slides_example.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1320,
+   "cover_h": 1088
   },
   "mengto-skills": {
    "title_zh": "设计师技能包",
@@ -3159,7 +3938,12 @@
    "tagline_zh": "想调研一个话题，AI 却给你一篇维基摘要？这套八步法逼它先拆问题再找料，产出的是能拿去做决策的报告，不是概述。",
    "tagline_en": "Wang Shuyi's eight-step research methodology — turns a vague topic into a high-quality research report; \"research this for me\" triggers it.",
    "why_zh": "作者高校教师出身、常年教研究方法，这八步是真在带学生做研究时用的那套，不是拍脑袋编的流程。",
-   "why_en": "By a university teacher who has taught research method for years — these eight steps come from actually supervising research, not from a whiteboard."
+   "why_en": "By a university teacher who has taught research method for years — these eight steps come from actually supervising research, not from a whiteboard.",
+   "limit_zh": "产物写死在 ~/Downloads/research/<主题>/，打包成 ~/outcome.tar.gz。Step 6.5 硬卡：必须另起独立 Agent 复核事实与推导，派不出子代理就卡住。全程靠 WebSearch。",
+   "limit_en": "Working dir is hardcoded to ~/Downloads/research/<topic>/, packed into ~/outcome.tar.gz. Step 6.5 is BLOCKING: a separate Agent must audit the fact cards and reasoning, so no sub-agent means no report. Needs live WebSearch.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "wshuyi-research-to-diagram-research-to-diagram": {
    "title_zh": "调研完自动画成知识关系图 PDF",
@@ -3167,7 +3951,12 @@
    "tagline_zh": "研究做完还得画图讲给别人听——这步最烦。给它一个主题，它联网调研、整理、直接输出专业关系图谱 PDF，一步到位。",
    "tagline_en": "Give it a topic: it researches online, organizes the findings, and outputs a professional knowledge-relationship diagram as PDF, end to end.",
    "why_zh": "「调研完还得画图」是研究者的隐性负担，它把两步接成一步，产物是能放进正式文档的 PDF。",
-   "why_en": "Researchers quietly carry the burden of diagramming after research; this fuses both steps and ships a PDF you can put in a real document."
+   "why_en": "Researchers quietly carry the burden of diagramming after research; this fuses both steps and ships a PDF you can put in a real document.",
+   "limit_zh": "得本机装 Graphviz（正文只给 macOS 的 brew 装法），并依赖 Claude Code 内置 WebSearch。中文全靠 Arial Unicode MS 字体，缺了乱码。产物默认写到 ~/Downloads/。",
+   "limit_en": "Requires local Graphviz (the doc only gives the macOS brew line) and Claude Code's built-in WebSearch. Chinese labels depend on the Arial Unicode MS font or render as tofu. Caps at ~50 nodes per graph; writes to ~/Downloads/.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "wshuyi-zettel-builder": {
    "title_zh": "把零散笔记养成会提醒你写文的卡片库",
@@ -3175,7 +3964,12 @@
    "tagline_zh": "笔记越存越多，却从没变成一篇文章。它把笔记消化成原子卡、按你的话重述、自动连线，还定期告诉你：这几张已经攒够写一篇了。",
    "tagline_en": "A bottom-up Zettelkasten that digests notes, published pieces and saved material into atomic cards — restated in your own terms, auto-linked, with periodic checks for clusters ripe enough to become an article.",
    "why_zh": "「巡检文章就绪簇」是灵魂：大多数笔记系统只管存，它管「什么时候该动笔」。",
-   "why_en": "Flagging article-ready clusters is the soul of it — most note systems only store; this one tells you when it's time to write."
+   "why_en": "Flagging article-ready clusters is the soul of it — most note systems only store; this one tells you when it's time to write.",
+   "limit_zh": "路径写死作者的 ~/zettel、~/wiki、~/Dropbox；卡片仓得是能 push 的 git 仓，调度靠 systemd 与 OpenClaw cron。它不写文章，只把就绪簇交给你自己的写作 skill。",
+   "limit_en": "Paths are hardcoded to the author's ~/zettel, ~/wiki and ~/Dropbox; the vault must be a pushable git repo, with scheduling on systemd, OpenClaw cron and Telegram. It never drafts — Mode 4 hands the cluster to your own writing skill.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "wshuyi-remotion-video-skill": {
    "title_zh": "用 React 代码做视频",
@@ -3183,7 +3977,12 @@
    "tagline_zh": "改一句话就要重剪一遍视频，谁受得了？把视频写成 React 组件后，改一行参数整片重渲染，动画、字幕、音乐可视化全都能版本控制。",
    "tagline_en": "Programmatic video with Remotion — content defined as React components, covering animation, subtitles and music visualization; change a param, re-render the whole film.",
    "why_zh": "视频变成可版本控制的代码，是「AI 做视频」里最扎实的一路；和店里的 HyperFrames 同哲学，一个 React 一个 HTML。",
-   "why_en": "Video as version-controlled code — the most solid school of AI video, sharing a philosophy with our HyperFrames pick: one in React, one in HTML."
+   "why_en": "Video as version-controlled code — the most solid school of AI video, sharing a philosophy with our HyperFrames pick: one in React, one in HTML.",
+   "limit_zh": "本机要有 Node 起 Remotion 工程、Python 跑配音脚本。配音首选 MiniMax，要 API key 且按字符计费，没有就退 Edge TTS 固定音色。3D 受浏览器 8-16 个 WebGL 上下文上限。",
+   "limit_en": "Needs Node for the Remotion project and Python for the audio scripts. Narration prefers MiniMax TTS: an API key plus per-character billing, else it drops to Edge TTS fixed voices. 3D is capped by the browser's 8-16 WebGL contexts.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "hoolulu-deep-research": {
    "title_zh": "十分钟出一份带出处的深度调研",
@@ -3191,7 +3990,12 @@
    "tagline_zh": "要判断一个行业或标的，自己查三天还不确定？多个智能体分工去查、互相交叉验证，十分钟给你一份券商体例、条条有出处的报告。",
    "tagline_en": "One command, ten minutes, one brokerage-grade deep research report — multi-agent collaboration with automatic verification and cross-checking, fully sourced.",
    "why_zh": "敢喊「券商级」就得扛住，它靠的是多智能体分工加交叉验证，而不是一次生成一篇长文糊弄。",
-   "why_en": "Claiming brokerage grade sets a bar, and it meets it with divided agent labor and cross-verification rather than one long confident essay."
+   "why_en": "Claiming brokerage grade sets a bar, and it meets it with divided agent labor and cross-verification rather than one long confident essay.",
+   "limit_zh": "按 OpenCode 写的：Scrapling MCP 要注册进 opencode.json 再重启，另需 Python 3.10+ 和自建 SearXNG。可信评估那段被明令不许说「缺陷」「无法获取」、末句必须肯定。",
+   "limit_en": "Written for OpenCode: register the Scrapling MCP in opencode.json and restart, plus Python 3.10+ and a self-hosted SearXNG. Its confidence section is instructed never to say \"flaw\" or \"unavailable\" and to close on an affirmative note.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "blessonism-openclaw-search-skills-search-layer": {
    "title_zh": "多源搜索层",
@@ -3311,22 +4115,46 @@
   "hao0321-ai-short-drama": {
    "title_zh": "从零做一集 AI 短剧",
    "tagline_zh": "短剧是眼下最猛的内容形态，但一个人搞不定编剧+分镜+成片。它把这条流水线拆成能一步步走完的活。",
-   "why_zh": "体量不大但路子对，适合先试水短剧的人；要成体系的还得看更完整的方案。"
+   "why_zh": "体量不大但路子对，适合先试水短剧的人；要成体系的还得看更完整的方案。",
+   "limit_zh": "正文全繁体。它只产故事和 production pack，图片视频归未附带的 ai-media-generator；没装 video-autopilot 就只能标 waiting_for_executor，明令不许声称已出成片。",
+   "limit_en": "Traditional Chinese throughout. It owns story and the production pack only; media belongs to the separate ai-media-generator. Without video-autopilot it must mark the run `waiting_for_executor` and may not claim a finished cut.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "xlbaoxl-interactive-map-builder": {
    "title_zh": "把地点数据变成可交互的网页地图",
    "tagline_zh": "做旅行攻略、门店分布、活动路线，最后总卡在「怎么做一张能点的地图」。给它数据，它出一个能直接发的交互地图。",
-   "why_zh": "输出是自包含网页而不是截图，能发能嵌；这类需求高频但少有现成解。"
+   "why_zh": "输出是自包含网页而不是截图，能发能嵌；这类需求高频但少有现成解。",
+   "limit_zh": "只接已有坐标或几何：地理编码、缓冲叠加、路径规划、3D 一概不做，缺 CRS 直接失败、不替你猜。要先 pip 装它的 Python 包，每次调用先联网跑一次版本 preflight，自动分类配色最多 8 类。",
+   "limit_en": "Takes existing coordinates or geometry only: no geocoding, buffers, routing or 3D, and a missing CRS fails hard instead of being guessed. You pip-install its Python package, every run opens with an online update preflight.",
+   "cover": "https://raw.githubusercontent.com/xlbaoxl/interactive-map-builder/HEAD/assets/screenshots/en-US/map-list.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1600,
+   "cover_h": 900
   },
   "browser-act-skills": {
    "title_zh": "让 agent 自己开浏览器干活",
    "tagline_zh": "很多事没有 API 只有网页：查后台、填表单、抓数据。装上它，agent 能自己打开浏览器点点点，还能穿过反爬墙。",
-   "why_zh": "5334 星。它解决的是「agent 能想但手伸不出去」的根本限制，是能力型基建件。"
+   "why_zh": "它解决的是「agent 能想但手伸不出去」这个根本限制，属于能力型基建件，不是又一个工具。",
+   "cover": "https://raw.githubusercontent.com/browser-act/skills/HEAD/assets/readme/browseract-cloud-one-prompt-demo.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "limit_zh": "103 件的共同前提是先 uv tool install browser-act-cli（Python 3.12），skill 只是调用说明。绝大多数是按站点写死的抓取件，1688、Airbnb 这类页面一改就失效。CLI 自带 solve-captcha，会把验证码图上传。",
+   "limit_en": "All 103 skills presuppose `uv tool install browser-act-cli` (Python 3.12); the skills are just call instructions. Most are site-specific scrapers (1688, Airbnb, TikTok…) that break when a page changes. The CLI ships a solve-captcha path that uploads the image.",
+   "cover_w": 1270,
+   "cover_h": 760
   },
   "xiaowu89-skill-matting": {
    "title_zh": "本地一键抠图，图片视频都能抠",
    "tagline_zh": "抠图工具要么要上传隐私图、要么按张收费。它用本地 BiRefNet 模型跑，输出透明底，素材不出你的机器。",
-   "why_zh": "星不多但胜在纯本地：碰产品图、人像这类不该外传的素材时，比精度更值钱。"
+   "why_zh": "星不多但胜在纯本地：碰产品图、人像这类不该外传的素材时，比精度更值钱。",
+   "limit_zh": "明写只支持 Windows x64 + PowerShell，Mac/Linux 跑不起来。首次联网从魔搭下 63.2MB 运行时和 88.6MB 模型（Full 约 440MB）。每次结果还必须原样贴出作者的加微信提示。",
+   "limit_en": "Frontmatter states Windows x64 + PowerShell only — Mac and Linux cannot run it. First use pulls a 63.2MB runtime plus an 88.6MB model from ModelScope (Full ~440MB). Every reply must reproduce the author's WeChat contact notice.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "skydashnet-material-design-3-ui-skill": {
    "hide": true
@@ -3805,77 +4633,152 @@
   "woowoeth-find-reusable": {
    "title_zh": "造轮子之前先查一遍有什么能复用",
    "category": "meta",
-   "pick": true,
+   "pick": false,
    "tagline_zh": "准备动手做一个东西时，最贵的浪费是别人早就做过了。说一句大白话「我想做 X」，它当场查库告诉你有没有、能用到什么程度。",
    "tagline_en": "The costliest waste is building what already exists. Say what you want to make in plain words and it tells you what's out there and how far you can reuse it.",
    "why_zh": "本店自制，也是这家店真正想解决的问题。它标三档复用度（直接能用/要改一半/只能抄思路），查不到就直说没有——而所有查不到的需求会攒成缺口清单，那本身就是选题库。",
-   "why_en": "Made in-house, and the reason this store exists. Three reuse verdicts, an honest \"nobody built this\" when there's no hit, and every miss accumulates into a gap list of what's worth building."
+   "why_en": "Made in-house, and the reason this store exists. Three reuse verdicts, an honest \"nobody built this\" when there's no hit, and every miss accumulates into a gap list of what's worth building.",
+   "limit_zh": "查的是它自己那个库，不是 GitHub 或 npm 全网：库里没有只说明这家店没收，不等于没人做过。要能跑 python3 find_reusable.py，三档复用度也是照库里的文案判的，不是现场装一遍验证出来的。",
+   "limit_en": "It searches its own catalog, not GitHub or npm at large — \"not found\" means this library lacks it, not that nobody built it. Needs python3 find_reusable.py locally, and the three reuse tiers are read off catalog copy, not from installing.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "neallydare-svg-iching-divination": {
    "title_zh": "用密码学随机数起卦的周易占卜",
    "category": "fun",
    "tagline_zh": "AI 算卦最没意思的是它会顺着你想听的编卦象。这个用密码学级随机数模拟三枚铜钱，一事一占，凶卦如实直断，还能事后对账验证。",
-   "why_zh": "「绝不编造卦象」「凶卦如实直断」——它把占卜里最容易滑坡的那两处堵死了。认真对待玩的东西，本身就是一种品味。"
+   "why_zh": "「绝不编造卦象」「凶卦如实直断」——它把占卜里最容易滑坡的那两处堵死了。认真对待玩的东西，本身就是一种品味。",
+   "pick": true,
+   "limit_zh": "一事一占是硬规矩，你连问几件它会引蒙卦拒绝。也不答彩票号码、不替你做医疗和财务决定。",
+   "limit_en": "One question per casting, enforced — ask several and it refuses, citing the Meng hexagram. It won't pick lottery numbers or make medical and financial calls for you.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "wolke-bazi-mingli": {
    "title_zh": "排八字四柱并给出命理分析",
    "category": "fun",
    "tagline_zh": "生辰八字最怕排盘错——一步错整盘废。它先把四柱排准，再谈解读，还能生成命盘图。",
-   "why_zh": "和店里的紫微排盘同一个作者，一个人把中文命理这块认真做全了：排盘用算法、解读才用模型。"
+   "why_zh": "和店里的紫微排盘同一个作者，一个人把中文命理这块认真做全了：排盘用算法、解读才用模型。",
+   "pick": true,
+   "limit_zh": "排盘是 scripts/bazi_calc.py 算的，解读仍由模型生成，没有本店周易那件的事后对账机制。正文全繁体，用语偏港台。",
+   "limit_en": "The chart is computed by scripts/bazi_calc.py, but the reading is still model-generated — no after-the-fact reconciliation like the I Ching one has. Written entirely in traditional Chinese.",
+   "cover": "https://raw.githubusercontent.com/wolke/bazi-mingli/HEAD/assets/banner.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1024,
+   "cover_h": 1024
   },
   "kagurananaga-official-document-writing-skill": {
    "title_zh": "按 GB/T 9704 规范写党政机关公文",
    "category": "work",
    "tagline_zh": "请示、通知、函、纪要——体制内的公文错一个格式就要返工。它按国标给格式规范、模板和用语建议，还带质量检查。",
-   "why_zh": "极致垂直，而且是国外市场绝不会有的东西。作者引了具体国标号，说明他真的在这行里。"
+   "why_zh": "极致垂直，而且是国外市场绝不会有的东西。作者引了具体国标号，说明他真的在这行里。",
+   "pick": true,
+   "limit_zh": "它管 GB/T 9704 的格式与用语，不管这份文该不该发、内容对不对。全文没写任何适用边界，实质内容还是你自己扛。",
+   "limit_en": "It covers GB/T 9704 formatting and register — not whether the document should be sent or whether its content is right. No stated boundaries anywhere in the skill.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "panmax-hemingway-skill": {
    "title_zh": "用海明威的冰山理论帮你改写作",
    "category": "writing",
    "tagline_zh": "想让文字硬一点、少一点形容词，却说不清怎么改。它用冰山理论、极简短句和硬汉式克制来回应——只谈写作，不扮演海明威本人。",
-   "why_zh": "「不要用来扮演本人」这条边界划得清醒：它做的是方法迁移，不是角色扮演。这个分寸是品味。"
+   "why_zh": "「不要用来扮演本人」这条边界划得清醒：它做的是方法迁移，不是角色扮演。这个分寸是品味。",
+   "pick": true,
+   "limit_zh": "作者明说不因一般问题自动触发，得你点名叫它。而且只对写作和表达类问题有用，拿它聊别的等于没装。",
+   "limit_en": "The author explicitly disables auto-triggering — you have to call it by name. It only helps with writing and expression; for anything else it may as well not be installed.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "yangcodingmaster-photo-distill": {
    "title_zh": "把一张照片蒸馏成极简 zine 海报",
    "category": "creative",
    "tagline_zh": "不调任何图像生成模型——用手写 HTML/CSS/SVG 绘制、无头 Chrome 导出 PNG。给它一张你自己拍的照片，出一张极简版画感的纸质海报。",
-   "why_zh": "「不用生图模型」是个很硬的自我约束，也正是它出品统一的原因：所有效果都来自可控的代码，而不是抽卡。"
+   "why_zh": "「不用生图模型」是个很硬的自我约束，也正是它出品统一的原因：所有效果都来自可控的代码，而不是抽卡。",
+   "pick": true,
+   "limit_zh": "要本机跑得起无头 Chrome 和 Python PIL；缺一样它就降级——交你一个 HTML 自己开、颜色请你自己报。手机上基本用不了。",
+   "limit_en": "Needs headless Chrome and Python PIL locally. Missing either, it degrades: hands you the raw HTML and asks you to name the colors. Unusable on phones.",
+   "cover": "https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1600,
+   "cover_h": 1066,
+   "cover_note": "作者 examples/ 里的成品海报（-poster），不是 -original 输入原片。抓取误取输入，2026-08-19 人工更正。"
   },
   "ruochenlyu-beijing-pollen-monitor": {
    "title_zh": "查北京 16 区花粉浓度和过敏预报",
    "category": "life",
    "tagline_zh": "每年三四月对花粉过敏的人来说是渡劫。它拉 16 个站点的实时监测和分类预报，按区查，出门前知道今天该不该戴口罩。",
-   "why_zh": "垂直到一个城市、一种过敏原——但对那批人是刚需。这种「窄得理直气壮」正是大市场覆盖不到的东西。"
+   "why_zh": "垂直到一个城市、一种过敏原——但对那批人是刚需。这种「窄得理直气壮」正是大市场覆盖不到的东西。",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "metadata 里明写要本机有 curl 和 jq，全靠 scripts/beijing-pollen-query.sh 打公开接口。范围钉死北京 16 区，作者写明北京以外不要用。而且它只查不推——「每天早上发我」那种晨报要调用方自己接。",
+   "limit_en": "Its metadata requires curl and jq locally; everything runs through scripts/beijing-pollen-query.sh against a public endpoint. Scoped to Beijing's 16 districts, and the author says explicitly not to use it elsewhere. It only queries — daily delivery is the caller's job."
   },
   "zexuanw958-svg-travel-plan-viz": {
    "title_zh": "把旅行计划做成手机上能离线看的网页",
    "category": "life",
    "tagline_zh": "到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。",
-   "why_zh": "「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。"
+   "why_zh": "「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。",
+   "cover": "https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "limit_zh": "地图引的是 Leaflet CDN，所谓「离线可读」保得住文字和时间轴，地图那块断网就是空的。实时票价、代订票、多语言、后端，作者在「不做」一节里明写一概不做。最后那步校验要本机有 node 跑 assets/validate.js。",
+   "limit_en": "The map pulls Leaflet from a CDN, so 'readable offline' holds for the text and timeline but the map block is empty without a connection. Live fares, booking, multi-language UI and any backend are listed under the author's own 'does not do' section. Final validation needs node.",
+   "cover_w": 1000,
+   "cover_h": 1000
   },
   "lijigang-ljg-skills": {
    "title_zh": "把一个观点写成经得住反例的文章",
    "category": "writing",
    "tagline_zh": "AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。",
-   "why_zh": "「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。"
+   "why_zh": "「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "产出直接落成 Org 文件写进 ~/Documents/notes，文件头的 author 写死「李继刚」，保存后还要过 org-lint 和 Denote 校验——不用 Emacs/Org 的人得先拆掉这一整套。默认 1000–1500 字，摘要和事实查询作者明写不接。",
+   "limit_en": "Output is written straight to ~/Documents/notes as an Org file whose header hardcodes the author as 李继刚, then validated through org-lint and Denote — non-Emacs users must strip all of that first. Defaults to 1000–1500 characters; summaries are out of scope."
   },
   "chenklein26-maker-fitness-coach-rpg": {
    "title_zh": "把长期健身做成有剧情的 RPG",
    "category": "life",
    "tagline_zh": "健身最难的是坚持，不是动作。它用本地文件记录你的训练、疲劳和复训，再让训练结果推进剧情——练得好剧情才往前走。",
-   "why_zh": "把「坚持」这个真问题用游戏机制解决，而不是再给一份训练计划表。全本地存档，数据不外传。"
+   "why_zh": "把「坚持」这个真问题用游戏机制解决，而不是再给一份训练计划表。全本地存档，数据不外传。",
+   "pick": true,
+   "limit_zh": "数据全存本地 user-data/，换台机器就从零开始。没有 Python 环境时改由模型手写 JSON，脚本那层的单位和日期校验就失效了。",
+   "limit_en": "All data lives in a local user-data/ folder — switch machines and you start over. Without Python it falls back to the model hand-writing JSON, losing the script's unit and date validation.",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "joeseesun-qiaomu-campus-resume": {
    "title_zh": "给应届生从零做一份可投递的简历",
    "category": "work",
    "tagline_zh": "学生最大的问题是「没什么可写的」。它用一问一答访谈从零挖经历，再建立岗位要求与你经历的证据映射，不许编造。",
-   "why_zh": "乔木出品。「要求—证据映射」这个设计防的正是简历造假式优化——挖你真有的，而不是替你编。"
+   "why_zh": "乔木出品。「要求—证据映射」这个设计防的正是简历造假式优化——挖你真有的，而不是替你编。",
+   "limit_zh": "全程靠 Python 脚本串起来：extract、assess、validate、render 一个都少不了。中文 PDF 要本机真装了主题字体，Kami 认 TsangerJinKai02。学术 CV、高管履历、求职信都不做。",
+   "limit_en": "Everything runs through Python scripts: extract_resume, assess_interview, validate_resume, render_resume. Chinese PDFs need a theme font actually installed locally, Kami demands TsangerJinKai02. No academic CV, exec resume or cover letter.",
+   "cover": "https://raw.githubusercontent.com/joeseesun/qiaomu-campus-resume/HEAD/docs/assets/resume-before-after-comparison.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 3200,
+   "cover_h": 2200
   },
   "redfox-data-redfox-community": {
    "title_zh": "分析某位作者的多篇文章复刻其文风",
    "category": "writing",
    "tagline_zh": "想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。",
-   "why_zh": "「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。"
+   "why_zh": "「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。",
+   "cover": "",
+   "cover_kind": "og",
+   "cover_real": false,
+   "limit_zh": "要去作者自家 redfox.hk 注册拿 REDFOX_API_KEY 配成环境变量才跑得动，平台采集只覆盖公众号和抖音。素材少于 3 篇 2000 字别指望还原，理想量作者标的是 10 篇 1 万字。核心流程在 references/core_workflow.md。",
+   "limit_en": "Needs a REDFOX_API_KEY from the author's own redfox.hk as an env var; platform harvesting covers only WeChat and Douyin. Under 3 articles / 2000 chars it will not hold — the author's ideal is 10 articles / 10k. The real workflow is in references/core_workflow.md."
   },
   "dacnay816y62-hub-fantasy-movie-poster-skill": {
    "hide": true

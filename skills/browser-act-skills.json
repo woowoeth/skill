@@ -15,17 +15,21 @@
  "homepage": "https://www.browseract.com/?co-from=github",
  "stars": 5351,
  "pushed_at": "2026-08-12T03:32:38Z",
- "skill_count": 103,
+ "skill_count": 102,
  "category": "dev",
  "fun_score": 3.36,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "daily-scout",
  "added_at": "2026-08-12",
  "install": {
   "clone": "git clone --depth 1 https://github.com/browser-act/skills.git",
-  "copy": "mv skills ~/.claude/skills/skills",
-  "dir": "~/.claude/skills/skills"
+  "copy": "",
+  "dir": "",
+  "browse": "https://github.com/browser-act/skills/tree/HEAD/solutions",
+  "note": "clone 下来，挑你要的那件复制进 ~/.claude/skills/。这是一个合集，没有「装它」这个动作。"
  },
- "cover": "https://browseract-prod.browseract.com/prod/tools/20260205-154549.png"
+ "cover": "https://browseract-prod.browseract.com/prod/tools/20260205-154549.png",
+ "unshelve_reason": "红线 · 绕反爬。CURATION.md 红线明列「恶意代码、绕反爬、批量盗号等灰产」，而这件的卖点正是穿过反爬墙，其 CLI 自带 solve-captcha 且会把验证码图上传第三方——我们自己的简介还在替它宣传这一点。同日我们刚因 robots 停用了自己的一个抓取口（D15），货架上不能同时卖破反爬的工具。附带问二：103 件是同一个 CLI 的按站点写死抓取件，页面一改就失效，属数量堆。",
+ "unshelved_at": "2026-08-19"
 }
