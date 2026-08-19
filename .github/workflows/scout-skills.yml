@@ -30,15 +30,24 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: python scouts/skill_scout.py
+        run: |
+          # tee the scout's own stdout: 拒收榜的统计数字要可追溯，日志就是凭据。
+          set -o pipefail
+          python scouts/skill_scout.py 2>&1 | tee "${RUNNER_TEMP}/scout-run.log"
+      - name: Editorial check (报告，不拦车)
+        continue-on-error: true
+        run: python scouts/check_curation.py
       - name: Commit (conflict-safe; feed regenerated from merged set)
         run: |
           git config user.name "skill-store-bot"
           git config user.email "skill-store-bot@users.noreply.github.com"
           # 1) commit ONLY per-item files + sources — unique names never conflict on rebase
+          #    聚合产物（feed.json / rejected-feed.json）永远在第 2 步从合并后的全量重建
           git add skills/*.json scouts/sources.json
-          git reset -q -- skills/feed.json 2>/dev/null || true
-          git checkout -q -- skills/feed.json 2>/dev/null || true
+          for agg in skills/feed.json skills/rejected-feed.json; do
+            git reset -q -- "$agg" 2>/dev/null || true
+            git checkout -q -- "$agg" 2>/dev/null || true
+          done
           if git diff --cached --quiet; then echo "no new stock"; else
             git commit -m "restock: daily scout"
             ok=0
@@ -48,16 +57,18 @@ jobs:
             done
             [ "$ok" = 1 ] || { echo "push failed"; exit 1; }
           fi
-          # 2) rebuild feed.json from the fully merged set, push with reset+regen retry
-          python scouts/scout_lib.py
-          git add skills/feed.json
+          # 2) rebuild the aggregates from the fully merged set, push with reset+regen retry
+          #    --from-log 把这一轮扫描的真实数字记进 scouts/scan_log.json（拒收榜的统计来源）
+          python scouts/scout_lib.py --from-log "${RUNNER_TEMP}/scout-run.log"
+          git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
           if git diff --cached --quiet; then echo "feed unchanged"; exit 0; fi
           git commit -m "restock: rebuild feed"
           for i in $(seq 1 8); do
             if git push; then echo "feed pushed"; exit 0; fi
             git fetch origin main && git reset -q --hard origin/main
-            python scouts/scout_lib.py
-            git add skills/feed.json
+            # reset --hard 把刚才那次记录一起丢了，所以重试要重记一次 —— 不会重复计数
+            python scouts/scout_lib.py --from-log "${RUNNER_TEMP}/scout-run.log"
+            git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
             git diff --cached --quiet || git commit -m "restock: rebuild feed"
             echo "feed push retry $i"; sleep $(( (RANDOM % 5) + 2 ))
           done

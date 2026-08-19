@@ -1,0 +1,63 @@
+name: 年龄回填 (fetch ages)
+
+# 手动触发。用 Actions 内置令牌（1000 次/小时，读公开仓库），
+# 不需要任何私人 PAT。跑完自动重建 feed 并提交。
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "本轮最多处理多少件（留空 = 不限，按配额自动停）"
+        required: false
+        default: ""
+
+concurrency:
+  group: skill-store-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  ages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 预演（只报数，不写盘）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scouts/fetch_ages.py ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
+
+      - name: 回填
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scouts/fetch_ages.py --write ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
+
+      - name: 重建 feed
+        run: python3 scouts/scout_lib.py
+
+      - name: 体检
+        continue-on-error: true
+        run: python3 scouts/check_curation.py
+
+      - name: 提交
+        run: |
+          git config user.name  "skill-store-bot"
+          git config user.email "skill-store-bot@users.noreply.github.com"
+          git add -A skills/ scouts/sources.json || true
+          if git diff --cached --quiet; then
+            echo "无改动"
+          else
+            git commit -m "ages: 回填 repo_created_at / skill_first_seen / age_source"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            python3 scouts/scout_lib.py
+            git add -A skills/
+            git diff --cached --quiet || git commit --amend --no-edit
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
