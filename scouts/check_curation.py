@@ -354,6 +354,12 @@ RED_WEAK = {
 }
 # 「不绕反爬」「不做荐股」这类否认句不算命中 —— 那是在写局限，正是我们要的东西。
 RED_NEGATED = r"(?:不|不会|没有|拒绝|不支持|不做|不帮|无法|不能|禁止|绝不)\s*$"
+# 否定标记也可能出现在红线词**后面**：「遇到验证码**就停**」「碰到风控**就撤**」。
+# 原来只看前面 12 个字，于是把一句「它不这么干」的褒奖判成了「我们在替它宣传」。
+# 这是本店最想褒奖的那一类行为（D41：它减负、它认栽，它不隐身），
+# 守卫却正好对它开火 —— 差点因此去改一句本来没问题的文案。
+RED_NEGATED_AFTER = (r"^\s*(?:就|便|即)?\s*(?:停|撤|退出|放弃|收手|停手|停下|作罢)"
+                     r"|^[^。；\n]{0,10}?(?:就停|就撤|停手|不换身份|不重复|不绕|不破解|不硬试|不代劳)")
 OUR_COPY = ("title_zh", "tagline_zh", "why_zh")          # 我们替它说好话的地方
 THEIR_TEXT = ("name", "desc_en", "tagline_en", "why_en", "limit_zh", "limit_brief_zh")
 
@@ -367,6 +373,8 @@ def _red_hits(it: dict, fields, table) -> list[tuple[str, str, str]]:
         for cat, pat in table.items():
             for m in re.finditer(pat, t, re.I):
                 if re.search(RED_NEGATED, t[max(0, m.start() - 12):m.start()]):
+                    continue
+                if re.search(RED_NEGATED_AFTER, t[m.end():m.end() + 14]):
                     continue
                 out.append((cat, f, t[max(0, m.start() - 16):m.end() + 16]))
     return out
@@ -964,7 +972,13 @@ def check_english(items: dict) -> dict:
     for it in shelved:
         for f in ("tagline_en", "why_en", "limit_en"):
             v = (it.get(f) or "").strip()
-            if v and v[-1] not in _SENT_END_EN:
+            # 句末标点允许在收尾引号 / 括号**里面** ——
+            # `…never 'Great job completing all those tasks!'` 是写完了的句子，
+            # 感叹号在引号内，最后一个字符是引号。原来只看最后一个字符，
+            # 于是把一句完整的话报成截断。**差点因此去改一句本来没问题的文案 ——
+            # 改文案迎合守卫，和在句读处切得干净一样，是把问题藏起来。**
+            tail = v.rstrip("'\"’”)]}»")
+            if v and (not tail or tail[-1] not in _SENT_END_EN):
                 cut.append((it["id"], f, len(v), v[-34:]))
     if cut:
         err(f"{len(cut)} 处英文文案没有英文句末标点 —— 要么是被截断（不是写完了），"

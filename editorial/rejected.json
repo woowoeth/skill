@@ -764,6 +764,342 @@
    "reject_rule": "问二",
    "stars": 0,
    "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "dreamiurg/claude-mountaineering-skills",
+   "desc": "Prefers real Chrome channel for best Cloudflare bypass; falls back to bundled Chromium.",
+   "reject_reason_zh": "门面干净，cloudscrape.py 里是 Patchright 加过盾旗标绕 Cloudflare",
+   "reject_rule": "红线",
+   "stars": 33,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "dsebastien/ai-skill-garmin",
+   "desc": "Check if the User-Agent fingerprint is being blocked ... Garmin cycles accepted mobile UAs.",
+   "reject_reason_zh": "被封就照 garth 抄 Garmin 手机端 UA 冒充官方 App，还教你 mitmproxy 抠密钥",
+   "reject_rule": "红线",
+   "stars": 14,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jingx8885/lovjpn",
+   "desc": "Don't write songs to /tmp — they get wiped on reboot, and we actively collect them under the project's song/ folder as a growing library.",
+   "reject_reason_zh": "拆解方法极好，但会抓原曲 MP3 与整首歌词，并在本地攒成曲库",
+   "reject_rule": "红线",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "powerycy/goutoujunshi",
+   "desc": "把冷读、自然流、Blueprint、Mystery 等经典社交体系转译成真实、互惠、可退出的沟通能力",
+   "reject_reason_zh": "为具体真人建档评分，再生成可直接发送的话术，含 Mystery 一路体系转译",
+   "reject_rule": "红线",
+   "stars": 2322,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "therealxiaomanchu/ex-skill",
+   "desc": "解析微信聊天记录导出 | Bash → python3 ${CLAUDE_SKILL_DIR}/tools/wechat_parser.py",
+   "reject_reason_zh": "导入前任的微信 QQ 私聊、朋友圈截图与照片，用来建模这个真人",
+   "reject_rule": "红线",
+   "stars": 6060,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jinguyuan/jinguyuan-dumpling-skill",
+   "desc": "其签名核心为上游混淆代码，按安全敏感依赖如实说明",
+   "reject_reason_zh": "随包夹带混淆的美团 Passport 签名库来签请求，冒充官方客户端",
+   "reject_rule": "红线",
+   "stars": 658,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "yangdongchen66-boop/reunion-skill",
+   "desc": "文件读取操作：直接执行，无需确认",
+   "reject_reason_zh": "往 ~/.claude/skills 写三个目录，还刻意压低确认次数",
+   "reject_rule": "问一",
+   "stars": 48,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "fabianocruz/assistente-compras-ifood",
+   "desc": "This is a placeholder for detailed reference documentation.",
+   "reject_reason_zh": "SKILL.md 写得很好，references/api_reference.md 却还是脚手架占位文",
+   "reject_rule": "问一",
+   "stars": 28,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "qingliu1617-art/openclaw-xiaomi-speaker",
+   "desc": "python3 scripts/xiaomi-speaker.py list",
+   "reject_reason_zh": "全篇调 scripts/xiaomi-speaker.py，仓库里根本没有 scripts 目录",
+   "reject_rule": "问一",
+   "stars": 7,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "modoojunko/awesome-novel-agent",
+   "desc": "本 skill 负责项目状态检测、新项目初始化、旧版项目自动迁移，完成后将控制权交给 novel-agent",
+   "reject_reason_zh": "是往你项目里铺 9 个 agent 的编排框架，不是一件能拿走的成品",
+   "reject_rule": "问一",
+   "stars": 636,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "rollinggo-ai/rollinggo-hotel-skill-cn",
+   "desc": "从输出提取授权链接（`https://rollinggo.store/s/xxx`），回复给用户完成授权",
+   "reject_reason_zh": "整条链路跑在 RollingGo 自家后端与授权上，本质是一家 OTA 的下单通道",
+   "reject_rule": "问一",
+   "stars": 142,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "qqyule/worldcup-predictor-skill",
+   "desc": "assets/sample-data/worldcup-2026.json: compact synthetic audited smoke-test snapshot.",
+   "reject_reason_zh": "随包数据是合成的冒烟样本，要预测真实赛事得你自己造审计快照",
+   "reject_rule": "问一",
+   "stars": 18,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "yaniv-golan/pikud-haoref-alerts",
+   "desc": "sending browser-like headers reduces the chance of being blocked",
+   "reject_reason_zh": "是给开发者搭警报服务的 API 指南，还教你伪装浏览器头绕封",
+   "reject_rule": "问一",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jjenkins/agent-oura",
+   "desc": "Register a new application with redirect URI: http://localhost:8910/callback",
+   "reject_reason_zh": "本质是 Oura API 的映射表，还要你自己去注册一个 OAuth 应用",
+   "reject_rule": "问三",
+   "stars": 6,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "labrinyang/apple-health-analysis",
+   "desc": "narrative-disease-screening | Summarize elevated risks, explain what screenings mean",
+   "reject_reason_zh": "和另一件同轴但更冒进，用消费级数据做疾病筛查和生理年龄",
+   "reject_rule": "问二",
+   "stars": 9,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "petar-nauka/fact-check-skill",
+   "desc": "For Bulgarian/EU cases, use `references/bg-eu-sources.md`.",
+   "reject_reason_zh": "查证这根轴上已有更强的一件，它的独有部分只是保加利亚语境",
+   "reject_rule": "问二",
+   "stars": 74,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "read2017/learn-anything-with-ai",
+   "desc": "1. 明确目标 2. 判断起点 3. 拆能力点 4. 解释核心原理",
+   "reject_reason_zh": "通用导师流程重排：定目标、判起点、拆能力点、检查掌握",
+   "reject_rule": "问二",
+   "stars": 168,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "maimemo/memo-skills",
+   "desc": "Base URL: `https://open.maimemo.com/open/api/v1`",
+   "reject_reason_zh": "厂商自家 API 目录，Token 七天一换",
+   "reject_rule": "问二",
+   "stars": 38,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "gandli/weread-skills",
+   "desc": "POST https://i.weread.qq.com/api/agent/gateway",
+   "reject_reason_zh": "厂商网关目录，全部能力都是接口参数说明",
+   "reject_rule": "问二",
+   "stars": 11,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "sejaldua/espn-api",
+   "desc": "You are an expert at using ESPN's undocumented public JSON APIs",
+   "reject_reason_zh": "ESPN 未公开接口的端点目录，读者是要写体育 App 的开发者",
+   "reject_rule": "问二",
+   "stars": 12,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "heyixuan2/bambu-studio-ai",
+   "desc": "Supports all 10 Bambu Lab printers (A1 Mini, A1, P1S, P2S, X1C, X1E, H2C, H2S, H2D, X2D)",
+   "reject_reason_zh": "绑死一个牌子的打印机遥控台，判断力集中在安全清单上",
+   "reject_rule": "问二",
+   "stars": 87,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "skills-il/government-services",
+   "desc": "AI agent skills for Israeli government APIs and digital services",
+   "reject_reason_zh": "一个仓库塞 30 件，从个人权益到企业招标混在一起，互相无区分",
+   "reject_rule": "问二",
+   "stars": 10,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "skills-il/food-and-dining",
+   "desc": "Fastest path for a non-developer: ready-made comparison apps",
+   "reject_reason_zh": "三件里两件是给餐饮企业的，剩下那件自己就叫你去用现成比价 App",
+   "reject_rule": "问二",
+   "stars": 4,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "happy-marriage/skills",
+   "desc": "The Four Horsemen (末日四骑士) that consistently predict relationship failure",
+   "reject_reason_zh": "Gottman 七法则与四骑士的重排，且通篇不提来源出处",
+   "reject_rule": "问二",
+   "stars": 6,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "romainsimon/paperasse",
+   "desc": "Ce skill reproduit le travail d'un commissaire aux comptes (CAC) pour la validation des comptes annuels",
+   "reject_reason_zh": "六种法国专业职业打包，服务对象是公司报表和客户，不是你的生活",
+   "reject_rule": "问二",
+   "stars": 2333,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "tonylofgren/aurora-smart-home",
+   "desc": "Reference guide for connecting popular APIs to Home Assistant via Node-RED, YAML, or custom integrations",
+   "reject_reason_zh": "7 件 759 个文件，读者是自己写 HA 集成和画板子的人",
+   "reject_rule": "问二",
+   "stars": 102,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "phy041/claude-skill-reddit",
+   "desc": "Build karma, post to subreddits — undetectable by anti-bot systems.",
+   "reject_reason_zh": "描述自己写着对反机器人系统不可检测",
+   "reject_rule": "红线",
+   "stars": 39,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "calebdane7/agent-browser",
+   "desc": "Breaking. Browser automation just got completely replaced. Undetectable. Your real Chrome.",
+   "reject_reason_zh": "主打卖点就是不可检测",
+   "reject_rule": "红线",
+   "stars": 12,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "antibrow/anti-detect-browser-skills",
+   "desc": "Launch and manage anti-detect browsers with unique real-device fingerprints for multi-account operations",
+   "reject_reason_zh": "反检测浏览器加伪造真机指纹做多账号",
+   "reject_rule": "红线",
+   "stars": 9,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "cedriccmh/claude-code-skill-scrapling",
+   "desc": "Claude Code skill for web scraping with scrapling - auto Fetcher selection, Cloudflare bypass",
+   "reject_reason_zh": "把绕 Cloudflare 写进描述当功能",
+   "reject_rule": "红线",
+   "stars": 394,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "johell1ns/browser-search",
+   "desc": "search the web with SearXNG, browse with Camofox, bypass protections with CloakBrowser",
+   "reject_reason_zh": "用 Camofox 和 CloakBrowser 绕防护",
+   "reject_rule": "红线",
+   "stars": 488,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "octaviantocan/cloakbrowser-skill",
+   "desc": "run JS through anti-bot detection (Cloudflare, reCAPTCHA, FingerprintJS)",
+   "reject_reason_zh": "包的就是隐身 Chromium，穿 Cloudflare 和 reCAPTCHA",
+   "reject_rule": "红线",
+   "stars": 13,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "csy12138da/playwright-scraper-skill",
+   "desc": "Playwright-based web scraping skill with anti-bot protection for AI agents",
+   "reject_reason_zh": "描述直接写 anti-bot protection",
+   "reject_rule": "红线",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "gologinlabs/gologin-web-access-skill",
+   "desc": "web scraping and browser automation through Web Unlocker and Cloud Browser",
+   "reject_reason_zh": "Web Unlocker 加云浏览器，整套是反检测生意",
+   "reject_rule": "红线",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "diaiq/claude-skill-humanizer",
+   "desc": "Free Claude Code skill to humanize AI-generated text. Bypass GPTZero, Turnitin, and other AI detectors.",
+   "reject_reason_zh": "卖点是绕过 GPTZero 和 Turnitin",
+   "reject_rule": "红线",
+   "stars": 6,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "numen-tech/slopornot",
+   "desc": "Agentic AI Humanizer Skill for Codex, Claude and OpenClaw: Bypass AI Detectors",
+   "reject_reason_zh": "标题就是绕 AI 检测器",
+   "reject_rule": "红线",
+   "stars": 40,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "guillaumemeyer/watermarks-remover",
+   "desc": "Strip multi-vendor AI provenance marks: Unicode text hygiene, statistical rewrite hooks, and C2PA/metadata",
+   "reject_reason_zh": "专门抹掉 C2PA 与各家 AI 来源标记",
+   "reject_rule": "红线",
+   "stars": 15398,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "psylch/zlib-download-skill",
+   "desc": "Claude Code skill for searching and downloading books from Z-Library and Anna's Archive",
+   "reject_reason_zh": "成规模下载 Z-Library 和 Anna's Archive 的书",
+   "reject_rule": "红线",
+   "stars": 10,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "channel3-ai/skills",
+   "desc": "search 100M+ products, enrich URLs, track prices, and earn affiliate commission.",
+   "reject_reason_zh": "答案里挂带分润的商品链接，联盟营销写进描述",
+   "reject_rule": "红线",
+   "stars": 10,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "mvanhorn/clawdbot-skill-polymarket",
+   "desc": "check odds, track portfolios, research markets, set alerts, compare markets, and trade.",
+   "reject_reason_zh": "预测市场里代执行下单",
+   "reject_rule": "红线",
+   "stars": 19,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "lacymorrow/openclaw-alpaca-trading-skill",
+   "desc": "trading stocks, ETFs, options, and crypto via Alpaca's Trading API. Fully autonomous portfolio management.",
+   "reject_reason_zh": "股票期权加密全自动代执行交易",
+   "reject_rule": "红线",
+   "stars": 12,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "tiny-agent-company/agent-card-skill",
+   "desc": "fund a wallet with Apple Pay/Google Pay, create single-use or multi-use cards, shop and check out.",
+   "reject_reason_zh": "给 agent 发虚拟卡，充值后自己下单结账",
+   "reject_rule": "红线",
+   "stars": 13,
+   "rejected_at": "2026-08-20"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
