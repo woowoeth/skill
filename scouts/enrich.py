@@ -976,7 +976,12 @@ def cmd_covers(args) -> None:
         if cur and "private-user-images.githubusercontent.com" not in cur:
             ok, _ = url_is_image(cur)
             if ok:
-                rec.update(cover_url=cur, source="existing", is_real_artwork=True)
+                # **不再打 is_real_artwork=True。** 这里只验了「链接还活着」，
+                # 没验「这张图是什么」—— 而当初正是这一行把 OG 卡片、60×60 头像、
+                # 一张 Kimi 赞助广告、会员横幅和三张二维码（含一张作者收款码）
+                # 一律记成了「真产出物图」，最后报出「97 张」而实际只有 27 张。
+                # 活着 ≠ 是产出物。这个字段只有人打开看过才配填。
+                rec.update(cover_url=cur, source="existing", is_real_artwork=None)
                 return rid, rec
             rec["dead_existing"] = cur
 

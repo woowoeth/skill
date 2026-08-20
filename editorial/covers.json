@@ -1,18 +1,23 @@
 {
  "generated_at": "2026-08-19",
- "note": "id → 封面候选。**不写回 skills/*.json**，由人工/上架流程决定采用哪些。is_real_artwork=true 表示这是仓库自己的图（README 头图或 assets 里的产出物示例），false 表示只是 GitHub 生成的 OG 卡片 —— 后者比渐变色块强，但不是品味的证据。",
+ "note": "id → 封面候选。**不写回 skills/*.json**，由人工上架流程决定采用哪些。\n**`is_real_artwork` 这个字段本身是错的，前端早就不信它了（见 index.html 里那段注释）。**\n它原来把 `readme_image` 和 `existing` 一律记成「真产出物图 / true」—— 而 README 里的图多半是**头图**，不是产出物样张；`existing` 里混过 OG 卡片、60×60 头像、一张 Kimi 赞助广告、会员横幅，还有三张二维码（其中一张是作者收款码）。\n**那次「97 张真产出物封面」→ 79 → 实际 27 的事故，根就在这份定义里：**\n「仓库自己的图」和「它做出来的东西」被当成了同一件事，而前端一直在区分这两者\n（capHero 的原话就是「作者自己的头图，**不是产出物样张**」）。下游改对了，上游的定义没改。\n唯一算数的判断是人工核过的 `cover_kind` / `cover_real`（在 editorial/curation.json 里），而人工核过的意思是**有人把那张图打开看了**。",
  "tiers": {
+  "output_sample": {
+   "label": "产出物样张（examples/ output/ demo/ samples/ screenshots/ 下）",
+   "is_real_artwork": null,
+   "_说明": "目录名本身声明了「这是它做出来的东西」，和 README 顶部的宣传图是两件事。**但仍然要人打开看** —— 实测踩到过：一张 examples/ 里的图是对照拼版，左三格是 1980 年代动画原片翻拍，我们登上去就等于展示别人的版权画面。"
+  },
   "readme_image": {
-   "label": "真产出物图",
-   "is_real_artwork": true
+   "label": "README 里的图（**多半是头图，不是产出物样张**）",
+   "is_real_artwork": false
   },
   "repo_asset": {
-   "label": "真产出物图",
-   "is_real_artwork": true
+   "label": "仓库 assets/ 里的图（要看是产出物还是装饰）",
+   "is_real_artwork": null
   },
   "existing": {
-   "label": "原有封面（已验活）",
-   "is_real_artwork": true
+   "label": "原有封面（只验了链接还活着，**没验它是什么**）",
+   "is_real_artwork": null
   },
   "repo_social_preview": {
    "label": "仓库自定义社交预览图",
@@ -1992,5 +1997,6 @@
  },
  "deny_rules": {
   "qr": "cover_url 命中 qr|reward|wechat_group 一律 denied，不进 feed。UX 于 2026-08-19 在手机两列实机截图中发现。"
- }
+ },
+ "_判据": "三个问题，缺一不可：①这张图是这个 skill 做出来的东西吗（不是头图/架构图/logo/界面截图/广告/头像/二维码/别人的作品）？②登在公开页上有没有问题（第三方版权画面、二维码、收款码、真人肖像、可识别个人信息 → 不用）？③它适合当卡片封面吗（站点米色底浅色系）？\n**没打开看过的图一律不判。「文件名叫 demo 所以是产出物」不算判断。**"
 }
