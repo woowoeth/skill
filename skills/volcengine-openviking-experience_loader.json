@@ -1,0 +1,32 @@
+{
+ "id": "volcengine-openviking-experience_loader",
+ "kind": "skill",
+ "name": "experience_loader",
+ "title_zh": "",
+ "tagline_zh": "调教技能的技能：experience_loader。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Load relevant OpenViking experience memories via case-linked experience candidates before solving a task.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "volcengine/OpenViking",
+ "owner": "volcengine",
+ "path": "benchmark/tau2/train/experience_loader_template",
+ "url": "https://github.com/volcengine/OpenViking/tree/HEAD/benchmark/tau2/train/experience_loader_template",
+ "homepage": "https://openviking.ai/",
+ "stars": 30297,
+ "pushed_at": "2026-08-19T15:59:33Z",
+ "skill_count": 1,
+ "category": "meta",
+ "fun_score": 5.53,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-20",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/volcengine/OpenViking.git",
+  "copy": "cp -r OpenViking/benchmark/tau2/train/experience_loader_template ~/.claude/skills/experience_loader",
+  "dir": "~/.claude/skills/experience_loader"
+ }
+}
