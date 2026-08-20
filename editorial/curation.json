@@ -5366,6 +5366,46 @@
   },
   "aldefy-compose-expert": {
    "title_zh": "答 Compose 问题必附 androidx 源码出处"
+  },
+  "liyue-aigc-seedance-2-5-video-director": {
+   "title_zh": "把想法写成即梦 Seedance 2.5 提示词，绝不替你按生成键",
+   "tagline_zh": "即梦每生成一版都在扣积分，改一次就是一次赌。它只交可复制的提示词，遇到「向前续写」这种歧义必须先问你放在原片前还是后。",
+   "why_zh": "它把边界写成硬规则：只产文字、不调用生成、不花积分；时间戳必须严丝合缝铺满时长，眼泪和脸红不许出现在触发之前。",
+   "limit_zh": "它不生成视频，只交提示词——粘回即梦、扣积分、返工仍是你的事。绑死 Seedance 2.5 一个模型，正文明写别把这些语法当成其他视频模型的通用规则。默认中文输出；每个新会话第一次调用会先塞一整段强制教学。",
+   "title_en": "Writes your Seedance 2.5 prompt, then refuses to hit generate",
+   "tagline_en": "Every Dreamina render costs credits, so a vague prompt is a paid mistake. It hands you the director's brief and a copy-ready prompt, and never guesses.",
+   "why_en": "The boundaries are hard rules: text only, no job submission, no credits spent. Timestamps must tile the full duration exactly, and a reaction may not land before its cause.",
+   "limit_en": "It writes prompts, not videos — pasting, paying and re-rolling stay with you. Bound to Seedance 2.5, it says not to treat its syntax as universal across video models. Output defaults to Chinese, and each session's first call opens with a tutorial."
+  },
+  "nolangz-breathing-montage-skill": {
+   "title_zh": "把高密度剪辑排成骨架，白闪只准一帧、全片四次",
+   "tagline_zh": "快剪到最后只剩噪音，因为全片一个节奏。它把镜头压成两极——插帧不超过 12 帧、呼吸不少于 2 秒，切点贴 VO 里的名词而不是 BPM 网格。",
+   "why_zh": "密度来自双峰分布而不是提速：插帧的帧数绝对、不随片长缩放；正片零溶解，唯一一次溶解留给彩蛋当反语法标记。",
+   "limit_zh": "它不碰视频：产出是骨架表和提示词包，落刀要你自己在时间线上数帧。正文明写「只提供语法，不携带任何视觉风格」，色板、题材、年代都得项目自带。六份 references 全中文，戏剧学检查层改写自 smixs/visual-skills 与 DirectorSKILL。",
+   "title_en": "A cut skeleton where the white flash is always exactly one frame",
+   "tagline_en": "Fast cutting turns to noise when every shot runs at one speed. Inserts stay under 12 frames, breaths over two seconds, and cuts land on voiceover nouns rather than the BPM grid.",
+   "why_en": "Density comes from a two-peak distribution, not from speed. Insert lengths are absolute frame counts that never scale with runtime, and the only dissolve allowed is the after-credits gag.",
+   "limit_en": "It never touches video: you get a rhythm skeleton and a prompt package, and you still count frames on your own timeline. It carries no visual style at all — palette, era and subject come from your project — and every reference file is in Chinese."
+  },
+  "alchaincyf-huashu-slide-doubao": {
+   "title_zh": "用豆包自带生图出整套 PPT，一分第三方 API 钱不花",
+   "tagline_zh": "做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。",
+   "why_zh": "它给字数上限配了反向约束：正文明写「AI 看到 220 字上限就会朝 220 字写」，于是先逼你答这页要人记住哪一句。",
+   "limit_zh": "不在豆包环境就别装——作者写明它「存在的全部理由」就是豆包自带的 image_gen，默认的 seedream_5.0_pro 还是会员专属，非会员回退 4.5。产物默认是图片式 PPT，文字不可编辑，除非你明说要可编辑、或生图连挂三次。",
+   "title_en": "Whole decks from Doubao's built-in image model, with no image API bill",
+   "tagline_en": "Course decks, WeChat headers and Bilibili thumbnails all bill you per generated image. This one pins that step to Doubao's built-in seedream, and gives covers, section breaks, content pages and closers four separate density ceilings.",
+   "why_en": "The word ceiling comes with a counterweight: the text warns that a model told \"220 characters max\" will write to 220, so every page must first name the one line the audience should remember.",
+   "limit_en": "Don't install this outside Doubao — the author calls the built-in image_gen its entire reason to exist, and the default seedream_5.0_pro is members-only, falling back to 4.5 for everyone else. Slides come out as flat images with no editable text unless you explicitly ask for editable output, or generation fails three times."
+  },
+  "luji12-luji-pet-streetwear-mood-avatar": {
+   "title_zh": "给宠物穿上街头装瘫进沙发，用傻瓜相机的直闪拍下来",
+   "tagline_zh": "AI 一出手就把毛孩子画成卡通玩偶，认不出是自家那只。它硬规定剪影要第一眼读成「人瘫在沙发上」，道具只许 1–2 件、占画面 3–12%。",
+   "why_zh": "它不生成新宠物，只把你上传的那张照片当编辑目标，先记下 2–4 个识别锚点；姿势可以像人，四肢必须还是动物的。",
+   "limit_zh": "它直接调 `view_image` 和 `image_gen.imagegen`，环境里没有这两个内置工具就跑不起来。产物只有 1:1 正方形一种，作者明令不许先出竖图再裁切；成片不许出现任何可读文字、商标和水印，把宠物变卡通、变人类或拿去做品牌广告都写进了禁止项。",
+   "title_en": "Your own pet, in real streetwear, slouched on a couch under a hard flash",
+   "tagline_en": "Ask any model for a pet portrait and you get a cartoon plush toy you can't recognise. This one insists the silhouette read first as \"a human sprawled on a sofa\", with only one or two props filling 3–12% of the frame.",
+   "why_en": "It never generates a new animal: your uploaded photo is the edit target, and two to four identity anchors get written down first. The pose may be human; the limbs and paws stay animal.",
+   "limit_en": "It calls `view_image` and `image_gen.imagegen` directly, so it goes nowhere in an environment without those two built-in tools. The only output is a 1:1 square composed as a square from the start — cropping a vertical down is forbidden — and readable text, logos and watermarks are banned outright, as is turning the pet into a cartoon, a human, or a brand advertisement."
   }
  }
 }

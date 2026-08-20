@@ -30,5 +30,5 @@
   "dir": "~/.claude/skills/paperclip"
  },
  "unshelved_at": "2026-08-20",
- "unshelve_reason": "暂撤：定时进货员自动上架，但没有人写过文案（中文标题/点评/局限、英文四项全空）。CURATION.md 第五节写死了「抓取与文案必须同时做，不许先抓一批以后再补」——货架上堆机器占位文案是本店犯过的最大错误。文案补齐后立刻恢复上架。"
+ "unshelve_reason": "问一 · Paperclip 控制面的运行时组件，不是能拿走的商品：凭据由平台注入（PAPERCLIP_AGENT_ID / PAPERCLIP_API_KEY 是短时 run JWT），执行窗口由平台唤醒。没有那个 SaaS 账号，连第一步 GET /api/agents/me 都发不出去。 正文原话：You run in **heartbeats** — short execution windows triggered by Paperclip. Each heartbeat, you wake up, check your work, do something useful, and exit. You do not run continuously."
 }

@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-20T03:10:22Z",
+ "generated_at": "2026-08-20T03:19:40Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 157,
-  "unshelved": 616,
+  "shelved": 161,
+  "unshelved": 612,
   "known_items": 773,
   "known_repos": 444,
-  "rejected_documented": 4,
+  "rejected_documented": 15,
   "rejected_machine_logged": 0,
   "rounds_logged": 2,
   "latest_round": {
@@ -39,21 +39,21 @@
    "zh": "不是拿走就能用的商品",
    "en": "Not a take-and-use product",
    "detail": "框架/底座、教程、脚手架、别人项目自己的装修配置",
-   "count": 0
+   "count": 5
   },
   {
    "rule": "问二",
    "zh": "用户在别处拿得到",
    "en": "No increment over any other directory",
    "detail": "官方厂商目录、通用开发件、数量堆、已有更好同类在架",
-   "count": 3
+   "count": 8
   },
   {
    "rule": "问三",
    "zh": "写不出让人想装的文案",
    "en": "No copy worth writing",
    "detail": "只能憋出「一个不错的 X 工具」= 它没有值得说的点",
-   "count": 0
+   "count": 1
   },
   {
    "rule": "红线",
@@ -121,6 +121,149 @@
    "stars": 451,
    "url": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
    "rejected_at": "2026-08-19",
+   "by": "店长"
+  },
+  {
+   "repo": "SawyerHood/doobie",
+   "name": "doobie",
+   "desc": "Browser automation with persistent named pages via the doobie CLI. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, log into sites, or automate b",
+   "reject_reason_zh": "1.5KB 正文里方法全推给 `doobie --help`，自己只留了几条分号和 ref 失效的 gotcha，用户拿到正文本身得不到任何可迁移的判断。",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/SawyerHood/doobie",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "basicmachines-co/basic-memory",
+   "name": "basic-memory",
+   "desc": "Use the Basic Memory knowledge graph for persistent memory across sessions. Search before answering; capture decisions, meetings, and insights as notes.",
+   "reject_reason_zh": "Basic Memory 自家产品的集成件（路径就在 `integrations/hermes/skill`）",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/basicmachines-co/basic-memory",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "ilexlyu/ad-proposal-skills",
+   "name": "ad-creative-methods",
+   "desc": "广告创意方法论 Skill。Use when the user already has a strategic insight, proposition, product angle, brand POV, or campaign strategy and needs to translate that strategy into persuasive creative expression, c",
+   "reject_reason_zh": "它是同仓库 `ad-proposal-orchestrator` 任务图里的第 4 道工序，前后还有研究、洞察、叙事、视觉、质检五道",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/ilexlyu/ad-proposal-skills",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "volcengine/OpenViking",
+   "name": "openviking-memory",
+   "desc": "Recall and persist long-term memory through the OpenViking MCP tools. Use at the start of any substantive task (coding, configuration, debugging, multi-step or tool-based work) to retrieve relevant pr",
+   "reject_reason_zh": "火山引擎官方仓库里给自家 MCP 服务写的调用说明书，同时是通用记忆件里的第 N 个。正文自己承认没接上那台服务器就整件空转；",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/volcengine/OpenViking",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "paperclipai/paperclip",
+   "name": "paperclip",
+   "desc": "Interact with the Paperclip control plane API for task coordination and governance. Use when checking assignments, updating issue status, posting comments, delegating work, managing routines, or calli",
+   "reject_reason_zh": "Paperclip 控制面的运行时组件，不是能拿走的商品：凭据由平台注入（PAPERCLIP_AGENT_ID / PAPERCLIP_API_KEY 是短…",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/paperclipai/paperclip",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "jar-analyzer/jar-analyzer",
+   "name": "jar-audit-agent",
+   "desc": "基于 jar-analyzer（SQLite + 内置 MCP）的证据驱动 Java 安全审计技能。核心目标：把“结论”变成“可复现证据 + 可度量覆盖率”。",
+   "reject_reason_zh": "jar-analyzer 在自家仓库里给自家应用配的驱动件：数据源是那个桌面工具的 SQLite 库加 :20032 上的 MCP",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/jar-analyzer/jar-analyzer",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "glincker/thesvg",
+   "name": "thesvg",
+   "desc": "Fetch brand SVG logos and cloud architecture icons (AWS, Azure, GCP) from theSVG. Use when the user asks for a brand logo, company icon, framework mark, service icon, or any \"icon/logo for X\" where X ",
+   "reject_reason_zh": "作者自家图标库的取货指针：正文核心内容就是一条 jsDelivr URL 模板加 slug 命名规则",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/glincker/thesvg",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "redfox-data/redfox-community-dsh",
+   "name": "redfox-community-dsh",
+   "desc": "The official bundle plugin package of DSH (DeepSeek Harness) from RedFoxHub: Over 100 social media data skills (Douyin / Xiaohongshu / Kuaishou / Bilibili / Official Accounts / Video Accounts / Weibo ",
+   "reject_reason_zh": "厂商自家的官方 bundle：README 自称 RedFoxHub 官方 DSH 包",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/redfox-data/redfox-community-dsh",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "ethosagent/ethos",
+   "name": "ethos",
+   "desc": "TypeScript AI agent framework where personality is architecture. Specialists, not chatbots.",
+   "reject_reason_zh": "这张卡指的那件东西不存在：五条候选路径（根目录 / skill/ / skills/ethos/ / .claude/skills/ethos/ 及记录的 …",
+   "reject_reason_en": "",
+   "reject_rule": "问三",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/ethosagent/ethos",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "harry0703/MoneyPrinterTurbo",
+   "name": "moneyprinterturbo-video",
+   "desc": "Use this skill whenever the user wants to create a finished video from a topic, title, idea, prompt, or script with MoneyPrinterTurbo. This includes short-form, voice-over, educational, marketing, soc",
+   "reject_reason_zh": "这不是一件能拿走的商品，是 MoneyPrinterTurbo 自家项目的安装+运行外壳：正文全篇在教 agent 怎么装 uv、把本体装进用户家目录",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+   "rejected_at": "",
+   "by": "店长"
+  },
+  {
+   "repo": "cathrynlavery/diagram-design",
+   "name": "diagram-design",
+   "desc": "Create branded architecture, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, loop/flywheel, nested, tree, org chart, layer stack, Venn,",
+   "reject_reason_zh": "23,486 星的画图大路货，任何目录站和「必装清单」里都有，收它用户拿不到增量——这正是 D40 按问二下架 ★6958 那件 Cocoon-AI 的同一…",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/cathrynlavery/diagram-design",
+   "rejected_at": "",
    "by": "店长"
   }
  ],
@@ -197,20 +340,6 @@
    "stars": 78907
   },
   {
-   "id": "nolangz-breathing-montage-skill",
-   "repo": "nolangz/Breathing-Montage-Skill",
-   "name": "breathing-montage",
-   "added_at": "2026-08-20",
-   "stars": 0
-  },
-  {
-   "id": "liyue-aigc-seedance-2-5-video-director",
-   "repo": "liyue-aigc/seedance-2-5-video-director",
-   "name": "seedance-2-5-video-director",
-   "added_at": "2026-08-20",
-   "stars": 93
-  },
-  {
    "id": "ethosagent-ethos",
    "repo": "ethosagent/ethos",
    "name": "ethos",
@@ -225,25 +354,11 @@
    "stars": 30312
   },
   {
-   "id": "luji12-luji-pet-streetwear-mood-avatar",
-   "repo": "luji12/luji-pet-streetwear-mood-avatar",
-   "name": "pet-streetwear-mood-avatar",
-   "added_at": "2026-08-20",
-   "stars": 1
-  },
-  {
    "id": "harry0703-moneyprinterturbo-moneyprinterturbo-video",
    "repo": "harry0703/MoneyPrinterTurbo",
    "name": "moneyprinterturbo-video",
    "added_at": "2026-08-20",
    "stars": 110997
-  },
-  {
-   "id": "alchaincyf-huashu-slide-doubao",
-   "repo": "alchaincyf/huashu-slide-doubao",
-   "name": "huashu-slide-doubao",
-   "added_at": "2026-08-20",
-   "stars": 3
   },
   {
    "id": "redfox-data-redfox-community-dsh",
