@@ -1107,3 +1107,33 @@ def check_install_dirs(items):
 # 一个从不执行的守卫比没有守卫更糟：它让人以为那一面已经有人看着了。
 if __name__ == "__main__":
     main()
+
+
+# ---------------------------------------------------------------------------
+# 【14】机器占位文案上架 —— 这条不该由店主替我们发现
+#
+# 2026-08-20：定时进货员自动上架了 21 件，中文标题/点评/局限、英文四项全空。
+# 店主一眼看出来：「上新的内容也都没有，只有个标题」。
+#
+# 而 CURATION.md 第五节早就写着：
+#   「不许『先抓一批、以后再补文案』。那样货架上会长期堆着机器占位文案，
+#    用户看到的就是一坨没人管的东西 —— 这是本店犯过的最大错误。」
+#   「自动进货（GitHub Actions）只负责往**候选池**里放东西，**不直接上架**。」
+#
+# 设计写对了，实现是反的（make_item 默认 hide=False，文案靠 LLM_API_KEY 现场写，
+# key 没配就整段 except 跳过）。根因已修成默认 hide=True。
+# 这条守卫是第二道：**万一又有别的路径把没文案的东西送上架，构建期就红。**
+# ---------------------------------------------------------------------------
+def check_no_placeholder(items):
+    live = [it for it in items if not it.get("hide")]
+    need = ("title_zh", "why_zh", "limit_zh")
+    bare = [(it.get("id"), [f for f in need if not (it.get(f) or "").strip()])
+            for it in live]
+    bare = [(i, miss) for i, miss in bare if miss]
+    print("\n【14】机器占位文案上架")
+    print(f"  在架 {len(live)} 件 · 缺人写文案的 {len(bare)} 件")
+    for i, miss in bare:
+        print(f"  [没人写过文案] {i} — 缺 {'/'.join(miss)}")
+    if bare:
+        print("  上架是人写完文案之后的动作，不是抓取的副作用。补文案，或 hide 掉。")
+    return bare

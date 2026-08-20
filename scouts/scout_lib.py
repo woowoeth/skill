@@ -291,7 +291,14 @@ def make_item(*, kind: str, name: str, desc_en: str, repo: str, path: str = "",
         "limit_zh": "", "limit_en": "",
         "repo": repo, "owner": owner, "path": path, "url": url, "homepage": homepage,
         "stars": stars, "pushed_at": pushed_at, "skill_count": skill_count,
-        "category": cat, "fun_score": fs, "pick": False, "hide": False,
+        "category": cat, "fun_score": fs, "pick": False,
+        # **新抓的一律默认不上架。** 上架是人写完文案之后的动作，不是抓取的副作用。
+        # 2026-08-20 的教训：定时进货员上了 21 件机器占位文案（中文标题/点评/局限、
+        # 英文四项全空），店主一眼看出来「上新的内容也都没有，只有个标题」。
+        # 根因就在这一行 —— 而 CURATION.md 第五节早就写着「自动进货只负责往候选池里
+        # 放东西，**不直接上架**」。设计写对了，实现是反的。
+        # 恢复上架靠 editorial/curation.json 里人写的 hide:false，或人工改这个文件。
+        "hide": True,
         "source": source, "added_at": added_at or today(), "install": install,
     }
 
