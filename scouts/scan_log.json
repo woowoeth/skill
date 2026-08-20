@@ -2,6 +2,21 @@
  "_说明": "机器扫描留痕。每轮进货扫了多少、收了多少、拒了哪些。网站上「今天扫了 N 条、收了 M 件」的数字来自这里，不来自估算。",
  "_字段": "rounds[].source = scout-instrumented（数字来自 scout 进程本身）| scout-log-parse（从 scout 的 stdout 回收，complete:false，未插桩的量一律 null 不猜）。rejects 是逐条留痕，滚动保留最近 600 条。",
  "_写入方": "scouts/scout_lib.py 的 flush_round() / record_round_from_log()。人不要手改这个文件；人写的拒收理由在 editorial/rejected.json。",
- "rounds": [],
+ "rounds": [
+  {
+   "round_id": "2026-08-20T02:39:36Z-31fedc",
+   "date": "2026-08-20",
+   "finished_at": "2026-08-20T02:39:36Z",
+   "scanned": null,
+   "rejected": null,
+   "by_rule": {},
+   "passed_gate": 24,
+   "tried": 5,
+   "admitted": 11,
+   "source": "scout-log-parse",
+   "complete": false,
+   "note": "scout-run.log"
+  }
+ ],
  "rejects": []
 }
