@@ -192,15 +192,27 @@ def check_rejected(items: dict) -> dict:
     check_against(doc, "rejected.schema.json", "rejected")
 
     entries = [e for e in doc.get("entries", []) if isinstance(e, dict)]
+    # 这两条检查的粒度是 **(repo, skill)**，不是 repo。
+    #
+    # 原来两条都按 repo 比，于是 rejected.json 里 `_去重键` 写明的正常状态
+    # —— 「同一个仓库一部分上架一部分被拒」—— 被判成了矛盾和重复。
+    # 同一个 repo-only 假设当时还长在 build_rejected_feed 里，让 96 条拒收只有 90 条进得了榜。
+    # **修一处不算修完：同一个错误假设会同时长在管线和守卫里，而守卫报出来的话正好把你引开。**
     seen, dupes = set(), []
-    shelved_repos = {it.get("repo") for it in items.values() if not it.get("hide")}
+    shelved = {(it.get("repo"), it.get("name") or "") for it in items.values() if not it.get("hide")}
+    shelved_repos = {r for r, _ in shelved}
     for e in entries:
         r = e.get("repo", "")
-        if r in seen:
-            dupes.append(r)
-        seen.add(r)
-        if r in shelved_repos:
-            err(f"拒收榜里的 {r} 同时还在架上 —— 收了又说拒了，站上会自相矛盾")
+        sk = (e.get("skill") or "").strip()
+        key = (r, sk)
+        if key in seen:
+            dupes.append(f"{r}" + (f"（{sk}）" if sk else "（整仓）"))
+        seen.add(key)
+        # 整仓被拒（skill 留空）却还有货在架 = 真矛盾。
+        # 指名某一件被拒，只有那一件也在架上才算矛盾。
+        if (r in shelved_repos) if not sk else ((r, sk) in shelved):
+            what = r if not sk else f"{r} 的 {sk}"
+            err(f"拒收榜里的 {what} 同时还在架上 —— 收了又说拒了，站上会自相矛盾")
         reason = e.get("reject_reason_zh", "")
         if re.fullmatch(r"\s*(不满足|未通过|不符合)?\s*(问一|问二|问三|红线|门槛)\s*[。.]?\s*", reason):
             err(f"{r}: reject_reason_zh 只复述了条款名，没说这一件为什么被拒")
@@ -209,7 +221,7 @@ def check_rejected(items: dict) -> dict:
         by_rule[e.get("reject_rule", "?")] = by_rule.get(e.get("reject_rule", "?"), 0) + 1
     print(f"  {len(entries)} 条 · 按条款 {by_rule or '（空）'}")
     if dupes:
-        warn(f"{len(dupes)} 个 repo 重复出现（构建时只取最后一条）：{dupes[:5]}")
+        warn(f"{len(dupes)} 条 (repo, skill) 重复（构建时只取最后写的那条）：{dupes[:5]}")
     return {"entries": len(entries), "by_rule": by_rule}
 
 

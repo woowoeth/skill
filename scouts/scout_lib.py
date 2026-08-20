@@ -537,13 +537,21 @@ def build_rejected_feed(items: dict) -> dict:
         if not isinstance(e, dict) or e.get("hide"):
             continue
         repo = (e.get("repo") or "").strip()
-        if not repo or repo in seen:
+        # 去重键是 **(repo, skill)**，不是 repo。
+        #
+        # 原来只按 repo 去重，于是「整仓被拒」和「同仓的另一个分支被拒」互相覆盖 ——
+        # 96 条写下来的拒收只有 90 条进得了榜，**6 条静默消失**，而 rejected.json 的
+        # `_去重键` 一直写着 (repo, skill)。文档写的是设计，实现是另一回事。
+        # check_curation 那条「N 个 repo 重复，构建时只取最后一条」的 WARN 一直在报这件事，
+        # 被当成无害提示读了很久。同一个仓库一部分上架一部分被拒是正常状态，不是矛盾。
+        key = (repo, (e.get("skill") or "").strip())
+        if not repo or key in seen:
             continue
-        seen.add(repo)
+        seen.add(key)
         rule = e.get("reject_rule", "")
         human.append({
             "repo": repo,
-            "name": e.get("name", "") or repo.split("/")[-1],
+            "name": e.get("name", "") or e.get("skill", "") or repo.split("/")[-1],
             "desc": (e.get("desc") or "")[:400],
             "reject_reason_zh": e.get("reject_reason_zh", ""),
             "reject_reason_en": e.get("reject_reason_en", ""),
@@ -558,7 +566,8 @@ def build_rejected_feed(items: dict) -> dict:
 
     log = read_json(SCAN_LOG, None) or {}
     rounds = [r for r in log.get("rounds", []) if isinstance(r, dict)]
-    machine = [r for r in log.get("rejects", []) if isinstance(r, dict) and r.get("repo") not in seen]
+    _seen_repos = {k[0] for k in seen}
+    machine = [r for r in log.get("rejects", []) if isinstance(r, dict) and r.get("repo") not in _seen_repos]
     machine.sort(key=lambda r: r.get("rejected_at", ""), reverse=True)
 
     def _sum(key):
