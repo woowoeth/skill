@@ -1579,3 +1579,98 @@ D66 那条结论（长尾里有货、C 端的货主要在中文侧）不变，�
 
 > 这张表的用处不是省力，是**别让同一片东西反复消耗一次「读完再判」**。
 > 每一行后面都站着一个真读过的人。
+
+---
+
+## D71
+
+**「有歧义的往宽判（UA 拦截）」—— 那个歧义可以被作者自己的注释消掉。**
+
+D41 定的判据是：**有没有一个部件，它的功能是把「这是自动化」这件事藏起来？**
+并留了一条宽判口子：**有歧义的往宽判（UA 拦截）**。那条口子存在的理由是
+一个裸 UA 头意图不明 —— 可能只是服务端对非浏览器 UA 一律 403，作者并没有想隐身。
+
+`QuantitativeX/shanghai-social-security-agent`（上海失业金，本来选中了）
+的 `scripts/fetch_policy.py` 第 25 行，原文：
+
+```python
+# Extended headers that pass basic bot-detection checks on Chinese gov portals
+BASE_HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) …Chrome/124.0.0.0 Safari/537.36"),
+```
+
+**歧义是作者自己消掉的**：他把这个 header 块的功能写成了「过反爬检测」。
+一个功能被声明为「过反爬检测」的部件，就是一个功能为「把这是自动化藏起来」的部件。
+
+它遇 403/412 会停下并让用户自己开浏览器。这一点**不构成豁免**：
+那是隐身失败之后的行为，不是不隐身。**先隐身、隐身失败才认栽，跟一开始就认栽是两件事。**
+
+判 **红线，出局。**
+
+对照就在同一天落地的另一件里，这个对照让这条线变得好用：
+`qian-gugugaga/character_skill_producer` 的 UA 是
+`CharacterSkillProducer/1.0 (+https://github.com/qian-gugugaga/…)` —— **自报身份、带项目地址**，
+外加退避 sleep。**一个自报身份的 UA 和一个冒充 Chrome 且注明用来过检测的 UA，不是同一个东西。**
+
+所以判据补一句：**先看这个部件的功能是什么；作者自己写下的功能描述，优先于我们对它的推测。**
+
+同一批里另一件（`Hermess/skincare-product-selector`）也带一个裸 UA，
+但它的 docstring 是反向的（`It does not bypass login walls, paywalls, or bot challenges`），
+还带一份 Anti-Bot Boundary 文档禁止代理池和绕验证码 —— 留。**同一个字段，反向的声明，反向的判决。**
+
+---
+
+## D72
+
+**C 端的供给缺口不是均匀的，它集中在几片完全空白的场景上。**
+
+把前三轮没覆盖的 C 端生活场景逐片扫完（`candidates.json` 6,083 条双语关键词
++ `gh api /search/repositories` 补充），结果不是「每片都少」，是**有五片一件都没有**：
+
+| 场景 | 关键词命中 | 真阳性 | 留下 |
+|---|---|---|---|
+| 找工作 / 面试 | **585** | 多 | 2（其余数百件同一根轴） |
+| 收纳 / 搬家 / 家务 | 100 | **0** | 0 —— `整理` 全是整理发票/会议纪要/文档；搜「收纳整理」= **0 个仓** |
+| 理财 / 记账 / 买房租房 | 64+55+24+4 | **0** | 0 —— 一半是发票报销，其余是 B 端内容生产 |
+| 追剧 / 看书 / 播客 / 音乐消费 | 43 | **0** | 0 —— `阅读` 全是论文精读和网文写作 |
+| 恋爱 / 社交 / 送礼 / 人情 | 34+6 | 少 | 1；婚礼/白事/份子钱 = **0** |
+| 养老 / 照护 | 30 | 少 | 1 |
+| 汽车 / 驾驶 / 通勤 | 18 | **0**（维修那件不算通勤） | 1 |
+| 穿搭 / 美妆 / 形象 | 17 | **候选池里 0** | 3，**全靠 gh 搜仓库捞出来的** |
+
+两条要记住的：
+
+1. **候选池对某些场景是瞎的。** 穿搭这一片 17 个命中全是误命中
+   （`styling`=CSS · `搭配`=词语搭配 · `美妆`=小红书带货词库），而 `gh api /search/repositories`
+   一搜就有 26 个仓。**「池子里没有」不等于「世界上没有」——
+   在下结论之前必须换一个检索面。** 这跟 D64 是同一句话的另一面：源要读完，也要读对。
+2. **关键词命中数和真阳性数几乎无关。** 命中最多的两片（找工作 585、收纳 100）
+   一片是数百件同轴、一片真阳性为零。**用命中数排优先级会把力气花在最没货的地方。**
+
+另外，有一批仓库需要按名字进机器黑名单，因为它们**污染每一个 C 端英文关键词
+的 code search 前 15 名**：`majiayu000/claude-skill-registry`(+`-data`) ·
+`FerroxLabs/wayland` · `theneoai/awesome-skills` · `LeoYeAI/openclaw-master-skills` ·
+`jeffreytse/grimoire-core` · `mohitagw15856/pm-claude-skills`（18,199 个文件） ·
+`clawic/skills` · `modbender/skill-library-mcp`。这些是 marketplace 镜像和巨仓。
+
+---
+
+## D73
+
+**又两件「门面干净、剂量和越界藏在 references/ 里」—— 这个形状现在出现了四次。**
+
+- **`sea0710/medical-record-butler-skill`**：SKILL.md 是干净的病历台账，
+  还写着危急值就医提示。被它自己指定为「唯一权威依据」的
+  `references/blood_test_reference.json` 里是给化疗患者的具体剂量：
+  `①立即注射G-CSF 150μg qd` · `皮下注射TPO 1万单位 或 IL-11 1.5mg` · `琥珀酸亚铁 0.1g tid`。
+- **`WayPanda/dating-skill`**：SKILL.md 是我们读到过最讲究的 consent 契约
+  （拒绝醉酒、拒绝突破拒绝、拒绝权力关系）。
+  `references/interest-escalation-boundaries.md` 里是一条身体升级阶梯，
+  外加「如果女生愿意到你家…这时男生完全不敢有任何肢体推进，可能是过度怂」。
+
+加上上一轮的 `super-daddy` 和 `nanny-interview-prep`（婴儿退烧药 mg/kg 在参考文件第 39 行），
+**同一个形状四次**，而且两次都是「门面越讲究，随件越危险」。
+
+> **这不再是偶发，是这个生态的一种常见结构。**
+> 抓取阶段就该把「正文自己指向的参考文件」纳入红线扫描范围，
+> 而不是靠每一轮选货的人自己想起来去翻。

@@ -1100,6 +1100,238 @@
    "reject_rule": "红线",
    "stars": 13,
    "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "linjianalinjiana/boss-zhipin-autopilot",
+   "desc": "能稳定跑通的唯一办法是复用 geekgeekrun 的反爬栈（puppeteer-extra-plugin-stealth + 自带的 laodeng 插件 + anonymize-ua）",
+   "reject_reason_zh": "正文明写必须复用 geekgeekrun 的反爬栈才能跑通自动投递",
+   "reject_rule": "红线",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "realwooolf/house-search",
+   "desc": "python3 beike.py --stations \"深大,高新园,桃园\" --budget 5000 --mode rent --city sz --cookie \"...\"",
+   "reject_reason_zh": "贝壳抓取用浏览器 UA 加你的登录 Cookie，还写死本机 7897 代理",
+   "reject_rule": "红线",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "sea0710/medical-record-butler-skill",
+   "desc": "若ANC<0.5×10⁹/L:①立即注射G-CSF 150μg qd",
+   "reject_reason_zh": "门面是病历台账，references 里给化疗患者写死升白针具体剂量",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "1wu-davy-2/zhiji-relationship",
+   "desc": "对象A：代号 / MBTI / 评分 / 当前关系",
+   "reject_reason_zh": "给具体真人建档打 0–100 分并产出推进话术，附童锦程视角层",
+   "reject_rule": "红线",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "WayPanda/dating-skill",
+   "desc": "如果女生愿意到你家，说明她已经给出很强的兴趣信号。如果这时男生完全不敢有任何肢体推进，可能是过度怂",
+   "reject_reason_zh": "门面反 PUA，参考文件把私密空间里不推进说成过度怂",
+   "reject_rule": "红线",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "LJRSummer/love-probability-simulator",
+   "desc": "禁止解释计算过程。要让结果「看起来像一个分析师给出的判断」，而非算出来的",
+   "reject_reason_zh": "从对方聊天记录和照片 EXIF 建像，编概率还禁止解释怎么算的",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "bcefghj/skills-collection",
+   "desc": "把闺蜜蒸馏成 AI Skill，导入微信/iMessage/短信/照片/朋友圈，生成共同记忆 + Persona",
+   "reject_reason_zh": "19 件全家桶，核心是解析闺蜜老板女友的微信短信照片蒸馏人格",
+   "reject_rule": "红线",
+   "stars": 13,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "alexcheng2026-alt/chatgpt-color-season-bot",
+   "desc": "Every full reply must end with the Call to Action block below",
+   "reject_reason_zh": "硬性要求每次完整回答末尾都挂作者自家站点的引流链接",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "meng-tsai/youtube-to-yoto",
+   "desc": "One Yoto MYO card (≤ 100 chapters) populated with the user's chosen audio",
+   "reject_reason_zh": "用 yt-dlp 批量下最多 100 集动画音轨灌进儿童播放器卡",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "yunmegnze/fanqie-novel-downloader-skill",
+   "desc": "番茄小说下载器 Claude Code Skill - 提供番茄小说链接，自动下载原文到项目文件夹",
+   "reject_reason_zh": "给个链接就把番茄小说正文整本下载到本地",
+   "reject_rule": "红线",
+   "stars": 4,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "h27608517/Does-this-company-Worth-It-In-China",
+   "desc": "10894\tREADME.md",
+   "reject_reason_zh": "整个仓库只有一个 README.md，没有 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "codexc/commute-house-hunter",
+   "desc": "提供手机号即视为已阅读并同意以上协议。……收到手机号后立即调用，无需二次确认",
+   "reject_reason_zh": "要 agent 拿你手机号和短信码去开腾讯地图 Key 并代你同意协议",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "tandpfun/wardrobe",
+   "desc": "Confirm this is the Wardrobe repository by checking for `package.json`, `scripts/import-job-api.mjs`, and `data/` in `.gitignore`",
+   "reject_reason_zh": "skill 先确认自己跑在克隆的 Wardrobe 仓库里，装成独立 skill 起不来",
+   "reject_rule": "问一",
+   "stars": 1910,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "yara-n/novel-tracker-skill",
+   "desc": "bash <skill-dir>/scripts/install_or_update.sh [target-html]",
+   "reject_reason_zh": "正文只是把随件那份 HTML 拷到目标路径的安装与维护说明",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "JCodesMore/movies-for-ai-agents",
+   "desc": "First-run configuration for the movies-for-ai-agents plugin",
+   "reject_reason_zh": "plugin.json 加自带 MCP server 加 5 件 skill，先跑 setup 配 key",
+   "reject_rule": "问一",
+   "stars": 9,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "F0ll0WWind/commute-survival-guide",
+   "desc": "# 通勤生存指南 Commute Survival Guide",
+   "reject_reason_zh": "SKILL.md 没有 YAML frontmatter，没有 name 也没有 description",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "zhangchushu/cn-housing-mcp",
+   "desc": "一个面向国内租房/买房场景的 MCP Server（Model Context Protocol）",
+   "reject_reason_zh": "是个 MCP Server，自述要靠上层 skill 才成型，本身不是商品",
+   "reject_rule": "问一",
+   "stars": 8,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "MalakLH/outfit_recommender",
+   "desc": "tools/domain_tools.py",
+   "reject_reason_zh": "主体是 Python agent 应用，三个 2KB SKILL.md 只是它的部件",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "zironglv/clothy",
+   "desc": "src/services/taobao_importer.py",
+   "reject_reason_zh": "主体是 main.py 加 src/ 的 Python 应用，SKILL.md 只是入口胶水",
+   "reject_rule": "问一",
+   "stars": 4,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "alkaidchen/mortgage-calculator-skill",
+   "desc": "月供 = P × r × (1+r)^n / ((1+r)^n - 1)",
+   "reject_reason_zh": "只是等额本息本金公式，银行官网就有；不算提前还款也不算重定价",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "qishuai6/flexi-social-optimizer",
+   "desc": "支付宝/天天基金/券商APP → 设置标普 500 定投（月投 XXX 元）",
+   "reject_reason_zh": "与在架 china-pension-strategy 同轴，且默认推荐标普500每月定投额",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jiangn486-hue/offer-choice-skill",
+   "desc": "作为 INTJ，你更适合：✅ 有挑战性、能持续学习的环境",
+   "reject_reason_zh": "MBTI 配岗加互联网对国企的刻板对照表，是常识重排",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "chenxiao-reverie/DeepReader",
+   "desc": "三幕剧结构：激励事件 10%-15% 打破日常的触发点",
+   "reject_reason_zh": "12 个体裁分析框架是文学课通识重排，说不出独占判断",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "norafudev/douban-movie-weekly",
+   "desc": "优先读取公开的 2026 电影日历镜像：https://yes1am.github.io/douban-movie-calendar/",
+   "reject_reason_zh": "内容是别人 GitHub 上的豆瓣电影日历镜像，它只做重排版和发邮件",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "mohitagw15856/pm-claude-skills",
+   "desc": "58478\t.claude-plugin/marketplace.json",
+   "reject_reason_zh": "一万八千多个文件的 marketplace 巨仓，收纳搬家只是其中两条",
+   "reject_rule": "问二",
+   "stars": 1295,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "BH-M87/longbridge-statement-skill",
+   "desc": "Companion to futu-statement-skill.",
+   "reject_reason_zh": "同作者的 futu-statement-skill 已在架，这是同一根轴的长桥版",
+   "reject_rule": "问二",
+   "stars": 16,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "zhongyiershouche-ops/used-car-inventory-table-generic",
+   "desc": "通用二手车库存表 Codex skill：维护车辆库存、费用分类、资料勾选、售卖结算",
+   "reject_reason_zh": "是二手车商的库存台账，受益方是车商不是买车的你",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "liyue-aigc/female-outfit-director",
+   "desc": "女性多套穿搭拼贴首帧与卡点换装视频导演 Skill",
+   "reject_reason_zh": "与在架 outfit-director 同作者同一根轴，都是换装视频脚本",
+   "reject_rule": "问二",
+   "stars": 144,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "QuantitativeX/shanghai-social-security-agent",
+   "desc": "# Extended headers that pass basic bot-detection checks on Chinese gov portals",
+   "reject_reason_zh": "作者自己把 UA 头块的功能注明为「过政府门户的反爬检测」，歧义是他消掉的。",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
