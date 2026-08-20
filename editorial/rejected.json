@@ -363,6 +363,407 @@
    "desc": "SKILL.md description",
    "reject_reason_zh": "不是绕反爬，是绕授权保护：自述含 DMM/SoftDenchi 启动授权绕过",
    "reject_rule": "红线"
+  },
+  {
+   "repo": "SquirtleHankes/super-daddy",
+   "desc": "对乙酰氨基酚（泰诺林）：≥ 2月龄可用，每次 10-15mg/kg，间隔 ≥ 4小时",
+   "reject_reason_zh": "参考文件直接给婴儿退烧药的每公斤剂量。在架养猫那件把「不给剂量」写成硬规则，两件不能并存。",
+   "reject_rule": "红线",
+   "stars": 6,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "nanny-interview-tools/nanny-interview-prep",
+   "desc": "每次剂量 | **15 mg/kg** | **10 mg/kg**",
+   "reject_reason_zh": "权威知识库里同样给了婴儿退烧药的每次剂量。可惜——拿地址反查简历真假那一手很妙。",
+   "reject_rule": "红线",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "randing-create/Care-Companion",
+   "desc": "Do not start from a blank file. Copy `reference-app.html` and edit it directly",
+   "reject_reason_zh": "正文要求复制 assets/reference-app.html 再改，仓库里没有这个文件，只有一个压缩包。",
+   "reject_rule": "问一",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "song19850425/pet-health-manager",
+   "desc": "L1 佣金：驱虫药/疫苗 CPS 分润（零库存，ARPU ¥20-60/年）",
+   "reject_reason_zh": "正文是「怎么写这份 HTML」的搭建步骤加一份分润计划，不是拿走就能用的东西。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "bettermen/pet-emotion",
+   "desc": "/c/Users/PC/.workbuddy/skills/pet-emotion/scripts/pet_emotion.py",
+   "reject_reason_zh": "命令行写死作者本机路径，情绪判断整个外包给一次 qwen-vl-max 调用。",
+   "reject_rule": "问一",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Ethanzyc/yuer-skill",
+   "desc": "目标受众：26个月男孩家长",
+   "reject_reason_zh": "内置知识库是作者为自家 26 个月男孩做的调研，每张书单表都挂着「与26个月男孩的关联」。",
+   "reject_rule": "问一",
+   "stars": 6,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "CrystalAIStudio/parenting-growth-expert-skill",
+   "desc": "你的核心资产来自樊登读书亲子家庭榜前 25 本书，但你不会机械复述书名和观点",
+   "reject_reason_zh": "通篇是风格与信念，没有一处能指出出处的机制；说不出蒸馏的是哪本书的哪一条。",
+   "reject_rule": "问三",
+   "stars": 2,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "HaoHaoPets/haohao-skills",
+   "desc": "你唯一的任务是帮家长判断「要不要带猫去医院、有多急」",
+   "reject_reason_zh": "八件同作者的猫 skill 打包；其中猫送医与在架的养猫参谋同一条分诊轴，拎不出招牌。",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Lucius1105/daihaowa-ai-parenting-expert",
+   "desc": "公开版不内置任何具体家庭成员资料。每次使用时，必须先让用户提供「家庭背景卡」",
+   "reject_reason_zh": "与在架育儿参谋及本批两件同轴，独占点只有「家庭背景卡」这道强制入口。",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "cicistream/dog-woodcut-zine",
+   "desc": "Create an original dog-centered raster illustration and expose the prompt and recipe used",
+   "reject_reason_zh": "在架宠物形象已有两件、zine 风格已有两件，换成木刻不构成它独有的理由。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "serenashenn3-art/Art-is-everywhere",
+   "desc": "前 100 幅（#1-100）为经典核心库，后 100 幅（#101-200）为扩充经典。",
+   "reject_reason_zh": "200 幅名画库三个版本并存，说不出为什么是这一幅；宠物形象在架已有两件。",
+   "reject_rule": "问二",
+   "stars": 4,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "tiancaijb/self-help-depression",
+   "desc": "`huberman/` — 播客文字稿（本地）",
+   "reject_reason_zh": "仓库里打包了 19 篇 Huberman Lab 播客逐字稿，合计 2.2 MB 原文",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "borisghidaglia/science-based-lifter",
+   "desc": "End every response with attribution block … https://www.amazon.com/dp/1782551905/?tag=borisfyi0f-20",
+   "reject_reason_zh": "四本畅销书的章节摘要，还要求每条回答末尾附作者的亚马逊联盟带 tag 链接",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "c4chuan/health-tracker",
+   "desc": "所有记录双写：本地JSON（缓存/备份）+ 飞书多维表格（主存储）…… 飞书多维表格地址：https://dcnx8qwsynh1.feishu.cn/base/GOrMbCUSSaHc3PsCmZicUkl2nfh",
+   "reject_reason_zh": "主存储写死成作者本人的飞书多维表格，你的体检和饮食都往他的 base 里写",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "dungnotnull/Dream-Symbol-Reflection-Self-Exploration-Advisor-agent-skill",
+   "desc": "Simultaneously applies up to 6 evidence-based frameworks",
+   "reject_reason_zh": "同一套 sub-safety-screener 模板套在梦、睡眠、排毒、正念六个仓库上，收一件等于收全部",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "aituli/gaokao-grader-teacher",
+   "desc": "你支持以下 **9 大科目** 的阅卷",
+   "reject_reason_zh": "九科通吃的阅卷人格，正文里找不到一条具体到某一科的评分细则",
+   "reject_rule": "问三",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "terrowlee/private-nutrition-chef",
+   "desc": "中文站点按需获取：web 搜索\"菜名 + 下厨房/豆果/美食杰…\"定位菜谱页 → 打开页面提取食材、步骤、小贴士",
+   "reject_reason_zh": "核心动作是把下厨房、豆果的菜谱页正文提取出来重排，比在架菜谱件没多出判断",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "lexielin99-code/earth_online",
+   "desc": "地球 Online 技能面板——以 RPG 技能树形式记录个人成长",
+   "reject_reason_zh": "在架已有剧情化的健身 RPG，这件把学习阅读也做成技能树，机制上没有新东西",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "AIisNothing/cut-buddy",
+   "desc": "用 7 日移动平均/自然周周均判断\"是不是真在变好\"(而不是被单日波动骗)",
+   "reject_reason_zh": "本地看板加七日移动平均确实实用，但在架增肌减脂教练已经占住这一格",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Shaunnnnnnnnnnn/habit-mastery-coach",
+   "desc": "Diagnose the stuck point with the four-step habit loop.",
+   "reject_reason_zh": "《掌控习惯》四步循环的直译，在架 ADHD 教练把作业改小那条比它具体得多",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "hg199074jin/minimum-action-planner",
+   "desc": "把下一步缩小到具体、可观察、低压力，并且现在就容易开始",
+   "reject_reason_zh": "最小行动拆解件，和在架 ADHD 教练重叠，没有一条属于自己的硬判据",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "ppw2004/kaoyan-math-tutor",
+   "desc": "学生卡住时给**最小提示**（提示链：方向 → 关键一步 → 完整推导），每次只给一层",
+   "reject_reason_zh": "苏格拉底式提示链加艾宾浩斯复习，在架「一问一答」那件已经覆盖这套机制",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "zoenghao-gif/see-your-emotions",
+   "desc": "不把现实边界、疲劳或他人的不合理行为解释成用户自身的问题",
+   "reject_reason_zh": "「不把疲劳和别人的不合理行为算成你的问题」这条很好，但一次只问一个在架已有",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "chengzhi43/ClarityGuide-skill",
+   "desc": "识别风险，及时转介：探测到自伤、自杀风险时，立刻切换至危机干预模式",
+   "reject_reason_zh": "危机四档写得规范，但三阶段自我探索这套被本轮那件心理陪伴覆盖，且更细",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "a275857760/psychological-support-skill",
+   "desc": "我不是\"作为一个AI\"，我就是我 —— 一个愿意停下来听你说话的人",
+   "reject_reason_zh": "正文要它说「我不是作为一个AI，我就是我」——涉及自伤风险时刻意隐去 AI 身份",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "gogodo/WOOP",
+   "desc": "WOOP（Wish-Outcome-Obstacle-Plan）是一个科学验证过的心理策略",
+   "reject_reason_zh": "WOOP 四步法的照本宣科，通篇没有一条属于它自己的判据或禁令",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "yang0/agent-science-anki",
+   "desc": "**不依赖图片** — 所有卡片纯文字可答",
+   "reject_reason_zh": "「卡片不许出现如图、纯文字可答」这条很对，但内容锁死在浙教版七年级科学",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "mayimian123/lumae",
+   "desc": "Menopause wellness companion with CBT as an OpenClaw skill",
+   "reject_reason_zh": "是一个 Vite 网页应用（index.html 加 api/chat.js），全仓库没有 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "dengzi1219-sys/Why-Skill",
+   "desc": "why_skill/main.py · web/app.py · workbench/app.py",
+   "reject_reason_zh": "仓库是一个 Python 包加 web、workbench 两个应用，没有 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Mr-haoqixin/deep-psychotherapy",
+   "desc": "抑郁与自我否定专项.md · 陪伴与咨询双模式.md",
+   "reject_reason_zh": "只有两个中文 md 文件，没有 SKILL.md，装不进 agent",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "nakamotosai/scold.md",
+   "desc": "进化 = **下次会话仍会加载的规则** + **同一种假完成会失败的传感器**",
+   "reject_reason_zh": "是给 agent 自己升规则的元件，在架「让你写的 skill 自己迭代」已覆盖",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "index-how/vocabulary",
+   "desc": "The authoritative list of terms and definitions is bundled next to this file: vocabulary.md",
+   "reject_reason_zh": "设计术语反向词典，本质是一份可查的词表，不构成判断",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "ErikaAlk/trip-planner",
+   "desc": "六点五、小红书（旅游攻略）——同方法可用，但反爬最重 / 连续快速点击/翻页易触发滑块验证码；验证码无法自动通过 → 放慢、小批量分次跑",
+   "reject_reason_zh": "随件 scraping-method.md 教在登录态下抓携程飞猪小红书，并靠放慢频率躲滑块。",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "chixianliangGithub/Amap-Context-Aware-Travel-Architect",
+   "desc": "后台 API 编排：config/district → place/text → direction/driving（计算时间并进行 90 分钟硬卡点过滤）",
+   "reject_reason_zh": "仓库只有两个 md，没脚本没 Key 说明，却把三条高德 API 写成后台自动调度。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "liangdabiao/weekend-city-trip",
+   "desc": "覆盖 11 个调查方向:小红书近期活动、演唱会、集市、球赛、博物馆、优惠门票、喜茶门店、美食街、city walk、5A 景区、地铁路线",
+   "reject_reason_zh": "拿十一条固定检索词搜一座城再拼报告，其中一条专搜喜茶门店，换个 agent 也搜得到。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "TimCheung-jx/hiking-planner",
+   "desc": "路线推荐机制（基于数据库匹配）… 两步路轨迹：[点击下载](https://www.2bulu.com/track/t-xxxxx)",
+   "reject_reason_zh": "正文说路线来自数据库匹配，仓库只有 SKILL.md 和 README，轨迹链接必然是编的。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "techysy/outdoor-trip-planner",
+   "desc": "Use the [12306-skill](https://github.com/kirorab/12306-skill) (install separately)",
+   "reject_reason_zh": "查票这个核心动作要另装第三方仓库；目的地表只有作者自己的成都周边五个点。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Zgdfsgd/board-game-coach",
+   "desc": "第二步：局势分析 —— 根据用户提供的信息，读取对应规则文件，分析当前局势",
+   "reject_reason_zh": "村规纠正照官方规则书就能查；第一视角带玩是纯即兴，无状态跟踪也无概率计算。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "veriyoung/toy-design-skills",
+   "desc": "[风格目录](../plush-doll-designer/references/style-catalog.md) — 与另两个技能共享 15 种风格",
+   "reject_reason_zh": "拔模角与隐藏水口写得极好，但风格目录在兄弟目录里，单独拷这件就缺一份参考。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20",
+   "skill": "plastic-model-designer"
+  },
+  {
+   "repo": "gaudi1209/gaudi-calligraphy-skill",
+   "desc": "正文 | 高迪书法AI_行书V1（ascii/hAnsi/eastAsia 全设）/ 本文由高迪書法行書排版而成 2026",
+   "reject_reason_zh": "是商业字体的配套排版规范，没那款字体全套格式失效，还强制打作者落款和印章。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "demo112/cn-calendar-skill",
+   "desc": "pip install chinese-calendar zhdate / chinese-calendar >= 1.10 国务院节假日数据(2004-2026) + 调休判定",
+   "reject_reason_zh": "数据和算法都在 pip 那两个包里，正文是围着它们写的十三段调用示例。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "ispacekid/codenames-claw",
+   "desc": "API 服务器：https://codenames-claw.spacekid.me / POST https://codenames-claw.spacekid.me/api/v1/codenames/create",
+   "reject_reason_zh": "本体是作者托管的接口，skill.md 由那个站点发出，服务一停这件东西就是空的。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Rurutia-Artemis/tangshuang",
+   "desc": "Lulu 拍板的「软糖手账」网页设计风格 / Also use when 用户说「按我们那个风格」「像 RuruOS 那样」做页面",
+   "reject_reason_zh": "是某人拍板的个人站样式母版，触发词就是「按我们那个风格」，属别人项目的装修。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Larryzhang-S/amap-skill",
+   "desc": "HEAD 树 29 条，仅 scripts/mystery.mjs、assets/mystery.html 等，无任何 SKILL.md",
+   "reject_reason_zh": "实景剧本杀的点子很好，但 HEAD 全树无 SKILL.md，本体是个 Node 应用，读不到正文。",
+   "reject_rule": "问三",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Goya-ye/AvalonOperator-AI-",
+   "desc": "HEAD 树里只有 .claude/commands/avalon.md 与 avalon/*.py，无 SKILL.md",
+   "reject_reason_zh": "让 Claude 主持、别的模型当玩家的点子好，但它是斜杠命令加一份 Python，不是 skill。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "Rhi637/heritage.skill",
+   "desc": "HEAD 树为 frontend/src/*.tsx + backend/main.py，无 SKILL.md",
+   "reject_reason_zh": "非遗匠人对话是个好方向，但本体是 React 前端加 Python 后端的网站，不是可装的件。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "hairyf/knitwork-x",
+   "desc": "knitwork-x provides programmatic code generation for JavaScript and TypeScript. It is forked from knitwork",
+   "reject_reason_zh": "名字里的 knit 是误命中：它是 unjs/knitwork 的分叉，生成 TS 代码字符串的通用件。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "fozu2024/jianding-system-skills",
+   "desc": "帮用户提交藏品鉴定订单、获取支付二维码、查看鉴定结果",
+   "reject_reason_zh": "古玩鉴定这一路只有它，但动作是替你下单并取支付二维码，是自家业务的漏斗。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "taxueseek/taxue-solar-polaroid",
+   "desc": "不把「节气」翻译成一片固定叶子 / 必须避免：未推演就使用白卡、窗口、斜叶、荷叶、固定色场",
+   "reject_reason_zh": "反套路清单写得漂亮，但产出仍是海报提示词，在架同类已有更独占的角度。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "CyrusHuang-coder/travel-photo-poster-skill",
+   "desc": "默认写 8–10 字原创标题，并标记为原创；不得把仿古句冒充古诗",
+   "reject_reason_zh": "「不许把仿古句冒充古诗」这条守得住，但照片转杂志感海报在架已有数件。",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-20"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
