@@ -20,7 +20,14 @@ gtag('js',new Date());gtag('config','G-DHD3WEXQ8T');</script>
      feed 是唯一必需的数据，其余全是后到的增强。
      ================================================================ -->
 <script>
-window.__FEED__ = fetch("skills/feed.json").then(function(r){
+// `cache:"no-cache"` = **每次都回源问一句「变了吗」**，没变就吃 304（几十字节），
+// 变了就拿新的。不是 no-store（那才是每次全量重下）。
+//
+// 为什么必须要：原来是裸 fetch，于是浏览器按 GitHub Pages 给的 TTL 直接吃本地缓存 ——
+// 实测上新 74 件、改了排序之后，页面拿到的仍是隔夜的 feed，**图在前的新顺序一件没生效**。
+// 一个首页写着「天天上新」的站，回头客看到的是昨天的货架。
+// 代价是每次多一次条件请求；收益是「上新」这两个字是真的。
+window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r){
   if(!r.ok) throw new Error("feed "+r.status); return r.json();
 });
 // 封面的一切都在 feed 里了：cover / cover_kind / cover_real / cover_w / cover_h。
@@ -273,7 +280,14 @@ header.top{padding:var(--s5) 0 var(--s4)}
    等 editorial/covers.json 带上 width/height，这个文件删掉、逻辑不变。
    实测宽高比 0.46 – 4.69：超宽 20 件、竖版 6 件。
    所以不裁切，只给一个 max-height 兜住最竖的那几张。 */
-.shot{display:block;background:var(--soft);position:relative;overflow:hidden}
+/* 一道内描边（inset shadow，不占布局尺寸）。**没有它，浅底图在浅底站上会看起来像坏图。**
+   实测：奥数那件的封面是米色底加细黑线的几何图，贴到米色卡片上，
+   截图里就是一个空灰框 —— 图其实加载成功了（620×818，complete=true），
+   是**卡片和图之间没有边界**。这不是那一张的问题，是所有浅底产出物图的问题，
+   而「代码画的干净线稿」正是我们最想要的那一类封面。
+   用 inset 而不是 border：border 会参与宽高计算，把写死的宽高比顶歪，瀑布流就跳版了。 */
+.shot{display:block;background:var(--soft);position:relative;overflow:hidden;
+      box-shadow:inset 0 0 0 1px var(--line)}
 .shot img{width:100%;height:100%;display:block;object-fit:cover}
 /* 竖过头的限个高，别让一张海报把一列吃掉。
    artwork 那一档放宽到 620px：最竖那张（比 0.46）在桌面五列自然高 570px，
@@ -1146,16 +1160,29 @@ function renderFlow(all){
   return head + flow;
 }
 
+/* 货架条目 —— **只有这一个地方决定「有哪些、什么顺序」**。
+   顺序不在这里算，就是 feed 给的顺序（见上面 renderShelf 里的注释）。
+   原来这一段在两处各写了一遍，两份都在重排 —— 重复的逻辑迟早会分叉，
+   而分叉的那天没人会想起来去看另一处。 */
+function shelfItems(){
+  return (D && D.skills || []).filter(function(x){ return !x.hide; });
+}
+
 function renderShelf(keepScroll){
   if(!D) return;
   var y = keepScroll ? window.scrollY : null;
   renderChrome();
   renderTally();
-  var all = (D.skills||[]).filter(function(x){return !x.hide});
-  // 按收录日倒序 —— 「今天挑了什么」是这一页的主语
-  all.sort(function(a,b){
-    return (b.added_at||"").localeCompare(a.added_at||"") || (a.title_zh||"").localeCompare(b.title_zh||"");
-  });
+  // **不在前端重排。** feed 里的顺序就是货架顺序 —— 那是 scout_lib.refresh() 算的：
+  // 收录日倒序（「今天挑了什么」是这一页的主语）→ 同一天内真产出物图优先 → fun_score → id。
+  //
+  // 原来这里按 `added_at` 倒序、再按 `title_zh` 字母序**整个重排一遍**，
+  // 于是流水线里那两档（真产出物优先、去掉 star）**一件都没生效** ——
+  // 我改完排序刷新页面，看到的还是原样，一开始以为是浏览器缓存。
+  // 两份排序真相，赢的是前端那份，而写在流水线注释里的是另一份。
+  // 同一个形状今天已经出现三次（拒收榜去重键、从不执行的守卫、这里）：
+  // **写下来那一刻，和真的生效，之间没有任何自动连线。**
+  var all = shelfItems();
   renderChips(all);
   el("main").innerHTML = renderFlow(all);
   SHELF = true;
@@ -1361,9 +1388,7 @@ el("q").addEventListener("input", function(){
   clearTimeout(qt);
   qt = setTimeout(function(){
     state.q = v; state.limit = 60;
-    if(D){ el("main").innerHTML = renderFlow((D.skills||[]).filter(function(x){return !x.hide}).sort(function(a,b){
-      return (b.added_at||"").localeCompare(a.added_at||"") || (a.title_zh||"").localeCompare(b.title_zh||"");
-    })); }
+    if(D){ el("main").innerHTML = renderFlow(shelfItems()); }
   }, 120);
 });
 el("clr").addEventListener("click", function(){

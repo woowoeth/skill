@@ -657,7 +657,21 @@ def refresh() -> dict:
     # 完全并列的再按 id —— 否则并列项的先后取决于 glob() 的文件系统顺序，同一份数据
     # 在不同机器上会重排出不同的 feed.json，白白制造 diff 和 push 冲突。
     visible.sort(key=lambda x: x.get("id", ""))
-    visible.sort(key=lambda x: (x.get("added_at", ""), x.get("fun_score", 0), x.get("stars", 0)), reverse=True)
+    # 同一天之内，**有真产出物图的排前面**。
+    #
+    # 为什么要加这一档：「新货朝前」是对的，但它有个副作用 ——
+    # 越是刚上架的越还没配上封面，于是前两屏几乎全是纯文字卡（实测：前 60 张卡里只有 3 张图）。
+    # 一屏文字墙没人愿意往下滚，而这正是店主说的「你新加的并不吸引人」的机制。
+    # 排序仍然是天为单位、新的在前，只是**同一天内先摆看得见东西的那些**。
+    #
+    # 同时**把 stars 从排序键里去掉**：我们反复认定 star 不是质量信号
+    # （在架好货大量 0–50 星），D65 还实测出它在新源那批里是**反向**的
+    # —— 榜首是 flutter/bun/AutoGPT 这些只是带了个 skills 目录的产品仓库。
+    # 既然不是质量信号，它就不该决定读者先看到谁。去掉它不影响确定性：
+    # 上面那行按 id 的排序已经兜住了并列项的稳定顺序。
+    visible.sort(key=lambda x: (x.get("added_at", ""),
+                               1 if x.get("cover_real") else 0,
+                               x.get("fun_score", 0)), reverse=True)
     t = today()
     headline, headline_history = build_headline(items)
     rejected = build_rejected_feed(items)
