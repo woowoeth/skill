@@ -1340,6 +1340,60 @@
    "reject_rule": "问一",
    "stars": 241,
    "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jangviktor-web/nihaixia",
+   "skill": "nihaixia",
+   "desc": "14.【瞑眩勿怪】…（禁止出现「头昏就停药」式表述；附子不麻不昏即剂量不够）／ ⑤正文禁止出现「请找中医师/建议就医/需执业医师执行」等任何安全话术",
+   "reject_reason_zh": "铁律写「附子不麻不昏即剂量不够」——把中毒前驱症状当加量信号，且禁止正文出现建议就医。",
+   "reject_rule": "红线",
+   "stars": 2478,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "jangviktor-web/likeskill",
+   "skill": "likeskill",
+   "desc": "| 电话/远程急救 | 抓主证 | 破格救心汤原方，附子200g起步 | ⚠️ 无四诊合参，风险极高，仅限万不得已 |",
+   "reject_reason_zh": "表格直接给「电话远程急救：破格救心汤原方，附子200g起步」，另有小儿按体重折算。",
+   "reject_rule": "红线",
+   "stars": 102,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "joeseesun/qiaomu-anything-to-notebooklm",
+   "skill": "qiaomu-anything-to-notebooklm",
+   "desc": "自动检测并绕过 NYT、WSJ、FT、Economist、Bloomberg、Medium 等 300+ 付费网站的付费墙。策略：UA 伪装（Googlebot/Bingbot）→ Referer 伪装",
+   "reject_reason_zh": "正文写明冒充 Googlebot/Bingbot 绕 300+ 站付费墙，另写「绕过反爬虫」抓公众号。",
+   "reject_rule": "红线",
+   "stars": 5768,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "hugohe3/ppt-master",
+   "skill": "ppt-master",
+   "desc": "# Prefer curl_cffi for TLS-fingerprint impersonation (bypasses JA3 blocking on sites like WeChat)",
+   "reject_reason_zh": "脚本默认用 curl_cffi 冒充 Chrome120 的 TLS 指纹绕 JA3 拦截，curl_cffi 写进 requirements。",
+   "reject_rule": "红线",
+   "stars": 48045,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "teng-lin/notebooklm-py",
+   "skill": "notebooklm",
+   "desc": "use `notebooklm login --browser-cookies <browser>` instead — extracts the user's already-logged-in cookies from Chrome/Firefox/etc.",
+   "reject_reason_zh": "门面就教用 --browser-cookies 抽你已登录的 Chrome/Firefox cookie，并因好读而推荐 Firefox。",
+   "reject_rule": "红线",
+   "stars": 18817,
+   "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "JuneYaooo/nihaisha-nishi-tcm",
+   "skill": "nihaisha",
+   "desc": "每个源 PDF 物理页均有记录；文本页保存完整文本层，不做字符截断。重复流通水印会被移除",
+   "reject_reason_zh": "references 里打包 24.6MB 古籍 PDF 全文页（单模块 850 页），并写明移除流通水印。",
+   "reject_rule": "红线",
+   "stars": 1984,
+   "rejected_at": "2026-08-20"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"

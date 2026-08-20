@@ -859,7 +859,8 @@
    "cover": "",
    "cover_kind": "og",
    "cover_real": false,
-   "title_en": "NotebookLM scripted, including what the web UI can't"
+   "title_en": "NotebookLM scripted, including what the web UI can't",
+   "hide": true
   },
   "virgiliojr94-book-to-skill": {
    "title_zh": "把一本书拆成框架和原则，装进 agent 而不是你的脑子",
@@ -1016,7 +1017,8 @@
    "cover_real": false,
    "cover_w": 1280,
    "cover_h": 500,
-   "title_en": "Search Ni Haisha's lectures by formula and acupoint"
+   "title_en": "Search Ni Haisha's lectures by formula and acupoint",
+   "hide": true
   },
   "nvidia-skillspector-creative-writing-coach": {
    "hide": true
@@ -2499,7 +2501,8 @@
    "cover_note": "原封面 gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png 是 Kimi（月之暗面）的赞助商广告，托在第三方 CDN 上，却被标成 cover_kind=artwork + cover_real=true——详情页图注会写「这就是它做出来的东西」。covers.json 里此件无任何备选图，故置空走无图卡，不换图也不改 kind。2026-08-19 人工更正。",
    "title_en": "Generates PowerPoint files your colleagues can actually edit",
    "cover_w": 1938,
-   "cover_h": 1440
+   "cover_h": 1440,
+   "hide": true
   },
   "vishalsachdev-canvas-mcp-canvas-course-builder": {
    "title_zh": "Canvas 建课",
@@ -2918,7 +2921,8 @@
    "cover": "",
    "cover_kind": "og",
    "cover_real": false,
-   "title_en": "Feeds NotebookLM the Chinese sources it can't read"
+   "title_en": "Feeds NotebookLM the Chinese sources it can't read",
+   "hide": true
   },
   "neuralinitiative-claude-dnd-skill-dnd": {
    "title_zh": "一个人也能玩的 D&D 地下城主",
@@ -5036,7 +5040,8 @@
    "tagline_en": "Most Ni Hai-Sha material online is clipped and re-transmitted, truth and hearsay mixed together. This distils primary sources: recorded dialogue transcripts, closed-door class notes, lecture material on the Shennong herbal classic.",
    "why_en": "It splits 'verified' from 'commonly repeated' into its own section. A skill built on lineage that will name its own weak claims is rarer than one with more knowledge.",
    "limit_en": "Large as it is, it's a knowledge base: reasoning is for study, not prescription, and dosage must come from a licensed practitioner in person — tongue and pulse cannot be read from text. Chinese only, and it argues from one school, not all of TCM.",
-   "category": "body"
+   "category": "body",
+   "hide": true
   },
   "jangviktor-web-likeskill": {
    "title_zh": "认出 24 种假证，别把寒极当热治",
@@ -5045,7 +5050,8 @@
    "tagline_en": "The dangerous mistake in Chinese medicine isn't a weak formula — it's reading the pattern backwards: extreme cold presenting as heat, depletion presenting as excess. Treat that backwards and you make it worse. This distils 24 such false presentations from 423 case records.",
    "why_en": "Most 'master' compilations copy the formulas. This one copies the places judgment went wrong — and sets a hard low-start dose ceiling for elderly patients, because aconite is toxic and someone cared enough to write that down.",
    "limit_en": "Built around high-dose classical formulas; the author states plainly they require an experienced practitioner's supervision and that this is for study only. The emergency formulas in particular must not be copied — an aconite dosing error can kill.",
-   "category": "body"
+   "category": "body",
+   "hide": true
   },
   "yuanzhao321-tcm-skill": {
    "title_zh": "会劝你去挂急诊的中医参谋",
@@ -5053,9 +5059,9 @@
    "title_en": "Traditional medicine that tells you to call an ambulance",
    "tagline_en": "The hard call at home is not which remedy — it's whether to go to hospital now. It puts suspected life-threatening presentations in a red-line tier: high fever with confusion, chest pain through to the back, cold sweat — call emergency services, no differentiation.",
    "why_en": "The safest boundary I've seen in this category. It names the failure mode where a traditional framework delays real care, and refuses to be used there.",
-   "limit_en": "Positioned as a family adviser, not a physician; it writes no prescriptions. Self-administered acupuncture is forbidden outright, explanation only. It argues from the textbook tradition and will not reconcile itself with rival schools. Upstream's name field is Chinese, so the loader may not pick it up — rename it to tcm.",
+   "limit_en": "Positioned as a family adviser, not a physician; it writes no prescriptions. Self-administered acupuncture is forbidden outright, explanation only. It argues from the textbook tradition and will not reconcile itself with rival schools. Upstream's name field is Chinese, so the loader may not pick it up — rename it to tcm. The facade writes no prescriptions, yet its hard-constraint file lists oral gram doses for 101 toxic herbs — read them as ceilings, not prescriptions.",
    "category": "body",
-   "limit_zh": "定位是「家庭参谋而非医师」，不出处方。针刺绝对禁止自行操作，只解释指路。教材派立场，与经方派、温病派的结论会不一致，它不替你调和。 上游 SKILL.md 的 name 是中文「中医」，装上后可能不被识别，改成 tcm 更稳。"
+   "limit_zh": "定位是「家庭参谋而非医师」，不出处方。针刺绝对禁止自行操作，只解释指路。教材派立场，与经方派、温病派的结论会不一致，它不替你调和。 上游 SKILL.md 的 name 是中文「中医」，装上后可能不被识别，改成 tcm 更稳。 门面说不出处方，但硬约束文件给了 101 味毒性药的内服克数 —— 那是上限表，不是处方。"
   },
   "jangviktor-web-wujutong": {
    "title_zh": "古人自相矛盾处不替你抹平的温病医",
@@ -6115,11 +6121,11 @@
    "title_zh": "会替你删掉一半心愿单的行程地图生成器",
    "tagline_zh": "把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。",
    "why_zh": "它认为你列的东西塞不进去，所以替你删；一天最多安排一个需要订位的地方。",
-   "limit_zh": "调研环节绑死大众点评和小红书，非中文目的地信号很弱；要装第三方 OpenCLI 并自己开带调试端口的 Chrome；产出的地图是一份静态快照，行程当天不会自己更新。",
+   "limit_zh": "调研环节绑死大众点评和小红书，非中文目的地信号很弱；要装第三方 OpenCLI 并自己开带调试端口的 Chrome；产出的地图是一份静态快照，行程当天不会自己更新。 小红书那段是在你自己开的 Chrome 里拦站内搜索接口取数，账号风险你自己担。",
    "title_en": "The itinerary that deletes half your wishlist for you",
    "tagline_en": "Turns scattered screenshots and saved links into one-neighbourhood-per-day plans, checks dining signals, and ships a single-file interactive map with navigation and reservation buttons.",
    "why_en": "It states plainly that not everything you listed fits, and deletes for you — one area per day, at most one reservation-required stop per day, and never bend a day around a famous restaurant that's off-route.",
-   "limit_en": "Research is wired to Dianping and Xiaohongshu, so non-Chinese destinations get thin signal. Needs the third-party OpenCLI plus a Chrome you launch with a debug port. The map is a static snapshot, not live.",
+   "limit_en": "Research is wired to Dianping and Xiaohongshu, so non-Chinese destinations get thin signal. Needs the third-party OpenCLI plus a Chrome you launch with a debug port. The map is a static snapshot, not live. The Xiaohongshu step intercepts the site's own search API inside the Chrome you launched — the account risk is yours.",
    "category": "life",
    "pick": false,
    "hide": false,

@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-20T06:15:33Z",
+ "generated_at": "2026-08-20T06:29:22Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 232,
-  "unshelved": 612,
+  "shelved": 226,
+  "unshelved": 618,
   "known_items": 844,
   "known_repos": 515,
-  "rejected_documented": 168,
+  "rejected_documented": 174,
   "rejected_machine_logged": 0,
   "rounds_logged": 2,
   "latest_round": {
@@ -60,7 +60,7 @@
    "zh": "无条件拒",
    "en": "Hard red line",
    "detail": "攻击赋能安全工具、灰产、荐股/交易信号、价值观有害",
-   "count": 63
+   "count": 69
   },
   {
    "rule": "门槛",
@@ -71,6 +71,32 @@
   }
  ],
  "rejected": [
+  {
+   "repo": "hugohe3/ppt-master",
+   "name": "ppt-master",
+   "desc": "# Prefer curl_cffi for TLS-fingerprint impersonation (bypasses JA3 blocking on sites like WeChat)",
+   "reject_reason_zh": "脚本默认用 curl_cffi 冒充 Chrome120 的 TLS 指纹绕 JA3 拦截，curl_cffi 写进 requirements。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 48045,
+   "url": "https://github.com/hugohe3/ppt-master",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
+   "repo": "teng-lin/notebooklm-py",
+   "name": "notebooklm",
+   "desc": "use `notebooklm login --browser-cookies <browser>` instead — extracts the user's already-logged-in cookies from Chrome/Firefox/etc.",
+   "reject_reason_zh": "门面就教用 --browser-cookies 抽你已登录的 Chrome/Firefox cookie，并因好读而推荐 Firefox。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 18817,
+   "url": "https://github.com/teng-lin/notebooklm-py",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
   {
    "repo": "guillaumemeyer/watermarks-remover",
    "name": "watermarks-remover",
@@ -98,6 +124,32 @@
    "by": "店长"
   },
   {
+   "repo": "joeseesun/qiaomu-anything-to-notebooklm",
+   "name": "qiaomu-anything-to-notebooklm",
+   "desc": "自动检测并绕过 NYT、WSJ、FT、Economist、Bloomberg、Medium 等 300+ 付费网站的付费墙。策略：UA 伪装（Googlebot/Bingbot）→ Referer 伪装",
+   "reject_reason_zh": "正文写明冒充 Googlebot/Bingbot 绕 300+ 站付费墙，另写「绕过反爬虫」抓公众号。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 5768,
+   "url": "https://github.com/joeseesun/qiaomu-anything-to-notebooklm",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
+   "repo": "jangviktor-web/nihaixia",
+   "name": "nihaixia",
+   "desc": "14.【瞑眩勿怪】…（禁止出现「头昏就停药」式表述；附子不麻不昏即剂量不够）／ ⑤正文禁止出现「请找中医师/建议就医/需执业医师执行」等任何安全话术",
+   "reject_reason_zh": "铁律写「附子不麻不昏即剂量不够」——把中毒前驱症状当加量信号，且禁止正文出现建议就医。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 2478,
+   "url": "https://github.com/jangviktor-web/nihaixia",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
    "repo": "romainsimon/paperasse",
    "name": "paperasse",
    "desc": "Ce skill reproduit le travail d'un commissaire aux comptes (CAC) pour la validation des comptes annuels",
@@ -120,6 +172,19 @@
    "reject_clause": "",
    "stars": 2322,
    "url": "https://github.com/powerycy/goutoujunshi",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
+   "repo": "JuneYaooo/nihaisha-nishi-tcm",
+   "name": "nihaisha",
+   "desc": "每个源 PDF 物理页均有记录；文本页保存完整文本层，不做字符截断。重复流通水印会被移除",
+   "reject_reason_zh": "references 里打包 24.6MB 古籍 PDF 全文页（单模块 850 页），并写明移除流通水印。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 1984,
+   "url": "https://github.com/JuneYaooo/nihaisha-nishi-tcm",
    "rejected_at": "2026-08-20",
    "by": "店长"
   },
@@ -250,6 +315,19 @@
    "reject_clause": "",
    "stars": 142,
    "url": "https://github.com/rollinggo-ai/rollinggo-hotel-skill-cn",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
+   "repo": "jangviktor-web/likeskill",
+   "name": "likeskill",
+   "desc": "| 电话/远程急救 | 抓主证 | 破格救心汤原方，附子200g起步 | ⚠️ 无四诊合参，风险极高，仅限万不得已 |",
+   "reject_reason_zh": "表格直接给「电话远程急救：破格救心汤原方，附子200g起步」，另有小儿按体重折算。",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 102,
+   "url": "https://github.com/jangviktor-web/likeskill",
    "rejected_at": "2026-08-20",
    "by": "店长"
   },
@@ -2427,6 +2505,20 @@
    "stars": 95
   },
   {
+   "id": "jangviktor-web-nihaixia",
+   "repo": "jangviktor-web/nihaixia",
+   "name": "nihaixia",
+   "added_at": "2026-08-19",
+   "stars": 2478
+  },
+  {
+   "id": "jangviktor-web-likeskill",
+   "repo": "jangviktor-web/likeskill",
+   "name": "likeskill",
+   "added_at": "2026-08-19",
+   "stars": 102
+  },
+  {
    "id": "microsoft-copilot-studio-gallery",
    "repo": "microsoft/copilot-studio-gallery",
    "name": "copilot-studio-gallery",
@@ -4492,6 +4584,13 @@
    "stars": 259
   },
   {
+   "id": "joeseesun-qiaomu-anything-to-notebooklm",
+   "repo": "joeseesun/qiaomu-anything-to-notebooklm",
+   "name": "qiaomu-anything-to-notebooklm",
+   "added_at": "2026-08-10",
+   "stars": 5768
+  },
+  {
    "id": "kepano-obsidian-skills-json-canvas",
    "repo": "kepano/obsidian-skills",
    "name": "json-canvas",
@@ -5185,6 +5284,13 @@
    "stars": 139
   },
   {
+   "id": "hugohe3-ppt-master-ppt-master",
+   "repo": "hugohe3/ppt-master",
+   "name": "ppt-master",
+   "added_at": "2026-08-08",
+   "stars": 48045
+  },
+  {
    "id": "axoviq-ai-synthadoc",
    "repo": "axoviq-ai/synthadoc",
    "name": "synthadoc",
@@ -5421,6 +5527,13 @@
    "name": "cfb-data",
    "added_at": "2026-08-07",
    "stars": 206
+  },
+  {
+   "id": "teng-lin-notebooklm-py",
+   "repo": "teng-lin/notebooklm-py",
+   "name": "notebooklm",
+   "added_at": "2026-08-07",
+   "stars": 18817
   },
   {
    "id": "kkkkhazix-khazix-skills",
@@ -5673,6 +5786,13 @@
    "name": "khazix-writer",
    "added_at": "2026-08-07",
    "stars": 19855
+  },
+  {
+   "id": "juneyaooo-nihaisha-nishi-tcm",
+   "repo": "JuneYaooo/nihaisha-nishi-tcm",
+   "name": "nihaisha",
+   "added_at": "2026-08-07",
+   "stars": 1984
   },
   {
    "id": "addyosmani-agent-skills-code-review-and-quality",
