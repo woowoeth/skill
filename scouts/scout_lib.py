@@ -41,11 +41,19 @@ GH_TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
 UA = "pinwei-skill-scout/1.0 (+https://github.com/woowoeth/skill)"
 
 # ---------------------------------------------------------------- shelves ---
+# 分类是**动词开头的使用场景**，不是学科名 —— 「做图」不是「设计」，「过日子」不是「生活方式」。
+#
+# learn / body 是第二批加的。加它们的理由不是分类学，是**一次上新把洞照了出来**：
+# 8 个格子里既没有「学」也没有「身体」，于是学习方法、升学、教辅、心理、育儿、
+# 健身、中医、过敏预报全被塞进「过日子」——那一格一度占到在架的三分之一（63/198）。
+# 一个装着 63 件、没有内部结构的筛子，读者点进去等于没筛。
 CATEGORIES = [
     ("creative", "做图",       "Images",     "🎨"),
     ("fun",      "玩",         "Play",       "🎲"),
     ("writing",  "写文章",     "Writing",    "✍️"),
     ("life",     "过日子",     "Everyday",   "🧺"),
+    ("learn",    "学东西",     "Learning",   "📚"),
+    ("body",     "养身体",     "Body",       "🏃"),
     ("docs",     "做文档",     "Documents",  "📄"),
     ("work",     "上班用",     "At Work",    "💼"),
     ("dev",      "写代码",     "Code",       "🔧"),
@@ -100,9 +108,24 @@ CAT_KW = {
                  "poem", "poetry", "blog", "copywriting", "translate", "translation",
                  "prose", "essay", "humanize", "humanizer", "tone", "editor", "summary",
                  "小说", "网文", "写作", "文案", "翻译", "公众号", "润色", "总结"],
-    "life":     ["cook", "recipe", "travel", "trip", "fitness", "health", "meal", "diet",
-                 "journal", "diary", "habit", "budget", "shopping", "gift", "wedding",
-                 "resume", "cv", "interview prep", "生活", "菜谱", "旅行", "简历", "健康"],
+    # life 里原本挂着 fitness/health/diet —— 那三个词现在归 body。
+    # 留在 life 的是**吃住行玩养宠**这一路：做饭、旅行、装修、种菜、养猫、钓鱼。
+    "life":     ["cook", "recipe", "travel", "trip", "meal", "journal", "diary", "habit",
+                 "budget", "shopping", "gift", "wedding", "pet", "cat", "dog", "garden",
+                 "baking", "coffee", "fishing", "resume", "cv", "interview prep",
+                 "生活", "菜谱", "旅行", "简历", "装修", "宠物", "养猫", "种菜", "烘焙", "咖啡"],
+    "learn":    ["study", "learning", "learn ", "tutor", "flashcard", "anki", "spaced repetition",
+                 "exam", "quiz prep", "vocabulary", "grammar", "language learning", "ielts",
+                 "toefl", "gaokao", "kaoyan", "homework", "curriculum", "syllabus", "olympiad",
+                 "math tutor", "lecture", "note-taking", "memoriz",
+                 "学习", "背单词", "刷题", "考研", "高考", "四六级", "升学", "志愿", "作业",
+                 "辅导", "备考", "复习", "奥数", "闪卡", "记忆", "口语", "教辅"],
+    "body":     ["fitness", "workout", "training plan", "strength", "hypertrophy", "running",
+                 "marathon", "cycling", "swim", "yoga", "stretch", "mobility", "rehab",
+                 "nutrition", "diet", "calorie", "macro", "sleep", "health", "medical",
+                 "allergy", "pollen", "tcm", "acupunctur", "herbal",
+                 "健身", "增肌", "减脂", "训练", "跑步", "马拉松", "拉伸", "康复", "营养",
+                 "热量", "睡眠", "健康", "过敏", "花粉", "中医", "针灸", "体检", "膳食"],
     "docs":     ["docx", "pdf", "pptx", "xlsx", "spreadsheet", "slide", "presentation",
                  "word document", "excel", "report", "form", "invoice", "文档", "表格", "幻灯"],
     "work":     ["marketing", "seo", "growth", "sales", "product manag", "pm ", "roadmap",

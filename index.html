@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
 <meta name="theme-color" content="#faf8f3">
-<meta name="description" content="生态里有 266 万条 Agent Skill。我们只挑值得装的，并且把挑它的理由写下来。">
+<meta name="description" content="叫 SKILL.md 的文件已经百万量级，没人数得清。我们只挑值得装的，并且把挑它的理由写下来。">
 <!--GEO:HEAD:START--><!--GEO:HEAD:END-->
 <!-- 站点统计沿用旧首页的配置，原样搬过来。要不要留是产品的决定，不是版式的。 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHD3WEXQ8T"></script>
@@ -595,7 +595,7 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
 
      砍的顺序是按「这一行是立场还是导航」来的：
        · TASTE 副标 —— 装饰，手机上直接不要
-       · 「生态里有 266 万条…」两行大字 —— **是立场，不是导航**。
+       · 「叫 SKILL.md 的文件已经百万量级…」两行大字 —— **是立场，不是导航**。
          手机上收掉，换成 slogan 顶上：「挑得少，是因为看得多」本来就是
          BRAND.md 定义的「那三个数字的注脚」，9 个字说的是同一件事。
          桌面保留完整那句。
@@ -653,7 +653,7 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
       <i id="brandSub">挑得少，是因为看得多</i>
       <button id="langBtn" type="button">EN</button>
     </div>
-    <p class="say" id="say">生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。</p>
+    <p class="say" id="say">叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清 —— 检索不是问题了，判断才是。</p>
     <p class="tally" id="tally"></p>
   </header>
 
@@ -693,8 +693,17 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
 var I18N = {
  zh:{
   brand:"品味", brandSub:"挑得少，是因为看得多", btn:"EN",
-  title:"品味 — 中文 Agent Skill 精选",
-  say:'生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。',
+  title:"品味 — Agent Skill 精选",
+  // 这句原先写的是「生态里有 266 万条 Agent Skill」，错了两层：266 万是 SkillsMP 首页
+  // 自报的「2,664,116 Collected SKILL.md files」，被我们记成了 skills.sh 的；更要紧的是
+  // **拿一家目录站的自报库存当了世界**。改的不是数字，是分母。
+  //
+  // 现在这句为什么只敢说「百万量级」：GitHub code search 查 filename:SKILL.md 报 5,619,712，
+  // 而 5,619,712 = 5488×1024 —— 三次取样全是 1024 的整数倍，说明这个数本身就是分桶估算。
+  // 量级站得住，具体数字站不住，所以只印量级。
+  //
+  // 「没人数得清」不是退让，是**我们卖的东西的理由**：一堆数不清的东西，目录没有用，判断才有用。
+  say:'叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清 —— 检索不是问题了，判断才是。',
   search:"搜标题、点评、仓库…",
   // 口径照 brand/BRAND.md：是「没让它进来」，不是「未上架」——
   // 把缺口翻成资历。slogan 是这三个数字的注脚，不单独当标语用。
@@ -723,13 +732,13 @@ var I18N = {
   safety:"提示：Skill 会在你的环境中执行指令，安装前请先读 SKILL.md，只装你信得过的。",
   copy:"复制", copied:"已复制", added:"收于", zhOnly:"中文",
   loading:"货架在装…", failed:"feed.json 读取失败，货架这次没装上。",
-  colo2:"生态在册 266 万 · 在架 %N% 件 · 更新于 %D%",
+  colo2:"在架 %N% 件 · 更新于 %D%",
   dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
  },
  en:{
   brand:"品味", brandSub:"We pick few because we look at many", btn:"中",
-  title:"Taste — curated Chinese agent skills",
-  say:'There are <em>2.66 million</em> agent skills out there. Finding them stopped being the problem long ago. Judging them is the problem.',
+  title:"Taste — curated agent skills",
+  say:'There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is.',
   search:"Search titles, verdicts, repos…",
   tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
   slogan:"We pick few because we look at many",
@@ -754,7 +763,7 @@ sendTip:"%s marked by you. Your marks outrank every machine signal — send them
   safety:"Note: skills execute instructions in your environment. Read the SKILL.md first and install only what you trust.",
   copy:"copy", copied:"copied", added:"added", zhOnly:"中文 ZH",
   loading:"Stocking the shelf…", failed:"feed.json failed to load; the shelf did not stock this time.",
-  colo2:"2.66M in the wild · %N% carried · updated %D%",
+  colo2:"%N% carried · updated %D%",
   dfmt:function(y,m,d){return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]+" "+d}
  }
 };
@@ -841,9 +850,17 @@ function sprintf(s,v){return String(s).replace("%s",v)}
 var CJK = "\\u2e80-\\u2fff\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff\\uff00-\\uffef";
 var GAP_A = new RegExp("(["+CJK+"])([A-Za-z0-9@#$%&+=/\\\\])","g");
 var GAP_B = new RegExp("([A-Za-z0-9!?.,:;%)\\]}+=/\\\\])(["+CJK+"])","g");
+/* 中西文之间插一个薄间距 <i class="g">。做法是先插哨兵、转义 HTML、再把哨兵换成标签 ——
+   顺序不能反，否则哨兵本身会被 esc() 转义掉。
+
+   哨兵原来写的是**裸 NUL 字节**。JS 里跑得通，代价是整个 index.html 对 file(1) 是
+   "data" 而不是 HTML，grep 当二进制处理、一行都不输出（连 `grep -c .` 都是空的），
+   而且任何做文本规范化的工具都可能把它吃掉。改成 \uE000（Unicode 私用区，正文里
+   不可能出现）并且用**转义序列**写，文件从此是纯文本。 */
+var GAPMARK = "\uE000";
 function mix(s){
-  var x = String(s==null?"":s).replace(GAP_A,"$1 $2").replace(GAP_B,"$1 $2");
-  return esc(x).split(" ").join('<i class="g"></i>');
+  var x = String(s==null?"":s).replace(GAP_A,"$1"+GAPMARK+"$2").replace(GAP_B,"$1"+GAPMARK+"$2");
+  return esc(x).split(GAPMARK).join('<i class="g"></i>');
 }
 
 function clean(s){ return String(s==null?"":s).replace(/^\s*>\s*/,"").trim(); }

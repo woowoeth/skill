@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>品味 — 中文 Agent Skill 精选</title>
-<meta name="description" content="生态里有 266 万条 Agent Skill。我们只挑值得装的，并且把挑它的理由写下来。">
+<meta name="description" content="叫 SKILL.md 的文件已经百万量级，没人数得清。我们只挑值得装的，并且把挑它的理由写下来。">
 
 <!-- ================================================================
      早启动：feed.json 是唯一真正必需的数据，在样式和脚本解析之前就发出去。
@@ -562,7 +562,7 @@ footer{border-top:2px solid var(--rule-ink);padding:var(--s5) 0 var(--s7);margin
     <div class="mast-rule"></div>
     <div class="mast-rule-thin"></div>
     <div class="creed">
-      <p class="say" id="creed">生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。</p>
+      <p class="say" id="creed">叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清。检索早就不是问题了，判断才是。</p>
       <!-- 三个真数的位置。「已写理由 N 条」将来挂在这一行末尾；
            现在数据是 0 条，所以整项不显示 —— 不用 0 占位，不拿样张凑数。 -->
       <p class="tally" id="tally"></p>
@@ -599,14 +599,14 @@ footer{border-top:2px solid var(--rule-ink);padding:var(--s5) 0 var(--s7);margin
 /* ------------------------------------------------------------------
    0 · 文案
    ------------------------------------------------------------------ */
-var ECOSYSTEM_TEXT = {zh:"266 万", en:"2.66 million"};   // 生态在册总量，将来应由数据层提供
+var ECOSYSTEM_TEXT = {zh:"百万量级", en:"millions"};   // 生态在册总量，将来应由数据层提供
 
 var I18N = {
  zh:{
   brand:"品味", brandSub:"Taste · curated agent skills",
   title:"品味 — 中文 Agent Skill 精选",
   btn:"EN", issue:"第 %s 期",
-  creed:"生态里有 <em>266 万</em>条 Agent Skill。检索早就不是问题了，判断才是。",
+  creed:"叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清。检索早就不是问题了，判断才是。",
   creedSub:'我们只做一件事：把值得装的挑出来，并且把挑它的理由写下来。<a href="../docs/CURATION.md">选品标准</a>',
   tSeen:"过手", tIn:"上架", tOut:"未上架", tNew:"今日上新", tWhy:"已写拒收理由",
   hl:"今日头条", hlNote:"每天一件。理由写满，不写满就不上。",
@@ -624,7 +624,7 @@ var I18N = {
   prep:"备料齐", read:"店长读过",
   loading:"货架在装…", failed:"feed.json 读取失败，货架这次没装上。",
   colo1:"「品味」不是目录站。目录站解决“有没有”，我们解决“值不值”。所有点评由人写，所有下架可翻回。",
-  colo2:"生态在册 266 万 · 在架 %N% 件 · 更新于 %D%",
+  colo2:"在架 %N% 件 · 更新于 %D%",
   dfmt:function(y,m,d){return m+" 月 "+d+" 日"},
   newBadge:"上新"
  },
@@ -632,7 +632,7 @@ var I18N = {
   brand:"品味", brandSub:"Taste · curated agent skills",
   title:"Taste — curated Chinese agent skills",
   btn:"中", issue:"No. %s",
-  creed:"There are <em>2.66 million</em> agent skills out there. Finding them stopped being the problem long ago. Judging them is the problem.",
+  creed:"There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is the problem.",
   creedSub:'We do one thing: pick what is worth installing, and write down why. <a href="../docs/CURATION.md">Our standard</a>',
   tSeen:"handled", tIn:"shelved", tOut:"left outside", tNew:"added today", tWhy:"reasons written",
   hl:"THE LEAD", hlNote:"One a day. If we cannot make the case, it does not run.",
@@ -650,7 +650,7 @@ var I18N = {
   prep:"WELL PREPPED", read:"EDITOR READ IT",
   loading:"Stocking the shelf…", failed:"feed.json failed to load; the shelf did not stock this time.",
   colo1:"Taste is not a directory. Directories answer “does it exist”. We answer “is it worth it”. Every verdict is written by a person; nothing is deleted, only hidden.",
-  colo2:"2.66M in the wild · %N% carried · updated %D%",
+  colo2:"%N% carried · updated %D%",
   dfmt:function(y,m,d){return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]+" "+d},
   newBadge:"NEW"
  }

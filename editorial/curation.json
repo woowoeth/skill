@@ -108,7 +108,7 @@
    "why_zh": "游戏素材是独立开发最大的坑之一，它把「画小人」变成了一句话的事，产物直接进引擎。",
    "why_en": "Art is indie dev's biggest wall; this turns \"draw me a sprite\" into a one-liner with engine-ready output.",
    "pick": false,
-   "category": "fun",
+   "category": "creative",
    "limit_zh": "生成那步要本机装好 codex 或 grok CLI 并登录。脚本只认仓库自建的 .venv，缺 NumPy 就在 import 处硬报错——作者明写没有纯 Python 降级。正文大半是韩文。",
    "limit_en": "Generation shells out to the codex or grok CLI with their OAuth logins. Scripts run only from the repo's own .venv; the entry point hard-errors without NumPy and the text states there is no pure-Python fallback. Much of the doc is Korean.",
    "cover": "https://repository-images.githubusercontent.com/1236336437/c2256b15-9938-486e-8d72-8ee4054431b9",
@@ -140,7 +140,7 @@
    "tagline_en": "An unbothered senior engineer moves in — few words, strong opinions, asks before acting, and writes not one line of code that needn't exist.",
    "why_zh": "反内卷的工程精髓——它总在问「这真的需要做吗」，治过度设计比写代码更省钱。",
    "why_en": "Its favorite question is \"do we even need this?\" — killing overengineering saves more than writing code.",
-   "category": "fun",
+   "category": "dev",
    "pick": false,
    "limit_zh": "它是常驻人格：ACTIVE EVERY RESPONSE，要说 stop ponytail 才关。作者写明非编码请求不适用，而且只管「建什么」不管「怎么说话」，文风得另配 Caveman。",
    "limit_en": "A persistent persona: ACTIVE EVERY RESPONSE until you say \"stop ponytail\" or \"normal mode\". The author states it is not for non-coding requests, and it governs what you build, not how you talk - prose style needs a separate skill (Caveman).",
@@ -155,7 +155,7 @@
    "title_zh": "把注意力当稀缺资源，让 Claude 一次只说一件事",
    "tagline_zh": "给 ADHD 大脑定制的相处模式：短句、一次只说一件事、绝不啰嗦，把注意力当稀缺资源来设计整场对话。",
    "tagline_en": "Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.",
-   "category": "fun",
+   "category": "meta",
    "why_zh": "少见的认真对待神经多样性的 skill，交互约束写得很体贴；非 ADHD 用户拿来治 AI 话痨也好用。",
    "why_en": "A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.",
    "limit_zh": "frontmatter 写了 disable-model-invocation：它不会自己触发，要你敲 /i-have-adhd 才开、说 stop adhd mode 才关。它只改输出形状，在 agent 里系统提示词还压它一头。",
@@ -1004,7 +1004,7 @@
   },
   "juneyaooo-nihaisha-nishi-tcm": {
    "title_zh": "检索倪海厦课上讲的方证与穴位，每条都回到板书截图",
-   "category": "life",
+   "category": "body",
    "tagline_zh": "倪海厦中医课程的随身助教：检索课程内容、辨析方证与穴位、整理学习笔记，还带板书截图做证据索引。",
    "tagline_en": "A study companion for Ni Haisha's TCM courses: search lectures, look up formulas and acupoints, organize notes.",
    "why_zh": "垂直领域 skill 的好样本：把一套课程资料做成可检索、有截图证据的学习系统，思路可以照搬到任何课上。",
@@ -1868,7 +1868,7 @@
    "tagline_en": "Photograph your handwriting, get a real installable font (TTF/WOFF) — free, open source, fully local, nothing uploaded.",
    "why_zh": "「拥有自己笔迹的字体」是很多人想过没做过的浪漫，本地处理这点尤其体面。",
    "why_en": "A font of your own hand is a romance most people never act on; the local-only processing is the classy touch.",
-   "category": "fun",
+   "category": "creative",
    "limit_zh": "只做拉丁字母：字符集就 minimal 和 spanish 两套，汉字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只认文件路径，聊天里粘的图它看得见却用不了。",
    "limit_en": "Latin only: the charsets are minimal and spanish (A-Z, a-z, 0-9, punctuation, accents) - no CJK. Needs Node >= 18 and scripts/resolve-cli.js first, and the CLI takes file paths only, so an image pasted into chat cannot be processed.",
    "cover": "https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png",
@@ -2598,7 +2598,7 @@
   },
   "staruhub-claudeskills-university-exam-prep": {
    "title_zh": "对着真实课本和考纲突击复习",
-   "category": "life",
+   "category": "learn",
    "tagline_zh": "考的是老师的 PPT 和课本，AI 却按通用知识给你讲。它强制你先传真材料，再用苏格拉底式提问带你想，不灌答案。",
    "tagline_en": "Built for textbook-and-slides exams — it makes you upload the actual materials first, then Socratically questions you toward understanding instead of spoon-feeding.",
    "why_zh": "「没材料就不辅导」这条硬约束很诚实：逼你对着真考纲学，而不是听 AI 编一套。",
@@ -3150,7 +3150,7 @@
   },
   "heygen-com-hyperframes-hyperframes-cli": {
    "title_zh": "用命令行批量出片",
-   "category": "dev",
+   "category": "creative",
    "tagline_zh": "一条视频好做，一百条要命。init/add/capture/render 一条龙，把出片变成能脚本化的构建流程，重复劳动交给机器。",
    "tagline_en": "The HyperFrames CLI dev loop — init, add, catalog, capture, lint and render; the backbone for batch production and automation.",
    "why_zh": "榜单上 33.6 万安装那件。批量做内容的人靠它把「一条一条手工做」变成流水线。",
@@ -3360,7 +3360,7 @@
   },
   "xiaomacoltai-math-modeling-skill": {
    "title_zh": "三天赛程里做完数学建模竞赛全流程",
-   "category": "life",
+   "category": "learn",
    "tagline_zh": "建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。",
    "tagline_en": "A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.",
    "why_zh": "按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。",
@@ -3713,7 +3713,7 @@
   },
   "alchaincyf-zhangxuefeng-skill": {
    "title_zh": "用张雪峰的框架分析升学和职业选择",
-   "category": "life",
+   "category": "learn",
    "tagline_zh": "高考志愿、考研、转行——这类决定影响十年，家里人给的建议却常常凭感觉。它基于他 5 本书、15 篇深访提炼出的心智模型和决策启发式来拆。",
    "tagline_en": "Analyzes education and career choices through Zhang Xuefeng's frameworks — five mental models and eight decision heuristics distilled from five books and 15+ interviews.",
    "why_zh": "调研扎实，不是拿网红名字贴标签；请不到本人，就请一份他的思维方式。",
@@ -3955,7 +3955,7 @@
   },
   "op7418-guizang-sports-skill": {
    "title_zh": "读懂运动手表导出的轨迹数据",
-   "category": "life",
+   "category": "body",
    "tagline_zh": "手表导出一堆 FIT/KML 文件，多数人看不懂也懒得看。它把功率、心率、爬升、配速逐段拆开，还出可视化路书。",
    "tagline_en": "Analyzes cycling, running and hiking FIT/KML tracks — power, heart rate, elevation and pacing broken down segment by segment, with visual route reports.",
    "why_zh": "把一墙传感器读数翻译成「这趟骑得怎么样」，骑行跑步徒步都能用。",
@@ -3969,7 +3969,7 @@
   },
   "joeseesun-qiaomu-learning": {
    "title_zh": "用一问一答逼你自己想明白",
-   "category": "life",
+   "category": "learn",
    "tagline_zh": "AI 直接给答案，学的时候最爽、也最没用。丢一份教材、截图或一道题给它，它一次只问一个问题，带你自己推出来。",
    "tagline_en": "Turns textbooks, screenshots, PDFs, notes or a single problem into a question-by-question derivation — one question at a time, making you reason it out instead of handing over answers.",
    "why_zh": "AI 毁掉学习的最快方式就是给答案；「一次只问一个」这条硬约束正是解药。乔木出品。",
@@ -4863,7 +4863,7 @@
   },
   "ruochenlyu-beijing-pollen-monitor": {
    "title_zh": "查北京 16 区花粉浓度和过敏预报",
-   "category": "life",
+   "category": "body",
    "tagline_zh": "每年三四月对花粉过敏的人来说是渡劫。它拉 16 个站点的实时监测和分类预报，按区查，出门前知道今天该不该戴口罩。",
    "why_zh": "垂直到一个城市、一种过敏原——但对那批人是刚需。这种「窄得理直气壮」正是大市场覆盖不到的东西。",
    "cover": "",
@@ -4907,7 +4907,7 @@
   },
   "chenklein26-maker-fitness-coach-rpg": {
    "title_zh": "把长期健身做成有剧情的 RPG",
-   "category": "life",
+   "category": "body",
    "tagline_zh": "健身最难的是坚持，不是动作。它用本地文件记录你的训练、疲劳和复训，再让训练结果推进剧情——练得好剧情才往前走。",
    "why_zh": "把「坚持」这个真问题用游戏机制解决，而不是再给一份训练计划表。全本地存档，数据不外传。",
    "pick": true,
@@ -5025,7 +5025,8 @@
    "title_en": "A TCM lineage that flags its own unverified claims",
    "tagline_en": "Most Ni Hai-Sha material online is clipped and re-transmitted, truth and hearsay mixed together. This distils primary sources: recorded dialogue transcripts, closed-door class notes, lecture material on the Shennong herbal classic.",
    "why_en": "It splits 'verified' from 'commonly repeated' into its own section. A skill built on lineage that will name its own weak claims is rarer than one with more knowledge.",
-   "limit_en": "Large as it is, it's a knowledge base: reasoning is for study, not prescription, and dosage must come from a licensed practitioner in person — tongue and pulse cannot be read from text. Chinese only, and it argues from one school, not all of TCM."
+   "limit_en": "Large as it is, it's a knowledge base: reasoning is for study, not prescription, and dosage must come from a licensed practitioner in person — tongue and pulse cannot be read from text. Chinese only, and it argues from one school, not all of TCM.",
+   "category": "body"
   },
   "jangviktor-web-likeskill": {
    "title_zh": "认出 24 种假证，别把寒极当热治",
@@ -5033,7 +5034,8 @@
    "title_en": "Twenty-four ways a cold case looks hot",
    "tagline_en": "The dangerous mistake in Chinese medicine isn't a weak formula — it's reading the pattern backwards: extreme cold presenting as heat, depletion presenting as excess. Treat that backwards and you make it worse. This distils 24 such false presentations from 423 case records.",
    "why_en": "Most 'master' compilations copy the formulas. This one copies the places judgment went wrong — and sets a hard low-start dose ceiling for elderly patients, because aconite is toxic and someone cared enough to write that down.",
-   "limit_en": "Built around high-dose classical formulas; the author states plainly they require an experienced practitioner's supervision and that this is for study only. The emergency formulas in particular must not be copied — an aconite dosing error can kill."
+   "limit_en": "Built around high-dose classical formulas; the author states plainly they require an experienced practitioner's supervision and that this is for study only. The emergency formulas in particular must not be copied — an aconite dosing error can kill.",
+   "category": "body"
   },
   "yuanzhao321-tcm-skill": {
    "title_zh": "会劝你去挂急诊的中医参谋",
@@ -5041,7 +5043,8 @@
    "title_en": "Traditional medicine that tells you to call an ambulance",
    "tagline_en": "The hard call at home is not which remedy — it's whether to go to hospital now. It puts suspected life-threatening presentations in a red-line tier: high fever with confusion, chest pain through to the back, cold sweat — call emergency services, no differentiation.",
    "why_en": "The safest boundary I've seen in this category. It names the failure mode where a traditional framework delays real care, and refuses to be used there.",
-   "limit_en": "Positioned as a family adviser, not a physician; it writes no prescriptions. Self-administered acupuncture is forbidden outright, explanation only. It argues from the textbook tradition and will not reconcile itself with rival schools."
+   "limit_en": "Positioned as a family adviser, not a physician; it writes no prescriptions. Self-administered acupuncture is forbidden outright, explanation only. It argues from the textbook tradition and will not reconcile itself with rival schools.",
+   "category": "body"
   },
   "jangviktor-web-wujutong": {
    "title_zh": "古人自相矛盾处不替你抹平的温病医",
@@ -5049,7 +5052,8 @@
    "title_en": "A school that leaves the contradictions standing",
    "tagline_en": "Warm-disease theory and cold-damage theory are two different games; use the wrong one and you treat backwards. This follows the triple-burner differentiation, 22 core formulas laid out by burner, 359 case records double-indexed.",
    "why_en": "One section is titled 'internal tensions — kept, not reconciled'. Where the classical author contradicts himself, it leaves the seam visible. It also names the rival school by skill and sends you there.",
-   "limit_en": "Warm disease only — cold damage, miscellaneous disease and the qi-dynamic school are out of scope and the author points each one elsewhere. No prescriptions; safety notice in its own section."
+   "limit_en": "Warm disease only — cold damage, miscellaneous disease and the qi-dynamic school are out of scope and the author points each one elsewhere. No prescriptions; safety notice in its own section.",
+   "category": "body"
   },
   "voidforall-fengshui-skill": {
    "title_zh": "先说自己不算命的风水顾问",
@@ -5081,7 +5085,8 @@
    "title_en": "Check pollen before you go out, 53 cities",
    "tagline_en": "Allergy season is an ordeal and most weather apps don't report pollen at all. It pulls monitoring-station data for grade, risk note, and seven days of history plus forecast.",
    "why_en": "Standard library only, nothing to install; the fallback source is kept clearly separate from the primary one, and when data is missing it says so rather than passing off a dispersal index as a concentration.",
-   "limit_en": "Only the 53 cities with monitoring stations; smaller cities have no data. Out of season it reports none, and gaps on individual days are normal. The fallback gives a dispersal index, not a concentration — don't read them as the same number. Mainland China only."
+   "limit_en": "Only the 53 cities with monitoring stations; smaller cities have no data. Out of season it reports none, and gaps on individual days are normal. The fallback gives a dispersal index, not a concentration — don't read them as the same number. Mainland China only.",
+   "category": "body"
   },
   "sunnypanzhen-fishing-skill": {
    "title_zh": "新手买竿，老手看天：从选位讲起",
@@ -5147,7 +5152,8 @@
    "title_en": "Exam coaching that refuses to sound like a textbook",
    "tagline_en": "The worst thing about test prep is a lesson so even-toned you remember none of it. This models a well-known Chinese exam coach's blunt classroom voice — peeling long sentences apart, assembling essays from patterns — calibrated against the June 2026 CET-6 paper.",
    "why_en": "Its 'absolutely forbidden' section is written in reverse: no academic register, no translationese, no 'firstly, secondly, finally'. Using rules to make a lesson sound human is harder than piling on content.",
-   "limit_en": "A simulation of a teaching style, not the person; the method is drawn from public course material. It makes no predictions about what will be on the paper, and calibration stops at June 2026. Chinese English-exam context (CET/postgraduate)."
+   "limit_en": "A simulation of a teaching style, not the person; the method is drawn from public course material. It makes no predictions about what will be on the paper, and calibration stops at June 2026. Chinese English-exam context (CET/postgraduate).",
+   "category": "learn"
   },
   "xntj-ai-baoxiao": {
    "title_en": "Loose receipts into a filed expense claim",
@@ -5197,7 +5203,8 @@
    "tagline_en": "Deciding whether it is safe to run, drill or work outside today — air temperature will mislead you. This pulls a seven-day open-meteo forecast, computes wet-bulb, and grades five risk levels.",
    "why_en": "It swaps out the scale people actually use: above 31°C wet-bulb all outdoor activity is dangerous, and 35°C is the theoretical survival limit, cited to Sherwood & Huber, PNAS 2010.",
    "limit_en": "It grades risk and stops there — the file's closing line sends anyone with high fever without sweating, or confusion, straight to a hospital. Chinese city names that miss have to be retyped in pinyin (the worked example is Dunhuang). One data source only: the open-meteo seven-day forecast, with no station correction.",
-   "pick": true
+   "pick": true,
+   "category": "body"
   },
   "fxw-labs-beachcombing": {
    "title_zh": "把你必须几点前撤离滩涂顶在报告最前面的赶海参谋",
@@ -5238,7 +5245,8 @@
    "title_en": "A trail-running decision desk that stops you at 2 out of 10 pain",
    "tagline_en": "Whether today's session should run, drop a level, or be cancelled, decided through three gates in order: metabolic, mechanical, executive. Never from heart rate and weekly mileage alone.",
    "why_en": "Downhill eccentric load, stairs and muscular-endurance work each get their own ledger, because those are exactly what a heart-rate watch cannot see.",
-   "limit_en": "Pain thresholds are fixed: 0–1 observe, 2 is yellow, above 2 downgrade or stop; pain on the first step out of bed or any neural symptom ends key sessions and goes to a professional. Without a runner profile, race profile and the last two to six weeks of training it gives only a conservative version rather than inventing numbers. The author also states the 7–10 day ME interval is a starting point for some runners, not a physiological law."
+   "limit_en": "Pain thresholds are fixed: 0–1 observe, 2 is yellow, above 2 downgrade or stop; pain on the first step out of bed or any neural symptom ends key sessions and goes to a professional. Without a runner profile, race profile and the last two to six weeks of training it gives only a conservative version rather than inventing numbers. The author also states the 7–10 day ME interval is a starting point for some runners, not a physiological law.",
+   "category": "body"
   },
   "wangzhengjun571-alt-recomp-coach": {
    "title_zh": "卡路里跟克数打架就按克数重算的增肌减脂教练",
@@ -5248,7 +5256,8 @@
    "title_en": "A recomp coach that recomputes your calories from the grams",
    "tagline_en": "5:2 fasting with carb cycling — the hard part was never the plan, it is the drift. It parses each daily log into JSON, names the single largest gap, and prescribes exactly one change.",
    "why_en": "One lever at a time is a hard rule. With no trigger row met it says \"hold, no change indicated\" rather than adjusting something so it looks useful.",
-   "limit_en": "The author writes the external-validity gap into the file himself: the MATADOR and Seimon trials behind intermittent restriction were run in people with obesity, not lean people near target body fat. It assumes a healthy adult, keeps the weekly deficit in a 2,000–4,000 kcal band, and when sleep is chronically under seven hours it flags sleep first and holds all diet and training changes."
+   "limit_en": "The author writes the external-validity gap into the file himself: the MATADOR and Seimon trials behind intermittent restriction were run in people with obesity, not lean people near target body fat. It assumes a healthy adult, keeps the weekly deficit in a 2,000–4,000 kcal band, and when sleep is chronically under seven hours it flags sleep first and holds all diet and training changes.",
+   "category": "body"
   },
   "marcotini-fraudi": {
    "title_zh": "禁止说「我听到了」和「需要我都在」的自省镜子",
@@ -5333,7 +5342,7 @@
    "limit_en": "Without a training log it degrades into generic advice — its whole value rests on you already having data (Xunji, CSV or JSON). The author states plainly it does not diagnose, refuses nutrition-only questions, and stops programming entirely on emergency symptoms.",
    "limit_brief_zh": "没有训练记录，它只能给通用建议。",
    "limit_brief_en": "With no training log, it can only give generic advice.",
-   "category": "life"
+   "category": "body"
   },
   "zhlmi-moodboard-alignment": {
    "title_zh": "把「要高级要有质感」变成能确认的方向稿",
@@ -5415,7 +5424,8 @@
    "title_en": "Your own pet, in real streetwear, slouched on a couch under a hard flash",
    "tagline_en": "Ask any model for a pet portrait and you get a cartoon plush toy you can't recognise. This one insists the silhouette read first as \"a human sprawled on a sofa\", with only one or two props filling 3–12% of the frame.",
    "why_en": "It never generates a new animal: your uploaded photo is the edit target, and two to four identity anchors get written down first. The pose may be human; the limbs and paws stay animal.",
-   "limit_en": "It calls `view_image` and `image_gen.imagegen` directly, so it goes nowhere in an environment without those two built-in tools. The only output is a 1:1 square composed as a square from the start — cropping a vertical down is forbidden — and readable text, logos and watermarks are banned outright, as is turning the pet into a cartoon, a human, or a brand advertisement."
+   "limit_en": "It calls `view_image` and `image_gen.imagegen` directly, so it goes nowhere in an environment without those two built-in tools. The only output is a 1:1 square composed as a square from the start — cropping a vertical down is forbidden — and readable text, logos and watermarks are banned outright, as is turning the pet into a cartoon, a human, or a brand advertisement.",
+   "category": "creative"
   },
   "zgdfsgd-pet-nutritionist": {
    "title_zh": "严禁给龙猫洗澡、也给矮脚马算食谱的宠物营养师",
@@ -5538,7 +5548,7 @@
    "tagline_en": "The market is full of score matchers. This one does the part nobody touches: does this school mark you down, do the supervisors bully, are placements decided by connections, what does a day there actually feel like.",
    "why_en": "One overriding rule: present, never adjudicate. Phrasing like \"ruled out\", \"perfect fit\" or \"tailored for you\" gets rewritten by the skill itself.",
    "limit_en": "It carries a whole cynical-realities handbook and will hand parents the marriage-market arithmetic behind a daughter's choice of major, stating plainly that it passes no moral judgement — if that turns your stomach, do not install it. The list has to be filled to at least seventy percent of your province's slots, and every rank, quota and employment figure is verified live or marked unconfirmed rather than answered from memory.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5554,7 +5564,7 @@
    "tagline_en": "You ask school A or school B and it calls that a fake decision: what is the endgame at eighteen? If the two parents answer differently, every plan after that is floating.",
    "why_en": "It does not answer policy from memory. Anything factual sends it to the municipal education bureau and exam authority originals, cited with document number and release date.",
    "limit_en": "Shanghai only, and nothing here transfers to another city; district admission plans are reissued every year, so it insists on checking district by district and forbids reusing one district's rules for another. It will not recite cut-off scores, repeat online rumours or comment on non-public data. When parents disagree it demands you align first, and that step cannot be skipped.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5570,7 +5580,7 @@
    "tagline_en": "Give it a grade, a chapter and a difficulty and you get six worked examples plus twelve homework problems. Figures go to a script that renders beige grid paper and forty-five-degree hatching, and the dimensions in the drawing are the same numbers as the question and the answer.",
    "why_en": "Every answer is computed twice by different routes and only written into the document when they agree — an area checked both by subtraction and by the shoelace formula.",
    "limit_en": "The file hands final review to \"the teacher, adjusted for this class\", so a parent using it alone still has to check the sheet. Difficulty has only three anchors, and when it cannot place yours it asks for a sample page rather than guessing. Figures depend on matplotlib and python-docx, which it will pip install if missing. It states plainly that it promises no score improvement.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5698,7 +5708,7 @@
    "tagline_en": "Turns whatever you are studying into cards and writes them straight into a deck over AnkiConnect. Cloze has a mode that shows shape but not text — you can see how many digits the speed of light has, without seeing the digits.",
    "why_en": "\"Never add cards without explicit user approval\" is written as non-negotiable, with every proposed card shown in full first — exactly the step bulk card generation usually skips.",
    "limit_en": "You need Anki desktop running, AnkiConnect enabled, and the repo's own Anki Markdown note type installed; miss one and nothing works. Delete, update and rate each ask for their own confirmation. The examples lean almost entirely on code and technical terms, so language learners will want to rewrite the card conventions.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5714,7 +5724,7 @@
    "tagline_en": "The repo ships no exam text at all — the sentence bank is built from your own PDFs. Every mock passage it writes must clear one check: twelve consecutive words overlapping your corpus and it goes back.",
    "why_en": "One rule locks the whole thing down: only sentences traceable to your local files count as real exam sentences. The model may not fill in missing years, and mock passages never get written back into the corpus.",
    "limit_en": "You need your own PDFs of the 2001–2026 papers; the repo hands you none. Commands are written for PowerShell and the bundled Codex Python, so other setups need rewriting. The first pass shows only the sentence and its source, with no translation and no parse, unless you say you would rather just see the explanation.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5730,7 +5740,7 @@
    "tagline_en": "Practise speaking off podcast transcripts like EnglishPod. No lecture first: each prompt gives the intent in Chinese plus any words you would need, you speak, and the explanation only arrives after you miss.",
    "why_en": "Mastery is graded in three tiers, and only unprompted use in a genuinely new situation counts as knowing it. A keyword, a sentence frame, or getting it right just after a correction all land in \"assisted\".",
    "limit_en": "It explicitly does not cover listening, pronunciation, stress, intonation or shadowing, and says so — you bring the audio material yourself. When a prompt's translation or supporting words are wrong it takes the blame and the item does not count against you, which also means prompt quality rests entirely on the model.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5746,7 +5756,7 @@
    "tagline_en": "For the three question shapes built on root existence, root count and parameter ranges. Limits and graphs are fine while you explore, but the written answer must become monotone partition, a concrete point, and a sign change.",
    "why_en": "Choosing the point is not guesswork: it states the sign goal first, works backward from a threshold, then swaps the value it derived for a cleaner one.",
    "limit_en": "It handles one family of problems — root existence, root count, and the parameter ranges you derive from those — and nothing else in calculus. The text is bilingual, but the writing conventions follow Chinese exam grading: both \"at least\" and \"at most\" must appear, and continuity has to be stated before the intermediate value theorem is invoked.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5762,7 +5772,7 @@
    "tagline_en": "Hand it the full contest problem and your paper. It builds and freezes its own hundred-point rubric before reading for quality, scores criterion by criterion, then estimates what share of valid entries you would beat.",
    "why_en": "Every numeric criterion is capped at nine tenths of its weight, so the raw maximum is ninety — and the file insists that deduction be labelled a judge's reserve rather than a defect in the paper.",
    "limit_en": "The report is required to end with the author's QQ group numbers and WeChat IDs, preserving their wording, emphasis, order and line breaks. The rubric is distilled from the official grading notes for sixteen CUMCM problems between 2020 and 2025; every other contest routes to a rough small-field distribution, and the percentile is an estimate, not a rank.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5794,7 +5804,7 @@
    "tagline_en": "When marking, it circles only the first mistake that changed the answer instead of listing them all. Explanations go hint, then half-worked example, then full solution — and it will not write what the child is meant to write.",
    "why_en": "It states that it will not pretend to remember which page of which textbook edition, and will not diagnose ADHD or dyslexia — only describe the difficulty it can observe.",
    "limit_en": "It asks for no real name, school, class or address, so it will not keep a long-term file on your child. It covers only the in-class scope of Chinese grades one to six and does no competition-level work; the textbook edition comes from you, and it neither guesses nor recites page numbers. If the photo is blurry or the question is cropped, it hands it back rather than guessing.",
-   "category": "life",
+   "category": "learn",
    "pick": false,
    "hide": false,
    "cover": "",
@@ -5810,7 +5820,7 @@
    "tagline_en": "One to two percent of bodyweight a week, and anything faster counts as water and muscle rather than fat. It looks at leptin, cortisol and your sleep before deciding whether this round gets a deficit at all.",
    "why_en": "One line does the work: binge eating is usually the inevitable rebound from having restricted too hard. What follows is repairing your relationship with food, not more willpower.",
    "limit_en": "Upstream SKILL.md sets name to \"陈石营养师 (Mars Chen)\" — spaces and parentheses, unlike the lowercase-hyphen form every other skill uses. Rename it to chenshi-nutrition before installing. This is an unofficial fan-made distillation and says so, and does not represent the nutritionist's own positions. What it offers is sports-nutrition education and lifestyle guidance, not diagnosis or prescription, and it routes eating disorders, serious metabolic disruption and clinical depression to a doctor or registered dietitian. It also declines to recommend melatonin as a routine supplement.",
-   "category": "life",
+   "category": "body",
    "pick": false,
    "hide": false,
    "cover": "",
