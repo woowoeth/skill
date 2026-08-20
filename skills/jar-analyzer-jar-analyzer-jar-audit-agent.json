@@ -1,0 +1,32 @@
+{
+ "id": "jar-analyzer-jar-analyzer-jar-audit-agent",
+ "kind": "skill",
+ "name": "jar-audit-agent",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：jar-audit-agent。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "基于 jar-analyzer（SQLite + 内置 MCP）的证据驱动 Java 安全审计技能。核心目标：把“结论”变成“可复现证据 + 可度量覆盖率”。",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "jar-analyzer/jar-analyzer",
+ "owner": "jar-analyzer",
+ "path": "skills/jar-audit-agent",
+ "url": "https://github.com/jar-analyzer/jar-analyzer/tree/HEAD/skills/jar-audit-agent",
+ "homepage": "https://jar-analyzer.github.io",
+ "stars": 2156,
+ "pushed_at": "2026-08-20T02:51:02Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.5,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-08-20",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/jar-analyzer/jar-analyzer.git",
+  "copy": "cp -r jar-analyzer/skills/jar-audit-agent ~/.claude/skills/jar-audit-agent",
+  "dir": "~/.claude/skills/jar-audit-agent"
+ }
+}
