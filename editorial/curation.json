@@ -6578,6 +6578,22 @@
    "cover": "",
    "cover_kind": "none",
    "cover_real": false
+  },
+  "gnipbao-codex-whiteboard-video-skill": {
+   "title_zh": "线稿只准本地模型抽、不许 AI 生成的白板手绘视频",
+   "tagline_zh": "上传一张照片，它先用本地神经网络抽出线稿，再一笔一笔画出来、配一只跟着笔尖走的手。",
+   "why_zh": "两个本地模型一个都没装时，它规定必须直接失败 —— 不许用边缘检测糊一版弱线稿交差。",
+   "limit_zh": "它只是适配层：引擎要 pip 装另一个仓库，Informative Drawings 或 Anime2Sketch 至少装一个并设环境变量，而模型的安装指南在引擎仓库里、不在这一件。一个都没装时它直接失败，不给降级方案。",
+   "title_en": "Refuses to let an image model draw the line art",
+   "tagline_en": "Hand it a photo and it pulls the line art with a local neural model, then draws it stroke by stroke with a hand trailing the pen tip — instead of asking an image model for something that merely looks hand-drawn.",
+   "why_en": "With neither local model installed it is required to fail outright — no edge-detection fallback, because a weak outline that looks finished is worse than an error.",
+   "limit_en": "It is only an adapter. The engine is a separate pip install, you must set up Informative Drawings or Anime2Sketch yourself and point env vars at it, and the model setup guide lives in the engine repo rather than here. With neither installed, extract-lineart and render-photo fail outright.",
+   "category": "creative",
+   "pick": false,
+   "hide": false,
+   "cover": "",
+   "cover_kind": "none",
+   "cover_real": false
   }
  }
 }

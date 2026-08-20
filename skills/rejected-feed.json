@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-20T05:41:10Z",
+ "generated_at": "2026-08-20T06:15:33Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 231,
+  "shelved": 232,
   "unshelved": 612,
-  "known_items": 843,
-  "known_repos": 514,
-  "rejected_documented": 167,
+  "known_items": 844,
+  "known_repos": 515,
+  "rejected_documented": 168,
   "rejected_machine_logged": 0,
   "rounds_logged": 2,
   "latest_round": {
@@ -39,7 +39,7 @@
    "zh": "不是拿走就能用的商品",
    "en": "Not a take-and-use product",
    "detail": "框架/底座、教程、脚手架、别人项目自己的装修配置",
-   "count": 39
+   "count": 40
   },
   {
    "rule": "问二",
@@ -198,6 +198,19 @@
    "reject_clause": "",
    "stars": 394,
    "url": "https://github.com/cedriccmh/claude-code-skill-scrapling",
+   "rejected_at": "2026-08-20",
+   "by": "店长"
+  },
+  {
+   "repo": "gnipbao/whiteboard-video-engine",
+   "name": "whiteboard-video-engine",
+   "desc": "本仓库专注于底层渲染能力…Codex Skill 独立维护在 gnipbao/codex-whiteboard-video-skill。",
+   "reject_reason_zh": "作者自己写明这是底层引擎，skill 在另一个仓库；整棵树没有 SKILL.md。",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 241,
+   "url": "https://github.com/gnipbao/whiteboard-video-engine",
    "rejected_at": "2026-08-20",
    "by": "店长"
   },
