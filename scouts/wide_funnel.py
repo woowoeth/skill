@@ -549,12 +549,36 @@ NAME_DENY = re.compile(
 # 分两档，因为「爬虫」本身不是红线，**绕过对方的防抓措施**才是：
 #   HARD —— 命中即记红线，理由里引出命中的原词，不做「可能」的措辞
 #   SOFT —— 只标记待人看，不自动拒；单独一个「爬虫」「reverse engineering」不定罪
+#
+# **判据不看修辞，看机制**（2026-08-20 定）：
+#   两件东西的随机抖动、退避、遇码转人工可以完全同形，光看「防风控/对抗风控」这类
+#   措辞会判出两个相反结果。所以只问一句：
+#
+#       **有没有一个部件，它的功能是把「这是自动化」这件事藏起来？**
+#       （stealth 补丁 / 指纹伪造 / UA+Referer 冒充 / TLS 冒充 / 抽浏览器 cookie /
+#        打码 / 签名逆向）
+#
+#   **限速和退避不算** —— 它减负、它认栽，它不隐身。
+#
+# 边界（画在这儿，因为再往严就会把生态里绝大多数正当读取一起判死）：
+#   **只带一个通用浏览器 UA 去抓公开页的，放行** —— 几乎所有 HTTP 库都会设 UA，
+#   而站点拦空 UA 多半是在说「报个身份」，不是「别抓」。
+#   **但附加一条**：它同时不能违反 robots。robots / 验证码 / 字体混淆 / anti-bot 拦截页
+#   是**没有歧义**的「别抓」信号，UA 拦截是有歧义的 —— 有歧义的往宽判，无歧义的往严判。
 RED_SCRAPE_HARD = re.compile(
     r"(反爬|绕过反爬|破解反爬|字体反爬|字体加密|字形还原|滑块验证|验证码识别|打码平台|"
     r"过验证码|自动过码|风控绕过|签名逆向|sign\s*算法逆向|"
     r"bypass\s*(anti[- ]?bot|captcha|cloudflare|waf|rate\s*limit)|"
     r"captcha\s*(solver|solving|bypass)|solve[-_ ]?captcha|anti[- ]?detect|"
-    r"undetected[-_ ]?chromedriver|cf[-_ ]?clearance)", re.I)
+    r"undetected[-_ ]?chromedriver|cf[-_ ]?clearance|"
+    # 2026-08-20 补的两个洞。判 96 个 SOFT 候选时发现：**第一轮词表漏了最常见的那种手法**
+    # —— 隐藏自动化指纹。补扫后多抓出 5 件红线（xhs-monitor / Joblens / fetch-archive /
+    # fashion-trend-weekly / boss-crawler），比 stealth 这个词常见得多。
+    r"disable-blink-features\s*=\s*AutomationControlled|AutomationControlled|"
+    r"navigator\.webdriver|webdriver.*undefined|"
+    r"patchright|playwright[-_ ]?stealth|puppeteer[-_ ]?extra[-_ ]?plugin[-_ ]?stealth|"
+    r"stealth\.min\.js|camoufox|camofox|curl[-_ ]?cffi|"
+    r"browser[-_ ]?cookie3|ja3\s*(随机|指纹|spoof)|tls\s*指纹)", re.I)
 RED_SCRAPE_SOFT = re.compile(
     r"(逆向|爬虫|抓取|采集|scraper|scraping|crawler|headless\s*browser|"
     r"reverse[- ]engineer)", re.I)

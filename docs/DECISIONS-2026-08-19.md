@@ -1308,3 +1308,82 @@ D59「写下了规矩没验证代码在执行它」· 这条「定了 schema 自
 
 「读不到正文」已归到 `问三`（能不能一句话讲出它妙在哪——读不到就讲不出），
 理由全部收到 78 字内并在句读处断，不硬切。
+
+## D62 · 96 个绕反爬候选判完：红线 25 · 放行 68 · 读不到 3
+
+**取证方式先说**：`gh` 已登录（5000 次/小时），所以 95 个仓库的**完整文件树 + 完整源码全部拉到本地 grep**，
+不是只读 SKILL.md。**前四次翻车全在 `scripts/` 里，不在正文里。**
+
+### 「门面和脚本自相矛盾」这个形状出现了四次
+
+最狠的一件矛盾在**同一个文件里**：`18235133475-spec/xhs-monitor-skill`
+的 `scripts/common.py:136` docstring 写着「检测风控：验证码/滑块/频繁。命中即熔断，**不得硬闯**」，
+而同一文件第 36 行定义了
+`STEALTH_JS = Object.defineProperty(navigator, 'webdriver', {get: () => undefined})`，
+`references/runtime-rules.md:39` 还专门叮嘱「注入 webdriver 抹除脚本（common.py 已实现，**勿删**）」。
+
+另外三件：
+- `DieselZhang/job-app-assistant-skill`：`anti-scraping.md:34` 立规矩「**不得**规避安全验证」，
+  `README.md:105` 自家安装命令带 `--stealth`。**这件其余部分相当克制**（强制确认门、遇码即停、
+  默认让用户粘贴），就一个 flag 把它送出局
+- `webshare-proxy/skills`：`:47` 写「**Will not do:** bypass CAPTCHAs or logins」，
+  `:107` 写「Patchright is an undetected version of playwright that **bypasses most bot detection**」
+- `casper-studios/casper-marketplace`：`:247`「never bypass authentication」，
+  脚本 `:376` 内容为空就自动 `retrying with stealth proxy`
+
+**「厂商招牌不豁免」也验到了**：`apify/agent-skills` 的 `references/gotchas.md:97` 有专章
+「Cloudflare and WAF bypass —— 住宅代理 + 浏览器指纹轮换」；`openweb-ninja` 直接把 `anti-bot bypass` 当能力卖。
+
+### 判据补了两个洞，都补出真东西
+
+**一、第一轮词表漏了最常见的那种手法。** `--disable-blink-features=AutomationControlled`
+和 `navigator.webdriver` 都不在表里，**补扫后多抓出 5 件红线**——
+它比 `stealth` 这个词常见得多。已加进 HARD，连同 `patchright` / `playwright-stealth` /
+`stealth.min.js` / `camoufox` / `curl_cffi` / `browser_cookie3` / TLS 与 JA3 指纹。
+**10 条假数据验过，含「限速退避」和「守 robots」正确不中。**
+
+**二、不看修辞，看机制。**
+
+> 两件东西的随机抖动、退避、遇码转人工可以完全同形，光看「防风控/对抗风控」这类措辞
+> 会判出两个相反结果。
+
+所以判据收成一句话，写进代码注释：
+
+> **有没有一个部件，它的功能是把「这是自动化」这件事藏起来？**
+> （stealth 补丁 / 指纹伪造 / UA+Referer 冒充 / TLS 冒充 / 抽浏览器 cookie / 打码 / 签名逆向）
+> **限速和退避不算 —— 它减负、它认栽，它不隐身。**
+
+### 三条边界件他明说「我可能画松了」，我复核：判他对
+
+只带一个通用浏览器 UA 抓公开页的，他一律放行。**这个界我认，并且把理由补成一条规矩**：
+
+**几乎所有 HTTP 库都会设 UA，而站点拦空 UA 多半是在说「报个身份」，不是「别抓」。**
+robots / 验证码 / 字体混淆 / anti-bot 拦截页是**没有歧义**的「别抓」信号，UA 拦截是**有歧义**的 ——
+**有歧义的往宽判，无歧义的往严判。** 附加条件：它同时不能违反 robots。
+
+再往严就会把生态里绝大多数正当读取一起判死，**那正是 D25 警告的那个错的反面版本**。
+
+### 三件超出判据、但归类要改的
+
+- `dsh-galgame-localization-reverse`：**不是绕反爬，是绕授权保护**（含 DMM/SoftDenchi
+  启动授权绕过、license 分析）。他没悄悄塞进反爬那一档，而是在理由里写清了——**这个处理是对的**
+- `reverse-engineering-assistant`：反爬这条上干净，但带 `ctf-pwn` / 漏洞利用件 ——
+  那是「攻击赋能」那条红线，**放行只代表反爬这一项**
+- `boss-crawler-skill`：已判红，另有一笔——它的 auto_apply 会**用你的账号自动投递、自动发招呼语**
+  （3–5 秒间隔、每场 10–20 个）。**这是批量代投，不是抓取**
+
+### 一个正面样本
+
+`mindmorass/reflex` 的 site-crawler **自带 `RobotsChecker` 合规检查器、限速、UA 自报身份** ——
+和 D15 我们自己改走 sitemap 的做法同形，**是这批里唯一把 robots 合规写成代码的**。
+
+## D63 · 守卫第三次拦下我自己写错的数据
+
+写完 25 条红线记录，`--strict` 报 **25 个 error**：`skill` 字段填了 `null`，而 schema 要 string。
+
+**而「整仓被拒就省略这个键」正是我加这个字段时自己写下的语义**（D43）。我加了字段，
+自己用的时候忘了它的用法。
+
+D61 是「定了 schema 自己没照着写」（超长、enum 外的值），这条是「定了语义自己没照着用」。
+**加上 D52（验证了函数没验证它接进流水线）和 D59（写下了规矩没验证代码在执行它）——
+四条都是同一件事：写下来那一刻，和真的做到，之间没有任何自动连线。**

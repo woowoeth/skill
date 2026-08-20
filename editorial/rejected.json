@@ -188,6 +188,181 @@
    "desc": "Browser automation with persistent named pages via the doobie CLI. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, log into sites, or automate b",
    "reject_reason_zh": "1.5KB 正文里方法全推给 `doobie --help`，自己只留了几条分号和 ref 失效的 gotcha，用户拿到正文本身得不到任何可迁移的判断。",
    "reject_rule": "问一"
+  },
+  {
+   "repo": "DieselZhang/job-app-assistant-skill",
+   "name": "job-app-assistant-skill",
+   "desc": "skills/job-greeting/references/anti-scraping.md:34 + README.md:105",
+   "reject_reason_zh": "门面写「不得规避安全验证」，自家安装命令却给浏览器 MCP 开 --stealth",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "18235133475-spec/xhs-monitor-skill",
+   "name": "xhs-monitor-skill",
+   "desc": "scripts/common.py:136 + scripts/common.py:36",
+   "reject_reason_zh": "同一个 common.py：一处写「不得硬闯」，一处定义抹除 webdriver 的 STEALTH_JS",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "webshare-proxy/skills",
+   "name": "skills",
+   "desc": "skills/scraper/SKILL.md:47 + :107",
+   "reject_reason_zh": "SKILL 写「不替你绕验证码」，同页却教用 patchright 绕机器人检测",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "casper-studios/casper-marketplace",
+   "name": "casper-marketplace",
+   "desc": "plugins/bizdev/research/skills/apify-scrapers/scripts/scrape_content_by_url.py:376",
+   "reject_reason_zh": "正文写「绝不绕认证」，脚本默认被拦就自动改用 stealth 代理重试",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "yfe404/web-scraper",
+   "name": "web-scraper",
+   "desc": "SKILL.md:193 + strategies/anti-blocking.md:32",
+   "reject_reason_zh": "整册教反检测：stealth 模式、伪造指纹、TLS 欺骗、cf_clearance",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "MarkITwains/gov-doc-collector",
+   "name": "gov-doc-collector",
+   "desc": "skill.md:30 + scripts/mcp_server.py:115",
+   "reject_reason_zh": "随件 curl_cffi 冒充浏览器 TLS 指纹，专为绕政府站阿里云 WAF",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "gooseworks-ai/goose-skills",
+   "name": "goose-skills",
+   "desc": "skills/research-tools/capabilities/youtube-apify-transcript/SKILL.md:3",
+   "reject_reason_zh": "多件卖点即绕机器人检测：solve_captchas、stealth 模式、住宅代理",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "chubbyguan/chubbyskills",
+   "name": "chubbyskills",
+   "desc": "zhihu-transcribe/scripts/transcribe.py:12",
+   "reject_reason_zh": "知乎/微博两个脚本 docstring 自述：UA + Referer 伪装以规避该站反爬",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "zhansan379/boss-crawler-skill",
+   "name": "boss-crawler-skill",
+   "desc": "scripts/boss_crawler/config.py:148-149",
+   "reject_reason_zh": "启动参数隐藏自动化标识，注释自述「避免网站限制」",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "walnut1218/Joblens.skill",
+   "name": "Joblens.skill",
+   "desc": "boss_zhipin_job_search/auth_cookie.py:20 + app.py:281",
+   "reject_reason_zh": "四件齐活：抽浏览器 cookie、patchright、隐藏自动化、私有 stoken 接口",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "nanmicoder/newscrawler",
+   "name": "newscrawler",
+   "desc": "libs/stealth.min.js + libs/playwright_driver.py:71",
+   "reject_reason_zh": "vendored stealth.min.js 注入 + curl_cffi + X 内部 GraphQL 私有接口",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "hemoouren/X-to-Obsidian-SKill",
+   "name": "X-to-Obsidian-SKill",
+   "desc": "scripts/x_to_obsidian.py:350-360",
+   "reject_reason_zh": "从 X 的 JS 包里扒 bearer 与 queryId，再伪造整套内部头冒充网页端",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "TAI-IPX/skills-teams-ai-design-daily",
+   "name": "skills-teams-ai-design-daily",
+   "desc": "README.md:15 + README.md:83",
+   "reject_reason_zh": "必需依赖是反检测浏览器 camofox，理由写明是为躲开官方 API 的限制",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "TAI-IPX/skills-lark-ai-design-daily",
+   "name": "skills-lark-ai-design-daily",
+   "desc": "README.md:16 + scripts/collect_camofox.mjs:3",
+   "reject_reason_zh": "同上：采集层强制走 camofox 反检测浏览器 + X 会话 cookie",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "ajaxhe/fetch-archive-to-lexiang",
+   "name": "fetch-archive-to-lexiang",
+   "desc": "scripts/fetch_article.py:315-323",
+   "reject_reason_zh": "从用户真实 Chrome 抽 cookie 注入 Playwright，另开隐藏自动化标识",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "RancyZhao69/fashion-trend-weekly",
+   "name": "fashion-trend-weekly",
+   "desc": "xhs_trend_report.py:28-32",
+   "reject_reason_zh": "打小红书时隐藏自动化标识 + 硬编码 Windows Chrome 假 UA",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "seannet888/house-fetcher",
+   "name": "house-fetcher",
+   "desc": "scripts/firecrawl-fetch.js:7",
+   "reject_reason_zh": "随件脚本 docstring 自述：注入 Cookie 绕链家反爬虫",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "hfl112/bs_novel_crawler",
+   "name": "bs_novel_crawler",
+   "desc": "README.md:7-8",
+   "reject_reason_zh": "README 自述 Headers 伪装 + 随机停顿「模拟真人阅读行为」躲封",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "gosom/google-maps-scraper",
+   "name": "google-maps-scraper",
+   "desc": "scraper/scraper.go:244 + gmaps/reviews.go:37",
+   "reject_reason_zh": "全部 runner 走 stealth 抓取器冒充 Firefox，配住宅代理轮换打谷歌地图",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "hccccc01333/arknights-taptap-yuqing",
+   "name": "arknights-taptap-yuqing",
+   "desc": "07对照_抖音/crawl_douyin_comments.py:446-458",
+   "reject_reason_zh": "对照渠道脚本伪造 UA+Referer+Origin 冒充网页端打抖音私有接口",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "apify/agent-skills",
+   "name": "agent-skills",
+   "desc": "skills/apify-ultimate-scraper/references/gotchas.md:97",
+   "reject_reason_zh": "随件参考文档专章教绕 Cloudflare/WAF：住宅代理 + 指纹轮换 + camoufox",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "openweb-ninja/openwebninja-skills",
+   "name": "openwebninja-skills",
+   "desc": "openwebninja/SKILL.md:153 + apis/web-unblocker/recipes.md:36",
+   "reject_reason_zh": "随件工具表把「anti-bot bypass」当能力卖，配套配方处理验证码拦截页",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "mindrally/skills",
+   "name": "skills",
+   "desc": "puppeteer-automation/SKILL.md:413 + scrapy-web-scraping/SKILL.md:17",
+   "reject_reason_zh": "两件正文直接教反检测：stealth 插件绕机器人检测、反 bot 规避技巧",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "huhukangqi-ux/jjxs.skill",
+   "name": "jjxs.skill",
+   "desc": "scraper.py:47-49",
+   "reject_reason_zh": "每次请求随机换移动端 UA + 硬编码 cookie 打晋江 VIP 榜",
+   "reject_rule": "红线"
+  },
+  {
+   "repo": "julescules/dsh-galgame-localization-reverse",
+   "name": "dsh-galgame-localization-reverse",
+   "desc": "SKILL.md description",
+   "reject_reason_zh": "不是绕反爬，是绕授权保护：自述含 DMM/SoftDenchi 启动授权绕过",
+   "reject_rule": "红线"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
