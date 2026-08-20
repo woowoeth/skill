@@ -578,7 +578,13 @@ RED_SCRAPE_HARD = re.compile(
     r"navigator\.webdriver|webdriver.*undefined|"
     r"patchright|playwright[-_ ]?stealth|puppeteer[-_ ]?extra[-_ ]?plugin[-_ ]?stealth|"
     r"stealth\.min\.js|camoufox|camofox|curl[-_ ]?cffi|"
-    r"browser[-_ ]?cookie3|ja3\s*(随机|指纹|spoof)|tls\s*指纹)", re.I)
+    r"browser[-_ ]?cookie3|ja3\s*(随机|指纹|spoof)|tls\s*指纹|"
+    # 2026-08-20 再补一个：**作者自己写出「为什么这样不容易被拦」的那句话**。
+    # 来自 ErikaAlk/trip-planner 的路由表原文：
+    #   「反爬/登录/验证码重 → 真实 Chrome；**真人指纹最不易被风控**」
+    # 这一类措辞比 stealth 那种库名更诚实也更好抓 —— 它说的正是「功能是把这是自动化藏起来」。
+    # 判据仍然是 D41 那句：看这个部件的功能是什么，而作者自己写下的功能描述优先。
+    r"真人指纹|真实指纹|浏览器指纹\s*\S{0,4}(?:伪装|模拟|绕|过)|(?:不易|不容易|难)被风控|规避风控)", re.I)
 RED_SCRAPE_SOFT = re.compile(
     r"(逆向|爬虫|抓取|采集|scraper|scraping|crawler|headless\s*browser|"
     r"reverse[- ]engineer)", re.I)
