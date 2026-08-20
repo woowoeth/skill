@@ -292,6 +292,10 @@ header.top{padding:var(--s5) 0 var(--s4)}
 /* 竖过头的限个高，别让一张海报把一列吃掉。
    artwork 那一档放宽到 620px：最竖那张（比 0.46）在桌面五列自然高 570px，
    卡在 420px 会把刚放宽的下限又用 max-height 裁回去。 */
+/* 超出画幅上限的产出物图：留白，不裁。见 shotHTML 里 letterbox 那段注释 ——
+   一张四格叙事被裁掉 33% 等于裁掉落点，卡片上剩个断掉的故事。 */
+.shot.letterbox{background:var(--soft)}
+.shot.letterbox img{object-fit:contain}
 .shot.tallcap{max-height:min(64vh,420px)}
 .shot.tallcap-art{max-height:min(78vh,620px)}
 
@@ -1023,10 +1027,24 @@ function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec) return "";
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
-  var shown = ar;
+  var shown = ar, letterbox = false;
   if(ar && !forSheet){
     var band = rec.real ? AR_ART : AR_HERO;
-    if(ar > band[1]) shown = band[1];
+    if(ar > band[1]){
+      shown = band[1];
+      // **超出上限的产出物图改留白，不裁。**
+      //
+      // 卡片画幅上限 2.00，配 object-fit:cover，一张比 3.00 的图横向被裁掉 33%。
+      // 对一张 banner 无所谓，对一张**四格叙事**是毁掉它：
+      // `xiejunjie524` 那张 960×320 是「凌晨四点经过早餐店 → 老板不多问只多放一杯豆浆 →
+      // 从那以后每个清晨多一份温暖 → 第二天开门时门前的雪已经被扫干净」，
+      // 裁掉右边 33% 正好裁掉第四格 —— **落点。** 卡片上剩下一个断在第三格的故事，
+      // 而卡片的职责是让人想点进去，一个断掉的故事起的是反作用。
+      //
+      // 这不是诚实问题（详情页一直给原比例、一刀不裁），是**读得懂读不懂**的问题。
+      // 所以只对 artwork/ours 这一档留白 —— hero 和 diagram 本来就是横幅，裁无妨。
+      letterbox = rec.real;
+    }
     else if(ar < band[0]) shown = band[0];
   }
   // 宽高比已知就写死 —— 图片加载前空间就占好了，瀑布流不跳版
@@ -1034,7 +1052,7 @@ function shotHTML(it, forSheet){
   // 竖幅限高分两档。artwork 若还按 420px 截，等于刚放宽的下限又被 max-height 裁回去 ——
   // 桌面五列 261px 宽、比 0.46 的那张自然高 570px，所以 artwork 这一档给到 620px。
   var tall = shown && shown < 0.78 ? (rec.real ? " tallcap-art" : " tallcap") : "";
-  return '<span class="shot'+tall+'"'+sty+'>'
+  return '<span class="shot'+tall+(letterbox?" letterbox":"")+'"'+sty+'>'
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
        +     ' onerror="var s=this.parentNode;s.parentNode.classList.add(\'noimg\');s.remove()">'
