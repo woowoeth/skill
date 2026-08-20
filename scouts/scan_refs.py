@@ -48,6 +48,23 @@ sys.path.insert(0, os.path.join(ROOT, "scouts"))
 # 绕反爬那张表**不复制**，从 wide_funnel 导 —— 两份真相迟早会分叉。
 from wide_funnel import RED_SCRAPE_HARD  # noqa: E402
 
+# 有毒或需严格控量的中药。**只列「用错了会出人命」的那些**，不列全药典 ——
+# 这张表是为了让「药名 + 数量」这个组合能被抓到，不是为了识别中药。
+# **只列「用错了会出人命」的那些**，而且刻意**不列** 甘草/石膏/麻黄/大黄/芒硝 ——
+# 它们几乎出现在每一张方子里，列进来的后果实测过：一份医案库里几百行
+# 「处方内容是桂枝10克 白芍10克 炙甘草10克」全部命中，真正危险的那两行淹在里面。
+# 这类「常见但要控量」的药改由下面的「巨剂量形态」接住（两/斤 这种单位本身就大，
+# 或者写着 起步/起手/以上）。
+TCM_HERBS = (r"附子|川乌|草乌|乌头|天雄|白附子|生半夏|生南星|马钱子|朱砂|雄黄|硫磺"
+             r"|甘遂|大戟|芫花|巴豆|斑蝉|蟾酥|藜芦|商陆|狼毒|轻粉|砒石|细辛")
+
+# 「这一行的 g/kg 是营养学不是药理」。实测 12 次假阳性全在这一档：
+# 蛋白质 1.6-2.0g/kg、猫补水 50-70ml/kg、豚鼠维C 10-30mg/kg、重金属残留 砷≤5mg/kg。
+NUTRITION_CTX = re.compile(
+    r"(蛋白|protein|碳水|carb|脂肪|fat|热量|kcal|卡路里|calorie|补水|饮水|hydrat"
+    r"|维生素|vitamin|矿物质|纤维|fiber|体重.{0,4}(?:每|per)|每(?:公斤|kg).{0,6}体重"
+    r"|残留|限量|标准值|≤|<=|体重|磅|lbs?\b)", re.I)
+
 # --- 红线表。每一条后面都站着一件真读到过的东西 ---------------------------------
 TABLES = {
     # 具体医疗剂量。判据是「**有没有一个数，照着它就能给人用药**」——
@@ -60,6 +77,27 @@ TABLES = {
         r"|(?:每次|每日|每天|一次)\s*\d+(?:\.\d+)?\s*(?:mg|μg|ug|g|ml|IU|万单位)"
         r"|皮下注射\s*\S{0,12}\s*\d"
         r"|立即注射|静脉推注|肌注\s*\d)", re.I),
+    # 中医剂量。**这一档是补的，而它的缺失直接让两件最危险的货进了架。**
+    #
+    # 原来的「剂量」表只认 mg|μg|g|ml|IU，于是全部漏掉：
+    #   · `生附子2-3钱`、`石膏12-14两`（中医用钱/两/枚，不是毫克）
+    #   · `附子200g起步`（有 g，但后面没有 qd/每次 这类频次词）
+    #   · `附子1枚≈20g`
+    # 漏掉的这两件里，一件写着「电话/远程急救：破格救心汤原方，**附子200g起步**」，
+    # 另一件写着「**附子不麻不昏即剂量不够**」—— 而麻和昏正是附子中毒的前驱症状。
+    #
+    # 判据不是单位，是**照着它就能给人用药**。所以要「药名 + 数量」近邻，
+    # 光有「3钱」不算（可能是菜谱），光有药名也不算（可能在讲药性）。
+    "剂量·中医": re.compile(
+        # ① 剧毒药 + 任何数量
+        r"((?:" + TCM_HERBS + r")[^。；\n]{0,20}?\d+(?:\.\d+)?\s*(?:-|~|–|至)?\s*"
+        r"\d*(?:\.\d+)?\s*(?:钱|两|分|枚|片|斤|克|g|ml)"
+        # ② 巨剂量形态 —— 常见药（甘草石膏麻黄）靠这一档接住，不进药名表
+        r"|\d+(?:\.\d+)?\s*(?:-|~|–|至)?\s*\d*\s*(?:两|斤)\s*(?:起|以上|一剂|重症)"
+        r"|\d+(?:\.\d+)?\s*(?:钱|两|分|枚|片|斤|克|g)\s*(?:起步|起手|以上|打底)"
+        # ③ 把「放开剂量」写成规矩本身
+        r"|(?:剂量|用量)\s*[^。；\n]{0,8}?(?:按体重折算|大胆|不得人为收敛|逐日累加)"
+        r"|不麻不昏|不麻不.{0,2}即.{0,4}不够)", re.I),
     # 联盟营销分润
     "分润": re.compile(
         r"(联盟(?:链接|营销|计划)|aff(?:iliate)?[-_ ]?(?:link|id|tag)|[?&]tag=[a-z0-9_-]{3,}"
@@ -73,7 +111,10 @@ TABLES = {
         r"(肢体(?:推进|升级|接触)阶梯|身体升级|升级阶梯|escalation\s*(?:ladder|boundaries)"
         # `kino` 第一版是裸词，实测在 **Tsukinomori（月ノ森）** 里面命中了 ——
         # 拉丁字母的短词一律要词边界，否则它会藏在任何专有名词里。
-        r"|过度怂|\bkino\b|Mystery\s*Method|Blueprint\s*Decoded"
+        # `kino` 连词边界也不够 —— 实测有个 CLI 就叫 kino，命中 30 次。
+        # 它只在把妹语境里才是术语，所以要求近处有那套词。
+        r"|过度怂|\bkino\b(?=[^。；\n]{0,40}(?:升级|推进|接触|试探|她|女生))"
+        r"|Mystery\s*Method|Blueprint\s*Decoded"
         r"|(?:推倒|拿下|搞定|攻略)\s*(?:她|他|对方|女生|男生|妹子|目标)"
         r"|(?:她|他|对方|女生|妹子).{0,8}(?:就(?:能|会)上钩|会心动|愿意到你家)"
         r"|话术(?:库|脚本|模板).{0,20}(?:她|他|对方|目标))", re.I),
@@ -84,10 +125,28 @@ TABLES = {
         r"|助记词|mnemonic\s*[:=]|seed\s*phrase"
         r"|browser[-_ ]?cookie3|chrome.*Login\s*Data|读取.{0,6}浏览器.{0,4}cookie"
         r"|create_order|place_order|下单买入|市价买入|一键下单|发起转账|withdraw\()", re.I),
+    # 成规模转载他人受版权保护的正文。**这一档原来整个不存在** ——
+    # 两件最大的下架货（24.6MB 古籍 PDF 全文页、4.6MB 闭门课原文）
+    # 一条正则都没命中，是人翻「读不到的文件」清单时觉得 8MB 的 md 不对劲才查出来的。
+    # 这里用的是**廉价代理指标**，不是判决：路径/文件名自称是逐字稿、
+    # 或文件自己承认「保存完整文本层 / 不做截断 / 去水印」。体积那一档在 scan_one 里另算。
+    # **只留「文件自己承认在做什么」的措辞。**
+    # 第一版把 `逐字稿|transcript|lyrics` 也放进来，实测 8 处假阳性全是
+    # 在讨论「我们**没有**这些」（「未取得逐字稿」「公开网页很少提供完整 transcript」）——
+    # 就是那类「在讲反面案例」的误命中。
+    # 那两件真货（24.6MB 古籍全文页 / 4.6MB 闭门课原文）本来也不是靠散文里的词抓到的，
+    # 是靠**体积和目录**。所以词挪到路径判（BULK_PATH），体积单独算（见 scan_one）。
+    "转载正文": re.compile(
+        r"(完整文本层|不做(?:字符)?截断|去水印|移除.{0,8}水印|物理页均有记录"
+        r"|全文(?:页|录入|收录)|版权归原(?:权利人|作者)|如有侵权请联系删除)", re.I),
     # AIGC 检测规避
     "检测规避": re.compile(
+        # 「降重」原来是裸词，实测 7 次假阳性：健身件的「合理降重」（减体重）
+        # 和倪海厦针灸模块里的道家内丹文「引任脉**降重**楼」。要求近处有查重语境。
         r"(bypass\s*(?:gptzero|turnitin|zerogpt|copyleaks|originality)"
-        r"|绕过\s*(?:查重|AI\s*检测|AIGC\s*检测)|降\s*AIGC|过\s*turnitin|降重)", re.I),
+        r"|绕过\s*(?:查重|AI\s*检测|AIGC\s*检测)|降\s*AIGC|过\s*turnitin"
+        r"|降重[^。；\n]{0,12}(?:查重|论文|知网|维普|AIGC|检测)"
+        r"|(?:查重|论文|知网|维普|AIGC|检测)[^。；\n]{0,12}降重)", re.I),
 }
 # 绕反爬用共享的那张表
 TABLES["绕反爬"] = RED_SCRAPE_HARD
@@ -98,15 +157,40 @@ TOX_CONTEXT = re.compile(
     r"(中毒|致死|毒性|半数致死|LD\s*50|lethal|toxic|中毒量|超过.{0,6}会中毒|危险剂量)", re.I)
 
 REFUSAL = re.compile(
-    r"(never|don'?t|do not|refuse|without\s+bypass|not\s+bypass|user\s+(?:clears|solves|does)"
-    r"|不会|不许|不得|禁止|拒绝|绝不|从不|由(?:你|用户)|你自己|用户自己|手动(?:过|输)|请你)", re.I)
+    # `不得` 要排掉「万不得已」—— 实测它把全店最危险的一行打成了「声明不做」：
+    #   「| 电话/远程急救 | 破格救心汤原方，附子200g起步 | ⚠️ 无四诊合参，风险极高，**仅限万不得已** |」
+    # 「万不得已」是在说「这么干很危险但有时只能这么干」，那是**加强**而不是拒绝。
+    r"(never|don'?t|do not|refuse|without\s+bypass|not\s+bypass|not\s+a\s+license"
+    r"|user\s+(?:clears|solves|does)"
+    r"|不会|不许|(?<!万)不得|禁止|拒绝|绝不|从不|由(?:你|用户)|你自己|用户自己|手动(?:过|输)|请你)", re.I)
+
+# 「这个路径本身在说它装了别人的正文」。词放在路径上判，不放在散文里判 ——
+# 散文里出现「逐字稿」多半是在说「我们没有逐字稿」。
+BULK_PATH = re.compile(r"(pdf-evidence|逐字稿|transcript|lyrics|ebooks?|闭门课|课程原文|全集)", re.I)
+# 单个随件文本文件超过这个字节数就打标让人去看。
+# 两件真货的量级：一件 24.6MB（六模块古籍 PDF 全文页），一件 4.6MB（闭门课原文）；
+# 已拒的播客逐字稿那件是 2.2MB。300KB 是「一份参考资料」和「一本书」之间的分界。
+BULK_BYTES = 300_000
 
 # 自动纳入扫描的目录（不用等正文点名）
 AUTO_DIRS = ("references/", "reference/", "assets/", "scripts/", "data/", "docs/", "prompts/")
 TEXTY = (".md", ".txt", ".json", ".yaml", ".yml", ".py", ".js", ".mjs", ".ts", ".sh",
          ".csv", ".toml", ".ini", ".html")
-MAX_BYTES = 400_000          # 单文件上限，超了如实报「太大没读」
-MAX_FILES = 60               # 单件上限，超了如实报「只读了前 N 个」
+MAX_BYTES = 8_000_000        # 单文件上限，超了如实报「太大没读」。走 raw，不吃 API 限额
+MAX_FILES = 200              # 单件上限，超了如实报（并汇总进收尾那段，见 main）
+# 扫描优先级：**references/ 和 scripts/ 排在 assets/ docs/ 前面**。
+# 实测代价：全架复查时 17/231 件被 MAX_FILES 静默截断（最多一件 337 个文件没扫），
+# 而最终下架的 `hugohe3/ppt-master` 那三个带 curl_cffi 指纹伪装的脚本
+# **就藏在那 337 个里** —— 被 300 个菜谱和截图挤出了窗口。
+# 危险永远在 references/ 和 scripts/ 里，不在 assets/ 里。
+DIR_PRIORITY = ("references/", "reference/", "scripts/", "prompts/", "data/", "docs/", "assets/")
+
+
+def _prio(path: str) -> tuple:
+    for i, d in enumerate(DIR_PRIORITY):
+        if f"/{d}" in f"/{path}":
+            return (i, path)
+    return (len(DIR_PRIORITY), path)
 
 
 def gh(path: str):
@@ -120,20 +204,35 @@ def gh(path: str):
 
 
 def fetch_text(repo: str, path: str):
-    """→ (text, err)。err 不是 None 时 text 一定是 None，反之亦然。"""
-    d, err = gh(f"repos/{repo}/contents/{path}")
-    if err:
-        return None, err
-    if isinstance(d, list):
-        return None, "是目录不是文件"
-    if (d.get("size") or 0) > MAX_BYTES:
-        return None, f"{d['size']} 字节，超过 {MAX_BYTES} 上限，没读"
-    if not d.get("content"):
-        return None, "没有 content 字段（可能是 LFS 或过大）"
-    try:
-        return base64.b64decode(d["content"]).decode("utf-8", "replace"), None
-    except Exception as e:                                    # noqa: BLE001
-        return None, f"解码失败: {e}"
+    """→ (text, err)。err 不是 None 时 text 一定是 None，反之亦然。
+
+    走 `raw.githubusercontent.com` 而不是 contents API，两个原因都是实测出来的：
+
+      1. **contents API 对 >1MB 的文件不给 `content` 字段**（返回 null），
+         而全架复查时被跳过的 31 个文件里**有 6 个就是问题本身** ——
+         其中一件 24.6MB 的古籍全文页、一件 4.6MB 的闭门课原文，
+         正是最终下架的两件最大的货。
+      2. raw 不吃 API 限额。全架跑一遍是几千个文件，走 API 会打穿主限额
+         （实测撞过一次，等了 23 分钟）。
+
+    既然是逐行正则，大文件流式读就行，**没必要跳**。上限抬到 8MB 只为兜住
+    误配到二进制的情况；超了仍然如实报，不静默跳过。
+    """
+    url = f"https://raw.githubusercontent.com/{repo}/HEAD/{path}"
+    r = subprocess.run(["curl", "-sL", "--max-time", "60", "-w", "%{http_code}", url],
+                       capture_output=True)
+    body = r.stdout
+    if not body:
+        return None, "curl 无输出"
+    code = body[-3:].decode("ascii", "replace")
+    body = body[:-3]
+    if code != "200":
+        return None, f"HTTP {code}"
+    if len(body) > MAX_BYTES:
+        return None, f"{len(body)} 字节，超过 {MAX_BYTES} 上限，没读（**这不是扫过没命中**）"
+    if b"\x00" in body[:2048]:
+        return None, "看着是二进制，没读"
+    return body.decode("utf-8", "replace"), None
 
 
 def referenced_paths(text: str, base: str) -> set[str]:
@@ -195,11 +294,11 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
             and any(f"/{d}" in f"/{p[len(prefix):]}" or p[len(prefix):].startswith(d)
                     for d in AUTO_DIRS)}
     want |= auto
-    ordered = sorted(want)
+    ordered = sorted(want, key=_prio)
     trimmed = ordered[:MAX_FILES]
+    skipped = max(0, len(ordered) - MAX_FILES)
     print(f"  正文点名 {len(named)} 个 · 自动纳入 {len(auto)} 个 · 合计扫 {len(trimmed)}"
-          + (f"（**上限 {MAX_FILES}，剩下 {len(ordered)-MAX_FILES} 个没扫**）"
-             if len(ordered) > MAX_FILES else ""))
+          + (f"（**上限 {MAX_FILES}，剩下 {skipped} 个没扫**）" if skipped else ""))
 
     hits, unread, clean = [], [], []
     for p in trimmed:
@@ -234,14 +333,106 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
                 # 「反爬/登录/验证码重 → 真实 Chrome；真人指纹最不易被风控；撞验证码能让用户手动过」——
                 # 整行里有「手动过」，于是这一行被标成了「声明不做」，
                 # **而它恰恰是这一件的真问题。差点被我自己的降噪盖掉。**
-                near = txt[max(0, m.start() - 25):m.end() + 25]
-                tag = f"{label}·声明不做" if REFUSAL.search(near) else label
+                # 认栽标记的窗口从「固定 ±25 字」改成「**回溯到句首**」。
+                # 实测代价：全架 112 条命中里，`·声明不做` 一次都没出现 ——
+                # 两处教科书式的拒绝全是裸命中：
+                #   「**Do not** automate repeated headed attempts or add anti-detection bypasses」
+                #   「It is **not a license** to bypass CAPTCHA」
+                # 前者的 `Do not` 离命中词 44 字，±25 接不住。
+                # 但也不能放宽成整行 —— 那样 trip-planner 路由表里无关的「手动过」
+                # 又会把真问题盖掉（那次是我收窄的原因）。按句读切，两头都接得住。
+                # 表格的竖线也算句读。一整行 markdown 表格里没有句号，
+                # 不加 `|` 的话「回溯到句首」会把整行五个单元格都吃进来，
+                # 于是别的格子里的字会决定这一格的判断 —— 那正是我上一版
+                # 收窄成 ±25 字要躲开的毛病，只是从固定字数换成了整行。
+                SEP = "。；.;\n!?|｜"
+                ls = max((txt.rfind(c, 0, m.start()) for c in SEP), default=-1) + 1
+                le = min((x for x in (txt.find(c, m.end()) for c in SEP) if x > 0),
+                         default=len(txt))
+                # **「声明不做」这个标签只给「绕反爬 / 检测规避 / 转载正文」这三档。**
+                #
+                # 剂量类命中永远原样显示，不许被降级。原因是关键词分不出这两句：
+                #   「不得绕过验证码」        —— 真的拒绝
+                #   「剂量…不得人为收敛」    —— 命令你**别把剂量调小**
+                # 后者字面上带「不得」，意思却正相反。实测这一条把 nihaixia
+                # 那句「剂量大胆授权…不得人为收敛——生附子起手2-3钱」标成了「声明不做」。
+                # 在「可能是漏报」和「可能是噪音」之间，剂量这一档必须选噪音。
+                SOFTENABLE = ("绕反爬", "检测规避", "转载正文")
+                tag = label
+                if label in SOFTENABLE and REFUSAL.search(txt[ls:le]):
+                    tag = f"{label}·声明不做"
                 found.append((tag, ln, m.group(0)[:60], line))
         # 毒性阈值不是用药指示 —— **它跟「照着它就能给人用药」正好相反**。
         # 实测栽过：`Zgdfsgd/fridge-hero` 的高风险清单里写「中毒剂量：2-5mg/kg体重」，
         # 那是在劝你别吃，不是在教你喂。同理 LD50 / 致死量 / lethal dose。
-        found = [f for f in found
-                 if not (f[0].startswith("剂量") and TOX_CONTEXT.search(f[3]))]
+        # 毒性上下文**按整份文件判，不按行**。
+        # 实测：那张 101 味毒性药的表，列名写着「内服剂量上限」、大多数行配着
+        # 「中毒表现/致死」，但有 3 行本行没写这两个字，于是只有那 3 行漏出来 ——
+        # 既是假阳性，又会让人误以为「只有 3 行有克数」。整份文件是不是一张毒性上限表，
+        # 是文件级的性质，不是行级的。
+        # **毒性豁免只对西药剂量档生效，不对「剂量·中医」生效。**
+        #
+        # 第一版我把它应用到所有 `剂量*` 档，后果当场出现：`likeskill` 的 SKILL.md 里
+        # 「附子中毒」出现三次以上（因为它把附子中毒当成一个要治的证），
+        # 于是整份文件被判成毒性上限表，**它那句「破格救心汤原方，附子200g起步」被整个消音**。
+        # 我为修一个假阳性造了一个更严重的漏报，而漏掉的正是全店最危险的一句。
+        #
+        # 分界：mg/kg 这种写法**确实**常出现在毒性阈值表里（「中毒剂量 2-5mg/kg」是劝你别吃），
+        # 而「剧毒药名 + 数量」这个组合本身就是「照着能给人用药」，不存在同形的无害用法。
+        file_is_tox = len(TOX_CONTEXT.findall(txt)) >= 3
+        def _drop(f):
+            if f[0] != "剂量":
+                return False
+            if file_is_tox or TOX_CONTEXT.search(f[3]):
+                return True
+            # **`g/kg` 和 `mg/kg` 不是一回事。** 宏量营养素按克每公斤给
+            # （蛋白 1.6-2.0g/kg 体重），药几乎永远是 mg/kg 或 μg/kg。
+            # 所以「本行提到体重/蛋白」只豁免 g/kg，不豁免 mg/kg ——
+            # 否则「对乙酰氨基酚 10-15mg/kg 体重」也会被一起放过，那是最不能放过的一句。
+            hit = f[2] if len(f) > 2 else ""
+            gram_per_kg = re.search(r"(?<![mμugc])g\s*/\s*kg", hit, re.I)
+            return bool(gram_per_kg and NUTRITION_CTX.search(f[3]))
+        found = [f for f in found if not _drop(f)]
+        # 折叠**按命中原文去重**，不按出现顺序截断。
+        #
+        # 第一版是「同一档最多留前 6 条」，后果当场出现：`likeskill` 那句
+        # 「破格救心汤原方，**附子200g起步**」排在第 7 条之后，**被我自己的降噪删掉了** ——
+        # 而它是全店最危险的一行。**按出现顺序截断，等于让「谁排在前面」决定「谁重要」。**
+        #
+        # 按原文去重不会有这个问题：同一种写法（`附子30-200g`）出现五次折叠成一条，
+        # 而 `附子200g起步` 是另一个字符串，它必然活下来。
+        # 折叠掉多少条如实报出来，不静默。
+        capped, seen_txt, dup = [], set(), {}
+        for f in found:
+            # 去重键是「命中词 + **所在行**」，不是命中词。
+            #
+            # 只按命中词的后果实测过：`likeskill` 第 395 行和第 399 行的命中串
+            # 都是 `附子200g`，于是 399 被 395 吃掉 —— 而两行的意思差得远：
+            #   395:「⚠️ 必须立即送医，中医急救需在有经验医师指导下进行」
+            #   399:「**电话/远程急救** … ⚠️ 无四诊合参，风险极高」
+            # **同一个匹配串，两句话的危险程度完全不同。** 两个不同的行是两个不同的发现。
+            #
+            # 这已经是我的降噪第三次删掉最该看的那一行（前两次：按出现顺序截断前 6 条、
+            # 文件级毒性豁免）。**教训：每加一道降噪，都要拿最危险的那一行当回归测试。**
+            key = (f[0], re.sub(r"\s+", "", (f[2] or "")), re.sub(r"\s+", "", (f[3] or ""))[:120])
+            if key in seen_txt:
+                dup[f[0]] = dup.get(f[0], 0) + 1
+                continue
+            seen_txt.add(key)
+            capped.append(f)
+        for lab, n in dup.items():
+            capped.append((f"{lab}·另有{n}处重复写法", 0, "", "（同一文件内相同原文已折叠）"))
+        found = capped
+        # 体积与路径 —— 不靠正文措辞。**那两件最大的下架货就是这么该被抓到的，
+        # 而上一版一条正则都没命中，是人翻「读不到的文件」清单时觉得 8MB 的 md 不对劲才查出来的。**
+        nb = len(txt.encode("utf-8", "ignore"))
+        if nb >= BULK_BYTES or BULK_PATH.search(p):
+            why = []
+            if nb >= BULK_BYTES:
+                why.append(f"{nb/1024/1024:.1f}MB 散文")
+            if BULK_PATH.search(p):
+                why.append(f"路径含「{BULK_PATH.search(p).group(0)}」")
+            found.append(("转载正文·体积路径", 0, "", " · ".join(why) + "（体积和路径不是判决，去看它装的是谁的正文）"))
         if found:
             hits.append((p, found))
         else:
@@ -278,7 +469,7 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
         if off:
             print(f"\n  ‼ **命中里有 {len(off)} 个不在 SKILL.md 里** —— "
                   f"就是「门面干净、问题在随件里」那个形状")
-    return {"repo": repo, "path": base,
+    return {"repo": repo, "path": base, "skipped": skipped,
             "hits": [{"file": p, "found": [{"label": a, "line": b, "text": d}
                                            for a, b, _, d in f]} for p, f in hits],
             "unreadable": [{"file": p, "why": e} for p, e in unread],
@@ -309,8 +500,15 @@ def main() -> None:
     n_off = sum(1 for o in out for h in o["hits"]
                 if h["file"] != (f"{o['path']}/SKILL.md" if o["path"] else "SKILL.md"))
     n_unread = sum(len(o["unreadable"]) for o in out)
+    trunc = [(o["repo"], o.get("skipped", 0)) for o in out if o.get("skipped")]
     print(f"\n{'='*72}\n扫了 {len(out)} 件 · 有命中 {n_hit} 件 · "
           f"**命中在随件里的 {n_off} 处** · 读不到 {n_unread} 个文件")
+    # 静默截断必须和「读不到」一样显眼。批量跑的时候，逐件那行会淹在几千行日志里 ——
+    # 而全架复查时最终下架的一件，问题就藏在被截断的 337 个文件里。
+    if trunc:
+        print(f"  **有 {len(trunc)} 件没扫完**（上限 {MAX_FILES}，这不是扫过没命中）：")
+        for r, n in sorted(trunc, key=lambda x: -x[1])[:15]:
+            print(f"      {r} —— 还剩 {n} 个文件没扫")
     print("机器只指出「这一行你去看」，判决是人的事。")
     if a.as_json:
         json.dump(out, open(a.as_json, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
