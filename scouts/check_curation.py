@@ -1003,6 +1003,13 @@ def main() -> None:
     shelf = [it for it in items.values() if not it.get("hide")]
     verdicts = check_verdict_in_limits(shelf)
     gen_dirs, clashes = check_install_dirs(list(items.values()))
+    bare = check_no_placeholder(list(items.values()))
+    badnames = check_upstream_names(items)
+    if bare:
+        err(f"{len(bare)} 件在架却没人写过文案 —— 上架是人写完文案之后的动作，不是抓取的副作用")
+    if badnames:
+        warn(f"{len(badnames)} 件的上游 frontmatter name 不是小写连字符 —— "
+             f"装机目录和 name 会对不上，必须在 limit 里披露，不许静默上架")
     # 【11】的严重程度是 D36 定的：「命中即 ERROR，逼人回去重过三问」。
     # 【12】D46 没写档位 —— 不替产品发明一个，按点名处理。
     if verdicts:
@@ -1013,6 +1020,35 @@ def main() -> None:
              f"安装目标会互相静默覆盖，用户不会收到任何提示")
     if clashes:
         warn(f"{len(clashes)} 组安装目录重名 —— 装了后一个，前一个被静默覆盖")
+
+    # ---- 自查：每一个 check_* 都必须真的被 main() 叫到 ----
+    #
+    # 这不是洁癖。这个文件已经犯过**两次**同一个错：守卫定义在
+    # `if __name__ == "__main__": main()` 之后，于是从来没执行过一次，
+    # 而裁决文档里写着它「命中 0，干净上线」（D52 记的是【11】【12】）。
+    # 修 D52 时我把入口挪到了当时的文件末尾，并在旁边写下「入口必须留在文件最末」——
+    # **然后把新加的【14】追加在了它后面，一模一样地重造了这个 bug。**
+    #
+    # 靠「记住把入口放最后」防不住，因为出错的方式是「在末尾追加代码」，
+    # 而那正是加新守卫时最自然的动作。所以改成静态自查：
+    # 扫本模块所有 check_* 函数，凡是没出现在 main() 源码里的，立刻红。
+    # **一个从不执行的守卫比没有守卫更糟：它让人以为那一面已经有人看着了。**
+    # 判据是「**在本文件里有没有任何地方调用它**」，不是「main() 里有没有」——
+    # 有的守卫是被别的守卫调的（check_against 由 check_rejected 调用 schema 校验），
+    # 只看 main() 会把它误报成死代码。要抓的那个 bug 是「定义了、谁都没调」。
+    import inspect as _insp
+    _mod = _insp.getsource(_insp.getmodule(main))
+    _defined = sorted(n for n, o in list(globals().items())
+                      if n.startswith("check_") and callable(o))
+    _never = []
+    for n in _defined:
+        # 去掉它自己的 def 行，再看还有没有 `n(` 出现
+        _rest = _mod.replace(f"def {n}(", "")
+        if f"{n}(" not in _rest:
+            _never.append(n)
+    if _never:
+        err(f"{len(_never)} 个守卫定义了但 main() 从来没调用：{_never} —— "
+            f"从不执行的守卫比没有守卫更糟")
 
     print("\n" + "=" * 60)
     for m in ERRORS:
@@ -1112,15 +1148,6 @@ def check_install_dirs(items):
     return generic, clash
 
 
-# 入口必须留在文件最末。【11】【12】是后来追加在 main() 之后的，而
-# `if __name__ == "__main__": main()` 原本卡在它们前面 —— 于是当脚本跑的时候
-# main() 执行时这两个函数还没定义，两条守卫**从来没有跑过一次**，
-# 而 D36 / D46 的裁决都写着它们「在架 N 件命中 0，干净上线」。
-# 一个从不执行的守卫比没有守卫更糟：它让人以为那一面已经有人看着了。
-if __name__ == "__main__":
-    main()
-
-
 # ---------------------------------------------------------------------------
 # 【14】机器占位文案上架 —— 这条不该由店主替我们发现
 #
@@ -1149,3 +1176,66 @@ def check_no_placeholder(items):
     if bare:
         print("  上架是人写完文案之后的动作，不是抓取的副作用。补文案，或 hide 掉。")
     return bare
+
+
+# ---------------------------------------------------------------------------
+# 【15】上游 frontmatter 的 name 不合小写连字符命名
+#
+# 本机每一个已装 skill 的 name 都是 `^[a-z0-9]+(-[a-z0-9]+)*$`，但查不到一份
+# 能引用的规范原文，**所以这条不断言「装不上」，只要求披露**：
+#   · 装机目录来自 slug(name)，name 带空格/括号/中文时，目录和 frontmatter 必然对不上
+#   · 读者拿到的是一条会让他困惑的命令，而困惑的成本由他承担
+# 触发这条的两件（`陈石营养师 (Mars Chen)`、`贴纸拼图-照片记忆卡skill`）已经在
+# limit 里写清了事实和改法。以后的新货必须照做，不许静默上架。
+#
+# 数据源是 methods/ 里已存档的 SKILL.md 正文 —— **本地零网络**。
+# 没有存档的不报（读不到 ≠ 有问题，见 prep_signals 模块头的同一条原则）。
+# ---------------------------------------------------------------------------
+NAME_OK = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+
+
+def check_upstream_names(items: dict):
+    live = {i: it for i, it in items.items() if not it.get("hide")}
+    bad, archived = [], 0
+    for sid, it in sorted(live.items()):
+        path = os.path.join(lib.ROOT, "methods", f"{sid}.md")
+        if not os.path.exists(path):
+            continue
+        archived += 1
+        try:
+            with open(path, encoding="utf-8") as f:
+                head = f.read(4000)
+        except Exception:
+            continue
+        m = re.search(r"^---\s*\n(.*?)\n---", head, re.S)
+        if not m:
+            continue
+        n = re.search(r"^name:\s*(.+)$", m.group(1), re.M)
+        if not n:
+            continue
+        raw = n.group(1).strip().strip("\"'")
+        if NAME_OK.fullmatch(raw):
+            continue
+        # 分级：**读者装的时候会不会困惑**，不是「合不合正则」。
+        #   · 带中文 / 空格 / 括号 → 装机目录和 frontmatter 必然对不上，必须披露
+        #   · 纯 ASCII 只是大小写或下划线（AnythingButLaw、my_skill）→ 只报，不催披露
+        #     limit_zh 那块地是留给真短处的，不该被一个大小写差异占掉
+        soft = raw.isascii() and not any(c in raw for c in " ()[]{}/\\")
+        lz = (it.get("limit_zh") or "") + (it.get("limit_en") or "")
+        disclosed = ("frontmatter" in lz) or ("name" in lz and "改成" in lz)
+        bad.append((sid, raw, disclosed or soft, soft))
+    print("\n【15】上游 frontmatter 的 name 是否合小写连字符命名")
+    print(f"  在架 {len(live)} 件 · 有正文存档 {archived} · 不合规 {len(bad)}")
+    for sid, raw, ok, soft in bad:
+        mark = "仅大小写/下划线，不催" if soft else ("已披露" if ok else "**未披露**")
+        print(f"  [{mark}] {sid} — name: {raw!r}")
+    undisclosed = [b for b in bad if not b[2]]
+    if undisclosed:
+        print("  未披露的：把事实和改法写进 limit_zh / limit_en，装机目录换成 ASCII slug。")
+    return undisclosed
+
+
+# 入口必须留在文件的**真正**最末。见 main() 末尾那段自查 ——
+# 光靠这句注释拦不住「在末尾追加新守卫」，所以那里加了静态检查。
+if __name__ == "__main__":
+    main()
