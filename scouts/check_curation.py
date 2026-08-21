@@ -1069,6 +1069,10 @@ def main() -> None:
     gen_dirs, clashes = check_install_dirs(list(items.values()))
     bare = check_no_placeholder(list(items.values()))
     badnames = check_upstream_names(items)
+    badtitles = check_title_shape(items)
+    if badtitles:
+        warn(f"{len(badtitles)} 件的标题只有禁令、没说「你拿到手的是什么」—— "
+             f"实测这一类的心选率 9%，说出产出物的是 43%（docs/CURATION.md 问三·补）")
     unscanned, stale_scan, unverif_scan = check_scan_archive(items)
     # 新旧分档。**一条永远红着的 ERROR 会被人学会忽略，那比没有它更糟。**
     #
@@ -1398,6 +1402,55 @@ def check_scan_archive(items: dict):
         print("  补法：python3 scouts/scan_refs.py <owner/repo>[:path]  —— 扫完自动落盘")
         print("  批量：把 [{repo, path}] 写成 JSON，python3 scouts/scan_refs.py --file picks.json")
     return never, stale, unverifiable
+
+
+# ---------------------------------------------------------------------------
+# 【17】标题只有禁令、没说「你拿到手的是什么」
+#
+# 2026-08-21 店主标了 73 件当参考标准，数据把这条钉死了（整体心选率 29%）：
+#   说出产出物 43%（75 件） · 两者都无 28% · **只有禁令 9%（54 件）**
+# 分批控制后更狠：8-20/21 那批「只有禁令」的 38 件只被标中 2 件（5%）。
+#
+# **这个坏结果是我们自己造出来的。** 任务书里「好标题里都有一个不该出现在这里的
+# 东西 —— 一个具体到你会愣一下的细节或**禁令**」被当成唯一判据，于是选货偏向
+# 「有硬禁令的」，标题又把禁令摆在最显眼处，产出物被挤出去。
+# 「不许 X」回答的是「它不干什么」，而读者要的是「我能拿到什么」。
+#
+# 这条是 WARN 不是 ERROR：产出物词表永远不全，硬拦会逼人往标题里塞关键词，
+# 那比现在更糟。它的作用是**点名让人重读那一句**。
+# ---------------------------------------------------------------------------
+TITLE_OUT = re.compile(
+    r"做成|生成|出图|出片|出整套|产出|变成|画|写成|做出|拍|剪|排版|算|查|挑|配|"
+    r"海报|地图|网页|PPT|封面|壁纸|简历|清单|报告|字帖|贴纸|视频|脚本|图谱|方案|"
+    r"复盘|路书|笔记|文章|提示词|配方|参数|档案|台账|图")
+TITLE_BAN = re.compile(
+    r"不许|不准|禁止|绝不|拒绝|只准|不肯|严禁|不给|不替|不写|不看|不认|不放|"
+    r"不凭|不问|不算|不外包|不再|不让")
+
+
+def check_title_shape(items: dict):
+    live = [it for it in items.values() if not it.get("hide")]
+    # **店主亲手标过的一律豁免。**
+    # 这批是判据的来源，不是判据的对象 —— 机器不许再判一遍人已经判过的。
+    # 实测这条豁免是必要的：`aryaminus-astro`「拒绝凭记忆报出一个行星位置的占星师」
+    # 形状上确实是「只有禁令」，但店主标了它。**判据把基准判掉了，是判据不够，不是它错。**
+    hearted = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), None)
+                   or {}).get("ids") or [])
+    bad = []
+    for it in sorted(live, key=lambda x: x.get("id", "")):
+        if it.get("id") in hearted:
+            continue
+        t = it.get("title_zh") or ""
+        if TITLE_BAN.search(t) and not TITLE_OUT.search(t):
+            bad.append((it.get("id"), t))
+    print("\n【17】标题只有禁令、没说「你拿到手的是什么」")
+    print(f"  在架 {len(live)} 件 · 店主已标（豁免）{len(hearted)} · "
+          f"只有禁令没说产出物 {len(bad)} 件")
+    for i, t in bad[:20]:
+        print(f"  [没说产出物] {i} — {t}")
+    if len(bad) > 20:
+        print(f"  …另有 {len(bad)-20} 件")
+    return bad
 
 
 # 入口必须留在文件的**真正**最末。见 main() 末尾那段自查 ——

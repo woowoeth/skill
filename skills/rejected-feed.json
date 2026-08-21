@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-21T11:31:59Z",
+ "generated_at": "2026-08-21T11:57:19Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 255,
-  "unshelved": 637,
+  "shelved": 248,
+  "unshelved": 644,
   "known_items": 892,
   "known_repos": 556,
-  "rejected_documented": 248,
+  "rejected_documented": 255,
   "rejected_machine_logged": 0,
   "rounds_logged": 4,
   "latest_round": {
@@ -39,14 +39,14 @@
    "zh": "不是拿走就能用的商品",
    "en": "Not a take-and-use product",
    "detail": "框架/底座、教程、脚手架、别人项目自己的装修配置",
-   "count": 51
+   "count": 53
   },
   {
    "rule": "问二",
    "zh": "用户在别处拿得到",
    "en": "No increment over any other directory",
    "detail": "官方厂商目录、通用开发件、数量堆、已有更好同类在架",
-   "count": 107
+   "count": 112
   },
   {
    "rule": "问三",
@@ -254,6 +254,19 @@
    "by": "店长"
   },
   {
+   "repo": "emaynard/claude-family-history-research-skill",
+   "name": "family-history-planning",
+   "desc": "你一说出祖先名字它就拒绝立刻开搜",
+   "reject_reason_zh": "血缘护照要你自己去掏各国档案，它给的是流程图不是成品。",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 104,
+   "url": "https://github.com/emaynard/claude-family-history-research-skill",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
    "repo": "yizhiyanhua-ai/chuinb-skill",
    "name": "chuinb-skill",
    "desc": "combines Feynman Technique, First Principles thinking, and 80/20 analysis",
@@ -419,6 +432,19 @@
    "reject_clause": "",
    "stars": 29,
    "url": "https://github.com/mrcarlsama/mrcarlsama-social-transcriber-skill",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
+   "repo": "fabianocruz/assistente-compras-ifood",
+   "name": "assistente-compras-ifood",
+   "desc": "装满购物车但绝不替你按下单键的超市采买助手",
+   "reject_reason_zh": "只覆盖巴西线上超市、正文葡萄牙语，对这家店的读者拿不到任何东西。",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 28,
+   "url": "https://github.com/fabianocruz/assistente-compras-ifood",
    "rejected_at": "2026-08-21",
    "by": "店长"
   },
@@ -618,6 +644,19 @@
    "by": "店长"
   },
   {
+   "repo": "orzcls/win-disk-cleaner",
+   "name": "win-disk-cleaner",
+   "desc": "写明 WinSxS 只准 DISM 清的清理单",
+   "reject_reason_zh": "Windows 磁盘清理属设备运维，产出是一条命令，别处随手可得。",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 4,
+   "url": "https://github.com/orzcls/win-disk-cleaner",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
    "repo": "dungnotnull/speedrun-route-optimization-agent-skill",
    "name": "speedrun-route-optimization-agent-skill",
    "desc": "Complete skill registry documentation for speedrun-route-optimization microkernel architecture v2.1.0",
@@ -722,6 +761,32 @@
    "by": "店长"
   },
   {
+   "repo": "choism4/macos-disk-cleanup",
+   "name": "macos-disk-cleanup",
+   "desc": "删缓存前先查这个 App 在不在跑的 Mac 清理工",
+   "reject_reason_zh": "Mac 缓存清理属设备运维，产出是一条命令，别处随手可得。",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 2,
+   "url": "https://github.com/choism4/macos-disk-cleanup",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
+   "repo": "rikirinjani/android-toolkit",
+   "name": "adb-storage-inspector",
+   "desc": "有一张「打死不许卸」名单的安卓预装清理台",
+   "reject_reason_zh": "安卓预装清理属设备运维，装了它拿到的是一份卸载名单，不是一件成品。",
+   "reject_reason_en": "",
+   "reject_rule": "问二",
+   "reject_clause": "",
+   "stars": 2,
+   "url": "https://github.com/rikirinjani/android-toolkit",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
    "repo": "citizen204/windows-gaming-optimizer",
    "name": "windows-gaming-optimizer",
    "desc": "# Disable Game DVR (biggest cause of stutter)",
@@ -757,6 +822,19 @@
    "reject_clause": "",
    "stars": 2,
    "url": "https://github.com/ash-harris/carousel-generator",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
+   "repo": "ryunana/xbloom-studio-recipe-skill",
+   "name": "xbloom-studio-recipe",
+   "desc": "翻车只准改一个变量的 xBloom 冲煮配方",
+   "reject_reason_zh": "没有 xBloom Studio 这台机器，它自己的局限就写着「一个数字都用不上」。",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 1,
+   "url": "https://github.com/ryunana/xbloom-studio-recipe-skill",
    "rejected_at": "2026-08-21",
    "by": "店长"
   },
@@ -848,6 +926,19 @@
    "reject_clause": "",
    "stars": 1,
    "url": "https://github.com/niukesi/baidu-netdisk-skill",
+   "rejected_at": "2026-08-21",
+   "by": "店长"
+  },
+  {
+   "repo": "SoftwareStartups/cortexrig",
+   "name": "analyze-song",
+   "desc": "自己没听过就不许判过载还是干净的吉他音色还原台",
+   "reject_reason_zh": "要 Quad Cortex 那台硬件才用得上，没有设备拿不到任何东西。",
+   "reject_reason_en": "",
+   "reject_rule": "问一",
+   "reject_clause": "",
+   "stars": 0,
+   "url": "https://github.com/SoftwareStartups/cortexrig",
    "rejected_at": "2026-08-21",
    "by": "店长"
   },
@@ -3362,6 +3453,13 @@
    "stars": 0
   },
   {
+   "id": "choism4-macos-disk-cleanup",
+   "repo": "choism4/macos-disk-cleanup",
+   "name": "macos-disk-cleanup",
+   "added_at": "2026-08-21",
+   "stars": 2
+  },
+  {
    "id": "huggingface-s2-cli",
    "repo": "huggingface/s2-cli",
    "name": "s2-cli",
@@ -3390,6 +3488,13 @@
    "stars": 72
   },
   {
+   "id": "fabianocruz-assistente-compras-ifood-assistente-compras-ifood",
+   "repo": "fabianocruz/assistente-compras-ifood",
+   "name": "assistente-compras-ifood",
+   "added_at": "2026-08-21",
+   "stars": 28
+  },
+  {
    "id": "moonlin1213-muted-zine-poster-v01",
    "repo": "moonlin1213/muted-zine-poster-v01",
    "name": "gc-muted-zine-poster-v0-1",
@@ -3404,11 +3509,25 @@
    "stars": 106
   },
   {
+   "id": "rikirinjani-android-toolkit",
+   "repo": "rikirinjani/android-toolkit",
+   "name": "adb-storage-inspector",
+   "added_at": "2026-08-21",
+   "stars": 2
+  },
+  {
    "id": "mixelpixx-konnect-konnect",
    "repo": "mixelpixx/Konnect",
    "name": "konnect",
    "added_at": "2026-08-21",
    "stars": 299
+  },
+  {
+   "id": "softwarestartups-cortexrig-analyze-song",
+   "repo": "SoftwareStartups/cortexrig",
+   "name": "analyze-song",
+   "added_at": "2026-08-21",
+   "stars": 0
   },
   {
    "id": "kyungseo-skillstead-docs-claim-check",
@@ -3516,11 +3635,32 @@
    "stars": 31093
   },
   {
+   "id": "ryunana-xbloom-studio-recipe-skill",
+   "repo": "ryunana/xbloom-studio-recipe-skill",
+   "name": "xbloom-studio-recipe",
+   "added_at": "2026-08-20",
+   "stars": 1
+  },
+  {
+   "id": "emaynard-claude-family-history-research-skill",
+   "repo": "emaynard/claude-family-history-research-skill",
+   "name": "family-history-planning",
+   "added_at": "2026-08-20",
+   "stars": 104
+  },
+  {
    "id": "harry0703-moneyprinterturbo-moneyprinterturbo-video",
    "repo": "harry0703/MoneyPrinterTurbo",
    "name": "moneyprinterturbo-video",
    "added_at": "2026-08-20",
    "stars": 113058
+  },
+  {
+   "id": "orzcls-win-disk-cleaner",
+   "repo": "orzcls/win-disk-cleaner",
+   "name": "win-disk-cleaner",
+   "added_at": "2026-08-20",
+   "stars": 4
   },
   {
    "id": "redfox-data-redfox-community-dsh",

@@ -1986,6 +1986,69 @@
    "reject_rule": "问二",
    "stars": 3,
    "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "fabianocruz/assistente-compras-ifood",
+   "skill": "assistente-compras-ifood",
+   "desc": "装满购物车但绝不替你按下单键的超市采买助手",
+   "reject_reason_zh": "只覆盖巴西线上超市、正文葡萄牙语，对这家店的读者拿不到任何东西。",
+   "reject_rule": "问二",
+   "stars": 28,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "rikirinjani/android-toolkit",
+   "skill": "adb-storage-inspector",
+   "desc": "有一张「打死不许卸」名单的安卓预装清理台",
+   "reject_reason_zh": "安卓预装清理属设备运维，装了它拿到的是一份卸载名单，不是一件成品。",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "orzcls/win-disk-cleaner",
+   "skill": "win-disk-cleaner",
+   "desc": "写明 WinSxS 只准 DISM 清的清理单",
+   "reject_reason_zh": "Windows 磁盘清理属设备运维，产出是一条命令，别处随手可得。",
+   "reject_rule": "问二",
+   "stars": 4,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "choism4/macos-disk-cleanup",
+   "skill": "macos-disk-cleanup",
+   "desc": "删缓存前先查这个 App 在不在跑的 Mac 清理工",
+   "reject_reason_zh": "Mac 缓存清理属设备运维，产出是一条命令，别处随手可得。",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "emaynard/claude-family-history-research-skill",
+   "skill": "family-history-planning",
+   "desc": "你一说出祖先名字它就拒绝立刻开搜",
+   "reject_reason_zh": "血缘护照要你自己去掏各国档案，它给的是流程图不是成品。",
+   "reject_rule": "问二",
+   "stars": 104,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "SoftwareStartups/cortexrig",
+   "skill": "analyze-song",
+   "desc": "自己没听过就不许判过载还是干净的吉他音色还原台",
+   "reject_reason_zh": "要 Quad Cortex 那台硬件才用得上，没有设备拿不到任何东西。",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "ryunana/xbloom-studio-recipe-skill",
+   "skill": "xbloom-studio-recipe",
+   "desc": "翻车只准改一个变量的 xBloom 冲煮配方",
+   "reject_reason_zh": "没有 xBloom Studio 这台机器，它自己的局限就写着「一个数字都用不上」。",
+   "reject_rule": "问一",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
