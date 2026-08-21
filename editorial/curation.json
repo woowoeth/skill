@@ -5137,13 +5137,12 @@
    "why_en": "It only draws; export and replication are left to two sibling skills. Drawing the line that clearly is rarer than being a toolbox that half-does everything.",
    "limit_en": "It's a rendering engine, not a finished app — it needs a 2D canvas context, and the Node self-test only checks the maths. Missing fonts silently fall back to system serif, so swap in your own before shipping. Upstream's name field contains a slash and parentheses, so the loader may not pick it up — rename it to canvas-grid-engine.",
    "limit_zh": "是个渲染引擎不是成品应用，需要 2D canvas 上下文才能画，Node 里自测只验数学不出图。字体缺失会静默回退系统 serif，正式用要自己换字体。 上游 SKILL.md 的 name 带斜杠和括号，装上后可能不被识别，改成 canvas-grid-engine 更稳。",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/shuangying0001-beep-canvas-grid-engine.png",
-   "cover_kind": "ours",
-   "cover_real": true,
-   "cover_w": 1040,
-   "cover_h": 590,
-   "cover_note": "命令：`node selftest.js`（18/18 PASS）后用 headless Chrome 出 A4 150dpi 字帖，裁上半。字样「天地人日月星山水火风」来自它自带的演示文件。空格正是字帖的用途，不是没渲染出来。",
-   "cover_note_en": "We installed it and ran it ourselves: `node selftest.js` (18/18 pass), then rendered the A4 150dpi sheet with headless Chrome and cropped the top. The characters come from its own demo file. The blank cells are the point of a practice sheet, not a rendering gap."
+   "cover": "",
+   "cover_kind": "none",
+   "cover_real": false,
+   "cover_note": "",
+   "cover_note_en": "",
+   "hide": true
   },
   "sumanasj-coc-kp-host": {
    "title_zh": "写到第三段就把回合交回来的克苏鲁跑团 KP",
@@ -6661,7 +6660,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者没放图（仓库树 8 项，零图片文件）。**这件刻意不做自截图**：它遥控真实微信客户端，跑一遍会碰到真账号和真会话，任务书的「绝不用真实个人数据」在这里意味着根本不该跑。"
   },
   "geekjourneyx-travel-guidebook": {
    "title_zh": "一张 AI 插图都不许有、emoji 也禁的旅行路书",
@@ -6675,9 +6675,11 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "",
-   "cover_kind": "none",
-   "cover_real": false
+   "cover": "https://raw.githubusercontent.com/geekjourneyx/travel-guidebook/HEAD/assets/design-system.png",
+   "cover_kind": "diagram",
+   "cover_real": false,
+   "cover_w": 1920,
+   "cover_h": 1080
   },
   "rimagination-bili-note": {
    "title_zh": "字幕太稀就不许写成完整笔记的 B 站视频提炼",
@@ -6693,7 +6695,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者仓库里没有产出物样张（逐张开过：只有 assets/bili-note-logo.png，卡通电视机+笔记本配「Bili Note」字标，1844×569。纯 logo。"
   },
   "santiagomoneta-3d-printing-skills-klipper-manager": {
    "title_zh": "动一个数之前先读回整份配置的 Klipper 参谋",
@@ -6725,7 +6728,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者仓库里唯一的产出物样张是 benchmarks/output/…_main_motif_sketch.svg（진양조 24 拍海琴主题动机草图，真产出物）——但它是**给深色底设计的**：坐标标签/周期标题/拍号的填充是 rgb(194,192,182)，对我们的浅色卡底 #f7f7f8 只有 1.70:1 对比（正文要 4.5），网格线是 rgba(222,220,209,.15) 几乎为 0。贴上去读者只会看到一串紫色音符浮在空白上，比无图更像坏了。benchmarks/charts/*.png 是「这个 skill 评测得分」的对比图，不是它的产出。"
   },
   "terancejiang-financial-report-minesweeper-minesweeper": {
    "title_zh": "信奉「财报是用来排除企业的」的 A 股排雷台",
@@ -6741,7 +6745,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者仓库里没有产出物样张（逐张开过：只有 assets/book-cover.png，350×350，是**第三方出版物的立体书封**——唐朝《手把手教你读财报》。登它等于在我们站上展示别人的书封美术，和之前那件 examples/ 里全是 1980 年代动画原片翻拍是同一类问题。"
   },
   "tonykoop-claude-skills-houseplant": {
    "title_zh": "在 Blender 里试剪过再对真盆景下刀的养护台",
@@ -6757,7 +6762,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "仓库有 18 张图，但**一张都不属于这件**：全在 docs/benchmarks/makerspace/（CNC 招牌、激光亚克力、等离子花架的基准测试）和 plugins/maker/skills/sheet-music/examples/（乐谱）下，而这件的 path 是 plugins/maker/skills/houseplant。单体仓库里别的 skill 的图，不能拿来当这件的封面。"
   },
   "truegrit16-snapsift-snapsift": {
    "title_zh": "「谁眨眼了」清晰度看不出来，靠眼神挑片的照片清道夫",
@@ -6853,7 +6859,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者没放图（仓库树 66 项，零图片文件）。查过 17 个脚本能不能自截图：chord_library.py / progress_charts.py 的输出都是**终端文本**（和弦记成 x32010 这种字符串、进度是 ASCII 条），不是可当封面的图形产出。"
   },
   "softwarestartups-cortexrig-analyze-song": {
    "title_zh": "自己没听过就不许判过载还是干净的吉他音色还原台",
@@ -6947,9 +6954,11 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "",
-   "cover_kind": "none",
-   "cover_real": false
+   "cover": "https://raw.githubusercontent.com/Shadowhusky/visa-application/HEAD/assets/demo-checklist.png",
+   "cover_kind": "artwork",
+   "cover_real": true,
+   "cover_w": 1200,
+   "cover_h": 1600
   },
   "skills-il-legal-tech-israeli-citizenship-by-descent": {
    "title_zh": "先告你哪条路已经死了、再让你去掏档案的血缘护照台",
@@ -6997,7 +7006,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者仓库里没有产出物样张（逐张开过：只有 docs/assets/changde-beef-noodle-logo.png，一碗手绘常德牛肉粉配「qí fěn 吃粉」美术字，1024×1024。是招牌不是产出物，而且会误导——这件的产出是方言文本，卡上放一碗粉会让人以为它生成美食图。"
   },
   "1229lky-art-cantonese-transcribe": {
    "title_zh": "粤语音频出一句一行配粤拼的 md，全程本地跑",
@@ -7013,7 +7023,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者没放图（仓库树 8 项，零图片文件）。"
   },
   "jiang59991-qiaopi": {
    "title_zh": "把「今天好想你」写成一封干支落款的南洋侨批",
@@ -7029,7 +7040,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者没放图（仓库树 10 项，零图片文件）。"
   },
   "elhamid-as-told-to-as-told-to": {
    "title_zh": "把父母的人生录成逐字稿，另出一份下次接着问的笔记",
@@ -7061,7 +7073,8 @@
    "hide": false,
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false
+   "cover_real": false,
+   "_无封面原因": "作者没放图（仓库树 5 项，零图片文件）。"
   },
   "julianpscheid-chronic-illness-research-partner": {
    "title_zh": "把你这个病的多年研究搭成一个带证据分级的本地仓库",
