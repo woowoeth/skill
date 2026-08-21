@@ -1808,11 +1808,11 @@
    "why_en": "\"Make it look like that deck\" is a real, frequent ask — layout mimicry is the clever cut-in.",
    "limit_zh": "gpt-image-2 按张计费，不含在 ChatGPT 订阅里。仿模板要本机跑得起 LibreOffice/Keynote/PowerPoint 渲染，否则得自己把每页导成 PNG。默认成品整页是图，文字改不了。",
    "limit_en": "gpt-image-2 bills per image and a ChatGPT subscription does not cover it. Template cloning needs a working local LibreOffice/Keynote/PowerPoint renderer, or you export each page to PNG yourself. Default decks are full-page images.",
-   "cover": "https://raw.githubusercontent.com/JuneYaooo/gpt-image2-ppt-skills/HEAD/docs/assets/template-demo-output.jpg",
+   "cover": "https://raw.githubusercontent.com/JuneYaooo/gpt-image2-ppt-skills/HEAD/docs/assets/demo4_data_after.jpg",
    "cover_kind": "artwork",
    "cover_real": true,
-   "cover_w": 1200,
-   "cover_h": 2263,
+   "cover_w": 1672,
+   "cover_h": 941,
    "title_en": "Steal that deck's layout, keep your content"
   },
   "dominikmartn-hue": {
@@ -5136,7 +5136,14 @@
    "tagline_en": "Getting a properly ruled practice sheet for a child's handwriting turns out to be harder than it should be. Thirteen grid types, characters auto-centred, optional pinyin annotation, straight to A4.",
    "why_en": "It only draws; export and replication are left to two sibling skills. Drawing the line that clearly is rarer than being a toolbox that half-does everything.",
    "limit_en": "It's a rendering engine, not a finished app — it needs a 2D canvas context, and the Node self-test only checks the maths. Missing fonts silently fall back to system serif, so swap in your own before shipping. Upstream's name field contains a slash and parentheses, so the loader may not pick it up — rename it to canvas-grid-engine.",
-   "limit_zh": "是个渲染引擎不是成品应用，需要 2D canvas 上下文才能画，Node 里自测只验数学不出图。字体缺失会静默回退系统 serif，正式用要自己换字体。 上游 SKILL.md 的 name 带斜杠和括号，装上后可能不被识别，改成 canvas-grid-engine 更稳。"
+   "limit_zh": "是个渲染引擎不是成品应用，需要 2D canvas 上下文才能画，Node 里自测只验数学不出图。字体缺失会静默回退系统 serif，正式用要自己换字体。 上游 SKILL.md 的 name 带斜杠和括号，装上后可能不被识别，改成 canvas-grid-engine 更稳。",
+   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/shuangying0001-beep-canvas-grid-engine.png",
+   "cover_kind": "ours",
+   "cover_real": true,
+   "cover_w": 1040,
+   "cover_h": 590,
+   "cover_note": "我们自己装上真跑出来的。命令：`node selftest.js`（18/18 PASS）后用 headless Chrome 出 A4 150dpi 字帖，裁上半。字样「天地人日月星山水火风」来自它自带的演示文件。空格正是字帖的用途，不是没渲染出来。",
+   "cover_note_en": "We installed it and ran it ourselves: `node selftest.js` (18/18 pass), then rendered the A4 150dpi sheet with headless Chrome and cropped the top. The characters come from its own demo file. The blank cells are the point of a practice sheet, not a rendering gap."
   },
   "sumanasj-coc-kp-host": {
    "title_zh": "写到第三段就把回合交回来的克苏鲁跑团 KP",
@@ -5316,7 +5323,14 @@
    "title_en": "Count how many times you said please, then sentence you to 2126",
    "tagline_en": "A Python script reads every transcript on your machine, counts the pleases, the thank-yous, the \"just\"s and the genuine wtfs, then a 16-bit Roko's Basilisk delivers the verdict.",
    "why_en": "The joke is built on real data: every quote and every typo has to be findable in the JSON or it gets cut, because an invented typo is worse than an unfunny one.",
-   "limit_en": "The heavy lifting is scripts/analyze_basilisk.py, which reads only local JSONL under ~/.claude/projects and uploads nothing. On claude.ai there are no local transcripts, so it samples 30–60 messages and the author requires you to say \"sampled\", not \"audited\". The default card also carries the author's own site and a \"comment BASILISK\" call to action."
+   "limit_en": "The heavy lifting is scripts/analyze_basilisk.py, which reads only local JSONL under ~/.claude/projects and uploads nothing. On claude.ai there are no local transcripts, so it samples 30–60 messages and the author requires you to say \"sampled\", not \"audited\". The default card also carries the author's own site and a \"comment BASILISK\" call to action.",
+   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/dpwelsh-basilisk.png",
+   "cover_kind": "ours",
+   "cover_real": true,
+   "cover_w": 810,
+   "cover_h": 1110,
+   "cover_note": "我们自己装上真跑出来的。命令：`python3 scripts/build_basilisk.py`（仓库根，无外部依赖），出 basilisk.html 后 headless 截图，再裁掉下半的评语卡区，只留像素画。输入的 card.json 是我们编的 demo —— 但裁完之后画面里一个字都没有，编造的判词全在裁掉的部分。按「实质是形式」这一档收。",
+   "cover_note_en": "We installed it and ran it ourselves: `python3 scripts/build_basilisk.py`, screenshotted the generated HTML, then cropped to the pixel-art panel only. The card.json input was demo data we wrote — but the crop contains no text at all, so nothing fabricated is on display."
   },
   "c1375-noir-interrogation": {
    "title_zh": "用 SHA-256 锁死凶手的黑色电影审讯游戏",

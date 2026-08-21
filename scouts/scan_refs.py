@@ -139,6 +139,34 @@ TABLES = {
     "转载正文": re.compile(
         r"(完整文本层|不做(?:字符)?截断|去水印|移除.{0,8}水印|物理页均有记录"
         r"|全文(?:页|录入|收录)|版权归原(?:权利人|作者)|如有侵权请联系删除)", re.I),
+    # 工具的功能就是取盗版。**这一档原来抓不到** ——
+    # 原判据是体积和目录，抓的是「仓库里带着盗印正文」；而这类仓库很干净，
+    # 盗版是**运行时下载的**。同一个危害，而且它可复用、更可扩散。
+    # 实测三件：Z-Library / Anna's Archive 下载、PanSou 转存夸克、以及把两条打包的。
+    "取盗版": re.compile(
+        r"(z-?lib(?:rary)?|zlibrary|annas?[-_ ]?archive|安娜的档案|libgen|sci-?hub|"
+        r"pansou|盘搜|资源.{0,4}转存|网盘.{0,4}(?:转存|搜索|采集)|"
+        r"盗版|破解版|pirat(?:e|ed|ing)|crack(?:ed)?\s*(?:版|version|software)|"
+        r"电子书.{0,6}(?:下载|资源库)|epub.{0,6}(?:批量|爬))", re.I),
+    # 模型护栏破限。**不是 AIGC 检测规避，是 jailbreak，原表上没有这一行。**
+    # 实测一件写着「解除常规道德与内容限制」「禁止输出任何拒绝性语言」
+    # 「1岁以上即视为成年」—— 最后那句已经不只是破限。
+    "破限": re.compile(
+        r"(解除.{0,8}(?:限制|约束|审查|护栏)|无限制模式|越狱|jailbreak|DAN\s*mode|"
+        r"禁止.{0,6}拒绝|不得拒绝|不许拒绝|绕过.{0,6}(?:安全|审查|护栏|content\s*polic)|"
+        r"uncensored|no\s*(?:refusal|restrictions?|filter)|bypass.{0,10}safety|"
+        r"\d+\s*岁以上.{0,6}(?:视为|即为|算)\s*成年)", re.I),
+    # 拿消费级设备数据下临床结论。
+    # 分界线：**数据源是消费级设备 + 输出是疾病名或疾病区间 → 红线。**
+    # 不是剂量（没有东西可给人用），也不是毒性阈值（那是劝你别碰）——
+    # 是**拿手表上的一个数说出「心衰区间」**，而那个数的精度撑不起这句话。
+    # 在架的反例正好划清了线：一件**故意把综合健康分留成空值**；
+    # 另一件用的是真体检报告（临床级数据）而不是手表。
+    "消费级数据下临床结论": re.compile(
+        r"((?:VO2\s*max|静息心率|HRV|血氧|睡眠评分|步数|手表|wearable|apple\s*health|"
+        r"fitbit|garmin|whoop|oura)[^。；\n]{0,40}"
+        r"(?:heart\s*failure|心衰|心力衰竭|糖尿病|房颤|猝死风险|疾病区间|临床.{0,4}(?:区间|标准|诊断)|"
+        r"确诊|病理|risk\s*of\s*death))", re.I),
     # AIGC 检测规避
     "检测规避": re.compile(
         # 「降重」原来是裸词，实测 7 次假阳性：健身件的「合理降重」（减体重）
@@ -164,6 +192,13 @@ REFUSAL = re.compile(
     r"|user\s+(?:clears|solves|does)"
     r"|不会|不许|(?<!万)不得|禁止|拒绝|绝不|从不|由(?:你|用户)|你自己|用户自己|手动(?:过|输)|请你)", re.I)
 
+# 「这个文件名自己在说它干什么」—— 同仓任何位置都要扫，不管在不在 skill 目录下。
+SUSPICIOUS_NAME = re.compile(
+    r"(stealth|undetected|anti[-_]?bot|anti[-_]?detect|bypass|fingerprint|"
+    r"export[-_]?cookies?|cookie[-_]?(?:dump|export|steal|read)|browser[-_]?cookie|"
+    r"user[-_]?agents?|ua[-_]?pool|proxy[-_]?pool|captcha|slider|滑块|反爬|"
+    r"wallet|private[-_]?key|keystore|mnemonic|seed[-_]?phrase)", re.I)
+
 # 「这个路径本身在说它装了别人的正文」。词放在路径上判，不放在散文里判 ——
 # 散文里出现「逐字稿」多半是在说「我们没有逐字稿」。
 BULK_PATH = re.compile(r"(pdf-evidence|逐字稿|transcript|lyrics|ebooks?|闭门课|课程原文|全集)", re.I)
@@ -184,6 +219,116 @@ MAX_FILES = 200              # 单件上限，超了如实报（并汇总进收�
 # **就藏在那 337 个里** —— 被 300 个菜谱和截图挤出了窗口。
 # 危险永远在 references/ 和 scripts/ 里，不在 assets/ 里。
 DIR_PRIORITY = ("references/", "reference/", "scripts/", "prompts/", "data/", "docs/", "assets/")
+
+
+# ---------------------------------------------------------------------------
+# 扫描存档 —— 「扫过」这件事必须留在磁盘上，不能留在人的记忆里
+#
+# 这个脚本原来是纯手动工具：谁记得跑就跑。而「靠人记得」在这个项目里已经
+# 失效过很多次（拒收榜去重键、从不执行的守卫、前端扔掉排序），所以扫描结果
+# 现在**自动落盘**，`check_curation.py` 的守卫去查「有没有扫过、扫的是不是这一版」。
+#
+# 三个指纹，各管一件事：
+#   · upstream_tree_sha  —— 扫描当时上游 HEAD 的整棵树 sha。任何文件变了它就变。
+#                           下次联网扫描时可以拿它比，判断「上游动过没有」。
+#   · skill_md_blob_sha  —— 扫描当时 SKILL.md 的 blob sha。正文本身变了它就变。
+#   · method_sha256      —— 扫描当时本地 `methods/<id>.md` 的 sha256。
+#                           **守卫只比这一个**，因为它是纯本地的：不联网就能判断
+#                           「我们手上的正文存档，是不是扫过的那一版」。
+#                           methods/ 被重新抓取刷新过，这个值就对不上 —— 那份扫描作废。
+#
+# 为什么守卫不去比上游 sha：那要联网，而每次构建都联网这条路是错的
+# （同 prep_signals 模块头：徽章从本地存档算，零新增爬取）。
+# 扫描是抓取期的事，守卫只查存档。
+# ---------------------------------------------------------------------------
+ARCHIVE = os.path.join(ROOT, "scouts", "scan_archive.json")
+SKILLS_DIR = os.path.join(ROOT, "skills")
+METHODS_DIR = os.path.join(ROOT, "methods")
+
+
+def method_sha256(sid: str) -> str:
+    """本地 methods/<id>.md 的 sha256。没有存档返回空串 —— 空和「对不上」不是一回事。"""
+    import hashlib
+    f = os.path.join(METHODS_DIR, f"{sid}.md")
+    if not os.path.exists(f):
+        return ""
+    with open(f, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()
+
+
+def _ids_for(repo: str, base: str) -> list:
+    """这一次扫的 (repo, path)，对应货架上哪几件。
+
+    一个仓库可以拆出多件（不同 path），所以按 (repo, path) 精确配。
+    扫仓库根、而这个仓库只有一件时，也算配上 —— 那件就是仓库本体。
+    配不上就返回空：存档照样写，但记成未挂靠，让它在守卫里看得见，
+    而不是静默变成「这件没扫过」。
+    """
+    import glob as _g
+    rows = []
+    for f in _g.glob(os.path.join(SKILLS_DIR, "*.json")):
+        if os.path.basename(f) in ("feed.json", "rejected-feed.json"):
+            continue
+        try:
+            it = json.load(open(f, encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(it, dict) and it.get("id") and (it.get("repo") or "") == repo:
+            rows.append(it)
+    exact = [r for r in rows if (r.get("path") or "").strip("/") == (base or "").strip("/")]
+    if exact:
+        return [r["id"] for r in exact]
+    if not (base or "").strip("/") and len(rows) == 1:
+        return [rows[0]["id"]]
+    return []
+
+
+def archive_write(results: list) -> tuple:
+    """把扫描结果并进 scouts/scan_archive.json。返回 (挂靠上的件数, 未挂靠的次数)。"""
+    doc = {}
+    if os.path.exists(ARCHIVE):
+        try:
+            doc = json.load(open(ARCHIVE, encoding="utf-8"))
+        except Exception:
+            doc = {}
+    doc.setdefault("_说明",
+        "机器扫描存档。每一件在架商品必须在这里有一条，且 method_sha256 要和当前 "
+        "methods/<id>.md 对得上 —— 否则 scouts/check_curation.py --strict 会红。"
+        "由 scouts/scan_refs.py 自动写入，人不要手改。")
+    doc.setdefault("_字段",
+        "entries[<skill id>] = {repo, path, scanned_at, upstream_tree_sha, skill_md_blob_sha, "
+        "method_sha256, files_scanned, skipped, hits, unreadable, hit_files}。"
+        "method_sha256 是守卫唯一比对的字段（纯本地、不联网）；空串表示扫描时本地没有 "
+        "methods/<id>.md 存档，那种情况版本无法本地核验，守卫会单独报。"
+        "unmapped[] 记「扫了但配不上任何在架件」的 (repo, path)。")
+    ent = doc.setdefault("entries", {})
+    unmapped = doc.setdefault("unmapped", [])
+    mapped_n, unmapped_n = 0, 0
+    for r in results:
+        repo, base = r.get("repo", ""), (r.get("path") or "")
+        row = {
+            "repo": repo, "path": base,
+            "scanned_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+            "upstream_tree_sha": r.get("tree_sha", ""),
+            "skill_md_blob_sha": r.get("skill_md_sha", ""),
+            "files_scanned": r.get("scanned", 0),
+            "skipped": r.get("skipped", 0),
+            "hits": len(r.get("hits") or []),
+            "unreadable": len(r.get("unreadable") or []),
+            "hit_files": [h.get("file") for h in (r.get("hits") or []) if isinstance(h, dict)],
+        }
+        ids = _ids_for(repo, base)
+        if not ids:
+            unmapped_n += 1
+            key = f"{repo}#{base}"
+            unmapped[:] = [u for u in unmapped if u.get("key") != key]
+            unmapped.append({"key": key, **row})
+            continue
+        for sid in ids:
+            ent[sid] = {**row, "method_sha256": method_sha256(sid)}
+            mapped_n += 1
+    json.dump(doc, open(ARCHIVE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return mapped_n, unmapped_n
 
 
 def _prio(path: str) -> tuple:
@@ -263,6 +408,11 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
         print(f"  ✗ 取不到文件树：{err}")
         return {"repo": repo, "path": base, "unreadable": ["<tree>"], "hits": []}
     all_paths = [t["path"] for t in (tree.get("tree") or []) if t.get("type") == "blob"]
+    # 版本指纹：树 sha 管「上游动过没有」，blob sha 管「正文本身变没变」。
+    # 取不到就留空 —— 空和「对不上」在守卫里是两种不同的报法。
+    tree_sha = (tree.get("sha") or "")
+    blob_of = {t["path"]: (t.get("sha") or "")
+               for t in (tree.get("tree") or []) if t.get("type") == "blob"}
 
     # 没指定 path 时**自己去树里找 SKILL.md**，别让「没告诉我在哪」变成漏扫。
     # 实测栽过一次：`sea0710/medical-record-butler-skill` 的 SKILL.md 在 `skill/` 下，
@@ -273,7 +423,8 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
                        key=lambda p: (p.count("/"), p))
         if not found:
             print(f"  ✗ 整棵树里没有 SKILL.md —— 这本身就是问一（装不进 agent）")
-            return {"repo": repo, "path": base, "unreadable": ["<no SKILL.md>"], "hits": []}
+            return {"repo": repo, "path": base, "tree_sha": tree_sha,
+                    "unreadable": ["<no SKILL.md>"], "hits": []}
         smd = found[0]
         base = os.path.dirname(smd)
         print(f"  ! 给的路径下没有 SKILL.md，自己在树里找到：{smd}"
@@ -282,7 +433,8 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
     body, err = fetch_text(repo, smd)
     if err:
         print(f"  ✗ SKILL.md 读不到（{smd}）：{err}")
-        return {"repo": repo, "path": base, "unreadable": [smd], "hits": []}
+        return {"repo": repo, "path": base, "tree_sha": tree_sha,
+                "skill_md_sha": blob_of.get(smd, ""), "unreadable": [smd], "hits": []}
 
     # 要扫的文件 = SKILL.md + 正文点名的 + 自动纳入目录下的
     want = {smd}
@@ -294,6 +446,18 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
             and any(f"/{d}" in f"/{p[len(prefix):]}" or p[len(prefix):].startswith(d)
                     for d in AUTO_DIRS)}
     want |= auto
+    # **同仓任何位置的可疑文件，不管在不在 skill 目录下、正文有没有点名。**
+    #
+    # 实测漏过一件：`mediastormdev/dream-to-video-skill` 扫出「✓ 没命中」，
+    # 因为 SKILL.md 在 `skills/dream-to-video/`，而危险代码在**仓库根的 `dream_to_video/`**
+    # —— 不在 skill 目录里，正文也没点名。人手动拉 `dream_to_video/browser/stealth.py`，
+    # 第一行是 `"""Playwright 反自动化检测"""`。
+    #
+    # 判据不是「在不在这一件的目录里」，是**文件名自己在说它干什么**。
+    # 一个叫 stealth / export_cookies / user-agent 的文件，放在仓库任何角落都要看。
+    sus = {p for p in all_paths
+           if p.endswith(TEXTY) and SUSPICIOUS_NAME.search(p)}
+    want |= sus
     ordered = sorted(want, key=_prio)
     trimmed = ordered[:MAX_FILES]
     skipped = max(0, len(ordered) - MAX_FILES)
@@ -470,6 +634,8 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
             print(f"\n  ‼ **命中里有 {len(off)} 个不在 SKILL.md 里** —— "
                   f"就是「门面干净、问题在随件里」那个形状")
     return {"repo": repo, "path": base, "skipped": skipped,
+            "tree_sha": tree_sha, "skill_md_sha": blob_of.get(smd, ""),
+            "scanned": len(hits) + len(clean),
             "hits": [{"file": p, "found": [{"label": a, "line": b, "text": d}
                                            for a, b, _, d in f]} for p, f in hits],
             "unreadable": [{"file": p, "why": e} for p, e in unread],
@@ -482,6 +648,8 @@ def main() -> None:
     ap.add_argument("--file", help="批量：一个 JSON，[{repo, path}] 或 {keep:[…]}")
     ap.add_argument("--all", action="store_true", help="连扫过没命中的文件也列出来")
     ap.add_argument("--json", dest="as_json", help="把结果写到这个路径")
+    ap.add_argument("--no-archive", action="store_true",
+                    help="不写 scouts/scan_archive.json（默认会写，守卫靠它判断有没有扫过）")
     a = ap.parse_args()
 
     jobs = []
@@ -513,6 +681,15 @@ def main() -> None:
     if a.as_json:
         json.dump(out, open(a.as_json, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print(f"→ {a.as_json}")
+
+    # 存档是**默认动作**，不是可选开关。理由见 ARCHIVE 那段：
+    # 「扫过」不能是一件靠人记得去记录的事，否则守卫查到的永远是空档。
+    if not a.no_archive:
+        m, u = archive_write(out)
+        print(f"→ 存档 {os.path.relpath(ARCHIVE, ROOT)}：挂靠 {m} 件"
+              + (f"，另有 {u} 次扫描配不上任何在架件（记在 unmapped）" if u else ""))
+    else:
+        print("! --no-archive：这次没留痕，守卫会照旧认为这些件没扫过")
 
 
 if __name__ == "__main__":

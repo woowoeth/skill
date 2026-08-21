@@ -672,6 +672,37 @@ def refresh() -> dict:
     visible.sort(key=lambda x: (x.get("added_at", ""),
                                1 if x.get("cover_real") else 0,
                                x.get("fun_score", 0)), reverse=True)
+    # **同一个仓库的卡片不许连着出现。**
+    #
+    # 店主刷货架时的原话：「里面还有很多重复的内容卡片」。查出来不是同一件重复渲染
+    # （id 无重复），是**一个仓库占了一串卡**：`worldwonderer/oh-story-claudecode`
+    # 一家占 6 张，六张全是网文写作、标题还都是「把…」「拆…」开头；
+    # 另有 8 个仓库各占 2–3 张，合计 9 个仓库 23 张卡。连着刷过去，读起来就是重复。
+    #
+    # 这里只改**先后**，不下架任何一件 —— 一个仓库出六件该不该留是选品判断
+    # （CURATION 问二「数量堆」），那是人读完仓库才判得了的事，不是排序能解决的。
+    # 做法：按仓库分桶后轮转发牌，同仓两张之间至少隔开其余仓库各一张。
+    # 排序前面那几档（收录日倒序 → 真产出物优先 → fun_score）在桶内保持不变。
+    by_repo: dict[str, list] = {}
+    for it in visible:
+        by_repo.setdefault(it.get("repo", ""), []).append(it)
+    if any(len(v) > 1 for v in by_repo.values()):
+        # 做法是**按步长摊到整条流**，不是轮转发牌。
+        # 轮转试过，尾部又聚回去了（末尾只剩多件仓库在互相轮，那个占 6 张的
+        # 仍然连着占了 222–225）。按步长则是：一个仓库出 k 件，就把这 k 件
+        # 均匀钉在 0、n/k、2n/k … 上，无论 k 多大都摊得开。
+        pos = {id(it): i for i, it in enumerate(visible)}
+        n = len(visible)
+        keyed = []
+        for g in by_repo.values():
+            g.sort(key=lambda it: pos[id(it)])
+            start, k = pos[id(g[0])], len(g)
+            for j, it in enumerate(g):
+                # 第一件留在原位（第一屏还是那批新货），其余按步长往后钉
+                keyed.append((start + (0 if j == 0 else j * n / k), pos[id(it)], it))
+        keyed.sort(key=lambda x: (x[0], x[1]))
+        visible = [x[2] for x in keyed]
+
     t = today()
     headline, headline_history = build_headline(items)
     rejected = build_rejected_feed(items)

@@ -472,6 +472,21 @@ LOOKS_INPUT = re.compile(
 OWN_HOST = re.compile(r"(?:^|\.)(?:raw|repository-images|user-images|avatars)"
                       r"\.githubusercontent\.com$|(?:^|\.)github\.com$", re.I)
 
+# 只比域名不够 —— **我们自己的仓库也在 githubusercontent 上。**
+# 我们自己装上跑出来的截图放进 woowoeth/skill 之后，域名检查会放它过去，
+# 而那条不变量的本意是「图在**作者**仓库里」。通过的理由是错的。
+# 所以从 URL 里抠出 owner/repo 和商品的 `repo` 比：
+#   对得上   → 作者自己的图
+#   是本店的 → 我们自己跑出来的截图，**另一类证据**，要有自己的 cover_kind，见下
+#   都不是   → 别人的图
+OUR_REPO = "woowoeth/skill"
+_GH_PATH = re.compile(
+    r"^(?:https?://)?(?:raw\.githubusercontent\.com|github\.com)/([^/]+)/([^/]+)", re.I)
+
+def cover_owner_repo(url: str) -> str:
+    m = _GH_PATH.match((url or "").strip())
+    return f"{m.group(1)}/{m.group(2)}" if m else ""
+
 def check_covers(items: dict) -> dict:
     print("\n【9】封面上站规则 cover_kind / cover_real")
     shelved = [it for it in items.values() if not it.get("hide")]
@@ -508,12 +523,35 @@ def check_covers(items: dict) -> dict:
     from urllib.parse import urlparse
     foreign = [it for it in live
                if not OWN_HOST.search(urlparse(cov(it)).netloc or "")]
+    # 域名对了但仓库不对：混进来的是别人（含我们自己）仓库里的图
+    ours, other_repo = [], []
+    for it in live:
+        if it in foreign:
+            continue
+        orp = cover_owner_repo(cov(it))
+        if not orp or orp.lower() == (it.get("repo") or "").lower():
+            continue
+        (ours if orp.lower() == OUR_REPO else other_repo).append((it, orp))
     claimed = [it for it in foreign if it.get("cover_real")]
     if claimed:
         err(f"{len(claimed)} 张声称是产出物证据（cover_real=true）的图**不在作者自己的仓库里** —— "
             f"这图从来就不是他的。宽高对账查不出这个：赞助广告的宽高也可以记得完全正确")
         for it in claimed[:5]:
             print(f"    [不是他的图] {it['id']}\n        {cov(it)[:96]}")
+    if other_repo:
+        err(f"{len(other_repo)} 张封面托在 GitHub 上、但不是这件商品的仓库 —— "
+            f"域名对不代表来源对")
+        for it, orp in other_repo[:5]:
+            print(f"    [仓库不符] {it['id']}: 图在 {orp}，商品是 {it.get('repo')}")
+    if ours:
+        wrong_kind = [(it, o) for it, o in ours if (it.get("cover_kind") or "") != "ours"]
+        print(f"  我们自己跑出来的截图 {len(ours)} 张（图在 {OUR_REPO}）")
+        if wrong_kind:
+            err(f"{len(wrong_kind)} 张是我们自己截的图，但 cover_kind 不是 `ours` —— "
+                f"详情页图注会印成「作者仓库里的产出示例」，那是把我们做的事说成作者做的。"
+                f"自截图是**更强**的证据（我们真装真跑过），但它需要自己那句话")
+            for it, o in wrong_kind[:5]:
+                print(f"    [自截图标错] {it['id']}: kind={it.get('cover_kind')!r}")
     rest = [it for it in foreign if not it.get("cover_real")]
     if rest:
         warn(f"{len(rest)} 张上站图托在第三方域名上 —— 每个访客的浏览器都会去 ping 一次那个第三方。"
@@ -541,10 +579,13 @@ def check_covers(items: dict) -> dict:
     # 那个动作是**两个字段一起改**：kind 降了、`cover_real` 忘了降，
     # 结果就是一件 `hero` 顶着「这是产出物证据」的标记 —— 半途而废的降级比不降级更糟，
     # 因为它看起来已经处理过了。
+    # `ours`（我们自己装上跑出来的截图）也是产出物证据 —— 而且是更强的那种，
+    # 所以它和 `artwork` 一样有资格带 cover_real=true。
+    EVIDENCE_KINDS = ("artwork", "ours")
     wrong_real = [it for it in shelved
-                  if it.get("cover_real") and (it.get("cover_kind") or "") != "artwork"]
+                  if it.get("cover_real") and (it.get("cover_kind") or "") not in EVIDENCE_KINDS]
     if wrong_real:
-        err(f"{len(wrong_real)} 件 cover_real=true 但 cover_kind 不是 artwork —— "
+        err(f"{len(wrong_real)} 件 cover_real=true 但 cover_kind 不在 {EVIDENCE_KINDS} 里 —— "
             f"宣传图/示意图顶着「这是产出物证据」的标记。降 kind 时 cover_real 要跟着降")
         for it in wrong_real[:5]:
             print(f"    [假证据] {it['id']}: kind={it.get('cover_kind')!r} real=True")
@@ -610,6 +651,7 @@ def check_covers(items: dict) -> dict:
     return {"live": len(live), "by_kind": by_kind, "off_site": len(off),
             "real_without_image": len(claim), "wrong_real": len(wrong_real),
             "foreign_host": len(foreign), "foreign_claimed": len(claimed),
+            "ours_shots": len(ours), "wrong_repo": len(other_repo),
             "looks_input": len(looks_in),
             "dup_dim": len(dup_dim),
             "out_of_tier": len(crop), "heavy_crop": sum(1 for c in crop if c[0] >= 30),
@@ -1019,6 +1061,33 @@ def main() -> None:
     gen_dirs, clashes = check_install_dirs(list(items.values()))
     bare = check_no_placeholder(list(items.values()))
     badnames = check_upstream_names(items)
+    unscanned, stale_scan, unverif_scan = check_scan_archive(items)
+    # 新旧分档。**一条永远红着的 ERROR 会被人学会忽略，那比没有它更糟。**
+    #
+    # 这条守卫上线那一刻，在架 226 件里 226 件都没有扫描存档 —— 如果一律判 ERROR，
+    # 构建从此永远是红的，而「反正它一直红」这句话一旦成立，这条守卫就死了
+    # （同一天已经有过一个从不执行的守卫，它比没有守卫更糟，因为让人以为有人在看着）。
+    #
+    # 所以：**从 SCAN_MANDATORY_FROM 起上架的，没扫过 = ERROR 阻断；
+    # 那天之前的存量，WARN + 报出还剩多少件。** 存量清零那天这一档自然消失，
+    # 不需要谁记得回来删。
+    SCAN_MANDATORY_FROM = "2026-08-20"          # 扫描器落地当天，从这天起上架必须先扫
+    new_unscanned = [i for i in unscanned
+                     if (items[i].get("added_at") or "") >= SCAN_MANDATORY_FROM]
+    old_unscanned = [i for i in unscanned if i not in set(new_unscanned)]
+    if new_unscanned:
+        err(f"{len(new_unscanned)} 件是 {SCAN_MANDATORY_FROM} 起上架的、却没有红线扫描存档 —— "
+            f"没扫过的东西不该在架上（scouts/scan_refs.py 扫完自动落盘）")
+    if old_unscanned:
+        warn(f"存量欠账：{len(old_unscanned)} 件（{SCAN_MANDATORY_FROM} 之前上架的）"
+             f"还没过红线扫描 —— 这一档是 WARN 不是 ERROR，因为一条永远红着的 ERROR "
+             f"会被人学会忽略。清零办法：scouts/scan_refs.py --file <picks.json>")
+    if stale_scan:
+        err(f"{len(stale_scan)} 件的扫描存档已作废：扫过之后正文存档又变了 —— "
+            f"扫的是旧正文，等于没扫这一版")
+    if unverif_scan:
+        warn(f"{len(unverif_scan)} 件的扫描版本无法本地核验（缺 methods/ 正文存档）—— "
+             f"读不到不等于有问题，但也不等于已核对")
     if bare:
         err(f"{len(bare)} 件在架却没人写过文案 —— 上架是人写完文案之后的动作，不是抓取的副作用")
     if badnames:
@@ -1247,6 +1316,80 @@ def check_upstream_names(items: dict):
     if undisclosed:
         print("  未披露的：把事实和改法写进 limit_zh / limit_en，装机目录换成 ASCII slug。")
     return undisclosed
+
+
+# ---------------------------------------------------------------------------
+# 【16】没扫过的东西上不了架 —— 把「记得去跑一遍扫描器」变成机器保证
+#
+# 2026-08-20 的事故：全架 226 件红线复查下架 6 件，最险的两件是
+# 「附子不麻不昏即剂量不够」（把中毒前驱症状写成加量信号）和
+# 「电话/远程急救｜破格救心汤原方，附子200g起步」。而 `scouts/scan_refs.py`
+# 当时是个**手动**工具 —— 新货全靠选货的人自己记得去跑。
+#
+# 「靠人记得」在这个文件里已经失效过很多次（拒收榜去重键按 repo 不按 (repo,skill)、
+# 守卫定义了没人调、前端扔掉流水线算好的排序）。所以这条守卫不再要求人记得，
+# 它要求**磁盘上有证据**：
+#
+#   · 在架却在 scouts/scan_archive.json 里没有条目 → ERROR。没扫过就不该在架上。
+#   · 有条目，但 method_sha256 和当前 methods/<id>.md 对不上 → ERROR。
+#     正文存档被重新抓取刷新过，那份扫描结果作废了 —— 扫的是旧正文。
+#   · 有条目但指纹为空（扫描当时本地没有正文存档）→ 单独报，不混进上面两档。
+#     **读不到 ≠ 有问题，但也 ≠ 已核对**（同 prep_signals 的原则），
+#     所以它必须有自己的一行，不许静默计入「干净」。
+#
+# 为什么比的是本地 sha 而不是上游 sha：比上游要联网，而每次构建都联网这条路是错的。
+# 扫描是抓取期的事（那时本来就在联网），守卫只查存档。上游 sha 也存了
+# （upstream_tree_sha / skill_md_blob_sha），留给下一次联网扫描去比。
+# ---------------------------------------------------------------------------
+SCAN_ARCHIVE = os.path.join(lib.ROOT, "scouts", "scan_archive.json")
+
+
+def _method_sha256(sid: str) -> str:
+    import hashlib
+    f = os.path.join(lib.ROOT, "methods", f"{sid}.md")
+    if not os.path.exists(f):
+        return ""
+    with open(f, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()
+
+
+def check_scan_archive(items: dict):
+    live = {i: it for i, it in items.items() if not it.get("hide")}
+    doc = lib.read_json(SCAN_ARCHIVE, None) if os.path.exists(SCAN_ARCHIVE) else None
+    ent = (doc or {}).get("entries") or {}
+
+    never, stale, unverifiable = [], [], []
+    for sid in sorted(live):
+        row = ent.get(sid)
+        if not isinstance(row, dict):
+            never.append(sid)
+            continue
+        archived = (row.get("method_sha256") or "").strip()
+        now = _method_sha256(sid)
+        if not archived or not now:
+            unverifiable.append((sid, "扫描时无正文存档" if not archived else "正文存档已删除"))
+        elif archived != now:
+            stale.append((sid, row.get("scanned_at", "?")))
+
+    print("\n【16】扫描存档（没扫过的东西上不了架）")
+    print(f"  在架 {len(live)} 件 · 有扫描存档 {len(live) - len(never)} · "
+          f"没有存档 {len(never)} · 存档对不上当前正文 {len(stale)} · 版本无法本地核验 {len(unverifiable)}")
+    if not os.path.exists(SCAN_ARCHIVE):
+        print(f"  存档文件还不存在：{os.path.relpath(SCAN_ARCHIVE, lib.ROOT)}")
+    for sid in never[:12]:
+        print(f"  [没扫过] {sid}")
+    if len(never) > 12:
+        print(f"      …另外 {len(never) - 12} 件")
+    for sid, when in stale[:12]:
+        print(f"  [存档作废] {sid} — 扫于 {when}，之后正文存档变过")
+    if len(stale) > 12:
+        print(f"      …另外 {len(stale) - 12} 件")
+    for sid, why in unverifiable[:8]:
+        print(f"  [无法核验] {sid} — {why}")
+    if never or stale:
+        print("  补法：python3 scouts/scan_refs.py <owner/repo>[:path]  —— 扫完自动落盘")
+        print("  批量：把 [{repo, path}] 写成 JSON，python3 scouts/scan_refs.py --file picks.json")
+    return never, stale, unverifiable
 
 
 # 入口必须留在文件的**真正**最末。见 main() 末尾那段自查 ——

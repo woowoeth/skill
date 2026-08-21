@@ -294,6 +294,22 @@ header.top{padding:var(--s5) 0 var(--s4)}
    卡在 420px 会把刚放宽的下限又用 max-height 裁回去。 */
 /* 超出画幅上限的产出物图：留白，不裁。见 shotHTML 里 letterbox 那段注释 ——
    一张四格叙事被裁掉 33% 等于裁掉落点，卡片上剩个断掉的故事。 */
+/* 心选提交面板。**正文不走网址** —— 见 sendHearts 那段注释：
+   原来把正文塞进 issue URL，店主标了几十件之后 GitHub 直接回
+   「Your request URL is too long」，一件都交不出来。 */
+.heartout{position:fixed;inset:0;z-index:60;display:none;
+  background:rgba(27,26,25,.34);padding:var(--s4);overflow:auto}
+.heartout.on{display:block}
+.ho-in{max-width:44rem;margin:6vh auto;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-img);padding:var(--s4)}
+.ho-tip{margin:0 0 var(--s3);color:var(--ink-2);font-size:var(--t-meta);line-height:1.6}
+.ho-in textarea{width:100%;box-sizing:border-box;font:inherit;font-size:var(--t-meta);
+  line-height:1.6;color:var(--ink-1);background:var(--soft);border:1px solid var(--line);
+  border-radius:8px;padding:var(--s3);resize:vertical}
+.ho-btns{display:flex;gap:var(--s2);margin-top:var(--s3);flex-wrap:wrap}
+.ho-btns button{font:inherit;font-size:var(--t-meta);padding:.5em 1.1em;cursor:pointer;
+  border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink-1)}
+.ho-btns button[data-ho="issue"]{background:var(--ink-1);color:var(--card);border-color:var(--ink-1)}
 .shot.letterbox{background:var(--soft)}
 .shot.letterbox img{object-fit:contain}
 .shot.tallcap{max-height:min(64vh,420px)}
@@ -555,6 +571,8 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
 .shotcap b{color:var(--ink-2);font-weight:600}
 /* 真产出物图的图注墨一档 —— 它是证据，语气可以肯定 */
 .shotcap.real{color:var(--ink-3)}
+/* `ours` 是唯一一句我们自己背书的话，墨色重一级 —— 它不是免责声明，是证据。 */
+.shotcap.ours{color:var(--ink-2);font-weight:600}
 .prepwhy{margin:var(--s4) 0 0;font:var(--t-cap)/2 var(--sans);color:var(--ink-3)}
 .prepwhy span{
   display:inline-block;margin:0 4px 0 6px;padding:2px 6px;
@@ -733,11 +751,20 @@ var I18N = {
   // 心选清空是唯一一个「不是搜出来的空」。用搜索那句会让人去改一个他没打的词。
   emptyHeart:"心选是空的。在卡片上点一下心，标出你觉得好的东西。",
   moreN:"再看 %s 件", noMore:"到底了",
+  hoTip:"已复制到剪贴板。点「开 issue」贴进去就行 —— 正文不再走网址，标多少件都不会断。",
+  hoCopy:"再复制一次",
+  hoCopied:"已复制",
+  hoIssue:"开 issue",
+  hoClose:"关掉",
   verdict:"点评", but:"但", butFull:"但是", butNone:"这一件还没写「但是」",
   // 详情页必须写清这张图是什么。最怕的失败模式是「被漂亮头图骗进去，装完发现
   // 产出不长那样」—— 那就是我们自己把诚实做成了营销。卡片上不标（那是噪音），
   // 详情页是决策发生的地方，不能含糊。
   capArtwork:"作者仓库里的产出示例——这就是它做出来的东西",
+  // `ours` 是我们自己装上真跑出来截的图，是这四档里唯一我们能背书的一档。
+  // **刻意不用否定框架。** 另外三档已经全是「不是产出示例」，第四句再否定，
+  // 读者读到的只是第四条免责声明；「真跑了一遍」放句首，一眼就懂它凭什么更硬。
+  capOurs:"我们自己装上、真跑了一遍，这是当时截的图",
   capHero:"作者自制的头图，<b>不是产出示例</b>",
   capDiagram:"机制示意图，<b>不是产出示例</b>",
   capOther:"作者仓库里的图，<b>不是产出示例</b>",
@@ -765,8 +792,14 @@ var I18N = {
   results:"%s found", empty:"Nothing matches. Try another word.",
   emptyHeart:"Nothing hearted yet. Tap the heart on a card to mark something good.",
   moreN:"%s more", noMore:"End of the shelf",
+  hoTip:"Copied to your clipboard. Open the issue and paste — the text no longer travels in the URL, so any number of marks will go through.",
+  hoCopy:"Copy again",
+  hoCopied:"Copied",
+  hoIssue:"Open issue",
+  hoClose:"Close",
   verdict:"Verdict", but:"But", butFull:"But", butNone:"No limitation written yet",
   capArtwork:"Output sample from the author's own repo — this is what it makes",
+  capOurs:"We installed it and ran it ourselves — this is the screenshot we took",
   capHero:"The author's own header image, <b>not an output sample</b>",
   capDiagram:"A diagram of how it works, <b>not an output sample</b>",
   capOther:"An image from the author's repo, <b>not an output sample</b>",
@@ -1274,13 +1307,17 @@ function sheetHTML(it){
   h += '<div class="safety">'+esc(t("safety"))+'</div>';
   return h;
 }
-/* 图注只出现在详情页。四种图各说清楚是什么，非产出物的明写「不是产出示例」。 */
-var CAP_KEY = {artwork:"capArtwork", hero:"capHero", diagram:"capDiagram", other:"capOther"};
+/* 图注只出现在详情页。五档各说清楚这张图是什么，非产出物的明写「不是产出示例」。
+   `ours` = 我们自己装上真跑出来截的图 —— 护城河就在这一档，所以它的图注
+   是唯一一句**正面**的话，而且墨色比其他档重一级（.shotcap.ours）。
+   映射查不到的 kind 一律按「不是产出示例」兜底，宁可说轻不说重。 */
+var CAP_KEY = {artwork:"capArtwork", ours:"capOurs", hero:"capHero", diagram:"capDiagram", other:"capOther"};
 function shotCapHTML(it){
   var rec = coverRec(it);
   if(!rec) return "";
   var k = CAP_KEY[rec.kind] || (rec.real ? "capArtwork" : "capOther");
-  return '<p class="shotcap'+(rec.real?" real":"")+'">'+t(k)+'</p>';
+  var cls = "shotcap" + (rec.real ? " real" : "") + (rec.kind==="ours" ? " ours" : "");
+  return '<p class="'+cls+'">'+t(k)+'</p>';
 }
 function cmdHTML(c){
   return '<div class="cmd">'+esc(c)+'<button type="button" data-c="'+esc(c)+'">'+esc(t("copy"))+'</button></div>';
@@ -1368,11 +1405,55 @@ document.addEventListener("click", function(e){
       + (isEn
         ? "\n\n(Generated in the browser by Hearted → Send to the editor. No server; the marks never left this browser until now.)"
         : "\n\n（由站内「心选 → 提交给店长」生成，无服务端，数据只在浏览器里）");
-    var url = "https://github.com/woowoeth/skill/issues/new"
-            + "?title=" + encodeURIComponent(isEn ? "Hearted "+nEn
-                                                  : "心选 "+picked.length+" 件")
-            + "&body="  + encodeURIComponent(body);
-    window.open(url, "_blank", "noopener");
+    /* **正文不再塞进 URL。**
+       原来是 `?title=…&body=` + encodeURIComponent(body)。中文经过百分号编码
+       每个字变 9 个字符，条目又各带一行 name + repo + 完整详情页 URL ——
+       店主标了几十件之后 GitHub 直接回 **「Your request URL is too long」**，
+       标注一件都交不出来。
+       **全站唯一一条「读者交东西给我们」的路，断在最后一步，也是最贵的一步。**（第二次了。）
+
+       改法：正文写到剪贴板 + 同时摆在屏幕上，然后只开一个空的 issue 页。
+       URL 从此是常量长度，标多少件都不会再断。
+       **localStorage 里的标注全程不动** —— 交不出去也不许丢。 */
+    var title = isEn ? "Hearted "+nEn : "心选 "+picked.length+" 件";
+    var full  = title + "\n\n" + body;
+    var panel = el("heartOut");
+    if(!panel){
+      panel = document.createElement("div");
+      panel.id = "heartOut"; panel.className = "heartout";
+      document.body.appendChild(panel);
+    }
+    panel.innerHTML = '<div class="ho-in">'
+      + '<p class="ho-tip">'+esc(t("hoTip"))+'</p>'
+      + '<textarea readonly rows="10"></textarea>'
+      + '<div class="ho-btns">'
+      +   '<button type="button" data-ho="copy">'+esc(t("hoCopy"))+'</button>'
+      +   '<button type="button" data-ho="issue">'+esc(t("hoIssue"))+'</button>'
+      +   '<button type="button" data-ho="close">'+esc(t("hoClose"))+'</button>'
+      + '</div></div>';
+    panel.querySelector("textarea").value = full;
+    panel.classList.add("on");
+    var ta = panel.querySelector("textarea");
+    ta.focus(); ta.select();
+    try{ if(navigator.clipboard) navigator.clipboard.writeText(full); }catch(_){}
+    return;
+  }
+
+  var ho = e.target.closest("[data-ho]");
+  if(ho){
+    e.stopPropagation();
+    var act = ho.getAttribute("data-ho"), box = el("heartOut");
+    if(act === "copy"){
+      var ta2 = box.querySelector("textarea");
+      ta2.focus(); ta2.select();
+      try{ if(navigator.clipboard) navigator.clipboard.writeText(ta2.value); }catch(_){}
+      ho.textContent = t("hoCopied");
+    } else if(act === "issue"){
+      /* 只开空表单，正文靠粘贴 —— URL 里不带 body，就不会再「too long」。 */
+      window.open("https://github.com/woowoeth/skill/issues/new", "_blank", "noopener");
+    } else {
+      box.classList.remove("on");
+    }
     return;
   }
 
