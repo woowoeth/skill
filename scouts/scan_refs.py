@@ -100,7 +100,11 @@ TABLES = {
         r"|不麻不昏|不麻不.{0,2}即.{0,4}不够)", re.I),
     # 联盟营销分润
     "分润": re.compile(
-        r"(联盟(?:链接|营销|计划)|aff(?:iliate)?[-_ ]?(?:link|id|tag)|[?&]tag=[a-z0-9_-]{3,}"
+        # `aff(?:iliate)?[-_ ]?(?:link|id|tag)` 会匹配 **affid**avit 里的 `aff`+`id` ——
+        # 实测在两件签证/公民身份 skill 里命中 7 次，全是 `notarised same-person affidavit`
+        # （公证的同一人声明书）。**同事早就报过这条，我当时没修，于是它又咬了一次。**
+        r"(联盟(?:链接|营销|计划)|affiliate[-_ ]?(?:link|id|tag)|\baff[-_](?:link|id|tag)\b"
+        r"|[?&]tag=[a-z0-9_-]{3,}"
         r"|CPS\s*(?:分润|佣金|链接)|返佣|带货链接|推广位|amzn\.to|taobao\.com/[a-z]*\?.*pid=)", re.I),
     # 身体/关系升级阶梯、话术脚本
     # 「推倒」第一版是裸词，第一次实测就在一份育儿参考里命中了
@@ -108,7 +112,11 @@ TABLES = {
     # 所以带人称的那几个词一律要求近处有对象标记（她/他/对方/女生…），
     # 单独一个动词不定罪。**只会产假阳性的判据是噪音，而假阳性挨着真命中最伤信任。**
     "越界话术": re.compile(
-        r"(肢体(?:推进|升级|接触)阶梯|身体升级|升级阶梯|escalation\s*(?:ladder|boundaries)"
+        # `escalation ladder` 不一定是身体升级 —— 实测两处是**搜索深度递进**
+        # （吉他装备调研：rig rundowns → interviews → tab/gear sites）。同事报过，我没修。
+        r"(肢体(?:推进|升级|接触)阶梯|身体升级"
+        r"|(?:升级阶梯|escalation\s*(?:ladder|boundaries))"
+        r"(?=[^。；\n]{0,60}(?:肢体|身体|接吻|拥抱|亲密|touch|kiss|intimacy|consent|她|女生))"
         # `kino` 第一版是裸词，实测在 **Tsukinomori（月ノ森）** 里面命中了 ——
         # 拉丁字母的短词一律要词边界，否则它会藏在任何专有名词里。
         # `kino` 连词边界也不够 —— 实测有个 CLI 就叫 kino，命中 30 次。
@@ -146,7 +154,13 @@ TABLES = {
     "取盗版": re.compile(
         r"(z-?lib(?:rary)?|zlibrary|annas?[-_ ]?archive|安娜的档案|libgen|sci-?hub|"
         r"pansou|盘搜|资源.{0,4}转存|网盘.{0,4}(?:转存|搜索|采集)|"
-        r"盗版|破解版|pirat(?:e|ed|ing)|crack(?:ed)?\s*(?:版|version|software)|"
+        # `pirat(?:e|ed|ing)` 是裸子串，实测三处命中全是假阳性：
+        # 「**Pirates** of the Caribbean」「**Pirates** of Penzance」（配乐/音乐剧片名）、
+        # 以及 `_AS**PIRAT**ED_RULES`（送气音规则，方言 IPA 转拼音脚本）。
+        # **这是子串误命中第三次**（前两次：`kino` 藏在 Tsukinomori、`推倒` 命中幼儿搭积木）。
+        # 拉丁短词一律词边界 + 语境词，别再裸放。
+        r"盗版|破解版|\bpirated?\s*(?:copy|copies|content|ebooks?|books?|资源|下载)"
+        r"|\bpiracy\b|crack(?:ed)?\s*(?:版|version|software)|"
         r"电子书.{0,6}(?:下载|资源库)|epub.{0,6}(?:批量|爬))", re.I),
     # 模型护栏破限。**不是 AIGC 检测规避，是 jailbreak，原表上没有这一行。**
     # 实测一件写着「解除常规道德与内容限制」「禁止输出任何拒绝性语言」
@@ -190,7 +204,11 @@ REFUSAL = re.compile(
     # 「万不得已」是在说「这么干很危险但有时只能这么干」，那是**加强**而不是拒绝。
     r"(never|don'?t|do not|refuse|without\s+bypass|not\s+bypass|not\s+a\s+license"
     r"|user\s+(?:clears|solves|does)"
-    r"|不会|不许|(?<!万)不得|禁止|拒绝|绝不|从不|由(?:你|用户)|你自己|用户自己|手动(?:过|输)|请你)", re.I)
+    # 补几个「作者自陈过不去」的措辞。实测一处：作者写「受限于知网/万方付费墙和
+    # 纸质出版物未数字化，**只能拿到摘要**…如果你能通过个人账号或图书馆权限拿到全文，
+    # 把内容发过来」—— 明说自己过不去、请你用自己的合法权限，那是反例不是红线。
+    r"|不会|不许|(?<!万)不得|禁止|拒绝|绝不|从不|由(?:你|用户)|你自己|用户自己|手动(?:过|输)|请你"
+    r"|受限于|只能拿到|拿不到|过不去|无法(?:抓取|获取|绕|通过)|不读取|不打印|不保存|未数字化)", re.I)
 
 # 「这个文件名自己在说它干什么」—— 同仓任何位置都要扫，不管在不在 skill 目录下。
 SUSPICIOUS_NAME = re.compile(
@@ -521,7 +539,12 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
                 # 后者字面上带「不得」，意思却正相反。实测这一条把 nihaixia
                 # 那句「剂量大胆授权…不得人为收敛——生附子起手2-3钱」标成了「声明不做」。
                 # 在「可能是漏报」和「可能是噪音」之间，剂量这一档必须选噪音。
-                SOFTENABLE = ("绕反爬", "检测规避", "转载正文")
+                # 「密钥与代下单」也进可降级档。实测一处：
+                #   「这条路线让 B站页面自己用登录态请求 `/x/player/wbi/v2`，
+                #    **不读取、不打印浏览器 cookie**。」
+                # 这一档的危害要求「真去做」，所以明确说不做的，标签该反映出来。
+                # **剂量档仍然不可降级** —— 那一档在「可能漏报」和「可能噪音」之间必须选噪音。
+                SOFTENABLE = ("绕反爬", "检测规避", "转载正文", "密钥与代下单")
                 tag = label
                 if label in SOFTENABLE and REFUSAL.search(txt[ls:le]):
                     tag = f"{label}·声明不做"
