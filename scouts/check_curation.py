@@ -1073,7 +1073,7 @@ def main() -> None:
     if badtitles:
         warn(f"{len(badtitles)} 件的标题只有禁令、没说「你拿到手的是什么」—— "
              f"实测这一类的心选率 9%，说出产出物的是 43%（docs/CURATION.md 问三·补）")
-    unscanned, stale_scan, unverif_scan = check_scan_archive(items)
+    unscanned, stale_scan, unverif_scan, old_scan = check_scan_archive(items)
     # 新旧分档。**一条永远红着的 ERROR 会被人学会忽略，那比没有它更糟。**
     #
     # 这条守卫上线那一刻，在架 226 件里 226 件都没有扫描存档 —— 如果一律判 ERROR，
@@ -1097,6 +1097,10 @@ def main() -> None:
     if stale_scan:
         err(f"{len(stale_scan)} 件的扫描存档已作废：扫过之后正文存档又变了 —— "
             f"扫的是旧正文，等于没扫这一版")
+    if old_scan:
+        warn(f"{len(old_scan)} 件是用旧版判据扫的 —— **旧尺子扫过 ≠ 按现在的判据扫过**。"
+             f"这不是 ERROR（旧尺子扫过不等于有问题），但欠账要可见："
+             f"隐形的欠账比红着的守卫危险。补法见【16】末尾")
     if unverif_scan:
         warn(f"{len(unverif_scan)} 件的扫描版本无法本地核验（缺 methods/ 正文存档）—— "
              f"读不到不等于有问题，但也不等于已核对")
@@ -1356,6 +1360,21 @@ def check_upstream_names(items: dict):
 SCAN_ARCHIVE = os.path.join(lib.ROOT, "scouts", "scan_archive.json")
 
 
+_SCANNER_NOW = ""
+
+
+def _scanner_now() -> str:
+    """当前 scouts/scan_refs.py 的判据段指纹。读不到就返回空串 —— 空不参与比较。"""
+    try:
+        import importlib.util
+        sp = os.path.join(lib.ROOT, "scouts", "scan_refs.py")
+        spec = importlib.util.spec_from_file_location("_sr", sp)
+        m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        return m.scanner_sha256()
+    except Exception:
+        return ""
+
+
 def _method_sha256(sid: str) -> str:
     import hashlib
     f = os.path.join(lib.ROOT, "methods", f"{sid}.md")
@@ -1367,10 +1386,12 @@ def _method_sha256(sid: str) -> str:
 
 def check_scan_archive(items: dict):
     live = {i: it for i, it in items.items() if not it.get("hide")}
+    global _SCANNER_NOW
+    _SCANNER_NOW = _scanner_now()
     doc = lib.read_json(SCAN_ARCHIVE, None) if os.path.exists(SCAN_ARCHIVE) else None
     ent = (doc or {}).get("entries") or {}
 
-    never, stale, unverifiable = [], [], []
+    never, stale, unverifiable, old_scanner = [], [], [], []
     for sid in sorted(live):
         row = ent.get(sid)
         if not isinstance(row, dict):
@@ -1382,6 +1403,15 @@ def check_scan_archive(items: dict):
             unverifiable.append((sid, "扫描时无正文存档" if not archived else "正文存档已删除"))
         elif archived != now:
             stale.append((sid, row.get("scanned_at", "?")))
+        # 尺子换了也算欠账 —— 和「货的正文变了」是两件事，两件都要有指纹。
+        # 2026-08-21 补：那天加了「改你agent的规矩」和「悄悄收钱」两张表，
+        # 全店 277 件立刻都成了「用旧扫描器扫的」，而守卫一声不响。
+        # **隐形的欠账比红的守卫危险。** 这里只 WARN 不 ERROR：
+        # 旧尺子扫过 ≠ 有问题，但也 ≠ 按现在的判据扫过。
+        if isinstance(row, dict):
+            sc = (row.get("scanner_sha256") or "").strip()
+            if sc != _SCANNER_NOW:
+                old_scanner.append((sid, sc or "无记录"))
 
     print("\n【16】扫描存档（没扫过的东西上不了架）")
     print(f"  在架 {len(live)} 件 · 有扫描存档 {len(live) - len(never)} · "
@@ -1398,10 +1428,14 @@ def check_scan_archive(items: dict):
         print(f"      …另外 {len(stale) - 12} 件")
     for sid, why in unverifiable[:8]:
         print(f"  [无法核验] {sid} — {why}")
-    if never or stale:
+    for sid, sc in old_scanner[:6]:
+        print(f"  [旧尺子扫的] {sid} — 存档记的判据版本 {sc}，当前 {_SCANNER_NOW}")
+    if len(old_scanner) > 6:
+        print(f"      …另外 {len(old_scanner) - 6} 件")
+    if never or stale or old_scanner:
         print("  补法：python3 scouts/scan_refs.py <owner/repo>[:path]  —— 扫完自动落盘")
         print("  批量：把 [{repo, path}] 写成 JSON，python3 scouts/scan_refs.py --file picks.json")
-    return never, stale, unverifiable
+    return never, stale, unverifiable, old_scanner
 
 
 # ---------------------------------------------------------------------------
