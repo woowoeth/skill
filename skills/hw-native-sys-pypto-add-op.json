@@ -1,0 +1,32 @@
+{
+ "id": "hw-native-sys-pypto-add-op",
+ "kind": "skill",
+ "name": "add-op",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：add-op。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Add new operator definitions to PyPTO across all layers (C++, Python IR, Python DSL, tests, codegen, docs). Covers tile ops, tensor ops, tensor-to-tile conversion, and codegen registration. Use when the user asks to add a new op, define a new operator, implement a new tile/tensor operation, or extend the operator system.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "hw-native-sys/pypto",
+ "owner": "hw-native-sys",
+ "path": ".claude/skills/add-op",
+ "url": "https://github.com/hw-native-sys/pypto/tree/HEAD/.claude/skills/add-op",
+ "homepage": "",
+ "stars": 106,
+ "pushed_at": "2026-08-21T02:57:30Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.32,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-21",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/hw-native-sys/pypto.git",
+  "copy": "cp -r pypto/.claude/skills/add-op ~/.claude/skills/add-op",
+  "dir": "~/.claude/skills/add-op"
+ }
+}

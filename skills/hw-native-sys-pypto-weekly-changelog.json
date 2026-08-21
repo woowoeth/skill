@@ -1,0 +1,32 @@
+{
+ "id": "hw-native-sys-pypto-weekly-changelog",
+ "kind": "skill",
+ "name": "weekly-changelog",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：weekly-changelog。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Generate a weekly changelog markdown file summarizing external API and feature changes from git commits in a date range. Extracts before/after Python examples per commit, groups by theme (DSL / distributed / runtime / IR deprecations), and attributes each change to its author. Use when the user asks for a weekly report, changelog, commit summary, or interface-change digest.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "hw-native-sys/pypto",
+ "owner": "hw-native-sys",
+ "path": ".claude/skills/weekly-changelog",
+ "url": "https://github.com/hw-native-sys/pypto/tree/HEAD/.claude/skills/weekly-changelog",
+ "homepage": "",
+ "stars": 106,
+ "pushed_at": "2026-08-21T02:57:30Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 4.32,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-21",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/hw-native-sys/pypto.git",
+  "copy": "cp -r pypto/.claude/skills/weekly-changelog ~/.claude/skills/weekly-changelog",
+  "dir": "~/.claude/skills/weekly-changelog"
+ }
+}
