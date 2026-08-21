@@ -2426,6 +2426,15 @@
    "reject_rule": "问三",
    "stars": 1091,
    "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "borski/travel-hacking-toolkit",
+   "skill": "travel-hacking-toolkit",
+   "desc": "\"\"\"Search Southwest for flight fares using Patchright (undetected Playwright). / # Start a virtual display so Patchright can run headed (Akamai detects headless).",
+   "reject_reason_zh": "满仓 Patchright（反检测 Playwright），还开虚拟显示器专门躲 Akamai 的无头检测。",
+   "reject_rule": "红线",
+   "stars": 631,
+   "rejected_at": "2026-08-21"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"

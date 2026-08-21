@@ -176,3 +176,32 @@ fork、命名黑名单（awesome/dotfiles/template/guide/tutorial…）始终拒
 
 所有下架都是 `hide: true`，记录保留、随时可翻回；所有文案在 editorial 层，可改可撤。
 机器只负责「抓来、够格、不霸架」；**"有没有品"这关永远是人在把。**
+
+## 红线补：拆了还工作吗（机制 / 选项）
+
+2026-08-21，合集全扫上线后第一批命中里出了两件在架货，逼出这条。
+
+`borski/travel-hacking-toolkit`（48 件，已下架）：满仓 Patchright，作者自己在 docstring 里写
+「undetected Playwright」，`vrbo/scripts/entrypoint.sh` 开 Xvfb 虚拟显示器，注释写明
+「Akamai detects headless」。**把 Patchright 拆掉，这一包一件都不工作。**
+
+`artokun/comfyui-mcp`（店主 ❤️ 过，留架 + 披露）：模型表里一行 `Qwen/abliterated/…`
+标「Abliterated (uncensored)」，同表另有两个普通写实模型；`ltxv2-video` 的 abliterated
+LoRA 带 ⭐，但作者写的功能是「prompt-accuracy / correct-eyes fix」。
+**把那行拆掉，这一包照样工作。**
+
+所以红线问一句：**拆了它，这件货还工作吗？**
+- 不工作 → 它是**机制**，红线，下架。
+- 照样工作 → 它是**选项**，留架，但在 `limit_zh` 里说清楚，让人装之前知道。
+
+配套两条，缺一条这判据就会变成想判谁判谁的借口：
+
+1. **「作者自己写下的功能描述优先于我们的推测」必须双向生效。** 它把 borski 判死
+   （作者写了 undetected），就必须同样接受 comfyui 的作者写了 correct-eyes。
+   只在一个方向上用，它就不是判据。
+2. **判据判掉了 `editorial/hearts.json` 里的货，先怀疑判据。** 这次「破限」按字面会把
+   菜单上的一行判成零件——是判据分不清机制和选项，不是那件货错。
+   （hearts.json 第三条本来就写了这件事会发生。）
+
+追加披露时**追加，不要覆盖**——我第一次改 comfyui 就把原来那句
+「没有 ComfyUI，这一整包一件都用不上」冲掉了，而那句比新加的重要。

@@ -2409,7 +2409,7 @@
    "cover": "https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png",
    "cover_kind": "artwork",
    "cover_real": true,
-   "limit_zh": "本体是 npm 上的 MCP server（node ≥22），39 件 skill 挂在 plugin/skills 底下给它当外围。前提是有一台跑着 ComfyUI 的机器，本地、局域网、VPS 都行——没有 ComfyUI，这一整包一件都用不上。",
+   "limit_zh": "本体是 npm 上的 MCP server，39 件 skill 给它当外围。前提是有一台跑着 ComfyUI 的机器——没有 ComfyUI，这一整包一件都用不上。另外推荐管线里含一个 abliterated（去掉了拒答方向）的文本编码器 LoRA，作者标它是修脸用的；模型表另有一行 abliterated 出图模型标着 uncensored，可换成同表的普通写实模型。",
    "limit_en": "The product is an npm MCP server (node ≥22); the 39 skills under plugin/skills are its periphery. You need a running ComfyUI — local, LAN, VPS or Comfy Cloud. Without one, none of it does anything.",
    "title_en": "Rewires your ComfyUI graph by talking to it",
    "cover_w": 1920,
@@ -3701,7 +3701,8 @@
    "cover_real": false,
    "limit_zh": "48 件几乎全是欧美体系——美航、西南、Chase、Amex、Bilt、德铁、北欧铁路，一件亚洲航司或国内银行积分都没有。装法是 /plugin marketplace add；六个 MCP server 里 LiteAPI 那个要自己申请 key。",
    "limit_en": "All 48 skills sit in the US/EU ecosystem — American, Southwest, Chase, Amex, Bilt, Deutsche Bahn — with no Asian carrier or Chinese bank program. Installs via /plugin marketplace add; of six MCP servers, LiteAPI needs your own key.",
-   "title_en": "The same seat, thousands apart in price"
+   "title_en": "The same seat, thousands apart in price",
+   "hide": true
   },
   "mvanhorn-last30days-skill-last30days": {
    "title_zh": "查最近30天网上真实在聊什么",
