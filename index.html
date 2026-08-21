@@ -316,8 +316,8 @@ header.top{padding:var(--s5) 0 var(--s4)}
 .ho-btns button{font:inherit;font-size:var(--t-meta);padding:.5em 1.1em;cursor:pointer;
   border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink-1)}
 .ho-btns button[data-ho="issue"]{background:var(--ink-1);color:var(--card);border-color:var(--ink-1)}
-.shot.tallcap{max-height:min(64vh,420px)}
-.shot.tallcap-art{max-height:min(78vh,620px)}
+/* 竖幅限高只剩一条：宽度那道闸在 JS 里（H_MAX_K），这里是视口那道。 */
+.shot.tallcap{max-height:min(78vh,620px)}
 
 /* ---- 无图卡：一道短墨杠起头 ------------------------------------
    不补占位符、不放 OG 卡。56 件没有真产出物图，无图必须是一等公民。
@@ -577,6 +577,15 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
 .shotcap.real{color:var(--ink-3)}
 /* `ours` 是唯一一句我们自己背书的话，墨色重一级 —— 它不是免责声明，是证据。 */
 .shotcap.ours{color:var(--ink-2);font-weight:600}
+/* 复现凭据：比图注小一档、不加重 —— 它是给要核的人看的脚注，不是卖点。 */
+.covernote{
+  margin:6px 0 0;font:var(--t-micro)/1.75 var(--sans);color:var(--ink-3);
+  padding-left:10px;border-left:1px solid var(--line-2);
+}
+.covernote code{
+  font:11px/1.6 var(--mono);background:var(--soft);border:1px solid var(--line);
+  border-radius:4px;padding:1px 4px;color:var(--ink-2);overflow-wrap:anywhere;
+}
 .prepwhy{margin:var(--s4) 0 0;font:var(--t-cap)/2 var(--sans);color:var(--ink-3)}
 .prepwhy span{
   display:inline-block;margin:0 4px 0 6px;padding:2px 6px;
@@ -1046,75 +1055,62 @@ function renderChips(all){
    瀑布流里高卡就是注意力。注意力给证据，不给宣传图。
    不额外印「作者头图」这种标签 —— 31 张卡上加一行小字是噪音，
    画幅本身已经把话说清了。 */
-/* 两档的**下限**不一样，上限一样。都是按实测的裁剪代价定的：
-     artwork      [0.45, 2.00]
-     hero/diagram [1.00, 2.00]
-
-   横向为什么两档都停在 2.0（不给 artwork 放宽）：
-   `docs/PROTOCOL.md` 那条「流里可以裁，完整那份在一次点击之外且一刀不动」成立之后，
-   卡上的图就该为**好看**优化，不是为**完整**优化 —— 完整版点一下就有。
-   而这两件是反向的：4.0 那张限到 2.0 是 130px 高的图框、露出 50%；
-   限到 3.2 是 82px 高、露出 80%。**在瀑布流里 130px 的框比 82px 的条有用得多**，
-   所以宁可少露一点。3 张横向超限的 artwork 都按这个处理。
-
-   竖向为什么只给 artwork 放到 0.45：竖裁掉的是海报的**头和脚**（标题在上、内容在下），
-   而不是横幅两侧的空白 —— 代价完全不同。放宽之后那两张
-   （1194×2608 比 0.46、1199×2268 比 0.53）从裁 24% / 12% 变成**零裁**，
-   还顺带拿到 570px / 494px 的高卡 —— 高卡正是小红书那个手感的来源。零代价。
-   实测：artwork 需裁 5 张 → 3 张，**竖裁 0 张**。 */
-var AR_ART = [0.45, 2.00], AR_HERO = [1.00, 2.00];
 function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec) return "";
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
-  /* **宽高比 ≥ 2.5 的图不进卡片，整张交给详情页。**
-     这条规则替掉了上一版的 `.letterbox`（超宽 artwork 在卡上留白不裁）。
-     撤掉它的理由是 UX 量出来的两个数：
 
-       卡上（.letterbox，171px 宽）    每格 42.6 × 56.8px
-       详情页（339px 宽，比 3.00 一刀不裁） 每格 84.8 × 113px
+  /* ================================================================
+     卡上画幅：一条规则，两个常量，零 `cover_kind` 分叉。
 
-     **详情页给每格的面积是卡上的 4 倍。** 留白保住了「不裁」、没保住「看得见」——
-     那张四格叙事的落点确实还在，但读不出来；源图每格上方还有小字说明，
-     42.6px 下完全不可读。代价那边也实：`.shot` 框有 33%（28.4/85.3px）是空的 `--soft`，
-     在一个靠不等高图撑节奏的瀑布流里，三分之一空的框既不是图也不是文字。
+     ---- 为什么要换掉上一版 ----
+     上一版是四个旋钮、其中三个按 kind 分叉：
+       AR_ART=[0.45,2.00] · AR_HERO=[1.00,2.00] · NO_CARD_AR=2.5 · tallcap / tallcap-art
+     它读起来像「一张一张特批」，因为它本来就是查找表不是原则 ——
+     而分叉全都挂在 `cover_kind` 上，也就是把画幅决定挂在了**选品判断**上。
 
-     而且留白是**按图特批**：现在 ≥2.5 的有 6 张，下一张 2.86、2.56 怎么办 ——
-     等于把画幅规则搬进选品流程。
+     ---- 一条规则 ----
+     卡上的图只需要回答两个问题，两个都只跟**渲染出来多大**有关，跟它是谁画的无关：
 
-     这条规则和原来那条同构：「流里可以短、可以裁；全的那份必须真的在一次点击之外、
-     一刀不动」——**流里可以「没有」，也是「可以短」的一种。**
+       甲 上不上卡？   图太扁 → 卡上是一条缝，什么都读不出来 → 不上，交给详情页
+       乙 多高？       图太竖 → 一张图吃掉一整列 → 限高
 
-     顺带记下 AR_ART 上限 2.00 那条规则自己的漏洞（UX 自陈）：当初理由是
-     「130px 的框比 82px 的条有用」，那**只对单幅图成立**（信息在中心，裁边缘代价小）。
-     四格叙事是信息沿横轴分布的图，裁任何一格都改变含义 —— 当时没区分这两类。
-     `≥2.5 不进卡` 不需要判「是不是叙事」（数据里没这个字段），只用宽高比一个已知量。 */
-  var NO_CARD_AR = 2.5;
-  if(ar >= NO_CARD_AR && !forSheet) return "";
-  var shown = ar;
-  if(ar && !forSheet){
-    var band = rec.real ? AR_ART : AR_HERO;
-    if(ar > band[1]){
-      shown = band[1];
-      // **超出上限的产出物图改留白，不裁。**
-      //
-      // 卡片画幅上限 2.00，配 object-fit:cover，一张比 3.00 的图横向被裁掉 33%。
-      // 对一张 banner 无所谓，对一张**四格叙事**是毁掉它：
-      // `xiejunjie524` 那张 960×320 是「凌晨四点经过早餐店 → 老板不多问只多放一杯豆浆 →
-      // 从那以后每个清晨多一份温暖 → 第二天开门时门前的雪已经被扫干净」，
-      // 裁掉右边 33% 正好裁掉第四格 —— **落点。** 卡片上剩下一个断在第三格的故事，
-      // 而卡片的职责是让人想点进去，一个断掉的故事起的是反作用。
-      //
-      // 这不是诚实问题（详情页一直给原比例、一刀不裁），是**读得懂读不懂**的问题。
-      // 所以只对 artwork/ours 这一档留白 —— hero 和 diagram 本来就是横幅，裁无妨。
-    }
-    else if(ar < band[0]) shown = band[0];
+     所以：**卡上永不裁，只决定「上不上」和「多高」。**
+
+     不裁这一条是关键。裁需要知道「信息是不是沿某一轴分布」（横幅裁两侧无妨，
+     四格叙事裁掉一格就毁了落点）—— 而数据里**没有这个字段**，永远也不会有。
+     上一版靠 `cover_kind` 当代理，那是拿「谁画的」猜「信息怎么分布」，两件事不相干：
+     `deusyu-translate-book` 是 diagram、比 0.75，上一版按 AR_HERO 下限 1.00 **裁掉 25%** ——
+     裁掉的是示意图的四分之一，比裁一张横幅的两侧严重得多。
+
+     ---- 两个常量怎么来的 ----
+     AR_FLAT = 2.45：卡上的图高不得低于宽的 1/2.45（手机 171px 宽 → 70px 高）。
+       低于这个就是一条缝：那张四格叙事比 3.00，每格只有 42.6×56.8px，
+       而详情页给它 84.8×113px —— **4 倍面积**，所以交给详情页是净赚。
+     H_MAX_K = 2.25：高不得超过宽的 2.25 倍。
+       现存最竖的是比 0.45（1264×2780），高 = 2.22 倍宽 —— **刚好在下面，所以这条今天不触发**，
+       它是给将来更极端的图留的闸。另加一道 78vh，防的是窄短视口下一张图占满屏，
+       跟宽度那道闸管的不是同一件事。
+
+     ---- 实测：换规则的代价 ----
+     56 张封面逐张跑过两套规则，手机 171px 和桌面 261px 都跑了：
+       **上卡张数 50 → 50（同一批图）· 被裁张数 4 → 0**
+     只有 4 张结论不同，全是「原来裁、现在不裁」：
+       othmanadi-planning-with-files  比2.33 hero     裁14% → 0%，框 86→73px
+       virgiliojr94-book-to-skill     比2.33 hero     裁14% → 0%，框 86→73px
+       312362115-claude-diagram       比2.24 diagram  裁11% → 0%，框 76px
+       deusyu-translate-book          比0.75 diagram  裁25% → 0%，框 171→228px
+     代价是前三张的框矮了 10–13px，换来零裁切和零分叉。
+     ================================================================ */
+  var AR_FLAT = 2.45, H_MAX_K = 2.25;
+  if(!forSheet){
+    if(ar >= AR_FLAT) return "";                    // 甲 · 太扁 → 不上卡
+    if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太竖 → 限高（等比，不裁）
   }
   // 宽高比已知就写死 —— 图片加载前空间就占好了，瀑布流不跳版
-  var sty = shown ? ' style="aspect-ratio:'+(Math.round(shown*1000)/1000)+'"' : '';
-  // 竖幅限高分两档。artwork 若还按 420px 截，等于刚放宽的下限又被 max-height 裁回去 ——
-  // 桌面五列 261px 宽、比 0.46 的那张自然高 570px，所以 artwork 这一档给到 620px。
-  var tall = shown && shown < 0.78 ? (rec.real ? " tallcap-art" : " tallcap") : "";
+  var sty = ar ? ' style="aspect-ratio:'+(Math.round(ar*1000)/1000)+'"' : '';
+  // 78vh 那道闸和上面的宽度闸管的不是一件事：它防的是窄短视口下一张图占满屏
+  var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
   return '<span class="shot'+tall+'"'+sty+'>'
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
@@ -1288,6 +1284,7 @@ function sheetHTML(it){
     + '</div>'
     + shotHTML(it, true)
     + shotCapHTML(it)
+    + coverNoteHTML(it)
     + (tg ? '<p class="lead">'+mix(tg)+'</p>' : '');
 
   /* 「备料齐」凭什么 —— 徽章只说结论，详情页把证据摊开。
@@ -1348,6 +1345,23 @@ function shotCapHTML(it){
   var k = CAP_KEY[rec.kind] || (rec.real ? "capArtwork" : "capOther");
   var cls = "shotcap" + (rec.real ? " real" : "") + (rec.kind==="ours" ? " ours" : "");
   return '<p class="'+cls+'">'+t(k)+'</p>';
+}
+/* `ours` 那一档的复现凭据。**这是补一个洞，不是加装饰。**
+   `cover_note` 里记着我们跑的命令（任务书原话：「没有命令的 ours 是不可复现的
+   证据声明」），但它原来只活在数据里 —— 于是 `ours` 成了全站**最强的声明**
+   配**最弱的可核性**：`artwork` 至少图在作者仓库里，读者点进去能自己看；
+   `ours` 说「我们跑的」，读者却没有任何东西可查。
+   一个查不了的证据声明，就是这个项目一直在防的那种「诚实变成营销」。
+
+   只给 `ours` 渲染。`cover_note` 里的反引号转成 <code>，其余按纯文本转义 ——
+   这段文字是人写的，不能当 HTML 灌。 */
+function coverNoteHTML(it){
+  var rec = coverRec(it);
+  if(!rec || rec.kind !== "ours") return "";
+  var note = (it.cover_note || "").trim();
+  if(!note) return "";
+  var html = esc(note).replace(/`([^`]+)`/g, '<code>$1</code>');
+  return '<p class="covernote">'+html+'</p>';
 }
 function cmdHTML(c){
   return '<div class="cmd">'+esc(c)+'<button type="button" data-c="'+esc(c)+'">'+esc(t("copy"))+'</button></div>';
