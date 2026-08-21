@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-21T15:25:11Z",
+ "generated_at": "2026-08-21T16:13:28Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 277,
-  "unshelved": 646,
+  "shelved": 276,
+  "unshelved": 647,
   "known_items": 923,
   "known_repos": 587,
-  "rejected_documented": 830,
+  "rejected_documented": 831,
   "rejected_machine_logged": 0,
   "rounds_logged": 4,
   "latest_round": {
@@ -60,7 +60,7 @@
    "zh": "无条件拒",
    "en": "Hard red line",
    "detail": "攻击赋能安全工具、灰产、荐股/交易信号、价值观有害",
-   "count": 115
+   "count": 116
   },
   {
    "rule": "门槛",
@@ -71,6 +71,19 @@
   }
  ],
  "rejected": [
+  {
+   "repo": "alchaincyf/nuwa-skill",
+   "name": "huashu-nuwa",
+   "desc": "SKILL.md:265  #### 工具辅助（如可用）  - 书籍：Z-Library/LibGen搜索下载 → 存入 `sources/books/`",
+   "reject_reason_zh": "SKILL.md 里直接叫你的 agent 去 Z-Library/LibGen 下书当取材",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "",
+   "stars": 31047,
+   "url": "https://github.com/alchaincyf/nuwa-skill",
+   "rejected_at": "2026-08-22",
+   "by": "店长"
+  },
   {
    "repo": "xbuilderlab/cheat-on-content",
    "name": "cheat-on-content",
@@ -13096,6 +13109,13 @@
    "name": "chinese-commit-conventions",
    "added_at": "2026-08-11",
    "stars": 7755
+  },
+  {
+   "id": "alchaincyf-nuwa-skill",
+   "repo": "alchaincyf/nuwa-skill",
+   "name": "huashu-nuwa",
+   "added_at": "2026-08-11",
+   "stars": 31047
   },
   {
    "id": "thinkinaixyz-deepchat-algorithmic-art",

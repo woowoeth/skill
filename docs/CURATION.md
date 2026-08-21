@@ -264,3 +264,44 @@ LoRA 带 ⭐，但作者写的功能是「prompt-accuracy / correct-eyes fix」�
 补了 `scanner_sha256`（只算判据段的 sha —— 改注释、改输出格式不该让全店作废，
 **改判据才该**）和【16】里的 WARN。只 WARN 不 ERROR：旧尺子扫过 ≠ 有问题，
 但也 ≠ 按现在的判据扫过。**隐形的欠账比红着的守卫危险。**
+
+## 「取盗版」的判例：指令比零件更难处置
+
+`alchaincyf/nuwa-skill`（已下架）。它的 `SKILL.md` 第 265 行，在
+`#### 工具辅助（如可用）` 底下：
+
+> - 书籍：Z-Library/LibGen搜索下载 → 存入 `sources/books/`
+
+值得记的是它上面十行还写着**信息源黑名单**（「不使用知乎、微信公众号、百度百科」）——
+**对源的质量想得很细，然后把 LibGen 放进了取材步骤。**
+
+按「拆了还工作吗」：拆掉这一行，它照样能用演讲、文章、访谈建人物视角 → 选项 → 留架加披露。
+**又是错的，又是同一个原因** —— 这不是零件，是**指令**：它叫你的 agent 去盗版站下载。
+披露对指令无效（等买家读到 `limit_zh`，那段已经载进上下文了），而这一条比
+FP-DCF 更重：FP-DCF 顶多把你的仓弄乱，这一条是**让买家自己的机器去做一件有法律风险的事**。
+
+一天之内「零件 / 指令」这条区分用了两次，两次都是「拆了还工作吗」给出错答案而它救回来。
+**先问是零件还是指令，再问拆了还工作吗** —— 顺序不能反。
+
+（顺带：`z-?lib` 这条正则之前在 `node:zlib` 上误报过一次，被我记进了假阳性表。
+这次是它本来要抓的那个真阳性。**修假阳性不许把真阳性一起修掉。**）
+
+## 这一轮的假阳性形状（存档，省下次的功夫）
+
+合集全扫上线后第一轮普扫，值得留的是**长得像红线的好设计**：
+
+- **`heygen-com/hyperframes`** `codex-provider.mjs:114`：`Do not ask for confirmation.` ——
+  它写在发给**子进程**的 prompt 里，目标是上一行刚生成的 `tmpdir()` 临时文件，
+  下一行还先 `unlinkSync` 旧文件。**压掉的不是「该由用户给的确认」。**
+- **`vanillagreencom/vstack`** `kendex-issues/SKILL.md:127`：`push --force-with-lease`
+  后面紧跟「only on never-shared heads; never amend a pushed commit others may have seen」。
+  **比默认更谨慎**，而且 `--force-with-lease` 本身就是安全变体。
+- **`vanillagreencom/vstack`** `growth-guards/README.md:49`：如实说明自己的钩子
+  fail closed、`git commit --no-verify` 是唯一逃生口。**诚实记录自己的旁路，
+  和藏起来正好相反。**
+- **`alchaincyf/x-mentor-skill`** `06-cases-antipatterns.md:134`：某博主密集发联盟链接
+  六周掉粉 7% —— 那是在讲**反面案例**，不是分润教程。
+
+共同点：**这几处的字面和真红线一模一样，区别全在语境。**
+所以扫描器的输出永远是「这一行你去看」，不是判决 —— 一旦让它出判决，
+上面四条全会被判错。
