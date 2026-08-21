@@ -175,6 +175,10 @@ TABLES = {
         r"禁止.{0,6}拒绝|不得拒绝|不许拒绝|绕过.{0,6}(?:安全|审查|护栏|content\s*polic)|"
         # `no\s*filter` 命中了一句 CSS 说明「Just `background: var(--background);`.
         # **No filter**, no gradient.」—— 要求近处有 AI 安全语境。
+        # `no restrictions` 撞上了素材**许可分级**：原文是
+        #   「permissive: CC0 / CC BY / Public domain / **No restrictions** → download」
+        #   「restrictive: CC BY-NC / © / copyrighted → refuse unless --force-license」
+        # —— 命中处恰恰是那一件的优点。要求近处不是在讲许可。
         r"uncensored|no\s*(?:refusals?|restrictions?)\b"
         r"|no\s*filter(?=[^。；\n]{0,40}(?:content|safety|moral|nsfw|censor|审查|道德|限制))"
         r"|bypass.{0,10}safety|"
@@ -190,6 +194,32 @@ TABLES = {
         r"fitbit|garmin|whoop|oura)[^。；\n]{0,40}"
         r"(?:heart\s*failure|心衰|心力衰竭|糖尿病|房颤|猝死风险|疾病区间|临床.{0,4}(?:区间|标准|诊断)|"
         r"确诊|病理|risk\s*of\s*death))", re.I),
+    # 改动别人的程序，把厂商刻意关掉的能力打开。
+    #
+    # **这一档是同事驳我驳出来的，不在我原来的表上。** 它照的是另一条我已经认可的推理：
+    # `renezander030/capcut-cli` 拒绝解剪映 6.0+ 的 draft 加密，理由写成
+    # 「**撤销厂商加密和读明文格式不是一个风险等级**」—— 我认了那条，
+    # 那 `dannote/figma-use`（591★）就不能收：`SKILL.md:41` 写着
+    #   「Figma 126+ blocks remote debugging. Run `figma-use patch` once to fix,
+    #    then restart Figma. Click **Always Allow** on the keychain prompt.
+    #    **Re-run after Figma updates.**」
+    # CHANGELOG 0.11.4 说得更直白：「patches Figma 126+ to re-enable
+    # `--remote-debugging-port` (**stripped by Figma's app code**)」。
+    # keychain 弹窗 + 升级要重打 = **它改了签过名的应用、破了代码签名**。
+    #
+    # 这不是绕反爬（没有 anti-bot），不是破限（不是模型护栏）——
+    # 是**动别人的软件**。「装了它你会失望」和「装了它你在改厂商的程序」不是一件事。
+    #
+    # 我第一遍只读 README 差点判它误报（顶部横幅现在主推不用 patch 的 `--pipe`），
+    # 而 SKILL.md 才是给 agent 读的那一份，它仍然主推 patch。
+    # **门面换了、给 agent 的那份没换 —— 这是「门面干净、问题在随件里」的又一种形状。**
+    "改厂商程序": re.compile(
+        r"(patch(?:es|ed|ing)?\s+\w+\s+to\s+(?:re-?)?enable"
+        r"|重新?(?:打|上)补丁|打补丁.{0,10}(?:重新|再来|升级后)|Re-?run after .{0,12} updates"
+        r"|绕过.{0,8}(?:签名|代码签名|完整性校验)|(?:破|去)除.{0,6}(?:签名|校验|保护)"
+        r"|codesign\s+(?:--force|-f)|重签名|resign\s+the\s+app"
+        r"|(?:stripped|disabled|blocked)\s+by\s+\w+'?s?\s+app\s+code"
+        r"|patch[-_ ]?(?:figma|electron|app|binary)|binary\s+patch(?:ing)?)", re.I),
     # AIGC 检测规避
     "检测规避": re.compile(
         # 「降重」原来是裸词，实测 7 次假阳性：健身件的「合理降重」（减体重）
@@ -206,6 +236,16 @@ TABLES["绕反爬"] = RED_SCRAPE_HARD
 # 「这一行说的是毒性/致死阈值」，不是用药剂量。
 TOX_CONTEXT = re.compile(
     r"(中毒|致死|毒性|半数致死|LD\s*50|lethal|toxic|中毒量|超过.{0,6}会中毒|危险剂量)", re.I)
+
+# 「这一行在讲素材许可，不是在讲模型护栏」。
+# 实测：`no restrictions` 撞上了素材许可分级 ——
+#   「permissive: CC0 / CC BY / Public domain / PD / **No restrictions** → download」
+#   「restrictive: CC BY-NC / © / copyrighted → refuse unless --force-license」
+# 命中处恰恰是那一件的优点。许可标记常在命中词**前面**，而 Python 的变长后顾不支持，
+# 所以按行级语境过滤，跟 NUTRITION_CTX / TOX_CONTEXT 一个做法。
+LICENCE_CTX = re.compile(
+    r"(CC0|CC[- ]BY|CC[- ]BY[- ]SA|CC[- ]BY[- ]NC|public\s*domain|\bPD\b|licen[cs]e|licensing|"
+    r"copyright(?:ed)?|©|版权|许可|授权协议|署名)", re.I)
 
 REFUSAL = re.compile(
     # `不得` 要排掉「万不得已」—— 实测它把全店最危险的一行打成了「声明不做」：
@@ -580,6 +620,9 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
         # 而「剧毒药名 + 数量」这个组合本身就是「照着能给人用药」，不存在同形的无害用法。
         file_is_tox = len(TOX_CONTEXT.findall(txt)) >= 3
         def _drop(f):
+            # 「破限」命中在讲素材许可的行上 → 丢。见 LICENCE_CTX。
+            if f[0].startswith("破限") and LICENCE_CTX.search(f[3] or ""):
+                return True
             if f[0] != "剂量":
                 return False
             if file_is_tox or TOX_CONTEXT.search(f[3]):
