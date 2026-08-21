@@ -588,7 +588,14 @@ RED_SCRAPE_HARD = re.compile(
     # 2026-08-20 第三次补。全架复查抓到的那件（300+ 站付费墙）**是靠「绕过反爬」
     # 四个字被命中的** —— 如果它只写「付费墙绕过 + UA 伪装（Googlebot）」就会全身而过。
     # 冒充搜索引擎爬虫是把「这是自动化」藏起来的一种，且顺带取走付费正文。
-    r"付费墙|paywall|UA\s*伪装|Referer\s*伪装|冒充\s*(?:Googlebot|Bingbot|搜索引擎)"
+    # `paywall` 不许匹到 `unpaywall` —— 2026-08-22，K-Dense-AI 那件报 70 处，
+    # **真的 0 处**：绝大多数是同一个 `skills/paper-lookup/references/unpaywall.md`，
+    # 而那文件第一行写的是「Unpaywall tells you whether a **legal, free** copy of a
+    # scholarly article exists」—— 一个合法开放获取查询服务。
+    # 这是子串假阳性第六次（前五次：Tsukinomori 里的 kino、幼儿叠积木的「推倒」、
+    # aspirated 里的 pirat、node:zlib 里的 z-lib、还有这次）。
+    # **每一次都是我先怀疑那件货，后来才发现是我的正则。**
+    r"付费墙|(?<!un)paywall|UA\s*伪装|Referer\s*伪装|冒充\s*(?:Googlebot|Bingbot|搜索引擎)"
     r"|archive\.today|12ft\.io|绕.{0,4}登录墙)", re.I)
 RED_SCRAPE_SOFT = re.compile(
     r"(逆向|爬虫|抓取|采集|scraper|scraping|crawler|headless\s*browser|"

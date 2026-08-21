@@ -157,7 +157,13 @@ TABLES = {
         # **子串误命中第四次**（前三次：`kino` 藏在 Tsukinomori、`推倒` 命中幼儿搭积木、
         # `pirat` 命中 Pirates of the Caribbean 和 as**pirat**ed）。
         # 改成必须带连字符或写全 library，裸 `zlib` 不算。
-        r"(\bz-lib\b|\bz-?library\b|annas?[-_ ]?archive|安娜的档案|libgen|sci-?hub|"
+                # `sci-?hub` 命中了 `https://**scihub**.copernicus.eu/` ——
+        # **子串误命中第七次**，而这次特别坏：那是**欧空局 Sentinel 卫星数据的
+        # 官方门户**，出现在 K-Dense-AI 的遥感件里，和盗版一点关系没有。
+        # 第六次是 `paywall` 命中 `unpaywall`（合法开放获取查询服务，已修在
+        # wide_funnel.py）。**七次里每一次我都是先怀疑那件货。**
+        r"(\bz-lib\b|\bz-?library\b|annas?[-_ ]?archive|安娜的档案|libgen"
+        r"|sci-?hub(?!\.copernicus|\.esa|\.eu)|"
         r"pansou|盘搜|资源.{0,4}转存|网盘.{0,4}(?:转存|搜索|采集)|"
         # `pirat(?:e|ed|ing)` 是裸子串，实测三处命中全是假阳性：
         # 「**Pirates** of the Caribbean」「**Pirates** of Penzance」（配乐/音乐剧片名）、
@@ -278,6 +284,30 @@ TABLES = {
         r"|DEFAULT_PRICE_USD|PRICE_PER_(?:CALL|USE|REQUEST)|price_usd\s*[=:]"
         r"|CHARGE_(?:PER|AMOUNT)|per[-_ ]call\s+(?:price|charge|fee)\s*[=:]"
         r"|(?:按次|每次)(?:收费|计费|扣费)|计费(?:接口|端点|地址)\s*[=:]?)", re.I),
+    # 对话里开收银台 —— 2026-08-22，J-levee/smartlib-skills 逼出来的
+    #
+    # 那件是「悄悄收钱」那张表**抓住了诚实的部分、漏掉了危险的部分**的活标本，
+    # 而那比没有这张表更糟：命中的 4 行全是它正当披露的计费接口清单，
+    # 而真正该看的那段一行没命中 —— `skills/smartlib-citation-checker/SKILL.md`
+    # 第 200–265 行：`POST /api/pay/create` → 用 `qrcode.js` 把 `weixin://`
+    # **渲成二维码贴进对话** → 每 3 秒轮询 `/api/pay/status` → 到账后自动重试。
+    #
+    # 为什么单列一档而不是塞进「悄悄收钱」：**披露与否是一回事，
+    # 谁在收钱、在哪收是另一回事。** smartlib 全程明写价格（¥9.90/¥29/¥99/¥299），
+    # 按「散文里讨论价格不算悄悄收钱」它该豁免 —— 但它干的是
+    # 拒服务 → 贴二维码 → 轮询到账 → 自动续充。那不是讨论价格，
+    # 是**在你的 agent 会话里开了个收银台**。
+    #
+    # 而这个形状天生是钓鱼的形状：agent 递给你一个二维码，你用银行 App 去扫。
+    # 我们自己的封面规则早就写了「永不发布支付二维码」——
+    # **不许我们发布的东西，更不该由我们上架的货递到买家手机上。**
+    "对话里开收银台": re.compile(
+        r"(weixin://|alipay(?:s)?://|alipays?://platformapi"
+        r"|/api/pay/|pay/(?:create|status|notify|query)|payment[-_]?(?:qr|qrcode)"
+        r"|qrcode[^\n]{0,40}(?:pay|支付|收款|weixin|alipay)"
+        r"|(?:pay|支付|收款)[^\n]{0,40}qrcode"
+        r"|收款码|付款二维码|支付二维码|扫码支付|轮询.{0,6}(?:支付|到账|订单)状态"
+        r"|poll[^\n]{0,20}(?:payment|pay)\s+status)", re.I),
     # AIGC 检测规避
     "检测规避": re.compile(
         # 「降重」原来是裸词，实测 7 次假阳性：健身件的「合理降重」（减体重）
@@ -616,9 +646,18 @@ def scan_one(repo: str, path: str = "", show_all: bool = False, _depth: int = 0)
             merged = {"repo": repo, "path": base, "tree_sha": tree_sha,
                       "hits": [], "unreadable": [], "clean": [], "skipped": 0,
                       "sub_skills": len(found)}
+            # 同一个随件常被多个子 skill 引用（`references/unpaywall.md` 就被
+            # K-Dense-AI 的 163 个子 skill 里的好几个引到），逐个子 skill 扫就会
+            # **把同一份文件报好几遍**。那件报「70 处」，真的独立文件只有个位数 ——
+            # **一个虚的数字会让人以为问题很大，然后学会不看它。**
+            seen_files = set()
             for sub in found[:MAX_SUB]:
                 one = scan_one(repo, os.path.dirname(sub), show_all, _depth=1)
-                merged["hits"] += one.get("hits") or []
+                for h in (one.get("hits") or []):
+                    if h.get("file") in seen_files:
+                        continue
+                    seen_files.add(h.get("file"))
+                    merged["hits"].append(h)
                 merged["unreadable"] += one.get("unreadable") or []
                 merged["clean"] += one.get("clean") or []
                 merged["skipped"] += one.get("skipped") or 0
