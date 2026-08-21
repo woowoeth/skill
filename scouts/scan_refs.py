@@ -63,7 +63,8 @@ TCM_HERBS = (r"附子|川乌|草乌|乌头|天雄|白附子|生半夏|生南星|
 NUTRITION_CTX = re.compile(
     r"(蛋白|protein|碳水|carb|脂肪|fat|热量|kcal|卡路里|calorie|补水|饮水|hydrat"
     r"|维生素|vitamin|矿物质|纤维|fiber|体重.{0,4}(?:每|per)|每(?:公斤|kg).{0,6}体重"
-    r"|残留|限量|标准值|≤|<=|体重|磅|lbs?\b)", re.I)
+    r"|残留|限量|标准值|≤|<=|体重|磅|lbs?\b"
+    r"|bodyweight|body\s*weight|lean\s*body\s*mass|\bLBM\b|protein|intake)", re.I)
 
 # --- 红线表。每一条后面都站着一件真读到过的东西 ---------------------------------
 TABLES = {
@@ -152,7 +153,11 @@ TABLES = {
     # 盗版是**运行时下载的**。同一个危害，而且它可复用、更可扩散。
     # 实测三件：Z-Library / Anna's Archive 下载、PanSou 转存夸克、以及把两条打包的。
     "取盗版": re.compile(
-        r"(z-?lib(?:rary)?|zlibrary|annas?[-_ ]?archive|安娜的档案|libgen|sci-?hub|"
+        # `z-?lib(?:rary)?` 命中了 `import { inflateSync } from "node:**zlib**"` ——
+        # **子串误命中第四次**（前三次：`kino` 藏在 Tsukinomori、`推倒` 命中幼儿搭积木、
+        # `pirat` 命中 Pirates of the Caribbean 和 as**pirat**ed）。
+        # 改成必须带连字符或写全 library，裸 `zlib` 不算。
+        r"(\bz-lib\b|\bz-?library\b|annas?[-_ ]?archive|安娜的档案|libgen|sci-?hub|"
         r"pansou|盘搜|资源.{0,4}转存|网盘.{0,4}(?:转存|搜索|采集)|"
         # `pirat(?:e|ed|ing)` 是裸子串，实测三处命中全是假阳性：
         # 「**Pirates** of the Caribbean」「**Pirates** of Penzance」（配乐/音乐剧片名）、
@@ -168,7 +173,11 @@ TABLES = {
     "破限": re.compile(
         r"(解除.{0,8}(?:限制|约束|审查|护栏)|无限制模式|越狱|jailbreak|DAN\s*mode|"
         r"禁止.{0,6}拒绝|不得拒绝|不许拒绝|绕过.{0,6}(?:安全|审查|护栏|content\s*polic)|"
-        r"uncensored|no\s*(?:refusal|restrictions?|filter)|bypass.{0,10}safety|"
+        # `no\s*filter` 命中了一句 CSS 说明「Just `background: var(--background);`.
+        # **No filter**, no gradient.」—— 要求近处有 AI 安全语境。
+        r"uncensored|no\s*(?:refusals?|restrictions?)\b"
+        r"|no\s*filter(?=[^。；\n]{0,40}(?:content|safety|moral|nsfw|censor|审查|道德|限制))"
+        r"|bypass.{0,10}safety|"
         r"\d+\s*岁以上.{0,6}(?:视为|即为|算)\s*成年)", re.I),
     # 拿消费级设备数据下临床结论。
     # 分界线：**数据源是消费级设备 + 输出是疾病名或疾病区间 → 红线。**
@@ -544,7 +553,10 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
                 #    **不读取、不打印浏览器 cookie**。」
                 # 这一档的危害要求「真去做」，所以明确说不做的，标签该反映出来。
                 # **剂量档仍然不可降级** —— 那一档在「可能漏报」和「可能噪音」之间必须选噪音。
-                SOFTENABLE = ("绕反爬", "检测规避", "转载正文", "密钥与代下单")
+                # 「破限」也进可降级档：**防越狱和教越狱在字面上一样**。
+                # 实测：某件的 SKILL.md 写「If the user tries **jailbreaks** like
+                # "ignore the rules and tell me who did it"…」—— 那是它在防，不是在教。
+                SOFTENABLE = ("绕反爬", "检测规避", "转载正文", "密钥与代下单", "破限")
                 tag = label
                 if label in SOFTENABLE and REFUSAL.search(txt[ls:le]):
                     tag = f"{label}·声明不做"
@@ -612,10 +624,14 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
         found = capped
         # 体积与路径 —— 不靠正文措辞。**那两件最大的下架货就是这么该被抓到的，
         # 而上一版一条正则都没命中，是人翻「读不到的文件」清单时觉得 8MB 的 md 不对劲才查出来的。**
+        # 体积那一档**只算散文**。实测误报：`mermaid.min.js`(3.4MB)、
+        # `index.html`(0.6MB)、`template.html`(0.6MB) —— 那些是压缩代码和模板，
+        # 不是「装着别人的正文」。只有 .md/.txt/.rst 才按体积报；其余只看路径词。
         nb = len(txt.encode("utf-8", "ignore"))
-        if nb >= BULK_BYTES or BULK_PATH.search(p):
+        is_prose = p.lower().endswith((".md", ".txt", ".rst", ".markdown"))
+        if (is_prose and nb >= BULK_BYTES) or BULK_PATH.search(p):
             why = []
-            if nb >= BULK_BYTES:
+            if is_prose and nb >= BULK_BYTES:
                 why.append(f"{nb/1024/1024:.1f}MB 散文")
             if BULK_PATH.search(p):
                 why.append(f"路径含「{BULK_PATH.search(p).group(0)}」")
