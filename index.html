@@ -186,11 +186,10 @@ header.top{padding:var(--s5) 0 var(--s4)}
   display:flex;flex-wrap:wrap;gap:2px 12px;
 }
 .tally .k{color:var(--ink-4)}
-.tally .sep{color:var(--line-2)}
+/* 分隔点挂在后一项上，不单独成节点 —— 否则换行时它会留在行尾。见 renderTally。 */
+.tally > span + span::before{content:"·";color:var(--line-2);margin:0 .45em}
 .tally b{font-weight:400;color:var(--ink)}
-.tally .bar{color:var(--line-2);margin:0 2px}
 /* slogan 用宋体，跟标识同一套笔法；它是数字的注脚，不抢分量 */
-.tally .slog{font-family:var(--serif);font-weight:600;color:var(--ink);letter-spacing:.02em}
 
 /* ============ 搜索条 + 横滑胶囊 ============
    两行都 sticky。手机上这是唯一的导航。 */
@@ -292,8 +291,15 @@ header.top{padding:var(--s5) 0 var(--s4)}
 /* 竖过头的限个高，别让一张海报把一列吃掉。
    artwork 那一档放宽到 620px：最竖那张（比 0.46）在桌面五列自然高 570px，
    卡在 420px 会把刚放宽的下限又用 max-height 裁回去。 */
-/* 超出画幅上限的产出物图：留白，不裁。见 shotHTML 里 letterbox 那段注释 ——
-   一张四格叙事被裁掉 33% 等于裁掉落点，卡片上剩个断掉的故事。 */
+/* 心标的**点击区**撑到 44×44，视觉尺寸一个像素不变。
+   实测 22×18px —— WCAG 下限 24×24、HIG 建议 44×44，两条都不满足。
+   真正贵的是失手代价：卡片本身是 role="button"，从心标中心下偏 16px 命中 `.cbody`、
+   左偏 16px 命中 `.foot` —— **失手不是「没点到」，是「打开了详情弹层」**，
+   得先关掉再重试。而心选是店里最高等级的信号（`.sendbar` 自己写着
+   「提交后我会据此改选品标准」），入口却是全站最小的可点目标。 */
+.card .heart{position:relative}
+.card .heart::after{content:"";position:absolute;inset:-13px -11px}
+
 /* 心选提交面板。**正文不走网址** —— 见 sendHearts 那段注释：
    原来把正文塞进 issue URL，店主标了几十件之后 GitHub 直接回
    「Your request URL is too long」，一件都交不出来。 */
@@ -310,8 +316,6 @@ header.top{padding:var(--s5) 0 var(--s4)}
 .ho-btns button{font:inherit;font-size:var(--t-meta);padding:.5em 1.1em;cursor:pointer;
   border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink-1)}
 .ho-btns button[data-ho="issue"]{background:var(--ink-1);color:var(--card);border-color:var(--ink-1)}
-.shot.letterbox{background:var(--soft)}
-.shot.letterbox img{object-fit:contain}
 .shot.tallcap{max-height:min(64vh,420px)}
 .shot.tallcap-art{max-height:min(78vh,620px)}
 
@@ -641,8 +645,6 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
   .say{display:none}
   header.top{padding:var(--s4) 0 var(--s2)}
   .tally{margin-top:var(--s3);font-size:var(--t-meta)}
-  .tally .bar{display:none}
-  .tally .slog{flex-basis:100%;margin-top:2px;font-size:var(--t-body)}
   .bar{padding-top:var(--s2)}
   .bar:after{margin-top:var(--s2)}
   .chips{margin-top:var(--s2)}
@@ -652,6 +654,10 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
   .empty{margin-top:var(--s3)}
   /* 手机两列的框最窄（375px 下只有 134.5px），英文标题再多一行 —— 见上面那节 */
   html[lang="en"] .card h3{-webkit-line-clamp:5}
+  /* 中文也放到 4 行。实测 3 行会切字：6 个 scrollHeight 超标里有 3 个真丢字，
+     最惨的是「从分镜到渲」把「染」切掉了 —— 一个字被切掉，那句话就不成句。
+     **不花钱**：line-clamp 只封顶、不预留高度，另外 223 张卡高度一个像素不变。 */
+  .card h3{-webkit-line-clamp:4}
   /* 手机是第一现场：详情从底部推上来，不是居中弹窗 */
   .veil{align-items:flex-end;padding:0}
   .sheet{
@@ -744,7 +750,6 @@ var I18N = {
   // 口径照 brand/BRAND.md：是「没让它进来」，不是「未上架」——
   // 把缺口翻成资历。slogan 是这三个数字的注脚，不单独当标语用。
   tSeen:"过手", tIn:"上架", tOut:"没让它进来", tWhy:"已写拒收理由",
-  slogan:"挑得少，是因为看得多",
   today:"今天上新 <b>%s</b> 件", todayNone:"今天还没上新。不硬凑数。",
   all:"全部", pick:"店长推荐",
   results:"搜到 %s 件", empty:"没有匹配的。换个词试试。",
@@ -786,7 +791,6 @@ var I18N = {
   say:'There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is.',
   search:"Search titles, verdicts, repos…",
   tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
-  slogan:"We pick few because we look at many",
   today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
   all:"All", pick:"Editor's picks",
   results:"%s found", empty:"Nothing matches. Try another word.",
@@ -990,10 +994,13 @@ function renderTally(){
   if(st.unshelved!=null) put("tOut", st.unshelved);
   // 拒收理由 0 条就整项不显示 —— 位置留着，不用 0 占位、不拿样张凑数
   if(st.rejected_documented) put("tWhy", st.rejected_documented);
-  // slogan 跟在三个数字后面，一道竖线隔开。它是注脚，所以只在数字出来了才出现。
-  var line = bits.join('<span class="sep">·</span>');
-  /* slogan 已移到品牌行「品味」之后，不再占数字行。 */
-  el("tally").innerHTML = line;
+  /* 分隔点**不再单独成节点**，改由 CSS 挂在后一项的 `::before` 上。
+     原来是 `bits.join('<span class="sep">·</span>')` —— 手机换行时那个「·」
+     会自己留在行尾：实测第 3 个 sep 在 `{left:270, top:0}`，而「已写拒收理由 174」
+     在 `top:20`，差一整行，第一行读作「…没让它进来 618 ·」。
+     挂到后一项上，它就跟着那一项一起换行，永远不会落单。
+     （slogan 已按店主要求搬到品牌行「品味」之后，不再占这一行 —— 见 brand/BRAND.md。） */
+  el("tally").innerHTML = bits.join("");
   el("colo2").textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
 }
 
@@ -1060,7 +1067,31 @@ function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec) return "";
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
-  var shown = ar, letterbox = false;
+  /* **宽高比 ≥ 2.5 的图不进卡片，整张交给详情页。**
+     这条规则替掉了上一版的 `.letterbox`（超宽 artwork 在卡上留白不裁）。
+     撤掉它的理由是 UX 量出来的两个数：
+
+       卡上（.letterbox，171px 宽）    每格 42.6 × 56.8px
+       详情页（339px 宽，比 3.00 一刀不裁） 每格 84.8 × 113px
+
+     **详情页给每格的面积是卡上的 4 倍。** 留白保住了「不裁」、没保住「看得见」——
+     那张四格叙事的落点确实还在，但读不出来；源图每格上方还有小字说明，
+     42.6px 下完全不可读。代价那边也实：`.shot` 框有 33%（28.4/85.3px）是空的 `--soft`，
+     在一个靠不等高图撑节奏的瀑布流里，三分之一空的框既不是图也不是文字。
+
+     而且留白是**按图特批**：现在 ≥2.5 的有 6 张，下一张 2.86、2.56 怎么办 ——
+     等于把画幅规则搬进选品流程。
+
+     这条规则和原来那条同构：「流里可以短、可以裁；全的那份必须真的在一次点击之外、
+     一刀不动」——**流里可以「没有」，也是「可以短」的一种。**
+
+     顺带记下 AR_ART 上限 2.00 那条规则自己的漏洞（UX 自陈）：当初理由是
+     「130px 的框比 82px 的条有用」，那**只对单幅图成立**（信息在中心，裁边缘代价小）。
+     四格叙事是信息沿横轴分布的图，裁任何一格都改变含义 —— 当时没区分这两类。
+     `≥2.5 不进卡` 不需要判「是不是叙事」（数据里没这个字段），只用宽高比一个已知量。 */
+  var NO_CARD_AR = 2.5;
+  if(ar >= NO_CARD_AR && !forSheet) return "";
+  var shown = ar;
   if(ar && !forSheet){
     var band = rec.real ? AR_ART : AR_HERO;
     if(ar > band[1]){
@@ -1076,7 +1107,6 @@ function shotHTML(it, forSheet){
       //
       // 这不是诚实问题（详情页一直给原比例、一刀不裁），是**读得懂读不懂**的问题。
       // 所以只对 artwork/ours 这一档留白 —— hero 和 diagram 本来就是横幅，裁无妨。
-      letterbox = rec.real;
     }
     else if(ar < band[0]) shown = band[0];
   }
@@ -1085,7 +1115,7 @@ function shotHTML(it, forSheet){
   // 竖幅限高分两档。artwork 若还按 420px 截，等于刚放宽的下限又被 max-height 裁回去 ——
   // 桌面五列 261px 宽、比 0.46 的那张自然高 570px，所以 artwork 这一档给到 620px。
   var tall = shown && shown < 0.78 ? (rec.real ? " tallcap-art" : " tallcap") : "";
-  return '<span class="shot'+tall+(letterbox?" letterbox":"")+'"'+sty+'>'
+  return '<span class="shot'+tall+'"'+sty+'>'
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
        +     ' onerror="var s=this.parentNode;s.parentNode.classList.add(\'noimg\');s.remove()">'
