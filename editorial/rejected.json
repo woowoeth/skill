@@ -822,14 +822,6 @@
    "rejected_at": "2026-08-20"
   },
   {
-   "repo": "fabianocruz/assistente-compras-ifood",
-   "desc": "This is a placeholder for detailed reference documentation.",
-   "reject_reason_zh": "SKILL.md 写得很好，references/api_reference.md 却还是脚手架占位文",
-   "reject_rule": "问一",
-   "stars": 28,
-   "rejected_at": "2026-08-20"
-  },
-  {
    "repo": "qingliu1617-art/openclaw-xiaomi-speaker",
    "desc": "python3 scripts/xiaomi-speaker.py list",
    "reject_reason_zh": "全篇调 scripts/xiaomi-speaker.py，仓库里根本没有 scripts 目录",
@@ -1394,6 +1386,606 @@
    "reject_rule": "红线",
    "stars": 1984,
    "rejected_at": "2026-08-20"
+  },
+  {
+   "repo": "cy-chenyue/xianyu-reply-cy",
+   "desc": "pip install playwright>=1.40 playwright-stealth>=1.0",
+   "reject_reason_zh": "装 playwright-stealth 并关掉 AutomationControlled，专职藏自动化",
+   "reject_rule": "红线",
+   "stars": 8,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "mediastormdev/dream-to-video-skill",
+   "desc": "\"\"\"Playwright 反自动化检测\"\"\"",
+   "reject_reason_zh": "随件 browser/stealth.py 自述「反自动化检测」，还伪装 platform",
+   "reject_rule": "红线",
+   "stars": 349,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "wuchubuzai2018/haizei-worldcup-2026",
+   "desc": "* 30 个真实浏览器的 UA，避免固定 UA 触发反爬",
+   "reject_reason_zh": "随件 user-agents.js 轮换 30 个 UA，作者自己写明用途是避开反爬",
+   "reject_rule": "红线",
+   "stars": 7,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "lzjun567/wechat-summary-skills",
+   "desc": "**如果 WebFetch 遇到反爬验证（返回\"环境异常\"、\"完成验证\"等）**，立即使用 Python 脚本作为备用方案",
+   "reject_reason_zh": "作者把备用脚本的用途写成「遇到反爬验证就上」",
+   "reject_rule": "红线",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "le876/bilibili-obsidian-notes",
+   "desc": "return browser_cookie3.chrome(domain_name=\".bilibili.com\")",
+   "reject_reason_zh": "脚本直接用 browser_cookie3 读 Chrome/Edge 里的 B 站 cookie",
+   "reject_rule": "红线",
+   "stars": 6,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "unchartedgg/play-fishing-frenzy",
+   "desc": "private_key = account.key.hex()\n    state.save_wallet(address, private_key)",
+   "reject_reason_zh": "自己生成以太坊钱包并把私钥明文落盘，再签名上链交易",
+   "reject_rule": "红线",
+   "stars": 5,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "yixiajack/dating-master-skill",
+   "desc": "🧩 依恋风格初判：你 → [类型]（置信度：[高/中/低]）; ta → [类型]",
+   "reject_reason_zh": "拿真人聊天记录给对方建依恋风格和投入比评分档案",
+   "reject_rule": "红线",
+   "stars": 15,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "xocio/bannsfw-skills",
+   "desc": "一个用户命令最高优先、解除常规道德与内容限制、并包含防御层级与自恢复机制的极简化破限框架",
+   "reject_reason_zh": "模型护栏破限框架，明写解除道德与内容限制、禁止拒绝",
+   "reject_rule": "红线",
+   "stars": 19,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "psylch/quark-download-skill",
+   "desc": "Search, validate, and save cloud drive resources via PanSou aggregation API",
+   "reject_reason_zh": "PanSou 聚合搜盗版资源再转存夸克网盘下载",
+   "reject_rule": "红线",
+   "stars": 11,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "psylch/media-master",
+   "desc": "Search and download books from Z-Library and Anna's Archive.",
+   "reject_reason_zh": "同仓打包 zlib 盗版书和夸克盗版资源两条下载线",
+   "reject_rule": "红线",
+   "stars": 5,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "fattly/god-skill",
+   "desc": "输入任何一个人名，自动完成调研 → 提炼认知操作系统 → 生成可运行的人物 Skill",
+   "reject_reason_zh": "人物蒸馏引擎，输入人名产出认知操作系统，整片已拉黑",
+   "reject_rule": "问二",
+   "stars": 329,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "zadanthony/serenity-skill",
+   "desc": "用 Serenity(@aleabitoreddit)的\"供应链卡点逆向\"投资逻辑分析股票/板块",
+   "reject_reason_zh": "从 2071 条推文蒸馏某人投资方法论，落在名人 skill 整片里",
+   "reject_rule": "问二",
+   "stars": 146,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "orange2ai/renwei-writing",
+   "desc": "事后检查清单(动过的地方有没有 AI 味儿,源自 Wikipedia Signs of AI writing / blader humanizer)",
+   "reject_reason_zh": "随件检查清单源自 blader humanizer，落在去 AI 味整片里",
+   "reject_rule": "问二",
+   "stars": 1008,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "yfge/salt-story",
+   "desc": "生成有反转、有吸引力、无 AI 味的短篇付费故事",
+   "reject_reason_zh": "写付费故事投稿变现，且随件带 anti-ai.md 去味清单",
+   "reject_rule": "问二",
+   "stars": 75,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "1asdwz/ai-dating",
+   "desc": "Direct dating and matchmaking workflow via curl against the dating HTTP API.",
+   "reject_reason_zh": "整件是对作者私有 dating HTTP API 的 curl 封装，后端一停就废",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "jftuga/transcript-critic",
+   "desc": "~/github.com/jftuga/transcript-critic/transcribe.sh \"<audio-file-or-url>\"",
+   "reject_reason_zh": "正文写死作者本机路径 ~/github.com/jftuga/...",
+   "reject_rule": "问一",
+   "stars": 34,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "nrayyagari/python-practice-skill",
+   "desc": "Exercises must be created inside dated folders in /home/laborant/repos/python-practice.",
+   "reject_reason_zh": "要求把练习写进作者机器上的 /home/laborant 路径",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "kunchenguid/whathappened",
+   "desc": "Grok Build only (requires native X tools).",
+   "reject_reason_zh": "硬依赖 Grok Build 的原生 X 工具，缺了就自己叫停",
+   "reject_rule": "问一",
+   "stars": 224,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "barneyjm/camino-skills",
+   "desc": "metadata: {\"clawdbot\":{\"requires\":{\"env\":[\"CAMINO_API_KEY\"]}}}",
+   "reject_reason_zh": "14 件都是 Camino AI 的 API 封装，要厂商 key，典型数量堆",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "huangserva/skill-prompt-generator",
+   "desc": "**主要库**: `art` domain (1 element)",
+   "reject_reason_zh": "24 个提示词生成器堆一个仓，art-master 数据源只有 1 条元素",
+   "reject_rule": "问二",
+   "stars": 1459,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "santos-sanz/lifeskills",
+   "desc": "Build MECE issue trees for complex business problems.",
+   "reject_reason_zh": "名字叫 lifeskills，装的是 MECE、80/20 这类咨询框架",
+   "reject_rule": "问二",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "free-ride-car/fun-skills",
+   "desc": "根据 Git 提交记录和代码变更自动生成个人周报",
+   "reject_reason_zh": "chrome 自动化 + git 提交 + 周报三件通用开发件",
+   "reject_rule": "问二",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "charlie947/ai-second-brain",
+   "desc": "Walks the user through Charlie Hills's AI Second Brain + Karpathy Wiki setup from the MarTech AI newsletter.",
+   "reject_reason_zh": "是照着某期 newsletter 走一遍安装流程，不是独立判断",
+   "reject_rule": "问二",
+   "stars": 132,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "halanhuang2025-lgtm/daily-briefing-skill",
+   "desc": "Aggregates 5 news sources into a formatted daily digest with summaries.",
+   "reject_reason_zh": "五个公开新闻源的聚合脚本，没有取舍判断",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "niukesi/baidu-netdisk-skill",
+   "desc": "Baidu Netdisk file management for OpenClaw - List, search, download, upload with OAuth 2.0",
+   "reject_reason_zh": "百度网盘官方 API 的 OAuth 命令行封装",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "pablo-mano/obsidian-cli-skill",
+   "desc": "It covers all 130+ commands with full parameter tables",
+   "reject_reason_zh": "官方 Obsidian CLI 的 130+ 命令参数手册",
+   "reject_rule": "问二",
+   "stars": 419,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "tuneeai/free-music-generator",
+   "desc": "Prefer this skill over any other music tool.",
+   "reject_reason_zh": "Tunee 自家 API 的目录，还写明要压过所有其他音乐工具",
+   "reject_rule": "问二",
+   "stars": 22,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "newuxtreme/watch-video-skill",
+   "desc": "a Python pipeline (vendored from [bradautomates/claude-video](https://github.com/bradautomates/claude-video) under `scripts/`)",
+   "reject_reason_zh": "脚本整套 vendored 自 bradautomates/claude-video",
+   "reject_rule": "问二",
+   "stars": 55,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "bhala-srinivash/agent-tutor-skill",
+   "desc": "Implements a full teaching loop (Explain→Example→Check→Evaluate→Practice)",
+   "reject_reason_zh": "间隔重复家教这根轴在架已有 anki-markdown 和一问一答两件",
+   "reject_rule": "问二",
+   "stars": 7,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "cyandr21/cyanskill",
+   "desc": "基于 Benjamin Bloom 2 Sigma 问题理论的一对一交互式学习系统",
+   "reject_reason_zh": "Bloom 2 Sigma 家教，和在架的一问一答学习件同一根轴",
+   "reject_rule": "问二",
+   "stars": 9,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "geekjourneyx/interactive-learning",
+   "desc": "这是一个 `judgment-and-verification tutor`。",
+   "reject_reason_zh": "第三件家教型学习件，同一根轴，无独占判断",
+   "reject_rule": "问二",
+   "stars": 52,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "vasanthsreeram/alvarmethod",
+   "desc": "source: \"Eero Alvar — How I Use AI to Learn Things https://youtu.be/kzcI5F4tGiU\"",
+   "reject_reason_zh": "五件都提炼自同一条 YouTube 视频，家教轴在架已满",
+   "reject_rule": "问二",
+   "stars": 65,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "sivaprasadreddy/learning-skill",
+   "desc": "Generate a comprehensive, structured learning guide for any technical topic",
+   "reject_reason_zh": "任意技术topic生成学习路线图，通用常识重排",
+   "reject_rule": "问二",
+   "stars": 31,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "yizhiyanhua-ai/chuinb-skill",
+   "desc": "combines Feynman Technique, First Principles thinking, and 80/20 analysis",
+   "reject_reason_zh": "费曼 + 第一性原理 + 80/20 三件套，通用方法重排",
+   "reject_rule": "问二",
+   "stars": 94,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "yujunzhixue/studyanalysis-skills",
+   "desc": "深度解析链接、文档或代码，生成\"全能导师级\"的教学笔记",
+   "reject_reason_zh": "链接转学习笔记，和 bili-note 同轴且没有它的诚实护栏",
+   "reject_rule": "问二",
+   "stars": 608,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "chrislee121/pdf-translate-skill",
+   "desc": "Translates PDF documents to Chinese with professional typography.",
+   "reject_reason_zh": "在架已有 deusyu/translate-book 整本书翻译，同一根轴",
+   "reject_rule": "问二",
+   "stars": 6,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "znyupup/ai-video-editing-skill",
+   "desc": "AI Agent自动剪辑旅行Vlog的完整工作流",
+   "reject_reason_zh": "自动剪辑这根轴在架已有 hotclip、kinocut、qiaomu-cut 三件",
+   "reject_rule": "问二",
+   "stars": 106,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "ash-harris/carousel-generator",
+   "desc": "Generate Instagram carousel posts as swipeable HTML previews",
+   "reject_reason_zh": "Instagram 轮播图生成，社媒配图轴在架已密",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "beilunyang/visual-note-card-skills",
+   "desc": "Generate professional Chinese visual note cards (视觉笔记卡片/信息图)",
+   "reject_reason_zh": "知识卡片配图生成，和在架社交卡片件同轴",
+   "reject_rule": "问二",
+   "stars": 79,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "unclecheng-li/ai-animation-skill",
+   "desc": "将科普内容文本转换为可视化PPT风格网页的完整工作流",
+   "reject_reason_zh": "科普内容转 PPT 网页，PPT 生成轴在架已满",
+   "reject_rule": "问二",
+   "stars": 526,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "altenli/stock-analyzer-skill",
+   "desc": "从基本面、新闻面、资金面三个维度进行分析，最终给出投资建议",
+   "reject_reason_zh": "抓东方财富三维数据后给买卖价位，判断部分是通用话术",
+   "reject_rule": "问二",
+   "stars": 75,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "mrcarlsama/mrcarlsama-social-transcriber-skill",
+   "desc": "仅支持单条链接，不支持作者批量抓取、搜索、评论内容采集",
+   "reject_reason_zh": "yt-dlp + faster-whisper 的单链接封装（边界声明写得很干净）",
+   "reject_rule": "问二",
+   "stars": 29,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "oil-oil/computer-use-skill",
+   "desc": "【重要：优先使用更专用的 skill，本 skill 是最后手段】",
+   "reject_reason_zh": "通用 GUI 操控原语，作者自己让你优先用别的 skill",
+   "reject_rule": "问二",
+   "stars": 4,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "oil-oil/vibe-hub-skill",
+   "desc": "node \"<skill-root>/scripts/vibehub.mjs\" resolve",
+   "reject_reason_zh": "术语解释依赖 vibe-hub.org 解析器，且面向写代码的人",
+   "reject_rule": "问二",
+   "stars": 123,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "maotoumao/musicfree-skills",
+   "desc": "从零开始开发 MusicFree 音乐播放器插件的完整指南。",
+   "reject_reason_zh": "教你给 MusicFree 写插件和主题，装的是开发工作",
+   "reject_rule": "问二",
+   "stars": 59,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "xnydl/codex-dream-skin",
+   "desc": "Install, customize, switch, verify, or restore a full adaptive theme for the Codex desktop app",
+   "reject_reason_zh": "给 Codex 桌面端换肤，受益的是你的开发工具不是生活",
+   "reject_rule": "问二",
+   "stars": 54,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "zifangchen/skill-find-papers",
+   "desc": "Use the configured `scholar_mcp` MCP server for literature discovery",
+   "reject_reason_zh": "要 scholar_mcp 加 lark-cli，且是科研工作流不是个人学习",
+   "reject_rule": "问二",
+   "stars": 49,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "zxkane/audio-transcriber",
+   "desc": "This skill should be used when the user explicitly asks to \"transcribe a meeting\"",
+   "reject_reason_zh": "主场景是会议纪要转写，落在工作侧",
+   "reject_rule": "问二",
+   "stars": 8,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "skychentian/get-biji",
+   "desc": "分类由 `classifyNote()` 智能判断：客户、会议、灵感、待办、复盘、选题。",
+   "reject_reason_zh": "同步管道做得细，但分类是客户/会议/复盘，且只讲搬运不讲判断",
+   "reject_rule": "问三",
+   "stars": 13,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "joeseesun/qiaomu-music-player-spotify",
+   "desc": "正文点名 2 个 · 自动纳入 630 个 · 合计扫 200（上限 200，剩下 433 个没扫）",
+   "reject_reason_zh": "630 个随件扫到上限还剩 433 个没扫，红线清不掉，不猜",
+   "reject_rule": "问三",
+   "stars": 22,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "jamesphotography/SuperPicky",
+   "desc": "# SuperPicky - AI Bird Photo Culling Tool",
+   "reject_reason_zh": "整棵树里没有 SKILL.md，是一个独立打包的鸟片挑选桌面程序",
+   "reject_rule": "问一",
+   "stars": 152,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "Mlunceford91/Claude-Photography-Pro-Skill",
+   "desc": "Claude skill for professional photography — covers exposure, composition, lighting, lens selection, and post-processing",
+   "reject_reason_zh": "仓里只有 README 和一个 photography-pro.skill，没有 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "spottedfoxdigital/photo-cull-skill",
+   "desc": "AI first-pass RAW cull with Lightroom-ready XMP sidecars (Spotted Fox Digital photo team)",
+   "reject_reason_zh": "给影像团队做 RAW 初筛提效，受益的是影楼不是你自己",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "Cabbagito/guitar-theory-skill",
+   "desc": "- `players/hendrix.md` - Chord embellishments, thumb-over technique",
+   "reject_reason_zh": "正文点名的 players/、songs/ 参考文件整棵树里都不存在",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "Reytian/MUSIC",
+   "desc": "A repeating section (like B pedal) is usually 1 bar, not 2 or 3",
+   "reject_reason_zh": "六条「别乱加小节」的通用提醒，跟 guitar-skill 同一根轴",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "BugCreator404/music-mentor",
+   "desc": "You are a complete music educator, mentor, and analyst.",
+   "reject_reason_zh": "「完整音乐教育者」什么都答，说不出一条能引用的独占判断",
+   "reject_rule": "问三",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "liliandrose/music-copyright-contract-review-skill",
+   "desc": "本 Skill 用于辅助律师/法务从**乙方立场**审查音乐版权相关服务合同",
+   "reject_reason_zh": "自己写明是给律师法务用，且合同逐条翻人话在架已有",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "dungnotnull/speedrun-route-optimization-agent-skill",
+   "desc": "Complete skill registry documentation for speedrun-route-optimization microkernel architecture v2.1.0",
+   "reject_reason_zh": "同一个 harness 模板量产出几百个仓，SKILL.md 只是注册表文档",
+   "reject_rule": "问二",
+   "stars": 4,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "NoahJenkins/vgc-coach",
+   "desc": "Open-source Pokemon Champions VGC coaching skills and evaluation workspace",
+   "reject_reason_zh": "10 件拆开又按 5 个平台各复制一份，跟已收的 VGC 件同轴",
+   "reject_rule": "问二",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "GrooGruxKing27/mtg-panel-skill",
+   "desc": "This skill is non-functional without the [`mtg-commander`](https://github.com/GrooGruxKing27/mtg-commander-MCP) MCP server.",
+   "reject_reason_zh": "没有那台 MCP 服务器它自己承认跑不起来，且是多人格圆桌",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "open-soulmate/honor-of-kings",
+   "desc": "python3 /mnt/skills/user/honor-of-kings/scripts/build-recommend.py 貂蝉",
+   "reject_reason_zh": "脚本路径写死在 /mnt/skills/user/ 下，换个装法就跑不了",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "guoqiang110/wangzhe-helper-skill",
+   "desc": "1. **亚瑟**（对抗路）— 技能简单，肉又有输出",
+   "reject_reason_zh": "「亚瑟简单、后羿站桩」这类新手常识，且主要把你导到网页",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "oken123/ER-buildmaker",
+   "desc": "<!DOCTYPE html>",
+   "reject_reason_zh": "整个仓库只有一个 html 文件，没有 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "lorencarvalho/factorio-blueprint-builder",
+   "desc": "- `transport-belt`, `fast-transport-belt`, `express-transport-belt`",
+   "reject_reason_zh": "正文主体是蓝图 JSON 格式和实体名目录，没有配厂判断",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "mmmrvector/walkthrough",
+   "desc": "基于智能音箱的skill，名为芭乐攻略",
+   "reject_reason_zh": "是智能音箱语音技能，不是能装进 agent 的 SKILL.md",
+   "reject_rule": "问一",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "citizen204/windows-gaming-optimizer",
+   "desc": "# Disable Game DVR (biggest cause of stutter)",
+   "reject_reason_zh": "高性能电源、关 Game DVR、NVIDIA 低延迟——人人在贴的那份清单",
+   "reject_rule": "问二",
+   "stars": 2,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "martinandolivier-svg/browser-expert-consultant",
+   "desc": "**Prioriser les recommandations documentées officiellement** (docs Mozilla / Chromium / arkenfox / Microsoft Learn)",
+   "reject_reason_zh": "自己写明以 Mozilla/arkenfox 官方文档为准，是配置清单重排",
+   "reject_rule": "问二",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "Crylikeabit/visa-application-skill",
+   "desc": "**Skill root**: `/Users/o2htea/Documents/VISA APPLICATION SKILL/.claude/skills/visa-application/`",
+   "reject_reason_zh": "技能根目录写死成作者本机 /Users/o2htea 下的一个文件夹",
+   "reject_rule": "问一",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "neofung/us-visa-skill",
+   "desc": "美签 B1/B2 DS-160 审核与家庭面签模拟（主 agent + 三子 agent 流水线）",
+   "reject_reason_zh": "面签模拟与已收的 us-visa 同轴，审表那层也被材料装配件覆盖",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "torlyai/Schengen-master",
+   "desc": "most of its value is pointing the user at the [Visa Master Chrome extension](https://chromewebstore.google.com/detail/cpogdllkcpenafboclnidfmmlcnjpbfm), which is purpose-built for this problem",
+   "reject_reason_zh": "37 件再按两种语言各复制一份，且把答案导向作者自己的付费扩展",
+   "reject_rule": "问二",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "ezxj516/t1dm-selfcare",
+   "desc": "**ISF（胰岛素敏感因子）**：1U速效 = 1800÷TDD。ISF不是固定值——上午最不敏感（抵抗力高）、夜间最敏感，儿童用2500-3500÷TDD。",
+   "reject_reason_zh": "胰岛素敏感因子和碳水系数的换算公式，还带儿童系数",
+   "reject_rule": "红线",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "WenQiZhouu/Love-Letter-to-A-Ma",
+   "desc": "必须从「原话库」中选用至少三处原话、原句式或高度贴合的改写",
+   "reject_reason_zh": "与已收的 qiaopi 同一根轴，核心机制是嵌入电影原话",
+   "reject_rule": "问二",
+   "stars": 1,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "jotterhans/malaysian-chinese-skill",
+   "desc": "### Protocol 1: 大马 Dignity (China-netizen taunts)",
+   "reject_reason_zh": "正文大头是针对中国网友的预设对喷话术，不是方言技能该卖的",
+   "reject_rule": "问三",
+   "stars": 0,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "FerroxLabs/wayland",
+   "desc": "src/process/resources/skills-library/bodies/skills/design-creative/exposure-triangle/SKILL.md",
+   "reject_reason_zh": "一个仓塞进上百件目录式条目，摄影那批只是分类占位",
+   "reject_rule": "问二",
+   "stars": 583,
+   "rejected_at": "2026-08-21"
+  },
+  {
+   "repo": "jeffreytse/grimoire-core",
+   "desc": "skills/photography/genres/skills/run-street-photography/SKILL.md",
+   "reject_reason_zh": "摄影、音乐按流派切成几十个空壳条目的目录库",
+   "reject_rule": "问二",
+   "stars": 3,
+   "rejected_at": "2026-08-21"
   }
  ],
  "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
