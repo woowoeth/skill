@@ -1488,12 +1488,28 @@ def check_title_shape(items: dict):
     # 形状上确实是「只有禁令」，但店主标了它。**判据把基准判掉了，是判据不够，不是它错。**
     hearted = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), None)
                    or {}).get("ids") or [])
-    bad = []
+    bad, acked = [], []
     for it in sorted(live, key=lambda x: x.get("id", "")):
         if it.get("id") in hearted:
             continue
         t = it.get("title_zh") or ""
+        # 「禁令即产物」豁免 —— 2026-08-21 补，rokokol/slop-stop 逼出来的。
+        # 那件的标题是「它把题解了但不给你看，只一级级放提示」：以禁令开头，
+        # 但**这件货的产物就是那个禁令** —— 一个宁可不给答案、只给阶梯提示的导师。
+        # 「不给你看」在说你拿到什么，和「不联网、不外传、不替你写」不是一回事。
+        #
+        # 先例就在上面那段注释里：店主标过的 aryaminus-astro
+        # 「拒绝凭记忆报出一个行星位置的占星师」形状上也是「只有禁令」。
+        # **店主自己的基准里就有一件「禁令即产物」** —— 那是判据缺区分，不是货错。
+        #
+        # 豁免要付代价：**只打标记不写理由的仍然算命中。**
+        # 不然这个字段就成了「消 WARN 开关」，而改文案迎合守卫和改守卫迎合文案
+        # 是同一种病（见 docs/CURATION.md）。
+        why = (it.get("title_ban_is_product") or "").strip()
         if TITLE_BAN.search(t) and not TITLE_OUT.search(t):
+            if len(why) >= 10:
+                acked.append((it.get("id"), t, why))
+                continue
             bad.append((it.get("id"), t))
     print("\n【17】标题只有禁令、没说「你拿到手的是什么」")
     print(f"  在架 {len(live)} 件 · 店主已标（豁免）{len(hearted)} · "
@@ -1502,6 +1518,9 @@ def check_title_shape(items: dict):
         print(f"  [没说产出物] {i} — {t}")
     if len(bad) > 20:
         print(f"  …另有 {len(bad)-20} 件")
+    for i, t, why in acked:
+        print(f"  [禁令即产物·已判过] {i} — {t}")
+        print(f"        理由：{why}")
     print("  **这个件数不是 KPI。** 词表永远不全，把它当指标追会逼人往标题里塞关键词 ——")
     print("  要看的是那几条标题本身回答没回答「装了它你拿到手的是什么」。")
     return bad

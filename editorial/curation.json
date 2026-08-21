@@ -7423,11 +7423,11 @@
    "hide": false
   },
   "science-prof-robot-recursive-math-animator-recursive-maths-animator": {
-   "title_zh": "先给三套配色让你挑，再渲一支 Manim 数理动画",
+   "title_zh": "渲一支 Manim 数理动画，六套设计系统随挑",
    "tagline_zh": "动手前先给一句话结论加三到五个节拍，你点头才写场景代码。六套设计系统，渲完切帧自查再重渲。",
    "why_zh": "GIF 只准用来查版式：ffmpeg 重编码会把深色极简配色的渐变压烂。",
    "limit_zh": "要装 manim、ffmpeg，物理场景锁死 manim-physics 0.4.0。默认交 MP4，要小体积 GIF 就得砍时长或减色。gTTS 配音要联网，换 Gemini TTS 得自己配 key。",
-   "title_en": "Three palettes to pick from, then a rendered Manim maths animation",
+   "title_en": "A Manim maths animation, six design systems to pick from",
    "tagline_en": "It pitches a one-line takeaway and three to five beats first; scene code waits for your yes. Six design systems, then a frame-by-frame self-review before the final render.",
    "why_en": "GIF is allowed only for layout checks — aggressive ffmpeg re-encoding crushes the gradients in dark minimal palettes.",
    "limit_en": "Needs manim and ffmpeg installed, with manim-physics pinned to 0.4.0 for physics scenes. MP4 is the default deliverable; a small GIF means cutting length or colors. gTTS voiceover needs network, and the Gemini TTS path needs your own key.",
@@ -7478,15 +7478,16 @@
    "hide": false
   },
   "rokokol-slop-stop-skill": {
-   "title_zh": "你自己写代码，它出技能地图和缺陷点名",
-   "tagline_zh": "它先把题自己解了但绝不给你看，只给机制和一个用别人材料搭的小例子；你真卡住才一级级递提示。",
+   "title_zh": "它把题解了但不给你看，只一级级放提示",
+   "tagline_zh": "它先自己把题解掉，然后一个字都不给你——只给机制和一个拿别人材料搭的小例子。你真卡住才一级级递提示，直接要答案那一级会被记成 surrendered，写进你的技能地图。",
    "why_zh": "提示阶梯本身就是量尺：直接给答案那一级会被记成 surrendered。",
    "limit_zh": "全程不替你写、不替你改、不替你跑一行任务代码，要现成解就别装。技能地图只在你同意时才动，它也不扫你的仓库来判水平——它说那证明不了什么。",
-   "title_en": "You write the code; it keeps the skill map and names the defects",
+   "title_en": "It solves your problem, then refuses to show you",
    "tagline_en": "It solves the task itself and never shows you the plan — only the mechanism and a tiny example built on foreign material. Hints come one rung at a time, and only when you genuinely stall.",
    "why_en": "The hint ladder doubles as the measurement: the rung where it just gives the answer is recorded as `surrendered`.",
    "limit_en": "It will not write, edit or run a line of code for your task — not to demonstrate, not to unblock. The skill map moves only with your agreement, and it refuses to scan your repos to judge your level, since that cannot tell your code from generated code.",
-   "hide": false
+   "hide": false,
+   "title_ban_is_product": "「不给你看」就是这件货的产物：一个宁可不给答案、只一级级放提示的导师，直接要答案会被记成 surrendered。先例是店主标过的 aryaminus-astro。"
   },
   "muselinn-nature-ref-verifier": {
    "title_zh": "逐条核参考文献，出字段级的验证报告",
@@ -7511,11 +7512,11 @@
    "hide": false
   },
   "lifei68801-contract-review": {
-   "title_zh": "配完自家红线，才给你出合同审核报告",
-   "tagline_zh": "没有配置文件它拒绝开审，也不替你猜是甲方还是乙方——角色决定所有红线朝哪一边算。",
+   "title_zh": "按你是甲方还是乙方，同一条款判反过来",
+   "tagline_zh": "先填一份自家红线和你的角色，它按那一方逐条挑合同里的问题出报告——同一条付款条款，甲方看是保护，乙方看就是风险。没有配置它拒绝开审，也不替你猜你是哪一方。",
    "why_zh": "快速模式只问一句：违约责任上限不超过实收款的几成。其余按角色自动预填。",
    "limit_zh": "红线是你自己填的，填错报告就跟着错；它不懂你所在行业的监管细则，也不是律师意见。不联网、不外传合同。首次必须走完初始化，绕不过去。",
-   "title_en": "No contract review until your own commercial red lines are on file",
+   "title_en": "The same clause flips depending on which side you're on",
    "tagline_en": "With no config file it refuses to start, and it will not guess whether you are the buyer or the supplier — the role decides which way every red line points.",
    "why_en": "Quick mode asks exactly one question: the cap on liability as a percentage of money actually received. Everything else is prefilled from your role.",
    "limit_en": "You write the red lines, so bad ones give a bad report; it does not know your industry's regulations and is not legal advice. No network, no contract leaves the machine. The first run must complete initialisation — there is no way past it.",
