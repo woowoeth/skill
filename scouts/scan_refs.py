@@ -465,7 +465,10 @@ def referenced_paths(text: str, base: str) -> set[str]:
     return out
 
 
-def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
+MAX_SUB = 60                 # 合集最多扫这么多子 skill，超了如实报进 skipped
+
+
+def scan_one(repo: str, path: str = "", show_all: bool = False, _depth: int = 0) -> dict:
     base = path.strip("/")
     smd = f"{base}/SKILL.md" if base else "SKILL.md"
     print(f"\n{'='*72}\n{repo}" + (f"  ({base})" if base else "") + f"\n{'='*72}")
@@ -492,10 +495,36 @@ def scan_one(repo: str, path: str = "", show_all: bool = False) -> dict:
             print(f"  ✗ 整棵树里没有 SKILL.md —— 这本身就是问一（装不进 agent）")
             return {"repo": repo, "path": base, "tree_sha": tree_sha,
                     "unreadable": ["<no SKILL.md>"], "hits": []}
+        if len(found) > 1 and _depth == 0:
+            # **合集就扫全部子 skill，不许挑一个代表。**
+            #
+            # 原来是 `smd = found[0]` —— 对 `borski/travel-hacking-toolkit`（48 件）
+            # 意味着挑了 `skills/alliances/SKILL.md`、**扫了 2 个文件就完事**，
+            # 然后往存档里记「这个仓库扫过了」。那是**把读了 48 分之一记成读完了**，
+            # 正是这个项目反复栽的那种「看起来有人在看着，其实没有」。
+            #
+            # 我差点顺手把「挂靠」放宽来消掉那条 WARN —— 那会把这个假覆盖固化下来。
+            # **一条消不掉的 WARN 比一条骗人的绿灯好。**
+            print(f"  ! 给的路径下没有 SKILL.md，树里有 {len(found)} 个 —— **全部扫**")
+            merged = {"repo": repo, "path": base, "tree_sha": tree_sha,
+                      "hits": [], "unreadable": [], "clean": [], "skipped": 0,
+                      "sub_skills": len(found)}
+            for sub in found[:MAX_SUB]:
+                one = scan_one(repo, os.path.dirname(sub), show_all, _depth=1)
+                merged["hits"] += one.get("hits") or []
+                merged["unreadable"] += one.get("unreadable") or []
+                merged["clean"] += one.get("clean") or []
+                merged["skipped"] += one.get("skipped") or 0
+            if len(found) > MAX_SUB:
+                merged["skipped"] += len(found) - MAX_SUB
+                print(f"  **上限 {MAX_SUB} 个子 skill，剩下 {len(found)-MAX_SUB} 个没扫**")
+            print(f"\n  合集小结：{len(found)} 个子 skill · 命中 {len(merged['hits'])} 个文件 · "
+                  f"读不到 {len(merged['unreadable'])}")
+            return merged
         smd = found[0]
         base = os.path.dirname(smd)
         print(f"  ! 给的路径下没有 SKILL.md，自己在树里找到：{smd}"
-              + (f"（另有 {len(found)-1} 个：{found[1:4]}）" if len(found) > 1 else ""))
+              + (f"（另有 {len(found)-1} 个）" if len(found) > 1 else ""))
 
     body, err = fetch_text(repo, smd)
     if err:
