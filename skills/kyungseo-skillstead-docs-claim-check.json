@@ -1,0 +1,32 @@
+{
+ "id": "kyungseo-skillstead-docs-claim-check",
+ "kind": "skill",
+ "name": "docs-claim-check",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：docs-claim-check。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Check whether the claims in public-facing documentation (README, release notes, install/usage docs) are supported by the evidence the user provides — files, manifests, logs, and command outputs supplied in the conversation. Produces per-claim findings with a confidence label (verified / unsupported / stale-suspected / needs-human) and an explicit \"input scope reviewed\" statement. Advisory only. Us",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "kyungseo/skillstead",
+ "owner": "kyungseo",
+ "path": "skills/docs-claim-check",
+ "url": "https://github.com/kyungseo/skillstead/tree/HEAD/skills/docs-claim-check",
+ "homepage": "",
+ "stars": 72,
+ "pushed_at": "2026-08-21T02:43:48Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.17,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-21",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/kyungseo/skillstead.git",
+  "copy": "cp -r skillstead/skills/docs-claim-check ~/.claude/skills/docs-claim-check",
+  "dir": "~/.claude/skills/docs-claim-check"
+ }
+}
