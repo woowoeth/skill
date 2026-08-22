@@ -1,0 +1,32 @@
+{
+ "id": "skyf0xx-hedgehog-core-deepseek-harness-hedgehog-bootstrap-deepseek-harness-core",
+ "kind": "skill",
+ "name": "hedgehog-bootstrap-deepseek-harness-core",
+ "title_zh": "",
+ "tagline_zh": "调教技能的技能：hedgehog-bootstrap-deepseek-harness-core。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Use once, at the start of a new Hedgehog project on the deepseek-harness core, to land the pre-verified DSH/Cordis plugin workspace and verify it's green. Runs as the only move of the `bootstrap` agent on this core — there are no add-on steps, unlike full-stack-app. Invoked automatically by `planner` after Confirm & Lock.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "skyf0xx/hedgehog-core-deepseek-harness",
+ "owner": "skyf0xx",
+ "path": "skills/hedgehog-bootstrap-deepseek-harness-core",
+ "url": "https://github.com/skyf0xx/hedgehog-core-deepseek-harness/tree/HEAD/skills/hedgehog-bootstrap-deepseek-harness-core",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-21T12:10:15Z",
+ "skill_count": 1,
+ "category": "meta",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-22",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/skyf0xx/hedgehog-core-deepseek-harness.git",
+  "copy": "cp -r hedgehog-core-deepseek-harness/skills/hedgehog-bootstrap-deepseek-harness-core ~/.claude/skills/hedgehog-bootstrap-deepseek-harness-core",
+  "dir": "~/.claude/skills/hedgehog-bootstrap-deepseek-harness-core"
+ }
+}

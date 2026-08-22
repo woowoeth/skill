@@ -1,0 +1,32 @@
+{
+ "id": "caesiumy-ko-design-md-docs-crawler",
+ "kind": "skill",
+ "name": "docs-crawler",
+ "title_zh": "",
+ "tagline_zh": "让 Claude 帮你搞创作：docs-crawler。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Crawl an entire documentation or design-system website into one LLM-ready Markdown corpus. Discovers every page from the site's sitemap.xml (with a same-origin link-following fallback when there is no sitemap), extracts each page's main content as clean Markdown, downloads each page's images (and inline base64 images) into a local folder referenced by relative paths, and renders JavaScript-heavy p",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "CaesiumY/ko-design-md",
+ "owner": "CaesiumY",
+ "path": ".claude/skills/docs-crawler",
+ "url": "https://github.com/CaesiumY/ko-design-md/tree/HEAD/.claude/skills/docs-crawler",
+ "homepage": "https://getdesign.kr",
+ "stars": 41,
+ "pushed_at": "2026-08-22T02:16:16Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 5.95,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-22",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/CaesiumY/ko-design-md.git",
+  "copy": "cp -r ko-design-md/.claude/skills/docs-crawler ~/.claude/skills/docs-crawler",
+  "dir": "~/.claude/skills/docs-crawler"
+ }
+}
