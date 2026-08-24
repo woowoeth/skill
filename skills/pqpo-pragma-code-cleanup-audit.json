@@ -1,0 +1,32 @@
+{
+ "id": "pqpo-pragma-code-cleanup-audit",
+ "kind": "skill",
+ "name": "code-cleanup-audit",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：code-cleanup-audit。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Audit a repository for architectural decay, AI-generated code smells, stale compatibility paths, dead abstractions, boundary violations, and cleanup candidates without modifying files. Use when the user asks to review code quality, find bad code, inspect AI-generated code, identify refactoring or cleanup opportunities, detect legacy leftovers, or produce a cleanup backlog that requires human confi",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "pqpo/pragma",
+ "owner": "pqpo",
+ "path": ".codex/skills/code-cleanup-audit",
+ "url": "https://github.com/pqpo/pragma/tree/HEAD/.codex/skills/code-cleanup-audit",
+ "homepage": "https://www.pqpo.me/2026/08/16/agent-team-builder-multi-harness-runtime/",
+ "stars": 105,
+ "pushed_at": "2026-08-24T02:51:43Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.32,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-24",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/pqpo/pragma.git",
+  "copy": "cp -r pragma/.codex/skills/code-cleanup-audit ~/.claude/skills/code-cleanup-audit",
+  "dir": "~/.claude/skills/code-cleanup-audit"
+ }
+}

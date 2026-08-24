@@ -1,0 +1,32 @@
+{
+ "id": "pqpo-pragma-claude-code-review",
+ "kind": "skill",
+ "name": "claude-code-review",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：claude-code-review。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Delegate code review of current uncommitted repository changes to Claude Code with `claude -p`, wait up to 10 minutes, then independently verify each finding and fix real issues. Use when the user asks to have Claude Code review a diff, audit uncommitted changes, perform CR/code review, or turn Claude Code review feedback into verified fixes.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "pqpo/pragma",
+ "owner": "pqpo",
+ "path": ".codex/skills/claude-code-review",
+ "url": "https://github.com/pqpo/pragma/tree/HEAD/.codex/skills/claude-code-review",
+ "homepage": "https://www.pqpo.me/2026/08/16/agent-team-builder-multi-harness-runtime/",
+ "stars": 105,
+ "pushed_at": "2026-08-24T02:51:43Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.32,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-24",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/pqpo/pragma.git",
+  "copy": "cp -r pragma/.codex/skills/claude-code-review ~/.claude/skills/claude-code-review",
+  "dir": "~/.claude/skills/claude-code-review"
+ }
+}
