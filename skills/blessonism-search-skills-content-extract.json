@@ -1,0 +1,32 @@
+{
+ "id": "blessonism-search-skills-content-extract",
+ "kind": "skill",
+ "name": "content-extract",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：content-extract。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Robust URL-to-Markdown extraction for OpenClaw workflows. Use when the user wants to \"extract/summarize/convert a webpage to markdown\" (especially WeChat mp.weixin.qq.com) and web_fetch/browser is blocked or messy. Uses a cheap probe via web_fetch first, then falls back to the official MinerU API (via the local mineru-extract skill) and returns a traceable result contract with source links.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "blessonism/search-skills",
+ "owner": "blessonism",
+ "path": "content-extract",
+ "url": "https://github.com/blessonism/search-skills/tree/HEAD/content-extract",
+ "homepage": "",
+ "stars": 436,
+ "pushed_at": "2026-08-24T10:41:32Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 3.88,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-08-25",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/blessonism/search-skills.git",
+  "copy": "cp -r search-skills/content-extract ~/.claude/skills/content-extract",
+  "dir": "~/.claude/skills/content-extract"
+ }
+}
