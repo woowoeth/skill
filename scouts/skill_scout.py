@@ -107,6 +107,27 @@ SEARCH_QUERIES = [
     "codex OR claude skill in:name,description watercolor OR paper-cut OR hand-drawn",
     "claude OR codex skill in:name,description 插画 OR 海报 OR 手绘 OR 水彩 OR 剪纸",
     "skill in:name,description retro OR brutalist OR editorial poster sort:stars",
+    # —— 高品味精选源（人工验证过的作者/合集，信噪比远高于关键词）——
+    # 注意：不放 pure awesome- 列表（会被 SKIP_REPO_PAT 拦，且 CURATION 拒「数量堆」）
+    "repo:obra/superpowers",
+    "repo:mattpocock/skills",
+    "repo:staruhub/ClaudeSkills",
+    "repo:PaulRBerg/agent-skills",
+    "repo:laolaoshiren/claude-code-skills-zh",
+    "repo:5tldr/claude-skills",
+    "repo:HK-hub/AgentSkills",
+    "repo:alirezarezvani/claude-skills",
+    "repo:secondsky/claude-skills",
+    "repo:frankxai/claude-skills-library",
+    "repo:K-Dense-AI/scientific-agent-skills",
+    # —— 中文创作者 / 本地化场景加强（国外目录站几乎没有的增量）——
+    "claude OR agent skill in:name,description 小红书 OR 公众号 OR 抖音 OR 电商文案",
+    "claude OR agent skill in:name,description 公文 OR 体制内 OR 申论 OR 述职 OR 红头文件",
+    "claude OR agent skill in:name,description 中医 OR 倪海厦 OR 方剂 OR 伤寒 OR 针灸",
+    "claude OR agent skill in:name,description 育儿 OR 养猫 OR 过敏 OR 花粉 OR 健身",
+    "claude OR agent skill in:name,description 八字 OR 周易 OR 占卜 OR 命理 OR 紫微",
+    "skill in:name,description 中文 OR 汉语 OR 本土 OR 本地化 sort:updated",
+    "claude OR agent skill in:name,description 去AI味 OR 人味 OR 去AI痕迹",
 ]
 
 SKIP_REPO_PAT = re.compile(
