@@ -1,0 +1,32 @@
+{
+ "id": "microsoft-amplifier-drumbeat-drumbeat-automation-authoring",
+ "kind": "skill",
+ "name": "drumbeat-automation-authoring",
+ "title_zh": "",
+ "tagline_zh": "一个有意思的技能：drumbeat-automation-authoring。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Author and validate drumbeat automation files — the closed-vocabulary YAML frontmatter contract. Covers the registered top-level keys, structured `steps:` objects ({id, prompt, label?} — steps live in the frontmatter, never the markdown body), the schedule grammar, `notify:` policy with its NOTHING_TO_REPORT and URGENT: sentinels, `conversation:` lifecycles (continuous/fresh/daily), the `requires:",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "microsoft/amplifier-drumbeat",
+ "owner": "microsoft",
+ "path": "skills/drumbeat-automation-authoring",
+ "url": "https://github.com/microsoft/amplifier-drumbeat/tree/HEAD/skills/drumbeat-automation-authoring",
+ "homepage": "",
+ "stars": 1,
+ "pushed_at": "2026-08-25T23:21:24Z",
+ "skill_count": 1,
+ "category": "learn",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-26",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/microsoft/amplifier-drumbeat.git",
+  "copy": "cp -r amplifier-drumbeat/skills/drumbeat-automation-authoring ~/.claude/skills/drumbeat-automation-authoring",
+  "dir": "~/.claude/skills/drumbeat-automation-authoring"
+ }
+}

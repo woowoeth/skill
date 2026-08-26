@@ -1,0 +1,32 @@
+{
+ "id": "microsoft-amplifier-drumbeat-drumbeat-operations",
+ "kind": "skill",
+ "name": "drumbeat-operations",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：drumbeat-operations。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Install, run, supervise, and troubleshoot the drumbeat automation engine and its `drumbeat` CLI. Covers the single `uv tool install`, workspace `init`, the `doctor` staleness check, running under a supervisor (`service install|status| uninstall` — systemd --user on Linux, launchd on macOS), pinned-session inspection and rotation (`sessions`, `rotate-session`), safe restart via `drain`, the invalid",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "microsoft/amplifier-drumbeat",
+ "owner": "microsoft",
+ "path": "skills/drumbeat-operations",
+ "url": "https://github.com/microsoft/amplifier-drumbeat/tree/HEAD/skills/drumbeat-operations",
+ "homepage": "",
+ "stars": 1,
+ "pushed_at": "2026-08-25T23:21:24Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-26",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/microsoft/amplifier-drumbeat.git",
+  "copy": "cp -r amplifier-drumbeat/skills/drumbeat-operations ~/.claude/skills/drumbeat-operations",
+  "dir": "~/.claude/skills/drumbeat-operations"
+ }
+}
