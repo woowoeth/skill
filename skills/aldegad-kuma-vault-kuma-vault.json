@@ -1,0 +1,32 @@
+{
+ "id": "aldegad-kuma-vault-kuma-vault",
+ "kind": "skill",
+ "name": "kuma-vault",
+ "title_zh": "",
+ "tagline_zh": "调教技能的技能：kuma-vault。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "kuma-vault knowledge-base retrieval — the agent memory layer. Trigger BEFORE answering any lookup, especially an unfamiliar proper noun (tool, library, repo, product, person, coined term) or an existence/identity question: \"X 있냐?\", \"X 뭐야?\", \"그거 알아?\", \"찾아봐\", \"우리 이거 봤었나\", \"is there an X\", \"what is X\", \"look it up\", \"have we seen this\", plus comparison against prior work, 새 작업/플랜, vault-backed 도메인/프로",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "aldegad/kuma-vault",
+ "owner": "aldegad",
+ "path": "skills/kuma-vault",
+ "url": "https://github.com/aldegad/kuma-vault/tree/HEAD/skills/kuma-vault",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-27T05:42:36Z",
+ "skill_count": 3,
+ "category": "meta",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-27",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/aldegad/kuma-vault.git",
+  "copy": "cp -r kuma-vault/skills/kuma-vault ~/.claude/skills/kuma-vault",
+  "dir": "~/.claude/skills/kuma-vault"
+ }
+}
