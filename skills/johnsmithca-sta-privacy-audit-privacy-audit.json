@@ -1,0 +1,32 @@
+{
+ "id": "johnsmithca-sta-privacy-audit-privacy-audit",
+ "kind": "skill",
+ "name": "privacy-audit",
+ "title_zh": "",
+ "tagline_zh": "写代码的顺手工具：privacy-audit。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "个人信息脱敏审查技能。当用户要求对本地技能、代码库、数据目录做个人信息脱敏审查、隐私合规检查、PII 敏感信息扫描、发布前安全自查、数据泄露排查、敏感字段检测、脱敏整改、隐私保护审计（脱敏审查、隐私审查、合规审查、敏感信息扫描、PII scan、desensitization audit、privacy audit、安全检查、发布前审查）时使用。覆盖 L1 自动扫描（17 类敏感字段 + 5 类硬编码凭证，身份证 MOD 11-2 / 银行卡 Luhn / 车牌结构 / 统一社会信用代码 GB 32100 校验防误报，支持目录/单文件/文本三种输入与 JSON/HTML 双格式报告，退出码 0/1/2 可直接接入 CI 门禁）与 L2 完整审查（六大维度：识别分类/脱敏方式/字段级要求/流程清单/违规场景/合规依据，33 项检查清单、15 项高频违规场景、18 部法规与 6 项国标索引）。",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "johnsmithCA-sta/privacy-audit",
+ "owner": "johnsmithCA-sta",
+ "path": "skills/privacy-audit",
+ "url": "https://github.com/johnsmithCA-sta/privacy-audit/tree/HEAD/skills/privacy-audit",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-27T04:51:39Z",
+ "skill_count": 1,
+ "category": "dev",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-27",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/johnsmithCA-sta/privacy-audit.git",
+  "copy": "cp -r privacy-audit/skills/privacy-audit ~/.claude/skills/privacy-audit",
+  "dir": "~/.claude/skills/privacy-audit"
+ }
+}
