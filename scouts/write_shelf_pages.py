@@ -54,10 +54,7 @@ def page(it, prev=None, nxt=None):
     cmds = [ins[k] for k in ("clone", "copy") if ins.get(k)]
     cover = cover_of(it)
 
-    media = ('<img class="cover" src="%s" alt="">' % esc(cover)
-             if cover else
-             '<div class="plate"><div class="c">%s</div><div class="t">%s</div></div>'
-             % (esc(cat), esc(title)))
+    media = ('<img class="cover" src="%s" alt="">' % esc(cover)) if cover else ""
 
     cmd_html = []
     for c in cmds:
