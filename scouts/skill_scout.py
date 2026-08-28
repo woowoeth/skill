@@ -110,6 +110,34 @@ T1_AUTHORS = [
     "seiya89757",
     "fxw-labs",
     "r0ses1r-dev",
+    "KKKKhazix",         # 卡兹克：活人感长文，不是效率合集
+    "BigPengSays",       # 创作者选题公式，对照用也盯新作
+    "tjxj",              # 手写幻灯片 / 四格漫画
+    "liamgvchi",         # 极简杂志海报
+    "gnipbao",           # 本地线稿白板视频
+    "oil-oil",           # 一套切开的同款图标
+    "geekjourneyx",      # 禁 AI 插图的路书、公众号版式
+    "hiyeshu",           # 会删心愿单的行程
+    "ToBeWin",           # 手绘白板讲解
+    "shpigford",         # NURBS 滑块打印件
+    "dongbeixiaohuo",    # 去 AI 味中文写作
+    "rubyzhu26",         # 草间 / 米罗五感壁纸
+    "mocomeng-666",      # Bluey 育儿
+    "bohandu",           # 冰箱剩货不放宽过敏原
+    "zgdfsgd",           # 龙猫不许洗澡
+    "xlt-6",             # 纸面桌游原型
+    "jasonbhorne",       # 只给和弦不抄词
+    "elhamid",           # 父母口述史
+    "lincwang123",       # 家长配音绘本
+    "ruochenlyu",        # 北京花粉
+    "xxxonechen",        # 53 城花粉
+    "sumanasj",          # 克苏鲁 KP
+    "zzzzzzza",          # 剧本杀角色蒸馏
+    "qian-gugugaga",
+    "yunpeng192",        # 定金 / 订金
+    "aryaminus",         # 三盘星历
+    "jadel-kemo",        # 跑团 SAN 表
+    "dpwelsh",           # basilisk 数谢谢
     # 单一风格 / 有立场的英文作者
     "Nutlope",           # hallmark
     "JuliusBrussee",     # caveman
@@ -127,9 +155,14 @@ T1_REPOS = [
     "op7418/guizang-material-illustration",
     "op7418/guizang-ppt-skill",
     "op7418/guizang-sports-skill",
+    "op7418/Humanizer-zh",
+    "op7418/logo-generator-skill",
     "alchaincyf/huashu-design",
+    "alchaincyf/huashu-skills",
+    "KKKKhazix/khazix-skills",
     "Nutlope/hallmark",
     "tjxj/z-skills",
+    "BigPengSays/bigpeng-hot-gzh",
     "5tldr/claude-skills",
     "laolaoshiren/claude-code-skills-zh",
     "obra/superpowers",

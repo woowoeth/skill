@@ -24,7 +24,10 @@
 - `JimLiu/baoyu-skills` 宝玉 — 中文写作与小红书图卡
 - `worldwonderer` — 小说变成能玩的游戏、网文拆解
 - `5tldr` · `laolaoshiren` — 中文现场单件
-- 在架已验证作者：`yangcodingmaster` `neallydare` `wei011` `wr5912` `c1375` `panmax` `chongchonghaoman` `yeyulangzi` `jiang59991` `dzcmemory-web` …
+- `KKKKhazix` 卡兹克 — 活人感长文，合集只抽 `khazix-writer` 这一档
+- `BigPengSays` — 从爆款公号蒸馏出的选题公式
+- `tjxj` — 手写幻灯片、四格漫画
+- 在架已验证作者继续盯：侨批、蒸馏海报、假崔玉涛、湿球、SHA-256 审讯、花粉、赶海、起名、风水先声明不算命、Bluey、冰箱过敏原、龙猫禁洗澡、纸面桌游、父母口述史、家长配音绘本、三盘星历、定金订金、克苏鲁 KP、剧本杀、草间壁纸、本地线稿白板、NURBS 滑块、禁 AI 插图路书
 
 有立场的英文单品作者：
 
