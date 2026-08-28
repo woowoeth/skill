@@ -188,6 +188,27 @@ SEARCH_QUERIES = (
 SKIP_REPO_PAT = re.compile(
     r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$|guide|tutorial|handbook|cookbook|cheatsheet|-docs?$", re.I)
 
+# T2 热门榜：只当候选池，过 _admit + 命名黑名单 + 官方厂牌黑名单。
+# 整榜不上架。每天最多试 3 个榜上新仓。
+MAX_CHART_REPOS_PER_RUN = 3
+CHART_SKIP_ORGS = {
+    "anthropics", "vercel", "vercel-labs", "microsoft", "google",
+    "googleworkspace", "google-labs-code", "github", "huggingface",
+    "shadcn-ui", "fastapi", "cursor",
+}
+CHART_CSV = [
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/rising-stars.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/trending-7d.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/social-buzz.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/top-repos.csv",
+]
+CHART_SEARCH = [
+    "topic:claude-skills created:>{since} sort:stars",
+    "topic:agent-skills created:>{since} sort:stars",
+    "SKILL.md in:readme created:>{since} stars:>20 sort:stars",
+    "topic:claude-skills pushed:>{since} stars:>80 sort:updated",
+]
+
 
 # ------------------------------------------------------------------ git ----
 def shallow_clone(repo: str, dest: str) -> bool:
@@ -593,6 +614,117 @@ def restock_existing(existing: dict, sources: dict) -> None:
             print(f"[scout] restock skip {repo}: {e}")
 
 
+def _chart_skip(full: str) -> bool:
+    owner = full.split("/")[0].lower()
+    name = full.split("/")[-1].lower()
+    if owner in CHART_SKIP_ORGS:
+        return True
+    if SKIP_REPO_PAT.search(full):
+        return True
+    if name in {"vscode", "claude-code", "ui", "skills", "agents", "plugins"}:
+        return True
+    return False
+
+
+def _fetch_chart_repos() -> list[str]:
+    """rising / 7 日趋势 / 社交热度 / 星榜。只抽 owner/repo，不信它的分数。"""
+    import csv, io, urllib.request
+    seen, out = set(), []
+    for url in CHART_CSV:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            raw = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
+        except Exception as e:
+            print(f"[chart] skip csv {url.split('/')[-1]}: {e}")
+            continue
+        rows = csv.DictReader(io.StringIO(raw))
+        for row in rows:
+            repo = (row.get("repo") or row.get("github") or row.get("full_name") or "").strip()
+            repo = repo.removeprefix("https://github.com/").rstrip("/")
+            if repo.count("/") != 1 or repo in seen:
+                continue
+            seen.add(repo)
+            out.append(repo)
+    return out
+
+
+def watch_charts(existing: dict, sources: dict) -> int:
+    """热门榜监视。候选进 discover 同一套 clone + stock，不上架官方厂牌。"""
+    from datetime import datetime, timedelta, timezone
+    known = set(sources.get("repos", {})) | {it["repo"] for it in existing.values()}
+    known |= {k.lower() for k in known}
+    candidates: dict[str, dict] = {}
+
+    for repo in _fetch_chart_repos():
+        if repo.lower() in known or _chart_skip(repo):
+            continue
+        try:
+            it = lib.gh_json(f"https://api.github.com/repos/{repo}")
+        except Exception:
+            continue
+        if not it or it.get("fork"):
+            continue
+        ok, lane = _admit(it)
+        if not ok:
+            continue
+        full = it.get("full_name") or repo
+        candidates[full] = {
+            "stars": it.get("stargazers_count", 0),
+            "description": it.get("description") or "",
+            "pushed_at": it.get("pushed_at", ""),
+            "created_at": it.get("created_at", ""),
+            "homepage": it.get("homepage") or "",
+            "lane": "chart-" + lane,
+        }
+        time.sleep(0.25)
+
+    since = (datetime.now(timezone.utc) - timedelta(days=14)).strftime("%Y-%m-%d")
+    for tmpl in CHART_SEARCH:
+        q = tmpl.format(since=since)
+        try:
+            url = ("https://api.github.com/search/repositories?q="
+                   + urllib.parse.quote(q) + "&order=desc&per_page=15")
+            for it in lib.gh_json(url).get("items", []) or []:
+                full = it.get("full_name") or ""
+                if not full or full.lower() in known or full in candidates or _chart_skip(full):
+                    continue
+                ok, lane = _admit(it)
+                if not ok:
+                    continue
+                candidates[full] = {
+                    "stars": it.get("stargazers_count", 0),
+                    "description": it.get("description") or "",
+                    "pushed_at": it.get("pushed_at", ""),
+                    "created_at": it.get("created_at", ""),
+                    "homepage": it.get("homepage") or "",
+                    "lane": "trend-" + lane,
+                }
+            time.sleep(3 if lib.GH_TOKEN else 8)
+        except Exception as e:
+            print(f"[chart] search skip [{q[:40]}]: {e}")
+
+    ranked = sorted(candidates.items(),
+                    key=lambda kv: -lib.fun_score(kv[0], kv[1]["description"], kv[1]["stars"]))
+    added, tried = 0, 0
+    for repo, meta in ranked:
+        if tried >= MAX_CHART_REPOS_PER_RUN:
+            break
+        tried += 1
+        print(f"[chart] candidate {repo} (★{meta['stars']}, via {meta.get('lane')})")
+        tmp = tempfile.mkdtemp(prefix="ss_chart_")
+        try:
+            if not shallow_clone(repo, tmp):
+                continue
+            items = ingest_repo(tmp, repo, meta, source="chart")
+            added += stock(items, existing, sources, repo, meta)
+        except Exception as e:
+            print(f"[chart] ingest skip {repo}: {e}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+    print(f"[chart] {len(candidates)} passed floor, {tried} tried, {added} items added")
+    return added
+
+
 # ------------------------------------------------------------- discover ----
 def discover(existing: dict, sources: dict) -> int:
     known = set(sources["repos"]) | {it["repo"] for it in existing.values()}
@@ -843,6 +975,7 @@ def main() -> None:
     ap.add_argument("--seed", help="seed from a directory of pre-cloned repos")
     ap.add_argument("--meta", default="", help="json map full_name -> {stars,description,pushed_at}")
     ap.add_argument("--no-discover", action="store_true")
+    ap.add_argument("--no-charts", action="store_true")
     ap.add_argument("--no-restock", action="store_true")
     ap.add_argument("--suggest", nargs="+", metavar="owner/repo",
                     help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
@@ -876,6 +1009,8 @@ def main() -> None:
         radar = watch_authors(existing, sources)
         if radar:
             suggest_repos(radar[:4], existing, sources)   # 已验证作者的新作，绕过星门槛
+        if not a.no_charts:
+            watch_charts(existing, sources)
         discover(existing, sources)
     enrich_items(NEW_IDS, existing)
     lib.save_sources(sources)

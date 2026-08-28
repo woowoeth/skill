@@ -38,10 +38,20 @@
 - `obra/superpowers` — 只抽能单独成件的方法，不整库上架
 - `mattpocock/skills` — 同上
 
-## T2 有货才收
+## T2 热门榜（监视 + 筛选，整榜不上架）
 
-HelloGitHub 近刊里带正经 `SKILL.md` 的单件（`ian-xiaohei-illustrations`、`i-have-adhd` 这一档）。
-伊恩日刊近两周能对上 GitHub、且装完手上有物件的。
+每天从这些榜抽 `owner/repo`，过 `_admit` 和官方厂牌黑名单，再 clone 看有没有正经 `SKILL.md`。每天最多试 3 个新仓。
+
+| 榜 | 取什么 |
+|---|---|
+| LinklyAI rising-stars / trending-7d / social-buzz | 新而热，不取 official-100 |
+| LinklyAI top-repos | 只当对照，官方厂牌丢掉 |
+| GitHub search `topic:claude-skills created:>14d sort:stars` | 近两周新星 |
+
+直接扔掉的厂牌：`anthropics` `vercel` `microsoft` `google` `github` `huggingface` `shadcn-ui` `cursor`。
+`awesome-`、vscode、空壳 `skills` 仓同样丢掉。
+
+HelloGitHub 近刊里带正经 `SKILL.md` 的单件、伊恩日刊近两周能对上 GitHub 且装完手上有物件的，仍走这一档。
 
 ## T3
 
