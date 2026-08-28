@@ -147,7 +147,19 @@ T1_AUTHORS = [
     "Alisa0808",         # vox-director
     "obra",              # superpowers 里能单独成件的
     "mattpocock",        # grill-me 那一档，不整库上架
+    "Zeejay0",
+    "Vieeeeeee",
+    "yokel1121",
+    "crawfordxx",
+    "ayi-ai",
+    "eternityspring",
+    "jinchenma94",
+    "liyue-aigc",
+    "wnby",
+    "carolinaaafy",
+    "Evianis",
 ]
+
 
 T1_REPOS = [
     "JimLiu/baoyu-skills",
