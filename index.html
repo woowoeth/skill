@@ -676,6 +676,7 @@ footer p{margin:0 0 8px;font:var(--t-cap)/1.8 var(--sans);color:var(--ink-3);max
 footer .links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:var(--s3);font:var(--t-cap)/1.6 var(--mono)}
 footer .links a{color:var(--ink-3);border-bottom:1px solid var(--line)}
 footer .links a:hover{color:var(--ink);border-color:var(--ink)}
+footer .fam a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -720,8 +721,10 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
 
   <footer>
       <p id="colo2"></p>
-    <div class="links">
-      <a href="https://github.com/woowoeth/skill" target="_blank" rel="noopener">GitHub · MIT</a>
+    <div class="links fam">
+      <a href="https://ourword.ai/">人类生存法则</a>
+      <a href="https://ourword.ai/podcast/">原声播客</a>
+      <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
     </div>
   </footer>
   <!-- 生成器写「可爬取层」的落点。SEO_PATCH_INDEX=1 打开后 seo/build_seo.py 往这里写。 -->

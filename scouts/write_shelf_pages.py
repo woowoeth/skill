@@ -252,6 +252,11 @@ def page(it, prev=None, nxt=None, related=None):
     </div>
     %s
   </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人类生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声播客</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+  </nav>
   <nav class="foot">%s</nav>
 </div>
 <script>
