@@ -1,0 +1,45 @@
+# 品味信源
+
+口号：帮你发现有品位的 Skills。
+进货对标原声：固定短名单，过不了门禁不上架。
+
+## 不当主源（对照用）
+
+| 源 | 为什么不进货 |
+|---|---|
+| `topic:claude-skills` 全网扫描 | 召回优先，货是目录站同款 |
+| LinklyAI/best-skills 安装量榜 | 官方四件套 + 通用开发件占满 Top |
+| Anthropic / Vercel / Microsoft 官方目录 | 用户自己会去官网 |
+| claudskills.com 6 万件镜像 | 数量堆 |
+| swaylq/master-skill 72 行业蒸馏 | 一台机器量产行业包，没有单件立场 |
+
+伊恩日刊、HelloGitHub 是**口味校准**，不是 SKILL.md 矿。看见对得上的单件再收。
+
+## T1 必盯
+
+中文创作者（国外目录站没有的理由）：
+
+- `op7418` 歸藏 — 瑞士风 / 材质插画 / 社交卡片
+- `alchaincyf` 花叔 — 设计哲学写进原型
+- `JimLiu/baoyu-skills` 宝玉 — 中文写作与小红书图卡
+- `worldwonderer` — 小说变成能玩的游戏、网文拆解
+- `5tldr` · `laolaoshiren` — 中文现场单件
+- 在架已验证作者：`yangcodingmaster` `neallydare` `wei011` `wr5912` `c1375` `panmax` `chongchonghaoman` `yeyulangzi` `jiang59991` `dzcmemory-web` …
+
+有立场的英文单品作者：
+
+- `Nutlope/hallmark` — 把一眼 AI 的页面改回人做的
+- `JuliusBrussee` caveman
+- `blader` humanizer
+- `tjxj/z-skills` — 手写幻灯片、四格漫画，HelloGitHub 同属
+- `obra/superpowers` — 只抽能单独成件的方法，不整库上架
+- `mattpocock/skills` — 同上
+
+## T2 有货才收
+
+HelloGitHub 近刊里带正经 `SKILL.md` 的单件（`ian-xiaohei-illustrations`、`i-have-adhd` 这一档）。
+伊恩日刊近两周能对上 GitHub、且装完手上有物件的。
+
+## T3
+
+极强才收。合集只抽招牌件。

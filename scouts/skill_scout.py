@@ -81,54 +81,76 @@ def _admit(item: dict) -> tuple[bool, str]:
     return False, "below-floor"
 CLONE_TIMEOUT = 90
 
-SEARCH_QUERIES = [
-    # —— 生态主干 ——
-    "topic:claude-skills sort:updated",
-    "topic:claude-code-skills sort:updated",
-    "topic:agent-skills sort:updated",
-    "claude skill game OR fun OR creative in:name,description sort:updated",
-    "SKILL.md skill in:readme claude sort:updated",
-    # —— 新品快车道（按创建时间倒序，接住刚发布还没积累星的）——
-    "topic:claude-skills sort:created",
-    "topic:agent-skills sort:created",
-    "SKILL.md agent skill in:readme sort:created",
-    "claude skill in:name,description sort:created",
-    # —— Codex 生态：曾经的盲区（gc-minimal-zine-poster 5.7k 星就在这里）——
-    "codex skill in:name,description sort:created",
-    "codex skill in:name,description sort:stars",
-    ".codex/skills in:readme sort:updated",
-    # —— 研究型：YouMind 画廊显示这类需求量远超预估（他们 328 个，我们曾只有 33）——
-    "skill in:name,description deep research report sort:stars",
-    "claude OR codex skill in:name,description competitor OR market-research sort:stars",
-    "agent skill in:name,description fact-check OR citation OR source-verify sort:stars",
-    "claude OR codex skill in:name,description 调研 OR 竞品 OR 分析报告",
-    # —— 单一视觉风格：好的图像 skill 卖的是一种具体风格，不是"设计工具"——
-    "codex skill in:name,description poster OR collage OR halftone OR risograph",
-    "codex OR claude skill in:name,description watercolor OR paper-cut OR hand-drawn",
-    "claude OR codex skill in:name,description 插画 OR 海报 OR 手绘 OR 水彩 OR 剪纸",
-    "skill in:name,description retro OR brutalist OR editorial poster sort:stars",
-    # —— 高品味精选源（人工验证过的作者/合集，信噪比远高于关键词）——
-    # 注意：不放 pure awesome- 列表（会被 SKIP_REPO_PAT 拦，且 CURATION 拒「数量堆」）
-    "repo:obra/superpowers",
-    "repo:mattpocock/skills",
-    "repo:staruhub/ClaudeSkills",
-    "repo:PaulRBerg/agent-skills",
-    "repo:laolaoshiren/claude-code-skills-zh",
-    "repo:5tldr/claude-skills",
-    "repo:HK-hub/AgentSkills",
-    "repo:alirezarezvani/claude-skills",
-    "repo:secondsky/claude-skills",
-    "repo:frankxai/claude-skills-library",
-    "repo:K-Dense-AI/scientific-agent-skills",
-    # —— 中文创作者 / 本地化场景加强（国外目录站几乎没有的增量）——
-    "claude OR agent skill in:name,description 小红书 OR 公众号 OR 抖音 OR 电商文案",
-    "claude OR agent skill in:name,description 公文 OR 体制内 OR 申论 OR 述职 OR 红头文件",
-    "claude OR agent skill in:name,description 中医 OR 倪海厦 OR 方剂 OR 伤寒 OR 针灸",
-    "claude OR agent skill in:name,description 育儿 OR 养猫 OR 过敏 OR 花粉 OR 健身",
-    "claude OR agent skill in:name,description 八字 OR 周易 OR 占卜 OR 命理 OR 紫微",
-    "skill in:name,description 中文 OR 汉语 OR 本土 OR 本地化 sort:updated",
-    "claude OR agent skill in:name,description 去AI味 OR 人味 OR 去AI痕迹",
+# 品味的进货通道。topic: / 安装量榜 / 官方目录 一律不当主源。
+# 对标原声：固定短名单，T1 作者新作必审；合集只抽招牌件。
+
+T1_AUTHORS = [
+    # 中文创作者，国外目录站没有的增量
+    "op7418",            # 歸藏
+    "alchaincyf",        # 花叔
+    "JimLiu",            # 宝玉
+    "worldwonderer",     # 网文 / 小说变游戏
+    "5tldr",
+    "laolaoshiren",
+    "yangcodingmaster",  # photo-distill
+    "chongchonghaoman",
+    "yeyulangzi",
+    "neallydare",
+    "wei011",
+    "wr5912",
+    "c1375",
+    "panmax",
+    "chenklein26",
+    "kagurananaga",
+    "jiang59991",        # 侨批
+    "RollingAlei",
+    "dzcmemory-web",
+    "voidforall",
+    "yuanzhao321",
+    "seiya89757",
+    "fxw-labs",
+    "r0ses1r-dev",
+    # 单一风格 / 有立场的英文作者
+    "Nutlope",           # hallmark
+    "JuliusBrussee",     # caveman
+    "blader",            # humanizer
+    "aldegad",           # sprite-gen
+    "danilo-znamerovszkij",
+    "Alisa0808",         # vox-director
+    "obra",              # superpowers 里能单独成件的
+    "mattpocock",        # grill-me 那一档，不整库上架
 ]
+
+T1_REPOS = [
+    "JimLiu/baoyu-skills",
+    "op7418/guizang-social-card-skill",
+    "op7418/guizang-material-illustration",
+    "op7418/guizang-ppt-skill",
+    "op7418/guizang-sports-skill",
+    "alchaincyf/huashu-design",
+    "Nutlope/hallmark",
+    "tjxj/z-skills",
+    "5tldr/claude-skills",
+    "laolaoshiren/claude-code-skills-zh",
+    "obra/superpowers",
+    "mattpocock/skills",
+]
+
+SEARCH_QUERIES = (
+    [f"repo:{r}" for r in T1_REPOS]
+    + [f"user:{u} skill in:name,description" for u in T1_AUTHORS]
+    + [
+        "codex skill in:name,description poster OR collage OR halftone OR risograph",
+        "codex OR claude skill in:name,description watercolor OR paper-cut OR hand-drawn",
+        "claude OR codex skill in:name,description 插画 OR 海报 OR 手绘 OR 水彩 OR 剪纸",
+        "claude OR agent skill in:name,description zine OR sticker OR risograph OR hallmark",
+        "claude OR agent skill in:name,description 公文 OR 红头文件 OR GB/T 9704",
+        "claude OR agent skill in:name,description 中医 OR 倪海厦 OR 方剂 OR 伤寒",
+        "claude OR agent skill in:name,description 育儿 OR 养猫 OR 花粉 OR 崔玉涛",
+        "claude OR agent skill in:name,description 八字 OR 周易 OR 占卜 OR 紫微 OR 侨批",
+        "claude OR agent skill in:name,description 去AI味 OR 人味 OR 海明威 OR 原始人",
+    ]
+)
 
 SKIP_REPO_PAT = re.compile(
     r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$|guide|tutorial|handbook|cookbook|cheatsheet|-docs?$", re.I)
@@ -614,7 +636,9 @@ def watch_authors(existing: dict, sources: dict, limit_per_author: int = 5) -> l
     好作者会持续产出好东西 —— 这条线的信噪比远高于关键词搜索，
     也是唯一能在「刚发布、零星、没打 topic」阶段就发现新品的自动通道。"""
     from datetime import datetime, timezone
-    authors = sorted({r.split("/")[0] for r in sources.get("repos", {})})
+    authors = sorted(set(T1_AUTHORS) | {
+        r.split("/")[0] for r in T1_REPOS
+    })
     have = {r.lower() for r in sources.get("repos", {})}
     found = []
     for u in authors:
