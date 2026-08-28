@@ -50,8 +50,8 @@ UA = "pinwei-skill-scout/1.0 (+https://github.com/woowoeth/skill)"
 CATEGORIES = [
     ("creative", "做图",   "Images",   "🎨"),
     ("writing",  "写字",   "Writing",  "✍️"),
-    ("life",     "过日子", "Everyday", "🧺"),
-    ("fun",      "玩",     "Play",     "🎲"),
+    ("life",     "生活",   "Everyday", "🧺"),
+    ("fun",      "玩乐",   "Play",     "🎲"),
 ]
 CAT_MERGE = {
     "body": "life", "work": "writing", "docs": "writing",
