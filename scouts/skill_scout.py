@@ -158,6 +158,8 @@ T1_AUTHORS = [
     "wnby",
     "carolinaaafy",
     "Evianis",
+    "garrytan",
+    "addyosmani",
     "KKenny0",
     "tluy",
     "Hiseaa",

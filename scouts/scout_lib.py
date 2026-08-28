@@ -51,11 +51,12 @@ CATEGORIES = [
     ("creative", "做图",   "Images",   "🎨"),
     ("writing",  "写字",   "Writing",  "✍️"),
     ("life",     "生活",   "Everyday", "🧺"),
+    ("work",     "工作",   "Work",     "💼"),
     ("fun",      "玩乐",   "Play",     "🎲"),
 ]
 CAT_MERGE = {
-    "body": "life", "work": "writing", "docs": "writing",
-    "learn": "life", "dev": "fun", "meta": "fun",
+    "body": "life", "docs": "work",
+    "learn": "life", "dev": "work", "meta": "work",
 }
 CAT_IDS = [c[0] for c in CATEGORIES]
 

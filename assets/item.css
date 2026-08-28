@@ -116,7 +116,8 @@ h1.ttl{
 .cmd button:hover,.cmd button.on{border-color:var(--ink); color:var(--ink)}
 
 .cover{
-  width:100%; border-radius:16px; margin:0 0 28px;
+  width:100%; height:auto; object-fit:contain; object-position:center top;
+  border-radius:16px; margin:0 0 20px;
   border:1px solid var(--line); background:var(--soft);
 }
 .plate{

@@ -8,8 +8,8 @@ FEED = os.path.join(ROOT, "skills", "feed.json")
 OUT = os.path.join(ROOT, "i")
 CAT = {
     "creative": "做图", "writing": "写字", "life": "生活", "fun": "玩乐",
-    "body": "生活", "work": "写字", "learn": "生活", "docs": "写字",
-    "dev": "玩乐", "meta": "玩乐",
+    "work": "工作", "body": "生活", "learn": "生活", "docs": "工作",
+    "dev": "工作", "meta": "工作",
 }
 MARK = """<svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
      stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
@@ -110,6 +110,11 @@ def page(it, prev=None, nxt=None, related=None):
             "按规则玩一轮，把依据留在结果里。",
             "编不出来就停，不要圆。",
             "玩完对照应用范围，别拿它当正事工具。",
+        ],
+        "work": [
+            "按它的流程走完这一件，不要跳步骤。",
+            "输出要能进仓库或工单，不要只给感想。",
+            "做完对照应用范围，越权的活另找工具。",
         ],
     }
     uses = uses_map.get(cat_id, uses_map["creative"])
