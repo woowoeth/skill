@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>品味 — 中文 Agent Skill 精选</title>
+<title>品味 — 帮你发现有品位的 Skills</title>
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
 <meta name="theme-color" content="#faf8f3">
@@ -701,7 +701,7 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
         </svg>
         <b id="brand">品味</b>
       </span>
-      <i id="brandSub">挑得少，是因为看得多</i>
+      <i id="brandSub">帮你发现有品位的 Skills</i>
       <button id="langBtn" type="button">EN</button>
     </div>
     <p class="say" id="say">叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清 —— 检索不是问题了，判断才是。</p>
@@ -743,8 +743,8 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
    ------------------------------------------------------------------ */
 var I18N = {
  zh:{
-  brand:"品味", brandSub:"挑得少，是因为看得多", btn:"EN",
-  title:"品味 — Agent Skill 精选",
+  brand:"品味", brandSub:"帮你发现有品位的 Skills", btn:"EN",
+  title:"品味 — 帮你发现有品位的 Skills",
   // 这句原先写的是「生态里有 266 万条 Agent Skill」，错了两层：266 万是 SkillsMP 首页
   // 自报的「2,664,116 Collected SKILL.md files」，被我们记成了 skills.sh 的；更要紧的是
   // **拿一家目录站的自报库存当了世界**。改的不是数字，是分母。
@@ -795,7 +795,7 @@ var I18N = {
   dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
  },
  en:{
-  brand:"品味", brandSub:"We pick few because we look at many", btn:"中",
+  brand:"品味", brandSub:"Helping you find Skills with taste", btn:"中",
   title:"Taste — curated agent skills",
   say:'There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is.',
   search:"Search titles, verdicts, repos…",
@@ -904,7 +904,7 @@ var params = new URLSearchParams(location.search);
 var lang = params.get("lang")==="en" ? "en" : "zh";
 var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
 var D=null, SHELF=false;
-var state={ q:"", cat:"all", limit:60 };
+var state={ q:"", cat:"pick", limit:60 };
 
 function el(id){return document.getElementById(id)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
