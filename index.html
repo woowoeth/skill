@@ -1089,8 +1089,7 @@ function renderChips(all){
 function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec){
-    if(forSheet) return "";
-    return '<span class="shot plate">'+plateInner(it)+'</span>';
+    return "";
   }
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
 
@@ -1138,7 +1137,7 @@ function shotHTML(it, forSheet){
      ================================================================ */
   var AR_FLAT = 2.45, H_MAX_K = 2.25;
   if(!forSheet){
-    if(ar >= AR_FLAT) return '<span class="shot plate">'+plateInner(it)+'</span>';
+    if(ar >= AR_FLAT) return "";
     if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太竖 → 限高（等比，不裁）
   }
   // 宽高比已知就写死 —— 图片加载前空间就占好了，瀑布流不跳版
@@ -1146,10 +1145,9 @@ function shotHTML(it, forSheet){
   // 78vh 那道闸和上面的宽度闸管的不是一件事：它防的是窄短视口下一张图占满屏
   var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
   return '<span class="shot hasimg'+tall+'"'+sty+'>'
-       +   plateInner(it)
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
-       +     ' onerror="var p=this.parentNode;this.remove();if(p)p.classList.remove(\'hasimg\')">'
+       +     ' onerror="var s=this.parentNode,c=s&&s.parentNode;if(s)s.remove();if(c)c.classList.add(\'noimg\')">'
        + '</span>';
 }
 
