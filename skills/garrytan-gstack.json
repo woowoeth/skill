@@ -2,11 +2,11 @@
   "id": "garrytan-gstack",
   "kind": "skill",
   "name": "gstack",
-  "title_zh": "路由中枢",
-  "tagline_zh": "多技能协作时，调用顺序总乱？gstack 像交通警察，用声明式路由让每个 Agent 各就各位，不乱跑不空转。",
+  "title_zh": "把工程流水线拆成可调用的一叠技能",
+  "tagline_zh": "规格、审查、发布各管一段，不当一个万能助手",
   "tagline_en": "Tired of skills stepping on each other? gstack routes every agent call declaratively—no more chaos, just order.",
   "desc_en": "Router for the gstack skill suite. (gstack)",
-  "why_zh": "同类靠硬编码或优先级，它用显式路由表，改一处全局生效，调试时一眼看穿调用链。",
+  "why_zh": "按环节装，不按明星作者装。适合把智能体嵌进已有交付流程的人。",
   "why_en": "Unlike hardcoded chains, it uses an explicit route table—change once, see the whole flow at a glance.",
   "repo": "garrytan/gstack",
   "owner": "garrytan",
@@ -26,5 +26,6 @@
     "clone": "git clone --depth 1 https://github.com/garrytan/gstack.git",
     "copy": "mv gstack ~/.claude/skills/gstack",
     "dir": "~/.claude/skills/gstack"
-  }
+  },
+  "limit_zh": "这是一套流程，不是一个会写代码的人设。只要聊天式回答，会嫌它啰嗦。"
 }
