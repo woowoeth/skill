@@ -108,7 +108,7 @@ def page(it, prev=None, nxt=None):
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
-<link rel="stylesheet" href="../../assets/item.css?v=9">
+<link rel="stylesheet" href="../../assets/item.css?v=10">
 <style>
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
