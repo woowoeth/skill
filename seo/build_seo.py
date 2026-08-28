@@ -132,15 +132,14 @@ def load_items():
 
 def main():
     items = load_items()
-    # index.html 暂不由生成器改写：首页正在重做，生成器往 GEO marker 块里写内容会和
-    # 改版撞车。index_files=() 让 G.build 完全跳过它（其余 800+ 页照常生成）。
-    # 首页改版落地后，设 SEO_PATCH_INDEX=1 或把默认值改回 ("index.html",) 即可恢复。
-    index_files = ("index.html",) if os.environ.get("SEO_PATCH_INDEX") == "1" else ()
+    # 内容页归 write_shelf_pages。GEO 不再写 /i/、/zh/i/、/t/、/all/。
+    index_files = ()
     rep = G.build(SITE, items, root=".", today=datetime.date.today().isoformat(),
                   how_built=HOW, cite_as=CITE, index_files=index_files,
-                  extra_sitemaps=["https://ourword.ai/sitemap.xml"])
-    if not index_files:
-        rep["index"] = "skipped (UX 正在重做首页；SEO_PATCH_INDEX=1 可恢复)"
+                  extra_sitemaps=["https://ourword.ai/sitemap.xml"],
+                  item_pages=False, hubs=False)
+    rep["index"] = "skipped"
+    rep["pages"] = "delegated to write_shelf_pages"
     print("pinwei seo/geo:", json.dumps(rep, ensure_ascii=False))
     return rep
 

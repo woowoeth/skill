@@ -3,10 +3,9 @@ name: seo
 # item pages, sitemap.xml, robots.txt, llms.txt and llms-full.txt. The generator only
 # writes files whose bytes actually changed, so a no-op run makes no commit.
 on:
-  push:
-  schedule:
-    - cron: "40 3 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "40 3 * * 1"
 concurrency:
   group: seo-${{ github.ref }}
   cancel-in-progress: false

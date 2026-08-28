@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write 原声-grade /i/<id>/ pages for every item on the shelf."""
 from __future__ import annotations
-import json, os, html
+import json, os, html, shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEED = os.path.join(ROOT, "skills", "feed.json")
@@ -212,7 +212,17 @@ def main():
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(it, prev, nxt))
         n += 1
-    print("[pages] wrote %s article pages" % n)
+    keep = {it["id"] for it in items}
+    dropped = 0
+    for folder in (OUT, os.path.join(ROOT, "zh", "i")):
+        if not os.path.isdir(folder):
+            continue
+        for name in os.listdir(folder):
+            p = os.path.join(folder, name)
+            if os.path.isdir(p) and name not in keep:
+                shutil.rmtree(p)
+                dropped += 1
+    print("[pages] wrote %s article pages, pruned %s stale" % (n, dropped))
 
 
 if __name__ == "__main__":
