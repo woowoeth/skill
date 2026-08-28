@@ -65,7 +65,7 @@ def cover_of(it):
     return ""
 
 
-def page(it, prev=None, nxt=None):
+def page(it, prev=None, nxt=None, related=None):
     title = it.get("title_zh") or it.get("name") or it["id"]
     cat_id = it.get("category") or ""
     cat = CAT.get(cat_id, cat_id)
@@ -78,11 +78,32 @@ def page(it, prev=None, nxt=None):
     added = (it.get("added_at") or "")[:10]
     gh = it.get("url") or ("https://github.com/" + repo if repo else "")
     url = "https://ourword.ai/skill/i/%s/" % it["id"]
+    related = related or []
+    rel = []
+    for o in related[:3]:
+        rel.append('<a href="../%s/">%s</a>' % (esc(o["id"]), esc(o.get("title_zh") or o.get("name") or o["id"])))
+    related_html = ('<div class="box"><p class="hd">同类</p><div class="rel">%s</div></div>' % "".join(rel)) if rel else ""
+
     ins = it.get("install") or {}
     cmds = [ins[k] for k in ("clone", "copy") if ins.get(k)]
     cover = cover_of(it)
 
     media = ('<img class="cover" src="%s" alt="">' % esc(cover)) if cover else ""
+
+    who_map = {
+        "creative": ["做图的人", "要一种风格锁死的人"],
+        "writing": ["写字的人", "改稿的人"],
+        "life": ["过日子的人", "现场有约束的人"],
+        "fun": ["想玩的人", "不当真的人"],
+    }
+    who = who_map.get(cat_id, [cat+"的人"])
+    who_html = "".join("<li>%s</li>" % esc(x) for x in who)
+    uses = [
+        "按这个 skill 做一版「%s」。" % title,
+        "先用它的规矩改我手上这张，不许换风格。",
+        "做完对照局限那一条，越界就停。",
+    ]
+    uses_html = "".join("<li>%s</li>" % esc(x) for x in uses)
 
     cmd_html = []
     for c in cmds:
@@ -95,12 +116,16 @@ def page(it, prev=None, nxt=None):
     tags = [x for x in (owner, "店长推荐" if it.get("pick") else "") if x]
     tag_html = "".join('<span class="tag">%s</span>' % esc(t) for t in tags)
 
-    pull = ('<aside class="pull"><span class="lbl">点评</span>%s</aside>' % esc(why)
+    pull = ('<aside class="pull"><span class="lbl">交付什么</span>%s</aside>' % esc(why)
             if why else "")
+    body_sec = ('<section class="sec"><h2>这件干什么</h2><p>%s</p></section>' % esc(why)
+                if why else "")
     limit_sec = ('<section class="sec"><h2>局限</h2><p>%s</p></section>' % esc(limit)
                  if limit else "")
+    uses_sec = '<section class="sec"><h2>这样用它</h2><ul class="uses">%s</ul></section>' % uses_html
     install_sec = ('<section class="sec"><h2>安装</h2><div class="cmds">%s</div></section>'
                    % "".join(cmd_html) if cmd_html else "")
+    who_box = '<div class="box"><p class="hd">适合谁</p><ul class="who">%s</ul></div>' % who_html
 
     sib = []
     if prev:
@@ -123,7 +148,7 @@ def page(it, prev=None, nxt=None):
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
-<link rel="stylesheet" href="../../assets/item.css?v=10">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
@@ -151,7 +176,6 @@ def page(it, prev=None, nxt=None):
 
 <div class="wrap ep-grid">
   <article>
-    %s
     <div class="kicker">
       <span class="src">%s</span>
       <span>%s</span>
@@ -163,16 +187,21 @@ def page(it, prev=None, nxt=None):
     %s
     %s
     %s
+    %s
+    %s
+    %s
   </article>
   <aside class="aside">
+    %s
     <div class="box">
       <dl class="kv">
         <dt>分类</dt><dd>%s</dd>
-        <dt>仓库</dt><dd>%s</dd>
+        <dt>作者</dt><dd>%s</dd>
         <dt>上架</dt><dd>%s</dd>
       </dl>
-      <a class="pill" href="%s" rel="noopener">打开仓库</a>
+      <a class="pill" href="%s" rel="noopener">在 GitHub 查看</a>
     </div>
+    %s
   </aside>
   <nav class="foot">%s</nav>
 </div>
@@ -203,20 +232,24 @@ def page(it, prev=None, nxt=None):
         esc(url),
         MARK,
         esc(url),
-        media,
         esc(cat),
         esc(owner),
         esc(added),
         esc(title),
         ('<p class="lede">%s</p>' % esc(lede)) if lede else "",
         tag_html,
+        media,
         pull,
+        body_sec,
         limit_sec,
+        uses_sec,
         install_sec,
+        who_box,
         esc(cat),
-        esc(repo),
+        esc(owner),
         esc(added),
         esc(gh),
+        related_html,
         "".join(sib),
     )
 
@@ -230,7 +263,8 @@ def main():
         nxt = items[i + 1] if i + 1 < len(items) else None
         d = os.path.join(OUT, it["id"])
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(it, prev, nxt))
+        same = [x for x in items if x.get("category")==it.get("category") and x["id"]!=it["id"]][:3]
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(it, prev, nxt, same))
         n += 1
     keep = {it["id"] for it in items}
     dropped = 0
