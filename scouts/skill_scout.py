@@ -18,7 +18,7 @@ Fault-tolerant: any single repo/skill failure is skipped, never aborts.
 No third-party deps — stdlib + git only.
 """
 from __future__ import annotations
-import os, re, sys, json, time, shutil, argparse, tempfile, subprocess as sp, urllib.parse
+import os, re, sys, json, time, shutil, argparse, tempfile, subprocess as sp, urllib.parse, urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import scout_lib as lib  # noqa: E402
@@ -430,7 +430,7 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
         if it["id"] in existing:
             continue
         if cover:
-            it["cover"] = cover
+            it["cover"] = host_cover(it["id"], cover) or cover
         if not save_method(it):
             # 取不回正文 = path 多半记错了（或仓库没了）。过去这里是静默的，
             # 于是错的 install.copy 一路上架，用户照抄装不上都没人知道。
@@ -480,8 +480,12 @@ def resolve_cover(repo: str) -> str:
         html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
         m = (re.search(r'property="og:image"\s+content="([^"]+)"', html)
              or re.search(r'content="([^"]+)"\s+property="og:image"', html))
-        if m and "repository-images.githubusercontent.com" in m.group(1):
-            return m.group(1)
+        if m:
+            u = m.group(1).replace("&amp;", "&")
+            if "private-user-images" in u:
+                pass
+            else:
+                return u
     except Exception:
         pass
     # 2) first meaningful image in rendered README
@@ -515,7 +519,35 @@ def resolve_cover(repo: str) -> str:
             return cands[0]
     except Exception:
         pass
-    return ""
+    # last resort: GitHub generated social card
+    return "https://opengraph.githubassets.com/1/" + repo
+
+
+def host_cover(sid: str, url: str) -> str:
+    """Save a cover into assets/covers so the shelf does not depend on hotlinks."""
+    if not url or not sid:
+        return url
+    if "woowoeth/skill" in url and "/assets/covers/" in url:
+        return url
+    dest_dir = os.path.join(lib.ROOT, "assets", "covers")
+    os.makedirs(dest_dir, exist_ok=True)
+    ext = "png"
+    low = url.lower()
+    if ".jpg" in low or "jpeg" in low:
+        ext = "jpg"
+    elif ".webp" in low:
+        ext = "webp"
+    path = os.path.join(dest_dir, f"{sid}.{ext}")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 pinwei-cover"})
+        data = urllib.request.urlopen(req, timeout=25).read()
+        if len(data) < 800:
+            return url
+        open(path, "wb").write(data)
+        return f"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/{sid}.{ext}"
+    except Exception as e:
+        print("[cover] host skip", sid, e)
+        return url
 
 
 # ---------------------------------------------------------------- enrich ----
@@ -713,6 +745,9 @@ def same_day_shelf(ids: list[str], existing: dict) -> int:
             lib.save_item(it)
             print(f"[shelf] 拒 {sid}")
             continue
+        blob = (it.get("title_zh") or "") + (it.get("tagline_zh") or "") + (it.get("why_zh") or "")
+        if "英文简介" in blob or "见下" in blob or sum(1 for c in (it.get("title_zh") or "") if "\u4e00" <= c <= "\u9fff") < 2:
+            it["title_zh"] = it["tagline_zh"] = it["why_zh"] = it["limit_zh"] = ""
         if not (it.get("title_zh") and it.get("why_zh") and it.get("limit_zh")):
             it.update({k: v for k, v in _local_copy(it).items() if not it.get(k)})
         if not (it.get("title_zh") and it.get("why_zh") and it.get("limit_zh")):
@@ -1193,6 +1228,13 @@ def main() -> None:
         radar = watch_authors(existing, sources)
         if radar:
             suggest_repos(radar[:4], existing, sources)   # 已验证作者的新作，绕过星门槛
+        # 图册名单直接进货，不走 GitHub 仓库搜索（repo:owner/name 几乎搜不到）
+        taste = [r for r in taste_list_repos()
+                 if r not in sources.get("repos", {})
+                 and r.lower() not in { (it.get("repo") or "").lower() for it in existing.values() }]
+        if taste:
+            print(f"[taste] {len(taste)} unseen, taking {min(4, len(taste))}")
+            suggest_repos(taste[:4], existing, sources)
         if not a.no_charts:
             watch_charts(existing, sources)
         discover(existing, sources)

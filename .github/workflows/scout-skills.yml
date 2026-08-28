@@ -60,7 +60,7 @@ jobs:
           # 2) rebuild the aggregates from the fully merged set, push with reset+regen retry
           #    --from-log 把这一轮扫描的真实数字记进 scouts/scan_log.json（拒收榜的统计来源）
           python scouts/scout_lib.py --from-log "${RUNNER_TEMP}/scout-run.log"
-          git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json i sitemap.xml llms.txt llms-full.txt feed.xml robots.txt index.html 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
+          git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json i sitemap.xml llms.txt llms-full.txt feed.xml robots.txt index.html assets/covers editorial/curation.json 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
           if git diff --cached --quiet; then echo "feed unchanged"; exit 0; fi
           git commit -m "restock: rebuild feed and index"
           for i in $(seq 1 8); do
@@ -68,7 +68,7 @@ jobs:
             git fetch origin main && git reset -q --hard origin/main
             # reset --hard 把刚才那次记录一起丢了，所以重试要重记一次 —— 不会重复计数
             python scouts/scout_lib.py --from-log "${RUNNER_TEMP}/scout-run.log"
-            git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json i sitemap.xml llms.txt llms-full.txt feed.xml robots.txt index.html 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
+            git add -- skills/feed.json skills/rejected-feed.json scouts/scan_log.json i sitemap.xml llms.txt llms-full.txt feed.xml robots.txt index.html assets/covers editorial/curation.json 2>/dev/null || git add -- skills/feed.json skills/rejected-feed.json
             git diff --cached --quiet || git commit -m "restock: rebuild feed and index"
             echo "feed push retry $i"; sleep $(( (RANDOM % 5) + 2 ))
           done
