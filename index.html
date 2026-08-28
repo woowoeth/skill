@@ -251,7 +251,7 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
 @media (max-width:620px){
   :root{--cols:1;--gut:12px;
     --t-body:14px;--t-lead:15px;--t-h3:18px;--t-h2:22px;--t-h1:32px;--t-meta:12px;--t-cap:11px}
-  .wrap{padding:0 16px}
+  .wrap{padding:0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right))}
   .logo{font-size:34px}
   .bar{flex-direction:column;align-items:stretch}
   .search{flex:1 1 auto;max-width:none}
