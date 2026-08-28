@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write a readable /i/<id>/ page for every item currently on the shelf."""
+"""Write 原声-grade /i/<id>/ pages for every item on the shelf."""
 from __future__ import annotations
 import json, os, html
 
@@ -11,94 +11,209 @@ CAT = {
     "body": "养身体", "work": "上班用", "learn": "学东西", "dev": "做图",
     "meta": "店长位",
 }
+MARK = """<svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>"""
 
-CSS = """
-:root{--bg:#e7ece8;--card:#f6f8f6;--ink:#16201b;--ink-2:#3d4a43;--ink-3:#5e6e66;
-  --line:#cfd8d2;--accent:#2d6a4f;--serif:'Songti SC','Source Han Serif SC','Noto Serif CJK SC',Georgia,serif;
-  --sans:-apple-system,BlinkMacSystemFont,'PingFang SC',system-ui,sans-serif}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
-a{color:inherit}.wrap{max-width:720px;margin:0 auto;padding:28px 20px 72px}
-.top{display:flex;align-items:baseline;gap:12px;margin-bottom:28px}
-.top b{font:600 28px/1 var(--serif)}.top i{font:16px/1 var(--serif);font-style:normal;color:var(--ink-3)}
-.top a.back{margin-left:auto;font-size:13px;color:var(--ink-3);text-decoration:none}
-.plate{aspect-ratio:16/10;border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;justify-content:flex-end;
-  background:radial-gradient(120% 80% at 100% 0%,rgba(45,106,79,.18),transparent 55%),
-             linear-gradient(165deg,#d7e0d9,#c5d1c8 60%,#b4c2b8);margin:0 0 22px}
-.plate .c{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
-.plate .t{font:600 22px/1.3 var(--serif)}
-.cover{width:100%;border-radius:14px;margin:0 0 22px;display:block}
-h1{font:600 28px/1.3 var(--serif);margin:0 0 12px}
-.why,.limit{margin:0 0 16px;color:var(--ink-2)}
-.limit{padding-top:14px;border-top:1px solid var(--line);color:var(--ink-3);font-size:14px}
-.cmds{margin:22px 0;display:grid;gap:8px}
-.cmd{font:13px/1.5 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);
-  border-radius:10px;padding:10px 12px;overflow:auto}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
-.row button,.row a{border:1px solid var(--line);background:var(--card);border-radius:999px;
-  padding:7px 12px;font:600 12px/1 var(--sans);text-decoration:none;cursor:pointer;color:var(--ink-2)}
-"""
 
 def esc(s):
     return html.escape(s or "", quote=True)
 
-def page(it):
+
+def cover_of(it):
+    c = (it.get("cover") or "").strip()
+    if c:
+        return c
+    p = os.path.join(ROOT, "skills", it["id"] + ".json")
+    if os.path.exists(p):
+        try:
+            raw = json.load(open(p, encoding="utf-8"))
+            return (raw.get("cover") or "").strip()
+        except Exception:
+            return ""
+    return ""
+
+
+def page(it, prev=None, nxt=None):
     title = it.get("title_zh") or it.get("name") or it["id"]
-    cat = CAT.get(it.get("category") or "", it.get("category") or "")
-    cover = it.get("cover") or ""
-    why = it.get("why_zh") or it.get("tagline_zh") or ""
-    limit = it.get("limit_zh") or ""
+    cat_id = it.get("category") or ""
+    cat = CAT.get(cat_id, cat_id)
+    why = (it.get("why_zh") or "").strip()
+    lede = (it.get("tagline_zh") or it.get("desc_en") or "").strip()
+    limit = (it.get("limit_zh") or "").strip()
+    repo = it.get("repo") or ""
+    owner = it.get("owner") or (repo.split("/")[0] if repo else "")
+    added = (it.get("added_at") or "")[:10]
+    gh = it.get("url") or ("https://github.com/" + repo if repo else "")
+    url = "https://ourword.ai/skill/i/%s/" % it["id"]
     ins = it.get("install") or {}
-    cmds = [ins.get("clone"), ins.get("copy")]
-    url = f"https://ourword.ai/skill/i/{it['id']}/"
-    media = (f'<img class="cover" src="{esc(cover)}" alt="">'
+    cmds = [ins[k] for k in ("clone", "copy") if ins.get(k)]
+    cover = cover_of(it)
+
+    media = ('<img class="cover" src="%s" alt="">' % esc(cover)
              if cover else
-             f'<div class="plate"><div class="c">{esc(cat)}</div><div class="t">{esc(title)}</div></div>')
-    cmd_html = "".join(f'<div class="cmd">{esc(c)}</div>' for c in cmds if c)
-    gh = it.get("url") or f"https://github.com/{it.get('repo','')}"
-    return f"""<!doctype html>
-<html lang="zh-CN"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)} — 品味</title>
-<link rel="canonical" href="{esc(url)}">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(why[:120])}">
-<meta property="og:url" content="{esc(url)}">
-<style>{CSS}</style>
-</head><body><div class="wrap">
-<div class="top"><a href="../../"><b>品味</b></a><i>帮你发现有品位的 Skills</i>
-<a class="back" href="../../">← 货架</a></div>
-{media}
-<h1>{esc(title)}</h1>
-<p class="why">{esc(why)}</p>
-<p class="limit">{esc(limit)}</p>
-<div class="cmds">{cmd_html}</div>
-<div class="row">
-<button type="button" id="share">分享</button>
-<a href="{esc(gh)}" rel="noopener">仓库</a>
-</div>
+             '<div class="plate"><div class="c">%s</div><div class="t">%s</div></div>'
+             % (esc(cat), esc(title)))
+
+    cmd_html = []
+    for c in cmds:
+        cmd_html.append(
+            '<div class="cmd"><code>%s</code>'
+            '<button type="button" data-copy="%s">复制</button></div>'
+            % (esc(c), esc(c))
+        )
+
+    tags = [x for x in (cat, owner, "店长推荐" if it.get("pick") else "") if x]
+    tag_html = "".join('<span class="tag">%s</span>' % esc(t) for t in tags)
+
+    pull = ('<aside class="pull"><span class="lbl">点评</span>%s</aside>' % esc(why)
+            if why else "")
+    limit_sec = ('<section class="sec"><h2>局限</h2><p>%s</p></section>' % esc(limit)
+                 if limit else "")
+    install_sec = ('<section class="sec"><h2>安装</h2><div class="cmds">%s</div></section>'
+                   % "".join(cmd_html) if cmd_html else "")
+
+    sib = []
+    if prev:
+        sib.append('<a href="../%s/">← %s</a>' % (
+            esc(prev["id"]), esc(prev.get("title_zh") or prev.get("name") or prev["id"])))
+    else:
+        sib.append("<span></span>")
+    if nxt:
+        sib.append('<a href="../%s/">%s →</a>' % (
+            esc(nxt["id"]), esc(nxt.get("title_zh") or nxt.get("name") or nxt["id"])))
+    else:
+        sib.append("<span></span>")
+
+    return """<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%s — 品味</title>
+<meta name="description" content="%s">
+<link rel="canonical" href="%s">
+<link rel="icon" type="image/svg+xml" href="../../icon.svg">
+<link rel="stylesheet" href="../../assets/item.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:title" content="%s — 品味">
+<meta property="og:description" content="%s">
+<meta property="og:url" content="%s">
+<meta name="theme-color" content="#e7ece8">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      %s
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="%s">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    %s
+    <div class="kicker">
+      <span class="src">%s</span>
+      <span>%s</span>
+      <span class="date">%s</span>
+    </div>
+    <h1 class="ttl">%s</h1>
+    <p class="lede">%s</p>
+    <div class="tags">%s</div>
+    %s
+    %s
+    %s
+  </article>
+  <aside class="aside">
+    <div class="box">
+      <p class="hd">本页</p>
+      <dl class="kv">
+        <dt>分类</dt><dd>%s</dd>
+        <dt>仓库</dt><dd>%s</dd>
+        <dt>上架</dt><dd>%s</dd>
+      </dl>
+      <a class="pill" href="%s" rel="noopener">打开仓库</a>
+    </div>
+    <div class="box">
+      <p class="hd">引用</p>
+      <dl class="kv">
+        <dt>地址</dt><dd>%s</dd>
+      </dl>
+    </div>
+  </aside>
+  <nav class="foot">%s</nav>
 </div>
 <script>
-var u={json.dumps(url)};
-document.getElementById('share').onclick=function(){{
-  var b=this, old=b.textContent;
-  function ok(){{b.textContent='已复制链接';setTimeout(function(){{b.textContent=old}},1400)}}
-  if(navigator.clipboard) navigator.clipboard.writeText(u).then(ok,ok); else ok();
-}};
+(function(){
+  function copy(t, btn){
+    var old = btn.textContent;
+    function ok(){ btn.textContent='已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
 </script>
-</body></html>
-"""
+</body>
+</html>
+""" % (
+        esc(title),
+        esc((lede or why)[:160]),
+        esc(url),
+        esc(title),
+        esc((lede or why)[:160]),
+        esc(url),
+        MARK,
+        esc(url),
+        media,
+        esc(cat),
+        esc(owner),
+        esc(added),
+        esc(title),
+        esc(lede),
+        tag_html,
+        pull,
+        limit_sec,
+        install_sec,
+        esc(cat),
+        esc(repo),
+        esc(added),
+        esc(gh),
+        esc(url),
+        "".join(sib),
+    )
+
 
 def main():
     feed = json.load(open(FEED, encoding="utf-8"))
+    items = [it for it in (feed.get("skills") or []) if not it.get("hide")]
     n = 0
-    for it in feed.get("skills") or []:
-        if it.get("hide"):
-            continue
+    for i, it in enumerate(items):
+        prev = items[i - 1] if i else None
+        nxt = items[i + 1] if i + 1 < len(items) else None
         d = os.path.join(OUT, it["id"])
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(it))
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page(it, prev, nxt))
         n += 1
-    print(f"[pages] wrote {n} shelf pages under i/")
+    print("[pages] wrote %s article pages" % n)
+
 
 if __name__ == "__main__":
     main()
