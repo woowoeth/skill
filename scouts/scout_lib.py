@@ -737,6 +737,11 @@ def refresh() -> dict:
     print(f"[lib] feed: {len(visible)} items ({feed['new_today']} new today, {feed['picks']} picks, "
           f"{feed['with_limit']} with 局限, headline={'yes' if headline else 'none'})")
     print(f"[lib] 备料齐 {ps['ready']} 件 / 有存档 {ps['archived']} / 无存档 {ps['no_archive']}")
+    try:
+        import write_shelf_pages
+        write_shelf_pages.main()
+    except Exception as e:
+        print(f"[lib] shelf pages skip: {e}")
     return feed
 
 def load_sources() -> dict:

@@ -291,7 +291,30 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
    用 inset 而不是 border：border 会参与宽高计算，把写死的宽高比顶歪，瀑布流就跳版了。 */
 .shot{display:block;background:var(--soft);position:relative;overflow:hidden;
       aspect-ratio:16/10;box-shadow:inset 0 0 0 1px var(--line)}
-.shot img{width:100%;height:100%;display:block;object-fit:cover}
+.shot img{width:100%;height:100%;display:block;object-fit:cover;position:relative;z-index:1}
+.shot .plate-ink{
+  position:absolute;inset:0;padding:18px 16px 16px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(45,106,79,.18), transparent 55%),
+    linear-gradient(165deg,#d7e0d9 0%,#c5d1c8 60%,#b4c2b8 100%);
+}
+.shot .plate-cat{
+  font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:10px;
+}
+.shot .plate-title{
+  font:600 18px/1.28 var(--serif);color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.shot.hasimg .plate-ink{display:none}
+.share{
+  margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--ink-3);
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  padding:6px 10px;border-radius:var(--r-chip);cursor:pointer;
+}
+.share:hover,.share.on{border-color:var(--ink);color:var(--ink)}
+a.card{color:inherit}
 /* 竖过头的限个高，别让一张海报把一列吃掉。
    artwork 那一档放宽到 620px：最竖那张（比 0.46）在桌面五列自然高 570px，
    卡在 420px 会把刚放宽的下限又用 max-height 裁回去。 */
@@ -706,6 +729,7 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
         <b id="brand">品味</b>
       </span>
       <i id="brandSub">帮你发现有品位的 Skills</i>
+      <button id="shareSite" class="share" type="button">分享本站</button>
       <button id="langBtn" type="button">EN</button>
     </div>
     <p class="say" id="say">叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清 —— 检索不是问题了，判断才是。</p>
@@ -765,6 +789,7 @@ var I18N = {
   tSeen:"过手", tIn:"上架", tOut:"没让它进来", tWhy:"已写拒收理由",
   today:"今天上新 <b>%s</b> 件", todayNone:"今天还没上新。不硬凑数。",
   all:"全部", pick:"店长推荐",
+  share:"分享", shared:"已复制链接", shareSite:"分享本站",
   results:"搜到 %s 件", empty:"没有匹配的。换个词试试。",
   // 心选清空是唯一一个「不是搜出来的空」。用搜索那句会让人去改一个他没打的词。
   emptyHeart:"心选是空的。在卡片上点一下心，标出你觉得好的东西。",
@@ -806,6 +831,7 @@ var I18N = {
   tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
   today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
   all:"All", pick:"Editor's picks",
+  share:"Share", shared:"Link copied", shareSite:"Share site",
   results:"%s found", empty:"Nothing matches. Try another word.",
   emptyHeart:"Nothing hearted yet. Tap the heart on a card to mark something good.",
   moreN:"%s more", noMore:"End of the shelf",
@@ -978,6 +1004,12 @@ function fmtDate(iso){
   return I18N[lang].dfmt(+m[1],+m[2],+m[3]);
 }
 function urlOf(it){ return it.url || ("https://github.com/"+it.repo); }
+function itemPath(it){ return "i/"+encodeURIComponent(it.id)+"/"; }
+function itemAbs(it){ return "https://ourword.ai/skill/i/"+it.id+"/"; }
+function plateInner(it){
+  return '<span class="plate-ink"><span class="plate-cat">'+esc(catName(it.category))+'</span>'
+       + '<span class="plate-title">'+esc(nameOf(it))+'</span></span>';
+}
 function dateOK(it){ return it.age_source==="file" || it.age_source==="repo"; }
 function isPack(it){ return it.kind==="collection"; }
 
@@ -990,6 +1022,7 @@ function renderChrome(){
   el("brand").textContent = t("brand");
   el("brandSub").textContent = t("brandSub");
   el("langBtn").textContent = t("btn");
+  var ss = el("shareSite"); if(ss) ss.textContent = t("shareSite");
   el("say").innerHTML = t("say");
   el("q").placeholder = t("search");
   if(!D) el("colo2").textContent = "";
@@ -1063,7 +1096,7 @@ function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec){
     if(forSheet) return "";
-    return '<span class="shot" aria-hidden="true"></span>';
+    return '<span class="shot plate">'+plateInner(it)+'</span>';
   }
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
 
@@ -1111,17 +1144,18 @@ function shotHTML(it, forSheet){
      ================================================================ */
   var AR_FLAT = 2.45, H_MAX_K = 2.25;
   if(!forSheet){
-    if(ar >= AR_FLAT) return '<span class="shot" aria-hidden="true"></span>';
+    if(ar >= AR_FLAT) return '<span class="shot plate">'+plateInner(it)+'</span>';
     if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太竖 → 限高（等比，不裁）
   }
   // 宽高比已知就写死 —— 图片加载前空间就占好了，瀑布流不跳版
   var sty = ar ? ' style="aspect-ratio:'+(Math.round(ar*1000)/1000)+'"' : '';
   // 78vh 那道闸和上面的宽度闸管的不是一件事：它防的是窄短视口下一张图占满屏
   var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
-  return '<span class="shot'+tall+'"'+sty+'>'
+  return '<span class="shot hasimg'+tall+'"'+sty+'>'
+       +   plateInner(it)
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
-       +     ' onerror="var s=this.parentNode;s.parentNode.classList.add(\'noimg\');s.remove()">'
+       +     ' onerror="var p=this.parentNode;this.remove();if(p)p.classList.remove(\'hasimg\')">'
        + '</span>';
 }
 
@@ -1156,6 +1190,7 @@ function badgesHTML(it, isNew){
   /* 「备料齐」「店长读过」已撤：它们是我们内部的词，读者看不懂，
      而卡片上没有地方解释。prep_badge 字段留着当选品内部工具。 */
   if(it.pick) h += '<span class="badge">'+esc(t("picked"))+'</span>';
+  h += '<button class="share" type="button" data-share="'+esc(it.id)+'">'+esc(t("share"))+'</button>';
   return '<div class="foot">'+h+'</div>';
 }
 
@@ -1173,17 +1208,14 @@ function cardHTML(it, isNew){
   var why  = whyOf(it);
   // 墨杠总是出现在 DOM 里，由 CSS 决定显不显 —— 这样图片 onerror 退化成无图卡时，
   // 起头那道杠也在，不会退成一张没头的卡。
-  return '<article class="card'+(shot?"":" noimg")+'" role="button" tabindex="0" data-id="'+esc(it.id)+'">'
-    + '<span class="bar-ink" aria-hidden="true"></span>'
+  return '<a class="card" href="'+itemPath(it)+'" data-id="'+esc(it.id)+'">'
     + shot
-    + (isPack(it) && !shot ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
     + '<div class="cbody">'
     +   '<h3>'+mix(nameOf(it))+'</h3>'
     +   (why ? '<p class="rev">'+zhChip(it)+mix(why)+'</p>' : '')
-    /* 「但是」不进流：店主定「换成点评」。完整局限在详情页，不截断、不夹行。 */
     +   badgesHTML(it, isNew)
     + '</div>'
-    + '</article>';
+    + '</a>';
 }
 
 /* ------------------------------------------------------------------
@@ -1413,6 +1445,20 @@ document.addEventListener("click", function(e){
   if(e.target.closest(".sheet .x")){ closeSheet(); return; }
   if(e.target.id==="veil"){ closeSheet(); return; }
 
+  var sh = e.target.closest("[data-share], #shareSite");
+  if(sh){
+    e.stopPropagation(); e.preventDefault();
+    var sid = sh.getAttribute("data-share");
+    var url = sid ? itemAbs({id:sid}) : "https://ourword.ai/skill/";
+    var old = sh.textContent;
+    function marked(){ sh.textContent = t("shared"); sh.classList.add("on");
+      setTimeout(function(){ sh.textContent = old; sh.classList.remove("on"); }, 1400); }
+    if(navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(url).then(marked, function(){ copyText(url, sh); });
+    else copyText(url, sh);
+    return;
+  }
+
   var hb = e.target.closest(".heart");
   if(hb){
     e.stopPropagation(); e.preventDefault();
@@ -1510,25 +1556,9 @@ document.addEventListener("click", function(e){
 
   if(e.target.closest("#more")){ state.limit += 60; renderShelf(true); return; }
 
-  var card = e.target.closest(".card");
-  if(card){
-    var it = (D.skills||[]).find(function(x){ return x.id===card.getAttribute("data-id") });
-    if(it) openSheet(it);
-    return;
-  }
 });
 
 document.addEventListener("keydown", function(e){
-  if(e.key==="Escape" && el("veil").classList.contains("open")){ closeSheet(); return; }
-  // article[role=button] 不像 <button> 自带键盘，得自己接
-  if(e.key==="Enter" || e.key===" " || e.key==="Spacebar"){
-    var card = e.target.closest && e.target.closest('.card[role="button"]');
-    if(card){
-      e.preventDefault();
-      var it = (D.skills||[]).find(function(x){ return x.id===card.getAttribute("data-id") });
-      if(it) openSheet(it);
-    }
-  }
 });
 
 var qt=null;

@@ -1,27 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>noir-interrogation — Pinwei</title>
-<!--GEO:HEAD:START--><meta name="description" content="Agent skill noir-interrogation from c1375/noir-interrogation."><meta name="keywords" content="claude code skills, agent skills, claude skills, codex skills, MCP skills, AI agent plugins, 品味, agent skill 推荐, claude code 技能, 智能体插件"><meta name="author" content="OurWord AI"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://ourword.ai/skill/i/c1375-noir-interrogation/"><link rel="alternate" type="application/rss+xml" title="Pinwei" href="https://ourword.ai/skill/feed.xml"><meta property="og:type" content="article"><meta property="og:site_name" content="Pinwei"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="noir-interrogation — Pinwei"><meta property="og:description" content="Agent skill noir-interrogation from c1375/noir-interrogation."><meta property="og:url" content="https://ourword.ai/skill/i/c1375-noir-interrogation/"><meta property="og:image" content="https://ourword.ai/skill/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Pinwei"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="noir-interrogation — Pinwei"><meta name="twitter:description" content="Agent skill noir-interrogation from c1375/noir-interrogation."><meta name="twitter:image" content="https://ourword.ai/skill/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"OurWord AI","alternateName":"用 AI 触摸这个世界","url":"https://ourword.ai/","logo":"https://ourword.ai/og.png","sameAs":["https://github.com/woowoeth","https://ourword.ai/idea/","https://ourword.ai/skill/","https://ourword.ai/ai-bubble/","https://ourword.ai/zouni/"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"noir-interrogation","url":"https://ourword.ai/skill/i/c1375-noir-interrogation/","description":"Agent skill noir-interrogation from c1375/noir-interrogation.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Pinwei","url":"https://ourword.ai/skill/"},"publisher":{"@type":"Organization","name":"OurWord AI","url":"https://ourword.ai/"},"dateModified":"2026-04-27","datePublished":"2026-04-27","keywords":"fun, skill, c1375","citation":"https://github.com/c1375/noir-interrogation/tree/HEAD/.claude/skills/noir-interrogation","sameAs":"https://github.com/c1375/noir-interrogation/tree/HEAD/.claude/skills/noir-interrogation","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OurWord AI","item":"https://ourword.ai/"},{"@type":"ListItem","position":2,"name":"Pinwei","item":"https://ourword.ai/skill/"},{"@type":"ListItem","position":3,"name":"noir-interrogation","item":"https://ourword.ai/skill/i/c1375-noir-interrogation/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you install it?","acceptedAnswer":{"@type":"Answer","text":"git clone --depth 1 https://github.com/c1375/noir-interrogation.git Then point your agent at the skill directory."}},{"@type":"Question","name":"Where does it come from?","acceptedAnswer":{"@type":"Answer","text":"Repository: c1375/noir-interrogation Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total."}}]}</script><!--GEO:HEAD:END-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHD3WEXQ8T"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-DHD3WEXQ8T");</script>
-<style>:root{color-scheme:light only;--ink:#0a0a0a;--ink-70:#404040;--ink-50:#666666;--ink-30:#b3b3b3;--hairline:#e5e5e5;--surface:#ffffff;--bg:#fafafa;--tint:#f0f0f0;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--fs-caption:11px;--fs-body:13px;--fs-strong:14px;--fs-heading:16px;--r-block:8px;--font:'Inter','Noto Sans CJK SC','PingFang SC','Hiragino Sans GB',system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:var(--fs-heading)/1.75 var(--font);-webkit-font-smoothing:antialiased}main{max-width:720px;margin:0 auto;padding:var(--sp-5) var(--sp-5) 72px}a{color:var(--ink)}nav.bc{font-size:var(--fs-body);color:var(--ink-50);margin:var(--sp-2) 0 var(--sp-5)}nav.bc a{color:var(--ink-50);text-decoration:none}nav.bc a:hover{text-decoration:underline}h1{font-size:26px;line-height:1.3;margin:0 0 var(--sp-3);letter-spacing:-.01em}h2{font-size:var(--fs-heading);margin:var(--sp-6) 0 var(--sp-2);letter-spacing:-.005em}.lede{font-size:var(--fs-heading);color:var(--ink-70);margin:0 0 var(--sp-5)}.meta{font-size:var(--fs-body);color:var(--ink-50);margin:0 0 var(--sp-5)}.tags{margin:var(--sp-5) 0 0}.tags a,.tags span{display:inline-block;font-size:var(--fs-caption);color:var(--ink-70);background:var(--tint);border-radius:999px;padding:var(--sp-1) var(--sp-3);margin:0 var(--sp-2) var(--sp-2) 0;text-decoration:none}footer{margin-top:var(--sp-6);padding-top:var(--sp-5);border-top:1px solid var(--hairline);font-size:var(--fs-body);color:var(--ink-50)}footer a{color:var(--ink-70)}p{margin:0 0 var(--sp-3)}.sib{margin-top:var(--sp-6);font-size:var(--fs-strong)}ul.idx{padding-left:18px}ul.idx li{margin:0 0 var(--sp-3)}</style>
-</head>
-<body>
-<main>
-<nav class="bc"><a href="https://ourword.ai/">Home</a> › <a href="https://ourword.ai/skill/">Pinwei</a> › noir-interrogation</nav>
-<h1>noir-interrogation</h1>
-<p class="lede">Agent skill noir-interrogation from c1375/noir-interrogation.</p>
-<p class="meta">Updated 2026-04-27 · Source <a href="https://github.com/c1375/noir-interrogation/tree/HEAD/.claude/skills/noir-interrogation" rel="nofollow noopener">https://github.com/c1375/noir-interrogation/tree/HEAD/.claude/skills/n…</a></p>
-<h2>How do you install it?</h2>
-<p>git clone --depth 1 https://github.com/c1375/noir-interrogation.git Then point your agent at the skill directory.</p>
-<h2>Where does it come from?</h2>
-<p>Repository: c1375/noir-interrogation Prep work visible in the skill&#x27;s own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.</p>
-<p class="tags"><a href="https://ourword.ai/skill/t/fun/">fun</a><a href="https://ourword.ai/skill/t/skill/">skill</a></p>
-<p class="sib">← <a href="https://ourword.ai/skill/i/joeseesun-qiaomu-anything-to-notebooklm/">qiaomu-anything-to-notebooklm</a> &nbsp;·&nbsp; <a href="https://ourword.ai/skill/i/multica-ai-andrej-karpathy-skills-karpathy-guidelines/">karpathy-guidelines</a> →</p>
-<footer><p>Back to <a href="https://ourword.ai/skill/">Pinwei</a> · <a href="https://ourword.ai/skill/all/">All entries</a></p><p>Cite this page: <code>https://ourword.ai/skill/i/c1375-noir-interrogation/</code></p><p><a href="https://ourword.ai/skill/llms.txt">llms.txt</a> · <a href="https://ourword.ai/skill/llms-full.txt">llms-full.txt</a></p><p><a href="https://ourword.ai/">OurWord AI</a> · <a href="https://ourword.ai/idea/">Idea</a> · <a href="https://ourword.ai/ai-bubble/">AI Bubble Monitor</a> · <a href="https://ourword.ai/zouni/">Zouni</a></p></footer>
-</main>
-</body>
-</html>
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>用 SHA-256 锁死凶手的黑色电影审讯游戏 — 品味</title>
+<link rel="canonical" href="https://ourword.ai/skill/i/c1375-noir-interrogation/">
+<meta property="og:title" content="用 SHA-256 锁死凶手的黑色电影审讯游戏">
+<meta property="og:description" content="困难模式会塞进一个指错人的假证人，而扮演那个嫌疑人的模型自己也不知道那是假的。">
+<meta property="og:url" content="https://ourword.ai/skill/i/c1375-noir-interrogation/">
+<style>
+:root{--bg:#e7ece8;--card:#f6f8f6;--ink:#16201b;--ink-2:#3d4a43;--ink-3:#5e6e66;
+  --line:#cfd8d2;--accent:#2d6a4f;--serif:'Songti SC','Source Han Serif SC','Noto Serif CJK SC',Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'PingFang SC',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
+a{color:inherit}.wrap{max-width:720px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;align-items:baseline;gap:12px;margin-bottom:28px}
+.top b{font:600 28px/1 var(--serif)}.top i{font:16px/1 var(--serif);font-style:normal;color:var(--ink-3)}
+.top a.back{margin-left:auto;font-size:13px;color:var(--ink-3);text-decoration:none}
+.plate{aspect-ratio:16/10;border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:radial-gradient(120% 80% at 100% 0%,rgba(45,106,79,.18),transparent 55%),
+             linear-gradient(165deg,#d7e0d9,#c5d1c8 60%,#b4c2b8);margin:0 0 22px}
+.plate .c{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.plate .t{font:600 22px/1.3 var(--serif)}
+.cover{width:100%;border-radius:14px;margin:0 0 22px;display:block}
+h1{font:600 28px/1.3 var(--serif);margin:0 0 12px}
+.why,.limit{margin:0 0 16px;color:var(--ink-2)}
+.limit{padding-top:14px;border-top:1px solid var(--line);color:var(--ink-3);font-size:14px}
+.cmds{margin:22px 0;display:grid;gap:8px}
+.cmd{font:13px/1.5 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:10px 12px;overflow:auto}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+.row button,.row a{border:1px solid var(--line);background:var(--card);border-radius:999px;
+  padding:7px 12px;font:600 12px/1 var(--sans);text-decoration:none;cursor:pointer;color:var(--ink-2)}
+</style>
+</head><body><div class="wrap">
+<div class="top"><a href="../../"><b>品味</b></a><i>帮你发现有品位的 Skills</i>
+<a class="back" href="../../">← 货架</a></div>
+<div class="plate"><div class="c">玩</div><div class="t">用 SHA-256 锁死凶手的黑色电影审讯游戏</div></div>
+<h1>用 SHA-256 锁死凶手的黑色电影审讯游戏</h1>
+<p class="why">困难模式会塞进一个指错人的假证人，而扮演那个嫌疑人的模型自己也不知道那是假的。</p>
+<p class="limit">一局 5–15 分钟，单场结束就完，不做多线战役。只有黑色电影一种类型，中途要奇幻或科幻会被拒绝；两套设定是 1940 年代美式与 1930 年代民国上海。作者明写不许 agent 去 Read 或 cat 案件 JSON，一旦绕过脚本，这个设计就作废了。</p>
+<div class="cmds"><div class="cmd">git clone --depth 1 https://github.com/c1375/noir-interrogation.git</div><div class="cmd">cp -r noir-interrogation/.claude/skills/noir-interrogation ~/.claude/skills/noir-interrogation</div></div>
+<div class="row">
+<button type="button" id="share">分享</button>
+<a href="https://github.com/c1375/noir-interrogation/tree/HEAD/.claude/skills/noir-interrogation" rel="noopener">仓库</a>
+</div>
+</div>
+<script>
+var u="https://ourword.ai/skill/i/c1375-noir-interrogation/";
+document.getElementById('share').onclick=function(){
+  var b=this, old=b.textContent;
+  function ok(){b.textContent='已复制链接';setTimeout(function(){b.textContent=old},1400)}
+  if(navigator.clipboard) navigator.clipboard.writeText(u).then(ok,ok); else ok();
+};
+</script>
+</body></html>
