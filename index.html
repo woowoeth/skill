@@ -138,51 +138,23 @@ i.g{font-style:normal;display:inline;margin:0 .085em}
 /* ============ 报头 ============
    整块静态 HTML。三个真数（过手 / 上架 / 未上架）落在 #tally，
    数据到了才填；没填的时候上面那句主张照样读得通。 */
-header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom:18px}
-.brandrow{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
-/* ---- 标识 ---- brand/BRAND.md 定稿，数值一个都不许改 ----------------
-   viewBox 必须是 14 4 33 55（不是 0 0 64 64）—— 笔画只落在 x∈[14,47]、
-   y∈[4,59]，用 64×64 会在两侧各留 15 单位透明空气，任何 CSS 间距都被推开。
-   标记高 = 字号 × 1.13；宽高比 0.6（33:55）不许拉伸；与字的间距 0.22em；
-   字是宋体 600、字距 .05em；align-items:center。 */
-.logo{display:flex;align-items:center;gap:.22em;font-size:42px;line-height:1}
-.logo b::after{content:".";color:var(--accent);font-weight:700}
-.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block;color:var(--ink)}
+header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);margin-bottom:18px;padding-bottom:18px}
+.mast-top{display:flex;align-items:flex-end;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:flex-end;gap:12px;color:inherit;text-decoration:none}
+.logo svg{width:22px;height:36px;color:var(--ink)}
 .logo b{
-  font-family:var(--serif);font-weight:600;letter-spacing:.05em;
-  font-size:1em;line-height:1;color:var(--ink);
+  font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,52px);
+  line-height:.98;letter-spacing:-.015em;color:var(--ink);
 }
-.brandrow i{
-  /* slogan 跟在「品味」后面。宋体、正常字距 —— 它是句子不是标签，
-     原来那套 uppercase + .34em 字距是给英文副标的，会把中文拉散。 */
-  font:600 var(--t-cap)/1 var(--serif);font-style:normal;
-  letter-spacing:.02em;color:var(--ink-3);align-self:flex-end;padding-bottom:2px;
+.logo b::after{content:".";color:var(--accent)}
+.slogan{margin:8px 0 0;color:var(--ink-3);font-size:13.5px;letter-spacing:.02em}
+.mast-side{display:flex;align-items:center;gap:7px;padding-bottom:4px}
+.pill{
+  display:inline-flex;align-items:center;height:32px;padding:0 13px;
+  border:1px solid var(--line-2);border-radius:999px;font-size:12.5px;
+  color:var(--ink-2);background:var(--card);white-space:nowrap;cursor:pointer;
 }
-#langBtn{
-  margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--ink-3);
-  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.12em;
-  padding:7px 11px;border-radius:var(--r-chip);cursor:pointer;
-}
-#langBtn:hover{border-color:var(--ink);color:var(--ink)}
-
-.say{
-  margin:10px 0 0;max-width:28em;
-  font:400 14px/1.55 var(--serif);color:var(--ink-3);
-}
-/* 数字不靠颜色跳出来，靠字重和墨度 —— 周围的字退一档，它就自然是重音 */
-.say em{font-style:normal;font-weight:600;color:var(--ink)}
-/* 三个真数。一个都不算、一个都不编，全部来自 feed；拿不到就整行不显示。
-   将来「已写拒收理由 N 条」挂在这一行末尾 —— 位置留着，0 条就不出现。 */
-.tally{
-  margin:var(--s4) 0 0;min-height:1.5em;
-  font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);
-  display:flex;flex-wrap:wrap;gap:2px 12px;
-}
-.tally .k{color:var(--ink-4)}
-/* 分隔点挂在后一项上，不单独成节点 —— 否则换行时它会留在行尾。见 renderTally。 */
-.tally > span + span::before{content:"·";color:var(--line-2);margin:0 .45em}
-.tally b{font-weight:400;color:var(--ink)}
-/* slogan 用宋体，跟标识同一套笔法；它是数字的注脚，不抢分量 */
+.pill:hover{border-color:var(--ink);color:var(--ink)}
 
 /* ============ 搜索条 + 横滑胶囊 ============
    两行都 sticky。手机上这是唯一的导航。 */
@@ -252,7 +224,7 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
   :root{--cols:1;--gut:12px;
     --t-body:14px;--t-lead:15px;--t-h3:18px;--t-h2:22px;--t-h1:32px;--t-meta:12px;--t-cap:11px}
   .wrap{padding:0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right))}
-  .logo{font-size:34px}
+  .logo b{font-size:34px}
   .bar{flex-direction:column;align-items:stretch}
   .search{flex:1 1 auto;max-width:none}
 }
@@ -711,8 +683,8 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
 <!-- 报头 + 搜索条都是静态 HTML：第一次绘制就是一屏真内容，不等 feed。 -->
 <div class="wrap">
   <header class="top">
-    <div class="brandrow">
-      <span class="logo">
+    <div class="mast-top">
+      <a class="logo" href="./">
         <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
              stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="品味">
           <g transform="rotate(-7 32 32)">
@@ -721,13 +693,13 @@ footer .links a:hover{color:var(--ink);border-color:var(--ink)}
           </g>
         </svg>
         <b id="brand">品味</b>
-      </span>
-      <i id="brandSub">帮你发现有品位的 Skills</i>
-      <button id="shareSite" class="share" type="button">分享本站</button>
-      <button id="langBtn" type="button">EN</button>
+      </a>
+      <nav class="mast-side">
+        <button id="shareSite" class="pill" type="button">分享</button>
+        <button id="langBtn" class="pill" type="button">EN</button>
+      </nav>
     </div>
-    <p class="say" id="say">叫 SKILL.md 的文件已经<em>百万量级</em>，没人数得清 —— 检索不是问题了，判断才是。</p>
-    <p class="tally" id="tally"></p>
+    <p class="slogan" id="brandSub">帮你发现有品位的 Skills</p>
   </header>
 
   <div class="bar">
@@ -1016,32 +988,15 @@ function renderChrome(){
   el("brand").textContent = t("brand");
   el("brandSub").textContent = t("brandSub");
   el("langBtn").textContent = t("btn");
-  var ss = el("shareSite"); if(ss) ss.textContent = t("shareSite");
-  el("say").innerHTML = t("say");
+  var ss = el("shareSite"); if(ss) ss.textContent = t("share");
   el("q").placeholder = t("search");
   if(!D) el("colo2").textContent = "";
 }
 
 function renderTally(){
   if(!D) return;
-  var st = D.rejected_summary || {}, bits = [];
-  function put(k, v){
-    if(v==null) return;
-    bits.push('<span><span class="k">'+esc(t(k))+'</span> <b>'+esc(String(v))+'</b></span>');
-  }
-  if(st.shelved!=null && st.unshelved!=null) put("tSeen", st.shelved + st.unshelved);
-  put("tIn", st.shelved!=null ? st.shelved : D.count);
-  if(st.unshelved!=null) put("tOut", st.unshelved);
-  // 拒收理由 0 条就整项不显示 —— 位置留着，不用 0 占位、不拿样张凑数
-  if(st.rejected_documented) put("tWhy", st.rejected_documented);
-  /* 分隔点**不再单独成节点**，改由 CSS 挂在后一项的 `::before` 上。
-     原来是 `bits.join('<span class="sep">·</span>')` —— 手机换行时那个「·」
-     会自己留在行尾：实测第 3 个 sep 在 `{left:270, top:0}`，而「已写拒收理由 174」
-     在 `top:20`，差一整行，第一行读作「…没让它进来 618 ·」。
-     挂到后一项上，它就跟着那一项一起换行，永远不会落单。
-     （slogan 已按店主要求搬到品牌行「品味」之后，不再占这一行 —— 见 brand/BRAND.md。） */
-  el("tally").innerHTML = bits.join("");
-  el("colo2").textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
+  var colo = el("colo2");
+  if(colo) colo.textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
 }
 
 /* ------------------------------------------------------------------
