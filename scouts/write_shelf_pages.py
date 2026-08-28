@@ -82,7 +82,7 @@ def page(it, prev=None, nxt=None, related=None):
     rel = []
     for o in related[:3]:
         rel.append('<a href="../%s/">%s</a>' % (esc(o["id"]), esc(o.get("title_zh") or o.get("name") or o["id"])))
-    related_html = ('<div class="box"><p class="hd">同类</p><div class="rel">%s</div></div>' % "".join(rel)) if rel else ""
+    related_html = ('<div class="box"><p class="hd">同类 Skill</p><div class="rel">%s</div></div>' % "".join(rel)) if rel else ""
 
     ins = it.get("install") or {}
     cmds = [ins[k] for k in ("clone", "copy") if ins.get(k)]
@@ -90,20 +90,35 @@ def page(it, prev=None, nxt=None, related=None):
 
     media = ('<img class="cover" src="%s" alt="">' % esc(cover)) if cover else ""
 
-    who_map = {
-        "creative": ["做图的人", "要一种风格锁死的人"],
-        "writing": ["写字的人", "改稿的人"],
-        "life": ["过日子的人", "现场有约束的人"],
-        "fun": ["想玩的人", "不当真的人"],
+    uses_map = {
+        "creative": [
+            "把我手上这张按它的规矩重做，风格不许换。",
+            "只要成品，过程里的解释可以没有。",
+            "做完对照应用范围，越界的那一稿丢掉。",
+        ],
+        "writing": [
+            "按它的句式改这一段，能删就删。",
+            "先标出越界的句子，再重写，不要通篇润色。",
+            "写完对照应用范围，串味就停。",
+        ],
+        "life": [
+            "按我给的现场条件出方案，条件不够就说做不到。",
+            "不要写成对谁都适用的攻略。",
+            "结论里把限制写在最前面。",
+        ],
+        "fun": [
+            "按规则玩一轮，把依据留在结果里。",
+            "编不出来就停，不要圆。",
+            "玩完对照应用范围，别拿它当正事工具。",
+        ],
     }
-    who = who_map.get(cat_id, [cat+"的人"])
-    who_html = "".join("<li>%s</li>" % esc(x) for x in who)
-    uses = [
-        "按这个 skill 做一版「%s」。" % title,
-        "先用它的规矩改我手上这张，不许换风格。",
-        "做完对照局限那一条，越界就停。",
-    ]
+    uses = uses_map.get(cat_id, uses_map["creative"])
     uses_html = "".join("<li>%s</li>" % esc(x) for x in uses)
+    scope = limit
+    if scope:
+        scope = "这件落在「%s」。%s" % (cat, scope)
+    else:
+        scope = "这件落在「%s」。超出这一格的活，它不会变聪明。" % cat
 
     cmd_html = []
     for c in cmds:
@@ -116,16 +131,14 @@ def page(it, prev=None, nxt=None, related=None):
     tags = [x for x in (owner, "店长推荐" if it.get("pick") else "") if x]
     tag_html = "".join('<span class="tag">%s</span>' % esc(t) for t in tags)
 
-    pull = ('<aside class="pull"><span class="lbl">交付什么</span>%s</aside>' % esc(why)
-            if why else "")
-    body_sec = ('<section class="sec"><h2>这件干什么</h2><p>%s</p></section>' % esc(why)
+    pull = ""
+    body_sec = ('<section class="sec"><h2>做什么用</h2><p>%s</p></section>' % esc(why)
                 if why else "")
-    limit_sec = ('<section class="sec"><h2>局限</h2><p>%s</p></section>' % esc(limit)
-                 if limit else "")
-    uses_sec = '<section class="sec"><h2>这样用它</h2><ul class="uses">%s</ul></section>' % uses_html
+    limit_sec = '<section class="sec"><h2>应用范围</h2><p>%s</p></section>' % esc(scope)
+    uses_sec = '<section class="sec"><h2>如何使用</h2><ul class="uses">%s</ul></section>' % uses_html
     install_sec = ('<section class="sec"><h2>安装</h2><div class="cmds">%s</div></section>'
                    % "".join(cmd_html) if cmd_html else "")
-    who_box = '<div class="box"><p class="hd">适合谁</p><ul class="who">%s</ul></div>' % who_html
+    who_box = ""
 
     sib = []
     if prev:

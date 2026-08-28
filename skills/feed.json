@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-08-28T10:22:31Z",
-  "count": 75,
-  "new_today": 27,
+  "generated_at": "2026-08-28T12:38:00Z",
+  "count": 79,
+  "new_today": 31,
   "picks": 12,
-  "with_limit": 75,
+  "with_limit": 79,
   "prep_stats": {
-    "shelved": 75,
-    "archived": 59,
-    "no_archive": 16,
-    "ready": 29,
-    "editor_read": 75,
+    "shelved": 79,
+    "archived": 52,
+    "no_archive": 27,
+    "ready": 28,
+    "editor_read": 79,
     "ready_at": 3,
     "per_signal": {
-      "references": 44,
-      "scripts": 29,
-      "assets": 12,
-      "boundaries": 31,
-      "when_to_use": 28,
-      "evals": 1
+      "references": 40,
+      "scripts": 25,
+      "assets": 11,
+      "boundaries": 29,
+      "when_to_use": 26,
+      "evals": 0
     }
   },
   "headline": {
@@ -57,7 +57,7 @@
         "copy": "cp -r noir-interrogation/.claude/skills/noir-interrogation ~/.claude/skills/noir-interrogation",
         "dir": "~/.claude/skills/noir-interrogation"
       },
-      "cover": "",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/c1375-noir-interrogation.png",
       "cover_kind": "none",
       "cover_real": false,
       "title_zh": "用 SHA-256 锁死凶手的黑色电影审讯游戏",
@@ -114,8 +114,8 @@
   ],
   "rejected_summary": {
     "feed": "rejected-feed.json",
-    "shelved": 75,
-    "unshelved": 1013,
+    "shelved": 79,
+    "unshelved": 1014,
     "rejected_documented": 873,
     "latest_round": {
       "round_id": "2026-08-27T12:15:23Z-b56c33",
@@ -138,7 +138,7 @@
       "zh": "做图",
       "en": "Images",
       "emoji": "🎨",
-      "count": 28
+      "count": 31
     },
     {
       "id": "writing",
@@ -159,7 +159,7 @@
       "zh": "玩乐",
       "en": "Play",
       "emoji": "🎲",
-      "count": 16
+      "count": 17
     }
   ],
   "skills": [
@@ -195,6 +195,7 @@
         "dir": "~/.claude/skills/novel-characters"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/eternityspring-shuohao-skills-novel-characters.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -202,8 +203,48 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/eternityspring-shuohao-skills-novel-characters.png"
+      "prep_evidence_en": []
+    },
+    {
+      "id": "n1ko724-scene-to-art-lab-scene-to-art-lab",
+      "kind": "skill",
+      "name": "scene-to-art-lab",
+      "title_zh": "一场戏收进艺术实验室",
+      "tagline_zh": "场景进实验室，出来是一张锁死的画",
+      "tagline_en": "",
+      "desc_en": "Transform a user-supplied photograph into an original vertical 3:4 art-directed poster using watercolor, pop-art screenprint, expressive painting, ink-wash, relief print, editorial surrealism, or a controlled hybrid. Use when the user asks to reinterpret a real scene, portrait, object, vehicle, landscape, architecture, or travel photo as creative visual art, an exhibition poster, editorial poster,",
+      "why_zh": "同一作者胶片板之外的另一件：把场面送进固定配方，不是再滤一遍。",
+      "why_en": "",
+      "limit_zh": "实验室只出它那一套画面。要纪录片、要多风格切换，卸掉。",
+      "limit_en": "",
+      "repo": "N1kO724/scene-to-art-lab",
+      "owner": "N1kO724",
+      "path": "scene-to-art-lab",
+      "url": "https://github.com/N1kO724/scene-to-art-lab/tree/HEAD/scene-to-art-lab",
+      "homepage": "",
+      "stars": 36,
+      "pushed_at": "2026-08-20T17:52:35Z",
+      "skill_count": 1,
+      "category": "creative",
+      "fun_score": 11.9,
+      "pick": false,
+      "hide": false,
+      "source": "human-suggested",
+      "added_at": "2026-08-28",
+      "install": {
+        "clone": "git clone --depth 1 https://github.com/N1kO724/scene-to-art-lab.git",
+        "copy": "cp -r scene-to-art-lab/scene-to-art-lab ~/.claude/skills/scene-to-art-lab",
+        "dir": "~/.claude/skills/scene-to-art-lab"
+      },
+      "gate_score": 8,
+      "limit_brief_zh": "",
+      "limit_brief_en": "",
+      "repo_created_at": "",
+      "skill_first_seen": "",
+      "age_source": "",
+      "prep_badge": "",
+      "prep_evidence": [],
+      "prep_evidence_en": []
     },
     {
       "id": "yokel1121-muyang-illustration-skills-muyang-oriental-poetry",
@@ -279,6 +320,7 @@
         "dir": "~/.claude/skills/morandi-cinematic-poster-zeejay"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -286,8 +328,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png"
+      "prep_evidence_en": []
     },
     {
       "id": "kkenny0-card-skill",
@@ -320,28 +361,16 @@
         "copy": "mv card-skill ~/.claude/skills/card-skill",
         "dir": "~/.claude/skills/card-skill"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkenny0-card-skill.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
       "skill_first_seen": "",
       "age_source": "",
-      "prep_badge": "ready",
-      "prep_evidence": [
-        "参考文件",
-        "可执行脚本",
-        "素材模板",
-        "适用条件",
-        "自带评测"
-      ],
-      "prep_evidence_en": [
-        "reference files",
-        "runnable scripts",
-        "bundled assets",
-        "when-to-use",
-        "evals"
-      ],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkenny0-card-skill.png"
+      "prep_badge": "",
+      "prep_evidence": [],
+      "prep_evidence_en": []
     },
     {
       "id": "jinchenma94-bazi-skill",
@@ -375,6 +404,7 @@
         "dir": "~/.claude/skills/bazi"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jinchenma94-bazi-skill.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -382,8 +412,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jinchenma94-bazi-skill.png"
+      "prep_evidence_en": []
     },
     {
       "id": "haorantang97-antibes-holiday-antibes-holiday",
@@ -416,6 +445,7 @@
         "copy": "cp -r antibes-holiday/plugins/antibes-holiday/skills/antibes-holiday ~/.claude/skills/antibes-holiday",
         "dir": "~/.claude/skills/antibes-holiday"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/haorantang97-antibes-holiday-antibes-holiday.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -424,8 +454,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/haorantang97-antibes-holiday-antibes-holiday.png"
+      "prep_evidence_en": []
     },
     {
       "id": "oil-oil-oil-motion",
@@ -459,6 +488,7 @@
         "dir": "~/.claude/skills/oil-motion"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/oil-oil-oil-motion.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -466,8 +496,56 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/oil-oil-oil-motion.png"
+      "prep_evidence_en": []
+    },
+    {
+      "id": "liuzihe849-png-silhouette-group-collage-silhouette-group-collage",
+      "kind": "skill",
+      "name": "silhouette-group-collage",
+      "title_zh": "一群人收成剪影拼贴",
+      "tagline_zh": "认人靠轮廓，不靠脸",
+      "tagline_en": "",
+      "desc_en": "Frozen v1 baseline for transforming user-supplied group photos into vertical diptych silhouette collages using reciprocal positive-negative masks, source-pixel-locked original people, tactile paper fields, preserved film texture, scene-matched handwriting, and sparse handmade stars. Use when the user asks for 剪影群像风格, 剪影群像风格 v1, silhouette group collage, 群像剪影拼贴, 正负形镜空, 上下双联画, youth-memory group art",
+      "why_zh": "同一作者印刷插画之外的一件：群体剪影拼在一张纸上。",
+      "why_en": "",
+      "limit_zh": "要认得出五官、要证件合影，会只剩影子。",
+      "limit_en": "",
+      "repo": "liuzihe849-png/silhouette-group-collage",
+      "owner": "liuzihe849-png",
+      "path": "silhouette-group-collage",
+      "url": "https://github.com/liuzihe849-png/silhouette-group-collage/tree/HEAD/silhouette-group-collage",
+      "homepage": "",
+      "stars": 6,
+      "pushed_at": "2026-08-18T06:47:37Z",
+      "skill_count": 1,
+      "category": "creative",
+      "fun_score": 8.4,
+      "pick": false,
+      "hide": false,
+      "source": "human-suggested",
+      "added_at": "2026-08-28",
+      "install": {
+        "clone": "git clone --depth 1 https://github.com/liuzihe849-png/silhouette-group-collage.git",
+        "copy": "cp -r silhouette-group-collage/silhouette-group-collage ~/.claude/skills/silhouette-group-collage",
+        "dir": "~/.claude/skills/silhouette-group-collage"
+      },
+      "gate_score": 8,
+      "limit_brief_zh": "",
+      "limit_brief_en": "",
+      "repo_created_at": "",
+      "skill_first_seen": "",
+      "age_source": "",
+      "prep_badge": "ready",
+      "prep_evidence": [
+        "参考文件",
+        "素材模板",
+        "边界说明"
+      ],
+      "prep_evidence_en": [
+        "reference files",
+        "bundled assets",
+        "stated boundaries"
+      ]
     },
     {
       "id": "vieeeeeee-wibi-style-textile-toy-portrait",
@@ -501,6 +579,7 @@
         "dir": "~/.claude/skills/textile-toy-portrait"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-textile-toy-portrait.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -508,8 +587,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-textile-toy-portrait.png"
+      "prep_evidence_en": []
     },
     {
       "id": "liuzihe849-png-ai-editorial-print-studio",
@@ -542,6 +620,7 @@
         "copy": "mv ai-editorial-print-studio ~/.claude/skills/editorial-illustration-generator",
         "dir": "~/.claude/skills/editorial-illustration-generator"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liuzihe849-png-ai-editorial-print-studio.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -550,8 +629,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liuzihe849-png-ai-editorial-print-studio.png"
+      "prep_evidence_en": []
     },
     {
       "id": "n1ko724-kodak-2383-film-look-kodak-2383-film-look",
@@ -627,6 +705,7 @@
         "dir": "~/.claude/skills/xianxia-visual-director"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liyue-aigc-xianxia-visual-director-xianxia-visual-director.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -634,8 +713,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liyue-aigc-xianxia-visual-director-xianxia-visual-director.png"
+      "prep_evidence_en": []
     },
     {
       "id": "wnby-photo-relic-editorial",
@@ -669,6 +747,7 @@
         "dir": "~/.claude/skills/photo-relic-editorial"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-photo-relic-editorial.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -676,8 +755,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-photo-relic-editorial.png"
+      "prep_evidence_en": []
     },
     {
       "id": "carolinaaafy-travel-memory-sticker-card",
@@ -722,6 +800,55 @@
       "prep_evidence_en": []
     },
     {
+      "id": "hchen1218-heytea-style",
+      "kind": "skill",
+      "name": "heytea-doodle-poster",
+      "title_zh": "喜茶那套视觉，一款一装",
+      "tagline_zh": "品牌配方锁死，不是通用新中式",
+      "tagline_en": "",
+      "desc_en": "Turn an uploaded photo into either a HEYTEA-inspired object-and-doodle poster or a personalized hand-drawn desktop pet with approved character concepts, schema-v2 source-faithful actions or schema-v3 flavor-monster behaviors, optional physical interactions, and an importable pet pack. Use for 喜茶简笔画海报, 歪扭儿童字, 实物加小人涂鸦, 桌宠, 照片变桌面宠物, 食物桌宠, or 饮料桌宠.",
+      "why_zh": "按喜茶公开视觉语法做图，颜色、留白、道具都有边界。",
+      "why_en": "",
+      "limit_zh": "不是你品牌的 VI。拿去套别的茶饮或随便一个国潮，会串味。",
+      "limit_en": "",
+      "repo": "Hchen1218/heytea-style",
+      "owner": "Hchen1218",
+      "path": "",
+      "url": "https://github.com/Hchen1218/heytea-style",
+      "homepage": "",
+      "stars": 208,
+      "pushed_at": "2026-08-27T04:57:28Z",
+      "skill_count": 1,
+      "category": "creative",
+      "fun_score": 6.59,
+      "pick": false,
+      "hide": false,
+      "source": "human-suggested",
+      "added_at": "2026-08-28",
+      "install": {
+        "clone": "git clone --depth 1 https://github.com/Hchen1218/heytea-style.git",
+        "copy": "mv heytea-style ~/.claude/skills/heytea-doodle-poster",
+        "dir": "~/.claude/skills/heytea-doodle-poster"
+      },
+      "gate_score": 8,
+      "limit_brief_zh": "",
+      "limit_brief_en": "",
+      "repo_created_at": "",
+      "skill_first_seen": "",
+      "age_source": "",
+      "prep_badge": "ready",
+      "prep_evidence": [
+        "参考文件",
+        "可执行脚本",
+        "素材模板"
+      ],
+      "prep_evidence_en": [
+        "reference files",
+        "runnable scripts",
+        "bundled assets"
+      ]
+    },
+    {
       "id": "evianis-travel-photo-abstraction-travel-photo-abstraction",
       "kind": "skill",
       "name": "travel-photo-abstraction",
@@ -753,6 +880,7 @@
         "dir": "~/.claude/skills/travel-photo-abstraction"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -760,8 +888,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png"
+      "prep_evidence_en": []
     },
     {
       "id": "traveler0621-reality-restaged",
@@ -794,6 +921,7 @@
         "copy": "mv reality-restaged ~/.claude/skills/reality-restaged",
         "dir": "~/.claude/skills/reality-restaged"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/traveler0621-reality-restaged.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -802,8 +930,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/traveler0621-reality-restaged.png"
+      "prep_evidence_en": []
     },
     {
       "id": "lzs0594-dreamy-motion-editorial",
@@ -836,24 +963,16 @@
         "copy": "mv dreamy-motion-editorial ~/.claude/skills/dreamy-motion-editorial",
         "dir": "~/.claude/skills/dreamy-motion-editorial"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lzs0594-dreamy-motion-editorial.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
       "skill_first_seen": "",
       "age_source": "",
-      "prep_badge": "ready",
-      "prep_evidence": [
-        "参考文件",
-        "可执行脚本",
-        "边界说明"
-      ],
-      "prep_evidence_en": [
-        "reference files",
-        "runnable scripts",
-        "stated boundaries"
-      ],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lzs0594-dreamy-motion-editorial.png"
+      "prep_badge": "",
+      "prep_evidence": [],
+      "prep_evidence_en": []
     },
     {
       "id": "iamkong-photo-to-minimal-illustration",
@@ -886,6 +1005,7 @@
         "copy": "mv photo-to-minimal-illustration ~/.claude/skills/gc-universal-field-study",
         "dir": "~/.claude/skills/gc-universal-field-study"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/iamkong-photo-to-minimal-illustration.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -894,8 +1014,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/iamkong-photo-to-minimal-illustration.png"
+      "prep_evidence_en": []
     },
     {
       "id": "wnby-paper-spirit-zine-paper-spirit-zine",
@@ -928,6 +1047,7 @@
         "copy": "cp -r paper-spirit-zine/skills/paper-spirit-zine ~/.claude/skills/paper-spirit-zine",
         "dir": "~/.claude/skills/paper-spirit-zine"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-paper-spirit-zine-paper-spirit-zine.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -936,8 +1056,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-paper-spirit-zine-paper-spirit-zine.png"
+      "prep_evidence_en": []
     },
     {
       "id": "liigoqi-photo-to-travel-sketch",
@@ -970,6 +1089,7 @@
         "copy": "mv photo-to-travel-sketch ~/.claude/skills/photo-to-travel-sketch",
         "dir": "~/.claude/skills/photo-to-travel-sketch"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liigoqi-photo-to-travel-sketch.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -978,8 +1098,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liigoqi-photo-to-travel-sketch.png"
+      "prep_evidence_en": []
     },
     {
       "id": "luji12-handdrawn-photo-poster",
@@ -1012,6 +1131,7 @@
         "copy": "mv handdrawn-photo-poster ~/.claude/skills/handdrawn-photo-poster",
         "dir": "~/.claude/skills/handdrawn-photo-poster"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-handdrawn-photo-poster.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
@@ -1020,8 +1140,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-handdrawn-photo-poster.png"
+      "prep_evidence_en": []
     },
     {
       "id": "zhu930824-poetic-line-zine-poster",
@@ -1054,24 +1173,16 @@
         "copy": "mv poetic-line-zine-poster ~/.claude/skills/poetic-line-zine-poster",
         "dir": "~/.claude/skills/poetic-line-zine-poster"
       },
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zhu930824-poetic-line-zine-poster.png",
       "gate_score": 8,
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
       "skill_first_seen": "",
       "age_source": "",
-      "prep_badge": "ready",
-      "prep_evidence": [
-        "参考文件",
-        "可执行脚本",
-        "素材模板"
-      ],
-      "prep_evidence_en": [
-        "reference files",
-        "runnable scripts",
-        "bundled assets"
-      ],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zhu930824-poetic-line-zine-poster.png"
+      "prep_badge": "",
+      "prep_evidence": [],
+      "prep_evidence_en": []
     },
     {
       "id": "crawfordxx-xiaoma-durex-copywriter",
@@ -1105,6 +1216,7 @@
         "dir": "~/.claude/skills/xiaoma-durex-copywriter"
       },
       "gate_score": 9,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/crawfordxx-xiaoma-durex-copywriter.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -1112,8 +1224,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/crawfordxx-xiaoma-durex-copywriter.png"
+      "prep_evidence_en": []
     },
     {
       "id": "ayi-ai-nie-grassroots-logic",
@@ -1147,6 +1258,7 @@
         "dir": "~/.claude/skills/nie-grassroots-logic"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ayi-ai-nie-grassroots-logic.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -1154,8 +1266,48 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ayi-ai-nie-grassroots-logic.png"
+      "prep_evidence_en": []
+    },
+    {
+      "id": "whiplashzeb-photo-to-zine-postcard",
+      "kind": "skill",
+      "name": "photo-to-zine-postcard",
+      "title_zh": "照片收成 zine 明信片",
+      "tagline_zh": "一张明信片的版心，不是长图文",
+      "tagline_en": "",
+      "desc_en": "Turn a user-provided photograph into a minimal two-sided 2:3 zine-style postcard. Preserve the original photo above, then create a sparse hand-drawn source-specific motif, minimal metadata, three sampled color swatches, and a matching functional postcard back.",
+      "why_zh": "旅行照片压进可寄出的薄页：图在上、字很少。",
+      "why_en": "",
+      "limit_zh": "页是明信片。要画册、要九宫格、要视频封面，对不上。",
+      "limit_en": "",
+      "repo": "Whiplashzeb/photo-to-zine-postcard",
+      "owner": "Whiplashzeb",
+      "path": "",
+      "url": "https://github.com/Whiplashzeb/photo-to-zine-postcard",
+      "homepage": "",
+      "stars": 182,
+      "pushed_at": "2026-08-07T11:39:48Z",
+      "skill_count": 1,
+      "category": "creative",
+      "fun_score": 2.73,
+      "pick": false,
+      "hide": false,
+      "source": "human-suggested",
+      "added_at": "2026-08-28",
+      "install": {
+        "clone": "git clone --depth 1 https://github.com/Whiplashzeb/photo-to-zine-postcard.git",
+        "copy": "mv photo-to-zine-postcard ~/.claude/skills/photo-to-zine-postcard",
+        "dir": "~/.claude/skills/photo-to-zine-postcard"
+      },
+      "gate_score": 8,
+      "limit_brief_zh": "",
+      "limit_brief_en": "",
+      "repo_created_at": "",
+      "skill_first_seen": "",
+      "age_source": "",
+      "prep_badge": "",
+      "prep_evidence": [],
+      "prep_evidence_en": []
     },
     {
       "id": "liamgvchi-gc-minimal-ip-doodle",
@@ -1189,6 +1341,7 @@
         "dir": "~/.claude/skills/gc-minimal-ip-doodle"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liamgvchi-gc-minimal-ip-doodle.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -1196,8 +1349,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liamgvchi-gc-minimal-ip-doodle.png"
+      "prep_evidence_en": []
     },
     {
       "id": "gnipbao-flat-poster-op",
@@ -1231,6 +1383,7 @@
         "dir": "~/.claude/skills/flat-poster-op"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/gnipbao-flat-poster-op.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -1238,8 +1391,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/gnipbao-flat-poster-op.png"
+      "prep_evidence_en": []
     },
     {
       "id": "elhamid-as-told-to-as-told-to",
@@ -1386,8 +1538,8 @@
       },
       "repo_created_at": "2026-05-12",
       "age_source": "repo",
+      "cover": "",
       "title_en": "Turns \"I miss you today\" into a letter posted home from Nanyang",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jiang59991-qiaopi.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 9,
@@ -1439,8 +1591,8 @@
       },
       "repo_created_at": "2026-05-18",
       "age_source": "",
+      "cover": "",
       "title_en": "The guitar chart builder that will not type out the lyrics",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jasonbhorne-guitar-skill-guitar.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 9,
@@ -1531,8 +1683,8 @@
       },
       "repo_created_at": "2026-06-26",
       "age_source": "repo",
+      "cover": "",
       "title_en": "Refuses to let an image model draw the line art",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/gnipbao-codex-whiteboard-video-skill.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 10,
@@ -1576,8 +1728,8 @@
       },
       "repo_created_at": "2026-07-29",
       "age_source": "repo",
+      "cover": "",
       "title_en": "A paper prototype you could hand-write today, and what to watch in playtest",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/xlt-6-boardgame-creator.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 9,
@@ -1629,8 +1781,8 @@
       },
       "repo_created_at": "2026-05-28",
       "age_source": "repo",
+      "cover": "",
       "title_en": "A pet nutritionist that forbids bathing your chinchilla",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zgdfsgd-pet-nutritionist.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 9,
@@ -1674,8 +1826,8 @@
       },
       "repo_created_at": "2026-08-16",
       "age_source": "",
+      "cover": "",
       "title_en": "Three dishes from what's in the fridge — or two, if allergens say two",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/bohandu-cook-with-what-you-have-cook-with-what-you-have.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 8,
@@ -1719,8 +1871,8 @@
       },
       "repo_created_at": "2026-06-27",
       "age_source": "",
+      "cover": "",
       "title_en": "Live a CS degree in ten minutes, leave with questions for a real engineer",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 10,
@@ -1764,8 +1916,8 @@
       },
       "repo_created_at": "2026-06-24",
       "age_source": "repo",
+      "cover": "",
       "title_en": "Cold water on your wrists for ten seconds, then which Bluey episode",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/mocomeng-666-bluey-parenting-skill.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 8,
@@ -1809,8 +1961,8 @@
       },
       "repo_created_at": "2026-05-30",
       "age_source": "repo",
+      "cover": "",
       "title_en": "It writes how she behaves, not what she said",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/qian-gugugaga-character_skill_producer.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 9,
@@ -1827,59 +1979,6 @@
       "prep_evidence_en": [
         "reference files",
         "runnable scripts",
-        "stated boundaries",
-        "when-to-use"
-      ]
-    },
-    {
-      "id": "yunpeng192-legal-language-bridge",
-      "kind": "skill",
-      "name": "legal-language-bridge",
-      "title_zh": "把「定金」和「订金」两个字掰开算钱的维权翻译机",
-      "tagline_zh": "你说「公司无故辞退我」，它输出能提交的仲裁申诉文本，附证据清单、维权路径和赔偿估算。覆盖劳动、租房、预付卡等 15 类。",
-      "tagline_en": "Say \"my company fired me for no reason\" and it hands back a filable arbitration statement, plus the evidence you need to keep, the route to take, and a compensation range. Fifteen domains, from labour to tenancy to prepaid cards that vanished.",
-      "desc_en": "将普通人日常表达转化为专业法律语言，使生成的内容可直接用于法律文书、劳动仲裁申请、消费投诉、对外交涉等场景。同时提供反向翻译功能，将法律文书中的法言法语解读为通俗易懂的大白话。  本版本新增： 四个新场景（医疗/教培/保险/预付卡）、维权路径地图、证据清单、赔偿计算器、常见误区纠正、合同条款逐条解读、判决书摘要、双模式翻译引擎。  核心理念： 本 Skill 不是法律咨询工具，不替代律师。它帮助用",
-      "why_zh": "误区表逐条对撞常识：定金不退订金可退，食品假货是退一赔十，2N 和 N 不能同时主张。",
-      "why_en": "Its misconception table collides with common sense line by line: one kind of deposit is forfeit and the other refundable, counterfeit food pays ten times over, and you cannot claim both severance and the double-damages figure.",
-      "limit_zh": "中国大陆法律，条文和赔偿标准会随司法解释变动，正文明写不构成法律意见、不替代律师。赔偿计算器只给区间，各省的一次性伤残就业补助金标准要你自己查。合同逐条解读这一块和在架的 AnythingButLaw 有重叠。",
-      "limit_en": "Mainland Chinese law only, and the statutes and compensation standards shift with judicial interpretation — the skill states outright that it is not legal advice and no substitute for a lawyer. The calculator gives ranges; province-specific disability employment subsidies you look up yourself. Its clause-by-clause contract reading overlaps with AnythingButLaw, already on the shelf.",
-      "repo": "Yunpeng192/legal-language-bridge",
-      "owner": "Yunpeng192",
-      "path": "",
-      "url": "https://github.com/Yunpeng192/legal-language-bridge",
-      "homepage": "",
-      "stars": 0,
-      "pushed_at": "2026-07-30T12:00:12Z",
-      "skill_count": 1,
-      "category": "life",
-      "fun_score": 1.0,
-      "pick": false,
-      "hide": false,
-      "source": "picks-0820-lifestyle",
-      "added_at": "2026-08-20",
-      "install": {
-        "clone": "git clone --depth 1 https://github.com/Yunpeng192/legal-language-bridge.git",
-        "copy": "mv legal-language-bridge ~/.claude/skills/legal-language-bridge",
-        "dir": "~/.claude/skills/legal-language-bridge"
-      },
-      "repo_created_at": "2026-07-29",
-      "age_source": "repo",
-      "title_en": "The grievance translator that pries apart two nearly identical Chinese words for deposit",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yunpeng192-legal-language-bridge.png",
-      "cover_kind": "none",
-      "cover_real": false,
-      "gate_score": 9,
-      "limit_brief_zh": "",
-      "limit_brief_en": "",
-      "skill_first_seen": "",
-      "prep_badge": "ready",
-      "prep_evidence": [
-        "参考文件",
-        "边界说明",
-        "适用条件"
-      ],
-      "prep_evidence_en": [
-        "reference files",
         "stated boundaries",
         "when-to-use"
       ]
@@ -1916,6 +2015,7 @@
         "dir": "~/.claude/skills/scene-distillation-zine-v1-3"
       },
       "gate_score": 9,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -1923,8 +2023,60 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png"
+      "prep_evidence_en": []
+    },
+    {
+      "id": "yunpeng192-legal-language-bridge",
+      "kind": "skill",
+      "name": "legal-language-bridge",
+      "title_zh": "把「定金」和「订金」两个字掰开算钱的维权翻译机",
+      "tagline_zh": "你说「公司无故辞退我」，它输出能提交的仲裁申诉文本，附证据清单、维权路径和赔偿估算。覆盖劳动、租房、预付卡等 15 类。",
+      "tagline_en": "Say \"my company fired me for no reason\" and it hands back a filable arbitration statement, plus the evidence you need to keep, the route to take, and a compensation range. Fifteen domains, from labour to tenancy to prepaid cards that vanished.",
+      "desc_en": "将普通人日常表达转化为专业法律语言，使生成的内容可直接用于法律文书、劳动仲裁申请、消费投诉、对外交涉等场景。同时提供反向翻译功能，将法律文书中的法言法语解读为通俗易懂的大白话。  本版本新增： 四个新场景（医疗/教培/保险/预付卡）、维权路径地图、证据清单、赔偿计算器、常见误区纠正、合同条款逐条解读、判决书摘要、双模式翻译引擎。  核心理念： 本 Skill 不是法律咨询工具，不替代律师。它帮助用",
+      "why_zh": "误区表逐条对撞常识：定金不退订金可退，食品假货是退一赔十，2N 和 N 不能同时主张。",
+      "why_en": "Its misconception table collides with common sense line by line: one kind of deposit is forfeit and the other refundable, counterfeit food pays ten times over, and you cannot claim both severance and the double-damages figure.",
+      "limit_zh": "中国大陆法律，条文和赔偿标准会随司法解释变动，正文明写不构成法律意见、不替代律师。赔偿计算器只给区间，各省的一次性伤残就业补助金标准要你自己查。合同逐条解读这一块和在架的 AnythingButLaw 有重叠。",
+      "limit_en": "Mainland Chinese law only, and the statutes and compensation standards shift with judicial interpretation — the skill states outright that it is not legal advice and no substitute for a lawyer. The calculator gives ranges; province-specific disability employment subsidies you look up yourself. Its clause-by-clause contract reading overlaps with AnythingButLaw, already on the shelf.",
+      "repo": "Yunpeng192/legal-language-bridge",
+      "owner": "Yunpeng192",
+      "path": "",
+      "url": "https://github.com/Yunpeng192/legal-language-bridge",
+      "homepage": "",
+      "stars": 0,
+      "pushed_at": "2026-07-30T12:00:12Z",
+      "skill_count": 1,
+      "category": "life",
+      "fun_score": 1.0,
+      "pick": false,
+      "hide": false,
+      "source": "picks-0820-lifestyle",
+      "added_at": "2026-08-20",
+      "install": {
+        "clone": "git clone --depth 1 https://github.com/Yunpeng192/legal-language-bridge.git",
+        "copy": "mv legal-language-bridge ~/.claude/skills/legal-language-bridge",
+        "dir": "~/.claude/skills/legal-language-bridge"
+      },
+      "repo_created_at": "2026-07-29",
+      "age_source": "repo",
+      "cover": "",
+      "title_en": "The grievance translator that pries apart two nearly identical Chinese words for deposit",
+      "cover_kind": "none",
+      "cover_real": false,
+      "gate_score": 9,
+      "limit_brief_zh": "",
+      "limit_brief_en": "",
+      "skill_first_seen": "",
+      "prep_badge": "ready",
+      "prep_evidence": [
+        "参考文件",
+        "边界说明",
+        "适用条件"
+      ],
+      "prep_evidence_en": [
+        "reference files",
+        "stated boundaries",
+        "when-to-use"
+      ]
     },
     {
       "id": "aryaminus-astro-astrology",
@@ -1959,8 +2111,8 @@
       },
       "repo_created_at": "2026-06-07",
       "age_source": "",
+      "cover": "",
       "title_en": "Three real charts from a local ephemeris",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/aryaminus-astro-astrology.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 8,
@@ -2004,8 +2156,8 @@
       },
       "repo_created_at": "2026-07-20",
       "age_source": "repo",
+      "cover": "",
       "title_en": "Ten sessions of clues and sanity totals in one queryable table",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jadel-kemo-trpg-log-copilot-skill.png",
       "cover_kind": "none",
       "cover_real": false,
       "gate_score": 10,
@@ -2223,7 +2375,7 @@
         "copy": "mv fitness-coach-rpg ~/.claude/skills/fitness-coach-rpg",
         "dir": "~/.claude/skills/fitness-coach-rpg"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/chenklein26-maker-fitness-coach-rpg.png",
+      "cover": "",
       "repo_created_at": "2026-05-04",
       "age_source": "repo",
       "limit_zh": "数据全存本地 user-data/，换台机器就从零开始。没有 Python 环境时改由模型手写 JSON，脚本那层的单位和日期校验就失效了。",
@@ -2279,6 +2431,7 @@
         "dir": "~/.claude/skills/glitch-pixel-collage"
       },
       "gate_score": 8,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-glitch-pixel-collage.png",
       "limit_brief_zh": "",
       "limit_brief_en": "",
       "repo_created_at": "",
@@ -2286,8 +2439,7 @@
       "age_source": "",
       "prep_badge": "",
       "prep_evidence": [],
-      "prep_evidence_en": [],
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-glitch-pixel-collage.png"
+      "prep_evidence_en": []
     },
     {
       "id": "neallydare-svg-iching-divination",
@@ -2318,7 +2470,7 @@
         "copy": "mv iching-divination ~/.claude/skills/iching-divination",
         "dir": "~/.claude/skills/iching-divination"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/neallydare-svg-iching-divination.png",
+      "cover": "",
       "repo_created_at": "2026-06-12",
       "age_source": "repo",
       "limit_zh": "一事一占是硬规矩，你连问几件它会引蒙卦拒绝。也不答彩票号码、不替你做医疗和财务决定。",
@@ -2371,7 +2523,7 @@
         "copy": "mv official-document-writing-skill ~/.claude/skills/official-document-writing-skill",
         "dir": "~/.claude/skills/official-document-writing-skill"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kagurananaga-official-document-writing-skill.png",
+      "cover": "",
       "unshelve_reason": "C 端全球化转向（店主 2026-08-19）：党政机关公文是职业工具 + 中国体制限定，两条都不符合新方向。它本身质量没问题（引具体国标号、作者真在这行里），是定位不匹配，不是货不好。留档随时可翻回。",
       "unshelved_at": "2026-08-19",
       "limit_zh": "它管 GB/T 9704 的格式与用语，不管这份文该不该发、内容对不对。全文没写任何适用边界，实质内容还是你自己扛。",
@@ -2430,7 +2582,7 @@
         "copy": "cp -r fengshui.skill ~/.claude/skills/fengshui-master",
         "dir": "~/.claude/skills/fengshui-master"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/voidforall-fengshui-skill.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_en": "A feng shui adviser that opens by limiting itself",
@@ -2528,7 +2680,7 @@
         "copy": "cp -r coc-kp-host ~/.claude/skills/coc-kp-host",
         "dir": "~/.claude/skills/coc-kp-host"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/sumanasj-coc-kp-host.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_en": "Hands the turn back the moment it starts a third paragraph",
@@ -2568,7 +2720,7 @@
         "copy": "mv hemingway-skill ~/.claude/skills/hemingway-skill",
         "dir": "~/.claude/skills/hemingway-skill"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/panmax-hemingway-skill.png",
+      "cover": "",
       "repo_created_at": "2026-04-11",
       "age_source": "repo",
       "limit_zh": "作者明说不因一般问题自动触发，得你点名叫它。而且只对写作和表达类问题有用，拿它聊别的等于没装。",
@@ -2671,7 +2823,7 @@
         "copy": "cp -r naming-skill ~/.claude/skills/chinese-baby-naming",
         "dir": "~/.claude/skills/chinese-baby-naming"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/seiya89757-naming-skill.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_en": "Mediating the family argument about the baby's name",
@@ -2719,7 +2871,7 @@
         "copy": "cp -r beijing-pollen-monitor/skills/beijing-pollen-monitor ~/.claude/skills/beijing-pollen-monitor",
         "dir": "~/.claude/skills/beijing-pollen-monitor"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ruochenlyu-beijing-pollen-monitor.png",
+      "cover": "",
       "repo_created_at": "2026-03-30",
       "skill_first_seen": "2026-03-30",
       "age_source": "file",
@@ -2777,7 +2929,7 @@
         "copy": "cp -r larp-skill ~/.claude/skills/create-larp-character",
         "dir": "~/.claude/skills/create-larp-character"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zzzzzzza-larp-skill.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_en": "Keep talking to a murder-mystery character after the game",
@@ -2920,7 +3072,7 @@
         "copy": "cp -r beachcombing ~/.claude/skills/beachcombing",
         "dir": "~/.claude/skills/beachcombing"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/fxw-labs-beachcombing.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_zh": "把你必须几点前撤离滩涂顶在报告最前面的赶海参谋",
@@ -2972,7 +3124,7 @@
         "copy": "cp -r BirdSight ~/.claude/skills/birdsight",
         "dir": "~/.claude/skills/birdsight"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/r0ses1r-dev-birdsight.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_zh": "查稀有鸟最近落在哪，顺带说清中文名是台湾译名",
@@ -3122,7 +3274,7 @@
         "copy": "cp -r pollen-query ~/.claude/skills/pollen-query",
         "dir": "~/.claude/skills/pollen-query"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/xxxonechen-pollen-query.png",
+      "cover": "",
       "cover_kind": "none",
       "cover_real": false,
       "title_en": "Check pollen before you go out, 53 cities",
@@ -3216,7 +3368,7 @@
         "copy": "cp -r moonlit-stories/skills/moonlit-book-workflow ~/.claude/skills/moonlit-book-workflow",
         "dir": "~/.claude/skills/moonlit-book-workflow"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book-workflow.png",
+      "cover": "",
       "repo_created_at": "2026-08-04",
       "skill_first_seen": "2026-08-04",
       "age_source": "file",
@@ -3261,7 +3413,7 @@
         "copy": "mv sprite-gen ~/.claude/skills/sprite-gen",
         "dir": "~/.claude/skills/sprite-gen"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/aldegad-sprite-gen.png",
+      "cover": "https://repository-images.githubusercontent.com/1236336437/c2256b15-9938-486e-8d72-8ee4054431b9",
       "repo_created_at": "2026-05-12",
       "age_source": "repo",
       "limit_zh": "生成那步要本机装好 codex 或 grok CLI 并登录。脚本只认仓库自建的 .venv，缺 NumPy 就在 import 处硬报错——作者明写没有纯 Python 降级。正文大半是韩文。",
@@ -3622,9 +3774,9 @@
       "repo_created_at": "2026-07-18",
       "skill_first_seen": "2026-07-18",
       "age_source": "file",
+      "cover": "",
       "limit_zh": "要 novel-game-analyze、game-concept、game-qa 一整家子都在才转得动。默认做的是验证切片不是全本游戏；完成只认启动、渲染、输入、核心循环、一次结果、重开六项，趣味和平衡它明说证明不了。",
       "limit_en": "Only turns if the whole family is installed — novel-game-analyze, game-concept, game-build, game-qa. Default scope is a verification slice, not a full game, and it says outright that fun and balance are not things it can prove.",
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/worldwonderer-novel-to-game-novel-to-game.png",
       "cover_kind": "artwork",
       "cover_real": false,
       "cover_dup_of": "worldwonderer-novel-to-game-game-concept",
@@ -3665,7 +3817,7 @@
         "copy": "mv huashu-design ~/.claude/skills/huashu-design",
         "dir": "~/.claude/skills/huashu-design"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/alchaincyf-huashu-design.png",
+      "cover": "",
       "repo_created_at": "2026-04-19",
       "age_source": "repo",
       "limit_zh": "任何新设计都是先出三版真初稿、然后停下等你选，无人值守的会话跑不完。生产级 Web App、SEO 站、要后端的系统作者写明不接。动画产出默认压上 Created by Huashu-Design 水印。",
@@ -3725,7 +3877,7 @@
         "copy": "mv humanizer ~/.claude/skills/humanizer",
         "dir": "~/.claude/skills/humanizer"
       },
-      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/blader-humanizer.png",
+      "cover": "",
       "repo_created_at": "2026-01-18",
       "age_source": "repo",
       "limit_zh": "35 条特征和全部例句都来自英文维基的 Signs of AI writing，破折号、弯引号、标题大小写那几条挪到中文基本落空。文件模式会直接把原文件改写成最终稿。",
