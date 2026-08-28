@@ -168,6 +168,11 @@ T1_AUTHORS = [
     "luji12",
     "liuzihe849-png",
     "luckdvr",
+    "2998980-hue",
+    "joeyhu1108-maker",
+    "moonlin1213",
+    "v92388375-gif",
+    "ZzzLc0405",
     "iamkong",
     "haorantang97",
     "liigoQi",
@@ -232,6 +237,7 @@ SEARCH_QUERIES = (
 # 有样图、单风格的图册合集。比 skills.sh 热门榜更接近本店门闸。
 TASTE_LISTS = (
     "https://raw.githubusercontent.com/tluy/skill-zine-summary/main/README.md",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/README.md",
 )
 
 SKIP_REPO_PAT = re.compile(
@@ -746,7 +752,8 @@ def same_day_shelf(ids: list[str], existing: dict) -> int:
             print(f"[shelf] 拒 {sid}")
             continue
         blob = (it.get("title_zh") or "") + (it.get("tagline_zh") or "") + (it.get("why_zh") or "")
-        if "英文简介" in blob or "见下" in blob or sum(1 for c in (it.get("title_zh") or "") if "\u4e00" <= c <= "\u9fff") < 2:
+        if "英文简介" in blob or "见下" in blob or "没在本机" in (it.get("limit_zh") or "") \
+           or sum(1 for c in (it.get("title_zh") or "") if "\u4e00" <= c <= "\u9fff") < 2:
             it["title_zh"] = it["tagline_zh"] = it["why_zh"] = it["limit_zh"] = ""
         if not (it.get("title_zh") and it.get("why_zh") and it.get("limit_zh")):
             it.update({k: v for k, v in _local_copy(it).items() if not it.get(k)})
