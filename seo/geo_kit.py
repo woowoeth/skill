@@ -612,71 +612,131 @@ def _sib_links(site, items, idx, zh, zh_url=False):
     return ('<p class="sib">%s</p>' % " &nbsp;·&nbsp; ".join(out)) if out else ""
 
 
+
 def item_page(site, it, items, idx, zh, hub_of=None):
-    zh_render = zh or site.zh()
+    """Storefront article. Chinese face even on /i/ — the English name is a filename, not a title."""
+    zh_render = True
     page_url = it.page(site, zh)
     alt_url = site.url(("i/%s/" if zh else "zh/i/%s/") % it.slug) if it.has_zh() else ""
-    title = clip("%s — %s" % (it.t(zh_render), site.name_zh if zh_render else site.name), 70)
-    ld = [org_ld(), item_ld(site, it, zh_render, page_url), breadcrumb_ld(site, it, zh_render)]
-    f = faq_ld(it, zh_render)
+    title = clip("%s — %s" % (it.t(True), site.name_zh), 70)
+    ld = [org_ld(), item_ld(site, it, True, page_url), breadcrumb_ld(site, it, True)]
+    f = faq_ld(it, True)
     if f:
         ld.append(f)
 
-    secs = []
-    for h, b in it.b(zh_render):
-        if h:
-            secs.append("<h2>%s</h2>" % esc(h))
-        for para in str(b).split("\n"):
-            if para.strip():
-                secs.append("<p>%s</p>" % esc(para.strip()))
+    why = limit = install = ""
+    for h, b in it.b(True):
+        hs = h or ""
+        if "值得" in hs or "Why" in hs:
+            why = str(b).strip()
+        elif "局限" in hs or "limit" in hs.lower() or "但是" in hs:
+            limit = str(b).strip()
+        elif "装" in hs or "install" in hs.lower():
+            install = str(b).strip()
+    if not why:
+        why = it.s(True)
 
-    lbl = {
-        True: ("首页", "本页可直接引用", "来源", "更新于", "返回", "英文版", "主题", "全部条目"),
-        False: ("Home", "Cite this page", "Source", "Updated", "Back to", "中文版",
-                "Topics", "All entries"),
-    }[zh_render]
+    depth = "../../../" if zh else "../../"
+    cat = (it.tags[0] if it.tags else "")
+    owner = it.tags[-1] if len(it.tags) > 1 else ""
+    tags = "".join('<span class="tag">%s</span>' % esc(x) for x in it.tags[:6])
+    cmds = []
+    for line in (install or "").split("\n"):
+        line = line.strip()
+        if line.startswith("git ") or line.startswith("cp ") or line.startswith("mv "):
+            cmds.append('<div class="cmd"><code>%s</code><button type="button" data-copy="%s">复制</button></div>'
+                        % (esc(line), esc(line)))
+    install_html = ('<section class="sec"><h2>安装</h2><div class="cmds">%s</div></section>' % "".join(cmds)
+                    if cmds else "")
+    limit_html = ('<section class="sec"><h2>局限</h2><p>%s</p></section>' % esc(limit) if limit else "")
+    pull = ('<aside class="pull"><span class="lbl">点评</span>%s</aside>' % esc(why) if why else "")
 
-    body = [
-        '<nav class="bc"><a href="%s">%s</a> › <a href="%s">%s</a> › %s</nav>'
-        % (esc(SITE + "/"), lbl[0], esc(site.base),
-           esc(site.name_zh if zh_render else site.name), esc(it.t(zh_render))),
-        "<h1>%s</h1>" % esc(it.t(zh_render)),
-        '<p class="lede">%s</p>' % esc(it.s(zh_render)),
-    ]
-    meta = []
-    if it.updated:
-        meta.append("%s %s" % (lbl[3], esc(it.updated)))
-    if it.source_url:
-        meta.append('%s <a href="%s" rel="nofollow noopener">%s</a>'
-                    % (lbl[2], esc(it.source_url), esc(clip(it.source_url, 70))))
-    if alt_url:
-        meta.append('<a href="%s">%s</a>' % (esc(alt_url), lbl[5]))
-    if meta:
-        body.append('<p class="meta">%s</p>' % " · ".join(meta))
-    body += secs
+    prev = items[idx - 1] if idx else None
+    nxt = items[idx + 1] if idx + 1 < len(items) else None
+    pre = "zh/i/" if zh else "i/"
+    sib_l = ('<a href="%s">← %s</a>' % (esc(site.url(pre + prev.slug + "/")), esc(prev.t(True))) if prev else "<span></span>")
+    sib_r = ('<a href="%s">%s →</a>' % (esc(site.url(pre + nxt.slug + "/")), esc(nxt.t(True))) if nxt else "<span></span>")
 
-    linked = [t for t in it.tags if (hub_of or {}).get(slugify(t))]
-    if linked:
-        body.append('<p class="tags">%s</p>'
-                    % "".join('<a href="%s">%s</a>'
-                              % (esc(site.url("t/%s/" % slugify(t))), esc(t)) for t in linked))
-    elif it.tags:
-        body.append('<p class="tags">%s</p>'
-                    % "".join("<span>%s</span>" % esc(t) for t in it.tags))
-    body.append(_sib_links(site, items, idx, zh_render, zh))
-    body.append('<footer><p>%s <a href="%s">%s</a> · <a href="%s">%s</a></p>'
-                '<p>%s: <code>%s</code></p>'
-                '<p><a href="%s">llms.txt</a> · <a href="%s">llms-full.txt</a></p>'
-                '<p>%s</p></footer>'
-                % (lbl[4], esc(site.base), esc(site.name_zh if zh_render else site.name),
-                   esc(site.url("all/")), esc(lbl[7]),
-                   lbl[1], esc(page_url), esc(site.url("llms.txt")),
-                   esc(site.url("llms-full.txt")), sibling_links(site, zh_render)))
+    mark = (
+        '<svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"'
+        ' stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">'
+        '<g transform="rotate(-7 32 32)">'
+        '<path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>'
+        '<path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>'
+        '</g></svg>'
+    )
+    body = """
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="%s">%s<b>品味</b></a>
+    <nav class="mast-side">
+      <a class="pill" href="%s">货架</a>
+      <button class="pill" type="button" id="share" data-url="%s">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+<div class="wrap ep-grid">
+  <article>
+    <div class="plate"><div class="c">%s</div><div class="t">%s</div></div>
+    <div class="kicker">
+      <span class="src">%s</span>
+      <span>%s</span>
+      <span class="date">%s</span>
+    </div>
+    <h1 class="ttl">%s</h1>
+    <p class="lede">%s</p>
+    <div class="tags">%s</div>
+    %s
+    %s
+    %s
+  </article>
+  <aside class="aside">
+    <div class="box">
+      <p class="hd">本页</p>
+      <dl class="kv">
+        <dt>分类</dt><dd>%s</dd>
+        <dt>来源</dt><dd>%s</dd>
+        <dt>更新</dt><dd>%s</dd>
+      </dl>
+      <a class="pill" href="%s" rel="noopener">打开仓库</a>
+    </div>
+  </aside>
+  <nav class="foot">%s%s</nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn){
+    var old = btn.textContent;
+    function ok(){ btn.textContent='已复制'; setTimeout(function(){ btn.textContent=old; }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+""" % (
+        esc(site.base), mark, esc(site.base), esc(page_url),
+        esc(cat), esc(it.t(True)),
+        esc(cat), esc(owner), esc(it.updated or ""),
+        esc(it.t(True)), esc(it.s(True)), tags,
+        pull, limit_html, install_html,
+        esc(cat), esc(clip(it.source_url, 48)), esc(it.updated or ""),
+        esc(it.source_url or site.base),
+        sib_l, sib_r,
+    )
+    head = head_block(site, page_url, title, it.s(True), zh=True, alt_url=alt_url, ld=ld, item=it)
+    head += '\n<link rel="stylesheet" href="%sassets/item.css">' % depth
+    head += '\n<meta name="theme-color" content="#eceae6">'
+    return ("<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n"
+            "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
+            "<title>%s</title>\n%s\n%s\n</head>\n<body>\n%s\n</body>\n</html>\n"
+            % (esc(title), head, ga_block(), body))
 
-    return _shell("zh-Hans" if zh_render else "en", title,
-                  head_block(site, page_url, title, it.s(zh_render), zh=zh_render,
-                             alt_url=alt_url, ld=ld, item=it),
-                  "\n".join(x for x in body if x))
 
 
 def write_item_pages(site, items, root=".", hub_of=None):
