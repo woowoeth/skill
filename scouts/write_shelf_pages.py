@@ -95,7 +95,7 @@ def page(it, prev=None, nxt=None):
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
-<link rel="stylesheet" href="../../assets/item.css">
+<link rel="stylesheet" href="../../assets/item.css?v=5">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:title" content="%s — 品味">
