@@ -6,7 +6,7 @@
 <title>品味 — 帮你发现有品位的 Skills</title>
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
-<meta name="theme-color" content="#e7ece8">
+<meta name="theme-color" content="#f2efe8">
 <meta name="description" content="叫 SKILL.md 的文件已经百万量级，没人数得清。我们只挑值得装的，并且把挑它的理由写下来。">
 <!--GEO:HEAD:START--><!--GEO:HEAD:END-->
 <!-- 站点统计沿用旧首页的配置，原样搬过来。要不要留是产品的决定，不是版式的。 -->
@@ -58,25 +58,19 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
    ============================================================ */
 
 :root{
-  /* 版式跟原声：三栏齐头、先封面后判断。
-     配色不跟原声的暖纸+锈点，改冷灰绿纸 + 墨绿点。 */
-  --bg:      #e7ece8;
-  --card:    #f6f8f6;
-  --soft:    #d8e0da;
+  /* 纸是骨色，点是印泥红。红只给标记和句点，正文不跟货抢颜色。 */
+  --bg:      #f2efe8;
+  --card:    #fbfaf6;
+  --soft:    #e6e1d6;
 
-  --ink:     #16201b;
-  --ink-2:   #3d4a43;
-  /* ink-3 / ink-4 比上一版压暗过 —— 不是审美，是算出来的。
-     浅色下原值 #78736c 对灰底只有 4.28:1、#a5a09a 对白卡只有 2.59:1，
-     WCAG 正文要 4.5、次要要 3.0，两处都不够。
-     **这四处失效只发生在浅色**，而浅色是我和产品都没法在本机看到的模式，
-     所以是算的不是看的：现在 #918c86 对白卡 3.33、#6d6861 对灰底 5.02，都留了余量。 */
-  --ink-3:   #5e6e66;
-  --ink-4:   #7d8c84;
+  --ink:     #1a1917;
+  --ink-2:   #3f3c37;
+  --ink-3:   #6a6560;
+  --ink-4:   #8a847c;
 
-  --line:    #cfd8d2;
-  --line-2:  #b7c4bc;
-  --accent:  #2d6a4f;
+  --line:    #ddd8ce;
+  --line-2:  #c9c2b6;
+  --accent:  #c23028;
 
   /* —— 单色。**站上没有品牌色。** ——
      brand/BRAND.md 定稿：「页面上唯一的彩色应该来自商品的产出物图，站不跟货抢颜色。」
@@ -153,7 +147,7 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
    字是宋体 600、字距 .05em；align-items:center。 */
 .logo{display:flex;align-items:center;gap:.22em;font-size:42px;line-height:1}
 .logo b::after{content:".";color:var(--accent);font-weight:700}
-.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block}
+.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block;color:var(--accent)}
 .logo b{
   font-family:var(--serif);font-weight:600;letter-spacing:.05em;
   font-size:1em;line-height:1;color:var(--ink);
@@ -296,8 +290,8 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
   position:absolute;inset:0;padding:18px 16px 16px;
   display:flex;flex-direction:column;justify-content:flex-end;
   background:
-    radial-gradient(120% 80% at 100% 0%, rgba(45,106,79,.18), transparent 55%),
-    linear-gradient(165deg,#d7e0d9 0%,#c5d1c8 60%,#b4c2b8 100%);
+    radial-gradient(120% 80% at 100% 0%, rgba(194,48,40,.10), transparent 55%),
+    linear-gradient(165deg,#efeae0 0%,#e4ddd1 60%,#d6cec1 100%);
 }
 .shot .plate-cat{
   font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
