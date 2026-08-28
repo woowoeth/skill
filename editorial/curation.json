@@ -3126,21 +3126,21 @@
       "gate_score": 10
     },
     "adrianpunk-punk-ip-illustrations": {
-      "title_zh": "生成专属你的 IP 角色并贯穿每篇文章",
+      "title_zh": "把一张脸收成可复用的朋克角色",
       "category": "creative",
-      "tagline_zh": "文章配图每篇风格都不一样，读者记不住你。上传一张照片生成专属 IP 角色（含四视图设定板），之后每篇都是同一个「你」在演。",
+      "tagline_zh": "先锁定角色，再出插图，不许中途换脸",
       "tagline_en": "Upload one photo to mint your own IP character (with a four-view sheet), then send that character into every article you write — retro flat-3D vignette style, image count auto-scaled to article length.",
-      "why_zh": "戳中自媒体的辨识度护城河：不是又一个文章配图，而是先立住视觉人格再篇篇复用。照片不上传、不推断敏感属性。",
+      "why_zh": "从照片做出能反复用的角色，再进插图工作流。脸漂了就重来。",
       "why_en": "Nails a real creator pain — not another article-illustrator, but a way to establish your own visual persona first, then reuse it across every piece. One consistent \"you\" running through all your content is a recognition moat. Photos stay local; no sensitive-attribute inference.",
-      "limit_zh": "角色要你亲口说「确认」才解锁配图，draft 状态不许激活，给了文章也不提前画。宿主没有生图能力时它只交提示词和保存计划，不出图。角色包只存本地运行目录。",
+      "limit_zh": "不是一次性贴纸。要每张换人，卸掉。",
       "limit_en": "The character stays locked until you explicitly confirm it — drafts can't be activated, and handing it an article won't skip that gate. With no image tool on the host it returns prompts instead of pictures. Character packs stay local only.",
-      "cover": "https://raw.githubusercontent.com/adrianpunk/punk-ip-illustrations/HEAD/assets/punk-character-sheet.png",
+      "cover": "https://opengraph.githubassets.com/d3be95bd5a0969f1d7dfc61b37836d1b9d55b6f954054033c22a8b1cebeaba13/adrianpunk/punk-ip-illustrations",
       "cover_kind": "artwork",
       "cover_real": true,
       "cover_w": 1122,
       "cover_h": 1402,
       "title_en": "One photo, then that character appears in every article",
-      "hide": true,
+      "hide": false,
       "gate_score": 9,
       "gate_drop": "not-taste-ref"
     },
@@ -4383,21 +4383,21 @@
       "gate_score": 6
     },
     "kkkkhazix-human-writing-human-writing": {
-      "title_zh": "让中文读起来像一个具体的人在说话",
+      "title_zh": "按活人那套改中文长文",
       "category": "writing",
-      "tagline_zh": "AI 写的中文一眼能认出来：套话、排比、什么都对但没人味。它不做关键词黑名单，而是立一个「见过事、查过料」的人的口吻。",
+      "tagline_zh": "知乎帖、人物故事、行业文，先删腔再写",
       "tagline_en": "Makes Chinese read like a person who has seen things, checked sources and wants to explain properly — long answers, articles, scripts and dialogue alike.",
-      "why_zh": "立人设比删 AI 词高一档——前者管句式和视角，后者只换词。中文原创，不是译过来的。",
+      "why_zh": "卡兹克这件卖的是中文现场的人味，不是通用润色按钮。",
       "why_en": "Installing a specific human voice beats blacklisting AI words — the first governs syntax and point of view, the second only swaps vocabulary. Chinese original, not a translation.",
-      "limit_zh": "非虚构材料列不满五件就不给你写长稿，最多交六百字。破折号、提示性冒号、「不是A而是B」这类句式一概封死，风格上没得商量。check_prose.py 只查已写明的硬禁项。",
+      "limit_zh": "不是短视频口播稿。要英文明信片、要公文，另装。",
       "limit_en": "If a nonfiction piece cannot list five concrete pieces of material, it refuses to write long and caps you near 600 characters. Em dashes, signposting colons and \"not A but B\" framing are banned. check_prose.py checks hard bans only.",
-      "cover": "https://raw.githubusercontent.com/KKKKhazix/human-writing/HEAD/assets/readme-cover.svg",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkkkhazix-human-writing-human-writing.png",
       "cover_kind": "hero",
       "cover_real": false,
       "cover_w": 1200,
       "cover_h": 420,
       "title_en": "Installs a voice instead of banning AI words",
-      "hide": true,
+      "hide": false,
       "gate_score": 8,
       "gate_drop": "not-taste-ref"
     },
@@ -5310,8 +5310,14 @@
       "gate_score": 2
     },
     "dacnay816y62-hub-photo-revival": {
-      "hide": true,
-      "gate_score": 3
+      "hide": false,
+      "gate_score": 3,
+      "title_zh": "日常快照收成手绘诗意稿",
+      "tagline_zh": "普通现场留下，笔触盖上去，不像精修",
+      "why_zh": "把随手拍抽成手绘插画，诗意在省略，不在加光。",
+      "limit_zh": "要证件照、要原片细节全留，会画丢。",
+      "category": "creative",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-photo-revival.png"
     },
     "quzhan51496-paper2anything-paper2html": {
       "hide": true,
@@ -5543,8 +5549,14 @@
       "gate_score": 4
     },
     "dacnay816y62-hub-fantasy-minimal-magazine": {
-      "hide": true,
-      "gate_score": 5
+      "hide": false,
+      "gate_score": 5,
+      "title_zh": "3:4 极简杂志封面",
+      "tagline_zh": "编辑页的留白和字号，不是方图加字",
+      "why_zh": "按杂志封面的格子重排主题。品牌味在版式里，不在滤镜里。",
+      "limit_zh": "页是 3:4 封面。要长图文、要视频封面，格不对。",
+      "category": "creative",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-fantasy-minimal-magazine.png"
     },
     "adrianpunk-punk-xhs-cards-punk-xhs-cards": {
       "hide": true,
@@ -5559,8 +5571,14 @@
       "gate_score": 3
     },
     "dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill": {
-      "hide": true,
-      "gate_score": 4
+      "hide": false,
+      "gate_score": 4,
+      "title_zh": "当代中式海报，配方锁在东方审美",
+      "tagline_zh": "留白和印色是规矩，不是随便新中式",
+      "why_zh": "当代东方海报的版式和色，按作者那套走，不跟国潮贴纸混。",
+      "limit_zh": "不是喜茶那件，也不是水墨写意。要品牌 VI，另找。",
+      "category": "creative",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.png"
     },
     "0xsline-dsh-spotlight-dsh-plugin-development": {
       "hide": true,
@@ -5579,8 +5597,13 @@
       "gate_score": 4
     },
     "threerocks-hand-drawn-styles": {
-      "hide": true,
-      "gate_score": 5
+      "hide": false,
+      "gate_score": 5,
+      "title_zh": "按手绘那一套出图，风格点名才动",
+      "tagline_zh": "先报名，再画。不混装水彩和马克笔",
+      "why_zh": "手绘不是一种滤镜。它要你说出用哪一种笔，才肯出那一种痕迹。",
+      "limit_zh": "不是万能插画箱。不点名风格，它不知道画什么。",
+      "category": "creative"
     },
     "devin-axis-ipollowork": {
       "hide": true,
@@ -5902,8 +5925,14 @@
       "gate_drop": "not-taste-ref"
     },
     "dacnay816y62-hub-fantasy-movie-poster-skill": {
-      "hide": true,
-      "gate_score": 4
+      "hide": false,
+      "gate_score": 4,
+      "title_zh": "中文竖版电影海报，9:16 锁死",
+      "tagline_zh": "一场戏一张海报，字少，场面要像院线",
+      "why_zh": "从故事场面压成一张能上墙的中文电影海报，比例不许改。",
+      "limit_zh": "不是横版大片，也不是剧照滤镜。要多页分镜，装不下。",
+      "category": "creative",
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png"
     },
     "jimliu-baocut-baocut": {
       "hide": true,
@@ -6593,17 +6622,18 @@
       "gate_drop": "not-taste-ref"
     },
     "luji12-luji-pet-streetwear-mood-avatar": {
-      "title_zh": "给宠物穿上街头装瘫进沙发，用傻瓜相机的直闪拍下来",
-      "tagline_zh": "AI 一出手就把毛孩子画成卡通玩偶，认不出是自家那只。它硬规定剪影要第一眼读成「人瘫在沙发上」，道具只许 1–2 件、占画面 3–12%。",
-      "why_zh": "它不生成新宠物，只把你上传的那张照片当编辑目标，先记下 2–4 个识别锚点；姿势可以像人，四肢必须还是动物的。",
-      "limit_zh": "它直接调 `view_image` 和 `image_gen.imagegen`，环境里没有这两个内置工具就跑不起来。产物只有 1:1 正方形一种，作者明令不许先出竖图再裁切；成片不许出现任何可读文字、商标和水印，把宠物变卡通、变人类或拿去做品牌广告都写进了禁止项。",
+      "title_zh": "宠物收成街头情绪头像",
+      "tagline_zh": "1:1，穿得上的衣服，低保真直闪",
+      "why_zh": "保住动物结构，加上合身街头穿搭和抓拍颗粒。是头像，不是萌宠滤镜。",
+      "limit_zh": "页是方头像。要全身设定、要写实毛发精修，对不上。",
       "title_en": "Your own pet, in real streetwear, slouched on a couch under a hard flash",
       "tagline_en": "Ask any model for a pet portrait and you get a cartoon plush toy you can't recognise. This one insists the silhouette read first as \"a human sprawled on a sofa\", with only one or two props filling 3–12% of the frame.",
       "why_en": "It never generates a new animal: your uploaded photo is the edit target, and two to four identity anchors get written down first. The pose may be human; the limbs and paws stay animal.",
       "limit_en": "It calls `view_image` and `image_gen.imagegen` directly, so it goes nowhere in an environment without those two built-in tools. The only output is a 1:1 square composed as a square from the start — cropping a vertical down is forbidden — and readable text, logos and watermarks are banned outright, as is turning the pet into a cartoon, a human, or a brand advertisement.",
       "category": "creative",
-      "hide": true,
-      "gate_score": 7
+      "hide": false,
+      "gate_score": 7,
+      "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-luji-pet-streetwear-mood-avatar.png"
     },
     "zgdfsgd-pet-nutritionist": {
       "title_zh": "严禁给龙猫洗澡、也给矮脚马算食谱的宠物营养师",
