@@ -24,6 +24,18 @@ def esc(s):
     return html.escape(s or "", quote=True)
 
 
+def junk_lede(lede, name, title):
+    s = (lede or "").strip()
+    if not s:
+        return True
+    if "英文简介" in s or "见下" in s:
+        return True
+    blob = (name or "") + " " + (title or "")
+    if any(x and x in s for x in (name, title) if x) and len(s) < 40:
+        return True
+    return False
+
+
 def cover_of(it):
     c = (it.get("cover") or "").strip()
     if c:
@@ -43,7 +55,8 @@ def page(it, prev=None, nxt=None):
     cat_id = it.get("category") or ""
     cat = CAT.get(cat_id, cat_id)
     why = (it.get("why_zh") or "").strip()
-    lede = (it.get("tagline_zh") or it.get("desc_en") or "").strip()
+    raw_lede = (it.get("tagline_zh") or "").strip()
+    lede = "" if junk_lede(raw_lede, it.get("name"), title) else raw_lede
     limit = (it.get("limit_zh") or "").strip()
     repo = it.get("repo") or ""
     owner = it.get("owner") or (repo.split("/")[0] if repo else "")
@@ -64,7 +77,7 @@ def page(it, prev=None, nxt=None):
             % (esc(c), esc(c))
         )
 
-    tags = [x for x in (cat, owner, "店长推荐" if it.get("pick") else "") if x]
+    tags = [x for x in (owner, "店长推荐" if it.get("pick") else "") if x]
     tag_html = "".join('<span class="tag">%s</span>' % esc(t) for t in tags)
 
     pull = ('<aside class="pull"><span class="lbl">点评</span>%s</aside>' % esc(why)
@@ -95,7 +108,7 @@ def page(it, prev=None, nxt=None):
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
-<link rel="stylesheet" href="../../assets/item.css?v=7">
+<link rel="stylesheet" href="../../assets/item.css?v=8">
 <style>
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
@@ -104,7 +117,7 @@ def page(it, prev=None, nxt=None):
 <meta property="og:title" content="%s — 品味">
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
-<meta name="theme-color" content="#eceae6">
+<meta name="theme-color" content="#f4efe6">
 </head>
 <body>
 <header class="wrap mast">
@@ -130,7 +143,7 @@ def page(it, prev=None, nxt=None):
       <span class="date">%s</span>
     </div>
     <h1 class="ttl">%s</h1>
-    <p class="lede">%s</p>
+    %s
     <div class="tags">%s</div>
     %s
     %s
@@ -187,7 +200,7 @@ def page(it, prev=None, nxt=None):
         esc(owner),
         esc(added),
         esc(title),
-        esc(lede),
+        ('<p class="lede">%s</p>' % esc(lede)) if lede else "",
         tag_html,
         pull,
         limit_sec,
