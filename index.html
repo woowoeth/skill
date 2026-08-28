@@ -6,7 +6,7 @@
 <title>品味 — 帮你发现有品位的 Skills</title>
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
-<meta name="theme-color" content="#faf8f3">
+<meta name="theme-color" content="#e7ece8">
 <meta name="description" content="叫 SKILL.md 的文件已经百万量级，没人数得清。我们只挑值得装的，并且把挑它的理由写下来。">
 <!--GEO:HEAD:START--><!--GEO:HEAD:END-->
 <!-- 站点统计沿用旧首页的配置，原样搬过来。要不要留是产品的决定，不是版式的。 -->
@@ -58,26 +58,25 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
    ============================================================ */
 
 :root{
-  /* —— 底 —— 浅灰底 + 白卡，小红书的基本盘 —— */
-  /* 店主定：白色或奶色，深色看久了累。所以本站**只有浅色**，
-     不跟随系统深色 —— 下面那个 prefers-color-scheme 块已删。 */
-  --bg:      #faf8f3;   /* 奶 */
-  --card:    #ffffff;
-  --soft:    #f5f1e9;
+  /* 版式跟原声：三栏齐头、先封面后判断。
+     配色不跟原声的暖纸+锈点，改冷灰绿纸 + 墨绿点。 */
+  --bg:      #e7ece8;
+  --card:    #f6f8f6;
+  --soft:    #d8e0da;
 
-  /* —— 墨 —— 带一点暖的炭黑，中文长文更耐读 —— */
-  --ink:     #1b1a19;
-  --ink-2:   #45423e;
+  --ink:     #16201b;
+  --ink-2:   #3d4a43;
   /* ink-3 / ink-4 比上一版压暗过 —— 不是审美，是算出来的。
      浅色下原值 #78736c 对灰底只有 4.28:1、#a5a09a 对白卡只有 2.59:1，
      WCAG 正文要 4.5、次要要 3.0，两处都不够。
      **这四处失效只发生在浅色**，而浅色是我和产品都没法在本机看到的模式，
      所以是算的不是看的：现在 #918c86 对白卡 3.33、#6d6861 对灰底 5.02，都留了余量。 */
-  --ink-3:   #6d6861;
-  --ink-4:   #918c86;
+  --ink-3:   #5e6e66;
+  --ink-4:   #7d8c84;
 
-  --line:    #e6e4e0;
-  --line-2:  #d3d0ca;
+  --line:    #cfd8d2;
+  --line-2:  #b7c4bc;
+  --accent:  #2d6a4f;
 
   /* —— 单色。**站上没有品牌色。** ——
      brand/BRAND.md 定稿：「页面上唯一的彩色应该来自商品的产出物图，站不跟货抢颜色。」
@@ -114,8 +113,8 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
   --r-chip: 999px;
   --r-img:  10px;
 
-  --gut: 14px;           /* 瀑布流列间距，也是卡内边距的基数 */
-  --cols: 5;             /* 桌面五列，断点逐级降到手机两列 */
+  --gut: 18px;
+  --cols: 3;
 }
 
 /* 深色跟随已移除：店主判断「深色太压抑，看久了会很累」。 */
@@ -140,19 +139,20 @@ img{max-width:100%}
    英文站不需要做，也做不了，正好是我们该做到的地方。 */
 i.g{font-style:normal;display:inline;margin:0 .085em}
 
-.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 
 /* ============ 报头 ============
    整块静态 HTML。三个真数（过手 / 上架 / 未上架）落在 #tally，
    数据到了才填；没填的时候上面那句主张照样读得通。 */
-header.top{padding:var(--s5) 0 var(--s4)}
-.brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.brandrow{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
 /* ---- 标识 ---- brand/BRAND.md 定稿，数值一个都不许改 ----------------
    viewBox 必须是 14 4 33 55（不是 0 0 64 64）—— 笔画只落在 x∈[14,47]、
    y∈[4,59]，用 64×64 会在两侧各留 15 单位透明空气，任何 CSS 间距都被推开。
    标记高 = 字号 × 1.13；宽高比 0.6（33:55）不许拉伸；与字的间距 0.22em；
    字是宋体 600、字距 .05em；align-items:center。 */
-.logo{display:flex;align-items:center;gap:.22em;font-size:26px;line-height:1}
+.logo{display:flex;align-items:center;gap:.22em;font-size:42px;line-height:1}
+.logo b::after{content:".";color:var(--accent);font-weight:700}
 .logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block}
 .logo b{
   font-family:var(--serif);font-weight:600;letter-spacing:.05em;
@@ -172,9 +172,8 @@ header.top{padding:var(--s5) 0 var(--s4)}
 #langBtn:hover{border-color:var(--ink);color:var(--ink)}
 
 .say{
-  /* 店主：logo 和下面那行贴太近。这里拉开一档。 */
-  margin:var(--s5) 0 0;max-width:36em;
-  font:400 clamp(17px,2.1vw,21px)/1.68 var(--sans);color:var(--ink);
+  margin:10px 0 0;max-width:28em;
+  font:400 14px/1.55 var(--serif);color:var(--ink-3);
 }
 /* 数字不靠颜色跳出来，靠字重和墨度 —— 周围的字退一档，它就自然是重音 */
 .say em{font-style:normal;font-weight:600;color:var(--ink)}
@@ -193,12 +192,13 @@ header.top{padding:var(--s5) 0 var(--s4)}
 
 /* ============ 搜索条 + 横滑胶囊 ============
    两行都 sticky。手机上这是唯一的导航。 */
-.bar{position:sticky;top:0;z-index:20;background:var(--bg);padding-top:var(--s3)}
-.bar:after{content:"";display:block;height:1px;background:var(--line);margin-top:var(--s3)}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 12px;
+     display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bar:after{content:"";display:block;height:0}
 .search{
   display:flex;align-items:center;gap:8px;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
-  padding:0 16px;height:42px;
+  padding:0 16px;height:40px;flex:0 1 260px;min-width:180px;
 }
 .search svg{flex:0 0 auto;opacity:.42}
 .search input{
@@ -214,7 +214,7 @@ header.top{padding:var(--s5) 0 var(--s4)}
 
 /* 横滑胶囊。八个货架直接当胶囊，滚动条藏起来。 */
 .chips{
-  display:flex;gap:8px;margin-top:var(--s3);
+  display:flex;gap:8px;margin-top:0;flex:1;min-width:0;
   overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
   scroll-snap-type:x proximity;
   /* 边缘淡出，暗示右边还有 */
@@ -248,21 +248,25 @@ header.top{padding:var(--s5) 0 var(--s4)}
      所以最新的一批会集中在最左列，而不是横着铺开。
      换来的是零 JS、零重排、缩放不抖。今日上新那条窄带就是为了补这个。 */
 .flow{
-  column-count:var(--cols);
-  column-gap:var(--gut);
-  margin:var(--s4) 0 0;
+  display:grid;
+  grid-template-columns:repeat(var(--cols),minmax(0,1fr));
+  gap:18px;
+  margin:18px 0 0;
 }
-@media (max-width:1320px){ :root{--cols:4} }
-@media (max-width:1040px){ :root{--cols:3} }
-@media (max-width:760px){
-  :root{--cols:2;--gut:10px;
-    --t-body:13px;--t-lead:14px;--t-h3:15px;--t-h2:19px;--t-h1:24px;--t-meta:11.5px;--t-cap:11px}
+@media (max-width:900px){ :root{--cols:2} }
+@media (max-width:620px){
+  :root{--cols:1;--gut:12px;
+    --t-body:14px;--t-lead:15px;--t-h3:18px;--t-h2:22px;--t-h1:32px;--t-meta:12px;--t-cap:11px}
+  .wrap{padding:0 16px}
+  .logo{font-size:34px}
+  .bar{flex-direction:column;align-items:stretch}
+  .search{flex:1 1 auto;max-width:none}
 }
 
 .card{
   break-inside:avoid;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
-  margin:0 0 var(--gut);overflow:hidden;
+  margin:0;overflow:hidden;
   cursor:pointer;display:block;
   transition:border-color .15s, transform .15s;
 }
@@ -286,7 +290,7 @@ header.top{padding:var(--s5) 0 var(--s4)}
    而「代码画的干净线稿」正是我们最想要的那一类封面。
    用 inset 而不是 border：border 会参与宽高计算，把写死的宽高比顶歪，瀑布流就跳版了。 */
 .shot{display:block;background:var(--soft);position:relative;overflow:hidden;
-      box-shadow:inset 0 0 0 1px var(--line)}
+      aspect-ratio:16/10;box-shadow:inset 0 0 0 1px var(--line)}
 .shot img{width:100%;height:100%;display:block;object-fit:cover}
 /* 竖过头的限个高，别让一张海报把一列吃掉。
    artwork 那一档放宽到 620px：最竖那张（比 0.46）在桌面五列自然高 570px，
@@ -356,7 +360,7 @@ header.top{padding:var(--s5) 0 var(--s4)}
    为什么不是 4 行：4 行才 0 条被夹，但那要 82 张卡长高一档，整条流的节奏就变了。
    3 行让版式吸收掉绝大多数，**剩下的几条按文案缩短，不让版式迁就个例**。 */
 .card h3{
-  margin:0;font:500 var(--t-h3)/var(--lh-tight) var(--sans);color:var(--ink);
+  margin:0;font:600 20px/1.32 var(--serif);color:var(--ink);
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
 /* ---- 英文标题多给一行（手机再多一行）--------------------------------
@@ -1057,7 +1061,10 @@ function renderChips(all){
    画幅本身已经把话说清了。 */
 function shotHTML(it, forSheet){
   var rec = coverRec(it);
-  if(!rec) return "";
+  if(!rec){
+    if(forSheet) return "";
+    return '<span class="shot" aria-hidden="true"></span>';
+  }
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
 
   /* ================================================================
@@ -1104,7 +1111,7 @@ function shotHTML(it, forSheet){
      ================================================================ */
   var AR_FLAT = 2.45, H_MAX_K = 2.25;
   if(!forSheet){
-    if(ar >= AR_FLAT) return "";                    // 甲 · 太扁 → 不上卡
+    if(ar >= AR_FLAT) return '<span class="shot" aria-hidden="true"></span>';
     if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太竖 → 限高（等比，不裁）
   }
   // 宽高比已知就写死 —— 图片加载前空间就占好了，瀑布流不跳版
