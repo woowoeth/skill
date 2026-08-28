@@ -6,7 +6,7 @@
 <title>品味 — 帮你发现有品位的 Skills</title>
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#eceae6">
 <meta name="description" content="叫 SKILL.md 的文件已经百万量级，没人数得清。我们只挑值得装的，并且把挑它的理由写下来。">
 <!--GEO:HEAD:START--><!--GEO:HEAD:END-->
 <!-- 站点统计沿用旧首页的配置，原样搬过来。要不要留是产品的决定，不是版式的。 -->
@@ -59,18 +59,18 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
 
 :root{
   /* 纸是骨色，点是印泥红。红只给标记和句点，正文不跟货抢颜色。 */
-  --bg:      #f2efe8;
-  --card:    #fbfaf6;
-  --soft:    #e6e1d6;
+  --bg:      #eceae6;
+  --card:    #f6f5f1;
+  --soft:    #ddd9d2;
 
-  --ink:     #1a1917;
+  --ink:     #141413;
   --ink-2:   #3f3c37;
   --ink-3:   #6a6560;
   --ink-4:   #8a847c;
 
-  --line:    #ddd8ce;
-  --line-2:  #c9c2b6;
-  --accent:  #c23028;
+  --line:    #d4d0c8;
+  --line-2:  #c0bbb2;
+  --accent:  #141413;
 
   /* —— 单色。**站上没有品牌色。** ——
      brand/BRAND.md 定稿：「页面上唯一的彩色应该来自商品的产出物图，站不跟货抢颜色。」
@@ -147,7 +147,7 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
    字是宋体 600、字距 .05em；align-items:center。 */
 .logo{display:flex;align-items:center;gap:.22em;font-size:42px;line-height:1}
 .logo b::after{content:".";color:var(--accent);font-weight:700}
-.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block;color:var(--accent)}
+.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block;color:var(--ink)}
 .logo b{
   font-family:var(--serif);font-weight:600;letter-spacing:.05em;
   font-size:1em;line-height:1;color:var(--ink);
@@ -290,8 +290,8 @@ header.top{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom
   position:absolute;inset:0;padding:18px 16px 16px;
   display:flex;flex-direction:column;justify-content:flex-end;
   background:
-    radial-gradient(120% 80% at 100% 0%, rgba(194,48,40,.10), transparent 55%),
-    linear-gradient(165deg,#efeae0 0%,#e4ddd1 60%,#d6cec1 100%);
+    radial-gradient(120% 80% at 88% 0%, rgba(20,20,19,.06), transparent 55%),
+    linear-gradient(165deg,#e8e4dc 0%,#ddd8ce 60%,#d0cbc2 100%);
 }
 .shot .plate-cat{
   font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;

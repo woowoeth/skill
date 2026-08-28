@@ -104,7 +104,7 @@ def page(it, prev=None, nxt=None):
 <meta property="og:title" content="%s — 品味">
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#eceae6">
 </head>
 <body>
 <header class="wrap mast">
