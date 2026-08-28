@@ -38,6 +38,8 @@ def junk_lede(lede, name, title):
 
 def cover_of(it):
     c = (it.get("cover") or "").strip()
+    if c and ("private-user-images" in c or "jwt=" in c or "opengraph.githubassets" in c):
+        c = ""
     if c:
         return c
     p = os.path.join(ROOT, "skills", it["id"] + ".json")
@@ -151,19 +153,12 @@ def page(it, prev=None, nxt=None):
   </article>
   <aside class="aside">
     <div class="box">
-      <p class="hd">本页</p>
       <dl class="kv">
         <dt>分类</dt><dd>%s</dd>
         <dt>仓库</dt><dd>%s</dd>
         <dt>上架</dt><dd>%s</dd>
       </dl>
       <a class="pill" href="%s" rel="noopener">打开仓库</a>
-    </div>
-    <div class="box">
-      <p class="hd">引用</p>
-      <dl class="kv">
-        <dt>地址</dt><dd>%s</dd>
-      </dl>
     </div>
   </aside>
   <nav class="foot">%s</nav>
@@ -209,7 +204,6 @@ def page(it, prev=None, nxt=None):
         esc(repo),
         esc(added),
         esc(gh),
-        esc(url),
         "".join(sib),
     )
 
