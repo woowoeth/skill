@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>将任意参考照片提炼成极简编辑式 Field St — 品味</title>
+<meta name="description" content="将任意参考照片提炼成极简编辑式 Field Study 插画。自动识别主体类型，保留最有辨识度的关系。">
+<link rel="canonical" href="https://ourword.ai/skill/i/iamkong-photo-to-minimal-illustration/">
+<link rel="icon" type="image/svg+xml" href="../../icon.svg">
+<link rel="stylesheet" href="../../assets/item.css?v=10">
+<style>
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:title" content="将任意参考照片提炼成极简编辑式 Field St — 品味">
+<meta property="og:description" content="将任意参考照片提炼成极简编辑式 Field Study 插画。自动识别主体类型，保留最有辨识度的关系。">
+<meta property="og:url" content="https://ourword.ai/skill/i/iamkong-photo-to-minimal-illustration/">
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/i/iamkong-photo-to-minimal-illustration/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    
+    <div class="kicker">
+      <span class="src">做图</span>
+      <span>iamkong</span>
+      <span class="date">2026-08-28</span>
+    </div>
+    <h1 class="ttl">将任意参考照片提炼成极简编辑式 Field St</h1>
+    
+    <div class="tags"><span class="tag">iamkong</span></div>
+    <aside class="pull"><span class="lbl">点评</span>将任意参考照片提炼成极简编辑式 Field Study 插画。自动识别主体类型，保留最有辨识度的关系。</aside>
+    <section class="sec"><h2>局限</h2><p>这轮没在本机复跑产出。局限以 SKILL.md 为准；和你的现场不符就卸。</p></section>
+    <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/iamkong/photo-to-minimal-illustration.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/iamkong/photo-to-minimal-illustration.git">复制</button></div><div class="cmd"><code>mv photo-to-minimal-illustration ~/.claude/skills/gc-universal-field-study</code><button type="button" data-copy="mv photo-to-minimal-illustration ~/.claude/skills/gc-universal-field-study">复制</button></div></div></section>
+  </article>
+  <aside class="aside">
+    <div class="box">
+      <dl class="kv">
+        <dt>分类</dt><dd>做图</dd>
+        <dt>仓库</dt><dd>iamkong/photo-to-minimal-illustration</dd>
+        <dt>上架</dt><dd>2026-08-28</dd>
+      </dl>
+      <a class="pill" href="https://github.com/iamkong/photo-to-minimal-illustration" rel="noopener">打开仓库</a>
+    </div>
+  </aside>
+  <nav class="foot"><a href="../lzs0594-dreamy-motion-editorial/">← Extract the semantic her</a><a href="../wnby-paper-spirit-zine-paper-spirit-zine/">Transform a user-supplie →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>
