@@ -242,11 +242,13 @@ TASTE_LISTS = (
 # LinklyAI/best-skills：跨平台安装量榜。总榜是工程工具，不能当门闸。
 # 只用它当雷达：抽出能对应到 GitHub 的仓，再过 TASTE_RE / JUNK_RE。
 LINKLY_CSV = (
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/best-100.csv",
     "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/rising-stars.csv",
     "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/trending-7d.csv",
     "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/social-buzz.csv",
     "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/top-repos.csv",
 )
+LINKLY_HEAT: dict[str, float] = {}
 LINKLY_SKIP_OWNER = {
     "vercel-labs", "vercel", "microsoft", "anthropics", "azure",
     "obra", "nousresearch", "deepseek-ai",
@@ -717,6 +719,9 @@ def _taste_pass(it: dict) -> str:
             return ""
     if owner in set(T1_AUTHORS):
         return "t1-author"
+    heat = float(LINKLY_HEAT.get(repo.lower(), 0) or LINKLY_HEAT.get(owner.lower(), 0) or 0)
+    if heat >= 50 and (TASTE_RE.search(blob) or float(it.get("fun_score") or 0) >= 7):
+        return "linkly-hot"
     if TASTE_RE.search(blob):
         return "object"
     if float(it.get("fun_score") or 0) >= 8 and TASTE_RE.search(blob):
@@ -962,16 +967,33 @@ def taste_list_repos() -> list[str]:
     return out
 
 
+def _linkly_heat(row: dict) -> float:
+    def num(*keys):
+        for k in keys:
+            v = row.get(k)
+            if v in (None, ""):
+                continue
+            try:
+                return float(str(v).replace(",", ""))
+            except ValueError:
+                pass
+        return 0.0
+    wis = num("wis")
+    inst = max(num("installs_skillssh"), num("downloads_clawhub"), num("downloads_skillhub_cn"))
+    stars = num("stars")
+    # WIS 是百分位合成；安装量和星只作辅助。Azure 级安装量会被 SKIP_OWNER 挡掉。
+    return max(wis, (inst ** 0.25) if inst else 0, (stars ** 0.2) if stars else 0)
+
+
 def linkly_radar_repos() -> list[str]:
-    """Pull GitHub repos out of Linkly rankings, drop platform slop."""
-    found = []
+    """Linkly 安装量是加分：热的先看。平台官方仓和词表垃圾仍丢掉。"""
+    scored: dict[str, float] = {}
     for url in LINKLY_CSV:
         try:
             raw = urllib.request.urlopen(url, timeout=20).read().decode("utf-8", "ignore")
         except Exception as e:
             print("[linkly]", url.split("/")[-1], e)
             continue
-        # csv without importing csv in hot path is fine; use csv
         import csv, io
         rows = csv.DictReader(io.StringIO(raw))
         n = 0
@@ -992,18 +1014,16 @@ def linkly_radar_repos() -> list[str]:
             ])
             if JUNK_RE.search(blob):
                 continue
-            if not (TASTE_RE.search(blob) or owner in set(T1_AUTHORS)):
+            heat = _linkly_heat(row)
+            LINKLY_HEAT[repo.lower()] = max(LINKLY_HEAT.get(repo.lower(), 0), heat)
+            taste = TASTE_RE.search(blob) or owner in set(T1_AUTHORS)
+            hot = heat >= 45
+            if not (taste or hot):
                 continue
-            found.append(repo)
+            scored[repo] = max(scored.get(repo, 0), heat)
         print(f"[linkly] {url.rsplit('/',1)[-1]} rows={n}")
-    out, seen = [], set()
-    for r in found:
-        k = r.lower()
-        if k in seen:
-            continue
-        seen.add(k)
-        out.append(r)
-    print(f"[linkly] {len(out)} taste-mapped github repos")
+    out = sorted(scored, key=lambda r: -scored[r])
+    print(f"[linkly] {len(out)} repos, hottest {[(r, round(scored[r],1)) for r in out[:6]]}")
     return out
 
 
