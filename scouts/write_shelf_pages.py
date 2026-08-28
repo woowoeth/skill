@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write 原声-grade /i/<id>/ pages for every item on the shelf."""
 from __future__ import annotations
-import json, os, html, shutil
+import json, os, html, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEED = os.path.join(ROOT, "skills", "feed.json")
@@ -332,6 +332,18 @@ def main():
                 shutil.rmtree(p)
                 dropped += 1
     print("[pages] wrote %s article pages, pruned %s stale" % (n, dropped))
+    seo = os.path.join(ROOT, "seo")
+    if seo not in sys.path:
+        sys.path.insert(0, seo)
+    here = os.getcwd()
+    try:
+        os.chdir(ROOT)
+        import build_seo
+        build_seo.main()
+    except Exception as e:
+        print("[pages] seo skip:", e)
+    finally:
+        os.chdir(here)
 
 
 if __name__ == "__main__":
