@@ -1,10 +1,10 @@
 name: daily-restock
 on:
   schedule:
-    # 一天三班（北京时间约 09 / 14 / 21 点）。GitHub 定时会漂，故每班配一个补跑档。
-    - cron: "17 1 * * *"     # ~09:17 北京 — 早班（开门前）
-    - cron: "47 1 * * *"     #   补跑
-    # 降为一天一班：高频自动化曾导致账号被停用，且产出多为杂质
+    # 北京时间 09 / 14 / 21。GitHub cron 是 UTC，会漂几分钟。
+    - cron: "17 1 * * *"     # ~09:17 北京
+    - cron: "17 6 * * *"     # ~14:17 北京
+    - cron: "17 13 * * *"    # ~21:17 北京
   workflow_dispatch:
     inputs:
       max_new_repos:
