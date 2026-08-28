@@ -7,9 +7,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEED = os.path.join(ROOT, "skills", "feed.json")
 OUT = os.path.join(ROOT, "i")
 CAT = {
-    "creative": "做图", "fun": "玩", "writing": "写文章", "life": "过日子",
-    "body": "养身体", "work": "上班用", "learn": "学东西", "dev": "做图",
-    "meta": "店长位",
+    "creative": "做图", "writing": "写字", "life": "过日子", "fun": "玩",
+    "body": "过日子", "work": "写字", "learn": "过日子", "docs": "写字",
+    "dev": "玩", "meta": "玩",
 }
 MARK = """<svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
      stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">

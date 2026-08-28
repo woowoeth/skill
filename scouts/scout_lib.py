@@ -48,17 +48,15 @@ UA = "pinwei-skill-scout/1.0 (+https://github.com/woowoeth/skill)"
 # 健身、中医、过敏预报全被塞进「过日子」——那一格一度占到在架的三分之一（63/198）。
 # 一个装着 63 件、没有内部结构的筛子，读者点进去等于没筛。
 CATEGORIES = [
-    ("creative", "做图",       "Images",     "🎨"),
-    ("fun",      "玩",         "Play",       "🎲"),
-    ("writing",  "写文章",     "Writing",    "✍️"),
-    ("life",     "过日子",     "Everyday",   "🧺"),
-    ("learn",    "学东西",     "Learning",   "📚"),
-    ("body",     "养身体",     "Body",       "🏃"),
-    ("docs",     "做文档",     "Documents",  "📄"),
-    ("work",     "上班用",     "At Work",    "💼"),
-    ("dev",      "写代码",     "Code",       "🔧"),
-    ("meta",     "调教 agent", "Tune Agents","🧬"),
+    ("creative", "做图",   "Images",   "🎨"),
+    ("writing",  "写字",   "Writing",  "✍️"),
+    ("life",     "过日子", "Everyday", "🧺"),
+    ("fun",      "玩",     "Play",     "🎲"),
 ]
+CAT_MERGE = {
+    "body": "life", "work": "writing", "docs": "writing",
+    "learn": "life", "dev": "fun", "meta": "fun",
+}
 CAT_IDS = [c[0] for c in CATEGORIES]
 
 # ---------------------------------------------------------- editorial layer ---
@@ -239,11 +237,14 @@ def infer_category(name: str, desc: str, repo_desc: str = "") -> str:
     blob = f"{name} {desc} {repo_desc}"
     scores = {c: 0 for c in CAT_IDS}
     for cat, kws in CAT_KW.items():
+        dest = CAT_MERGE.get(cat, cat)
+        if dest not in scores:
+            dest = "fun"
         for k in kws:
             if has_kw(blob, [k]):
-                scores[cat] += 2 if has_kw(f"{name} {desc[:80]}", [k]) else 1
+                scores[dest] += 2 if has_kw(f"{name} {desc[:80]}", [k]) else 1
     best = max(scores, key=lambda c: (scores[c], -CAT_IDS.index(c)))
-    return best if scores[best] > 0 else "dev"
+    return best if scores[best] > 0 else "fun"
 
 def fun_score(name: str, desc: str, stars: int = 0, pushed_days_ago: int = 999) -> float:
     blob = f"{name} {desc}"

@@ -133,7 +133,8 @@ img{max-width:100%}
    英文站不需要做，也做不了，正好是我们该做到的地方。 */
 i.g{font-style:normal;display:inline;margin:0 .085em}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+html,body{overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;min-width:0}
 
 /* ============ 报头 ============
    整块静态 HTML。三个真数（过手 / 上架 / 未上架）落在 #tally，
@@ -159,7 +160,7 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
 /* ============ 搜索条 + 横滑胶囊 ============
    两行都 sticky。手机上这是唯一的导航。 */
 .bar{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 12px;
-     display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+     display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0;max-width:100%}
 .bar:after{content:"";display:block;height:0}
 .search{
   display:flex;align-items:center;gap:8px;
@@ -180,8 +181,8 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
 
 /* 横滑胶囊。八个货架直接当胶囊，滚动条藏起来。 */
 .chips{
-  display:flex;gap:8px;margin-top:0;flex:1;min-width:0;
-  overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  display:flex;gap:8px;margin-top:0;flex:1 1 100%;min-width:0;max-width:100%;
+  overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;
   scroll-snap-type:x proximity;
   /* 边缘淡出，暗示右边还有 */
   -webkit-mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 22px),transparent 100%);
@@ -226,7 +227,8 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
   .wrap{padding:0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right))}
   .logo b{font-size:34px}
   .bar{flex-direction:column;align-items:stretch}
-  .search{flex:1 1 auto;max-width:none}
+  .search{flex:1 1 auto;max-width:none;min-width:0}
+  .chips{flex:1 1 auto;width:100%}
 }
 
 .card{
