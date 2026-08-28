@@ -18,19 +18,12 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 img{max-width:100%; display:block}
 :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:3px}
 
-.wrap{
-  max-width:1120px; margin:0 auto;
-  padding-left: max(24px, env(safe-area-inset-left));
-  padding-right: max(24px, env(safe-area-inset-right));
-}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 @media (max-width:620px){
-  .wrap{
-    padding-left: max(28px, env(safe-area-inset-left));
-    padding-right: max(28px, env(safe-area-inset-right));
-  }
+  .wrap{padding:0 20px}
   h1.ttl{font-size:28px}
   .lede{font-size:16px}
-  .mast-top{align-items:center; gap:10px}
+  .mast-top{align-items:center;gap:10px}
 }
 
 .mast{padding:clamp(26px,5vw,48px) 0 0}
