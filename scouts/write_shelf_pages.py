@@ -117,13 +117,13 @@ def page(it, prev=None, nxt=None, related=None):
             "做完对照应用范围，越权的活另找工具。",
         ],
     }
-    uses = uses_map.get(cat_id, uses_map["creative"])
+    uses = ["就按「%s」这一件来做，不要中途改风格。" % title] + uses_map.get(cat_id, uses_map["creative"])
     uses_html = "".join("<li>%s</li>" % esc(x) for x in uses)
-    scope = limit
+    scope = limit or ""
     if scope:
-        scope = "这件落在「%s」。%s" % (cat, scope)
+        scope = "用在「%s」这一格。%s" % (cat, scope)
     else:
-        scope = "这件落在「%s」。超出这一格的活，它不会变聪明。" % cat
+        scope = "用在「%s」。超出这一格，它不会变聪明。" % cat
 
     cmd_html = []
     for c in cmds:
@@ -137,8 +137,13 @@ def page(it, prev=None, nxt=None, related=None):
     tag_html = "".join('<span class="tag">%s</span>' % esc(t) for t in tags)
 
     pull = ""
-    body_sec = ('<section class="sec"><h2>做什么用</h2><p>%s</p></section>' % esc(why)
-                if why else "")
+    purpose = why
+    if lede and why and lede not in why:
+        purpose = lede + "。" + why if not lede.endswith("。") else lede + why
+    elif lede and not why:
+        purpose = lede
+    body_sec = ('<section class="sec"><h2>做什么用</h2><p>%s</p></section>' % esc(purpose)
+                if purpose else "")
     limit_sec = '<section class="sec"><h2>应用范围</h2><p>%s</p></section>' % esc(scope)
     uses_sec = '<section class="sec"><h2>如何使用</h2><ul class="uses">%s</ul></section>' % uses_html
     install_sec = ('<section class="sec"><h2>安装</h2><div class="cmds">%s</div></section>'

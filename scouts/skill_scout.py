@@ -707,22 +707,22 @@ def _taste_pass(it: dict) -> str:
 
 
 def _local_copy(it: dict) -> dict:
-    """没有 LLM 时的当场文案：用描述说清是什么，局限写没复跑。空话不上架。"""
-    name = (it.get("title_zh") or it.get("name") or "").strip()
-    desc = (it.get("desc_en") or it.get("tagline_zh") or "").strip()
-    if not name or not desc or len(desc) < 12:
+    """没有 LLM 时：必须已经有能读的中文标题，才用描述补另外两句。英文半截不上架。"""
+    title = (it.get("title_zh") or "").strip()
+    if sum(1 for c in title if "\u4e00" <= c <= "\u9fff") < 2:
         return {}
-    title = name.replace("-", " ")
-    if re.fullmatch(r"[a-z0-9 \-]+", title) and len(desc) >= 8:
-        title = desc.split(".")[0].split("。")[0][:24]
-    why = desc.replace("\n", " ")
-    if len(why) > 52:
-        why = _clamp_cjk(why, 52)
+    if "英文简介" in title or "见下" in title:
+        return {}
+    desc = (it.get("why_zh") or it.get("tagline_zh") or it.get("desc_zh") or "").strip()
+    if "英文简介" in desc or "见下" in desc:
+        desc = ""
+    if not desc:
+        desc = title + "。装之前先看应用范围。"
     return {
-        "title_zh": title[:26],
-        "tagline_zh": _clamp_cjk(desc, 58),
-        "why_zh": why,
-        "limit_zh": "这轮没在本机复跑产出。局限以 SKILL.md 为准；和你的现场不符就卸。",
+        "title_zh": title[:28],
+        "tagline_zh": it.get("tagline_zh") or _clamp_cjk(desc, 36),
+        "why_zh": it.get("why_zh") or _clamp_cjk(desc, 80),
+        "limit_zh": it.get("limit_zh") or "超出它声明的那一格，产物会串味。对不上就卸。",
     }
 
 
