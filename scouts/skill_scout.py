@@ -158,6 +158,20 @@ T1_AUTHORS = [
     "wnby",
     "carolinaaafy",
     "Evianis",
+    "KKenny0",
+    "tluy",
+    "Hiseaa",
+    "TwentyfiveBTea",
+    "N1kO724",
+    "luji12",
+    "liuzihe849-png",
+    "luckdvr",
+    "iamkong",
+    "haorantang97",
+    "liigoQi",
+    "lzs0594",
+    "traveler0621",
+    "zhu930824",
 ]
 
 
@@ -179,6 +193,20 @@ T1_REPOS = [
     "laolaoshiren/claude-code-skills-zh",
     "obra/superpowers",
     "mattpocock/skills",
+    "KKenny0/card-skill",
+    "tluy/skill-zine-summary",
+    "Hiseaa/eastern-ink-photo-diptych",
+    "TwentyfiveBTea/ink-wash-poster",
+    "N1kO724/kodak-2383-film-look",
+    "luji12/handdrawn-photo-poster",
+    "liuzihe849-png/ai-editorial-print-studio",
+    "luckdvr/photo-riso-poster",
+    "iamkong/photo-to-minimal-illustration",
+    "haorantang97/antibes-holiday",
+    "wnby/paper-spirit-zine",
+    "LiamGvchi/gc-minimal-zine-poster",
+    "Zeejay0/gathered-scenes-zine-skill",
+    "yangcodingmaster/photo-distill",
 ]
 
 SEARCH_QUERIES = (
@@ -194,7 +222,14 @@ SEARCH_QUERIES = (
         "claude OR agent skill in:name,description 育儿 OR 养猫 OR 花粉 OR 崔玉涛",
         "claude OR agent skill in:name,description 八字 OR 周易 OR 占卜 OR 紫微 OR 侨批",
         "claude OR agent skill in:name,description 去AI味 OR 人味 OR 海明威 OR 原始人",
+        "claude OR codex skill in:name,description risograph OR riso OR zine OR diptych",
+        "claude OR codex skill in:name,description 水墨 OR 胶片 OR 莫兰迪 OR 剪影",
     ]
+)
+
+# 有样图、单风格的图册合集。比 skills.sh 热门榜更接近本店门闸。
+TASTE_LISTS = (
+    "https://raw.githubusercontent.com/tluy/skill-zine-summary/main/README.md",
 )
 
 SKIP_REPO_PAT = re.compile(
@@ -844,10 +879,38 @@ def watch_charts(existing: dict, sources: dict) -> int:
 
 
 # ------------------------------------------------------------- discover ----
+def taste_list_repos() -> list[str]:
+    found = []
+    pat = re.compile(r"https://github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
+    for url in TASTE_LISTS:
+        try:
+            raw = lib.http_get(url) if hasattr(lib, "http_get") else None
+            if raw is None:
+                req = urllib.request.Request(url, headers={"User-Agent": "pinwei-scout"})
+                raw = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
+            for owner, name in pat.findall(raw or ""):
+                if owner.lower() in {"tluy"}:
+                    continue
+                found.append(f"{owner}/{name}")
+        except Exception as e:
+            print("[taste-list]", url, e)
+    # stable unique
+    out, seen = [], set()
+    for r in found:
+        k = r.lower()
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(r)
+    print(f"[taste-list] {len(out)} repos from anthologies")
+    return out
+
+
 def discover(existing: dict, sources: dict) -> int:
     known = set(sources["repos"]) | {it["repo"] for it in existing.values()}
     candidates: dict[str, dict] = {}
-    for q in SEARCH_QUERIES:
+    extra = [f"repo:{r}" for r in taste_list_repos()]
+    for q in list(SEARCH_QUERIES) + extra:
         try:
             url = ("https://api.github.com/search/repositories?q="
                    + urllib.parse.quote(q) + "&order=desc&per_page=20")
