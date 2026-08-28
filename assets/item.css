@@ -73,14 +73,15 @@ h1.ttl{
   font-size:clamp(28px,4.6vw,44px); line-height:1.18; letter-spacing:-.02em;
 }
 .lede{font-size:18px; line-height:1.7; color:var(--ink-2); margin:0 0 18px; max-width:38em}
-.tags{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 28px}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px}
+.tags:empty{display:none;margin:0}
 .tag{
   font-size:11.5px; color:var(--ink-3); border:1px solid var(--line);
   border-radius:999px; padding:4px 10px; background:var(--card);
 }
 
 .pull{
-  margin:0 0 32px; padding:16px 18px 16px 20px;
+  margin:0 0 18px; padding:16px 18px 16px 20px;
   background:color-mix(in srgb, var(--accent) 8%, var(--card));
   border-left:3px solid var(--accent); border-radius:0 12px 12px 0;
   color:var(--ink-2); font-size:15.5px; line-height:1.7;
@@ -88,7 +89,8 @@ h1.ttl{
 .pull .lbl{display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
   color:var(--accent); margin-bottom:8px; font-weight:600}
 
-.sec{margin:0 0 34px}
+.sec{margin:0 0 18px}
+.sec:last-child{margin-bottom:0}
 .sec h2{
   font-family:var(--serif); font-size:20px; font-weight:700;
   margin:0 0 10px; letter-spacing:-.01em;
@@ -126,7 +128,7 @@ h1.ttl{
 .plate .c{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:10px; font-weight:600}
 .plate .t{font-family:var(--serif); font-size:clamp(22px,3vw,30px); font-weight:700; line-height:1.25}
 
-.aside{position:sticky; top:28px; display:grid; gap:16px}
+.aside{position:sticky; top:28px; display:grid; gap:10px}
 @media (max-width:940px){ .aside{position:static} }
 .box{
   background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 16px 14px;
