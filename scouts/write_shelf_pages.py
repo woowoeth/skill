@@ -157,6 +157,28 @@ def page(it, prev=None, nxt=None, related=None):
     else:
         sib.append("<span></span>")
 
+    desc = (lede or why or title)[:160]
+    og_img = ""
+    if cover:
+        og_img = ('<meta property="og:image" content="%s">'
+                  '<meta name="twitter:image" content="%s">' % (esc(cover), esc(cover)))
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": title,
+        "description": desc,
+        "url": url,
+        "applicationCategory": cat or "AgentSkill",
+        "operatingSystem": "Claude Code, Codex, Agent Skills",
+        "isPartOf": {"@type": "WebSite", "name": "品味", "url": "https://ourword.ai/skill/"},
+    }
+    if owner:
+        ld["author"] = {"@type": "Person", "name": owner}
+    if cover:
+        ld["image"] = cover
+    if gh:
+        ld["codeRepository"] = gh
+
     return """<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -164,7 +186,10 @@ def page(it, prev=None, nxt=None, related=None):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s — 品味</title>
 <meta name="description" content="%s">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, %s, %s">
 <link rel="canonical" href="%s">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
@@ -172,9 +197,15 @@ def page(it, prev=None, nxt=None, related=None):
 </style>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="%s — 品味">
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
+%s
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="%s — 品味">
+<meta name="twitter:description" content="%s">
+<script type="application/ld+json">%s</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -243,11 +274,17 @@ def page(it, prev=None, nxt=None, related=None):
 </html>
 """ % (
         esc(title),
-        esc((lede or why)[:160]),
+        esc(desc),
+        esc(cat),
+        esc(owner),
         esc(url),
         esc(title),
-        esc((lede or why)[:160]),
+        esc(desc),
         esc(url),
+        og_img,
+        esc(title),
+        esc(desc),
+        json.dumps(ld, ensure_ascii=False, separators=(",", ":")),
         MARK,
         esc(url),
         esc(cat),

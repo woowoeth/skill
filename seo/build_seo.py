@@ -18,19 +18,18 @@ SITE = G.Site(
     # 全站 800 多个页面一起指向 404。改动前先确认线上路径。
     path="skill",
     name="Pinwei", name_zh="品味",
-    tagline="agent skills worth installing, restocked daily",
-    tagline_zh="每天上新的好玩 Agent Skill 精选店",
+    tagline="discover agent skills with taste",
+    tagline_zh="帮你发现有品位的 Skills",
     description=(
         "A daily-restocked shelf of agent skills for Claude Code, Codex and other coding "
         "agents — each one with what it actually does, who it is for, and the one-line "
         "install command. Skills are picked by hand from public repositories; the shelf "
         "favours the ones that are fun or genuinely useful over the ones that merely exist."),
     description_zh=(
-        "每天上新的 Agent Skill 精选店：给 Claude Code、Codex 这类编程智能体用的 skill，"
-        "每一条都写清楚它到底做什么、适合谁、以及一行安装命令。所有 skill 从公开仓库人工挑选，"
-        "偏好「好玩」或者「真有用」的，而不是「存在」的。"),
-    keywords=("claude code skills, agent skills, claude skills, codex skills, MCP skills, "
-              "AI agent plugins, 品味, agent skill 推荐, claude code 技能, 智能体插件"),
+        "品味是一手挑选的 Agent Skill 货架，给 Claude Code、Codex 和同类智能体用。"
+        "每一件都写清做什么用、应用范围、如何使用和怎么安装。"),
+    keywords=("品味, Pinwei, Agent Skill, Claude Code Skills, Codex Skills, "
+              "SKILL.md, Claude 技能, 有品位的 Skills, 做图 skill, 写字 skill, 工作 skill"),
     item_type="SoftwareApplication", item_noun="skill", item_noun_zh="skill",
     changefreq="daily",
 )
@@ -48,10 +47,10 @@ CITE = ("Cite the individual skill page. The skill itself belongs to its author 
         "link on each page is the authoritative source. Attribute the shelf note to "
         "\"Pinwei 品味 (OurWord AI)\".")
 
-CAT_EN = {"dev": "development", "creative": "creative", "writing": "writing", "work": "work",
-          "docs": "documentation", "meta": "meta", "fun": "fun", "life": "life"}
-CAT_ZH = {"dev": "写代码", "creative": "创作", "writing": "写字", "work": "办公",
-          "docs": "文档", "meta": "元技能", "fun": "好玩", "life": "生活"}
+CAT_EN = {"creative": "images", "writing": "writing", "life": "everyday",
+          "work": "work", "fun": "play"}
+CAT_ZH = {"creative": "做图", "writing": "写字", "life": "生活",
+          "work": "工作", "fun": "玩乐"}
 
 
 # skills/ 里这几个是聚合产物，不是货。它们没有 id，会被当成一件 slug 为空的商品
@@ -64,14 +63,9 @@ PREP_EVIDENCE = prep.load_all()
 
 
 def load_items():
+    feed = json.load(open("skills/feed.json", encoding="utf-8"))
     items = []
-    for p in sorted(glob.glob("skills/*.json")):
-        if os.path.basename(p) in AGGREGATES:
-            continue
-        try:
-            s = json.load(open(p, encoding="utf-8"))
-        except Exception:
-            continue
+    for s in feed.get("skills") or []:
         if s.get("hide") or not (s.get("id") or s.get("name")):
             continue
         name = s.get("name") or s.get("id") or ""
@@ -132,14 +126,20 @@ def load_items():
 
 def main():
     items = load_items()
-    # 内容页归 write_shelf_pages。GEO 不再写 /i/、/zh/i/、/t/、/all/。
-    index_files = ()
-    rep = G.build(SITE, items, root=".", today=datetime.date.today().isoformat(),
-                  how_built=HOW, cite_as=CITE, index_files=index_files,
-                  extra_sitemaps=["https://ourword.ai/sitemap.xml"],
-                  item_pages=False, hubs=False)
-    rep["index"] = "skipped"
-    rep["pages"] = "delegated to write_shelf_pages"
+    today = datetime.date.today().isoformat()
+    # 内容页归 write_shelf_pages。这里只写机器能读的入口：首页头、sitemap、llms、RSS。
+    G.write_robots(SITE, ".", extra_sitemaps=["https://ourword.ai/sitemap.xml"])
+    G.write_sitemap(SITE, items, ".", today, extra_urls=())
+    # 不把已废弃的 /all/、/t/ 写进 sitemap
+    sm = open("sitemap.xml", encoding="utf-8").read()
+    sm = "\n".join(line for line in sm.splitlines()
+                   if "/skill/all/" not in line and "/skill/t/" not in line
+                   and "/skill/zh/" not in line) + "\n"
+    open("sitemap.xml", "w", encoding="utf-8").write(sm)
+    G.write_llms(SITE, items, ".", HOW, CITE, hubs=())
+    G.write_rss(SITE, items, ".")
+    G.patch_index("index.html", SITE, items, zh=True)
+    rep = {"items": len(items), "sitemap": sm.count("<loc>"), "index": True}
     print("pinwei seo/geo:", json.dumps(rep, ensure_ascii=False))
     return rep
 
