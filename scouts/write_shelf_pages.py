@@ -95,9 +95,9 @@ def page(it, prev=None, nxt=None):
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
 <link rel="icon" type="image/svg+xml" href="../../icon.svg">
-<link rel="stylesheet" href="../../assets/item.css?v=6">
+<link rel="stylesheet" href="../../assets/item.css?v=7">
 <style>
-.wrap{padding-left:max(36px,env(safe-area-inset-left))!important;padding-right:max(36px,env(safe-area-inset-right))!important}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
