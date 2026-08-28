@@ -190,7 +190,8 @@ def page(it, prev=None, nxt=None, related=None):
 <meta name="keywords" content="品味, Agent Skill, Claude Code, %s, %s">
 <link rel="canonical" href="%s">
 <link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
-<link rel="icon" type="image/svg+xml" href="../../icon.svg">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
+<link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
