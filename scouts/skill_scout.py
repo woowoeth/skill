@@ -237,8 +237,20 @@ SEARCH_QUERIES = (
 # 有样图、单风格的图册合集。比 skills.sh 热门榜更接近本店门闸。
 TASTE_LISTS = (
     "https://raw.githubusercontent.com/tluy/skill-zine-summary/main/README.md",
-    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/README.md",
 )
+
+# LinklyAI/best-skills：跨平台安装量榜。总榜是工程工具，不能当门闸。
+# 只用它当雷达：抽出能对应到 GitHub 的仓，再过 TASTE_RE / JUNK_RE。
+LINKLY_CSV = (
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/rising-stars.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/trending-7d.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/social-buzz.csv",
+    "https://raw.githubusercontent.com/LinklyAI/best-skills/main/data/latest/rankings/top-repos.csv",
+)
+LINKLY_SKIP_OWNER = {
+    "vercel-labs", "vercel", "microsoft", "anthropics", "azure",
+    "obra", "nousresearch", "deepseek-ai",
+}
 
 SKIP_REPO_PAT = re.compile(
     r"awesome-|awesome$|^.*/(dotfiles|test|demo|example|template)s?$|guide|tutorial|handbook|cookbook|cheatsheet|-docs?$", re.I)
@@ -950,6 +962,51 @@ def taste_list_repos() -> list[str]:
     return out
 
 
+def linkly_radar_repos() -> list[str]:
+    """Pull GitHub repos out of Linkly rankings, drop platform slop."""
+    found = []
+    for url in LINKLY_CSV:
+        try:
+            raw = urllib.request.urlopen(url, timeout=20).read().decode("utf-8", "ignore")
+        except Exception as e:
+            print("[linkly]", url.split("/")[-1], e)
+            continue
+        # csv without importing csv in hot path is fine; use csv
+        import csv, io
+        rows = csv.DictReader(io.StringIO(raw))
+        n = 0
+        for row in rows:
+            n += 1
+            repo = (row.get("repo") or row.get("source_skillssh") or "").strip()
+            if repo.count("/") != 1:
+                m = re.search(r"github.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)", row.get("url") or "")
+                repo = m.group(1) if m else ""
+            if not repo or repo.count("/") != 1:
+                continue
+            owner = repo.split("/")[0]
+            if owner.lower() in LINKLY_SKIP_OWNER:
+                continue
+            blob = " ".join([
+                row.get("skill") or "", row.get("topics") or "",
+                row.get("description") or "", row.get("description_zh") or "", repo,
+            ])
+            if JUNK_RE.search(blob):
+                continue
+            if not (TASTE_RE.search(blob) or owner in set(T1_AUTHORS)):
+                continue
+            found.append(repo)
+        print(f"[linkly] {url.rsplit('/',1)[-1]} rows={n}")
+    out, seen = [], set()
+    for r in found:
+        k = r.lower()
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(r)
+    print(f"[linkly] {len(out)} taste-mapped github repos")
+    return out
+
+
 def discover(existing: dict, sources: dict) -> int:
     known = set(sources["repos"]) | {it["repo"] for it in existing.values()}
     candidates: dict[str, dict] = {}
@@ -1242,6 +1299,12 @@ def main() -> None:
         if taste:
             print(f"[taste] {len(taste)} unseen, taking {min(4, len(taste))}")
             suggest_repos(taste[:4], existing, sources)
+        linkly = [r for r in linkly_radar_repos()
+                  if r not in sources.get("repos", {})
+                  and r.lower() not in {(it.get("repo") or "").lower() for it in existing.values()}]
+        if linkly:
+            print(f"[linkly] unseen {len(linkly)}, taking {min(3, len(linkly))}")
+            suggest_repos(linkly[:3], existing, sources)
         if not a.no_charts:
             watch_charts(existing, sources)
         discover(existing, sources)
