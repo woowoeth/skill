@@ -252,6 +252,7 @@ LINKLY_HEAT: dict[str, float] = {}
 LINKLY_SKIP_OWNER = {
     "vercel-labs", "vercel", "microsoft", "anthropics", "azure",
     "obra", "nousresearch", "deepseek-ai",
+    "supabase", "prisma", "neondatabase", "skills-101",
 }
 
 SKIP_REPO_PAT = re.compile(
