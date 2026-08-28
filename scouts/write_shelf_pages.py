@@ -36,17 +36,30 @@ def junk_lede(lede, name, title):
     return False
 
 
+COVER_DENY = (
+    "private-user-images", "jwt=", "opengraph.githubassets",
+    "camo.githubusercontent", "shields.io", "img.youtube.com",
+    "i.ytimg.com", "skills.sh/b/",
+)
+
+def cover_ok(c):
+    c = (c or "").strip()
+    if not c.startswith("http"):
+        return ""
+    low = c.lower()
+    if any(x in low for x in COVER_DENY):
+        return ""
+    return c
+
 def cover_of(it):
-    c = (it.get("cover") or "").strip()
-    if c and ("private-user-images" in c or "jwt=" in c or "opengraph.githubassets" in c):
-        c = ""
+    c = cover_ok(it.get("cover"))
     if c:
         return c
     p = os.path.join(ROOT, "skills", it["id"] + ".json")
     if os.path.exists(p):
         try:
             raw = json.load(open(p, encoding="utf-8"))
-            return (raw.get("cover") or "").strip()
+            return cover_ok(raw.get("cover"))
         except Exception:
             return ""
     return ""
