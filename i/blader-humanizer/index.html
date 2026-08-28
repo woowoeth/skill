@@ -68,15 +68,15 @@
 </div>
 <script>
 (function(){
-  function copy(t, btn){
+  function copy(t, btn, done){
     var old = btn.textContent;
-    function ok(){ btn.textContent='已复制'; btn.classList.add('on');
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
       setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
     if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
   }
   document.addEventListener('click', function(e){
     var s = e.target.closest('#share');
-    if(s){ copy(s.getAttribute('data-url'), s); return; }
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
     var c = e.target.closest('[data-copy]');
     if(c) copy(c.getAttribute('data-copy'), c);
   });

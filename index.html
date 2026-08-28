@@ -464,7 +464,7 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
    攒够了在「心选」里一次性提交成一个预填的 GitHub Issue。
    这是全站唯一一处彩色 —— 它不是装饰，是唯一一个「你的状态」。 */
 .heart{
-  flex:0 0 auto;margin-right:auto;background:none;border:0;padding:2px 4px;
+  flex:0 0 auto;background:none;border:0;padding:2px 4px;
   line-height:1;cursor:pointer;color:var(--ink-4);
   transition:transform .12s ease, color .12s ease;
 }
@@ -755,7 +755,7 @@ var I18N = {
   tSeen:"过手", tIn:"上架", tOut:"没让它进来", tWhy:"已写拒收理由",
   today:"今天上新 <b>%s</b> 件", todayNone:"今天还没上新。不硬凑数。",
   all:"全部", pick:"店长推荐",
-  share:"分享", shared:"已复制链接", shareSite:"分享本站",
+  share:"分享", shared:"已分享", shareSite:"分享",
   results:"搜到 %s 件", empty:"没有匹配的。换个词试试。",
   // 心选清空是唯一一个「不是搜出来的空」。用搜索那句会让人去改一个他没打的词。
   emptyHeart:"心选是空的。在卡片上点一下心，标出你觉得好的东西。",
@@ -797,7 +797,7 @@ var I18N = {
   tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
   today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
   all:"All", pick:"Editor's picks",
-  share:"Share", shared:"Link copied", shareSite:"Share site",
+  share:"Share", shared:"Shared", shareSite:"Share",
   results:"%s found", empty:"Nothing matches. Try another word.",
   emptyHeart:"Nothing hearted yet. Tap the heart on a card to mark something good.",
   moreN:"%s more", noMore:"End of the shelf",
@@ -1130,13 +1130,10 @@ function heartHTML(it){
 }
 
 function badgesHTML(it, isNew){
-  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>' + heartHTML(it);
+  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>';
   if(isNew) h += '<span class="newdot">'+esc(t("newBadge"))+'</span>';
-  // prep_badge 由功能开发那边从 methods/ 存档本地算（≥3 条证据）。
-  // 字段没到就什么都不印 —— 不猜、不估。
-  /* 「备料齐」「店长读过」已撤：它们是我们内部的词，读者看不懂，
-     而卡片上没有地方解释。prep_badge 字段留着当选品内部工具。 */
   if(it.pick) h += '<span class="badge">'+esc(t("picked"))+'</span>';
+  h += heartHTML(it);
   h += '<button class="share" type="button" data-share="'+esc(it.id)+'">'+esc(t("share"))+'</button>';
   return '<div class="foot">'+h+'</div>';
 }
