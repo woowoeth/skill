@@ -43,7 +43,7 @@ jobs:
           git config user.email "skill-store-bot@users.noreply.github.com"
           # 1) commit ONLY per-item files + sources — unique names never conflict on rebase
           #    聚合产物（feed.json / rejected-feed.json）永远在第 2 步从合并后的全量重建
-          git add skills/*.json scouts/sources.json
+          git add skills/*.json scouts/sources.json editorial/curation.json
           for agg in skills/feed.json skills/rejected-feed.json; do
             git reset -q -- "$agg" 2>/dev/null || true
             git checkout -q -- "$agg" 2>/dev/null || true

@@ -483,10 +483,11 @@ ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 
   ✓ 对：「把任何人的思维方式蒸馏成一个能装的 skill」
 - tagline_zh：**用户为什么要装**（40~58 字，占满两行）。写痛点/场景/反差 + 一个别处没有的具体细节。
   禁止复述功能列表，禁止「实用利器」「效率神器」这类空话。
-- why_zh：**它到底好在哪**（30~52 字）。机制上的差异点、诚实的局限、平台限制。可以有态度。
+- why_zh：**它到底好在哪**（30~52 字）。机制上的差异点。可以有态度。
+- limit_zh：**不装的理由**（一句诚实局限，必写）。
 - tagline_en / why_en：英文版，同义但地道，各 ≤115 / ≤130 字符。
 
-如果这件东西你写不出有钩子的文案 —— 说明它不值得上架。这时把 title_zh 设为 "SKIP" 并留空其余字段。
+基建、官方四件套、合集目录、写不出钩子的，title_zh 设为 "SKIP"。
 
 商品信息：
 name: {name}
@@ -574,7 +575,7 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             c = json.loads(txt)
             patch = {k: str(c[k]).strip() for k in
-                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en")
+                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh")
                      if c.get(k) and str(c[k]).strip()}
             patch = _clamp_patch(patch)
             if patch.get("title_zh", "").strip().upper() == "SKIP":
@@ -589,6 +590,111 @@ def enrich_items(ids: list[str], existing: dict) -> None:
         except Exception as e:  # never let copywriting break the restock
             print(f"[scout] enrich {sid}: {e}")
     print(f"[scout] enrich: {done}/{len(ids)} items copywritten by {LLM_MODEL}")
+
+
+TASTE_RE = re.compile(
+    r"插画|海报|手绘|水彩|剪纸|小红书|公文|八字|命理|去AI|人味|短剧|剧本|分镜|"
+    r"漫画|手写|zine|poster|illustration|humanizer|hallmark|caveman|risograph|"
+    r"watercolor|comic|封面|种草|育儿|中医|风水|占卜|网文|贴纸|涂鸦|仙侠|"
+    r"杜蕾斯|莫兰迪|编辑稿|文物|动效|诗意", re.I)
+JUNK_RE = re.compile(
+    r"harness|runtime|orchestr|marketplace|templates?|crm|seo audit|"
+    r"agentic framework|coding agent fleet|official skill|"
+    r"全自动发布|简历包装|办公套件", re.I)
+
+
+def _taste_pass(it: dict) -> str:
+    """同一轮能不能上架。返回空串=拒，否则是通道名。"""
+    if it.get("kind") == "collection":
+        return ""
+    repo = (it.get("repo") or "")
+    owner = repo.split("/")[0] if repo else ""
+    blob = " ".join([
+        it.get("name") or "", it.get("desc_en") or "",
+        it.get("title_zh") or "", repo,
+    ])
+    if JUNK_RE.search(blob) or (hasattr(sys.modules[__name__], "_chart_skip") and _chart_skip(repo)):
+        if owner not in set(T1_AUTHORS):
+            return ""
+    if owner in set(T1_AUTHORS):
+        return "t1-author"
+    if TASTE_RE.search(blob):
+        return "object"
+    if float(it.get("fun_score") or 0) >= 8 and TASTE_RE.search(blob):
+        return "fun+object"
+    return ""
+
+
+def _local_copy(it: dict) -> dict:
+    """没有 LLM 时的当场文案：用描述说清是什么，局限写没复跑。空话不上架。"""
+    name = (it.get("title_zh") or it.get("name") or "").strip()
+    desc = (it.get("desc_en") or it.get("tagline_zh") or "").strip()
+    if not name or not desc or len(desc) < 12:
+        return {}
+    title = name.replace("-", " ")
+    if re.fullmatch(r"[a-z0-9 \-]+", title) and len(desc) >= 8:
+        title = desc.split(".")[0].split("。")[0][:24]
+    why = desc.replace("\n", " ")
+    if len(why) > 52:
+        why = _clamp_cjk(why, 52)
+    return {
+        "title_zh": title[:26],
+        "tagline_zh": _clamp_cjk(desc, 58),
+        "why_zh": why,
+        "limit_zh": "这轮没在本机复跑产出。局限以 SKILL.md 为准；和你的现场不符就卸。",
+    }
+
+
+def same_day_shelf(ids: list[str], existing: dict) -> int:
+    """原声同款：进货和上架同一轮。过门禁且三句文案齐了就 hide:false，写进 curation。"""
+    if not ids:
+        return 0
+    cur = lib.read_json(lib.EDITORIAL, {"items": {}})
+    if not isinstance(cur, dict):
+        cur = {"items": {}}
+    items = cur.setdefault("items", {})
+    up = 0
+    for sid in ids:
+        it = existing.get(sid)
+        if not it:
+            continue
+        lane = _taste_pass(it)
+        if not lane:
+            it["hide"] = True
+            lib.save_item(it)
+            print(f"[shelf] 拒 {sid}")
+            continue
+        if not (it.get("title_zh") and it.get("why_zh") and it.get("limit_zh")):
+            it.update({k: v for k, v in _local_copy(it).items() if not it.get(k)})
+        if not (it.get("title_zh") and it.get("why_zh") and it.get("limit_zh")):
+            it["hide"] = True
+            lib.save_item(it)
+            print(f"[shelf] 缺文案留库房 {sid}")
+            continue
+        if (it.get("title_zh") or "").strip().upper() == "SKIP":
+            it["hide"] = True
+            lib.save_item(it)
+            continue
+        it["hide"] = False
+        lib.save_item(it)
+        patch = items.get(sid, {})
+        patch.update({
+            "title_zh": it.get("title_zh", ""),
+            "why_zh": it.get("why_zh", ""),
+            "limit_zh": it.get("limit_zh", ""),
+            "tagline_zh": it.get("tagline_zh", ""),
+            "hide": False,
+            "gate_score": 8,
+            "category": it.get("category", ""),
+        })
+        items[sid] = patch
+        up += 1
+        print(f"[shelf] 上架 {sid} via {lane}")
+    if up:
+        cur.setdefault("gate", {})["same_day"] = True
+        lib.write_json(lib.EDITORIAL, cur)
+    print(f"[shelf] same-day {up}/{len(ids)}")
+    return up
 
 
 
@@ -1000,6 +1106,7 @@ def main() -> None:
     if a.suggest:
         suggest_repos(a.suggest, existing, sources)
         enrich_items(NEW_IDS, existing)
+        same_day_shelf(NEW_IDS, existing)
         lib.save_sources(sources)
         lib.refresh()
         return
@@ -1013,6 +1120,7 @@ def main() -> None:
             watch_charts(existing, sources)
         discover(existing, sources)
     enrich_items(NEW_IDS, existing)
+    same_day_shelf(NEW_IDS, existing)
     lib.save_sources(sources)
     lib.refresh()
 
