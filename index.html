@@ -906,7 +906,7 @@ var params = new URLSearchParams(location.search);
 var lang = params.get("lang")==="en" ? "en" : "zh";
 var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
 var D=null, SHELF=false;
-var state={ q:"", cat:"pick", limit:60 };
+var state={ q:"", cat:"all", limit:60 };
 
 function el(id){return document.getElementById(id)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
