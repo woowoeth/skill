@@ -103,12 +103,12 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
 
   --s1:4px; --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px;
 
-  --r-card: 14px;
+  --r-card: 10px;
   --r-chip: 999px;
   --r-img:  10px;
 
-  --gut: 18px;
-  --cols: 3;
+  --gut: 10px;
+  --cols: 2;
 }
 
 /* 深色跟随已移除：店主判断「深色太压抑，看久了会很累」。 */
@@ -134,7 +134,7 @@ img{max-width:100%}
 i.g{font-style:normal;display:inline;margin:0 .085em}
 
 html,body{overflow-x:hidden}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px;min-width:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px;min-width:0}
 
 /* ============ 报头 ============
    整块静态 HTML。三个真数（过手 / 上架 / 未上架）落在 #tally，
@@ -216,19 +216,20 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
      换来的是零 JS、零重排、缩放不抖。今日上新那条窄带就是为了补这个。 */
 .flow{
   display:grid;
-  grid-template-columns:repeat(var(--cols),minmax(0,1fr));
-  gap:18px;
-  margin:18px 0 0;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:12px 0 0;
 }
-@media (max-width:900px){ :root{--cols:2} }
 @media (max-width:620px){
-  :root{--cols:1;--gut:12px;
-    --t-body:14px;--t-lead:15px;--t-h3:18px;--t-h2:22px;--t-h1:32px;--t-meta:12px;--t-cap:11px}
-  .wrap{padding:0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right))}
-  .logo b{font-size:34px}
-  .bar{flex-direction:column;align-items:stretch}
+  :root{
+    --gut:8px;
+    --t-body:13.5px;--t-lead:14.5px;--t-h3:15.5px;--t-h2:20px;--t-h1:30px;--t-meta:11.5px;--t-cap:10.5px}
+  .wrap{padding:0 max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right))}
+  .logo b{font-size:30px}
+  .bar{flex-direction:column;align-items:stretch;gap:8px}
   .search{flex:1 1 auto;max-width:none;min-width:0}
   .chips{flex:1 1 auto;width:100%}
+  .flow{gap:8px;margin:10px 0 0}
 }
 
 .card{
@@ -324,7 +325,7 @@ a.card{color:inherit}
 }
 .card.noimg .cbody{padding-top:var(--s3)}
 
-.cbody{padding:var(--s4)}
+.cbody{padding:12px}
 
 /* 标题：两行截断。
    ⚠️ **下面这两行旧账已经不成立了，留着是为了让人看见它怎么过期的：**
