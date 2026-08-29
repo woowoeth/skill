@@ -168,6 +168,9 @@ T1_AUTHORS = [
     "luji12",
     "liuzihe849-png",
     "luckdvr",
+    "dacnay816y62-hub",
+    "adrianpunk",
+    "threerocks",
     "2998980-hue",
     "joeyhu1108-maker",
     "moonlin1213",
@@ -237,6 +240,8 @@ SEARCH_QUERIES = (
 # 有样图、单风格的图册合集。比 skills.sh 热门榜更接近本店门闸。
 TASTE_LISTS = (
     "https://raw.githubusercontent.com/tluy/skill-zine-summary/main/README.md",
+    "https://raw.githubusercontent.com/travisvn/awesome-claude-skills/main/README.md",
+    "https://raw.githubusercontent.com/VoltAgent/awesome-agent-skills/main/README.md",
 )
 
 # LinklyAI/best-skills：跨平台安装量榜。总榜是工程工具，不能当门闸。
@@ -490,26 +495,9 @@ def _img_ok(url: str) -> bool:
 
 
 def resolve_cover(repo: str) -> str:
-    """Best real image for a repo: author's social-preview > first non-badge
-    README image (usually an actual screenshot/demo). '' -> UI falls back to
-    GitHub's opengraph stats card."""
+    """README / examples 截图优先。GitHub 统计名片最后才用。"""
     import urllib.request
-    # 1) custom social preview set by the author
-    try:
-        req = urllib.request.Request("https://github.com/" + repo,
-                                     headers={"User-Agent": "Mozilla/5.0 (skill-store)"})
-        html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
-        m = (re.search(r'property="og:image"\s+content="([^"]+)"', html)
-             or re.search(r'content="([^"]+)"\s+property="og:image"', html))
-        if m:
-            u = m.group(1).replace("&amp;", "&")
-            if "private-user-images" in u:
-                pass
-            else:
-                return u
-    except Exception:
-        pass
-    # 2) first meaningful image in rendered README
+    # 1) first meaningful image in rendered README
     try:
         hdr = {"Accept": "application/vnd.github.html", "User-Agent": "skill-store-scout"}
         tok = os.environ.get("GH_TOKEN", "")
@@ -540,6 +528,35 @@ def resolve_cover(repo: str) -> str:
             return cands[0]
     except Exception:
         pass
+    # 2) examples / screenshots / preview folders
+    tok = os.environ.get("GH_TOKEN", "")
+    hdr = {"User-Agent": "skill-store-scout", "Accept": "application/vnd.github+json"}
+    if tok:
+        hdr["Authorization"] = "Bearer " + tok
+    for folder in ("examples", "example", "screenshots", "preview", "previews", "assets", "docs/images"):
+        try:
+            req = urllib.request.Request(
+                f"https://api.github.com/repos/{repo}/contents/{folder}", headers=hdr)
+            listing = json.loads(urllib.request.urlopen(req, timeout=20).read())
+            urls = []
+            for ent in listing if isinstance(listing, list) else []:
+                name = (ent.get("name") or "").lower()
+                if not name.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif")):
+                    continue
+                if BADGE_PAT.search(name):
+                    continue
+                u = ent.get("download_url") or ""
+                if u:
+                    urls.append(u)
+            if urls:
+                try:
+                    from enrich import prefer_output_images
+                    urls = prefer_output_images(urls)
+                except Exception:
+                    pass
+                return urls[0]
+        except Exception:
+            continue
     # last resort: GitHub generated social card
     return "https://opengraph.githubassets.com/1/" + repo
 
