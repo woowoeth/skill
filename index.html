@@ -215,10 +215,17 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
      所以最新的一批会集中在最左列，而不是横着铺开。
      换来的是零 JS、零重排、缩放不抖。今日上新那条窄带就是为了补这个。 */
 .flow{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
+  columns:2;
+  column-gap:10px;
   margin:12px 0 0;
+}
+.flow > *{
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  width:100%;
+  margin:0 0 10px;
+  display:block;
 }
 @media (max-width:620px){
   :root{
