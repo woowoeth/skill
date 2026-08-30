@@ -1,0 +1,33 @@
+{
+ "id": "bradautomates-claude-video-watch",
+ "kind": "skill",
+ "name": "watch",
+ "title_zh": "",
+ "tagline_zh": "让 Claude 帮你搞创作：watch。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Watch a video (URL or local path). Downloads with yt-dlp, extracts auto-scaled frames with ffmpeg, pulls the transcript from captions (or Whisper API fallback), and hands the result to Claude so it can answer questions about what's in the video.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "bradautomates/claude-video",
+ "owner": "bradautomates",
+ "path": "skills/watch",
+ "url": "https://github.com/bradautomates/claude-video/tree/HEAD/skills/watch",
+ "homepage": "",
+ "stars": 16482,
+ "pushed_at": "2026-07-01T01:26:49Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.8,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-08-30",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/bradautomates/claude-video.git",
+  "copy": "cp -r claude-video/skills/watch ~/.claude/skills/watch",
+  "dir": "~/.claude/skills/watch"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/bradautomates-claude-video-watch.png"
+}
