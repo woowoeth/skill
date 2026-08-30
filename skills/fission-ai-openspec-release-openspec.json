@@ -1,0 +1,33 @@
+{
+ "id": "fission-ai-openspec-release-openspec",
+ "kind": "skill",
+ "name": "release-openspec",
+ "title_zh": "",
+ "tagline_zh": "过日子用得上：release-openspec。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Use this skill when releasing OpenSpec: audit merged work and changeset coverage, decide whether a catch-up changeset PR is needed, prepare or resume the Changesets Version Packages PR, cut a beta or stable release, verify publishing, and polish GitHub release notes. Also use when asked whether an open release PR is complete, what the next release step is, or to continue a release paused for human",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "Fission-AI/OpenSpec",
+ "owner": "Fission-AI",
+ "path": ".agents/skills/release-openspec",
+ "url": "https://github.com/Fission-AI/OpenSpec/tree/HEAD/.agents/skills/release-openspec",
+ "homepage": "https://openspec.dev/",
+ "stars": 66658,
+ "pushed_at": "2026-08-28T20:08:11Z",
+ "skill_count": 1,
+ "category": "life",
+ "fun_score": 5.84,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-08-30",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/Fission-AI/OpenSpec.git",
+  "copy": "cp -r OpenSpec/.agents/skills/release-openspec ~/.claude/skills/release-openspec",
+  "dir": "~/.claude/skills/release-openspec"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/fission-ai-openspec-release-openspec.png"
+}
