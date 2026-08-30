@@ -1,0 +1,33 @@
+{
+ "id": "kagurananaga-format-agent-skill",
+ "kind": "skill",
+ "name": "format-agent",
+ "title_zh": "",
+ "tagline_zh": "打工人的外挂：format-agent。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "通用文档格式排版。当用户给一份\"格式规范\"（自然语言规范文字，或排好版的 Word 模板）加一份格式混乱的 docx，要求按规范重排时使用。AI 只产出两个 JSON（格式规则 FormatSpec、段落角色 RoleMap），所有文档修改由确定性代码完成，输出可继续编辑的命名样式文档、修订模式文档和修改对照报告。",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "KaguraNanaga/format-agent-skill",
+ "owner": "KaguraNanaga",
+ "path": "",
+ "url": "https://github.com/KaguraNanaga/format-agent-skill",
+ "homepage": "",
+ "stars": 0,
+ "pushed_at": "2026-08-30T15:09:04Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 1.5,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-08-30",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/KaguraNanaga/format-agent-skill.git",
+  "copy": "mv format-agent-skill ~/.claude/skills/format-agent",
+  "dir": "~/.claude/skills/format-agent"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kagurananaga-format-agent-skill.png"
+}

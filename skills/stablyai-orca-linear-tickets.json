@@ -1,0 +1,33 @@
+{
+ "id": "stablyai-orca-linear-tickets",
+ "kind": "skill",
+ "name": "linear-tickets",
+ "title_zh": "",
+ "tagline_zh": "打工人的外挂：linear-tickets。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Use Orca's Linear CLI through `orca linear ...` commands to read linked ticket context with `orca linear issue --current --full --json`, post completion updates, move work forward through Linear workflow states, attach PR/MR links with `orca linear attach --current --url <pr-or-mr-url> --title \"PR/MR link\" --json`, and triage Linear tasks for assignee, priority, estimate, due date, labels, and par",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "stablyai/orca",
+ "owner": "stablyai",
+ "path": "skills/linear-tickets",
+ "url": "https://github.com/stablyai/orca/tree/HEAD/skills/linear-tickets",
+ "homepage": "https://onOrca.dev",
+ "stars": 57209,
+ "pushed_at": "2026-08-30T16:33:09Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 5.78,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-08-30",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/stablyai/orca.git",
+  "copy": "cp -r orca/skills/linear-tickets ~/.claude/skills/linear-tickets",
+  "dir": "~/.claude/skills/linear-tickets"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/stablyai-orca-linear-tickets.png"
+}
