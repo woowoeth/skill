@@ -4,6 +4,28 @@
 # Full corpus, plain text. 104 skills.
 
 ========================================================================
+## sprite-gen
+## 一句话出的精灵图带透明底，丢进游戏引擎直接能用
+URL: https://ourword.ai/skill/i/aldegad-sprite-gen/
+Source: https://github.com/aldegad/sprite-gen
+Updated: 2026-08-30
+Tags: images, skill, aldegad
+
+One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
+
+### What does this skill do?
+Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
+
+### Why is it worth installing?
+Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aldegad/sprite-gen The repository ships 1 skills in total.
+
+========================================================================
 ## textile-toy-portrait
 ## 把人收成纺织玩偶肖像
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-textile-toy-portrait/
@@ -877,28 +899,6 @@ git clone --depth 1 https://github.com/LiamGvchi/gc-minimal-zine-poster.git Then
 
 ### Where does it come from?
 Repository: LiamGvchi/gc-minimal-zine-poster The repository ships 1 skills in total.
-
-========================================================================
-## sprite-gen
-## 一句话出的精灵图带透明底，丢进游戏引擎直接能用
-URL: https://ourword.ai/skill/i/aldegad-sprite-gen/
-Source: https://github.com/aldegad/sprite-gen
-Updated: 2026-08-13
-Tags: images, skill, aldegad
-
-One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
-
-### What does this skill do?
-Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
-
-### Why is it worth installing?
-Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
-
-### How do you install it?
-git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
 ## reality-restaged
