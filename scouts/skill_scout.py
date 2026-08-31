@@ -723,28 +723,38 @@ JUNK_RE = re.compile(
 
 
 def _taste_pass(it: dict) -> str:
-    """同一轮能不能上架。返回空串=拒，否则是通道名。"""
-    if it.get("kind") == "collection":
+    """同一轮能不能上架。返回空串=拒，否则是通道名。
+
+    2026-08-31 重写。旧闸是一张题材白名单（TASTE_RE：插画|海报|水彩|剪纸|八字|命理…）
+    加一个作者白名单，拿店主亲手标的 73 件回测，结论是它**没有区分力**：
+
+        旧闸          心选通过 33%  ·  非心选通过 32%   →  +1pt
+        真局限        心选通过 99%  ·  非心选通过 62%   →  +37pt
+        有封面        心选通过 59%  ·  非心选通过 41%   →  +18pt
+        说出产出物     心选通过 64%  ·  非心选通过 48%   →  +16pt
+        fun_score≥8   心选通过  4%  ·  非心选通过 12%   →  **−8pt**
+
+    三件事因此定了性：
+    ① 旧闸放行 33% 的心选和 32% 的其它，**它判的是题材，不是好坏**。
+       被它拒掉的是「定金/订金掰开算钱」「报价单先看漏项」「被辞退后把钱算清楚」
+       ——正是本店说的「痛点足够痛」那一类，只因为标题里没有「水彩」两个字。
+    ② 闸里唯一那个分数**方向是反的**。而且它所在的 fun+object 分支永不可达
+       （上一行命中关键词就已经 return 了）——commit 里写的「8/10 taste filter」
+       在代码里根本不存在。
+    ③ 通过的 24 件里 19 件是靠作者白名单过的。那不是标准，是认人。
+
+    新闸只留一条能自己站住的：**有人真写过一句局限**。它不是审美判据，是过程判据。
+    配套删掉了 _local_copy 里那句伪造局限的常量 —— 否则这道闸一行字符串就能过。
+    """
+    # 「合集一律拒」也去掉了：它挡下 5 件心选（comfyui-mcp 39 件、Suno 44 件、
+    # 去 AI 味写作 3 件、技能库体检 6 件、GTM 合伙人 18 件），而去掉之后
+    # **召回和区分力同时变好**（92%/59% → 99%/62%，+33pt → +37pt）。
+    # 合集堆数量的顾虑归问二和 check_curation 的 skill_count>40 那道守卫，
+    # 不该由一道自动闸一刀切。
+    lim = (it.get("limit_zh") or "").strip()
+    if len(lim) < 20:
         return ""
-    repo = (it.get("repo") or "")
-    owner = repo.split("/")[0] if repo else ""
-    blob = " ".join([
-        it.get("name") or "", it.get("desc_en") or "",
-        it.get("title_zh") or "", repo,
-    ])
-    if JUNK_RE.search(blob) or (hasattr(sys.modules[__name__], "_chart_skip") and _chart_skip(repo)):
-        if owner not in set(T1_AUTHORS):
-            return ""
-    if owner in set(T1_AUTHORS):
-        return "t1-author"
-    heat = float(LINKLY_HEAT.get(repo.lower(), 0) or LINKLY_HEAT.get(owner.lower(), 0) or 0)
-    if heat >= 50 and (TASTE_RE.search(blob) or float(it.get("fun_score") or 0) >= 7):
-        return "linkly-hot"
-    if TASTE_RE.search(blob):
-        return "object"
-    if float(it.get("fun_score") or 0) >= 8 and TASTE_RE.search(blob):
-        return "fun+object"
-    return ""
+    return "real-limit"
 
 
 def _local_copy(it: dict) -> dict:
@@ -763,13 +773,38 @@ def _local_copy(it: dict) -> dict:
         "title_zh": title[:28],
         "tagline_zh": it.get("tagline_zh") or _clamp_cjk(desc, 36),
         "why_zh": it.get("why_zh") or _clamp_cjk(desc, 80),
-        "limit_zh": it.get("limit_zh") or "超出它声明的那一格，产物会串味。对不上就卸。",
+        # **不许伪造局限。** 拿 2026-08-31 店主标的 73 件回测，
+        # 「有一句真写过的局限」是所有判据里区分力最强的：心选 99% / 非心选 62%，+37pt
+        # —— 因为它是「有人真读过这件货」的代理，读过才写得出它不能做什么。
+        # 原来这里是一句常量「超出它声明的那一格，产物会串味。对不上就卸。」，
+        # **那让最强的那道闸可以被一行字符串满足**。宁可留库房。
+        "limit_zh": it.get("limit_zh") or "",
     }
 
 
 def same_day_shelf(ids: list[str], existing: dict) -> int:
-    """原声同款：进货和上架同一轮。过门禁且三句文案齐了就 hide:false，写进 curation。"""
+    """过门禁且三句文案齐了就 hide:false，写进 curation。
+
+    **默认不上架。** docs/CURATION.md 第 162 行写着：
+      「自动进货（GitHub Actions）只负责往**候选池**里放东西，**不直接上架**。」
+    而这个函数原来的 docstring 是「进货和上架同一轮」—— 干的正是文档禁止的事。
+
+    数据也指向同一处：最强的门禁是「有人真写过一句局限」（心选 99% / 非心选 62%），
+    那是「有人真读过」的代理。**同轮自动上架造不出这个，只能伪造它** ——
+    伪造的那句常量就在 _local_copy 里，已经删了。
+
+    要开同轮上架，显式设 SAME_DAY_SHELF=1。不设就只落候选池，等人过一遍。
+    """
     if not ids:
+        return 0
+    if os.environ.get("SAME_DAY_SHELF") != "1":
+        for sid in ids:
+            it = existing.get(sid)
+            if it and not it.get("hide"):
+                it["hide"] = True
+                lib.save_item(it)
+        print(f"[shelf] 只进候选池，不上架 {len(ids)} 件"
+              f"（docs/CURATION.md:162；要同轮上架设 SAME_DAY_SHELF=1）")
         return 0
     cur = lib.read_json(lib.EDITORIAL, {"items": {}})
     if not isinstance(cur, dict):
