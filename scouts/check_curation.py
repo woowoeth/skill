@@ -1119,6 +1119,22 @@ def main() -> None:
         warn(f"库房积压 {len(_backlog)} 件「有货没文案」—— 进货和文案之间多半断了。"
              f"先查 LLM_API_KEY 配没配（gh secret list -R woowoeth/skill），"
              f"再决定这批怎么消化：**别一次倒进货架**")
+    # 【20】在架却没有封面 —— 待办清单，不是判决。
+    # 两个正样本组一致显示封面是货架的标准（在架 99% 有 · 库房 28%），
+    # 但拿它当入闸条件会砍掉 42% 的心选（30 件心选没封面）。
+    # **缺封面是待办，不是判决**，所以这里只列不拦。
+    _nocover = [i for i, it in items.items()
+                if not it.get("hide") and not (it.get("cover") or it.get("cover_url"))]
+    _hearts = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), None)
+                   or {}).get("ids") or [])
+    _nc_heart = [i for i in _nocover if i in _hearts]
+    print(f"\n【20】在架没封面（待办，不拦车）\n  {len(_nocover)} 件 · 其中店主标过的 {len(_nc_heart)} 件")
+    for i in _nc_heart[:8]:
+        print(f"  [心选缺封面] {i}")
+    if _nocover:
+        warn(f"{len(_nocover)} 件在架没封面（其中心选 {len(_nc_heart)} 件）—— "
+             f"在架货 99% 有封面、库房只有 28%，封面是这个货架的标准之一。"
+             f"**但它是待办不是判决**：拿它当入闸条件会砍掉 42% 的心选")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:

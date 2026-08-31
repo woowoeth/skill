@@ -751,10 +751,22 @@ def _taste_pass(it: dict) -> str:
     # **召回和区分力同时变好**（92%/59% → 99%/62%，+33pt → +37pt）。
     # 合集堆数量的顾虑归问二和 check_curation 的 skill_count>40 那道守卫，
     # 不该由一道自动闸一刀切。
-    lim = (it.get("limit_zh") or "").strip()
-    if len(lim) < 20:
+    # 两个正样本组：店主标的 73 件，和现在在架的 88 件非心选货。
+    # 两组各自跟库房（392 件有文案的）比，**一致支持的只有这两条**：
+    #     四句中文都齐   心选 100% · 在架 94% · 库房 54%   → +46pt / +40pt
+    #     真局限 ≥20 字  心选  99% · 在架 89% · 库房 56%   → +43pt / +33pt
+    # 两组分歧的两条**没有进闸**，因为分歧本身说明它是某一组的偏好、不是共同标准：
+    #     局限 ≥40 字    心选 97% · 在架 40%（比库房 55% 还低）—— 长局限是店主的标准
+    #     说出产出物     心选 64% · 在架 51%（库房 47%）—— 在架那组几乎没有区分力
+    # 封面也没进闸：在架货 99% 有封面（是 08-28 补的），但**心选里 30 件没有**，
+    # 拿它当入闸条件会砍掉 42% 的心选。**缺封面是待办，不是判决** ——
+    # 改成 check_curation 的一张待办清单（见【20】）。
+    if not all(len((it.get(k) or "").strip()) >= 8
+               for k in ("title_zh", "tagline_zh", "why_zh", "limit_zh")):
         return ""
-    return "real-limit"
+    if len((it.get("limit_zh") or "").strip()) < 20:
+        return ""
+    return "four+limit"
 
 
 def _local_copy(it: dict) -> dict:
