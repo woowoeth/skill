@@ -590,8 +590,14 @@ def host_cover(sid: str, url: str) -> str:
 
 # ---------------------------------------------------------------- enrich ----
 LLM_KEY = os.environ.get("LLM_API_KEY", "").strip()
-LLM_BASE = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1").strip().rstrip("/")
-LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o-mini").strip()
+# `os.environ.get(x, 默认)` 的默认值**只在变量不存在时生效**。
+# GitHub Actions 在 secret 没设时会把 env 设成**空串** —— 变量存在，所以默认值永远拿不到。
+# 2026-08-31 就栽在这：LLM_API_KEY 设好了、enrich 真的跑起来了，然后
+#     ValueError: unknown url type: '/chat/completions'
+# 因为 LLM_BASE 是空串，拼出来的 URL 没有协议头。整轮 exit 1。
+# **空串和「没设过」在 os.environ 里分得出来，在语义上分不出来** —— 要用 `or`。
+LLM_BASE = (os.environ.get("LLM_BASE_URL") or "https://api.openai.com/v1").strip().rstrip("/")
+LLM_MODEL = (os.environ.get("LLM_MODEL") or "gpt-4o-mini").strip()
 
 ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 写货架文案。这家店只留精品，文案要让人"一眼想装"。
 
@@ -658,6 +664,16 @@ def _clamp_patch(patch: dict) -> dict:
 def enrich_items(ids: list[str], existing: dict) -> None:
     """LLM copywriting for newly stocked items. No-op unless LLM_API_KEY is set.
     Writes into the machine layer (item files); editorial still overrides everything."""
+    if LLM_KEY and ids:
+        # 把这一轮实际用的端点和模型打出来（**不打 key**）。
+        # 2026-08-31 之前这里什么都不打，于是 enrich 崩在
+        # 「unknown url type: '/chat/completions'」时，日志里看不出它想打哪个地址。
+        # 一行诊断行省掉一次翻栈。
+        _ant = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+        _ep = "https://api.anthropic.com" if (_ant and "anthropic" not in LLM_BASE) else LLM_BASE
+        _md = (os.environ.get("LLM_MODEL") or ("claude-haiku-4-5" if _ant else "gpt-4o-mini")).strip()
+        print(f"[scout] enrich: {len(ids)} 件 · 端点 {_ep} · 模型 {_md}"
+              f"{' （LLM_BASE_URL 没设，用的默认值）' if not os.environ.get('LLM_BASE_URL') else ''}")
     if not LLM_KEY or not ids:
         if ids:
             print(f"[scout] enrich: skipped ({len(ids)} new items, LLM_API_KEY not set)")
@@ -708,7 +724,11 @@ def enrich_items(ids: list[str], existing: dict) -> None:
                 done += 1
         except Exception as e:  # never let copywriting break the restock
             print(f"[scout] enrich {sid}: {e}")
-    print(f"[scout] enrich: {done}/{len(ids)} items copywritten by {LLM_MODEL}")
+    # 报真正用的那个模型。原来一律印 LLM_MODEL（默认 gpt-4o-mini），
+    # 走 Anthropic 分支时也这么印 —— **日志在撒谎**。
+    _ant = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+    _used = (os.environ.get("LLM_MODEL") or ("claude-haiku-4-5" if _ant else "gpt-4o-mini")).strip()
+    print(f"[scout] enrich: {done}/{len(ids)} items copywritten by {_used}")
 
 
 TASTE_RE = re.compile(
