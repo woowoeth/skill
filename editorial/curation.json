@@ -30,12 +30,13 @@
    "pick": false,
    "limit_zh": "要 novel-game-analyze、game-concept、game-qa 一整家子都在才转得动。默认做的是验证切片不是全本游戏；完成只认启动、渲染、输入、核心循环、一次结果、重开六项，趣味和平衡它明说证明不了。",
    "limit_en": "Only turns if the whole family is installed — novel-game-analyze, game-concept, game-build, game-qa. Default scope is a verification slice, not a full game, and it says outright that fun and balance are not things it can prove.",
-   "cover_kind": "artwork",
+   "cover_kind": "og",
    "cover_real": false,
    "cover_dup_of": "worldwonderer-novel-to-game-game-concept",
    "title_en": "Turns a novel you love into a playable game",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "worldwonderer-oh-story-claudecode": {
    "title_zh": "网文写作全家桶",
@@ -4405,8 +4406,8 @@
    "why_en": "Installing a specific human voice beats blacklisting AI words — the first governs syntax and point of view, the second only swaps vocabulary. Chinese original, not a translation.",
    "limit_zh": "不是短视频口播稿。要英文明信片、要公文，另装。",
    "limit_en": "If a nonfiction piece cannot list five concrete pieces of material, it refuses to write long and caps you near 600 characters. Em dashes, signposting colons and \"not A but B\" framing are banned. check_prose.py checks hard bans only.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkkkhazix-human-writing-human-writing.png",
-   "cover_kind": "hero",
+   "cover": "",
+   "cover_kind": "og",
    "cover_real": false,
    "cover_w": 1200,
    "cover_h": 420,
@@ -4545,7 +4546,8 @@
    "cover_real": false,
    "title_en": "A bedtime book read in your own cloned voice",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -5769,7 +5771,8 @@
    "tagline_en": "The dull thing about AI fortune-telling is that it quietly tells you what you want to hear. This one casts three coins with a cryptographic RNG, allows one question per casting, states bad hexagrams plainly, and invites you back to check whether it was right.",
    "why_en": "It seals the two places divination usually slides: no inventing hexagrams, no softening a bad one. Taking a game seriously is itself a kind of taste.",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "wolke-bazi-mingli": {
    "title_zh": "排八字四柱并给出命理分析",
@@ -5801,7 +5804,8 @@
    "cover_kind": "og",
    "cover_real": false,
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "panmax-hemingway-skill": {
    "title_zh": "用海明威的冰山理论帮你改写作",
@@ -5811,14 +5815,15 @@
    "pick": true,
    "limit_zh": "作者明说不因一般问题自动触发，得你点名叫它。而且只对写作和表达类问题有用，拿它聊别的等于没装。",
    "limit_en": "The author explicitly disables auto-triggering — you have to call it by name. It only helps with writing and expression; for anything else it may as well not be installed.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "title_en": "Iceberg theory applied to your draft",
    "tagline_en": "You want the prose harder and the adjectives gone but can't say how. It answers through iceberg theory, short declaratives and hard-boiled restraint — and it discusses writing only; it does not play Hemingway.",
    "why_en": "'Do not use this to impersonate the man' is a clear-eyed boundary: it transfers a method, it doesn't cosplay an author. That sense of proportion is taste.",
    "_无封面原因": "全仓 0 张图片。examples/demo-conversation.md 是文本。产出是改稿意见（内容）。",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "yangcodingmaster-photo-distill": {
    "title_zh": "把一张照片蒸馏成极简 zine 海报",
@@ -5853,7 +5858,8 @@
    "tagline_en": "March and April are an ordeal if you're allergic. It pulls live readings and graded forecasts from 16 monitoring stations, queryable by district, so you know before you leave whether to mask up.",
    "why_en": "Narrow to one city and one allergen — and for those people it's essential. That kind of unembarrassed narrowness is exactly what a large marketplace never covers.",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "zexuanw958-svg-travel-plan-viz": {
    "title_zh": "把旅行计划做成手机上能离线看的网页",
@@ -5900,14 +5906,15 @@
    "pick": true,
    "limit_zh": "数据全存本地 user-data/，换台机器就从零开始。没有 Python 环境时改由模型手写 JSON，脚本那层的单位和日期校验就失效了。",
    "limit_en": "All data lives in a local user-data/ folder; switch machines and you start over. Without Python it falls back to the model hand-writing JSON, losing the script's unit and date checks.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "title_en": "Long-term training as a story you unlock",
    "tagline_en": "Sticking with it is the hard part, not the movements. It keeps your sessions, fatigue and returns in local files, then lets the results move a storyline forward — train well and the plot advances.",
    "why_en": "It answers the real problem — consistency — with a game mechanic instead of yet another training plan. Everything stays on your machine.",
    "_无封面原因": "全仓 0 张图片。examples/ 里是 md 和 json（AUTHOR-WORLD-SAMPLE.md、MINIMAL-RUN.md、completed-save/CURRENT-STATE.json、sessions/2026-07-29.json），产出物是剧情文本 + 状态 JSON，没有任何可视产出物。",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "joeseesun-qiaomu-campus-resume": {
    "title_zh": "给应届生从零做一份可投递的简历",
@@ -6079,7 +6086,9 @@
    "limit_zh": "定位是「家庭参谋而非医师」，不出处方。针刺绝对禁止自行操作，只解释指路。教材派立场，与经方派、温病派的结论会不一致，它不替你调和。 上游 SKILL.md 的 name 是中文「中医」，装上后可能不被识别，改成 tcm 更稳。 门面说不出处方，但硬约束文件给了 101 味毒性药的内服克数 —— 那是上限表，不是处方。",
    "why_zh": "这类里我见过最安全的边界：先点名「传统框架拖成急诊」的失败模式，并在红线层直接拒绝辨证。",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "jangviktor-web-wujutong": {
    "title_zh": "按三焦辨证给温病方，古人矛盾处照原样留着",
@@ -6092,7 +6101,9 @@
    "why_zh": "有一节叫「内部张力——保留，不调和」。古人自相矛盾处留着缝，并点名对立学派把你送过去。",
    "limit_zh": "只做温病；伤寒、杂病、气化学派不在范围，作者分别指路。不出处方；安全说明单独成节。",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "voidforall-fengshui-skill": {
    "title_zh": "先说自己不算命的风水顾问",
@@ -6101,13 +6112,14 @@
    "tagline_en": "You want to ask about orientation, favourable sectors and sha positions, and every source online contradicts the last. This runs three systems separately — Flying Star, Eight Mansions, and form-and-landform — instead of blending them into one confident answer.",
    "why_en": "Its honesty section quotes the classics to say feng shui assists but does not determine fate. A practice that shrinks its own claim first is easier to trust.",
    "limit_en": "The three systems routinely disagree with each other; it shows them side by side and won't adjudicate for you. Burial-site practice varies enormously by region — don't read it as a general rule.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。examples/ 下是 zeri-example.md 和 yangzhai.md 两个文本。产出是风水/择日判断（内容），不做 ours。",
    "why_zh": "诚实段先引经典说风水辅佐不决定命运。一个会先缩小自己主张的术数，反而更好信。",
    "limit_zh": "三套体系常互相打架，并排展示不替你裁决。葬法地域差异极大，别当通例。",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "seiya89757-naming-skill": {
    "title_zh": "全家为起名吵架时出来当中间人",
@@ -6116,13 +6128,14 @@
    "tagline_en": "Naming a Chinese child is never short of characters — it's short of agreement: grandfather wants the generation character, mother says too many strokes, father wants the five elements balanced. It has a negotiation mode that puts the conflict on the table.",
    "why_en": "The anti-patterns section is unusually clear-eyed: never fake a birth chart when no birth time was given, never reach for a rare character to balance the elements — 'the child will write it and hear it mispronounced for a lifetime'.",
    "limit_en": "It refuses shops, brands, pets, game characters and fictional names, and won't do pure fortune-telling or interpret an existing name. Dialect checks cover only the language groups it knows; where it doesn't know, it says so.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是起名方案（判断类内容）。",
    "why_zh": "反模式写得清醒：没给出生时刻绝不伪造命盘；不为凑五行去用冷僻字——「孩子要写、要被叫一辈子」。",
    "limit_zh": "不做店名/品牌/宠物/游戏角色/虚构名，不做纯算命、不解读已有名字。方言校验只覆盖它掌握的语组。",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "mrchendev-cantonese-lyrics": {
    "title_zh": "逐字查九声六调，填不倒字的粤语词",
@@ -6144,13 +6157,14 @@
    "why_en": "Standard library only, nothing to install; the fallback source is kept clearly separate from the primary one, and when data is missing it says so rather than passing off a dispersal index as a concentration.",
    "limit_en": "Only the 53 cities with monitoring stations; smaller cities have no data. Out of season it reports none, and gaps on individual days are normal. The fallback gives a dispersal index, not a concentration — don't read them as the same number. Mainland China only.",
    "category": "body",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是花粉浓度查询结果（内容），要外部数据源。",
    "why_zh": "多数天气 app 不报花粉；它用标准库直拉监测站，缺数就明说，不把扩散指数冒充浓度。",
    "limit_zh": "仅 53 个有监测站的城市；淡季报无、单日缺口正常。备用源是扩散指数不是浓度，别当同一个数。仅中国大陆。",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "sunnypanzhen-fishing-skill": {
    "title_zh": "新手买竿，老手看天：从选位讲起",
@@ -6281,11 +6295,12 @@
    "tagline_en": "The character disappears when the session ends, but you might still want to talk to them. Feed it the player script and character bio as PDF; it extracts story memory and personality into a character you can keep talking to.",
    "why_en": "Its safety section refuses to leak the core trick or the culprit, and won't reveal what the character shouldn't know. A roleplay tool that guards against spoilers on its own is written by someone who actually plays.",
    "limit_en": "For personal enjoyment only — not for helping someone else through a game they haven't played. Output quality follows the source: a thin bio yields a thin character. Needs file read/write permission.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。example_skills/ 是 4 组角色卡（SKILL.md/story.md/persona.md/meta.json）加 4 个同名 zip，全是文本。",
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "weante-city-salary": {
    "title_en": "Take-home pay by the rules of your actual city",
@@ -6306,7 +6321,9 @@
    "limit_en": "The file bars every drug dose, frequency and course, and will not fill gaps even when the user says a vet gave instructions. It names Yunnan Baiyao, Huoxiang Zhengqi and smectite as home remedies it refuses. Cats only. Offline, it gives principles and the official channels to check rather than current recall or regional vaccine rules.",
    "pick": true,
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": "",
+   "cover_kind": "og"
   },
   "r0ses1r-dev-birdsight": {
    "title_zh": "查稀有鸟最近落在哪，顺带说清中文名是台湾译名",
@@ -6317,11 +6334,12 @@
    "tagline_en": "Wondering whether anything rare has turned up near you this weekend, or which hotspot is producing — this queries Cornell's eBird API v2 directly for real sightings.",
    "why_en": "All twenty endpoints were tested by hand, including the two that return 404 and 403 and are marked do-not-call. Sightings must come from the API, never from the model's memory.",
    "limit_en": "You supply your own free key from ebird.org/api/keygen; free keys are non-commercial and start returning 429 above three concurrent requests. Recent-observation endpoints look back thirty days at most — full history needs a separate EBD request. Chinese common names come back in Taiwanese traditional form, and the author says to keep your own alias table rather than invent mainland ones.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。要 eBird API key 才能查鸟况 → 按规矩跳过，没去找、没读、也没用任何 key。",
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "wei011-heat-risk-calc": {
    "title_zh": "用湿球温度算出 48℃ 的吐鲁番比长沙安全",
@@ -6335,7 +6353,9 @@
    "pick": true,
    "category": "body",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": "",
+   "cover_kind": "og"
   },
   "fxw-labs-beachcombing": {
    "title_zh": "把你必须几点前撤离滩涂顶在报告最前面的赶海参谋",
@@ -6346,11 +6366,12 @@
    "tagline_en": "What is diggable in the two hours around a spring low tide, and when to turn back before the water closes in. Safe-exit time comes first, harvest second, across 51 sites in 11 coastal provinces.",
    "why_en": "The rare part is the ceiling it puts on itself: when it falls back to an astronomical skeleton estimate, the suitability rating is capped at the second of five levels rather than faked.",
    "limit_en": "Mainland Chinese coast only — 51 built-in sites across 11 provinces, everything else falls back to geocoding. Without a real tide API it computes a lunar semidiurnal skeleton, labelled \"estimated ±1h\" and capped at the second of five suitability levels. It explicitly declines fishing forecasts, species photo ID, and any legal check on closed seasons or protected areas.",
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是赶海撤离时间报告（内容），且要实时潮汐数据源。",
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "yeyulangzi-parenting-advisor": {
    "title_zh": "专防「假托崔玉涛」文章的 0–13 岁育儿参谋",
@@ -6363,7 +6384,9 @@
    "limit_en": "Profiles are written to a fixed Obsidian-style vault path, so without a vault you must nominate a local directory first. Ages 0–13. It says \"this symptom has been associated with X\", never \"your child has X\", and recommends no drug or dose. Words like breathing difficulty or seizure skip every workflow and return only a go-to-hospital message.",
    "pick": true,
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": "",
+   "cover_kind": "og"
   },
   "violasi-reading-diary": {
    "title_zh": "把分级读物 PDF 里嵌的真人音频一页页抠出来",
@@ -6475,7 +6498,9 @@
    "limit_en": "One case runs 5–15 minutes and ends there; no campaigns. Noir only — fantasy or sci-fi requests are declined — in two settings, 1940s America and 1930s Shanghai. The file forbids the agent from ever reading or cat-ing the case JSON, since bypassing the script defeats the whole design.",
    "pick": true,
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": "",
+   "cover_kind": "og"
   },
   "rubyzhu26-see-life-wallpaper-skill": {
    "title_zh": "用草间弥生画孤独、米罗画温暖的每日五感壁纸",
@@ -6505,7 +6530,9 @@
    "limit_en": "Chinese flash only, ≤3000 chars. Title + story only by default. No real persons/orgs as villains; no region/job/poverty/disability joke shortcuts; no late death for pathos.",
    "pick": true,
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": "",
+   "cover_kind": "og"
   },
   "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
    "title_zh": "按你的训练记录算下一次该练什么",
@@ -6651,7 +6678,8 @@
    "category": "creative",
    "hide": false,
    "gate_score": 7,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-luji-pet-streetwear-mood-avatar.png"
+   "cover": "",
+   "cover_kind": "og"
   },
   "zgdfsgd-pet-nutritionist": {
    "title_zh": "严禁给龙猫洗澡、也给矮脚马算食谱的宠物营养师",
@@ -6665,9 +6693,10 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "pengchenge-pet-skill": {
    "title_zh": "先填九项档案，之后叫一声名字它就用「我」接话",
@@ -6716,9 +6745,10 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "the-data-galaxy-child-reading-adventures-skill-design-child-reading-adventures": {
    "title_zh": "给孩子设计读书任务，页码只在核过这一版分页后才写",
@@ -7049,9 +7079,10 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "mayuwen18-china-primary-school-tutor": {
    "title_zh": "批改只圈第一个影响结果的错，讲解先给提示再给半成品",
@@ -7099,9 +7130,10 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "ryunana-xbloom-studio-recipe-skill": {
    "title_zh": "翻车只准改一个变量的 xBloom 冲煮配方",
@@ -7151,9 +7183,10 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "zgdfsgd-balcony-farmer": {
    "title_zh": "把「采收前 7 天停药」写成硬规则的阳台种菜参谋",
@@ -7236,9 +7269,10 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover": ""
   },
   "mantyke-game-notebook-skill": {
    "title_zh": "奇数页孔在左偶数页在右，把攻略印成活页手账",
@@ -7340,8 +7374,8 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/2998980-hue-surreal-pop-collage.png",
-   "cover_kind": "none",
+   "cover": "",
+   "cover_kind": "og",
    "cover_real": false,
    "gate_score": 7
   },
@@ -7357,10 +7391,11 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓唯一一张 claude.gif(1440x898, 10MB)，逐帧开过（第 0/220/440/660 帧）：是 claude.ai 网页录屏 —— 浏览器窗口、Free plan·Upgrade、输入框里打 /astrology how will my june go、下一帧是聊天页在问 What's your date of birth?，**全程没有出现星盘或任何产出物**，而且画面里有别人的账号名 sunim 和聊天 URL。界面截图 + 他人账号信息 → 不用",
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": ""
   },
   "hiyeshu-trip-map-builder": {
    "title_zh": "会替你删掉一半心愿单的行程地图生成器",
@@ -7653,9 +7688,10 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "flowful-ai-cad-skill": {
    "title_zh": "动一行几何代码之前先去查真实尺寸的建模台",
@@ -7775,10 +7811,11 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出物是维权文书和「定金/订金」的算钱结论（内容/判断），不做 ours。",
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "senzhang88-socialist-workers-power-work-powers-shanghai": {
    "title_zh": "门禁被关了也让你去打卡，被拦就报警拿回执",
@@ -8127,9 +8164,10 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "dougcompton-guitar-coach-guitar-coach": {
    "title_zh": "每次练琴出一份计时日志，三份之后自己排出纠正练习",
@@ -8337,10 +8375,11 @@
    "category": "writing",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "作者没放图（仓库树 10 项，零图片文件）。",
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "elhamid-as-told-to-as-told-to": {
    "title_zh": "把父母的人生录成逐字稿，另出一份下次接着问的笔记",
@@ -8354,9 +8393,10 @@
    "category": "writing",
    "pick": false,
    "hide": false,
-   "cover_kind": "none",
+   "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": ""
   },
   "brendanbank-fix-my-text-skill-fix-my-text": {
    "title_zh": "b/d 写反了帮你改、口语拼法一个不动的改字台",
@@ -9240,7 +9280,8 @@
    "why_zh": "主题或句子压成竖版纸感海报，饱和度被按住。",
    "limit_zh": "不是热闹大片。要霓虹、要满版字，对不上。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/moonlin1213-muted-zine-poster-v01.png"
+   "cover": "",
+   "cover_kind": "og"
   },
   "pqpo-pragma-code-cleanup-audit": {
    "hide": true,
@@ -9573,7 +9614,9 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3": {
    "title_zh": "把一场戏蒸成一本小 zine",
@@ -9583,7 +9626,9 @@
    "pick": true,
    "hide": false,
    "gate_score": 9,
-   "tagline_zh": "可翻的薄刊物，不是一张海报"
+   "tagline_zh": "可翻的薄刊物，不是一张海报",
+   "cover": "",
+   "cover_kind": "og"
   },
   "jinchenma94-bazi-skill": {
    "title_zh": "四柱八字，把生辰当成一张表来排",
@@ -9592,7 +9637,9 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "eternityspring-shuohao-skills-novel-characters": {
    "title_zh": "短剧开拍前先把角色拆开",
@@ -9613,7 +9660,9 @@
    "category": "writing",
    "pick": true,
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover": "",
+   "cover_kind": "og"
   },
   "yokel1121-muyang-illustration-skills-muyang-oriental-poetry": {
    "title_zh": "东方诗意插画，一款一装",
@@ -9658,7 +9707,9 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "liamgvchi-gc-minimal-ip-doodle": {
    "title_zh": "保住角色的手绘涂鸦",
@@ -9680,7 +9731,9 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "liyue-aigc-xianxia-visual-director-xianxia-visual-director": {
    "title_zh": "仙侠静帧导演",
@@ -9689,7 +9742,9 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "carolinaaafy-travel-memory-sticker-card": {
    "title_zh": "旅行照片做成记忆贴纸卡",
@@ -9710,7 +9765,9 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "ayi-ai-nie-grassroots-logic": {
    "title_zh": "聂辉华《基层中国的运行逻辑》方法箱",
@@ -9731,7 +9788,9 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover": "",
+   "cover_kind": "og"
   },
   "zeejay0-gathered-scenes-zine-skill-scenes-gathered-zine-v1-3": {
    "hide": true
@@ -9796,7 +9855,9 @@
    "tagline_zh": "不是滤镜，是印刷插画那一档",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "iamkong-photo-to-minimal-illustration": {
    "title_zh": "照片收成田野速写式极简稿",
@@ -9817,7 +9878,9 @@
    "tagline_zh": "松的黑线，画概念或参照，不画热闹插画",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "wnby-paper-spirit-zine-paper-spirit-zine": {
    "title_zh": "原片还在，下面铺一层纸",
@@ -9850,7 +9913,9 @@
    "tagline_zh": "竖版照片加抽象，像一本薄刊物的一页",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "liigoqi-photo-to-travel-sketch": {
    "title_zh": "旅行照片收成赶路速写",
@@ -9859,7 +9924,9 @@
    "tagline_zh": "黑线乱走、大量省略，像纤维笔当场画",
    "hide": false,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "cover": "",
+   "cover_kind": "og"
   },
   "traveler0621-reality-restaged": {
    "title_zh": "纪实照片重新搭台",
@@ -9880,7 +9947,9 @@
    "tagline_zh": "抽出主角，大留白，像在动的杂志页",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "n1ko724-scene-to-art-lab-scene-to-art-lab": {
    "title_zh": "一场戏收进艺术实验室",
@@ -9901,7 +9970,9 @@
    "tagline_zh": "品牌配方锁死，不是通用新中式",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "whiplashzeb-photo-to-zine-postcard": {
    "title_zh": "照片收成一张可寄的刊物明信片",
@@ -9922,7 +9993,9 @@
    "tagline_zh": "认人靠轮廓，脸被故意拿掉",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "zzzlc0405-photo-abstract-editorial": {
    "title_zh": "照片抽成抽象编辑页",
@@ -9931,7 +10004,9 @@
    "tagline_zh": "颜色和形状留下，路牌和人脸让路",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction": {
    "title_zh": "旅行照片收成软抽象",
@@ -9952,7 +10027,9 @@
    "tagline_zh": "圆盘、沟槽、封套，不是方图加贴纸",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "og"
   },
   "carolinaaafy-travel-memory-card-duo": {
    "title_zh": "旅行记忆卡成对出",
