@@ -57,9 +57,24 @@ jobs:
         run: |
           L="${RUNNER_TEMP}/scout-run.log"
           [ -f "$L" ] || exit 0
+          # 两种「有新货但一件也写不出文案」都要点红：
+          #   ① enrich: skipped (N new items, LLM_API_KEY not set)   —— key 没配
+          #   ② enrich: 0/N items copywritten by ...                 —— key 配了但调用全失败
+          # 2026-08-31 只写了①，结果那轮 21 件全 401、上架 0 件，**灯还是绿的**。
+          # 「跑了」和「跑出东西了」是两回事，闸要认后者。
           line=$(grep -oE "enrich: skipped \([0-9]+ new items[^)]*\)" "$L" | head -1)
-          [ -n "$line" ] || exit 0
           n=$(printf '%s' "$line" | grep -oE '[0-9]+' | head -1)
+          if [ -z "$line" ]; then
+            line=$(grep -oE "enrich: 0/[0-9]+ items copywritten" "$L" | head -1)
+            n=$(printf '%s' "$line" | grep -oE '[0-9]+' | sed -n 2p)
+            if [ -n "$line" ]; then
+              echo "::error::$line —— enrich 跑了但一件都没成。上面几行有每件的原因（多半是 401/超时）。"
+              grep -oE "enrich [^\n]{0,60}: HTTP Error [0-9]+[^\n]{0,24}" "$L" | head -1 \
+                | xargs -I{} echo "::error::第一条失败：{}"
+              grep -oE "端点 [^ ]+ · 模型 [^ ]+" "$L" | head -1 | xargs -I{} echo "::error::用的是 {}"
+            fi
+          fi
+          [ -n "$line" ] || exit 0
           [ "${n:-0}" -gt 0 ] || exit 0
           echo "::error::$line —— 进了 $n 件新货，一件也写不出文案，所以一件也上不了架。"
           echo "::error::修法：gh secret set LLM_API_KEY -R woowoeth/skill（还有 LLM_BASE_URL / LLM_MODEL）"
