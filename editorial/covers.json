@@ -2000,5 +2000,218 @@
  },
  "_判据": "三个问题，缺一不可：①这张图是这个 skill 做出来的东西吗（不是头图/架构图/logo/界面截图/广告/头像/二维码/别人的作品）？②登在公开页上有没有问题（第三方版权画面、二维码、收款码、真人肖像、可识别个人信息 → 不用）？③它适合当卡片封面吗（站点米色底浅色系）？\n**没打开看过的图一律不判。「文件名叫 demo 所以是产出物」不算判断。**",
  "_ours 这一档的额外一条": "**自截图证明「它能做出这个」，不证明「读者按它说的做能拿到这个」。**\n踩过一次：`shuangying0001-beep/canvas-grid-engine` 我跑 `node selftest.js` 拿到了 A4 1240×1754 米字格字帖，就给了它 ours 封面和标题「一句话打印一张米字格字帖」。但 selftest 是**自测脚本**，不是文档给读者的路径 —— 正文实际写的是「导入 references/grid-engine.js，调几个函数」，而 A4 打印还要另配同作者的 `canvas-multipage-pdf`。**我跑通的是我自己找到的路，不是它承诺的路。**\n所以 ours 截图之前要先答一句：**我跑的这条命令，是不是 SKILL.md 让读者跑的那条？**如果是自测脚本、示例入口、或者我自己拼出来的路径 —— 这张图能证明代码能跑，不能证明这件东西名副其实。",
- "_ours 什么时候便宜、什么时候根本不该试": "**`ours` 便宜只对「自带确定性渲染器、且渲染物是形式」的 skill 成立。**（UX 逐件试出来的判据）\n已成立的两件都是这个形状：`node selftest.js` 出米字格、`python3 build_basilisk.py` 出像素画。\n其余三类不要逐件试，直接跳过：\n① **产出内容由模型写** —— 比如某件走 6 个 stage（深度调研 → agent 写 HTML → Playwright 导 PDF），脚本只负责最后一步转换。**「我们跑了一遍」在这里等于「我们写了内容」，那就不是自截图了。**\n② **确定性脚本但产出是文本** —— 和弦输出成 `x32010`、进度是 ASCII 条，终端文字当不了封面。\n③ **不该跑** —— 遥控真实微信客户端那类，跑一遍就碰真账号真会话；「绝不用真实个人数据」在这里的意思是**根本不该跑**。"
+ "_ours 什么时候便宜、什么时候根本不该试": "**`ours` 便宜只对「自带确定性渲染器、且渲染物是形式」的 skill 成立。**（UX 逐件试出来的判据）\n已成立的两件都是这个形状：`node selftest.js` 出米字格、`python3 build_basilisk.py` 出像素画。\n其余三类不要逐件试，直接跳过：\n① **产出内容由模型写** —— 比如某件走 6 个 stage（深度调研 → agent 写 HTML → Playwright 导 PDF），脚本只负责最后一步转换。**「我们跑了一遍」在这里等于「我们写了内容」，那就不是自截图了。**\n② **确定性脚本但产出是文本** —— 和弦输出成 `x32010`、进度是 ASCII 条，终端文字当不了封面。\n③ **不该跑** —— 遥控真实微信客户端那类，跑一遍就碰真账号真会话；「绝不用真实个人数据」在这里的意思是**根本不该跑**。",
+ "_待换封面": "2026-08-31：店主定优先级「仓库里的图 > 默认预览卡」。这些件现在靠 og 兜底，作者仓里有候选图，等人逐张看过再换 —— 判据第一条：没打开看过的图一律不判。",
+ "pending_repo_covers": {
+  "liuzihe849-png-silhouette-group-collage-silhouette-group-collage": {
+   "repo": "liuzihe849-png/silhouette-group-collage",
+   "candidates": [
+    "silhouette-group-collage/assets/approved-style-examples/07-warmth-within-winter-outside.png",
+    "silhouette-group-collage/assets/approved-style-examples/03-together-under-winter-skies.png",
+    "silhouette-group-collage/assets/approved-style-examples/05-one-step-same-rhythm.png",
+    "silhouette-group-collage/assets/approved-style-examples/08-we-chased-the-last-light.png"
+   ]
+  },
+  "zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay": {
+   "repo": "Zeejay0/gathered-scenes-zine-skill",
+   "candidates": [
+    "skills/morandi-cinematic-poster-zeejay/assets/reference-typography-material-v1.png",
+    "assets/brand/zine-ai-gpt-claude-recharge.png",
+    "assets/brand/gathered-scenes-cover.jpg",
+    "examples/real-scene-collage/02-winter-crossing/source.jpg"
+   ]
+  },
+  "haorantang97-antibes-holiday-antibes-holiday": {
+   "repo": "haorantang97/antibes-holiday",
+   "candidates": [
+    "plugins/antibes-holiday/skills/antibes-holiday/assets/stroke-calibration.png",
+    "plugins/dirty-pixels/assets/examples/trojan-horse-loop.gif",
+    "plugins/antibes-holiday/assets/examples/giant-dog-and-planter.jpg",
+    "plugins/antibes-holiday/assets/examples/waiter-and-tray.jpg"
+   ]
+  },
+  "oil-oil-oil-motion": {
+   "repo": "oil-oil/oil-motion",
+   "candidates": [
+    "assets/readme/source/hero-illustration-crop-v1.png",
+    "assets/readme/source/hero-illustration-crop-v1.webp"
+   ]
+  },
+  "evianis-travel-photo-abstraction-travel-photo-abstraction": {
+   "repo": "Evianis/travel-photo-abstraction",
+   "candidates": [
+    "travel-photo-abstraction/assets/style-references/memory-reference-009.png",
+    "travel-photo-abstraction/assets/style-references/memory-reference-017.png",
+    "travel-photo-abstraction/assets/style-references/memory-reference-004.png",
+    "showcase/cross-current.png"
+   ]
+  },
+  "wnby-photo-relic-editorial": {
+   "repo": "wnby/photo-relic-editorial",
+   "candidates": [
+    "examples/paper-beijing/geese-procession.png",
+    "examples/paper-beijing/great-wall-ridge.png",
+    "examples/paper-beijing/bird-nest-reflection.png",
+    "examples/paper-beijing/corner-tower-water.png"
+   ]
+  },
+  "hchen1218-heytea-style": {
+   "repo": "Hchen1218/heytea-style",
+   "candidates": [
+    "private-assets/reference-cutouts/desktop-pet-style/contact_sheet_dry_media_wavy_line_v4.png",
+    "examples/desktop-pet/pink-green-flavor-monster-v3/preview.png",
+    "assets/examples/desktop-pet/source-drink.png",
+    "private-assets/reference-cutouts/desktop-pet-style/contact_sheet_mixed_media_objects_v2.png"
+   ]
+  },
+  "zzzlc0405-photo-abstract-editorial": {
+   "repo": "ZzzLc0405/photo-abstract-editorial",
+   "candidates": [
+    "assets/examples/case-4.jpg",
+    "assets/examples/case-8.jpg",
+    "assets/examples/case-2.jpg",
+    "assets/examples/case-10.jpg"
+   ]
+  },
+  "zhu930824-poetic-line-zine-poster": {
+   "repo": "zhu930824/poetic-line-zine-poster",
+   "candidates": [
+    "docs/examples/yellow-crane-railway.png",
+    "docs/examples/riverside-tree.png",
+    "docs/examples/yellow-crane-bridge.png",
+    "docs/examples/wuhan-sunset-river.png"
+   ]
+  },
+  "crawfordxx-xiaoma-durex-copywriter": {
+   "repo": "crawfordxx/xiaoma-durex-copywriter",
+   "candidates": [
+    "examples/output/lays_onechip_3x4.jpg",
+    "examples/output/lays_daynight_3x4.jpg",
+    "examples/durex-reference/03.jpg",
+    "examples/durex-reference/23.jpg"
+   ]
+  },
+  "alchaincyf-huashu-slide-doubao": {
+   "repo": "alchaincyf/huashu-slide-doubao",
+   "candidates": [
+    "assets/personal-brand/像素品牌资产.png",
+    "assets/personal-brand/像素公众号头图示例.png",
+    "assets/personal-brand/像素风头像.png"
+   ]
+  },
+  "aryaminus-astro-astrology": {
+   "repo": "aryaminus/astro",
+   "candidates": [
+    "claude.gif"
+   ]
+  },
+  "redfox-data-redfox-community": {
+   "repo": "redfox-data/redfox-community",
+   "candidates": [
+    "skills/visual-ops-writer/assets/02.jpg",
+    "skills/visual-ops-writer/assets/03.jpg"
+   ]
+  },
+  "wangchangwei-arb-skill": {
+   "repo": "wangchangwei/arb-skill",
+   "candidates": [
+    "docs/flow-architecture.png"
+   ]
+  },
+  "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
+   "repo": "Reluctant2828/System-Fitness-Advisor-skill",
+   "candidates": [
+    "concept.png"
+   ]
+  },
+  "luckdvr-photo-riso-poster": {
+   "repo": "luckdvr/photo-riso-poster",
+   "candidates": [
+    "examples/comparisons/compare-1827.jpg",
+    "examples/comparisons/compare-1830.jpg",
+    "examples/comparisons/compare-1829.jpg",
+    "examples/comparisons/compare-1828.jpg"
+   ]
+  },
+  "zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3": {
+   "repo": "Zeejay0/gathered-scenes-zine-skill",
+   "candidates": [
+    "skills/morandi-cinematic-poster-zeejay/assets/reference-typography-material-v1.png",
+    "assets/brand/zine-ai-gpt-claude-recharge.png",
+    "assets/brand/gathered-scenes-cover.jpg",
+    "examples/real-scene-collage/02-winter-crossing/source.jpg"
+   ]
+  },
+  "lincwang123-bot-moonlit-stories-moonlit-book-workflow": {
+   "repo": "lincwang123-bot/moonlit-stories",
+   "candidates": [
+    "design/source-art/moonlit-watercolor-v1-style-key.png",
+    "design/cover-state-concept.png",
+    "design/desktop-concept.png",
+    "design/generation-progress-concept.png"
+   ]
+  },
+  "khendzel-skills-janitor": {
+   "repo": "khendzel/skills-janitor",
+   "candidates": [
+    "janitor-swipe-demo.gif",
+    "hero.png"
+   ]
+  },
+  "adamlyttleapps-claude-skill-aso-appstore-screenshots": {
+   "repo": "adamlyttleapps/claude-skill-aso-appstore-screenshots",
+   "candidates": [
+    "assets/device_frame.png"
+   ]
+  },
+  "vanillagreencom-vstack-trading-design": {
+   "repo": "vanillagreencom/vstack",
+   "candidates": [
+    "pi-extensions/pi-agents-tmux/assets/agents-tmux-demo.gif",
+    "pi-extensions/pi-qol/assets/session-search.gif",
+    ".agents/skills/iced-rs/examples/custom_shader/textures/ice_cube_normal_map.png",
+    "skills/iced-rs/examples/custom_shader/textures/ice_cube_normal_map.png"
+   ]
+  },
+  "worldwonderer-novel-to-game-novel-to-game": {
+   "repo": "worldwonderer/novel-to-game",
+   "candidates": [
+    "examples/jin-ping-mei/build/app/assets/bg/compound_new_guofeng.webp",
+    "examples/jin-ping-mei/build/app/assets/cg/group/public_day10.webp",
+    "examples/journey-to-the-west/build/app/assets/bg/bibotan.jpg",
+    "examples/journey-to-the-west/build/app/assets/cover.jpg"
+   ]
+  },
+  "worldwonderer-oh-story-claudecode-story-deslop": {
+   "repo": "worldwonderer/oh-story-claudecode",
+   "candidates": [
+    "demo/封面-剑道独尊.png",
+    "demo/story-dashboard.png"
+   ]
+  },
+  "egonex-ai-understand-anything-understand-figma": {
+   "repo": "Egonex-AI/Understand-Anything",
+   "candidates": [
+    "homepage/public/images/overview-structural.gif",
+    "homepage/public/images/overview-domain.gif",
+    "assets/overview.png",
+    "homepage/public/images/overview.png"
+   ]
+  },
+  "bitwize-music-studio-claude-ai-music-skills": {
+   "repo": "bitwize-music-studio/claude-ai-music-skills",
+   "candidates": [
+    "docs/images/be-excellent-to-each-other.jpg"
+   ]
+  },
+  "k-dense-ai-scientific-agent-skills-citation-management": {
+   "repo": "K-Dense-AI/scientific-agent-skills",
+   "candidates": [
+    "docs/k-dense-web.gif",
+    "docs/images/histolab.png",
+    "docs/images/esm.png",
+    "docs/images/diffdock.png"
+   ]
+  }
+ }
 }

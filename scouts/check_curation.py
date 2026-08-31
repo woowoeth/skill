@@ -423,7 +423,12 @@ def check_red_lines(items: dict) -> dict:
 # D4 / D10 的上站规则：`artwork` 允许竖幅大画幅；`hero`/`diagram` 收窄；
 # **`og` 和 `other` 不上站**。`other` 是 logo / 二维码 / 空白 / 坏图 / 别人的书封 ——
 # 让它上站，正是 D10 最怕的那个失败模式：「被漂亮图骗进去，装完发现产出不长那样」。
-COVER_OFF_SITE = ("og", "other")
+# 2026-08-31 店主定的封面优先级：**优先取仓库里的图，没有才用默认预览卡**。
+# 所以 og（GitHub 自动生成的社交预览卡）从「不上站」改成「兜底可上站」。
+#
+# 改之前我按旧规则把 54 张 og 卡全撤了，在架有封面 129 → 75。**规则是店主的，不是我的。**
+# 但兜底不等于没有优先级：og 是最后一档，仓库里有真图就该换掉它 —— 见【21】。
+COVER_OFF_SITE = ("other",)
 
 # D22 的画幅档（原 D10 是对称区间，产品自己纠了：**横竖不是同一件事**——
 # 竖裁掉的是海报的头和脚，横裁掉的是两侧空白，不该用同一个数）：
@@ -1135,6 +1140,13 @@ def main() -> None:
         warn(f"{len(_nocover)} 件在架没封面（其中心选 {len(_nc_heart)} 件）—— "
              f"在架货 99% 有封面、库房只有 28%，封面是这个货架的标准之一。"
              f"**但它是待办不是判决**：拿它当入闸条件会砍掉 42% 的心选")
+    # 【21】还在靠默认预览卡兜底的（待办，不拦车）
+    _og = [i for i, it in items.items()
+           if not it.get("hide") and (it.get("cover_kind") or "") == "og" and (it.get("cover") or "")]
+    print(f"\n【21】还在用默认预览卡兜底\n  {len(_og)} 件 —— 优先级是「仓库里的图 > 预览卡」")
+    if _og:
+        warn(f"{len(_og)} 件封面还是 GitHub 默认预览卡 —— 能上站（店主 2026-08-31 定的兜底），"
+             f"但仓库里有真图就该换掉它")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:
