@@ -1045,6 +1045,42 @@ def check_english(items: dict) -> dict:
             "cjk_leak": len(leak), "cjk_quoted": len(quoted), "truncated": len(cut)}
 
 
+
+# ---------------------------------------------------------------------------
+# 【18】心选件被下架却没写理由
+#
+# 2026-08-28 那次提标准（「Gate the shelf: slogan + 8/10 taste filter」→
+# 「Cut shelf to 48」）把在架从 279 砍到 48，其中**包含店主亲手标的 73 件里的 57 件**，
+# 而 57 件**一件都没写理由**。到 08-31 才被发现，中间三天货架是 104 件、每天照跑。
+#
+# editorial/hearts.json 自己的第三条写着：
+#   「任何新判据都要拿这批回测：判据把它们判掉了，是判据错，不是它们错。」
+#
+# 这条守卫不禁止下架心选件 —— 店主的判断也会变，货也会烂掉。
+# 它只要求**写一行为什么**。理由要动手写；整批 hide 什么都不用写。
+# **闸门装在「什么都不做就会出错」的那一侧。**
+def check_hearted_hidden(items: dict):
+    hearts = (lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), None) or {})
+    ids = set(hearts.get("ids") or [])
+    silent, withreason = [], []
+    for i in sorted(ids):
+        it = items.get(i)
+        if not it or not it.get("hide"):
+            continue
+        why = (it.get("unheart_reason") or "").strip()
+        (withreason if len(why) >= 10 else silent).append((i, why))
+    print("\n【18】心选件下架要写理由")
+    print(f"  店主标过 {len(ids)} 件 · 在架 {len(ids) - len(silent) - len(withreason)} · "
+          f"下架且写了理由 {len(withreason)} · **下架却没写理由 {len(silent)}**")
+    for i, _ in silent[:12]:
+        print(f"  [没写理由] {i}")
+    for i, why in withreason[:6]:
+        print(f"  [已判过] {i} — {why}")
+    if silent:
+        print("  补法：在 editorial/curation.json 该件下写 unheart_reason（至少 10 字）")
+    return silent
+
+
 def main() -> None:
     show_list = "--list" in sys.argv
     as_json = "--json" in sys.argv
@@ -1068,6 +1104,21 @@ def main() -> None:
     verdicts = check_verdict_in_limits(shelf)
     gen_dirs, clashes = check_install_dirs(list(items.values()))
     bare = check_no_placeholder(list(items.values()))
+    unheart = check_hearted_hidden(items)
+    if unheart:
+        err(f"{len(unheart)} 件店主亲手标过的货被下架却没写理由 —— "
+            f"hearts.json 第三条：判据把这批判掉了，是判据错，不是它们错。"
+            f"真要下架就写 unheart_reason")
+    # 库房积压：进了货、没人写文案，所以永远上不了架。
+    # 这个数只有变大没有变小时，说明进货和文案之间断了（多半是 LLM_API_KEY 没配）。
+    # 2026-08-31 发现时是 720 件，断了 13 天没人看见 —— 因为它以前不是一个数字。
+    _backlog = [i for i, it in items.items()
+                if it.get("hide") and not (it.get("title_zh") or "").strip()]
+    print(f"\n【19】库房积压（有货没文案，上不了架）\n  {len(_backlog)} 件")
+    if len(_backlog) > 200:
+        warn(f"库房积压 {len(_backlog)} 件「有货没文案」—— 进货和文案之间多半断了。"
+             f"先查 LLM_API_KEY 配没配（gh secret list -R woowoeth/skill），"
+             f"再决定这批怎么消化：**别一次倒进货架**")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:

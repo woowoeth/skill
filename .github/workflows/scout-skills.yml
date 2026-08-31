@@ -34,6 +34,27 @@ jobs:
           # tee the scout's own stdout: 拒收榜的统计数字要可追溯，日志就是凭据。
           set -o pipefail
           python scouts/skill_scout.py 2>&1 | tee "${RUNNER_TEMP}/scout-run.log"
+      # 进货能进、文案写不出来 —— 这条从 2026-08-18 断到 08-31，13 天，
+      # 每天 success。因为 enrich 拿不到 key 只打印一行 skipped，跑批照样退 0。
+      # 期间进货一直在进（08-31 那次 195 个候选、19 件新货），全部「缺文案留库房」，
+      # 上架 0 件。库房积到 720 件才被店主问「为什么不更新」。
+      #
+      # 灯必须红。但不能让跑批本身失败 —— 那样连进货都提交不了，
+      # 白跑一趟还丢货。所以放在提交之后单独一步：货照进、照提交，然后把灯点红。
+      - name: 有新货却没人写文案 —— 灯要红
+        if: always()
+        run: |
+          L="${RUNNER_TEMP}/scout-run.log"
+          [ -f "$L" ] || exit 0
+          line=$(grep -oE "enrich: skipped \([0-9]+ new items[^)]*\)" "$L" | head -1)
+          [ -n "$line" ] || exit 0
+          n=$(printf '%s' "$line" | grep -oE '[0-9]+' | head -1)
+          [ "${n:-0}" -gt 0 ] || exit 0
+          echo "::error::$line —— 进了 $n 件新货，一件也写不出文案，所以一件也上不了架。"
+          echo "::error::修法：gh secret set LLM_API_KEY -R woowoeth/skill（还有 LLM_BASE_URL / LLM_MODEL）"
+          grep -c "缺文案留库房" "$L" | xargs -I{} echo "::error::本次留库房 {} 件"
+          exit 1
+
       - name: Editorial check (报告，不拦车)
         continue-on-error: true
         run: python scouts/check_curation.py
