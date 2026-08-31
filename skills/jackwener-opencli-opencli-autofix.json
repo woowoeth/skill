@@ -1,0 +1,33 @@
+{
+ "id": "jackwener-opencli-opencli-autofix",
+ "kind": "skill",
+ "name": "opencli-autofix",
+ "title_zh": "",
+ "tagline_zh": "纯属好玩，装了不亏：opencli-autofix。英文简介见下。",
+ "tagline_en": "",
+ "desc_en": "Automatically fix broken OpenCLI adapters when commands fail. Load this skill when an opencli command fails — it guides you through collecting a trace artifact, patching the adapter, retrying, and filing an upstream GitHub issue after a verified fix. Works with any AI agent.",
+ "why_zh": "",
+ "why_en": "",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "jackwener/OpenCLI",
+ "owner": "jackwener",
+ "path": "skills/opencli-autofix",
+ "url": "https://github.com/jackwener/OpenCLI/tree/HEAD/skills/opencli-autofix",
+ "homepage": "https://opencli.info/",
+ "stars": 28759,
+ "pushed_at": "2026-08-30T17:36:26Z",
+ "skill_count": 1,
+ "category": "fun",
+ "fun_score": 5.51,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-08-31",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/jackwener/OpenCLI.git",
+  "copy": "cp -r OpenCLI/skills/opencli-autofix ~/.claude/skills/opencli-autofix",
+  "dir": "~/.claude/skills/opencli-autofix"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jackwener-opencli-opencli-autofix.png"
+}
