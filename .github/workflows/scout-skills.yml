@@ -69,8 +69,10 @@ jobs:
             n=$(printf '%s' "$line" | grep -oE '[0-9]+' | sed -n 2p)
             if [ -n "$line" ]; then
               echo "::error::$line —— enrich 跑了但一件都没成。上面几行有每件的原因（多半是 401/超时）。"
-              grep -oE "enrich [^\n]{0,60}: HTTP Error [0-9]+[^\n]{0,24}" "$L" | head -1 \
-                | xargs -I{} echo "::error::第一条失败：{}"
+              # 必须限定在 enrich 行里再抓：日志更早处有抓仓时的 HTTP Error 404，
+              # 不限定就会把那条当成 enrich 的失败原因报出来 —— **误导比不报更糟**。
+              grep "enrich" "$L" | grep -oE "HTTP Error [0-9]+" | head -1 \
+                | xargs -I{} echo "::error::enrich 第一条失败：{}"
               grep -oE "端点 [^ ]+ · 模型 [^ ]+" "$L" | head -1 | xargs -I{} echo "::error::用的是 {}"
             fi
           fi
