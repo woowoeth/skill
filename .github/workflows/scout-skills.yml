@@ -27,6 +27,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           MAX_NEW_REPOS: ${{ github.event.inputs.max_new_repos || '5' }}
+          # 同轮上架。2026-08-31 打开 —— 当天上午我按 docs/CURATION.md:162
+          # 「自动进货不直接上架」把它关了，结果自动更新在结构上不可能发生。
+          # 那条规则写下来时的两个前提今天都变了：
+          #   ① 闸是废物（旧闸放行 33% 的心选和 32% 的其它，+1pt）
+          #      → 现在是「四句齐 + 真局限≥20 字」，心选 99% / 库房 54%
+          #   ② 文案是一句伪造的常量（_local_copy 里那句"产物会串味"）
+          #      → 已删，写不出文案就留库房
+          # 老实说清楚它弱在哪：文案现在由 enrich(LLM) 写，所以这道闸**不再证明
+          # 「有人读过」**，只证明「有一句具体的局限」。第二道防线是
+          # check_curation 的【14】机器占位文案上架。
+          SAME_DAY_SHELF: "1"
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
