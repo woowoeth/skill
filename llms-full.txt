@@ -23,6 +23,44 @@ git clone --depth 1 https://github.com/Hchen1218/heytea-style.git Then point you
 Repository: Hchen1218/heytea-style The repository ships 1 skills in total.
 
 ========================================================================
+## travel-plan-viz
+## 把旅行计划做成手机上能离线看的网页
+URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
+URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
+Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
+Updated: 2026-08-31
+Tags: everyday, skill, zexuanw958-svg
+
+The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
+
+### What does this skill do?
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Why is it worth installing?
+Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+--- 中文 ---
+到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
+
+### Q：这个 skill 做什么？
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Q：为什么值得装？
+「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+========================================================================
 ## multi-copywrite-alchemy
 ## 分析某位作者的多篇文章复刻其文风
 URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
@@ -81,6 +119,50 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 
 ### Where does it come from?
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
+
+========================================================================
+## comfyui-mcp
+## 用自然语言指挥 ComfyUI 出图
+URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
+Source: https://github.com/artokun/comfyui-mcp
+Updated: 2026-08-31
+Tags: images, collection, artokun
+
+A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+
+### What does this skill do?
+Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+
+### Why is it worth installing?
+ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+
+### How do you install it?
+git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-08-31
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## kinocut
@@ -193,6 +275,50 @@ git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent 
 Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
+## citation-management
+## 每条引用都回数据库核验，揪出 AI 编造的参考文献
+URL: https://ourword.ai/skill/i/k-dense-ai-scientific-agent-skills-citation-management/
+Source: https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management
+Updated: 2026-08-31
+Tags: docs, skill, K-Dense-AI
+
+Searches OpenAlex, PubMed and Scholar, extracts clean metadata, validates and formats citations — the reference-error killer.
+
+### What does this skill do?
+Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.
+
+### Why is it worth installing?
+Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## planning-with-files
+## 把计划写成磁盘文件，/clear 和上下文压缩都不丢进度
+URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
+Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
+Updated: 2026-08-31
+Tags: meta, skill, OthmanAdi
+
+Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
+
+### What does this skill do?
+Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
+
+### Why is it worth installing?
+Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
+
+### How do you install it?
+git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
+
+========================================================================
 ## social-post
 ## 学你的语气排好 14 天日历，再替你按下发布键
 URL: https://ourword.ai/skill/i/hao0321-claude-skill-social-post-social-post/
@@ -269,50 +395,6 @@ git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然�
 Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
-## comfyui-mcp
-## 用自然语言指挥 ComfyUI 出图
-URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
-Source: https://github.com/artokun/comfyui-mcp
-Updated: 2026-08-30
-Tags: images, collection, artokun
-
-A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
-
-### What does this skill do?
-Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
-
-### Why is it worth installing?
-ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
-
-### How do you install it?
-git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
-
-========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-08-30
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
 ## story-deslop
 ## 把翻译腔和排比堆砌洗掉，别被平台查出 AI 味
 URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
@@ -371,28 +453,6 @@ git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Th
 
 ### Where does it come from?
 Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## planning-with-files
-## 把计划写成磁盘文件，/clear 和上下文压缩都不丢进度
-URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
-Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
-Updated: 2026-08-30
-Tags: meta, skill, OthmanAdi
-
-Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
-
-### What does this skill do?
-Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
-
-### Why is it worth installing?
-Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
-
-### How do you install it?
-git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## obsidian-second-brain
@@ -534,28 +594,6 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
-## citation-management
-## 每条引用都回数据库核验，揪出 AI 编造的参考文献
-URL: https://ourword.ai/skill/i/k-dense-ai-scientific-agent-skills-citation-management/
-Source: https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management
-Updated: 2026-08-29
-Tags: docs, skill, K-Dense-AI
-
-Searches OpenAlex, PubMed and Scholar, extracts clean metadata, validates and formats citations — the reference-error killer.
-
-### What does this skill do?
-Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.
-
-### Why is it worth installing?
-Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## oil-motion
 ## 一套切开的网页动效
 URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
@@ -573,44 +611,6 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 
 ### Where does it come from?
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
-
-========================================================================
-## travel-plan-viz
-## 把旅行计划做成手机上能离线看的网页
-URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
-URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
-Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
-Updated: 2026-08-28
-Tags: everyday, skill, zexuanw958-svg
-
-The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
-
-### What does this skill do?
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Why is it worth installing?
-Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
---- 中文 ---
-到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
-
-### Q：这个 skill 做什么？
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Q：为什么值得装？
-「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## agent-skills
