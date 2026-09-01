@@ -664,6 +664,39 @@ def _clamp_patch(patch: dict) -> dict:
 def enrich_items(ids: list[str], existing: dict) -> None:
     """LLM copywriting for newly stocked items. No-op unless LLM_API_KEY is set.
     Writes into the machine layer (item files); editorial still overrides everything."""
+    # —— 开跑前自检：端点/key/模型三者是否匹配 ——
+    # 教训：LLM_BASE_URL 与 LLM_MODEL 两个 secret 曾经丢失，代码回落到 OpenAI 默认值，
+    # 拿 DeepSeek 的 key 去敲 OpenAI 的门，连吃 19 次 401 才报错。
+    # 配置错误应该在第一秒暴露，而不是把整批新货陪葬。
+    if LLM_KEY and ids:
+        import urllib.request as _U
+        _probe_ok, _probe_msg = False, ""
+        try:
+            _a = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+            if _a:
+                _u = (LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com") + "/v1/messages"
+                _b = json.dumps({"model": LLM_MODEL, "max_tokens": 4,
+                                 "messages": [{"role": "user", "content": "hi"}]}).encode()
+                _h = {"x-api-key": LLM_KEY, "anthropic-version": "2023-06-01",
+                      "Content-Type": "application/json"}
+            else:
+                _u = LLM_BASE + "/chat/completions"
+                _b = json.dumps({"model": LLM_MODEL, "max_tokens": 4,
+                                 "messages": [{"role": "user", "content": "hi"}]}).encode()
+                _h = {"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"}
+            with _U.urlopen(_U.Request(_u, data=_b, method="POST", headers=_h), timeout=30):
+                _probe_ok = True
+        except Exception as _e:
+            _probe_msg = f"{type(_e).__name__}: {_e}"
+        if not _probe_ok:
+            print(f"[scout] ✗ LLM 自检失败 —— 端点 {LLM_BASE} · 模型 {LLM_MODEL} · {_probe_msg}")
+            print("[scout]   三项必须匹配：LLM_API_KEY / LLM_BASE_URL / LLM_MODEL")
+            print("[scout]   DeepSeek 应为 https://api.deepseek.com + deepseek-chat")
+            print("[scout]   本轮跳过 enrich，新货全部留库房（不会上占位文案）")
+            ids = []
+        else:
+            print(f"[scout] ✓ LLM 自检通过 —— 端点 {LLM_BASE} · 模型 {LLM_MODEL}")
+
     if LLM_KEY and ids:
         # 把这一轮实际用的端点和模型打出来（**不打 key**）。
         # 2026-08-31 之前这里什么都不打，于是 enrich 崩在
