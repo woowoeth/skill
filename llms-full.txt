@@ -1,7 +1,51 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 161 skills.
+# Full corpus, plain text. 168 skills.
+
+========================================================================
+## tastemaker
+## 把参考图变成同风格UI代码，告别AI味
+URL: https://ourword.ai/skill/i/codeswithroh-tastemaker-tastemaker/
+Source: https://github.com/codeswithroh/tastemaker/tree/HEAD/skills/tastemaker
+Updated: 2026-09-01
+Tags: work, skill, codeswithroh
+
+Paste a Pinterest/Dribbble link or image, and get UI code that matches its palette, type, spacing, and vibe—no.
+
+### What does this skill do?
+Generate genuinely beautiful, on-brand UI instead of generic "AI slop" — use whenever the user asks to build, design, style, or improve a UI, landing page, dashboard, app screen, or component, whenever a PRD/spec needs a design pass before implementation, whenever the user pastes reference images/Pinterest/Dribbble links and wants the app to look like them, or whenever the user complains the AI-ge
+
+### Why is it worth installing?
+It doesn't just copy a layout—it extracts the visual DNA (color, type, spacing, texture) and rebuilds it around your components.
+
+### How do you install it?
+git clone --depth 1 https://github.com/codeswithroh/tastemaker.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: codeswithroh/tastemaker The repository ships 2 skills in total. Homepage: https://tastemaker-skill.online
+
+========================================================================
+## a2ui-renderer
+## 让AI界面在React应用中自动渲染的A2UI引擎
+URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
+Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
+Updated: 2026-09-01
+Tags: images, skill, CopilotKit
+
+AI outputs become interactive UIs automatically. No manual message passing—just configure once and let CopilotKit.
+
+### What does this skill do?
+Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
+
+### Why is it worth installing?
+Unlike plain text streaming, it auto-activates via /info, wiring low-level primitives to high-level components—so you get.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
 
 ========================================================================
 ## textile-toy-portrait
@@ -393,6 +437,44 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
+
+========================================================================
+## huashu-report
+## 把顶级机构报告的结构与视觉规范提炼成可复用技能
+URL: https://ourword.ai/skill/i/alchaincyf-huashu-report/
+URL (中文): https://ourword.ai/skill/zh/i/alchaincyf-huashu-report/
+Source: https://github.com/alchaincyf/huashu-report
+Updated: 2026-08-31
+Tags: work, skill, alchaincyf
+
+Tired of reports that read like homework? This skill distills 42 top-tier institutional reports.
+
+### What does this skill do?
+做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
+
+### Why is it worth installing?
+Not a template pack—it reverse-engineers the unwritten rules from 42 elite reports, including a coherent chart visual system.
+
+### How do you install it?
+git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
+
+--- 中文 ---
+写行业报告总被说“不够专业”？这套规范提炼自42份Stanford/BCG/McKinsey实测。
+
+### Q：这个 skill 做什么？
+做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
+
+### Q：为什么值得装？
+不是模板堆砌，而是从42份顶级报告中逆向工程出的“隐性规范”——包括图表视觉系统的连贯性设计。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
 
 ========================================================================
 ## math-modeling
@@ -3054,6 +3136,94 @@ git clone --depth 1 https://github.com/zx029w/zhuangxiu-laoshi-skill.git 然后�
 
 ### Q：它从哪来？
 Repository: zx029w/zhuangxiu-laoshi-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## threejs-animation
+## 让 Three.js 场景动起来：关键帧、骨骼、形变
+URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/
+Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation
+Updated: 2026-07-09
+Tags: images, skill, CloudAI-X
+
+Stop hand-rolling animation loops. Keyframe, skeletal, morph targets, and blending—import GLTF and play, or.
+
+### What does this skill do?
+Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.
+
+### Why is it worth installing?
+Wraps Three.js animation into a declarative API—no need to memorize low-level method names. Blending, speed, and loop modes are.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
+
+========================================================================
+## threejs-postprocessing
+## 给 Three.js 场景一键加电影级后期特效
+URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/
+Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-postprocessing
+Updated: 2026-07-09
+Tags: play, skill, CloudAI-X
+
+Bloom, depth of field, color grading, screen effects—no pipeline digging. From plain scene to cinematic look, one.
+
+### What does this skill do?
+Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.
+
+### Why is it worth installing?
+Wraps EffectComposer's messy setup into declarative calls, with ready-made templates for custom screen-space shaders. While.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
+
+========================================================================
+## threejs-shaders
+## 把Three.js着色器从文档恐惧变成可视化直觉
+URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/
+Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders
+Updated: 2026-07-09
+Tags: writing, skill, CloudAI-X
+
+Tired of GLSL errors with no clue? This skill turns ShaderMaterial, uniforms, and vertex/fragment logic into.
+
+### What does this skill do?
+Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.
+
+### Why is it worth installing?
+No API dump—it packages shader compile flow, uniform update timing, and built-in material extension points into reusable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
+
+========================================================================
+## threejs-skills
+## 十个 Three.js 技能，让 3D 场景从能跑到
+URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills/
+Source: https://github.com/CloudAI-X/threejs-skills
+Updated: 2026-07-09
+Tags: play, collection, CloudAI-X
+
+Struggling with lights, cameras, or animations that feel fake? This pack turns 10 common Three.js headaches into.
+
+### What does this skill do?
+A pack of 10 skills.
+
+### Why is it worth installing?
+Not an API cheat sheet—each skill is a parameterized, production-ready solution for a specific pain point (shadows, particles.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CloudAI-X/threejs-skills The repository ships 10 skills in total.
 
 ========================================================================
 ## trip-map-builder
