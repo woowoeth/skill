@@ -1,0 +1,33 @@
+{
+ "id": "khazp-vibe-coding-prompt-template-vibe-techdesign",
+ "kind": "skill",
+ "name": "vibe-techdesign",
+ "title_zh": "把模糊想法变成可执行的技术设计文档",
+ "tagline_zh": "当你说“怎么搭”时，它不甩术语，而是先问清目标，再给出架构、选型和步骤。适合还在MVP阶段、不想被过度设计绑架的你。",
+ "tagline_en": "When you say 'how should I build this,' it asks what matters first, then hands you a lean architecture, stack.",
+ "desc_en": "Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says \"plan technical design\", \"choose tech stack\", or \"how should I build this\".",
+ "why_zh": "它用对话式引导替代模板填空，先对齐业务目标再谈技术，避免常见的设计文档变成自嗨。每次输出都带取舍理由。",
+ "why_en": "It replaces blank-template torture with a dialogue that pins down your real constraints first, then justifies every tech.",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "KhazP/vibe-coding-prompt-template",
+ "owner": "KhazP",
+ "path": ".agents/skills/vibe-techdesign",
+ "url": "https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign",
+ "homepage": "https://vibeworkflow.app/",
+ "stars": 3017,
+ "pushed_at": "2026-08-21T09:54:43Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.83,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-09-01",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git",
+  "copy": "cp -r vibe-coding-prompt-template/.agents/skills/vibe-techdesign ~/.claude/skills/vibe-techdesign",
+  "dir": "~/.claude/skills/vibe-techdesign"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/khazp-vibe-coding-prompt-template-vibe-techdesign.png"
+}

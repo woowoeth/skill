@@ -1,0 +1,33 @@
+{
+ "id": "copilotkit-copilotkit-a2ui-renderer",
+ "kind": "skill",
+ "name": "a2ui-renderer",
+ "title_zh": "让AI界面在React应用中自动渲染的A2UI引擎",
+ "tagline_zh": "AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。",
+ "tagline_en": "AI outputs become interactive UIs automatically. No manual message passing—just configure once and let CopilotKit.",
+ "desc_en": "Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via <CopilotKit a2ui={{ theme }}>. Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot",
+ "why_zh": "不同于传统流式文本，它通过/info自动激活渲染管线，从底层A2UIProvider到高层组件全链路打。",
+ "why_en": "Unlike plain text streaming, it auto-activates via /info, wiring low-level primitives to high-level components—so you get.",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "CopilotKit/CopilotKit",
+ "owner": "CopilotKit",
+ "path": "packages/a2ui-renderer/skills/a2ui-renderer",
+ "url": "https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer",
+ "homepage": "https://docs.copilotkit.ai",
+ "stars": 37150,
+ "pushed_at": "2026-09-01T18:31:15Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 9.61,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-01",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git",
+  "copy": "cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer",
+  "dir": "~/.claude/skills/a2ui-renderer"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png"
+}

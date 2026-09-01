@@ -1,0 +1,33 @@
+{
+ "id": "copilotkit-copilotkit-reskin",
+ "kind": "skill",
+ "name": "reskin",
+ "title_zh": "为可换肤应用写一套全新领域皮肤",
+ "tagline_zh": "品牌、主题、布局、页面、工具、数据、Agent 一键全换。不是改样式，是换掉整个应用体验，让销售演示活起来。",
+ "tagline_en": "Swap brand, theme, layout, pages, tools, data, and agent in one shot. Not a reskin—a full experience transplant.",
+ "desc_en": "Author a NEW skin for the reskinnable-demo app. A skin is a self-contained domain plugin under src/skins/<id>/ that implements the frozen `Skin` contract (src/shell/skin-contract.ts) to swap the app's entire experience — brand, theme, layout, pages, tools, data, and agent — as a live sales demo. Use when the user says \"add a skin\", \"create a skin\", \"new skin\", \"reskin the app\", \"make a <domain> sk",
+ "why_zh": "皮肤实现冻结的 Skin 契约，领域逻辑自包含，不污染主应用。换肤即换产品，演示时像换幻灯片一样干净利。",
+ "why_en": "Each skin implements a frozen contract, keeping domain logic self-contained. Swap the whole product like flipping a slide—zero.",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "CopilotKit/CopilotKit",
+ "owner": "CopilotKit",
+ "path": "examples/showcases/reskinnable-demo/.claude/skills/reskin",
+ "url": "https://github.com/CopilotKit/CopilotKit/tree/HEAD/examples/showcases/reskinnable-demo/.claude/skills/reskin",
+ "homepage": "https://docs.copilotkit.ai",
+ "stars": 37150,
+ "pushed_at": "2026-09-01T18:31:15Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 9.61,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-01",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git",
+  "copy": "cp -r CopilotKit/examples/showcases/reskinnable-demo/.claude/skills/reskin ~/.claude/skills/reskin",
+  "dir": "~/.claude/skills/reskin"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-reskin.png"
+}

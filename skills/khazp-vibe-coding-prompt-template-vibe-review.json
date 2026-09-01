@@ -1,0 +1,33 @@
+{
+ "id": "khazp-vibe-coding-prompt-template-vibe-review",
+ "kind": "skill",
+ "name": "vibe-review",
+ "title_zh": "按PRD逐条审查生成代码，防跑偏",
+ "tagline_zh": "AI写的代码总在细节上偏离设计？用这份skill对照需求文档、技术方案和验证清单逐项过审，让每次提交都经得起追问。",
+ "tagline_en": "AI code drifts from spec? This skill audits every line against PRD, tech design, and verification checklist—so.",
+ "desc_en": "Review generated code against the PRD, tech design, and verification checklist.",
+ "why_zh": "不是泛泛的代码评审，而是把需求文档变成可执行的检查矩阵，逐条映射到实现，连验证步骤都替你列好。",
+ "why_en": "Turns your PRD into an executable audit matrix, mapping each requirement to implementation and verification steps—kills the.",
+ "limit_zh": "",
+ "limit_en": "",
+ "repo": "KhazP/vibe-coding-prompt-template",
+ "owner": "KhazP",
+ "path": "templates/.agents/skills/vibe-review",
+ "url": "https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/templates/.agents/skills/vibe-review",
+ "homepage": "https://vibeworkflow.app/",
+ "stars": 3017,
+ "pushed_at": "2026-08-21T09:54:43Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.83,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-09-01",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git",
+  "copy": "cp -r vibe-coding-prompt-template/templates/.agents/skills/vibe-review ~/.claude/skills/vibe-review",
+  "dir": "~/.claude/skills/vibe-review"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/khazp-vibe-coding-prompt-template-vibe-review.png"
+}
