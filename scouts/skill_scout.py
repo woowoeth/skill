@@ -819,6 +819,81 @@ JUNK_RE = re.compile(
     r"全自动发布|简历包装|办公套件", re.I)
 
 
+TASTE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一件打 0-100 分。
+
+这家店卖的是**判断**，不是索引。店主认可的那些货有一个共同点：
+**它把一件事做到了「有人真的想过这件事该怎么做」的程度** ——
+它会拒绝做某些事、会说清楚产出物到哪儿为止、会在一个具体场景里给出别处拿不到的做法。
+不是「功能多」，不是「star 高」，也不是题材（画画、写作、算命、报税都可以）。
+
+给分参考：
+  80-100  别处拿不到，而且它对自己的边界很清楚
+  60-79   做得扎实，但换个工具也能做
+  40-59   能用，泛泛，说不出非它不可的理由
+  0-39    是模板/目录/基建/官方示例，或者读完说不出它到底交付什么
+
+读下面这份上游 SKILL.md 正文，只回一个 JSON：{{"score": 0-100, "why": "不超过25字"}}
+**打分，不要判是非。** 大部分东西落在 40-70 之间是正常的。
+
+---
+{body}
+---"""
+
+
+TASTE_MIN = int(os.environ.get("TASTE_MIN", "60"))
+
+
+def taste_score(it: dict) -> int:
+    """让判官读上游正文打 0-100 分。读不到正文或调不通 → 返回 -1（**不当作过**）。
+
+    2026-09-02 立。此前三轮测量说「机器判不了品味」（题材词 +1pt、上游形态 +6pt、
+    二元问法 −17pt），**那三轮的负样本全是库房** —— 而库房是「还没人判过」，
+    不是「判过不要」，里面本来就混着大量好货。拿「没判过」当「不好」，
+    任何判据都会被压平。**结论是标签错造出来的，我拿它当结论讲了三次。**
+
+    换成真负样本（按问一/问二/问三拒收的 40 个仓的上游正文）重测：
+        留出集   正样本均分 72.8 · 负样本 53.5 · 最佳线 ≥70 → **+61pt**
+        新数据   店主指名的四件，3/4 过 ≥60
+    唯一没过的 kvnkld/aicss 拿了 35 分，原因清楚：它没有 SKILL.md，
+    喂进去的是 886 字节 README，判的不是它本身。
+
+    门槛取 60 不取 70：留出集上 70 更好看，但 OJO 68 分、ppt-master 68 分，
+    **一个会把店主指名的货判掉的门槛就是错门槛。**
+    """
+    body = ""
+    for cand in (os.path.join(lib.ROOT, "methods", f"{it.get('id','')}.md"),):
+        if os.path.exists(cand):
+            body = open(cand, encoding="utf-8", errors="replace").read()
+            break
+    if not body or not LLM_KEY:
+        return -1
+    prompt = TASTE_PROMPT.format(body=body[:6000])
+    import urllib.request
+    anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+    if anthropic:
+        url = (LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com") + "/v1/messages"
+        data = json.dumps({"model": LLM_MODEL, "max_tokens": 200,
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        hdr = {"x-api-key": LLM_KEY, "anthropic-version": "2023-06-01",
+               "Content-Type": "application/json"}
+    else:
+        url = LLM_BASE + "/chat/completions"
+        data = json.dumps({"model": LLM_MODEL, "max_tokens": 200,
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        hdr = {"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"}
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=hdr,
+                                                           method="POST"), timeout=60) as r:
+            resp = json.loads(r.read())
+        txt = (resp["content"][0]["text"] if anthropic
+               else resp["choices"][0]["message"]["content"])
+        txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        return int(json.loads(txt).get("score", -1))
+    except Exception as e:
+        print(f"[taste] {it.get('id')}: {type(e).__name__}: {e}")
+        return -1
+
+
 def _taste_pass(it: dict) -> str:
     """同一轮能不能上架。返回空串=拒，否则是通道名。
 
@@ -864,7 +939,16 @@ def _taste_pass(it: dict) -> str:
         return ""
     if len((it.get("limit_zh") or "").strip()) < 20:
         return ""
-    return "four+limit"
+    # 品味判据。**读不到正文或判官不通 → 不当作过**（沿用「没扫到不算干净」那条）。
+    sc = taste_score(it)
+    if sc < 0:
+        print(f"[taste] {it.get('id')} 判不了（无上游正文或判官不通）→ 留库房")
+        return ""
+    if sc < TASTE_MIN:
+        print(f"[taste] {it.get('id')} {sc} 分 < {TASTE_MIN} → 不上架")
+        return ""
+    print(f"[taste] {it.get('id')} {sc} 分 → 上架")
+    return f"taste{sc}"
 
 
 def _local_copy(it: dict) -> dict:
