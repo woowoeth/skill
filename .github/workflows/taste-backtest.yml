@@ -1,0 +1,20 @@
+name: taste-backtest
+# LLM 判品味到底行不行 —— **验完再用，不验就不用。**
+# 前两轮都失败了（题材关键词 +1pt，上游形态特征 +6pt），所以这一轮先测再说。
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 留出测试
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: python scouts/taste_backtest.py --holdout 18 --shots 8
