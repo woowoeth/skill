@@ -58,6 +58,10 @@ JUDGE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一�
 
 
 def body_of(i: str) -> str | None:
+    # "!" 前缀 = 真负样本（拒收榜的上游正文，抓在 methods_rejected/）
+    if i.startswith("!"):
+        p = os.path.join(ROOT, "methods_rejected", f"{i[1:]}.md")
+        return open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
     p = os.path.join(ROOT, "methods", f"{i}.md")
     if not os.path.exists(p):
         return None
@@ -65,7 +69,7 @@ def body_of(i: str) -> str | None:
 
 
 def title_of(i: str, cur: dict) -> str:
-    return ((cur.get(i) or {}).get("title_zh") or i)[:34]
+    return ((cur.get(i) or {}).get("title_zh") or i.lstrip("!"))[:34]
 
 
 def main() -> int:
@@ -84,7 +88,15 @@ def main() -> int:
     have = [f[len(os.path.join(ROOT, "methods")) + 1:-3]
             for f in glob.glob(os.path.join(ROOT, "methods", "*.md"))]
     pos = [i for i in have if i in hearts]
-    neg = [i for i in have if i not in hearts and i not in live]
+    # **负样本必须是「店主不要的」，不是「还没人判过的」。**
+    # 2026-09-02 之前三轮测量（+1pt / +6pt / +11pt）用的都是库房当负样本 ——
+    # 而库房里的货是**未判**，不是**判过不要**，里面本来就混着大量好货。
+    # 拿「没判过」当「不好」，任何判据都会被压平。三轮结论都可能是这个错造出来的。
+    # 真负样本：按问一/问二/问三拒收的，上游正文抓在 methods_rejected/。
+    neg_dir = os.path.join(ROOT, "methods_rejected")
+    neg = ["!" + f[:-3] for f in sorted(os.listdir(neg_dir))] if os.path.isdir(neg_dir) else []
+    if not neg:
+        print("methods_rejected/ 是空的 —— 先跑抓取，别拿库房当负样本"); return 2
     random.seed(20260902)
     random.shuffle(pos); random.shuffle(neg)
     ho_pos, ho_neg = pos[:a.holdout], neg[:a.holdout]
