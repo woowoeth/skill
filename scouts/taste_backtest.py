@@ -77,6 +77,8 @@ def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--holdout", type=int, default=18, help="每边留出多少件")
     ap.add_argument("--shots", type=int, default=8, help="每边给几个例子")
+    ap.add_argument("--verify-refs", action="store_true",
+                    help="拿 taste_refs.json（店主指名、从没进过训练/留出）当新数据验门槛")
     a = ap.parse_args()
 
     cur = json.load(open(os.path.join(ROOT, "editorial", "curation.json"),
@@ -150,6 +152,29 @@ def main() -> int:
             print(f"    ! {i}: {type(e).__name__}: {e}")
             return None
 
+    if a.verify_refs:
+        # **门槛是在留出集上挑的，必须在没见过的数据上再验一次。**
+        # taste_refs 里是店主 2026-09-02 指名说「这是有品味的」的四件，
+        # 它们从来不在正样本池（methods/ 里没有或不在 hearts），是干净的新数据。
+        refs = json.load(open(os.path.join(ROOT, "editorial", "taste_refs.json"),
+                              encoding="utf-8"))["items"]
+        import glob as _g, re as _re
+        allm = {f[len(os.path.join(ROOT, "methods")) + 1:-3]
+                for f in _g.glob(os.path.join(ROOT, "methods", "*.md"))}
+        print("\n拿店主指名的那几件当新数据验门槛 ≥60：")
+        hit = tot = 0
+        for repo in refs:
+            sl = _re.sub(r"[^a-z0-9]+", "-", repo.lower()).strip("-")
+            cand = [i for i in allm if i.startswith(sl)] or \
+                   [i for i in allm if i.startswith(sl.split("-")[0])]
+            if not cand:
+                print(f"  · {repo:<42} 没有上游正文存档，跳过"); continue
+            sc = judge(cand[0]); tot += 1
+            ok = sc is not None and sc >= 60
+            hit += ok
+            print(f"  {'✓' if ok else '✗'} {repo:<42} {sc} 分")
+        print(f"\n新数据上：{hit}/{tot} 件过 ≥60 线")
+        return 0
     kp = [x for x in (judge(i) for i in ho_pos) if x is not None and x >= 0]
     kn = [x for x in (judge(i) for i in ho_neg) if x is not None and x >= 0]
     if not kp or not kn:
