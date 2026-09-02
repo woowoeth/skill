@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>让AI界面在React应用中自动渲染的A2UI引擎 — 品味</title>
-<meta name="description" content="AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。">
+<title>把 Agent 的界面声明渲染成可交互 UI — 品味</title>
+<meta name="description" content="CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, CopilotKit">
 <link rel="canonical" href="https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="让AI界面在React应用中自动渲染的A2UI引擎 — 品味">
-<meta property="og:description" content="AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。">
+<meta property="og:title" content="把 Agent 的界面声明渲染成可交互 UI — 品味">
+<meta property="og:description" content="CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。">
 <meta property="og:url" content="https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/">
 <meta property="og:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="让AI界面在React应用中自动渲染的A2UI引擎 — 品味">
-<meta name="twitter:description" content="AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"让AI界面在React应用中自动渲染的A2UI引擎","description":"AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。","url":"https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CopilotKit"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png","codeRepository":"https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer"}</script>
+<meta name="twitter:title" content="把 Agent 的界面声明渲染成可交互 UI — 品味">
+<meta name="twitter:description" content="CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 Agent 的界面声明渲染成可交互 UI","description":"CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。","url":"https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CopilotKit"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png","codeRepository":"https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>CopilotKit</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">让AI界面在React应用中自动渲染的A2UI引擎</h1>
-    <p class="lede">AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。</p>
+    <h1 class="ttl">把 Agent 的界面声明渲染成可交互 UI</h1>
+    <p class="lede">CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。</p>
     <div class="tags"><span class="tag">CopilotKit</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/copilotkit-copilotkit-a2ui-renderer.png" alt="">
     
-    <section class="sec"><h2>做什么用</h2><p>AI不再只回文字，还能直接生成可交互界面。自动激活，无需手动传消息，一行配置即可让CopilotKit应用拥有原生。不同于传统流式文本，它通过/info自动激活渲染管线，从底层A2UIProvider到高层组件全链路打。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」。超出这一格，它不会变聪明。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「让AI界面在React应用中自动渲染的A2UI引擎」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。声明式渲染，运行时自动激活。底层原语齐全，主题可配，省掉胶水代码。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只认 CopilotKit v2 的 A2UI 协议；v1 不兼容。必须自行启用 runtime 和 provider。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把 Agent 的界面声明渲染成可交互 UI」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git">复制</button></div><div class="cmd"><code>cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer</code><button type="button" data-copy="cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../s0xdk-refactoring-ui-skill/">把 Refactoring UI 的设计规则变成你的</a><a href="../luji12-retro-scrapbook-collage/">把日常照片转成复古剪贴簿海报</a><a href="../cloudai-x-threejs-skills-threejs-animation/">让 Three.js 场景动起来：关键帧、骨骼、形变</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../cloudai-x-threejs-skills-threejs-animation/">在浏览器里编排三维动画的完整工作台</a><a href="../n1ko724-scene-to-art-lab-scene-to-art-lab/">一场戏收进艺术实验室</a><a href="../yokel1121-muyang-illustration-skills-muyang-oriental-poetry/">东方诗意插画，一款一装</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../codeswithroh-tastemaker-tastemaker/">← 把参考图变成同风格UI代码，告别AI味</a><a href="../moonlin1213-cove-tarot-companion/">把塔罗牌阵变成一场本地私密对话 →</a></nav>
+  <nav class="foot"><a href="../codeswithroh-tastemaker-tastemaker/">← 把参考图变成同风格 UI 代码，告别 AI 味</a><a href="../moonlin1213-cove-tarot-companion/">把塔罗牌阵变成一场本地私密对话仪式 →</a></nav>
 </div>
 <script>
 (function(){

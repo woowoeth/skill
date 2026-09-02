@@ -1,89 +1,23 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 184 skills.
-
-========================================================================
-## mempalace
-## 把项目与对话挖掘成一座可检索的记忆宫殿
-URL: https://ourword.ai/skill/i/mempalace-mempalace-mempalace/
-Source: https://github.com/MemPalace/mempalace/tree/HEAD/.antigravity-plugin/skills/mempalace
-Updated: 2026-09-02
-Tags: play, skill, MemPalace
-
-Ask “how did we end up changing that plan?” and it digs the context out of your scattered old chats—no scrolling.
-
-### What does this skill do?
-MemPalace — mine projects and conversations into a searchable memory palace. Use when the user asks about MemPalace, memory palace, mining memories, searching memories, palace setup, wings, rooms, or drawers; or when they want to recall past work that may already be filed in their palace.
-
-### Why is it worth installing?
-Not a full-text search—it files memories into wings, rooms, and drawers, so recall follows structure, beating keyword matching.
-
-### How do you install it?
-git clone --depth 1 https://github.com/MemPalace/mempalace.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: MemPalace/mempalace The repository ships 14 skills in total. Homepage: http://mempalaceofficial.com/
-
-========================================================================
-## BMAD-METHOD
-## 把敏捷开发流程蒸馏成可复用的 AI 驱动方法
-URL: https://ourword.ai/skill/i/bmad-code-org-bmad-method/
-Source: https://github.com/bmad-code-org/BMAD-METHOD
-Updated: 2026-09-02
-Tags: play, collection, bmad-code-org
-
-Stop letting AI just write code. This method turns sprints, retros, and backlog grooming into executable prompt.
-
-### What does this skill do?
-Breakthrough Method for Agile Ai Driven Development
-
-### Why is it worth installing?
-Not scattered tips—a stateful workflow protocol. Each phase's output becomes the next phase's context, upgrading AI from tool to.
-
-### How do you install it?
-git clone --depth 1 https://github.com/bmad-code-org/BMAD-METHOD.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: bmad-code-org/BMAD-METHOD The repository ships 56 skills in total.
-
-========================================================================
-## aaron-marketing-skills
-## 120个营销技能打包成一个AI营销部
-URL: https://ourword.ai/skill/i/aaron-he-zhu-aaron-marketing-skills/
-Source: https://github.com/aaron-he-zhu/aaron-marketing-skills
-Updated: 2026-09-02
-Tags: work, collection, aaron-he-zhu
-
-One contract, 7 marketing disciplines, 120 skills, 8 auditor gates. Stop switching prompts—start running a.
-
-### What does this skill do?
-120 marketing skills as an AI marketing staff — plugin, portable skills, or an 8-bot team across 7 disciplines (narrative, SEO/GEO, social, email, paid, influencer, launch) on one contract, with 8 auditor gates: TALE · CORE-EEAT · CITE · ECHO · SEND · ROAS · STAR · RAMP.
-
-### Why is it worth installing?
-Not a skill dump—a gated pipeline. Every output passes TALE/EEAT/CITE-style audits before delivery. 8 editors built in.
-
-### How do you install it?
-git clone --depth 1 https://github.com/aaron-he-zhu/aaron-marketing-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: aaron-he-zhu/aaron-marketing-skills The repository ships 120 skills in total. Homepage: https://skills.sh/aaron-he-zhu/aaron-marketing-skills
+# Full corpus, plain text. 170 skills.
 
 ========================================================================
 ## a2ui-renderer
-## 让AI界面在React应用中自动渲染的A2UI引擎
+## 把 Agent 的界面声明渲染成可交互 UI
 URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
 Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
 Updated: 2026-09-02
 Tags: images, skill, CopilotKit
 
-AI outputs become interactive UIs automatically. No manual message passing—just configure once and let CopilotKit.
+In CopilotKit v2, let your agent declare UI and get it rendered automatically. No manual renderActivityMessages.
 
 ### What does this skill do?
 Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
 
 ### Why is it worth installing?
-Unlike plain text streaming, it auto-activates via /info, wiring low-level primitives to high-level components—so you get.
+Declarative rendering with auto-activation at runtime. Full low-level primitives, themeable, zero glue code.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
@@ -181,19 +115,19 @@ Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own t
 
 ========================================================================
 ## tastemaker
-## 把参考图变成同风格UI代码，告别AI味
+## 把参考图变成同风格 UI 代码，告别 AI 味
 URL: https://ourword.ai/skill/i/codeswithroh-tastemaker-tastemaker/
 Source: https://github.com/codeswithroh/tastemaker/tree/HEAD/skills/tastemaker
 Updated: 2026-09-01
 Tags: work, skill, codeswithroh
 
-Paste a Pinterest/Dribbble link or image, and get UI code that matches its palette, type, spacing, and vibe—no.
+Paste a Pinterest/Dribbble link or screenshot — it extracts colors, type, spacing, and texture to ship on-brand.
 
 ### What does this skill do?
 Generate genuinely beautiful, on-brand UI instead of generic "AI slop" — use whenever the user asks to build, design, style, or improve a UI, landing page, dashboard, app screen, or component, whenever a PRD/spec needs a design pass before implementation, whenever the user pastes reference images/Pinterest/Dribbble links and wants the app to look like them, or whenever the user complains the AI-ge
 
 ### Why is it worth installing?
-It doesn't just copy a layout—it extracts the visual DNA (color, type, spacing, texture) and rebuilds it around your components.
+It doesn't apply templates — it parses the visual grammar of your reference and maps it into maintainable Tailwind/component.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/codeswithroh/tastemaker.git Then point your agent at the skill directory.
@@ -203,19 +137,19 @@ Repository: codeswithroh/tastemaker The repository ships 2 skills in total. Home
 
 ========================================================================
 ## cove-tarot-companion
-## 把塔罗牌阵变成一场本地私密对话
+## 把塔罗牌阵变成一场本地私密对话仪式
 URL: https://ourword.ai/skill/i/moonlin1213-cove-tarot-companion/
 Source: https://github.com/moonlin1213/cove-tarot-companion
 Updated: 2026-09-01
 Tags: play, skill, moonlin1213
 
-Draw and discuss tarot locally, no cloud, no tracking. Perfect for late-night introspection when you want the.
+No cloud, no accounts—your spread unfolds in a local browser. When the chat hits the right beat, it gently.
 
 ### What does this skill do?
 Use when a user wants a local Tarot Ritual, returns from one to discuss its original reading, or a companion conversation offers a suitable moment to invite them. Requires an existing local shell and browser; not for independently drawing or reinterpreting cards.
 
 ### Why is it worth installing?
-It doesn't draw for you — it stages the spread locally and lets conversation surface the reading. Ritual stays intact, no cloud.
+It doesn't read for you—it anchors the conversation to the spread. Every return reconnects you to the card's original context.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/moonlin1213/cove-tarot-companion.git Then point your agent at the skill directory.
@@ -225,63 +159,25 @@ Repository: moonlin1213/cove-tarot-companion The repository ships 1 skills in to
 
 ========================================================================
 ## markstream-vue
-## 在 Vue 3 里接入 AI 流式渲染的完整指南
+## 把 Markdown 流式渲染器装进 Vue 3 项
 URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
 Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
 Updated: 2026-09-01
 Tags: work, skill, Simon-He95
 
-When AI output floods in like a waterfall, ordinary components freeze. This skill installs markstream-vue for.
+Stream AI markdown into Vue 3 without cursor jitter or code flash. Built-in virtual timeline keeps 1000-line.
 
 ### What does this skill do?
 Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
 
 ### Why is it worth installing?
-It doesn't just paste docs—it orders CSS imports, picks the right renderer and DOM mode, and coordinates virtual timelines to.
+Pluggable renderer paths plus a virtual timeline that paces async AI output—not a v-html hack, but rhythmic, recyclable.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
 
 ### Where does it come from?
 Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
-
-========================================================================
-## easy-humanizer-zh
-## 把AI文本改写成四种真人声纹的中文润色器
-URL: https://ourword.ai/skill/i/fxw-labs-easy-humanizer-zh/
-URL (中文): https://ourword.ai/skill/zh/i/fxw-labs-easy-humanizer-zh/
-Source: https://github.com/fxw-labs/easy-humanizer-zh
-Updated: 2026-09-01
-Tags: writing, skill, fxw-labs
-
-Detects 24 AI tells, rewrites into 4 human voices—tech blog, WeChat, PM, academic. Not synonym swap; it.
-
-### What does this skill do?
-按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
-
-### Why is it worth installing?
-Diagnose-then-rewrite: it lists AI tells first, then rebuilds sentence rhythm per voice profile—no templates. Four presets cover.
-
-### How do you install it?
-git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
-
---- 中文 ---
-检测24种AI腔，一键切换成技术博客/公号/产品/学术口吻。不是简单换词，是连句子的呼吸节奏都重写。
-
-### Q：这个 skill 做什么？
-按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
-
-### Q：为什么值得装？
-先诊断后手术：先列出具体AI痕迹清单，再按声纹特征逐句重构，而非套模板。四种预设覆盖主流写作场景。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
 
 ========================================================================
 ## textile-toy-portrait
@@ -648,20 +544,20 @@ Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's 
 
 ========================================================================
 ## huashu-report
-## 把顶级机构报告的结构与视觉规范提炼成可复用技能
+## 把顶级机构报告的结构规范蒸馏成写作技能
 URL: https://ourword.ai/skill/i/alchaincyf-huashu-report/
 URL (中文): https://ourword.ai/skill/zh/i/alchaincyf-huashu-report/
 Source: https://github.com/alchaincyf/huashu-report
 Updated: 2026-08-31
 Tags: work, skill, alchaincyf
 
-Tired of reports that read like homework? This skill distills 42 top-tier institutional reports.
+Stop staring at a blank page for industry reports, whitepapers, and annual surveys. Built on 42 top-tier reports.
 
 ### What does this skill do?
 做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
 
 ### Why is it worth installing?
-Not a template pack—it reverse-engineers the unwritten rules from 42 elite reports, including a coherent chart visual system.
+Not a template dump—a reverse-engineered skeleton from 42 elite reports. It sets chapter logic and visual systems; you just fill.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point your agent at the skill directory.
@@ -670,13 +566,13 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point y
 Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
 
 --- 中文 ---
-写行业报告总被说“不够专业”？这套规范提炼自42份Stanford/BCG/McKinsey实测。
+写行业报告、白皮书、年度调研，不用再对着空白页发怵。内置 Stanford/BCG/McKinsey 等 42 份。
 
 ### Q：这个 skill 做什么？
 做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
 
 ### Q：为什么值得装？
-不是模板堆砌，而是从42份顶级报告中逆向工程出的“隐性规范”——包括图表视觉系统的连贯性设计。
+不是模板堆砌，是从 42 份顶级报告里逆向出的写作骨架。它替你定好章节逻辑和视觉系统，你只需填内容。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然后把智能体指向这个 skill 目录即可。
@@ -887,44 +783,6 @@ git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然
 Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## humanize-chinese
-## 中文去AI腔六步套装，装完即用零配置
-URL: https://ourword.ai/skill/i/swaylq-humanize-chinese/
-URL (中文): https://ourword.ai/skill/zh/i/swaylq-humanize-chinese/
-Source: https://github.com/swaylq/humanize-chinese
-Updated: 2026-08-29
-Tags: writing, skill, swaylq
-
-Write Chinese without AI flavor from draft one. Review, swap phrases by style, de-Claudify, strip invisible.
-
-### What does this skill do?
-中文去 AI 腔一整套（装完即用，零 API Key —— 装了本 skill 的 agent 自己就是那个 LLM）。 六个流程：① 生成即去 AI —— 写中文时按本 skill 的写作指南落笔，初稿就不带 AI 腔； ② 复查改写 —— 产出后对照本 skill 的清单再过一遍，定点拆模板句式； ③ Python 词语替换 —— ./humanize replace 按文体自动路由词表（学术 120+ 条 / 通用 220+ 条），只做短语级、只在子句边界替换，改完自动核对数字/专名/段落； ④ Claude 腔转中文 —— 把 Claude 助手腔的中文改写成平实中文， 规则提炼自 gvzdv/claudish-to-english 并本地化； ⑤ 去水印 —— ./humanize watermark 扫清零宽字符/双向控制符/同形替身， 并对照 guillaumemeyer/w
-
-### Why is it worth installing?
-Not a single rewrite—a six-stage pipeline: write per guide, audit against checklist, script swaps by style, even strips.
-
-### How do you install it?
-git clone --depth 1 https://github.com/swaylq/humanize-chinese.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: swaylq/humanize-chinese The repository ships 5 skills in total. Homepage: https://swaylq.github.io/humanize-chinese/
-
---- 中文 ---
-初稿就不带AI味，复查拆模板，Python按文体换词，Claude腔转平实，还能扫零宽字符水印——一个skill全。
-
-### Q：这个 skill 做什么？
-中文去 AI 腔一整套（装完即用，零 API Key —— 装了本 skill 的 agent 自己就是那个 LLM）。 六个流程：① 生成即去 AI —— 写中文时按本 skill 的写作指南落笔，初稿就不带 AI 腔； ② 复查改写 —— 产出后对照本 skill 的清单再过一遍，定点拆模板句式； ③ Python 词语替换 —— ./humanize replace 按文体自动路由词表（学术 120+ 条 / 通用 220+ 条），只做短语级、只在子句边界替换，改完自动核对数字/专名/段落； ④ Claude 腔转中文 —— 把 Claude 助手腔的中文改写成平实中文， 规则提炼自 gvzdv/claudish-to-english 并本地化； ⑤ 去水印 —— ./humanize watermark 扫清零宽字符/双向控制符/同形替身， 并对照 guillaumemeyer/w
-
-### Q：为什么值得装？
-不是单一改写，是六道工序闭环：生成时按指南落笔、产出后清单复查、脚本按文体路由词表、连水印都扫。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/swaylq/humanize-chinese.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: swaylq/humanize-chinese The repository ships 5 skills in total. Homepage: https://swaylq.github.io/humanize-chinese/
-
-========================================================================
 ## travel-memory-card-duo
 ## 旅行记忆卡成对出
 URL: https://ourword.ai/skill/i/carolinaaafy-travel-memory-card-duo/
@@ -1090,28 +948,6 @@ git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git The
 
 ### Where does it come from?
 Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## refactoring-ui
-## 把 Refactoring UI 的设计规则变成你的
-URL: https://ourword.ai/skill/i/s0xdk-refactoring-ui-skill/
-Source: https://github.com/s0xDk/refactoring-ui-skill
-Updated: 2026-08-26
-Tags: images, skill, s0xDk
-
-UI still feels off? Apply Refactoring UI's concrete rules to audit spacing, type, shadows, hierarchy—and fix it.
-
-### What does this skill do?
-Design and improve user interfaces using the concrete rules from Refactoring UI (Wathan & Schoger) — constrained spacing/type/color/shadow scales, visual hierarchy through weight and color rather than size, and depth through emulated light. Use when building or styling any UI (web, app, dashboard, landing page, component), when picking font sizes, spacing, colors, shadows or border radius, when de
-
-### Why is it worth installing?
-Turns the book's concrete scales and light-emulation principles into actionable checks, so you fix UI with intent, not guesswork.
-
-### How do you install it?
-git clone --depth 1 https://github.com/s0xDk/refactoring-ui-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: s0xDk/refactoring-ui-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## novel-characters
@@ -1392,28 +1228,6 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-design.git 然后把智
 Repository: alchaincyf/huashu-design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## web-quality-skills
-## 把 Lighthouse 报告变成可执行的网页优化清
-URL: https://ourword.ai/skill/i/addyosmani-web-quality-skills/
-Source: https://github.com/addyosmani/web-quality-skills
-Updated: 2026-08-24
-Tags: play, collection, addyosmani
-
-Stop staring at Lighthouse scores. This turns Core Web Vitals audits into step-by-step fixes you can actually.
-
-### What does this skill do?
-Agent Skills for optimizing web quality based on Lighthouse and Core Web Vitals.
-
-### Why is it worth installing?
-It parses your Lighthouse JSON, ranks fixes by impact, and tells you exactly what to change and how to re-measure.
-
-### How do you install it?
-git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: addyosmani/web-quality-skills The repository ships 6 skills in total.
-
-========================================================================
 ## morandi-cinematic-poster-zeejay
 ## 把场景收成莫兰迪电影海报
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/
@@ -1433,50 +1247,6 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
 
 ========================================================================
-## accessibility
-## 按 WCAG 2.2 给网页做无障碍体检并给修复清单
-URL: https://ourword.ai/skill/i/addyosmani-web-quality-skills-accessibility/
-Source: https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/accessibility
-Updated: 2026-08-24
-Tags: play, skill, addyosmani
-
-When asked to "make it accessible," don't just add alt text. It audits keyboard, screen reader, contrast against.
-
-### What does this skill do?
-Audit and improve web accessibility following WCAG 2.2 guidelines. Use when asked to "improve accessibility", "a11y audit", "WCAG compliance", "screen reader support", "keyboard navigation", or "make accessible".
-
-### Why is it worth installing?
-It doesn't suggest—it asserts. Each failure maps to a specific WCAG 2.2 clause and a concrete fix. Faster than manual review.
-
-### How do you install it?
-git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: addyosmani/web-quality-skills The repository ships 1 skills in total.
-
-========================================================================
-## best-practices
-## 一键给代码做安全与质量体检并现代化改造
-URL: https://ourword.ai/skill/i/addyosmani-web-quality-skills-best-practices/
-Source: https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/best-practices
-Updated: 2026-08-24
-Tags: work, skill, addyosmani
-
-Say 'security audit' or 'modernize code' and it acts: checks security, compatibility, and quality, then gives.
-
-### What does this skill do?
-Apply modern web development best practices for security, compatibility, and code quality. Use when asked to "apply best practices", "security audit", "modernize code", "code quality review", or "check for vulnerabilities".
-
-### Why is it worth installing?
-It compiles scattered web best practices into an executable checklist, triggered on demand, pinpointing issues with concrete.
-
-### How do you install it?
-git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: addyosmani/web-quality-skills The repository ships 1 skills in total.
-
-========================================================================
 ## scene-distillation-zine-v1-3
 ## 把一场戏蒸成一本小 zine
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3/
@@ -1494,28 +1264,6 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 
 ### Where does it come from?
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
-
-========================================================================
-## core-web-vitals
-## 用现场与实验室数据修复 Core Web Vital
-URL: https://ourword.ai/skill/i/addyosmani-web-quality-skills-core-web-vitals/
-Source: https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/core-web-vitals
-Updated: 2026-08-24
-Tags: play, skill, addyosmani
-
-Stop guessing why LCP is slow or CLS jumps—use field + lab evidence to pinpoint and fix Core Web Vitals with.
-
-### What does this skill do?
-Optimize Core Web Vitals (LCP, INP, CLS) for better page experience using field and lab evidence. Use when asked to "improve Core Web Vitals", "fix LCP", "reduce CLS", "optimize INP", "page experience optimization", or "fix layout shifts".
-
-### Why is it worth installing?
-Separates field from lab evidence, so you prioritize fixes based on real-user impact, not just synthetic scores.
-
-### How do you install it?
-git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: addyosmani/web-quality-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## skills
@@ -1601,28 +1349,6 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 
 ### Where does it come from?
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## vibe-techdesign
-## 把模糊想法变成可执行的技术设计文档
-URL: https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/
-Source: https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign
-Updated: 2026-08-21
-Tags: images, skill, KhazP
-
-When you say 'how should I build this,' it asks what matters first, then hands you a lean architecture, stack.
-
-### What does this skill do?
-Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says "plan technical design", "choose tech stack", or "how should I build this".
-
-### Why is it worth installing?
-It replaces blank-template torture with a dialogue that pins down your real constraints first, then justifies every tech.
-
-### How do you install it?
-git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: KhazP/vibe-coding-prompt-template The repository ships 1 skills in total. Homepage: https://vibeworkflow.app/
 
 ========================================================================
 ## fitness-coach
@@ -1980,82 +1706,6 @@ git clone --depth 1 https://github.com/dacnay816y62-hub/FANTASY-Minimal-Magazine
 
 ### Where does it come from?
 Repository: dacnay816y62-hub/FANTASY-Minimal-Magazine The repository ships 1 skills in total.
-
-========================================================================
-## retro-scrapbook-collage
-## 把日常照片转成复古剪贴簿海报
-URL: https://ourword.ai/skill/i/luji12-retro-scrapbook-collage/
-URL (中文): https://ourword.ai/skill/zh/i/luji12-retro-scrapbook-collage/
-Source: https://github.com/luji12/retro-scrapbook-collage
-Updated: 2026-08-14
-Tags: images, skill, luji12
-
-Center the person, keep objects uncut as stickers, warm scan paper, semantic captions. Recreate 90s family albums.
-
-### What does this skill do?
-将日常照片转译成 1086×1448 的复古 DIY 剪贴簿海报：保留一个居中的完整人物主体，从原图提取少量完整物件做成清晰贴纸，再加入克制的通用几何贴纸、暖白扫描纸质感和与画面语义相关的短文字。用于用户要求复刻家庭相册、90/00 年代剪贴簿、照片贴纸拼贴，或强调“人物居中、物件完整、不裁切”的视觉风格时。
-
-### Why is it worth installing?
-Not a filter stack—it detects subjects, preserves object completeness, then composes stickers and captions semantically.
-
-### How do you install it?
-git clone --depth 1 https://github.com/luji12/retro-scrapbook-collage.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: luji12/retro-scrapbook-collage The repository ships 1 skills in total.
-
---- 中文 ---
-人物居中不裁切，物件抠成完整贴纸，暖白扫描纸感加语义短句。复刻 90 年代家庭相册，一张图就够。
-
-### Q：这个 skill 做什么？
-将日常照片转译成 1086×1448 的复古 DIY 剪贴簿海报：保留一个居中的完整人物主体，从原图提取少量完整物件做成清晰贴纸，再加入克制的通用几何贴纸、暖白扫描纸质感和与画面语义相关的短文字。用于用户要求复刻家庭相册、90/00 年代剪贴簿、照片贴纸拼贴，或强调“人物居中、物件完整、不裁切”的视觉风格时。
-
-### Q：为什么值得装？
-不是滤镜叠加，而是先做主体检测与物件完整性保留，再按语义配字。贴纸层级和纸纹质感按真实剪贴流程生成。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/luji12/retro-scrapbook-collage.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: luji12/retro-scrapbook-collage The repository ships 1 skills in total.
-
-========================================================================
-## wanghong-handwritten-ppt
-## 把讲稿变成王虹式手写学术报告幻灯片
-URL: https://ourword.ai/skill/i/tjxj-dsh-wanghong-handwritten-ppt-wanghong-handwritten-ppt/
-URL (中文): https://ourword.ai/skill/zh/i/tjxj-dsh-wanghong-handwritten-ppt-wanghong-handwritten-ppt/
-Source: https://github.com/tjxj/dsh-wanghong-handwritten-ppt/tree/HEAD/skills/wanghong-handwritten-ppt
-Updated: 2026-08-14
-Tags: work, skill, tjxj
-
-Turn scripts or tech topics into Notability-style handwritten 16:9 HTML slides, exported page-by-page as PNG.
-
-### What does this skill do?
-将文章、讲稿或技术主题制作成王虹学术报告气质的 16:9 Notability 手写风 HTML 幻灯片，并逐页导出 PNG。触发词：王虹PPT风格、王虹手写PPT、Notability学术手写幻灯片、手写网页PPT、手写PPT、数学家手写报告风。
-
-### Why is it worth installing?
-It recreates Wang Hong's academic handwriting vibe—not font-swapping, but a holistic mimicry of layout, whitespace, and stroke.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tjxj/dsh-wanghong-handwritten-ppt.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tjxj/dsh-wanghong-handwritten-ppt Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-讲稿/技术主题一键变 Notability 手写风 16:9 HTML 幻灯片，逐页导出 PNG。
-
-### Q：这个 skill 做什么？
-将文章、讲稿或技术主题制作成王虹学术报告气质的 16:9 Notability 手写风 HTML 幻灯片，并逐页导出 PNG。触发词：王虹PPT风格、王虹手写PPT、Notability学术手写幻灯片、手写网页PPT、手写PPT、数学家手写报告风。
-
-### Q：为什么值得装？
-它复刻王虹学术报告的手写气质——非字体替换，而是排版、留白、笔迹节奏的整体模拟，输出可直接放映的 HT。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/tjxj/dsh-wanghong-handwritten-ppt.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: tjxj/dsh-wanghong-handwritten-ppt Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## trpg-log-copilot
@@ -3533,19 +3183,19 @@ Repository: zx029w/zhuangxiu-laoshi-skill Prep work visible in the skill's own t
 
 ========================================================================
 ## threejs-animation
-## 让 Three.js 场景动起来：关键帧、骨骼、形变
+## 在浏览器里编排三维动画的完整工作台
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/
 Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation
 Updated: 2026-07-09
 Tags: images, skill, CloudAI-X
 
-Stop hand-rolling animation loops. Keyframe, skeletal, morph targets, and blending—import GLTF and play, or.
+Keyframe, skeletal, morph, and mixing—all in one. Stop hunting docs, start directing motion like a pro.
 
 ### What does this skill do?
 Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.
 
 ### Why is it worth installing?
-Wraps Three.js animation into a declarative API—no need to memorize low-level method names. Blending, speed, and loop modes are.
+Not scattered snippets—a pipeline linking load, play, and blend, with a state machine owning every frame.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3555,19 +3205,19 @@ Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## threejs-postprocessing
-## 给 Three.js 场景一键加电影级后期特效
+## 给 Three.js 场景加电影级后期特效
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/
 Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-postprocessing
 Updated: 2026-07-09
 Tags: play, skill, CloudAI-X
 
-Bloom, depth of field, color grading, screen effects—no pipeline digging. From plain scene to cinematic look, one.
+Bloom, DOF, color grading, screen-space shaders — drop into EffectComposer without digging through docs. Plug.
 
 ### What does this skill do?
 Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.
 
 ### Why is it worth installing?
-Wraps EffectComposer's messy setup into declarative calls, with ready-made templates for custom screen-space shaders. While.
+Consolidates scattered official examples into declarative pass configs — auto-handles sizing and order, tweak params live.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3577,19 +3227,19 @@ Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## threejs-shaders
-## 把Three.js着色器从文档恐惧变成可视化直觉
+## 在 Three.js 里直接写 GLSL 着色器做自
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/
 Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders
 Updated: 2026-07-09
 Tags: writing, skill, CloudAI-X
 
-Tired of GLSL errors with no clue? This skill turns ShaderMaterial, uniforms, and vertex/fragment logic into.
+Built-in materials not enough? Edit vertices, write fragment shaders, add uniforms — this skill gets you straight.
 
 ### What does this skill do?
 Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.
 
 ### Why is it worth installing?
-No API dump—it packages shader compile flow, uniform update timing, and built-in material extension points into reusable.
+It wraps ShaderMaterial boilerplate and common uniform conventions, so you focus on the GLSL core instead of re-building.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3599,19 +3249,19 @@ Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## threejs-skills
-## 十个 Three.js 技能，让 3D 场景从能跑到
+## Three.js 场景搭建的十件套技能包
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills/
 Source: https://github.com/CloudAI-X/threejs-skills
 Updated: 2026-07-09
 Tags: play, collection, CloudAI-X
 
-Struggling with lights, cameras, or animations that feel fake? This pack turns 10 common Three.js headaches into.
+Build Three.js scenes without the docs—cameras, lights, geometry, animation, and interaction in one pack.
 
 ### What does this skill do?
 A pack of 10 skills.
 
 ### Why is it worth installing?
-Not an API cheat sheet—each skill is a parameterized, production-ready solution for a specific pain point (shadows, particles.
+Ten skills sequenced along the scene lifecycle—init to render loop—so you skip API hunting and boilerplate debugging.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3684,28 +3334,6 @@ git clone --depth 1 https://github.com/wei011/heat-risk-calc.git Then point your
 
 ### Where does it come from?
 Repository: wei011/heat-risk-calc The repository ships 1 skills in total.
-
-========================================================================
-## terraform-skill
-## 写 Terraform 时自动识别故障模式并给出版本
-URL: https://ourword.ai/skill/i/antonbabenko-terraform-skill-terraform-skill/
-Source: https://github.com/antonbabenko/terraform-skill/tree/HEAD/skills/terraform-skill
-Updated: 2026-07-03
-Tags: writing, skill, antonbabenko
-
-When your module starts identity churn, secret leaks, or blast-radius creep, it names the failure mode and points.
-
-### What does this skill do?
-Use when writing, reviewing, or debugging Terraform/OpenTofu modules, tests, CI, scans, or state ops - diagnoses failure mode (identity churn, secrets, blast radius, CI drift, state corruption) with version-aware guards.
-
-### Why is it worth installing?
-Not a linter but a diagnostician: classifies failures by mode (identity churn, secrets, blast radius, CI drift, state.
-
-### How do you install it?
-git clone --depth 1 https://github.com/antonbabenko/terraform-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: antonbabenko/terraform-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## whiteboard-video

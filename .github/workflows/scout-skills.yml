@@ -37,7 +37,12 @@ jobs:
           # 老实说清楚它弱在哪：文案现在由 enrich(LLM) 写，所以这道闸**不再证明
           # 「有人读过」**，只证明「有一句具体的局限」。第二道防线是
           # check_curation 的【14】机器占位文案上架。
-          SAME_DAY_SHELF: "1"
+          # 2026-09-02 关掉。打开它的那一轮上架 12 件，**12 件全都没有红线扫描存档** ——
+          # same_day_shelf 只看文案，扫描相关的引用是 0 处，它根本不扫就上架。
+          # 而下面那步 release_clean 是「同一套文案门禁 + 先扫红线、零命中才放行」，
+          # 严格更强，却排在它后面 —— 等于我这条弱路把货先放过去了。
+          # **一条路，一套标准，含扫描。** 上架统一交给 release_clean。
+          SAME_DAY_SHELF: "0"
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}

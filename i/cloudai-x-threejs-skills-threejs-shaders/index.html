@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把Three.js着色器从文档恐惧变成可视化直觉 — 品味</title>
-<meta name="description" content="还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。">
+<title>在 Three.js 里直接写 GLSL 着色器做自 — 品味</title>
+<meta name="description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 写字, CloudAI-X">
 <link rel="canonical" href="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把Three.js着色器从文档恐惧变成可视化直觉 — 品味">
-<meta property="og:description" content="还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。">
+<meta property="og:title" content="在 Three.js 里直接写 GLSL 着色器做自 — 品味">
+<meta property="og:description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/">
 <meta property="og:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把Three.js着色器从文档恐惧变成可视化直觉 — 品味">
-<meta name="twitter:description" content="还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把Three.js着色器从文档恐惧变成可视化直觉","description":"还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png","codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
+<meta name="twitter:title" content="在 Three.js 里直接写 GLSL 着色器做自 — 品味">
+<meta name="twitter:description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在 Three.js 里直接写 GLSL 着色器做自","description":"内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png","codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>CloudAI-X</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">把Three.js着色器从文档恐惧变成可视化直觉</h1>
-    <p class="lede">还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。</p>
+    <h1 class="ttl">在 Three.js 里直接写 GLSL 着色器做自</h1>
+    <p class="lede">内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png" alt="">
     
-    <section class="sec"><h2>做什么用</h2><p>还在为GLSL报错抓瞎？这套skill把ShaderMaterial、uniforms和顶点/片元逻辑拆成可调参数。它不扔给你API手册，而是把着色器编译流程、uniform更新时机和内置材质扩展点做成可复用的模板。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「写字」。超出这一格，它不会变聪明。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把Three.js着色器从文档恐惧变成可视化直觉」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。它把 ShaderMaterial 的样板代码和常见 uniform 约定打包好。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只覆盖 Three.js 的 ShaderMaterial 路径，不处理 post-processing 链。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「在 Three.js 里直接写 GLSL 着色器做自」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git">复制</button></div><div class="cmd"><code>cp -r threejs-skills/skills/threejs-shaders ~/.claude/skills/threejs-shaders</code><button type="button" data-copy="cp -r threejs-skills/skills/threejs-shaders ~/.claude/skills/threejs-shaders">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../swaylq-humanize-chinese/">中文去AI腔六步套装，装完即用零配置</a><a href="../antonbabenko-terraform-skill-terraform-skill/">写 Terraform 时自动识别故障模式并给出版本</a><a href="../fxw-labs-easy-humanizer-zh/">把AI文本改写成四种真人声纹的中文润色器</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../eternityspring-shuohao-skills-novel-characters/">短剧开拍前先把角色拆开</a><a href="../crawfordxx-xiaoma-durex-copywriter/">按杜蕾斯海报那套双关写文案</a><a href="../elhamid-as-told-to-as-told-to/">把父母的人生录成逐字稿，另出一份下次接着问的笔记</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../panmax-hemingway-skill/">← 用海明威的冰山理论帮你改写作</a><a href="../bh-m87-futu-statement-skill/">从富途月结单里抠出境外所得报税数据 →</a></nav>
+  <nav class="foot"><a href="../kagurananaga-official-document-writing-skill/">← 按 GB/T 9704 规范写党政机关公文</a><a href="../voidforall-fengshui-skill/">先说自己不算命的风水顾问 →</a></nav>
 </div>
 <script>
 (function(){
