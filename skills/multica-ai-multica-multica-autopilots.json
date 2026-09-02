@@ -1,0 +1,33 @@
+{
+ "id": "multica-ai-multica-multica-autopilots",
+ "kind": "skill",
+ "name": "multica-autopilots",
+ "title_zh": "把 Multica 定时任务变成可调试的自动驾驶仪",
+ "tagline_zh": "创建、更新、检查、触发、调试 Multica autopilot，一次装齐。定时、webhook。",
+ "tagline_en": "Create, update, inspect, trigger, and debug Multica autopilots—scheduled, webhook, or manual—all from one skill.",
+ "desc_en": "Use when creating, updating, inspecting, triggering, or debugging a Multica autopilot (scheduled, webhook, or manual).",
+ "why_zh": "不是零散命令拼接，而是围绕 autopilot 生命周期设计的完整操作集。状态检查与触发分离。",
+ "why_en": "Not a grab-bag of commands—a lifecycle-aware toolkit. Separate inspect from trigger, so debugging stays legible.",
+ "limit_zh": "只覆盖 Multica autopilot 的 CRUD 与触发/调试，不碰 Multica 的模型训练。",
+ "limit_en": "Scoped to Multica autopilot CRUD + trigger/debug only. No model training, data pipelines, or external integrations. Requires network access to.",
+ "repo": "multica-ai/multica",
+ "owner": "multica-ai",
+ "path": "server/internal/service/builtin_skills/multica-autopilots",
+ "url": "https://github.com/multica-ai/multica/tree/HEAD/server/internal/service/builtin_skills/multica-autopilots",
+ "homepage": "https://multica.ai",
+ "stars": 48569,
+ "pushed_at": "2026-09-02T05:38:15Z",
+ "skill_count": 1,
+ "category": "fun",
+ "fun_score": 5.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/multica-ai/multica.git",
+  "copy": "cp -r multica/server/internal/service/builtin_skills/multica-autopilots ~/.claude/skills/multica-autopilots",
+  "dir": "~/.claude/skills/multica-autopilots"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/multica-ai-multica-multica-autopilots.png"
+}

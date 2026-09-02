@@ -1,0 +1,33 @@
+{
+ "id": "multica-ai-multica-web-design-guidelines",
+ "kind": "skill",
+ "name": "web-design-guidelines",
+ "title_zh": "按 Web 界面规范逐条审查你的 UI 代码",
+ "tagline_zh": "说一句「检查我的界面」，它对照 26 条业界规范逐条过你的代码，把可访问性、误触、焦点丢失这类坑连证据一起翻出来。",
+ "tagline_en": "Say \"review my UI\" and it audits your code against 26 web interface rules, surfacing accessibility, misclicks.",
+ "desc_en": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+ "why_zh": "不是泛泛而谈的设计建议，而是直接读你的 HTML/CSS/JS，按规范条目逐条判定。",
+ "why_en": "It reads your actual HTML/CSS/JS and checks each rule line-by-line, citing exact code locations and fixes—like a pedantic spec.",
+ "limit_zh": "只认代码文件，不认设计稿截图或 Figma 链接；只覆盖 Web Interface Guidelines 那 26 。",
+ "limit_en": "Code files only—no screenshots or Figma. Covers just the 26 Web Interface Guidelines, not performance/SEO/cross-browser. Outputs an issue list, not.",
+ "repo": "multica-ai/multica",
+ "owner": "multica-ai",
+ "path": ".agents/skills/web-design-guidelines",
+ "url": "https://github.com/multica-ai/multica/tree/HEAD/.agents/skills/web-design-guidelines",
+ "homepage": "https://multica.ai",
+ "stars": 48569,
+ "pushed_at": "2026-09-02T05:38:15Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 8.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/multica-ai/multica.git",
+  "copy": "cp -r multica/.agents/skills/web-design-guidelines ~/.claude/skills/web-design-guidelines",
+  "dir": "~/.claude/skills/web-design-guidelines"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/multica-ai-multica-web-design-guidelines.png"
+}

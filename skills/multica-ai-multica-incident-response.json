@@ -1,0 +1,33 @@
+{
+ "id": "multica-ai-multica-incident-response",
+ "kind": "skill",
+ "name": "incident-response",
+ "title_zh": "生产事故处置规范：先定边界再动手修",
+ "tagline_zh": "代理一上来就抢修？先让它学会：事故当下先确认影响面与证据链，再谈修复——否则越修越乱。",
+ "tagline_en": "Agents rushing to fix? Teach them: establish impact & evidence first, then propose fixes—or chaos ensues.",
+ "desc_en": "How this team handles a production incident issue — what to establish before proposing a fix, and what an agent may and may not do on its own.",
+ "why_zh": "内置团队真实事故流程，强制代理先做状态确认与影响分级，禁止未经许可的写操作，从机制上防止乱改。",
+ "why_en": "Encodes real incident protocol: mandates impact assessment & read-only first, blocks unauthorized writes—prevents reckless.",
+ "limit_zh": "仅覆盖生产事故的初始响应阶段（确认、定级、提议），不含具体修复执行；需要团队已有事故响应手册或值班流程。",
+ "limit_en": "Covers initial response only (triage, classify, propose), no fix execution; requires existing incident playbook or on-call flow, else agent just.",
+ "repo": "multica-ai/multica",
+ "owner": "multica-ai",
+ "path": "examples/plugins/deploy-sentinel/skills/incident-response",
+ "url": "https://github.com/multica-ai/multica/tree/HEAD/examples/plugins/deploy-sentinel/skills/incident-response",
+ "homepage": "https://multica.ai",
+ "stars": 48569,
+ "pushed_at": "2026-09-02T05:38:15Z",
+ "skill_count": 1,
+ "category": "fun",
+ "fun_score": 5.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/multica-ai/multica.git",
+  "copy": "cp -r multica/examples/plugins/deploy-sentinel/skills/incident-response ~/.claude/skills/incident-response",
+  "dir": "~/.claude/skills/incident-response"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/multica-ai-multica-incident-response.png"
+}

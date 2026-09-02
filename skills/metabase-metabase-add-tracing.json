@@ -1,0 +1,33 @@
+{
+ "id": "metabase-metabase-add-tracing",
+ "kind": "skill",
+ "name": "add-tracing",
+ "title_zh": "给 Metabase 的 Clojure 代码按规范",
+ "tagline_zh": "后端要加 trace 覆盖时，不用再翻内部约定、猜 span 命名。照着仓库惯例生成代码，改完就能合进 PR。",
+ "tagline_en": "Stop guessing span names and tracing conventions when instrumenting Metabase backend code. Generate idiomatic.",
+ "desc_en": "Add OpenTelemetry tracing spans to Clojure code following Metabase tracing conventions. Use when instrumenting backend code with trace coverage.",
+ "why_zh": "它读的是仓库自身的 tracing 惯例，不是通用模板。生成的 span 结构、属性命名和现有代码一致。",
+ "why_en": "It learns from the repo's own tracing conventions, not generic patterns—so generated spans match existing structure and naming.",
+ "limit_zh": "只认 Metabase 仓库里的 Clojure 后端代码；前端、非 Clojure 服务、或没装 OpenTelem。",
+ "limit_en": "Only for Clojure backend code inside Metabase repo; won't touch frontend, other services, or modules without OpenTelemetry deps. Outputs snippets.",
+ "repo": "metabase/metabase",
+ "owner": "metabase",
+ "path": ".claude/skills/add-tracing",
+ "url": "https://github.com/metabase/metabase/tree/HEAD/.claude/skills/add-tracing",
+ "homepage": "https://metabase.com",
+ "stars": 49049,
+ "pushed_at": "2026-09-02T05:19:20Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 5.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/metabase/metabase.git",
+  "copy": "cp -r metabase/.claude/skills/add-tracing ~/.claude/skills/add-tracing",
+  "dir": "~/.claude/skills/add-tracing"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/metabase-metabase-add-tracing.png"
+}

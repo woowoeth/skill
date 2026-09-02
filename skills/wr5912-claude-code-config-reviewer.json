@@ -1,0 +1,33 @@
+{
+ "id": "wr5912-claude-code-config-reviewer",
+ "kind": "skill",
+ "name": "agent-config-reviewer",
+ "title_zh": "给 Claude Code 配置做一次全身体检和修复",
+ "tagline_zh": "CLAUDE.md 越堆越乱、权限时松时紧、hook 悄悄失效？让这个 skill 从 .claude 到 .mc。",
+ "tagline_en": "CLAUDE.md sprawl, loose permissions, dead hooks? This skill audits .claude to .mcp.json layer by layer and pins.",
+ "desc_en": "Review, validate, and optimize a target Claude Code configuration and Claude Agent SDK integration from Claude Code or Codex. Use for audits or remediations involving CLAUDE.md, .claude settings/rules/skills/agents/hooks/commands/output styles, .mcp.json, worktrees, permissions, sandboxing, SDK setting sources, tool surfaces, cross-file reachability, and regression validation.",
+ "why_zh": "不止读文件——它交叉验证跨文件可达性、SDK 设置源与工具面，能发现单看某处永远看不出的断裂。",
+ "why_en": "It doesn't just read files—it cross-checks reachability across files, SDK setting sources, and tool surfaces to catch breaks no.",
+ "limit_zh": "只针对 Claude Code / Agent SDK 配置域；不碰业务代码逻辑。需要本机有 claude 或 cod。",
+ "limit_en": "Scoped to Claude Code/Agent SDK config only—no business logic. Requires claude or codex CLI locally and an initialized target project. Outputs.",
+ "repo": "wr5912/claude-code-config-reviewer",
+ "owner": "wr5912",
+ "path": "",
+ "url": "https://github.com/wr5912/claude-code-config-reviewer",
+ "homepage": "",
+ "stars": 1,
+ "pushed_at": "2026-08-13T09:03:21Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 0.7,
+ "pick": false,
+ "hide": true,
+ "source": "human-suggested",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/wr5912/claude-code-config-reviewer.git",
+  "copy": "mv claude-code-config-reviewer ~/.claude/skills/agent-config-reviewer",
+  "dir": "~/.claude/skills/agent-config-reviewer"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wr5912-claude-code-config-reviewer.png"
+}

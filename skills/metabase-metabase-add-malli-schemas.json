@@ -1,0 +1,33 @@
+{
+ "id": "metabase-metabase-add-malli-schemas",
+ "kind": "skill",
+ "name": "add-malli-schemas",
+ "title_zh": "给 Metabase 接口批量补 Malli 校验模",
+ "tagline_zh": "在 Metabase 代码库里给 API 端点加 Malli schema，不用翻遍历史 PR 找套路。校验时机。",
+ "tagline_en": "Add Malli schemas to Metabase endpoints without digging through old PRs for conventions. Validation timing, error.",
+ "desc_en": "Efficiently add Malli schemas to API endpoints in the Metabase codebase with proper patterns, validation timing, and error handling",
+ "why_zh": "不是泛泛的 schema 生成器，而是吃透 Metabase 内部约定：知道何时校验、怎么报错。",
+ "why_en": "Not a generic schema generator—it's steeped in Metabase's internal conventions: when to validate, how to error, how to name.",
+ "limit_zh": "只认 Metabase 仓库的 Clojure 代码；对非 API 端点（如内部函数）不适用。需要你已理解 Malli。",
+ "limit_en": "Only for Clojure in the Metabase repo; not for non-API fns. Requires basic Malli knowledge—it applies patterns, doesn't teach syntax.",
+ "repo": "metabase/metabase",
+ "owner": "metabase",
+ "path": ".claude/skills/add-malli-schemas",
+ "url": "https://github.com/metabase/metabase/tree/HEAD/.claude/skills/add-malli-schemas",
+ "homepage": "https://metabase.com",
+ "stars": 49049,
+ "pushed_at": "2026-09-02T05:19:20Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 5.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/metabase/metabase.git",
+  "copy": "cp -r metabase/.claude/skills/add-malli-schemas ~/.claude/skills/add-malli-schemas",
+  "dir": "~/.claude/skills/add-malli-schemas"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/metabase-metabase-add-malli-schemas.png"
+}

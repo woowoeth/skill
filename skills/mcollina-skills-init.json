@@ -1,0 +1,33 @@
+{
+ "id": "mcollina-skills-init",
+ "kind": "skill",
+ "name": "init",
+ "title_zh": "为代码库生成高信号 AGENTS.md 的初始化工具",
+ "tagline_zh": "新仓库要配 AI 助手？它自动扫描代码，提炼非显性约定与怪癖，生成精简 AGENTS.md，避免冗长泛泛而谈。",
+ "tagline_en": "Setting up AI for a new repo? It scans code, extracts hidden conventions and quirks, and writes a lean.",
+ "desc_en": "Creates, updates, or optimizes an AGENTS.md file for a repository with minimal, high-signal instructions covering non-discoverable coding conventions, tooling quirks, workflow preferences, and project-specific rules that agents cannot infer from reading the codebase. Use when setting up agent instructions or Claude configuration for a new repository, when an existing AGENTS.md is too long, generic",
+ "why_zh": "机制上它聚焦“代码里读不出来”的信息，通过分析仓库结构生成最小必要指令，而非堆砌通用规则。",
+ "why_en": "Unlike generic templates, it mines the repo for non-obvious details, producing only what an agent can't infer—so setup is fast.",
+ "limit_zh": "只针对 AGENTS.md 的创建与优化，不处理其他配置文件；需仓库已有可扫描的代码结构，空仓库或纯文档项目可能产出有。",
+ "limit_en": "Only handles AGENTS.md creation/optimization; requires a codebase to scan; empty or doc-only repos yield limited output; manual review still needed.",
+ "repo": "mcollina/skills",
+ "owner": "mcollina",
+ "path": "skills/init",
+ "url": "https://github.com/mcollina/skills/tree/HEAD/skills/init",
+ "homepage": "",
+ "stars": 1908,
+ "pushed_at": "2026-08-17T16:47:42Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 3.65,
+ "pick": false,
+ "hide": true,
+ "source": "daily-scout",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/mcollina/skills.git",
+  "copy": "cp -r skills/skills/init ~/.claude/skills/init",
+  "dir": "~/.claude/skills/init"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/mcollina-skills-init.png"
+}

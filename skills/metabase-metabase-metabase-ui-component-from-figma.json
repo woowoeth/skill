@@ -1,0 +1,33 @@
+{
+ "id": "metabase-metabase-metabase-ui-component-from-figma",
+ "kind": "skill",
+ "name": "metabase-ui-component-from-figma",
+ "title_zh": "把 Figma 设计稿变成 Metabase 设计系",
+ "tagline_zh": "Linear 里躺着设计稿和 ticket，前端组件却迟迟对不上。这个 skill 帮你查 issue。",
+ "tagline_en": "Figma specs sit in Linear, but the UI never matches. This skill maps the blast radius, scaffolds or restyles.",
+ "desc_en": "Update or build a Metabase design-system component (frontend/src/metabase/ui — Chip, Badge, Alert, Switch, etc.) to match a Figma spec described in a Linear issue. Use when a ticket asks to restyle an existing `metabase/ui` component or implement a new one from Figma. Covers: checking out the issue, mapping the component (usage/blast radius for an existing one, or scaffolding a new one), building ",
+ "why_zh": "它先做影响面分析再动手，避免改一个 Chip 崩掉十个页面；对老组件查引用、新组件给脚手架。",
+ "why_en": "It does blast-radius analysis before touching code, so restyling a Chip won't break ten screens; for new components it.",
+ "limit_zh": "只认 metabase/frontend/src/metabase/ui 下的组件（Chip、Badge、Alert。",
+ "limit_en": "Only for metabase/ui components (Chip, Badge, Alert, Switch…), requires a Linear issue with Figma link. Ignores other dirs, no tests or release steps.",
+ "repo": "metabase/metabase",
+ "owner": "metabase",
+ "path": ".claude/skills/metabase-ui-component-from-figma",
+ "url": "https://github.com/metabase/metabase/tree/HEAD/.claude/skills/metabase-ui-component-from-figma",
+ "homepage": "https://metabase.com",
+ "stars": 49049,
+ "pushed_at": "2026-09-02T05:19:20Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 8.72,
+ "pick": false,
+ "hide": true,
+ "source": "chart",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/metabase/metabase.git",
+  "copy": "cp -r metabase/.claude/skills/metabase-ui-component-from-figma ~/.claude/skills/metabase-ui-component-from-figma",
+  "dir": "~/.claude/skills/metabase-ui-component-from-figma"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/metabase-metabase-metabase-ui-component-from-figma.png"
+}
