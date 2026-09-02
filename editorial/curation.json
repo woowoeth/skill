@@ -36,7 +36,9 @@
    "title_en": "Turns a novel you love into a playable game",
    "hide": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/worldwonderer-novel-to-game-novel-to-game.png"
+   "cover": "/skill/assets/covers/worldwonderer-novel-to-game-novel-to-game.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "worldwonderer-oh-story-claudecode": {
    "title_zh": "网文写作全家桶",
@@ -380,7 +382,9 @@
    "category": "work",
    "cover": "/skill/assets/covers/addyosmani-agent-skills.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1376,
+   "cover_h": 768
   },
   "coreyhaines31-marketingskills": {
    "title_zh": "营销技能大礼包",
@@ -757,7 +761,9 @@
    "_无封面原因": "图逐张开过：assets/hero.png(1774x887) 是宣传横幅（'Understand Anything / We don\\'t just map your code. We teach it.' + 一只螃蟹吉祥物 + 1 SCAN·2 MAP·3 TEACH 的金色节点图）；assets/overview.png、homepage/public/images/overview.png(3408x1882) 和 overview-domain.gif / ove",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "egonex-ai-understand-anything-understand-chat": {
    "title_zh": "按调用结构而不是搜字符串，回答改这里会牵动谁",
@@ -836,7 +842,9 @@
    "title_en": "Thirteen research agents that cross-check each other",
    "_无封面原因": "全仓 0 张图片，但 examples/showcase/ 里有 13 个 PDF 产出物（英中双语全文论文、4 份诚信核验报告、4 份同行评审报告、逐条答复、流程说明）。我把 integrity_report_stage2.5.pdf 第 1 页渲染成图放在 hearted_covers/_optional-imbad0202-integrity-report-p1.png（1700x2200）：白底论文体，标题 INTEGRITY VERIFICATION REPORT，",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wshobson-agents": {
    "title_zh": "多平台插件市场",
@@ -1224,7 +1232,9 @@
    "_无封面原因": "demo/ 里两张图都开过：story-dashboard.png(1440x900) 已经被同仓的 story-cover 那件用掉了；封面-剑道独尊.png(1024x1536) 是一张仙侠小说封面（金色书法大字「剑道独尊」、白衣持剑的长发人物立在云海山峰上、底部作者名「青椒炒肉」）—— 它是 story-cover 的产出物不是 story-deslop 的，而且《剑道独尊》是真实已出版的网文、封面上印的是真作者笔名，我们登上去等于给一本别人的书发一张我们背书的封面。d",
    "hide": false,
    "gate_score": 10,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "worldwonderer-oh-story-claudecode-story-long-scan": {
    "title_zh": "长篇扫榜雷达",
@@ -1416,7 +1426,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/addyosmani-agent-skills-interview-me.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1376,
+   "cover_h": 768
   },
   "addyosmani-agent-skills-doubt-driven-development": {
    "title_zh": "怀疑驱动开发",
@@ -1429,7 +1441,9 @@
    "category": "work",
    "cover": "/skill/assets/covers/addyosmani-agent-skills-doubt-driven-development.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1376,
+   "cover_h": 768
   },
   "addyosmani-agent-skills-code-review-and-quality": {
    "title_zh": "多轴代码评审",
@@ -1673,7 +1687,9 @@
    "title_en": "Kills the fabricated citation before your reviewer finds it",
    "_无封面原因": "docs/images/ 下有 170 张 1536x864 的同模板图，一件 skill 一张 —— 这是宣传/说明卡阵列，正是「OG 卡片混进产出物」那个坑。我开了对题的那张 citation-management.png：是一幅做得挺漂亮的信息图（DISCOVERY 三列 OpenAlex/PubMed/Google Scholar → METADATA extract_metadata.py + WebSearch enrichment → references.bi",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "k-dense-ai-scientific-agent-skills-latex-posters": {
    "title_zh": "学术海报",
@@ -1880,7 +1896,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/mattpocock-skills.png",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 738,
+   "cover_h": 388
   },
   "garrytan-gstack": {
    "title_zh": "YC 掌门的 Claude Code 全套配置，23 个角色分工",
@@ -1894,7 +1912,9 @@
    "cover": "/skill/assets/covers/garrytan-gstack.png",
    "cover_kind": "artwork",
    "cover_real": true,
-   "limit_zh": "这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: 'bypassPermissions'，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。"
+   "limit_zh": "这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: 'bypassPermissions'，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。",
+   "cover_w": 1398,
+   "cover_h": 400
   },
   "nextlevelbuilder-ui-ux-pro-max-skill": {
    "title_zh": "设计智囊库",
@@ -2091,7 +2111,9 @@
    "title_en": "Install your brand once, every screen obeys",
    "_无封面原因": "全仓 0 张图片，但 examples/ 下有 18 个品牌目录，每个是 design-model.yaml + landing-page.html（部分还有 component-library.html / app-screen.html）—— 产出物是 HTML 不是图。我渲染了 halcyon 的组件库和 ridge 的落地页，挑了前者放在 hearted_covers/_optional-dominikmartn-hue.png（2880x1800）：深色页面，左侧 ",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "dzcmemory-web-bazi-ziwei-skill": {
    "title_zh": "排盘交给算法库算，不让模型瞎编的八字与紫微斗数",
@@ -2135,7 +2157,9 @@
    "title_en": "Learns your voice, then actually hits post",
    "_无封面原因": "全仓 0 张图片。产出是 14 天内容日历和发布动作，要平台账号，不跑。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "danilo-znamerovszkij-draw-your-font-draw-your-font": {
    "title_zh": "拍一张手写字母，本地生成能装进系统的 TTF 字体",
@@ -2241,7 +2265,9 @@
    "limit_brief_en": "It does not make the audio; you generate that on Suno.",
    "_无封面原因": "全仓唯一一张 docs/images/be-excellent-to-each-other.jpg(1400x700)，开过：《比尔和泰德历险记》的电影剧照（画面里能认出年轻的基努·里维斯和 Alex Winter 双手张开站在舞台上），底部叠白色大字 'Be Excellent To Each Other'。第三方版权画面 + 真人肖像，两条都撞线，坚决不用。这件其余产出要接 Suno（外部账号）。",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
@@ -2589,7 +2615,9 @@
    "title_en": "Design rules for screens where color means money",
    "_无封面原因": "心选的 skills/trading-design 目录里只有一个 SKILL.md（纯规则文档：密度、配色、组件规范，没有 examples/ 也没有 scripts/）。仓库里 40+ 张图我抽查开过代表性的几张：docs/img/home.png(1440x900) 是 vstack 这个 App 自己的 Home 界面（Needs attention / Recently changed 列表），pi-extensions/*/assets/*.png|gif 是各个",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "vanillagreencom-vstack-iced-rs": {
    "title_zh": "用 Rust Iced 写桌面图形界面",
@@ -2785,7 +2813,9 @@
    "_无封面原因": "4 张图逐张开过，其实是同一张 256x256 反复命名（writing-agent-app/src-tauri/icons/ 下的 128x128.png、128x128@2x.png、32x32.png、icon.png 文件头全是 256x256）：深绿底、米黄圆形里一个 'W' 的 App 图标。demo/ 目录里是整套 md 稿件流程文件（01_theme.md、draft_v1_humanized.md、pre_publish_review.md…），没有图。",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "dongbeixiaohuo-writing-agent-workflow-producer": {
    "title_zh": "调度长文写作的总入口",
@@ -3176,7 +3206,9 @@
    "title_en": "Interviews you once, then stops giving generic advice",
    "_无封面原因": "全仓唯一一张 favicon.png(1442x1718，这个尺寸叫 favicon 挺怪)，开过：黑色圆角方块里一个亮绿色的 '>_' 终端提示符，是 logo。产出是 GTM 策略文档（内容）。",
    "hide": false,
-   "gate_score": 5
+   "gate_score": 5,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "aidevgtm-gtm-cofounder-positioning-and-story": {
    "title_zh": "把产品叙事改写成开发者当英雄的故事",
@@ -3355,7 +3387,9 @@
    "_无封面原因": "全仓 0 张图片。要 IM 机器人 token / webhook 才能跑 → 跳过，没找也没用任何 token。",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "deusyu-translate-book": {
    "title_zh": "把整本书翻译成任何语言",
@@ -3460,7 +3494,9 @@
    "_无封面原因": "全仓唯一一张 assets/device_frame.png(1030x2800)，开过：纯黑的手机边框模板（顶部一小块白），是输入素材不是产出物，宽高比 2.72 本身也过了 2.5 的线。我照 README 真跑了 Stage 1：python3 compose.py --bg '#1F3A93' --verb TRACK --desc 'EVERY PRICE CHANGE' --screenshot <我造的手机截图> --output scaffold.png，**",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "cosmoblk-email-marketing-bible": {
    "title_zh": "做邮件营销的顾问",
@@ -3477,7 +3513,9 @@
    "title_en": "908 sources of email marketing, installed as one consultant",
    "_无封面原因": "全仓 0 张图片。产出是邮件营销顾问建议（内容）。",
    "hide": false,
-   "gate_score": 5
+   "gate_score": 5,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "coffeefuelbump-csv-data-summarizer-claude-skill": {
    "title_zh": "拿到陌生 CSV 先给它做个体检",
@@ -3948,7 +3986,9 @@
    "title_en": "Swipe left on the skills quietly billing you tokens",
    "_无封面原因": "唯一的图是 303 帧终端录屏 GIF。**首帧非背景像素只占 0.2%**（实测），懒加载从第 0 帧起，卡片刚出现就是个空框；而且终端界面录屏不是产出物 —— 这条线跟「界面截图不算产出物」是同一条。中段确实有它的裁决卡（Verdict ✓ Used recently — keep + 快捷键条），但取不出一张能当静态封面的帧。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "312362115-claude-diagram": {
    "title_zh": "自动选对图表类型再画出来",
@@ -4548,7 +4588,9 @@
    "title_en": "A bedtime book read in your own cloned voice",
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book-workflow.png"
+   "cover": "/skill/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book-workflow.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -4788,7 +4830,9 @@
    "_无封面原因": "全仓 0 张图片。产出是调研报告（内容），且要联网搜索。",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wshuyi-research-to-diagram-research-to-diagram": {
    "title_zh": "调研完自动画成知识关系图 PDF",
@@ -5170,7 +5214,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/twentyfivebtea-ink-wash-poster.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1050,
+   "cover_h": 1400
   },
   "liangdabiao-boardgame-io-skill": {
    "hide": true,
@@ -5338,7 +5384,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/dacnay816y62-hub-photo-revival.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 933,
+   "cover_h": 1400
   },
   "quzhan51496-paper2anything-paper2html": {
    "hide": true,
@@ -5354,7 +5402,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/luckdvr-photo-riso-poster.png",
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "jiemianduan-image-to-prompt": {
    "hide": true,
@@ -5582,7 +5632,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-minimal-magazine.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1050,
+   "cover_h": 1400
   },
   "adrianpunk-punk-xhs-cards-punk-xhs-cards": {
    "hide": true,
@@ -5606,7 +5658,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1050,
+   "cover_h": 1400
   },
   "0xsline-dsh-spotlight-dsh-plugin-development": {
    "hide": true,
@@ -5634,7 +5688,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/threerocks-hand-drawn-styles.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 1400
   },
   "devin-axis-ipollowork": {
    "hide": true,
@@ -5666,7 +5722,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/v92388375-gif-pixel-style-poster-skill.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1050,
+   "cover_h": 1400
   },
   "zlanqing-codex-claude-academic-skills-pymoo": {
    "hide": true,
@@ -5776,7 +5834,9 @@
    "why_en": "It seals the two places divination usually slides: no inventing hexagrams, no softening a bad one. Taking a game seriously is itself a kind of taste.",
    "hide": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/neallydare-svg-iching-divination.png"
+   "cover": "/skill/assets/covers/neallydare-svg-iching-divination.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wolke-bazi-mingli": {
    "title_zh": "排八字四柱并给出命理分析",
@@ -5809,7 +5869,9 @@
    "cover_real": false,
    "hide": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/kagurananaga-official-document-writing-skill.png"
+   "cover": "/skill/assets/covers/kagurananaga-official-document-writing-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "panmax-hemingway-skill": {
    "title_zh": "用海明威的冰山理论帮你改写作",
@@ -5827,7 +5889,9 @@
    "_无封面原因": "全仓 0 张图片。examples/demo-conversation.md 是文本。产出是改稿意见（内容）。",
    "hide": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/panmax-hemingway-skill.png"
+   "cover": "/skill/assets/covers/panmax-hemingway-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "yangcodingmaster-photo-distill": {
    "title_zh": "把一张照片蒸馏成极简 zine 海报",
@@ -5863,7 +5927,9 @@
    "why_en": "Narrow to one city and one allergen — and for those people it's essential. That kind of unembarrassed narrowness is exactly what a large marketplace never covers.",
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/ruochenlyu-beijing-pollen-monitor.png"
+   "cover": "/skill/assets/covers/ruochenlyu-beijing-pollen-monitor.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zexuanw958-svg-travel-plan-viz": {
    "title_zh": "把旅行计划做成手机上能离线看的网页",
@@ -5900,7 +5966,9 @@
    "_无封面原因": "全仓唯一一张图 skills/ljg-card/assets/logo.png(480x480)，开过：牛皮纸底上一张写实线描的男性肖像（作者头像）。两条都不过 —— 写实人像不登，而且它属于同仓的 ljg-card，心选的是 ljg-writes。",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "chenklein26-maker-fitness-coach-rpg": {
    "title_zh": "把长期健身做成有剧情的 RPG",
@@ -5918,7 +5986,9 @@
    "_无封面原因": "全仓 0 张图片。examples/ 里是 md 和 json（AUTHOR-WORLD-SAMPLE.md、MINIMAL-RUN.md、completed-save/CURRENT-STATE.json、sessions/2026-07-29.json），产出物是剧情文本 + 状态 JSON，没有任何可视产出物。",
    "hide": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/chenklein26-maker-fitness-coach-rpg.png"
+   "cover": "/skill/assets/covers/chenklein26-maker-fitness-coach-rpg.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "joeseesun-qiaomu-campus-resume": {
    "title_zh": "给应届生从零做一份可投递的简历",
@@ -5955,7 +6025,9 @@
    "_无封面原因": "4 张图逐张开过：skills/multi-content-feed/assets/default_cover.png 和 skills/playlet-xiaohongshu-feed/assets/default_cover.png（都是 72x112 的灰色占位图）；skills/visual-ops-writer/assets/02.jpg 和 03.jpg（扩展名是 .jpg，文件头其实是 webp，1376x768）是漫画风探店图文长图，右上角带 'ZCOOL 快",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "dacnay816y62-hub-fantasy-movie-poster-skill": {
    "hide": false,
@@ -5967,7 +6039,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 932,
+   "cover_h": 1400
   },
   "jimliu-baocut-baocut": {
    "hide": true,
@@ -6092,7 +6166,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/yuanzhao321-tcm-skill.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "jangviktor-web-wujutong": {
    "title_zh": "按三焦辨证给温病方，古人矛盾处照原样留着",
@@ -6107,7 +6183,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/jangviktor-web-wujutong.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "voidforall-fengshui-skill": {
    "title_zh": "先说自己不算命的风水顾问",
@@ -6123,7 +6201,9 @@
    "limit_zh": "三套体系常互相打架，并排展示不替你裁决。葬法地域差异极大，别当通例。",
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/voidforall-fengshui-skill.png"
+   "cover": "/skill/assets/covers/voidforall-fengshui-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "seiya89757-naming-skill": {
    "title_zh": "全家为起名吵架时出来当中间人",
@@ -6139,7 +6219,9 @@
    "limit_zh": "不做店名/品牌/宠物/游戏角色/虚构名，不做纯算命、不解读已有名字。方言校验只覆盖它掌握的语组。",
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/seiya89757-naming-skill.png"
+   "cover": "/skill/assets/covers/seiya89757-naming-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "mrchendev-cantonese-lyrics": {
    "title_zh": "逐字查九声六调，填不倒字的粤语词",
@@ -6168,7 +6250,9 @@
    "limit_zh": "仅 53 个有监测站的城市；淡季报无、单日缺口正常。备用源是扩散指数不是浓度，别当同一个数。仅中国大陆。",
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/xxxonechen-pollen-query.png"
+   "cover": "/skill/assets/covers/xxxonechen-pollen-query.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "sunnypanzhen-fishing-skill": {
    "title_zh": "新手买竿，老手看天：从选位讲起",
@@ -6184,7 +6268,9 @@
    "why_zh": "目录本身就是论点：选位写在最前。先讲位置和天气，再谈装备——把老手和新手真正分开的那一层。",
    "limit_zh": "经验知识，无实时水位/天气接口，仍要自己对照当天。偏中国淡水台钓路亚；海钓篇幅更薄。",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "alaric1098-china-pension-strategy-skill": {
    "title_zh": "社保断缴要不要补，用脚本算给你看",
@@ -6200,7 +6286,9 @@
    "why_zh": "每个政策数字都走确定性 CLI，明说从不在对话里口算。模型最容易算错社保算术，这扇门它关死了。",
    "limit_zh": "隐私分 ALLOW / REDACT / BLOCK——身份证、社保号等走屏蔽。地区规则会变，脚本参数需对照当地最新文件；不是法律意见。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "mixiaxiaoyu-scraply": {
    "title_zh": "照片排成带票据和胶带的手账跨页",
@@ -6246,7 +6334,9 @@
    "cover_kind": "artwork",
    "cover_real": true,
    "_无封面原因": "作者仓库里没有产出物样张（逐张开过：Claude 客户端界面截图，标签写「Call of Cthulhu KP host setup」，正文是整屏中文跑团尾）",
-   "gate_score": 8
+   "gate_score": 8,
+   "cover_w": 1661,
+   "cover_h": 1080
   },
   "wangchangwei-arb-skill": {
    "title_en": "Build the evidence file after you're fired",
@@ -6258,7 +6348,9 @@
    "cover_real": false,
    "_无封面原因": "仓库只有一张图的两个格式：docs/flow-architecture.png 和 .svg（1200x540），开过：仲裁 skill 的完整流程图（输入 INPUT → 核心计算 CORE COMPUTATION 五个方框 → 输出 OUTPUT / 补充说明 四层），是文档流程图，不是产出物。要当 cover_kind=diagram 用是对题的（宽高比 2.22，没过线），但它不是 artwork。产出是劳动仲裁的证据和算钱结论（内容），也不做 ours。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "bh-m87-futu-statement-skill": {
    "title_en": "Find the numbers a broker statement hides",
@@ -6270,7 +6362,9 @@
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。输入必须是本人富途月结单 = 真实个人金融数据，明确不跑。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "tong666-bit-liu-xiaoyan-skill": {
    "title_en": "Exam coaching that refuses to sound like a textbook",
@@ -6283,7 +6377,9 @@
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是四六级讲解文本。",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "xntj-ai-baoxiao": {
    "title_en": "Loose receipts into a filed expense claim",
@@ -6304,7 +6400,9 @@
    "_无封面原因": "全仓 0 张图片。example_skills/ 是 4 组角色卡（SKILL.md/story.md/persona.md/meta.json）加 4 个同名 zip，全是文本。",
    "hide": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/zzzzzzza-larp-skill.png"
+   "cover": "/skill/assets/covers/zzzzzzza-larp-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "weante-city-salary": {
    "title_en": "Take-home pay by the rules of your actual city",
@@ -6327,7 +6425,9 @@
    "hide": false,
    "gate_score": 10,
    "cover": "/skill/assets/covers/chongchonghaoman-feline-health-advisory.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "r0ses1r-dev-birdsight": {
    "title_zh": "查稀有鸟最近落在哪，顺带说清中文名是台湾译名",
@@ -6343,7 +6443,9 @@
    "_无封面原因": "全仓 0 张图片。要 eBird API key 才能查鸟况 → 按规矩跳过，没去找、没读、也没用任何 key。",
    "hide": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/r0ses1r-dev-birdsight.png"
+   "cover": "/skill/assets/covers/r0ses1r-dev-birdsight.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wei011-heat-risk-calc": {
    "title_zh": "用湿球温度算出 48℃ 的吐鲁番比长沙安全",
@@ -6359,7 +6461,9 @@
    "hide": false,
    "gate_score": 10,
    "cover": "/skill/assets/covers/wei011-heat-risk-calc.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "fxw-labs-beachcombing": {
    "title_zh": "把你必须几点前撤离滩涂顶在报告最前面的赶海参谋",
@@ -6375,7 +6479,9 @@
    "_无封面原因": "全仓 0 张图片。产出是赶海撤离时间报告（内容），且要实时潮汐数据源。",
    "hide": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/fxw-labs-beachcombing.png"
+   "cover": "/skill/assets/covers/fxw-labs-beachcombing.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "yeyulangzi-parenting-advisor": {
    "title_zh": "专防「假托崔玉涛」文章的 0–13 岁育儿参谋",
@@ -6390,7 +6496,9 @@
    "hide": false,
    "gate_score": 10,
    "cover": "/skill/assets/covers/yeyulangzi-parenting-advisor.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "violasi-reading-diary": {
    "title_zh": "把分级读物 PDF 里嵌的真人音频一页页抠出来",
@@ -6434,7 +6542,9 @@
    "_无封面原因": "全仓 0 张图片。examples/example_session.md 是文本。产出是训练/饮食处方（内容）。",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "marcotini-fraudi": {
    "title_zh": "一轮只问一个问题，帮你把自己想清楚",
@@ -6504,7 +6614,9 @@
    "hide": false,
    "gate_score": 10,
    "cover": "/skill/assets/covers/c1375-noir-interrogation.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "rubyzhu26-see-life-wallpaper-skill": {
    "title_zh": "用草间弥生画孤独、米罗画温暖的每日五感壁纸",
@@ -6536,7 +6648,9 @@
    "hide": false,
    "gate_score": 10,
    "cover": "/skill/assets/covers/wr5912-human-allegory-engine.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
    "title_zh": "按你的训练记录算下一次该练什么",
@@ -6556,7 +6670,9 @@
    "_无封面原因": "全仓唯一一张 concept.png(1672x941)，开过：AI 生成的宣传概念图 —— 浅灰渐变背景上立着一台平板，屏幕里是「用户数据 / 知识库 / 增肌减脂 / RPE·RM 7.5」四张卡片和一条 用户数据→安全边界→训练逻辑→输出计划 的流程条，顶部大字「系统健身 System Fitness Advisor.skill」。这是 hero 宣传图（1672x941 这个尺寸站上已经有好几件是当 hero 收的），不是产出物。",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zhlmi-moodboard-alignment": {
    "title_zh": "把「要高级要有质感」变成能确认的方向稿",
@@ -6618,7 +6734,9 @@
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是换装视频脚本文本。",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "aldefy-compose-expert": {
    "title_zh": "答 Compose 问题必附 androidx 源码出处",
@@ -6639,7 +6757,9 @@
    "_无封面原因": "全仓 0 张图片（png/jpg/jpeg/gif/webp/svg/bmp 全查过）。产出物是即梦 Seedance 2.5 的提示词文本，没有可视产出物。要自截图得有即梦付费账号 → 按规矩跳过，没去找任何账号或 key。",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "nolangz-breathing-montage-skill": {
    "title_zh": "把高密度剪辑排成骨架，白闪只准一帧、全片四次",
@@ -6668,7 +6788,9 @@
    "_无封面原因": "3 张图逐张开过：① assets/personal-brand/像素公众号头图示例.png(2560x1088) 是花叔本人的像素风公众号头图「一人公司，也有品牌部了」，右下角印着 hUasheng.ai；② 像素品牌资产.png(3560x4712) 是九宫格品牌资产册（主标识/色板/字体/名片/T恤/渔夫帽/马克杯/贴纸/数字资产），做得很好看、比例 1.32 很合卡片，**但名片那一格里有二维码，还有 hello@huashu.dev 和 Beijing, China",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "luji12-luji-pet-streetwear-mood-avatar": {
    "title_zh": "宠物收成街头情绪头像",
@@ -6683,7 +6805,9 @@
    "hide": false,
    "gate_score": 7,
    "cover": "/skill/assets/covers/luji12-luji-pet-streetwear-mood-avatar.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zgdfsgd-pet-nutritionist": {
    "title_zh": "严禁给龙猫洗澡、也给矮脚马算食谱的宠物营养师",
@@ -6700,7 +6824,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/zgdfsgd-pet-nutritionist.png"
+   "cover": "/skill/assets/covers/zgdfsgd-pet-nutritionist.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "pengchenge-pet-skill": {
    "title_zh": "先填九项档案，之后叫一声名字它就用「我」接话",
@@ -6752,7 +6878,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/mocomeng-666-bluey-parenting-skill.png"
+   "cover": "/skill/assets/covers/mocomeng-666-bluey-parenting-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "the-data-galaxy-child-reading-adventures-skill-design-child-reading-adventures": {
    "title_zh": "给孩子设计读书任务，页码只在核过这一版分页后才写",
@@ -6804,7 +6932,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是装修报价单的漏项审阅结论（判断类内容），不做 ours。",
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zeoxcode-gaokao-advisor-skill-gaokao-advisor": {
    "title_zh": "按经济下行期算账、和招生办天然对立的志愿顾问",
@@ -6981,7 +7111,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。这件的输入必须是本人一整年的日记 = 真实个人数据，按铁律宁可没封面，明确不跑。",
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "terkelg-anki-markdown-anki": {
    "title_zh": "你不点头一张都不写进 Anki 的闪卡生成器",
@@ -7086,7 +7218,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan.png"
+   "cover": "/skill/assets/covers/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "mayuwen18-china-primary-school-tutor": {
    "title_zh": "批改只圈第一个影响结果的错，讲解先给提示再给半成品",
@@ -7137,7 +7271,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/bohandu-cook-with-what-you-have-cook-with-what-you-have.png"
+   "cover": "/skill/assets/covers/bohandu-cook-with-what-you-have-cook-with-what-you-have.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "ryunana-xbloom-studio-recipe-skill": {
    "title_zh": "翻车只准改一个变量的 xBloom 冲煮配方",
@@ -7190,7 +7326,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/xlt-6-boardgame-creator.png"
+   "cover": "/skill/assets/covers/xlt-6-boardgame-creator.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zgdfsgd-balcony-farmer": {
    "title_zh": "把「采收前 7 天停药」写成硬规则的阳台种菜参谋",
@@ -7276,7 +7414,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 10,
-   "cover": "/skill/assets/covers/jadel-kemo-trpg-log-copilot-skill.png"
+   "cover": "/skill/assets/covers/jadel-kemo-trpg-log-copilot-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "mantyke-game-notebook-skill": {
    "title_zh": "奇数页孔在左偶数页在右，把攻略印成活页手账",
@@ -7381,7 +7521,9 @@
    "cover": "/skill/assets/covers/2998980-hue-surreal-pop-collage.png",
    "cover_kind": "og",
    "cover_real": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "aryaminus-astro-astrology": {
    "title_zh": "本地星历实算西洋·印度·八字三盘",
@@ -7399,7 +7541,9 @@
    "cover_real": false,
    "_无封面原因": "全仓唯一一张 claude.gif(1440x898, 10MB)，逐帧开过（第 0/220/440/660 帧）：是 claude.ai 网页录屏 —— 浏览器窗口、Free plan·Upgrade、输入框里打 /astrology how will my june go、下一帧是聊天页在问 What's your date of birth?，**全程没有出现星盘或任何产出物**，而且画面里有别人的账号名 sunim 和聊天 URL。界面截图 + 他人账号信息 → 不用",
    "gate_score": 8,
-   "cover": "/skill/assets/covers/aryaminus-astro-astrology.png"
+   "cover": "/skill/assets/covers/aryaminus-astro-astrology.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "hiyeshu-trip-map-builder": {
    "title_zh": "会替你删掉一半心愿单的行程地图生成器",
@@ -7418,7 +7562,9 @@
    "cover_real": false,
    "_无封面原因": "仓库 0 张图片，只有 assets/template.html（Leaflet + CartoDB 瓦片，不需要 API key）。我照模板真跑出来了：填了 5 个京都点位（坐标逐个用 OpenStreetMap Nominatim 查的，没凭记忆写——顺带发现「錦市場」直接查会命中北京一个服装批发市场），playwright 截图存在 hearted_covers/_optional-hiyeshu-trip-map.png（1800x2400，画面是京都地图上 5 个橙",
    "gate_score": 10,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "emaynard-claude-family-history-research-skill": {
    "title_zh": "你一说出祖先名字它就拒绝立刻开搜",
@@ -7556,7 +7702,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出物是苏格拉底式追问对话（判断/评语类内容），按规矩不拿 demo 对话当自截图。",
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "evan715823-cheatsheet-generator-skill-cheatsheet-generator": {
    "title_zh": "认为页脚留白就是浪费考试资源的速查表",
@@ -7695,7 +7843,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/qian-gugugaga-character_skill_producer.png"
+   "cover": "/skill/assets/covers/qian-gugugaga-character_skill_producer.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "flowful-ai-cad-skill": {
    "title_zh": "动一行几何代码之前先去查真实尺寸的建模台",
@@ -7819,7 +7969,9 @@
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出物是维权文书和「定金/订金」的算钱结论（内容/判断），不做 ours。",
    "gate_score": 9,
-   "cover": "/skill/assets/covers/yunpeng192-legal-language-bridge.png"
+   "cover": "/skill/assets/covers/yunpeng192-legal-language-bridge.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "senzhang88-socialist-workers-power-work-powers-shanghai": {
    "title_zh": "门禁被关了也让你去打卡，被拦就报警拿回执",
@@ -8171,7 +8323,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/jasonbhorne-guitar-skill-guitar.png"
+   "cover": "/skill/assets/covers/jasonbhorne-guitar-skill-guitar.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "dougcompton-guitar-coach-guitar-coach": {
    "title_zh": "每次练琴出一份计时日志，三份之后自己排出纠正练习",
@@ -8383,7 +8537,9 @@
    "cover_real": false,
    "_无封面原因": "作者没放图（仓库树 10 项，零图片文件）。",
    "gate_score": 9,
-   "cover": "/skill/assets/covers/jiang59991-qiaopi.png"
+   "cover": "/skill/assets/covers/jiang59991-qiaopi.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "elhamid-as-told-to-as-told-to": {
    "title_zh": "把父母的人生录成逐字稿，另出一份下次接着问的笔记",
@@ -8400,7 +8556,9 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "/skill/assets/covers/elhamid-as-told-to-as-told-to.png"
+   "cover": "/skill/assets/covers/elhamid-as-told-to-as-told-to.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "brendanbank-fix-my-text-skill-fix-my-text": {
    "title_zh": "b/d 写反了帮你改、口语拼法一个不动的改字台",
@@ -9285,7 +9443,9 @@
    "limit_zh": "不是热闹大片。要霓虹、要满版字，对不上。",
    "category": "creative",
    "cover": "/skill/assets/covers/moonlin1213-muted-zine-poster-v01.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "pqpo-pragma-code-cleanup-audit": {
    "hide": true,
@@ -9620,7 +9780,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3": {
    "title_zh": "把一场戏蒸成一本小 zine",
@@ -9632,7 +9794,9 @@
    "gate_score": 9,
    "tagline_zh": "可翻的薄刊物，不是一张海报",
    "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "jinchenma94-bazi-skill": {
    "title_zh": "四柱八字，把生辰当成一张表来排",
@@ -9643,7 +9807,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/jinchenma94-bazi-skill.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "eternityspring-shuohao-skills-novel-characters": {
    "title_zh": "短剧开拍前先把角色拆开",
@@ -9666,7 +9832,9 @@
    "hide": false,
    "gate_score": 9,
    "cover": "/skill/assets/covers/crawfordxx-xiaoma-durex-copywriter.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "yokel1121-muyang-illustration-skills-muyang-oriental-poetry": {
    "title_zh": "东方诗意插画，一款一装",
@@ -9678,7 +9846,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/yokel1121-muyang-illustration-skills-muyang-oriental-poetry.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 560
   },
   "vieeeeeee-wibi-style-textile-toy-portrait": {
    "title_zh": "把人收成纺织玩偶肖像",
@@ -9690,7 +9860,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/vieeeeeee-wibi-style-textile-toy-portrait.png",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 931
   },
   "vieeeeeee-wibi-style-glitch-pixel-collage": {
    "title_zh": "故障像素拼贴",
@@ -9702,7 +9874,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/vieeeeeee-wibi-style-glitch-pixel-collage.png",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 931
   },
   "gnipbao-flat-poster-op": {
    "title_zh": "有证据的扁平海报复刻",
@@ -9713,7 +9887,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/gnipbao-flat-poster-op.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "liamgvchi-gc-minimal-ip-doodle": {
    "title_zh": "保住角色的手绘涂鸦",
@@ -9726,7 +9902,9 @@
    "tagline_zh": "同一张脸反复画，五官不许漂",
    "cover": "/skill/assets/covers/liamgvchi-gc-minimal-ip-doodle.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 360,
+   "cover_h": 480
   },
   "evianis-travel-photo-abstraction-travel-photo-abstraction": {
    "title_zh": "旅行照片蒸成稀疏编辑稿",
@@ -9737,7 +9915,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "liyue-aigc-xianxia-visual-director-xianxia-visual-director": {
    "title_zh": "仙侠静帧导演",
@@ -9748,7 +9928,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/liyue-aigc-xianxia-visual-director-xianxia-visual-director.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "carolinaaafy-travel-memory-sticker-card": {
    "title_zh": "旅行照片做成记忆贴纸卡",
@@ -9760,7 +9942,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/carolinaaafy-travel-memory-sticker-card.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 933
   },
   "wnby-photo-relic-editorial": {
    "title_zh": "把真照片做成 Photo Relic",
@@ -9771,7 +9955,9 @@
    "hide": false,
    "gate_score": 8,
    "cover": "/skill/assets/covers/wnby-photo-relic-editorial.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "ayi-ai-nie-grassroots-logic": {
    "title_zh": "聂辉华《基层中国的运行逻辑》方法箱",
@@ -9783,7 +9969,9 @@
    "gate_score": 8,
    "cover": "/skill/assets/covers/ayi-ai-nie-grassroots-logic.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 735
   },
   "oil-oil-oil-motion": {
    "title_zh": "一套切开的网页动效",
@@ -9821,7 +10009,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/yokel1121-muyang-illustration-skills-muyang-dark-fashion.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 560
   },
   "vieeeeeee-wibi-style": {
    "hide": true
@@ -9839,7 +10029,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/n1ko724-kodak-2383-film-look-kodak-2383-film-look.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 700
   },
   "luji12-handdrawn-photo-poster": {
    "title_zh": "暗原照上贴一枚手绘邮签",
@@ -9851,7 +10043,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/luji12-handdrawn-photo-poster.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1024,
+   "cover_h": 1536
   },
   "liuzihe849-png-ai-editorial-print-studio": {
    "title_zh": "照片收成复古编辑印刷插画",
@@ -9862,7 +10056,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/liuzihe849-png-ai-editorial-print-studio.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "iamkong-photo-to-minimal-illustration": {
    "title_zh": "照片收成田野速写式极简稿",
@@ -9874,7 +10070,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/iamkong-photo-to-minimal-illustration.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1200,
+   "cover_h": 900
   },
   "haorantang97-antibes-holiday-antibes-holiday": {
    "title_zh": "安提布假期那套黑笔闲笔",
@@ -9885,7 +10083,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/haorantang97-antibes-holiday-antibes-holiday.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wnby-paper-spirit-zine-paper-spirit-zine": {
    "title_zh": "原片还在，下面铺一层纸",
@@ -9897,7 +10097,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/wnby-paper-spirit-zine-paper-spirit-zine.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 839,
+   "cover_h": 1400
   },
   "kkenny0-card-skill": {
    "title_zh": "证据收成一种纸面",
@@ -9909,7 +10111,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/kkenny0-card-skill.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 1400
   },
   "zhu930824-poetic-line-zine-poster": {
    "title_zh": "上半原片，下半抽成线",
@@ -9920,7 +10124,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/zhu930824-poetic-line-zine-poster.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "liigoqi-photo-to-travel-sketch": {
    "title_zh": "旅行照片收成赶路速写",
@@ -9931,7 +10137,9 @@
    "gate_score": 8,
    "category": "life",
    "cover": "/skill/assets/covers/liigoqi-photo-to-travel-sketch.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "traveler0621-reality-restaged": {
    "title_zh": "纪实照片重新搭台",
@@ -9943,7 +10151,9 @@
    "category": "life",
    "cover": "/skill/assets/covers/traveler0621-reality-restaged.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 788
   },
   "lzs0594-dreamy-motion-editorial": {
    "title_zh": "日常照片收成雾面编辑稿",
@@ -9954,7 +10164,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/lzs0594-dreamy-motion-editorial.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "n1ko724-scene-to-art-lab-scene-to-art-lab": {
    "title_zh": "一场戏收进艺术实验室",
@@ -9966,7 +10178,9 @@
    "category": "creative",
    "cover": "/skill/assets/covers/n1ko724-scene-to-art-lab-scene-to-art-lab.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 787
   },
   "hchen1218-heytea-style": {
    "title_zh": "按喜茶那套视觉做一张",
@@ -9977,7 +10191,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/hchen1218-heytea-style.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "whiplashzeb-photo-to-zine-postcard": {
    "title_zh": "照片收成一张可寄的刊物明信片",
@@ -9989,7 +10205,9 @@
    "category": "fun",
    "cover": "/skill/assets/covers/whiplashzeb-photo-to-zine-postcard.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 933,
+   "cover_h": 1400
   },
   "liuzihe849-png-silhouette-group-collage-silhouette-group-collage": {
    "title_zh": "一群人收成剪影拼贴",
@@ -10000,7 +10218,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "zzzlc0405-photo-abstract-editorial": {
    "title_zh": "照片抽成抽象编辑页",
@@ -10011,7 +10231,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/zzzlc0405-photo-abstract-editorial.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction": {
    "title_zh": "旅行照片收成软抽象",
@@ -10023,7 +10245,9 @@
    "category": "life",
    "cover": "/skill/assets/covers/wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 840,
+   "cover_h": 1400
   },
   "liigoqi-vinyl-image-generator": {
    "title_zh": "照片压成一张黑胶封面",
@@ -10034,7 +10258,9 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/liigoqi-vinyl-image-generator.png",
-   "cover_kind": "og"
+   "cover_kind": "og",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "carolinaaafy-travel-memory-card-duo": {
    "title_zh": "旅行记忆卡成对出",
@@ -10046,7 +10272,9 @@
    "category": "life",
    "cover": "/skill/assets/covers/carolinaaafy-travel-memory-card-duo.png",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 933
   },
   "joeyhu1108-maker-selective-ink-sketch": {
    "title_zh": "照片收成选择性墨水素描",
@@ -10057,7 +10285,9 @@
    "hide": false,
    "cover": "/skill/assets/covers/joeyhu1108-maker-selective-ink-sketch.jpg",
    "cover_kind": "artwork",
-   "cover_real": true
+   "cover_real": true,
+   "cover_w": 1400,
+   "cover_h": 797
   },
   "luji12-retro-scrapbook-collage": {
    "title_zh": "把日常照片转成复古剪贴簿海报",
@@ -10191,7 +10421,9 @@
    "hide": false,
    "cover": "/skill/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png",
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "kvnkld-aicss": {
    "title_zh": "给 AI 对话界面用的现成 React 组件和 CLI",
@@ -10205,7 +10437,9 @@
    "hide": false,
    "cover": "/skill/assets/covers/kvnkld-aicss.png",
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "kacperkapusciak-goldie-goldie": {
    "title_zh": "在模拟器里跑一遍你的 App，出上架用的截图和预览视频",
@@ -10219,13 +10453,75 @@
    "hide": false,
    "cover": "/skill/assets/covers/kacperkapusciak-goldie-goldie.png",
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "op7418-youtube-clipper-skill": {
-   "cover": "/skill/assets/covers/op7418-youtube-clipper-skill.png"
+   "cover": "/skill/assets/covers/op7418-youtube-clipper-skill.png",
+   "cover_w": 1200,
+   "cover_h": 600
   },
   "fxw-labs-easy-humanizer-zh": {
-   "cover": "/skill/assets/covers/fxw-labs-easy-humanizer-zh.png"
+   "cover": "/skill/assets/covers/fxw-labs-easy-humanizer-zh.png",
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "ayi-ai-ayi-nonviolent-communication": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "paramchoudhary-resumeskills": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "zzzlc0405-photo-chromatic-abstraction-style-1": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "yeyulangzi-personal-reflector": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "cloudai-x-threejs-skills-threejs-animation": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "khazp-vibe-coding-prompt-template-vibe-techdesign": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "codeswithroh-tastemaker-tastemaker": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "copilotkit-copilotkit-a2ui-renderer": {
+   "cover_w": 256,
+   "cover_h": 256
+  },
+  "moonlin1213-cove-tarot-companion": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "simon-he95-markstream-vue-markstream-vue": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "alchaincyf-huashu-report": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "cloudai-x-threejs-skills-threejs-postprocessing": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "cloudai-x-threejs-skills-threejs-shaders": {
+   "cover_w": 1200,
+   "cover_h": 600
+  },
+  "cloudai-x-threejs-skills": {
+   "cover_w": 1200,
+   "cover_h": 600
   }
  },
  "gate": {
