@@ -40,6 +40,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 切片：GitHub 代码搜索单查询最多回 1000 条，所以用互不相同的第二关键词切开。
 # 这些词**不是题材**，是 SKILL.md 里普遍会出现的结构性字段和常见动词 ——
 # 目的是覆盖面，不是筛口味。
+# 三条通道，都不依赖「我猜它是什么题材」：
+#   ① topic:   —— 仓库**自己贴的标签**
+#   ② awesome  —— 别人已经筛过一轮的精选清单
+#   ③ filename —— 按 SKILL.md 这个定义特征枚举（下面 SLICES）
+#
+# 2026-09-02 量的盲区：三个 topic 按星排的**前 600 里，397 个我们从来没见过**；
+# awesome 清单里 27 个没见过。连最显然的「按星排序」都没看过 —— 漏斗就这么窄。
+TOPICS = ("claude-skills", "agent-skills", "claude-code-skills",
+          "claude-code", "ai-agent-skills")
+AWESOME = ("ComposioHQ/awesome-claude-skills", "travisvn/awesome-claude-skills",
+           "diegosouzapw/awesome-omni-skills")
+
 SLICES = [
     "user-invocable", "allowed-tools", "license", "trigger", "workflow",
     "output", "checklist", "template", "reference", "example",
@@ -85,6 +97,39 @@ def main() -> int:
     seen = known_repos()
     print(f"已知仓 {len(seen)} 个（含拒收榜）—— 只报没见过的\n")
     found: dict[str, dict] = {}
+
+    # ① 仓库自己贴的标签
+    for t in TOPICS:
+        n = 0
+        for page in (1, 2):
+            d = gh(f"search/repositories?q=topic:{t}&sort=stars&order=desc&per_page=100&page={page}")
+            for it in d.get("items", []):
+                f = it.get("full_name") or ""
+                if f and f.lower() not in seen and f not in found:
+                    found[f] = {"via": f"topic:{t}", "stars": it.get("stargazers_count", 0)}
+                    n += 1
+            time.sleep(1)
+        print(f"  topic:{t:<22} 新增 {n:3d}  （累计 {len(found)}）")
+
+    # ② 别人已经筛过一轮的精选清单
+    import re as _re, urllib.request as _U
+    for r in AWESOME:
+        n = 0
+        try:
+            txt = _U.urlopen(f"https://raw.githubusercontent.com/{r}/HEAD/README.md",
+                             timeout=30).read().decode("utf-8", "replace")
+        except Exception as e:
+            print(f"  awesome {r} 读不到（{e}）"); continue
+        for m in _re.findall(r"github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)", txt):
+            m = m.rstrip(")").removesuffix(".git")
+            if m.lower() in seen or m in found or m.lower() == r.lower():
+                continue
+            if m.startswith(("user-attachments/", "sponsors/", "topics/")):
+                continue                       # 那些不是仓库
+            found[m] = {"via": f"awesome:{r.split('/')[0]}"}
+            n += 1
+        print(f"  awesome:{r.split('/')[0]:<19} 新增 {n:3d}  （累计 {len(found)}）")
+    print()
     for term in SLICES:
         q = urllib.parse.quote(f'filename:SKILL.md "{term}"')
         new_here = 0

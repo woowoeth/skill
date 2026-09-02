@@ -100,6 +100,51 @@ def scan(batch: list[dict], out_json: str, timeout: int) -> list[dict]:
     return d if isinstance(d, list) else d.get("results", d.get("items", []))
 
 
+def shelved_unscanned() -> list[dict]:
+    """**已经在架、但还没扫过红线的。** 先发后审的「审」就是审这一批。
+
+    2026-09-02 店主定了先发后审：文案齐就当轮上架，红线扫描挪到上架之后。
+    好处是货架每天真的会动；代价是有命中的货会在架上停留最多一轮。
+    **那个代价只有在「审真的发生」时才可接受** —— 所以这个函数每轮都跑，
+    扫出命中的当场撤下并写 unshelf_reason，不能悄悄消失。
+    """
+    try:
+        arch = set(json.load(open(os.path.join(ROOT, "scouts", "scan_archive.json"),
+                                  encoding="utf-8"))["entries"])
+    except Exception:
+        arch = set()
+    live = {x["id"] for x in json.load(open(os.path.join(ROOT, "skills", "feed.json"),
+                                            encoding="utf-8"))["skills"]}
+    out = []
+    for f in glob.glob(os.path.join(ROOT, "skills", "*.json")):
+        if f.endswith(("feed.json", "rejected-feed.json")):
+            continue
+        try:
+            d = json.load(open(f, encoding="utf-8"))
+        except Exception:
+            continue
+        if d["id"] in live and d["id"] not in arch:
+            d["_file"] = f
+            out.append(d)
+    return out
+
+
+def pull_down(items: list[tuple[dict, str]]) -> None:
+    """撤下并留痕。**两层都要写** —— 人工层 curation.json 永远覆盖机器层，
+    只改 skills/*.json 的 hide 不生效（2026-09-02 栽过两次）。"""
+    cur_p = os.path.join(ROOT, "editorial", "curation.json")
+    cur = json.load(open(cur_p, encoding="utf-8"))
+    for d, why in items:
+        f = d.get("_file")
+        d2 = {k: v for k, v in d.items() if k != "_file"}
+        d2["hide"] = True
+        json.dump(d2, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        e = cur["items"].setdefault(d["id"], {})
+        e["hide"] = True
+        e["unshelf_reason"] = f"先发后审：上架后补扫命中红线 —— {why}"
+    json.dump(cur, open(cur_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
 def main():
     ap = argparse.ArgumentParser(description="扫红线，干净的自动上架")
     ap.add_argument("--max", type=int, default=12, help="每轮最多处理几件（大仓库很慢）")
@@ -108,12 +153,18 @@ def main():
     ap.add_argument("--dry", action="store_true")
     a = ap.parse_args()
 
+    # 先发后审：**先审在架的**（它们已经对访客可见，风险在这边），
+    # 审完还有余额再顺手放行库房里的。
+    onshelf = shelved_unscanned()
     held = held_items()
-    if not held:
-        print("[release] 库房里没有等着放行的（文案已写好的）新货")
+    todo = (onshelf + held)[:a.max]
+    if not todo:
+        print("[release] 在架的都扫过了，库房也没有文案齐的新货")
         return
-    todo = held[:a.max]
-    print(f"[release] 库房 {len(held)} 件待放行，本轮处理 {len(todo)} 件")
+    print(f"[release] 在架待补扫 {len(onshelf)} 件 · 库房待放行 {len(held)} 件"
+          f" —— 本轮处理 {len(todo)} 件（在架的排前面）")
+    live_ids = {x["id"] for x in json.load(open(os.path.join(ROOT, "skills", "feed.json"),
+                                                encoding="utf-8"))["skills"]}
 
     released, kept = [], []
     tmp = os.path.join(os.environ.get("RUNNER_TEMP", "/tmp"), "release_scan.json")
@@ -140,6 +191,14 @@ def main():
                 released.append(d)
         time.sleep(1)
 
+    # 在架的有命中 → 撤下；库房的有命中 → 本来就没上架，留着即可。
+    pull = [(d, why) for d, why in kept if d["id"] in live_ids]
+    if pull and not a.dry:
+        pull_down(pull)
+    if pull:
+        print(f"\n[release] **撤下 {len(pull)} 件**（先发后审：上架后补扫命中红线）：")
+        for d, why in pull:
+            print(f'   ✗ {d.get("title_zh") or d.get("name")}  ({d["repo"]})  —— {why}')
     for d in released:
         if a.dry:
             continue
