@@ -38,8 +38,29 @@ def check_covers(items, sample: int) -> None:
     if miss:
         note("坏", f"{len(miss)} 张卡没有封面（访客下拉会撞到空洞）",
              [f"第{items.index(x)+1}位 {x.get('title_zh','')[:26]}" for x in miss[:8]])
-    urls = [(x["id"], x.get("cover") or x.get("cover_url")) for x in items
-            if (x.get("cover") or x.get("cover_url"))]
+    # 指向我们自己仓的封面**查本地文件**，不发 HTTP。
+    # 2026-09-02 的坑：这一步在工作流里排在 Commit 之前，本轮新写的封面还没推上去，
+    # raw.githubusercontent 自然 404 —— CI 里报「4 张打不开」，本地跑全 200。
+    # **那不是货坏了，是体检站错了位置，而且会每轮误报。**
+    # 本地文件在不在，才是「它推上去之后能不能显示」的正确判据。
+    OURS = "/woowoeth/skill/HEAD/"
+    urls, missing_local = [], []
+    for x in items:
+        u = x.get("cover") or x.get("cover_url")
+        if not u:
+            continue
+        if OURS in u:
+            rel = u.split(OURS, 1)[1]
+            if not os.path.exists(os.path.join(ROOT, rel)):
+                missing_local.append(f"{x['id']} → {rel}")
+        else:
+            urls.append((x["id"], u))
+    if missing_local:
+        note("坏", f"{len(missing_local)} 张封面写着我们仓里的路径，但文件不存在",
+             missing_local[:6])
+    else:
+        n_ours = sum(1 for x in items if OURS in (x.get("cover") or x.get("cover_url") or ""))
+        print(f"  ✓ 自家仓封面 {n_ours} 张，文件都在")
     step = max(1, len(urls) // sample) if sample else 1
     probe = urls[::step][:sample] if sample else urls
     dead = []

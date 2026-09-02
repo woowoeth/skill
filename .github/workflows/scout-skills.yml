@@ -71,6 +71,13 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
+          # 这一步会调 skill_scout 的 _taste_pass（门闸只有一处定义），
+          # 而那里面要判品味 —— 不传 LLM_* 它就报「判官不通（LLM_API_KEY 没配）」，
+          # 而同一轮跑批的 enrich 明明用同一把 key 成功写了 20/20 篇文案。
+          # **同一个仓里两句互相矛盾的日志，就是接线漏了。** 2026-09-02 补。
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: |
           python scouts/release_clean.py --max 12 --chunk 3 --timeout 240 || true
           python scouts/scout_lib.py || true
