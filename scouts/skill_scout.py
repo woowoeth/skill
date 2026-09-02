@@ -1456,8 +1456,20 @@ def main() -> None:
         return
     existing, sources = lib.load_items(), lib.load_sources()
     if a.enrich_missing:
-        miss = [sid for sid, it in existing.items()
-                if not it.get("hide") and (not it.get("why_zh") or "见下" in it.get("tagline_zh", ""))]
+        # 「缺文案」的口径必须和门禁同源。2026-09-02 之前这里只看 why_zh，
+        # 于是那 13 件「有 why_zh、没 limit_zh」的在架货**一次都没被选中补写** ——
+        # 补文案跑了 262 件、写成 261 件，那 13 件仍然是空的。
+        # 同一个概念在三处各写各的（门禁 / release_clean / 这里），这是第三处。
+        # 现在统一到 GATE_FIELDS。
+        # **必须在人工层合并之后判**。文案住在 editorial/curation.json，
+        # existing 是机器层原始数据 —— 直接拿它判「缺文案」会把 441 件
+        # 已经有文案的货全部当成缺的重写一遍（实测差点这么干），
+        # 既烧调用又可能盖掉人写的那份。
+        _merged = lib.apply_editorial(dict(existing))
+        miss = [sid for sid, it in _merged.items()
+                if not it.get("hide") and (
+                    any(not (it.get(k) or "").strip() for k in GATE_FIELDS)
+                    or "见下" in (it.get("tagline_zh") or ""))]
         print(f"[scout] enrich-missing: {len(miss)} 件在架占位货待补")
         enrich_items(miss, existing)
         lib.refresh()

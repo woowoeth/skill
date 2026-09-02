@@ -1,0 +1,42 @@
+name: watchdog
+# 「每日更新」最阴险的坏法不是报错，是**没人发现它没跑**。
+#
+# 2026-09-01 18:21 到 09-02 03:26，01:17 UTC 那一班定时**整班没来** ——
+# GitHub 的 schedule 会漂、高峰期会丢，而丢了不会有任何通知：
+# Actions 列表里只是少一行，没人会去数少了哪一行。
+#
+# 这个看门狗跑在**另一条排程**上，只做一件事：如果 daily-restock 太久没有
+# 成功跑过，就让自己红。两条独立排程同时丢的概率，比一条低得多。
+on:
+  schedule:
+    - cron: "40 */6 * * *"     # 每 6 小时，和 daily-restock 的班次错开
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: daily-restock 多久没成功跑过
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAX_HOURS: "26"        # 三班/天，26 小时没成功 = 至少连丢两班
+        run: |
+          last=$(gh run list -R "$GITHUB_REPOSITORY" --workflow scout-skills.yml \
+                   --status success --limit 1 --json createdAt --jq '.[0].createdAt')
+          if [ -z "$last" ] || [ "$last" = "null" ]; then
+            echo "::error::daily-restock 从来没有成功跑过 —— 这不该发生"
+            exit 1
+          fi
+          now=$(date -u +%s)
+          then=$(date -u -d "$last" +%s)
+          hours=$(( (now - then) / 3600 ))
+          echo "上次成功: $last （$hours 小时前）"
+          if [ "$hours" -gt "$MAX_HOURS" ]; then
+            echo "::error::daily-restock 已经 $hours 小时没有成功跑过（上限 $MAX_HOURS）。"
+            echo "::error::要么定时被 GitHub 丢了，要么连续失败。去 Actions 看 daily-restock。"
+            echo "::error::手动补一轮：gh workflow run scout-skills.yml -R $GITHUB_REPOSITORY"
+            exit 1
+          fi
+          echo "✓ 在 $MAX_HOURS 小时内跑成功过"
