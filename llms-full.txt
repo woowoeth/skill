@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 168 skills.
+# Full corpus, plain text. 170 skills.
 
 ========================================================================
 ## tastemaker
@@ -46,6 +46,50 @@ git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your
 
 ### Where does it come from?
 Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
+
+========================================================================
+## cove-tarot-companion
+## 把塔罗牌阵变成一场本地私密对话
+URL: https://ourword.ai/skill/i/moonlin1213-cove-tarot-companion/
+Source: https://github.com/moonlin1213/cove-tarot-companion
+Updated: 2026-09-01
+Tags: play, skill, moonlin1213
+
+Draw and discuss tarot locally, no cloud, no tracking. Perfect for late-night introspection when you want the.
+
+### What does this skill do?
+Use when a user wants a local Tarot Ritual, returns from one to discuss its original reading, or a companion conversation offers a suitable moment to invite them. Requires an existing local shell and browser; not for independently drawing or reinterpreting cards.
+
+### Why is it worth installing?
+It doesn't draw for you — it stages the spread locally and lets conversation surface the reading. Ritual stays intact, no cloud.
+
+### How do you install it?
+git clone --depth 1 https://github.com/moonlin1213/cove-tarot-companion.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: moonlin1213/cove-tarot-companion The repository ships 1 skills in total.
+
+========================================================================
+## markstream-vue
+## 在 Vue 3 里接入 AI 流式渲染的完整指南
+URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
+Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
+Updated: 2026-09-01
+Tags: work, skill, Simon-He95
+
+When AI output floods in like a waterfall, ordinary components freeze. This skill installs markstream-vue for.
+
+### What does this skill do?
+Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
+
+### Why is it worth installing?
+It doesn't just paste docs—it orders CSS imports, picks the right renderer and DOM mode, and coordinates virtual timelines to.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
 
 ========================================================================
 ## textile-toy-portrait
