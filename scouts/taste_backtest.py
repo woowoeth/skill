@@ -30,16 +30,27 @@ import json, os, random, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scouts"))
 
-JUDGE_PROMPT = """你在替一家中文 Agent Skill 精选店的店主做初筛。这家店只留「有品味」的货。
+JUDGE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一件打 0-100 分。
 
-店主认可的例子（他亲手标的）：
+这家店卖的是**判断**，不是索引。店主认可的那些货有一个共同点：
+**它把一件事做到了「有人真的想过这件事该怎么做」的程度** ——
+它会拒绝做某些事、会说清楚产出物到哪儿为止、会在一个具体场景里给出别处拿不到的做法。
+不是「功能多」，不是「star 高」，也不是题材（画画、写作、算命、报税都可以）。
+
+店主认可的（他亲手标的）：
 {pos}
 
-他没要的例子：
+店主没要的：
 {neg}
 
-现在读这一件的上游 SKILL.md 正文，只回答一个 JSON：{{"keep": true/false, "why": "不超过30字"}}
-判的是**店主会不会认可它**，不是它有没有用。
+给分参考：
+  80-100  别处拿不到，而且它对自己的边界很清楚
+  60-79   做得扎实，但换个工具也能做
+  40-59   能用，泛泛，说不出非它不可的理由
+  0-39    是模板/目录/基建/官方示例，或者读完说不出它到底交付什么
+
+读下面这份上游 SKILL.md 正文，只回一个 JSON：{{"score": 0-100, "why": "不超过25字"}}
+**打分，不要判是非。** 大部分东西落在 40-70 之间是正常的。
 
 ---
 {body}
@@ -95,7 +106,7 @@ def main() -> int:
         print(p[:900]); return 0
 
     import urllib.request
-    def judge(i: str) -> bool | None:
+    def judge(i: str) -> int | None:
         b = body_of(i)
         if not b:
             return None
@@ -122,23 +133,30 @@ def main() -> int:
             txt = (resp["content"][0]["text"] if anthropic
                    else resp["choices"][0]["message"]["content"])
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-            return bool(json.loads(txt).get("keep"))
+            return int(json.loads(txt).get("score", -1))
         except Exception as e:
             print(f"    ! {i}: {type(e).__name__}: {e}")
             return None
 
-    kp = [judge(i) for i in ho_pos]
-    kn = [judge(i) for i in ho_neg]
-    kp = [x for x in kp if x is not None]; kn = [x for x in kn if x is not None]
+    kp = [x for x in (judge(i) for i in ho_pos) if x is not None and x >= 0]
+    kn = [x for x in (judge(i) for i in ho_neg) if x is not None and x >= 0]
     if not kp or not kn:
         print("判不出来，测试无效"); return 2
-    a_rate = sum(kp) / len(kp); b_rate = sum(kn) / len(kn)
-    lift = (a_rate - b_rate) * 100
-    print(f"\n留出正样本通过 {sum(kp)}/{len(kp)} = {a_rate*100:.0f}%")
-    print(f"留出负样本通过 {sum(kn)}/{len(kn)} = {b_rate*100:.0f}%")
-    print(f"**区分力 {lift:+.0f}pt**   （题材词 +1pt · 形态特征 +6pt，都已证明没用）")
-    print("\n" + ("→ 够格拿来给候选排序（但仍然只排序，不自动上架）" if lift >= 25 else
-                  "→ **不够格。** 和随机差不多的排序器比没有更糟：它会让人以为前面的更值得看。"))
+    print(f"\n留出正样本 {len(kp)} 件 · 均分 {sum(kp)/len(kp):.1f} · 分布 {sorted(kp)}")
+    print(f"留出负样本 {len(kn)} 件 · 均分 {sum(kn)/len(kn):.1f} · 分布 {sorted(kn)}")
+    # 门槛不是拍的：把每个可能的分数线都试一遍，取区分力最大的那条。
+    best = (-999, 0, 0, 0)
+    for th in range(0, 101, 5):
+        a = sum(1 for x in kp if x >= th) / len(kp)
+        b = sum(1 for x in kn if x >= th) / len(kn)
+        if (a - b) * 100 > best[0]:
+            best = ((a - b) * 100, th, a, b)
+    lift, th, a, b = best
+    print(f"\n最佳分数线 ≥{th}：正样本过 {a*100:.0f}% · 负样本过 {b*100:.0f}%")
+    print(f"**区分力 {lift:+.0f}pt**   （题材词 +1pt · 上游形态 +6pt · 上一版二元问法 −17pt）")
+    print("\n" + ("→ 够格当门闸。**但门槛是在留出集上挑的，真用之前要在新一批上再验一次**，"
+                  "否则就是拿留出集当训练集。" if lift >= 25 else
+                  "→ 还不够格。"))
     return 0
 
 
