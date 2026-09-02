@@ -26,6 +26,26 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
 
+# 门禁：直接用 skill_scout 里那一份，避免两条上架路径各长各的标准。
+# 读不到就用等价的本地实现，并**明说是兜底**——不要静默降级到更松的判据。
+try:
+    sys.path.insert(0, HERE)
+    from skill_scout import GATE_FIELDS as _GF, _taste_pass as _tp
+
+    def _gate_ok(d: dict) -> bool:
+        return bool(_tp(d))
+except Exception as _e:                                   # pragma: no cover
+    print(f"[release] ! 读不到 skill_scout 的门禁（{_e}），用本地等价实现兜底")
+    _GF = ("title_zh", "tagline_zh", "why_zh", "limit_zh")
+
+    def _gate_ok(d: dict) -> bool:
+        if d.get("kind") == "collection":
+            pass                                          # 合集不再一刀切拒
+        if not all(len((d.get(k) or "").strip()) >= 8 for k in _GF):
+            return False
+        return len((d.get("limit_zh") or "").strip()) >= 20
+
+
 def held_items() -> list[dict]:
     """留库房、但文案已经写好的 —— 只差扫红线这一步。"""
     out = []
@@ -38,8 +58,13 @@ def held_items() -> list[dict]:
             continue
         if not d.get("hide"):
             continue
-        if not (d.get("why_zh") or "").strip():
-            continue          # 没文案的不在本脚本管辖内
+        # **和 same_day_shelf 用同一把尺子。** 2026-09-02 改。
+        # 原来这里只看 why_zh，而同轮上架那条路要求 GATE_FIELDS 四句齐 + limit_zh≥20 ——
+        # **一个货架两套标准**，结果 13 件没有 limit_zh 的货从这条路进了架，
+        # 触发守卫【14】「机器占位文案上架」。
+        # 门禁只能有一处定义，这里 import 过来，不再各写各的。
+        if not _gate_ok(d):
+            continue          # 文案不齐的不在本脚本管辖内
         d["_file"] = f
         out.append(d)
     return out
