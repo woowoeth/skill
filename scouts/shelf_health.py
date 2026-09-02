@@ -43,14 +43,25 @@ def check_covers(items, sample: int) -> None:
     # raw.githubusercontent 自然 404 —— CI 里报「4 张打不开」，本地跑全 200。
     # **那不是货坏了，是体检站错了位置，而且会每轮误报。**
     # 本地文件在不在，才是「它推上去之后能不能显示」的正确判据。
-    OURS = "/woowoeth/skill/HEAD/"
+    # 自家的封面查本地文件，外部的才发 HTTP。
+    # **「自家」有两种写法**，都要认：
+    #   /skill/assets/covers/…                              （同源相对路径，现在用这种）
+    #   https://raw.githubusercontent.com/woowoeth/skill/HEAD/…（旧的绝对路径）
+    # 2026-09-02 栽过一次：改成同源相对路径之后，体检还拿它当完整 URL 去 curl，
+    # 相对路径 curl 不了，15 张里 11 张报 000 —— **不是货坏了，是我改了一头没改另一头**。
+    def local_rel(u: str) -> str | None:
+        if u.startswith("/skill/"):
+            return u[len("/skill/"):]
+        marker = "/woowoeth/skill/HEAD/"
+        return u.split(marker, 1)[1] if marker in u else None
+
     urls, missing_local = [], []
     for x in items:
         u = x.get("cover") or x.get("cover_url")
         if not u:
             continue
-        if OURS in u:
-            rel = u.split(OURS, 1)[1]
+        rel = local_rel(u)
+        if rel is not None:
             if not os.path.exists(os.path.join(ROOT, rel)):
                 missing_local.append(f"{x['id']} → {rel}")
         else:
@@ -59,7 +70,7 @@ def check_covers(items, sample: int) -> None:
         note("坏", f"{len(missing_local)} 张封面写着我们仓里的路径，但文件不存在",
              missing_local[:6])
     else:
-        n_ours = sum(1 for x in items if OURS in (x.get("cover") or x.get("cover_url") or ""))
+        n_ours = sum(1 for x in items if local_rel(x.get("cover") or x.get("cover_url") or "") is not None)
         print(f"  ✓ 自家仓封面 {n_ours} 张，文件都在")
     step = max(1, len(urls) // sample) if sample else 1
     probe = urls[::step][:sample] if sample else urls

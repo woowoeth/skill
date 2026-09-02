@@ -36,7 +36,7 @@
    "title_en": "Turns a novel you love into a playable game",
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/worldwonderer-novel-to-game-novel-to-game.png"
+   "cover": "/skill/assets/covers/worldwonderer-novel-to-game-novel-to-game.png"
   },
   "worldwonderer-oh-story-claudecode": {
    "title_zh": "网文写作全家桶",
@@ -57,7 +57,7 @@
    "pick": false,
    "limit_zh": "任何新设计都是先出三版真初稿、然后停下等你选，无人值守的会话跑不完。生产级 Web App、SEO 站、要后端的系统作者写明不接。动画产出默认压上 Created by Huashu-Design 水印。",
    "limit_en": "Every new design starts with three real drafts and then stops for your pick — it won't self-select even in unattended sessions. Production web apps, SEO sites and backend systems are out of scope. Animations carry a Huashu-Design watermark.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/alchaincyf-huashu-design.png",
+   "cover": "/skill/assets/covers/alchaincyf-huashu-design.png",
    "cover_kind": "artwork",
    "cover_real": true,
    "cover_w": 1280,
@@ -108,7 +108,7 @@
    "pick": false,
    "limit_zh": "35 条特征和全部例句都来自英文维基的 Signs of AI writing，破折号、弯引号、标题大小写那几条挪到中文基本落空。文件模式会直接把原文件改写成最终稿。",
    "limit_en": "All 35 patterns and every example come from English Wikipedia's \"Signs of AI writing\"; the em-dash, curly-quote and title-case rules do not carry over to Chinese. In file mode it rewrites your file in place, leaving only the final version.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/blader-humanizer.png",
+   "cover": "/skill/assets/covers/blader-humanizer.png",
    "cover_kind": "artwork",
    "cover_real": true,
    "title_en": "Deletes every \"it's worth noting\" you wrote",
@@ -378,7 +378,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "work",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-agent-skills.jpg",
+   "cover": "/skill/assets/covers/addyosmani-agent-skills.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -749,7 +749,7 @@
    "why_en": "Design handoff, solved visually — the whole system in one graph.",
    "limit_zh": "要自备 FIGMA_TOKEN，还要 Node ≥22、pnpm ≥10 并先 build 出 core 才跑得动。正文明说它会外连 api.figma.com，不像 /understand 那样离线。分析批次失败只记警告不重试。",
    "limit_en": "You supply your own FIGMA_TOKEN, plus Node >= 22, pnpm >= 10 and a core build before it runs. The text states it calls out to api.figma.com and is not offline like /understand. Failed analysis batches are logged as warnings, not retried.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/egonex-ai-understand-anything-understand-figma.png",
+   "cover": "/skill/assets/covers/egonex-ai-understand-anything-understand-figma.png",
    "cover_kind": "og",
    "cover_real": false,
    "cover_dup_of": "egonex-ai-understand-anything-understand-chat",
@@ -830,7 +830,7 @@
    "why_en": "A serious open-source take on deep research — the division of labor and cross-checks are well designed.",
    "limit_zh": "单件装不起来：路由靠仓库根的 .claude/CLAUDE.md 和 shared/，默认由 academic-pipeline 调度。改稿最多两轮，剩下的问题直接写进「已知局限」交差。",
    "limit_en": "Not installable alone: routing depends on the repo-root .claude/CLAUDE.md and shared/, and the default mode is dispatched by academic-pipeline. Revision is capped at two loops; what remains is filed under \"acknowledged limitations\".",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/imbad0202-academic-research-skills-deep-research.png",
+   "cover": "/skill/assets/covers/imbad0202-academic-research-skills-deep-research.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Thirteen research agents that cross-check each other",
@@ -1216,7 +1216,7 @@
    "why_en": "Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.",
    "limit_zh": "只对中文网文有用，禁用词表和脚本都是照网文口味调的。文件模式要 Node 跑 check-ai-patterns.js 等三个脚本，没有就只剩肉眼判断。默认把正文里的 …… 和 —— 全清掉，不吃这套排版口味的别装。",
    "limit_en": "Chinese web-novel prose only — the banned-word list and scripts are tuned for it. File mode needs Node for check-ai-patterns.js and two sibling scripts. By default it strips ellipses and em dashes, and promises no detector score.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png",
+   "cover": "/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png",
    "cover_kind": "og",
    "cover_real": false,
    "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover",
@@ -1414,7 +1414,7 @@
    "why_en": "Wrong requirements waste everything downstream; interrogation-first saves the whole project's rework.",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-agent-skills-interview-me.jpg",
+   "cover": "/skill/assets/covers/addyosmani-agent-skills-interview-me.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -1427,7 +1427,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "work",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-agent-skills-doubt-driven-development.jpg",
+   "cover": "/skill/assets/covers/addyosmani-agent-skills-doubt-driven-development.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -1667,7 +1667,7 @@
    "why_en": "Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.",
    "limit_zh": "要 Python 3.9+ 和 requests，还要连得上 openalex、crossref、pubmed。Google Scholar 没有 API，靠 scholarly 爬，每条歇 2 到 5 秒还常被封，作者自己说只能当补充。",
    "limit_en": "Needs Python 3.9+ with requests plus network access to openalex, crossref and pubmed. Google Scholar has no API: scholarly scrapes it, sleeps 2-5s per result and is blocked often, so the skill itself calls it a supplement.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png",
+   "cover": "/skill/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Kills the fabricated citation before your reviewer finds it",
@@ -1878,7 +1878,7 @@
    "why_en": "Pulled from his own working directory — the most honest endorsement a skill pack can have.",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/mattpocock-skills.png",
+   "cover": "/skill/assets/covers/mattpocock-skills.png",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -1891,7 +1891,7 @@
    "why_en": "How a top investor actually runs agents — the role division alone is worth the install.",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png",
+   "cover": "/skill/assets/covers/garrytan-gstack.png",
    "cover_kind": "artwork",
    "cover_real": true,
    "limit_zh": "这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: 'bypassPermissions'，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。"
@@ -1967,7 +1967,7 @@
    "tagline_en": "Guizang-style social cards — XHS carousels, WeChat cover pairs, Live Photo motion cards; 28 layouts, 10 themes.",
    "why_zh": "歸藏是中文 AI 设计内容的头部创作者，这套编辑部×瑞士风的版式体系就是他的招牌。",
    "why_en": "Guizang is a top Chinese AI-design creator; this editorial-Swiss layout system is his signature.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/op7418-guizang-social-card-skill.png",
+   "cover": "/skill/assets/covers/op7418-guizang-social-card-skill.png",
    "limit_zh": "出图靠本机浏览器截图，核查跑 node validate-social-deck.mjs。实况卡要 makelive 打成 .pvt 再 AirDrop 到 iPhone 发，桌面端认不出。OOTD 全身、美食大片、Y2K 风明说不接。",
    "limit_en": "Rendering needs a local browser screenshot pass plus node validate-social-deck.mjs. Live Photo cards must be packed into .pvt with makelive and AirDropped to an iPhone; desktop upload can't publish. OOTD and food-styling posts are refused.",
    "cover_kind": "artwork",
@@ -2085,7 +2085,7 @@
    "why_en": "Brand consistency goes from manual policing to systemic guarantee — big-co discipline for small teams.",
    "limit_zh": "它产的是一件新 skill，不是界面；而且生成的 description 硬写 NEVER trigger automatically，之后每次都得点名叫它。没接 Chrome DevTools MCP 就降级取色并自报低可信。",
    "limit_en": "It outputs a new skill, not a UI - and the generated description must contain \"NEVER trigger automatically\", so you invoke it by name every time. Without Chrome DevTools MCP it falls back to WebFetch and flags reduced confidence.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dominikmartn-hue.png",
+   "cover": "/skill/assets/covers/dominikmartn-hue.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Install your brand once, every screen obeys",
@@ -2129,7 +2129,7 @@
    "why_en": "Voice-learning, calendaring and actual posting in one loop — rare full automation for personal brands.",
    "limit_zh": "正文是繁体。真发帖要 chrome:control-chrome 和已登录的浏览器，每篇都得你当场确认，没有 IG 图片素材它就停。成效全落本地 data/*.jsonl，换台机器归零。",
    "limit_en": "Traditional Chinese. Publishing needs `chrome:control-chrome` and an already-signed-in browser, with in-session confirmation per post; no IG image and it stops. Performance data lives in local data/*.jsonl, so a new machine starts empty.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/hao0321-claude-skill-social-post-social-post.png",
+   "cover": "/skill/assets/covers/hao0321-claude-skill-social-post-social-post.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Learns your voice, then actually hits post",
@@ -2231,7 +2231,7 @@
    "why_zh": "Suno 玩家众多但成品率低，这套流程补的正是「从段子到作品」的那段路。",
    "why_en": "Plenty of Suno players, few finished tracks — this pack covers exactly that gap.",
    "category": "fun",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/bitwize-music-studio-claude-ai-music-skills.png",
+   "cover": "/skill/assets/covers/bitwize-music-studio-claude-ai-music-skills.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "歌不是它生成的：音频得你自己去 Suno 出、把 stems 拿回来，它管概念、歌词、Suno 提示词、母带和发行。52 件里 8 件是插件自用件（about/help/setup/test 等），真能用的 44 件。",
@@ -2582,7 +2582,7 @@
    "why_en": "Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.",
    "limit_zh": "只给规则不给 token：具体颜色和像素值要你自己的设计系统补，正文没有一行组件代码。深色是设计靶心，浅色只是把层级反过来。硬到「圆角一律为零、彩色只准两个」，跟通用仪表盘规范会打架。",
    "limit_en": "Rules only, no tokens — exact colors and pixel values stay in your own design system, and no component code ships. Dark is the target; light is a reversed adaptation. Hard rules: zero border radius everywhere, exactly two chromatic hues.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vanillagreencom-vstack-trading-design.png",
+   "cover": "/skill/assets/covers/vanillagreencom-vstack-trading-design.png",
    "cover_kind": "og",
    "cover_real": false,
    "cover_dup_of": "vanillagreencom-vstack-decider",
@@ -2776,7 +2776,7 @@
    "tagline_en": "A full-stack Chinese writing system on Claude Code that strips AI-flavor — forces human viewpoint and detail, with reader-test evals and auto layout, from topic to publish.",
    "why_zh": "国产模型友好（DeepSeek/GLM/MiniMax），把「防 AI 味」从口号做成了强制规则——中文写作全家桶里立意很高的一套。",
    "why_en": "Friendly to domestic models and turning de-AI-flavor from slogan into enforced rules — a high-ambition Chinese writing suite.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dongbeixiaohuo-writing-agent.png",
+   "cover": "/skill/assets/covers/dongbeixiaohuo-writing-agent.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "9 份 SKILL.md 其实是同样三件放在 .claude、claude-runtime、plugins 三个目录里，真货只有三件。作者实测过的模型只列了 DeepSeek-V3.2、GLM、MiniMax，桌面版只出了 Windows 预览。",
@@ -3168,7 +3168,7 @@
    "tagline_en": "The GTM co-founder you don't have — for solo technical AI/dev-tool founders: positioning, first users, launch and pricing, open-source and forged from real deals.",
    "why_zh": "「先访谈再建议」这个设计诚实：不套教科书，而是长在你的业务上。",
    "why_en": "Technical founders lack GTM instinct most; this turns that gap into an executable process. The \"interview you once, then ground every later suggestion in your real business\" design is refreshingly honest, not textbook.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/aidevgtm-gtm-cofounder.png",
+   "cover": "/skill/assets/covers/aidevgtm-gtm-cofounder.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "18 件是编号 00–17 的一条链，单拎一件出来等于只拿到半张地图。全套英文，连 founder-brief、gtm-roadmap 两个模板也是。作者把适用面钉在开发者工具和 AI 产品，消费品和本地生意套不进去。",
@@ -3278,7 +3278,7 @@
    "why_en": "Hand-drawn beats rigid boxes for explaining ideas warmly; real Excalidraw files you keep editing after.",
    "limit_zh": "必做的渲染校验要用 uv 装 Playwright 和 Chromium。正文禁止写脚本生成、禁止转交别的 agent，只能一段段手敲 JSON，再渲染—看图—改，通常来回 2-4 轮。 随件的渲染模板从 esm.sh 拉 excalidraw，传递依赖现在 404、脚本会等到超时；钉版本到 0.18.0 才渲得出来。",
    "limit_en": "The mandatory validation step renders through uv, Playwright and Chromium. The skill forbids writing a generator script or handing the job to a coding agent: you hand-write JSON section by section, then loop render-view-fix 2-4 times. Its render template pulls excalidraw from esm.sh; a transitive dependency 404s today and the script hangs until timeout. Pinning 0.18.0 fixes it.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/coleam00-excalidraw-diagram-skill.png",
+   "cover": "/skill/assets/ours/coleam00-excalidraw-diagram-skill.png",
    "cover_kind": "ours",
    "cover_real": true,
    "title_en": "Generated diagrams that look hand-drawn and stay editable",
@@ -3348,7 +3348,7 @@
    "why_en": "By Guizang — solves the real pain of long tasks while you're away; command remotely from your phone, get pinged when done.",
    "limit_zh": "本机得一直开着：桥是常驻 Node 进程，装完还要在 skill 目录 npm install 和 build。微信只能扫码绑一个号，没有内联授权按钮和流式预览，语音只收微信自己转的文字。飞书要两轮发版加管理员审批。",
    "limit_en": "Your machine must stay up: the bridge is a resident Node daemon, and its dir needs npm install plus build. WeChat is QR-login, one account only, no inline permission buttons or streaming, voice only via WeChat's own transcript.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/op7418-claude-to-im-skill.png",
+   "cover": "/skill/assets/covers/op7418-claude-to-im-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Runs on your desk, takes orders from your phone",
@@ -3453,7 +3453,7 @@
    "why_en": "Store screenshots are what indies do worst and download rates need most; deriving benefits from code beats guessing at copy.",
    "limit_zh": "检测不到 Gemini MCP（npm i -g gemini-mcp）它就直接停手不生成；裁切那步调的是 macOS 专有的 sips。尺寸只给 iPhone 6.5/6.7/6.9 三种，没有 iPad，模拟器截图还得你自己拍。 compose.py 把字体写死成 /Library/Fonts/SF-Pro-Display-Black.otf，macOS 不自带、缺了直接崩没兜底；第二段还要付费模型。",
    "limit_en": "It refuses to generate unless the Gemini MCP server (npm i -g gemini-mcp) is present, and the crop/resize step shells out to macOS-only sips. Ships iPhone 6.5/6.7/6.9 sizes only, no iPad — and you supply the simulator screenshots yourself. compose.py hardcodes an SF Pro font path macOS does not ship; it crashes with no fallback. Stage 2 also needs a paid model.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/adamlyttleapps-claude-skill-aso-appstore-screenshots.png",
+   "cover": "/skill/assets/covers/adamlyttleapps-claude-skill-aso-appstore-screenshots.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "Reads your source code to write App Store screenshots",
@@ -3471,7 +3471,7 @@
    "why_en": "Staggering density (55K words, 908 sources), not hand-waving; in email marketing where details decide outcomes, a thick knowledge base is real muscle.",
    "limit_zh": "装进来的是索引，19 章全文在 emailmarketingskill.com 上。基准数据标着截至 2026 年中、作者叮嘱要复核。选型表首推的 nitrosend 与本指南同一个创始人——他自己写明了。",
    "limit_en": "What ships is an index; the 19 full chapters live on emailmarketingskill.com. Benchmarks are dated mid-2026 with a note to verify volatile figures, and the top pick for agent-driven email, nitrosend, shares a founder with the guide.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/cosmoblk-email-marketing-bible.png",
+   "cover": "/skill/assets/covers/cosmoblk-email-marketing-bible.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "908 sources of email marketing, installed as one consultant",
@@ -3940,7 +3940,7 @@
    "tagline_en": "A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.",
    "why_zh": "这个生态罕见的「减法」工具：装得多不等于装得好，它同时管省上下文、防注入、看清成本。",
    "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/khendzel-skills-janitor.png",
+   "cover": "/skill/assets/covers/khendzel-skills-janitor.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "它会真动手删：左滑就把那个 MCP server 从配置文件里移除，只留一个带时间戳的 .bak。判断依据是本机会话记录里的调用次数——刚装没多久的 skill 天然显示成「没用过」，容易误杀。安全扫描作者写明是启发式。",
@@ -4407,7 +4407,7 @@
    "why_en": "Installing a specific human voice beats blacklisting AI words — the first governs syntax and point of view, the second only swaps vocabulary. Chinese original, not a translation.",
    "limit_zh": "不是短视频口播稿。要英文明信片、要公文，另装。",
    "limit_en": "If a nonfiction piece cannot list five concrete pieces of material, it refuses to write long and caps you near 600 characters. Em dashes, signposting colons and \"not A but B\" framing are banned. check_prose.py checks hard bans only.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkkkhazix-human-writing-human-writing.png",
+   "cover": "/skill/assets/covers/kkkkhazix-human-writing-human-writing.png",
    "cover_kind": "og",
    "cover_real": false,
    "cover_w": 1200,
@@ -4548,7 +4548,7 @@
    "title_en": "A bedtime book read in your own cloned voice",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book-workflow.png"
+   "cover": "/skill/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book-workflow.png"
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -4781,7 +4781,7 @@
    "why_en": "By a university teacher who has taught research method for years — these eight steps come from actually supervising research, not from a whiteboard.",
    "limit_zh": "产物写死在 ~/Downloads/research/<主题>/，打包成 ~/outcome.tar.gz。Step 6.5 硬卡：必须另起独立 Agent 复核事实与推导，派不出子代理就卡住。全程靠 WebSearch。",
    "limit_en": "Working dir is hardcoded to ~/Downloads/research/<topic>/, packed into ~/outcome.tar.gz. Step 6.5 is BLOCKING: a separate Agent must audit the fact cards and reasoning, so no sub-agent means no report. Needs live WebSearch.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wshuyi-deep-research-deep-research.png",
+   "cover": "/skill/assets/covers/wshuyi-deep-research-deep-research.png",
    "cover_kind": "og",
    "cover_real": false,
    "title_en": "The eight steps a research supervisor actually uses",
@@ -5168,7 +5168,7 @@
    "why_zh": "按水墨海报的浓淡和空白重做照片，笔是结构不是装饰。",
    "limit_zh": "要彩色插画、要写实人像，墨会把你按回去。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/twentyfivebtea-ink-wash-poster.png",
+   "cover": "/skill/assets/covers/twentyfivebtea-ink-wash-poster.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5336,7 +5336,7 @@
    "why_zh": "把随手拍抽成手绘插画，诗意在省略，不在加光。",
    "limit_zh": "要证件照、要原片细节全留，会画丢。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-photo-revival.png",
+   "cover": "/skill/assets/covers/dacnay816y62-hub-photo-revival.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5352,7 +5352,7 @@
    "why_zh": "按孔版印刷的套色层数做海报，颜色少、边毛、故意不准。",
    "limit_zh": "不是高清写真。要渐变商业海报，对不上。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luckdvr-photo-riso-poster.png",
+   "cover": "/skill/assets/covers/luckdvr-photo-riso-poster.png",
    "cover_kind": "og",
    "cover_real": false
   },
@@ -5580,7 +5580,7 @@
    "why_zh": "按杂志封面的格子重排主题。品牌味在版式里，不在滤镜里。",
    "limit_zh": "页是 3:4 封面。要长图文、要视频封面，格不对。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-fantasy-minimal-magazine.png",
+   "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-minimal-magazine.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5604,7 +5604,7 @@
    "why_zh": "当代东方海报的版式和色，按作者那套走，不跟国潮贴纸混。",
    "limit_zh": "不是喜茶那件，也不是水墨写意。要品牌 VI，另找。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.png",
+   "cover": "/skill/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5632,7 +5632,7 @@
    "why_zh": "手绘不是一种滤镜。它要你说出用哪一种笔，才肯出那一种痕迹。",
    "limit_zh": "不是万能插画箱。不点名风格，它不知道画什么。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/threerocks-hand-drawn-styles.png",
+   "cover": "/skill/assets/covers/threerocks-hand-drawn-styles.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5664,7 +5664,7 @@
    "why_zh": "按像素海报的格点重排主题，边要齐，色要少。",
    "limit_zh": "要高清写实、要渐变插画，格会对不上。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/v92388375-gif-pixel-style-poster-skill.png",
+   "cover": "/skill/assets/covers/v92388375-gif-pixel-style-poster-skill.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -5776,7 +5776,7 @@
    "why_en": "It seals the two places divination usually slides: no inventing hexagrams, no softening a bad one. Taking a game seriously is itself a kind of taste.",
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/neallydare-svg-iching-divination.png"
+   "cover": "/skill/assets/covers/neallydare-svg-iching-divination.png"
   },
   "wolke-bazi-mingli": {
    "title_zh": "排八字四柱并给出命理分析",
@@ -5809,7 +5809,7 @@
    "cover_real": false,
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kagurananaga-official-document-writing-skill.png"
+   "cover": "/skill/assets/covers/kagurananaga-official-document-writing-skill.png"
   },
   "panmax-hemingway-skill": {
    "title_zh": "用海明威的冰山理论帮你改写作",
@@ -5827,7 +5827,7 @@
    "_无封面原因": "全仓 0 张图片。examples/demo-conversation.md 是文本。产出是改稿意见（内容）。",
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/panmax-hemingway-skill.png"
+   "cover": "/skill/assets/covers/panmax-hemingway-skill.png"
   },
   "yangcodingmaster-photo-distill": {
    "title_zh": "把一张照片蒸馏成极简 zine 海报",
@@ -5863,7 +5863,7 @@
    "why_en": "Narrow to one city and one allergen — and for those people it's essential. That kind of unembarrassed narrowness is exactly what a large marketplace never covers.",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ruochenlyu-beijing-pollen-monitor.png"
+   "cover": "/skill/assets/covers/ruochenlyu-beijing-pollen-monitor.png"
   },
   "zexuanw958-svg-travel-plan-viz": {
    "title_zh": "把旅行计划做成手机上能离线看的网页",
@@ -5889,7 +5889,7 @@
    "category": "writing",
    "tagline_zh": "AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。",
    "why_zh": "「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lijigang-ljg-skills.png",
+   "cover": "/skill/assets/covers/lijigang-ljg-skills.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "产出直接落成 Org 文件写进 ~/Documents/notes，文件头的 author 写死「李继刚」，保存后还要过 org-lint 和 Denote 校验——不用 Emacs/Org 的人得先拆掉这一整套。默认 1000–1500 字，摘要和事实查询作者明写不接。",
@@ -5918,7 +5918,7 @@
    "_无封面原因": "全仓 0 张图片。examples/ 里是 md 和 json（AUTHOR-WORLD-SAMPLE.md、MINIMAL-RUN.md、completed-save/CURRENT-STATE.json、sessions/2026-07-29.json），产出物是剧情文本 + 状态 JSON，没有任何可视产出物。",
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/chenklein26-maker-fitness-coach-rpg.png"
+   "cover": "/skill/assets/covers/chenklein26-maker-fitness-coach-rpg.png"
   },
   "joeseesun-qiaomu-campus-resume": {
    "title_zh": "给应届生从零做一份可投递的简历",
@@ -5944,7 +5944,7 @@
    "category": "writing",
    "tagline_zh": "想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。",
    "why_zh": "「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/redfox-data-redfox-community.png",
+   "cover": "/skill/assets/covers/redfox-data-redfox-community.png",
    "cover_kind": "og",
    "cover_real": false,
    "limit_zh": "要去作者自家 redfox.hk 注册拿 REDFOX_API_KEY 配成环境变量才跑得动，平台采集只覆盖公众号和抖音。素材少于 3 篇 2000 字别指望还原，理想量作者标的是 10 篇 1 万字。核心流程在 references/core_workflow.md。",
@@ -5965,7 +5965,7 @@
    "why_zh": "从故事场面压成一张能上墙的中文电影海报，比例不许改。",
    "limit_zh": "不是横版大片，也不是剧照滤镜。要多页分镜，装不下。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png",
+   "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -6091,7 +6091,7 @@
    "why_zh": "这类里我见过最安全的边界：先点名「传统框架拖成急诊」的失败模式，并在红线层直接拒绝辨证。",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yuanzhao321-tcm-skill.png",
+   "cover": "/skill/assets/covers/yuanzhao321-tcm-skill.png",
    "cover_kind": "og"
   },
   "jangviktor-web-wujutong": {
@@ -6106,7 +6106,7 @@
    "limit_zh": "只做温病；伤寒、杂病、气化学派不在范围，作者分别指路。不出处方；安全说明单独成节。",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jangviktor-web-wujutong.png",
+   "cover": "/skill/assets/covers/jangviktor-web-wujutong.png",
    "cover_kind": "og"
   },
   "voidforall-fengshui-skill": {
@@ -6123,7 +6123,7 @@
    "limit_zh": "三套体系常互相打架，并排展示不替你裁决。葬法地域差异极大，别当通例。",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/voidforall-fengshui-skill.png"
+   "cover": "/skill/assets/covers/voidforall-fengshui-skill.png"
   },
   "seiya89757-naming-skill": {
    "title_zh": "全家为起名吵架时出来当中间人",
@@ -6139,7 +6139,7 @@
    "limit_zh": "不做店名/品牌/宠物/游戏角色/虚构名，不做纯算命、不解读已有名字。方言校验只覆盖它掌握的语组。",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/seiya89757-naming-skill.png"
+   "cover": "/skill/assets/covers/seiya89757-naming-skill.png"
   },
   "mrchendev-cantonese-lyrics": {
    "title_zh": "逐字查九声六调，填不倒字的粤语词",
@@ -6168,7 +6168,7 @@
    "limit_zh": "仅 53 个有监测站的城市；淡季报无、单日缺口正常。备用源是扩散指数不是浓度，别当同一个数。仅中国大陆。",
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/xxxonechen-pollen-query.png"
+   "cover": "/skill/assets/covers/xxxonechen-pollen-query.png"
   },
   "sunnypanzhen-fishing-skill": {
    "title_zh": "新手买竿，老手看天：从选位讲起",
@@ -6177,7 +6177,7 @@
    "tagline_en": "When nothing bites it's usually not the bait — it's the spot and the conditions. Swim selection comes first in the whole document; pressure, wind, temperature swing and rain are covered before any tackle, across float, lure, sea and commercial fisheries.",
    "why_en": "The table of contents is the argument: 'swim selection (most important, first)'. It leads with what actually separates a veteran from a beginner instead of opening with gear recommendations.",
    "limit_en": "Experience-based knowledge with no live water or weather feed, so you still map it onto the day yourself. Weighted towards Chinese freshwater methods; the sea-fishing material is thinner.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/sunnypanzhen-fishing-skill.png",
+   "cover": "/skill/assets/covers/sunnypanzhen-fishing-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是钓位/天气判断（内容），且要实时气象数据。",
@@ -6193,7 +6193,7 @@
    "tagline_en": "Nobody wants to work out whether a contribution gap is worth filling, or whether flexible-employment contributions still pay off. These are arithmetic problems, not mysteries. It runs them against regional rules.",
    "why_en": "Every policy figure goes through a deterministic CLI and it says outright that it never computes them inline. Models get social-insurance arithmetic wrong; this closes that door.",
    "limit_en": "Privacy model is ALLOW / REDACT / BLOCK — national ID, social-security and bank card numbers are blocked outright. Still a local MVP with limited regional coverage, and results follow the current policy basis. Mainland China only.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/alaric1098-china-pension-strategy-skill.png",
+   "cover": "/skill/assets/covers/alaric1098-china-pension-strategy-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。有 scripts/ 和 schemas/ 能真跑出测算，但产出的实质是「社保断缴要不要补」的结论（内容/判断），按规矩不能拿我造的 demo 输入去印一张结论图。",
@@ -6242,7 +6242,7 @@
    "category": "fun",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/sumanasj-coc-kp-host.jpg",
+   "cover": "/skill/assets/covers/sumanasj-coc-kp-host.jpg",
    "cover_kind": "artwork",
    "cover_real": true,
    "_无封面原因": "作者仓库里没有产出物样张（逐张开过：Claude 客户端界面截图，标签写「Call of Cthulhu KP host setup」，正文是整屏中文跑团尾）",
@@ -6253,7 +6253,7 @@
    "tagline_en": "Labour arbitration is hard at both ends: the evidence is scattered across attendance logs and chat history, and you have no idea what number to ask for. This parses attendance files, computes overtime, severance and social-insurance shortfalls, and writes it up.",
    "why_en": "It is unambiguously on the employee's side — not an HR compliance tool, an evidence tool for the person who was let go. Knowing whose side you're on is itself taste.",
    "limit_en": "Calculations use general formulas; local arbitration commissions differ a great deal in practice, so the report is a negotiating draft, not a conclusion. Mainland China labour law only.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wangchangwei-arb-skill.png",
+   "cover": "/skill/assets/covers/wangchangwei-arb-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "仓库只有一张图的两个格式：docs/flow-architecture.png 和 .svg（1200x540），开过：仲裁 skill 的完整流程图（输入 INPUT → 核心计算 CORE COMPUTATION 五个方框 → 输出 OUTPUT / 补充说明 四层），是文档流程图，不是产出物。要当 cover_kind=diagram 用是对题的（宽高比 2.22，没过线），但它不是 artwork。产出是劳动仲裁的证据和算钱结论（内容），也不做 ours。",
@@ -6265,7 +6265,7 @@
    "tagline_en": "Reporting overseas investment income stalls on the broker statement: dividends and realised P&L are not in the column you'd expect, and the statement doesn't compute the figure you need at all.",
    "why_en": "The whole document is about where the numbers actually live and how to rebuild what the statement omits, with a section of common traps. That only comes from grinding through real statements.",
    "limit_en": "Reads official statement files only; it never connects to your account. Futu's format specifically — other brokers won't parse. The reconstructed P&L follows its own convention; check it before filing.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/bh-m87-futu-statement-skill.png",
+   "cover": "/skill/assets/covers/bh-m87-futu-statement-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。输入必须是本人富途月结单 = 真实个人金融数据，明确不跑。",
@@ -6278,7 +6278,7 @@
    "why_en": "Its 'absolutely forbidden' section is written in reverse: no academic register, no translationese, no 'firstly, secondly, finally'. Using rules to make a lesson sound human is harder than piling on content.",
    "limit_en": "A simulation of a teaching style, not the person; the method is drawn from public course material. It makes no predictions about what will be on the paper, and calibration stops at June 2026. Chinese English-exam context (CET/postgraduate).",
    "category": "learn",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/tong666-bit-liu-xiaoyan-skill.png",
+   "cover": "/skill/assets/covers/tong666-bit-liu-xiaoyan-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是四六级讲解文本。",
@@ -6304,7 +6304,7 @@
    "_无封面原因": "全仓 0 张图片。example_skills/ 是 4 组角色卡（SKILL.md/story.md/persona.md/meta.json）加 4 个同名 zip，全是文本。",
    "hide": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zzzzzzza-larp-skill.png"
+   "cover": "/skill/assets/covers/zzzzzzza-larp-skill.png"
   },
   "weante-city-salary": {
    "title_en": "Take-home pay by the rules of your actual city",
@@ -6326,7 +6326,7 @@
    "pick": true,
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/chongchonghaoman-feline-health-advisory.png",
+   "cover": "/skill/assets/covers/chongchonghaoman-feline-health-advisory.png",
    "cover_kind": "og"
   },
   "r0ses1r-dev-birdsight": {
@@ -6343,7 +6343,7 @@
    "_无封面原因": "全仓 0 张图片。要 eBird API key 才能查鸟况 → 按规矩跳过，没去找、没读、也没用任何 key。",
    "hide": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/r0ses1r-dev-birdsight.png"
+   "cover": "/skill/assets/covers/r0ses1r-dev-birdsight.png"
   },
   "wei011-heat-risk-calc": {
    "title_zh": "用湿球温度算出 48℃ 的吐鲁番比长沙安全",
@@ -6358,7 +6358,7 @@
    "category": "body",
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wei011-heat-risk-calc.png",
+   "cover": "/skill/assets/covers/wei011-heat-risk-calc.png",
    "cover_kind": "og"
   },
   "fxw-labs-beachcombing": {
@@ -6375,7 +6375,7 @@
    "_无封面原因": "全仓 0 张图片。产出是赶海撤离时间报告（内容），且要实时潮汐数据源。",
    "hide": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/fxw-labs-beachcombing.png"
+   "cover": "/skill/assets/covers/fxw-labs-beachcombing.png"
   },
   "yeyulangzi-parenting-advisor": {
    "title_zh": "专防「假托崔玉涛」文章的 0–13 岁育儿参谋",
@@ -6389,7 +6389,7 @@
    "pick": true,
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yeyulangzi-parenting-advisor.png",
+   "cover": "/skill/assets/covers/yeyulangzi-parenting-advisor.png",
    "cover_kind": "og"
   },
   "violasi-reading-diary": {
@@ -6428,7 +6428,7 @@
    "why_en": "One lever at a time is a hard rule. With no trigger row met it says \"hold, no change indicated\" rather than adjusting something so it looks useful.",
    "limit_en": "The author writes the external-validity gap into the file himself: the MATADOR and Seimon trials behind intermittent restriction were run in people with obesity, not lean people near target body fat. It assumes a healthy adult, keeps the weekly deficit in a 2,000–4,000 kcal band, and when sleep is chronically under seven hours it flags sleep first and holds all diet and training changes.",
    "category": "body",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wangzhengjun571-alt-recomp-coach.png",
+   "cover": "/skill/assets/covers/wangzhengjun571-alt-recomp-coach.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。examples/example_session.md 是文本。产出是训练/饮食处方（内容）。",
@@ -6481,7 +6481,7 @@
    "tagline_en": "A Python script reads every transcript on your machine, counts the pleases, the thank-yous, the \"just\"s and the genuine wtfs, then a 16-bit Roko's Basilisk delivers the verdict.",
    "why_en": "The joke is built on real data: every quote and every typo has to be findable in the JSON or it gets cut, because an invented typo is worse than an unfunny one.",
    "limit_en": "The heavy lifting is scripts/analyze_basilisk.py, which reads only local JSONL under ~/.claude/projects and uploads nothing. On claude.ai there are no local transcripts, so it samples 30–60 messages and the author requires you to say \"sampled\", not \"audited\". The default card also carries the author's own site and a \"comment BASILISK\" call to action.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/dpwelsh-basilisk.png",
+   "cover": "/skill/assets/ours/dpwelsh-basilisk.png",
    "cover_kind": "ours",
    "cover_real": true,
    "cover_w": 810,
@@ -6503,7 +6503,7 @@
    "pick": true,
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/c1375-noir-interrogation.png",
+   "cover": "/skill/assets/covers/c1375-noir-interrogation.png",
    "cover_kind": "og"
   },
   "rubyzhu26-see-life-wallpaper-skill": {
@@ -6535,7 +6535,7 @@
    "pick": true,
    "hide": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wr5912-human-allegory-engine.png",
+   "cover": "/skill/assets/covers/wr5912-human-allegory-engine.png",
    "cover_kind": "og"
   },
   "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
@@ -6550,7 +6550,7 @@
    "limit_brief_zh": "没有训练记录，它只能给通用建议。",
    "limit_brief_en": "With no training log, it can only give generic advice.",
    "category": "body",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/reluctant2828-system-fitness-advisor-skill-system-fitness-advisor.png",
+   "cover": "/skill/assets/covers/reluctant2828-system-fitness-advisor-skill-system-fitness-advisor.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓唯一一张 concept.png(1672x941)，开过：AI 生成的宣传概念图 —— 浅灰渐变背景上立着一台平板，屏幕里是「用户数据 / 知识库 / 增肌减脂 / RPE·RM 7.5」四张卡片和一条 用户数据→安全边界→训练逻辑→输出计划 的流程条，顶部大字「系统健身 System Fitness Advisor.skill」。这是 hero 宣传图（1672x941 这个尺寸站上已经有好几件是当 hero 收的），不是产出物。",
@@ -6570,7 +6570,7 @@
    "limit_brief_zh": "方向没确认它就不出图，急着要图会被拦。",
    "limit_brief_en": "No image until the direction is confirmed.",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/ours/zhlmi-moodboard-alignment.png",
+   "cover": "/skill/assets/ours/zhlmi-moodboard-alignment.png",
    "cover_kind": "ours",
    "cover_real": true,
    "cover_w": 2880,
@@ -6613,7 +6613,7 @@
    "limit_brief_zh": "它出的是提示词和时间轴，不是视频。",
    "limit_brief_en": "It outputs prompts and a timeline, not a video.",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liyue-aigc-outfit-director-outfit-director.png",
+   "cover": "/skill/assets/covers/liyue-aigc-outfit-director-outfit-director.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是换装视频脚本文本。",
@@ -6633,7 +6633,7 @@
    "tagline_en": "Every Dreamina render costs credits, so a vague prompt is a paid mistake. It hands you the director's brief and a copy-ready prompt, and never guesses.",
    "why_en": "The boundaries are hard rules: text only, no job submission, no credits spent. Timestamps must tile the full duration exactly, and a reaction may not land before its cause.",
    "limit_en": "It writes prompts, not videos — pasting, paying and re-rolling stay with you. Bound to Seedance 2.5, it says not to treat its syntax as universal across video models. Output defaults to Chinese, and each session's first call opens with a tutorial.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liyue-aigc-seedance-2-5-video-director.png",
+   "cover": "/skill/assets/covers/liyue-aigc-seedance-2-5-video-director.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片（png/jpg/jpeg/gif/webp/svg/bmp 全查过）。产出物是即梦 Seedance 2.5 的提示词文本，没有可视产出物。要自截图得有即梦付费账号 → 按规矩跳过，没去找任何账号或 key。",
@@ -6662,7 +6662,7 @@
    "tagline_en": "Course decks, WeChat headers and Bilibili thumbnails all bill you per generated image. This one pins that step to Doubao's built-in seedream, and gives covers, section breaks, content pages and closers four separate density ceilings.",
    "why_en": "The word ceiling comes with a counterweight: the text warns that a model told \"220 characters max\" will write to 220, so every page must first name the one line the audience should remember.",
    "limit_en": "Don't install this outside Doubao — the author calls the built-in image_gen its entire reason to exist, and the default seedream_5.0_pro is members-only, falling back to 4.5 for everyone else. Slides come out as flat images with no editable text unless you explicitly ask for editable output, or generation fails three times.",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/alchaincyf-huashu-slide-doubao.png",
+   "cover": "/skill/assets/covers/alchaincyf-huashu-slide-doubao.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "3 张图逐张开过：① assets/personal-brand/像素公众号头图示例.png(2560x1088) 是花叔本人的像素风公众号头图「一人公司，也有品牌部了」，右下角印着 hUasheng.ai；② 像素品牌资产.png(3560x4712) 是九宫格品牌资产册（主标识/色板/字体/名片/T恤/渔夫帽/马克杯/贴纸/数字资产），做得很好看、比例 1.32 很合卡片，**但名片那一格里有二维码，还有 hello@huashu.dev 和 Beijing, China",
@@ -6682,7 +6682,7 @@
    "category": "creative",
    "hide": false,
    "gate_score": 7,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-luji-pet-streetwear-mood-avatar.png",
+   "cover": "/skill/assets/covers/luji12-luji-pet-streetwear-mood-avatar.png",
    "cover_kind": "og"
   },
   "zgdfsgd-pet-nutritionist": {
@@ -6700,7 +6700,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zgdfsgd-pet-nutritionist.png"
+   "cover": "/skill/assets/covers/zgdfsgd-pet-nutritionist.png"
   },
   "pengchenge-pet-skill": {
    "title_zh": "先填九项档案，之后叫一声名字它就用「我」接话",
@@ -6752,7 +6752,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/mocomeng-666-bluey-parenting-skill.png"
+   "cover": "/skill/assets/covers/mocomeng-666-bluey-parenting-skill.png"
   },
   "the-data-galaxy-child-reading-adventures-skill-design-child-reading-adventures": {
    "title_zh": "给孩子设计读书任务，页码只在核过这一版分页后才写",
@@ -6800,7 +6800,7 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zx029w-zhuangxiu-laoshi-skill.png",
+   "cover": "/skill/assets/covers/zx029w-zhuangxiu-laoshi-skill.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出是装修报价单的漏项审阅结论（判断类内容），不做 ours。",
@@ -6977,7 +6977,7 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/pandadalmore-annual-diary-insight.png",
+   "cover": "/skill/assets/covers/pandadalmore-annual-diary-insight.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。这件的输入必须是本人一整年的日记 = 真实个人数据，按铁律宁可没封面，明确不跑。",
@@ -7086,7 +7086,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan.png"
+   "cover": "/skill/assets/covers/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan.png"
   },
   "mayuwen18-china-primary-school-tutor": {
    "title_zh": "批改只圈第一个影响结果的错，讲解先给提示再给半成品",
@@ -7137,7 +7137,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/bohandu-cook-with-what-you-have-cook-with-what-you-have.png"
+   "cover": "/skill/assets/covers/bohandu-cook-with-what-you-have-cook-with-what-you-have.png"
   },
   "ryunana-xbloom-studio-recipe-skill": {
    "title_zh": "翻车只准改一个变量的 xBloom 冲煮配方",
@@ -7190,7 +7190,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/xlt-6-boardgame-creator.png"
+   "cover": "/skill/assets/covers/xlt-6-boardgame-creator.png"
   },
   "zgdfsgd-balcony-farmer": {
    "title_zh": "把「采收前 7 天停药」写成硬规则的阳台种菜参谋",
@@ -7276,7 +7276,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 10,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jadel-kemo-trpg-log-copilot-skill.png"
+   "cover": "/skill/assets/covers/jadel-kemo-trpg-log-copilot-skill.png"
   },
   "mantyke-game-notebook-skill": {
    "title_zh": "奇数页孔在左偶数页在右，把攻略印成活页手账",
@@ -7378,7 +7378,7 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/2998980-hue-surreal-pop-collage.png",
+   "cover": "/skill/assets/covers/2998980-hue-surreal-pop-collage.png",
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 7
@@ -7399,7 +7399,7 @@
    "cover_real": false,
    "_无封面原因": "全仓唯一一张 claude.gif(1440x898, 10MB)，逐帧开过（第 0/220/440/660 帧）：是 claude.ai 网页录屏 —— 浏览器窗口、Free plan·Upgrade、输入框里打 /astrology how will my june go、下一帧是聊天页在问 What's your date of birth?，**全程没有出现星盘或任何产出物**，而且画面里有别人的账号名 sunim 和聊天 URL。界面截图 + 他人账号信息 → 不用",
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/aryaminus-astro-astrology.png"
+   "cover": "/skill/assets/covers/aryaminus-astro-astrology.png"
   },
   "hiyeshu-trip-map-builder": {
    "title_zh": "会替你删掉一半心愿单的行程地图生成器",
@@ -7413,7 +7413,7 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/hiyeshu-trip-map-builder.png",
+   "cover": "/skill/assets/covers/hiyeshu-trip-map-builder.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "仓库 0 张图片，只有 assets/template.html（Leaflet + CartoDB 瓦片，不需要 API key）。我照模板真跑出来了：填了 5 个京都点位（坐标逐个用 OpenStreetMap Nominatim 查的，没凭记忆写——顺带发现「錦市場」直接查会命中北京一个服装批发市场），playwright 截图存在 hearted_covers/_optional-hiyeshu-trip-map.png（1800x2400，画面是京都地图上 5 个橙",
@@ -7552,7 +7552,7 @@
    "category": "learn",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/duskyelf-teach-me-teach-me.png",
+   "cover": "/skill/assets/covers/duskyelf-teach-me-teach-me.png",
    "cover_kind": "og",
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出物是苏格拉底式追问对话（判断/评语类内容），按规矩不拿 demo 对话当自截图。",
@@ -7695,7 +7695,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/qian-gugugaga-character_skill_producer.png"
+   "cover": "/skill/assets/covers/qian-gugugaga-character_skill_producer.png"
   },
   "flowful-ai-cad-skill": {
    "title_zh": "动一行几何代码之前先去查真实尺寸的建模台",
@@ -7819,7 +7819,7 @@
    "cover_real": false,
    "_无封面原因": "全仓 0 张图片。产出物是维权文书和「定金/订金」的算钱结论（内容/判断），不做 ours。",
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yunpeng192-legal-language-bridge.png"
+   "cover": "/skill/assets/covers/yunpeng192-legal-language-bridge.png"
   },
   "senzhang88-socialist-workers-power-work-powers-shanghai": {
    "title_zh": "门禁被关了也让你去打卡，被拦就报警拿回执",
@@ -7920,7 +7920,7 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/gnipbao-codex-whiteboard-video-skill.png",
+   "cover": "/skill/assets/covers/gnipbao-codex-whiteboard-video-skill.png",
    "cover_kind": "artwork",
    "cover_real": true,
    "gate_score": 10
@@ -7989,7 +7989,7 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/geekjourneyx-travel-guidebook.png",
+   "cover": "/skill/assets/covers/geekjourneyx-travel-guidebook.png",
    "cover_kind": "artwork",
    "cover_real": true,
    "cover_w": 1920,
@@ -8171,7 +8171,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jasonbhorne-guitar-skill-guitar.png"
+   "cover": "/skill/assets/covers/jasonbhorne-guitar-skill-guitar.png"
   },
   "dougcompton-guitar-coach-guitar-coach": {
    "title_zh": "每次练琴出一份计时日志，三份之后自己排出纠正练习",
@@ -8383,7 +8383,7 @@
    "cover_real": false,
    "_无封面原因": "作者没放图（仓库树 10 项，零图片文件）。",
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jiang59991-qiaopi.png"
+   "cover": "/skill/assets/covers/jiang59991-qiaopi.png"
   },
   "elhamid-as-told-to-as-told-to": {
    "title_zh": "把父母的人生录成逐字稿，另出一份下次接着问的笔记",
@@ -8400,7 +8400,7 @@
    "cover_kind": "og",
    "cover_real": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/elhamid-as-told-to-as-told-to.png"
+   "cover": "/skill/assets/covers/elhamid-as-told-to-as-told-to.png"
   },
   "brendanbank-fix-my-text-skill-fix-my-text": {
    "title_zh": "b/d 写反了帮你改、口语拼法一个不动的改字台",
@@ -9284,7 +9284,7 @@
    "why_zh": "主题或句子压成竖版纸感海报，饱和度被按住。",
    "limit_zh": "不是热闹大片。要霓虹、要满版字，对不上。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/moonlin1213-muted-zine-poster-v01.png",
+   "cover": "/skill/assets/covers/moonlin1213-muted-zine-poster-v01.png",
    "cover_kind": "og"
   },
   "pqpo-pragma-code-cleanup-audit": {
@@ -9619,7 +9619,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png",
+   "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png",
    "cover_kind": "og"
   },
   "zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3": {
@@ -9631,7 +9631,7 @@
    "hide": false,
    "gate_score": 9,
    "tagline_zh": "可翻的薄刊物，不是一张海报",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png",
+   "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png",
    "cover_kind": "og"
   },
   "jinchenma94-bazi-skill": {
@@ -9642,7 +9642,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/jinchenma94-bazi-skill.png",
+   "cover": "/skill/assets/covers/jinchenma94-bazi-skill.png",
    "cover_kind": "og"
   },
   "eternityspring-shuohao-skills-novel-characters": {
@@ -9653,7 +9653,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/eternityspring-shuohao-skills-novel-characters.webp",
+   "cover": "/skill/assets/covers/eternityspring-shuohao-skills-novel-characters.webp",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9665,7 +9665,7 @@
    "pick": true,
    "hide": false,
    "gate_score": 9,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/crawfordxx-xiaoma-durex-copywriter.png",
+   "cover": "/skill/assets/covers/crawfordxx-xiaoma-durex-copywriter.png",
    "cover_kind": "og"
   },
   "yokel1121-muyang-illustration-skills-muyang-oriental-poetry": {
@@ -9676,7 +9676,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yokel1121-muyang-illustration-skills-muyang-oriental-poetry.png",
+   "cover": "/skill/assets/covers/yokel1121-muyang-illustration-skills-muyang-oriental-poetry.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9688,7 +9688,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-textile-toy-portrait.png",
+   "cover": "/skill/assets/covers/vieeeeeee-wibi-style-textile-toy-portrait.png",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9700,7 +9700,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/vieeeeeee-wibi-style-glitch-pixel-collage.png",
+   "cover": "/skill/assets/covers/vieeeeeee-wibi-style-glitch-pixel-collage.png",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9712,7 +9712,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/gnipbao-flat-poster-op.png",
+   "cover": "/skill/assets/covers/gnipbao-flat-poster-op.png",
    "cover_kind": "og"
   },
   "liamgvchi-gc-minimal-ip-doodle": {
@@ -9724,7 +9724,7 @@
    "hide": false,
    "gate_score": 8,
    "tagline_zh": "同一张脸反复画，五官不许漂",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liamgvchi-gc-minimal-ip-doodle.jpg",
+   "cover": "/skill/assets/covers/liamgvchi-gc-minimal-ip-doodle.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9736,7 +9736,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
+   "cover": "/skill/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
    "cover_kind": "og"
   },
   "liyue-aigc-xianxia-visual-director-xianxia-visual-director": {
@@ -9747,7 +9747,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liyue-aigc-xianxia-visual-director-xianxia-visual-director.png",
+   "cover": "/skill/assets/covers/liyue-aigc-xianxia-visual-director-xianxia-visual-director.png",
    "cover_kind": "og"
   },
   "carolinaaafy-travel-memory-sticker-card": {
@@ -9758,7 +9758,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/carolinaaafy-travel-memory-sticker-card.png",
+   "cover": "/skill/assets/covers/carolinaaafy-travel-memory-sticker-card.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9770,7 +9770,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-photo-relic-editorial.png",
+   "cover": "/skill/assets/covers/wnby-photo-relic-editorial.png",
    "cover_kind": "og"
   },
   "ayi-ai-nie-grassroots-logic": {
@@ -9781,7 +9781,7 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ayi-ai-nie-grassroots-logic.png",
+   "cover": "/skill/assets/covers/ayi-ai-nie-grassroots-logic.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9819,7 +9819,7 @@
    "why_zh": "同一作者诗意水墨之外的一款。主体原样填进暗黑时装配方，不许改光色。",
    "limit_zh": "不是插画工具箱。要东方诗意，去装那一件。",
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/yokel1121-muyang-illustration-skills-muyang-dark-fashion.png",
+   "cover": "/skill/assets/covers/yokel1121-muyang-illustration-skills-muyang-dark-fashion.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9837,7 +9837,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/n1ko724-kodak-2383-film-look-kodak-2383-film-look.jpg",
+   "cover": "/skill/assets/covers/n1ko724-kodak-2383-film-look-kodak-2383-film-look.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9849,7 +9849,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/luji12-handdrawn-photo-poster.jpg",
+   "cover": "/skill/assets/covers/luji12-handdrawn-photo-poster.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9861,7 +9861,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liuzihe849-png-ai-editorial-print-studio.png",
+   "cover": "/skill/assets/covers/liuzihe849-png-ai-editorial-print-studio.png",
    "cover_kind": "og"
   },
   "iamkong-photo-to-minimal-illustration": {
@@ -9872,7 +9872,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/iamkong-photo-to-minimal-illustration.jpg",
+   "cover": "/skill/assets/covers/iamkong-photo-to-minimal-illustration.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9884,7 +9884,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/haorantang97-antibes-holiday-antibes-holiday.png",
+   "cover": "/skill/assets/covers/haorantang97-antibes-holiday-antibes-holiday.png",
    "cover_kind": "og"
   },
   "wnby-paper-spirit-zine-paper-spirit-zine": {
@@ -9895,7 +9895,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-paper-spirit-zine-paper-spirit-zine.png",
+   "cover": "/skill/assets/covers/wnby-paper-spirit-zine-paper-spirit-zine.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9907,7 +9907,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kkenny0-card-skill.png",
+   "cover": "/skill/assets/covers/kkenny0-card-skill.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9919,7 +9919,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zhu930824-poetic-line-zine-poster.png",
+   "cover": "/skill/assets/covers/zhu930824-poetic-line-zine-poster.png",
    "cover_kind": "og"
   },
   "liigoqi-photo-to-travel-sketch": {
@@ -9930,7 +9930,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liigoqi-photo-to-travel-sketch.png",
+   "cover": "/skill/assets/covers/liigoqi-photo-to-travel-sketch.png",
    "cover_kind": "og"
   },
   "traveler0621-reality-restaged": {
@@ -9941,7 +9941,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/traveler0621-reality-restaged.png",
+   "cover": "/skill/assets/covers/traveler0621-reality-restaged.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9953,7 +9953,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/lzs0594-dreamy-motion-editorial.png",
+   "cover": "/skill/assets/covers/lzs0594-dreamy-motion-editorial.png",
    "cover_kind": "og"
   },
   "n1ko724-scene-to-art-lab-scene-to-art-lab": {
@@ -9964,7 +9964,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/n1ko724-scene-to-art-lab-scene-to-art-lab.jpg",
+   "cover": "/skill/assets/covers/n1ko724-scene-to-art-lab-scene-to-art-lab.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9976,7 +9976,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/hchen1218-heytea-style.png",
+   "cover": "/skill/assets/covers/hchen1218-heytea-style.png",
    "cover_kind": "og"
   },
   "whiplashzeb-photo-to-zine-postcard": {
@@ -9987,7 +9987,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "fun",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/whiplashzeb-photo-to-zine-postcard.png",
+   "cover": "/skill/assets/covers/whiplashzeb-photo-to-zine-postcard.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -9999,7 +9999,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
+   "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
    "cover_kind": "og"
   },
   "zzzlc0405-photo-abstract-editorial": {
@@ -10010,7 +10010,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/zzzlc0405-photo-abstract-editorial.png",
+   "cover": "/skill/assets/covers/zzzlc0405-photo-abstract-editorial.png",
    "cover_kind": "og"
   },
   "wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction": {
@@ -10021,7 +10021,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction.png",
+   "cover": "/skill/assets/covers/wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -10033,7 +10033,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/liigoqi-vinyl-image-generator.png",
+   "cover": "/skill/assets/covers/liigoqi-vinyl-image-generator.png",
    "cover_kind": "og"
   },
   "carolinaaafy-travel-memory-card-duo": {
@@ -10044,7 +10044,7 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/carolinaaafy-travel-memory-card-duo.png",
+   "cover": "/skill/assets/covers/carolinaaafy-travel-memory-card-duo.png",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -10055,7 +10055,7 @@
    "limit_zh": "要上色完成稿、要五官精修，会嫌它空。",
    "category": "creative",
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/joeyhu1108-maker-selective-ink-sketch.png",
+   "cover": "/skill/assets/covers/joeyhu1108-maker-selective-ink-sketch.jpg",
    "cover_kind": "artwork",
    "cover_real": true
   },
@@ -10189,7 +10189,7 @@
    "why_en": "A vague-word firewall: premium, refined, elegant, tasteful are never justifications; they must become saturation, spacing, radius and motion numbers.",
    "limit_en": "Outputs design specs and a single preview page, not a full front-end. Long document, context-hungry. One skill only.",
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png",
+   "cover": "/skill/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png",
    "cover_kind": "og",
    "cover_real": false
   },
@@ -10203,7 +10203,7 @@
    "why_en": "Every AI product rebuilds the same handful of chat-UI parts; these are finished, with live previews.",
    "limit_en": "Not a SKILL.md agent skill — an npm package and CLI you wire up yourself. Free components on npm; Pro ones need a paid AICSS_TOKEN.",
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kvnkld-aicss.png",
+   "cover": "/skill/assets/covers/kvnkld-aicss.png",
    "cover_kind": "og",
    "cover_real": false
   },
@@ -10217,7 +10217,7 @@
    "why_en": "It insists the preview video stays a plain screen recording — because Apple requires that — instead of prettifying it into something that gets rejected.",
    "limit_en": "Run it from the mobile app's own repo with a simulator available. Choosing which screens to market, authoring the flows and writing the copy stay yours.",
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/kacperkapusciak-goldie-goldie.png",
+   "cover": "/skill/assets/covers/kacperkapusciak-goldie-goldie.png",
    "cover_kind": "og",
    "cover_real": false
   }

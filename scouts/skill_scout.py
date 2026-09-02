@@ -582,7 +582,12 @@ def host_cover(sid: str, url: str) -> str:
         if len(data) < 800:
             return url
         open(path, "wb").write(data)
-        return f"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/{sid}.{ext}"
+        # **同源路径，不要 raw.githubusercontent。** 2026-09-02 实测：
+        # 首屏 58 张封面里 23 张加载失败（naturalWidth===0），而同一批 URL 用 curl
+        # 单独取都是 200 —— raw.githubusercontent 对单个客户端有速率限制，
+        # 一页几十张就把后面的掐了。站点本身就在 GitHub Pages 上，
+        # assets/covers/ 同源可取，还走 CDN 缓存。
+        return f"/skill/assets/covers/{sid}.{ext}"
     except Exception as e:
         print("[cover] host skip", sid, e)
         return url
