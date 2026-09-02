@@ -1361,15 +1361,6 @@
    "rejected_at": "2026-08-20"
   },
   {
-   "repo": "hugohe3/ppt-master",
-   "skill": "ppt-master",
-   "desc": "# Prefer curl_cffi for TLS-fingerprint impersonation (bypasses JA3 blocking on sites like WeChat)",
-   "reject_reason_zh": "脚本默认用 curl_cffi 冒充 Chrome120 的 TLS 指纹绕 JA3 拦截，curl_cffi 写进 requirements。",
-   "reject_rule": "红线",
-   "stars": 48045,
-   "rejected_at": "2026-08-20"
-  },
-  {
    "repo": "teng-lin/notebooklm-py",
    "skill": "notebooklm",
    "desc": "use `notebooklm login --browser-cookies <browser>` instead — extracts the user's already-logged-in cookies from Chrome/Firefox/etc.",
@@ -7567,5 +7558,15 @@
    "rejected_at": "2026-08-22"
   }
  ],
- "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。"
+ "_去重键": "(repo, skill)。同一个仓库可以一部分上架一部分被拒——合集卡在架、它的某个路由分支被拒，是正常状态，不是矛盾。skill 留空表示整个仓库被拒。",
+ "_翻案记录": [
+  {
+   "repo": "hugohe3/ppt-master",
+   "翻于": "2026-09-02",
+   "原拒于": "2026-08-20",
+   "原拒因": "脚本默认用 curl_cffi 冒充 Chrome120 的 TLS 指纹绕 JA3 拦截，curl_cffi 写进 requirements。",
+   "为什么翻": "去看现在的仓，同一处已从「Prefer curl_cffi（默认用）」改成「Optional …If installed, web_to_md.py uses it automatically; otherwise falls back to requests」。按本店「拆了还工作吗」：拆掉 curl_cffi 会回退到 requests，PPT 生成照常工作 → 选项不是机制 → 留架 + 在 limit_zh 里披露。",
+   "教训": "**拒收是永久的，上游却在变。** 我们拒了一个五万星的仓，理由两周前就不成立了，而没有任何东西会回头看。为此加了 scouts/recheck_rejects.py。"
+  }
+ ]
 }

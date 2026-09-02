@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 177 skills.
+# Full corpus, plain text. 180 skills.
 
 ========================================================================
 ## a2ui-renderer
@@ -579,6 +579,28 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
+
+========================================================================
+## ppt-master
+## 出可编辑的 PPTX，也能把做好的稿子重排和加旁白
+URL: https://ourword.ai/skill/i/hugohe3-ppt-master-ppt-master/
+Source: https://github.com/hugohe3/ppt-master/tree/HEAD/skills/ppt-master
+Updated: 2026-08-31
+Tags: docs, skill, hugohe3
+
+Routed workflow: author new decks, reconstruct page visuals, fill native PPTX templates, enhance finished files, or add narration and animation for a self-running video.
+
+### What does this skill do?
+Routed workflow: author new decks, reconstruct page visuals, fill native PPTX templates, enhance finished files, or add narration and animation for a self-running video.
+
+### Why is it worth installing?
+It hands back a real editable PPTX rather than images posing as slides; templates are filled natively so the deck stays a deck.
+
+### How do you install it?
+git clone --depth 1 https://github.com/hugohe3/ppt-master.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: hugohe3/ppt-master The repository ships 1 skills in total. Homepage: https://hugohe3.github.io/ppt-master-examples/
 
 ========================================================================
 ## huashu-report
@@ -1266,6 +1288,28 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-design.git 然后把智
 Repository: alchaincyf/huashu-design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## aicss
+## 给 AI 对话界面用的现成 React 组件和 CLI
+URL: https://ourword.ai/skill/i/kvnkld-aicss/
+Source: https://github.com/kvnkld/aicss
+Updated: 2026-08-24
+Tags: work, skill, kvnkld
+
+Thinking states, streaming output and other AI-conversation UI pieces — npm for React, or pull React/Vue/Svelte source straight into your project via CLI.
+
+### What does this skill do?
+Thinking states, streaming output and other AI-conversation UI pieces — npm for React, or pull React/Vue/Svelte source straight into your project via CLI.
+
+### Why is it worth installing?
+Every AI product rebuilds the same handful of chat-UI parts; these are finished, with live previews.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kvnkld/aicss.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kvnkld/aicss The repository ships 1 skills in total. Homepage: https://www.aicss.dev
+
+========================================================================
 ## morandi-cinematic-poster-zeejay
 ## 把场景收成莫兰迪电影海报
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/
@@ -1911,7 +1955,7 @@ Treats emotions as signals, not defects—reframes stuck points through a 'syste
 git clone --depth 1 https://github.com/yeyulangzi/personal-reflector.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: yeyulangzi/personal-reflector Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+Repository: yeyulangzi/personal-reflector The repository ships 1 skills in total.
 
 --- 中文 ---
 焦虑、自我怀疑、关系反复？它不灌鸡汤，只带你回放触发瞬间，看清是旧模式在重播，还是新系统在磨合。
@@ -1926,7 +1970,7 @@ Use when the user discusses personal emotions, anxiety, self-doubt, behavior pat
 git clone --depth 1 https://github.com/yeyulangzi/personal-reflector.git 然后把智能体指向这个 skill 目录即可。
 
 ### Q：它从哪来？
-Repository: yeyulangzi/personal-reflector Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+Repository: yeyulangzi/personal-reflector The repository ships 1 skills in total.
 
 ========================================================================
 ## reality-restaged
@@ -2180,7 +2224,7 @@ It segments by color weight, not subject placement—flat fields adapt to tonal 
 git clone --depth 1 https://github.com/ZzzLc0405/photo-chromatic-abstraction-style-1.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 The repository ships 1 skills in total.
 
 --- 中文 ---
 照片记不住细节？那就只留颜色。自适应平涂色块 + 源图提取的克制点缀，让色彩权重自己说话，适合色卡转译与色彩构成练。
@@ -2195,7 +2239,7 @@ Translate an uploaded or local photograph into a color-first chromatic-memory ab
 git clone --depth 1 https://github.com/ZzzLc0405/photo-chromatic-abstraction-style-1.git 然后把智能体指向这个 skill 目录即可。
 
 ### Q：它从哪来？
-Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 The repository ships 1 skills in total.
 
 ========================================================================
 ## nie-grassroots-logic
@@ -3101,6 +3145,28 @@ git clone --depth 1 https://github.com/TwentyfiveBTea/ink-wash-poster.git Then p
 
 ### Where does it come from?
 Repository: TwentyfiveBTea/ink-wash-poster The repository ships 1 skills in total.
+
+========================================================================
+## app-ui-ux-best-practices
+## 把「高级感」翻译成能查的数值再动手做设计
+URL: https://ourword.ai/skill/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/
+Source: https://github.com/touchine-ojo/OJO-Design-Skills/tree/HEAD/skills/app-ui-ux-best-practices
+Updated: 2026-07-29
+Tags: images, skill, touchine-ojo
+
+Derives five register dials from product evidence first, then emits design specs, tokens and component rules — every dial value must cite evidence.
+
+### What does this skill do?
+Derives five register dials from product evidence first, then emits design specs, tokens and component rules — every dial value must cite evidence.
+
+### Why is it worth installing?
+A vague-word firewall: premium, refined, elegant, tasteful are never justifications; they must become saturation, spacing, radius and motion numbers.
+
+### How do you install it?
+git clone --depth 1 https://github.com/touchine-ojo/OJO-Design-Skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: touchine-ojo/OJO-Design-Skills The repository ships 1 skills in total. Homepage: https://ojo.art
 
 ========================================================================
 ## boardgame-creator
@@ -4539,7 +4605,7 @@ It automates the grunt work—subtitle sync, timeline alignment, translation bur
 git clone --depth 1 https://github.com/op7418/Youtube-clipper-skill.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: op7418/Youtube-clipper-skill Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+Repository: op7418/Youtube-clipper-skill The repository ships 1 skills in total.
 
 --- 中文 ---
 下载、AI 分章、选段、翻译、烧字幕一条龙。不用再开五个软件来回倒腾，几分钟级章节定位让找素材像翻目录。
@@ -4554,4 +4620,4 @@ YouTube 视频智能剪辑工具。下载视频和字幕，AI 分析生成精细
 git clone --depth 1 https://github.com/op7418/Youtube-clipper-skill.git 然后把智能体指向这个 skill 目录即可。
 
 ### Q：它从哪来？
-Repository: op7418/Youtube-clipper-skill Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+Repository: op7418/Youtube-clipper-skill The repository ships 1 skills in total.

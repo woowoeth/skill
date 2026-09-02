@@ -345,6 +345,20 @@ LICENCE_CTX = re.compile(
 # 第 948 行 `class GoalHijackTester`，第 945 行 `### 1. Goal Hijack Testing`。
 # 那是喂给你自己 agent 检验它抗不抗注入的测试集，和危害正好相反。
 # **按前若干行的语境判，不按本行** —— 样本行本身长得和真攻击一模一样，本行永远判不出来。
+# 压掉「自己步骤之间的催问」不是危害 —— 危害是压掉**对外部有后果的动作**的确认。
+# 2026-09-02，touchine-ojo/OJO-Design-Skills 逼出来的（店主指名说这是好货）。
+# 它 SKILL.md 第 371 行写：
+#   Do NOT output a question like「需要先出一个核心页面看看整体感觉吗？」
+#   or「产品简报已保存…要继续吗？」— both calls are mandatory and uninterruptible.
+# 被压掉的两个动作是**写它自己声明的两个本地文件**（PRD、预览页），
+# 压掉的是「要继续吗」这种催问，不是危险动作前的确认门。
+# 和 mattpocock「Append silently. Don't ask permission for each fragment」
+# （已判误报）是同一种。**判据是「确认的对象是什么」，不是「出现了不要确认」。**
+NAG_CTX = re.compile(
+    r"(要继续吗|继续吗|需要.{0,10}吗？|shall\s+i\s+(?:continue|proceed)"
+    r"|do\s+you\s+want\s+(?:me\s+)?to\s+(?:continue|proceed)"
+    r"|non-?interactive|uninterruptible|mandatory and|不要输出|don'?t output)", re.I)
+
 PAYLOAD_CTX = re.compile(
     r"(PAYLOADS?\s*[=:]|_PAYLOADS|class\s+\w*(?:Tester|Attack|Injection|Hijack)"
     r"|(?:test|attack|hijack|injection)[_\s]?(?:cases?|payloads?|vectors?|suite)"
@@ -793,6 +807,9 @@ def scan_one(repo: str, path: str = "", show_all: bool = False, _depth: int = 0)
                     # 样本行本身长得和真攻击一模一样，本行永远判不出来，
                     # 判据在它上面那几行（`HIJACK_PAYLOADS = [` / `class GoalHijackTester`）。
                     if PAYLOAD_CTX.search(txt[max(0, ls - 400):ls]):
+                        continue
+                    # 催问不是确认门 —— 看本行和后 300 字（被压掉的是什么，写在后面）
+                    if NAG_CTX.search(txt[ls:min(len(txt), ls + 300)]):
                         continue
                 found.append((tag, ln, m.group(0)[:60], line))
         # 毒性阈值不是用药指示 —— **它跟「照着它就能给人用药」正好相反**。
