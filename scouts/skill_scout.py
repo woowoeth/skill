@@ -840,10 +840,14 @@ TASTE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一�
 ---"""
 
 
+# 每轮的判决留在仓里，不只在 Actions 日志里 —— 日志要点进去才看得到，
+# 而店主要的是「为什么过、为什么不过都讲清楚」。写进 editorial/gate_log.json。
+GATE_LOG: list[dict] = []
+
 TASTE_MIN = int(os.environ.get("TASTE_MIN", "60"))
 
 
-def taste_score(it: dict) -> int:
+def taste_score(it: dict) -> tuple[int, str]:
     """让判官读上游正文打 0-100 分。读不到正文或调不通 → 返回 -1（**不当作过**）。
 
     2026-09-02 立。此前三轮测量说「机器判不了品味」（题材词 +1pt、上游形态 +6pt、
@@ -866,7 +870,7 @@ def taste_score(it: dict) -> int:
             body = open(cand, encoding="utf-8", errors="replace").read()
             break
     if not body or not LLM_KEY:
-        return -1
+        return -1, ("没有上游正文存档" if not body else "判官不通（LLM_API_KEY 没配）")
     prompt = TASTE_PROMPT.format(body=body[:6000])
     import urllib.request
     anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
@@ -888,10 +892,10 @@ def taste_score(it: dict) -> int:
         txt = (resp["content"][0]["text"] if anthropic
                else resp["choices"][0]["message"]["content"])
         txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-        return int(json.loads(txt).get("score", -1))
+        d = json.loads(txt)
+        return int(d.get("score", -1)), str(d.get("why", "")).strip()[:40]
     except Exception as e:
-        print(f"[taste] {it.get('id')}: {type(e).__name__}: {e}")
-        return -1
+        return -1, f"{type(e).__name__}: {str(e)[:60]}"
 
 
 def _taste_pass(it: dict) -> str:
@@ -933,22 +937,37 @@ def _taste_pass(it: dict) -> str:
     # 封面也没进闸：在架货 99% 有封面（是 08-28 补的），但**心选里 30 件没有**，
     # 拿它当入闸条件会砍掉 42% 的心选。**缺封面是待办，不是判决** ——
     # 改成 check_curation 的一张待办清单（见【20】）。
-    # 用 GATE_FIELDS 这一个常量，不再各写各的 —— 提示词那头由
-    # _assert_prompt_covers_gate() 开跑即验，两边不可能再悄悄分家。
-    if not all(len((it.get(k) or "").strip()) >= 8 for k in GATE_FIELDS):
-        return ""
-    if len((it.get("limit_zh") or "").strip()) < 20:
-        return ""
+    # **每一道闸都要说清为什么**（店主 2026-09-02 要求）。
+    # 之前只在过闸时打一行「上架 xxx via yyy」，不过的那些只有一个「拒」字 ——
+    # 那等于把判断藏起来了：看日志的人没法复核，也没法告诉我判错在哪。
+    sid = it.get("id", "?")
+    def _log(ok: bool, why: str, score: int | None = None) -> str:
+        GATE_LOG.append({"id": sid, "repo": it.get("repo", ""),
+                         "title": (it.get("title_zh") or "")[:34],
+                         "过": ok, "为什么": why,
+                         **({"分": score} if score is not None else {})})
+        print(f"[gate] {'✓' if ok else '✗'} {sid}  {why}")
+        return f"taste{score}" if ok else ""
+    # 「缺」和「太短」要分开说 —— 说错理由比说少更糟：
+    # 写了「对不上就卸」5 个字被报成「缺 limit_zh」，看日志的人会去找一个不存在的空字段。
+    empty = [k for k in GATE_FIELDS if not (it.get(k) or "").strip()]
+    short = [f"{k}({len((it.get(k) or '').strip())}字)"
+             for k in GATE_FIELDS
+             if (it.get(k) or "").strip() and len((it.get(k) or "").strip()) < 8]
+    if empty or short:
+        parts = ([f"缺 {'/'.join(empty)}"] if empty else []) + \
+                ([f"太短 {'/'.join(short)}"] if short else [])
+        return _log(False, f"文案不齐：{' · '.join(parts)}")
+    lim = (it.get("limit_zh") or "").strip()
+    if len(lim) < 20:
+        return _log(False, f"局限只有 {len(lim)} 字（要 ≥20）：{lim}")
     # 品味判据。**读不到正文或判官不通 → 不当作过**（沿用「没扫到不算干净」那条）。
-    sc = taste_score(it)
+    sc, why = taste_score(it)
     if sc < 0:
-        print(f"[taste] {it.get('id')} 判不了（无上游正文或判官不通）→ 留库房")
-        return ""
+        return _log(False, f"品味判不了 —— {why} → 留库房")
     if sc < TASTE_MIN:
-        print(f"[taste] {it.get('id')} {sc} 分 < {TASTE_MIN} → 不上架")
-        return ""
-    print(f"[taste] {it.get('id')} {sc} 分 → 上架")
-    return f"taste{sc}"
+        return _log(False, f"品味 {sc} 分 < {TASTE_MIN} —— {why}", sc)
+    return _log(True, f"品味 {sc} 分 —— {why}", sc)
 
 
 def _local_copy(it: dict) -> dict:
@@ -1013,7 +1032,8 @@ def same_day_shelf(ids: list[str], existing: dict) -> int:
         if not lane:
             it["hide"] = True
             lib.save_item(it)
-            print(f"[shelf] 拒 {sid}")
+            # 不再打「拒 xxx」——上面 [gate] 那行已经写了为什么，
+            # 这行只重复结论、丢掉理由，比没有更糟。
             continue
         blob = (it.get("title_zh") or "") + (it.get("tagline_zh") or "") + (it.get("why_zh") or "")
         if "英文简介" in blob or "见下" in blob or "没在本机" in (it.get("limit_zh") or "") \
@@ -1044,11 +1064,24 @@ def same_day_shelf(ids: list[str], existing: dict) -> int:
         })
         items[sid] = patch
         up += 1
-        print(f"[shelf] 上架 {sid} via {lane}")
+        print(f"[shelf] 上架 {sid}  ({lane})")
     if up:
         cur.setdefault("gate", {})["same_day"] = True
         lib.write_json(lib.EDITORIAL, cur)
-    print(f"[shelf] same-day {up}/{len(ids)}")
+    print(f"[shelf] same-day {up}/{len(ids)} —— 上面每一行都写了为什么过、为什么不过")
+    if GATE_LOG:
+        gp = os.path.join(lib.ROOT, "editorial", "gate_log.json")
+        doc = lib.read_json(gp, {"_说明": "每轮门闸的判决：谁过了、谁没过、为什么。"
+                                         "**留在仓里**，不只在 Actions 日志里 —— "
+                                         "日志要点进去才看得到。只留最近 20 轮。",
+                                 "rounds": []})
+        doc.setdefault("rounds", []).insert(0, {
+            "时间": lib.now_iso(), "判了": len(GATE_LOG),
+            "过": sum(1 for x in GATE_LOG if x["过"]),
+            "明细": GATE_LOG})
+        doc["rounds"] = doc["rounds"][:20]
+        lib.write_json(gp, doc)
+        print(f"[gate] 判决留档 editorial/gate_log.json（{len(GATE_LOG)} 条）")
     return up
 
 
