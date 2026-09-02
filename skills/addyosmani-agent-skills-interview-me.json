@@ -2,12 +2,12 @@
  "id": "addyosmani-agent-skills-interview-me",
  "kind": "skill",
  "name": "interview-me",
- "title_zh": "刨根问底",
- "tagline_zh": "当你说“做个App”却说不清给谁用，它不猜，而是一问一答追到95%把握。专治需求模糊，逼出你真正想要的。",
- "tagline_en": "When you say 'build me an app' but can't say for whom, it won't guess—it interviews you one question at a time.",
+ "title_zh": "用一问一答逼出你真正想要的东西",
+ "tagline_zh": "当你说“帮我做个X”却说不清给谁用、为什么现在做——它不猜，不列选项，一次只问一个问题，直到95%确信你心底的真实。",
+ "tagline_en": "When you say \"build me X\" but can't say for whom or why now—it doesn't guess or list options. One question at a.",
  "desc_en": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yours",
- "why_zh": "同类工具多直接给方案，它却用单问迭代逼近真实意图，直到95%置信才动手，避免返工。",
- "why_en": "Unlike tools that jump to solutions, it iterates one question at a time to 95% intent confidence, preventing rework.",
+ "why_zh": "别的skill急着给方案，它急着拆问题。每次只问一个，逼你自检，把“我以为想要”和“我实际需要”之间的。",
+ "why_en": "Others rush to solutions; it rushes to deconstruct. One question at a time forces self-audit, exposing the gap between what you.",
  "repo": "addyosmani/agent-skills",
  "owner": "addyosmani",
  "path": "skills/interview-me",
@@ -29,5 +29,8 @@
  },
  "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-agent-skills-interview-me.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 8,
+ "limit_zh": "只对“需求模糊”有效——若你已能写出清晰PRD，它只会烦你。不产出方案、不写代码，只输出澄清后的意图陈述。问完就停。",
+ "limit_en": "Only helps with underspecified asks—if you already have a crisp PRD, it'll just annoy you. Produces no solution or code, only a clarified intent."
 }
