@@ -1,0 +1,33 @@
+{
+ "id": "antonbabenko-terraform-skill-terraform-skill",
+ "kind": "skill",
+ "name": "terraform-skill",
+ "title_zh": "写 Terraform 时自动识别故障模式并给出版本",
+ "tagline_zh": "当你的 module 开始身份漂移、密钥泄漏、爆炸半径失控时，它不报错，而是告诉你这是哪一类故障、该往哪儿修。",
+ "tagline_en": "When your module starts identity churn, secret leaks, or blast-radius creep, it names the failure mode and points.",
+ "desc_en": "Use when writing, reviewing, or debugging Terraform/OpenTofu modules, tests, CI, scans, or state ops - diagnoses failure mode (identity churn, secrets, blast radius, CI drift, state corruption) with version-aware guards.",
+ "why_zh": "不是 lint，是诊断器：按故障模式分类（身份漂移、密钥、爆炸半径、CI 漂移、状态损坏）。",
+ "why_en": "Not a linter but a diagnostician: classifies failures by mode (identity churn, secrets, blast radius, CI drift, state.",
+ "limit_zh": "只覆盖 Terraform/OpenTofu 的 module 编写、测试、CI、扫描和状态操作。",
+ "limit_en": "Only for Terraform/OpenTofu modules, tests, CI, scans, state ops. Non-HCL IaC (Pulumi, CloudFormation) unsupported; non-modular code gets generic.",
+ "repo": "antonbabenko/terraform-skill",
+ "owner": "antonbabenko",
+ "path": "skills/terraform-skill",
+ "url": "https://github.com/antonbabenko/terraform-skill/tree/HEAD/skills/terraform-skill",
+ "homepage": "",
+ "stars": 2321,
+ "pushed_at": "2026-07-03T05:56:41Z",
+ "skill_count": 1,
+ "category": "writing",
+ "fun_score": 3.03,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/antonbabenko/terraform-skill.git",
+  "copy": "cp -r terraform-skill/skills/terraform-skill ~/.claude/skills/terraform-skill",
+  "dir": "~/.claude/skills/terraform-skill"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/antonbabenko-terraform-skill-terraform-skill.png"
+}

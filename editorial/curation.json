@@ -10054,6 +10054,114 @@
    "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/joeyhu1108-maker-selective-ink-sketch.png",
    "cover_kind": "artwork",
    "cover_real": true
+  },
+  "luji12-retro-scrapbook-collage": {
+   "title_zh": "把日常照片转成复古剪贴簿海报",
+   "why_zh": "不是滤镜叠加，而是先做主体检测与物件完整性保留，再按语义配字。贴纸层级和纸纹质感按真实剪贴流程生成。",
+   "limit_zh": "只认单人或双人且主体占画面 30% 以上的照片；多人合照或主体过小会直接失败。输出固定 1086×1448。",
+   "tagline_zh": "人物居中不裁切，物件抠成完整贴纸，暖白扫描纸感加语义短句。复刻 90 年代家庭相册，一张图就够。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "tjxj-dsh-wanghong-handwritten-ppt-wanghong-handwritten-ppt": {
+   "title_zh": "把讲稿变成王虹式手写学术报告幻灯片",
+   "why_zh": "它复刻王虹学术报告的手写气质——非字体替换，而是排版、留白、笔迹节奏的整体模拟，输出可直接放映的 HT。",
+   "limit_zh": "只认中文讲稿/技术主题；需本机有 Chromium 或 Chrome 才能导出 PNG；不处理图表、公式渲染。",
+   "tagline_zh": "讲稿/技术主题一键变 Notability 手写风 16:9 HTML 幻灯片，逐页导出 PNG。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "s0xdk-refactoring-ui-skill": {
+   "title_zh": "把 Refactoring UI 的设计规则变成你的",
+   "why_zh": "不是泛泛而谈，而是把书里的约束尺度、层级对比、光照模拟变成可执行的检查项，直接作用于你的代码。",
+   "limit_zh": "只覆盖视觉规则（间距/字号/颜色/阴影/圆角），不涉及交互逻辑、动效或无障碍；需要你提供代码或截图，且规则偏静态设计。",
+   "tagline_zh": "做界面总差口气？用这本书的硬规则查间距、字号、阴影、层级，像老手一样挑出毛病，改完立刻顺眼。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "mempalace-mempalace-mempalace": {
+   "title_zh": "把项目与对话挖掘成一座可检索的记忆宫殿",
+   "why_zh": "不是全文搜索，而是按翼、房间、抽屉分层归档，检索时沿结构走，命中率比关键词高一个量级。",
+   "limit_zh": "只挖本机已存在的项目与对话，不接云端；新建对话不会自动入库，需显式触发挖掘；检索结果止于「找到片段」。",
+   "tagline_zh": "问一句「上次那个方案后来怎么改的」，它从你散落的旧对话里把上下文捞回来——不用翻聊天记录，不用记得关键词。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "bmad-code-org-bmad-method": {
+   "title_zh": "把敏捷开发流程蒸馏成可复用的 AI 驱动方法",
+   "why_zh": "它不是零散技巧，而是一套有状态的工作流协议：每个阶段产出物自动成为下一阶段的上下文。",
+   "limit_zh": "只覆盖软件开发流程（需求→设计→开发→测试→复盘），不涉及硬件、市场或运营。需要团队已有敏捷实践基础。",
+   "tagline_zh": "团队从『人肉开会』切换到『AI 全程陪跑』。这套方法把冲刺、复盘、需求拆解都变成可执行的提示词链。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "addyosmani-web-quality-skills": {
+   "title_zh": "把 Lighthouse 报告变成可执行的网页优化清",
+   "why_zh": "不是给建议，是直接读你的 Lighthouse JSON，按影响排序生成改动清单。",
+   "limit_zh": "只认 Lighthouse 导出的 JSON 报告，且需含 performance 分类。不覆盖图片压缩。",
+   "tagline_zh": "别再看满屏红黄绿的审计项发呆。这套 skill 把 Core Web Vitals 拆成一步步改法。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "addyosmani-web-quality-skills-accessibility": {
+   "title_zh": "按 WCAG 2.2 给网页做无障碍体检并给修复清单",
+   "why_zh": "不是给「建议」，而是给「断言」：每条失败都对应 WCAG 2.2 的具体条款和修复动作。比人工走查快。",
+   "limit_zh": "只审静态 HTML/CSS 可判定的项；动态交互、焦点陷阱、真实读屏体验需人工验证。产物是问题清单，不含自动修复补丁。",
+   "tagline_zh": "用户说「做个无障碍」时，别只加 alt。它按 2.2 逐条查键盘、读屏、对比度，给出能直接改的修复项。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "addyosmani-web-quality-skills-best-practices": {
+   "title_zh": "一键给代码做安全与质量体检并现代化改造",
+   "why_zh": "它把分散的 Web 最佳实践编译成可执行的检查清单，按需触发，自动定位问题并给出具体改法。",
+   "limit_zh": "只覆盖 Web 前端代码（HTML/CSS/JS），不处理后端或框架特有逻辑；依赖静态分析，无法检测运行时漏洞。",
+   "tagline_zh": "当你说“检查漏洞”或“现代化代码”，它直接动手：查安全、查兼容、查坏味道，并给出可落地的修复建议。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "addyosmani-web-quality-skills-core-web-vitals": {
+   "title_zh": "用现场与实验室数据修复 Core Web Vital",
+   "why_zh": "它把现场与实验室证据分开处理，先看真实用户分布，再对照实验室诊断，避免用合成数据误导优化方向。",
+   "limit_zh": "只覆盖 LCP、INP、CLS 三项，不处理 TTFB、FCP 等其他指标；需要能访问 PageSpeed Insig。",
+   "tagline_zh": "LCP 慢、CLS 跳、INP 卡？不用猜，直接拿 CrUX 现场数据和 Lighthouse 实验室证据。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "aaron-he-zhu-aaron-marketing-skills": {
+   "title_zh": "120个营销技能打包成一个AI营销部",
+   "why_zh": "不是技能堆砌，是带质检的流水线：每个输出先过TALE/EEAT/CITE等闸门再交付。",
+   "limit_zh": "只覆盖营销域，不碰产品研发/客服；8道闸门是规则检查不是创意生成器，要天马行空的点子它反而会拦你。",
+   "tagline_zh": "别人一个prompt只干一件事，你一个合同装下叙事、SEO、社媒、邮件、投放、达人、发布7个兵种。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "antonbabenko-terraform-skill-terraform-skill": {
+   "title_zh": "写 Terraform 时自动识别故障模式并给出版本",
+   "why_zh": "不是 lint，是诊断器：按故障模式分类（身份漂移、密钥、爆炸半径、CI 漂移、状态损坏）。",
+   "limit_zh": "只覆盖 Terraform/OpenTofu 的 module 编写、测试、CI、扫描和状态操作。",
+   "tagline_zh": "当你的 module 开始身份漂移、密钥泄漏、爆炸半径失控时，它不报错，而是告诉你这是哪一类故障、该往哪儿修。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "swaylq-humanize-chinese": {
+   "title_zh": "中文去AI腔六步套装，装完即用零配置",
+   "why_zh": "不是单一改写，是六道工序闭环：生成时按指南落笔、产出后清单复查、脚本按文体路由词表、连水印都扫。",
+   "limit_zh": "只处理中文文本，不碰英文；词表替换仅限短语级、子句边界，长句重构需手动；需Python环境跑脚本；不保证文学性提升。",
+   "tagline_zh": "初稿就不带AI味，复查拆模板，Python按文体换词，Claude腔转平实，还能扫零宽字符水印——一个skill全。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
   }
  },
  "gate": {

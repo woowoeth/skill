@@ -1,0 +1,33 @@
+{
+ "id": "addyosmani-web-quality-skills-accessibility",
+ "kind": "skill",
+ "name": "accessibility",
+ "title_zh": "按 WCAG 2.2 给网页做无障碍体检并给修复清单",
+ "tagline_zh": "用户说「做个无障碍」时，别只加 alt。它按 2.2 逐条查键盘、读屏、对比度，给出能直接改的修复项。",
+ "tagline_en": "When asked to \"make it accessible,\" don't just add alt text. It audits keyboard, screen reader, contrast against.",
+ "desc_en": "Audit and improve web accessibility following WCAG 2.2 guidelines. Use when asked to \"improve accessibility\", \"a11y audit\", \"WCAG compliance\", \"screen reader support\", \"keyboard navigation\", or \"make accessible\".",
+ "why_zh": "不是给「建议」，而是给「断言」：每条失败都对应 WCAG 2.2 的具体条款和修复动作。比人工走查快。",
+ "why_en": "It doesn't suggest—it asserts. Each failure maps to a specific WCAG 2.2 clause and a concrete fix. Faster than manual review.",
+ "limit_zh": "只审静态 HTML/CSS 可判定的项；动态交互、焦点陷阱、真实读屏体验需人工验证。产物是问题清单，不含自动修复补丁。",
+ "limit_en": "Static HTML/CSS only; dynamic focus traps and real screen-reader UX need manual checks. Outputs findings, not patches. For SPAs, provide rendered.",
+ "repo": "addyosmani/web-quality-skills",
+ "owner": "addyosmani",
+ "path": "skills/accessibility",
+ "url": "https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/accessibility",
+ "homepage": "",
+ "stars": 2733,
+ "pushed_at": "2026-08-24T21:07:36Z",
+ "skill_count": 1,
+ "category": "fun",
+ "fun_score": 3.79,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git",
+  "copy": "cp -r web-quality-skills/skills/accessibility ~/.claude/skills/accessibility",
+  "dir": "~/.claude/skills/accessibility"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-web-quality-skills-accessibility.png"
+}

@@ -1,0 +1,33 @@
+{
+ "id": "addyosmani-web-quality-skills-core-web-vitals",
+ "kind": "skill",
+ "name": "core-web-vitals",
+ "title_zh": "用现场与实验室数据修复 Core Web Vital",
+ "tagline_zh": "LCP 慢、CLS 跳、INP 卡？不用猜，直接拿 CrUX 现场数据和 Lighthouse 实验室证据。",
+ "tagline_en": "Stop guessing why LCP is slow or CLS jumps—use field + lab evidence to pinpoint and fix Core Web Vitals with.",
+ "desc_en": "Optimize Core Web Vitals (LCP, INP, CLS) for better page experience using field and lab evidence. Use when asked to \"improve Core Web Vitals\", \"fix LCP\", \"reduce CLS\", \"optimize INP\", \"page experience optimization\", or \"fix layout shifts\".",
+ "why_zh": "它把现场与实验室证据分开处理，先看真实用户分布，再对照实验室诊断，避免用合成数据误导优化方向。",
+ "why_en": "Separates field from lab evidence, so you prioritize fixes based on real-user impact, not just synthetic scores.",
+ "limit_zh": "只覆盖 LCP、INP、CLS 三项，不处理 TTFB、FCP 等其他指标；需要能访问 PageSpeed Insig。",
+ "limit_en": "Only covers LCP, INP, CLS; requires PageSpeed Insights API or CrUX data access, otherwise lab-only advice, no real-user validation.",
+ "repo": "addyosmani/web-quality-skills",
+ "owner": "addyosmani",
+ "path": "skills/core-web-vitals",
+ "url": "https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/core-web-vitals",
+ "homepage": "",
+ "stars": 2733,
+ "pushed_at": "2026-08-24T21:07:36Z",
+ "skill_count": 1,
+ "category": "fun",
+ "fun_score": 3.79,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/addyosmani/web-quality-skills.git",
+  "copy": "cp -r web-quality-skills/skills/core-web-vitals ~/.claude/skills/core-web-vitals",
+  "dir": "~/.claude/skills/core-web-vitals"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/addyosmani-web-quality-skills-core-web-vitals.png"
+}

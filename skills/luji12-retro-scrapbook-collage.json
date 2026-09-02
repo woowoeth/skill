@@ -1,0 +1,33 @@
+{
+ "id": "luji12-retro-scrapbook-collage",
+ "kind": "skill",
+ "name": "retro-scrapbook-collage",
+ "title_zh": "把日常照片转成复古剪贴簿海报",
+ "tagline_zh": "人物居中不裁切，物件抠成完整贴纸，暖白扫描纸感加语义短句。复刻 90 年代家庭相册，一张图就够。",
+ "tagline_en": "Center the person, keep objects uncut as stickers, warm scan paper, semantic captions. Recreate 90s family albums.",
+ "desc_en": "将日常照片转译成 1086×1448 的复古 DIY 剪贴簿海报：保留一个居中的完整人物主体，从原图提取少量完整物件做成清晰贴纸，再加入克制的通用几何贴纸、暖白扫描纸质感和与画面语义相关的短文字。用于用户要求复刻家庭相册、90/00 年代剪贴簿、照片贴纸拼贴，或强调“人物居中、物件完整、不裁切”的视觉风格时。",
+ "why_zh": "不是滤镜叠加，而是先做主体检测与物件完整性保留，再按语义配字。贴纸层级和纸纹质感按真实剪贴流程生成。",
+ "why_en": "Not a filter stack—it detects subjects, preserves object completeness, then composes stickers and captions semantically.",
+ "limit_zh": "只认单人或双人且主体占画面 30% 以上的照片；多人合照或主体过小会直接失败。输出固定 1086×1448。",
+ "limit_en": "Only works with 1-2 people occupying >30% of frame; group shots fail. Fixed 1086×1448 output, no recomposition. Captions auto-derived from scene, no.",
+ "repo": "luji12/retro-scrapbook-collage",
+ "owner": "luji12",
+ "path": "",
+ "url": "https://github.com/luji12/retro-scrapbook-collage",
+ "homepage": "",
+ "stars": 8,
+ "pushed_at": "2026-08-14T14:43:19Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 4.51,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/luji12/retro-scrapbook-collage.git",
+  "copy": "mv retro-scrapbook-collage ~/.claude/skills/retro-scrapbook-collage",
+  "dir": "~/.claude/skills/retro-scrapbook-collage"
+ },
+ "cover": "https://opengraph.githubassets.com/1/luji12/retro-scrapbook-collage"
+}

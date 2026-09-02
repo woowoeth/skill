@@ -1,0 +1,33 @@
+{
+ "id": "swaylq-humanize-chinese",
+ "kind": "skill",
+ "name": "humanize-chinese",
+ "title_zh": "中文去AI腔六步套装，装完即用零配置",
+ "tagline_zh": "初稿就不带AI味，复查拆模板，Python按文体换词，Claude腔转平实，还能扫零宽字符水印——一个skill全。",
+ "tagline_en": "Write Chinese without AI flavor from draft one. Review, swap phrases by style, de-Claudify, strip invisible.",
+ "desc_en": "中文去 AI 腔一整套（装完即用，零 API Key —— 装了本 skill 的 agent 自己就是那个 LLM）。 六个流程：① 生成即去 AI —— 写中文时按本 skill 的写作指南落笔，初稿就不带 AI 腔； ② 复查改写 —— 产出后对照本 skill 的清单再过一遍，定点拆模板句式； ③ Python 词语替换 —— ./humanize replace 按文体自动路由词表（学术 120+ 条 / 通用 220+ 条），只做短语级、只在子句边界替换，改完自动核对数字/专名/段落； ④ Claude 腔转中文 —— 把 Claude 助手腔的中文改写成平实中文， 规则提炼自 gvzdv/claudish-to-english 并本地化； ⑤ 去水印 —— ./humanize watermark 扫清零宽字符/双向控制符/同形替身， 并对照 guillaumemeyer/w",
+ "why_zh": "不是单一改写，是六道工序闭环：生成时按指南落笔、产出后清单复查、脚本按文体路由词表、连水印都扫。",
+ "why_en": "Not a single rewrite—a six-stage pipeline: write per guide, audit against checklist, script swaps by style, even strips.",
+ "limit_zh": "只处理中文文本，不碰英文；词表替换仅限短语级、子句边界，长句重构需手动；需Python环境跑脚本；不保证文学性提升。",
+ "limit_en": "Chinese text only; phrase-level swaps at clause boundaries, no long-sentence restructuring; needs Python for scripts; removes clichés, not a.",
+ "repo": "swaylq/humanize-chinese",
+ "owner": "swaylq",
+ "path": "",
+ "url": "https://github.com/swaylq/humanize-chinese",
+ "homepage": "https://swaylq.github.io/humanize-chinese/",
+ "stars": 14,
+ "pushed_at": "2026-08-29T15:26:04Z",
+ "skill_count": 5,
+ "category": "writing",
+ "fun_score": 9.53,
+ "pick": false,
+ "hide": false,
+ "source": "daily-scout",
+ "added_at": "2026-09-02",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/swaylq/humanize-chinese.git",
+  "copy": "mv humanize-chinese ~/.claude/skills/humanize-chinese",
+  "dir": "~/.claude/skills/humanize-chinese"
+ },
+ "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/swaylq-humanize-chinese.png"
+}
