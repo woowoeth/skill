@@ -2,12 +2,12 @@
  "id": "tw93-waza-think",
  "kind": "skill",
  "name": "think",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：think。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把模糊想法变成可拍板的完整方案",
+ "tagline_zh": "还在为「这功能要不要做」反复开会？它把想法拆成结构化的决策点，连可行性、价值判断都替你推演完，你只需点头或摇头。",
+ "tagline_en": "Tired of endless meetings over 'should we build this?' It turns rough ideas into structured, decision-ready.",
  "desc_en": "Turns rough ideas into approved, decision-complete plans with validated structure before coding. Use when users ask in any language for planning, architecture, design direction, feasibility, value judgment, or whether a feature is worth doing before implementation. Not for bug fixes or small edits.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不写代码，而是先逼你把结构、边界、取舍摆上桌，用可验证的骨架让「值不值得做」变成一道选择题。",
+ "why_en": "It doesn't code—it forces structure, boundaries, and trade-offs onto the table, turning 'is it worth it?' into a checkbox, not a.",
  "repo": "tw93/Waza",
  "owner": "tw93",
  "path": "plugins/waza/skills/think",
@@ -27,5 +27,7 @@
   "copy": "cp -r Waza/plugins/waza/skills/think ~/.claude/skills/think",
   "dir": "~/.claude/skills/think"
  },
- "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e"
+ "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e",
+ "limit_zh": "只服务规划阶段，不碰 bug 修复和小改动；输出是方案不是代码，落地仍需你或团队实现；若需求已明确到可直接编码。",
+ "limit_en": "Planning only—no bug fixes or small edits. Output is a plan, not code. If requirements are already crystal-clear, it's redundant."
 }

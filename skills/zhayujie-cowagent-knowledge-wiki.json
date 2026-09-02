@@ -2,12 +2,12 @@
  "id": "zhayujie-cowagent-knowledge-wiki",
  "kind": "skill",
  "name": "knowledge-wiki",
- "title_zh": "",
- "tagline_zh": "调教技能的技能：knowledge-wiki。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把散落文章整理成可检索的个人知识库",
+ "tagline_zh": "你分享的文章、聊出的洞见，随手一丢就再也找不到？它替你归档、链接、沉淀，下次问一句就能捞回来。",
+ "tagline_en": "Articles you share and insights you chat about get lost? It files, links, and surfaces them—ask once, retrieve.",
  "desc_en": "Manage the personal knowledge wiki. Use when the user shares articles, documents, or asks to organize knowledge; when a conversation produces insights worth preserving as structured knowledge; or when the user asks about the knowledge base.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单存文件，而是按语义拆解、建立关联，让知识库随对话自然生长，问它就能定位到原始出处。",
+ "why_en": "Not just file storage—it parses semantically, links concepts, and grows with your chats, tracing every answer back to source.",
  "repo": "zhayujie/CowAgent",
  "owner": "zhayujie",
  "path": "skills/knowledge-wiki",
@@ -27,5 +27,7 @@
   "copy": "cp -r CowAgent/skills/knowledge-wiki ~/.claude/skills/knowledge-wiki",
   "dir": "~/.claude/skills/knowledge-wiki"
  },
- "cover": "https://private-user-images.githubusercontent.com/26161723/543901349-eca9a9ec-8534-4615-9e0f-96c5ac1d10a3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDkwNTEsIm5iZiI6MTc4Njg0ODc1MSwicGF0aCI6Ii8yNjE2MTcyMy81NDM5MDEzNDktZWNhOWE5ZWMtODUzNC00NjE1LTllMGYtOTZjNWFjMWQxMGEzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDAyNTIzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxOTQ1NTVmYmZjOTc5MGMxMjY5NWU5NTQ1ZDRiNDUzMjZkOTlkNGVlZWViYTZiYzkzYTNiMGY5Zjc3NzMwOWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.qGKSkd8gWS8KEWvwSX1uuak8SKSjQ6ynUDR2P_Rl50o"
+ "cover": "https://private-user-images.githubusercontent.com/26161723/543901349-eca9a9ec-8534-4615-9e0f-96c5ac1d10a3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDkwNTEsIm5iZiI6MTc4Njg0ODc1MSwicGF0aCI6Ii8yNjE2MTcyMy81NDM5MDEzNDktZWNhOWE5ZWMtODUzNC00NjE1LTllMGYtOTZjNWFjMWQxMGEzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDAyNTIzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxOTQ1NTVmYmZjOTc5MGMxMjY5NWU5NTQ1ZDRiNDUzMjZkOTlkNGVlZWViYTZiYzkzYTNiMGY5Zjc3NzMwOWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.qGKSkd8gWS8KEWvwSX1uuak8SKSjQ6ynUDR2P_Rl50o",
+ "limit_zh": "只处理文本类内容（文章/对话/文档），不解析PDF图表、音视频；需要你主动触发保存，不会自动抓取网页。",
+ "limit_en": "Text-only (articles/chats/docs); no PDF charts, audio, or video. Requires manual save trigger—no auto web scraping. Retrieval only covers."
 }

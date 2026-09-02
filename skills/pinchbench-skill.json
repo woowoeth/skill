@@ -2,12 +2,12 @@
  "id": "pinchbench-skill",
  "kind": "skill",
  "name": "pinchbench",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：pinchbench。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用真实任务给 OpenClaw 智能体跑分排名",
+ "tagline_zh": "日历、邮件、研究、编程、多步流程——五类真实任务一测便知。跑完直接提交榜单，跟别人家智能体硬碰硬比高低。",
+ "tagline_en": "Calendar, email, research, coding, multi-step flows—five real-world task types. Run, submit to the leaderboard.",
  "desc_en": "Run PinchBench benchmarks to evaluate OpenClaw agent performance across real-world tasks. Use when testing model capabilities, comparing models, submitting benchmark results to the leaderboard, or checking how well your OpenClaw setup handles calendar, email, research, coding, and multi-step workflows.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是自说自话的玩具题，是带评分基准的标准化测试。同一把尺子量所有智能体，结果可复现、可对比、可上榜。",
+ "why_en": "Not toy prompts—standardized, scored benchmarks. One ruler for every agent, reproducible results you can compare and rank.",
  "repo": "pinchbench/skill",
  "owner": "pinchbench",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/pinchbench/skill.git",
   "copy": "mv skill ~/.claude/skills/pinchbench",
   "dir": "~/.claude/skills/pinchbench"
- }
+ },
+ "limit_zh": "只测 OpenClaw 智能体，且只覆盖日历、邮件、研究、编码、多步流程这五类任务。不测视觉、语音、多模态。",
+ "limit_en": "OpenClaw agents only; covers just calendar, email, research, coding, multi-step flows. No vision/speech/multimodal. Needs OpenClaw installed."
 }

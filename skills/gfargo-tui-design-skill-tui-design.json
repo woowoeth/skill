@@ -2,12 +2,12 @@
  "id": "gfargo-tui-design-skill-tui-design",
  "kind": "skill",
  "name": "tui-design",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：tui-design。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把终端界面从能用改到好用，一次装齐",
+ "tagline_zh": "改 lazygit 布局、给 k9s 加筛选、让 btop 配色不刺眼——不用翻源码，直接说人话。",
+ "tagline_en": "Reshape lazygit, add filters to k9s, fix btop's glare—no source-diving. Just say it; it speaks Bubble Tea.",
  "desc_en": "Design, build, refactor, or review terminal interfaces—full-screen TUIs, interactive prompts, and command-line tools. Use for terminal-app layout and UX, CLI behavior, ncurses-style tools, dashboards, REPLs, fzf-like pickers, and libraries such as Bubble Tea, Ratatui, Textual, or Ink, including requests that name a known TUI such as lazygit, k9s, btop, helix, or yazi instead of saying “TUI.” Do no",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的代码生成器，它按 TUI 的渲染循环、事件模型和布局约束来思考，改完不破坏键盘流和刷新节奏。",
+ "why_en": "Not a generic codegen—it reasons in render loops, event models, and layout constraints, so edits keep keyboard flow and refresh.",
  "repo": "gfargo/tui-design-skill",
  "owner": "gfargo",
  "path": "plugins/tui-design/skills/tui-design",
@@ -27,5 +27,7 @@
   "copy": "cp -r tui-design-skill/plugins/tui-design/skills/tui-design ~/.claude/skills/tui-design",
   "dir": "~/.claude/skills/tui-design"
  },
- "cover": "https://www.skills.sh/b/gfargo/tui-design-skill"
+ "cover": "https://www.skills.sh/b/gfargo/tui-design-skill",
+ "limit_zh": "只认终端界面这一格：不碰 GUI 桌面应用、不写后端 API、不做数据管道。产物是代码改动建议和 diff。",
+ "limit_en": "Terminal UI only: no desktop GUI, no backend APIs, no data pipelines. Outputs diffs and suggestions—won't run tests or deploy. Deep IPC or async."
 }

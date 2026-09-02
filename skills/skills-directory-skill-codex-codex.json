@@ -2,12 +2,12 @@
  "id": "skills-directory-skill-codex-codex",
  "kind": "skill",
  "name": "codex",
- "title_zh": "",
- "tagline_zh": "过日子用得上：codex。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 Codex CLI 变成你手下的自动改码工",
+ "tagline_zh": "说一句“跑 codex”，它就知道该 exec 还是 resume。不用记参数、不用翻文档，改完代码还能接着上次的。",
+ "tagline_en": "Say \"run codex\" and it knows exec from resume. No flags to memorize, no docs to dig — pick up where you left off.",
  "desc_en": "Use when the user asks to run Codex CLI (codex exec, codex resume) or references OpenAI Codex for code analysis, refactoring, or automated editing",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 Codex 的两种入口封装成意图判断：分析/重构走 exec，续聊走 resume。",
+ "why_en": "It wraps Codex's two entry points into intent detection: exec for analysis/refactor, resume for follow-ups. Fewer keystrokes.",
  "repo": "skills-directory/skill-codex",
  "owner": "skills-directory",
  "path": "plugins/skill-codex/skills/codex",
@@ -27,5 +27,7 @@
   "copy": "cp -r skill-codex/plugins/skill-codex/skills/codex ~/.claude/skills/codex",
   "dir": "~/.claude/skills/codex"
  },
- "cover": "https://private-user-images.githubusercontent.com/36307788/503919437-85336a9f-4680-479e-b3fe-d6a68cadc051.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4ODk0NDgsIm5iZiI6MTc4Njg4OTE0OCwicGF0aCI6Ii8zNjMwNzc4OC81MDM5MTk0MzctODUzMzZhOWYtNDY4MC00NzllLWIzZmUtZDZhNjhjYWRjMDUxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDE0MDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxNWNmODhkYmJiZmFhMDA0YzY0MGU1OTUxODFiOTIyZmExZjA3Y2JjNTQ5NGYxOTEyYmM1YmZhMGUzYmYyODMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.308r5GWPBbBNK8gBMLzWhDSHVFzgD2gc3ogBrf9oVns"
+ "cover": "https://private-user-images.githubusercontent.com/36307788/503919437-85336a9f-4680-479e-b3fe-d6a68cadc051.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4ODk0NDgsIm5iZiI6MTc4Njg4OTE0OCwicGF0aCI6Ii8zNjMwNzc4OC81MDM5MTk0MzctODUzMzZhOWYtNDY4MC00NzllLWIzZmUtZDZhNjhjYWRjMDUxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDE0MDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxNWNmODhkYmJiZmFhMDA0YzY0MGU1OTUxODFiOTIyZmExZjA3Y2JjNTQ5NGYxOTEyYmM1YmZhMGUzYmYyODMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.308r5GWPBbBNK8gBMLzWhDSHVFzgD2gc3ogBrf9oVns",
+ "limit_zh": "只认本机已装好的 Codex CLI，且只处理 exec/resume 两种调用。不负责装环境、不解析输出。",
+ "limit_en": "Requires Codex CLI pre-installed; only handles exec/resume. No env setup, no output parsing, no complex multi-turn branching — else it hands back to."
 }

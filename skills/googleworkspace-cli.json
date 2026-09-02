@@ -2,12 +2,12 @@
  "id": "googleworkspace-cli",
  "kind": "collection",
  "name": "cli",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：cli。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一个命令行接管 Google 全家桶的官方 CLI",
+ "tagline_zh": "Drive、Gmail、日历、表格、文档、Chat、Admin…… 不用再记七八个 API 端点。一个工具。",
+ "tagline_en": "One CLI to rule all Google Workspace APIs — Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin. Auto-generated.",
  "desc_en": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是手写封装，而是从 Google Discovery Service 动态生成——API 更新它跟着。",
+ "why_en": "Not hand-wrapped — dynamically generated from Google Discovery Service, so it tracks API changes automatically. Official Google.",
  "repo": "googleworkspace/cli",
  "owner": "googleworkspace",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/googleworkspace/cli.git",
   "copy": "mv cli ~/.claude/skills/cli",
   "dir": "~/.claude/skills/cli"
- }
+ },
+ "limit_zh": "只覆盖 Google Workspace 官方 API，不含 GCP、YouTube 等非 Workspace 服务。",
+ "limit_en": "Only Google Workspace official APIs — no GCP, YouTube, etc. Requires Node.js 18+ and a Google Cloud project for OAuth. CLI only, no GUI or data."
 }

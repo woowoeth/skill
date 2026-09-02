@@ -2,12 +2,12 @@
  "id": "adolfousier-opencrabs-a2a-gateway",
  "kind": "skill",
  "name": "a2a-gateway",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：a2a-gateway。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "让两个 Agent 用 JSON-RPC 直接对话的",
+ "tagline_zh": "你的 Agent 还在靠人肉转发消息？装上它，Agent 之间就能点对点互聊，不用再经过你的对话框。",
+ "tagline_en": "Agents still chatting through you? This gateway lets them talk peer-to-peer over JSON-RPC, no human relay.",
  "desc_en": "Agent-to-Agent (A2A) protocol gateway reference. JSON-RPC 2.0 peer-to-peer agent communication. (/a2a-gateway, a2a, agent protocol)",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 A2A 协议做成了可挂载的网关参考实现，不是 SDK 而是协议层——你的 Agent 只需发 J。",
+ "why_en": "It's a protocol-level gateway, not a library—your agent just speaks JSON-RPC and joins a peer-to-peer agent mesh.",
  "repo": "adolfousier/opencrabs",
  "owner": "adolfousier",
  "path": "src/docs/reference/templates/skills/a2a-gateway",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/adolfousier/opencrabs.git",
   "copy": "cp -r opencrabs/src/docs/reference/templates/skills/a2a-gateway ~/.claude/skills/a2a-gateway",
   "dir": "~/.claude/skills/a2a-gateway"
- }
+ },
+ "limit_zh": "只覆盖 JSON-RPC 2.0 点对点通信，不含服务发现、鉴权或消息路由；需要你自行实现 Agent 身份注册和网络。",
+ "limit_en": "Only JSON-RPC 2.0 peer-to-peer; no discovery, auth, or routing. You must handle identity and topology yourself—otherwise local loopback only."
 }

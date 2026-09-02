@@ -2,12 +2,12 @@
  "id": "twostraws-swiftui-agent-skill-swiftui-pro",
  "kind": "skill",
  "name": "swiftui-pro",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：swiftui-pro。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "SwiftUI 代码审查官：现代 API、可维护性与",
+ "tagline_zh": "读、写、改 SwiftUI 项目时，它逐行挑刺：旧 API、隐式性能坑、难维护的结构，一次说清。不放过任何一处。",
+ "tagline_en": "Read, write, or refactor SwiftUI? It line-by-line flags legacy APIs, hidden perf traps, and unmaintainable.",
  "desc_en": "Comprehensively reviews SwiftUI code for best practices on modern APIs, maintainability, and performance. Use when reading, writing, or reviewing SwiftUI projects.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的 lint，而是按现代 SwiftUI 最佳实践做语义级审查，能区分「能用」和「该用」。",
+ "why_en": "Not a generic linter — it does semantic review against current SwiftUI best practices, telling 'works' from 'should be', with.",
  "repo": "twostraws/SwiftUI-Agent-Skill",
  "owner": "twostraws",
  "path": "swiftui-pro",
@@ -30,5 +30,7 @@
  "cover": "https://www.hackingwithswift.com/img/hws-plus-banner@2x.jpg",
  "repo_created_at": "2026-03-05",
  "skill_first_seen": "2026-03-05",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只覆盖 SwiftUI 视图与状态管理代码，不审查 UIKit/AppKit 混编、网络层或数据持久化。",
+ "limit_en": "SwiftUI views & state only; no UIKit/AppKit interop, networking, or persistence. Output is a review list, not auto-fixes. Requires Xcode 16+ & iOS."
 }

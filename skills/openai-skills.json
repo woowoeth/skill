@@ -2,12 +2,12 @@
  "id": "openai-skills",
  "kind": "collection",
  "name": "skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "官方 44 个技能合集，一次装齐 OpenAI 精选",
+ "tagline_zh": "不用再一个个翻 GitHub 找 skill。44 个官方验证过的技能，覆盖写代码、做表格、处理文档，装完就能用。",
+ "tagline_en": "Stop hunting for skills one by one. 44 official, battle-tested workflows for code, spreadsheets, and docs—install.",
  "desc_en": "A pack of 44 skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "这是 OpenAI 官方仓库，每个技能都经过内部验证，质量有保底。合集安装，一次搞定依赖和版本匹配。",
+ "why_en": "Straight from OpenAI's official repo—every skill is internally vetted. One-shot install handles dependencies and version.",
  "repo": "openai/skills",
  "owner": "openai",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/openai/skills.git",
   "copy": "mv skills ~/.claude/skills/skills",
   "dir": "~/.claude/skills/skills"
- }
+ },
+ "limit_zh": "只含 OpenAI 官方收录的 44 个，社区技能不在此列。部分技能需额外 API key 或本地环境（如浏览器。",
+ "limit_en": "Only the 44 official skills—no community ones. Some require extra API keys or local tools (browser, DB). Install ≠ ready: each skill needs its own."
 }

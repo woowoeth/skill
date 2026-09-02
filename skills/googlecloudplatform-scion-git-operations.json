@@ -2,12 +2,12 @@
  "id": "googlecloudplatform-scion-git-operations",
  "kind": "skill",
  "name": "git-operations",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：git-operations。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "让 Agent 安全操作 Git 的守则与避坑指南",
+ "tagline_zh": "重置工作区、rebase 翻车、误提交——这些坑 Agent 常踩。这份守则让它在动手前先想清楚，不把仓库搞乱。",
+ "tagline_en": "Resets, rebase traps, bad commits—the usual agent mess. This rulebook makes it think before it touches your repo.",
  "desc_en": "Git safety and operational guidance for Scion agents. Covers working tree resets, rebase pitfalls, and general git behavior that agents should know regardless of workspace mode. For workspace-mode-specific git rules, see the git-sandbox skill.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是命令速查，而是行为约束：明确何时该停、何时该问，把 Git 的破坏性操作变成可预期的流程。",
+ "why_en": "Not a command cheat-sheet but a behavioral guardrail: it defines when to stop and ask, turning destructive Git ops into.",
  "repo": "GoogleCloudPlatform/scion",
  "owner": "GoogleCloudPlatform",
  "path": "resources/platform_skills/git-operations",
@@ -27,5 +27,7 @@
   "copy": "cp -r scion/resources/platform_skills/git-operations ~/.claude/skills/git-operations",
   "dir": "~/.claude/skills/git-operations"
  },
- "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09"
+ "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09",
+ "limit_zh": "只覆盖通用 Git 行为，不含工作区模式专属规则；需要配合 git-sandbox skill 使用。",
+ "limit_en": "Covers only general Git behavior, not workspace-mode rules; requires git-sandbox skill for sandbox-specific constraints."
 }

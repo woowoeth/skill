@@ -2,12 +2,12 @@
  "id": "julianoczkowski-designer-skills-design-review",
  "kind": "skill",
  "name": "design-review",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：design-review。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "对刚做完的界面做一次结构化设计评审",
+ "tagline_zh": "代码写完了但心里没底？让 skill 对照 brief 逐项检查视觉层级、一致性、响应式、无障碍和还原度。",
+ "tagline_en": "Finished building but unsure? This skill audits your UI against the brief—visual hierarchy, consistency.",
  "desc_en": "Run a structured design critique against the brief and codebase. Checks visual hierarchy, consistency, responsiveness, accessibility, and aesthetic fidelity. Use when user wants a design review, critique, QA pass, polish pass, or mentions \"review\" after building.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛而谈的审美建议，而是把设计原则拆成可执行的检查项，直接对照代码库逐条验证。",
+ "why_en": "Not vague aesthetic opinions—it decomposes design principles into executable checks, validates them against your actual.",
  "repo": "julianoczkowski/designer-skills",
  "owner": "julianoczkowski",
  "path": "design-review",
@@ -27,5 +27,7 @@
   "copy": "cp -r designer-skills/design-review ~/.claude/skills/design-review",
   "dir": "~/.claude/skills/design-review"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只评审已有代码，不生成新设计；需要项目里有可读的样式文件和 brief 文本；对纯视觉稿（无代码）无效。",
+ "limit_en": "Reviews existing code only, no new design generation. Needs readable style files and a brief in the repo. Useless for static mockups; ignores."
 }

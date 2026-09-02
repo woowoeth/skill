@@ -2,12 +2,12 @@
  "id": "vercel-labs-agent-skills-vercel-react-view-transitions",
  "kind": "skill",
  "name": "vercel-react-view-transitions",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：vercel-react-view-transitions。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 View Transition API 给 Re",
+ "tagline_zh": "页面切换、路由跳转、列表重排、共享元素……想要那种原生 App 的顺滑感？这个 skill 直接给你写好的组件和 。",
+ "tagline_en": "Native-feel page transitions, route changes, shared elements, list reorder—this skill hands you the.",
  "desc_en": "Guide for implementing smooth, native-feeling animations using React's View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS view transition pseudo-elements). Use this skill whenever the user wants to add page transitions, animate route changes, create shared element animations, animate enter/exit of components, animate list reorder, implement directional (forward/back) n",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 View Transition API 封装成 React 组件，还内置了前进/后退方向感知——。",
+ "why_en": "Wraps the raw API into a `<ViewTransition>` component with built-in forward/back direction awareness—fits React's mental model.",
  "repo": "vercel-labs/agent-skills",
  "owner": "vercel-labs",
  "path": "skills/react-view-transitions",
@@ -27,5 +27,7 @@
   "copy": "cp -r agent-skills/skills/react-view-transitions ~/.claude/skills/react-view-transitions",
   "dir": "~/.claude/skills/react-view-transitions"
  },
- "cover": "https://skills.sh/b/vercel-labs/agent-skills"
+ "cover": "https://skills.sh/b/vercel-labs/agent-skills",
+ "limit_zh": "只覆盖 React 18.3+ 且浏览器需支持 View Transition API（Chrome 111+。",
+ "limit_en": "Requires React 18.3+ and browsers with View Transition API (Chrome 111+, Safari 18+). No 3D/WebGL; large DOM trees may drop frames. Provides."
 }

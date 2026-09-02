@@ -2,12 +2,12 @@
  "id": "leon-drq-stockskill",
  "kind": "collection",
  "name": "stockskill",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：stockskill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 AI 装上经过实测的股票与量化分析技能",
+ "tagline_zh": "别让 AI 在行情面前瞎猜。这套 QVeris 技能包已经跑过真实数据，装完就能让 Agent 开口讲估值。",
+ "tagline_en": "Stop your AI guessing at tickers. This QVeris-tested skill pack gets agents talking valuation, backtests, and.",
  "desc_en": "Tested QVeris-powered stock and quantitative finance skills for AI agents",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "每个技能都带着测试用例和输出契约，不是随手写的 prompt。Agent 拿到的是可复现的量化流程。",
+ "why_en": "Every skill ships with test cases and output contracts—reproducible quant pipelines, not lucky chat prompts.",
  "repo": "Leon-Drq/stockskill",
  "owner": "Leon-Drq",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Leon-Drq/stockskill.git",
   "copy": "mv stockskill ~/.claude/skills/stockskill",
   "dir": "~/.claude/skills/stockskill"
- }
+ },
+ "limit_zh": "只覆盖 QVeris 生态内的数据源和接口；不接券商实盘、不做高频交易。若你的数据源不在其列，技能会直接报错而非降级。",
+ "limit_en": "Only works within QVeris data sources and APIs. No broker live trading or HFT. Unsupported feeds cause hard errors, not graceful fallback."
 }

@@ -2,12 +2,12 @@
  "id": "yangcodingmaster-photo-distill",
  "kind": "skill",
  "name": "photo-distill",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：photo-distill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把照片蒸馏成手写代码的极简纸质海报",
+ "tagline_zh": "不用 AI 生图，用手写 HTML/CSS/SVG + 无头 Chrome，把你拍的照片变成可印刷的 zine 风。",
+ "tagline_en": "No AI image gen — hand-coded HTML/CSS/SVG + headless Chrome turns your photos into printable zine-style prints.",
  "desc_en": "> 把一张照片蒸馏成极简 zine 纸质海报——不用图像生成模型，用手写 HTML/CSS/SVG 绘制、 无头 Chrome 导出 PNG。当用户给出一张自己拍的照片、想把它做成极简海报/版画/zine 风格作品时使用。 触发词：照片蒸馏、photo distill、把这张照片做成海报、极简海报、zine 海报、 蒸馏这张照片、做成版画那种、用代码画这张照片、纸质海报、海报系列再做一张。 即使用户只说\"把这张照片处理成那个风格\"、\"这张也来一张\"、\"帮我把这照片抽象一下\"， 只要是把摄影作品变成印刷符号，就应触发。 不用于 AI 生图海报（那用 gc-minimal-zine-poster）",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "每次输出都是同一套代码骨架的变体，风格天然统一；SVG 路径可调，改色改线比改像素快一个量级。",
+ "why_en": "Every output is a variant of the same code skeleton, so style stays coherent; SVG paths are tweakable — recoloring beats.",
  "repo": "yangcodingmaster/photo-distill",
  "owner": "yangcodingmaster",
  "path": "",
@@ -29,5 +29,7 @@
  },
  "cover": "",
  "repo_created_at": "2026-08-02",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只吃单张照片输入，输出是静态 PNG 海报，不产出可编辑源文件；无头 Chrome 需本机预装；复杂光影照片会丢失细节。",
+ "limit_en": "Single photo in, static PNG poster out — no editable source. Requires headless Chrome locally. Low-contrast or busy photos lose detail; best for."
 }

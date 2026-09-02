@@ -2,12 +2,12 @@
  "id": "vercel-labs-eve-software-factory-template-triaging-issues",
  "kind": "skill",
  "name": "Triaging Issues",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Triaging Issues。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 GitHub 工单变成可执行的工厂流水线输入",
+ "tagline_zh": "新工单进来先别急着动手——查重、贴标签、判断要不要追问，一步到位。专治重复 issue 和缺复现步骤的烂摊子。",
+ "tagline_en": "New issue? Don't dive in yet—dedupe, label, decide if you need more info. Built for messy repos with duplicate.",
  "desc_en": "Grounding a GitHub work item before running the factory pipeline: checking for duplicates, working with the repo's existing labels, deciding whether to ask for clarification or proceed, and asking for reproduction details well. Load whenever a work item arrives from a GitHub issue or mention, and whenever asked to triage, label, dedupe, or close issues. Not needed for work items that arrive as pla",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 triage 变成一套显式规则，而不是靠感觉：先查重、再匹配现有标签、拿不准就停下来问。",
+ "why_en": "Turns triage into explicit rules, not vibes: dedupe first, match existing labels, and stop to ask when uncertain—instead of.",
  "repo": "vercel-labs/eve-software-factory-template",
  "owner": "vercel-labs",
  "path": "agent/skills/triaging-issues",
@@ -27,5 +27,7 @@
   "copy": "cp -r eve-software-factory-template/agent/skills/triaging-issues ~/.claude/skills/triaging-issues",
   "dir": "~/.claude/skills/triaging-issues"
  },
- "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7"
+ "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7",
+ "limit_zh": "只认 GitHub issue 或 mention 进来的工单；纯文本描述或已带完整复现步骤的工单它不碰。",
+ "limit_en": "Only for GitHub issues/mentions; ignores plain-text or fully-specified tickets. Output stops at 'next step'—won't code or close issues for you."
 }

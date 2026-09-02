@@ -2,12 +2,12 @@
  "id": "liangdabiao-amazon-sorftime-research-mcp-skill-keyword-research",
  "kind": "skill",
  "name": "keyword-research",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：keyword-research。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把亚马逊竞品关键词拆成8类可执行词库",
+ "tagline_zh": "丢一个ASIN进去，2000+关键词自动按否定/品牌/材质等8维分类，直接生成报告、CSV和仪表板。",
+ "tagline_en": "Drop an ASIN, get 2000+ keywords auto-sorted into 8 actionable buckets—negatives, brands, materials, etc.—with.",
  "desc_en": "亚马逊关键词深度调研与智能分类分析。基于 Sorftime MCP 数据采集 2000+ 关键词，通过 LLM Agent 按 8 维度智能分类（否定词、品牌词、材质词、场景词、属性词、功能词、核心词、其他），生成 Markdown 报告、CSV 词库和 HTML 仪表板。触发方式：/keyword-research {ASIN} {SITE}",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单聚合，而是用LLM Agent逐词推理归类，8维分类直指投放动作，比原始词表多一层决策价值。",
+ "why_en": "It's not just aggregation—an LLM agent reasons over each keyword and assigns it to one of 8 action-oriented buckets, adding a.",
  "repo": "liangdabiao/amazon-sorftime-research-MCP-skill",
  "owner": "liangdabiao",
  "path": "SKILLS/skills/keyword-research",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill.git",
   "copy": "cp -r amazon-sorftime-research-MCP-skill/SKILLS/skills/keyword-research ~/.claude/skills/keyword-research",
   "dir": "~/.claude/skills/keyword-research"
- }
+ },
+ "limit_zh": "依赖Sorftime MCP数据源，需先配置好凭证；仅覆盖亚马逊美国/欧洲等Sorftime支持站点。",
+ "limit_en": "Requires Sorftime MCP credentials; only works on Sorftime-supported Amazon sites; LLM classification may mislabel rare long-tails—spot-check needed."
 }

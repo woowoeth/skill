@@ -2,12 +2,12 @@
  "id": "ninehills-skills-bggg-creator-image2ppt",
  "kind": "skill",
  "name": "bggg-creator-image2ppt",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：bggg-creator-image2ppt。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任何图片/设计稿变成可编辑的 PPTX",
+ "tagline_zh": "截图、海报、HTML 或 SVG 设计稿，一键拆成文本框和图片组件，拼成可编辑的 PowerPoint。",
+ "tagline_en": "Turn screenshots, posters, HTML, or SVG designs into editable PPTX—auto-split into text boxes and image parts.",
  "desc_en": "把图片、截图、海报、PPT 页面截图、HTML 或 SVG 设计稿转换成可编辑 PPTX 的 Codex skill。 当用户需要 image2ppt、image2pptx、图片转 PPT、截图转 PPT、PNG/JPEG 转可编辑幻灯片、 HTML/SVG 转 PPTX、把设计图拆成图片组件和文本框再拼成 PowerPoint、 或希望复用 Codex 内置生图能力把平面图重建为多元素可编辑 PPT 时，应该使用此 skill。 在 Codex 中处理二进制图片时，默认结合 imagegen skill：先用 Codex 视觉理解版式， 再用内置图片生成/编辑能力生成或清理多个组件图片，最后用本 skill 的脚本拼装 PPTX。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是 OCR 或简单嵌入，而是视觉理解版式后，用内置生图重绘组件，再脚本拼装，保留可编辑性。",
+ "why_en": "Not OCR or simple embedding—it visually parses layout, regenerates parts with image-gen, then scripts assembly for true.",
  "repo": "ninehills/skills",
  "owner": "ninehills",
  "path": "bggg-creator-image2ppt",
@@ -27,5 +27,7 @@
   "copy": "cp -r skills/bggg-creator-image2ppt ~/.claude/skills/bggg-creator-image2ppt",
   "dir": "~/.claude/skills/bggg-creator-image2ppt"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只输出 PPTX，不保证像素级还原；复杂渐变或艺术字可能失真。需要 Codex 环境，且图片清晰度不足时组件拆分可能出。",
+ "limit_en": "Outputs PPTX only, not pixel-perfect; complex gradients/word art may distort. Requires Codex; low-res images may mis-split components."
 }

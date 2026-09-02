@@ -2,12 +2,12 @@
  "id": "jiemianduan-poster-style-transfer",
  "kind": "skill",
  "name": "poster-style-transfer",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：poster-style-transfer。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把一张海报的设计系统拆出来，移植到你的新主题上",
+ "tagline_zh": "上传参考海报，自动提取配色、字体、版式与构图规则，再按你的新标题、副标题或文案生成一张风格统一的新海报。",
+ "tagline_en": "Upload a reference poster, extract its color, type, layout, and composition rules, then generate a new poster.",
  "desc_en": "Analyze an uploaded or local reference poster, extract its reusable design system, and transpose that system to an original poster with a new theme, title, subtitle, or campaign copy.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是滤镜叠加，而是把设计决策拆成可复用的系统——从网格到字重、从留白到对比，逐层迁移。",
+ "why_en": "Not a filter overlay—it decomposes design decisions into a reusable system, migrating grid, type weight, whitespace, and.",
  "repo": "jiemianduan/poster-style-transfer",
  "owner": "jiemianduan",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/jiemianduan/poster-style-transfer.git",
   "copy": "mv poster-style-transfer ~/.claude/skills/poster-style-transfer",
   "dir": "~/.claude/skills/poster-style-transfer"
- }
+ },
+ "limit_zh": "只处理静态海报（JPG/PNG/PDF），不生成动效或交互稿；需要你提供明确的参考图与主题文案，否则输出会停在草稿阶段。",
+ "limit_en": "Static posters only (JPG/PNG/PDF); no motion or interactive output. Requires a clear reference image and copy—otherwise output stays at draft stage."
 }

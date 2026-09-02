@@ -2,12 +2,12 @@
  "id": "luji12-ugly-outsider-cgi",
  "kind": "skill",
  "name": "ugly-outsider-cgi",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：ugly-outsider-cgi。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把照片变成早期3D渲染的笨拙丑角色",
+ "tagline_zh": "告别精致AI滤镜，让照片变成低面数、僵硬表情、破损贴图的业余3D角色。保留身份与构图，丑得认真，丑得可爱。",
+ "tagline_en": "Ditch the polished AI filter. Turn photos into low-poly, stiff-faced, broken-texture amateur 3D renders. Identity.",
  "desc_en": "将用户提供的个人照片转换成结构完整、主体清晰但故意丑怪笨拙的 early 3D render 角色画面。用于照片风格转换、naive 3D character、业余 3D 动画、primitive CGI、early computer graphics、outsider animation、坏掉的低分辨率材质和反精致视觉实验；默认保留主体身份、物种、姿势、关键道具、颜色关系和原始构图，以完全没有美术基础的外行初学者做出的低面数曲面形体、僵硬表情、错误比例、破损拉伸贴图、粗糙颗粒材质、flat/Gouraud shading 和低配背景重构照片，不把丑感做成碎裂模型或随机肢体故障。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是随机破坏，而是模拟外行初学者的‘笨拙’：低面数曲面、错误比例、flat/Gouraud着色。",
+ "why_en": "Not random glitch—it simulates a beginner's 'clumsiness': low-poly curves, wrong proportions, flat/Gouraud shading. Ugliness.",
  "repo": "luji12/ugly-outsider-cgi",
  "owner": "luji12",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/luji12/ugly-outsider-cgi.git",
   "copy": "mv ugly-outsider-cgi ~/.claude/skills/ugly-outsider-cgi",
   "dir": "~/.claude/skills/ugly-outsider-cgi"
- }
+ },
+ "limit_zh": "只处理单张人物照片，需主体清晰、背景简单；不生成动画或3D模型文件，只输出静态图；复杂多人场景或强烈透视会直接失败。",
+ "limit_en": "Single-person photo only, clear subject, simple background. Outputs static image, no animation or 3D file. Multi-person or extreme perspective will."
 }

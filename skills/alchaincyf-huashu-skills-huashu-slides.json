@@ -2,12 +2,12 @@
  "id": "alchaincyf-huashu-skills-huashu-slides",
  "kind": "skill",
  "name": "huashu-slides",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：huashu-slides。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把零散内容直接变成带插画的成品PPTX",
+ "tagline_zh": "不用排版、不用找图，从大纲到18种风格的成品幻灯片一步到位。AI插画自动配图，适合赶汇报、做课件、出方案。",
+ "tagline_en": "Skip layout and stock photos—turn raw content into styled PPTX with AI illustrations. Built for last-minute.",
  "desc_en": "从内容到成品PPTX的端到端演示文稿制作，含AI插画生成和18种设计风格。当用户提到\"做PPT\"、\"做幻灯片\"、\"演示文稿\"、\"Keynote\"、\"slides\"时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "端到端生成，不是模板套壳：内容结构、视觉风格、插画三件事一次解决，且风格选择多达18种。",
+ "why_en": "True end-to-end generation, not template filling—handles structure, visual style, and AI illustrations in one pass, with 18.",
  "repo": "alchaincyf/huashu-skills",
  "owner": "alchaincyf",
  "path": "huashu-slides",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/alchaincyf/huashu-skills.git",
   "copy": "cp -r huashu-skills/huashu-slides ~/.claude/skills/huashu-slides",
   "dir": "~/.claude/skills/huashu-slides"
- }
+ },
+ "limit_zh": "只输出PPTX，不产出PDF或演讲备注；AI插画需联网且依赖外部图像服务，离线或内网环境会卡住；复杂图表（如甘特图。",
+ "limit_en": "Outputs PPTX only—no PDF or speaker notes. AI illustrations require internet and external image APIs; offline or intranet setups will stall. Complex."
 }

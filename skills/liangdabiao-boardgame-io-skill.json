@@ -2,12 +2,12 @@
  "id": "liangdabiao-boardgame-io-skill",
  "kind": "skill",
  "name": "boardgame-io",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：boardgame-io。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 boardgame.io 搭回合制桌游的脚手架",
+ "tagline_zh": "从井字棋到卡牌对战，写回合、阶段、AI 机器人，不用啃 v0.50 文档。报错时它直接告诉你哪步写歪了。",
+ "tagline_en": "From tic-tac-toe to card battles, scaffold turns, phases, and bots without digging through v0.50 docs. Errors.",
  "desc_en": "Build turn-based games with the boardgame.io framework (v0.50.x API). Use whenever the user wants to create, extend, or debug a board/card/dice/strategy game with boardgame.io — e.g. \"make tic-tac-toe / chess / a card game\", \"add multiplayer to my boardgame.io game\", \"define phases/moves/turns\", writing bots, lobby/matchmaking, or any mention of boardgame.io, bgio, 回合制游戏, 桌游, 棋牌游戏, 桌面游戏开发. Covers ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 boardgame.io 的 API 拆成可复用的积木，按你的规则自动生成合法代码。",
+ "why_en": "It decomposes the boardgame.io API into reusable blocks, auto-generates valid code for your rules, and pinpoints errors to.",
  "repo": "liangdabiao/boardgame-io-skill",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/boardgame-io-skill.git",
   "copy": "mv boardgame-io-skill ~/.claude/skills/boardgame-io-skill",
   "dir": "~/.claude/skills/boardgame-io-skill"
- }
+ },
+ "limit_zh": "只认 v0.50.x API，旧版项目需先迁移；只覆盖回合制桌游，实时或非棋牌类游戏不适用；生成的代码是起点。",
+ "limit_en": "Only v0.50.x API; older projects need migration. Turn-based board/card games only—no real-time or non-tabletop. Generated code is a starting point."
 }

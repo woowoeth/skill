@@ -2,12 +2,12 @@
  "id": "leon-gittech-skill2poster-paper-poster-imagegen",
  "kind": "skill",
  "name": "paper-poster-imagegen",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：paper-poster-imagegen。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把论文变成高保真海报参考图，先看图再动手做",
+ "tagline_zh": "做ACL/NeurIPS海报前，先让AI生成、批评、迭代图像提示词，得到版式参考图。不用盲改HTML，先定视觉方向。",
+ "tagline_en": "Before building that A0 poster, generate and critique image prompts to lock the visual direction—no more blind.",
  "desc_en": "Generate, critique, and iterate image-generation prompts for high-fidelity academic paper poster reference mockups before implementing HTML/PDF/PPTX. Use when Codex is asked to create a poster concept image, imagegen prompt, visual reference draft, layout mockup, or \"生图\" design for ACL/EMNLP/NeurIPS-style A0 posters from a paper, figures, metrics, logos, QR codes, or an existing poster screenshot.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把图像生成当成可批评、可迭代的中间产物，而非最终结果。先看图定版式，再落代码，减少返工。",
+ "why_en": "Treats imagegen as a criticizable, iterable intermediate—not the final output. Settle the layout visually before touching code.",
  "repo": "LEON-gittech/Skill2Poster",
  "owner": "LEON-gittech",
  "path": "paper-poster-imagegen",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/LEON-gittech/Skill2Poster.git",
   "copy": "cp -r Skill2Poster/paper-poster-imagegen ~/.claude/skills/paper-poster-imagegen",
   "dir": "~/.claude/skills/paper-poster-imagegen"
- }
+ },
+ "limit_zh": "只产出海报参考图，不生成HTML/PDF/PPTX。需要论文图表、指标、logo等素材已备好；若输入只有标题。",
+ "limit_en": "Outputs only reference mockups, not final files. Needs paper figures, metrics, logos ready; with just a title, layouts turn generic."
 }

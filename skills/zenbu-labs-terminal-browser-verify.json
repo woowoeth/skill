@@ -2,12 +2,12 @@
  "id": "zenbu-labs-terminal-browser-verify",
  "kind": "skill",
  "name": "verify",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：verify。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "在终端里无头驱动引擎应用，录下全程验证视频并生成可点",
+ "tagline_zh": "跑验证时人不在屏幕前？它替你盯着 pty 里的每一步，自动录成视频，最后甩你一个带时间轴和检查项的网页，点开即复盘。",
+ "tagline_en": "Run verification while you're away—it watches the pty, records every step, and hands you a clickable page with.",
  "desc_en": "Drive an engine app headlessly in a pty, record a video of the whole verification, and open a summary page (video + timeline + checks) with pixel open.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是录屏工具，是在 pty 里直接驱动引擎应用，连输入输出都同步捕获，验证轨迹和视频天然对齐。",
+ "why_en": "Not a screen recorder—it drives the engine app inside the pty, so input/output and video are inherently synced. No.",
  "repo": "zenbu-labs/terminal-browser",
  "owner": "zenbu-labs",
  "path": ".claude/skills/verify",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/zenbu-labs/terminal-browser.git",
   "copy": "cp -r terminal-browser/.claude/skills/verify ~/.claude/skills/verify",
   "dir": "~/.claude/skills/verify"
- }
+ },
+ "limit_zh": "只认能在 pty 里跑的引擎应用（如浏览器、CLI 工具）；图形界面应用得先有 headless 模式。",
+ "limit_en": "Only works with pty-capable engine apps (e.g., browsers, CLIs); GUI apps need a headless mode. Video captures terminal output, not screen pixels."
 }

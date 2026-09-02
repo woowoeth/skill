@@ -2,12 +2,12 @@
  "id": "adolfousier-opencrabs-browser-cdp",
  "kind": "skill",
  "name": "browser-cdp",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：browser-cdp。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Chrome 原生调试协议直接操控浏览器",
+ "tagline_zh": "不装插件、不碰 Selenium，一条 CDP 通道就能截图、执行 JS、抓页面。适合爬虫和自动化测试。",
+ "tagline_en": "No plugins, no Selenium—just raw CDP for screenshots, JS eval, and scraping. Chrome-family only.",
  "desc_en": "Native CDP browser automation reference. Headless/headed Chrome control, screenshots, JS evaluation. (/browser-cdp, browser automation, cdp, scraping)",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "直连 Chrome 的调试端口，比 WebDriver 少一层翻译，响应快、控制细。",
+ "why_en": "Talks straight to Chrome's DevTools port—skips WebDriver's translation layer for faster, finer control. Full native protocol.",
  "repo": "adolfousier/opencrabs",
  "owner": "adolfousier",
  "path": "src/docs/reference/templates/skills/browser-cdp",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/adolfousier/opencrabs.git",
   "copy": "cp -r opencrabs/src/docs/reference/templates/skills/browser-cdp ~/.claude/skills/browser-cdp",
   "dir": "~/.claude/skills/browser-cdp"
- }
+ },
+ "limit_zh": "只支持 Chrome/Edge 等 Chromium 内核浏览器；需要预先以 --remote-debugging-p。",
+ "limit_en": "Chromium-only; requires launching with --remote-debugging-port; headed mode fails without a display server."
 }

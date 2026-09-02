@@ -2,12 +2,12 @@
  "id": "komal-skynet-claude-skill-homeassistant-home-assistant-manager",
  "kind": "skill",
  "name": "home-assistant-manager",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：home-assistant-manager。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "安全改 Home Assistant 配置并秒级生效",
+ "tagline_zh": "改 YAML 怕改崩？它先跑 core check 再部署，git 或 scp 随你选；reload 还是 res。",
+ "tagline_en": "Edit YAML without fear: core check before deploy, git or scp, reload vs restart done right, verify via logs and.",
  "desc_en": "Manage Home Assistant configuration safely and fast — edit and deploy YAML (automations, blueprints, scripts, scenes, templates, MQTT), validate with ha core check, deploy via git or rapid scp, reload-vs-restart correctly, verify changes from logs, traces and entity state, and build Lovelace dashboards. Use for any Home Assistant config, automation, template, or dashboard work over SSH/hass-cli/MC",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "机制上把「改配置」拆成校验、部署、生效、验证四步，每一步都有明确命令和回退判断，不是让你自己猜。",
+ "why_en": "Turns config edits into a four-step pipeline — validate, deploy, reload, verify — with explicit commands and rollback logic, so.",
  "repo": "komal-SkyNET/claude-skill-homeassistant",
  "owner": "komal-SkyNET",
  "path": "skills/home-assistant-manager",
@@ -30,5 +30,7 @@
  "cover": "https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png",
  "repo_created_at": "2025-11-29",
  "skill_first_seen": "2026-06-22",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只认 SSH 或 hass-cli 可达的 Home Assistant；Lovelace 仪表盘只生成 YAML 不。",
+ "limit_en": "Requires SSH/hass-cli access to HA; Lovelace output is YAML only, no preview; core check breaks on HA < 2023.6."
 }

@@ -2,12 +2,12 @@
  "id": "ruochenlyu-beijing-pollen-monitor",
  "kind": "skill",
  "name": "beijing-pollen-monitor",
- "title_zh": "",
- "tagline_zh": "正经办公文档：beijing-pollen-monitor。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "北京花粉浓度实时查询与逐区预报",
+ "tagline_zh": "鼻炎星人出门前先查一眼：16 区实时浓度、站点趋势、总量与分类预报一次给全。海淀还是朝阳，区名一报就有数。",
+ "tagline_en": "Hay fever? Check before you step out: live levels for all 16 districts, station trends, total & species.",
  "desc_en": "查询北京花粉实时监测和预报数据，生成包含区级浓度、站点趋势、总量预报与分类预报的结果。北京 16 个固定站点，每区一个，用区名指定。 user-invocable: true argument-hint: \"[report|overview|stations|history|forecast|daily] [--district 海淀] [options]\"",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是笼统的全市均值，而是按区拆到站点级，趋势和分类预报都齐。命令设计直白，一个参数切视角。",
+ "why_en": "Skips city-wide averages—drills to station-level per district, with trends and species breakdown. Flat CLI args make it.",
  "repo": "ruochenlyu/beijing-pollen-monitor",
  "owner": "ruochenlyu",
  "path": "skills/beijing-pollen-monitor",
@@ -30,5 +30,7 @@
  "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/ruochenlyu-beijing-pollen-monitor.png",
  "repo_created_at": "2026-03-30",
  "skill_first_seen": "2026-03-30",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只覆盖北京 16 个固定站点，且数据源为公开监测接口，无历史回溯超过接口保留期；预报仅限总量与分类，不含浓度逐小时曲线。",
+ "limit_en": "Covers only Beijing's 16 fixed stations; data from public APIs, no deep history beyond retention. Forecasts are total & category only, no hourly."
 }

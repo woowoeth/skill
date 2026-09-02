@@ -2,12 +2,12 @@
  "id": "gotempsh-temps-temps",
  "kind": "skill",
  "name": "temps",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：temps。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Temps 一条命令部署、运维并观测你的应用",
+ "tagline_zh": "从部署到监控，不用再切五个控制台。Temps 的 CLI 把项目、环境、日志、追踪、会话回放全收进一个终端。",
+ "tagline_en": "Stop juggling five dashboards. Temps CLI puts deploy, logs, tracing, session replay, and Core Web Vitals in one.",
  "desc_en": "Manage, deploy, operate, and instrument applications with Temps. Use this skill whenever the user mentions Temps, `@temps-sdk/cli@0.1.33`, deploying or migrating an app to Temps, projects, environments, services, domains, backups, logs, monitoring, analytics, browser Performance Insights/Core Web Vitals, observability, error tracking, OpenTelemetry, tracing, session replay, or Temps Cloud. Also us",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把部署和可观测性焊死在同一条命令链上——不是拼装工具，而是以 Temps 为原生的操作界面。",
+ "why_en": "It welds deploy and observability into one command chain—native to Temps, not bolted on, with OpenTelemetry and error tracking.",
  "repo": "gotempsh/temps",
  "owner": "gotempsh",
  "path": "skills/temps",
@@ -27,5 +27,7 @@
   "copy": "cp -r temps/skills/temps ~/.claude/skills/temps",
   "dir": "~/.claude/skills/temps"
  },
- "cover": "https://repository-images.githubusercontent.com/1080410643/38640f85-24d8-42ee-abf6-0b3c69a04649"
+ "cover": "https://repository-images.githubusercontent.com/1080410643/38640f85-24d8-42ee-abf6-0b3c69a04649",
+ "limit_zh": "只认 Temps 平台和 @temps-sdk/cli@0.1.33，别的 PaaS 或旧版 CLI 一概不碰。",
+ "limit_en": "Only works with Temps platform and @temps-sdk/cli@0.1.33. Stops at Temps Cloud operations—no self-managed K8s or non-Temps monitoring stacks."
 }

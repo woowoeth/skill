@@ -2,12 +2,12 @@
  "id": "binggandata-bggg-skills-tiktok-gemini-video-workflow",
  "kind": "skill",
  "name": "tiktok-gemini-video-workflow",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：tiktok-gemini-video-workflow。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把飞书表格里的爆款视频拆解成TikTok带货成片",
+ "tagline_zh": "人工标记返工优先，再认领新任务。拆画面/文字/声音钩子，生成脚本、九宫格分镜和提示词，多Google账号轮询额度。",
+ "tagline_en": "Rework first, then new tasks. Extract hooks from visuals/text/audio, generate scripts & storyboards, rotate.",
  "desc_en": "将飞书多维表格中的产品图和爆款视频自动处理为 TikTok 带货视频：优先处理人工标记的返工任务，再认领新任务，拆解画面/文字/声音钩子，生成1–2段脚本、九宫格分镜和视频提示词，按单个或多个已授权Google账号路由Gemini/Flow额度，完成生成、续接、下载、消除可见星形水印、检查并后期补齐必要文字钩子，最后回传待验收成品。用于用户提到爆款复刻、TikTok带货视频、Gemini/Flow生视频、多Google账号、Chrome账号切换、额度轮询与日志、屏幕文字钩子、字幕缺失或乱码、人工验收返工、尾帧续接、九宫格分镜、视频去水印或飞书任务轮询时。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把「返工优先」做成硬逻辑，而不是排队重跑。额度按账号路由，水印和字幕缺口在回传前自动补齐——流水线自己。",
+ "why_en": "Rework tasks jump the queue by design, not by luck. Quota routes per account; watermark and missing captions get patched before.",
  "repo": "binggandata/bggg-skills",
  "owner": "binggandata",
  "path": "tiktok-gemini-video-workflow",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/binggandata/bggg-skills.git",
   "copy": "cp -r bggg-skills/tiktok-gemini-video-workflow ~/.claude/skills/tiktok-gemini-video-workflow",
   "dir": "~/.claude/skills/tiktok-gemini-video-workflow"
- }
+ },
+ "limit_zh": "只吃飞书多维表格的结构，且必须已有产品图和爆款视频两列。生成器仅限Gemini/Flow，没有授权Google账号就停。",
+ "limit_en": "Only works with Feishu Bitable (needs product image & viral video columns). Generators limited to Gemini/Flow; no authorized Google account = stops."
 }

@@ -2,12 +2,12 @@
  "id": "juliusbrussee-caveman-browse-caveman-browse",
  "kind": "skill",
  "name": "caveman-browse",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：caveman-browse。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用快照-行动-验证循环驯服任何网页",
+ "tagline_zh": "网页再乱也不怕：先快照再动手，大页面先查后点，卡住就恢复精确字节。浏览器操作从此有章法。",
+ "tagline_en": "Tame any webpage with snapshot-act-verify. Query first on big pages, recover exact bytes when stuck. Browsing.",
  "desc_en": "Drive web pages through the caveman-browse MCP tools (browser_snapshot, browser_act, browser_eval, browser_recover). Use whenever interacting with a web page, dashboard, or form through caveman-browse — it teaches the snapshot→act→verify loop, query-first discipline on large pages, and when to recover exact bytes.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把浏览器操作变成可验证的循环，而非盲点乱试。查询优先于点击，恢复机制保证每次操作都有据可依。",
+ "why_en": "Turns browsing into a verifiable loop, not blind clicking. Query-before-act discipline plus byte-exact recovery keeps every step.",
  "repo": "JuliusBrussee/caveman-browse",
  "owner": "JuliusBrussee",
  "path": "skills/caveman-browse",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/JuliusBrussee/caveman-browse.git",
   "copy": "cp -r caveman-browse/skills/caveman-browse ~/.claude/skills/caveman-browse",
   "dir": "~/.claude/skills/caveman-browse"
- }
+ },
+ "limit_zh": "只适配 caveman-browse MCP 工具链，需自行配置 MCP 服务器；不处理验证码、登录墙或反爬。",
+ "limit_en": "Requires caveman-browse MCP server setup. No captcha/login-wall/anti-bot handling. Outputs action sequences only, not data reports."
 }

@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-opencli-skills-qiaomu-opencli-explorer",
  "kind": "skill",
  "name": "qiaomu-opencli-explorer",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：qiaomu-opencli-explorer。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意网站变成可用的命令行工具",
+ "tagline_zh": "对着 DevTools 抓包太累？说一句“生成 xxx.com 的 CLI”，它自动摸清 API、选认证。",
+ "tagline_en": "Tired of digging through DevTools? Say “make a CLI for xxx.com” and it maps APIs, picks auth, writes the adapter.",
  "desc_en": "Use when creating a new OpenCLI adapter from scratch, adding support for a new website or platform, exploring a site's API endpoints via browser DevTools, or when a user asks to automatically generate a CLI for a website (e.g. \"帮我生成 xxx.com 的 cli\"). Covers automated generation, API discovery workflow, authentication strategy selection, TS adapter writing, and testing.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是模板填充，而是按真实流量走一遍发现端点，再按站点特性选认证策略，最后产出可测的 TS 适配器——像。",
+ "why_en": "Not template stuffing—it traces real traffic to find endpoints, picks auth per site, then ships a testable TS adapter. Like.",
  "repo": "joeseesun/qiaomu-opencli-skills",
  "owner": "joeseesun",
  "path": "qiaomu-opencli-explorer",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/joeseesun/qiaomu-opencli-skills.git",
   "copy": "cp -r qiaomu-opencli-skills/qiaomu-opencli-explorer ~/.claude/skills/qiaomu-opencli-explorer",
   "dir": "~/.claude/skills/qiaomu-opencli-explorer"
- }
+ },
+ "limit_zh": "只覆盖从零新建适配器的全流程；已有适配器的改造、非浏览器可访问的 API（如移动端私有协议）、以及需要登录态但无 We。",
+ "limit_en": "Only greenfield adapter creation. Won't retrofit existing adapters, handle non-browser APIs (e.g. mobile private protocols), or sites with no web."
 }

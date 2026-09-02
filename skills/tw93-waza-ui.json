@@ -2,12 +2,12 @@
  "id": "tw93-waza-ui",
  "kind": "skill",
  "name": "ui",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：ui。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任何界面改到能直接上线的视觉打磨器",
+ "tagline_zh": "截图丢进来，丑界面变生产级 UI。字体、间距、层次一次到位，不用再跟设计师来回拉扯。",
+ "tagline_en": "Drop a screenshot, get production-grade UI. Typography, spacing, hierarchy—done in one pass, no design ping-pong.",
  "desc_en": "Produces distinctive, production-grade UI for pages, components, visual interfaces, typography, and screenshot-driven polish. Use when users ask in any language for UI, page, component, frontend, typography, screenshot-grounded visual polish, or complaints that a screen looks unclear, ugly, inconsistent, or visually wrong. Not for backend logic or data pipelines.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是套模板，而是从截图反推视觉系统，按你的产品语境重排层级。比通用组件库更懂‘这一屏’该长什么样。",
+ "why_en": "No templates—it reverse-engineers the visual system from your screenshot and reorders hierarchy for your exact context. Sharper.",
  "repo": "tw93/Waza",
  "owner": "tw93",
  "path": "plugins/waza/skills/ui",
@@ -27,5 +27,7 @@
   "copy": "cp -r Waza/plugins/waza/skills/ui ~/.claude/skills/ui",
   "dir": "~/.claude/skills/ui"
  },
- "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e"
+ "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e",
+ "limit_zh": "只管视觉层，不碰后端逻辑或数据管道。输入得是页面/组件/截图，纯 API 或命令行界面它不接。产出到视觉稿为止。",
+ "limit_en": "Visual layer only—no backend or data pipelines. Needs a page/component/screenshot input; pure APIs or CLIs are ignored. Output stops at visual."
 }

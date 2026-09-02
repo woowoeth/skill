@@ -2,12 +2,12 @@
  "id": "acedatacloud-skills",
  "kind": "collection",
  "name": "Skills",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：Skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 Agent 装上 AceDataCloud 全家",
+ "tagline_zh": "音乐、图像、视频、搜索，一次装齐。Claude Code、Copilot、Gemini CLI 通用。",
+ "tagline_en": "Music, image, video, search — one install. Works across Claude Code, Copilot, Gemini CLI, no per-tool setup.",
  "desc_en": "Agent Skills for AceDataCloud AI services — music, image, video generation, web search, and more. Compatible with Claude Code, GitHub Copilot, Gemini CLI, and all agentskills.io-compatible agents.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "按 agentskills.io 标准打包，跨平台即插即用。官方维护，接口稳定，比零散第三方技能少踩坑。",
+ "why_en": "Packaged to agentskills.io spec, plug-and-play across agents. Officially maintained, stable APIs, fewer surprises than scattered.",
  "repo": "AceDataCloud/Skills",
  "owner": "AceDataCloud",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/AceDataCloud/Skills.git",
   "copy": "mv Skills ~/.claude/skills/Skills",
   "dir": "~/.claude/skills/Skills"
- }
+ },
+ "limit_zh": "仅覆盖 AceDataCloud 自家服务，不接其他云厂商。需要对应服务的 API key 才能跑通；免费额度有限。",
+ "limit_en": "Only works with AceDataCloud services; needs their API key. Free quota is limited; beyond that, you pay."
 }

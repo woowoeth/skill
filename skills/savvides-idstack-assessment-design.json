@@ -2,12 +2,12 @@
  "id": "savvides-idstack-assessment-design",
  "kind": "skill",
  "name": "assessment-design",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：assessment-design。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按布鲁姆分类法设计带量规的评估方案",
+ "tagline_zh": "课程设计时最怕评估与目标脱节。这个 skill 读你的学习目标清单，用布鲁姆分类法对齐，再套 Nicol 七原则生。",
+ "tagline_en": "Tired of assessments that don't match your goals? It reads your learning objectives, aligns them via Bloom's, and.",
  "desc_en": "Evidence-based assessment design with rubrics, feedback strategies, and formative checkpoints. Aligns each assessment to learning objectives using Bloom's taxonomy. Applies Nicol's 7 principles of good feedback practice. Reads from /learning-objectives manifest and extends it with assessment specs. (idstack)",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是模板堆砌，而是从目标清单出发反向推导评估规格，让量规、反馈策略和检查点都长在同一根目标茎上。",
+ "why_en": "It doesn't just paste templates—it derives assessment specs backward from your objectives, so rubrics, feedback, and checkpoints.",
  "repo": "savvides/idstack",
  "owner": "savvides",
  "path": "skills/assessment-design",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/savvides/idstack.git",
   "copy": "cp -r idstack/skills/assessment-design ~/.claude/skills/assessment-design",
   "dir": "~/.claude/skills/assessment-design"
- }
+ },
+ "limit_zh": "只认 /learning-objectives 清单格式，且只覆盖课程设计阶段；不生成试题、不批改作业。",
+ "limit_en": "Only reads /learning-objectives manifest format; covers course design only—no item generation, no grading. Missing or malformed manifest aborts."
 }

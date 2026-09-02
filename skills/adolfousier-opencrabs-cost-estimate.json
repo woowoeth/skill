@@ -2,12 +2,12 @@
  "id": "adolfousier-opencrabs-cost-estimate",
  "kind": "skill",
  "name": "cost-estimate",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：cost-estimate。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给代码库算一笔账：重建成本、AI 回报与公允估值",
+ "tagline_zh": "拿到任何仓库，先别急着写代码。用它能估算重建要烧多少钱、AI 能省多少力、以及这堆代码在市场上值几个钱。",
+ "tagline_en": "Before you write a line, know what you're holding. Estimate rebuild cost, AI savings, and fair-market value of.",
  "desc_en": "Estimate codebase cost-to-build, AI-assisted ROI, and fair-market valuation",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是拍脑袋估价，而是把代码量、语言、复杂度拆成可解释的成本模型，输出带假设和区间，能直接用于谈判或立项。",
+ "why_en": "No gut-feel numbers. It decomposes codebase into an explainable cost model with assumptions and ranges—ready for negotiation or.",
  "repo": "adolfousier/opencrabs",
  "owner": "adolfousier",
  "path": "src/docs/reference/templates/skills/cost-estimate",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/adolfousier/opencrabs.git",
   "copy": "cp -r opencrabs/src/docs/reference/templates/skills/cost-estimate ~/.claude/skills/cost-estimate",
   "dir": "~/.claude/skills/cost-estimate"
- }
+ },
+ "limit_zh": "只估代码本身的构建成本，不含运维、市场、获客。需要能访问仓库元数据（如 GitHub API），私有仓库或纯二进制项目。",
+ "limit_en": "Estimates build cost only—no ops, marketing, or acquisition. Requires repo metadata access (e.g., GitHub API); private or binary-only repos will."
 }

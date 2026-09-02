@@ -2,12 +2,12 @@
  "id": "agricidaniel-gauntlet-loop-brain",
  "kind": "skill",
  "name": "gauntlet-loop-brain",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：gauntlet-loop-brain。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把一次任务拆成带裁判和闸门的对抗流水线",
+ "tagline_zh": "一个启动词，自动生成耦合感知的构建者、新鲜批评者、受保护闸门、集成检查与显式停止。适合盲比、收敛评审。",
+ "tagline_en": "One kickoff prompt spawns coupling-aware builders, fresh critics, gated checks, and explicit stops—built for.",
  "desc_en": "Design and govern evidence-bound Gauntlet Loops: one initiating prompt that launches coupling-aware builders, fresh critics, protected gates, integration checks, and explicit stop controls. Use for Gauntlet fit decisions, job contracts, reference selection, builder-critic loops, blind comparison, convergence review, and opt-in AI Marketing Hub quality lanes.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "批评者每次新建，避免自我重复；闸门受保护，防止构建者绕过检查；停止控制显式，不靠运气收尾。",
+ "why_en": "Critics are regenerated per loop to avoid echo; gates are tamper-proof; stop controls are explicit—no lucky endings.",
  "repo": "AgriciDaniel/gauntlet-loop-brain",
  "owner": "AgriciDaniel",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/AgriciDaniel/gauntlet-loop-brain.git",
   "copy": "mv gauntlet-loop-brain ~/.claude/skills/gauntlet-loop-brain",
   "dir": "~/.claude/skills/gauntlet-loop-brain"
- }
+ },
+ "limit_zh": "只认 Gauntlet 拟合决策、任务契约、参考选择、构建者-批评者循环、盲比、收敛评审这六类场景；超出此域。",
+ "limit_en": "Only fits six scenarios: Gauntlet fit, job contracts, reference selection, builder-critic loops, blind comparison, convergence review. Outside."
 }

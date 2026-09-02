@@ -2,12 +2,12 @@
  "id": "microsoft-copilot-studio-gallery-membership-card-png",
  "kind": "skill",
  "name": "membership-card-png",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：membership-card-png。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把会员卡补办流程变成一张可展示的 PNG 图",
+ "tagline_zh": "会员卡丢了、坏了、被偷了？不用等实体卡寄到，脚本直接把补办后的卡号渲染成数字卡片，当场就能亮在屏幕上。",
+ "tagline_en": "Lost, damaged, or stolen card? Skip the wait for plastic—render the reissued card as a PNG you can show on screen.",
  "desc_en": "Generate a digital BlastPass membership card as a PNG image by running the bundled card_png.py script. Use when a member self-serves a lost/stolen/damaged card replacement, or any time a card needs to be shown on screen (vs. printed). The skill takes the member details returned by the Membership MCP (get_membership) plus the new_card_serial returned by reissue_card and passes them as command-line ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 Membership MCP 的查询结果和补办序列号直接喂给本地 Python 脚本。",
+ "why_en": "Feeds get_membership output plus the new serial straight into a local Python script—one command yields a card image, no design.",
  "repo": "microsoft/copilot-studio-gallery",
  "owner": "microsoft",
  "path": "submissions/blastbox-demo-agents/solution/botcomponents/Default_draft_IsBewO.file.SKILL.md/filedata",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/microsoft/copilot-studio-gallery.git",
   "copy": "cp -r copilot-studio-gallery/submissions/blastbox-demo-agents/solution/botcomponents/Default_draft_IsBewO.file.SKILL.md/filedata ~/.claude/skills/filedata",
   "dir": "~/.claude/skills/filedata"
- }
+ },
+ "limit_zh": "只认 Membership MCP 返回的字段结构，且本机要有 Python 3 和 Pillow。",
+ "limit_en": "Requires Python 3 + Pillow; only accepts fields from Membership MCP. Output is a static PNG—no QR, magstripe, or interactivity, and not print-ready."
 }

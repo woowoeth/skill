@@ -2,12 +2,12 @@
  "id": "0xsline-dsh-spotlight-dsh-plugin-development",
  "kind": "skill",
  "name": "dsh-plugin-development",
- "title_zh": "",
- "tagline_zh": "调教技能的技能：dsh-plugin-development。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从零搭一个 DeepSeek Harness Cor",
+ "tagline_zh": "模板、规划、脚手架、实现、画像、测试、发布就绪——一条龙。别家只给代码骨架，它连发布前检查都替你排好。",
+ "tagline_en": "From template to release-ready: planning, scaffolding, implementation, profile, testing, and go-live checks in.",
  "desc_en": "Use when creating or extending a standalone DeepSeek Harness Cordis plugin from this self-contained template and coordinating planning, scaffolding, implementation, profile composition, testing, and release readiness. Do not use for SDK DSL-only projects or host-source changes.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把插件生命周期固化成一条显式流水线，每一步都有产物和验收点，不是零散脚本。规划与实现同源。",
+ "why_en": "It hardens the plugin lifecycle into one explicit pipeline with artifacts and checkpoints per stage—not scattered scripts.",
  "repo": "0xsline/dsh-spotlight",
  "owner": "0xsline",
  "path": ".agents/skills/dsh-plugin-development",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/0xsline/dsh-spotlight.git",
   "copy": "cp -r dsh-spotlight/.agents/skills/dsh-plugin-development ~/.claude/skills/dsh-plugin-development",
   "dir": "~/.claude/skills/dsh-plugin-development"
- }
+ },
+ "limit_zh": "只认 DeepSeek Harness Cordis 插件模板；SDK DSL 纯脚本或改宿主源码的项目它不碰。",
+ "limit_en": "Only for DeepSeek Harness Cordis plugins from this template; no SDK DSL-only or host-source changes. Release checks cover template fields only."
 }

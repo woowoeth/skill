@@ -2,12 +2,12 @@
  "id": "ninehills-skills-bggg-creator-image2psd",
  "kind": "skill",
  "name": "bggg-creator-image2psd",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：bggg-creator-image2psd。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把多张图片拼成分层 PSD，可继续编辑",
+ "tagline_zh": "海报/设计稿拆层、白底转透明、颜色聚类拆层，一步到位。AI 生图结果也能拆成元素图再合成，交给 Photoshop。",
+ "tagline_en": "Flatten multiple images into editable PSD layers—split posters, remove white backgrounds, cluster colors, even.",
  "desc_en": "把一张或多张图片整理成 PSD 图层文件的创作与转换 skill。当用户需要 image2psd、图片转 PSD、 多张图片拼成 PSD、海报/设计稿拆成多个图层、白底转透明、颜色聚类拆层、把 Codex/AI 生图结果拆成元素图再合成 PSD、 或希望输出 layered PSD、可在 Photoshop/Photopea 中编辑的分层栅格文件时，应该使用此 skill。 在 Codex 中使用时，默认结合 imagegen skill：先用 Codex 视觉/生图能力理解、补齐或重建元素，再用本 skill 的脚本落地 PSD。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单拼图，而是按颜色聚类、透明度通道重建图层结构，产物是真正可编辑的分层栅格文件，而非一张死图。",
+ "why_en": "It doesn't just stack images—it rebuilds layer structure via color clustering and alpha channels, yielding genuinely editable.",
  "repo": "ninehills/skills",
  "owner": "ninehills",
  "path": "bggg-creator-image2psd",
@@ -27,5 +27,7 @@
   "copy": "cp -r skills/bggg-creator-image2psd ~/.claude/skills/bggg-creator-image2psd",
   "dir": "~/.claude/skills/bggg-creator-image2psd"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只认栅格图（PNG/JPG 等），不解析矢量或文字图层；输出为 PSD 栅格层，不保留原始可编辑文本/形状。",
+ "limit_en": "Raster-only (PNG/JPG); no vector/text layer parsing. Outputs raster PSD layers, losing editable text/shapes. Requires Python + Pillow; huge images."
 }

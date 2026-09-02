@@ -2,12 +2,12 @@
  "id": "op7418-pilot-harness-record-browser-gif",
  "kind": "skill",
  "name": "record-browser-gif",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：record-browser-gif。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把浏览器操作录成可直接贴 PR 的 GIF",
+ "tagline_zh": "改完界面要给人看效果？不用录屏软件，不用手动裁剪。它用状态抓帧 + 确定性编码，自动产出优化过的 GIF。",
+ "tagline_en": "Show UI changes without screen-recording hassle—state-based capture and deterministic encoding produce clean.",
  "desc_en": "Record browser or Web UI interaction demos as optimized GIFs using the available built-in browser, state-based frame capture, and deterministic encoding, then publish to a dedicated assets branch when the task includes attaching the GIF to a pull request. Use when asked to make, record, or generate a GIF that demonstrates a browser workflow, and for every pull request that changes product-user-vis",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是录屏，是抓状态：只在关键帧采样，体积小、节奏稳。编码参数固定，结果可复现，不会每次生成都不一样。",
+ "why_en": "Not screen recording—state sampling captures only key frames, yielding compact, steady GIFs. Deterministic encoding means.",
  "repo": "op7418/pilot-harness",
  "owner": "op7418",
  "path": ".agents/skills/record-browser-gif",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/op7418/pilot-harness.git",
   "copy": "cp -r pilot-harness/.agents/skills/record-browser-gif ~/.claude/skills/record-browser-gif",
   "dir": "~/.claude/skills/record-browser-gif"
- }
+ },
+ "limit_zh": "只认内置浏览器，外部浏览器或复杂动效（如 CSS 过渡）会失真；GIF 最长 15 秒，超出自动截断。",
+ "limit_en": "Only works with the built-in browser; external browsers or CSS transitions may distort. GIFs capped at 15s, auto-truncated. Requires push access to."
 }

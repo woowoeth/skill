@@ -2,12 +2,12 @@
  "id": "addyosmani-factory-factory-monitor",
  "kind": "skill",
  "name": "factory-monitor",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：factory-monitor。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一眼看清工厂健康度，不碰修复只做诊断",
+ "tagline_zh": "仓库积压、CI 红黄、安全公告、陈旧工作全在眼前。不写一行修复代码，先看清哪里在漏，再决定动哪里。",
+ "tagline_en": "See stale work, CI status, security advisories, and run evidence at a glance. Diagnose first, fix later—no code.",
  "desc_en": "Inspect factory health, stale work, CI, security advisories, and recent run evidence without implementing fixes.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把分散在 GitHub 各处的信号聚成一张健康快照，只读不改，让你在动手前先看清全局，避免盲修。",
+ "why_en": "It aggregates scattered GitHub signals into a read-only health snapshot, so you see the whole picture before touching anything.",
  "repo": "addyosmani/factory",
  "owner": "addyosmani",
  "path": "template/.agents/skills/factory-monitor",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/addyosmani/factory.git",
   "copy": "cp -r factory/template/.agents/skills/factory-monitor ~/.claude/skills/factory-monitor",
   "dir": "~/.claude/skills/factory-monitor"
- }
+ },
+ "limit_zh": "只覆盖 GitHub 仓库的元数据与 CI 状态，不读代码内容、不分析日志细节；产物是诊断清单，不包含任何修复建议或补。",
+ "limit_en": "Only covers GitHub repo metadata and CI status; no code analysis or log details. Output is a diagnostic list, no fixes or patches."
 }

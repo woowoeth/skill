@@ -2,12 +2,12 @@
  "id": "southliu-south-admin-react-demo-create",
  "kind": "skill",
  "name": "demo-create",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：demo-create。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按项目内建模板生成后台 CRUD 三件套代码",
+ "tagline_zh": "报上模块名、API 路径和字段，自动产出 Page/Model/Api 三件套。支持分页列表和独立操作页两种模式。",
+ "tagline_en": "Give it a module name, API path, and fields—get Page/Model/Api files generated from your project's own templates.",
  "desc_en": "基于项目中 .vscode/south.code-snippets 定义的 CRUD 模板，快速生成后台管理系统的标准 CRUD 页面代码。该技能根据用户提供的业务模块信息（如模块名称、API路径、字段配置等），自动生成完整的页面文件（Page）、数据模型文件（Model）和 API 接口文件（Api），支持分页列表页面（demoPage）、独立操作页面（demoOptionPage）两种页面模式。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "直接读取你仓库里的 .vscode/south.code-snippets，生成的不是泛化脚手架。",
+ "why_en": "It reads your repo's own .vscode/south.code-snippets, so output matches your existing code style and folder layout—not a generic.",
  "repo": "southliu/south-admin-react",
  "owner": "southliu",
  "path": ".claude/skills/demo-create",
@@ -27,5 +27,7 @@
   "copy": "cp -r south-admin-react/.claude/skills/demo-create ~/.claude/skills/demo-create",
   "dir": "~/.claude/skills/demo-create"
  },
- "cover": "https://private-user-images.githubusercontent.com/26358837/473471966-943f1ca2-9ad3-45cc-83aa-7a3d18984653.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODcxMDgxMTAsIm5iZiI6MTc4NzEwNzgxMCwicGF0aCI6Ii8yNjM1ODgzNy80NzM0NzE5NjYtOTQzZjFjYTItOWFkMy00NWNjLTgzYWEtN2EzZDE4OTg0NjUzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE5VDAyNTAxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIyZjZiMDljMTcwZGE5OWM3YTdlZjNkMjQzNGMyZmU2YzM4ZWRkY2I0NjA1YjVmNDU4ZjdjYWIzNDE0NWQyZTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.bNUamMswQISBV1c9fCnzxOOROOy6sNJ2QwhrFUgWquU"
+ "cover": "https://private-user-images.githubusercontent.com/26358837/473471966-943f1ca2-9ad3-45cc-83aa-7a3d18984653.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODcxMDgxMTAsIm5iZiI6MTc4NzEwNzgxMCwicGF0aCI6Ii8yNjM1ODgzNy80NzM0NzE5NjYtOTQzZjFjYTItOWFkMy00NWNjLTgzYWEtN2EzZDE4OTg0NjUzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE5VDAyNTAxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIyZjZiMDljMTcwZGE5OWM3YTdlZjNkMjQzNGMyZmU2YzM4ZWRkY2I0NjA1YjVmNDU4ZjdjYWIzNDE0NWQyZTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.bNUamMswQISBV1c9fCnzxOOROOy6sNJ2QwhrFUgWquU",
+ "limit_zh": "只认 southliu/south-admin-react 这个仓库的模板结构；若你的项目没有 .vscode/sou。",
+ "limit_en": "Only works with southliu/south-admin-react's template structure; fails without .vscode/south.code-snippets. Generates standard CRUD only—no complex."
 }

@@ -2,12 +2,12 @@
  "id": "alchaincyf-huashu-skills-huashu-design",
  "kind": "skill",
  "name": "huashu-design",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：huashu-design。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从20种风格中挑3个方向并生成视觉Demo",
+ "tagline_zh": "面对空白画布不知从何下手？给它一句需求，它从20种风格里筛出3个方向，每个都配好视觉Demo和AI提示词。",
+ "tagline_en": "Stuck staring at a blank canvas? Give it one sentence, get 3 curated style directions with visual demos and AI.",
  "desc_en": "设计哲学顾问，从20种风格中推荐3个方向并生成视觉Demo和AI提示词。当用户提到\"设计风格\"、\"设计方向\"、\"配色方案\"、\"视觉风格\"、\"设计评审\"、\"推荐风格\"时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛推荐，而是基于你的具体描述做风格筛选，每个方向都附带可落地的视觉Demo和提示词。",
+ "why_en": "It doesn't just list styles—it filters 20 based on your actual description, then pairs each pick with a concrete visual demo and.",
  "repo": "alchaincyf/huashu-skills",
  "owner": "alchaincyf",
  "path": "huashu-design",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/alchaincyf/huashu-skills.git",
   "copy": "cp -r huashu-skills/huashu-design ~/.claude/skills/huashu-design",
   "dir": "~/.claude/skills/huashu-design"
- }
+ },
+ "limit_zh": "只覆盖视觉风格探索阶段，不处理排版、动效或品牌策略。Demo是静态示意图，非可交付设计稿。若需求涉及具体产品界面或商业。",
+ "limit_en": "Covers visual style exploration only—no layout, motion, or brand strategy. Demos are static mockups, not final designs. For product UI or business."
 }

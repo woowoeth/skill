@@ -2,12 +2,12 @@
  "id": "irenerachel-style-pack-skill",
  "kind": "skill",
  "name": "风格包",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：风格包。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意参考图的视觉DNA打包成可复用风格包",
+ "tagline_zh": "剧照、截图、文件夹——一键提取配色与视觉语法，生成双色卡+JSON。下次出图，直接套用，不再凭感觉调参。",
+ "tagline_en": "Turn any stills, screenshots, or folders into a reusable style pack with dual palettes + JSON. Next time, just.",
  "desc_en": "从一组参考图、电影剧照、视频截图或用户给定文件夹中提取可复用的视觉风格 DNA，打包成中文风格包；提取模式强制为每个视觉分组同时生成统一 10 色标注色卡和完全无文字纯色色卡，并生成两套色卡总览与可复用色值 JSON。也可读取已有风格包的 design.md 和提示词模板，把剧本、脚本表格或创意需求拆成文生图提示词 + 视频提示词表格文档。触发词包括“风格包”“提取某电影风格包”“按这个风格包生成提示词”“读取这个文件夹的风格 DNA”“用风格包拆剧本”“生成色卡”“生成文生图和视频提示词表格”。核心原则：只参考视觉语法，绝对避免场景和元素雷同。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "强制双色卡（标注色+纯色）和JSON，让风格可量化、可复用；只提取视觉语法，杜绝场景元素雷同。",
+ "why_en": "Forces dual palettes (labeled + pure) and JSON, making style quantifiable and reusable; extracts only visual grammar, avoiding.",
  "repo": "irenerachel/style-pack-skill",
  "owner": "irenerachel",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/style-pack-skill"
  },
  "repo_created_at": "2026-07-21",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认静态图像文件夹或已有风格包；视频需先抽帧。生成的是风格描述与色值，不负责具体构图或元素设计。超出视觉语法范围（如叙。",
+ "limit_en": "Only works on static image folders or existing style packs; video needs pre-extracted frames. Outputs style description & color values, not."
 }

@@ -2,12 +2,12 @@
  "id": "lc044-trailsnap-trailsnap-cli",
  "kind": "skill",
  "name": "trailsnap-cli",
- "title_zh": "",
- "tagline_zh": "过日子用得上：trailsnap-cli。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "命令行里翻遍本地照片的元数据仓库",
+ "tagline_zh": "不装看图软件，不拖进相册 App。在终端里按人物、地点、标签、相册查照片，像查数据库一样快。",
+ "tagline_en": "Skip the gallery app. Query your photo library by face, place, tag, or album right from the terminal—like SQL for.",
  "desc_en": "TrailSnap CLI 命令行工具，用于查询照片、相册、标签、位置和人物等信息。当用户需要查看照片、相册数据时调用此技能。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把照片库变成可编程接口，脚本、管道、批处理都能直接调。不是看图工具，是给照片的查询引擎。",
+ "why_en": "Turns your photo library into a programmable API—pipe it, script it, batch it. Not a viewer, a query engine.",
  "repo": "LC044/TrailSnap",
  "owner": "LC044",
  "path": "skills/trailsnap-cli",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/LC044/TrailSnap.git",
   "copy": "cp -r TrailSnap/skills/trailsnap-cli ~/.claude/skills/trailsnap-cli",
   "dir": "~/.claude/skills/trailsnap-cli"
- }
+ },
+ "limit_zh": "只读元数据，不读照片像素；依赖本地已建好的索引，首次需自行初始化；不支持云端相册，只认本机目录结构。",
+ "limit_en": "Metadata only, no pixel access. Requires a pre-built local index; no cloud albums, local directories only."
 }

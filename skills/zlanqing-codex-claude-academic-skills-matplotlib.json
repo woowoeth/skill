@@ -2,12 +2,12 @@
  "id": "zlanqing-codex-claude-academic-skills-matplotlib",
  "kind": "skill",
  "name": "matplotlib",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：matplotlib。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "逐像素掌控图表每一根线条的底层绘图库",
+ "tagline_zh": "当默认样式配不上你的论文时，直接接管坐标轴、刻度、色标和字体。适合做新图型、改细节、嵌进科研流程。",
+ "tagline_en": "When defaults aren't good enough, take full command of axes, ticks, colormaps, and fonts. For novel plot types.",
  "desc_en": "Low-level plotting library for full customization. Use when you need fine-grained control over every plot element, creating novel plot types, or integrating with specific scientific workflows. Export to PNG/PDF/SVG for publication. For quick statistical plots use seaborn; for interactive plots use plotly; for publication-ready multi-panel figures with journal styling, use scientific-visualization.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不替你决定任何视觉元素，所有对象都可编程访问。你要的是绝对控制权，它给的是从 figure 到 pa。",
+ "why_en": "No hidden defaults — every visual element is a programmable object. You get the full object tree, from figure down to each.",
  "repo": "zLanqing/codex-claude-academic-skills",
  "owner": "zLanqing",
  "path": "scientific-toolkit-skill/references/scientific-skills/matplotlib",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/zLanqing/codex-claude-academic-skills.git",
   "copy": "cp -r codex-claude-academic-skills/scientific-toolkit-skill/references/scientific-skills/matplotlib ~/.claude/skills/matplotlib",
   "dir": "~/.claude/skills/matplotlib"
- }
+ },
+ "limit_zh": "只认 Python 环境且需手动管理状态机；不负责统计计算、交互式探索或自动排版。多子图期刊模板请用 scientif。",
+ "limit_en": "Python-only, manual state-machine management. No stats, no interactivity, no auto-layout. For journal templates use scientific-visualization; for."
 }

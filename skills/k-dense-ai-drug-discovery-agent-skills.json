@@ -2,12 +2,12 @@
  "id": "k-dense-ai-drug-discovery-agent-skills",
  "kind": "collection",
  "name": "drug-discovery-agent-skills",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：drug-discovery-agent-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "小分子与蛋白药物研发的Agent技能全家桶",
+ "tagline_zh": "从化学信息学到分子动力学，从靶点发现到蛋白设计，一套技能覆盖药物研发全流程，让AI代理直接上手干活。",
+ "tagline_en": "From cheminformatics to molecular dynamics, target discovery to protein design—a full skill suite that gets AI.",
  "desc_en": "Agent Skills for small-molecule and protein therapeutics: cheminformatics, molecular ML, docking and dynamics, protein design platforms, and target-discovery knowledge graphs.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是零散脚本，而是按药物研发管线组织的模块化技能，每个都封装好输入输出，可组合成复杂工作流，且持续更新。",
+ "why_en": "Not scattered scripts, but a pipeline-organized modular suite with clean I/O, composable into complex workflows, and actively.",
  "repo": "K-Dense-AI/drug-discovery-agent-skills",
  "owner": "K-Dense-AI",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/K-Dense-AI/drug-discovery-agent-skills.git",
   "copy": "mv drug-discovery-agent-skills ~/.claude/skills/drug-discovery-agent-skills",
   "dir": "~/.claude/skills/drug-discovery-agent-skills"
- }
+ },
+ "limit_zh": "需要自行配置计算环境和依赖（如RDKit、OpenMM等）；技能覆盖研发环节，不包含实验验证或临床数据。",
+ "limit_en": "Requires manual setup of compute env & deps (RDKit, OpenMM, etc.); covers R&D stages only, no experimental or clinical data; outside."
 }

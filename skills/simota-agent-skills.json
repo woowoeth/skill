@@ -2,12 +2,12 @@
  "id": "simota-agent-skills",
  "kind": "collection",
  "name": "agent-skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：agent-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "124 个专业 AI 智能体，按需装进你的终端",
+ "tagline_zh": "开发、安全、设计、测试、FinOps、合规、可观测、AI/ML…… 一个仓库集齐。Claude Code / Co。",
+ "tagline_en": "124 specialist agents for dev, security, design, testing, FinOps, compliance, observability, AI/ML. Works across.",
  "desc_en": "124 specialist AI agents for Claude Code / Codex CLI / Antigravity CLI (agy). Anthropic Agent Skills spec-aligned, gerund-form descriptions, hub-spoke orchestration via Nexus. Covers development, security, design, testing, FinOps, compliance, observability, AI/ML, and more.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是零散技能包，而是带 gerund 描述、符合 Anthropic 规范的整套体系。",
+ "why_en": "Not scattered snippets—a spec-compliant suite with gerund-form descriptions and a Nexus hub that makes 124 agents work as one.",
  "repo": "simota/agent-skills",
  "owner": "simota",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/simota/agent-skills.git",
   "copy": "mv agent-skills ~/.claude/skills/agent-skills",
   "dir": "~/.claude/skills/agent-skills"
- }
+ },
+ "limit_zh": "只适配 Anthropic Agent Skills 规范的 CLI（Claude Code / Codex / ag。",
+ "limit_en": "Only for Anthropic-spec CLIs (Claude Code/Codex/agy). Nexus hub required for orchestration; standalone agents lose inter-agent coordination."
 }

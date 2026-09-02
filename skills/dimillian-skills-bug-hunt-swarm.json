@@ -2,12 +2,12 @@
  "id": "dimillian-skills-bug-hunt-swarm",
  "kind": "skill",
  "name": "bug-hunt-swarm",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：bug-hunt-swarm。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "派一群只读探子并行查清 bug 根因",
+ "tagline_zh": "崩溃、回归、偶发失败——别再单线程瞎猜。它派出多路只读探子并行取证，给你一份带最快验证路径的排序诊断。",
+ "tagline_en": "Crashes, regressions, flaky failures—stop guessing alone. It dispatches parallel read-only scouts to gather.",
  "desc_en": "Parallel read-only multi-agent root-cause investigation for bugs, regressions, crashes, flaky behavior, or unexplained failures. Use when the user asks to investigate a bug, find the root cause, trace a regression, understand why something broke, or wants a ranked diagnosis with the fastest proof path without making code edits.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "并行只读是机制核心：探子互不干扰、不污染现场，按证据强度排序输出，把‘最可能原因’和‘最快验证法’绑在。",
+ "why_en": "Parallel read-only scouts keep the crime scene pristine, rank hypotheses by evidence strength, and pair each with its fastest.",
  "repo": "Dimillian/Skills",
  "owner": "Dimillian",
  "path": "bug-hunt-swarm",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Dimillian/Skills.git",
   "copy": "cp -r Skills/bug-hunt-swarm ~/.claude/skills/bug-hunt-swarm",
   "dir": "~/.claude/skills/bug-hunt-swarm"
- }
+ },
+ "limit_zh": "只做诊断、不修代码；需要仓库可读且能跑测试/日志命令。若根因藏在需写操作才能复现的路径（如改配置触发）。",
+ "limit_en": "Diagnosis only, no fixes. Needs a readable repo with runnable tests/logs. If root cause requires a write to reproduce (e.g., config change), it."
 }

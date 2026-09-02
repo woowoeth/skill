@@ -2,12 +2,12 @@
  "id": "colemurray-background-agents-onboarding",
  "kind": "skill",
  "name": "onboarding",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：onboarding。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "自助部署 Open-Inspect 实例的全程向导",
+ "tagline_zh": "从仓库克隆到 Terraform 部署再到验证，全程有人带你走。不用翻文档猜步骤，每步都留好交接点。",
+ "tagline_en": "From repo clone to Terraform deploy to verification, guided end-to-end. No doc-hunting, no guesswork—each step.",
  "desc_en": "Deploy your own Open-Inspect instance. Use when the user wants to set up, deploy, or onboard to Open-Inspect. Guides through repository setup, credential collection, Terraform deployment, and verification with user handoffs.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把部署拆成可确认的节点，每步都要求你确认再继续，而不是一把梭跑完。适合怕出错、想边做边懂的人。",
+ "why_en": "It breaks deployment into confirmable checkpoints, pausing for your input at each handoff—so you learn as you go instead of.",
  "repo": "ColeMurray/background-agents",
  "owner": "ColeMurray",
  "path": ".claude/skills/onboarding",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/ColeMurray/background-agents.git",
   "copy": "cp -r background-agents/.claude/skills/onboarding ~/.claude/skills/onboarding",
   "dir": "~/.claude/skills/onboarding"
- }
+ },
+ "limit_zh": "只覆盖 Open-Inspect 官方仓库的部署路径；不处理自建 fork、离线环境或已有实例的迁移。",
+ "limit_en": "Only covers the official Open-Inspect repo path; no forks, offline setups, or migrating existing instances. You manage Terraform state yourself—no."
 }

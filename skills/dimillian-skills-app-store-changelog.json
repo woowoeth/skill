@@ -2,12 +2,12 @@
  "id": "dimillian-skills-app-store-changelog",
  "kind": "skill",
  "name": "app-store-changelog",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：app-store-changelog。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 git 历史变成给用户看的 App Store ",
+ "tagline_zh": "别再对着 git log 逐条猜「这条要不要写进 What's New」——它自动筛出用户能感知的改动。",
+ "tagline_en": "Stop guessing which git commits matter to users. It filters user-facing changes and rewrites them into polished.",
  "desc_en": "Create user-facing App Store release notes by collecting and summarizing all user-impacting changes since the last git tag (or a specified ref). Use when asked to generate a comprehensive release changelog, App Store \"What's New\" text, or release notes based on git history or tags.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单拼接 commit message，而是以「用户视角」过滤重构：只保留影响使用行为的改动。",
+ "why_en": "It doesn't just concatenate commits—it filters through a user-impact lens, dropping refactors, deps, and CI noise while keeping.",
  "repo": "Dimillian/Skills",
  "owner": "Dimillian",
  "path": "app-store-changelog",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Dimillian/Skills.git",
   "copy": "cp -r Skills/app-store-changelog ~/.claude/skills/app-store-changelog",
   "dir": "~/.claude/skills/app-store-changelog"
- }
+ },
+ "limit_zh": "只认 git 仓库且需有 tag 或指定 ref；产物是英文草稿，不含截图、审核备注或本地化；若提交信息写得含糊。",
+ "limit_en": "Requires a git repo with tags/refs; output is English draft only—no screenshots, review notes, or localization. Vague commits yield vague notes."
 }

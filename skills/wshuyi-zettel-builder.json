@@ -2,12 +2,12 @@
  "id": "wshuyi-zettel-builder",
  "kind": "skill",
  "name": "zettel-builder",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：zettel-builder。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "素材进来自动长成原子卡片的 Zettelkasten",
+ "tagline_zh": "笔记、文章、收藏夹里的碎片，进来就被切成原子卡、重述成你的价值观、自动连好链接。不用等写文章时才翻旧账。",
+ "tagline_en": "Feed it notes, articles, or scraps—it atomizes them, restates them in your voice, and links them up. Cards grow.",
  "desc_en": "自底向上生长的 Zettelkasten 卡片笔记系统。从笔记/已发表文章/收藏素材持续消化为原子卡, 用户价值观重述,自动链接,周期性巡检文章就绪簇,缺口处可调 deep-research 补卡。 与\"自顶向下选题\"或\"长文写作 Skill\"不重叠:那些是\"等到要写时再生产\",本 skill 是\"素材进来就长卡\"。 触发词: - \"/zettel\"、\"/zettel-builder\" - \"卡片笔记\"、\"zettelkasten\"、\"原子卡\"、\"二级大脑\" - \"巡检卡片\"、\"长出来一篇\"、\"卡片就绪了吗\" - \"把这段切卡\"、\"做成卡片\" 四种模式(由用户调用语义路由): - ingest:把指定素材(文本/路径/URL/本会话片段)切原子卡 → 价值观重述 → 候选链接 - scan:消化 _queue/ 里 mechanical scan 积累的 llm-wiki 新增素材 - i",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是检索式笔记，是自底向上的生长机制：每张卡都带价值观重述，周期性巡检自动发现就绪簇。",
+ "why_en": "It's not a search box—it's a growth engine. Every card carries your value restatement, periodic scans surface ready clusters.",
  "repo": "wshuyi/zettel-builder",
  "owner": "wshuyi",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/zettel-builder"
  },
  "repo_created_at": "2026-05-21",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只处理文本类素材，图片/PDF/音频需先转文本。卡片链接依赖已有语料密度，冷启动时链接稀疏。deep-research。",
+ "limit_en": "Text-only input—images/PDFs/audio need prior transcription. Linking is sparse until your corpus thickens. Deep-research fills factual gaps only, and."
 }

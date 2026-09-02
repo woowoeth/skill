@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-opencli-skills",
  "kind": "collection",
  "name": "qiaomu-opencli-skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：qiaomu-opencli-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用命令行逛遍全网内容社区",
+ "tagline_zh": "B站、知乎、X、YouTube、微博、小红书、V2EX、Reddit……不用开浏览器，终端里一条命令拉取、搜索。",
+ "tagline_en": "Bilibili, Zhihu, X, YouTube, Weibo, Xiaohongshu, V2EX, Reddit — browse, search, and post from your terminal. No.",
  "desc_en": "Use opencli CLI to interact with social/content websites (Bilibili, Zhihu, Twitter/X, YouTube, Weibo, 小红书, V2EX, Reddit,",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把各家网站的私有接口统一收敛成一套 opencli 子命令，脚本化、可管道、可定时。",
+ "why_en": "It normalizes each site's private API into one opencli command set — scriptable, pipeable, schedulable. Content consumption.",
  "repo": "joeseesun/qiaomu-opencli-skills",
  "owner": "joeseesun",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/joeseesun/qiaomu-opencli-skills.git",
   "copy": "mv qiaomu-opencli-skills ~/.claude/skills/qiaomu-opencli-skills",
   "dir": "~/.claude/skills/qiaomu-opencli-skills"
- }
+ },
+ "limit_zh": "只覆盖列出的八个站点，且依赖 opencli 已登录对应账号；不支持私信、直播、付费内容；发布仅限文本。",
+ "limit_en": "Only the 8 listed sites; requires opencli logged into each. No DMs, livestreams, or paywalled content. Publishing is text-only; media needs official."
 }

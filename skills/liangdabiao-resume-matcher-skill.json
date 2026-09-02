@@ -2,12 +2,12 @@
  "id": "liangdabiao-resume-matcher-skill",
  "kind": "skill",
  "name": "resume-matcher",
- "title_zh": "",
- "tagline_zh": "过日子用得上：resume-matcher。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把简历扔给 HRBP 视角的 AI 做深度审计与匹配",
+ "tagline_zh": "投了 50 份没回音？让 AI 先替你用 HR 的眼睛审一遍：解析简历、比对 JD、输出可执行的修改清单。",
+ "tagline_en": "50 applications, zero replies? Let AI audit your resume like an HRBP: parse, match against the JD, and get.",
  "desc_en": "简历深度分析与优化。当用户需要分析简历、优化简历匹配岗位、HRBP 视角审计简历、获取简历修改建议、简历批评、简历与 JD 匹配度评估时使用。涵盖简历解析、JD 匹配、HR 审计报告生成、简历重写等场景。即使用户只说\"帮我看看这个简历\"也应该触发。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不只看关键词，而是模拟 HRBP 的筛选逻辑：先拆 JD 的隐性要求，再逐条对照你的经历。",
+ "why_en": "It doesn't just keyword-match—it simulates an HRBP's screening logic: deconstructs the JD's implicit requirements, cross-checks.",
  "repo": "liangdabiao/resume-matcher-skill",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/resume-matcher-skill.git",
   "copy": "mv resume-matcher-skill ~/.claude/skills/resume-matcher-skill",
   "dir": "~/.claude/skills/resume-matcher-skill"
- }
+ },
+ "limit_zh": "只吃 PDF/Word 文本简历，不读图片扫描件；输出是修改建议和重写稿，不保证面试邀约；JD 必须由你提供。",
+ "limit_en": "Only parses text-based PDF/Word resumes (no scanned images); outputs suggestions & rewrites, not guaranteed interviews; you must supply the JD—it."
 }

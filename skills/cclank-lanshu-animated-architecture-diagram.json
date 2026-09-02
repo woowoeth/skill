@@ -2,12 +2,12 @@
  "id": "cclank-lanshu-animated-architecture-diagram",
  "kind": "skill",
  "name": "lanshu-animated-architecture-diagram",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：lanshu-animated-architecture-diagram。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把架构图变成会流动的动画 GIF",
+ "tagline_zh": "想要岚叔那种黑底手绘风动态图？输入流程，输出可编辑 Excalidraw 源文件 + 静态 PNG + 带流动高亮。",
+ "tagline_en": "Want that Lanshu-style blackboard sketch with moving flow? Feed it a process, get an editable .excalidraw, a.",
  "desc_en": "Create premium hand-drawn architecture and process diagrams in the Lanshu animated GIF style, with editable .excalidraw files, static PNG previews, and genuinely animated GIFs with moving flow highlights. Use this skill whenever the user asks for 岚叔动态架构图, Excalidraw-like diagrams, DailyDoseOfDS-style black-background sketches, animated architecture/process GIFs, polished flowcharts, visual explana",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是把静态图硬转成 GIF，而是从结构层面生成动画路径，流动高亮跟着逻辑走，改图重出也保持一致性。",
+ "why_en": "It doesn't fake motion by animating a static image—it generates flow paths structurally, so highlights trace the logic and.",
  "repo": "cclank/lanshu-animated-architecture-diagram",
  "owner": "cclank",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/cclank/lanshu-animated-architecture-diagram.git",
   "copy": "mv lanshu-animated-architecture-diagram ~/.claude/skills/lanshu-animated-architecture-diagram",
   "dir": "~/.claude/skills/lanshu-animated-architecture-diagram"
- }
+ },
+ "limit_zh": "只认文本描述的流程/架构，不解析已有图片；动画只支持节点间连线流动，不支持节点自身缩放或旋转；输出 GIF 帧率固定 。",
+ "limit_en": "Only takes text-described flows/architectures, not images. Animates edge flow only—no node scaling/rotation. GIF is fixed at 8fps; changing it means."
 }

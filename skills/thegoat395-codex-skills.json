@@ -2,12 +2,12 @@
  "id": "thegoat395-codex-skills",
  "kind": "collection",
  "name": "Codex-Skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Codex-Skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 Codex 装一整套前端交付级技能库",
+ "tagline_zh": "从动效到无障碍、从 QA 到交接，六类精品技能一次装齐。专治 Codex 写出的页面“能跑但没法交付”的尴尬。",
+ "tagline_en": "Six curated skill packs—motion, a11y, QA, handoff—so Codex ships frontend that's actually deliverable, not just.",
  "desc_en": "Codex-first Agent Skills library for premium frontend, website, motion, accessibility, QA, and handoff workflows.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "按交付链路而非单点功能组织，每个技能都带验收标准。Codex 用它产出的代码，能直接过设计师和 QA 。",
+ "why_en": "Organized by delivery pipeline, not isolated tricks. Each skill ships with acceptance criteria, so Codex's output survives.",
  "repo": "TheGoat395/Codex-Skills",
  "owner": "TheGoat395",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/TheGoat395/Codex-Skills.git",
   "copy": "mv Codex-Skills ~/.claude/skills/Codex-Skills",
   "dir": "~/.claude/skills/Codex-Skills"
- }
+ },
+ "limit_zh": "只认 Codex 系 agent（OpenAI 官方或兼容 CLI），其他框架不保证。技能覆盖前端与交接，不碰后端。",
+ "limit_en": "Codex-family agents only (official or compatible CLI). Frontend & handoff scope—no backend, DB, or DevOps. Output ends at PR; no deploy or monitoring."
 }

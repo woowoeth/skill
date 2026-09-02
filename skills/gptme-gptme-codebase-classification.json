@@ -2,12 +2,12 @@
  "id": "gptme-gptme-codebase-classification",
  "kind": "skill",
  "name": "codebase-classification",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：codebase-classification。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "改代码前先给代码库分个类再动手",
+ "tagline_zh": "拿到陌生仓库别急着改，先判断它是单体、微服务还是遗留系统。避免用错套路，把简单改动做成大工程。",
+ "tagline_en": "Before you edit an unfamiliar repo, classify it first. Avoid applying the wrong playbook and turning a small.",
  "desc_en": "Classify codebases before modification to choose appropriate development approach",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把架构识别变成显式步骤，逼你在动手前先回答『这是什么』，而不是凭感觉直接改。",
+ "why_en": "It turns architecture recognition into an explicit step, forcing you to answer 'what is this' before touching code, instead of.",
  "repo": "gptme/gptme",
  "owner": "gptme",
  "path": "gptme/lessons/skills/codebase-classification",
@@ -27,5 +27,7 @@
   "copy": "cp -r gptme/gptme/lessons/skills/codebase-classification ~/.claude/skills/codebase-classification",
   "dir": "~/.claude/skills/codebase-classification"
  },
- "cover": "https://gptme.org/media/logo.png"
+ "cover": "https://gptme.org/media/logo.png",
+ "limit_zh": "只做分类，不产出修改方案。需要你已有基本的架构常识（如知道单体与微服务的区别），否则分类结果对你没指导意义。",
+ "limit_en": "Classifies only, no fix suggestions. Requires basic architecture knowledge (e.g., monolith vs microservices) to be useful."
 }

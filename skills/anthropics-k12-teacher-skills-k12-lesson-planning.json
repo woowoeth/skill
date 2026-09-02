@@ -2,12 +2,12 @@
  "id": "anthropics-k12-teacher-skills-k12-lesson-planning",
  "kind": "skill",
  "name": "k12-lesson-planning",
- "title_zh": "",
- "tagline_zh": "纯属好玩，装了不亏：k12-lesson-planning。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从零生成K-12全科教案与配套材料",
+ "tagline_zh": "还没说年级、科目、标准？直接丢给它一个主题，它先出教案再追问细节。数学、英语、科学、社会四科全覆盖。",
+ "tagline_en": "No grade, subject, or standard yet? Give it a topic and it drafts the lesson first, then asks. Covers math, ELA.",
  "desc_en": "Creates a lesson plan, student-facing materials, and observation template. Load this skill BEFORE asking the teacher any clarifying question about grade, subject, topic, standard, or timing. Use when a K-12 teacher needs a math, ELA, science, or social studies lesson built from scratch — even if grade, subject, or topic isn't yet stated. Do NOT load for grading, a rubric, assessment feedback, a qu",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把「先问清需求」倒过来：先产出可改的初稿，再补细节。老师不用对着空白页发怵，追问发生在草稿之后。",
+ "why_en": "It flips the script: draft first, clarify later. Teachers never face a blank page—the clarifying questions come after a usable.",
  "repo": "anthropics/k12-teacher-skills",
  "owner": "anthropics",
  "path": "plugin/skills/k12-lesson-planning",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/anthropics/k12-teacher-skills.git",
   "copy": "cp -r k12-teacher-skills/plugin/skills/k12-lesson-planning ~/.claude/skills/k12-lesson-planning",
   "dir": "~/.claude/skills/k12-lesson-planning"
- }
+ },
+ "limit_zh": "只服务K-12四科（数学/英语/科学/社会）的整课新建；不批改作业、不评量、不给反馈。若输入是已有教案的修订而非从零构。",
+ "limit_en": "Only builds new K-12 lessons in 4 subjects; no grading, rubrics, or feedback. If fed an existing lesson to revise, it will start from scratch instead."
 }

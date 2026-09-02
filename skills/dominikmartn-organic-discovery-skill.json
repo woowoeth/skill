@@ -2,12 +2,12 @@
  "id": "dominikmartn-organic-discovery-skill",
  "kind": "skill",
  "name": "organic-discovery-skill",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：organic-discovery-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 AI 编码助手做技术 SEO 与内容分发审计",
+ "tagline_zh": "搜不到、不收录、AI 不引用？一次审计覆盖索引、GEO、YMYL 证据与 App Store 可见性。",
+ "tagline_en": "Not indexed? Invisible to AI? One audit covers indexing, GEO, YMYL evidence, App Store discovery, and post-deploy.",
  "desc_en": "Technical SEO, assistant visibility, content strategy, earned distribution planning, and evidence governance for AI coding agents. Activate for SEO audits, Search Console, indexing, AI/assistant visibility, organic content and distribution planning, GEO, YMYL evidence, App Store discovery, structured data, international SEO, and post-deploy checks. The legacy name seo-skill and /seo command remain",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的 SEO 清单，而是把「证据治理」当一等公民：每个建议都绑定可验证的 Search Cons。",
+ "why_en": "Treats evidence governance as a first-class citizen: every recommendation ties to verifiable Search Console data and structured.",
  "repo": "dominikmartn/organic-discovery-skill",
  "owner": "dominikmartn",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dominikmartn/organic-discovery-skill.git",
   "copy": "mv organic-discovery-skill ~/.claude/skills/organic-discovery-skill",
   "dir": "~/.claude/skills/organic-discovery-skill"
- }
+ },
+ "limit_zh": "只认 Google Search Console 与标准结构化数据；不接 Bing/Yandex 后台。",
+ "limit_en": "Only Google Search Console and standard structured data; no Bing/Yandex. YMYL needs your own credentials—else hints only. Output stops at audit."
 }

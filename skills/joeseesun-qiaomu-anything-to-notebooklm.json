@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-anything-to-notebooklm",
  "kind": "skill",
  "name": "qiaomu-anything-to-notebooklm",
- "title_zh": "",
- "tagline_zh": "正经办公文档：qiaomu-anything-to-notebooklm。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把公众号、网页、PDF、播客一键喂给 Noteboo",
+ "tagline_zh": "看到长文就头疼？丢给它，自动转成播客、PPT、思维导图。支持小宇宙、喜马拉雅、YouTube。",
+ "tagline_en": "Drowning in long reads? Feed it once, get podcasts, slides & mind maps. Handles WeChat, YouTube, RSS, PDFs—even.",
  "desc_en": "多源内容智能处理器：支持微信公众号、网页、YouTube、播客（小宇宙/喜马拉雅）、PDF、Markdown等，自动上传到NotebookLM并生成播客/PPT/思维导图等多种格式。支持深度分析模式和飞书文档自动创建",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单上传，而是先做深度分析再喂给 NotebookLM，输出物直接可用。多源抓取+格式转换+飞书落。",
+ "why_en": "Not just upload—it pre-digests content for deeper NotebookLM analysis, then auto-generates deliverables. One pipeline from messy.",
  "repo": "joeseesun/qiaomu-anything-to-notebooklm",
  "owner": "joeseesun",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/qiaomu-anything-to-notebooklm"
  },
  "repo_created_at": "2026-01-25",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "需要你已有 NotebookLM 账号和 API 密钥；YouTube 只认公开链接，播客只认小宇宙/喜马拉雅单集页。",
+ "limit_en": "Requires your NotebookLM account & API key. YouTube must be public; podcasts only from Xiaoyuzhou/Ximalaya episode pages. Feishu needs your app."
 }

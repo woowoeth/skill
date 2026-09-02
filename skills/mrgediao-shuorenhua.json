@@ -2,12 +2,12 @@
  "id": "mrgediao-shuorenhua",
  "kind": "skill",
  "name": "shuorenhua",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：shuorenhua。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把AI腔调从文本里挑出来标给你看",
+ "tagline_zh": "改稿时总说不上来哪里假？它逐句标出套路词、空话和模板感，按场景控制力度，保留事实和术语，只动语气不动内容。",
+ "tagline_en": "Can't say why a draft feels fake? It flags AI-isms line by line, adjusts intensity per context, and keeps facts.",
  "desc_en": "检查和清理中英文文本里的 AI 套路，适用于“去 AI 味”“说人话”“自然一点”“别像模板”“先标问题”这类改写和审稿需求；按场景控制力度，同时保留事实、术语、语域和责任主体。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是无脑替换同义词，而是先诊断再动手：区分套路表达与必要术语，按语域保留责任主体，改完像人写的。",
+ "why_en": "It diagnoses before rewriting—separates clichés from necessary jargon, respects register and agency, so output reads human, not.",
  "repo": "MrGeDiao/shuorenhua",
  "owner": "MrGeDiao",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv shuorenhua ~/.claude/skills/shuorenhua",
   "dir": "~/.claude/skills/shuorenhua"
  },
- "cover": "https://repository-images.githubusercontent.com/1188860591/24c8cf0c-9bbe-4569-93ba-721c3c19d499"
+ "cover": "https://repository-images.githubusercontent.com/1188860591/24c8cf0c-9bbe-4569-93ba-721c3c19d499",
+ "limit_zh": "只处理中文和英文的书面文本，不碰口语对话、代码注释或诗歌；对刻意模仿AI风格的讽刺文无效；不提供一键改写，只标记问题。",
+ "limit_en": "Chinese & English prose only—no speech, code, or poetry. Won't catch deliberate AI-parody. Flags issues only; rewriting is up to you."
 }

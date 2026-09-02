@@ -2,12 +2,12 @@
  "id": "kappaemme-git-codex-first-customer-finder-skill-first-customer-finder",
  "kind": "skill",
  "name": "first-customer-finder",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：first-customer-finder。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从公开抱怨里挖出第一批付费种子用户",
+ "tagline_zh": "别再用行业报告猜客户了。它扫 Reddit、HN、推文里的真实痛点和购买信号，按适配度和时机给潜在用户排序。",
+ "tagline_en": "Stop guessing who your first users are. It scans Reddit, HN, and tweets for real pain and buying signals, ranks.",
  "desc_en": "Find and qualify evidence-backed potential first customers, early adopters, design partners, or beta users for a startup using recent public pain and buying signals. Use when Codex needs to analyze a product URL or idea, define an ideal customer profile, research public discussions and business pages, identify first-user prospects, rank lead fit and timing, prepare source-based outreach drafts, or",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不靠泛泛的 ICP 画像，而是把公开讨论里的抱怨、预算线索和近期行为交叉验证，用证据链而非直觉给线索打。",
+ "why_en": "Instead of generic ICP profiles, it cross-references complaints, budget hints, and recent behavior from public posts to score.",
  "repo": "Kappaemme-git/codex-first-customer-finder-skill",
  "owner": "Kappaemme-git",
  "path": "first-customer-finder",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Kappaemme-git/codex-first-customer-finder-skill.git",
   "copy": "cp -r codex-first-customer-finder-skill/first-customer-finder ~/.claude/skills/first-customer-finder",
   "dir": "~/.claude/skills/first-customer-finder"
- }
+ },
+ "limit_zh": "只认英文公开文本（Reddit/HN/推特/博客），不碰 LinkedIn 私域和付费数据库；产出到'带出处的线索列表。",
+ "limit_en": "English public text only (Reddit/HN/Twitter/blogs); no LinkedIn or paid DBs. Output ends at sourced lead list + outreach draft; no auto-sending or."
 }

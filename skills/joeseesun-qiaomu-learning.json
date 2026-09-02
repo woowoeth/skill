@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-learning",
  "kind": "skill",
  "name": "qiaomu-learning",
- "title_zh": "",
- "tagline_zh": "正经办公文档：qiaomu-learning。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把教材变成苏格拉底式逐问推导的对话",
+ "tagline_zh": "学不进去？它一次只问一个短问题，接住你的原话温和纠错，数学物理还能在黑板上边画边推。像真人老师，不剧透答案。",
+ "tagline_en": "Stuck studying? It asks one short question at a time, catches your exact words, and sketches math/physics on a.",
  "desc_en": "用苏格拉底式逐问学习把教材、截图、PDF、笔记、题目或一个主题变成主动推导对话。Use when the learner明确要求“苏格拉底式学习”“逐问带我学”“一次只问一个问题”“先别告诉我答案”“边问边引导我推出来”、interactive quiz、active recall or question-led tutoring。宽泛主题默认先进入关键词定向：列出 12 个关键词及白话解释，推荐专家和专业书籍，并提供“扩展关键词”的入口，再让学习者选起点。正式学习中每个活跃回合只问一个简短、可回答的问题，并根据学习者上一步的推理调整难度；回答要接住学习者原话，像真人老师一样温和纠错，并在数学、物理、流程或图形内容中用累积黑板逐步画出推理。学习者说“太抽象”“不理解”“想象不出来”“枯燥”或要求图解，且当前台阶可视觉化时，必须立即切换为问题承载型图示并提供文字替代，空间、相对运动、流程和几",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "每个回合只问一个可回答的问题，难度随你上一步推理动态调整；抽象时强制切图示并给文字替代。",
+ "why_en": "One answerable question per turn, difficulty adapts to your last step; forces visual scaffolding with text fallback when you're.",
  "repo": "joeseesun/qiaomu-learning",
  "owner": "joeseesun",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/qiaomu-learning"
  },
  "repo_created_at": "2026-08-10",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认文字/截图/PDF/笔记输入，不读网页和视频；宽泛主题先强制过12关键词定向，急性子会嫌慢；图示仅限可视觉化台阶。",
+ "limit_en": "Text/screenshots/PDF/notes only, no web or video; broad topics force a 12-keyword orientation first; diagrams only when the step is visualizable."
 }

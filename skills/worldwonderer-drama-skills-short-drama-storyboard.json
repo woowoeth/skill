@@ -2,12 +2,12 @@
  "id": "worldwonderer-drama-skills-short-drama-storyboard",
  "kind": "skill",
  "name": "short-drama-storyboard",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：short-drama-storyboard。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把短剧剧本转成可拍的镜头表与关键帧提示词",
+ "tagline_zh": "剧本还在纸上，镜头已经在你脑子里？它帮你拆成有动机的镜头、守住轴线与持物，连首帧提示词都写好，不生成媒体也能开拍。",
+ "tagline_en": "Turn your approved script into shot lists with dramatic intent, continuity guardrails, and keyframe prompts—no.",
  "desc_en": "把已接受的中文短剧剧本和资产转成原文落实表、有戏剧动机的镜头、连续性边界与冻结关键帧提示词；关键场次可先做场次视觉计划或 Coverage Audition 比较真正不同的导演方案。用户提出“拆分镜/设计镜头/做镜头表”“场次视觉计划/调度故事板”“比较导演方案/Coverage Audition”“写首帧/关键帧提示词”“检查轴线、站位、视线、持物连续性”，或需要在不生成媒体的前提下把竖屏短剧、漫剧的剧本内容转成可拍的画面时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不止拆镜头，它把戏剧动机焊进每个镜头，用连续性边界拦住穿帮，关键场次还能对比导演方案，让选择有据可依。",
+ "why_en": "It doesn't just split shots—it welds dramatic intent into each one, enforces continuity, and lets you audition director choices.",
  "repo": "worldwonderer/drama-skills",
  "owner": "worldwonderer",
  "path": "skills/short-drama-storyboard",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/worldwonderer/drama-skills.git",
   "copy": "cp -r drama-skills/skills/short-drama-storyboard ~/.claude/skills/short-drama-storyboard",
   "dir": "~/.claude/skills/short-drama-storyboard"
- }
+ },
+ "limit_zh": "只吃已接受的中文短剧/漫剧剧本，不生成任何媒体；镜头表到关键帧提示词为止，不含分镜图或视频。超出竖屏叙事或需媒体输出时。",
+ "limit_en": "Only accepts approved Chinese short-drama scripts; outputs shot lists & keyframe prompts, no media. Stops outside vertical narrative or if media."
 }

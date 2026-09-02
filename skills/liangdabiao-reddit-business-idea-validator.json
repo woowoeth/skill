@@ -2,12 +2,12 @@
  "id": "liangdabiao-reddit-business-idea-validator",
  "kind": "skill",
  "name": "reddit-business-idea-validator",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：reddit-business-idea-validator。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Reddit 真实讨论验证创业想法并生成评分报告",
+ "tagline_zh": "别拍脑袋猜市场。抓取 Reddit 帖子评论，多智能体分析痛点与需求，输出带评分的 HTML 报告，让数据替你决策。",
+ "tagline_en": "Stop guessing. Scrape Reddit threads, run multi-agent analysis on pain points & demand, and get a scored HTML.",
  "desc_en": "Validate a business idea by scraping Reddit posts/comments and running a multi-agent LLM analysis pipeline that produces a scored HTML report. Use whenever the user says things like \"验证创业想法\", \"调研 XX 在 Reddit 上的反响\", \"这个产品有市场吗\", \"validate business idea\", \"is X a good business idea\", \"analyze market demand for X\", \"what pain points do people have around X\", or provides a product/niche/idea and wants ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单搜索，而是多智能体分工：抓取、清洗、情感分析、市场评估，最后合成一份可读的评分报告。",
+ "why_en": "Not just search—multi-agent pipeline handles scraping, cleaning, sentiment, and market scoring, producing a readable report 10x.",
  "repo": "liangdabiao/reddit-business-idea-validator",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/reddit-business-idea-validator.git",
   "copy": "mv reddit-business-idea-validator ~/.claude/skills/reddit-business-idea-validator",
   "dir": "~/.claude/skills/reddit-business-idea-validator"
- }
+ },
+ "limit_zh": "只覆盖 Reddit 文本数据，不包含其他平台或付费数据；需要 Python 环境和 Reddit API 凭据。",
+ "limit_en": "Reddit text only, no other platforms or paid data; needs Python & Reddit API credentials; static HTML, no live updates; limited non-English support."
 }

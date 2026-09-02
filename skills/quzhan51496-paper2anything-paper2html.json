@@ -2,12 +2,12 @@
  "id": "quzhan51496-paper2anything-paper2html",
  "kind": "skill",
  "name": "paper2html",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：paper2html。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把论文 PDF 变成可直接发布的单页项目主页",
+ "tagline_zh": "投完稿顺手把 PDF 拖进去，出来一个自带样式、可挂 GitHub Pages 的 index.html。",
+ "tagline_en": "Drop in a paper PDF, get a styled, self-contained index.html ready for GitHub Pages. Zero frontend work—reviewers.",
  "desc_en": "Convert an academic paper PDF into a publish-ready, self-contained single-page **project homepage** (a self-contained index.html) — the kind of paper landing page researchers host on GitHub Pages. Triggers when the user says \"turn a paper into a project page/webpage\", \"paper2html\", \"generate a paper landing page / project page\", \"turn this PDF into an HTML page\", \"paper to webpage\", or \"make a pap",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不渲染成普通网页，而是按学术项目主页的惯例组织：标题、摘要、图表、引用分区，且所有资源内联。",
+ "why_en": "It structures output like a real academic project page—title, abstract, figures, citations—and inlines all assets, so one file.",
  "repo": "QuZhan51496/paper2anything",
  "owner": "QuZhan51496",
  "path": "paper2html",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/QuZhan51496/paper2anything.git",
   "copy": "cp -r paper2anything/paper2html ~/.claude/skills/paper2html",
   "dir": "~/.claude/skills/paper2html"
- }
+ },
+ "limit_zh": "只吃学术论文 PDF，且依赖本机安装的 LaTeX 工具链（pdflatex 等）来解析公式；图表提取限于 PDF 内。",
+ "limit_en": "Academic PDFs only; needs local LaTeX toolchain for formula parsing. Extracts only embedded vector figures—scanned/image PDFs skip figures. Output."
 }

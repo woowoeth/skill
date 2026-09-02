@@ -2,12 +2,12 @@
  "id": "geekjourneyx-hyperframes-motion-director-hyperframes-motion-director",
  "kind": "skill",
  "name": "hyperframes-motion-director",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：hyperframes-motion-director。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把文案脚本变成中文优先的电影级动态视频",
+ "tagline_zh": "给产品发布、文章转视频、字幕动画配上 HyperFrames 渲染。不用碰英文模板，直接出中文正片。",
+ "tagline_en": "Turn scripts into cinematic Chinese-first motion videos with HyperFrames. No English templates, straight to final.",
  "desc_en": "Direct and produce Chinese-first cinematic motion videos with HyperFrames. Use this skill when the user wants a rendered promo film, article-to-video piece, product launch film, website-to-video piece, keynote reveal, kinetic typography sequence, text/icon transition promo, music-synced motion graphic, HTML/CSS/SVG/GSAP video, short-form vertical video, or a landing page/product story turned into ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把导演流程封装成 skill：从脚本拆解到镜头节奏自动对齐，中文排版和字体渲染是默认项，不是事后修补。",
+ "why_en": "It packages the directing pipeline—script breakdown to shot pacing—with Chinese typography as a default, not a patch.",
  "repo": "geekjourneyx/hyperframes-motion-director",
  "owner": "geekjourneyx",
  "path": "skills/hyperframes-motion-director",
@@ -30,5 +30,7 @@
  "cover": "",
  "repo_created_at": "2026-06-02",
  "skill_first_seen": "2026-07-03",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只覆盖 HyperFrames 渲染器，输出是 HTML/CSS/SVG/GSAP 工程而非 MP4。",
+ "limit_en": "Only works with HyperFrames renderer, outputs HTML/CSS/SVG/GSAP project, not MP4. Requires Node.js + browser locally. No transcoding or color."
 }

@@ -2,12 +2,12 @@
  "id": "microsoft-copilot-studio-gallery-prorated-refund-calculator",
  "kind": "skill",
  "name": "prorated-refund-calculator",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：prorated-refund-calculator。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按天折算退款与换购差价，精确到分",
+ "tagline_zh": "客户中途取消会员、坏机换新机，别再拍脑袋估数。脚本算清剩余天数与差价，账目经得起对账。",
+ "tagline_en": "Stop guessing refunds when members cancel mid-cycle or defective units get traded up. Exact prorated math.",
  "desc_en": "Calculate the exact prorated refund when a customer cancels a BlastPass membership, and the net settlement when a defective unit is traded up to a pricier model. Use after the Store Policy Agent confirms the refund rule and the Membership MCP has returned the membership details. The skill runs a bundled Python script so the arithmetic is exact.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是调库，是内置 Python 脚本逐日计算，避开浮点误差；且只在你确认政策、拿到会员数据后才动手。",
+ "why_en": "Bundled Python does day-level arithmetic, dodging float drift. It fires only after policy confirmation and membership data.",
  "repo": "microsoft/copilot-studio-gallery",
  "owner": "microsoft",
  "path": "submissions/blastbox-deploy/solution/botcomponents/cra24a45_skill_md_30aa9a7b2b7c/filedata",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/microsoft/copilot-studio-gallery.git",
   "copy": "cp -r copilot-studio-gallery/submissions/blastbox-deploy/solution/botcomponents/cra24a45_skill_md_30aa9a7b2b7c/filedata ~/.claude/skills/filedata",
   "dir": "~/.claude/skills/filedata"
- }
+ },
+ "limit_zh": "只认 BlastPass 会员取消与单件换购两种场景；需要先有 Store Policy Agent 的规则确认和 M。",
+ "limit_en": "Only BlastPass cancellations and single-unit trade-ups. Requires prior policy confirmation and membership data; stops otherwise. No payout, tax, or."
 }

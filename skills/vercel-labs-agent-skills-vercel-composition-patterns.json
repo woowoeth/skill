@@ -2,12 +2,12 @@
  "id": "vercel-labs-agent-skills-vercel-composition-patterns",
  "kind": "skill",
  "name": "vercel-composition-patterns",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：vercel-composition-patterns。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 React 组件从布尔地狱重构为可组合架构",
+ "tagline_zh": "当组件 props 堆满 isA/isB/isC，改一处崩三处。这套模式用 compound components。",
+ "tagline_en": "Drowning in boolean props? This pattern library rescues component APIs with compound components & render.",
  "desc_en": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是教你怎么写组件，而是给出一套可复用的组合决策树：何时用 context、何时用 render pr。",
+ "why_en": "Not another tutorial—a decision framework for component architecture. Maps React 19 APIs to concrete refactoring moves, so you.",
  "repo": "vercel-labs/agent-skills",
  "owner": "vercel-labs",
  "path": "skills/composition-patterns",
@@ -27,5 +27,7 @@
   "copy": "cp -r agent-skills/skills/composition-patterns ~/.claude/skills/composition-patterns",
   "dir": "~/.claude/skills/composition-patterns"
  },
- "cover": "https://skills.sh/b/vercel-labs/agent-skills"
+ "cover": "https://skills.sh/b/vercel-labs/agent-skills",
+ "limit_zh": "只覆盖 React 组件组合层，不涉及样式、状态管理或服务端。需要你已有 React 19 项目。",
+ "limit_en": "React 19 only; no styling, state, or backend. Delivers refactoring blueprints & code skeletons, not full implementations. Useless for Vue/Svelte."
 }

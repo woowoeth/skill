@@ -2,12 +2,12 @@
  "id": "devin-axis-ipollowork",
  "kind": "collection",
  "name": "iPolloWork",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：iPolloWork。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一个能自我进化的AI工作台，装下代码、设计、视频全流",
+ "tagline_zh": "受够了在Codex、设计工具、剪辑软件之间来回搬运？它把子代理调度、可编辑产物和双插件生态拧成一条流水线。",
+ "tagline_en": "Tired of juggling Codex, design tools, and video editors? This fuses subagent delegation, editable outputs, and.",
  "desc_en": "A next-generation, source-available AI workspace with a self-evolving agent runtime for editable code, design, presentations, websites, and video—a Codex alternative that integrates DeepSeek Harness for subagent delegation, combining iPolloWork’s complete AI workbench with DSH’s specialized agents and both plugin ecosystems in one workflow.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是套壳聚合，而是把DeepSeek Harness的子代理调度焊进工作台本体，让专业代理和通用代理在。",
+ "why_en": "Not a wrapper—it welds DeepSeek Harness's subagent delegation into the workbench core, so specialized and general agents iterate.",
  "repo": "Devin-AXIS/iPolloWork",
  "owner": "Devin-AXIS",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv iPolloWork ~/.claude/skills/iPolloWork",
   "dir": "~/.claude/skills/iPolloWork"
  },
- "cover": "https://repository-images.githubusercontent.com/1044010907/3f86291a-c81a-4e83-8a29-bcf3fb8a793c"
+ "cover": "https://repository-images.githubusercontent.com/1044010907/3f86291a-c81a-4e83-8a29-bcf3fb8a793c",
+ "limit_zh": "只覆盖代码、设计、演示、网站、视频五类产物；超出这五类（如3D建模、音频混音）它没有对应代理，会卡在调度层。",
+ "limit_en": "Covers only code, design, slides, websites, video. No agents for 3D/audio—it stalls at delegation. Needs your own model API keys; first install."
 }

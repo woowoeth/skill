@@ -2,12 +2,12 @@
  "id": "necmttn-ax",
  "kind": "collection",
  "name": "ax",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：ax。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 AI 编程助手装上记忆与仪表盘",
+ "tagline_zh": "Claude Code 和 Codex 每次会话都失忆？ax 把每次调试、每个决策记成结构化日志，本地留存。",
+ "tagline_en": "Tired of AI agents forgetting everything? ax logs every debug & decision locally, so Claude Code and Codex learn.",
  "desc_en": "the agent experience layer · observability + memory for AI coding agents (Claude Code + Codex) · local-first, typed, yours",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是聊天记录，是类型化的事件流。本地优先，数据归你，能按时间线回溯，也能接进自己的分析工具。",
+ "why_en": "Not chat logs—typed event streams. Local-first, yours forever, timeline-queryable, and pipeable into your own tooling.",
  "repo": "Necmttn/ax",
  "owner": "Necmttn",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv ax ~/.claude/skills/ax",
   "dir": "~/.claude/skills/ax"
  },
- "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9"
+ "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9",
+ "limit_zh": "只支持 Claude Code 和 Codex 两个 agent；需要 Node 18+ 且本地跑一个常驻服务。",
+ "limit_en": "Only for Claude Code & Codex; needs Node 18+ and a local daemon. It logs, doesn't decide or fix bugs."
 }

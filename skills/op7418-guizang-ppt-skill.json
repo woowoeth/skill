@@ -2,12 +2,12 @@
  "id": "op7418-guizang-ppt-skill",
  "kind": "skill",
  "name": "guizang-ppt-skill",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：guizang-ppt-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把演讲变成横滑翻页的网页杂志",
+ "tagline_zh": "不用 Keynote，不用 Canva，一份单 HTML 搞定 WebGL 背景、演讲者视图。",
+ "tagline_en": "Skip Keynote and Canva. One HTML file gives you WebGL backgrounds, speaker view, audience sync, and speaker.",
  "desc_en": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① \"电子杂志 × 电子墨水\"（衬线 + 流体背景 + 暖色） ② \"瑞士国际主义\"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到\"杂志风 PPT\"、\"瑞士风 PPT\"、\"Swiss Style\"、\"horizontal swipe deck\"时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把 PPT 拆成「内容 + 风格」两层：先写大纲，再套杂志或瑞士模板。WebGL 背景和观众屏同步是。",
+ "why_en": "It separates content from style: draft your outline, then drop in either the e-ink magazine or Swiss grid template. WebGL.",
  "repo": "op7418/guizang-ppt-skill",
  "owner": "op7418",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/guizang-ppt-skill"
  },
  "repo_created_at": "2026-04-23",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只生成横向翻页的网页 PPT，不输出 PDF 或 PPTX。WebGL 背景需要支持 WebGL 的浏览器。",
+ "limit_en": "Outputs horizontal-swipe web decks only—no PDF/PPTX. WebGL needs a capable browser; speaker view relies on local network, so offline or cross-device."
 }

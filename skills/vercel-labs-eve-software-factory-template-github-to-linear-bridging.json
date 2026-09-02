@@ -2,12 +2,12 @@
  "id": "vercel-labs-eve-software-factory-template-github-to-linear-bridging",
  "kind": "skill",
  "name": "GitHub to Linear Bridging",
- "title_zh": "",
- "tagline_zh": "正经办公文档：GitHub to Linear Bridging。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 GitHub 议题自动转成 Linear 工单并",
+ "tagline_zh": "GitHub 收到 issue，Linear 立刻有对应工单，两边互链不丢。省去手动搬运，随时查某 issue 是。",
+ "tagline_en": "Turn GitHub issues into Linear tickets with cross-links, and instantly check if an issue is already tracked—no.",
  "desc_en": "Conventions for bridging GitHub and Linear: creating Linear issues from GitHub issues, cross-referencing the two trackers, and checking whether a GitHub issue is already tracked in Linear. Load when asked to create Linear issues from GitHub issues, link the trackers in either direction, or report tracking status. Not needed for work that stays inside one tracker.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单复制标题，而是按约定生成工单、自动加关联引用，让两个追踪器互为镜像，状态一目了然。",
+ "why_en": "It doesn't just copy text—it follows conventions to create linked tickets, keeping both trackers in sync so status is always.",
  "repo": "vercel-labs/eve-software-factory-template",
  "owner": "vercel-labs",
  "path": "agent/skills/github-linear-bridging",
@@ -27,5 +27,7 @@
   "copy": "cp -r eve-software-factory-template/agent/skills/github-linear-bridging ~/.claude/skills/github-linear-bridging",
   "dir": "~/.claude/skills/github-linear-bridging"
  },
- "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7"
+ "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7",
+ "limit_zh": "只处理 GitHub 与 Linear 之间的桥接，不涉及单边追踪器内的常规操作；需要已有 Linear API 访问。",
+ "limit_en": "Only bridges GitHub-Linear; requires Linear API access; handles issue creation and linking, not comment sync or auto status updates."
 }

@@ -2,12 +2,12 @@
  "id": "0xsline-dsh-spotlight",
  "kind": "collection",
  "name": "dsh-spotlight",
- "title_zh": "",
- "tagline_zh": "调教技能的技能：dsh-spotlight。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "键盘流命令面板，让 DeepSeek Harness",
+ "tagline_zh": "鼠标点三层的操作，现在一个快捷键直达。为重度键盘用户设计，连翻页、切模型、看历史都无需离开键盘。",
+ "tagline_en": "Three layers of mouse clicks, now one hotkey away. Built for keyboard zealots—paging, model switching.",
  "desc_en": "Keyboard-first command palette for DeepSeek Harness Web",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是套壳搜索框，而是深度绑定 Harness 内部状态机。每个命令都直连数据层，响应零延迟。",
+ "why_en": "Not a wrapped search box—it's wired into Harness's internal state machine. Every command hits the data layer directly.",
  "repo": "0xsline/dsh-spotlight",
  "owner": "0xsline",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/0xsline/dsh-spotlight.git",
   "copy": "mv dsh-spotlight ~/.claude/skills/dsh-spotlight",
   "dir": "~/.claude/skills/dsh-spotlight"
- }
+ },
+ "limit_zh": "仅适用于 DeepSeek Harness 网页版，且需浏览器支持 WebSocket。不覆盖移动端触屏操作。",
+ "limit_en": "Only for DeepSeek Harness web UI; requires WebSocket-capable browser. No touch-screen support; collapses to plain search on narrow viewports."
 }

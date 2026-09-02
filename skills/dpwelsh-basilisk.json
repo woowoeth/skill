@@ -26,5 +26,12 @@
  },
  "cover": "",
  "cover_kind": "none",
- "cover_real": false
+ "cover_real": false,
+ "title_zh": "把任意代码仓库变成可对话的活文档",
+ "tagline_zh": "别再翻 README 和散落的注释了。装了这个 skill，直接问仓库「这个函数为什么这么写」。",
+ "tagline_en": "Stop digging through READMEs and scattered comments. Ask the repo 'why is this function written this way' and get.",
+ "why_zh": "它不靠向量检索猜答案，而是顺着调用图和符号定义做图遍历，回答自带文件:行号证据链。",
+ "why_en": "No fuzzy vector search—it walks the call graph and symbol definitions, returning answers with file:line evidence chains. Like a.",
+ "limit_zh": "只对本地已 clone 的仓库生效，且要求仓库有完整的 git 历史；不处理二进制、锁文件或超过 10 万行的巨型仓库。",
+ "limit_en": "Works only on locally cloned repos with full git history; ignores binaries, lockfiles, and repos over 100k lines; answers code facts only—no."
 }

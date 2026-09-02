@@ -2,12 +2,12 @@
  "id": "heygen-com-hyperframes-hyperframes-cli",
  "kind": "skill",
  "name": "hyperframes-cli",
- "title_zh": "",
- "tagline_zh": "纯属好玩，装了不亏：hyperframes-cli。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用命令行全流程驱动 HyperFrames 视频生成",
+ "tagline_zh": "从 init 到 publish 一条龙，40+ 子命令覆盖渲染、对比、云跑、字幕。适合把视频流水线当代码管的团队。",
+ "tagline_en": "Drive HyperFrames end-to-end from the terminal: 40+ subcommands for render, compare, cloud, captions. For teams.",
  "desc_en": "Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, check, snapshot, compare, grade-compare, preview, play, present, beats, keyframes, single or batch render, publish, cloud, cloudrun, feedback, lambda, doctor, browser, info, upgrade, skills, compositions, docs, benchmark, telemetry, transcribe, auth, tts, and remove-background. Also use when diagnosing build or render fai",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把视频制作拆成可 lint、可 snapshot、可 grade-compare 的工程步骤。",
+ "why_en": "Turns video production into lintable, snapshot-able, grade-compare-able engineering steps—every change is reviewable, not a.",
  "repo": "heygen-com/hyperframes",
  "owner": "heygen-com",
  "path": "skills/hyperframes-cli",
@@ -30,5 +30,7 @@
  "cover": "",
  "repo_created_at": "2026-03-10",
  "skill_first_seen": "2026-03-31",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只认 HyperFrames 自家项目结构，非其工程目录下 init 会失败；渲染依赖本机已装 ffmpeg 和相应模。",
+ "limit_en": "Only works inside HyperFrames project structure; requires local ffmpeg + model weights or capture stalls; no source editing—generation and."
 }

@@ -2,12 +2,12 @@
  "id": "liangdabiao-amazon-sorftime-research-mcp-skill-category-selection",
  "kind": "skill",
  "name": "category-selection",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：category-selection。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "亚马逊品类五维评分自动选品分析",
+ "tagline_zh": "别再用感觉挑品。输入品类名，自动抓取Top20竞品，按五维模型打分排序，输出可直接决策的Markdown报告。",
+ "tagline_en": "Stop picking products by gut feeling. Input a category, auto-analyze Top20 competitors, score on 5 dimensions.",
  "desc_en": "亚马逊品类自动化选品分析技能。通过五维评分模型对亚马逊品类进行深度市场调研，生成Markdown分析报告。当用户使用 /category-selection 命令或提出'分析XX品类'、'XX品类市场调研'、'XX品类选品'等需求时触发此技能。支持配置分析数量，默认Top20。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "五维评分模型把模糊的市场直觉拆成可比较的量化维度，排序结果直接指向机会窗口，省掉人工翻页和主观加权。",
+ "why_en": "A 5-dimension scoring model turns fuzzy market intuition into comparable metrics, ranking opportunities directly—no manual.",
  "repo": "liangdabiao/amazon-sorftime-research-MCP-skill",
  "owner": "liangdabiao",
  "path": "SKILLS/skills/category-selection",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill.git",
   "copy": "cp -r amazon-sorftime-research-MCP-skill/SKILLS/skills/category-selection ~/.claude/skills/category-selection",
   "dir": "~/.claude/skills/category-selection"
- }
+ },
+ "limit_zh": "仅覆盖亚马逊在售品类的公开数据，不含广告、库存、利润测算；分析深度止于市场层面，不涉及供应链或财务建模。",
+ "limit_en": "Covers only public Amazon category data; no ads, inventory, or profit modeling. Analysis stops at market level—no supply chain or financial depth."
 }

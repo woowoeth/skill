@@ -2,12 +2,12 @@
  "id": "julianoczkowski-designer-skills-grill-me",
  "kind": "skill",
  "name": "grill-me",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：grill-me。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "像面试官一样拷问你的方案，直到想清楚",
+ "tagline_zh": "方案越重要，越该被狠问。它顺着你的决策树逐支追问，不放过任何含糊假设，直到你亲口说出「原来这里我没想明白」。",
+ "tagline_en": "The more critical the plan, the harder it should be probed. It walks each branch of your decision tree until you.",
  "desc_en": "Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, challenge an approach, or mentions \"grill me\".",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不是泛泛提意见，而是递归拆解每个决策分支，逼你为每个假设负责。像最较真的同事，但不会累。",
+ "why_en": "It doesn't give generic advice—it recursively decomposes every decision branch, forcing you to own each assumption. Like your.",
  "repo": "julianoczkowski/designer-skills",
  "owner": "julianoczkowski",
  "path": "grill-me",
@@ -27,5 +27,7 @@
   "copy": "cp -r designer-skills/grill-me ~/.claude/skills/grill-me",
   "dir": "~/.claude/skills/grill-me"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只适用于有明确决策树的计划或设计；若目标模糊、无分支可拆，它会反复问同一层问题直到你烦。产物是共识与澄清。",
+ "limit_en": "Only works on plans with a clear decision tree; vague goals make it loop on the same layer. Output is shared understanding, not docs or code."
 }

@@ -2,12 +2,12 @@
  "id": "op7418-claude-to-im-skill",
  "kind": "skill",
  "name": "claude-to-im",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：claude-to-im。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 Claude 会话桥接到手机聊天软件",
+ "tagline_zh": "人在外面，手机弹出 Claude 的回复。支持 Telegram、Discord、飞书、QQ、微信。",
+ "tagline_en": "Get Claude's replies on your phone via Telegram, Discord, Feishu, QQ, or WeChat. One command starts the bridge.",
  "desc_en": "Bridge THIS Claude Code or Codex session to Telegram, Discord, Feishu/Lark, QQ, or WeChat so the user can chat with Claude from their phone. Use for: setting up, starting, stopping, or diagnosing the claude-to-im bridge daemon; forwarding Claude replies to a messaging app; any phrase like \"claude-to-im\", \"bridge\", \"消息推送\", \"消息转发\", \"桥接\", \"连上飞书\", \"手机上看claude\", \"启动后台服务\", \"诊断\", \"查看日志\", \"配置\". Subcommand",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是轮询也不是网页套壳，是常驻守护进程直连消息 API，回复实时推送。一条命令装好，断线自动重连。",
+ "why_en": "Not a poller or web wrapper—a persistent daemon that pushes replies straight to your chat app. One-command setup.",
  "repo": "op7418/Claude-to-IM-skill",
  "owner": "op7418",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/Claude-to-IM-skill"
  },
  "repo_created_at": "2026-03-05",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只桥接 Claude Code 或 Codex 的会话输出，不能反向发消息给 Claude。需要本机有 Node.js。",
+ "limit_en": "Bridges only Claude Code/Codex session output, not two-way chat. Requires Node.js 18+ and a Bot Token per app; WeChat needs itchat and risks account."
 }

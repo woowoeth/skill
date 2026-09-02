@@ -2,12 +2,12 @@
  "id": "blessonism-openclaw-search-skills-mineru-extract",
  "kind": "skill",
  "name": "mineru-extract",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：mineru-extract。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把网页/PDF/Office 解析成干净 Markd",
+ "tagline_zh": "当 web_fetch 抓回乱码、表格散架、公式变图时，MinerU 官方 API 一键输出结构化 Markdow。",
+ "tagline_en": "When web_fetch returns messy HTML, broken tables, or formulas as images, this calls MinerU's official API to.",
  "desc_en": "Use the official MinerU (mineru.net) parsing API to convert a URL (HTML pages like WeChat articles, or direct PDF/Office/image links) into clean Markdown + structured outputs. Use when web_fetch/browser can’t access or extracts messy content, and you want higher-fidelity parsing (layout/table/formula/OCR).",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "走官方 API 而非自建模型，解析质量有保障；布局/表格/公式/OCR 四类结构化输出一次拿全。",
+ "why_en": "Uses the official MinerU API, not a local model, so parsing quality is guaranteed—layout, tables, formulas, and OCR all come.",
  "repo": "blessonism/openclaw-search-skills",
  "owner": "blessonism",
  "path": "mineru-extract",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/blessonism/openclaw-search-skills.git",
   "copy": "cp -r openclaw-search-skills/mineru-extract ~/.claude/skills/mineru-extract",
   "dir": "~/.claude/skills/mineru-extract"
- }
+ },
+ "limit_zh": "仅限公网可直连的 URL，且需有 mineru.net 的 API key；本地文件、内网页面、需登录的微信文章都不行。",
+ "limit_en": "Requires a public URL and a mineru.net API key; no local files, intranet pages, or login-walled WeChat articles. Output stops at Markdown—no."
 }

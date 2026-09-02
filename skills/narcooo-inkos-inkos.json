@@ -2,12 +2,12 @@
  "id": "narcooo-inkos-inkos",
  "kind": "skill",
  "name": "inkos",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：inkos。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把小说、剧本、互动叙事全流程装进一个 Agent",
+ "tagline_zh": "从长篇连载到多分支互动电影，写完还能翻成多语言 EPUB/PDF。自带可追溯研究、受控上下文和持久故事状态。",
+ "tagline_en": "From long novels to branching interactive films, write then translate to EPUB/PDF. Built-in traceable research.",
  "desc_en": "Story Creation and Translation AI Agent with Studio Chat, CLI, and TUI - use for long-form novels, short fiction, scripts, storyboards, interactive-film projects, open-world / branching play, fan fiction, spinoffs, style imitation, continuations, covers, and multilingual EPUB/PDF/TXT/Markdown translation. Includes Agent Skills, traceable research, governed context, persistent story state, multi-mo",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是聊天套壳，而是把故事状态、研究笔记、上下文预算做成显式工程构件，多模态 CLI/TUI/Studi。",
+ "why_en": "Not a chat wrapper—story state, research notes, and context budget are explicit engineered artifacts. One state machine across.",
  "repo": "Narcooo/inkos",
  "owner": "Narcooo",
  "path": "skills",
@@ -27,5 +27,7 @@
   "copy": "cp -r inkos/skills ~/.claude/skills/inkos",
   "dir": "~/.claude/skills/inkos"
  },
- "cover": "https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69fudcmosb3pipls0"
+ "cover": "https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69fudcmosb3pipls0",
+ "limit_zh": "只认文本创作域：小说、剧本、分镜、互动叙事。不做代码、不做数据分析。需要你已有 Python 3.10+ 和 Node。",
+ "limit_en": "Text-fiction only: novels, scripts, storyboards, interactive narrative. No code, no data analysis. Requires Python 3.10+ and Node 18+. Exports only."
 }

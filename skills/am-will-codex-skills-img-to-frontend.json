@@ -2,12 +2,12 @@
  "id": "am-will-codex-skills-img-to-frontend",
  "kind": "skill",
  "name": "img-to-frontend",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：img-to-frontend。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意网页截图变成可直接上线的成品前端",
+ "tagline_zh": "别再对着设计稿手搓样式了。丢一张图进来，它替你走完从视觉拆解到响应式布局的全流程，交付的是能跑的代码，不是半成品。",
+ "tagline_en": "Stop hand-coding from screenshots. Drop in an image, get a production-ready frontend with responsive layout—not a.",
  "desc_en": "Use when the user wants an end-to-end premium visual design workflow for any type of website or web page created directly from images.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把「看图写码」拆成可校验的流水线：先解析视觉层级，再生成组件树，最后套用设计令牌。",
+ "why_en": "It turns 'code from image' into a verifiable pipeline: visual hierarchy → component tree → design tokens. Each step yields.",
  "repo": "am-will/codex-skills",
  "owner": "am-will",
  "path": "skills/img-to-frontend",
@@ -27,5 +27,7 @@
   "copy": "cp -r codex-skills/skills/img-to-frontend ~/.claude/skills/img-to-frontend",
   "dir": "~/.claude/skills/img-to-frontend"
  },
- "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM"
+ "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM",
+ "limit_zh": "只认静态网页截图，不处理多页交互或复杂动效；输出为 React + Tailwind 代码，无后端集成。",
+ "limit_en": "Static page screenshots only; no multi-page flows or complex animations. Outputs React + Tailwind, no backend. Blurry text/gradients need manual."
 }

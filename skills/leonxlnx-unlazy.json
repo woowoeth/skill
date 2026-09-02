@@ -2,12 +2,12 @@
  "id": "leonxlnx-unlazy",
  "kind": "skill",
  "name": "unlazy",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：unlazy。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 Agent 装上完工闸门，杜绝 80% 就交差",
+ "tagline_zh": "长任务总在最后 20% 卡壳？它用 gate 文件强制验收，跑不通就不算完。专治「报告完成」但产物半截的假完工。",
+ "tagline_en": "Long runs stalling at 80%? Gate files force real completion—if it doesn't run, it's not done. Kills fake 'done'.",
  "desc_en": "Anti-laziness execution discipline for substantial tasks. Use when work keeps coming back half done, when an agent reports done before it is done, when output must be exhaustive rather than fast, on long autonomous runs that tend to stall at 80 percent, or on any invocation like /unlazy, \"tree N\", \"gates\", or \"do not stop until it is done\". v2 enforces completion through gate files and runnable ch",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是靠提示词喊口号，而是用可执行的 gate 文件做物理验收：产物必须能跑通才算过，机制上堵死半成品。",
+ "why_en": "No pep-talk prompts—physical gate files that must execute successfully. Half-baked output literally can't pass the checkpoint.",
  "repo": "Leonxlnx/unlazy",
  "owner": "Leonxlnx",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/unlazy"
  },
  "repo_created_at": "2026-08-09",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认 gate 文件定义的验收标准，且要求本机有可运行环境；若任务本身无明确「跑通」判据（如纯文案）。",
+ "limit_en": "Only works with runnable gate criteria; needs a working runtime locally. For vague outputs (e.g., prose), it loops retrying at the gate."
 }

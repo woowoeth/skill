@@ -2,12 +2,12 @@
  "id": "liangdabiao-amazon-sorftime-research-mcp-skill",
  "kind": "collection",
  "name": "amazon-sorftime-research-MCP-skill",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：amazon-sorftime-research-MCP-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "七个亚马逊选品研究技能，打包即装",
+ "tagline_zh": "做亚马逊选品，别再一个个找工具、拼流程。这套技能把竞品追踪、市场调研、关键词分析等七件事打包，一次装齐，直接开干。",
+ "tagline_en": "Stop stitching together tools for Amazon product research. This pack installs 7 skills at once—competitor.",
  "desc_en": "A pack of 7 skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它好在一个“包”字：七种能力共享一套数据接口和输出格式，装完即用，不用逐个调试对接。",
+ "why_en": "The power is in the bundle: all 7 skills share one data interface and output schema. Install once, no per-skill wiring—saves you.",
  "repo": "liangdabiao/amazon-sorftime-research-MCP-skill",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill.git",
   "copy": "mv amazon-sorftime-research-MCP-skill ~/.claude/skills/amazon-sorftime-research-MCP-skill",
   "dir": "~/.claude/skills/amazon-sorftime-research-MCP-skill"
- }
+ },
+ "limit_zh": "只覆盖亚马逊美国站，且依赖你已有 AWS 凭证和 Sorftime 数据源权限；七个技能各自独立。",
+ "limit_en": "US Amazon only; requires your own AWS credentials & Sorftime data access. Skills run standalone, no auto-pipeline to a full report; no logistics or."
 }

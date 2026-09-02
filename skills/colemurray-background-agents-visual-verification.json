@@ -2,12 +2,12 @@
  "id": "colemurray-background-agents-visual-verification",
  "kind": "skill",
  "name": "visual-verification",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：visual-verification。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用截图或视频验收 UI 改动的视觉核对器",
+ "tagline_zh": "改完界面，别靠肉眼猜。丢一张截图或一段录屏进去，它替你逐像素核对，把差异和回归一次说清。",
+ "tagline_en": "Stop eyeballing UI changes. Drop in a screenshot or screen recording, and it verifies the pixels for you—flagging.",
  "desc_en": "Verify application UI changes with uploaded screenshot or video artifacts",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不只看图，还读得懂视频里的时序变化；比对维度覆盖布局、颜色、状态切换，比人眼更早发现细微回归。",
+ "why_en": "It goes beyond stills—parses video timelines for state transitions, and checks layout, color, and interaction flows more.",
  "repo": "ColeMurray/background-agents",
  "owner": "ColeMurray",
  "path": "packages/sandbox-runtime/src/sandbox_runtime/skills/visual-verification",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/ColeMurray/background-agents.git",
   "copy": "cp -r background-agents/packages/sandbox-runtime/src/sandbox_runtime/skills/visual-verification ~/.claude/skills/visual-verification",
   "dir": "~/.claude/skills/visual-verification"
- }
+ },
+ "limit_zh": "只认上传的截图或视频文件，不接实时浏览器或本地目录；视频需为常见格式（mp4/mov），超长录屏会截断分析。",
+ "limit_en": "Accepts only uploaded image/video files (mp4/mov), not live browser or local folders; long recordings get truncated; verifies visuals only—no."
 }

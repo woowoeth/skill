@@ -2,12 +2,12 @@
  "id": "necmttn-ax-ax-extract-workflow",
  "kind": "skill",
  "name": "ax-extract-workflow",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：ax-extract-workflow。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从历史产物反推当时的工作流",
+ "tagline_zh": "看到旧成果想不起怎么做的？问它一句，ax 自动翻出当时的会话，按顺序讲清是哪几步 skill 拼出了那个结果。",
+ "tagline_en": "Staring at an old artifact and can't recall how it got made? Ask once—ax digs up the sessions and narrates the.",
  "desc_en": "Reconstruct the workflow behind a past artifact - \"what made X work\" / \"extract workflow from <date|sha>\" / \"how did we ship Y\". Uses ax to find the relevant sessions and narrate the ordered skill arcs that produced the result. Triggers on \"what made X work\", \"how did we build Y\", \"extract workflow from <date>\", \"extract workflow from <sha>\", \"what was the workflow around <topic>\", \"show me how I ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是搜聊天记录，而是用 ax 的会话索引定位产物对应的时刻，再按时间轴把 skill 调用串成可复述的。",
+ "why_en": "It doesn't grep chat logs—it uses ax's session index to pin the artifact's moment, then chains skill calls into a narratable.",
  "repo": "Necmttn/ax",
  "owner": "Necmttn",
  "path": "skills/ax-extract-workflow",
@@ -27,5 +27,7 @@
   "copy": "cp -r ax/skills/ax-extract-workflow ~/.claude/skills/ax-extract-workflow",
   "dir": "~/.claude/skills/ax-extract-workflow"
  },
- "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9"
+ "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9",
+ "limit_zh": "只认 ax 已索引的会话；产物若来自未记录的手工操作或外部工具，它只能还原到 skill 调用层，不补缺失步骤。",
+ "limit_en": "Only works on ax-indexed sessions; if the artifact came from manual or external steps, it stops at skill-call level and won't fill gaps."
 }

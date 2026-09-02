@@ -2,12 +2,12 @@
  "id": "zlanqing-codex-claude-academic-skills-office-academic-skill",
  "kind": "skill",
  "name": "office-academic-skill",
- "title_zh": "",
- "tagline_zh": "正经办公文档：office-academic-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把论文和组会材料一键变成可编辑的 Word 与 PP",
+ "tagline_zh": "读论文写报告、组会做 PPT 不用再手动排版。直接产出可编辑 DOCX/PPTX，带演讲备注和版式检查。",
+ "tagline_en": "Turn papers and meeting notes into editable Word/PPTX with speaker notes and layout checks—built for Chinese.",
  "desc_en": "Chinese-first academic Word and PowerPoint workflow for paper reading reports, thesis or group-meeting PPTs, editable DOCX/PPTX generation, Office file inspection, template matching, speaker notes, and layout quality checks. Use when the user asks to read papers into Word reports, create or polish PPT/PPTX, convert paper/thesis materials into slides, edit DOCX/PPTX, inspect Office files, or produc",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不止生成文件，它会先匹配模板再写内容，最后做版式质检。备注、结构、可编辑性一次到位。",
+ "why_en": "It doesn't just generate files—it matches templates first, writes content, then runs layout QA. Notes, structure, and.",
  "repo": "zLanqing/codex-claude-academic-skills",
  "owner": "zLanqing",
  "path": "office-academic-skill",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/zLanqing/codex-claude-academic-skills.git",
   "copy": "cp -r codex-claude-academic-skills/office-academic-skill ~/.claude/skills/office-academic-skill",
   "dir": "~/.claude/skills/office-academic-skill"
- }
+ },
+ "limit_zh": "只覆盖 Word 和 PowerPoint 的生成与检查，不处理 Excel、PDF 或扫描件。模板匹配依赖你提供的参。",
+ "limit_en": "Only Word/PPTX generation and inspection—no Excel, PDF, or scans. Template matching needs your reference file; without it, layouts stay."
 }

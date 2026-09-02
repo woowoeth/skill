@@ -2,12 +2,12 @@
  "id": "twentyfivebtea-8bit-pixel-art",
  "kind": "skill",
  "name": "8bit-pixel-art",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：8bit-pixel-art。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把照片或一句话蒸馏成稀疏 8-bit 像素艺术",
+ "tagline_zh": "Instagram/编辑风格，软边粗像素主体落在干净纸面上；或全出血构图。自动砍掉低价值细节，只留主导物，绝不硬边。",
+ "tagline_en": "Turn a brief or photo into sparse 8-bit art: soft coarse pixels on clean paper, or full-bleed when needed. Drops.",
  "desc_en": "Create sparse abstract Instagram/editorial 8-bit pixel artwork from a natural-language brief, or distill an uploaded photo into either a soft-edged coarse-pixel subject cluster on a clean portrait paper field or an intentional edge-to-edge pixel composition when the source calls for full bleed. Use for `create` and `fuse`; prioritize dominant subjects, omit low-value detail, and never use a hard p",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是滤镜叠加，而是先做视觉优先级排序——先识别主导物，再决定软边或全出血，最后才像素化。",
+ "why_en": "Not a filter stack—it prioritizes dominant subjects first, then chooses soft-edge or full-bleed, then pixelates. Output feels.",
  "repo": "TwentyfiveBTea/8bit-pixel-art",
  "owner": "TwentyfiveBTea",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/TwentyfiveBTea/8bit-pixel-art.git",
   "copy": "mv 8bit-pixel-art ~/.claude/skills/8bit-pixel-art",
   "dir": "~/.claude/skills/8bit-pixel-art"
- }
+ },
+ "limit_zh": "只认两种输入：自然语言 brief 或单张照片。不做多图合成、不做动画、不输出透明背景 PNG。像素块尺寸固定为 8×。",
+ "limit_en": "Only accepts a text brief or one photo. No multi-image compositing, no animation, no transparent PNG. Pixel size fixed at 8×8—no finer/coarser."
 }

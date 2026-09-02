@@ -2,12 +2,12 @@
  "id": "op7418-pilot-harness-cordis-plugin-development",
  "kind": "skill",
  "name": "cordis-plugin-development",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：cordis-plugin-development。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "开发、调试、回滚 Cordis 插件的一站式技能",
+ "tagline_zh": "写插件卡在 Host Service 或事件上？它帮你定位到正确的 Provider，改完能跑、坏了能回滚。",
+ "tagline_en": "Stuck on Host Services or events? It routes you to the right provider, runs, repairs, or rolls back—even handles.",
  "desc_en": "Create, modify, debug, or extend dynamic Cordis Plugins, including Host Services and Events, Client Slot and theme UI, Package-private Client-to-Host calls, dynamic Tools, version updates, approval failures, and runtime diagnostics. Use this Skill to route a user request to the correct platform and Inspect Provider, then define, run, repair, or roll back the Plugin.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不只是生成代码——它把请求路由到正确的平台和 Inspect Provider，再定义、运行。",
+ "why_en": "Not just codegen—it routes requests to the right platform and Inspect Provider, then defines, runs, repairs, or rolls back in a.",
  "repo": "op7418/pilot-harness",
  "owner": "op7418",
  "path": "apps/cli/config/agent-presets/cordis/skills/cordis-plugin-development",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/op7418/pilot-harness.git",
   "copy": "cp -r pilot-harness/apps/cli/config/agent-presets/cordis/skills/cordis-plugin-development ~/.claude/skills/cordis-plugin-development",
   "dir": "~/.claude/skills/cordis-plugin-development"
- }
+ },
+ "limit_zh": "仅限 Cordis 插件开发，且需已有 pilot-harness 环境；不覆盖非 Cordis 项目。",
+ "limit_en": "Cordis plugins only, requires pilot-harness env; no non-Cordis projects, output stops at plugin code, no deployment."
 }

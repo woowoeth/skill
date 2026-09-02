@@ -2,12 +2,12 @@
  "id": "francyjglisboa-agent-gauntlet-skills-run-gauntlet",
  "kind": "skill",
  "name": "run-gauntlet",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：run-gauntlet。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "让多个智能体在关卡式流程中互相审查并交付",
+ "tagline_zh": "面对复杂任务，单个智能体容易自嗨出错。这个技能把任务拆成关卡，让不同智能体独立取证、互相挑错，最后干净验收。",
+ "tagline_en": "One agent alone tends to fool itself. This skill turns tasks into checkpoints where agents gather evidence.",
  "desc_en": "Execute an existing agent-ready Gauntlet Pack through bounded builder-critic loops, independent evidence collection, formal state transitions, and clean-room final verification. Use when `.gauntlet/manifest.yaml` or an equivalent compiled pack exists and the user wants agents to implement, adapt, repair, or validate the target. Do not use to invent requirements from a vague request; invoke compile",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它用形式化状态机管住整个流程，builder 和 critic 被硬性隔离，证据收集独立于结论。",
+ "why_en": "Formal state transitions keep builder and critic strictly separated, evidence is gathered independently of conclusions, and a.",
  "repo": "FrancyJGLisboa/agent-gauntlet-skills",
  "owner": "FrancyJGLisboa",
  "path": "skills/run-gauntlet",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/FrancyJGLisboa/agent-gauntlet-skills.git",
   "copy": "cp -r agent-gauntlet-skills/skills/run-gauntlet ~/.claude/skills/run-gauntlet",
   "dir": "~/.claude/skills/run-gauntlet"
- }
+ },
+ "limit_zh": "必须已有 .gauntlet/manifest.yaml 或等价编译包；它不会从模糊需求里发明任务。只覆盖实现、适配。",
+ "limit_en": "Requires an existing .gauntlet/manifest.yaml or compiled pack; won't invent tasks from vague asks. Only covers implement, adapt, repair."
 }

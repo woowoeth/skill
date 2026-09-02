@@ -2,12 +2,12 @@
  "id": "jamditis-claude-skills-journalism",
  "kind": "collection",
  "name": "claude-skills-journalism",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：claude-skills-journalism。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把记者查证、FOIA、数据新闻的整套手艺装进 Cla",
+ "tagline_zh": "跑调查报道时不用再切七八个工具：核源、提公开记录申请、跑数据、写学术稿，一个会话里按新闻伦理走完。",
+ "tagline_en": "Stop juggling seven tools on a story. Verify sources, file FOIA, crunch data, and draft academic pieces—all.",
  "desc_en": "Claude Code skills for journalism, media, and academia - verification, FOIA, data journalism, academic writing, and more",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是零散提示词，是按新闻工作流组织的 skill 合集——每个 skill 自带行业规范。",
+ "why_en": "Not loose prompts but a workflow-tuned skill set—each skill encodes industry standards and hands off to the next, like a veteran.",
  "repo": "jamditis/claude-skills-journalism",
  "owner": "jamditis",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv claude-skills-journalism ~/.claude/skills/claude-skills-journalism",
   "dir": "~/.claude/skills/claude-skills-journalism"
  },
- "cover": "https://repository-images.githubusercontent.com/1122958696/cd1a5427-0e76-469a-8d52-4a4c5e1cfcaf"
+ "cover": "https://repository-images.githubusercontent.com/1122958696/cd1a5427-0e76-469a-8d52-4a4c5e1cfcaf",
+ "limit_zh": "只覆盖调查/学术写作链路，不含发布排版或视频脚本；FOIA 需你本机有 curl 且目标机构支持电子申请。",
+ "limit_en": "Covers investigative/academic writing only—no publishing layout or video scripts. FOIA needs curl and e-filing support; paper-only agencies get a."
 }

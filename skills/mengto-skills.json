@@ -2,12 +2,12 @@
  "id": "mengto-skills",
  "kind": "collection",
  "name": "Skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "127 个即装即用的 Agent 技能合集",
+ "tagline_zh": "从写代码到写文案，127 个技能一装就有。不用再为每个小任务东拼西凑，一个仓库覆盖日常高频场景。",
+ "tagline_en": "127 ready-to-install agent skills, from coding to copywriting. Stop patching together workflows—one repo covers.",
  "desc_en": "A pack of 127 skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "按场景分好类的技能包，装完即用。每个技能独立可拆，不污染主 prompt，适合快速试错和组合。",
+ "why_en": "Categorized, self-contained skills that drop in cleanly without polluting your main prompt. Ideal for fast experimentation and.",
  "repo": "MengTo/Skills",
  "owner": "MengTo",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/MengTo/Skills.git",
   "copy": "mv Skills ~/.claude/skills/Skills",
   "dir": "~/.claude/skills/Skills"
- }
+ },
+ "limit_zh": "仅覆盖通用场景，不针对特定行业深度优化；部分技能依赖第三方 API 或本地工具，需自行配置密钥；技能质量参差。",
+ "limit_en": "Generic coverage only, no deep vertical optimization; some skills need third-party API keys or local tools; quality varies—manual curation required."
 }

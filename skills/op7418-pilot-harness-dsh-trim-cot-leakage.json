@@ -2,12 +2,12 @@
  "id": "op7418-pilot-harness-dsh-trim-cot-leakage",
  "kind": "skill",
  "name": "dsh-trim-cot-leakage",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：dsh-trim-cot-leakage。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把泄露推理痕迹的草稿改写成干净成品文",
+ "tagline_zh": "审稿时总撞见「(decision 3)」「§2」「later PR」这类残留？它专治死引用、变更叙述、评审辩解。",
+ "tagline_en": "Tired of drafts leaking 'decision 3', '§2', or 'later PR'? It scrubs dead citations, change narration, and.",
  "desc_en": "Use when auditing or fixing prose that reads like a leaked reasoning transcript — dead design-session citations such as (decision N), audit item codes, or §N of uncommitted drafts; change narration such as \"used to\", \"no longer\", \"this cut\"; stack or review vantage (\"a later PR in this stack\", \"rejected in review\"); reviewer-addressed justifications; control-flow narration; or hedged planning resi",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是通用改写器，而是针对推理泄漏的专用扫描仪：识别五类残留模式并给出替换，机制上像 lint 而非润色。",
+ "why_en": "Not a generic rewriter—a specialized linter for reasoning leakage: detects five residue patterns and suggests fixes, operating.",
  "repo": "op7418/pilot-harness",
  "owner": "op7418",
  "path": ".agents/skills/dsh-trim-cot-leakage",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/op7418/pilot-harness.git",
   "copy": "cp -r pilot-harness/.agents/skills/dsh-trim-cot-leakage ~/.claude/skills/dsh-trim-cot-leakage",
   "dir": "~/.claude/skills/dsh-trim-cot-leakage"
- }
+ },
+ "limit_zh": "只处理英文散文中的推理残留；不检查代码、注释或非英文文本。若原文无此类痕迹，输出为空。需人工确认替换建议，不自动改写。",
+ "limit_en": "Only handles reasoning residue in English prose; ignores code, comments, non-English text. Empty output if none found. Requires human confirmation."
 }

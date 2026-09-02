@@ -2,12 +2,12 @@
  "id": "jimliu-baocut-baocut",
  "kind": "skill",
  "name": "baocut",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：baocut。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "只操作本机 bcut CLI 与 .bcut 项目的",
+ "tagline_zh": "当对话明确点名 BaoCut 或 bcut、指向 .bcut 项目或字幕工作室时，它才出手。不碰泛音视频、字幕。",
+ "tagline_en": "Only fires when BaoCut or bcut is explicitly named, a .bcut project is targeted, or an existing BaoCut workflow.",
  "desc_en": "BaoCut-only operator for the installed `bcut` CLI and `.bcut` projects. Implicitly trigger only when the request explicitly names BaoCut or `bcut`, targets a `.bcut` project or BaoCut Subtitle Studio, or continues a BaoCut workflow already established in the conversation. Do not trigger solely for generic audio or video, transcription, subtitles, translation, editing, animation, review, rendering ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "严格按显式提及与项目类型做门控，绝不越界碰泛音视频任务。把操作面收窄到 bcut 生态。",
+ "why_en": "Strictly gated by explicit mentions and project types—never drifts into generic media tasks. Keeps the operation surface tight.",
  "repo": "JimLiu/baocut",
  "owner": "JimLiu",
  "path": "skills/baocut",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/JimLiu/baocut.git",
   "copy": "cp -r baocut/skills/baocut ~/.claude/skills/baocut",
   "dir": "~/.claude/skills/baocut"
- }
+ },
+ "limit_zh": "只认本机已装的 bcut CLI 和 .bcut 项目；若请求未点名 BaoCut/bcut、或指向其他格式。",
+ "limit_en": "Requires local bcut CLI and .bcut projects; won't trigger for generic media tasks or uninstalled CLI. No subtitle translation, editing, or."
 }

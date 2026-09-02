@@ -2,12 +2,12 @@
  "id": "quzhan51496-paper2anything-paper2xhs",
  "kind": "skill",
  "name": "paper2xhs",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：paper2xhs。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把学术论文一键变成小红书爆款图文帖",
+ "tagline_zh": "论文读不完、发不出？它替你解析 PDF、生成封面配图，你只管定角度写文案，半自动发布，省下机械活。",
+ "tagline_en": "Turn dense PDFs into Xiaohongshu posts—it parses, covers, and drafts, while you own the angle and voice.",
  "desc_en": "把学术论文 PDF 转成小红书多图帖（标题 + 正文 + 标签 + 封面 + 论文主图/主实验结果配图）。你主导设计的协调式：机械活（MinerU 解析 PDF、生成封面与配图、半自动发布）交给 scripts/ 下的小工具，论文理解、选题角度、文案撰写由你亲自完成并在关键点与用户确认。当用户说“论文转小红书”、“paper2xhs”、“把这篇论文发小红书”、“论文转社交媒体”、“PDF 转小红书帖子”时触发。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是全自动流水线，而是人机分工：MinerU 啃 PDF、脚本出图，你掌控理解与选题。",
+ "why_en": "Not a blind pipeline—it splits labor: MinerU parses, scripts render, you steer interpretation and angle, confirming at key.",
  "repo": "QuZhan51496/paper2anything",
  "owner": "QuZhan51496",
  "path": "paper2xhs",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/QuZhan51496/paper2anything.git",
   "copy": "cp -r paper2anything/paper2xhs ~/.claude/skills/paper2xhs",
   "dir": "~/.claude/skills/paper2xhs"
- }
+ },
+ "limit_zh": "只认学术 PDF，且需本机装好 MinerU 依赖；封面/配图是模板化生成，不接复杂版式；发布仅半自动。",
+ "limit_en": "Academic PDFs only; requires MinerU setup locally. Covers are template-based, no custom layouts; publishing is semi-auto—you click send."
 }

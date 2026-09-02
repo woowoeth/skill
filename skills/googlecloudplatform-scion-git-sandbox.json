@@ -2,12 +2,12 @@
  "id": "googlecloudplatform-scion-git-sandbox",
  "kind": "skill",
  "name": "git-sandbox",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：git-sandbox。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "沙箱里给 Agent 用的 Git 工作流协议",
+ "tagline_zh": "Agent 在沙箱里改代码，分支乱、冲突卡死、交互弹窗？这套协议让 Git 全程静默、非交互、本地闭环。",
+ "tagline_en": "Agents stuck in sandbox Git hell—interactive prompts, branch chaos, merge deadlocks? This protocol keeps Git.",
  "desc_en": "Git workflow protocol for agents in sandbox/worktree environments. Covers local-only operations, worktree-aware branch management, and non-interactive conflict resolution. Injected only for git-associated workspaces.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是命令集合，是工作流约束：强制 worktree 感知、只走本地操作、冲突自动降级为可解析格式。",
+ "why_en": "Not a command list—a constraint system: worktree-aware, local-only, conflicts auto-degrade to parseable output, so the agent.",
  "repo": "GoogleCloudPlatform/scion",
  "owner": "GoogleCloudPlatform",
  "path": "resources/platform_skills/git-sandbox",
@@ -27,5 +27,7 @@
   "copy": "cp -r scion/resources/platform_skills/git-sandbox ~/.claude/skills/git-sandbox",
   "dir": "~/.claude/skills/git-sandbox"
  },
- "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09"
+ "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09",
+ "limit_zh": "只覆盖 git 关联工作区，且仅限本地操作；不处理远程推送、认证、子模块递归。遇到交互式 rebase 或复杂三方合并。",
+ "limit_en": "Only for git-linked workspaces, local ops only; no push/auth/submodule recursion. Interactive rebase or complex 3-way merges abort and defer to human."
 }

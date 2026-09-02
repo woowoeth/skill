@@ -2,12 +2,12 @@
  "id": "badlogic-pi-skills-brave-search",
  "kind": "skill",
  "name": "brave-search",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：brave-search。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "不打开浏览器，直接搜网页并抓正文",
+ "tagline_zh": "查文档、找事实、抓网页内容，一条命令搞定。不用开浏览器、不用手动复制，轻量到像在终端里打了个响指。",
+ "tagline_en": "Search the web and pull page content without opening a browser. Docs, facts, anything—one command, zero tab.",
  "desc_en": "Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把搜索和正文提取焊成一步，省掉“搜完再点进去复制”的中间态。对脚本和自动化来说，这是唯一不卡壳的路径。",
+ "why_en": "It fuses search and content extraction into one step, killing the copy-paste middleman. For scripts and automation, it's the.",
  "repo": "badlogic/pi-skills",
  "owner": "badlogic",
  "path": "brave-search",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/badlogic/pi-skills.git",
   "copy": "cp -r pi-skills/brave-search ~/.claude/skills/brave-search",
   "dir": "~/.claude/skills/brave-search"
- }
+ },
+ "limit_zh": "必须自备 Brave Search API key，且免费额度有限（每月约 2000 次）。只返回文本，不处理登录墙。",
+ "limit_en": "Requires your own Brave Search API key with a ~2k/month free cap. Text only—no login walls, JS-rendered pages, or PDFs."
 }

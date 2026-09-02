@@ -2,12 +2,12 @@
  "id": "vercel-labs-agent-skills-web-design-guidelines",
  "kind": "skill",
  "name": "web-design-guidelines",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：web-design-guidelines。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按 Web 界面规范逐条审查你的 UI 代码",
+ "tagline_zh": "说一句「检查我的界面」，它就把按钮、焦点、触控、语义逐条过一遍。不是泛泛而谈，是拿着 Vercel 的规范清单挑刺。",
+ "tagline_en": "Say \"review my UI\" and it walks your buttons, focus, touch targets, and semantics against a real checklist—not.",
  "desc_en": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把散落的 Web 界面最佳实践固化成可执行的审查流程，每次输出都对应具体规范条目，而不是凭感觉给建议。",
+ "why_en": "It turns scattered UI best practices into a repeatable audit—every finding maps to a concrete guideline, not a vibe.",
  "repo": "vercel-labs/agent-skills",
  "owner": "vercel-labs",
  "path": "skills/web-design-guidelines",
@@ -27,5 +27,7 @@
   "copy": "cp -r agent-skills/skills/web-design-guidelines ~/.claude/skills/web-design-guidelines",
   "dir": "~/.claude/skills/web-design-guidelines"
  },
- "cover": "https://skills.sh/b/vercel-labs/agent-skills"
+ "cover": "https://skills.sh/b/vercel-labs/agent-skills",
+ "limit_zh": "只审代码不审视觉稿；需要你提供组件源码或页面文件，纯截图或设计稿它无法运行。产物是问题清单，不含自动修复补丁。",
+ "limit_en": "Code only—no screenshots or design files. You must supply source. Output is a findings list, not auto-fixes."
 }

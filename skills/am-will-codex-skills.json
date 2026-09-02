@@ -2,12 +2,12 @@
  "id": "am-will-codex-skills",
  "kind": "collection",
  "name": "codex-skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：codex-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "22 个即装即用的 Codex 技能包",
+ "tagline_zh": "不用再翻 GitHub 找散装 prompt，一次装齐 22 个精选技能。覆盖编码、调试、重构、文档。",
+ "tagline_en": "Stop hunting for scattered prompts. 22 curated skills in one pack—coding, debugging, refactoring, docs—so Codex.",
  "desc_en": "A pack of 22 skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "每个技能都是独立可审的 markdown，装哪个、改哪句都透明。不像黑盒插件，你能直接看到并调整 Co。",
+ "why_en": "Every skill is a plain, reviewable markdown file—see exactly what Codex is told, tweak any line. No black-box plugin, full.",
  "repo": "am-will/codex-skills",
  "owner": "am-will",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv codex-skills ~/.claude/skills/codex-skills",
   "dir": "~/.claude/skills/codex-skills"
  },
- "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM"
+ "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM",
+ "limit_zh": "只适配 Codex CLI 的 SKILL.md 格式，不兼容其他 agent。技能是通用模板，不含你项目的私有上下文。",
+ "limit_en": "Only for Codex CLI's SKILL.md format, not other agents. Generic templates—no project-specific context, so expect to tweak per project."
 }

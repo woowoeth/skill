@@ -2,12 +2,12 @@
  "id": "heygen-com-hyperframes",
  "kind": "collection",
  "name": "hyperframes",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：hyperframes。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意视频帧序列变成可交互的高维超帧",
+ "tagline_zh": "视频不再是时间轴上的死帧。拖拽、旋转、缩放，在帧与帧之间自由穿行——像在时间切片里游泳。",
+ "tagline_en": "Video frames become a navigable space. Drag, rotate, zoom—swim through time slices instead of scrubbing a timeline.",
  "desc_en": "",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不靠插值猜中间帧，而是把每帧当高维点云重投影。你拖的是真实像素，不是算法脑补的幻影。",
+ "why_en": "No frame interpolation guessing. Each frame is a high-dim point cloud re-projected—you drag real pixels, not hallucinated.",
  "repo": "heygen-com/hyperframes",
  "owner": "heygen-com",
  "path": "",
@@ -31,5 +31,7 @@
  },
  "cover": "",
  "repo_created_at": "2026-03-10",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只吃连续镜头且相机运动明显的素材；静态机位或纯剪辑跳切会退化成普通相册。输出是交互式HTML，不是视频文件。",
+ "limit_en": "Requires continuous footage with visible camera motion; static shots or hard cuts degrade to a plain gallery. Output is interactive HTML, not a."
 }

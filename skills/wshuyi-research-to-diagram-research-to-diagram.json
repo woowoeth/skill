@@ -2,12 +2,12 @@
  "id": "wshuyi-research-to-diagram-research-to-diagram",
  "kind": "skill",
  "name": "research-to-diagram",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：research-to-diagram。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "输入主题自动调研并生成知识关系图谱PDF",
+ "tagline_zh": "给一个研究方向，它替你上网查资料、梳理脉络，最后交付一张可打印的知识关系图。适合开题、综述、科普前先看清全局。",
+ "tagline_en": "Give it a topic, it researches, organizes, and delivers a printable knowledge map. Perfect before writing a.",
  "desc_en": "深度调研主题并自动生成知识关系图谱PDF。接收研究主题后自动进行网络调研、信息收集、知识整理，最终生成专业的可视化关系图谱。适用于\"研究...并做图\"、\"深度分析...并可视化\"、\"生成知识图谱\"等场景。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单画图，而是把网络调研、信息筛选、关系建模串成一条流水线，输出的是PDF而非截图。",
+ "why_en": "It's a pipeline: web research → knowledge structuring → relation graph, output as a vector PDF ready for papers, not just a.",
  "repo": "wshuyi/research-to-diagram",
  "owner": "wshuyi",
  "path": "skills/research-to-diagram",
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2026-01-02",
  "skill_first_seen": "2026-01-02",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "依赖外部搜索API和PDF渲染环境；只生成关系图谱，不产出文字综述；对冷门小众主题可能搜不到足够资料，图谱会偏稀疏。",
+ "limit_en": "Requires external search API & PDF renderer. Outputs only the graph, not a written review. Sparse for niche topics with scarce web sources."
 }

@@ -2,12 +2,12 @@
  "id": "irenerachel-character-sheet-studio-skill",
  "kind": "skill",
  "name": "character-sheet-studio",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：character-sheet-studio。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一张参考图生成二十类中文角色设定图",
+ "tagline_zh": "画师总为三视图比例崩、字体乱、风格飘而返工？这个 skill 统一字体与头身比，直接产出提示词、成图和质检报告。",
+ "tagline_en": "Tired of inconsistent proportions, fonts, and styles in character sheets? This skill unifies them and outputs.",
  "desc_en": "基于一张角色参考图生成统一字体、真实头身比与二十类中文角色设定图。适用于角色三视图、四视图、表情、动作、服装、道具和综合设定总表；可按快速、标准、完整模式直接输出提示词、成图与质检报告。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "内置二十类设定图模板，自动校准头身比与字体，输出带质检报告，机制上把「画得对不对」从感觉变成可检查项。",
+ "why_en": "Built-in 20 template types, auto-calibrated proportions and fonts, plus a QA report—turns 'does it look right' from gut feeling.",
  "repo": "irenerachel/character-sheet-studio-skill",
  "owner": "irenerachel",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/irenerachel/character-sheet-studio-skill.git",
   "copy": "mv character-sheet-studio-skill ~/.claude/skills/character-sheet-studio-skill",
   "dir": "~/.claude/skills/character-sheet-studio-skill"
- }
+ },
+ "limit_zh": "只认单张角色参考图；需要本地部署图像生成模型（如 SD）或调用外部 API；产出为设定图草稿，不包含动画或建模。",
+ "limit_en": "Requires a single reference image; needs local image gen (e.g., SD) or external API; outputs are draft sheets, not animation or 3D; quick mode gives."
 }

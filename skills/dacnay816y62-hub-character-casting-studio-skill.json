@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-character-casting-studio-skill",
  "kind": "skill",
  "name": "character-casting-studio",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：character-casting-studio。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把角色设定铸成可交付的真人选角卡",
+ "tagline_zh": "从一句人设到商业级选角素材：正面、侧面、多套服装一次出齐。材质参考驱动，光影统一，像真拍了三视图。",
+ "tagline_en": "From one-line persona to a commercial-grade casting sheet: front, side, and multiple outfits in one pass.",
  "desc_en": "Create original, material-reference-driven, consistent, photorealistic character casting sheets for commercial, advertising, cinematic, model, occupational, everyday, historical, traditional-cultural, literary, or lightly fantastical character concepts. Use when the user wants a designed person, a casting reference, a character asset sheet, a model card, or a single image containing front, side, b",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不靠提示词碰运气，而是用材质参考锁定皮肤、布料、金属的反射特性，让三视图的光影和肤色跨图不漂移。",
+ "why_en": "No prompt roulette. It locks reflectance via material references, so skin, fabric, and metal stay consistent across views—no.",
  "repo": "dacnay816y62-hub/character-casting-studio-skill",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dacnay816y62-hub/character-casting-studio-skill.git",
   "copy": "mv character-casting-studio-skill ~/.claude/skills/character-casting-studio-skill",
   "dir": "~/.claude/skills/character-casting-studio-skill"
- }
+ },
+ "limit_zh": "只产出单张含正面、侧面的选角图，不生成多视角独立文件；人物必须是人形，非人、机械、怪物类设定直接失效。",
+ "limit_en": "Outputs a single sheet with front/side views only—no separate multi-angle files. Humanoid only; non-human, mech, or monster concepts fail. Needs."
 }

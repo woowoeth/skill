@@ -2,12 +2,12 @@
  "id": "liangdabiao-xhs-business-validator-skill",
  "kind": "skill",
  "name": "xhs-business-validator",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：xhs-business-validator。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把小红书里的真实需求蒸馏成可验证的商业判断",
+ "tagline_zh": "别拍脑袋猜市场。丢一个想法进去，它翻遍小红书笔记和评论，用 AI 挖出真实痛点，给你一份带评分的验证报告。",
+ "tagline_en": "Stop guessing. Drop an idea, it mines Xiaohongshu posts & comments, surfaces real pains, and hands you a scored.",
  "desc_en": "小红书业务创意验证器。当用户想验证一个商业想法、分析小红书市场需求、生成市场验证报告时激活。 这是一个完全自包含的技能，不依赖任何外部项目文件。 通过 TikHub API 搜索小红书笔记和评论，利用 AI 分析用户痛点、市场信号，最终生成评分和报告。 触发词：验证XX想法、分析XX市场、小红书调研、市场验证、Xiaohongshu research、business idea validation。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的舆情分析，它把评论按痛点、信号、伪需求分类，用 TikHub 实时数据喂给 AI。",
+ "why_en": "Not generic sentiment analysis—it classifies comments into pains, signals, and fake needs, feeding live TikHub data to AI for a.",
  "repo": "liangdabiao/xhs-business-validator-skill",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/xhs-business-validator-skill.git",
   "copy": "mv xhs-business-validator-skill ~/.claude/skills/xhs-business-validator-skill",
   "dir": "~/.claude/skills/xhs-business-validator-skill"
- }
+ },
+ "limit_zh": "需要自备 TikHub API key 并承担调用费用；只覆盖小红书站内文本数据，不含抖音/淘宝；报告是决策参考。",
+ "limit_en": "Requires your own TikHub API key & usage fees; covers Xiaohongshu text only (no Douyin/Taobao); output is a reference, not a substitute for user."
 }

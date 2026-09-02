@@ -2,12 +2,12 @@
  "id": "aref-vc-tufte-claude-skill",
  "kind": "skill",
  "name": "tufte",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：tufte。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任何图表改造成信息密度最高的Tufte风格",
+ "tagline_zh": "嫌默认图表花哨又低效？让Edward Tufte的极简原则接管你的柱状图、仪表盘和热力图，数据墨水比拉满。",
+ "tagline_en": "Tired of noisy charts? Let Tufte's minimalist principles take over your plots, dashboards, and heatmaps—maximize.",
  "desc_en": "Apply Edward Tufte's principles to any data visualization, chart, dashboard, or infographic. Use when the user asks to produce, design, critique, or improve a chart, graph, dashboard, KPI tile, table-with-data, sparkline, small multiple, time series, distribution plot, choropleth, or any other visual that communicates quantitative or categorical information. Also triggers on words like \"visualize\"",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是套模板，而是逐项审查你的图表：删网格线、去装饰、调对齐、提对比，把每一条像素都变成数据。",
+ "why_en": "Not a template—it audits your chart element by element: strips gridlines, kills chartjunk, sharpens contrast, turns every pixel.",
  "repo": "aref-vc/tufte-claude-skill",
  "owner": "aref-vc",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/tufte-claude-skill"
  },
  "repo_created_at": "2026-05-23",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只处理静态图表（PNG/SVG/PDF），不碰交互式仪表盘；需要你提供图表代码或图片路径，且默认不改变数据本身。",
+ "limit_en": "Only static charts (PNG/SVG/PDF), not interactive dashboards; needs your chart code or image path; changes presentation, not data."
 }

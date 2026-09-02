@@ -2,12 +2,12 @@
  "id": "wshuyi-remotion-video-skill",
  "kind": "skill",
  "name": "remotion-video",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：remotion-video。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 React 代码生成可编程视频，告别剪辑软件",
+ "tagline_zh": "批量生成、数据驱动、音乐可视化、自动字幕——把视频当代码写，改数据就能重渲染。适合教程讲解、3D 展示。",
+ "tagline_en": "Batch-generate, data-driven, music-visualized, auto-captioned videos—write video as code, re-render on data.",
  "desc_en": "使用 Remotion 框架以编程方式创建视频。Remotion 让你用 React 组件定义视频内容，支持动画、字幕、音乐可视化等。 触发词： - \"用代码做视频\"、\"编程视频\"、\"React 视频\" - \"Remotion\"、\"remotion\" - \"/remotion-video\" 适用场景： - 程序化视频：(1) 批量生成 (2) 数据驱动（如年度总结）(3) 音乐可视化 (4) 自动字幕 - 教程讲解视频：(5) 技术概念可视化（如 CNN、算法）(6) 分层递进讲解 (7) AI 配音教程 - 3D 视频：(8) 产品展示/模型动画 (9) 卡通角色讲解 (10) 3D 数据可视化 (11) Logo 动画",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把视频拆成 React 组件，状态变了画面就变——版本管理、自动化测试、参数化复用全都能用上。",
+ "why_en": "Video as React components—state changes re-render frames. Git versioning, automated tests, and parametric reuse become native.",
  "repo": "wshuyi/remotion-video-skill",
  "owner": "wshuyi",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/remotion-video-skill"
  },
  "repo_created_at": "2026-01-25",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认 React/TypeScript 技术栈，需本机有 Node.js 18+ 和 Chrome 内核。",
+ "limit_en": "Requires React/TS stack, Node 18+, and Chrome engine. Outputs MP4 only—no audio mixing, color grading, or multi-track compositing. Complex post."
 }

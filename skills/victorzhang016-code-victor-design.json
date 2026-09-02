@@ -2,12 +2,12 @@
  "id": "victorzhang016-code-victor-design",
  "kind": "skill",
  "name": "victor-design-system",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：victor-design-system。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "证据驱动的跨载体视觉设计与交付系统",
+ "tagline_zh": "做海报、PPT、UI 总被说“没依据”？它先学优秀人工参考，再给足设计手法，产出可编辑 HTML 母版。",
+ "tagline_en": "Tired of design feedback like 'just make it pop'? It studies human-crafted references first, then produces.",
  "desc_en": "证据驱动的跨载体视觉设计与交付系统。用于海报、图文/社交内容、PPT/演示和产品 UI：理解主题与情绪，学习优秀人工参考，选择有依据且足够丰富的设计手法，制作 HTML 母版并完成可编辑交付与审查。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是凭感觉堆样式，而是先拆解参考再生成母版，设计决策可追溯、可审查，交付物直接可编辑。",
+ "why_en": "It reverse-engineers human references into an evidence chain, then renders editable HTML—so your design decisions are auditable.",
  "repo": "victorzhang016-code/victor-design",
  "owner": "victorzhang016-code",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/victorzhang016-code/victor-design.git",
   "copy": "mv victor-design ~/.claude/skills/victor-design",
   "dir": "~/.claude/skills/victor-design"
- }
+ },
+ "limit_zh": "只认 HTML/CSS 输出，不生成 Figma/Sketch 源文件；参考图需本地路径或 URL。",
+ "limit_en": "Outputs HTML/CSS only—no Figma/Sketch files. References must be local paths or URLs with parseable colors/layout. No 3D or particle effects; complex."
 }

@@ -2,12 +2,12 @@
  "id": "colemurray-background-agents-record-video",
  "kind": "skill",
  "name": "record-video",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：record-video。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把浏览器操作录成可回放的上传视频",
+ "tagline_zh": "演示 bug、走查流程、留交接证据时，别再开录屏软件。它把一次浏览器交互变成一段短视频，直接产出可上传的 arti。",
+ "tagline_en": "Stop opening a screen recorder to show a bug or walk through a flow. This turns any browser interaction into a.",
  "desc_en": "Record and upload a short browser interaction video artifact",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是录整个屏幕，而是按 DOM 事件重放，画质清晰、体积小，且天然只含操作区域，隐私噪音少。",
+ "why_en": "It replays DOM events rather than capturing the whole screen—crisper, smaller, and free of unrelated desktop clutter.",
  "repo": "ColeMurray/background-agents",
  "owner": "ColeMurray",
  "path": "packages/sandbox-runtime/src/sandbox_runtime/skills/record-video",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/ColeMurray/background-agents.git",
   "copy": "cp -r background-agents/packages/sandbox-runtime/src/sandbox_runtime/skills/record-video ~/.claude/skills/record-video",
   "dir": "~/.claude/skills/record-video"
- }
+ },
+ "limit_zh": "只支持 Chromium 系浏览器，且需本机装有 ffmpeg；产物是 WebM 格式，不含系统音频，仅录页面内操作。",
+ "limit_en": "Chromium-only; requires local ffmpeg. Output is WebM with no system audio—just in-page interactions."
 }

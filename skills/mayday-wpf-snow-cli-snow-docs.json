@@ -2,12 +2,12 @@
  "id": "mayday-wpf-snow-cli-snow-docs",
  "kind": "skill",
  "name": "snow-docs",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：snow-docs。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "装完 Snow CLI 后，用它自己管自己",
+ "tagline_zh": "Profile、MCP、Skills、Hooks、子代理、敏感命令——不再靠模型瞎猜，官方文档按需翻，问到哪查到哪。",
+ "tagline_en": "Stop guessing about Profile, MCP, Skills, Hooks, sub-agents, sensitive commands—official docs on tap, fetched.",
  "desc_en": "Use when the user asks to install, configure, troubleshoot, or understand Snow CLI itself — Profile/API setup, MCP servers, Skills, Hooks, sub-agents, sensitive commands, proxy/browser, third-party relay, LSP/ACE, Team mode, SSE, privacy, plugins, or docs paths. Loads official bundled usage docs via progressive disclosure (list/search/get) instead of guessing from model memory.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "渐进式披露（list/search/get）按需加载官方文档，不把整本手册塞进上下文。",
+ "why_en": "Progressive disclosure (list/search/get) pulls official docs on demand—no context bloat, answers grounded in source, not model.",
  "repo": "MayDay-wpf/snow-cli",
  "owner": "MayDay-wpf",
  "path": "source/skills/snow-docs",
@@ -27,5 +27,7 @@
   "copy": "cp -r snow-cli/source/skills/snow-docs ~/.claude/skills/snow-docs",
   "dir": "~/.claude/skills/snow-docs"
  },
- "cover": "https://contrib.rocks/image?repo=MayDay-wpf/snow-cli"
+ "cover": "https://contrib.rocks/image?repo=MayDay-wpf/snow-cli",
+ "limit_zh": "只覆盖 Snow CLI 自身的使用与排障，不碰业务代码或第三方工具配置；离线或文档未收录的边角场景。",
+ "limit_en": "Only covers Snow CLI itself—not business code or third-party tools. Offline or undocumented edge cases get 'check the official repo' as the answer."
 }

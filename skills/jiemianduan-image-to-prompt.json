@@ -2,12 +2,12 @@
  "id": "jiemianduan-image-to-prompt",
  "kind": "skill",
  "name": "image-to-prompt",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：image-to-prompt。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把参考图逆向成可复用的中英双语绘图提示词",
+ "tagline_zh": "看到一张好图，却说不清它好在哪？给它喂图，它替你拆解光线、构图、风格，输出能直接粘贴的提示词，中英双语各一份。",
+ "tagline_en": "Stuck on how to describe a great image? Feed it a picture, get back a ready-to-paste prompt—lighting.",
  "desc_en": "Analyze one or more reference images and reconstruct faithful, reusable image-generation prompts in Chinese and English. Use when users want to reverse-engineer, infer, restore, imitate, or write prompts from visual references.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单打标签，而是按生成模型习惯重排描述顺序，并区分『可复现要素』与『风格猜测』。",
+ "why_en": "It doesn't just tag—it reorders descriptions the way diffusion models expect, and separates reproducible elements from stylistic.",
  "repo": "jiemianduan/image-to-prompt",
  "owner": "jiemianduan",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/jiemianduan/image-to-prompt.git",
   "copy": "mv image-to-prompt ~/.claude/skills/image-to-prompt",
   "dir": "~/.claude/skills/image-to-prompt"
- }
+ },
+ "limit_zh": "只认单张或少量参考图，不处理视频帧序列；输出是提示词文本，不负责调参或生成图像；对抽象艺术、超现实拼贴的还原度低。",
+ "limit_en": "Single or few still images only, no video frames. Output is prompt text, not tuned params or generated images. Abstract/surreal collages degrade."
 }

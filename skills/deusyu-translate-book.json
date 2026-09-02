@@ -2,12 +2,12 @@
  "id": "deusyu-translate-book",
  "kind": "skill",
  "name": "translate-book",
- "title_zh": "",
- "tagline_zh": "正经办公文档：translate-book。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把整本书拆给多个子代理并行翻译成任何语言",
+ "tagline_zh": "PDF/DOCX/EPUB 丢进去，自动转 Markdown、分块、并行翻译，再拼回原格式。适合啃外文书但不想等串。",
+ "tagline_en": "Drop in PDF/DOCX/EPUB, it splits into Markdown chunks, translates in parallel, and rebuilds the original format.",
  "desc_en": "Translate books (PDF/DOCX/EPUB) into any language using parallel sub-agents. Converts input -> Markdown chunks -> translated chunks -> HTML/DOCX/EPUB/PDF.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是单线程硬翻，而是拆块后多个子代理同时开工，速度随块数近似线性提升；且保留原书结构，不是流水账文本。",
+ "why_en": "Not a single-thread slog—chunks go to parallel sub-agents, speed scales with chunk count; preserves book structure, not just a.",
  "repo": "deusyu/translate-book",
  "owner": "deusyu",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/translate-book"
  },
  "repo_created_at": "2026-03-15",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认 PDF/DOCX/EPUB 三种输入；扫描版 PDF 无 OCR，图片型页面会变成空块；输出 HTML/DOCX。",
+ "limit_en": "Only PDF/DOCX/EPUB in; scanned PDFs lack OCR, image pages become empty chunks; outputs HTML/DOCX/EPUB/PDF but complex layouts (tables, footnotes)."
 }

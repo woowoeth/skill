@@ -2,12 +2,12 @@
  "id": "julianoczkowski-designer-skills",
  "kind": "collection",
  "name": "designer-skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：designer-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把设计师的整套工作流打包成可复用的技能",
+ "tagline_zh": "从调研到交付，设计师的隐性决策链被拆成一个个可调用的技能。装完像多了个随时在线的设计搭档，不用再靠猜。",
+ "tagline_en": "Turn a designer's hidden decision chain into callable skills. Install it and get a design partner who's always.",
  "desc_en": "",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是单点技巧，而是把调研、构思、评审、交付的完整链路拆成技能，每个环节都有可追溯的产出物。",
+ "why_en": "Not isolated tricks—it decomposes the full design loop into skills with traceable outputs, so you can plug them into your own.",
  "repo": "julianoczkowski/designer-skills",
  "owner": "julianoczkowski",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv designer-skills ~/.claude/skills/designer-skills",
   "dir": "~/.claude/skills/designer-skills"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "依赖 Figma API 和本地 Node 环境；只覆盖 UI/UX 设计域，不碰品牌、动效或前端代码。",
+ "limit_en": "Requires Figma API + local Node. UI/UX only—no brand, motion, or frontend code. Output ends at specs, not runnable pages."
 }

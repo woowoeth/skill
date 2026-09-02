@@ -2,12 +2,12 @@
  "id": "xr843-master-skill",
  "kind": "skill",
  "name": "create-master",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：create-master。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把高僧大德的讲学风格蒸馏成可对话的 AI 导师",
+ "tagline_zh": "想跟虚云、弘一那样的大德请教，却无缘亲炙？这个 skill 用佛教原典训练角色，让 AI 以他们的口吻和见地。",
+ "tagline_en": "Want to learn from masters like Xuyun or Hongyi but can't meet them? This skill builds AI mentors from Buddhist.",
  "desc_en": "基于佛教经典文献，生成特定高僧大德的 AI 教学角色",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是套皮聊天，而是从原典抽取义理与机锋，按人物生平校准应答尺度，让角色有戒律感，不越格、不戏说。",
+ "why_en": "Not a chatbot costume—it mines doctrine and repartee from source texts, calibrates responses to each master's biography, keeping.",
  "repo": "xr843/Master-skill",
  "owner": "xr843",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv Master-skill ~/.claude/skills/Master-skill",
   "dir": "~/.claude/skills/Master-skill"
  },
- "cover": "https://raw.githubusercontent.com/xr843/Master-skill/main/docs/assets/desktop-manager.png"
+ "cover": "https://raw.githubusercontent.com/xr843/Master-skill/main/docs/assets/desktop-manager.png",
+ "limit_zh": "只认汉传佛教高僧且需有足够文献支撑；无原典依据的提问会拒绝回答。不覆盖藏传、南传，也不做经义考据或学术论证。",
+ "limit_en": "Only Chinese Buddhist masters with sufficient textual sources; questions without scriptural basis are declined. Excludes Tibetan/Theravada, no."
 }

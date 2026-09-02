@@ -2,12 +2,12 @@
  "id": "badlogic-pi-skills-browser-tools",
  "kind": "skill",
  "name": "browser-tools",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：browser-tools。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "通过 Chrome 调试协议操控真实浏览器",
+ "tagline_zh": "测试前端、抓页面、点按钮，不用写 Selenium。直接连上你正在看的 Chrome，像真人一样操作。",
+ "tagline_en": "Drive the Chrome you already have open. No Selenium, no WebDriver — just CDP for real clicks, typing, and page.",
  "desc_en": "Interactive browser automation via Chrome DevTools Protocol. Use when you need to interact with web pages, test frontends, or when user interaction with a visible browser is required.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "走 CDP 直连，不另起浏览器实例，能复用登录态和用户配置；操作可见、可中断，适合需要人工确认的交互场。",
+ "why_en": "Attaches to your live Chrome via CDP — reuses sessions and cookies, shows every action, and lets you step in when needed.",
  "repo": "badlogic/pi-skills",
  "owner": "badlogic",
  "path": "browser-tools",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/badlogic/pi-skills.git",
   "copy": "cp -r pi-skills/browser-tools ~/.claude/skills/browser-tools",
   "dir": "~/.claude/skills/browser-tools"
- }
+ },
+ "limit_zh": "只支持本机 Chrome/Chromium，且需以 --remote-debugging-port 启动。",
+ "limit_en": "Local Chrome/Chromium only, launched with --remote-debugging-port. No captcha/popup handling, no multi-tab orchestration, no test reports — just."
 }

@@ -2,12 +2,12 @@
  "id": "worldwonderer-drama-skills-short-drama-novel-analyze",
  "kind": "skill",
  "name": "short-drama-novel-analyze",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：short-drama-novel-analyze。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把长篇小说拆成可追溯的短剧改编分析报告",
+ "tagline_zh": "面对百万字网文不知从何下手？它把章节、剧情单元、人物设定逐层归并，输出改编价值判定与分集候选，让后续开发有据可依。",
+ "tagline_en": "Drowning in a million-word web novel? It layers chapters, arcs, and characters into a traceable adaptation report.",
  "desc_en": "把长篇小说、连载网文或多集散稿拆成可追溯的原著分析：章节索引、改编价值快评、逐章功能提取、剧情单元与节奏聚合、人物与设定归并，最后给出改编价值判定与分集候选，交给 $short-drama-develop 立契约。用户说“导入这本小说”“拆这本书”“分析原著”“这本书能不能改短剧”“先看看值不值得拆”“把长篇拆成分集候选”，或直接给出小说文件路径时使用。只做只读的结构化分析，不写剧本、不建资产、不生成媒体，也不替创作者决定改编方案。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不靠感觉，靠结构：逐章功能提取+节奏聚合，每个结论都能回溯到原文位置，改编判断有据可查。",
+ "why_en": "No gut calls—every beat is extracted and aggregated with traceable chapter links, so adaptation verdicts are evidence-based.",
  "repo": "worldwonderer/drama-skills",
  "owner": "worldwonderer",
  "path": "skills/short-drama-novel-analyze",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/worldwonderer/drama-skills.git",
   "copy": "cp -r drama-skills/skills/short-drama-novel-analyze ~/.claude/skills/short-drama-novel-analyze",
   "dir": "~/.claude/skills/short-drama-novel-analyze"
- }
+ },
+ "limit_zh": "只做只读的结构化分析，不写剧本、不建资产、不生成媒体；输出到分集候选为止，后续开发需另接 $short-drama-d。",
+ "limit_en": "Read-only structural analysis only—no script, assets, or media. Output ends at episode candidates; hand off to $short-drama-develop for next steps."
 }

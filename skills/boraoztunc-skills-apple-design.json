@@ -2,12 +2,12 @@
  "id": "boraoztunc-skills-apple-design",
  "kind": "skill",
  "name": "apple-design",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：apple-design。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把苹果界面动效哲学转译成可落地的 Web 设计规范",
+ "tagline_zh": "做手势、弹簧动画、拖拽抽屉总差口气？这套 skill 把 iOS 的物理感、材质层次和排版细节拆给你。",
+ "tagline_en": "Web gestures and springs feel off? This skill distills iOS physics, translucency, and typography into web-ready.",
  "desc_en": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behin",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是贴苹果皮，而是提炼其动效底层逻辑：可中断曲线、动量守恒、景深材质，直接映射到 CSS 和 JS 参。",
+ "why_en": "Not skin-deep mimicry—it extracts Apple's motion logic (interruptible curves, momentum, depth) into concrete CSS/JS parameters.",
  "repo": "boraoztunc/skills",
  "owner": "boraoztunc",
  "path": "apple-design",
@@ -27,5 +27,7 @@
   "copy": "cp -r skills/apple-design ~/.claude/skills/apple-design",
   "dir": "~/.claude/skills/apple-design"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只覆盖交互设计与视觉规范，不产出代码组件；需你自行实现动画逻辑。且仅适用于 Web 前端，不涉及 iOS 原生开发或设。",
+ "limit_en": "Covers design principles only—no code components; you implement animations. Web-frontend only, not for native iOS or design-tool plugins."
 }

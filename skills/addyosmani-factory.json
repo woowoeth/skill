@@ -2,12 +2,12 @@
  "id": "addyosmani-factory",
  "kind": "collection",
  "name": "factory",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：factory。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 Claude Code 和 Codex 调教成同",
+ "tagline_zh": "别再让两个 AI 各干各的——用同一份参考实现，让它们产出同构的代码、同款的提交、同味的架构。",
+ "tagline_en": "Stop letting two AIs drift apart—one reference implementation keeps Claude Code and Codex producing the same.",
  "desc_en": "A reference software factory for Claude Code and Codex",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把『软件工厂』的隐性约定——目录结构、命名、提交粒度——固化成可复制的模板，让多 Agent 协作不。",
+ "why_en": "It bakes the unwritten rules of a software factory—layout, naming, commit granularity—into a copyable template, so multi-agent.",
  "repo": "addyosmani/factory",
  "owner": "addyosmani",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/addyosmani/factory.git",
   "copy": "mv factory ~/.claude/skills/factory",
   "dir": "~/.claude/skills/factory"
- }
+ },
+ "limit_zh": "只覆盖 Claude Code 和 Codex 两个运行时；不含部署、CI/CD 或测试策略。若你的工具链不在其中。",
+ "limit_en": "Only covers Claude Code and Codex runtimes; no deploy, CI/CD, or test strategy. Other toolchains must translate its conventions themselves or."
 }

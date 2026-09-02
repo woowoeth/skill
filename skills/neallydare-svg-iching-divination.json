@@ -2,12 +2,12 @@
  "id": "neallydare-svg-iching-divination",
  "kind": "skill",
  "name": "iching-divination",
- "title_zh": "",
- "tagline_zh": "纯属好玩，装了不亏：iching-divination。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "真随机起卦的周易占卜，不编卦象、凶卦直断",
+ "tagline_zh": "想用易经推演跳槽、感情、合作？密码学级随机数模拟三枚铜钱，一事一占，卦象可对账验证，绝不糊弄你。",
+ "tagline_en": "Casting hexagrams with cryptographic randomness—no fabricated omens, one question per cast, verifiable results.",
  "desc_en": "真随机起卦的周易/易经占卜。用密码学级随机数模拟三枚铜钱起卦,绝不编造卦象;一事一占;按传统规范解读本卦、动爻、之卦,先引原文再讲白话;凶卦如实直断;支持事后对账验证。只要用户提到占卜、算卦、起卦、问卦、解卦、摇卦、占一卦、六十四卦、易经、周易、卦象,或想用易经视角推演某个决定(跳槽、感情、合作、出行、时机),就使用本 skill,即使他没有明说\"占卜\"二字。Authentic I Ching (Yijing/Zhouyi) divination - cryptographically random coin casting, classical hexagram interpretation",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它用真随机数而非伪随机或人为编排，卦象可复现校验；解读先引原文再白话，凶卦不回避。",
+ "why_en": "True cryptographic randomness replaces pseudo-random or hand-waved casting; every hexagram is verifiable, and readings quote the.",
  "repo": "neallydare-svg/iching-divination",
  "owner": "neallydare-svg",
  "path": "",
@@ -29,5 +29,7 @@
  },
  "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/neallydare-svg-iching-divination.png",
  "repo_created_at": "2026-06-12",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只覆盖周易六十四卦的铜钱起卦法，不处理梅花易数、奇门遁甲等；需要联网获取卦辞原文，离线时只能给卦名和动爻。",
+ "limit_en": "Only covers coin-casting for the 64 hexagrams; no Meihua or Qimen. Requires internet for full text; offline gives names only. Repeated casts may."
 }

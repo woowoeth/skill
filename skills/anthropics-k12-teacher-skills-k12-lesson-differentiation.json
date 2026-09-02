@@ -2,12 +2,12 @@
  "id": "anthropics-k12-teacher-skills-k12-lesson-differentiation",
  "kind": "skill",
  "name": "k12-lesson-differentiation",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：k12-lesson-differentiation。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按水平分层改编K-12教案的专用技能",
+ "tagline_zh": "面对参差不齐的班级，一键把同一节课拆成三层：低于、达标、超纲。不用再熬夜手动改三份教案，它替你分好，你只需微调。",
+ "tagline_en": "One click splits any K-12 lesson into three tiers—below, at, above grade level. Stop hand-differentiating three.",
  "desc_en": "Adapts an existing K-12 lesson (math, ELA, science, or social studies) for students at different proficiency levels (below / at / above grade level). Load this skill BEFORE asking the teacher any clarifying question about the lesson, tiers, or student levels. Triggers on explicit asks to differentiate, tier, or scaffold a lesson, and on implicit signals like \"my students are at different levels\". ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它先于提问加载，能捕捉“学生水平不一”这类隐晦信号，主动分层，而非被动应答。机制上把差异化从课后补救变。",
+ "why_en": "Loads before you ask, catches implicit cues like 'mixed levels' and proactively tiers—making differentiation a default, not an.",
  "repo": "anthropics/k12-teacher-skills",
  "owner": "anthropics",
  "path": "plugin/skills/k12-lesson-differentiation",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/anthropics/k12-teacher-skills.git",
   "copy": "cp -r k12-teacher-skills/plugin/skills/k12-lesson-differentiation ~/.claude/skills/k12-lesson-differentiation",
   "dir": "~/.claude/skills/k12-lesson-differentiation"
- }
+ },
+ "limit_zh": "仅覆盖数学、英语、科学、社会四科；只改编已有教案，不生成新内容；分层止于教案层面，不含配套练习或评估；需输入完整教案。",
+ "limit_en": "Only math, ELA, science, social studies; adapts existing lessons only, no new content; stops at lesson plan, no worksheets or assessments; needs."
 }

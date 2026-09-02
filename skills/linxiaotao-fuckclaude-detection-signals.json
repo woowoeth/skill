@@ -2,12 +2,12 @@
  "id": "linxiaotao-fuckclaude-detection-signals",
  "kind": "skill",
  "name": "detection-signals",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：detection-signals。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给反克劳德项目增删改查中国用户检测信号",
+ "tagline_zh": "浏览器扫描、/api/check 权重、打分器，一处改全链路生效。改完不用翻代码，直接看信号怎么被算出来。",
+ "tagline_en": "Tweak browser scans, /api/check weights, and scorers in one place—see exactly how each signal gets scored without.",
  "desc_en": "Add, adjust or remove \"China user\" detection signals in the FuckClaude project (browser scan + /api/check). Use when adding detection methods, changing signal weights or scorers, or when the user mentions 检测信号 / 检测手段 / 新增检测 / signals / weights / detectors.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把分散的检测逻辑收敛成信号字典，改权重像调参数，加新检测手段只需注册，不用碰主流程。",
+ "why_en": "Consolidates scattered detection logic into a signal dictionary—tune weights like config, register new detectors without.",
  "repo": "LinXiaoTao/FuckClaude",
  "owner": "LinXiaoTao",
  "path": "skills/detection-signals",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/LinXiaoTao/FuckClaude.git",
   "copy": "cp -r FuckClaude/skills/detection-signals ~/.claude/skills/detection-signals",
   "dir": "~/.claude/skills/detection-signals"
- }
+ },
+ "limit_zh": "只作用于 FuckClaude 仓库内的检测信号定义与权重；不负责绕过检测、不生成新检测算法，只改已有信号的增删改查。",
+ "limit_en": "Only edits signal definitions/weights inside the FuckClaude repo; won't bypass detection or invent new algorithms—stops working outside this codebase."
 }

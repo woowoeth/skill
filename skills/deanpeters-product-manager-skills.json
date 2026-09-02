@@ -2,12 +2,12 @@
  "id": "deanpeters-product-manager-skills",
  "kind": "collection",
  "name": "Product-Manager-Skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Product-Manager-Skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把产品经理的实战方法论装进 AI 代理",
+ "tagline_zh": "别让 AI 只会写代码——让它在砍需求、排优先级、写 PRD 时也像个老 PM。基于 Claude Code。",
+ "tagline_en": "Stop letting AI just code. Make it cut scope, rank priorities, and write PRDs like a seasoned PM. A battle-tested.",
  "desc_en": "Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是零散提示词，而是一套可组合的 skill 框架，把「先问为什么、再定怎么做」的 PM 决策链固化进。",
+ "why_en": "Not scattered prompts—a composable skill framework that hardcodes the PM decision chain (why before how) into agent workflows.",
  "repo": "deanpeters/Product-Manager-Skills",
  "owner": "deanpeters",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/deanpeters/Product-Manager-Skills.git",
   "copy": "mv Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills",
   "dir": "~/.claude/skills/Product-Manager-Skills"
- }
+ },
+ "limit_zh": "只覆盖产品管理流程（发现、定义、排期、复盘），不涉及技术实现或 UI 设计。需要代理已支持 skill 机制（如 Cl。",
+ "limit_en": "Covers PM workflow only (discovery, definition, prioritization, retro)—no coding or UI design. Requires agent skill support (e.g., Claude Code."
 }

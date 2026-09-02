@@ -2,12 +2,12 @@
  "id": "danny-avila-librechat-e2e-deployment-skill",
  "kind": "skill",
  "name": "e2e-deployment-skill",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：e2e-deployment-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Playwright 启动时自动验证共享技能是否",
+ "tagline_zh": "每次跑端到端测试前，先替你确认共享技能真的挂上了。别等用例跑到一半才发现技能没加载，白等一场。",
+ "tagline_en": "Before E2E tests run, verify shared skills actually load. Don't discover mid-run that they're missing and waste.",
  "desc_en": "Use this deployment skill to verify shared skills load during Playwright startup.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把「技能加载」变成启动期硬检查，而不是用例里的隐性假设。失败即停，省下整轮调试时间。",
+ "why_en": "Turns skill loading into a hard startup check instead of an implicit assumption in tests. Fail fast, save a whole debug cycle.",
  "repo": "danny-avila/LibreChat",
  "owner": "danny-avila",
  "path": "e2e/fixtures/deployment-skills/e2e-deployment-skill",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/danny-avila/LibreChat.git",
   "copy": "cp -r LibreChat/e2e/fixtures/deployment-skills/e2e-deployment-skill ~/.claude/skills/e2e-deployment-skill",
   "dir": "~/.claude/skills/e2e-deployment-skill"
- }
+ },
+ "limit_zh": "只覆盖 LibreChat 仓库里的共享技能加载验证；需要已有 Playwright 测试环境。不检查技能内容正确性。",
+ "limit_en": "Only verifies shared skill loading in LibreChat repo; requires existing Playwright setup. Checks load action, not skill correctness."
 }

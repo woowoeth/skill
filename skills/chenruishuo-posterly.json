@@ -2,12 +2,12 @@
  "id": "chenruishuo-posterly",
  "kind": "skill",
  "name": "posterly",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：posterly。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把学术海报编译成单文件 HTML 并打印为 PDF",
+ "tagline_zh": "投 ICML/NeurIPS 前最后一晚，别再用 PPT 对齐文本框。一条命令出排版严谨的学术海报。",
+ "tagline_en": "Last night before the ICML deadline, stop aligning text boxes in PPT. One command turns your research into a.",
  "desc_en": "Build an academic conference poster (ICML/NeurIPS/ICLR/CVPR/etc.) as a single HTML/CSS file and render it to print-ready PDF via headless Chromium. Use when user says \\\"做海报\\\", \\\"poster\\\", \\\"ICML/NeurIPS/ICLR poster\\\", or asks to design/edit a research poster.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把海报当代码写：HTML/CSS 即源文件，改字体、调布局全靠 diff，版本管理天然成立。",
+ "why_en": "Poster as code: HTML/CSS is the source, diffs handle revisions, and Chromium rendering guarantees what you see in the browser is.",
  "repo": "Chenruishuo/posterly",
  "owner": "Chenruishuo",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Chenruishuo/posterly.git",
   "copy": "mv posterly ~/.claude/skills/posterly",
   "dir": "~/.claude/skills/posterly"
- }
+ },
+ "limit_zh": "只认学术会议模板（ICML/NeurIPS/ICLR/CVPR 等），非学术海报会缺样式骨架。本机需装 Chromiu。",
+ "limit_en": "Only academic conference templates (ICML/NeurIPS/ICLR/CVPR). Needs Chromium/Chrome installed. No vector embedding—insert figures as PNG/SVG first."
 }

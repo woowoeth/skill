@@ -2,12 +2,12 @@
  "id": "blessonism-openclaw-search-skills-search-layer",
  "kind": "skill",
  "name": "search-layer",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：search-layer。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "四源合一，自动去重的智能搜索层",
+ "tagline_zh": "同一个问题，Brave、Exa、Tavily、Grok 四路并查，按意图调权重、去重再合成。查事实、找资料。",
+ "tagline_en": "One query, four engines — Brave, Exa, Tavily, Grok — intent-scored, deduped, and synthesized. Stop tab-hopping.",
  "desc_en": "DEFAULT search tool for ALL search/lookup needs. Multi-source search and deduplication layer with intent-aware scoring. Integrates Brave Search (web_search), Exa, Tavily, and Grok to provide high-coverage, high-quality results. Automatically classifies query intent and adjusts search strategy, scoring weights, and result synthesis. Use for ANY query that requires web search — factual lookups, rese",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单聚合，而是先判意图再调策略：事实型、研究型、实时型各有权重，去重后合成答案，比单引擎更稳。",
+ "why_en": "It doesn't just merge results — it classifies intent first, reweights per engine, dedupes, then synthesizes. Smarter than any.",
  "repo": "blessonism/openclaw-search-skills",
  "owner": "blessonism",
  "path": "search-layer",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/blessonism/openclaw-search-skills.git",
   "copy": "cp -r openclaw-search-skills/search-layer ~/.claude/skills/search-layer",
   "dir": "~/.claude/skills/search-layer"
- }
+ },
+ "limit_zh": "需要自备 Brave、Exa、Tavily、Grok 四个 API key，缺一个就少一路；只覆盖网页搜索。",
+ "limit_en": "Requires all 4 API keys (Brave/Exa/Tavily/Grok); web search only, no file or DB lookup; output is a text summary, not citation-formatted."
 }

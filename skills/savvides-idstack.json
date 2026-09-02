@@ -2,12 +2,12 @@
  "id": "savvides-idstack",
  "kind": "collection",
  "name": "idstack",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：idstack。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给AI教学材料做循证体检的11件套",
+ "tagline_zh": "从LMS导入课件，自动查对齐、无障碍、认知负荷和证据强度。不靠感觉改课，靠清单挑刺，每一条都标得出出处。",
+ "tagline_en": "Import from any LMS, auto-check alignment, accessibility, cognitive load, and evidence strength. Critique courses.",
  "desc_en": "Evidence-based instructional design skills for Claude Code. 11 AI skills that check alignment, accessibility, cognitive load, and evidence strength. Import from any LMS or authoring tool.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把教学设计的隐性标准变成显式检查器，每个skill对应一条可追溯的证据链。不是泛泛建议。",
+ "why_en": "Turns tacit instructional design standards into explicit checkers—each skill maps to a traceable evidence chain, diagnosing down.",
  "repo": "savvides/idstack",
  "owner": "savvides",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/savvides/idstack.git",
   "copy": "mv idstack ~/.claude/skills/idstack",
   "dir": "~/.claude/skills/idstack"
- }
+ },
+ "limit_zh": "只认文本型课件（HTML/Markdown/文档导出），不解析视频音频；检查结论止于标注与建议，不自动改写内容。",
+ "limit_en": "Text-only courses (HTML/MD/docs); no video/audio parsing. Outputs annotations & suggestions, not auto-rewrites. Needs internet for citation lookup."
 }

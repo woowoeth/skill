@@ -2,12 +2,12 @@
  "id": "alchaincyf-huashu-skills-huashu-video-outline",
  "kind": "skill",
  "name": "huashu-video-outline",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：huashu-video-outline。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把视频选题变成2-3套可拍的完整大纲方案",
+ "tagline_zh": "别在空白文档前憋标题了。输入一个选题，它给你三套带封面建议和结构设计的方案，挑一套就能开拍。",
+ "tagline_en": "Stop staring at a blank doc. Feed it a topic, get 3 ready-to-shoot outlines with cover ideas and structure—just.",
  "desc_en": "快速生成2-3个视频大纲方案，含标题、封面建议和结构设计。当用户提到\"视频大纲\"、\"视频结构\"、\"脚本大纲\"、\"视频选题\"时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是列要点，而是连封面、标题、结构一起打包成方案。三套并行，让你有对比和选择权，而不是被单一思路锁死。",
+ "why_en": "It doesn't list bullet points—it packages title, cover, and structure into 3 parallel plans, so you compare and choose instead.",
  "repo": "alchaincyf/huashu-skills",
  "owner": "alchaincyf",
  "path": "huashu-video-outline",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/alchaincyf/huashu-skills.git",
   "copy": "cp -r huashu-skills/huashu-video-outline ~/.claude/skills/huashu-video-outline",
   "dir": "~/.claude/skills/huashu-video-outline"
- }
+ },
+ "limit_zh": "只产出大纲方案，不写逐字稿、不排镜头、不剪片。适合短视频口播或图文脚本的骨架阶段；长视频分集、纪录片叙事不在覆盖内。",
+ "limit_en": "Delivers outline-level plans only—no full scripts, shot lists, or editing. Best for short-video talking-head or article scripts; long-form series or."
 }

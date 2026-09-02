@@ -2,12 +2,12 @@
  "id": "badlogic-pi-skills",
  "kind": "collection",
  "name": "pi-skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：pi-skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 pi 编码代理装一整套即插即用的技能库",
+ "tagline_zh": "在 pi、Claude Code、Codex CLI 之间无缝复用技能。不用再为每个代理重写提示词，装一次，到处跑。",
+ "tagline_en": "Reuse skills across pi, Claude Code, and Codex CLI. Write once, run anywhere — no more per-agent prompt rewriting.",
  "desc_en": "Skills for pi coding agent (compatible with Claude Code and Codex CLI)",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "按代理无关的格式打包技能，靠统一约定而非硬编码适配。换工具链时，技能文件原样迁移，零改动。",
+ "why_en": "Skills are packaged in an agent-agnostic format, relying on conventions rather than hardcoded adapters. Migrate as-is when.",
  "repo": "badlogic/pi-skills",
  "owner": "badlogic",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/badlogic/pi-skills.git",
   "copy": "mv pi-skills ~/.claude/skills/pi-skills",
   "dir": "~/.claude/skills/pi-skills"
- }
+ },
+ "limit_zh": "仅适用于支持 skills 目录约定的代理（pi、Claude Code、Codex CLI）。不含任何内置技能。",
+ "limit_en": "Only for agents supporting the skills-dir convention (pi, Claude Code, Codex CLI). No built-in skills; you must author or import them. Outside these."
 }

@@ -2,12 +2,12 @@
  "id": "architectds-modeldock-content-to-video",
  "kind": "skill",
  "name": "content-to-video",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：content-to-video。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意素材端到端变成一条成片级 MP4 视频",
+ "tagline_zh": "README、故事、PPT、数据报告、甚至一句话题——丢进去，自动分类意图、选版式、定节奏、挑配音。",
+ "tagline_en": "Drop in a README, story, deck, or bare topic—it auto-classifies intent, picks layout, pacing, and TTS, then.",
  "desc_en": "Turn arbitrary source content (README, article, story, slides, deck, data/report, product description, tutorial text, audio/transcript, or a bare topic) into a finished, high-quality MP4 video. Classifies the content type and user intent, picks the right pipeline, format preset (16:9 / 9:16 / 1:1), pacing, visual strategy, and TTS voice, then runs production end-to-end (message + storyboard with a",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是模板拼接，而是先判内容类型与用户意图，再选 pipeline、画幅、节奏和视觉策略——每个决定都有。",
+ "why_en": "It doesn't stitch templates—it classifies content type and intent first, then selects pipeline, aspect, pacing, and visual.",
  "repo": "architectds/modeldock",
  "owner": "architectds",
  "path": "skills/content-to-video",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/architectds/modeldock.git",
   "copy": "cp -r modeldock/skills/content-to-video ~/.claude/skills/content-to-video",
   "dir": "~/.claude/skills/content-to-video"
- }
+ },
+ "limit_zh": "只认描述里列出的八类输入（README/文章/故事/幻灯片/数据报告/产品介绍/教程/音频转写），超出会卡在分类步。",
+ "limit_en": "Only handles the 8 listed input types (README/article/story/slides/data/product/tutorial/transcript); others stall at classification. Output is MP4."
 }

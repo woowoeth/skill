@@ -2,12 +2,12 @@
  "id": "addyosmani-factory-factory-implement",
  "kind": "skill",
  "name": "factory-implement",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：factory-implement。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "认领一个 GitHub issue 并自动实现到可审",
+ "tagline_zh": "从 issue 到 draft PR 全自动：认领、改码、跑门禁、找独立验证。适合维护者批量清积压。",
+ "tagline_en": "From issue to draft PR automatically: claim, code, run fail-closed gates, get independent verification. Perfect.",
  "desc_en": "Claim and implement one ready GitHub issue, run fail-closed gates, obtain independent verification, and open a draft pull request.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "内置 fail-closed 门禁和独立验证环节，不是闷头改完就交差，而是先证明改动通过检查再开 PR。",
+ "why_en": "Built-in fail-closed gates and independent verification ensure changes are proven before PR, cutting review cycles.",
  "repo": "addyosmani/factory",
  "owner": "addyosmani",
  "path": "template/.agents/skills/factory-implement",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/addyosmani/factory.git",
   "copy": "cp -r factory/template/.agents/skills/factory-implement ~/.claude/skills/factory-implement",
   "dir": "~/.claude/skills/factory-implement"
- }
+ },
+ "limit_zh": "只认 GitHub 上状态清晰、描述完整的 issue；需要本机配好 Node.js 和 git 凭据。",
+ "limit_en": "Only for well-defined GitHub issues; requires Node.js and git credentials locally; not for large refactors; output is a draft PR, not merged code."
 }

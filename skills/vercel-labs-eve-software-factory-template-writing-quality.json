@@ -2,12 +2,12 @@
  "id": "vercel-labs-eve-software-factory-template-writing-quality",
  "kind": "skill",
  "name": "Writing Quality",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：Writing Quality。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 Agent 写的每段人话装一道去 AI 味的质检",
+ "tagline_zh": "PR 描述、issue 评论、周报、回客户邮件——AI 味一冒头就被拦下。专治「首先其次最后」「综上所述」这类腔调。",
+ "tagline_en": "PRs, issues, reviews, replies—catch the AI-sounding phrasing before it ships. Kills 'firstly, moreover, in.",
  "desc_en": "Writing-quality guardrails for any prose the agent drafts or edits: pull request descriptions, issue comments, review reports, Linear replies. Use this skill whenever writing or revising content meant for humans to read, to keep the prose natural, plain, and free of AI-sounding phrasing. Not needed for code, queries, or tool plumbing.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是改词表，是规则引擎：检测被动语态、空洞连接词、过度正式措辞，逐条给替换建议。比通用润色更懂「AI 。",
+ "why_en": "Not a word list—a rule engine that flags passive voice, filler connectors, and over-formal phrasing, then suggests concrete.",
  "repo": "vercel-labs/eve-software-factory-template",
  "owner": "vercel-labs",
  "path": "agent/skills/writing-quality",
@@ -27,5 +27,7 @@
   "copy": "cp -r eve-software-factory-template/agent/skills/writing-quality ~/.claude/skills/writing-quality",
   "dir": "~/.claude/skills/writing-quality"
  },
- "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7"
+ "cover": "https://repository-images.githubusercontent.com/1332009127/027a01cb-35de-477d-ac15-e121724259c7",
+ "limit_zh": "只审面向人的叙述文本，不碰代码、查询语句或工具调用。需要你主动调用，不会自动生效。若文本本身是技术文档或日志。",
+ "limit_en": "Only for human-facing prose; ignores code, queries, or tooling. Must be invoked manually—no auto-run. May false-positive on technical docs or logs."
 }

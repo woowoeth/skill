@@ -2,12 +2,12 @@
  "id": "dhicoc-dsh-mcp-plugin",
  "kind": "skill",
  "name": "dsh-mcp-plugin",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：dsh-mcp-plugin。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意 MCP server 封装成 dsh 可装插",
+ "tagline_zh": "Rust/Go 二进制、Node/Python 脚本，stdio 或 HTTP——一条命令 `dsh plugin。",
+ "tagline_en": "Wrap any MCP server—Rust/Go binaries, Node/Python scripts, stdio or HTTP—into a `dsh plugin add`-installable.",
  "desc_en": "把一个 MCP server（stdio/HTTP，任意语言，含 Rust/Go 独立二进制、Node/Python 脚本）封装成可 `dsh plugin add` 安装的 DeepSeek Harness (dsh) Cordis 插件。当用户想把某个 MCP server「做成 dsh 插件 / 封装成 dsh 插件 / 接入 dsh」时使用。注意：这与 dsh-skill-pack-plugin（把 SKILL.md 技能包封装成插件）是两条不同路线，本技能只处理 MCP server。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "自动探测语言与传输方式，生成 Cordis 生命周期与配置映射，把 MCP 的 stdio/HTTP 。",
+ "why_en": "Auto-detects language and transport, generates Cordis lifecycle and config mapping, flattens stdio/HTTP differences into a.",
  "repo": "dhicoc/dsh-mcp-plugin",
  "owner": "dhicoc",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dhicoc/dsh-mcp-plugin.git",
   "copy": "mv dsh-mcp-plugin ~/.claude/skills/dsh-mcp-plugin",
   "dir": "~/.claude/skills/dsh-mcp-plugin"
- }
+ },
+ "limit_zh": "只处理 MCP server 封装，不碰 SKILL.md 技能包（那是 dsh-skill-pack-plugin 。",
+ "limit_en": "Only wraps MCP servers, not SKILL.md packs (that's dsh-skill-pack-plugin). Target must run locally with a clear start command; cloud-only or."
 }

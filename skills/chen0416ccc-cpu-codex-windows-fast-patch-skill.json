@@ -2,12 +2,12 @@
  "id": "chen0416ccc-cpu-codex-windows-fast-patch-skill",
  "kind": "skill",
  "name": "codex-windows-fast-patch",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：codex-windows-fast-patch。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "修复被商店升级打回原形的 Codex 桌面版",
+ "tagline_zh": "Windows 上 Codex 更新后，模型列表被砍、Fast Mode 失灵、插件隐身？一键重打补丁。",
+ "tagline_en": "After a Windows Codex update, models vanish, Fast Mode breaks, plugins hide? One re-patch restores hidden Ultra.",
  "desc_en": "Reapply and repair Windows Codex Desktop after Store upgrades, including custom provider models hidden by Statsig available_models filtering, the dependent blue-purple Power slider and its Ultra toggle, Fast Mode request/UI gates, locale i18n, plugin UI gates, Chrome/browser_use gates, Goal command gates, Windows Computer Use availability gates and plugin/runtime repair, phone remote-control pairi",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不止改配置，而是直接绕过 Statsig 的 available_models 过滤。",
+ "why_en": "Bypasses Statsig's model filtering and repairs runtime/UI gates that Store upgrades clobber—even restores phone pairing.",
  "repo": "chen0416ccc-cpu/codex-windows-fast-patch-skill",
  "owner": "chen0416ccc-cpu",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/chen0416ccc-cpu/codex-windows-fast-patch-skill.git",
   "copy": "mv codex-windows-fast-patch-skill ~/.claude/skills/codex-windows-fast-patch-skill",
   "dir": "~/.claude/skills/codex-windows-fast-patch-skill"
- }
+ },
+ "limit_zh": "仅限 Windows 版 Codex Desktop，且需已安装官方商店版；不处理 macOS/Linux。",
+ "limit_en": "Windows-only, requires official Store build; no macOS/Linux or CLI support; may break if Microsoft changes internals in a future update."
 }

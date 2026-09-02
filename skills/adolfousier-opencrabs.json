@@ -2,12 +2,12 @@
  "id": "adolfousier-opencrabs",
  "kind": "collection",
  "name": "opencrabs",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：opencrabs。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一个住在终端里的全栈自主 AI 代理",
+ "tagline_zh": "从落地页到后端、文件管理到深度研究，它自己规划、自己修错、自己排程。TUI、CLI、守护进程三合一。",
+ "tagline_en": "From landing pages to backends, files to deep research—it plans, fixes, and schedules itself. TUI, CLI, daemon in.",
  "desc_en": "The all-in-one AI agent living in your terminal. Build landing, mobile apps, backends, manages files, deep research, schedule tasks and events. Self-improving, self-healing, fully autonomous. TUI, CLI and Daemon. Connect to your favorite channels.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是插件拼盘，是带自我改进循环的常驻代理。它把终端变成操作系统的入口，让 AI 直接驱动你的开发与运维。",
+ "why_en": "Not a plugin patchwork—a resident agent with a self-improvement loop. It turns the terminal into an OS-level entry point.",
  "repo": "adolfousier/opencrabs",
  "owner": "adolfousier",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/adolfousier/opencrabs.git",
   "copy": "mv opencrabs ~/.claude/skills/opencrabs",
   "dir": "~/.claude/skills/opencrabs"
- }
+ },
+ "limit_zh": "只认终端环境：没有 TTY 或 SSH 会话它就罢工。自主模式会改文件、跑命令，沙箱外慎用。深度研究依赖网络。",
+ "limit_en": "Terminal-only: no TTY or SSH session, it bails. Autonomous mode edits files and runs commands—use outside a sandbox at your own risk. Deep research."
 }

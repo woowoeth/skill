@@ -2,12 +2,12 @@
  "id": "necmttn-ax-ax-narrate",
  "kind": "skill",
  "name": "ax-narrate",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：ax-narrate。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把一次会话的隐情写成可回放的故事档案",
+ "tagline_zh": "PR 只记录最终代码，但用户改了什么、试错几次、工具挂在哪，全被丢进黑洞。装上它，每次会话的暗线都变成可审阅的 J。",
+ "tagline_en": "PRs show what shipped; this captures what didn't—your corrections, dead ends, tool failures. Turn every session's.",
  "desc_en": "Write the agent-generated narration of the current session - the reviewable story of what changed, including what never reaches a PR (user corrections, abandoned attempts, tool failures). Triggers on \"narrate this session\", \"summarize what changed\", \"write the session story\", \"narrate what we did\", \"session narration\". Output is .ax/narrations/<session-id>.json for the ax studio narration view. Do",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不总结代码差异，而是记录决策轨迹：用户纠正、放弃的尝试、工具报错。这些从不进 PR 的暗线。",
+ "why_en": "It doesn't diff code—it traces decisions: your corrections, abandoned attempts, tool errors. The subplot PRs never show becomes.",
  "repo": "Necmttn/ax",
  "owner": "Necmttn",
  "path": "skills/narrate",
@@ -27,5 +27,7 @@
   "copy": "cp -r ax/skills/narrate ~/.claude/skills/narrate",
   "dir": "~/.claude/skills/narrate"
  },
- "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9"
+ "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9",
+ "limit_zh": "只认 ax studio 生态，输出固定为 .ax/narrations/<session-id>.json。",
+ "limit_en": "Tied to ax studio only; writes .ax/narrations/<session-id>.json. No other workflow, no prose summary—outside ax's viewer, the file is inert."
 }

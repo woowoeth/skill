@@ -2,12 +2,12 @@
  "id": "wshuyi-x-article-publisher-skill-x-article-publisher",
  "kind": "skill",
  "name": "x-article-publisher",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：x-article-publisher。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 Markdown 文章一键发布成 X 长文",
+ "tagline_zh": "写好的 .md 还在手动复制粘贴？它自动传封面、转富文本，直接进 X Articles 编辑器。发推前少折腾十分钟。",
+ "tagline_en": "Stop copy-pasting your .md into X. It uploads the cover, converts to rich text, and drops you right into the.",
  "desc_en": "Publish Markdown articles to X (Twitter) Articles editor with proper formatting. Use when user wants to publish a Markdown file/URL to X Articles, or mentions \"publish to X\", \"post article to Twitter\", \"X article\", or wants help with X Premium article publishing. Handles cover image upload and converts Markdown to rich text automatically.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单塞进文本框——它走官方发布链路，封面图、标题、段落结构一次到位，Markdown 语法原样保留。",
+ "why_en": "It uses the real publishing pipeline, not a paste hack—cover, headings, and structure land intact, so you skip the manual.",
  "repo": "wshuyi/x-article-publisher-skill",
  "owner": "wshuyi",
  "path": "skills/x-article-publisher",
@@ -29,5 +29,7 @@
  },
  "repo_created_at": "2025-12-31",
  "skill_first_seen": "2025-12-31",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只认 Markdown 文件或公开 URL，本地图片需已可访问；产物停在 X 编辑器草稿，不负责最终发布。",
+ "limit_en": "Only Markdown files or public URLs; local images must be reachable. Stops at the X editor draft—no final publish. Requires X Premium; free accounts."
 }

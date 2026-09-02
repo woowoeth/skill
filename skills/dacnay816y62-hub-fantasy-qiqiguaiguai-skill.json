@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-fantasy-qiqiguaiguai-skill",
  "kind": "skill",
  "name": "fantasy-qiqiguaiguai",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：fantasy-qiqiguaiguai。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把朋友圈碎片变成有梗的编辑感社交图文",
+ "tagline_zh": "拍糊的票根、地铁上的怪人、随手截的图——三秒归类成 T1 人像 / T2 拼贴 / T3 压字。",
+ "tagline_en": "Blurry tickets, weird subway strangers, random screenshots — auto-sorted into T1 portrait / T2 collage / T3.",
  "desc_en": "将朋友圈碎片图片、截图、物件、人物与零散想法，整理成具有幽默、黑色幽默、玩梗和编辑感的社交内容；自动选择 T1 人像主体、T2 杂物拼贴或 T3 全图压字视觉模板，并输出可直接生成的视觉简报与成图提示词。Use when the user wants to turn life fragments, photos, screenshots, objects, portraits, pets, commute scenes, food, tickets, or loose ideas into a funny editorial social post, poster, cover image, visual brief, or image-generation prompt.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是滤镜堆砌，是先把素材按视觉层级拆成三类模板，再让文案和构图互相咬合——编辑感来自结构，不是贴纸。",
+ "why_en": "No filter stacking — it first breaks your mess into three visual hierarchies, then locks copy and composition together. The.",
  "repo": "dacnay816y62-hub/fantasy-qiqiguaiguai-skill",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dacnay816y62-hub/fantasy-qiqiguaiguai-skill.git",
   "copy": "mv fantasy-qiqiguaiguai-skill ~/.claude/skills/fantasy-qiqiguaiguai-skill",
   "dir": "~/.claude/skills/fantasy-qiqiguaiguai-skill"
- }
+ },
+ "limit_zh": "只吃图片类素材（照片/截图/物件图），纯文字想法得先配图才能用；产出到成图提示词为止，不负责实际渲染。",
+ "limit_en": "Images only (photos/screenshots/objects); text-only ideas need an image first. Output stops at image prompts — no rendering. Humor is tuned for."
 }

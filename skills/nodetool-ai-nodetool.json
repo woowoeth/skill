@@ -2,12 +2,12 @@
  "id": "nodetool-ai-nodetool",
  "kind": "collection",
  "name": "nodetool",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：nodetool。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "开源、Agent 优先的创意工作流画布",
+ "tagline_zh": "把 AI 当同事而不是工具：在可视化节点图上编排多智能体协作，让每个创意步骤都可回溯、可复用、可版本化。",
+ "tagline_en": "Treat AI as a teammate, not a tool: orchestrate multi-agent workflows on a visual node graph where every creative.",
  "desc_en": "The open-source, agent-first creative workspace.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "节点即函数、连线即数据流，Agent 作为一等公民嵌入画布。比 LangChain 更直观。",
+ "why_en": "Nodes are functions, edges are data flow, and agents are first-class citizens on the canvas. More intuitive than LangChain, more.",
  "repo": "nodetool-ai/nodetool",
  "owner": "nodetool-ai",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/nodetool-ai/nodetool.git",
   "copy": "mv nodetool ~/.claude/skills/nodetool",
   "dir": "~/.claude/skills/nodetool"
- }
+ },
+ "limit_zh": "只覆盖创意生成与编排层，不含模型训练/微调；需自行配置 LLM API 密钥；复杂多模态任务需熟悉其 Python 节。",
+ "limit_en": "Covers creative generation & orchestration only, no model training/fine-tuning; requires your own LLM API keys; complex multimodal tasks need Python."
 }

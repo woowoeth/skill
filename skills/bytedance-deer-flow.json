@@ -2,12 +2,12 @@
  "id": "bytedance-deer-flow",
  "kind": "collection",
  "name": "deer-flow",
- "title_zh": "",
- "tagline_zh": "调教技能的技能：deer-flow。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把长周期任务交给一个会自主研究的超级代理",
+ "tagline_zh": "从研究到写码再到产出，它自己拆解、自己跑沙盒、自己调工具。你只需丢一个目标，等几分钟到几小时，拿结果。",
+ "tagline_en": "From research to code to artifacts, it self-decomposes, runs sandboxes, and calls tools. Drop a goal; wait.",
  "desc_en": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是单次调用的聊天机器人，而是带记忆、子代理、消息网关的编排层。任务越长，它的相对优势越明显。",
+ "why_en": "Not a single-shot chatbot, but an orchestration layer with memory, subagents, and a message gateway. The longer the task, the.",
  "repo": "bytedance/deer-flow",
  "owner": "bytedance",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv deer-flow ~/.claude/skills/deer-flow",
   "dir": "~/.claude/skills/deer-flow"
  },
- "cover": "https://private-user-images.githubusercontent.com/1003147/621907406-077edef4-d560-41af-bb0d-d0a5f14fcc20.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDgzODAsIm5iZiI6MTc4Njg0ODA4MCwicGF0aCI6Ii8xMDAzMTQ3LzYyMTkwNzQwNi0wNzdlZGVmNC1kNTYwLTQxYWYtYmIwZC1kMGE1ZjE0ZmNjMjAucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDgxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA4MTZUMDI0MTIwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NTM0ZTRkYTk4NWU2N2JjN2NmMGFlMzE5YzkyY2JjMjk3MmY5MzlmOWVmMWY4ZTNjN2JlZTE5ZmNkOTliMmM3OSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.6tRJWbpBZWAwY8NQftD_11TwJ8oLQuRyEEY4RX1HAKg"
+ "cover": "https://private-user-images.githubusercontent.com/1003147/621907406-077edef4-d560-41af-bb0d-d0a5f14fcc20.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDgzODAsIm5iZiI6MTc4Njg0ODA4MCwicGF0aCI6Ii8xMDAzMTQ3LzYyMTkwNzQwNi0wNzdlZGVmNC1kNTYwLTQxYWYtYmIwZC1kMGE1ZjE0ZmNjMjAucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDgxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA4MTZUMDI0MTIwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NTM0ZTRkYTk4NWU2N2JjN2NmMGFlMzE5YzkyY2JjMjk3MmY5MzlmOWVmMWY4ZTNjN2JlZTE5ZmNkOTliMmM3OSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.6tRJWbpBZWAwY8NQftD_11TwJ8oLQuRyEEY4RX1HAKg",
+ "limit_zh": "只适合能拆成明确子目标的长任务；需要 Docker 沙盒环境；不处理实时交互式对话，且首次配置子代理与工具链要花半天。",
+ "limit_en": "Only for long tasks decomposable into clear subgoals; needs Docker sandbox; no real-time chat; initial subagent/toolchain setup takes half a day."
 }

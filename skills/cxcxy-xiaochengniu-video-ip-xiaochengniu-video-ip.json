@@ -2,12 +2,12 @@
  "id": "cxcxy-xiaochengniu-video-ip-xiaochengniu-video-ip",
  "kind": "skill",
  "name": "xiaochengniu-video-ip",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：xiaochengniu-video-ip。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把教学视频里的吉祥物嵌入做成可验证的工程",
+ "tagline_zh": "口播、字幕、分镜、时间轴全读一遍，自动决定小橙牛何时出现、什么表情、站哪边、待多久。不挡字幕、不遮代码。",
+ "tagline_en": "Reads scripts, SRT, storyboards, and timelines to place a mascot that never covers captions or code. Outputs.",
  "desc_en": "将固定“小橙牛”教学 IP 智能嵌入知识讲解、课程、教程、AI/工具教学、概念解释和学习类视频。读取口播、SRT、时间轴 JSON、分镜、截图或 Remotion/HyperFrames 工程，自动决定是否出现、语义动作、表情、左右位置、尺寸、持续时间与轻量动效；生成并验证 mascot-overlays.json，可直接安装透明 PNG 和组件。用户提到小橙牛、牛来、教学牛角色、在视频里加入吉祥物/学习陪伴角色，或要求不遮挡字幕、人物、代码、UI 地插入角色时使用。不要用于无关封面、重绘角色或把角色高频当装饰贴纸。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是贴纸，是语义调度：它读口播和分镜判断动作与表情，还跑验证脚本确保不遮挡关键内容。",
+ "why_en": "Not a sticker—it parses scripts and storyboards for semantic timing, then validates overlays against captions and UI. Ships as.",
  "repo": "cxcxy/xiaochengniu-video-ip",
  "owner": "cxcxy",
  "path": "xiaochengniu-video-ip",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/cxcxy/xiaochengniu-video-ip.git",
   "copy": "cp -r xiaochengniu-video-ip/xiaochengniu-video-ip ~/.claude/skills/xiaochengniu-video-ip",
   "dir": "~/.claude/skills/xiaochengniu-video-ip"
- }
+ },
+ "limit_zh": "只认小橙牛这一只角色，不重绘、不换皮。需要你提供口播/SRT/时间轴等结构化输入；只有成片没有工程文件，它无法反推。",
+ "limit_en": "Only works with the Xiaochengniu mascot—no redraws. Needs structured inputs (script/SRT/timeline); can't reverse-engineer from a final video."
 }

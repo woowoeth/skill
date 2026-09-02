@@ -2,12 +2,12 @@
  "id": "cxcxy-dy-travel-ticket-poster",
  "kind": "skill",
  "name": "dy-travel-ticket-poster",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：dy-travel-ticket-poster。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把旅行照片变成带参考锁定的 3:4 票根海报",
+ "tagline_zh": "照片秒变咖啡票、电影票、旅行票，背景由 12 套画廊风格自动匹配。默认近纯色底纹，批量统一色系，参考锚定材质不跑偏。",
+ "tagline_en": "Turn photos into 3:4 ticket posters for travel, coffee, or movies. 12 gallery styles auto-match backgrounds.",
  "desc_en": "Convert user-supplied photos into reference-locked 3:4 travel, coffee, or movie ticket posters, and apply a configurable 12-style gallery-derived background system to existing tickets, cards, posters, photos, or products. Defaults to a photo-adaptive near-solid background with very subtle tactile texture, supports optional batch-wide unified color families, explicit reference-anchored material and",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是滤镜堆叠，而是把参考图当锚点锁材质与色调，背景系统按图自适应，批量时还能强制统一色系。",
+ "why_en": "Not a filter stack—it anchors material and tone to a reference, adapts backgrounds per photo, and can force unified color.",
  "repo": "cxcxy/dy-travel-ticket-poster",
  "owner": "cxcxy",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/cxcxy/dy-travel-ticket-poster.git",
   "copy": "mv dy-travel-ticket-poster ~/.claude/skills/dy-travel-ticket-poster",
   "dir": "~/.claude/skills/dy-travel-ticket-poster"
- }
+ },
+ "limit_zh": "只吃用户自供照片，且必须是 3:4 构图；参考锁定只作用于背景与材质，不重绘主体；批量统一色系需手动开启。",
+ "limit_en": "Inputs must be user-supplied photos in 3:4; reference-locking affects only background/material, not subject redraw; batch color families require."
 }

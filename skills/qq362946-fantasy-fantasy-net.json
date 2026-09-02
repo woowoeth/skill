@@ -2,12 +2,12 @@
  "id": "qq362946-fantasy-fantasy-net",
  "kind": "skill",
  "name": "fantasy-net",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：fantasy-net。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 C# 开发者装一个 Fantasy 服务器/Un",
+ "tagline_zh": "改 Fantasy 服务器代码或 Unity 客户端时，不用再翻 ECS、FTask、路由、K8s 文档——它直接。",
+ "tagline_en": "Stop flipping through Fantasy docs when editing server or Unity code — it reviews and plans using Fantasy's own.",
  "desc_en": "This guide applies to development and code review for Fantasy / Fantasy.Net / Fantasy.Unity written in C#. Use it when a task involves Fantasy server code or Unity client code using Fantasy, ECS entities/components/systems, scenes and subscenes, FTask, network handlers/messages/protocols, Address or Roaming routing, Control Center and service discovery, Kubernetes deployment and Pod DNS binding, N",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是通用 C# 助手，而是把 Fantasy 的实体/组件/系统、子场景、网络消息。",
+ "why_en": "Not a generic C# helper — it's loaded with Fantasy's ECS, subscenes, FTask, routing, service discovery, and Pod DNS rules, so.",
  "repo": "qq362946/Fantasy",
  "owner": "qq362946",
  "path": "Skills/fantasy-net",
@@ -27,5 +27,7 @@
   "copy": "cp -r Fantasy/Skills/fantasy-net ~/.claude/skills/fantasy-net",
   "dir": "~/.claude/skills/fantasy-net"
  },
- "cover": "https://socialify.git.ci/qq362946/Fantasy/image?custom_description=%F0%9F%8E%AE+%E4%B8%93%E4%B8%BA%E5%A4%A7%E5%9E%8B%E5%A4%9A%E4%BA%BA%E5%9C%A8%E7%BA%BF%E6%B8%B8%E6%88%8F%E6%89%93%E9%80%A0%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%86%E6%9E%B6+%0A%F0%9F%9A%80+%E7%94%A8C%23+%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E6%B8%B8%E6%88%8F%E5%B8%9D%E5%9B%BD+%7C+%E4%BB%8E%E5%B0%8F%E5%9E%8B%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F%E5%88%B0%E5%A4%9A%E4%BA%BA%E5%9C%A8%E7%BA%BF%E5%A4%A7%E5%9E%8B%E6%B8%B8%E6%88%8F%0A%E2%9A%A1+%E9%9B%B6%E5%8F%8D%E5%B0%84+%7C+%F0%9F%9A%80+Native+AOT+%7C+%F0%9F%8C%90+%E5%A4%9A%E5%8D%8F%E8%AE%AE+%7C+%F0%9F%94%A5+%E5%88%86%E5%B8%83%E5%BC%8F&amp;description=1&amp;font=Inter&amp;forks=1&amp;issues=1&amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII%3D&amp;name=1&amp;pattern=Signal&amp;pulls=1&amp;stargazers=1&amp;theme=Auto"
+ "cover": "https://socialify.git.ci/qq362946/Fantasy/image?custom_description=%F0%9F%8E%AE+%E4%B8%93%E4%B8%BA%E5%A4%A7%E5%9E%8B%E5%A4%9A%E4%BA%BA%E5%9C%A8%E7%BA%BF%E6%B8%B8%E6%88%8F%E6%89%93%E9%80%A0%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%86%E6%9E%B6+%0A%F0%9F%9A%80+%E7%94%A8C%23+%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E6%B8%B8%E6%88%8F%E5%B8%9D%E5%9B%BD+%7C+%E4%BB%8E%E5%B0%8F%E5%9E%8B%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F%E5%88%B0%E5%A4%9A%E4%BA%BA%E5%9C%A8%E7%BA%BF%E5%A4%A7%E5%9E%8B%E6%B8%B8%E6%88%8F%0A%E2%9A%A1+%E9%9B%B6%E5%8F%8D%E5%B0%84+%7C+%F0%9F%9A%80+Native+AOT+%7C+%F0%9F%8C%90+%E5%A4%9A%E5%8D%8F%E8%AE%AE+%7C+%F0%9F%94%A5+%E5%88%86%E5%B8%83%E5%BC%8F&amp;description=1&amp;font=Inter&amp;forks=1&amp;issues=1&amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII%3D&amp;name=1&amp;pattern=Signal&amp;pulls=1&amp;stargazers=1&amp;theme=Auto",
+ "limit_zh": "只覆盖 Fantasy 系（Fantasy/Fantasy.Net/Fantasy.Unity）的 C# 开发与代码评。",
+ "limit_en": "Only for Fantasy-family C# dev/review (Fantasy/Fantasy.Net/Fantasy.Unity). Outside this framework it misfires. No live K8s debugging — stops at."
 }

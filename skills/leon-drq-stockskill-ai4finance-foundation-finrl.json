@@ -2,12 +2,12 @@
  "id": "leon-drq-stockskill-ai4finance-foundation-finrl",
  "kind": "skill",
  "name": "ai4finance-foundation-finrl",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：ai4finance-foundation-finrl。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用强化学习构建量化研究数据集与离线策略回测",
+ "tagline_zh": "不接实盘，只做研究：把行情数据变成 FinRL 风格的状态-动作样本，离线跑通训练-验证-交易全流程。",
+ "tagline_en": "No live trading, just research: turn market data into FinRL-style state-action samples, run train-validate-trade.",
  "desc_en": "Build FinRL-inspired reinforcement-learning research datasets and offline strategy evaluations using QVeris-routed market data. Use for train-validate-trade experiments, state and reward design, risk controls, walk-forward evaluation, and paper-trading research without live order execution.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把「数据管道」和「策略评估」焊死在一起——QVeris 路由的行情直接进状态设计。",
+ "why_en": "It welds data pipeline to strategy evaluation—QVeris-routed market data flows straight into state design, no DIY CSV scrubbing.",
  "repo": "Leon-Drq/stockskill",
  "owner": "Leon-Drq",
  "path": "skills/ai4finance-foundation-finrl",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Leon-Drq/stockskill.git",
   "copy": "cp -r stockskill/skills/ai4finance-foundation-finrl ~/.claude/skills/ai4finance-foundation-finrl",
   "dir": "~/.claude/skills/ai4finance-foundation-finrl"
- }
+ },
+ "limit_zh": "只认 QVeris 路由的行情格式，其他数据源得先自备转换器；只覆盖离线研究和 paper trading。",
+ "limit_en": "Only accepts QVeris-routed market data; other sources need custom converters. Offline research and paper trading only—no live order execution."
 }

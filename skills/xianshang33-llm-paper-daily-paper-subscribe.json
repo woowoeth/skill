@@ -2,12 +2,12 @@
  "id": "xianshang33-llm-paper-daily-paper-subscribe",
  "kind": "skill",
  "name": "paper-subscribe",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：paper-subscribe。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "订阅中心化论文日报，定时生成并投递本地摘要",
+ "tagline_zh": "每天自动拉取论文 feed，生成一份本地 digest 并按计划送达。适合固定时间刷论文、又不想被多源信息冲散注意。",
+ "tagline_en": "Pull the daily paper feed, build a local digest, and get it delivered on schedule. For researchers who want one.",
  "desc_en": "Subscribe to the centrally generated paper-daily feed, prepare a local digest, and deliver it on a schedule.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把『订阅-摘要-投递』做成闭环，不依赖任何外部推送服务，全部在本地跑，调度逻辑透明可改。",
+ "why_en": "It closes the loop from feed to digest to delivery, all local and cron-driven — no cloud push, no opaque pipeline.",
  "repo": "xianshang33/llm-paper-daily",
  "owner": "xianshang33",
  "path": "skill/paper-subscribe",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/xianshang33/llm-paper-daily.git",
   "copy": "cp -r llm-paper-daily/skill/paper-subscribe ~/.claude/skills/paper-subscribe",
   "dir": "~/.claude/skills/paper-subscribe"
- }
+ },
+ "limit_zh": "只认 xianshang33/llm-paper-daily 这一个 feed 格式；摘要质量取决于上游。",
+ "limit_en": "Only parses the llm-paper-daily feed format; digest quality depends on upstream; delivery is local commands only (mail/notify), no built-in SMTP/IMAP."
 }

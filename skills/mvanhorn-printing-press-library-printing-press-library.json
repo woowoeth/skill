@@ -2,12 +2,12 @@
  "id": "mvanhorn-printing-press-library-printing-press-library",
  "kind": "skill",
  "name": "printing-press-library",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：printing-press-library。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "按需搜索并安装匹配任务的命令行工具",
+ "tagline_zh": "别再满 GitHub 翻找 CLI、API 封装或爬虫脚本。输入任务描述，它直接检索 Printing Press。",
+ "tagline_en": "Stop hunting GitHub for the right CLI, scraper, or API wrapper. Describe the task, it finds and installs the.",
  "desc_en": "Use when looking for a CLI, API wrapper, scraper, data-source tool, automation tool, or focused agent skill for a task; searches the Printing Press Library and installs matching tools.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把「找工具」变成「装工具」一步到位，且只认经过筛选的库，避免装到半成品或废弃项目。",
+ "why_en": "Turns 'find a tool' into 'install a tool' in one step, and only pulls from a curated library, so you skip abandoned or.",
  "repo": "mvanhorn/printing-press-library",
  "owner": "mvanhorn",
  "path": "skills/printing-press-library",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/mvanhorn/printing-press-library.git",
   "copy": "cp -r printing-press-library/skills/printing-press-library ~/.claude/skills/printing-press-library",
   "dir": "~/.claude/skills/printing-press-library"
- }
+ },
+ "limit_zh": "只覆盖 Printing Press Library 已收录的工具；库外工具搜不到。安装依赖本机已有包管理器（如 np。",
+ "limit_en": "Only covers tools already in the Printing Press Library; anything outside is invisible. Requires a local package manager (npm/pip/brew) and won't."
 }

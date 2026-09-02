@@ -2,12 +2,12 @@
  "id": "microsoft-copilot-studio-gallery",
  "kind": "collection",
  "name": "copilot-studio-gallery",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：copilot-studio-gallery。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "微软官方 Copilot Studio 智能体与工作",
+ "tagline_zh": "别人踩坑试出来的智能体配方，你直接抄作业。从官方仓库里翻现成的 agent 和工作流，不用从零搓提示词。",
+ "tagline_en": "Battle-tested agent recipes from the community, ready to copy. Skip the prompt-tweaking grind with official.",
  "desc_en": "Community driven gallery of agents and workflows for Copilot Studio",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "微软官方维护，质量有背书。每个条目都带可复用的工作流骨架，比零散博客更系统，比自研更省试错成本。",
+ "why_en": "Microsoft-backed curation with reusable workflow skeletons. More structured than random blogs, cheaper than building from scratch.",
  "repo": "microsoft/copilot-studio-gallery",
  "owner": "microsoft",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/microsoft/copilot-studio-gallery.git",
   "copy": "mv copilot-studio-gallery ~/.claude/skills/copilot-studio-gallery",
   "dir": "~/.claude/skills/copilot-studio-gallery"
- }
+ },
+ "limit_zh": "只覆盖 Copilot Studio 生态，非通用 Agent 框架。需要你已有 Copilot Studio 环境。",
+ "limit_en": "Copilot Studio only; requires existing environment. Mostly concept demos, not production-hardened—you must add security and compliance yourself."
 }

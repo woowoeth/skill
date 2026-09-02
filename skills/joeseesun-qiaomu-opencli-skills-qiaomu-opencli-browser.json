@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-opencli-skills-qiaomu-opencli-browser",
  "kind": "skill",
  "name": "qiaomu-opencli-browser",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：qiaomu-opencli-browser。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "让 AI 用你已登录的 Chrome 操作任意网页",
+ "tagline_zh": "不用 API key、不用重登账号，AI 直接接管你开着的浏览器：导航、点击、输入、抓取、等待，全自动。",
+ "tagline_en": "No API key, no re-login. AI takes over your open Chrome to navigate, click, type, extract, and wait — fully.",
  "desc_en": "Make websites accessible for AI agents. Navigate, click, type, extract, wait — using Chrome with existing login sessions. No LLM API key needed.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "复用现有登录态，绕开验证码和权限墙；本地驱动 Chrome，数据不出机器，比云端浏览器方案更隐私可控。",
+ "why_en": "Reuses live sessions, bypassing logins and CAPTCHAs; drives Chrome locally, so data stays on your machine — more private and.",
  "repo": "joeseesun/qiaomu-opencli-skills",
  "owner": "joeseesun",
  "path": "qiaomu-opencli-browser",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/joeseesun/qiaomu-opencli-skills.git",
   "copy": "cp -r qiaomu-opencli-skills/qiaomu-opencli-browser ~/.claude/skills/qiaomu-opencli-browser",
   "dir": "~/.claude/skills/qiaomu-opencli-browser"
- }
+ },
+ "limit_zh": "只认本机已装的 Chrome（含调试端口），且页面必须是标准 DOM；遇到 iframe 嵌套或 Shadow DOM。",
+ "limit_en": "Requires local Chrome with debug port; only standard DOM works — iframes and Shadow DOM slip through, and hard CAPTCHAs still need a human."
 }

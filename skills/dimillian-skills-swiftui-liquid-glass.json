@@ -2,12 +2,12 @@
  "id": "dimillian-skills-swiftui-liquid-glass",
  "kind": "skill",
  "name": "swiftui-liquid-glass",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：swiftui-liquid-glass。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 SwiftUI 界面升级成 iOS 26 液态玻",
+ "tagline_zh": "新界面想上 Liquid Glass 却怕踩 API 坑？它能照着 iOS 26 规范实现、重构、审查。",
+ "tagline_en": "Adopting Liquid Glass in SwiftUI? Get implementation, refactor, and review that checks correctness, performance.",
  "desc_en": "Implement, review, or improve SwiftUI features using the iOS 26+ Liquid Glass API. Use when asked to adopt Liquid Glass in new SwiftUI UI, refactor an existing feature to Liquid Glass, or review Liquid Glass usage for correctness, performance, and design alignment.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是贴一层模糊滤镜，而是按 Apple 的 API 语义生成可维护代码；审查时会逐条对照设计规范。",
+ "why_en": "It doesn't fake the effect with blur overlays—it generates code following Apple's API semantics, and reviews against design.",
  "repo": "Dimillian/Skills",
  "owner": "Dimillian",
  "path": "swiftui-liquid-glass",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Dimillian/Skills.git",
   "copy": "cp -r Skills/swiftui-liquid-glass ~/.claude/skills/swiftui-liquid-glass",
   "dir": "~/.claude/skills/swiftui-liquid-glass"
- }
+ },
+ "limit_zh": "只认 iOS 26+ 的 SwiftUI 项目；若你的部署目标低于 iOS 26，或界面不是 SwiftUI 而是 U。",
+ "limit_en": "Only works for SwiftUI projects targeting iOS 26+. For UIKit/AppKit or lower deployment targets, it produces nothing usable."
 }

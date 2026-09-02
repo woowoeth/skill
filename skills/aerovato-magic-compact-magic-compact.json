@@ -2,12 +2,12 @@
  "id": "aerovato-magic-compact-magic-compact",
  "kind": "skill",
  "name": "magic-compact",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：magic-compact。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一键压缩当前 Claude Code 会话上下文",
+ "tagline_zh": "会话越聊越长，上下文快爆了？敲一下就把历史压成摘要，腾出窗口继续干，不用开新会话重讲一遍。",
+ "tagline_en": "Session dragging on and context about to blow? One command compresses the history into a summary, freeing the.",
  "desc_en": "Compact this Claude Code session.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把对话历史就地蒸馏成结构化摘要，保留关键决策与未竟事项，而非粗暴截断。压缩后仍可续聊。",
+ "why_en": "It distills the conversation in-place into a structured digest—key decisions and open threads preserved, not just truncated.",
  "repo": "aerovato/magic-compact",
  "owner": "aerovato",
  "path": "packages/claude-code-plugin/skills/magic-compact",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/aerovato/magic-compact.git",
   "copy": "cp -r magic-compact/packages/claude-code-plugin/skills/magic-compact ~/.claude/skills/magic-compact",
   "dir": "~/.claude/skills/magic-compact"
- }
+ },
+ "limit_zh": "只适用于 Claude Code 的交互式会话，不处理纯脚本或管道输入；压缩后原始逐字记录即被丢弃，无法回滚。",
+ "limit_en": "Only works inside interactive Claude Code sessions, not scripts or piped input. Original verbatim transcript is discarded after compaction—no."
 }

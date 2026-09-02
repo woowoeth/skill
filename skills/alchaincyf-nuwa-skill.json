@@ -2,12 +2,12 @@
  "id": "alchaincyf-nuwa-skill",
  "kind": "skill",
  "name": "huashu-nuwa",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：huashu-nuwa。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任何人的思维方式蒸馏成一个能装的 skill",
+ "tagline_zh": "输入人名或模糊需求，自动深度调研、提炼思维框架，生成可运行的人物 Skill。从「我想提升决策质量」到「做个芒格视。",
+ "tagline_en": "Feed it a name or a vague need—it researches, distills the thinking framework, and outputs a runnable persona.",
  "desc_en": "女娲造人：输入人名/主题/甚至只是模糊需求，自动深度调研→思维框架提炼→生成可运行的人物Skill。 两种入口：(1)明确人名→直接蒸馏 (2)模糊需求→诊断推荐→再蒸馏。 触发词：「造skill」「蒸馏XX」「女娲」「造人」「XX的思维方式」「做个XX视角」「更新XX的skill」。 模糊需求也触发：「我想提升决策质量」「有没有一种思维方式能帮我...」「我需要一个思维顾问」。 English triggers: \"distill [person]\", \"nuwa\", \"create a [person] perspective skill\", \"how does [person] think\", \"I need a thinking advisor\".",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单问答，而是先做深度调研再提炼框架，产出的是可执行的 Skill 而非聊天记录。",
+ "why_en": "It doesn't chat—it researches, distills, and compiles a runnable Skill. Vague needs get diagnosed and matched to a persona.",
  "repo": "alchaincyf/nuwa-skill",
  "owner": "alchaincyf",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/nuwa-skill"
  },
  "repo_created_at": "2026-04-05",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只蒸馏「思维方式」，不产出具体知识库或数据文件；若目标人物公开资料稀少（如非公众人物），调研结果会偏薄。",
+ "limit_en": "Distills thinking frameworks only—no knowledge bases or data files. Sparse public info on obscure figures yields shallow Skills."
 }

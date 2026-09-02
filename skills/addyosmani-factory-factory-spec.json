@@ -2,12 +2,12 @@
  "id": "addyosmani-factory-factory-spec",
  "kind": "skill",
  "name": "factory-spec",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：factory-spec。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把模糊工厂问题切成四片可执行规格",
+ "tagline_zh": "开工前先过四道闸：产品、行为、设计、实现。每个切片都过人工确认，不让你对着空气写代码。",
+ "tagline_en": "Before coding, slice the vague ask into product, behavior, design, and implementation—each human-approved, so you.",
  "desc_en": "Turn an ambiguous factory issue into human-approved product, behavior, design, and implementation slices. Use interactively before implementation.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是生成一份大而全的文档，而是按决策层级逐片确认，每片独立可审、可改、可弃，把返工成本压到最低。",
+ "why_en": "It doesn't dump one monolithic spec—it slices by decision layer, each independently reviewable and editable, so rework stays.",
  "repo": "addyosmani/factory",
  "owner": "addyosmani",
  "path": "template/.agents/skills/factory-spec",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/addyosmani/factory.git",
   "copy": "cp -r factory/template/.agents/skills/factory-spec ~/.claude/skills/factory-spec",
   "dir": "~/.claude/skills/factory-spec"
- }
+ },
+ "limit_zh": "只处理工厂/制造类issue，且必须有人工逐片确认；若你跳过确认直接写码，切片会停在实现层不产出代码。",
+ "limit_en": "Factory/manufacturing issues only; requires human sign-off per slice. Skip review and it stops at implementation—no code. Not for refactors or tech."
 }

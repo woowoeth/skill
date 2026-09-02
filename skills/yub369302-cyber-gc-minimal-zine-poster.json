@@ -2,12 +2,12 @@
  "id": "yub369302-cyber-gc-minimal-zine-poster",
  "kind": "skill",
  "name": "gc-minimal-zine-poster-v0-1",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：gc-minimal-zine-poster-v0-1。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把主题变成一张留白极简的日韩风杂志海报",
+ "tagline_zh": "给一句话、一张照片或一个念头，就生成诗意海报提示词和配图。大留白、旧纸纹理、实验字体，像独立杂志内页。",
+ "tagline_en": "Turn a phrase, photo, or mood into a poetic zine poster prompt plus matching image—quiet, aged-paper, editorial.",
  "desc_en": "Generate Minimal Zine Poster v0.1 poetic paper-poster prompts and the matching generated image. Use when the user gives a theme, sentence, object, mood, article idea, photo, or content brief and wants a quiet Japanese/Korean zine-like editorial poster with large negative space, aged paper texture, experimental typography, restrained color accents, and a generated bitmap image.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不堆模板，而是把输入拆成版式、纸张、字型、色调四层，再重组为可执行的提示词，让每张海报都有手作感。",
+ "why_en": "It decomposes input into layout, paper, type, and palette, then reweaves them into a concrete prompt—so every poster feels.",
  "repo": "yub369302-cyber/gc-minimal-zine-poster",
  "owner": "yub369302-cyber",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/yub369302-cyber/gc-minimal-zine-poster.git",
   "copy": "mv gc-minimal-zine-poster ~/.claude/skills/gc-minimal-zine-poster",
   "dir": "~/.claude/skills/gc-minimal-zine-poster"
- }
+ },
+ "limit_zh": "只输出提示词和一张生成图，不负责排版或印刷。需要你本地有图像生成API密钥；若输入是复杂长文，它会简化成单一意象。",
+ "limit_en": "Outputs only a prompt and one image; no layout or print. Requires your own image-gen API key. Long inputs get condensed to one core image, losing."
 }

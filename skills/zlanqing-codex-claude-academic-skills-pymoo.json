@@ -2,12 +2,12 @@
  "id": "zlanqing-codex-claude-academic-skills-pymoo",
  "kind": "skill",
  "name": "pymoo",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：pymoo。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "多目标优化：一次跑出整条帕累托前沿",
+ "tagline_zh": "调参只给一个解？工程上要的是权衡。NSGA-II/III、MOEA/D 内置，ZDT/DTLZ 基准齐。",
+ "tagline_en": "One solution isn't enough for real trade-offs. NSGA-II/III, MOEA/D built-in, ZDT/DTLZ benchmarks ready—see the.",
  "desc_en": "Multi-objective optimization framework. NSGA-II, NSGA-III, MOEA/D, Pareto fronts, constraint handling, benchmarks (ZDT, DTLZ), for engineering design and optimization problems.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是调包侠：约束处理、种群初始化、终止准则都暴露成可改参数，能嵌进你自己的评估循环，而不是被框架牵着走。",
+ "why_en": "Not a black box: constraint handling, initialization, and termination are all exposed—drop it into your own evaluation loop.",
  "repo": "zLanqing/codex-claude-academic-skills",
  "owner": "zLanqing",
  "path": "scientific-toolkit-skill/references/scientific-skills/pymoo",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/zLanqing/codex-claude-academic-skills.git",
   "copy": "cp -r codex-claude-academic-skills/scientific-toolkit-skill/references/scientific-skills/pymoo ~/.claude/skills/pymoo",
   "dir": "~/.claude/skills/pymoo"
- }
+ },
+ "limit_zh": "只覆盖连续/离散参数型优化，不碰组合爆炸的离散搜索（如 TSP）。目标函数必须能写成 Python 函数。",
+ "limit_en": "Only for parameter-based optimization, not combinatorial search (e.g., TSP). Objectives must be Python-callable; wrap your simulator yourself."
 }

@@ -2,12 +2,12 @@
  "id": "dimillian-skills",
  "kind": "collection",
  "name": "Skills",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Skills。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把个人工作流打包成可复用的技能集",
+ "tagline_zh": "别人晒技能，你直接抄作业。这是作者 Dimillian 的 Codex 技能仓库，装下就能复用他调教好的 Agen。",
+ "tagline_en": "Stop reinventing agent workflows. This is Dimillian's personal Codex skill collection — copy his setup, skip the.",
  "desc_en": "My Codex Skills",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是单个技能，而是作者真实使用中的整套配置。每个 skill 都经过实战打磨，装完即得一套经过验证的 。",
+ "why_en": "A living collection, not a demo. Every skill here was shaped by real usage — you inherit battle-tested agent behavior, not toy.",
  "repo": "Dimillian/Skills",
  "owner": "Dimillian",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Dimillian/Skills.git",
   "copy": "mv Skills ~/.claude/skills/Skills",
   "dir": "~/.claude/skills/Skills"
- }
+ },
+ "limit_zh": "仅含作者个人仓库中的技能，不保证覆盖你的领域；依赖 Codex 环境，且技能间可能互相引用，单独抽取某个可能缺上下文。",
+ "limit_en": "Only covers Dimillian's own workflow; assumes Codex runtime; skills may reference each other, so cherry-picking one could break."
 }

@@ -2,12 +2,12 @@
  "id": "alchaincyf-seedance-skill",
  "kind": "skill",
  "name": "huashu-seedance",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：huashu-seedance。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把视频创意先变成白模再生成，杜绝翻车",
+ "tagline_zh": "拍脑袋写提示词，出片全靠抽卡？先让 Seedance 2.5 把需求澄清成参数，渲染一版白模参考视频。",
+ "tagline_en": "Stop gambling on prompt luck. Clarify specs, render a white-model preview, pass geometry checks, then.",
  "desc_en": "Seedance 2.5 视频生成全流程。先把需求澄清成参数（时长/画幅/机位类型/跟随方式/要不要切镜），再用 scene.json 引擎生成白模参考视频（渲染前有几何体检），也能从用户给的照片反解出白模，最后按官方规范生成与白模严格对齐的提示词。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是黑盒抽卡，而是把视频生成拆成「需求澄清→白模预演→提示词对齐」三段，每一步都有中间产物可检查。",
+ "why_en": "No black-box gambling. It splits video gen into spec → white-model preview → aligned prompt, with inspectable artifacts at each.",
  "repo": "alchaincyf/seedance-skill",
  "owner": "alchaincyf",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/alchaincyf/seedance-skill.git",
   "copy": "mv seedance-skill ~/.claude/skills/seedance-skill",
   "dir": "~/.claude/skills/seedance-skill"
- }
+ },
+ "limit_zh": "只认 Seedance 2.5 官方 API；白模引擎只覆盖机位/跟随/切镜三类参数，不处理光影、材质、物理特效。",
+ "limit_en": "Seedance 2.5 API only. White-model covers camera/movement/cut only—no lighting, material, or FX. Photo-to-model accepts single frontal shot."
 }

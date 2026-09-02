@@ -2,12 +2,12 @@
  "id": "gptme-gptme-python-repl",
  "kind": "skill",
  "name": "python-repl",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：python-repl。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "在对话里直接跑 Python 并自动纠错",
+ "tagline_zh": "不用切终端、不用手动贴报错。它自己跑代码、读 traceback、改完再跑，直到出结果或坦白卡住。",
+ "tagline_en": "Run Python inline, auto-fix errors, and iterate without leaving the chat.",
  "desc_en": "Interactive Python REPL automation with common helpers and best practices",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不止是执行器：它把 REPL 会话状态、常用 helper 和最佳实践打包，报错后自动重试。",
+ "why_en": "Not just a runner: it keeps session state, bundles helpers, and retries after errors—like a pair programmer in your terminal.",
  "repo": "gptme/gptme",
  "owner": "gptme",
  "path": "gptme/lessons/skills/python-repl",
@@ -27,5 +27,7 @@
   "copy": "cp -r gptme/gptme/lessons/skills/python-repl ~/.claude/skills/python-repl",
   "dir": "~/.claude/skills/python-repl"
  },
- "cover": "https://gptme.org/media/logo.png"
+ "cover": "https://gptme.org/media/logo.png",
+ "limit_zh": "只覆盖 Python 解释器交互，不处理文件系统持久化或环境依赖；每次对话状态独立，装包需自行 pip install。",
+ "limit_en": "Only interactive Python; no persistent FS or env setup. Session state resets per chat; long outputs are truncated."
 }

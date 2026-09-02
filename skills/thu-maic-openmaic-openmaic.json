@@ -2,12 +2,12 @@
  "id": "thu-maic-openmaic-openmaic",
  "kind": "skill",
  "name": "openmaic",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：openmaic。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把多智能体互动课堂生成成可二开的本地项目",
+ "tagline_zh": "别人演示完就关掉，你却能当场生成一个能跑的多智能体课堂，还能 fork 改 provider、存储、主题。",
+ "tagline_en": "Turn a live demo into your own forkable multi-agent classroom—swap providers, storage, themes, and make it yours.",
  "desc_en": "OpenMAIC assistant for setting up, generating, and extending OpenMAIC. Use when the user wants to use OpenMAIC, generate a multi-agent interactive classroom, or build on / extend / customize OpenMAIC and its @openmaic/* SDK (secondary development, 二开) — covers Live Demo or local setup, startup modes, provider keys, classroom generation, and secondary development (forking, providers/storage/themes,",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是包装好的黑盒，而是把 OpenMAIC 的启动、生成、二开路径全摊开，让你从「看演示」直接跳到「改。",
+ "why_en": "No black box—it lays bare the full setup, generation, and extension paths, so you jump from watching a demo to editing code.",
  "repo": "THU-MAIC/OpenMAIC",
  "owner": "THU-MAIC",
  "path": "skills/openmaic",
@@ -27,5 +27,7 @@
   "copy": "cp -r OpenMAIC/skills/openmaic ~/.claude/skills/openmaic",
   "dir": "~/.claude/skills/openmaic"
  },
- "cover": "https://vercel.com/button"
+ "cover": "https://vercel.com/button",
+ "limit_zh": "只覆盖 OpenMAIC 生态；需要你本机有 Node 环境和 provider API key；生成的是课堂骨架。",
+ "limit_en": "OpenMAIC-only; requires Node and provider keys; generates classroom skeleton, not content or grading—beyond that, you build it."
 }

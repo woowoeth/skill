@@ -2,12 +2,12 @@
  "id": "luji12-daily-photo-playground",
  "kind": "skill",
  "name": "daily-photo-playground",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：daily-photo-playground。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把随手拍变成小红书式情绪海报",
+ "tagline_zh": "照片还是那张照片，但被拆成色场、主体切出和几何块，重组成 3:4 竖版高饱和情绪画面，发出去就是不一样。",
+ "tagline_en": "Same photo, rebuilt into a 3:4 vertical, high-saturation mood poster—split into color fields, cut-out subject.",
  "desc_en": "将日常摄影照片解构并重构成适合小红书和抖音发布的 3:4 竖版高饱和情绪海报。用于从照片提取情绪、主体动作和视觉符号，将原场景拆成纯色色场、放大的主体切出、少量纯色几何和一个小型完整原照片窗口，再以暖白外部页面、更多连续留白和衬线体边缘排版重新构成画面；当用户想要艺术化重构的实验海报，而不是滤镜、写实静物页或整张原图加装饰时使用。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不调滤镜，而是先解构再重构：把原场景拆成纯色色场、放大主体和几何块，再配衬线排版。",
+ "why_en": "It doesn't filter—it deconstructs then rebuilds: color fields, enlarged subject, geometry, serif type. More graphic design than.",
  "repo": "luji12/daily-photo-playground",
  "owner": "luji12",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/luji12/daily-photo-playground.git",
   "copy": "mv daily-photo-playground ~/.claude/skills/daily-photo-playground",
   "dir": "~/.claude/skills/daily-photo-playground"
- }
+ },
+ "limit_zh": "只吃单张日常照片，输出是实验性海报，不是写实静物或整图加装饰；需要你提供情绪关键词，否则它只能按默认情绪硬拆。",
+ "limit_en": "Single casual photo only; output is an experimental poster, not realism or decorated original. Needs your mood keyword, else it defaults."
 }

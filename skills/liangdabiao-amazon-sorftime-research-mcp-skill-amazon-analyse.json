@@ -2,12 +2,12 @@
  "id": "liangdabiao-amazon-sorftime-research-mcp-skill-amazon-analyse",
  "kind": "skill",
  "name": "amazon-analyse",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：amazon-analyse。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "亚马逊竞品Listing全维度穿透分析器",
+ "tagline_zh": "输入ASIN，自动拆解竞品文案逻辑、评论关键词、市场动态，输出Markdown报告，让选品调研不再靠肉眼翻页。",
+ "tagline_en": "Drop an ASIN, get a full-spectrum teardown of rival listings—copy logic, review mining, market shifts—saved as.",
  "desc_en": "对亚马逊竞品Listing进行全维度穿透分析，包括文案逻辑、评论分析、关键词分析、市场动态等。分析完成后自动保存为Markdown报告文档到reports/目录。Invoke when user uses /amazon-analyse command with a product ASIN.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单抓数据，而是把文案、评论、关键词、市场四层叠起来交叉验证，结论直接落到报告。",
+ "why_en": "It cross-references copy, reviews, keywords, and market signals into one report—so you get synthesized intel, not raw dumps.",
  "repo": "liangdabiao/amazon-sorftime-research-MCP-skill",
  "owner": "liangdabiao",
  "path": "SKILLS/skills/amazon-analyse",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill.git",
   "copy": "cp -r amazon-sorftime-research-MCP-skill/SKILLS/skills/amazon-analyse ~/.claude/skills/amazon-analyse",
   "dir": "~/.claude/skills/amazon-analyse"
- }
+ },
+ "limit_zh": "只认亚马逊美国站ASIN，需联网且目标Listing有足够评论量；报告止于分析，不含运营建议或竞品定价策略。",
+ "limit_en": "US Amazon ASINs only; requires internet and sufficient review volume. Output is analysis, not pricing or strategy advice; invalid/empty listings."
 }

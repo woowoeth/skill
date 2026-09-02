@@ -2,12 +2,12 @@
  "id": "binggandata-bggg-skills-bggg-creator-image2ppt",
  "kind": "skill",
  "name": "bggg-creator-image2ppt",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：bggg-creator-image2ppt。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意图片/设计稿拆成可编辑 PPTX 的组装器",
+ "tagline_zh": "截图、海报、HTML/SVG 设计稿，一键变可编辑幻灯片。不再手动描框打字，版式由视觉模型理解，组件自动拼装。",
+ "tagline_en": "Turn screenshots, posters, or HTML/SVG designs into editable slides—no manual tracing, layout understood by.",
  "desc_en": "把图片、截图、海报、PPT 页面截图、HTML 或 SVG 设计稿转换成可编辑 PPTX 的 Codex skill。 当用户需要 image2ppt、image2pptx、图片转 PPT、截图转 PPT、PNG/JPEG 转可编辑幻灯片、 HTML/SVG 转 PPTX、把设计图拆成图片组件和文本框再拼成 PowerPoint、 或希望复用 Codex 内置生图能力把平面图重建为多元素可编辑 PPT 时，应该使用此 skill。 在 Codex 中处理二进制图片时，默认结合 imagegen skill：先用 Codex 视觉理解版式， 再用内置图片生成/编辑能力生成或清理多个组件图片，最后用本 skill 的脚本拼装 PPTX。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不直接转图片，而是先让 Codex 视觉理解版式，再用 imagegen 清理/生成组件。",
+ "why_en": "It doesn't just rasterize—uses Codex vision to parse layout, imagegen to clean/generate parts, then script-assembles, keeping.",
  "repo": "binggandata/bggg-skills",
  "owner": "binggandata",
  "path": "bggg-creator-image2ppt",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/binggandata/bggg-skills.git",
   "copy": "cp -r bggg-skills/bggg-creator-image2ppt ~/.claude/skills/bggg-creator-image2ppt",
   "dir": "~/.claude/skills/bggg-creator-image2ppt"
- }
+ },
+ "limit_zh": "需要 Codex 环境且依赖 imagegen skill；只产出 PPTX，不保留原始设计稿的动画/交互。",
+ "limit_en": "Requires Codex + imagegen skill; outputs PPTX only, no animations/interactions; complex charts or sketches may misparse—manual review needed."
 }

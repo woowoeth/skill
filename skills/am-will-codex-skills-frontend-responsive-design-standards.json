@@ -2,12 +2,12 @@
  "id": "am-will-codex-skills-frontend-responsive-design-standards",
  "kind": "skill",
  "name": "Frontend Responsive Design Standards",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：Frontend Responsive Design Standards。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一套规则让布局在手机到电视上都不破相",
+ "tagline_zh": "写响应式布局不用再靠猜断点、试像素。流式容器、弹性单位、媒体查询、触控尺寸一次给全，改完直接跨屏验收。",
+ "tagline_en": "Stop guessing breakpoints and pixel-pushing. Get fluid containers, flexible units, media queries, and touch.",
  "desc_en": "Build responsive, mobile-first layouts using fluid containers, flexible units, media queries, and touch-friendly design that works across all screen sizes. Use this skill when creating or modifying UI layouts, responsive grids, breakpoint styles, mobile navigation, or any interface that needs to adapt to different screen sizes. Apply when working with responsive CSS, media queries, viewport settin",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是 CSS 教程，是带决策顺序的规范：先定容器弹性，再定断点，最后补触控。照着走。",
+ "why_en": "Not a CSS tutorial—a decision-ordered standard: fluid containers first, breakpoints second, touch targets last. Follow it and.",
  "repo": "am-will/codex-skills",
  "owner": "am-will",
  "path": "skills/frontend-responsive-ui",
@@ -27,5 +27,7 @@
   "copy": "cp -r codex-skills/skills/frontend-responsive-ui ~/.claude/skills/frontend-responsive-ui",
   "dir": "~/.claude/skills/frontend-responsive-ui"
  },
- "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM"
+ "cover": "https://private-user-images.githubusercontent.com/42459108/537327691-c244cbdd-6f98-40b5-81f0-754aad546be4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY5MzU0MjYsIm5iZiI6MTc4NjkzNTEyNiwicGF0aCI6Ii80MjQ1OTEwOC81MzczMjc2OTEtYzI0NGNiZGQtNmY5OC00MGI1LTgxZjAtNzU0YWFkNTQ2YmU0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE3VDAyNTIwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTYxYjE2MmJlZDQwMzRhMzNlNGIxZDZlNWE0NDY0ZTMwZjAyNmEwOTAwMTRiMWNjMWZkOWUxYTkxMWViNjlmNDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.DQA38wIcsv-7L9PqBGfei_ZO6sMyGMMkaV1l7JwizAM",
+ "limit_zh": "只覆盖布局层：不管颜色、字体、动效和组件库。若项目已用 Tailwind 或 CSS-in-JS，规则需自行翻译。",
+ "limit_en": "Layout only: no color, type, motion, or component libs. Tailwind/CSS-in-JS need manual translation; smoothest on static HTML—dynamic heights in."
 }

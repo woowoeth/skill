@@ -2,12 +2,12 @@
  "id": "danny-avila-librechat-codebase-design",
  "kind": "skill",
  "name": "codebase-design",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：codebase-design。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把模块接口设计成深模块的共享词汇表",
+ "tagline_zh": "当你想划清接口边界、找深化机会、让代码更可测或更易被 AI 导航时，这套词汇让讨论不再各说各话。",
+ "tagline_en": "When you're drawing seams, deepening interfaces, or making code testable and AI-navigable, this shared vocabulary.",
  "desc_en": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不给你答案，而是给设计讨论一套共同语言——让「深模块」「接缝」这类概念可指认、可复用，避免空泛争论。",
+ "why_en": "It doesn't hand you answers—it hands you a shared language for design debates, so terms like 'deep module' and 'seam' become.",
  "repo": "danny-avila/LibreChat",
  "owner": "danny-avila",
  "path": ".claude/skills/codebase-design",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/danny-avila/LibreChat.git",
   "copy": "cp -r LibreChat/.claude/skills/codebase-design ~/.claude/skills/codebase-design",
   "dir": "~/.claude/skills/codebase-design"
- }
+ },
+ "limit_zh": "只提供词汇和判断框架，不产出具体代码或架构图。若你已明确知道接口怎么改，或团队没有设计讨论场景，它只会增加一层抽象。",
+ "limit_en": "Vocabulary only, no code or diagrams. If the interface change is already obvious, or no one's debating design, it adds abstraction without payoff."
 }

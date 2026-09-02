@@ -2,12 +2,12 @@
  "id": "leon-drq-stockskill-ai4finance-foundation-finrobot",
  "kind": "skill",
  "name": "ai4finance-foundation-finrobot",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：ai4finance-foundation-finrobot。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把上市公司财报与电话会蒸馏成结构化投研报告",
+ "tagline_zh": "写公司深度不再翻十年年报——QVeris 路由数据直取，估值、电话会、分析师预期一次成稿，证据链自动留痕。",
+ "tagline_en": "Stop digging through 10-Ks for a deep dive—QVeris-routed data feeds valuation, earnings calls, and analyst views.",
  "desc_en": "Produce FinRobot-inspired public-equity research with QVeris-routed company data. Use for evidence-backed company profiles, financial statement analysis, valuation, earnings-call review, analyst-expectation comparison, catalyst tracking, and structured investment research reports.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是抓网页拼摘要，而是按投研框架路由到 QVeris 结构化字段，输出带引用锚点的分析段落，可复核。",
+ "why_en": "It doesn't scrape and summarize—it routes to QVeris structured fields, producing cited, auditable analysis blocks you can verify.",
  "repo": "Leon-Drq/stockskill",
  "owner": "Leon-Drq",
  "path": "skills/ai4finance-foundation-finrobot",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Leon-Drq/stockskill.git",
   "copy": "cp -r stockskill/skills/ai4finance-foundation-finrobot ~/.claude/skills/ai4finance-foundation-finrobot",
   "dir": "~/.claude/skills/ai4finance-foundation-finrobot"
- }
+ },
+ "limit_zh": "只覆盖公开股权研究，不含另类数据与实时行情；依赖 QVeris 数据覆盖范围，小市值或海外冷门标的可能缺字段。",
+ "limit_en": "Public-equity only; no alt-data or live quotes. Coverage depends on QVeris—small caps or obscure foreign names may lack fields, requiring manual."
 }

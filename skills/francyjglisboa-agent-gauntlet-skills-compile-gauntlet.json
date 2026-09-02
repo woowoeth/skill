@@ -2,12 +2,12 @@
  "id": "francyjglisboa-agent-gauntlet-skills-compile-gauntlet",
  "kind": "skill",
  "name": "compile-gauntlet",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：compile-gauntlet。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把模糊想法编译成可执行的技能包",
+ "tagline_zh": "面对一段视频、一篇论文、一个截图或一句「做个类似的」，它能产出完整 Gauntlet Pack。不用再猜需求。",
+ "tagline_en": "Turn a video, paper, screenshot, or 'make something like this' into a complete Gauntlet Pack. Stop guessing.",
  "desc_en": "Convert vague goals, reference repositories, YouTube demonstrations, blogs, social discussions, screenshots, live products, papers, target data sources, or adaptation requests into complete agent-executable Gauntlet Packs. Use before implementation when requirements are underspecified, public evidence must be reconstructed into an independent production-grade product, a repository must be pivoted ",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单总结，而是把散落证据重构为独立可产出的规格：拆解、补全、编排成 agent 能直接跑的步骤链。",
+ "why_en": "Not a summarizer—it reconstructs scattered evidence into standalone, production-ready specs: decomposed, completed, and.",
  "repo": "FrancyJGLisboa/agent-gauntlet-skills",
  "owner": "FrancyJGLisboa",
  "path": "skills/compile-gauntlet",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/FrancyJGLisboa/agent-gauntlet-skills.git",
   "copy": "cp -r agent-gauntlet-skills/skills/compile-gauntlet ~/.claude/skills/compile-gauntlet",
   "dir": "~/.claude/skills/compile-gauntlet"
- }
+ },
+ "limit_zh": "只产出 Gauntlet Pack 规格文档，不写实现代码；需要目标域有可参照的公开证据（视频/仓库/论文）。",
+ "limit_en": "Outputs spec docs only, no code. Needs public evidence (video/repo/paper) to work from; pure verbal descriptions stall it. Stops at executable."
 }

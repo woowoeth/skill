@@ -2,12 +2,12 @@
  "id": "zhayujie-cowagent-image-generation",
  "kind": "skill",
  "name": "image-generation",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：image-generation。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把一句话变成一张图：文生图与图像编辑",
+ "tagline_zh": "说“画一只戴帽子的柴犬”就出图，说“把背景换成雪地”就改图。不用切工具、不用写参数，对话里直接完成视觉创作。",
+ "tagline_en": "Say it, see it. Generate or edit images right inside the chat—no tool-switching, no parameter fiddling.",
  "desc_en": "Generate or edit images from text prompts. Use when the user asks to create, draw, design, or edit an image, illustration, photo, icon, poster, or any visual content.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把“生成”和“编辑”收进同一个对话流，你描述完就能拿到结果，省去来回粘贴图片和提示词的笨拙步骤。",
+ "why_en": "One continuous loop from your words to the final image—no copy-pasting prompts or shuttling between apps.",
  "repo": "zhayujie/CowAgent",
  "owner": "zhayujie",
  "path": "skills/image-generation",
@@ -27,5 +27,7 @@
   "copy": "cp -r CowAgent/skills/image-generation ~/.claude/skills/image-generation",
   "dir": "~/.claude/skills/image-generation"
  },
- "cover": "https://private-user-images.githubusercontent.com/26161723/543901349-eca9a9ec-8534-4615-9e0f-96c5ac1d10a3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDkwNTEsIm5iZiI6MTc4Njg0ODc1MSwicGF0aCI6Ii8yNjE2MTcyMy81NDM5MDEzNDktZWNhOWE5ZWMtODUzNC00NjE1LTllMGYtOTZjNWFjMWQxMGEzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDAyNTIzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxOTQ1NTVmYmZjOTc5MGMxMjY5NWU5NTQ1ZDRiNDUzMjZkOTlkNGVlZWViYTZiYzkzYTNiMGY5Zjc3NzMwOWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.qGKSkd8gWS8KEWvwSX1uuak8SKSjQ6ynUDR2P_Rl50o"
+ "cover": "https://private-user-images.githubusercontent.com/26161723/543901349-eca9a9ec-8534-4615-9e0f-96c5ac1d10a3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODY4NDkwNTEsIm5iZiI6MTc4Njg0ODc1MSwicGF0aCI6Ii8yNjE2MTcyMy81NDM5MDEzNDktZWNhOWE5ZWMtODUzNC00NjE1LTllMGYtOTZjNWFjMWQxMGEzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwODE2VDAyNTIzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxOTQ1NTVmYmZjOTc5MGMxMjY5NWU5NTQ1ZDRiNDUzMjZkOTlkNGVlZWViYTZiYzkzYTNiMGY5Zjc3NzMwOWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.qGKSkd8gWS8KEWvwSX1uuak8SKSjQ6ynUDR2P_Rl50o",
+ "limit_zh": "只覆盖文生图和基于文本的编辑，不处理局部涂抹、图层或精细修图；生成质量取决于底层模型，复杂构图或长文本提示可能跑偏。",
+ "limit_en": "Text-to-image and text-driven edits only—no inpainting, layers, or fine retouch. Output quality depends on the underlying model; complex scenes or."
 }

@@ -2,12 +2,12 @@
  "id": "study8677-readme.skill-readme-skill",
  "kind": "skill",
  "name": "readme-skill",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：readme-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 AI 编码习惯量化成一份可分享的开发者档案",
+ "tagline_zh": "你天天用 Claude、Cursor、Codex，但 GitHub 主页只显示提交数。这份 skill 把六款 A。",
+ "tagline_en": "Your GitHub shows commits, not how you actually build with AI. This skill turns your usage across six AI tools.",
  "desc_en": "生成一份对外可分享、脱敏的 AI-Native 开发者 README。 量化展示我对 Claude Code + Codex CLI + Kiro (AWS) + Trae (ByteDance) + Gemini Antigravity (Google) + Cursor 的使用深度、AI 协作风格、 项目与领域分布、兴趣主题，以及与 GitHub 提交的产出关联。 Trigger when the user says: \"生成我的 AI 档案\" / \"做一份 AI-native README\" / \"分析我的 Claude / Codex / Kiro / Trae / Antigravity / Cursor 使用情况\" / \"总结我的 AI 使用\" / \"生成 AI 月度报告\" / \"按月份分析我的 AI 编码\" / \"分析 2026-05 的 AI 使用\" / \"build my",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单统计调用次数——它把工具使用与 GitHub 产出关联，按月份和项目域切片。",
+ "why_en": "It doesn't just count calls—it correlates tool usage with GitHub output, slices by month and domain, and quantifies your AI.",
  "repo": "study8677/Readme.skill",
  "owner": "study8677",
  "path": "skills/readme-skill",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/study8677/Readme.skill.git",
   "copy": "cp -r Readme.skill/skills/readme-skill ~/.claude/skills/readme-skill",
   "dir": "~/.claude/skills/readme-skill"
- }
+ },
+ "limit_zh": "只认六款工具（Claude Code、Codex CLI、Kiro、Trae、Antigravity。",
+ "limit_en": "Only reads local session logs from six tools (Claude Code, Codex CLI, Kiro, Trae, Antigravity, Cursor); requires those logs on this machine and."
 }

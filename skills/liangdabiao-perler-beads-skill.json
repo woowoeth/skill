@@ -2,12 +2,12 @@
  "id": "liangdabiao-perler-beads-skill",
  "kind": "skill",
  "name": "pindou-pattern",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：pindou-pattern。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意图片变成 205 色拼豆施工图",
+ "tagline_zh": "不用再对着屏幕数格子、猜色号。一张照片进去，带坐标、带用量统计的拼豆图纸出来，五种国产珠品牌色号直接对应。",
+ "tagline_en": "Stop guessing bead colors from a screen. Drop in any image, get a build-ready perler chart with coordinates.",
  "desc_en": "生成拼豆图纸（perler bead pattern）。把任意图片或像素数据量化为 205 色、5 大品牌色号（MARD/COCO/漫漫/盼盼/咪小窝）的拼豆施工图 PNG，含格内色号、行列坐标、加重网格线、色号用量统计，并可导出 CSV 物料清单。当用户提到拼豆、拼豆图纸、色号、像素画导出、把图片转成 N×N 拼豆、串珠/珠子图案、perler bead pattern、bead pattern 时使用；当用户对已生成图纸不满意（效果不好/不好看/颜色太乱/太杂/优化一下/AI 优化/重新弄好看点）时，先用 AI 图像编辑（基于原图参考图的 chibi 白底像素风改绘）再重新生成图纸。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单降色，而是对齐 5 家国产珠的实际色板，连 MARD 和 COCO 的细微差异都分开算。",
+ "why_en": "It quantizes against real palettes from 5 Chinese bead brands, not a generic RGB cube. Heavy grid lines and in-cell codes make.",
  "repo": "liangdabiao/perler-beads-skill",
  "owner": "liangdabiao",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/liangdabiao/perler-beads-skill.git",
   "copy": "mv perler-beads-skill ~/.claude/skills/perler-beads-skill",
   "dir": "~/.claude/skills/perler-beads-skill"
- }
+ },
+ "limit_zh": "只认 5 个品牌色号（MARD/COCO/漫漫/盼盼/咪小窝），其他牌子得自己对照。输出是静态 PNG 和 CSV。",
+ "limit_en": "Only maps to 5 specific bead brands (MARD/COCO/Manman/Panpan/MiXiaowo). Output is static PNG + CSV; no 3D preview or step-by-step animation. Blurry."
 }

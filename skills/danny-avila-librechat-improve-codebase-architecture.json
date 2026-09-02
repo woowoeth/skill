@@ -2,12 +2,12 @@
  "id": "danny-avila-librechat-improve-codebase-architecture",
  "kind": "skill",
  "name": "improve-codebase-architecture",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：improve-codebase-architecture。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "扫描代码库，把架构隐患变成可视化报告",
+ "tagline_zh": "别等重构时才后悔。一眼看清代码库哪里在腐烂，点开就能深挖，像给项目做一次带图的体检。",
+ "tagline_en": "Stop refactoring blind. See exactly where your codebase is rotting, then click into any spot to dig deeper.",
  "desc_en": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是列清单，而是把发现变成可交互的 HTML 报告，选中哪块就追问到底，逼你把问题想透。",
+ "why_en": "It doesn't just list issues—it turns findings into an interactive HTML report and interrogates you on whichever one you choose.",
  "repo": "danny-avila/LibreChat",
  "owner": "danny-avila",
  "path": ".claude/skills/improve-codebase-architecture",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/danny-avila/LibreChat.git",
   "copy": "cp -r LibreChat/.claude/skills/improve-codebase-architecture ~/.claude/skills/improve-codebase-architecture",
   "dir": "~/.claude/skills/improve-codebase-architecture"
- }
+ },
+ "limit_zh": "只对本地 Git 仓库有效，且需要 Node.js 18+。报告是静态快照，不追踪后续改动；深挖靠对话，不自动改代码。",
+ "limit_en": "Local Git repos only, requires Node.js 18+. Report is a static snapshot—no live tracking; deep-dive is conversational, no auto-fixes."
 }

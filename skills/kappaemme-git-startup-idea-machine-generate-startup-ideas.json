@@ -2,12 +2,12 @@
  "id": "kappaemme-git-startup-idea-machine-generate-startup-ideas",
  "kind": "skill",
  "name": "generate-startup-ideas",
- "title_zh": "",
- "tagline_zh": "正经办公文档：generate-startup-ideas。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把创业点子从灵光一现炼成可验证机会的交互机器",
+ "tagline_zh": "受够空想？让 Codex 用几个尖锐问题、实时网页信号和你的爱/无感反馈，把模糊念头迭代成有竞品、有用户的真实机会。",
+ "tagline_en": "Tired of daydreaming? Let Codex turn vague sparks into validated opportunities with sharp questions, live web.",
  "desc_en": "Generate, refine, research, and validate startup ideas through an interactive founder-specific idea machine. Use when Codex needs to ask a few focused questions, search current public web signals, rapidly brainstorm startup or SaaS ideas, learn from love/maybe/no reactions, produce additional idea rounds, compare finalists, investigate competitors and existing workarounds, select a promising oppor",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是一次性生成器，而是循环迭代机：用你的反馈驱动多轮产出，自动对比决赛选手、深挖竞品和替代方案。",
+ "why_en": "Not a one-shot generator but an iterative engine: your feedback drives multiple rounds, auto-compares finalists, and digs into.",
  "repo": "Kappaemme-git/startup-idea-machine",
  "owner": "Kappaemme-git",
  "path": "generate-startup-ideas",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Kappaemme-git/startup-idea-machine.git",
   "copy": "cp -r startup-idea-machine/generate-startup-ideas ~/.claude/skills/generate-startup-ideas",
   "dir": "~/.claude/skills/generate-startup-ideas"
- }
+ },
+ "limit_zh": "需要 Codex 联网搜索；只覆盖点子生成与初步验证，不包含市场调研报告、财务模型或商业计划书；若你已有明确方向。",
+ "limit_en": "Requires Codex web access; covers idea generation & initial validation only—no market reports, financial models, or business plans; if you have a."
 }

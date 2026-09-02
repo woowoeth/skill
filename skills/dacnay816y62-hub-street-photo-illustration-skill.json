@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-street-photo-illustration-skill",
  "kind": "skill",
  "name": "street-photo-illustration",
- "title_zh": "",
- "tagline_zh": "过日子用得上：street-photo-illustration。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把街拍路人变成黑白墨线或彩色编辑风插画",
+ "tagline_zh": "照片里的人物一键转成干净插画，环境、姿势、穿搭、场景关系全保留。适合街拍、旅行、日常、商业空间照。",
+ "tagline_en": "Turn people in your photos into clean ink or chibi-style illustrations, keeping the scene, pose, outfit, and.",
  "desc_en": "Transform people in uploaded street, travel, lifestyle, casual, or commercial-space photos into clean BLACK INK or colorful editorial-chibi illustrations while preserving the original photographic environment, pose, clothing, accessories, and scene relationships. Use when the user asks to illustrate, cartoonize, or create a photo-plus-character editorial treatment from real photos, with optional e",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不只是换滤镜——它理解照片中的人物与环境关系，输出保留原始构图和细节的插画，而非粗暴的卡通化。",
+ "why_en": "Not just a filter—it understands the person-scene relationship, preserving composition and details while delivering a true.",
  "repo": "dacnay816y62-hub/street-photo-illustration-skill",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dacnay816y62-hub/street-photo-illustration-skill.git",
   "copy": "mv street-photo-illustration-skill ~/.claude/skills/street-photo-illustration-skill",
   "dir": "~/.claude/skills/street-photo-illustration-skill"
- }
+ },
+ "limit_zh": "仅处理人物主体，背景保持原样不重绘；需要上传真实照片，不支持纯文字描述生成；输出为插画风格，不保留照片质感。",
+ "limit_en": "Only transforms people, not backgrounds; requires uploaded photos, not text prompts; output is illustration, not photo-real; complex multi-person."
 }

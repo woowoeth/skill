@@ -2,12 +2,12 @@
  "id": "qwenlm-qwen-code",
  "kind": "collection",
  "name": "qwen-code",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：qwen-code。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "在终端里常驻的开源 AI 编程代理",
+ "tagline_zh": "不用切 IDE，不用开网页，在终端里直接对话改代码。跑测试、查报错、改文件，它自己动手，你只管验收。",
+ "tagline_en": "Skip the IDE, skip the browser. Talk to your codebase right in the terminal—it edits files, runs tests, and fixes.",
  "desc_en": "An open-source AI coding agent that lives in your terminal.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不只是补全，而是真正理解项目上下文后动手改。开源可自托管，数据不出本机，终端党无缝衔接现有工作流。",
+ "why_en": "Not just autocomplete—it reads your project context, makes edits, and runs commands. Fully open-source, self-hostable, and.",
  "repo": "QwenLM/qwen-code",
  "owner": "QwenLM",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv qwen-code ~/.claude/skills/qwen-code",
   "dir": "~/.claude/skills/qwen-code"
  },
- "cover": "https://img.alicdn.com/imgextra/i2/O1CN01K0nwj41RM1Il8kB0t_!!6000000002096-2-tps-1544-1060.png"
+ "cover": "https://img.alicdn.com/imgextra/i2/O1CN01K0nwj41RM1Il8kB0t_!!6000000002096-2-tps-1544-1060.png",
+ "limit_zh": "只认终端环境，没有 GUI 和可视化 diff 审查；复杂多文件重构需人工确认，且对超大仓库的索引速度不如商业 IDE。",
+ "limit_en": "Terminal-only, no GUI or visual diff review. Large multi-file refactors need manual confirmation; indexing very large repos is slower than."
 }

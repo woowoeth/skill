@@ -2,12 +2,12 @@
  "id": "tw93-waza",
  "kind": "collection",
  "name": "Waza",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：Waza。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把工程习惯固化成 Claude 可跑的技能包",
+ "tagline_zh": "不用重新发明 prompt，把你日常的 git、调试、代码审查习惯直接变成 skill。装一次。",
+ "tagline_en": "Stop re-inventing prompts. Turn your daily git, debug, and code-review habits into skills Claude just runs.",
  "desc_en": "🥷 Engineering habits you already know, turned into skills Claude can run.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它不教新东西，而是把你已有的工作流打包成可复用技能。仓库本身就是一套精选集合，装完即用，省去从零调教。",
+ "why_en": "It doesn't teach new tricks—it packages your existing workflow into reusable skills. A curated collection, install and go.",
  "repo": "tw93/Waza",
  "owner": "tw93",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv Waza ~/.claude/skills/Waza",
   "dir": "~/.claude/skills/Waza"
  },
- "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e"
+ "cover": "https://repository-images.githubusercontent.com/1179363570/836c8062-9bbb-4524-9f94-98ecfecf073e",
+ "limit_zh": "只覆盖工程习惯（git、调试、审查），不含写作、数据分析等域。技能依赖你的本地环境，若 Claude 无对应工具链（如。",
+ "limit_en": "Only covers engineering habits (git, debug, review). Requires local toolchain (gh, jq, etc.); without them, skills fail silently."
 }

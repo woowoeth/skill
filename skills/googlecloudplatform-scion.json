@@ -2,12 +2,12 @@
  "id": "googlecloudplatform-scion",
  "kind": "collection",
  "name": "scion",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：scion。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 Google 云上 8 个运维技能打包成一套可装",
+ "tagline_zh": "别人在控制台里点半天，你一条命令装完 8 个运维技能。从日志诊断到成本排查，全是 Google 云官方沉淀的套路。",
+ "tagline_en": "While others click through consoles, you install 8 Google Cloud ops skills in one go. Official patterns for.",
  "desc_en": "A pack of 8 skills.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "官方仓库直接出包，技能间有共享上下文，能串起来用。不是单个工具的堆叠，而是按真实运维流程编排好的组合拳。",
+ "why_en": "Straight from the official repo, skills share context and chain together. Not a tool pile—a choreographed combo for real ops.",
  "repo": "GoogleCloudPlatform/scion",
  "owner": "GoogleCloudPlatform",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv scion ~/.claude/skills/scion",
   "dir": "~/.claude/skills/scion"
  },
- "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09"
+ "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09",
+ "limit_zh": "只认 Google Cloud 生态，AWS/Azure 一概不碰。装完是 8 个独立 skill。",
+ "limit_en": "Google Cloud only—no AWS/Azure. Ships 8 standalone skills, no runtime or credential handling; you must configure gcloud and project IAM yourself."
 }

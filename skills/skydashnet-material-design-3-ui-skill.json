@@ -2,12 +2,12 @@
  "id": "skydashnet-material-design-3-ui-skill",
  "kind": "skill",
  "name": "material-design-3-ui",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：material-design-3-ui。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Material 3 规范设计、审查并交付 UI",
+ "tagline_zh": "从组件选择到 Figma 规格，全程对齐 Google M3 规范。自动做无障碍审计，适配响应式布局。",
+ "tagline_en": "From component pick to Figma-ready specs, stay aligned with Google M3. Auto accessibility audits and adaptive.",
  "desc_en": "Design, redesign, review, or implement user interfaces using Google Material Design 3 (M3), Material You, and optional Material 3 Expressive principles. Use for UI/UX screens, app flows, design systems, component selection, theming, responsive/adaptive layouts, accessibility audits, Figma-ready specifications, or developer handoff where Material Design 3 is required.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不只是给组件清单，而是把 M3 的令牌、动效和布局规则内化成决策引擎，能对现有界面做差异审查。",
+ "why_en": "It's not a component list — it internalizes M3 tokens, motion, and layout rules into a decision engine that audits existing UIs.",
  "repo": "skydashnet/material-design-3-ui-skill",
  "owner": "skydashnet",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/skydashnet/material-design-3-ui-skill.git",
   "copy": "mv material-design-3-ui-skill ~/.claude/skills/material-design-3-ui-skill",
   "dir": "~/.claude/skills/material-design-3-ui-skill"
- }
+ },
+ "limit_zh": "只认 Material Design 3 体系，不覆盖 iOS HIG、Bootstrap 或自定义设计系统。",
+ "limit_en": "M3 only — no iOS HIG, Bootstrap, or custom systems. Outputs spec-level advice, not runnable code. Needs screenshots or structured descriptions."
 }

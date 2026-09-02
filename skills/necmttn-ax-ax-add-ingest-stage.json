@@ -2,12 +2,12 @@
  "id": "necmttn-ax-ax-add-ingest-stage",
  "kind": "skill",
  "name": "ax-add-ingest-stage",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：ax-add-ingest-stage。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "给 ax 图加 ingest 阶段或 Surreal",
+ "tagline_zh": "你刚加完新阶段，CI 却因漏注册而红。这个 skill 把那些藏得极深的注册陷阱直接编码成检查清单，一次过。",
+ "tagline_en": "Add a new ingest stage or SurrealDB table without the CI red. It encodes the exact registration gotchas that.",
  "desc_en": "Use when adding a new ingest stage or a new SurrealDB table to the ax graph. Encodes the exact registration gotchas that fail CI if missed.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的代码生成，而是把 CI 失败的具体原因固化成步骤。它知道哪些遗漏会让流水线在最后一步爆掉。",
+ "why_en": "Not generic scaffolding—it encodes the precise registration pitfalls that break CI. It knows which omissions blow up late and.",
  "repo": "Necmttn/ax",
  "owner": "Necmttn",
  "path": ".ax/skills/ax-add-ingest-stage",
@@ -27,5 +27,7 @@
   "copy": "cp -r ax/.ax/skills/ax-add-ingest-stage ~/.claude/skills/ax-add-ingest-stage",
   "dir": "~/.claude/skills/ax-add-ingest-stage"
  },
- "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9"
+ "cover": "https://repository-images.githubusercontent.com/1232710515/2a715a29-2e0e-48d3-ae61-994733d81ee9",
+ "limit_zh": "只覆盖 ax 仓库内 ingest 阶段与 SurrealDB 表的注册逻辑；不处理查询优化、数据迁移或非 ax 项目。",
+ "limit_en": "Only covers ingest-stage and SurrealDB-table registration inside the ax repo. No query tuning, migrations, or non-ax projects. Won't flag schema."
 }

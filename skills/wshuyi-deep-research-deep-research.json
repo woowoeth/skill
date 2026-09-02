@@ -2,12 +2,12 @@
  "id": "wshuyi-deep-research-deep-research",
  "kind": "skill",
  "name": "deep-research",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：deep-research。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把模糊问题蒸馏成一份可执行的调研报告",
+ "tagline_zh": "面对陌生领域不知从哪下手？8步法带你从零搭框架、找证据、下结论。不靠灵感靠流程，报告自带可追溯的推理链。",
+ "tagline_en": "Stuck with a vague topic? An 8-step method to build frameworks, gather evidence, and conclude—traceable.",
  "desc_en": "深度调研方法论（8步法）：将模糊主题转化为高质量调研报告。 触发词：/deep-research、深度调研、帮我调研、调研一下、对比分析 注意：如果用户需要的是可视化图谱而非报告，请使用 research-to-diagram skill。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是搜索工具，是方法论引擎。每一步强制你明确子问题、记录信息缺口，最终报告自带推理链，可复核、可反驳。",
+ "why_en": "Not a search tool—a methodology engine. Each step forces explicit sub-questions and gaps, yielding a report with a traceable.",
  "repo": "wshuyi/deep-research",
  "owner": "wshuyi",
  "path": "skills/deep-research",
@@ -30,5 +30,7 @@
  },
  "repo_created_at": "2026-01-14",
  "skill_first_seen": "2026-01-14",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只产出文字报告，不画图谱（图谱请用 research-to-diagram）。需要实时数据或私有数据库时。",
+ "limit_en": "Text reports only—no diagrams (use research-to-diagram). Won't fetch live/private data; output quality depends on sources you provide."
 }

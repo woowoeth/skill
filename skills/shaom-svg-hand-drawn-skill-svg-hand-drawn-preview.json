@@ -2,12 +2,12 @@
  "id": "shaom-svg-hand-drawn-skill-svg-hand-drawn-preview",
  "kind": "skill",
  "name": "svg-hand-drawn-preview",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：svg-hand-drawn-preview。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意 SVG 变成手绘动画演示包",
+ "tagline_zh": "丢一个 SVG 文件或链接，拿回独立 preview.html + 可复用 player.js。",
+ "tagline_en": "Drop an SVG file or URL, get a standalone preview.html plus a reusable player.js. Strokes and fills draw.",
  "desc_en": "Generate a hand-drawn SVG animation package from a local SVG file or SVG URL. Use when the user wants an SVG drawing demo with path-plus-fill animation, or wants the default deliverables to be a standalone preview.html plus a reusable player.js.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不依赖在线服务，本地生成；动画逻辑封装成 player.js，可嵌入任意页面；路径与填充分轨处理。",
+ "why_en": "Runs fully offline; the animation logic ships as a reusable player.js for any page; paths and fills are animated on separate.",
  "repo": "shaom/svg-hand-drawn-skill",
  "owner": "shaom",
  "path": "skills/svg-hand-drawn-preview",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/shaom/svg-hand-drawn-skill.git",
   "copy": "cp -r svg-hand-drawn-skill/skills/svg-hand-drawn-preview ~/.claude/skills/svg-hand-drawn-preview",
   "dir": "~/.claude/skills/svg-hand-drawn-preview"
- }
+ },
+ "limit_zh": "只接受单层、无外部引用的 SVG；渐变/滤镜/蒙版会被降级为纯色；动画时长固定 3 秒，不提供逐路径调速。",
+ "limit_en": "Single-layer SVG only, no external refs; gradients/filters/masks flatten to solid fills; fixed 3s duration, no per-path timing; outputs HTML+JS."
 }

@@ -2,12 +2,12 @@
  "id": "dhicoc-dsh-chinese-traditional-wisdom-skill-chinese-traditional-wisdom-ai-agent-",
  "kind": "skill",
  "name": "chinese-traditional-wisdom-ai-agent-workflow",
- "title_zh": "",
- "tagline_zh": "纯属好玩，装了不亏：chinese-traditional-wisdom-ai-agent-workflow。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把中国传统文化智慧装进本地确定性引擎",
+ "tagline_zh": "人生困惑、健康调养、事业抉择、婚恋择居，一次问清。不靠云端黑箱，本地规则引擎给出可追溯的传统文化答案。",
+ "tagline_en": "Life dilemmas, health, career, love, or housing—get grounded answers from a local deterministic engine, not a.",
  "desc_en": "中国传统文化整体智慧咨询系统。遇到人生困惑、健康调养、事业决策、婚恋、择居、占卜或传统文化问题时，使用本地确定性引擎并遵守伦理边界。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "与传统AI闲聊不同，它用显式规则库和伦理边界，输出可解释、可复核的结论，适合需要严谨参考而非模糊建议的。",
+ "why_en": "Unlike AI chit-chat, it uses explicit rule sets and ethical guardrails, yielding explainable, verifiable answers for serious.",
  "repo": "dhicoc/dsh-chinese-traditional-wisdom-skill",
  "owner": "dhicoc",
  "path": "skills",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/dhicoc/dsh-chinese-traditional-wisdom-skill.git",
   "copy": "cp -r dsh-chinese-traditional-wisdom-skill/skills ~/.claude/skills/chinese-traditional-wisdom-ai-agent-workflow",
   "dir": "~/.claude/skills/chinese-traditional-wisdom-ai-agent-workflow"
- }
+ },
+ "limit_zh": "仅覆盖传统文化咨询域（命理、择居、养生等），不处理现代科学或法律问题；需本地部署Python环境，且结果仅供参考。",
+ "limit_en": "Covers only traditional wisdom topics (fate, housing, health); no modern science/legal advice; requires local Python setup; outputs are advisory."
 }

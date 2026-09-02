@@ -2,12 +2,12 @@
  "id": "calesthio-openmontage",
  "kind": "collection",
  "name": "OpenMontage",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：OpenMontage。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把AI编程助手变成全能视频制作工坊",
+ "tagline_zh": "12条生产管线、100+工具、700+技能文件，开源免费。让Claude/Cursor直接产出成片。",
+ "tagline_en": "12 pipelines, 100+ tools, 700+ skill files, open-source. Turn Claude/Cursor into a full video studio—no more.",
  "desc_en": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是单个技能，而是整套生产知识库。Agent按管线调度工具，从脚本到渲染全自动，工程化程度远超零散插件。",
+ "why_en": "Not a skill but a production OS. Agents orchestrate tools across pipelines—script to render—far beyond scattered plugins.",
  "repo": "calesthio/OpenMontage",
  "owner": "calesthio",
  "path": "",
@@ -27,5 +27,7 @@
   "copy": "mv OpenMontage ~/.claude/skills/OpenMontage",
   "dir": "~/.claude/skills/OpenMontage"
  },
- "cover": "https://repository-images.githubusercontent.com/1195360525/645f0bc1-450d-4791-99b8-6102b4bb9f3d"
+ "cover": "https://repository-images.githubusercontent.com/1195360525/645f0bc1-450d-4791-99b8-6102b4bb9f3d",
+ "limit_zh": "仅适配支持MCP的编程助手（Claude/Cursor等）；需自行安装ffmpeg、blender等外部依赖。",
+ "limit_en": "Requires MCP-capable coding assistant (Claude/Cursor); external deps like ffmpeg/blender needed; output ends at edit timeline—color & mix stay manual."
 }

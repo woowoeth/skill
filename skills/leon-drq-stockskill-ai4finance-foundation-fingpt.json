@@ -2,12 +2,12 @@
  "id": "leon-drq-stockskill-ai4finance-foundation-fingpt",
  "kind": "skill",
  "name": "ai4finance-foundation-fingpt",
- "title_zh": "",
- "tagline_zh": "打工人的外挂：ai4finance-foundation-fingpt。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把金融新闻蒸馏成带证据链的情绪与预测简报",
+ "tagline_zh": "做投研 RAG 或事件标注时，最怕数据没出处、情绪没依据。它把 FinGPT 思路落成可复用的数据集与简报流水线。",
+ "tagline_en": "For investment RAG or event labeling, ungrounded sentiment is a dead end. This turns FinGPT-style thinking into.",
  "desc_en": "Build FinGPT-inspired financial language intelligence datasets and evidence-backed sentiment or forecasting briefs. Use for financial news curation, sentiment analysis, RAG context assembly, event labeling, and market-reaction studies that must obtain all live financial data through QVeris.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是又一个情感打分器，而是把「数据采集—事件标注—情绪归因—简报生成」串成一条可审计的链。",
+ "why_en": "Not another sentiment scorer—it chains collection, event labeling, attribution, and briefing into an auditable pipeline where.",
  "repo": "Leon-Drq/stockskill",
  "owner": "Leon-Drq",
  "path": "skills/ai4finance-foundation-fingpt",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Leon-Drq/stockskill.git",
   "copy": "cp -r stockskill/skills/ai4finance-foundation-fingpt ~/.claude/skills/ai4finance-foundation-fingpt",
   "dir": "~/.claude/skills/ai4finance-foundation-fingpt"
- }
+ },
+ "limit_zh": "只认 QVeris 作为实时行情与新闻的唯一数据出口，本地无 QVeris 凭证或目标市场不在其覆盖内则直接停摆。",
+ "limit_en": "Requires QVeris credentials as sole live data source; stops if market/coverage missing. Outputs labeled data and briefs only—no trading signals or."
 }

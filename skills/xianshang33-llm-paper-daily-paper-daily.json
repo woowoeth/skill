@@ -2,12 +2,12 @@
  "id": "xianshang33-llm-paper-daily-paper-daily",
  "kind": "skill",
  "name": "paper-daily",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：paper-daily。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "每天自动筛选 arXiv 上 LLM/Agent 新",
+ "tagline_zh": "早上打开电脑，它已按关键词和机构排好今日候选，挑出少量精品，直接喂给 llm-paper-daily 工作流。",
+ "tagline_en": "Wake up to a shortlist of today's LLM/Agent papers, ranked by keywords and institutions, ready for your.",
  "desc_en": "Discover daily arXiv papers for LLM/Agent topics, rank candidates with keyword and institution filters, and prepare a small selected paper list for llm-paper-daily style workflows.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单抓标题——它用关键词+机构双重过滤，把海量 arXiv 压成可读清单，省下你每天刷页面的半小时。",
+ "why_en": "Not just a feed—it double-filters by keywords and institutions, compressing arXiv's flood into a readable shortlist, saving you.",
  "repo": "xianshang33/llm-paper-daily",
  "owner": "xianshang33",
  "path": "skill/paper-daily",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/xianshang33/llm-paper-daily.git",
   "copy": "cp -r llm-paper-daily/skill/paper-daily ~/.claude/skills/paper-daily",
   "dir": "~/.claude/skills/paper-daily"
- }
+ },
+ "limit_zh": "只覆盖 arXiv 的 cs.CL/cs.AI/cs.LG 分类；需要本机配置好 llm-paper-daily 的读。",
+ "limit_en": "Only covers arXiv cs.CL/cs.AI/cs.LG; requires llm-paper-daily's reader env locally, else it outputs JSON only, no Markdown report."
 }

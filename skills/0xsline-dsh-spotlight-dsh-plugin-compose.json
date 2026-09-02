@@ -2,12 +2,12 @@
  "id": "0xsline-dsh-spotlight-dsh-plugin-compose",
  "kind": "skill",
  "name": "dsh-plugin-compose",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：dsh-plugin-compose。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把 DSH 插件装进 profile，不碰宿主源码",
+ "tagline_zh": "还在手改 node_modules 或宿主补丁？用 package.json 的 dsh.bundle.patch。",
+ "tagline_en": "Stop patching DSH host source. Wire plugins declaratively via dsh.bundle.patch & cordis.patch.yml, then inspect.",
  "desc_en": "Use when wiring a standalone DSH plugin into a profile through package.json dsh.bundle.patch and cordis.patch.yml, installing a local or Git package with dsh plugin, inspecting effective rows, and proving activation without patching DSH host source.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把补丁变成可审阅的声明，而不是散落的 diff；装完能查生效行，激活与否可验证，不是黑盒。",
+ "why_en": "Turns patches into auditable declarations, not scattered diffs; post-install row inspection makes activation verifiable, not a.",
  "repo": "0xsline/dsh-spotlight",
  "owner": "0xsline",
  "path": ".agents/skills/dsh-plugin-compose",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/0xsline/dsh-spotlight.git",
   "copy": "cp -r dsh-spotlight/.agents/skills/dsh-plugin-compose ~/.claude/skills/dsh-plugin-compose",
   "dir": "~/.claude/skills/dsh-plugin-compose"
- }
+ },
+ "limit_zh": "只认 DSH 生态的 plugin 包（本地或 Git 源）；不处理 npm 公有 registry 的依赖解析。",
+ "limit_en": "Only DSH-ecosystem plugins (local or Git); no npm registry resolution; output ends at effective-row inspection, not runtime validation; requires."
 }

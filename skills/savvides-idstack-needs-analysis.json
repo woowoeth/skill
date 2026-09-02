@@ -2,12 +2,12 @@
  "id": "savvides-idstack-needs-analysis",
  "kind": "skill",
  "name": "needs-analysis",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：needs-analysis。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "开课前把组织、任务、学员三层需求一次摸清",
+ "tagline_zh": "别急着写大纲。先做证据式需求分析，产出共享项目清单，让后续目标撰写和质量评审直接读取，不返工。",
+ "tagline_en": "Don't jump to outlines. Run evidence-based org, task & learner analysis first—output a shared manifest downstream.",
  "desc_en": "Evidence-based three-level needs assessment for instructional design. Guides you through organizational, task, and learner analysis before building a course. Creates a shared project manifest that downstream skills (/learning-objectives, /course-quality-review) read and extend. (idstack)",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是问卷模板堆砌，而是按三层证据链逐级收敛，每步结论都落进结构化清单，让下游技能自动继承上下文。",
+ "why_en": "Not a survey dump—it converges via a three-level evidence chain, persisting findings into a structured manifest downstream.",
  "repo": "savvides/idstack",
  "owner": "savvides",
  "path": "skills/needs-analysis",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/savvides/idstack.git",
   "copy": "cp -r idstack/skills/needs-analysis ~/.claude/skills/needs-analysis",
   "dir": "~/.claude/skills/needs-analysis"
- }
+ },
+ "limit_zh": "只覆盖需求分析阶段，不产出学习目标或课程内容；需配合 /learning-objectives 等下游技能使用。",
+ "limit_en": "Covers needs analysis only—no objectives or content. Requires downstream skills like /learning-objectives to be useful alone it's just a checklist."
 }

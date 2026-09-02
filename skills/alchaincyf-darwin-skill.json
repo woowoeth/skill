@@ -2,12 +2,12 @@
  "id": "alchaincyf-darwin-skill",
  "kind": "skill",
  "name": "darwin-skill",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：darwin-skill。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用九维评分自动迭代你的 SKILL.md 直到它变强",
+ "tagline_zh": "你的 skill 写完后没人用？让达尔文式爬山算法自己改自己，每次改动都有 git 留痕，九维评分当裁判。",
+ "tagline_en": "Your SKILL.md stuck at v1? Let hill-climbing rewrite it, scored on 9 axes with git history, and you just approve.",
  "desc_en": "Darwin Skill 2.0 (达尔文.skill 2.0): autonomous skill optimizer, v2.0 integrates Microsoft Research SkillLens (arXiv 2605.23899) 9-dim rubric + SkillOpt (arXiv 2605.23904) validation-gated design + human-in-the-loop checkpoints. Evaluates SKILL.md files using a 9-dimension rubric (structure + effectiveness + meta-skill blacklists), runs hill-climbing with git version control, spawns independent judge",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是模板生成器，是带验证门的优化器：SkillLens 九维打分 + SkillOpt 爬山搜索。",
+ "why_en": "Not a template filler—a validation-gated optimizer: SkillLens 9-axis scoring plus SkillOpt hill-climbing, with an independent.",
  "repo": "alchaincyf/darwin-skill",
  "owner": "alchaincyf",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/darwin-skill"
  },
  "repo_created_at": "2026-04-13",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只改 SKILL.md 文本，不碰代码逻辑；需要本机有 git 和可用的 LLM API；评分依赖 SkillLens。",
+ "limit_en": "Edits SKILL.md text only, not code; requires git + a working LLM API; scoring depends on SkillLens model—offline means it stops; no cross-domain."
 }

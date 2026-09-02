@@ -2,12 +2,12 @@
  "id": "joeseesun-qiaomu-cut-skill",
  "kind": "skill",
  "name": "qiaomu-cut",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：qiaomu-cut。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "一句话需求变成可验收的视频工程",
+ "tagline_zh": "你说“做个产品发布短片”，它直接给出分镜、素材路线和渲染方案。不写脚本、不猜风格，每一步都能核对、能回放。",
+ "tagline_en": "Say \"make a launch video\" and get a shot list, asset plan, and render path — every step checkable, every cut.",
  "desc_en": "把一句话需求转成可复现、可验收视频工程的乔木智能剪辑导演。Use when the user asks to create, plan, edit, remix, explain, narrate, subtitle, animate, composite, or render a video; build English-learning movie mixes, person profiles, explainers, product launch videos, cinematic shorts, social clips, course/PPT videos, AI image/video/TTS/music-assisted stories, stock-footage stories, or multi-source montage. Routes across 33台词, C",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把模糊需求拆成可验收的中间产物：分镜表、素材清单、渲染参数。每一步有明确输入输出。",
+ "why_en": "Turns vague asks into verifiable artifacts — storyboard, asset list, render specs — with explicit inputs/outputs at each step.",
  "repo": "joeseesun/qiaomu-cut-skill",
  "owner": "joeseesun",
  "path": "",
@@ -28,5 +28,7 @@
   "dir": "~/.claude/skills/qiaomu-cut-skill"
  },
  "repo_created_at": "2026-07-18",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "只认视频域：剪辑、混剪、字幕、动画、合成、渲染。素材来源依赖 33 台词等外部接口，离线或接口失效时无法取景。",
+ "limit_en": "Video domain only: editing, remix, subtitles, animation, compositing, rendering. Depends on external APIs like 33台词 for footage; no offline asset."
 }

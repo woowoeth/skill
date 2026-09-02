@@ -2,12 +2,12 @@
  "id": "googlecloudplatform-scion-chrome-devtools",
  "kind": "skill",
  "name": "chrome-devtools",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：chrome-devtools。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "用 Chrome DevTools 远程调试网页并自",
+ "tagline_zh": "调试卡住的页面、抓网络请求、看性能瓶颈，不用手动开 DevTools。适合排查线上问题、跑自动化测试、分析前端性能。",
+ "tagline_en": "Debug stuck pages, inspect network, spot performance issues—without manually opening DevTools. Ideal for live.",
  "desc_en": "Uses Chrome DevTools via MCP for efficient debugging, troubleshooting and browser automation. Use when debugging web pages, automating browser interactions, analyzing performance, or inspecting network requests.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "通过 MCP 协议把 DevTools 能力变成可调用的工具，让 AI 能直接操作浏览器。",
+ "why_en": "Exposes DevTools as callable tools via MCP, letting AI drive the browser directly—no more manual clicking or copy-paste between.",
  "repo": "GoogleCloudPlatform/scion",
  "owner": "GoogleCloudPlatform",
  "path": ".scion/templates/web-dev/skills/chrome-devtools",
@@ -27,5 +27,7 @@
   "copy": "cp -r scion/.scion/templates/web-dev/skills/chrome-devtools ~/.claude/skills/chrome-devtools",
   "dir": "~/.claude/skills/chrome-devtools"
  },
- "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09"
+ "cover": "https://repository-images.githubusercontent.com/1177353643/fb7a899b-7686-481d-8292-3a4656229a09",
+ "limit_zh": "需要本机已安装 Chrome 并开启远程调试端口；只覆盖 Chromium 系浏览器，Firefox/Safari 不。",
+ "limit_en": "Requires Chrome with remote debugging enabled; Chromium-only, no Firefox/Safari; outputs debug results or logs, not test reports."
 }

@@ -2,12 +2,12 @@
  "id": "0xsline-dsh-spotlight-dsh-plugin-plan",
  "kind": "skill",
  "name": "dsh-plugin-plan",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：dsh-plugin-plan。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "先定插件骨架再动手，避免返工",
+ "tagline_zh": "写代码前先定清插件形态、角色、依赖、配置与证据归属。适合设计 DSH Cordis 插件但不想立刻实现时。",
+ "tagline_en": "Before writing code, lock down plugin shape, roles, deps, config, and evidence ownership. Turns vague asks into.",
  "desc_en": "Use as the planning stage of dsh-plugin-development, or when asked to design a standalone DSH Cordis plugin without implementing it. Decide plugin form, roles, dependencies, configuration, invariant ownership, profile composition, evidence, and distribution before files are copied or code is written.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把规划从实现中硬拆出来，强制你在复制文件前回答所有权与组合问题——比边写边想多一层结构约束。",
+ "why_en": "It hard-separates planning from implementation, forcing ownership and composition decisions before any file lands—structural.",
  "repo": "0xsline/dsh-spotlight",
  "owner": "0xsline",
  "path": ".agents/skills/dsh-plugin-plan",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/0xsline/dsh-spotlight.git",
   "copy": "cp -r dsh-spotlight/.agents/skills/dsh-plugin-plan ~/.claude/skills/dsh-plugin-plan",
   "dir": "~/.claude/skills/dsh-plugin-plan"
- }
+ },
+ "limit_zh": "只覆盖规划阶段，不写任何代码或生成文件。若你已开始实现、或目标不是 DSH Cordis 插件，它不会产出可运行结果。",
+ "limit_en": "Planning only—no code or file output. Useless mid-implementation or for non-DSH Cordis targets; it stops at blueprint level."
 }

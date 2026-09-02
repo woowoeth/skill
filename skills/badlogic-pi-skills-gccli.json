@@ -2,12 +2,12 @@
  "id": "badlogic-pi-skills-gccli",
  "kind": "skill",
  "name": "gccli",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：gccli。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "终端里直接管 Google 日历，不离开键盘",
+ "tagline_zh": "开会前才想起没看日程？在终端敲两下就能查空闲、建事件、改时间，不用切窗口、不用点鼠标，比开网页快三秒。",
+ "tagline_en": "Scheduling without leaving your terminal. Check availability, create events, and edit—faster than opening the.",
  "desc_en": "Google Calendar CLI for listing calendars, viewing/creating/updating events, and checking availability.",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "它把日历操作压成 CLI 命令，能直接嵌进脚本和快捷键流。查空闲、建事件、改时间一气呵成，适合键盘党。",
+ "why_en": "Turns calendar ops into composable CLI commands, so you can script them or bind to hotkeys. No GUI, no friction.",
  "repo": "badlogic/pi-skills",
  "owner": "badlogic",
  "path": "gccli",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/badlogic/pi-skills.git",
   "copy": "cp -r pi-skills/gccli ~/.claude/skills/gccli",
   "dir": "~/.claude/skills/gccli"
- }
+ },
+ "limit_zh": "只认 Google 日历，需要本机配好 OAuth 凭据；不支持 Exchange/Outlook。只覆盖日历读写。",
+ "limit_en": "Google Calendar only; requires local OAuth setup. No Exchange/Outlook. Handles events/availability only—no reminders, attachments, or Meet links."
 }

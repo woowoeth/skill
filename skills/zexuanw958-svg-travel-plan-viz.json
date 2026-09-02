@@ -2,12 +2,12 @@
  "id": "zexuanw958-svg-travel-plan-viz",
  "kind": "skill",
  "name": "travel-plan-viz",
- "title_zh": "",
- "tagline_zh": "过日子用得上：travel-plan-viz。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把旅行行程变成离线可点的手机网页",
+ "tagline_zh": "丢个目的地和天数，它替你排路线；或扔一份现成计划，直接出交互地图+每日时间轴+订票提醒，单文件离线带走。",
+ "tagline_en": "Feed it a destination and days, or a ready plan—get an interactive map, daily timeline, and ticket reminders in.",
  "desc_en": "把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "产物是单文件 HTML，不依赖任何在线服务；地图与时间轴联动，出发前提醒嵌在页面里。",
+ "why_en": "One self-contained HTML, no cloud dependency—map and timeline sync, pre-trip alerts baked in, opens straight in mobile browser.",
  "repo": "zexuanw958-svg/travel-plan-viz",
  "owner": "zexuanw958-svg",
  "path": "travel-plan-viz",
@@ -30,5 +30,7 @@
  "cover": "",
  "repo_created_at": "2026-06-13",
  "skill_first_seen": "2026-06-13",
- "age_source": "file"
+ "age_source": "file",
+ "limit_zh": "只认结构化行程（含日期/地点/活动），自由文本需先转成 JSON；地图基于静态 GeoJSON，不支持实时路况或动态改。",
+ "limit_en": "Requires structured itinerary (dates/places/activities); free text must be pre-converted to JSON. Map is static GeoJSON—no live traffic or."
 }

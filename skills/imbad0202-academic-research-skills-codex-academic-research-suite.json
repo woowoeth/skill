@@ -2,12 +2,12 @@
  "id": "imbad0202-academic-research-skills-codex-academic-research-suite",
  "kind": "skill",
  "name": "academic-research-suite",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：academic-research-suite。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "从研究问题到投稿信的全流程学术写作工作台",
+ "tagline_zh": "文献综述、元分析、手稿评审、审稿模拟、编辑决策信——一套流程走完，不用在五个工具间来回搬运上下文。",
+ "tagline_en": "One workflow for lit review, meta-analysis, manuscript review, reviewer simulation, and decision letters—no more.",
  "desc_en": "ARS-Codex workflows for research, academic writing, manuscript review, research-to-paper pipelines, and experiment planning. Use when the user asks for deep research, literature review, systematic review, meta-analysis, research question refinement, academic paper drafting, paper revision, citation or integrity checks, reviewer simulation, peer review, editorial decision letters, research-to-paper",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "把学术写作拆成可复用的流水线节点，每个节点输出结构化中间产物，下一节点直接消费，不丢上下文。",
+ "why_en": "Breaks academic writing into reusable pipeline stages, each emitting structured artifacts the next stage consumes—no context loss.",
  "repo": "Imbad0202/academic-research-skills-codex",
  "owner": "Imbad0202",
  "path": "plugins/ars-codex/skills/academic-research-suite",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Imbad0202/academic-research-skills-codex.git",
   "copy": "cp -r academic-research-skills-codex/plugins/ars-codex/skills/academic-research-suite ~/.claude/skills/academic-research-suite",
   "dir": "~/.claude/skills/academic-research-suite"
- }
+ },
+ "limit_zh": "只覆盖论文写作与评审流程，不处理实验设计的数据分析部分；需要你已有文献 PDF 或检索结果，否则综述节点会卡住。",
+ "limit_en": "Covers writing/review only, not data analysis. Requires your own PDFs or search results; lit-review node stalls without them."
 }

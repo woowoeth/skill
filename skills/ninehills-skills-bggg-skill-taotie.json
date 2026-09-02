@@ -2,12 +2,12 @@
  "id": "ninehills-skills-bggg-skill-taotie",
  "kind": "skill",
  "name": "bggg-skill-taotie",
- "title_zh": "",
- "tagline_zh": "写代码的顺手工具：bggg-skill-taotie。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任意两个 skill 合并成一个更强的 skill",
+ "tagline_zh": "手上有两个 skill 各有所长？说一句“把 X 喂给 Y”，它自动拆解、提炼、融合，产出进化版 skill。",
+ "tagline_en": "Two skills, each strong in its own way? Say 'feed X into Y' and it dissects, distills, and merges them into an.",
  "desc_en": "Skill 进化器（饕餮）— 通过\"吞噬\"并分析其他 skill 的优势来强化目标 skill。 当用户想要：整合两个 skill、用一个 skill 优化另一个、对比分析两个 skill 的优劣、 把某个 skill 的优点提炼到另一个 skill 中、或者说\"把 X 喂给 Y\"、\"用 X 来优化 Y\"、 \"整合这两个 skill\"、\"吃掉这个 skill\"、\"skill 进化\"、\"skill 升级\"、\"合并 skill\" 等意图时，必须触发此 skill。即使用户没有明确说\"饕餮\"，只要涉及到两个 skill 之间的 能力迁移、对比分析、或优势提取，都应该使用此 skill。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是简单拼接，而是先拆解各自能力边界，再按意图重组：对比、迁移、或合并，输出带注释的完整 skill 。",
+ "why_en": "Not a blunt merge—it first dissects each skill's capability boundaries, then recombines per intent: compare, transplant, or.",
  "repo": "ninehills/skills",
  "owner": "ninehills",
  "path": "bggg-skill-taotie",
@@ -27,5 +27,7 @@
   "copy": "cp -r skills/bggg-skill-taotie ~/.claude/skills/bggg-skill-taotie",
   "dir": "~/.claude/skills/bggg-skill-taotie"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只吃本地已安装的 skill 文件（需在 skills 目录）；不吃在线仓库或未下载的 skill。",
+ "limit_en": "Only consumes locally installed skill files (in skills dir); no online repos or undownloaded skills. Output is text-only—no runtime testing, no."
 }

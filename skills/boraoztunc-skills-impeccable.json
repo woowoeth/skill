@@ -2,12 +2,12 @@
  "id": "boraoztunc-skills-impeccable",
  "kind": "skill",
  "name": "impeccable",
- "title_zh": "",
- "tagline_zh": "让 Claude 帮你搞创作：impeccable。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把任何前端界面打磨到无可挑剔的审查与重构技能",
+ "tagline_zh": "从落地页到仪表盘，从组件到空状态，它像资深设计合伙人一样揪出视觉层级、信息架构、认知负荷的毛病。",
+ "tagline_en": "From landing pages to dashboards, it audits visual hierarchy, IA, and cognitive load like a senior design.",
  "desc_en": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, acc",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "不是泛泛的UI建议，而是逐层拆解界面：先审UX，再调视觉层级，最后动信息架构，每一步都有明确输出。",
+ "why_en": "It doesn't just give generic UI tips—it deconstructs your interface layer by layer: UX review, visual hierarchy, then IA, with.",
  "repo": "boraoztunc/skills",
  "owner": "boraoztunc",
  "path": "impeccable",
@@ -27,5 +27,7 @@
   "copy": "cp -r skills/impeccable ~/.claude/skills/impeccable",
   "dir": "~/.claude/skills/impeccable"
  },
- "cover": ""
+ "cover": "",
+ "limit_zh": "只覆盖前端界面（网页、应用、组件等），不处理后端逻辑、API设计或移动端原生代码。产物是改进建议和重构方案。",
+ "limit_en": "Only frontend UI (web/app/components); no backend, API, or native mobile. Outputs suggestions, not code. Requires a description or screenshot to."
 }

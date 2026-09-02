@@ -2,12 +2,12 @@
  "id": "fly143-ultimate-novel-creation-skill",
  "kind": "skill",
  "name": "全能小说作家",
- "title_zh": "",
- "tagline_zh": "写字的人会喜欢：全能小说作家。英文简介见下。",
- "tagline_en": "",
+ "title_zh": "把长篇小说从零写到完结的全流程创作引擎",
+ "tagline_zh": "卡文、断更、人设崩塌？27个模块覆盖书名到终章，自动记忆故事圣经、伏笔和人物弧线，还能拆解名作学爽点。",
+ "tagline_en": "Stuck mid-story? 27 modules from title to finale, auto-tracking lore, foreshadowing, and arcs—plus bestseller.",
  "desc_en": "全流程长篇小说创作技能，27个功能模块，支持 AI 全自动和分步引导双模式。涵盖书名生成、人设构建、大纲规划、章节写作、爽点设计、节奏诊断、风格创作、强约束系统、作品拆解分析（含拆文库）、叙事质量管理、导入已有小说。配备三大自动系统：自然语言记忆系统（故事圣经/人物弧线/剧情时间线/伏笔清单/角色数据库）、强约束系统（金手指叙事/时间约束/叙事线监控）、叙事质量管理框架（写前预检/三阶复核/参数链条）。触发词：「写小说」「新开一本」「继续」「接着写」「下一章」「书名」「人设」「大纲」「看记忆」「导出」「导入」「切书」「金手指」「叙事线」「分析《XXX》」「菜单」「预检」「复核」「规则集」。",
- "why_zh": "",
- "why_en": "",
+ "why_zh": "双模式（全自动/分步引导）+ 三大系统：记忆系统让伏笔不丢，强约束防金手指崩坏，叙事质量三阶复核。",
+ "why_en": "Dual-mode + three engines: memory tracks every thread, constraints tame plot holes, and a 3-stage quality gate—like a built-in.",
  "repo": "Fly143/ultimate-novel-creation-skill",
  "owner": "Fly143",
  "path": "",
@@ -26,5 +26,7 @@
   "clone": "git clone --depth 1 https://github.com/Fly143/ultimate-novel-creation-skill.git",
   "copy": "mv ultimate-novel-creation-skill ~/.claude/skills/ultimate-novel-creation-skill",
   "dir": "~/.claude/skills/ultimate-novel-creation-skill"
- }
+ },
+ "limit_zh": "只认中文网文风格，不擅长严肃文学或短篇；需配合 Claude 或 GPT-4 长上下文模型，否则记忆系统会截断。",
+ "limit_en": "Chinese web-novel style only; needs long-context LLM (Claude/GPT-4) or memory truncates; analysis works on plain text, not scanned PDFs."
 }
