@@ -326,6 +326,9 @@ a.card{color:inherit}
 .ho-btns button[data-ho="issue"]{background:var(--ink-1);color:var(--card);border-color:var(--ink-1)}
 /* 竖幅限高只剩一条：宽度那道闸在 JS 里（H_MAX_K），这里是视口那道。 */
 .shot.tallcap{max-height:min(78vh,620px)}
+/* 被限高的极端竖幅：cover + 顶部对齐。contain 会在底部留一条空带，
+   那正是「空洞」本身 —— 用一个空洞换另一个没有意义。裁掉的是底部，头还在。 */
+.shot.capped img{height:100%;object-fit:cover;object-position:center top}
 
 /* ---- 无图卡：一道短墨杠起头 ------------------------------------
    不补占位符、不放 OG 卡。56 件没有真产出物图，无图必须是一等公民。
@@ -1094,7 +1097,7 @@ function shotHTML(it, forSheet){
      AR_FLAT = 2.45：卡上的图高不得低于宽的 1/2.45（手机 171px 宽 → 70px 高）。
        低于这个就是一条缝：那张四格叙事比 3.00，每格只有 42.6×56.8px，
        而详情页给它 84.8×113px —— **4 倍面积**，所以交给详情页是净赚。
-     H_MAX_K = 2.25：高不得超过宽的 2.25 倍。
+     H_MAX_K = 1.40：高不得超过宽的 1.40 倍（原为 2.25，2026-09-02 按 177 张复验后收窄，见下）。
        现存最竖的是比 0.45（1264×2780），高 = 2.22 倍宽 —— **刚好在下面，所以这条今天不触发**，
        它是给将来更极端的图留的闸。另加一道 78vh，防的是窄短视口下一张图占满屏，
        跟宽度那道闸管的不是同一件事。
@@ -1108,8 +1111,27 @@ function shotHTML(it, forSheet){
        312362115-claude-diagram       比2.24 diagram  裁11% → 0%，框 76px
        deusyu-translate-book          比0.75 diagram  裁25% → 0%，框 171→228px
      代价是前三张的框矮了 10–13px，换来零裁切和零分叉。
+     ---- 2026-09-02 复验：分布变了，常量没跟上 ----
+     上面那句「现存最竖的是比 0.45、高 2.22 倍宽，刚好在下面，所以这条今天不触发」
+     是 **56 张封面时**的事实。现在有宽高的是 177 张，同样那张比 0.45 撑出 **895px**，
+     而框高中位数是 204px —— **最高/中位 = 4.4 倍**。一张卡三四倍于邻居，
+     瀑布流看着就是一根柱子加一片空洞（图没加载完时尤其明显）。
+     **常量没错，是分布变了而没人回来复验。**
+
+     按 177 张重算（桌面列宽 407px 实测）：
+       2.25×（原）  最高 895px · 4.4×中位 · 受影响 0 张
+       1.60×        最高 651px · 3.2×中位 · 受影响 5 张
+       1.40×（取）  最高 570px · 2.8×中位 · 受影响 9 张
+       1.25×        最高 509px · 2.5×中位 · 受影响 17 张
+     取 1.40：把最坏情况从 4.4 倍压到 2.8 倍，只动 9 张。
+
+     被限住的那几张改用 cover + 顶部对齐（.shot.capped）：
+     contain 会在底部留一条空带 —— 那正是「空洞」本身，等于用一个空洞换另一个。
+     顶部对齐意味着裁掉的是**底部**，海报的头还在。这是对「不裁切」那条的**收窄**，
+     不是推翻：只对超出 1.40 倍的极端竖幅生效，且只裁底。
      ================================================================ */
-  var AR_FLAT = 2.45, H_MAX_K = 2.25;
+  var AR_FLAT = 2.45, H_MAX_K = 1.40;
+  var rawAr = ar;
   if(!forSheet){
     if(ar >= AR_FLAT) return "";
     if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太竖 → 限高（等比，不裁）
@@ -1118,6 +1140,8 @@ function shotHTML(it, forSheet){
   var sty = ar ? ' style="aspect-ratio:'+(Math.round(ar*1000)/1000)+'"' : '';
   // 78vh 那道闸和上面的宽度闸管的不是一件事：它防的是窄短视口下一张图占满屏
   var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
+  // 被 H_MAX_K 限住的（原图比这个还竖）→ cover 顶部对齐，别在底部留空带
+  if(!forSheet && rawAr && rawAr < 1/H_MAX_K) tall += " capped";
   return '<span class="shot hasimg'+tall+'"'+sty+'>'
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
