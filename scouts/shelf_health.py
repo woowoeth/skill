@@ -65,14 +65,40 @@ def check_copy(items) -> None:
 
 
 def check_freshness(items) -> None:
-    """今天上新了没有。**这是这家店的承诺**，没做到就是坏的。"""
+    """今天上新了没有。**这是这家店的承诺**，没做到就是坏的。
+
+    按「今天新出现在货架上的 id」算，**不按 added_at 算**。
+    第一版按 added_at，结果刚放行的 5 件（09-01 进的货、今天才上架）
+    被算成「今天 0 件」—— 访客感知的是**货架今天有没有变**，
+    不是这批货哪天进的库。口径错了，体检就会在没坏的时候报坏、
+    在坏的时候报好。
+    """
     today = datetime.date.today().isoformat()
-    y = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
-    added = collections.Counter((x.get("added_at") or "")[:10] for x in items)
-    if not added.get(today):
-        note("坏", f"今天（{today}）一件没上新 —— 昨天 {added.get(y,0)} 件",
+    now = {x["id"] for x in items}
+    since = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+    r = subprocess.run(["git", "log", "--format=%H", f"--until={since}T23:59:59",
+                        "-1", "--", "skills/feed.json"],
+                       capture_output=True, text=True, cwd=ROOT)
+    base = (r.stdout or "").strip()
+    if not base:
+        print("  · 查不到昨天的 feed（仓库历史太浅），今日上新这条跳过")
+        return
+    old = subprocess.run(["git", "show", f"{base}:skills/feed.json"],
+                         capture_output=True, cwd=ROOT).stdout
+    try:
+        prev = {x["id"] for x in json.loads(old)["skills"]}
+    except Exception:
+        print("  · 昨天的 feed 读不出来，今日上新这条跳过")
+        return
+    new_ids = now - prev
+    gone = prev - now
+    if not new_ids:
+        note("坏", f"今天（{today}）货架一件没多 —— 昨天收盘 {len(prev)} 件，现在 {len(now)} 件",
              ["库房里有够格的就跑 scouts/release_clean.py；"
               "一件都没有说明进货或写文案那一环断了"])
+    else:
+        print(f"  ✓ 今天上架 {len(new_ids)} 件"
+              + (f"（另有 {len(gone)} 件下架）" if gone else ""))
 
 
 def check_clumping(items) -> None:

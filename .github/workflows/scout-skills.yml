@@ -106,6 +106,14 @@ jobs:
           grep -c "缺文案留库房" "$L" | xargs -I{} echo "::error::本次留库房 {} 件"
           exit 1
 
+      # 货架体检：按**访客所见**查（图挂没挂、今天有没有上新、卡片缺不缺句）。
+      # 上面那个 Editorial check 查的是数据自不自洽，查不出这些。
+      # 2026-09-02 加 —— 之前这三类问题全是店主先看见、我后去修，
+      # 等于把体检外包给了店主。**坏的要自己红，不该等人报。**
+      - name: 货架体检（访客视角）
+        if: always()
+        run: python scouts/shelf_health.py --sample 30
+
       - name: Editorial check (报告，不拦车)
         continue-on-error: true
         run: python scouts/check_curation.py

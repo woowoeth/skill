@@ -40,3 +40,11 @@ jobs:
             exit 1
           fi
           echo "✓ 在 $MAX_HOURS 小时内跑成功过"
+
+      # 看门狗顺手也做一次访客视角体检 —— daily-restock 万一整轮没跑，
+      # 那边的体检也不会跑，坏了照样没人知道。这里补一道。
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 货架体检（访客视角）
+        run: python scouts/shelf_health.py --sample 30
