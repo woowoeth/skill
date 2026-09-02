@@ -1,0 +1,23 @@
+{
+ "_说明": "红线扫描命中的人工判读留档。机器只指出「这一行你去看」，判决记在这里，下次不用重看。",
+ "entries": {
+  "Hchen1218/heytea-style": {
+   "判": "误报",
+   "表": "剂量",
+   "原文": "\"integrity\": \"sha512-3kSBtG8ObcTVfXanm5vVJ6UnBLEVmVsRk1M+...\"",
+   "理由": "package-lock 里的哈希串被剂量正则匹到。**子串假阳性第八次**（前七：kino/推倒/pirat/z-lib/paywall-unpaywall/scihub.copernicus）。"
+  },
+  "mattpocock/skills": {
+   "判": "误报（其中一处是反的）",
+   "表": "改你agent的规矩",
+   "原文": "writing-fragments/SKILL.md:73 「Append silently. Don't ask permission for each fragment」；git-guardrails/SKILL.md:12 「git push (all variants including --force)」",
+   "理由": "前者同段紧跟「Never overwrite the file; only append」「re-read the file from disk…preserve their changes」——是别拿保存对话框打断写作，配着很硬的安全约束。后者那一行是**它要拦截的危险命令清单**，这件 skill 的功能就是装 PreToolUse 钩子挡掉 git push --force，和危害正好相反。"
+  },
+  "garrytan/gstack": {
+   "判": "留架 + 披露",
+   "表": "改你agent的规矩 / 破限",
+   "原文": "scripts/preflight-agent-sdk.ts:68 permissionMode: 'bypassPermissions'；docs/designs/SLATE_HOST.md:80,268 --dangerously-skip-permissions；docs/skills.md:1079 危险 git 操作清单",
+   "理由": "三处全在非 SKILL.md 的文件里（scripts/、docs/designs/）。「改你agent的规矩」这一类的危害前提是它在**会被载入上下文的那份文件**里（FP-DCF 判例卡的就是这一点），这三处不是。但 bypassPermissions 是可执行代码——是能力不是指令，所以按「拆了还工作吗」处理：留架，写进 limit_zh。破限那两处讲的是一个 jailbreak **检测**库，防不是教。"
+  }
+ }
+}

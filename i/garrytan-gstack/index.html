@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Garry Tan 全家桶 — 品味</title>
+<title>YC 掌门的 Claude Code 全套配置，23 个角色分工 — 品味</title>
 <meta name="description" content="YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, garrytan">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="Garry Tan 全家桶 — 品味">
+<meta property="og:title" content="YC 掌门的 Claude Code 全套配置，23 个角色分工 — 品味">
 <meta property="og:description" content="YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。">
 <meta property="og:url" content="https://ourword.ai/skill/i/garrytan-gstack/">
 <meta property="og:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Garry Tan 全家桶 — 品味">
+<meta name="twitter:title" content="YC 掌门的 Claude Code 全套配置，23 个角色分工 — 品味">
 <meta name="twitter:description" content="YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Garry Tan 全家桶","description":"YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。","url":"https://ourword.ai/skill/i/garrytan-gstack/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"garrytan"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png","codeRepository":"https://github.com/garrytan/gstack"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YC 掌门的 Claude Code 全套配置，23 个角色分工","description":"YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。","url":"https://ourword.ai/skill/i/garrytan-gstack/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"garrytan"},"image":"https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png","codeRepository":"https://github.com/garrytan/gstack"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>garrytan</span>
       <span class="date">2026-08-07</span>
     </div>
-    <h1 class="ttl">Garry Tan 全家桶</h1>
+    <h1 class="ttl">YC 掌门的 Claude Code 全套配置，23 个角色分工</h1>
     <p class="lede">YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。</p>
     <div class="tags"><span class="tag">garrytan</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png" alt="">
     
     <section class="sec"><h2>做什么用</h2><p>YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。看顶级投资人怎么用 agent 干活，光是角色分工这张图就值得装一遍。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。这是一套流程，不是一个会写代码的人设。只要聊天式回答，会嫌它啰嗦。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「Garry Tan 全家桶」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: &#x27;bypassPermissions&#x27;，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「YC 掌门的 Claude Code 全套配置，23 个角色分工」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/garrytan/gstack.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/garrytan/gstack.git">复制</button></div><div class="cmd"><code>mv gstack ~/.claude/skills/gstack</code><button type="button" data-copy="mv gstack ~/.claude/skills/gstack">复制</button></div></div></section>
   </article>
   <aside class="aside">

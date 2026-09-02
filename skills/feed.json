@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-02T03:30:53Z",
+ "generated_at": "2026-09-02T03:52:43Z",
  "count": 170,
  "new_today": 0,
  "picks": 12,
@@ -7104,7 +7104,7 @@
    "id": "garrytan-gstack",
    "kind": "skill",
    "name": "gstack",
-   "title_zh": "Garry Tan 全家桶",
+   "title_zh": "YC 掌门的 Claude Code 全套配置，23 个角色分工",
    "tagline_zh": "YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。",
    "tagline_en": "YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.",
    "desc_en": "Router for the gstack skill suite. (gstack)",
@@ -7129,7 +7129,7 @@
     "copy": "mv gstack ~/.claude/skills/gstack",
     "dir": "~/.claude/skills/gstack"
    },
-   "limit_zh": "这是一套流程，不是一个会写代码的人设。只要聊天式回答，会嫌它啰嗦。",
+   "limit_zh": "这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: 'bypassPermissions'，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。",
    "cover": "https://raw.githubusercontent.com/woowoeth/skill/HEAD/assets/covers/garrytan-gstack.png",
    "cover_kind": "artwork",
    "cover_real": true,
