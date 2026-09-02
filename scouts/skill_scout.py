@@ -601,7 +601,7 @@ LLM_MODEL = (os.environ.get("LLM_MODEL") or "gpt-4o-mini").strip()
 
 ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 写货架文案。这家店只留精品，文案要让人"一眼想装"。
 
-三个字段各司其职，**不许互相重复**：
+每个字段各司其职，**不许互相重复**：
 
 - title_zh：**一句话说清这是什么**（12~24 个汉字）。不是外号、不是产品名。
   ✗ 错：「女娲造 skill」「技能饕餮」——用户不知道那是啥
@@ -609,7 +609,12 @@ ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 
 - tagline_zh：**用户为什么要装**（40~58 字，占满两行）。写痛点/场景/反差 + 一个别处没有的具体细节。
   禁止复述功能列表，禁止「实用利器」「效率神器」这类空话。
 - why_zh：**它到底好在哪**（30~52 字）。机制上的差异点。可以有态度。
-- limit_zh：**不装的理由**（一句诚实局限，必写）。
+- limit_zh：**不装的理由**（20~60 个汉字，**必写，写不出就整件 SKIP**）。
+  要具体到能让人当场决定不装：缺什么前置、只覆盖哪一格、产物到哪儿为止、超出会怎样。
+  ✗ 空话：「使用前请注意适用范围」「超出场景效果不佳」——这种等于没写
+  ✓ 具体：「只认三种渲染器：抛体轨迹、一维振子、RC 电路，落到别的域它直接停下来问你」
+  ✓ 具体：「本机要有 rawtherapee-cli；RAW 才有 16 bit 余量，JPG 只有 8 bit、曝光得保守」
+- limit_en：limit_zh 的英文版，≤150 字符。
 - tagline_en / why_en：英文版，同义但地道，各 ≤115 / ≤130 字符。
 
 基建、官方四件套、合集目录、写不出钩子的，title_zh 设为 "SKIP"。
@@ -620,7 +625,8 @@ repo: {repo}
 kind: {kind}
 description: {desc}
 
-只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en 五个键。"""
+只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en, limit_zh, limit_en 七个键。
+**limit_zh 缺了这件货就上不了架** —— 货架门禁要求四句中文都齐、且 limit_zh 至少 20 字。"""
 
 
 def _clamp_cjk(text: str, limit: int) -> str:
@@ -646,6 +652,35 @@ def _clamp_en(text: str, limit: int) -> str:
     return cut
 
 
+# 门禁要的字段，必须都在提示词的键清单里 —— 开跑就验，不然又是「写下来的和跑着的两回事」。
+#
+# 2026-09-02 栽的：提示词正文写着「limit_zh 必写」，最后一行却只列五个键，
+# 模型听最后那句，limit_zh 一次都没产出过。而门禁恰好卡在这个字段上，
+# 两个 bug 正好互相隐藏 —— 那轮 enrich 写了 18/19 件，same-day 0/19，
+# 日志里只看到「一件没上架」，看不到「因为一个字段从来没被要过」。
+#
+# 手动核对过一次不算修完。这条自检让两头再也不能悄悄分家。
+GATE_FIELDS = ("title_zh", "tagline_zh", "why_zh", "limit_zh")
+
+
+def _assert_prompt_covers_gate() -> None:
+    import re as _re
+    m = _re.search(r"含 (.+?) [一二三四五六七八九十]+个键", ENRICH_PROMPT)
+    if not m:
+        raise SystemExit("[scout] ✗ 提示词里找不到「含 … N 个键」那行 —— 自检没法做，先修提示词")
+    keys = {k.strip() for k in m.group(1).split(",")}
+    miss = [k for k in GATE_FIELDS if k not in keys]
+    if miss:
+        raise SystemExit(
+            f"[scout] ✗ 门禁要 {'/'.join(miss)}，但提示词的键清单里没有 —— "
+            f"写出来的文案永远缺这几项，货一件也上不了架。\n"
+            f"    提示词键清单：{sorted(keys)}\n"
+            f"    门禁要求：{list(GATE_FIELDS)}")
+
+
+_assert_prompt_covers_gate()
+
+
 def _clamp_patch(patch: dict) -> dict:
     """把模型产出的文案硬性压进规范长度——模型不听字数指令，代码兜底。"""
     if patch.get("title_zh"):
@@ -658,6 +693,15 @@ def _clamp_patch(patch: dict) -> dict:
         patch["tagline_en"] = _clamp_en(patch["tagline_en"], 115)
     if patch.get("why_en"):
         patch["why_en"] = _clamp_en(patch["why_en"], 130)
+    # limit_zh 2026-09-02 补。此前它压根不在这里，也不在提示词最后那行的键清单里 ——
+    # 正文写着「必写」，最后一行却只列五个键，模型听最后那句，于是一次都没产出过。
+    # **同一段提示词里，写下来的和跑着的是两回事。**
+    # 而货架门禁恰好卡在这个字段上（四句齐 + limit_zh≥20），两个 bug 正好互相隐藏：
+    # 09-01 那轮 enrich 写了 18/19 件，same-day 0/19，全卡在 limit_zh=0 字。
+    if patch.get("limit_zh"):
+        patch["limit_zh"] = _clamp_cjk(patch["limit_zh"], 60)
+    if patch.get("limit_en"):
+        patch["limit_en"] = _clamp_en(patch["limit_en"], 150)
     return patch
 
 
@@ -743,7 +787,7 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             c = json.loads(txt)
             patch = {k: str(c[k]).strip() for k in
-                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh")
+                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh", "limit_en")
                      if c.get(k) and str(c[k]).strip()}
             patch = _clamp_patch(patch)
             if patch.get("title_zh", "").strip().upper() == "SKIP":
@@ -814,8 +858,9 @@ def _taste_pass(it: dict) -> str:
     # 封面也没进闸：在架货 99% 有封面（是 08-28 补的），但**心选里 30 件没有**，
     # 拿它当入闸条件会砍掉 42% 的心选。**缺封面是待办，不是判决** ——
     # 改成 check_curation 的一张待办清单（见【20】）。
-    if not all(len((it.get(k) or "").strip()) >= 8
-               for k in ("title_zh", "tagline_zh", "why_zh", "limit_zh")):
+    # 用 GATE_FIELDS 这一个常量，不再各写各的 —— 提示词那头由
+    # _assert_prompt_covers_gate() 开跑即验，两边不可能再悄悄分家。
+    if not all(len((it.get(k) or "").strip()) >= 8 for k in GATE_FIELDS):
         return ""
     if len((it.get("limit_zh") or "").strip()) < 20:
         return ""
