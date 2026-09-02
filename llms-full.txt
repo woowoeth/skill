@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 170 skills.
+# Full corpus, plain text. 172 skills.
 
 ========================================================================
 ## a2ui-renderer
@@ -178,6 +178,44 @@ git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point 
 
 ### Where does it come from?
 Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
+
+========================================================================
+## easy-humanizer-zh
+## 把AI中文文本改写成四种真人声纹的润色器
+URL: https://ourword.ai/skill/i/fxw-labs-easy-humanizer-zh/
+URL (中文): https://ourword.ai/skill/zh/i/fxw-labs-easy-humanizer-zh/
+Source: https://github.com/fxw-labs/easy-humanizer-zh
+Updated: 2026-09-01
+Tags: writing, skill, fxw-labs
+
+Four preset voices—tech blogger, WeChat writer, PM, academic—rewrite AI Chinese text. Detects 24 AI tells and.
+
+### What does this skill do?
+按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
+
+### Why is it worth installing?
+Not generic 'humanizing'—it converges vocabulary, syntax, and rhythm toward a chosen persona, with quantifiable before/after.
+
+### How do you install it?
+git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
+
+--- 中文 ---
+技术博客、公号主、产品经理、学术作者，四种预设人格任选。检测24种AI痕迹，逐句重写，让审稿人看不出是机器写的。
+
+### Q：这个 skill 做什么？
+按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
+
+### Q：为什么值得装？
+不是泛泛的'更像人'，而是按声纹特征做定向改写：词汇、句式、节奏都朝目标人格收敛。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
 
 ========================================================================
 ## textile-toy-portrait
@@ -1349,6 +1387,28 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 
 ### Where does it come from?
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## vibe-techdesign
+## 把 MVP 技术选型变成一张可执行的设计图
+URL: https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/
+Source: https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign
+Updated: 2026-08-21
+Tags: images, skill, KhazP
+
+Stuck on stack choices? It turns architecture, dependencies, and risks into one clear spec—no more back-and-forth.
+
+### What does this skill do?
+Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says "plan technical design", "choose tech stack", or "how should I build this".
+
+### Why is it worth installing?
+It doesn't just suggest—it forces a structured TDD: scope first, then components, then risks. The order is fixed, so you end.
+
+### How do you install it?
+git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: KhazP/vibe-coding-prompt-template The repository ships 1 skills in total. Homepage: https://vibeworkflow.app/
 
 ========================================================================
 ## fitness-coach
