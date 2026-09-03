@@ -329,8 +329,12 @@ a.card{color:inherit}
    那正是「空洞」本身 —— 用一个空洞换另一个没有意义。裁掉的是底部，头还在。 */
 .shot.capped img{height:100%;object-fit:cover;object-position:center top}
 /* 默认预览卡：能上卡，但是最后一档 —— 去饱和、压对比、四边留一圈底色，别和真封面抢 */
-.shot.og{background:var(--soft)}
-.shot.og img{filter:grayscale(.35) contrast(.9) opacity(.85);transform:scale(.92);transform-origin:center}
+.shot.plate-only{aspect-ratio:2/1;background:linear-gradient(135deg,var(--soft),#f9f7f1);
+  display:flex;align-items:flex-end;justify-content:space-between;padding:12px 14px;box-shadow:inset 0 0 0 1px var(--line)}
+.shot.plate-only .plate-glyph{font:700 clamp(44px,26%,72px)/.9 var(--serif);color:var(--ink);opacity:.14;letter-spacing:-.04em;
+  position:absolute;right:10px;top:6px;font-size:min(96px,42cqw)}
+.shot.plate-only{container-type:inline-size}
+.shot.plate-only .plate-kicker{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 
 /* ---- 无图卡：一道短墨杠起头 ------------------------------------
    不补占位符、不放 OG 卡。56 件没有真产出物图，无图必须是一等公民。
@@ -1056,10 +1060,22 @@ function renderChips(all){
    瀑布流里高卡就是注意力。注意力给证据，不给宣传图。
    不额外印「作者头图」这种标签 —— 31 张卡上加一行小字是噪音，
    画幅本身已经把话说清了。 */
+function plateGlyph(it){
+  // 标题里第一个汉字当大字；没有汉字就用分类名的首字
+  var t = nameOf(it) || "", m = t.match(/[\u4e00-\u9fff]/);
+  if(!m){ var c = catName(it.category) || "技"; m = [c.charAt(0)]; }
+  return m[0];
+}
 function shotHTML(it, forSheet){
   var rec = coverRec(it);
   if(!rec){
-    return "";
+    // 09-03：89 件在作者仓里确实找不到自家的图（README 和文件树都翻过）。
+    // 与其让它们当纯文字块夹在有图的卡中间，不如给一张排版底 —— 大字衬线首字 + 分类小字，
+    // 照原声 .cover .fallback 的路子。比例 2:1，别把一列吃掉。详情页（forSheet）不需要。
+    if(forSheet) return "";
+    return '<span class="shot plate-only" aria-hidden="true">'
+         + '<span class="plate-glyph">'+esc(plateGlyph(it))+'</span>'
+         + '<span class="plate-kicker">'+esc(catName(it.category))+'</span></span>';
   }
   var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
 
