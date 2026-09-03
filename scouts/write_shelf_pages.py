@@ -44,6 +44,9 @@ COVER_DENY = (
 
 def cover_ok(c):
     c = (c or "").strip()
+    # 09-03：封面改成同源托管（/skill/assets/covers/…）之后，这里只认 http 开头 → 详情页一直没图。
+    if c.startswith("/skill/"):
+        c = "https://ourword.ai" + c
     if not c.startswith("http"):
         return ""
     low = c.lower()
@@ -87,8 +90,14 @@ def page(it, prev=None, nxt=None, related=None):
     ins = it.get("install") or {}
     cmds = [ins[k] for k in ("clone", "copy") if ins.get(k)]
     cover = cover_of(it)
+    # 店主 09-03：「详情页把封面图也放进去，如果有的话，没有的话就放 github url 预览卡」。
+    # 卡片上不铺预览卡；详情页一次只看一件，预览卡是这个仓的门脸，放。
+    cover_is_og = False
+    if not cover and it.get("repo"):
+        cover = "https://opengraph.githubassets.com/pinwei/%s" % it["repo"]
+        cover_is_og = True
 
-    media = ('<img class="cover" src="%s" alt="">' % esc(cover)) if cover else ""
+    media = ('<img class="cover%s" src="%s" alt="" onerror="this.remove()">' % (" og" if cover_is_og else "", esc(cover))) if cover else ""
 
     uses_map = {
         "creative": [
@@ -199,6 +208,8 @@ def page(it, prev=None, nxt=None, related=None):
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">

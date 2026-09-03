@@ -1070,7 +1070,14 @@ function shotHTML(it, forSheet){
     // 09-03：89 件在作者仓里确实找不到自家的图（README 和文件树都翻过）。
     // 与其让它们当纯文字块夹在有图的卡中间，不如给一张排版底 —— 大字衬线首字 + 分类小字，
     // 照原声 .cover .fallback 的路子。比例 2:1，别把一列吃掉。详情页（forSheet）不需要。
-    if(forSheet) return "";
+    // 店主 09-03：「详情页把封面图也放进去，如果有的话，没有的话就放 github url 预览卡」。
+    // 卡片上不铺预览卡（毫无吸引力、有大有小），详情页一次只看一件，放预览卡是给读者一个仓的门脸。
+    if(forSheet){
+      if(!it.repo) return "";
+      return '<span class="shot hasimg sheet-og" style="aspect-ratio:2">'
+           + '<img src="https://opengraph.githubassets.com/pinwei/'+esc(it.repo)+'" alt="" loading="eager" decoding="async"'
+           + ' onerror="this.parentNode.remove()"></span>';
+    }
     return '<span class="shot plate-only" aria-hidden="true">'
          + '<span class="plate-glyph">'+esc(plateGlyph(it))+'</span>'
          + '<span class="plate-kicker">'+esc(catName(it.category))+'</span></span>';
