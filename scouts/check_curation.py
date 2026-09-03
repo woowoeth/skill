@@ -1188,7 +1188,9 @@ def main() -> None:
     if _short:
         err(f"{len(_short)} 件编辑挑的理由不到 30 字（门闸不认）：{', '.join(_short[:5])}")
     # 【24】店长推荐：每一件都得有作者真图（文件真在）且四段文案齐 —— 店主 09-03：「至少要有图」。标准见 scout_lib.refresh()。
-    _picks = [_it for _it in (items.values() if isinstance(items, dict) else items) if _it.get("pick") and not _it.get("hide")]
+    # pick 由 refresh() 在内存里重算、只落进 feed.json；skills/*.json 里那些是 8/28 的遗留，读它会误报
+    _feed_items = (lib.read_json(os.path.join(lib.ROOT, "skills", "feed.json"), {}) or {}).get("skills", [])
+    _picks = [_it for _it in _feed_items if _it.get("pick")]
     _bad_pick = []
     for _it in _picks:
         _u = _it.get("cover") or ""
