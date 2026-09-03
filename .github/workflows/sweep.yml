@@ -201,6 +201,16 @@ jobs:
         run: |
           python scouts/release_clean.py --max 12 --chunk 3 --timeout 240 || true
           python scouts/scout_lib.py || true
+      # 09-03：新上架的先去作者仓 README/文件树取真图（取不到走排版底，卡片上不铺预览卡），再出 800px 派生图。
+      # 之前这一步只在本地手跑，CI 上架的货全顶着预览卡/空图上首页。
+      - name: 新货取真图 + 派生缩略图
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scouts/repo_covers.py --tree --only-none --max 40 || true
+          python3 scouts/make_thumbs.py || true
+          python3 scouts/scout_lib.py >/dev/null 2>&1 || true
 
       - name: 提交
         if: always()
