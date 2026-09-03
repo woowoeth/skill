@@ -59,17 +59,17 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
 
 :root{
   /* 纸是骨色，点是印泥红。红只给标记和句点，正文不跟货抢颜色。 */
-  --bg:      #f4efe6;
-  --card:    #fffaf3;
-  --soft:    #e8e0d4;
+  --bg:      #f4f2ec;   /* 原声同款米白 */
+  --card:    #fffefa;
+  --soft:    #eae7de;
 
-  --ink:     #3a342e;
-  --ink-2:   #5a534c;
-  --ink-3:   #7a726a;
-  --ink-4:   #9a9288;
+  --ink:     #14120e;   /* 原来 #3a342e 灰褐，和米底对比不够，整站发糊 */
+  --ink-2:   #3d3830;
+  --ink-3:   #6f6959;
+  --ink-4:   #9b9484;
 
-  --line:    #e0d8cc;
-  --line-2:  #cfc6ba;
+  --line:    #e2ddd0;
+  --line-2:  #cec8b8;
   --accent:  #8b3d2f;
 
   /* —— 单色。**站上没有品牌色。** ——
@@ -103,7 +103,8 @@ window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r
 
   --s1:4px; --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px;
 
-  --r-card: 10px;
+  --r-card: 14px;
+  --shadow: 0 1px 2px rgba(20,18,14,.05), 0 8px 24px -16px rgba(20,18,14,.18);
   --r-chip: 999px;
   --r-img:  10px;
 
@@ -245,6 +246,8 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
   break-inside:avoid;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
   margin:0;overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease,border-color .18s,box-shadow .18s;
   cursor:pointer;display:block;
   transition:border-color .15s, transform .15s;
 }
@@ -273,9 +276,7 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
 .shot .plate-ink{
   position:absolute;inset:0;padding:18px 16px 16px;
   display:flex;flex-direction:column;justify-content:flex-end;
-  background:
-    radial-gradient(120% 80% at 88% 0%, rgba(20,20,19,.06), transparent 55%),
-    linear-gradient(165deg,#e8e4dc 0%,#ddd8ce 60%,#d0cbc2 100%);
+  background:linear-gradient(135deg,var(--soft),#f9f7f1);
 }
 .shot .plate-cat{
   font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
@@ -302,6 +303,8 @@ a.card{color:inherit}
    左偏 16px 命中 `.foot` —— **失手不是「没点到」，是「打开了详情弹层」**，
    得先关掉再重试。而心选是店里最高等级的信号（`.sendbar` 自己写着
    「提交后我会据此改选品标准」），入口却是全站最小的可点目标。 */
+.card:hover{transform:translateY(-3px);border-color:var(--line-2);
+  box-shadow:0 2px 4px rgba(20,18,14,.06),0 18px 40px -22px rgba(20,18,14,.32)}
 .card .heart{position:relative}
 .card .heart::after{content:"";position:absolute;inset:-13px -11px}
 
@@ -340,7 +343,7 @@ a.card{color:inherit}
 }
 .card.noimg .cbody{padding-top:var(--s3)}
 
-.cbody{padding:12px}
+.cbody{padding:15px 17px 17px;display:flex;flex-direction:column;gap:9px}
 
 /* 标题：两行截断。
    ⚠️ **下面这两行旧账已经不成立了，留着是为了让人看见它怎么过期的：**
@@ -367,7 +370,7 @@ a.card{color:inherit}
    为什么不是 4 行：4 行才 0 条被夹，但那要 82 张卡长高一档，整条流的节奏就变了。
    3 行让版式吸收掉绝大多数，**剩下的几条按文案缩短，不让版式迁就个例**。 */
 .card h3{
-  margin:0;font:600 20px/1.32 var(--serif);color:var(--ink);
+  margin:0;font:700 19px/1.34 var(--serif);color:var(--ink);letter-spacing:-.01em;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
 /* ---- 英文标题多给一行（手机再多一行）--------------------------------
@@ -429,10 +432,7 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
    现在层级由**夹行行数**锁死：点评 ≥ 但是，恒成立。
    `limit_zh` 中位 107 字、`limit_brief_zh` 目标 ≤30 字，差 3.5 倍 ——
    夹行之后两者都是固定高度，所以这个倒置在字段填满前后都不会再出现。 */
-.card .rev{
-  margin:var(--s2) 0 0;font:var(--t-body)/var(--lh-body) var(--sans);color:var(--ink-2);
-  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
-}
+.card .rev{margin:0;color:var(--ink-2);font:14px/1.66 var(--sans);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ---- 但是：占掉小红书的点赞位 ----------------------------------
    实测「但是」中位 107 字、最长 134 字。手机两列每行约 12 字，
@@ -468,14 +468,8 @@ html[lang="en"] .card h3{-webkit-line-clamp:4}
    星数在前端已经彻底没有出口。替代信号两个，都只在「有」的时候出现：
    一个只有一段提示词的极简 skill 可能恰恰是好东西，
    给它印「备料少」就是把星数的错误换个马甲再犯一次。 */
-.foot{
-  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-  margin:var(--s3) 0 0;
-}
-.tagn{
-  font:var(--t-micro)/1 var(--sans);color:var(--ink-4);letter-spacing:.04em;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;
-}
+.foot{margin-top:auto;padding-top:11px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:10.5px/1 var(--mono);color:var(--ink-4);letter-spacing:.03em}
+.tagn{font:11px/1.4 var(--sans);color:var(--ink-3);background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:1px 7px}
 /* ---- 心标 ----------------------------------------------------------
    店主的手动信号，凌驾于一切机器信号之上：他点了，就是最高等级。
    站是纯静态没有后端，所以点心只写 localStorage、不产生任何请求；
@@ -1147,7 +1141,10 @@ function shotHTML(it, forSheet){
      ---------------------------------------------------------------- */
   // 09-03 撤回上面那条：店主说「很多都没图片」—— 他 08-31 的指示是「没有仓库图就用默认预览卡」，
   // 我 09-02 擅自改成不铺。恢复铺，但用 .shot.og 压对比、去饱和、缩一圈，别和真封面抢。
-  var ogCls = (!forSheet && it.cover_kind === "og") ? " og" : "";
+  // 09-03 第三次改这条，这次听最新的话：店主说预览卡「毫无吸引力，有大有小」（1200×600 和 1200×630 混着）。
+  // 卡片上不铺预览卡；取不到作者仓里的真图（repo_covers.py）就走 plate。
+  if(!forSheet && it.cover_kind === "og") return "";
+  var ogCls = "";
 
   var AR_FLAT = 2.45, H_MAX_K = 1.40;
   var rawAr = ar;
