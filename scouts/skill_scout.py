@@ -672,7 +672,17 @@ ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 
 
 - title_zh：**一句话说清这是什么**（12~24 个汉字）。不是外号、不是产品名。
   ✗ 错：「女娲造 skill」「技能饕餮」——用户不知道那是啥
-  ✓ 对：「把任何人的思维方式蒸馏成一个能装的 skill」
+  **禁止以「把」「一句话」「一张」「用」开头。** 2026-09-03 店主说新货标题不吸引人，
+  查近三天 15 条**全是「把 X 做成 Y」**——同一个句式排成一列，读者滑三张就疲了。
+  先亮**钩子**（它拒绝什么 / 它多懂行 / 别处拿不到的那一点），再说产出物。店主亲手标过的好标题长这样：
+  ✓ 「植被多就换品红键色，把照片做成能剪下来的贴纸页」
+  ✓ 「会替你删掉一半心愿单的行程地图生成器」
+  ✓ 「会打断你含糊用词的苏格拉底式陪练」
+  ✓ 「用豆包自带生图出整套 PPT，一分第三方 API 钱不花」
+  ✓ 「本地星历实算西洋·印度·八字三盘」
+  ✓ 「只认「哪天之后你回不去了」的年度日记复盘」
+  ✓ 「报价单先看漏项不看总价的 20 年装修老师傅」
+  ✓ 「每一步都告诉你怎么算做好了的菜谱」
 - tagline_zh：**用户为什么要装**（40~58 字，占满两行）。写痛点/场景/反差 + 一个别处没有的具体细节。
   禁止复述功能列表，禁止「实用利器」「效率神器」这类空话。
 - why_zh：**它到底好在哪**（30~52 字）。机制上的差异点。可以有态度。
@@ -1684,6 +1694,9 @@ def main() -> None:
                     help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
     ap.add_argument("--verify-paths", action="store_true",
                     help="复核在架商品的 path 能不能取回 SKILL.md（只报告，不改数据）")
+    ap.add_argument("--retitle-since", default="",
+                    help="给这个日期起入库的在架货重写 title_zh/title_en（其余句不动）。"
+                         "09-03 店主说新货标题不吸引；查近三天 15 条全是「把…」开头")
     ap.add_argument("--enrich-missing", action="store_true",
                     help="给所有在架、仍是占位/缺文案的商品补写文案（用 LLM_* secrets）")
     a = ap.parse_args()
@@ -1693,6 +1706,23 @@ def main() -> None:
         seed(a.seed, a.meta)
         return
     existing, sources = lib.load_items(), lib.load_sources()
+    if a.retitle_since:
+        _m = lib.apply_editorial(dict(existing))
+        ids = [sid for sid, it in _m.items() if not it.get("hide") and (it.get("added_at") or "")[:10] >= a.retitle_since]
+        print(f"[scout] retitle: {len(ids)} 件（{a.retitle_since} 起入库）只重写标题")
+        keep = {sid: {k: existing[sid].get(k) for k in ("tagline_zh","tagline_en","why_zh","why_en","limit_zh","limit_en")} for sid in ids}
+        enrich_items(ids, existing)
+        cur = lib.read_json(lib.EDITORIAL, {"items": {}})
+        for sid in ids:
+            for k, v in keep[sid].items():          # 其余句恢复原样，只让标题变
+                if v: existing[sid][k] = v
+            lib.save_item(existing[sid])
+            e = cur["items"].setdefault(sid, {})
+            for k in ("title_zh", "title_en"):
+                if existing[sid].get(k): e[k] = existing[sid][k]
+        lib.write_json(lib.EDITORIAL, cur)
+        lib.refresh()
+        return
     if a.enrich_missing:
         # 「缺文案」的口径必须和门禁同源。2026-09-02 之前这里只看 why_zh，
         # 于是那 13 件「有 why_zh、没 limit_zh」的在架货**一次都没被选中补写** ——

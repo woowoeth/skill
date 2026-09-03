@@ -1,6 +1,10 @@
 name: enrich-backfill
 on:
   workflow_dispatch:
+    inputs:
+      retitle_since:
+        description: "只重写这个日期起入库的货的标题（留空=补缺的句子）"
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -19,7 +23,12 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: python scouts/skill_scout.py --enrich-missing
+        run: |
+          if [ -n "${{ github.event.inputs.retitle_since }}" ]; then
+            python scouts/skill_scout.py --retitle-since "${{ github.event.inputs.retitle_since }}"
+          else
+            python scouts/skill_scout.py --enrich-missing
+          fi
       - name: 提交
         run: |
           bash scouts/git_sync.sh "enrich: 补写在架占位货文案"
