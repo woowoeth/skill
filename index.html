@@ -940,6 +940,30 @@ var lang = params.get("lang")==="en" ? "en" : "zh";
 var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
 var D=null, SHELF=false;
 var state={ q:"", cat:"all", limit:60 };
+/* 09-03 同事 humanworld-a4 实测：筛了分类、翻了一屏、点开一件再返回 → 分类回「全部」、滚到顶。
+   state 只活在内存，任何导航都清零；卡片是 JS 渲染的，浏览器自带的滚动恢复也落空。
+   改法：cat / q 进 URL（?cat=…&q=…，返回天然带回，还能分享筛选后的货架）；
+   已加载的条数和滚动位置存 sessionStorage（按 URL 分键），首次渲染后恢复。 */
+if(params.get("cat")) state.cat = params.get("cat");
+if(params.get("q"))   state.q   = params.get("q");
+try{ history.scrollRestoration = "manual"; }catch(_){}
+function syncURL(){
+  var u = new URLSearchParams();
+  if(lang==="en") u.set("lang","en");
+  if(state.cat!=="all") u.set("cat", state.cat);
+  if(state.q) u.set("q", state.q);
+  var qs = u.toString();
+  var next = location.pathname + (qs ? "?"+qs : "") + location.hash;
+  if(next !== location.pathname+location.search+location.hash) history.replaceState(null, "", next);
+}
+function posKey(){ return "pinwei:pos:"+location.search; }
+function savePos(){ try{ sessionStorage.setItem(posKey(), JSON.stringify({y:window.scrollY, limit:state.limit})); }catch(_){} }
+function restorePos(){
+  var raw=null; try{ raw = sessionStorage.getItem(posKey()); }catch(_){}
+  if(!raw) return null;
+  try{ return JSON.parse(raw); }catch(_){ return null; }
+}
+window.addEventListener("pagehide", savePos);
 
 function el(id){return document.getElementById(id)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -1376,6 +1400,7 @@ function renderShelf(keepScroll){
   renderChips(all);
   el("main").innerHTML = renderFlow(all);
   armAutoMore();
+  syncURL();
   SHELF = true;
   if(y!=null) window.scrollTo(0,y);
 }
@@ -1643,7 +1668,7 @@ el("q").addEventListener("input", function(){
   clearTimeout(qt);
   qt = setTimeout(function(){
     state.q = v; state.limit = 60;
-    if(D){ el("main").innerHTML = renderFlow(shelfItems()); armAutoMore(); }
+    if(D){ el("main").innerHTML = renderFlow(shelfItems()); armAutoMore(); syncURL(); }
   }, 120);
 });
 el("clr").addEventListener("click", function(){
@@ -1679,7 +1704,11 @@ el("main").innerHTML = '<div class="empty">'+esc(t("loading"))+'</div>';
 
 window.__FEED__.then(function(feed){
   D = feed;
+  var _pos = restorePos();
+  if(_pos && _pos.limit > state.limit) state.limit = _pos.limit;
+  if(state.q){ el("q").value = state.q; el("searchBox").classList.add("has"); }
   renderShelf();
+  if(_pos && _pos.y > 0){ requestAnimationFrame(function(){ window.scrollTo(0, _pos.y); }); }
 }).catch(function(e){
   el("main").innerHTML = '<div class="empty">'+esc(t("failed"))+'</div>';
   if(window.console) console.error(e);
