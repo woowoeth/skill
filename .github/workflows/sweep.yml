@@ -129,6 +129,10 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           SAME_DAY_SHELF: "1"
+          # 2026-09-03 实测：sweep 挑出 ≥80 的**仓**，--suggest 进去后按默认 60 线把仓里
+          # **每个子 skill** 又判了一遍，62/65/72/75 分的全上了架 —— 80 线被自己的下游绕过。
+          # 这一步的门槛必须和挑选的门槛一致。
+          TASTE_MIN: "80"
         run: |
           R=$(python3 -c "import json;print(' '.join(k['repo'] for k in json.load(open('/tmp/sweep_keep.json'))[:10]))" 2>/dev/null || true)
           [ -n "$R" ] || { echo "本轮没有 ≥70 分的"; exit 0; }
