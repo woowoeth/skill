@@ -2,127 +2,165 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-03T06:26:36Z",
-   "判了": 15,
-   "过": 7,
+   "时间": "2026-09-03T07:27:26Z",
+   "判了": 20,
+   "过": 3,
    "明细": [
     {
-     "id": "op7418-guizang-yingzao-skill-yingzao",
-     "repo": "op7418/guizang-yingzao-skill",
-     "title": "只认真实中国建筑与在地文化，出片即杂志编辑版式",
-     "过": true,
-     "为什么": "品味 72 分 —— 工作流完整，边界清晰，但核心是图像生成技巧，非独特判断。（3 判：[72, 72, 85]）",
-     "分": 72
-    },
-    {
-     "id": "bitjaru-styleseed-styleseed",
-     "repo": "bitjaru/styleseed",
-     "title": "只认当前画布边界，把 StyleSeed 请求派给唯",
-     "过": false,
-     "为什么": "品味 47 分 < 60 —— 路由分发清晰有边界，但本质是指南目录，具体做法在别处。（3 判：[45, 47, 65]）",
-     "分": 47
-    },
-    {
-     "id": "cli-cli",
-     "repo": "cli/cli",
-     "title": "不打开浏览器就能改 Issue 合并 PR 的 Gi",
+     "id": "fcakyon-phd-skills",
+     "repo": "fcakyon/phd-skills",
+     "title": "只认论文复现、实验设计、审稿、对比四件事的科研助手",
      "过": false,
      "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
     },
     {
-     "id": "cli-cli-agentic-workflows",
-     "repo": "cli/cli",
-     "title": "只认 gh 命令行的四类 workflow 请求，自",
+     "id": "fcakyon-phd-skills-experiment-design",
+     "repo": "fcakyon/phd-skills",
+     "title": "只认消融实验的对照设计器，基线矩阵自动排",
      "过": false,
-     "为什么": "品味 40 分 < 60 —— 功能是路由分发，但产出物泛泛，泛用工具也可替代。（3 判：[35, 40, 45]）",
-     "分": 40
-    },
-    {
-     "id": "cli-cli-code-review",
-     "repo": "cli/cli",
-     "title": "只认代码库自家规矩的 GitHub PR 审查员",
-     "过": true,
-     "为什么": "品味 72 分 —— 审查规范详细且可执行，但本质仍依赖模型遵循，深度略逊于人工专家，非独有做法。（3 判：[72, 72, 78]）",
+     "为什么": "品味 72 分 < 80 —— 方法系统完整，但通用性强，非独家方案，多为常识性结构化。（3 判：[68, 72, 75]）",
      "分": 72
     },
     {
-     "id": "cli-cli-dependabot-triager",
-     "repo": "cli/cli",
-     "title": "只评不批的Dependabot PR分流员，三档结论",
-     "过": true,
-     "为什么": "品味 72 分 —— 流程严谨，边界清晰，但本质是规则化操作，易被替代。（3 判：[72, 72, 75]）",
-     "分": 72
+     "id": "fcakyon-phd-skills-compare",
+     "repo": "fcakyon/phd-skills",
+     "title": "同一步伐对齐训练曲线，拒绝拿终局当基准的对比",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 立意明确且独特，强制同epoch对齐并区分指标类型，操作性强，但实现细节依赖上游（3 判：[72, 75, 75]）",
+     "分": 75
     },
     {
-     "id": "rohitg00-agentmemory",
-     "repo": "rohitg00/agentmemory",
-     "title": "跑分第一的持久记忆，让编码 Agent 不再失忆",
+     "id": "fcakyon-phd-skills-dataset-curation",
+     "repo": "fcakyon/phd-skills",
+     "title": "会先问『这数据对谁不公平』的数据集体检员",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 方法论扎实全面，流程清晰，但属通用清单，换工具或专家也能做。（3 判：[62, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "ryze-ai-adgent-open-seo-mcp-skills",
+     "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+     "title": "只认你自家 Search Console 数据的 S",
      "过": false,
      "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
     },
     {
-     "id": "rohitg00-agentmemory-agentmemory-agents",
-     "repo": "rohitg00/agentmemory",
-     "title": "只认官方适配器，装错路径当场报错的内存接线员",
+     "id": "ryze-ai-adgent-open-seo-mcp-skills-ai-visibility",
+     "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+     "title": "不靠猜，直接读 GA4 原始流量，看 ChatGPT",
      "过": false,
-     "为什么": "品味 55 分 < 60 —— 实用但文档化，连接流程清晰，却非独特不可替代（3 判：[45, 55, 55]）",
-     "分": 55
-    },
-    {
-     "id": "rohitg00-agentmemory-agentmemory-architecture",
-     "repo": "rohitg00/agentmemory",
-     "title": "拆开记忆引擎看存储与检索全链路，附端口与查看器",
-     "过": false,
-     "为什么": "品味 55 分 < 60 —— 描述清晰但属架构说明，非实操做法，边界感一般。（3 判：[45, 55, 65]）",
-     "分": 55
-    },
-    {
-     "id": "rohitg00-agentmemory-agentmemory-config",
-     "repo": "rohitg00/agentmemory",
-     "title": "不翻源码就改配置，环境变量端口开关全在这",
-     "过": true,
-     "为什么": "品味 62 分 —— 配置说明清晰实用，但属工具文档，非独特方法论。（3 判：[55, 62, 65]）",
-     "分": 62
-    },
-    {
-     "id": "geekjourneyx-meme-generator-skill-generating-memes",
-     "repo": "geekjourneyx/meme-generator-skill",
-     "title": "298 个模板随叫随到，连 petpet 都能现做",
-     "过": false,
-     "为什么": "品味 55 分 < 60 —— 扎实收录工具用法，但功能可由CLI直接替代，无独特判断边界。（3 判：[45, 55, 62]）",
-     "分": 55
-    },
-    {
-     "id": "jimliu-doubao-multimodal-skill-doubao-multimodal",
-     "repo": "JimLiu/doubao-multimodal-skill",
-     "title": "音视频丢给它，回来的是字幕、时间轴和谁在说话",
-     "过": true,
-     "为什么": "品味 72 分 —— 功能扎实且边界清晰，但本质是火山方舟API的封装，换其他多云厂商工具可实现。（3 判：[72, 72, 82]）",
+     "为什么": "品味 72 分 < 80 —— 方法明确但依赖特定工具，通用替代方案弱，未显独特洞察或边界。（3 判：[45, 72, 72]）",
      "分": 72
     },
     {
-     "id": "oil-oil-kimi",
-     "repo": "oil-oil/kimi",
-     "title": "设计稿交给它，前端代码拿回来就能跑",
-     "过": true,
-     "为什么": "品味 70 分 —— 边界清晰、封装实用，但本质是CLI包装器，非独有核心价值。（3 判：[62, 70, 72]）",
-     "分": 70
-    },
-    {
-     "id": "aldegad-tenstorrent",
-     "repo": "aldegad/tenstorrent",
-     "title": "跳过网页控制台，直接调 Tenstorrent 全家",
+     "id": "ryze-ai-adgent-open-seo-mcp-skills-backlink-check",
+     "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+     "title": "不只看外链数量，连锚文本分布都摊开给你看的反链体检",
      "过": false,
-     "为什么": "品味 55 分 < 60 —— API目录加curl示例，边界清晰但做法通用，官方文档可替代，无独特判断。（3 判：[45, 55, 62]）",
-     "分": 55
+     "为什么": "品味 72 分 < 80 —— 流程扎实，边界清楚，但依赖外部工具，实现方式可能同质化。（3 判：[62, 72, 75]）",
+     "分": 72
     },
     {
-     "id": "dacnay816y62-hub-window-scenery-skill",
-     "repo": "dacnay816y62-hub/window-scenery-skill",
-     "title": "左下角永远钉着地名徽章的车窗风景照",
-     "过": true,
-     "为什么": "品味 72 分 —— 细节丰富，流程完整，但本质可被其他图像工具复现，且依赖个人路径。（3 判：[70, 72, 72]）",
+     "id": "ryze-ai-adgent-open-seo-mcp-skills-competitor-gap",
+     "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+     "title": "专挖对手有而你没有的搜索词，按流量和可赢性排好序",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程清晰，步骤具体，但依赖特定数据源，非独家方法论。（3 判：[72, 72, 75]）",
      "分": 72
+    },
+    {
+     "id": "nulightjens-humanizer-stack-structural-humanizer",
+     "repo": "NulightJens/humanizer-stack",
+     "title": "专删AI味叙事骨架，留下你原本的毛边",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 基于实证研究，提供六项可操作的结构审计与改写流程，边界清晰，非泛泛而谈。（3 判：[72, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "nulightjens-humanizer-stack-humanizer",
+     "repo": "NulightJens/humanizer-stack",
+     "title": "只认维基百科那份AI写作痕迹清单的文本去味器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 准确识别并修补AI文风，但核心思路仍源于既有指南，独特性有限。（3 判：[68, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "lennney-stop-that-shit-stop-that-shit",
+     "repo": "lennney/stop-that-shit",
+     "title": "只准改该改的，越界一步就喊停的代码审查员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 拒绝机制明确，边界清晰，但更像优化方法论，换工具也能实现。（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "agiwhitelist-auteur",
+     "repo": "agiwhitelist/auteur",
+     "title": "拒绝套版，从零长出整套网站设计系统",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰，交付物明确，反模式清单与验证门禁是别处拿不到的实做。（3 判：[65, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "pale-knight-redteam-skill",
+     "repo": "pale-knight/redteam-skill",
+     "title": "只带你走能落地的攻击链，不背 CVE 字典",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "pale-knight-redteam-skill-ad-attack",
+     "repo": "pale-knight/redteam-skill",
+     "title": "拿到域账号后不再卡壳的 AD 全链路攻击手册",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 域攻击流程扎实，分工明确，但属专家操作手册，非独有方法论。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "pale-knight-redteam-skill-ad-recon",
+     "repo": "pale-knight/redteam-skill",
+     "title": "不碰密码不越权，把AD域摸成一张可下手的图",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰、门控合理，但同质工具多，非唯一解法。（3 判：[72, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "pale-knight-redteam-skill-cicd",
+     "repo": "pale-knight/redteam-skill",
+     "title": "专挑 CI/CD 软肋下手的红队渗透手册",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 红队CI/CD攻击操作手册，实操细节充分，但边界清晰度一般，需配合环境（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "outlinedriven-odin-claude-plugin",
+     "repo": "OutlineDriven/odin-claude-plugin",
+     "title": "先画图再写码，46 个 Agent 替你守住架构不跑",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "iziqing--disk-cleaner",
+     "repo": "iziqing/-disk-cleaner",
+     "title": "只动你点头的C盘清理，先扫后议再备份",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程严谨安全边界清晰，但核心依赖现成WizTree，方案性大于不可替代性。（3 判：[72, 72, 78]）",
+     "分": 72
+    },
+    {
+     "id": "img2threejs-img2threejs",
+     "repo": "img2threejs/img2threejs",
+     "title": "拒绝贴图骗人的代码建模，从参考图长出可动三维骨架",
+     "过": false,
+     "为什么": "品味 76 分 < 80 —— 扎实的工程化流程，有硬性约束，但偏重内部脚手架叙事。（3 判：[72, 76, 82]）",
+     "分": 76
+    },
+    {
+     "id": "simonlin1212-a-stock-data",
+     "repo": "simonlin1212/a-stock-data",
+     "title": "54个真实数据端点，A股取数不靠猜",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰拒绝泛化，54端点自含代码可运行，版本日志实证迭代，别处难替代。（3 判：[72, 85, 85]）",
+     "分": 85
     }
    ]
   },
