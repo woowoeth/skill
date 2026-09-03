@@ -1157,6 +1157,29 @@ def main() -> None:
     if _og:
         warn(f"{len(_og)} 件封面还是 GitHub 默认预览卡 —— 能上站（店主 2026-08-31 定的兜底），"
              f"但仓库里有真图就该换掉它")
+    # 【22】封面文件和记录对不上 —— 09-03 店主：「卡片图下面多了一条灰色」。CI 把预览卡同名覆盖了真图，
+    # 记录还是真图的宽高，容器按真图撑开、装的是 1200×600 的卡。这条不是待办，是事故：亮红。
+    _mis = []
+    for _it in items:
+        _u = (_it.get("cover") or "")
+        if not _u.startswith("/skill/"):
+            continue
+        _p = os.path.join(ROOT, _u[len("/skill/"):])
+        if not os.path.exists(_p):
+            _mis.append((_it["id"], "文件不存在")); continue
+        try:
+            import skill_scout as _S
+            _wh = _S.cover_dims(_p)
+        except Exception:
+            _wh = None
+        if _wh and (_wh[0], _wh[1]) != (_it.get("cover_w"), _it.get("cover_h")):
+            _mis.append((_it["id"], f"记录 {_it.get('cover_w')}x{_it.get('cover_h')} 文件 {_wh[0]}x{_wh[1]}"))
+    print(f"\n【22】封面文件 vs 记录\n  {len(_mis)} 件对不上")
+    for _m in _mis[:12]:
+        print(f"    {_m[0]}  {_m[1]}")
+    if _mis:
+        err(f"{len(_mis)} 件封面文件和记录的宽高对不上（或文件不存在）—— 容器按记录撑开、装的是别的图，卡下面就是一条灰。"
+            f"跑 scouts/repair_covers.py")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:

@@ -790,6 +790,9 @@ def _assert_prompt_covers_gate() -> None:
 _assert_prompt_covers_gate()
 
 
+TITLE_BANNED_OPENER = re.compile(r"^(只认|只剪|拒绝|把|一句话|一张|用)")
+
+
 def _clamp_patch(patch: dict) -> dict:
     """把模型产出的文案硬性压进规范长度——模型不听字数指令，代码兜底。"""
     if patch.get("title_zh"):
@@ -874,29 +877,43 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             continue
         prompt = ENRICH_PROMPT.format(name=it.get("name", ""), repo=it.get("repo", ""),
                                       kind=it.get("kind", ""), desc=(it.get("desc_en") or "")[:600])
-        anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
-        if anthropic:
-            model = (os.environ.get("LLM_MODEL") or "claude-haiku-4-5").strip()
-            base = LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com"
-            body = json.dumps({"model": model, "max_tokens": 800,
-                               "messages": [{"role": "user", "content": prompt}]}).encode()
-            req = urllib.request.Request(base + "/v1/messages", data=body, method="POST",
-                                         headers={"x-api-key": LLM_KEY,
-                                                  "anthropic-version": "2023-06-01",
-                                                  "Content-Type": "application/json"})
-        else:
-            body = json.dumps({"model": LLM_MODEL, "temperature": 0.4,
-                               "messages": [{"role": "user", "content": prompt}]}).encode()
-            req = urllib.request.Request(LLM_BASE + "/chat/completions", data=body, method="POST",
-                                         headers={"Authorization": "Bearer " + LLM_KEY,
-                                                  "Content-Type": "application/json"})
-        try:
+
+        def _ask(prompt_text: str) -> dict:
+            anthropic = LLM_KEY.startswith("sk-ant-") or "anthropic" in LLM_BASE
+            if anthropic:
+                model = (os.environ.get("LLM_MODEL") or "claude-haiku-4-5").strip()
+                base = LLM_BASE if "anthropic" in LLM_BASE else "https://api.anthropic.com"
+                body = json.dumps({"model": model, "max_tokens": 800,
+                                   "messages": [{"role": "user", "content": prompt_text}]}).encode()
+                req = urllib.request.Request(base + "/v1/messages", data=body, method="POST",
+                                             headers={"x-api-key": LLM_KEY,
+                                                      "anthropic-version": "2023-06-01",
+                                                      "Content-Type": "application/json"})
+            else:
+                body = json.dumps({"model": LLM_MODEL, "temperature": 0.4,
+                                   "messages": [{"role": "user", "content": prompt_text}]}).encode()
+                req = urllib.request.Request(LLM_BASE + "/chat/completions", data=body, method="POST",
+                                             headers={"Authorization": "Bearer " + LLM_KEY,
+                                                      "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=60) as r:
                 resp = json.loads(r.read())
                 txt = (resp["content"][0]["text"] if anthropic
                        else resp["choices"][0]["message"]["content"])
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-            c = json.loads(txt)
+            return json.loads(txt)
+
+        try:
+            c = _ask(prompt)
+            # 09-03：提示词里禁了「只认/只剪/拒绝/把/一句话/一张/用」开头，模型照样写「拒绝套版…」（重写 58 条后首屏 8 条里 2 条）。
+            # 写在提示词里的规矩模型不一定听，代码要兜：命中就带着这句再问一次；再命中就不要它的标题，留原标题。
+            for _try in range(2):
+                if not TITLE_BANNED_OPENER.match(str(c.get("title_zh") or "")):
+                    break
+                c2 = _ask(prompt + f"\n\n上一稿标题是「{c.get('title_zh')}」，开头又用了禁用的套路词。换一个开头，先说读者拿到手的是什么。只重写 title_zh 和 title_en，其它字段照抄。")
+                c = {**c, "title_zh": c2.get("title_zh") or c.get("title_zh"), "title_en": c2.get("title_en") or c.get("title_en")}
+            if TITLE_BANNED_OPENER.match(str(c.get("title_zh") or "")):
+                print(f"[scout] enrich {sid}: 标题两次都是套路开头「{c.get('title_zh')}」→ 不要它的标题")
+                c.pop("title_zh", None); c.pop("title_en", None)
             patch = {k: str(c[k]).strip() for k in
                      ("title_zh", "title_en", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh", "limit_en")
                      if c.get(k) and str(c[k]).strip()}
