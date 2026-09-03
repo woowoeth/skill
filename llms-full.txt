@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 275 skills.
+# Full corpus, plain text. 284 skills.
 
 ========================================================================
 ## html-to-pptx
@@ -198,6 +198,28 @@ git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git 然�
 
 ### Q：它从哪来？
 Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## site-repair
+## 交付后网站改不动、内容消失，它进场查修
+URL: https://ourword.ai/skill/i/nurkamol-website-build-kit-site-repair/
+Source: https://github.com/nurkamol/website-build-kit/tree/HEAD/skills/site-repair
+Updated: 2026-09-03
+Tags: work, skill, nurkamol
+
+Client can't swap a photo, CMS saves vanish, uploads break the build—it diagnoses and repairs already-delivered.
+
+### What does this skill do?
+Check and repair a marketing site that has already been delivered — a client who cannot change a photograph or a section on their own site, content that disappeared after they saved in the CMS, uploads that vanish or turn the build red, or a site built from an older version of this kit whose state is unknown. Use when someone reports that a delivered site cannot be edited, when content went missin
+
+### Why is it worth installing?
+Built for post-handoff unknowns, not greenfield builds. It traces failures to CMS write paths, upload pipelines, or legacy kit.
+
+### How do you install it?
+git clone --depth 1 https://github.com/nurkamol/website-build-kit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: nurkamol/website-build-kit The repository ships 1 skills in total.
 
 ========================================================================
 ## styleseed
@@ -2066,6 +2088,28 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git 然后把智�
 Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
 
 ========================================================================
+## handover-contract
+## 代码里长出来的交接文档，签字时不用再怕
+URL: https://ourword.ai/skill/i/z2est-handover-contract-handover-contract/
+Source: https://github.com/z2est/handover-contract/tree/HEAD/skills/handover-contract
+Updated: 2026-08-29
+Tags: work, skill, z2est
+
+Turn your code into tech handover notes, dev-protective contracts & maintenance terms (Korean law). Heavier docs.
+
+### What does this skill do?
+만든 시스템을 발주처·운영자에게 넘길 때 필요한 문서를 코드에 근거해 작성한다 — 기술 인수인계서, 개발자 보호형 인계·운영책임 계약서와 유지보수 계약서(한국법 기준), 개정 검토 패치, 서명용 A4 PDF. 랜딩페이지·홍보사이트부터 쇼핑몰·예약·구독 서비스, 사내 도구, 포인트·마일리지·내부 원장을 다루는 플랫폼까지 분야를 가리지 않고 쓰며, 위험 수준에 맞춰 문서 무게를 조절한다. "인수인계", "핸드오버", "이관", "납품 마무리", "운영책임", "면책", "개발자 책임 범위", "손 떼야 한다", "인계 후 악용", "유지보수 끝내기", "handover", "SI 마무리", "외주 마무리" 같은 말이 나오면 사용한다. 특히 내가 만든 것을 다른 사람이 운영하게 되는 상황에서 회원 데이터·결제·자
+
+### Why is it worth installing?
+Not template-filling: it derives liability boundaries from your actual repo. Spells out which risks belong in the contract and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/z2est/handover-contract.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: z2est/handover-contract The repository ships 1 skills in total.
+
+========================================================================
 ## nature-writing-studio
 ## 657 篇 Nature 原文蒸馏出的学术英语改写器
 URL: https://ourword.ai/skill/i/mumdark-nature-writing-studio-nature-writing-studio/
@@ -2192,6 +2236,28 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Threefold-Memory.git 
 Repository: Starryear/Starryear-Threefold-Memory The repository ships 1 skills in total.
 
 ========================================================================
+## hydo-self-improve
+## 改完先跑测试和截图，才把分支交回给你的自我改造工具
+URL: https://ourword.ai/skill/i/fortun8te-hydo-hydo-self-improve/
+Source: https://github.com/fortun8te/hydo/tree/HEAD/skills/hydo-self-improve
+Updated: 2026-08-28
+Tags: work, skill, fortun8te
+
+Add features to Hydo without breaking your running setup: edit in a throwaway worktree, verify with tests + real.
+
+### What does this skill do?
+Change Hydo itself — safely. Work in a throwaway git worktree, verify with tests, build and a real screenshot, and hand back a branch. Never edit the running app, never touch app data, never merge.
+
+### Why is it worth installing?
+Turns self-modification into an isolated experiment: never touches the live app, never merges. Verification via real screenshot.
+
+### How do you install it?
+git clone --depth 1 https://github.com/fortun8te/hydo.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: fortun8te/hydo The repository ships 1 skills in total.
+
+========================================================================
 ## dnr-flat-pic
 ## 不描边不追光影，只留身份与空间关系的扁平化压缩
 URL: https://ourword.ai/skill/i/createlafont-dnr-flat-pic/
@@ -2312,6 +2378,28 @@ git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后
 Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## cs-shotcraft-skill
+## 152张运镜卡，产品宣传片按卡拍不重样
+URL: https://ourword.ai/skill/i/chenshuo2004-cs-shotcraft-skill/
+Source: https://github.com/ChenShuo2004/cs-shotcraft-skill
+Updated: 2026-08-27
+Tags: images, skill, ChenShuo2004
+
+Tired of slideshow promos? Redraw real UI at logical pixels, lock camera paths with a drift-proof shot table, and.
+
+### What does this skill do?
+Create cinematic product videos with Remotion: real product UI (redrawn at logical pixels or captured), a shot-table camera that cannot drift, optional beat-synced sound, and 152 shot recipe cards. Use when the user asks for a product promo / launch film / demo video, names cs-shotcraft-skill or Ink Press, wants a shot-card motion, or needs to restyle an existing video/ project. 用真实产品界面（逻辑像素重画或真机抓
+
+### Why is it worth installing?
+The shot table hard-constrains camera paths so they never drift; the 152 cards set the creative ceiling, each spelling out moves.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ChenShuo2004/cs-shotcraft-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ChenShuo2004/cs-shotcraft-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## outsider-art
 ## 大色块平涂加手工纹理，小人做日常事，只留一个高饱和点
 URL: https://ourword.ai/skill/i/fihaaade-skills-outsider-art/
@@ -2372,6 +2460,44 @@ git clone --depth 1 https://github.com/Work-Fisher/reference-first-motion-direct
 Repository: Work-Fisher/reference-first-motion-director Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
+## jingtian-style
+## 一份会替你按住抒情冲动的第一人称记账笔
+URL: https://ourword.ai/skill/i/anhao-jingtian-style/
+URL (中文): https://ourword.ai/skill/zh/i/anhao-jingtian-style/
+Source: https://github.com/anhao/jingtian-style
+Updated: 2026-08-27
+Tags: writing, skill, anhao
+
+Short lines, numbers over feelings, titles as status, labor shots, empty endings—a restrained first-person ledger.
+
+### What does this skill do?
+把任意文稿改写成《我的女友景甜》体（景甜体）：短行白描、抵押对位、外围劳动镜头、数字代替情绪、称谓即关系状态、以空置与「什么都不发生」收束的第一人称记账文案。 Use when the user asks for 景甜体、孙宇晨体、孙哥文案、《我的女友景甜》风格、景甜式文案、景甜体改写、记账体改写、克制文风改写, or says 改成景甜体 / 用景甜体重写 / 写成孙宇晨那种记账体, or asks for Justin Sun style / justinsun write style, or runs /jingtian-style.
+
+### Why is it worth installing?
+Not imitation—structural replication: mortgage mirroring, peripheral labor, empty closure. Every line follows a mechanism.
+
+### How do you install it?
+git clone --depth 1 https://github.com/anhao/jingtian-style.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: anhao/jingtian-style The repository ships 1 skills in total.
+
+--- 中文 ---
+短行白描、数字替情绪、称谓即关系、空置收尾——把情绪藏进劳动镜头里，第一人称记账体，克制到不像广告。
+
+### Q：这个 skill 做什么？
+把任意文稿改写成《我的女友景甜》体（景甜体）：短行白描、抵押对位、外围劳动镜头、数字代替情绪、称谓即关系状态、以空置与「什么都不发生」收束的第一人称记账文案。 Use when the user asks for 景甜体、孙宇晨体、孙哥文案、《我的女友景甜》风格、景甜式文案、景甜体改写、记账体改写、克制文风改写, or says 改成景甜体 / 用景甜体重写 / 写成孙宇晨那种记账体, or asks for Justin Sun style / justinsun write style, or runs /jingtian-style.
+
+### Q：为什么值得装？
+不是仿写，是结构复刻：抵押对位、外围劳动、空置收束，每一句都有机制可循，改完自带景甜体的冷感。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/anhao/jingtian-style.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: anhao/jingtian-style The repository ships 1 skills in total.
+
+========================================================================
 ## antibes-holiday
 ## 安提布假期那套黑笔闲笔
 URL: https://ourword.ai/skill/i/haorantang97-antibes-holiday-antibes-holiday/
@@ -2416,6 +2542,44 @@ git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git The
 Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
+## promo-film
+## 界面在片子里是真界面，不是录屏重放
+URL: https://ourword.ai/skill/i/whyubel1eve-promo-film-skill/
+URL (中文): https://ourword.ai/skill/zh/i/whyubel1eve-promo-film-skill/
+Source: https://github.com/whyubel1eve/promo-film-skill
+Updated: 2026-08-26
+Tags: images, skill, whyubel1eve
+
+Product promos built in code: UI redrawn or captured from device, every frame reproducible and.
+
+### What does this skill do?
+用代码做产品宣传片 / 推广片 / 演示短片 —— Remotion + React 出片， 界面在片子里是重画或真机抓图的真界面，全程可版本管理、可逐帧复现； 配乐是可选的一步，要配才配，纯代码合成、无第三方素材。 当用户说「给这个产品做支宣传片 / 推广片 / 演示视频 / promo / product video」、 「发 X（推特）/ 小红书 / 官网首屏的那种短片」、「更新短片 / release 视频」、 「片子节奏不对 / 字在抖 / 想换个运镜 / 想重新配乐」、 「把这几个功能拍出来」时使用。也用于给已有的 video/ 工程改文案、改节拍、改镜头、出竖版。 不适用：需要真人出镜或实拍素材的片子；纯剪辑现成视频（那是 ffmpeg 的活）； 单张封面图 / OG 图（那是静态图的活，不必为它搭一个视频工程）。
+
+### Why is it worth installing?
+Video as code: UI is live, tweak text and re-render a frame. Music is synthesized, no licensing. Switch vertical/horizontal in.
+
+### How do you install it?
+git clone --depth 1 https://github.com/whyubel1eve/promo-film-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: whyubel1eve/promo-film-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+产品宣传片用代码拍：界面重画或真机抓图，每帧可复现、可版本管理。改文案改运镜改配乐，改完重新渲染就是新片子。
+
+### Q：这个 skill 做什么？
+用代码做产品宣传片 / 推广片 / 演示短片 —— Remotion + React 出片， 界面在片子里是重画或真机抓图的真界面，全程可版本管理、可逐帧复现； 配乐是可选的一步，要配才配，纯代码合成、无第三方素材。 当用户说「给这个产品做支宣传片 / 推广片 / 演示视频 / promo / product video」、 「发 X（推特）/ 小红书 / 官网首屏的那种短片」、「更新短片 / release 视频」、 「片子节奏不对 / 字在抖 / 想换个运镜 / 想重新配乐」、 「把这几个功能拍出来」时使用。也用于给已有的 video/ 工程改文案、改节拍、改镜头、出竖版。 不适用：需要真人出镜或实拍素材的片子；纯剪辑现成视频（那是 ffmpeg 的活）； 单张封面图 / OG 图（那是静态图的活，不必为它搭一个视频工程）。
+
+### Q：为什么值得装？
+把视频当代码工程管：界面是活的，改一行字重出一帧；配乐纯合成无版权风险；竖版横版一键切。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/whyubel1eve/promo-film-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: whyubel1eve/promo-film-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## xiaoou-gzh-layout
 ## Markdown 进去，公众号编辑器样式直接粘贴出来
 URL: https://ourword.ai/skill/i/xiaoou-waou-xiaoou-gzh-layout/
@@ -2452,6 +2616,66 @@ git clone --depth 1 https://github.com/xiaoou-waou/xiaoou-gzh-layout.git 然后�
 
 ### Q：它从哪来？
 Repository: xiaoou-waou/xiaoou-gzh-layout Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## visit-prep-information-pack
+## 老人看病前，把症状、药盒、报告理成一页纸
+URL: https://ourword.ai/skill/i/codecrab9547-iuscm-visit-prep-information-pack-visit-prep-information-pack/
+URL (中文): https://ourword.ai/skill/zh/i/codecrab9547-iuscm-visit-prep-information-pack-visit-prep-information-pack/
+Source: https://github.com/codecrab9547-iuscm/visit-prep-information-pack/tree/HEAD/skills/visit-prep-information-pack
+Updated: 2026-08-26
+Tags: everyday, skill, codecrab9547-iuscm
+
+Stop blanking at the doctor's. It turns symptom timelines, pill boxes, reports, and your questions into one.
+
+### What does this skill do?
+面向老年人及家属/照护者，整理就医前后的健康信息：症状时间线、陪诊提问、检查报告或药盒照片的 OCR 结构化、健康谣言/健康说法的权威核验、血压血糖等慢病日记和一页就诊资料包。用户提到老人看病准备、陪诊、病历/报告/药盒整理、家庭健康记录、健康传言核验或需要家属确认时，即使未明确说“使用 Skill”，也优先使用。默认短句、大字友好、最小隐私；不诊断、不解释处方、不调整用药、不决定分诊或设定阈值。危急信号优先当地急救服务。
+
+### Why is it worth installing?
+Structured around the care visit flow, not a chatbot. It compiles scattered info into a deliverable one-pager with checkable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/codecrab9547-iuscm/visit-prep-information-pack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: codecrab9547-iuscm/visit-prep-information-pack The repository ships 1 skills in total.
+
+--- 中文 ---
+陪爸妈去医院最怕问不清、说不明、白跑一趟。它把时间线、要问的话、药盒照片、报告单都结构化成一页大字资料包。
+
+### Q：这个 skill 做什么？
+面向老年人及家属/照护者，整理就医前后的健康信息：症状时间线、陪诊提问、检查报告或药盒照片的 OCR 结构化、健康谣言/健康说法的权威核验、血压血糖等慢病日记和一页就诊资料包。用户提到老人看病准备、陪诊、病历/报告/药盒整理、家庭健康记录、健康传言核验或需要家属确认时，即使未明确说“使用 Skill”，也优先使用。默认短句、大字友好、最小隐私；不诊断、不解释处方、不调整用药、不决定分诊或设定阈值。危急信号优先当地急救服务。
+
+### Q：为什么值得装？
+不是简单问答，而是按就医动线把零散信息编排成可交付的实体：症状时间线、陪诊提问、OCR 药盒报告。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/codecrab9547-iuscm/visit-prep-information-pack.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: codecrab9547-iuscm/visit-prep-information-pack The repository ships 1 skills in total.
+
+========================================================================
+## heritage-records-access-governance
+## 社区说了算的口述史访问与归档流程
+URL: https://ourword.ai/skill/i/coolbear2922-qpmod-heritage-records-access-governance-heritage-records-access-go/
+Source: https://github.com/coolbear2922-qpmod/heritage-records-access-governance/tree/HEAD/skills/heritage-records-access-governance
+Updated: 2026-08-26
+Tags: writing, skill, coolbear2922-qpmod
+
+Plan, consent, organize, describe, review oral histories with Indigenous & minoritized communities. Every step.
+
+### What does this skill do?
+Community-governed workflow for Indigenous and minoritized communities to plan, consent, organize, describe, and review oral histories, stories, place names, kinship terms, and cultural lexicon. Use when a community archivist, language worker, elder, narrator, or authorized partner asks to structure notes, draft metadata, map access protocols, prepare a review packet, or maintain a culturally gove
+
+### Why is it worth installing?
+Returns cultural authority to communities: each phase has explicit gates, preventing outside researchers from overstepping.
+
+### How do you install it?
+git clone --depth 1 https://github.com/coolbear2922-qpmod/heritage-records-access-governance.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: coolbear2922-qpmod/heritage-records-access-governance The repository ships 1 skills in total.
 
 ========================================================================
 ## travel-memory-sticker-card
@@ -3748,6 +3972,28 @@ git clone --depth 1 https://github.com/staruhub/ClaudeSkills.git 然后把智能
 
 ### Q：它从哪来？
 Repository: staruhub/ClaudeSkills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use, evals. The repository ships 1 skills in total. Homepage: https://staruhub.github.io/ClaudeSkills/
+
+========================================================================
+## ci
+## GitLab CI 黑屋里先摸清墙再动手的探路杖
+URL: https://ourword.ai/skill/i/gram-ax-gramax-ci/
+Source: https://github.com/Gram-ax/gramax/tree/HEAD/.claude/skills/ci
+Updated: 2026-08-12
+Tags: everyday, skill, Gram-ax
+
+Lost in a headless CI job? It checks out, authenticates, maps tools, then shows how to read GitLab state and.
+
+### What does this skill do?
+Use when running headless inside a GitLab CI job in the Gramax repo (the `ai` job). Establishes environment — repo checked out, glab/gh authenticated, what tools exist, how to read/post on GitLab, how to diagnose failed pipeline jobs. Triggers on "ci", "running in CI", "headless CI job", "ты в CI", "запущен в пайплайне".
+
+### Why is it worth installing?
+It prioritizes orientation over action: verifies checkout, auth, and tooling before any command. Debugging means knowing where.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Gram-ax/gramax.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Gram-ax/gramax The repository ships 1 skills in total.
 
 ========================================================================
 ## arch-kele-structure-photo
