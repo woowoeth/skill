@@ -94,6 +94,12 @@ def pair_winrate(S, body: str, anchors: list[str], cur: dict, k: int = 3) -> flo
     return wins / tot if tot else -1.0
 
 
+def _score(S, body: str):
+    r = _call(S, S.TASTE_PROMPT.format(body=body[:6000]))
+    if not r: return -1, ""
+    return int(r.get("score", -1)), str(r.get("why", ""))[:40]
+
+
 def _call(S, prompt: str):
     import urllib.request
     ant = S.LLM_KEY.startswith("sk-ant-") or "anthropic" in S.LLM_BASE
@@ -140,6 +146,9 @@ def main() -> int:
     ap.add_argument("--pairwise", action="store_true",
                     help="成对比较代替绝对打分：B 对 k 件心选锚点的赢率。绝对打分在难负样本上 +0pt，"
                          "正负分布重叠在 62-75；LLM 做「二选一」比做「打分」可靠得多，验一下")
+    ap.add_argument("--repeat", type=int, default=0,
+                    help="同一批件判 N 遍，量分数抖动。2026-09-03 看到同一仓 sweep 给 ≥80、管线里子 skill 给 72-75："
+                         "不知道是子 skill 真的差，还是判官本身 ±8 抖 —— 先量再说")
     ap.add_argument("--verify-refs", action="store_true",
                     help="拿 taste_refs.json（店主指名、从没进过训练/留出）当新数据验门槛")
     a = ap.parse_args()
@@ -229,6 +238,22 @@ def main() -> int:
             print(f"    ! {i}: {type(e).__name__}: {e}")
             return None
 
+    if a.repeat:
+        import statistics as _st
+        sample = (ho_pos[:6] + ho_neg[:6])
+        print(f"同一批 {len(sample)} 件各判 {a.repeat} 遍，看每件的分数范围：\n")
+        spreads = []
+        for i in sample:
+            b = body_of(i)
+            if not b: continue
+            scores = [x for x in (_score(S, b)[0] for _ in range(a.repeat)) if x >= 0]
+            if len(scores) < 2: continue
+            sp = max(scores) - min(scores); spreads.append(sp)
+            print(f"  {title_of(i, cur):<34} {sorted(scores)}  跨度 {sp}")
+        if spreads:
+            print(f"\n跨度中位 {_st.median(spreads):.0f} 分 · 最大 {max(spreads)} 分")
+            print("→ 跨度若接近 10，则 60/80 这种线在 ±5 内的判决本质是抛硬币；门槛要留出抖动余量，或多判取中位。")
+        return 0
     if a.pairwise:
         anchors = [i for i in pos if i not in ho_pos]        # 锚点只从非留出的正样本里取
         print(f"成对比较：每件对 3 个心选锚点，赢率 = 判官说「留 B」的比例\n")
