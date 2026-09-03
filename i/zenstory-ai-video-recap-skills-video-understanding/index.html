@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>拒绝逐帧空转，把视频拆成可检索的场景时间线 — 品味</title>
+<title>视频拆成六层索引，写稿前先看清素材全貌 — 品味</title>
 <meta name="description" content="看完一部纪录片，你只记得&#x27;好像不错&#x27;。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, zenstory-ai">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="拒绝逐帧空转，把视频拆成可检索的场景时间线 — 品味">
+<meta property="og:title" content="视频拆成六层索引，写稿前先看清素材全貌 — 品味">
 <meta property="og:description" content="看完一部纪录片，你只记得&#x27;好像不错&#x27;。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。">
 <meta property="og:url" content="https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="拒绝逐帧空转，把视频拆成可检索的场景时间线 — 品味">
+<meta name="twitter:title" content="视频拆成六层索引，写稿前先看清素材全貌 — 品味">
 <meta name="twitter:description" content="看完一部纪录片，你只记得&#x27;好像不错&#x27;。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"拒绝逐帧空转，把视频拆成可检索的场景时间线","description":"看完一部纪录片，你只记得'好像不错'。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"视频拆成六层索引，写稿前先看清素材全貌","description":"看完一部纪录片，你只记得'好像不错'。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>zenstory-ai</span>
       <span class="date">2026-09-03</span>
     </div>
-    <h1 class="ttl">拒绝逐帧空转，把视频拆成可检索的场景时间线</h1>
+    <h1 class="ttl">视频拆成六层索引，写稿前先看清素材全貌</h1>
     <p class="lede">看完一部纪录片，你只记得&#x27;好像不错&#x27;。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。</p>
     <div class="tags"><span class="tag">zenstory-ai</span></div>
     
     
     <section class="sec"><h2>做什么用</h2><p>看完一部纪录片，你只记得&#x27;好像不错&#x27;。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。不是单一转录，而是六层产物互相咬合：ASR 对齐场景，VLM 观察画面，静音窗补叙事空隙。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只吃本地视频文件，不吃 YouTube 链接；需预装 ffmpeg 和一台能跑 VLM 的 GPU（无 GPU 则视觉。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「拒绝逐帧空转，把视频拆成可检索的场景时间线」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「视频拆成六层索引，写稿前先看清素材全貌」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git">复制</button></div><div class="cmd"><code>cp -r video-recap-skills/skills/video-understanding ~/.claude/skills/video-understanding</code><button type="button" data-copy="cp -r video-recap-skills/skills/video-understanding ~/.claude/skills/video-understanding">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">只认已分析完的视频，出带时间戳的解说稿</a><a href="../agiwhitelist-auteur/">拒绝套版，从零长出整套网站设计系统</a><a href="../img2threejs-img2threejs/">拒绝贴图骗人的代码建模，从参考图长出可动三维骨架</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">先定镜头再落笔的解说稿，时间戳卡到帧</a><a href="../agiwhitelist-auteur/">拒绝套版，从零长出整套网站设计系统</a><a href="../img2threejs-img2threejs/">拒绝贴图骗人的代码建模，从参考图长出可动三维骨架</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../liuzihe849-png-silhouette-group-collage-silhouette-group-collage/">← 一群人收成剪影拼贴</a><a href="../zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/">把场景收成莫兰迪电影海报 →</a></nav>
+  <nav class="foot"><a href="../liuzihe849-png-silhouette-group-collage-silhouette-group-collage/">← 一群人收成剪影拼贴</a><a href="../zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/">照片变电影海报，但只留你拍下的真实光影 →</a></nav>
 </div>
 <script>
 (function(){
