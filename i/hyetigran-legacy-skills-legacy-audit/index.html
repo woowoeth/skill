@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>先摸清遗产代码再动手的逆向审计员 — 品味</title>
+<meta name="description" content="接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, hyetigran">
+<link rel="canonical" href="https://ourword.ai/skill/i/hyetigran-legacy-skills-legacy-audit/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="先摸清遗产代码再动手的逆向审计员 — 品味">
+<meta property="og:description" content="接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。">
+<meta property="og:url" content="https://ourword.ai/skill/i/hyetigran-legacy-skills-legacy-audit/">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/hyetigran-legacy-skills-legacy-audit.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/hyetigran-legacy-skills-legacy-audit.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="先摸清遗产代码再动手的逆向审计员 — 品味">
+<meta name="twitter:description" content="接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"先摸清遗产代码再动手的逆向审计员","description":"接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。","url":"https://ourword.ai/skill/i/hyetigran-legacy-skills-legacy-audit/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"hyetigran"},"image":"https://ourword.ai/skill/assets/covers/hyetigran-legacy-skills-legacy-audit.png","codeRepository":"https://github.com/hyetigran/legacy-skills/tree/HEAD/skills/legacy-audit"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/i/hyetigran-legacy-skills-legacy-audit/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">工作</span>
+      <span>hyetigran</span>
+      <span class="date">2026-09-03</span>
+    </div>
+    <h1 class="ttl">先摸清遗产代码再动手的逆向审计员</h1>
+    <p class="lede">接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。</p>
+    <div class="tags"><span class="tag">hyetigran</span></div>
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/hyetigran-legacy-skills-legacy-audit.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/hyetigran-legacy-skills-legacy-audit.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什么用</h2><p>接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。它把「理解代码」从凭感觉变成可执行流程：先反向侦察再逐文件覆盖式分析，产出的是带严重度标签的缺陷清单。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。只认本地已有代码库，不接远程仓库自动拉取；产物是审计报告与 bug 目录，不含修复补丁。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「先摸清遗产代码再动手的逆向审计员」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/hyetigran/legacy-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/hyetigran/legacy-skills.git">复制</button></div><div class="cmd"><code>cp -r legacy-skills/skills/legacy-audit ~/.claude/skills/legacy-audit</code><button type="button" data-copy="cp -r legacy-skills/skills/legacy-audit ~/.claude/skills/legacy-audit">复制</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分类</dt><dd>工作</dd>
+        <dt>作者</dt><dd>hyetigran</dd>
+        <dt>上架</dt><dd>2026-09-03</dd>
+      </dl>
+      <a class="pill" href="https://github.com/hyetigran/legacy-skills/tree/HEAD/skills/legacy-audit" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../yejy53-editable-design-html-to-pptx/">HTML 版式拆成可编辑 PPT 的转换器</a><a href="../oil-oil-kimi/">设计稿交给它，前端代码拿回来就能跑</a><a href="../xiaoou-waou-xiaoou-gzh-layout/">Markdown 进去，公众号编辑器样式直接粘贴出来</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人类生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声播客</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../ryze-ai-adgent-open-seo-mcp-skills-competitor-gap/">← 专挖对手有而你没有的搜索词，按流量和可赢性排好序</a><a href="../starryear-starryear-threefold-memory/">照片分三层：记忆碎片、证据原件、心情路线图 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>
