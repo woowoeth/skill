@@ -46,6 +46,9 @@ def cover_ok(c):
     c = (c or "").strip()
     # 09-03：封面改成同源托管（/skill/assets/covers/…）之后，这里只认 http 开头 → 详情页一直没图。
     if c.startswith("/skill/"):
+        # 文件得真在仓里；机器层记的托管路径有的已经没文件了（cli-cli-code-review 404），那就算没图 → 走预览卡
+        if not os.path.exists(os.path.join(ROOT, c[len("/skill/"):])):
+            return ""
         c = "https://ourword.ai" + c
     if not c.startswith("http"):
         return ""
