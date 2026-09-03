@@ -2,6 +2,283 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-03T15:51:41Z",
+   "判了": 34,
+   "过": 12,
+   "明细": [
+    {
+     "id": "kcc920926-droid-explain_me",
+     "repo": "kcc920926-droid/explain_me",
+     "title": "代码库自带 ELI5 分层图解",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 方法论扎实，边界清晰，交付物明确，但本质是高质量流程指南，非独家成品。（3 判：[72, 78, 85]）",
+     "分": 78
+    },
+    {
+     "id": "mantis5x5-kvm-automation-kvm-automation",
+     "repo": "mantis5x5/kvm-automation",
+     "title": "隔着屏幕按键盘的远程手，专治没 SSH 的裸机",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 边界清晰，针对KVM场景给出独到做法，但核心思路可迁移其他自动化工具，非不可替代（3 判：[72, 75, 82]）",
+     "分": 75
+    },
+    {
+     "id": "sagirimo-biodsh",
+     "repo": "sagirimo/BioDSH",
+     "title": "临床医生与湿实验科学家的本地生信工作台",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "sagirimo-biodsh-image-generate",
+     "repo": "sagirimo/BioDSH",
+     "title": "科研配图专用：机制图、封面、海报，不碰数据图",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 边界清晰区分绘图与数据图，含具体做法和风险提示，非通用目录可执行。（3 判：[72, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "sagirimo-biodsh-data-format-bridge",
+     "repo": "sagirimo/BioDSH",
+     "title": "临床统计师双击就开的表格转换器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 边界清晰，针对特定数据格式转换场景，提供具体实用做法，别处难得。（3 判：[68, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "sagirimo-biodsh-desktop-control",
+     "repo": "sagirimo/BioDSH",
+     "title": "不看屏幕也能看见桌面的盲操手",
+     "过": true,
+     "为什么": "品味 85 分 —— 极具体的无视觉桌面操控方案，含循环验证与严格规则，边界清晰，非通用模板。（3 判：[85, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "jsath-simplified-technical-english-technical-english",
+     "repo": "jsath/simplified-technical-english",
+     "title": "航天维修手册级英文改写器，专杀AI腔",
+     "过": true,
+     "为什么": "品味 85 分 —— 规则具体可执行，拒绝删除事实，边界清晰，别处难拿到同等深度。（3 判：[82, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "zfrory15-max-symperturb-symperturb-analysis-zh",
+     "repo": "zfrory15-max/SymPerturb",
+     "title": "症状网络虚拟扰动，先问你要动哪一刀再给审计报告",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 方法论完整且边界清晰，但高度依赖SymPerturb专有框架，非生态内用户价值有（3 判：[65, 65, 85]）",
+     "分": 65
+    },
+    {
+     "id": "zfrory15-max-symperturb-symperturb-analysis",
+     "repo": "zfrory15-max/SymPerturb",
+     "title": "虚拟敲除症状网络节点，先看七类效用再排干预顺序",
+     "过": true,
+     "为什么": "品味 82 分 —— 框架边界清晰，交付物明确，含独有操作指引与防错规则，非通用模板。（3 判：[72, 82, 85]）",
+     "分": 82
+    },
+    {
+     "id": "lucian1u-learning-coach",
+     "repo": "Lucian1u/learning-coach",
+     "title": "会先考你一遍再决定讲多细的学习陪练",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰，教学法具体可执行，检查掌握与防作弊设计独特，非通用问答可替代。（3 判：[72, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "hairoom-canvas-study-assistant-skill",
+     "repo": "hairoom/canvas-study-assistant-skill",
+     "title": "学生视角的 Canvas 课业管家，不点头不交作业",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 边界清晰，流程精细，安全约束明确；但非不可替代，其他工具可模拟。（3 判：[72, 75, 82]）",
+     "分": 75
+    },
+    {
+     "id": "cd-ndk-ghostwriter",
+     "repo": "cd-ndk/ghostwriter",
+     "title": "提交记录里不留 AI 署名的 git 守门员",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰，规则具体到可执行，给出了别处没有的验证命令，极具实操价值。（3 判：[72, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "martinsin0223-the-fool",
+     "repo": "martinsin0223/the-fool",
+     "title": "先重建发售年舆论场，再陪你通关的老游戏向导",
+     "过": true,
+     "为什么": "品味 85 分 —— 玩法设计独特，边界清晰，但依赖检索，非纯工具不可替代。（3 判：[72, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "sharptoolbox-ontology-driven-dev",
+     "repo": "sharptoolbox/ontology-driven-dev",
+     "title": "需求没逐条签字，代码一行都不生成",
+     "过": true,
+     "为什么": "品味 82 分 —— 边界清晰，三阶段强门禁与一致性校验是别处拿不到的做法，交付物明确可运行。（3 判：[70, 82, 85]）",
+     "分": 82
+    },
+    {
+     "id": "suihe1-short-drama-production",
+     "repo": "suihe1/short-drama-production",
+     "title": "短剧生产总控台，返工次数记进 production.",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程设计扎实，边界清晰，但属项目管理工具，非独家创作方法。（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "selfishclub-privacy-build",
+     "repo": "selfishclub/privacy-build",
+     "title": "韩国三法一规自动起草，隐私政策·条款·同意书一次配齐",
+     "过": true,
+     "为什么": "品味 85 分 —— 边界清晰、流程扎实，但本质是法律文书模板，换其他工具亦可实现。（3 判：[72, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "maxritter-open-claude-design-open-claude-design",
+     "repo": "maxritter/open-claude-design",
+     "title": "一个把 claude.ai/design 项目搬进本",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 边界与授权机制扎实清晰，但核心功能依赖特定外部产品，独特性受限。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "sonpiaz-bto-skills-bto-researchmarket",
+     "repo": "sonpiaz/bto-skills",
+     "title": "多路并行深挖市场，结论带置信度、数字自己算",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程扎实，边界清楚，但核心交付物依赖外部模板，独特做法可复制性一般。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "sonpiaz-bto-skills-bto-secrets",
+     "repo": "sonpiaz/bto-skills",
+     "title": "提交前先替你翻一遍 .env 和密钥的代码安检员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 分得清边界，给的是可落地的做法，还带真实教训。（3 判：[70, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "sonpiaz-bto-skills-bto-teardown",
+     "repo": "sonpiaz/bto-skills",
+     "title": "拆开别人的产品只留一张干净图纸，新会话照着重建",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 方法完整扎实，有明确边界与产出物，但属教学流程，非独门工具。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "liangdabiao-enterprise-rag-challenge-release-deepseek-v4-flash-vision-rag",
+     "repo": "liangdabiao/enterprise-rag-challenge-release",
+     "title": "问PDF哪页答哪页，连扫描图纸都认得出",
+     "过": true,
+     "为什么": "品味 82 分 —— 将文档问答做成类人翻页的明确工作流，有硬核实测与边界，非模板。（3 判：[70, 82, 85]）",
+     "分": 82
+    },
+    {
+     "id": "cooing-code-project-interview-review",
+     "repo": "Cooing-code/project-interview-review",
+     "title": "简历项目经不起追问？它拿仓库逐行核验并出模拟面试",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 核验方法扎实、边界清晰，但产出依赖人工执行，工具替代性中等。（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "vuk97-forward-implementation-first",
+     "repo": "Vuk97/forward-implementation-first",
+     "title": "先出活再记账，别让台账卡住真进度",
+     "过": true,
+     "为什么": "品味 85 分 —— 清晰界定行政簿记与实质工作，给出可执行规则与边界，非模板能比（3 判：[82, 85, 88]）",
+     "分": 85
+    },
+    {
+     "id": "timefiles404-lean-mode-skill-lean-mode",
+     "repo": "Timefiles404/lean-mode-skill",
+     "title": "改代码前先问一句：这层防御真有必要吗",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 判据具体可操作，边界清晰，但内容多为工程常识汇编，非独门绝技。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "koinu32-y2k-pop-poster",
+     "repo": "koinu32/y2k-pop-poster",
+     "title": "照片认出主体，直接剪成撞色描边 Y2K 海报",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 规则详尽可执行，边界清晰，但参考文件未读，难断独创深度。（3 判：[72, 72, 78]）",
+     "分": 72
+    },
+    {
+     "id": "dlborjigin-zanmenliaotian-ai-exporter-wechat-chat-export",
+     "repo": "DLBorjigin/zanmenliaotian-ai-exporter",
+     "title": "微信聊天记录本地筛选打包，只导出你圈定的那几段",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 边界清晰、交付物明确，流程严谨可用；但本质是可替代的专业工具。（3 判：[72, 78, 85]）",
+     "分": 78
+    },
+    {
+     "id": "mrmps-chomsky-stack",
+     "repo": "mrmps/chomsky-stack",
+     "title": "六个带脾气的思维脚手架，拆装都按你的来",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "mrmps-chomsky-stack-office-hours",
+     "repo": "mrmps/chomsky-stack",
+     "title": "六个逼问戳破需求幻觉的 YC 式办公时间",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 将YC咨询方法论拆解为可执行的模式与问题清单，边界清晰，但核心价值依赖执行而非不（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "mrmps-chomsky-stack-plan-ceo-review",
+     "repo": "mrmps/chomsky-stack",
+     "title": "先问该不该做，再问做没做对的方案评审",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 评审框架扎实，边界清晰，但核心方法可被通用提示词替代。（3 判：[62, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "mrmps-chomsky-stack-complexity",
+     "repo": "mrmps/chomsky-stack",
+     "title": "删掉会连环炸的部件，留能独立坏的",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 引用外部文章未内化，指令笼统，缺乏具体边界和可执行做法。（3 判：[25, 35, 45]）",
+     "分": 35
+    },
+    {
+     "id": "srlabs-skillforge-evolve-skill",
+     "repo": "srlabs/skillforge",
+     "title": "拿真实代码库当考场，给已装技能做迭代升级",
+     "过": true,
+     "为什么": "品味 85 分 —— 将技能进化定义为可测量的实验流程，边界明确，守则具体，提供别处难觅的实操细节。（3 判：[78, 85, 85]）",
+     "分": 85
+    },
+    {
+     "id": "mmstudio-games-myassets-myassets",
+     "repo": "mmstudio-games/MyAssets",
+     "title": "HTML 页面变游戏引擎位图资产的流水线",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 工具边界极清晰，纪律具体可执行，工作流完整直通引擎，别处难拿到同等交付。（3 判：[72, 75, 85]）",
+     "分": 75
+    },
+    {
+     "id": "starryear-starryear-ink",
+     "repo": "Starryear/Starryear-Ink",
+     "title": "照片留一条证据带，碎成干印再晕成水墨",
+     "过": true,
+     "为什么": "品味 82 分 —— 工序明确、边界清楚、有独家脚本锁证，交付物非他处可得。（3 判：[82, 82, 85]）",
+     "分": 82
+    },
+    {
+     "id": "sosplit-adaptive-learning-course",
+     "repo": "sosplit/adaptive-learning-course",
+     "title": "先摸底再开课，每节课都按你刚答错的题生成",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程清晰，状态机明确，但核心教学法依赖个人经验，非独特方法论。（3 判：[72, 72, 75]）",
+     "分": 72
+    }
+   ]
+  },
+  {
    "时间": "2026-09-03T13:36:35Z",
    "判了": 24,
    "过": 12,
