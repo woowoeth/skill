@@ -81,7 +81,7 @@ def tree_images(repo: str, path: str) -> list[str]:
         return []
     files = [p for p in r.stdout.split("\n") if p.rsplit(".", 1)[-1].lower() in EXTS]
     pre = path.rstrip("/") + "/" if path else ""
-    files = [p for p in files if not BAD.search(os.path.basename(p)) and "node_modules" not in p and "/." not in "/" + p]
+    files = [p for p in files if not BAD.search(p) and "node_modules" not in p and "/." not in "/" + p]   # 09-03：看整条路径，personal-brand/ 目录漏了两次
     # 只看 SKILL.md 目录之内。09-03 第一轮翻全仓兜底，捞回来 cli/cli 的 docs/primer 组件截图当
     # dependabot-triager 的封面 —— 图是真的，但不是这件 skill 的。仓根的 skill 才允许看全仓。
     inside = [p for p in files if pre and p.startswith(pre)]
