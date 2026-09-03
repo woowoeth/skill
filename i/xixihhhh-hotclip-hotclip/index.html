@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">长视频不出本机，剪成带卡拉OK字幕的竖屏爆点</h1>
     <p class="lede">切片工具满地都是，但敢把未发布的素材传上去吗？它端侧转写、LLM 找高光、9:16 重构、卡拉OK字幕，每条还打病毒潜力分，全程不出你的机器。</p>
     <div class="tags"><span class="tag">xixihhhh</span></div>
-    <img class="cover" src="https://repository-images.githubusercontent.com/1289069066/5b00d697-d8a3-4867-bddf-abcb2363893d" alt="">
+    <img class="cover" src="https://repository-images.githubusercontent.com/1289069066/5b00d697-d8a3-4867-bddf-abcb2363893d" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>切片工具满地都是，但敢把未发布的素材传上去吗？它端侧转写、LLM 找高光、9:16 重构、卡拉OK字幕，每条还打病毒潜力分，全程不出你的机器。「100% 本地」是它最狠的点：碰未公开素材时，这一条比精度更值钱。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。装 skill 还不够：得先 git clone 仓库再 pnpm install，首次跑自动下约 1GB 的 ASR 模型。高光检测要一个 OpenAI 兼容端点，接云端时转写文本会出机器（媒体文件不会），本地则要自己起 Ollama。</p></section>

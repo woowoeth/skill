@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="生成手绘白板风格的示意图 — 品味">
 <meta property="og:description" content="讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。">
 <meta property="og:url" content="https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="生成手绘白板风格的示意图 — 品味">
 <meta name="twitter:description" content="讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"生成手绘白板风格的示意图","description":"讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。","url":"https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"coleam00"},"codeRepository":"https://github.com/coleam00/excalidraw-diagram-skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"生成手绘白板风格的示意图","description":"讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。","url":"https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"coleam00"},"image":"https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png","codeRepository":"https://github.com/coleam00/excalidraw-diagram-skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">生成手绘白板风格的示意图</h1>
     <p class="lede">讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。</p>
     <div class="tags"><span class="tag">coleam00</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。产物是可编辑源文件而不是截图——这一点决定了它能进日常工作流，而不只是配图。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。必做的渲染校验要用 uv 装 Playwright 和 Chromium。正文禁止写脚本生成、禁止转交别的 agent，只能一段段手敲 JSON，再渲染—看图—改，通常来回 2-4 轮。 随件的渲染模板从 esm.sh 拉 excalidraw，传递依赖现在 404、脚本会等到超时；钉版本到 0.18.0 才渲得出来。</p></section>

@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="删掉「她眸色一暗」的网文去AI味改稿器 — 品味">
 <meta property="og:description" content="检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。">
 <meta property="og:url" content="https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="删掉「她眸色一暗」的网文去AI味改稿器 — 品味">
 <meta name="twitter:description" content="检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"删掉「她眸色一暗」的网文去AI味改稿器","description":"检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。","url":"https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"worldwonderer"},"codeRepository":"https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"删掉「她眸色一暗」的网文去AI味改稿器","description":"检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。","url":"https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"worldwonderer"},"image":"https://ourword.ai/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png","codeRepository":"https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">删掉「她眸色一暗」的网文去AI味改稿器</h1>
     <p class="lede">检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。</p>
     <div class="tags"><span class="tag">worldwonderer</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只对中文网文有用，禁用词表和脚本都是照网文口味调的。文件模式要 Node 跑 check-ai-patterns.js 等三个脚本，没有就只剩肉眼判断。默认把正文里的 …… 和 —— 全清掉，不吃这套排版口味的别装。</p></section>

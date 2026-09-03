@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">把手机壁纸变成每天更新的生活观察窗</h1>
     <p class="lede">今天闻到桂花、听见雨——一句感受配一段极细宋体和一张手写的抽象 SVG，直接渲成锁屏壁纸，图形还避开顶部时钟区。</p>
     <div class="tags"><span class="tag">rubyzhu26</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/rubyzhu26/see-life-wallpaper-skill/HEAD/example-wallpaper.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/rubyzhu26/see-life-wallpaper-skill/HEAD/example-wallpaper.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>今天闻到桂花、听见雨——一句感受配一段极细宋体和一张手写的抽象 SVG，直接渲成锁屏壁纸，图形还避开顶部时钟区。它给引用的诗人定了规矩：小字、低透明度，不能比你自己那句话抢风头。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。默认输出尺寸是 1264×2780，也就是作者那台一加 13，其它机型要手动挑备选分辨率。渲染依赖 Playwright，成品自动复制到 ~/Downloads。六种情绪对应固定的六位艺术家和固定渐变，语录库是写死的一小批中西作者，超出这个范围就没有匹配项。</p></section>

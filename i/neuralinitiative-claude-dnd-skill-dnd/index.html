@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">一个人也能玩的 D&amp;D 地下城主</h1>
     <p class="lede">跑团最难的是凑人和一个好 DM。它管战役、角色卡、战斗轮次和 NPC，还带可选的影院式画面，一个人也能沉浸开团。</p>
     <div class="tags"><span class="tag">neuralinitiative</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>跑团最难的是凑人和一个好 DM。它管战役、角色卡、战斗轮次和 NPC，还带可选的影院式画面，一个人也能沉浸开团。它补上的是 DM 这个最难替代的位置，规则和状态全托管，所以单人玩不塌。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「玩乐」这一格。战役数据全在本机 ~/.claude/dnd，换台机器就从零开。随包只有 5e SRD 数据集，跑正式模组得你自己导入书。影院画面是本地/局域网起的 Flask 面板。默认 roll_mode 是玩家自己掷骰，它不替你的 PC 代掷。</p></section>

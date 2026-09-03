@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">有护栏的 AI 视频剪辑</h1>
     <p class="lede">让 AI 直接剪素材，最怕一刀把原片剪废。它先规划后执行、每步可回溯，FFmpeg 操作、字幕、音频、成片改编都管。</p>
     <div class="tags"><span class="tag">KyaniteLabs</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/KyaniteLabs/kinocut/HEAD/assets/kinocut-hero.webp" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/KyaniteLabs/kinocut/HEAD/assets/kinocut-hero.webp" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>让 AI 直接剪素材，最怕一刀把原片剪废。它先规划后执行、每步可回溯，FFmpeg 操作、字幕、音频、成片改编都管。「guarded」是它的灵魂：剪辑指令可追溯、可回退，敢让 agent 碰真素材。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。本体是要装的 kinocut CLI（uvx + FFmpeg），先跑 kino doctor。只碰本地文件，上云要另开 egress 审批。360 只吃拼好的等距 MP4，.insv 直接拒。图层合成不当 NLE 用，音频合成 fail-closed。</p></section>

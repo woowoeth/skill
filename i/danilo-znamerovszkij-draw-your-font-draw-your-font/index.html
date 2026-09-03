@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">拍一张手写字母，本地生成能装进系统的 TTF 字体</h1>
     <p class="lede">拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。</p>
     <div class="tags"><span class="tag">danilo-znamerovszkij</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。「拥有自己笔迹的字体」是很多人想过没做过的浪漫，本地处理这点尤其体面。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只做拉丁字母：字符集就 minimal 和 spanish 两套，汉字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只认文件路径。</p></section>

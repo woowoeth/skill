@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">让 Claude 用原始人腔说话，据称省下 65% 的 token</h1>
     <p class="lede">让 Claude 像原始人一样说话：「为什么用很多 token，少 token 就行」——据称实测省 65% token，还越用越上头。</p>
     <div class="tags"><span class="tag">JuliusBrussee</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>让 Claude 像原始人一样说话：「为什么用很多 token，少 token 就行」——据称实测省 65% token，还越用越上头。一个玩笑做成了真产品：token 账单实打实地降（据称 65%），还顺手治好了 AI 的啰嗦病。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「玩乐」这一格。65% 是作者自己标注的实测，正文没给测法。凡是写到聊天之外的字——代码注释、commit、文档、issue、记忆文件——一律恢复正常散文，那部分省不到。安全警告也自动切回。</p></section>

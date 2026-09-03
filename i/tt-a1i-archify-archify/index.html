@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">画出来的架构图要和代码对得上，导出自带动效的 HTML</h1>
     <p class="lede">产出可验证的架构、时序、数据流、生命周期图：自包含 HTML 自带动效，导出清晰锐利可直接交付。</p>
     <div class="tags"><span class="tag">tt-a1i</span></div>
-    <img class="cover" src="https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1" alt="">
+    <img class="cover" src="https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>产出可验证的架构、时序、数据流、生命周期图：自包含 HTML 自带动效，导出清晰锐利可直接交付。「可验证」是关键词：图和描述对得上号，不是好看但骗人的装饰画。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。靠 node bin/archify.mjs 出图；收尾的 visual-check 要本机有 Chrome，没有就退出码 2 给张 skipped 收据。只做架构、流程、时序、数据流、生命周期五类，主节点建议不超过 12 个。</p></section>

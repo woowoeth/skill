@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="不碰内置材质，直接写 GLSL 顶点与片元着色器 — 品味">
 <meta property="og:description" content="当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="不碰内置材质，直接写 GLSL 顶点与片元着色器 — 品味">
 <meta name="twitter:description" content="当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"不碰内置材质，直接写 GLSL 顶点与片元着色器","description":"当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"不碰内置材质，直接写 GLSL 顶点与片元着色器","description":"当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"image":"https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png","codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">不碰内置材质，直接写 GLSL 顶点与片元着色器</h1>
     <p class="lede">当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>当内置材质调不出你要的扭曲、发光或顶点动画，直接上手 ShaderMaterial。不用翻文档拼凑。它不丢给你一段裸代码，而是按 Three.js 的渲染管线组织 vertex/fragment 结构。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只覆盖 WebGL/WebGPU 的 GLSL 编写与 ShaderMaterial 接入；不涉及后处理 Effect。</p></section>

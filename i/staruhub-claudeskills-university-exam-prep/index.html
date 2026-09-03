@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">对着真实课本和考纲突击复习</h1>
     <p class="lede">考的是老师的 PPT 和课本，AI 却按通用知识给你讲。它强制你先传真材料，再用苏格拉底式提问带你想，不灌答案。</p>
     <div class="tags"><span class="tag">staruhub</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/staruhub/ClaudeSkills/HEAD/assets/social/agent-skills-concept-hero.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/staruhub/ClaudeSkills/HEAD/assets/social/agent-skills-concept-hero.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>考的是老师的 PPT 和课本，AI 却按通用知识给你讲。它强制你先传真材料，再用苏格拉底式提问带你想，不灌答案。「没材料就不辅导」这条硬约束很诚实：逼你对着真考纲学，而不是听 AI 编一套。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。没传课本/PPT/考纲它就只要材料，不开讲。PDF、Word 得另借 docx/pdf skill 提取。正文全中文，射程锁在大学期中期末，脚本只有 analyze_material.py 和 generate_questions.py。</p></section>

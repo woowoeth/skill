@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="只评不批的Dependabot PR分流员，三档结论 — 品味">
 <meta property="og:description" content="每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cli-cli-dependabot-triager/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/cli-cli-dependabot-triager.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/cli-cli-dependabot-triager.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="只评不批的Dependabot PR分流员，三档结论 — 品味">
 <meta name="twitter:description" content="每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"只评不批的Dependabot PR分流员，三档结论","description":"每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。","url":"https://ourword.ai/skill/i/cli-cli-dependabot-triager/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"cli"},"codeRepository":"https://github.com/cli/cli/tree/HEAD/.github/skills/dependabot-triager"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"只评不批的Dependabot PR分流员，三档结论","description":"每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。","url":"https://ourword.ai/skill/i/cli-cli-dependabot-triager/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"cli"},"image":"https://ourword.ai/skill/assets/covers/cli-cli-dependabot-triager.png","codeRepository":"https://github.com/cli/cli/tree/HEAD/.github/skills/dependabot-triager"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">只评不批的Dependabot PR分流员，三档结论</h1>
     <p class="lede">每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。</p>
     <div class="tags"><span class="tag">cli</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/cli-cli-dependabot-triager.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。结论扎根于上游源码变更而非依赖元数据，能识别版本跳跃中的真实风险；状态机确保同一PR状态只评论一次。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只处理Dependabot开的PR，且需能访问上游仓库源码；不合并、不批准、不打标签，仅输出建议。</p></section>

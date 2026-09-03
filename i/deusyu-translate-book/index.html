@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">整本书拆给多个分身并行翻译，再拼回原排版</h1>
     <p class="lede">一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。</p>
     <div class="tags"><span class="tag">deusyu</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。并行是关键：把几小时压到几十分钟，而且排版不散——这才让「翻整本书」从设想变成可做的事。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。本机要有 python3 和 pandoc，DOCX/EPUB/PDF 还得装 Calibre，缺了只剩 HTML。默认放 8 个子 agent 并发，整本书的 token 你自己付；术语表只从 5 个抽样块里提。</p></section>

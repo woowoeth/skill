@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="一次拍出多套造型的换装视频脚本 — 品味">
 <meta property="og:description" content="换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。">
 <meta property="og:url" content="https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/">
-
+<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="一次拍出多套造型的换装视频脚本 — 品味">
 <meta name="twitter:description" content="换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一次拍出多套造型的换装视频脚本","description":"换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。","url":"https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"liyue-aigc"},"codeRepository":"https://github.com/liyue-aigc/outfit-director/tree/HEAD/skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一次拍出多套造型的换装视频脚本","description":"换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。","url":"https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"liyue-aigc"},"image":"https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director","codeRepository":"https://github.com/liyue-aigc/outfit-director/tree/HEAD/skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">一次拍出多套造型的换装视频脚本</h1>
     <p class="lede">换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。</p>
     <div class="tags"><span class="tag">liyue-aigc</span></div>
-    
+    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。把「身份一致性」当成硬约束而不是碰运气——先定首帧再派生视频，这个顺序就是它和一堆换装提示词的全部区别。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。它交付的是提示词和时间轴，不是视频——真出片要你自己拿去生视频模型跑，成片效果取决于那个模型不取决于它。参数预设、转场库、服装方案分散在三个 references 文件里，正文只给路由。</p></section>

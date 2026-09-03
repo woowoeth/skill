@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="YC 掌门的 Claude Code 全套配置，23 个角色分工 — 品味">
 <meta property="og:description" content="YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。">
 <meta property="og:url" content="https://ourword.ai/skill/i/garrytan-gstack/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/garrytan-gstack.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/garrytan-gstack.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YC 掌门的 Claude Code 全套配置，23 个角色分工 — 品味">
 <meta name="twitter:description" content="YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YC 掌门的 Claude Code 全套配置，23 个角色分工","description":"YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。","url":"https://ourword.ai/skill/i/garrytan-gstack/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"garrytan"},"codeRepository":"https://github.com/garrytan/gstack"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YC 掌门的 Claude Code 全套配置，23 个角色分工","description":"YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。","url":"https://ourword.ai/skill/i/garrytan-gstack/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"garrytan"},"image":"https://ourword.ai/skill/assets/covers/garrytan-gstack.png","codeRepository":"https://github.com/garrytan/gstack"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">YC 掌门的 Claude Code 全套配置，23 个角色分工</h1>
     <p class="lede">YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。</p>
     <div class="tags"><span class="tag">garrytan</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/garrytan-gstack.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。看顶级投资人怎么用 agent 干活，光是角色分工这张图就值得装一遍。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: &#x27;bypassPermissions&#x27;，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件。</p></section>

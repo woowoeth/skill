@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">自然语言改工作流，178 个工具随叫随到</h1>
     <p class="lede">ComfyUI 的连线劝退过无数人。装上它用说话就能生成图/视频/音频、搭工作流、改你正在跑的节点图，全程本地不上传素材。</p>
     <div class="tags"><span class="tag">artokun</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>ComfyUI 的连线劝退过无数人。装上它用说话就能生成图/视频/音频、搭工作流、改你正在跑的节点图，全程本地不上传素材。把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。本体是 npm 上的 MCP server，39 件 skill 给它当外围。前提是有一台跑着 ComfyUI 的机器——没有 ComfyUI，这一整包一件都用不上。另外推荐管线里含一个 abliterated（去掉了拒答方向）的文本编码器 LoRA，作者标它是修脸用的；模型表另有一行 abliterated 出图模型标着 uncensored，可换成同表的普通写实模型。</p></section>

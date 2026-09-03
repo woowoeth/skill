@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="会替你删掉一半心愿单的行程地图生成器 — 品味">
 <meta property="og:description" content="把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。">
 <meta property="og:url" content="https://ourword.ai/skill/i/hiyeshu-trip-map-builder/">
-
+<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/hiyeshu/trip-map-builder"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/hiyeshu/trip-map-builder">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="会替你删掉一半心愿单的行程地图生成器 — 品味">
 <meta name="twitter:description" content="把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"会替你删掉一半心愿单的行程地图生成器","description":"把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。","url":"https://ourword.ai/skill/i/hiyeshu-trip-map-builder/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"hiyeshu"},"codeRepository":"https://github.com/hiyeshu/trip-map-builder"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"会替你删掉一半心愿单的行程地图生成器","description":"把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。","url":"https://ourword.ai/skill/i/hiyeshu-trip-map-builder/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"hiyeshu"},"image":"https://opengraph.githubassets.com/pinwei/hiyeshu/trip-map-builder","codeRepository":"https://github.com/hiyeshu/trip-map-builder"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">会替你删掉一半心愿单的行程地图生成器</h1>
     <p class="lede">把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。</p>
     <div class="tags"><span class="tag">hiyeshu</span></div>
-    
+    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/hiyeshu/trip-map-builder" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>把零散截图和收藏整理成一天一片区的行程，查完点评和小红书，输出可点导航的单页交互地图。它认为你列的东西塞不进去，所以替你删；一天最多安排一个需要订位的地方。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。调研环节绑死大众点评和小红书，非中文目的地信号很弱；要装第三方 OpenCLI 并自己开带调试端口的 Chrome；产出的地图是一份静态快照，行程当天不会自己更新。 小红书那段是在你自己开的 Chrome 里拦站内搜索接口取数，账号风险你自己担。</p></section>

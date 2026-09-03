@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">让新资料改写旧笔记，而不是在 Obsidian 里越堆越多</h1>
     <p class="lede">把 Obsidian 库运营成会自我改写的第二大脑：新资料改写旧页面而不是堆新笔记，越用越干净。</p>
     <div class="tags"><span class="tag">eugeniughelbur</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/eugeniughelbur/obsidian-second-brain/HEAD/media/banner.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/eugeniughelbur/obsidian-second-brain/HEAD/media/banner.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>把 Obsidian 库运营成会自我改写的第二大脑：新资料改写旧页面而不是堆新笔记，越用越干净。「改写而非堆积」师承 Karpathy 的 LLM Wiki 思路，直击笔记软件越用越乱的死穴。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。脚本层要 Python 3.10+ 和 uv，/x-read、/x-pulse 必须自备 xAI Grok key。正文自认在 1000+ 笔记库首跑 recall@10 是 0%——raw/ 与 log.md 会压垮词频排序。</p></section>

@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">把 PDF 和 EPUB 拆成能装进 Agent 的</h1>
     <p class="lede">把一本书（PDF/EPUB/DOCX 都行）拆成框架、模型、原则，装进 agent 当技能。</p>
     <div class="tags"><span class="tag">virgiliojr94</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>把一本书（PDF/EPUB/DOCX 都行）拆成框架、模型、原则，装进 agent 当技能。「书读完就忘」的解法：知识不进脑子没关系，进 agent 也行——这个立意本身就值一颗星。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。MOBI/AZW 要先装 Calibre，技术书走 Docling 每页约 1.5 秒，EPUB 里的插图直接丢掉。两百页的书约 7.5 万 token，钱按你自己的模型价算。第三方版权书生成的技能只准建私有仓库。</p></section>

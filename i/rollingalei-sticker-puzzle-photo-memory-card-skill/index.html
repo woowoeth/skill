@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">植被多就换品红键色，把照片做成能剪下来的贴纸页</h1>
     <p class="lede">照片做成好看的图不难，难的是拿到一张真能打印、真能剪的透明贴纸。它一次交记忆卡和六枚图案的透明 PNG。</p>
     <div class="tags"><span class="tag">RollingAlei</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/RollingAlei/Sticker-Puzzle-Photo-Memory-Card-Skill/HEAD/examples/example-1-lake-sunset.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/RollingAlei/Sticker-Puzzle-Photo-Memory-Card-Skill/HEAD/examples/example-1-lake-sunset.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>照片做成好看的图不难，难的是拿到一张真能打印、真能剪的透明贴纸。它一次交记忆卡和六枚图案的透明 PNG。去背走色度键，绿场景会撞色，所以植被多的图改用品红打底，最后还要验四角 alpha 是不是 0。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。生图模型被写死成 seedream_5.0_pro，接不上这个模型的 agent 装了没用。贴纸恰好六枚、手写关键词恰好三个，都是定死的，不接受你要八枚。原图里的文字只在真的标识了地点时才留，广告、菜单、价格、时间戳一律剔掉。 上游 SKILL.md 的 name 是中文，装上后可能不被识别，改成英文更稳。</p></section>

@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="一个观点经得住反例才肯落笔的写作引擎 — 品味">
 <meta property="og:description" content="AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。">
 <meta property="og:url" content="https://ourword.ai/skill/i/lijigang-ljg-skills/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/lijigang-ljg-skills.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/lijigang-ljg-skills.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="一个观点经得住反例才肯落笔的写作引擎 — 品味">
 <meta name="twitter:description" content="AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一个观点经得住反例才肯落笔的写作引擎","description":"AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。","url":"https://ourword.ai/skill/i/lijigang-ljg-skills/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"lijigang"},"codeRepository":"https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一个观点经得住反例才肯落笔的写作引擎","description":"AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。","url":"https://ourword.ai/skill/i/lijigang-ljg-skills/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"lijigang"},"image":"https://ourword.ai/skill/assets/covers/lijigang-ljg-skills.png","codeRepository":"https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">一个观点经得住反例才肯落笔的写作引擎</h1>
     <p class="lede">AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。</p>
     <div class="tags"><span class="tag">lijigang</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/lijigang-ljg-skills.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。产出直接落成 Org 文件写进 ~/Documents/notes，文件头的 author 写死「李继刚」，保存后还要过 org-lint 和 Denote 校验——不用 Emacs/Org 的人得先拆掉这一整套。默认 1000–1500 字，摘要和事实查询作者明写不接。</p></section>

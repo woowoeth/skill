@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="旁白落定才压原声，字幕烧完再响度归一 — 品味">
 <meta property="og:description" content="旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。">
 <meta property="og:url" content="https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="旁白落定才压原声，字幕烧完再响度归一 — 品味">
 <meta name="twitter:description" content="旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"旁白落定才压原声，字幕烧完再响度归一","description":"旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"旁白落定才压原声，字幕烧完再响度归一","description":"旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"image":"https://ourword.ai/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png","codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">旁白落定才压原声，字幕烧完再响度归一</h1>
     <p class="lede">旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。</p>
     <div class="tags"><span class="tag">zenstory-ai</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。它把「混音决策」编码成规则：ducking 深度随旁白能量动态调，而不是固定衰减。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只吃 tts_meta.json 的旁白窗口，手动标注的旁白位置不认。源视频须含音轨，纯画面素材会中断。</p></section>

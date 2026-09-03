@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">自动选对图表类型再画出来</h1>
     <p class="lede">多数人卡在「该用泳道图还是时序图」，不是不会画。它先按需求选型，再从 29 种里出符合规范的 PNG。</p>
     <div class="tags"><span class="tag">312362115</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/312362115/claude/HEAD/docs/assets/workflow-panorama.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/312362115/claude/HEAD/docs/assets/workflow-panorama.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>多数人卡在「该用泳道图还是时序图」，不是不会画。它先按需求选型，再从 29 种里出符合规范的 PNG。先选型后出图这个顺序，比丢给你一堆模板实用得多。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。出 PNG 必须跑 scripts/capture.py 和 bridge.py（内部调 Playwright），正文禁止你手动截图。雷达、热力、散点、漏斗、瀑布不支持 Mermaid 文本输出，只能留 PNG。</p></section>

@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">按调用结构而不是搜字符串，回答改这里会牵动谁</h1>
     <p class="lede">对着代码库的知识图谱直接提问：这段逻辑在哪、谁调用谁、改这里会牵动什么——按结构找答案，不是搜字符串。</p>
     <div class="tags"><span class="tag">Egonex-AI</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>对着代码库的知识图谱直接提问：这段逻辑在哪、谁调用谁、改这里会牵动什么——按结构找答案，不是搜字符串。比全文搜索聪明一档——它按结构找答案，不是按字符串。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。它只读 .ua/knowledge-graph.json，那张图得先跑 /understand 生成，没有就只能劝你去跑。图按 git commit 记时。</p></section>

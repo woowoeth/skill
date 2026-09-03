@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -21,11 +23,11 @@
 <meta property="og:title" content="骨骼、变形、混合全包，GLTF 动画直接上手 — 品味">
 <meta property="og:description" content="骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/">
-
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="骨骼、变形、混合全包，GLTF 动画直接上手 — 品味">
 <meta name="twitter:description" content="骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"骨骼、变形、混合全包，GLTF 动画直接上手","description":"骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"骨骼、变形、混合全包，GLTF 动画直接上手","description":"骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"image":"https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png","codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -59,7 +61,7 @@
     <h1 class="ttl">骨骼、变形、混合全包，GLTF 动画直接上手</h1>
     <p class="lede">骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
-    
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>骨骼、变形、关键帧、混合，GLTF 动画拿来即播。写代码前先问它，省得自己翻文档拼 API。它把官方示例拆成可复用的动作片段，按语义调用而非抄代码。你描述意图，它给出对应实现。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。仅覆盖 Three.js 动画模块，不含场景搭建、模型加载或渲染优化。超出此范围需自行处理，且要求环境已安装 Thre。</p></section>

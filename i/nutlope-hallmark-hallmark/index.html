@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">一眼看出页面像 AI 生成的，并给出改法</h1>
     <p class="lede">Nutlope 出品的 anti-slop 设计 skill：把「一眼 AI」的页面救回来。</p>
     <div class="tags"><span class="tag">Nutlope</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/Nutlope/hallmark/HEAD/site/OG-hallmark.png" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/Nutlope/hallmark/HEAD/site/OG-hallmark.png" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>Nutlope 出品的 anti-slop 设计 skill：把「一眼 AI」的页面救回来。作者是产出过一堆爆款开源应用的老手，这份审美清单是他 ship 出来的经验，不是理论。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只管网页与组件这一层的视觉。防重复靠项目根目录的 .hallmark/log.json，换个项目就从头轮，组件级的活压根不记账。study 读网页走 WebFetch，碰到要登录或纯 JS 的 SPA 只能改让你截图。</p></section>

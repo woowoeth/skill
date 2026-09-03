@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="https://ourword.ai/skill/icon.svg">
 <link rel="stylesheet" href="../../assets/item.css?v=12">
 <style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -59,7 +61,7 @@
     <h1 class="ttl">给 Go 代码库做地道性评审</h1>
     <p class="lede">Go 里「能跑」和「地道」差得远。命名、结构、一致性、接口、错误处理逐维打分，还附可执行的修法。</p>
     <div class="tags"><span class="tag">dimetron</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif" alt="">
+    <img class="cover" src="https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif" alt="" onerror="this.remove()">
     
     <section class="sec"><h2>做什么用</h2><p>Go 里「能跑」和「地道」差得远。命名、结构、一致性、接口、错误处理逐维打分，还附可执行的修法。按维度打分让评审意见特别可落地，不是笼统说「建议重构」。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。正文明说单个 PR 或未提交 diff 不归它管，那要另一件 code-review。而且末尾嵌着 pi-go 这个项目自己的检查项（ADK、internal/provider/、禁 init()），换仓库得先删。</p></section>
