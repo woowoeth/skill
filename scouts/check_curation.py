@@ -1164,7 +1164,7 @@ def main() -> None:
         _u = (_it.get("cover") or "")
         if not _u.startswith("/skill/"):
             continue
-        _p = os.path.join(ROOT, _u[len("/skill/"):])
+        _p = os.path.join(lib.ROOT, _u[len("/skill/"):])
         if not os.path.exists(_p):
             _mis.append((_it["id"], "文件不存在")); continue
         try:
