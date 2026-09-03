@@ -152,4 +152,5 @@ jobs:
 
       - name: 提交
         if: always()
-        run: bash scouts/git_sync.sh "sweep: 自动发现并判品味"
+        run: |
+          bash scouts/git_sync.sh "sweep: 自动发现并判品味"

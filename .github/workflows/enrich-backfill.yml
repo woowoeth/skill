@@ -21,4 +21,5 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: python scouts/skill_scout.py --enrich-missing
       - name: 提交
-        run: bash scouts/git_sync.sh "enrich: 补写在架占位货文案"
+        run: |
+          bash scouts/git_sync.sh "enrich: 补写在架占位货文案"
