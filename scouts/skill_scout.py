@@ -389,6 +389,20 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
 
     # Flagship rule: a sub-skill named like the repo means "one product with
     # add-ons" (caveman, ponytail, i-have-adhd...) → one product card only.
+    # 09-03 编辑亲挑：挑的是合集里点名的那一两件（editor_picks 写了 path/paths）时，只收那几件，不出合集卡。
+    # 网文合集 26 件 ≥ COLLECTION_ONLY 本来只出一张合集卡，编辑点名的 continuity / aidetect 根本没进库。
+    _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
+    _pick = _eds.get(repo.lower()) or {}
+    _want = [q.strip("/") for q in ([_pick.get("path")] if _pick.get("path") else []) + list(_pick.get("paths") or [])]
+    if _want:
+        got = [p for p in parsed if (p[2] or "").strip("/") in _want]
+        print(f"[scout] 编辑点名 {repo} 里 {len(_want)} 件，仓里对上 {len(got)} 件：{[p[2] for p in got]}")
+        for name, desc, rel in got:
+            items.append(lib.make_item(kind="skill", name=name, desc_en=desc or repo_desc, repo=repo,
+                                       path=rel, stars=stars, repo_desc=repo_desc, pushed_at=pushed,
+                                       homepage=homepage, skill_count=1, source=source))
+        return items
+
     tail = lib.slug(repo.split("/")[-1])
     flag = next((p for p in parsed if lib.slug(p[0]) == tail), None)
     if flag:
