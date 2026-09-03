@@ -1,1 +1,269 @@
-{"_说明":"编辑（Claude）读过 SKILL.md 原文后挑的，不过判官。键是仓库全名小写；reason ≥30 字，写不出的不算挑过。店主觉得不好会说，说了就下架并把理由记到 hard_negatives。","items":{}}
+{
+ "_说明": "编辑（Claude）读过 SKILL.md 原文后挑的，不过判官。键是仓库全名小写；reason ≥30 字，写不出的不算挑过。店主觉得不好会说，说了就下架并把理由记到 hard_negatives。",
+ "items": {
+  "tengj/article-poster-generator": {
+   "repo": "tengj/article-poster-generator",
+   "path": "",
+   "reason": "长文拆成 5–8 张竖版信息图海报直接出 PNG：1290 行渲染脚本 + 6 种布局 schema + 5 套配色是真零件；「提取什么」和「卡片需要什么」反向绑定（金字塔还原论证层级再决定进哪种布局），有自己的取舍规则（每张 ≤200 字、优先保数据案例、先删过渡句），和心选 guizang 社交卡片同一路而更完整。",
+   "note": "依赖 Playwright；风格 guochao 实为黑金邀请函风；卖点写「长文拆图」不是「做封面」",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "y1fe1-yang/resume-assistant-skill": {
+   "repo": "Y1fe1-Yang/resume-assistant-skill",
+   "path": "",
+   "reason": "学生从「没经历」到能投的简历：PDF/DOCX/网页三套生成脚本 + 模板 + 随包中文字体 + 样例 JSON，拆了照样出文件；差距分 A 类硬伤诚实告知、B 可补、C 易补，肯说这个岗位冲不上；STAR 深挖真经历不编，补的是心选乔木简历没有的下游产出和面试反向改简历闭环。",
+   "note": "与 joeseesun/qiaomu-campus-resume 并排时要说清分工；「五个代理」是话术",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "momozi1996/directoragents": {
+   "repo": "momozi1996/DirectorAgents",
+   "path": "",
+   "reason": "31 位导演风格档案库（平均 14KB，有出处有片例有导演自我定位，侯孝贤篇引陈世骧、戴锦华并具体到《悲情城市》固定机位），中港台导演 13 位是中文创作者真用得上的谱系；题材→导演组合对照表给剧本/分镜一个可执行的风格方案，和心选 seedance 导演、outfit-director 同一读者。",
+   "note": "SKILL.md 前半段多智能体框架是营销腔，上架文案绕开；只精读了侯孝贤篇",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "cattlez/dance-video-to-prompt": {
+   "repo": "CattleZ/dance-video-to-prompt",
+   "path": "skills/dance-video-to-prompt",
+   "reason": "本地跳舞/变装短视频反推成能直接喂生成模型的 7 段中文提示词：抽帧、清晰度检测邻帧救援、本地音轨 BPM 拍点分析全是脚本干活，模型只读结果（和心选 astro「引擎算、模型读」同构）；明写模糊帧不编造手指五官身材轮廓。",
+   "note": "依赖 ffmpeg",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "m1n-n9/academic-figures-drawer": {
+   "repo": "M1n-n9/academic-figures-drawer",
+   "path": "",
+   "reason": "从论文/代码生成两栏可读、可编辑的 .drawio 学术配图：自动布局脚本 + 形状索引数据 + 十几篇质量契约；产物是可编辑源文件不是截图（同心选 excalidraw），立场硬：每个形状颜色连线要有命名含义、绝不臆造维度或模块名。",
+   "note": "正文英文，面向 ML 论文",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "itshen/source-reading-methodology": {
+   "repo": "itshen/source-reading-methodology",
+   "path": "",
+   "reason": "带 AI 精读大型开源仓库并编成每句话可回溯到源码具体行的书稿：build_book.py 编 HTML 书、style_scan.py 抓静默删行、分阶段校验器；专治读码幻觉，与心选 deep-research / Understand-Anything 同一底线。",
+   "note": "README 有作者微信群二维码（不注入产物）—— 封面不许用 README 图里带二维码的",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "mumdark/nature-writing-studio": {
+   "repo": "mumdark/nature-writing-studio",
+   "path": "skill",
+   "reason": "把中文/粗糙科研文本改成 Nature 家族英文并清 AI 味：14 个 TSV 真数据（反 AI 模式、短语库、领域句长统计、hedge 动词）标注来自 657/412 篇 Nature 逐篇观测，provenance.json 存来源 —— 厚知识库即硬实力，同心选 email-marketing-bible。",
+   "note": "受众是写英文论文的研究生",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "yuanchen-home/cumcm-step-review": {
+   "repo": "yuanchen-home/cumcm-step-review",
+   "path": "",
+   "reason": "数学建模国赛逐步审核：先审思路算法、通过再写代码、每部分写进论文草稿再审；assets 七份算法说明 + raincloud/ROC-CI/SHAP/chord 等一批可直接跑的出图脚本，是真带过学生比赛才写得出的节奏，与心选 math-modeling-skill 互补（那件管全流程，这件管审）。",
+   "note": "",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "gary149/h3-game-sprites": {
+   "repo": "gary149/h3-game-sprites",
+   "path": "skills/h3-game-sprites",
+   "reason": "用 H3 视频当演员拍动作再切成校验过的透明底 2D 游戏精灵表：gen_still / sprite_cut / build_atlas 三个脚本 + ffmpeg/numpy 数值 QC，「用数字而非感觉验收」，idle-pin 技巧保证每个动作 on-model 可循环 —— 独立游戏作者省下手绘几十帧。",
+   "note": "英文；需 OPENROUTER_API_KEY 且生成花钱（明写）",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "locoda/duizuo-reading-companion-skill": {
+   "repo": "locoda/duizuo-reading-companion-skill",
+   "path": "",
+   "reason": "对坐：陪你把一本书读完、只聊你读到的地方、绝不剧透。剧透拆成权限≠状态、临时授权不落盘等六条硬规则，连意象结构节奏也算剧透；6 种对话模式各一份规则 + 回归测试用例 + 每本书三件档 —— 立场之硬，是这批里最像心选的一件。",
+   "note": "文本核查依赖宿主能读 EPUB",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "xiaohuailabs/xiaohu-ip-studio": {
+   "repo": "xiaohuailabs/xiaohu-ip-studio",
+   "path": "",
+   "reason": "给中文深度文配由固定 IP 角色出演的解释图，自带 31 个手绘角色（含 16 个谐音梗食物角色）各有锚点图和角色卡，14 份方法文件；「选 IP 和风格是用户的品味节点，替用户选=禁止」，配几张配哪几节按逐节枚举表，还写了自己走过的弯路 —— 心选 ian-xiaohei / punk-ip 的进阶版。",
+   "note": "需自填图像 API key（明说）；129 个文件上手门槛高",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "fuwenhao12/academic-ref-inserter": {
+   "repo": "fuwenhao12/academic-ref-inserter",
+   "path": "",
+   "reason": "给 Word 毕业论文/投稿稿插入、重排、超链接参考文献，GB/T 7714-2015 / IEEE / APA 7 等 7 种格式各一个 .py，validate 查孤引、未引、编号断档、文献类型标签 —— 中国研究生改参考文献格式的真痛点，脚本离开 SKILL.md 完全能跑。",
+   "note": "只管 docx 不管 LaTeX；仓根堆了十来个 agent 配置文件",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "zy-zmc/tianming-skill": {
+   "repo": "zy-zmc/tianming-skill",
+   "path": "",
+   "reason": "多卷长篇小说协同写作系统：法则/协议/事实三层，冲突时「事实时效更高、法典永远胜出」，缺核心文件报绑定失败禁止捏造、事实不足只标待决议；conflict-score.py 量化冲突、10 个题材 BizPrompt、完整 mini-volume 样例 —— 把长篇最难的前后矛盾做成可校验流程，与心选 oh-story 同一读者。",
+   "note": "仪式感重（「双神已就位」），冷启动要自建五份知识库",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "vivixiao980/xhs-cover-skill": {
+   "repo": "Vivixiao980/xhs-cover-skill",
+   "path": "",
+   "reason": "一张人像 + 一句标题出小红书 3:4 封面，18 种风格是 JSON + 各配一张真实效果图（风格是数据不是形容词），风格学习流程能把用户喂的参考图提炼成同 schema 的 JSON；「修改必须以上一张为输入、只改点名的部分」把改一下和重做分开了 —— 小红书博主每天要干的活。",
+   "note": "本质仍是生图封装；要自己的 API key（明说）",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "xianxie6/stamp-edge-skill": {
+   "repo": "xianxie6/stamp-edge-skill",
+   "path": "",
+   "reason": "任意截图变四周打孔、带柔和投影的透明底邮票 PNG，多张拼成邮票合集图：两个 Pillow 脚本零 API 依赖，参数表可调；注意事项全是踩坑记录（微信会把透明 PNG 压成 JPG，要保透明发文件），和心选 Sticker-Puzzle 同一路数。",
+   "note": "体量小；路径写死 ~/.agents/skills/",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "larashero3-dotcom/lieflat-less-ai-tone": {
+   "repo": "larashero3-dotcom/lieflat-less-ai-tone",
+   "path": "",
+   "reason": "按白名单规则去中文成稿的 AI 味，没命中规则的句子逐字保留：629 篇（AI 300 / 人类 329）对照语料把每条规则证实或证伪，「不作为改写理由」表把句长参差、被动句、首先其次这些站不住的传说一条条否掉；信息守恒不许增删 —— 去 AI 味工具满地，这是唯一拿数据说话的。",
+   "note": "与心选 hemingway / oh-story 题材相近，方法层级不同",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "chengyi-ai/native-subtitle-quote-image": {
+   "repo": "chengyi-ai/native-subtitle-quote-image",
+   "path": "skills/native-subtitle-quote-image",
+   "reason": "把一段视频做成 3:4 的字幕金句长图（一张主画面 + 四条字幕帧，1440×1920）：752 行拼图脚本；原生字幕 / 脚本字幕两种模式硬分开，用户说保留原字幕就不能因为难处理偷换模式，DRM/付费墙/无烧录字幕明列为停止条件 —— B 站/小红书博主做视频拆解图的具体活。",
+   "note": "依赖 FFmpeg/yt-dlp；启动时向 GitHub Release 做一次只读版本检查（已声明）",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "qianye-wuyu/yueyuan-bazi": {
+   "repo": "qianye-wuyu/yueyuan-bazi",
+   "path": "",
+   "reason": "子平八字研究型分析：lunar-python 引擎排盘，模型只按 STRUCTURAL>CORE>SCHOOL>HEURISTIC 分层规则读盘，给「倾向 + 证据 + 不确定度」不给断语；v1.1 删掉伪量化，措辞分级「大概率→目前更支持」，还给自己写了能力边界 —— 命理题材里罕见的诚实做法，与心选 astro / fengshui 同一口径。",
+   "note": "SKILL.md 前 50 行是修订日志，正文超 20KB；架上已有 jinchenma94 八字件，这件角度是研究型",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "yejy53/editable-design": {
+   "repo": "yejy53/Editable-Design",
+   "path": "skills/html-to-pptx",
+   "reason": "把 slide/poster 的 HTML 确定性转成每个元素都能单独选中拖动的 PPTX，不是截图贴底：纯本地单命令无 LLM，render_check.py 用 LibreOffice 渲回比对保真度；专治 AI 出的 PPT「回 PowerPoint 改不动」，产物是可编辑源文件这条判断和心选 excalidraw 一致。",
+   "note": "Playwright + Chromium 依赖重；只挑这一个子 skill",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "xiaoou-waou/xiaoou-gzh-layout": {
+   "repo": "xiaoou-waou/xiaoou-gzh-layout",
+   "path": "",
+   "reason": "把 Markdown/Word/PDF 排成粘进公众号编辑器样式不丢的 HTML：6 套主题组件库 + validate_gzh_html.py 校验平台禁用项、<span leaf>、半角标点，ERROR 清零才算交付；「HTML 一律从组件库取不手写」「不得冒署」—— 公众号排版是中文创作者每周的体力活，这件把编辑器的坑做成了确定性校验。",
+   "note": "默认署名 xiaoou 要提醒读者改",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "work-fisher/reference-first-motion-director": {
+   "repo": "Work-Fisher/reference-first-motion-director",
+   "path": "reference-first-motion-director",
+   "reason": "口播视频整片视觉导演：先出视觉总表和动效清单，再为每个动效交付 2048×1152 成片级参考图 + 按内容定时的视频提示词；随包 33 图 15 视频的原创参考库 + ensure_2k.py 读真实像素不许「提示词里声称 2K」；「高级感来自画面职责和动静落差，不来自每句话套风格皮肤」。",
+   "note": "体量大门槛高；提示词编译绑 MiniMax H3",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "sherlyryn/make-tape-collage": {
+   "repo": "sherlyryn/make-tape-collage",
+   "path": "",
+   "reason": "照片变和纸胶带拼贴画，或原照片零改动、旁边配留白胶带纸面：compose_direct_split.py 确定性合成（裁切上限 20%、纸面纹理、标题定位，--plan 先出布局），只把一块透明底胶带动机交给生成模型 —— 和心选 photo-distill「全程代码绘制」同一种自我约束，10–18 块胶带、留白 65–80% 是真做过的量化。",
+   "note": "依赖宿主生图；英文写作",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "v-yun/vuln-report-skill": {
+   "repo": "v-yun/vuln-report-skill",
+   "path": "",
+   "reason": "白帽把已确认漏洞写成能直接投 SRC/CNVD/EDUSRC 的 DOCX：分层验证门把「什么够格写报告」写成硬判据（无 PoC 不算漏洞、只读到自己测试账号数据不算、IDOR 要 A/B 交叉证明、dnslog 记录直接交是半成品），去 AI 腔硬规 —— 能看出作者被审核驳回过很多次。",
+   "note": "上架文案写清仅用于已授权/SRC 范围；零件只有一个 docx 模板",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "songzhi-lab/chinese-font-selector": {
+   "repo": "Songzhi-lab/chinese-font-selector",
+   "path": "chinese-font-selector",
+   "reason": "给小红书卡片/产品册/网页/书内页选可免费商用的中文字体，T0 开源 / T1 厂商免费商用 / 慎用三级 + 场景×气质矩阵，每条推荐必写授权类型和获取渠道；「授权先行再谈审美」这个顺序本身就是立场 —— 中文字体的问题从来不是好看而是能不能商用。",
+   "note": "字体库只 76 行偏基础；授权信息会过期",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "liufanshan11/cumcm-c-problem-lfs": {
+   "repo": "liufanshan11/cumcm-c-problem-lfs",
+   "path": "",
+   "reason": "数模国赛 C 题 72 小时从读题到 LaTeX 成稿：init/validate/audit_figures 三个脚本 + 论文骨架 + 2018–2025 题型演变、评委讲评、质量门 11 份参考；「每引入一个复杂模型都答三句话：基础方法哪里失效、新方法修复什么、复杂度换来什么可量化收益」—— 九月正是国赛，带过队的人写的节奏。",
+   "note": "同作者 B 题件同构不重复上；与 cumcm-step-review 文案要区分（那件管审）",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "tance-mang/chinese-webnovel-skills": {
+   "repo": "tance-mang/chinese-webnovel-skills",
+   "path": "skills/continuity",
+   "reason": "网文作者后台里只挑两件：continuity 七条逻辑链体检（人物/时间/地点/物品/能力/伏笔/因果）把跨章矛盾定位到句，aidetect 把 AI 味量化并定位到第几句；30+ references + cli，对标心选 oh-story 但更系统。同仓其余 20 多件是泛用写作件，不上。",
+   "note": "合集只挂点名的两件，避免稀释成索引站",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "endlessbluewjl/schengen-visa-guide": {
+   "repo": "EndlessBlueWJL/schengen-visa-guide",
+   "path": "",
+   "reason": "中国护照办申根签逐步陪跑：分身份 checklist + 各国路由表 + 生成解释信/行程单 + progress 状态机；写的都是真坑（护照签发≤10 年、户口本整本复印），拒绝跳步、反复提示以官网为准 —— 普通人生活里的具体事，和心选行程地图同一读者。",
+   "note": "政策会变需更新",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "cclank/lanshu-awesome-ai-video-kit": {
+   "repo": "cclank/lanshu-awesome-ai-video-kit",
+   "path": "",
+   "reason": "AI 视频提示词查表式跨模型转换 + 翻车诊断：cross-model-matrix.json 110 条官方公式对照是真数据资产，避坑 12 问是撞过才有的；作者 cclank 的菜谱件已是心选，同一种「每一步告诉你怎么算做好了」的手法。",
+   "note": "模型迭代快有时效",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "sanhuang520-ship-it/awesome-chinese-ai-tools": {
+   "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+   "path": "skills/chinese-lesson-plan",
+   "reason": "合集里只挑教师备课这一件：反例正例对照 + 分学科 references，产物是一份能直接用的教案，中国中小学老师每周的具体活；同仓其余是泛用中文工具，不上。",
+   "note": "合集只挂这一件；book-digest-cn / chinese-typography 可以下一轮再看",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "larashero3-dotcom/lieflat-charts": {
+   "repo": "larashero3-dotcom/lieflat-charts",
+   "path": "",
+   "reason": "给非程序员的图表品味法典：5 套 gallery + 12 套中英报告模板，硬立场是必须从模板生成禁止另画、图的数量由结论数决定、禁混色系 —— 和心选「自动选对图表类型」互补（那件管选型，这件管品味）；同作者的去 AI 味件同批上架，拿数据说话是一贯风格。",
+   "note": "模板体系庞大",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "feichangai-team/china-compliance-skills": {
+   "repo": "feichangai-team/china-compliance-skills",
+   "path": "skills/cn-compliance-guard",
+   "reason": "中文文案违禁词扫描：广告法 6 类 200+ 词逐条挂法条和罚款区间（绝对化用语 20–100 万），5 平台 SEO 规则，给安全替换词，check.sh 一句出结果 —— 小红书/抖音/淘宝发文案被限流或被市监局罚，是做号人和小商家的具体事，这张表能贴在墙上。",
+   "note": "README 有「premium…2000+ businesses」营销话，未发现付费墙；词表静态靠作者维护；同仓 cn-aigc-detector 阈值武断不上",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "mikuz12/exampass-assistant": {
+   "repo": "MIKUZ12/ExamPass-Assistant",
+   "path": "",
+   "reason": "课件变教授式讲义 + 可打印的交互测试 HTML：16 个脚本是真零件，拒绝编造、不确定就说明 —— 和心选「对着真实课本和考纲突击复习」同一读者，多了产物形态（讲义 + 自测页）。",
+   "note": "依赖课件完整度",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  },
+  "juneyaooo/xhs-writer-skill": {
+   "repo": "JuneYaooo/xhs-writer-skill",
+   "path": "",
+   "reason": "小红书卡片组/短视频脚本，卖点按稀缺×实用×可感知打分而不是凭感觉，7 个脚本 + references；生图依赖自己的 key 且明说可降级 —— 和同批 xhs-cover 分工：那件管封面，这件管内容。",
+   "note": "生图要 OpenAI key（明说，可降级）",
+   "picked_at": "2026-09-03",
+   "by": "编辑（Claude）读原文"
+  }
+ }
+}

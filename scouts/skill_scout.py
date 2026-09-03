@@ -1122,7 +1122,8 @@ def _taste_pass(it: dict) -> str:
     _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
     _ed = _eds.get((it.get("repo") or "").lower()) or _eds.get(sid)
     # 挑的是仓里某一个 skill（写了 path）时，同仓其它子 skill 不沾光
-    if _ed and _ed.get("path") and (it.get("path") or "").strip("/") != _ed["path"].strip("/"):
+    _paths = [q.strip("/") for q in ([_ed.get("path")] if _ed and _ed.get("path") else []) + list((_ed or {}).get("paths") or [])]
+    if _ed and _paths and (it.get("path") or "").strip("/") not in _paths:
         _ed = None
     if _ed and len((_ed.get("reason") or "").strip()) >= 30:
         return _log(True, f"编辑读过原文挑的 —— {_ed['reason'][:80]}")
