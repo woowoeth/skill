@@ -1190,7 +1190,8 @@ def main() -> None:
     # 【24】店长推荐：每一件都得有作者真图（文件真在）且四段文案齐 —— 店主 09-03：「至少要有图」。标准见 scout_lib.refresh()。
     # pick 由 refresh() 在内存里重算、只落进 feed.json；skills/*.json 里那些是 8/28 的遗留，读它会误报
     _feed_items = (lib.read_json(os.path.join(lib.ROOT, "skills", "feed.json"), {}) or {}).get("skills", [])
-    _picks = [_it for _it in _feed_items if _it.get("pick")]
+    _pinned_ids = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "picks_pinned.json"), {}) or {}).get("ids", []))
+    _picks = [_it for _it in _feed_items if _it.get("pick") and _it.get("id") not in _pinned_ids]   # 钉住的 12 件店主定的，不检查
     _bad_pick = []
     for _it in _picks:
         _u = _it.get("cover") or ""
@@ -1199,11 +1200,9 @@ def main() -> None:
         _ok_copy = all(len((_it.get(k) or "").strip()) >= 8 for k in ("title_zh", "tagline_zh", "why_zh", "limit_zh"))
         if not (_ok_cover and _ok_copy):
             _bad_pick.append((_it["id"], "没真图" if not _ok_cover else "文案缺"))
-    print(f"\n【24】店长推荐 {len(_picks)} 件 · 不合格 {len(_bad_pick)} 件")
+    print(f"\n【24】店长推荐（编辑追加的）{len(_picks)} 件 · 不合格 {len(_bad_pick)} 件 · 另钉住 {len(_pinned_ids)} 件不检查")
     if _bad_pick:
         err(f"{len(_bad_pick)} 件店长推荐没有真图或文案不齐：{_bad_pick[:5]} —— 推荐位是店的脸，refresh() 应该已经筛掉，查 scout_lib")
-    if len(_picks) > 12:
-        err(f"店长推荐 {len(_picks)} 件 > 12")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:

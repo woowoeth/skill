@@ -658,8 +658,8 @@ def refresh() -> dict:
     # 「店长推荐」（英文 Editor's picks）—— 首页第一眼的 12 张卡，就是这家店的脸。
     # 店主 09-03：「店长推荐你自己想一下推荐标准，我觉得至少要有图」。标准定这样（docs/CURATION.md 同步）：
     #   硬条件 ① 有作者真图，且文件真在仓里     ② 编辑读过原文挑的（editorial/editor_picks.json，理由 ≥30 字）
-    #          ③ 四段文案齐全，标题不是套路开头、不是半句话   ④ 分散：同一分类最多 4 件，同一仓最多 1 件
-    #   补位   编辑挑的不够 12 件时，用店主心选里有真图、文案齐的补（心选是店主亲手过的眼）
+    #          ③ 四段文案齐全，标题不是套路开头、不是半句话   ④ 同一仓最多 1 件
+    #   钉住   8/28 店主定的 12 件（editorial/picks_pinned.json）原样保留，新的只增不删
     #   排序   登记时间新的在前 → 同日先摆过了红线扫描存档的 → 再按上架时间、id 稳定
     # 09-03 同事查出：pick 标记只在 8/28 那轮门禁时打过一次，之后没有任何流程更新它，首页那组十二天没换。现在每次 refresh 重算。
     _eds = (read_json(os.path.join(ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
@@ -701,24 +701,19 @@ def refresh() -> dict:
             continue
         _cands.append(((e.get("picked_at") or "", 1 if it.get("id") in _scan else 0, it.get("added_at") or "", it.get("id") or ""), it))
     _cands.sort(key=lambda kv: kv[0], reverse=True)
-    # 编辑挑的凑不够 12 时，用店主心选补位：心选是店主亲手过的眼，读过原文这条它天然满足；同样要有真图、文案齐。
-    _hearts = set((read_json(os.path.join(ROOT, "editorial", "hearts.json"), {}) or {}).get("ids", []))
-    _heart_cands = sorted(((it.get("added_at") or "", it.get("id") or ""), it) for it in items.values()
-                          if not it.get("hide") and it.get("id") in _hearts and _has_real_cover(it) and _copy_ok(it)
-                          and not _pick_entry(it))
-    _heart_cands.sort(key=lambda kv: kv[0], reverse=True)
-    _top, _per_cat, _per_repo = set(), {}, set()
-    for _, it in _cands + _heart_cands:
-        cat, repo = it.get("category") or "", (it.get("repo") or "").lower()
-        if _per_cat.get(cat, 0) >= 4 or repo in _per_repo:
+    # 店主 09-03：「12 件不要删，只是新增」。8/28 那 12 件钉在 editorial/picks_pinned.json，不看图不看文案，原样保留；
+    # 编辑挑的满足上面四条就追加，不限总数、同一仓只上一件；不再用心选补位。
+    _pinned = set((read_json(os.path.join(ROOT, "editorial", "picks_pinned.json"), {}) or {}).get("ids", []))
+    _top = {i for i in _pinned if i in items and not items[i].get("hide")}
+    _per_repo = {(items[i].get("repo") or "").lower() for i in _top}
+    for _, it in _cands:
+        repo = (it.get("repo") or "").lower()
+        if repo in _per_repo:
             continue
-        _top.add(it["id"]); _per_cat[cat] = _per_cat.get(cat, 0) + 1; _per_repo.add(repo)
-        if len(_top) >= 12:
-            break
+        _top.add(it["id"]); _per_repo.add(repo)
     for it in items.values():
         it["pick"] = it.get("id") in _top
-    if len(_top) < 12:
-        print(f"[lib] 店长推荐只凑出 {len(_top)} 件（候选 {len(_cands)}）—— 有图、文案齐、读过原文的不够 12 件，缺的不硬凑")
+    print(f"[lib] 店长推荐 {len(_top)} 件 = 钉住 {len(_top & _pinned)} + 编辑追加 {len(_top - _pinned)}（候选 {len(_cands)}）")
     visible = [it for it in items.values() if not it.get("hide")]
     # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars.
     # 完全并列的再按 id —— 否则并列项的先后取决于 glob() 的文件系统顺序，同一份数据
