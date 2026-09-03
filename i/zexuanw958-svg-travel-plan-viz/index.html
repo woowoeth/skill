@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把旅行计划做成手机上能离线看的网页 — 品味</title>
+<title>离线可读的手机旅行页，地图时间轴订票提醒一页装完 — 品味</title>
 <meta name="description" content="到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, zexuanw958-svg">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把旅行计划做成手机上能离线看的网页 — 品味">
+<meta property="og:title" content="离线可读的手机旅行页，地图时间轴订票提醒一页装完 — 品味">
 <meta property="og:description" content="到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。">
 <meta property="og:url" content="https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/">
 <meta property="og:image" content="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把旅行计划做成手机上能离线看的网页 — 品味">
+<meta name="twitter:title" content="离线可读的手机旅行页，地图时间轴订票提醒一页装完 — 品味">
 <meta name="twitter:description" content="到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把旅行计划做成手机上能离线看的网页","description":"到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。","url":"https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zexuanw958-svg"},"image":"https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png","codeRepository":"https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"离线可读的手机旅行页，地图时间轴订票提醒一页装完","description":"到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。","url":"https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zexuanw958-svg"},"image":"https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png","codeRepository":"https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>zexuanw958-svg</span>
       <span class="date">2026-08-19</span>
     </div>
-    <h1 class="ttl">把旅行计划做成手机上能离线看的网页</h1>
+    <h1 class="ttl">离线可读的手机旅行页，地图时间轴订票提醒一页装完</h1>
     <p class="lede">到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。</p>
     <div class="tags"><span class="tag">zexuanw958-svg</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png" alt="">
     
     <section class="sec"><h2>做什么用</h2><p>到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。地图引的是 Leaflet CDN，所谓「离线可读」保得住文字和时间轴，地图那块断网就是空的。实时票价、代订票、多语言、后端，作者在「不做」一节里明写一概不做。最后那步校验要本机有 node 跑 assets/validate.js。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把旅行计划做成手机上能离线看的网页」这一件来做，不要中途改风格。</li><li>按我给的现场条件出方案，条件不够就说做不到。</li><li>不要写成对谁都适用的攻略。</li><li>结论里把限制写在最前面。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「离线可读的手机旅行页，地图时间轴订票提醒一页装完」这一件来做，不要中途改风格。</li><li>按我给的现场条件出方案，条件不够就说做不到。</li><li>不要写成对谁都适用的攻略。</li><li>结论里把限制写在最前面。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git">复制</button></div><div class="cmd"><code>cp -r travel-plan-viz/travel-plan-viz ~/.claude/skills/travel-plan-viz</code><button type="button" data-copy="cp -r travel-plan-viz/travel-plan-viz ~/.claude/skills/travel-plan-viz">复制</button></div></div></section>
   </article>
   <aside class="aside">

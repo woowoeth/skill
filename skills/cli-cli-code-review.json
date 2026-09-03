@@ -2,7 +2,7 @@
  "id": "cli-cli-code-review",
  "kind": "skill",
  "name": "code-review",
- "title_zh": "只认代码库自家规矩的 GitHub PR 审查员",
+ "title_zh": "合代码前先过一遍仓库规矩的 gh 评审员",
  "tagline_zh": "PR 一上来就按你仓库的约定逐条核对，不靠通用模板。它先读 CONTRIBUTING 和现有代码风格，再挑刺。",
  "tagline_en": "Checks each PR against your codebase's stated rules, not generic templates. Reads CONTRIBUTING and code style.",
  "desc_en": "Reviews GitHub CLI (gh) pull requests against codebase conventions",
@@ -32,5 +32,6 @@
  "cover": "/skill/assets/covers/cli-cli-code-review.png",
  "cover_w": 2524,
  "cover_h": 1636,
- "title_en": "PR reviewer that follows your repo's own conventions"
+ "title_en": "A gh reviewer that checks PRs against repo rules",
+ "gate_score": 8
 }

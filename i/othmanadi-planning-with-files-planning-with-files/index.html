@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把计划写成磁盘文件，/clear 和上下文压缩都不丢进度 — 品味</title>
+<title>任务拆解写到磁盘，/clear 后自动续上进度 — 品味</title>
 <meta name="description" content="把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, OthmanAdi">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把计划写成磁盘文件，/clear 和上下文压缩都不丢进度 — 品味">
+<meta property="og:title" content="任务拆解写到磁盘，/clear 后自动续上进度 — 品味">
 <meta property="og:description" content="把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。">
 <meta property="og:url" content="https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/">
 <meta property="og:image" content="https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg"><meta name="twitter:image" content="https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把计划写成磁盘文件，/clear 和上下文压缩都不丢进度 — 品味">
+<meta name="twitter:title" content="任务拆解写到磁盘，/clear 后自动续上进度 — 品味">
 <meta name="twitter:description" content="把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把计划写成磁盘文件，/clear 和上下文压缩都不丢进度","description":"把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。","url":"https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"OthmanAdi"},"image":"https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg","codeRepository":"https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"任务拆解写到磁盘，/clear 后自动续上进度","description":"把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。","url":"https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"OthmanAdi"},"image":"https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg","codeRepository":"https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>OthmanAdi</span>
       <span class="date">2026-08-07</span>
     </div>
-    <h1 class="ttl">把计划写成磁盘文件，/clear 和上下文压缩都不丢进度</h1>
+    <h1 class="ttl">任务拆解写到磁盘，/clear 后自动续上进度</h1>
     <p class="lede">把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。</p>
     <div class="tags"><span class="tag">OthmanAdi</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg" alt="">
     
     <section class="sec"><h2>做什么用</h2><p>把计划写成 Markdown 文件常驻磁盘：崩溃、/clear、上下文压缩都不丢进度，随时从断点接着施工。长任务的命根子是「状态不丢」，它用最朴素的文件方案解决，比花哨的记忆系统皮实。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。装法决定功能：npx skills add 装的没有 /plan-goal 和 /plan-loop。「没做完不许停」的门也只在 Claude Code、Codex CLI 真拦得住，OpenCode、Gemini CLI 只弹提示。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把计划写成磁盘文件，/clear 和上下文压缩都不丢进度」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「任务拆解写到磁盘，/clear 后自动续上进度」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git">复制</button></div><div class="cmd"><code>cp -r planning-with-files/.agents/skills/planning-with-files ~/.claude/skills/planning-with-files</code><button type="button" data-copy="cp -r planning-with-files/.agents/skills/planning-with-files ~/.claude/skills/planning-with-files">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">给你装的技能库做体检和减法</a><a href="../op7418-claude-to-im-skill/">从手机指挥电脑里跑着的 agent</a><a href="../virgiliojr94-book-to-skill/">把一本书拆成框架和原则，装进 agent 而不是你的脑子</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">给你装的技能库做体检和减法</a><a href="../op7418-claude-to-im-skill/">从手机指挥电脑里跑着的 agent</a><a href="../virgiliojr94-book-to-skill/">把 PDF 和 EPUB 拆成能装进 Agent 的</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../virgiliojr94-book-to-skill/">← 把一本书拆成框架和原则，装进 agent 而不是你的脑子</a><a href="../eugeniughelbur-obsidian-second-brain/">让新资料改写旧笔记，而不是在 Obsidian 里越堆越多 →</a></nav>
+  <nav class="foot"><a href="../virgiliojr94-book-to-skill/">← 把 PDF 和 EPUB 拆成能装进 Agent 的</a><a href="../eugeniughelbur-obsidian-second-brain/">让新资料改写旧笔记，而不是在 Obsidian 里越堆越多 →</a></nav>
 </div>
 <script>
 (function(){

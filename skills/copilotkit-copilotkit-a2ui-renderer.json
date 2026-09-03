@@ -2,7 +2,7 @@
  "id": "copilotkit-copilotkit-a2ui-renderer",
  "kind": "skill",
  "name": "a2ui-renderer",
- "title_zh": "只认 A2UI 声明式协议，不碰手写消息流的渲染器",
+ "title_zh": "A2UI 界面渲染器，装上就能让 Agent 画表单",
  "tagline_zh": "你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。",
  "tagline_en": "Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.",
  "desc_en": "Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via <CopilotKit a2ui={{ theme }}>. Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot",
@@ -34,5 +34,5 @@
  "cover_h": 600,
  "cover_kind": "og",
  "cover_real": false,
- "title_en": "A2UI-only renderer that skips hand-rolled message flows"
+ "title_en": "A2UI renderer that turns Agent output into tappable UI"
 }

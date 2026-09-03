@@ -25,13 +25,17 @@
   "dir": "~/.claude/skills/beachcombing"
  },
  "cover": "/skill/assets/covers/fxw-labs-beachcombing.png",
- "cover_kind": "none",
+ "cover_kind": "og",
  "cover_real": false,
- "title_zh": "把海滩上捡到的碎片拼成可用的工具链",
- "tagline_zh": "别人在海滩上捡贝壳，你捡的是函数、配置和脚本片段。它帮你把散落的代码碎片自动归类、去重、组装成能直接跑的 skil。",
- "tagline_en": "While others collect shells, you collect functions, configs, and script scraps. It auto-sorts, dedupes, and.",
- "why_zh": "不是简单收藏夹，而是按依赖关系自动编织：识别碎片间的调用链，补全缺失参数，生成可执行的 skill 骨。",
- "why_en": "Not a bookmark folder—it weaves scraps by dependency, detects call chains, fills missing params, and emits a runnable skill.",
- "limit_zh": "只处理纯文本代码片段（.py/.js/.sh/.md），不认二进制或图片里的代码；组装结果需要你手动确认依赖版本。",
- "limit_en": "Only plain-text code scraps (.py/.js/.sh/.md); no binaries or images. You must verify dependency versions; it won't resolve env conflicts. Over 50."
+ "title_zh": "潮水退去后替你扫三遍滩面的拾遗器",
+ "tagline_zh": "大潮那两小时能挖到什么、几点回头才不会被围住——它先算撤退时刻再谈收获，11 省 51 处点位带方言别名和吃法。",
+ "tagline_en": "What is diggable in the two hours around a spring low tide, and when to turn back before the water closes in. Safe-exit time comes first, harvest second, across 51 sites in 11 coastal provinces.",
+ "why_zh": "最难得的是它给自己设了上限：走天文骨架估算时，适用性评分强制压到五档里的第二档，不假装精确。",
+ "why_en": "The rare part is the ceiling it puts on itself: when it falls back to an astronomical skeleton estimate, the suitability rating is capped at the second of five levels rather than faked.",
+ "limit_zh": "只覆盖中国大陆沿海，内置点库 11 省 51 处，其余靠 geocoding 兜底。没接真实潮汐 API 时走农历半日潮天文骨架，正文标「估算 ±1h」且评分不超过五档中的第二档。明确不做钓鱼预报、不做生物图像识别、不做休渔期与保护区的法律核对。",
+ "limit_en": "Mainland Chinese coast only — 51 built-in sites across 11 provinces, everything else falls back to geocoding. Without a real tide API it computes a lunar semidiurnal skeleton, labelled \"estimated ±1h\" and capped at the second of five suitability levels. It explicitly declines fishing forecasts, species photo ID, and any legal check on closed seasons or protected areas.",
+ "title_en": "A beachcomber that sweeps the strandline three times after.",
+ "gate_score": 9,
+ "cover_w": 1200,
+ "cover_h": 600
 }

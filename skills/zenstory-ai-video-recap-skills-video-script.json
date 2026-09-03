@@ -2,7 +2,7 @@
  "id": "zenstory-ai-video-recap-skills-video-script",
  "kind": "skill",
  "name": "video-script",
- "title_zh": "只认已分析完的视频，出带时间戳的解说稿",
+ "title_zh": "先定镜头再落笔的解说稿，时间戳卡到帧",
  "tagline_zh": "已有 VLM 分析但不知怎么剪？它替你定故事线、挑片段、分镜分工，再写出带时间戳的中文解说并自动校验，一步到位。",
  "tagline_en": "Stuck with VLM analysis but no cut? It picks the story, selects shots, assigns audio/visual roles, writes.",
  "desc_en": "对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。",
@@ -30,7 +30,7 @@
   "dir": "~/.claude/skills/video-script"
  },
  "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-script.png",
- "title_en": "Timestamped narration script for analyzed videos only",
+ "title_en": "Shot-by-shot narration script with frame-accurate timestamps",
  "cover_w": 1200,
  "cover_h": 600,
  "cover_kind": "og",

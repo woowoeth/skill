@@ -2,12 +2,12 @@
  "id": "artokun-comfyui-mcp",
  "kind": "collection",
  "name": "comfyui-mcp",
- "title_zh": "ComfyUI ",
- "tagline_zh": "别在节点间迷路了。用自然语言指挥 ComfyUI 生成图、视频、音频，改工作流，连离线 Ollama 都能用。",
- "tagline_en": "Stop wrestling nodes. Command ComfyUI in plain English—images, video, audio, live graph edits, even on offline.",
+ "title_zh": "自然语言改工作流，178 个工具随叫随到",
+ "tagline_zh": "ComfyUI 的连线劝退过无数人。装上它用说话就能生成图/视频/音频、搭工作流、改你正在跑的节点图，全程本地不上传素材。",
+ "tagline_en": "A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.",
  "desc_en": "Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.",
- "why_zh": "同类里唯一能直接改你正在跑的工作流，且不挑模型——本地、云端、离线都行，不是套壳，是真控制。",
- "why_en": "The only one that edits your live graph mid-run and works with any model—local, cloud, or offline. Real control, not a wrapper.",
+ "why_zh": "把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。",
+ "why_en": "ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.",
  "repo": "artokun/comfyui-mcp",
  "owner": "artokun",
  "path": "",
@@ -30,5 +30,14 @@
   "note": "clone 下来，挑你要的那件复制进 ~/.claude/skills/。这是一个合集，没有「装它」这个动作。"
  },
  "repo_created_at": "2026-02-15",
- "age_source": "repo"
+ "age_source": "repo",
+ "cover": "https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png",
+ "cover_kind": "artwork",
+ "cover_real": true,
+ "limit_zh": "本体是 npm 上的 MCP server，39 件 skill 给它当外围。前提是有一台跑着 ComfyUI 的机器——没有 ComfyUI，这一整包一件都用不上。另外推荐管线里含一个 abliterated（去掉了拒答方向）的文本编码器 LoRA，作者标它是修脸用的；模型表另有一行 abliterated 出图模型标着 uncensored，可换成同表的普通写实模型。",
+ "limit_en": "The product is an npm MCP server (node ≥22); the 39 skills under plugin/skills are its periphery. You need a running ComfyUI — local, LAN, VPS or Comfy Cloud. Without one, none of it does anything.",
+ "title_en": "Drive ComfyUI workflows by plain language, 178 tools ready",
+ "cover_w": 1920,
+ "cover_h": 1080,
+ "gate_score": 6
 }

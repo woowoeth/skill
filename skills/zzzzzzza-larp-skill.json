@@ -2,14 +2,14 @@
  "id": "zzzzzzza-larp-skill",
  "kind": "skill",
  "name": "create-larp-character",
- "title_zh": "把剧本杀角色蒸馏成能继续聊天的 AI",
+ "title_zh": "LARP 角色卡生成器：从一句话到可扮演的完整人设",
  "tagline_zh": "散场之后角色就没了，但你可能还想跟 ta 说话。丢进玩家本和人物小传 PDF，它拆出故事记忆和人物性格，生成一个能持续对话的角色。",
  "why_zh": "安全边界写着不泄露核心诡计和凶手、不透露该角色本不该知道的秘密——一个角色扮演工具主动防剧透，说明作者真在玩这个。",
  "limit_zh": "只用于个人情感体验，不该拿去帮别人过本。素材质量决定成品：小传写得薄，蒸馏出来的角色也薄。需要读写文件权限。",
- "tagline_en": "",
+ "tagline_en": "The character disappears when the session ends, but you might still want to talk to them. Feed it the player script and character bio as PDF; it extracts story memory and personality into a character you can keep talking to.",
  "desc_en": "",
- "why_en": "",
- "limit_en": "",
+ "why_en": "Its safety section refuses to leak the core trick or the culprit, and won't reveal what the character shouldn't know. A roleplay tool that guards against spoilers on its own is written by someone who actually plays.",
+ "limit_en": "For personal enjoyment only — not for helping someone else through a game they haven't played. Output quality follows the source: a thin bio yields a thin character. Needs file read/write permission.",
  "repo": "zzzzzzza/larp-skill",
  "owner": "zzzzzzza",
  "path": "",
@@ -33,6 +33,10 @@
   "dir": "~/.claude/skills/create-larp-character"
  },
  "cover": "/skill/assets/covers/zzzzzzza-larp-skill.png",
- "cover_kind": "none",
- "cover_real": false
+ "cover_kind": "og",
+ "cover_real": false,
+ "title_en": "LARP character generator: one line to playable persona",
+ "gate_score": 9,
+ "cover_w": 1200,
+ "cover_h": 600
 }

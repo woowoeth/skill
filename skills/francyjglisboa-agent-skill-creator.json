@@ -2,12 +2,12 @@
  "id": "francyjglisboa-agent-skill-creator",
  "kind": "skill",
  "name": "agent-skill-creator",
- "title_zh": "技能工坊",
- "tagline_zh": "你说一句“每天我要…”，它就把重复流程变成跨平台Agent技能。不用写代码，不用懂API，连验证都替你做了。",
- "tagline_en": "Say \"every day I have to…\" and it turns that chore into a cross-platform agent skill. No code, no API docs.",
+ "title_zh": "把口头流程变成能跑的跨平台技能，三步内交付",
+ "tagline_zh": "把任何工作流写成一次、装到 17 个平台：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 铸造机。",
+ "tagline_en": "Write a workflow once, install it on 17 platforms — a skill foundry compatible with Claude Code, Cursor, Copilot and more.",
  "desc_en": "Create cross-platform agent skills from workflow descriptions. Activates when users ask to create an agent, automate a repetitive workflow, create a custom skill, or need advanced agent creation. Triggers on phrases like create agent for, automate workflow, create skill for, every day I have to, daily I need to, turn process into agent, need to automate, create a cross-platform skill, validate thi",
- "why_zh": "同类工具只生成代码，它连跨平台兼容和验证都包了，从描述到可用技能一步到位。",
- "why_en": "Others just output code; this one handles cross-platform compatibility and validation, turning a description into a ready-to-use.",
+ "why_zh": "跨平台是 skill 生态的下一站，这件把「一处编写到处运行」提前做出来了。",
+ "why_en": "Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early.",
  "repo": "FrancyJGLisboa/agent-skill-creator",
  "owner": "FrancyJGLisboa",
  "path": "",
@@ -28,5 +28,14 @@
   "dir": "~/.claude/skills/agent-skill-creator"
  },
  "repo_created_at": "2025-10-18",
- "age_source": "repo"
+ "age_source": "repo",
+ "limit_zh": "17 个平台里只有 12 个原样能装，Cursor、Windsurf 等 4 个要转格式，Zed、Aider 等 4 个得你手抄进配置。校验和安全扫描都是 python3 脚本，过了它会直接装进你的配置目录。",
+ "limit_en": "Of 17 platforms only 12 install SKILL.md as-is; 4 (Cursor, Windsurf, Trae, Junie) are auto-rewritten and 4 (Zed, Augment, Aider, Continue) need manual copying. Validation and security scan are python3 scripts; it auto-installs on pass.",
+ "cover": "https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png",
+ "cover_kind": "diagram",
+ "cover_real": false,
+ "cover_w": 1640,
+ "cover_h": 1064,
+ "title_en": "Turn spoken workflows into installable cross-platform.",
+ "gate_score": 5
 }

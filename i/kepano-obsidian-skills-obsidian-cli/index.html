@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>用命令行让 agent 读写你的 Obsidian 库 — 品味</title>
+<title>在 Obsidian 库里搜、写、改、查，不用开编辑 — 品味</title>
 <meta name="description" content="笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, kepano">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="用命令行让 agent 读写你的 Obsidian 库 — 品味">
+<meta property="og:title" content="在 Obsidian 库里搜、写、改、查，不用开编辑 — 品味">
 <meta property="og:description" content="笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。">
 <meta property="og:url" content="https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/">
 <meta property="og:image" content="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab"><meta name="twitter:image" content="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="用命令行让 agent 读写你的 Obsidian 库 — 品味">
+<meta name="twitter:title" content="在 Obsidian 库里搜、写、改、查，不用开编辑 — 品味">
 <meta name="twitter:description" content="笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"用命令行让 agent 读写你的 Obsidian 库","description":"笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。","url":"https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"kepano"},"image":"https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab","codeRepository":"https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在 Obsidian 库里搜、写、改、查，不用开编辑","description":"笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。","url":"https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"kepano"},"image":"https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab","codeRepository":"https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>kepano</span>
       <span class="date">2026-08-10</span>
     </div>
-    <h1 class="ttl">用命令行让 agent 读写你的 Obsidian 库</h1>
+    <h1 class="ttl">在 Obsidian 库里搜、写、改、查，不用开编辑</h1>
     <p class="lede">笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。</p>
     <div class="tags"><span class="tag">kepano</span></div>
     <img class="cover" src="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab" alt="">
     
     <section class="sec"><h2>做什么用</h2><p>笔记都在 Obsidian 里，AI 却看不见。装上它 agent 能直接读写笔记、搜索、改属性和任务——作者就是 Obsidian 的 CEO。一手权威：没人比作者更懂这个库的数据模型，比任何第三方封装都可靠。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。要装 obsidian 命令行，而且 Obsidian 必须开着，关掉就全断。命令清单以 obsidian help 为准，这里只列了常用几条。不写 vault= 时动的是最近聚焦的那个库。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「用命令行让 agent 读写你的 Obsidian 库」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「在 Obsidian 库里搜、写、改、查，不用开编辑」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/kepano/obsidian-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/kepano/obsidian-skills.git">复制</button></div><div class="cmd"><code>cp -r obsidian-skills/skills/obsidian-cli ~/.claude/skills/obsidian-cli</code><button type="button" data-copy="cp -r obsidian-skills/skills/obsidian-cli ~/.claude/skills/obsidian-cli">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,7 +76,7 @@
       </dl>
       <a class="pill" href="https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../cli-cli-code-review/">只认代码库自家规矩的 GitHub PR 审查员</a><a href="../rohitg00-agentmemory-agentmemory-config/">不翻源码就改配置，环境变量端口开关全在这</a><a href="../oil-oil-kimi/">设计稿交给它，前端代码拿回来就能跑</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../cli-cli-code-review/">合代码前先过一遍仓库规矩的 gh 评审员</a><a href="../rohitg00-agentmemory-agentmemory-config/">不翻源码就改配置，环境变量端口开关全在这</a><a href="../oil-oil-kimi/">设计稿交给它，前端代码拿回来就能跑</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>

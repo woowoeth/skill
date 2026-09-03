@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把整本书翻译成任何语言 — 品味</title>
+<title>整本书拆给多个分身并行翻译，再拼回原排版 — 品味</title>
 <meta name="description" content="一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 写字, deusyu">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把整本书翻译成任何语言 — 品味">
+<meta property="og:title" content="整本书拆给多个分身并行翻译，再拼回原排版 — 品味">
 <meta property="og:description" content="一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。">
 <meta property="og:url" content="https://ourword.ai/skill/i/deusyu-translate-book/">
 <meta property="og:image" content="https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg"><meta name="twitter:image" content="https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把整本书翻译成任何语言 — 品味">
+<meta name="twitter:title" content="整本书拆给多个分身并行翻译，再拼回原排版 — 品味">
 <meta name="twitter:description" content="一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把整本书翻译成任何语言","description":"一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。","url":"https://ourword.ai/skill/i/deusyu-translate-book/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"deusyu"},"image":"https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg","codeRepository":"https://github.com/deusyu/translate-book"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"整本书拆给多个分身并行翻译，再拼回原排版","description":"一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。","url":"https://ourword.ai/skill/i/deusyu-translate-book/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"deusyu"},"image":"https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg","codeRepository":"https://github.com/deusyu/translate-book"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>deusyu</span>
       <span class="date">2026-08-10</span>
     </div>
-    <h1 class="ttl">把整本书翻译成任何语言</h1>
+    <h1 class="ttl">整本书拆给多个分身并行翻译，再拼回原排版</h1>
     <p class="lede">一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。</p>
     <div class="tags"><span class="tag">deusyu</span></div>
     <img class="cover" src="https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg" alt="">
     
     <section class="sec"><h2>做什么用</h2><p>一本书几十万字，串行翻要等到天荒地老。它用并行子 agent 分块同时翻，保留原书排版，输出 HTML/DOCX/EPUB。并行是关键：把几小时压到几十分钟，而且排版不散——这才让「翻整本书」从设想变成可做的事。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。本机要有 python3 和 pandoc，DOCX/EPUB/PDF 还得装 Calibre，缺了只剩 HTML。默认放 8 个子 agent 并发，整本书的 token 你自己付；术语表只从 5 个抽样块里提。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把整本书翻译成任何语言」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「整本书拆给多个分身并行翻译，再拼回原排版」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/deusyu/translate-book.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/deusyu/translate-book.git">复制</button></div><div class="cmd"><code>mv translate-book ~/.claude/skills/translate-book</code><button type="button" data-copy="mv translate-book ~/.claude/skills/translate-book">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,7 +76,7 @@
       </dl>
       <a class="pill" href="https://github.com/deusyu/translate-book" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../op7418-youtube-clipper-skill/">只剪你圈中的几分钟，YouTube长视频秒变双语短片</a><a href="../ayi-ai-ayi-nonviolent-communication/">把指责翻译成需要，吵架前先替你踩一脚刹车</a><a href="../zzzlc0405-photo-chromatic-abstraction-style-1/">只留 1~5 个源图色，把照片译成色块记忆卡</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../op7418-youtube-clipper-skill/">YouTube 长视频先切章再剪段，字幕同步烧进画面</a><a href="../ayi-ai-ayi-nonviolent-communication/">把指责翻译成需要的长颈鹿语言翻译官</a><a href="../zzzlc0405-photo-chromatic-abstraction-style-1/">只留 1~5 个源图色，把照片译成色块记忆卡</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>

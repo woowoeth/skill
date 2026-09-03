@@ -24,14 +24,18 @@
   "copy": "cp -r see-life-wallpaper-skill ~/.claude/skills/see-life-wallpaper",
   "dir": "~/.claude/skills/see-life-wallpaper"
  },
- "cover": "",
- "cover_kind": "none",
- "cover_real": false,
- "title_zh": "把实时摄像头画面变成会呼吸的壁纸",
- "tagline_zh": "厌倦了静态壁纸？让桌面显示窗外实景、鱼缸或街角。装一次，每次解锁都像换了个新世界。",
- "tagline_en": "Tired of static wallpapers? Turn your desktop into a live window—real-time camera feeds that feel new every unlock.",
- "why_zh": "不是简单循环视频，而是真·实时取流：延迟低、自动重连，支持多摄像头轮播。壁纸随世界同步变化。",
- "why_en": "Not a looped video—true live streaming with low latency, auto-reconnect, and multi-cam rotation. Your wallpaper mirrors the.",
- "limit_zh": "需要本机有可访问的 RTSP/HTTP 摄像头源；仅支持 Linux + X11 桌面环境；壁纸无音频。",
- "limit_en": "Requires accessible RTSP/HTTP camera sources; Linux + X11 only; no audio; freezes on network/camera loss until manual refresh."
+ "cover": "https://raw.githubusercontent.com/rubyzhu26/see-life-wallpaper-skill/HEAD/example-wallpaper.png",
+ "cover_kind": "artwork",
+ "cover_real": true,
+ "title_zh": "把手机壁纸变成每天更新的生活观察窗",
+ "tagline_zh": "今天闻到桂花、听见雨——一句感受配一段极细宋体和一张手写的抽象 SVG，直接渲成锁屏壁纸，图形还避开顶部时钟区。",
+ "tagline_en": "You smelled osmanthus today, or heard rain. One sentence becomes hairline serif type over a hand-authored abstract SVG, rendered straight into a lock-screen wallpaper that keeps clear of the clock.",
+ "why_zh": "它给引用的诗人定了规矩：小字、低透明度，不能比你自己那句话抢风头。",
+ "why_en": "The quoted poets are put on a leash: small type, low opacity, never allowed to upstage the line you wrote yourself.",
+ "limit_zh": "默认输出尺寸是 1264×2780，也就是作者那台一加 13，其它机型要手动挑备选分辨率。渲染依赖 Playwright，成品自动复制到 ~/Downloads。六种情绪对应固定的六位艺术家和固定渐变，语录库是写死的一小批中西作者，超出这个范围就没有匹配项。",
+ "limit_en": "The default output is 1264×2780 — the author's own OnePlus 13 — so other phones mean picking an alternate resolution by hand. Rendering needs Playwright, and finished files are copied to ~/Downloads. Six moods map to six fixed artists and six fixed gradients, and the quote bank is a small hard-coded set, so anything outside it has no match.",
+ "title_en": "Turn your wallpaper into a daily life-observation window",
+ "cover_w": 1264,
+ "cover_h": 2780,
+ "gate_score": 8
 }
