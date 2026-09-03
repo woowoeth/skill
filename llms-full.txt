@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 234 skills.
+# Full corpus, plain text. 240 skills.
 
 ========================================================================
 ## editable-design
@@ -990,20 +990,20 @@ git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git 
 Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## agentmemory-architecture
-## 拆开记忆引擎看存储与检索全链路，附端口与查看器
-URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-architecture/
-Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-architecture
+## agentmemory-agents
+## 只认官方适配器，装错路径当场报错的内存接线员
+URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-agents/
+Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-agents
 Updated: 2026-08-31
 Tags: work, skill, rohitg00
 
-Stop treating memory as a black box. This skill maps agentmemory's iii primitives, storage model, ports, and.
+When wiring agentmemory into a host coding agent, it double-checks which config path the connect command should.
 
 ### What does this skill do?
-How agentmemory is built, the iii engine primitives it runs on, its storage model, ports, and the viewer. Use when reasoning about how memory is stored or retrieved end to end, when extending the system, or when answering how agentmemory works under the hood.
+How agentmemory wires into host coding agents via the connect command. Use when installing agentmemory into a specific agent, when asked which agents are supported, or when a connect adapter writes the wrong config path.
 
 ### Why is it worth installing?
-It traces the end-to-end write-to-retrieve path through concrete modules and ports—so you see the causal chain before touching.
+It never guesses: every connect adapter ships with whitelisted path validation, halting on mismatch instead of silently writing.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
@@ -1032,6 +1032,28 @@ git clone --depth 1 https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills.git Th
 
 ### Where does it come from?
 Repository: Ryze-AI-Adgent/open-seo-mcp-skills The repository ships 1 skills in total.
+
+========================================================================
+## agentmemory-architecture
+## 拆开记忆引擎看存储与检索全链路，附端口与查看器
+URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-architecture/
+Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-architecture
+Updated: 2026-08-31
+Tags: work, skill, rohitg00
+
+Stop treating memory as a black box. This skill maps agentmemory's iii primitives, storage model, ports, and.
+
+### What does this skill do?
+How agentmemory is built, the iii engine primitives it runs on, its storage model, ports, and the viewer. Use when reasoning about how memory is stored or retrieved end to end, when extending the system, or when answering how agentmemory works under the hood.
+
+### Why is it worth installing?
+It traces the end-to-end write-to-retrieve path through concrete modules and ports—so you see the causal chain before touching.
+
+### How do you install it?
+git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: rohitg00/agentmemory The repository ships 1 skills in total. Homepage: https://agent-memory.dev
 
 ========================================================================
 ## agentmemory-config
@@ -4630,6 +4652,50 @@ git clone --depth 1 https://github.com/v92388375-gif/pixel-style-poster-skill.gi
 Repository: v92388375-gif/pixel-style-poster-skill The repository ships 1 skills in total.
 
 ========================================================================
+## structural-humanizer
+## 专删AI味叙事骨架，留下你原本的毛边
+URL: https://ourword.ai/skill/i/nulightjens-humanizer-stack-structural-humanizer/
+Source: https://github.com/NulightJens/humanizer-stack/tree/HEAD/skills/structural-humanizer
+Updated: 2026-07-24
+Tags: writing, skill, NulightJens
+
+Surface edits won't cut it—this removes paragraph-level AI tells: moral closers, single-track arcs, performed.
+
+### What does this skill do?
+Remove the discourse-level (structural) signs of AI writing that survive surface editing: stated lessons and moral-of-the-story closers, tidy single-track arcs, embodied-emotion performance ("chest tightened"), vague allusions instead of named references, unbroken linear structure, and shape convergence across pieces. Grounded in the StoryScope study (Russell et al. 2026): narrative structure alon
+
+### Why is it worth installing?
+Most tools swap words; this dismantles narrative scaffolding—detects and removes moral closers, emotion performances, vague.
+
+### How do you install it?
+git clone --depth 1 https://github.com/NulightJens/humanizer-stack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: NulightJens/humanizer-stack Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## humanizer
+## 只认维基百科那份AI写作痕迹清单的文本去味器
+URL: https://ourword.ai/skill/i/nulightjens-humanizer-stack-humanizer/
+Source: https://github.com/NulightJens/humanizer-stack/tree/HEAD/skills/humanizer
+Updated: 2026-07-24
+Tags: writing, skill, NulightJens
+
+Stuck with robotic prose? It runs your draft against Wikipedia's full list of AI-writing tells—em-dash spam.
+
+### What does this skill do?
+Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive "Signs of AI writing" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, a
+
+### Why is it worth installing?
+Instead of vague advice, it operationalizes Wikipedia's guide into concrete, checkable patterns, so edits are transparent and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/NulightJens/humanizer-stack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: NulightJens/humanizer-stack Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## gc-muted-zine-poster-v0-1
 ## 低饱和刊物海报
 URL: https://ourword.ai/skill/i/moonlin1213-muted-zine-poster-v01/
@@ -5222,6 +5288,28 @@ git clone --depth 1 https://github.com/wangchangwei/arb-skill.git Then point you
 Repository: wangchangwei/arb-skill The repository ships 1 skills in total.
 
 ========================================================================
+## tenstorrent
+## 跳过网页控制台，直接调 Tenstorrent 全家
+URL: https://ourword.ai/skill/i/aldegad-tenstorrent/
+Source: https://github.com/aldegad/tenstorrent
+Updated: 2026-06-19
+Tags: images, skill, aldegad
+
+Skip the web UI. Trigger chat, image, video, TTS, STT from your terminal with a single skill. No browser, no API.
+
+### What does this skill do?
+Use Tenstorrent console.tenstorrent.com models across chat, image, video, TTS, and STT. Triggers: tenstorrent, 텐스토렌트, Torendissi, 토렌디시, Wan2.2, T2V, text-to-video, image jobs, SDXL, tt-sd3.5, tt-z-image-turbo, DeepSeek-R1, Qwen3, tts-1, whisper-large-v3.
+
+### Why is it worth installing?
+Packs the entire console.tenstorrent.com model lineup behind one trigger word—Wan2.2, SDXL, DeepSeek-R1 included. Feels like.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aldegad/tenstorrent.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aldegad/tenstorrent The repository ships 1 skills in total.
+
+========================================================================
 ## ResumeSkills
 ## 只改动词和数字就过筛的简历润色师
 URL: https://ourword.ai/skill/i/paramchoudhary-resumeskills/
@@ -5608,6 +5696,28 @@ git clone --depth 1 https://github.com/Zgdfsgd/pet-nutritionist.git Then point y
 
 ### Where does it come from?
 Repository: Zgdfsgd/pet-nutritionist The repository ships 1 skills in total.
+
+========================================================================
+## cn-aigc-detector
+## 五维统计信号，专挑中文AI腔的段落级检测器
+URL: https://ourword.ai/skill/i/feichangai-team-china-compliance-skills-cn-aigc-detector/
+Source: https://github.com/feichangai-team/china-compliance-skills/tree/HEAD/skills/cn-aigc-detector
+Updated: 2026-05-27
+Tags: everyday, skill, feichangai-team
+
+Sentence-length variance, TTR, structural templates, starter uniformity, punctuation density—cross-checked to.
+
+### What does this skill do?
+Detect AI-generated Chinese text using 5 statistical signals: sentence length variance (perplexity), vocabulary TTR (burstiness), structural pattern matching (首先...其次...最后), sentence starter uniformity, and punctuation density analysis. Highlights suspicious sections. Use when: verifying if Chinese text is AI-generated, checking content authenticity before publishing, auditing user-generated conte
+
+### Why is it worth installing?
+Instead of a whole-text score, it localizes where signals overlap per paragraph. Decomposes 'AI flavor' into computable stats.
+
+### How do you install it?
+git clone --depth 1 https://github.com/feichangai-team/china-compliance-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: feichangai-team/china-compliance-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## cn-compliance-guard
@@ -6252,6 +6362,28 @@ git clone --depth 1 https://github.com/cclank/recipe-generator.git 然后把智�
 
 ### Q：它从哪来？
 Repository: cclank/recipe-generator The repository ships 1 skills in total.
+
+========================================================================
+## generating-memes
+## 298 个模板随叫随到，连 petpet 都能现做
+URL: https://ourword.ai/skill/i/geekjourneyx-meme-generator-skill-generating-memes/
+Source: https://github.com/geekjourneyx/meme-generator-skill/tree/HEAD/skills/generating-memes
+Updated: 2026-02-08
+Tags: play, skill, geekjourneyx
+
+Skip the browser hunt—search, preview, and generate from 298 templates right in your terminal, including animated.
+
+### What does this skill do?
+Creates memes using the meme CLI with 298 templates. Generates, previews, searches, and lists meme templates. Use when user asks to make memes, create memes, generate memes, or mentions specific meme names like petpet, slap, hug, rub, etc.
+
+### Why is it worth installing?
+Wraps the full meme CLI into a natural-language Skill—no flags to memorize. Offline template library with.
+
+### How do you install it?
+git clone --depth 1 https://github.com/geekjourneyx/meme-generator-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: geekjourneyx/meme-generator-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## resume-assistant
