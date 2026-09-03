@@ -181,23 +181,20 @@ header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);
 
 /* 横滑胶囊。八个货架直接当胶囊，滚动条藏起来。 */
 .chips{
-  display:flex;gap:8px;margin-top:0;flex:1 1 100%;min-width:0;max-width:100%;
-  overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  scroll-snap-type:x proximity;
-  /* 边缘淡出，暗示右边还有 */
-  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 22px),transparent 100%);
-          mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 22px),transparent 100%);
+  /* 2026-09-03 照原声（/podcast/）重写。原来是横向滚动 + 两端淡出遮罩 + scroll-snap：
+     桌面上明明放得下却被遮罩切掉一截、chip 比搜索框高一档、字号也不一致 —— 店主说「tab 样式很奇怪」。
+     原声的做法：换行排、30px、细边、静色，按下时墨底反白。 */
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:1 1 100%;min-width:0;
 }
-.chips::-webkit-scrollbar{display:none}
 .chip{
-  flex:0 0 auto;scroll-snap-align:start;
-  background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
-  padding:8px 14px;cursor:pointer;white-space:nowrap;
-  font:var(--t-meta)/1 var(--sans);color:var(--ink-2);transition:.14s;
+  flex:0 0 auto;height:30px;padding:0 12px;display:inline-flex;align-items:center;
+  background:var(--card);border:1px solid var(--line-2);border-radius:999px;
+  cursor:pointer;white-space:nowrap;
+  font:500 12.5px/1 var(--sans);color:var(--ink-3);transition:color .15s,border-color .15s,background .15s;
 }
-.chip:hover{border-color:var(--line-2)}
+.chip:hover{color:var(--ink);border-color:var(--ink-3)}
 .chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.chip .cnt{font:var(--t-micro)/1 var(--mono);font-style:normal;opacity:.55;margin-left:5px}
+.chip .cnt{font:10.5px/1 var(--mono);font-style:normal;opacity:.55;margin-left:5px}
 .chip.on .cnt{opacity:.7}
 
 /* 今日上新一条窄带。瀑布流没法按天分组（多列会把日期打散），
@@ -329,6 +326,9 @@ a.card{color:inherit}
 /* 被限高的极端竖幅：cover + 顶部对齐。contain 会在底部留一条空带，
    那正是「空洞」本身 —— 用一个空洞换另一个没有意义。裁掉的是底部，头还在。 */
 .shot.capped img{height:100%;object-fit:cover;object-position:center top}
+/* 默认预览卡：能上卡，但是最后一档 —— 去饱和、压对比、四边留一圈底色，别和真封面抢 */
+.shot.og{background:var(--soft)}
+.shot.og img{filter:grayscale(.35) contrast(.9) opacity(.85);transform:scale(.92);transform-origin:center}
 
 /* ---- 无图卡：一道短墨杠起头 ------------------------------------
    不补占位符、不放 OG 卡。56 件没有真产出物图，无图必须是一等公民。
@@ -1145,7 +1145,9 @@ function shotHTML(it, forSheet){
      那句话是为了「别让卡片开天窗」，而 plate 同样不开天窗，且不引入外站的字体和
      logo。详情页（forSheet）仍然给图，那里一次只看一件，不存在互相抢的问题。
      ---------------------------------------------------------------- */
-  if(!forSheet && (it.cover_kind === "og")) return "";
+  // 09-03 撤回上面那条：店主说「很多都没图片」—— 他 08-31 的指示是「没有仓库图就用默认预览卡」，
+  // 我 09-02 擅自改成不铺。恢复铺，但用 .shot.og 压对比、去饱和、缩一圈，别和真封面抢。
+  var ogCls = (!forSheet && it.cover_kind === "og") ? " og" : "";
 
   var AR_FLAT = 2.45, H_MAX_K = 1.40;
   var rawAr = ar;
@@ -1159,7 +1161,7 @@ function shotHTML(it, forSheet){
   var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
   // 被 H_MAX_K 限住的（原图比这个还竖）→ cover 顶部对齐，别在底部留空带
   if(!forSheet && rawAr && rawAr < 1/H_MAX_K) tall += " capped";
-  return '<span class="shot hasimg'+tall+'"'+sty+'>'
+  return '<span class="shot hasimg'+tall+ogCls+'"'+sty+'>'
        +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
        +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
        +     ' onerror="var s=this.parentNode,c=s&&s.parentNode;if(s)s.remove();if(c)c.classList.add(\'noimg\')">'
@@ -1288,6 +1290,20 @@ function shelfItems(){
   return (D && D.skills || []).filter(function(x){ return !x.hide; });
 }
 
+/* 下拉到底自动加载（店主：「下拉分页加载，不要每次加载全部」）。
+   原来是点「再看 N 件」按钮；现在按钮进视口就自动触发，按钮本身保留当兜底（观察器不可用时还能点）。
+   数据仍是一次取整份 feed（190 件的 JSON 很小），重的是 DOM 和图，所以分批渲染即可。 */
+var _moreIO = null;
+function armAutoMore(){
+  var btn = document.getElementById("more");
+  if(!btn || !("IntersectionObserver" in window)) return;
+  if(_moreIO) _moreIO.disconnect();
+  _moreIO = new IntersectionObserver(function(es){
+    if(es.some(function(e){ return e.isIntersecting })){ _moreIO.disconnect(); btn.click(); }
+  }, {rootMargin:"600px 0px"});
+  _moreIO.observe(btn);
+}
+
 function renderShelf(keepScroll){
   if(!D) return;
   var y = keepScroll ? window.scrollY : null;
@@ -1305,6 +1321,7 @@ function renderShelf(keepScroll){
   var all = shelfItems();
   renderChips(all);
   el("main").innerHTML = renderFlow(all);
+  armAutoMore();
   SHELF = true;
   if(y!=null) window.scrollTo(0,y);
 }
