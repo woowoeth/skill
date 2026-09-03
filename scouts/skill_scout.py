@@ -637,6 +637,7 @@ ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 
   ✓ 具体：「只认三种渲染器：抛体轨迹、一维振子、RC 电路，落到别的域它直接停下来问你」
   ✓ 具体：「本机要有 rawtherapee-cli；RAW 才有 16 bit 余量，JPG 只有 8 bit、曝光得保守」
 - limit_en：limit_zh 的英文版，≤150 字符。
+- title_en：title_zh 的英文版，≤60 字符，同样先说「你拿到手的是什么」。
 - tagline_en / why_en：英文版，同义但地道，各 ≤115 / ≤130 字符。
 
 基建、官方四件套、合集目录、写不出钩子的，title_zh 设为 "SKIP"。
@@ -647,7 +648,7 @@ repo: {repo}
 kind: {kind}
 description: {desc}
 
-只输出一个 JSON 对象，含 title_zh, tagline_zh, tagline_en, why_zh, why_en, limit_zh, limit_en 七个键。
+只输出一个 JSON 对象，含 title_zh, title_en, tagline_zh, tagline_en, why_zh, why_en, limit_zh, limit_en 八个键。
 **limit_zh 缺了这件货就上不了架** —— 货架门禁要求四句中文都齐、且 limit_zh 至少 20 字。"""
 
 
@@ -691,7 +692,11 @@ def _assert_prompt_covers_gate() -> None:
     if not m:
         raise SystemExit("[scout] ✗ 提示词里找不到「含 … N 个键」那行 —— 自检没法做，先修提示词")
     keys = {k.strip() for k in m.group(1).split(",")}
-    miss = [k for k in GATE_FIELDS if k not in keys]
+    # 英文四句守卫也在查（缺一句就 ERROR），所以同样要在键清单里。
+    # 2026-09-03：补文案跑了两轮、67/68 成功，title_en 却从 68 缺涨到 72 缺 ——
+    # 因为提示词的键清单里**从来没有 title_en**。和 limit_zh 那次一模一样的病。
+    EN_FIELDS = ("title_en", "tagline_en", "why_en", "limit_en")
+    miss = [k for k in GATE_FIELDS + EN_FIELDS if k not in keys]
     if miss:
         raise SystemExit(
             f"[scout] ✗ 门禁要 {'/'.join(miss)}，但提示词的键清单里没有 —— "
@@ -711,6 +716,8 @@ def _clamp_patch(patch: dict) -> dict:
         patch["tagline_zh"] = _clamp_cjk(patch["tagline_zh"], 58)
     if patch.get("why_zh"):
         patch["why_zh"] = _clamp_cjk(patch["why_zh"], 52)
+    if patch.get("title_en"):
+        patch["title_en"] = _clamp_en(patch["title_en"], 60)
     if patch.get("tagline_en"):
         patch["tagline_en"] = _clamp_en(patch["tagline_en"], 115)
     if patch.get("why_en"):
@@ -809,7 +816,7 @@ def enrich_items(ids: list[str], existing: dict) -> None:
             txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             c = json.loads(txt)
             patch = {k: str(c[k]).strip() for k in
-                     ("title_zh", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh", "limit_en")
+                     ("title_zh", "title_en", "tagline_zh", "tagline_en", "why_zh", "why_en", "limit_zh", "limit_en")
                      if c.get(k) and str(c[k]).strip()}
             patch = _clamp_patch(patch)
             if patch.get("title_zh", "").strip().upper() == "SKIP":
