@@ -561,7 +561,13 @@ def check_covers(items: dict) -> dict:
         for it, orp in other_repo[:5]:
             print(f"    [仓库不符] {it['id']}: 图在 {orp}，商品是 {it.get('repo')}")
     if ours:
-        wrong_kind = [(it, o) for it, o in ours if (it.get("cover_kind") or "") != "ours"]
+        # 「图托在我们仓里 ⇒ 我们自己截的」这个推断 09-01 就证明是错的：仓里托的还有
+        # 转存的作者作品（artwork）和 GitHub 自动生成的预览卡（og）。
+        # 09-03 把 /skill/ 相对路径算进自家仓之后，这条一下子从 37 跳到 152 —— 其中 103 张是 og。
+        # og 的来源是确定的（GitHub 生成，1200×600），不该被要求标成 ours；
+        # artwork 的来源分不出来（转存 vs 自截），09-01 已记为「没有出处记录就不判」。
+        # 所以这里只盯真正说不清的：kind 为空的。
+        wrong_kind = [(it, o) for it, o in ours if (it.get("cover_kind") or "") not in ("ours", "og", "artwork", "hero", "diagram")]
         print(f"  我们自己跑出来的截图 {len(ours)} 张（图在 {OUR_REPO}）")
         if wrong_kind:
             err(f"{len(wrong_kind)} 张是我们自己截的图，但 cover_kind 不是 `ours` —— "
