@@ -146,6 +146,27 @@ def check_clumping(items) -> None:
         note("糙", f"同一个仓连着占了 {worst[0]} 张卡：{worst[1]}", [])
 
 
+def check_coverage() -> None:
+    """流式全扫有没有按天跑、有没有断口。**看不见的漏比看得见的坏更危险。**"""
+    cov = os.path.join(ROOT, "editorial", "coverage_log.json")
+    if not os.path.exists(cov):
+        note("坏", "还没有覆盖账（stream.py 一次都没跑过）—— 「每天新发的都扫一遍」目前是空话", [])
+        return
+    runs = (json.load(open(cov, encoding="utf-8")).get("runs") or [])
+    if not runs:
+        note("坏", "覆盖账是空的", []); return
+    last = runs[0]
+    t = datetime.datetime.strptime(last["time"], "%Y-%m-%dT%H:%MZ")
+    age_h = (datetime.datetime.utcnow() - t).total_seconds() / 3600
+    if age_h > 30:
+        note("坏", f"流式全扫已 {age_h:.0f} 小时没跑（上次 {last['time']}）—— 这期间新出的 SKILL.md 一个都没看", [])
+    if last.get("gaps"):
+        note("坏", f"上一轮有断口：{', '.join(last['gaps'])} —— 这些片翻满上限还没接上上一轮，那一天没扫全",
+             [f"{r['slice']}: 翻 {r['pages']} 页 · 新 {r['new']} · {r['status']}" for r in last["slices"]])
+    if age_h <= 30 and not last.get("gaps"):
+        print(f"  ✓ 流式全扫 {age_h:.0f} 小时前跑过，新见 {last['new']} 个仓，五片都连上了")
+
+
 def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--sample", type=int, default=25, help="抽查多少张封面（0=全查）")
@@ -156,6 +177,7 @@ def main() -> int:
     check_copy(items)
     check_freshness(items)
     check_clumping(items)
+    check_coverage()
     if not PROBLEMS:
         print("\n✓ 访客现在打开站，看不到坏东西")
         return 0
