@@ -10417,11 +10417,11 @@
    "unshelf_reason": "2026-09-02 收回：上架时没有红线扫描存档。同轮上架那条路只看文案不扫红线，已关。等 release_clean 扫过再放。"
   },
   "touchine-ojo-ojo-design-skills-app-ui-ux-best-practices": {
-   "title_zh": "把「高级感」翻译成能查的数值再动手做设计",
+   "title_zh": "先拒写设计稿，拿产品证据校准五个刻度再出规范",
    "tagline_zh": "先从产品证据推出五个档位（响度/成色/密度/重量/严肃度），再出设计规范、token、组件准则——每个档位都要给出处，不许凭习惯设。",
    "why_zh": "它有一条含糊词防火墙：premium、精致、克制、高级感一律不许当理由，必须换算成饱和度、间距、圆角、动效幅度。",
    "limit_zh": "它出的是设计规范和单页预览，不是整套前端工程。档位一旦从证据推定，后面所有步骤都跟着走，你想中途换风格得从证据改起。只有一件 skill，正文很长、很吃上下文。",
-   "title_en": "It refuses to let \"premium\" be a reason",
+   "title_en": "Evidence-first design specs: calibrate 5 dials before.",
    "tagline_en": "Derives five register dials from product evidence first, then emits design specs, tokens and component rules — every dial value must cite evidence.",
    "why_en": "A vague-word firewall: premium, refined, elegant, tasteful are never justifications; they must become saturation, spacing, radius and motion numbers.",
    "limit_en": "Outputs design specs and a single preview page, not a full front-end. Long document, context-hungry. One skill only.",
@@ -10433,11 +10433,11 @@
    "cover_h": 600
   },
   "kvnkld-aicss": {
-   "title_zh": "给 AI 对话界面用的现成 React 组件和 CLI",
+   "title_zh": "AI 对话界面不重造轮子，现成思考态与流式输出组件",
    "tagline_zh": "思考中、流式输出这类 AI 会话专用的界面部件，npm 装 React 版，或用 CLI 取 React／Vue／Svelte 源码直接落进你的项目。",
    "why_zh": "AI 产品的界面反复要造同一批零件，这里把它们做成了能直接取走的成品，还带在线预览。",
    "limit_zh": "它不是 SKILL.md 形态的 agent skill，装不进 agent，是 npm 包和 CLI，要你自己写代码接。免费组件在 npm 上；Pro 组件不在，要用 CLI 配 AICSS_TOKEN，那是付费的。文档站是闭源的，这个仓只是包源码。",
-   "title_en": "Ready-made React parts for AI chat interfaces",
+   "title_en": "AI chat UI parts: thinking states & streaming output, no.",
    "tagline_en": "Thinking states, streaming output and other AI-conversation UI pieces — npm for React, or pull React/Vue/Svelte source straight into your project via CLI.",
    "why_en": "Every AI product rebuilds the same handful of chat-UI parts; these are finished, with live previews.",
    "limit_en": "Not a SKILL.md agent skill — an npm package and CLI you wire up yourself. Free components on npm; Pro ones need a paid AICSS_TOKEN.",
@@ -10449,11 +10449,11 @@
    "cover_h": 600
   },
   "kacperkapusciak-goldie-goldie": {
-   "title_zh": "在模拟器里跑一遍你的 App，出上架用的截图和预览视频",
+   "title_zh": "重放 App 操作录屏，套上真实商店页边框和文案",
    "tagline_zh": "回放 argent 流程录屏，给截图套机身边框、配底色和文案，出 4~5 张成品加一段预览视频，本地起个 studio 按真实商店页排给你看。",
    "why_zh": "预览视频它坚持交原始录屏不加边框字幕——因为苹果就是这么要求的，它没替你「美化」成会被打回的东西。",
    "limit_zh": "要在这个 App 自己的仓里跑，且要有 iOS 模拟器或安卓模拟器。挑哪几屏值得营销、写流程、写文案还是你的活，它只负责跑和渲。studio 起在 localhost:4321，视频在后台渲。",
-   "title_en": "Runs your app in a simulator and ships store screenshots plus a preview video",
+   "title_en": "Replay app flows, framed in a real store page mockup",
    "tagline_en": "Replays argent flows, frames the captures with a device bezel, background and copy, and opens a local studio laid out as the real store page.",
    "why_en": "It insists the preview video stays a plain screen recording — because Apple requires that — instead of prettifying it into something that gets rejected.",
    "limit_en": "Run it from the mobile app's own repo with a simulator available. Choosing which screens to market, authoring the flows and writing the copy stay yours.",
@@ -10469,109 +10469,141 @@
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只剪你圈中的几分钟，YouTube长视频秒变双语短片",
+   "title_en": "Clip only the minutes you pick—turn long YouTube videos."
   },
   "fxw-labs-easy-humanizer-zh": {
    "cover": "/skill/assets/covers/fxw-labs-easy-humanizer-zh.png",
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "四种声纹任选，把AI稿改成看不出机器味的中文",
+   "title_en": "Pick one of 4 voices to strip AI tells from Chinese text"
   },
   "ayi-ai-ayi-nonviolent-communication": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "把指责翻译成需要，吵架前先替你踩一脚刹车",
+   "title_en": "Translates blame into needs, brakes before you snap"
   },
   "paramchoudhary-resumeskills": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只改动词和数字就过筛的简历润色师",
+   "title_en": "Resume editor that fixes verbs & numbers to pass ATS filters"
   },
   "zzzlc0405-photo-chromatic-abstraction-style-1": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只留 1~5 个源图色，把照片译成色块记忆卡",
+   "title_en": "Photo to 1–5-color memory blocks, not a copy"
   },
   "yeyulangzi-personal-reflector": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "不喂鸡汤只拆模式的自我复盘镜",
+   "title_en": "A self-reflection mirror that dissects patterns, not."
   },
   "cloudai-x-threejs-skills-threejs-animation": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "骨骼、变形、混合全包，GLTF 动画直接上手",
+   "title_en": "Keyframe, skeletal, morph, mixing—GLTF animation ready"
   },
   "khazp-vibe-coding-prompt-template-vibe-techdesign": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "先写技术设计再写代码，让 MVP 不返工",
+   "title_en": "Write the tech design first, so your MVP survives"
   },
   "codeswithroh-tastemaker-tastemaker": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "拒绝AI味界面，只产能上线的品牌级UI",
+   "title_en": "Brand-grade UI that kills AI slop, ready to ship"
   },
   "copilotkit-copilotkit-a2ui-renderer": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover": "/skill/assets/covers/copilotkit-copilotkit-a2ui-renderer.png",
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只认 A2UI 声明式协议，不碰手写消息流的渲染器",
+   "title_en": "A2UI-only renderer that skips hand-rolled message flows"
   },
   "moonlin1213-cove-tarot-companion": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只做仪式不占卜的本地塔罗陪谈，回看原牌不重抽",
+   "title_en": "Local Tarot Ritual Companion: revisit, never re-draw"
   },
   "simon-he95-markstream-vue-markstream-vue": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚",
+   "title_en": "Vue 3 streaming renderer with virtual timeline for long AI."
   },
   "alchaincyf-huashu-report": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只认顶级机构报告范式，把资料写成能上桌的行业报告",
+   "title_en": "Boardroom-grade industry reports from your raw material"
   },
   "cloudai-x-threejs-skills-threejs-postprocessing": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只认 EffectComposer 链的后期特效，不",
+   "title_en": "Post-processing only via EffectComposer chain, no material."
   },
   "cloudai-x-threejs-skills-threejs-shaders": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "不碰内置材质，直接写 GLSL 顶点与片元着色器",
+   "title_en": "Write GLSL vertex & fragment shaders directly, skip."
   },
   "cloudai-x-threejs-skills": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "不写一行渲染代码，Three.js 场景从口述到可交",
+   "title_en": "Describe a 3D scene, get a working Three.js sketch"
   },
   "architect-kele-arch-kele-structure-photo": {
-   "title_zh": "把一张照片画成分层爆炸的水彩结构研究图",
+   "title_zh": "每张照片出两张图：一张结构研究稿，一张带原图角标",
    "why_zh": "它要求几何仍可辨认——建筑、物件、人、动植物、街景都按同一套方法拆，不是套一层水彩滤镜。",
    "limit_zh": "附带的示例只准用来校准风格，不准影响主体和配色——作者写死了这条。人像和动物也走同一方法，但识别度靠几何保留，不靠五官。只出图，不出可编辑源文件。",
    "tagline_zh": "一张照片出两张：一张干净的结构研究水彩，一张右上角嵌着原片对照。暖纸底、分析线、克制的标注，配色从照片里取。",
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "title_en": "One photo into a layered, exploded watercolor structure study",
+   "title_en": "Two prints per photo: study sheet + source-inset plate",
    "tagline_en": "Two outputs per photo: a clean structural-study artwork, and one with the untouched source inset top-right. Warm paper, construction lines, restrained labels, palette derived from the photo.",
    "why_en": "Geometry must stay recognizable — architecture, objects, people, plants, streetscapes all follow one method; it is not a watercolor filter.",
    "limit_en": "Bundled examples are for style calibration only, never subject or palette. Image output only.",
@@ -10583,14 +10615,14 @@
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
   },
   "createlafont-dnr-flat-pic": {
-   "title_zh": "把照片压成无渐变、高饱和、一眼认得出的扁平插画",
+   "title_zh": "不描边不追光影，只留身份与空间关系的扁平化压缩",
    "why_zh": "它把「简化」定义成可核对的规则——固定 HSB 实色、硬边界、无光效，所以一批图能保持同一套语言。",
    "limit_zh": "默认复杂度 6/10 以下，细节多的照片会被大幅删减，想保留纹理或渐变的别装。它删文字、数字、UI 元素是硬规则，带字的海报会被清空。",
    "tagline_zh": "不是描边转矢量，是语义压缩：保留身份和空间关系，去掉渐变、光晕、纹理、文字和 logo，复杂度压到 6/10 以下。",
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "title_en": "Photos compressed into flat, gradient-free, high-saturation illustrations you still recognize",
+   "title_en": "Flatten by semantics, not tracing: keep identity, drop.",
    "tagline_en": "Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.",
    "why_en": "It defines simplification as checkable rules — fixed-HSB solid fills, crisp edges, no light effects — so a set stays in one language.",
    "limit_en": "Detail-heavy photos get heavily cut; text, numbers and UI are removed as a hard rule.",
@@ -10602,14 +10634,14 @@
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
   },
   "lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster": {
-   "title_zh": "把照片主体拆成平面色块，排进双色纸纹编辑海报",
+   "title_zh": "版式坐标锁死，只留象牙纸和一种墨的双色海报",
    "why_zh": "它不画不描不用照片细节，全靠大幅简化的平面色块，加分开处理的光晕和克制的墨渗——所以像印出来的，不像滤镜。",
    "limit_zh": "只有那四种固定版式，坐标不可改；想要自由构图的别装。墨色只能选一种。底部固定两行英文打字机小字加极简图标，不能去掉。",
    "tagline_zh": "四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。",
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "title_en": "Photo subjects broken into flat masses, set into a duotone paper-grain editorial print",
+   "title_en": "Locked-coordinate duotone posters: ivory paper, one ink",
    "tagline_en": "Four fixed layouts (3:4 nine-square, 3:4 four-panel, 4:3 six-square, 4:3 four-panel) with locked coordinates; ivory paper plus one ink of your choice.",
    "why_en": "No drawing, hatching or photo detail — reduced flat masses with separate halation and restrained ink bleed, so it reads as printed, not filtered.",
    "limit_en": "Only those four layouts; one ink; the two-line typewriter footer is fixed.",
@@ -10621,14 +10653,14 @@
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
   },
   "hongfamonvai-vintage-travel-ticket": {
-   "title_zh": "把一张风景或美食照片印成一张 20 世纪中后期的中文老门票",
+   "title_zh": "66 张老车票里抽一套设计语法，每次出票都像翻到旧藏",
    "why_zh": "它生成前先核对景点或食物的官方名称，票面上的字是查过的，不是编的。",
    "limit_zh": "只出一张成品票，不出可编辑源文件。那 66 张参考图作者没有随仓分发，你拿到的只是从中提炼的规则。组合是随机选的，想指定某种风格得自己改提示。",
    "tagline_zh": "从 66 张历史票据里蒸馏出的设计语法：结构原型、插画语言、配色、纸张、字体、信息格式、印刷老化，每次随机选一套自洽的组合。",
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "title_en": "A landscape or food photo printed as a mid-to-late-20th-century Chinese ticket",
+   "title_en": "A random vintage ticket grammar from 66 real ones, every.",
    "tagline_en": "A design grammar distilled from 66 historical tickets — archetype, illustration, palette, paper, type, information layout, print ageing — one coherent set picked at random each time.",
    "why_en": "It verifies the official place or food name before generating; the words on the ticket are checked, not invented.",
    "limit_en": "One finished ticket, no editable source. The 66 reference images are not distributed.",
@@ -10639,14 +10671,14 @@
    "cover_h": 600
   },
   "starryear-starryear-threefold-memory": {
-   "title_zh": "一张旅行照片出成三联画：所见、所在、所留",
+   "title_zh": "照片分三层：记忆碎片、证据原件、心情路线图",
    "why_zh": "它规定每一条路线、节点、碎片、图标、配色都必须从这张照片推出来，不许写死地点，也不许套装饰性的星座。",
    "limit_zh": "只吃一张锁定的照片，三层等高竖排，版式不可改。下层的「记忆地图」是从照片推的空间信号，不是真地图，别拿它导航。仓里 3 个 SKILL.md，这是主件。",
    "tagline_zh": "上层把照片重组成大块不规则碎片的视觉记忆，中层原片不动当证据，下层把路线、方向、情绪画成一张记忆地图。",
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "title_en": "One travel photo into a triptych: what I saw, what happened, what stayed",
+   "title_en": "Photo in 3 layers: memory fragments, raw evidence, mood map",
    "tagline_en": "Top: the photo recomposed as large fragments of visual memory. Middle: the untouched photo as evidence. Bottom: route, direction and mood drawn as a memory map.",
    "why_en": "Every route, node, fragment, pictogram and palette must derive from this photo — no hard-coded places, no decorative constellations.",
    "limit_en": "One locked photo, three equal stacked panels, fixed layout. The map is a spatial signal, not navigation.",
@@ -10658,14 +10690,14 @@
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
   },
   "bigfish-zzz-bigfish-ink-wash-photo": {
-   "title_zh": "把照片画成寥寥数笔、大面积留白的当代写意水墨",
+   "title_zh": "不重绘只锚定主体走向，落笔前先定画心与延展向",
    "why_zh": "它明确要避开两种假货：贴上去的写实主体，和果冻感的 AI 水彩笔触。",
    "limit_zh": "要先读完 references/generation-prompt.md 才动手——作者写成了硬步骤。只保留锚点意味着细节大量丢失，想认出人脸的别装。只出图。",
    "tagline_zh": "不是精确重建，只保留关键的识别锚点；生成前先看照片定画幅方向，按主体延展、空间流向和视觉中心分布来定。",
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "title_en": "A photo as contemporary expressive ink: a few decisive strokes, most of the paper untouched",
+   "title_en": "Anchor subject & canvas direction first, then ink-wash",
    "tagline_en": "Not reconstruction — only essential identifying anchors; canvas direction is decided from the photo's subject extension and visual center before generating.",
    "why_en": "It explicitly avoids two fakes: photorealistic pasted subjects, and jelly-like AI watercolor marks.",
    "limit_en": "Read references/generation-prompt.md in full first — a hard step. Anchors only means heavy detail loss.",
@@ -10748,11 +10780,11 @@
    "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：概念级追踪与错题再测的设计扎实，但核心流程仍可被通用工具替代。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "anthropics-claude-plugins-community-eli5": {
-   "title_zh": "一句话的 skill：把任何概念做成大图少字的一页",
+   "title_zh": "把任何概念讲成大字报式网页，图多字少零术语",
    "tagline_zh": "正文只有一句：「把我当成对这个话题完全不懂的人，用大图、少字的 HTML 页面讲明白。」输出不是一段话，是一页能顺着往下看的图文。",
    "why_zh": "它证明 skill 不必复杂：改变的不是信息量，是理解路径——从「读一大段」变成「顺着标题和图往下看」。",
    "limit_zh": "整份 SKILL.md 只有一句指令，效果全看你的 agent 会不会做 HTML；不会出图的环境里它就退化成一段普通解释。装的是 anthropics/claude-plugins-community 这个 31 件合集里的一个路径。",
-   "title_en": "A one-sentence skill: any concept as one page of big pictures, few words",
+   "title_en": "Explain anything as a big-picture, few-words HTML page",
    "tagline_en": "The whole body is one line: explain like I know nothing, as an HTML page with big pictures and few words.",
    "why_en": "It shows a skill need not be complex — what changes is not the amount of information but the path to understanding.",
    "limit_en": "One sentence; the result depends entirely on whether your agent can render HTML. Installed as one path inside a 31-skill community plugin repo.",
@@ -10764,11 +10796,11 @@
    "cover_h": 600
   },
   "tait-tt-tait-crt-interface-skill": {
-   "title_zh": "把人像或物件重画成 80 年代 CRT 界面里的位图漫画",
+   "title_zh": "拒绝柔光美颜的早期Macintosh风格夸张位图漫画",
    "tagline_zh": "早期 Macintosh／Minitel 式窗口下面一张夸张的位图讽刺画，桶形弯曲的屏幕边，三套中文预设：街头怪诞、巨像符号、冷面几何。",
    "why_zh": "它禁止描摹和自动像素化——每个主体是重新绘制的独立身份，共用一套像素网格，中间调只许用受限的棋盘格。",
    "limit_zh": "生成前有两段强制问答：调色板和画幅比例没给就先问你。标题栏签名不可去掉。一次只出一张。正文 3.7 万字节，很吃上下文。",
-   "title_en": "Portraits and objects redrawn as bitmap caricatures inside a 1980s CRT interface",
+   "title_en": "Exaggerated bitmap caricature under early Mac windows, 3.",
    "tagline_en": "An exaggerated bitmap editorial caricature beneath early Macintosh / Minitel-style windows, barrel-curved CRT edges, three Chinese presets.",
    "why_en": "No tracing, no auto-pixelation — each subject is re-authored as a distinct identity on one shared pixel lattice.",
    "limit_en": "A strict two-stage intake asks for palette and aspect ratio if not supplied; the title-bar signature is immutable; one image per run.",
@@ -10780,11 +10812,11 @@
    "cover_h": 600
   },
   "fihaaade-skills-outsider-art": {
-   "title_zh": "把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮",
+   "title_zh": "拒绝渐变和噪点的扁平插画，每块色都带手作纸纹",
    "tagline_zh": "大块平涂色区，每区一种手工纹理（窗格点阵、缝线虚线、织纹颗粒、墨线轮廓），撒满做日常事的无脸小人。纸白、暖墨黑、2–4 个场景色，外加恰好一个饱和高亮色。",
    "why_zh": "那「恰好一个高亮色」必须真的在构图里干活，不是点缀——它把民间艺术的天真感变成了可执行的约束。",
    "limit_zh": "小人是实心剪影、无脸、不许是火柴人——作者反复强调。照片只当语义参考，不复制细节。仓里 3 个 SKILL.md，这件是 outsider-art。",
-   "title_en": "A photo or a line of text as an Outsider Art poster: flattened view, hand-made textures, one highlight",
+   "title_en": "Flat illustration with hand-made paper texture, no gradients",
    "tagline_en": "Large flat color zones each carrying one hand-made texture, tiny faceless silhouette figures doing ordinary things; paper white, warm ink black, 2–4 scene colors plus exactly one saturated highlight.",
    "why_en": "That single highlight must do real compositional work — it turns folk-art naivety into an executable constraint.",
    "limit_en": "Figures are solid silhouettes, faceless, never stick figures. The photo is a semantic reference only. One of three skills in the repo.",
@@ -10799,19 +10831,29 @@
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只认已分析完的视频，出带时间戳的解说稿",
+   "title_en": "Timestamped narration script for analyzed videos only"
   },
   "zenstory-ai-video-recap-skills-video-understanding": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "拒绝逐帧空转，把视频拆成可检索的场景时间线",
+   "title_en": "Scene-timed video index: detect shots, transcribe speech."
   },
   "zenstory-ai-video-recap-skills-video-assemble": {
    "cover_w": 1200,
    "cover_h": 600,
    "cover_kind": "og",
-   "cover_real": false
+   "cover_real": false,
+   "title_zh": "只认旁白时间轴，混音压字烧录一步到成片",
+   "title_en": "Assemble final cut: duck audio, burn subs, one pass"
+  },
+  "karanb192-itr-wala-itr-wala": {
+   "title_zh": "只认印度税表 ITR-1 到 4，旧新税制哪个省一算",
+   "title_en": "Indian ITR filer that picks the right form and regime for."
   }
  },
  "gate": {
