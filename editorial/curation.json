@@ -11146,7 +11146,7 @@
    "why_zh": "别的工具给你总结，它给你证据链。锁版本锚点+机器校验+并行子Agent。",
    "limit_zh": "只服务「读懂+产出」闭环：需已有可编译/可解析的源码树，且产出限于书稿/课程/文档，不生成可运行补丁或重构建议。",
    "tagline_zh": "带 AI 啃陌生大型仓库，产出书稿/课程/文档。零幻觉是底线：引用逐字节核实，行号实读。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/itshen-source-reading-methodology.png",
@@ -11154,7 +11154,8 @@
    "cover_real": false,
    "cover_w": 1440,
    "cover_h": 1831,
-   "cover_src": "https://raw.githubusercontent.com/itshen/source-reading-methodology/HEAD/assets/preview-cover.png"
+   "cover_src": "https://raw.githubusercontent.com/itshen/source-reading-methodology/HEAD/assets/preview-cover.png",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 3 处 · METHODOLOGY.md: 破限·声明不做 第279行"
   },
   "mumdark-nature-writing-studio-nature-writing-studio": {
    "title_zh": "657 篇 Nature 原文蒸馏出的学术英语改写器",
@@ -11172,7 +11173,7 @@
    "why_zh": "把「审核」做成流程关卡而非事后检查——思路、代码、论文三段各自设卡，逼你在写代码前就想清算法。",
    "limit_zh": "只服务国赛真题或完整建模流程，不接单问速解；要求你逐段审核，急性子会嫌慢。",
    "tagline_zh": "建模题不再闷头冲：每问先给候选思路，你点头才写代码，每段结果自动落成论文草稿，再审完再走下一步。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/yuanchen-home-cumcm-step-review.png",
@@ -11180,7 +11181,8 @@
    "cover_real": false,
    "cover_w": 1280,
    "cover_h": 640,
-   "cover_src": "https://raw.githubusercontent.com/yuanchen-home/cumcm-step-review/HEAD/assets/social-preview.png"
+   "cover_src": "https://raw.githubusercontent.com/yuanchen-home/cumcm-step-review/HEAD/assets/social-preview.png",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/绘图参考/viz_pitfalls.md: 剂量 第151行"
   },
   "gary149-h3-game-sprites-h3-game-sprites": {
    "title_zh": "视频生成转逐帧精灵图，动作全对齐绿幕抠像",
@@ -11498,6 +11500,87 @@
   "nulightjens-humanizer-stack-humanizer": {
    "cover": "",
    "cover_kind": "none"
+  },
+  "endlessbluewjl-schengen-visa-guide": {
+   "title_zh": "申根签材料清单，按身份拆到每张纸",
+   "why_zh": "不是泛泛而谈的攻略，而是按中国大陆护照持有者的六种身份逐一拆解，连材料细节和常见坑都标出来。",
+   "limit_zh": "只覆盖申根短期旅游签，不涉及商务、探亲、留学等类型；仅针对中国大陆护照，其他护照持有者不适用。",
+   "tagline_zh": "学生、退休、自由职业、无业、未成年……每种身份该交什么、不该交什么，一次说清。照着备，别让签证官挑出毛病。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "tance-mang-chinese-webnovel-skills-aidetect": {
+   "title_zh": "AI味指数0到10，逐句标出扣分位置的中文网文质检员",
+   "why_zh": "把「AI味」拆成八项可计算的文本特征，逐句定位扣分点，改稿前先知道重灾区在哪，比整段重写省力气。",
+   "limit_zh": "只针对中文网文正文，不评诗歌、古文、翻译腔或非叙事文体；比喻密度等指标依赖分词准确度。",
+   "tagline_zh": "改稿前先量化：比喻密度、连续同句式、句长波动、高频情绪词、极端词堆砌，八项指标实测，告诉你问题在第几句，不靠感觉猜。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "tance-mang-chinese-webnovel-skills-continuity": {
+   "title_zh": "六条逻辑链逐章核对，专治写到一百章崩设定",
+   "why_zh": "不是泛泛提建议，而是拿六条固定逻辑链（时间/资源/伤势/战力/身份/行为）当尺子。",
+   "limit_zh": "只认中文网文叙事（玄幻/都市/科幻等），不认剧本、大纲、非连续章节片段；需要你提供前文或设定档案才能比对。",
+   "tagline_zh": "怕战力越级、伤势自愈、身份忽爆忽藏？它逐章核对时间线+资源+人物行为，揪出和前文矛盾的每一处，直接给改法。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan": {
+   "title_zh": "先问教材版本再落笔的备课助手，连分层作业一起出",
+   "why_zh": "不是模板堆砌，而是以评价证据倒推教学目标——每个任务都能对应到可观察的学生行为，让教案经得起教研组追问。",
+   "limit_zh": "只覆盖中国课标（含部编/人教版等主流版本），不含港澳台及国际课程；产出为教案与配套材料文本，不生成PPT文件本身。",
+   "tagline_zh": "备课最怕架空课标。它先锁定学段、版本和课标，再按核心素养排可观察任务，最后连分层作业和说课稿都递到你手上。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "cclank-lanshu-awesome-ai-video-kit-seedance-debugger": {
+   "title_zh": "视频里人脸飘了先别删，它给你换提示词的根因",
+   "why_zh": "不是笼统说'加强一致性'，而是按故障类型拆解到具体参数与措辞，告诉你哪句话导致 ID 漂移。",
+   "limit_zh": "只诊断 Seedance 2.0 的提示词问题，不处理其他视频模型；需要你提供原提示词和故障截图/片段；它给修复建议。",
+   "tagline_zh": "人物变双胞胎、字幕乱入、风格漂移、结尾爆音——12 类故障它不修视频，只修你手里那句提示词，改完重跑就稳。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "yejy53-editable-design-html-to-pptx": {
+   "title_zh": "HTML 版式拆成可编辑 PPT 的转换器",
+   "why_zh": "确定性转换，不靠截图。每个视觉元素都保留独立身份，在 PowerPoint 里能继续改。",
+   "limit_zh": "只认 HTML 结构清晰的 slide/poster；复杂 CSS 动画、JS 交互。",
+   "tagline_zh": "海报、slide 的每个插画、图标、箭头、文字都变成能单独拖动的对象，不是一张压扁的背景图。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "cclank-lanshu-awesome-ai-video-kit-model-selector": {
+   "title_zh": "16 个视频模型按你的拍摄条件筛出 1-3 个",
+   "why_zh": "不是泛泛对比，而是按你的具体约束做排除法。连 Gemini Omni 这种 2026 年 5 月的新模…",
+   "limit_zh": "只覆盖 16 个固定模型，新增模型需手动更新。推荐基于你填写的条件，不保证实际生成效果。不处理视频生成后的剪辑。",
+   "tagline_zh": "别在 Sora 和 Kling 之间纠结到凌晨。把场景、时长、预算、本地部署、角色一致性丢进去。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "cclank-lanshu-awesome-ai-video-kit": {
+   "title_zh": "411 条提示词按镜头编号排好，拍企业片直接抄",
+   "why_zh": "按真实项目流程组织，不是收藏夹。每条 prompt 都标了适用模型和失败案例，抄的时候知道哪步会翻车。",
+   "limit_zh": "只覆盖企业宣传片/产品视频的文案与分镜环节，不含剪辑软件操作。需要自备 Claude 账号。",
+   "tagline_zh": "从甲方 brief 到交付片，15 个模型选型表 + 7 个 Claude Skill 替你扛。不是教程合集。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "cclank-lanshu-awesome-ai-video-kit-kling-prompter": {
+   "title_zh": "给可灵 3.0 写提示词，三种公式按场景自动切换",
+   "why_zh": "不是堆形容词，而是把镜头拆成可执行的结构：运动、景别、节奏、音画同步分项写，模型按公式吃透你的意图。",
+   "limit_zh": "只认 Kling 3.0 的规则，不适用于其他视频模型；不负责画面审美判断，只保证提示词结构合规。",
+   "tagline_zh": "短视频、剧情片、图生视频各有一套公式，不背模板也能写出带原生音频和角色发声的镜头描述，让模型听懂你要的每一帧。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
   }
  },
  "gate": {

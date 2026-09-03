@@ -1,7 +1,45 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 238 skills.
+# Full corpus, plain text. 245 skills.
+
+========================================================================
+## html-to-pptx
+## HTML 版式拆成可编辑 PPT 的转换器
+URL: https://ourword.ai/skill/i/yejy53-editable-design-html-to-pptx/
+URL (中文): https://ourword.ai/skill/zh/i/yejy53-editable-design-html-to-pptx/
+Source: https://github.com/yejy53/Editable-Design/tree/HEAD/skills/html-to-pptx
+Updated: 2026-09-03
+Tags: work, skill, yejy53
+
+Every illustration, icon, arrow, and text becomes a draggable object in PowerPoint—not a flattened background.
+
+### What does this skill do?
+把 slide／poster 的 HTML 确定性地转成可编辑 PPTX——每个视觉元素（插画、图标、箭头、装饰线、文字）都是能单独选中拖动的对象，而不是压成一张背景图；也能自动识别并转换 Editable Design 的 editor.html 和 case 的图层展开图 layers.html；并可把产物渲回图片做保真度比对。当用户要导出 pptx／ppt、问「HTML 怎么转 PowerPoint」、想让生成的海报或幻灯片能在 PowerPoint 里继续改、要把图层展开图／拆解图变成 ppt、或需要检查转换后元素是否独立可编辑时使用。
+
+### Why is it worth installing?
+Deterministic conversion, not screenshots. Each visual keeps its own identity, so you keep editing in PowerPoint instead of.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yejy53/Editable-Design.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yejy53/Editable-Design The repository ships 1 skills in total.
+
+--- 中文 ---
+海报、slide 的每个插画、图标、箭头、文字都变成能单独拖动的对象，不是一张压扁的背景图。
+
+### Q：这个 skill 做什么？
+把 slide／poster 的 HTML 确定性地转成可编辑 PPTX——每个视觉元素（插画、图标、箭头、装饰线、文字）都是能单独选中拖动的对象，而不是压成一张背景图；也能自动识别并转换 Editable Design 的 editor.html 和 case 的图层展开图 layers.html；并可把产物渲回图片做保真度比对。当用户要导出 pptx／ppt、问「HTML 怎么转 PowerPoint」、想让生成的海报或幻灯片能在 PowerPoint 里继续改、要把图层展开图／拆解图变成 ppt、或需要检查转换后元素是否独立可编辑时使用。
+
+### Q：为什么值得装？
+确定性转换，不靠截图。每个视觉元素都保留独立身份，在 PowerPoint 里能继续改。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yejy53/Editable-Design.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yejy53/Editable-Design The repository ships 1 skills in total.
 
 ========================================================================
 ## styleseed
@@ -708,6 +746,44 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
+
+========================================================================
+## chinese-lesson-plan
+## 先问教材版本再落笔的备课助手，连分层作业一起出
+URL: https://ourword.ai/skill/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/
+URL (中文): https://ourword.ai/skill/zh/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/
+Source: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/HEAD/skills/chinese-lesson-plan
+Updated: 2026-09-01
+Tags: images, skill, sanhuang520-ship-it
+
+Tired of lesson plans floating in the air? It locks in grade, edition, and curriculum standard, then builds.
+
+### What does this skill do?
+生成中国中小学教案与配套材料。当用户要"备课""写教案""设计一节课""做课件大纲""出分层作业""写说课稿""评课"时使用。覆盖语文/数学/英语/科学等学科，小学到高中；先确认学段、教材版本与适用课程标准，再按学科核心素养、可观察任务和评价证据组织目标。
+
+### Why is it worth installing?
+Backward design done right: every objective maps to observable student behavior and assessment evidence, so your plan survives.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sanhuang520-ship-it/awesome-chinese-ai-tools Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+备课最怕架空课标。它先锁定学段、版本和课标，再按核心素养排可观察任务，最后连分层作业和说课稿都递到你手上。
+
+### Q：这个 skill 做什么？
+生成中国中小学教案与配套材料。当用户要"备课""写教案""设计一节课""做课件大纲""出分层作业""写说课稿""评课"时使用。覆盖语文/数学/英语/科学等学科，小学到高中；先确认学段、教材版本与适用课程标准，再按学科核心素养、可观察任务和评价证据组织目标。
+
+### Q：为什么值得装？
+不是模板堆砌，而是以评价证据倒推教学目标——每个任务都能对应到可观察的学生行为，让教案经得起教研组追问。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: sanhuang520-ship-it/awesome-chinese-ai-tools Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## tastemaker
@@ -2050,44 +2126,6 @@ git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-less-ai-tone.gi
 Repository: larashero3-dotcom/lieflat-less-ai-tone The repository ships 1 skills in total.
 
 ========================================================================
-## source-reading
-## 每句话都能回溯到源码行号的开源仓库精读器
-URL: https://ourword.ai/skill/i/itshen-source-reading-methodology/
-URL (中文): https://ourword.ai/skill/zh/i/itshen-source-reading-methodology/
-Source: https://github.com/itshen/source-reading-methodology
-Updated: 2026-08-24
-Tags: work, skill, itshen
-
-Reads huge unfamiliar repos with AI, outputs books/courses/docs. Zero hallucination: citations byte-verified.
-
-### What does this skill do?
-带 AI 精读大型开源仓库，产出每句话都能回溯到源码具体行的书稿、课程或技术文档。核心是零幻觉：每一处引用逐字节核实、行号实读、静默删行由脚本抓出。覆盖锁版本锚点、写逐章大纲、八段结构写章节、编成带封面封底的 HTML 书、机器校验、并行子 Agent 生产六件事。当用户要读懂一个陌生的大型仓库、精读某个开源项目源码、把源码整理成一本书、整理成课程或系列文章、做源码解读、写架构分析、或者要派多个 Agent 并行写技术内容时使用。触发词：精读源码、读源码、源码解读、源码分析、拆解这个项目、这个仓库怎么读、把源码写成课、把源码写成书、写源码精读、架构分析、code walkthrough、带我读代码。
-
-### Why is it worth installing?
-Others summarize; it gives you an evidence chain. Version-pinned anchors + machine checks + parallel sub-agents let readers.
-
-### How do you install it?
-git clone --depth 1 https://github.com/itshen/source-reading-methodology.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: itshen/source-reading-methodology Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-带 AI 啃陌生大型仓库，产出书稿/课程/文档。零幻觉是底线：引用逐字节核实，行号实读。
-
-### Q：这个 skill 做什么？
-带 AI 精读大型开源仓库，产出每句话都能回溯到源码具体行的书稿、课程或技术文档。核心是零幻觉：每一处引用逐字节核实、行号实读、静默删行由脚本抓出。覆盖锁版本锚点、写逐章大纲、八段结构写章节、编成带封面封底的 HTML 书、机器校验、并行子 Agent 生产六件事。当用户要读懂一个陌生的大型仓库、精读某个开源项目源码、把源码整理成一本书、整理成课程或系列文章、做源码解读、写架构分析、或者要派多个 Agent 并行写技术内容时使用。触发词：精读源码、读源码、源码解读、源码分析、拆解这个项目、这个仓库怎么读、把源码写成课、把源码写成书、写源码精读、架构分析、code walkthrough、带我读代码。
-
-### Q：为什么值得装？
-别的工具给你总结，它给你证据链。锁版本锚点+机器校验+并行子Agent。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/itshen/source-reading-methodology.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: itshen/source-reading-methodology Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## aicss
 ## AI 对话界面不重造轮子，现成思考态与流式输出组件
 URL: https://ourword.ai/skill/i/kvnkld-aicss/
@@ -2174,44 +2212,6 @@ git clone --depth 1 https://github.com/hongfamonvAI/vintage-travel-ticket.git Th
 
 ### Where does it come from?
 Repository: hongfamonvAI/vintage-travel-ticket Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## cumcm-step-review
-## 每步先交方案再写代码的国赛建模流水线
-URL: https://ourword.ai/skill/i/yuanchen-home-cumcm-step-review/
-URL (中文): https://ourword.ai/skill/zh/i/yuanchen-home-cumcm-step-review/
-Source: https://github.com/yuanchen-home/cumcm-step-review
-Updated: 2026-08-23
-Tags: work, skill, yuanchen-home
-
-No more blind rushes: each subproblem offers candidate plans, waits for your OK, codes, then drafts that section.
-
-### What does this skill do?
-数学建模国赛（CUMCM/全国大学生数学建模竞赛）分步审核工作流。当用户要求做数学建模国赛题目、完整建模、建模分析、代码求解、结果可视化或生成数学建模论文，且需要分步推进、先审核思路与算法再写代码、每个部分写入论文草稿供审核时使用。按'问题重述→数据预处理→逐问建模与求解→模型分析与检验→模型评价与推广→参考文献→附录→问题分析→模型假设→符号说明'逐步完成：每部分先给出分析与候选方案，用户审核通过后编写代码，并把该部分写入 Word 论文草稿再次供用户审核；保留建模约束、工具链、算法库与最终验收。
-
-### Why is it worth installing?
-Turns review into a gate, not an afterthought: plan, code, and paper each have checkpoints, forcing algorithmic clarity before.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yuanchen-home/cumcm-step-review.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yuanchen-home/cumcm-step-review Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 7 skills in total.
-
---- 中文 ---
-建模题不再闷头冲：每问先给候选思路，你点头才写代码，每段结果自动落成论文草稿，再审完再走下一步。
-
-### Q：这个 skill 做什么？
-数学建模国赛（CUMCM/全国大学生数学建模竞赛）分步审核工作流。当用户要求做数学建模国赛题目、完整建模、建模分析、代码求解、结果可视化或生成数学建模论文，且需要分步推进、先审核思路与算法再写代码、每个部分写入论文草稿供审核时使用。按'问题重述→数据预处理→逐问建模与求解→模型分析与检验→模型评价与推广→参考文献→附录→问题分析→模型假设→符号说明'逐步完成：每部分先给出分析与候选方案，用户审核通过后编写代码，并把该部分写入 Word 论文草稿再次供用户审核；保留建模约束、工具链、算法库与最终验收。
-
-### Q：为什么值得装？
-把「审核」做成流程关卡而非事后检查——思路、代码、论文三段各自设卡，逼你在写代码前就想清算法。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/yuanchen-home/cumcm-step-review.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: yuanchen-home/cumcm-step-review Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 7 skills in total.
 
 ========================================================================
 ## ad-recon
@@ -4718,6 +4718,28 @@ git clone --depth 1 https://github.com/wr5912/human-allegory-engine.git Then poi
 Repository: wr5912/human-allegory-engine The repository ships 1 skills in total.
 
 ========================================================================
+## schengen-visa-guide
+## 申根签材料清单，按身份拆到每张纸
+URL: https://ourword.ai/skill/i/endlessbluewjl-schengen-visa-guide/
+Source: https://github.com/EndlessBlueWJL/schengen-visa-guide
+Updated: 2026-07-19
+Tags: everyday, skill, EndlessBlueWJL
+
+Student, retired, freelancer, unemployed, minor—exactly what to prepare and what to skip. Get your documents.
+
+### What does this skill do?
+Use EXCLUSIVELY when user mentions Schengen visa (申根签/申根签证/办申根签) or wants to apply for a tourist visa to Schengen countries (France, Italy, Spain, Germany, Switzerland, etc.). Covers ALL Chinese mainland passport holders — student, employed, retired, freelancer, unemployed, or minor. This skill ONLY covers Schengen short-stay tourist visas.
+
+### Why is it worth installing?
+Not generic advice—it breaks down requirements for six applicant types under Chinese passport, flagging pitfalls and specifics.
+
+### How do you install it?
+git clone --depth 1 https://github.com/EndlessBlueWJL/schengen-visa-guide.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: EndlessBlueWJL/schengen-visa-guide The repository ships 1 skills in total.
+
+========================================================================
 ## kimi
 ## 设计稿交给它，前端代码拿回来就能跑
 URL: https://ourword.ai/skill/i/oil-oil-kimi/
@@ -5332,6 +5354,82 @@ git clone --depth 1 https://github.com/rubyzhu26/see-life-wallpaper-skill.git Th
 Repository: rubyzhu26/see-life-wallpaper-skill Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## aidetect
+## AI味指数0到10，逐句标出扣分位置的中文网文质检员
+URL: https://ourword.ai/skill/i/tance-mang-chinese-webnovel-skills-aidetect/
+URL (中文): https://ourword.ai/skill/zh/i/tance-mang-chinese-webnovel-skills-aidetect/
+Source: https://github.com/tance-mang/chinese-webnovel-skills/tree/HEAD/skills/aidetect
+Updated: 2026-06-13
+Tags: writing, skill, tance-mang
+
+Before revising, quantify it: metaphor density, repetitive sentence patterns, length swings, emotion-word.
+
+### What does this skill do?
+中文网文 AI 味量化检测与评分。当用户要给正文"打个 AI 味分/量化看看有多像 AI"、要知道"问题具体在第几句"、要查比喻密度/连续同句式/句长波动/段落分布/高频情绪词重复/极端词堆砌，或要在改稿前先定位 AI 味重灾区时使用。产出 AI 味指数(0–10)+八项指标实测+扣分定位清单。
+
+### Why is it worth installing?
+Breaks 'AI flavor' into eight computable text features and localizes every deduction, so you fix hotspots instead of rewriting.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tance-mang/chinese-webnovel-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tance-mang/chinese-webnovel-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+改稿前先量化：比喻密度、连续同句式、句长波动、高频情绪词、极端词堆砌，八项指标实测，告诉你问题在第几句，不靠感觉猜。
+
+### Q：这个 skill 做什么？
+中文网文 AI 味量化检测与评分。当用户要给正文"打个 AI 味分/量化看看有多像 AI"、要知道"问题具体在第几句"、要查比喻密度/连续同句式/句长波动/段落分布/高频情绪词重复/极端词堆砌，或要在改稿前先定位 AI 味重灾区时使用。产出 AI 味指数(0–10)+八项指标实测+扣分定位清单。
+
+### Q：为什么值得装？
+把「AI味」拆成八项可计算的文本特征，逐句定位扣分点，改稿前先知道重灾区在哪，比整段重写省力气。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/tance-mang/chinese-webnovel-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: tance-mang/chinese-webnovel-skills The repository ships 1 skills in total.
+
+========================================================================
+## continuity
+## 六条逻辑链逐章核对，专治写到一百章崩设定
+URL: https://ourword.ai/skill/i/tance-mang-chinese-webnovel-skills-continuity/
+URL (中文): https://ourword.ai/skill/zh/i/tance-mang-chinese-webnovel-skills-continuity/
+Source: https://github.com/tance-mang/chinese-webnovel-skills/tree/HEAD/skills/continuity
+Updated: 2026-06-13
+Tags: writing, skill, tance-mang
+
+Scared of power creep, healing plot holes, or identity flips? It cross-checks timeline, resources, and behavior.
+
+### What does this skill do?
+中文网文长篇连贯性与逻辑检查。当用户写长篇怕"前后矛盾/写到一百章崩了/设定漂移"、要查时间线乱不乱、人物行为合不合理、资源凭空变、身份忽暴忽藏、伤势没延续、战力越级、或要对一卷/全书做逻辑体检时使用。逐章核对六条逻辑链+时间线，揪出和前文/档案的矛盾并给改法。
+
+### Why is it worth installing?
+No vague advice—it runs six fixed logic chains (time, resources, injuries, power, identity, behavior) against each chapter's.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tance-mang/chinese-webnovel-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tance-mang/chinese-webnovel-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+怕战力越级、伤势自愈、身份忽爆忽藏？它逐章核对时间线+资源+人物行为，揪出和前文矛盾的每一处，直接给改法。
+
+### Q：这个 skill 做什么？
+中文网文长篇连贯性与逻辑检查。当用户写长篇怕"前后矛盾/写到一百章崩了/设定漂移"、要查时间线乱不乱、人物行为合不合理、资源凭空变、身份忽暴忽藏、伤势没延续、战力越级、或要对一卷/全书做逻辑体检时使用。逐章核对六条逻辑链+时间线，揪出和前文/档案的矛盾并给改法。
+
+### Q：为什么值得装？
+不是泛泛提建议，而是拿六条固定逻辑链（时间/资源/伤势/战力/身份/行为）当尺子。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/tance-mang/chinese-webnovel-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: tance-mang/chinese-webnovel-skills The repository ships 1 skills in total.
+
+========================================================================
 ## iching-divination
 ## 三枚铜钱真随机，卦象不靠编
 URL: https://ourword.ai/skill/i/neallydare-svg-iching-divination/
@@ -5592,6 +5690,142 @@ git clone --depth 1 https://github.com/helloianneo/ian-xiaohei-illustrations.git
 
 ### Q：它从哪来？
 Repository: helloianneo/ian-xiaohei-illustrations The repository ships 1 skills in total.
+
+========================================================================
+## lanshu-awesome-ai-video-kit
+## 411 条提示词按镜头编号排好，拍企业片直接抄
+URL: https://ourword.ai/skill/i/cclank-lanshu-awesome-ai-video-kit/
+Source: https://github.com/cclank/lanshu-awesome-ai-video-kit
+Updated: 2026-06-01
+Tags: images, collection, cclank
+
+From client brief to final cut: 15 model picks + 7 Claude Skills. Built from real agency projects, not a tutorial.
+
+### What does this skill do?
+做企业 AI 视频项目逼出来的工具包 · 411 prompt · 15 模型 · 7 Claude Skill · 14 篇方法论
+
+### Why is it worth installing?
+Organized by actual production workflow, not bookmarks. Each prompt names its model and known failure modes, so you know where.
+
+### How do you install it?
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 7 skills in total.
+
+========================================================================
+## kling-prompter
+## 给可灵 3.0 写提示词，三种公式按场景自动切换
+URL: https://ourword.ai/skill/i/cclank-lanshu-awesome-ai-video-kit-kling-prompter/
+URL (中文): https://ourword.ai/skill/zh/i/cclank-lanshu-awesome-ai-video-kit-kling-prompter/
+Source: https://github.com/cclank/lanshu-awesome-ai-video-kit/tree/HEAD/skills/kling-prompter
+Updated: 2026-06-01
+Tags: images, skill, cclank
+
+Short-form, narrative, or image-to-video—each gets its own formula. Write prompts that carry audio, character.
+
+### What does this skill do?
+生成符合 Kling 3.0（可灵 3.0，快手）规则的视频提示词。三种写法自适应：4 部分基础公式（短视频）/ 5 层进阶公式（剧情+音频）/ 图生视频专用（只描述运动）。Kling 是 2026 年中文理解最强、原生音画同步、最长 2 分钟、支持角色定向发声、Motion Brush 的电影级模型。用于"用 Kling 生成视频"、"可灵 AI 提示词"、"中文视频生成"、"带原生音频的剧情视频"、"图生视频"、"角色对话视频"等触发场景。
+
+### Why is it worth installing?
+It structures prompts into executable parts—motion, framing, rhythm, audio sync—so the model follows intent precisely, not.
+
+### How do you install it?
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
+
+--- 中文 ---
+短视频、剧情片、图生视频各有一套公式，不背模板也能写出带原生音频和角色发声的镜头描述，让模型听懂你要的每一帧。
+
+### Q：这个 skill 做什么？
+生成符合 Kling 3.0（可灵 3.0，快手）规则的视频提示词。三种写法自适应：4 部分基础公式（短视频）/ 5 层进阶公式（剧情+音频）/ 图生视频专用（只描述运动）。Kling 是 2026 年中文理解最强、原生音画同步、最长 2 分钟、支持角色定向发声、Motion Brush 的电影级模型。用于"用 Kling 生成视频"、"可灵 AI 提示词"、"中文视频生成"、"带原生音频的剧情视频"、"图生视频"、"角色对话视频"等触发场景。
+
+### Q：为什么值得装？
+不是堆形容词，而是把镜头拆成可执行的结构：运动、景别、节奏、音画同步分项写，模型按公式吃透你的意图。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
+
+========================================================================
+## model-selector
+## 16 个视频模型按你的拍摄条件筛出 1-3 个
+URL: https://ourword.ai/skill/i/cclank-lanshu-awesome-ai-video-kit-model-selector/
+URL (中文): https://ourword.ai/skill/zh/i/cclank-lanshu-awesome-ai-video-kit-model-selector/
+Source: https://github.com/cclank/lanshu-awesome-ai-video-kit/tree/HEAD/skills/model-selector
+Updated: 2026-06-01
+Tags: work, skill, cclank
+
+Stop agonizing over Sora vs Kling at 2am. Feed it scene, duration, budget, local deploy, character consistency—it.
+
+### What does this skill do?
+根据用户的视频需求(场景、时长、音频、语言、平台限制、预算、是否需要本地部署/角色一致性等),从 16 个主流 AI 视频模型(12 商业 + 4 开源)中推荐最匹配的 1-3 个,并解释为什么。覆盖商业:Seedance 2.0、HappyHorse 1.0、Kling 3.0、Sora 2、Veo 3.1、**Gemini Omni**(2026-05 新)、Runway Gen-4.5/Aleph、Pika 2.5、Hailuo 02、Hunyuan Video 1.5、Wan 2.7、即梦 AI;开源:LTX-Video 0.9.7、Mochi 1、CogVideoX 5B、Higgsfield Soul。用于"用哪个 AI 视频模型好"、"Sora 还是 Kling"、"国内有什么模型"、"哪个免费"、"哪个支持中文"、"哪个能编辑已有视频"、"哪个能本地部署"、"哪个角色一致性
+
+### Why is it worth installing?
+Not generic comparisons—it eliminates by your real constraints. Covers new models like Gemini Omni (May 2026). Every pick comes.
+
+### How do you install it?
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
+
+--- 中文 ---
+别在 Sora 和 Kling 之间纠结到凌晨。把场景、时长、预算、本地部署、角色一致性丢进去。
+
+### Q：这个 skill 做什么？
+根据用户的视频需求(场景、时长、音频、语言、平台限制、预算、是否需要本地部署/角色一致性等),从 16 个主流 AI 视频模型(12 商业 + 4 开源)中推荐最匹配的 1-3 个,并解释为什么。覆盖商业:Seedance 2.0、HappyHorse 1.0、Kling 3.0、Sora 2、Veo 3.1、**Gemini Omni**(2026-05 新)、Runway Gen-4.5/Aleph、Pika 2.5、Hailuo 02、Hunyuan Video 1.5、Wan 2.7、即梦 AI;开源:LTX-Video 0.9.7、Mochi 1、CogVideoX 5B、Higgsfield Soul。用于"用哪个 AI 视频模型好"、"Sora 还是 Kling"、"国内有什么模型"、"哪个免费"、"哪个支持中文"、"哪个能编辑已有视频"、"哪个能本地部署"、"哪个角色一致性
+
+### Q：为什么值得装？
+不是泛泛对比，而是按你的具体约束做排除法。连 Gemini Omni 这种 2026 年 5 月的新模…
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
+
+========================================================================
+## seedance-debugger
+## 视频里人脸飘了先别删，它给你换提示词的根因
+URL: https://ourword.ai/skill/i/cclank-lanshu-awesome-ai-video-kit-seedance-debugger/
+URL (中文): https://ourword.ai/skill/zh/i/cclank-lanshu-awesome-ai-video-kit-seedance-debugger/
+Source: https://github.com/cclank/lanshu-awesome-ai-video-kit/tree/HEAD/skills/seedance-debugger
+Updated: 2026-06-01
+Tags: images, skill, cclank
+
+Twin faces, stray subtitles, style drift, end noise—it fixes the prompt, not the footage, across 12 Seedance.
+
+### What does this skill do?
+诊断 Seedance 2.0 生成视频时出现的常见问题（人物 ID 漂移/双胞胎/字幕/Logo/风格漂移/延长跳变/画质劣化/特效不对/中文发音/音色不准/结尾噪音 等 12 类），定位根因并给出修复后的提示词。用于"我的提示词生成出来不对"、"视频里出现奇怪的字幕"、"人脸不像参考图"、"出现两个一样的人物"、"风格变了"、"怎么修这个提示词"等触发场景。
+
+### Why is it worth installing?
+No vague 'improve consistency'—it maps each failure to specific prompt phrases and settings, so edits target the actual cause.
+
+### How do you install it?
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
+
+--- 中文 ---
+人物变双胞胎、字幕乱入、风格漂移、结尾爆音——12 类故障它不修视频，只修你手里那句提示词，改完重跑就稳。
+
+### Q：这个 skill 做什么？
+诊断 Seedance 2.0 生成视频时出现的常见问题（人物 ID 漂移/双胞胎/字幕/Logo/风格漂移/延长跳变/画质劣化/特效不对/中文发音/音色不准/结尾噪音 等 12 类），定位根因并给出修复后的提示词。用于"我的提示词生成出来不对"、"视频里出现奇怪的字幕"、"人脸不像参考图"、"出现两个一样的人物"、"风格变了"、"怎么修这个提示词"等触发场景。
+
+### Q：为什么值得装？
+不是笼统说'加强一致性'，而是按故障类型拆解到具体参数与措辞，告诉你哪句话导致 ID 漂移。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
 
 ========================================================================
 ## academic-ref-inserter
