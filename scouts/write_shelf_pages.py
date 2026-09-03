@@ -100,7 +100,15 @@ def page(it, prev=None, nxt=None, related=None):
         cover = "https://opengraph.githubassets.com/pinwei/%s" % it["repo"]
         cover_is_og = True
 
-    media = ('<img class="cover%s" src="%s" alt="" onerror="this.remove()">' % (" og" if cover_is_og else "", esc(cover))) if cover else ""
+    # 封面引 800px 宽的 WebP 派生图（scouts/make_thumbs.py 生成）。详情页这张显示
+    # 350×242，原图却是 1200-2500 宽、平均 788 KB。派生图缺失就回退原图。
+    def _thumb(u):
+        import re as _re
+        m = _re.match(r"^(https://ourword\.ai/skill/assets/covers/|/skill/assets/covers/)([^/]+)\.[A-Za-z0-9]+$", u or "")
+        return (m.group(1) + "w800/" + m.group(2) + ".webp") if m else u
+    _t = _thumb(cover)
+    _fb = (' data-full="%s" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}' % esc(cover)) if _t != cover else ' onerror="this.remove()'
+    media = ('<img class="cover%s" src="%s" alt=""%s">' % (" og" if cover_is_og else "", esc(_t), _fb)) if cover else ""
 
     uses_map = {
         "creative": [
