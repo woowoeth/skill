@@ -1121,6 +1121,9 @@ def _taste_pass(it: dict) -> str:
     # 所以编辑亲自读原文挑的走这条道，不过判官 —— 但理由必须写够 30 字，写不出 30 字理由的不算挑过。
     _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
     _ed = _eds.get((it.get("repo") or "").lower()) or _eds.get(sid)
+    # 挑的是仓里某一个 skill（写了 path）时，同仓其它子 skill 不沾光
+    if _ed and _ed.get("path") and (it.get("path") or "").strip("/") != _ed["path"].strip("/"):
+        _ed = None
     if _ed and len((_ed.get("reason") or "").strip()) >= 30:
         return _log(True, f"编辑读过原文挑的 —— {_ed['reason'][:80]}")
     if _ed:

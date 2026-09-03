@@ -31,6 +31,8 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           SAME_DAY_SHELF: "1"
+          # 09-03：手动指名的仓里往往有好几个子 skill，只有编辑挑的那件走 editor 通道，其余按 80 线，不按默认 60
+          TASTE_MIN: "80"
         run: python scouts/skill_scout.py --suggest ${{ github.event.inputs.repos }}
       - name: 上架之后补扫红线，命中的撤下
         if: always()
