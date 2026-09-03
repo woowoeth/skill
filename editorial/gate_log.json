@@ -2,6 +2,184 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-03T12:03:46Z",
+   "判了": 22,
+   "过": 2,
+   "明细": [
+    {
+     "id": "kagurananaga-format-agent-01-format-agent",
+     "repo": "KaguraNanaga/format-agent-01",
+     "title": "AI只出规则、代码动手改的格式排版工",
+     "过": true,
+     "为什么": "品味 82 分 —— 用JSON隔离AI与代码、含降级与自检，扎实，但换脚本也能做。（3 判：[75, 82, 85]）",
+     "分": 82
+    },
+    {
+     "id": "google-gemini-gemini-cli",
+     "repo": "google-gemini/gemini-cli",
+     "title": "终端里直接跑的 Gemini 开源智能体",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "google-gemini-gemini-cli-tui-tester",
+     "repo": "google-gemini/gemini-cli",
+     "title": "终端里给 Gemini CLI 做行为与视觉回归的测",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 针对性强且具体，但高度依赖内部工具链，专业测试人员之外价值有限。（3 判：[63, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "google-gemini-gemini-cli-agent-tui",
+     "repo": "google-gemini/gemini-cli",
+     "title": "让 AI 替你按键盘，终端界面自动测",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 针对自身环境的运维细节扎实，但核心玩法与官方工具重叠，属换工具也能做的范畴。（3 判：[70, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "google-gemini-gemini-cli-async-pr-review",
+     "repo": "google-gemini/gemini-cli",
+     "title": "后台挂起 PR 审查，干别的回来再看结果",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 实现模式清晰，边界明确，但核心可复用于其他AI工具或外包做法。（3 判：[68, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "rtk-ai-rtk",
+     "repo": "rtk-ai/rtk",
+     "title": "同一句命令，token 先砍七成再交给大模型",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "rtk-ai-rtk-design-patterns",
+     "repo": "rtk-ai/rtk",
+     "title": "新模块开工前先翻这页 Rust 模式清单",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 泛泛介绍常见Rust模式，示例虽具体但非独有做法，可替代性强。（3 判：[45, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "rtk-ai-rtk-code-simplifier",
+     "repo": "rtk-ai/rtk",
+     "title": "删掉多余分配和绕路写法的 Rust 代码审阅员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 针对RTK提供了具体、可操作的简化模式，但换用通用Rust重构工具或指南也能达到（3 判：[70, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "rtk-ai-rtk-issue-triage",
+     "repo": "rtk-ai/rtk",
+     "title": "开源仓库的看门人：自动分诊 issue、查重",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 扎实的自动分类流程，但核心逻辑GitHub原生及脚本可替代，深度分析部分被截断不（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "ccxt-ccxt",
+     "repo": "ccxt/ccxt",
+     "title": "一套代码接 100+ 交易所，换所不换语法",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "ccxt-ccxt-meme-rush",
+     "repo": "ccxt/ccxt",
+     "title": "新币上架三秒内告诉你它是不是在骗你",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 工具扎实，参数详尽，但换API封装也能做，边界清晰但非独占。（3 判：[45, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "ccxt-ccxt-crypto-market-rank",
+     "repo": "ccxt/ccxt",
+     "title": "全市场排名聚合器：热度、聪明钱、盈亏榜一屏拉齐",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 对排行榜API封装清晰，职责边界明确，但换用其他工具也能构造类似调用。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "ccxt-ccxt-binance-agentic-wallet",
+     "repo": "ccxt/ccxt",
+     "title": "钱包里有多少币、能换什么，一句话问它就知道",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 功能规格齐全但属官方外包，边界源自CLI，无独到判断（3 判：[40, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "resciencelab-opc-skills",
+     "repo": "ReScienceLab/opc-skills",
+     "title": "独行创业者的一排现成 Agent 技能货架",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "resciencelab-opc-skills-seo-geo",
+     "repo": "ReScienceLab/opc-skills",
+     "title": "AI 搜索时代的关键词布局与结构化标记生成器",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 扎实的SEO/GEO操作手册，方法具体，但多为已有知识的综合，非独家方案。（3 判：[62, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "resciencelab-opc-skills-logo-creator",
+     "repo": "ReScienceLab/opc-skills",
+     "title": "从草图到 SVG 的 AI 标志设计工坊",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 流程完整但依赖外部模型和工具，方法通用，无明显独到判断。（3 判：[45, 55, 72]）",
+     "分": 55
+    },
+    {
+     "id": "shpigford-chops-release",
+     "repo": "Shpigford/chops",
+     "title": "发布一次，版本号、官网、流水线全自动对齐",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 发布流程扎实且边界清晰，但本质是可脚本化的步骤说明，换工具或人工也能完成。（3 判：[62, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "shpigford-chops-setup",
+     "repo": "Shpigford/chops",
+     "title": "新程序员进 Chops 仓库，先跑通构建再谈架构",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 是具体项目的开发者上手指南，非通用技能；对目标项目内部有用，别处难复用。（3 判：[35, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "neolabhq-context-engineering-kit",
+     "repo": "NeoLabHQ/context-engineering-kit",
+     "title": "给 Agent 换脑子的手工技能包",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "liyue-aigc-female-portrait-director",
+     "repo": "liyue-aigc/female-portrait-director",
+     "title": "十二类女性人像风格，一条提示词管线全走完",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 工作流完整，边界清晰，但本质是专业提示词生成，替代工具易寻。（3 判：[62, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "noobnooc-agent-better-codex",
+     "repo": "noobnooc/agent",
+     "title": "Codex 干活前先念三遍的六条行为红线",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 边界清晰质量准则扎实，但多属通用工程实践非独家（3 判：[72, 75, 75]）",
+     "分": 75
+    },
+    {
+     "id": "noobnooc-agent-wtf",
+     "repo": "noobnooc/agent",
+     "title": "上线前先替你拆雷的 AI 项目体检员",
+     "过": true,
+     "为什么": "品味 82 分 —— 针对AI生成项目的检查，边界清晰，提供别处未见的具体操作清单与严重等级。（3 判：[75, 82, 85]）",
+     "分": 82
+    }
+   ]
+  },
+  {
    "时间": "2026-09-03T10:33:41Z",
    "判了": 12,
    "过": 5,
