@@ -1686,13 +1686,10 @@
    "limit_en": "Needs Python 3.9+ with requests plus network access to openalex, crossref and pubmed. Google Scholar has no API: scholarly scrapes it, sleeps 2-5s per result and is blocked often, so the skill itself calls it a supplement.",
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false,
    "title_en": "Kills the fabricated citation before your reviewer finds it",
    "_无封面原因": "docs/images/ 下有 170 张 1536x864 的同模板图，一件 skill 一张 —— 这是宣传/说明卡阵列，正是「OG 卡片混进产出物」那个坑。我开了对题的那张 citation-management.png：是一幅做得挺漂亮的信息图（DISCOVERY 三列 OpenAlex/PubMed/Google Scholar → METADATA extract_metadata.py + WebSearch enrichment → references.bi",
    "hide": false,
-   "gate_score": 7,
-   "cover_w": 1200,
-   "cover_h": 600
+   "gate_score": 7
   },
   "k-dense-ai-scientific-agent-skills-latex-posters": {
    "title_zh": "学术海报",
@@ -2261,7 +2258,6 @@
    "category": "fun",
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false,
    "limit_zh": "歌不是它生成的：音频得你自己去 Suno 出、把 stems 拿回来，它管概念、歌词、Suno 提示词、母带和发行。52 件里 8 件是插件自用件（about/help/setup/test 等），真能用的 44 件。",
    "limit_en": "It does not make the audio — you generate on Suno and bring the stems back; it covers concept, lyrics, Suno prompts, mastering and release prep. Of its 52 skills, 8 are plugin housekeeping (about/help/setup/test/health-check); 44 are actually usable.",
    "title_en": "Turns Suno noodling into finished, mixed tracks",
@@ -2269,9 +2265,7 @@
    "limit_brief_en": "It does not make the audio; you generate that on Suno.",
    "_无封面原因": "全仓唯一一张 docs/images/be-excellent-to-each-other.jpg(1400x700)，开过：《比尔和泰德历险记》的电影剧照（画面里能认出年轻的基努·里维斯和 Alex Winter 双手张开站在舞台上），底部叠白色大字 'Be Excellent To Each Other'。第三方版权画面 + 真人肖像，两条都撞线，坚决不用。这件其余产出要接 Suno（外部账号）。",
    "hide": false,
-   "gate_score": 7,
-   "cover_w": 1200,
-   "cover_h": 600
+   "gate_score": 7
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
@@ -2614,14 +2608,11 @@
    "limit_en": "Rules only, no tokens — exact colors and pixel values stay in your own design system, and no component code ships. Dark is the target; light is a reversed adaptation. Hard rules: zero border radius everywhere, exactly two chromatic hues.",
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false,
    "cover_dup_of": "vanillagreencom-vstack-decider",
    "title_en": "Design rules for screens where color means money",
    "_无封面原因": "心选的 skills/trading-design 目录里只有一个 SKILL.md（纯规则文档：密度、配色、组件规范，没有 examples/ 也没有 scripts/）。仓库里 40+ 张图我抽查开过代表性的几张：docs/img/home.png(1440x900) 是 vstack 这个 App 自己的 Home 界面（Needs attention / Recently changed 列表），pi-extensions/*/assets/*.png|gif 是各个",
    "hide": false,
-   "gate_score": 7,
-   "cover_w": 1200,
-   "cover_h": 600
+   "gate_score": 7
   },
   "vanillagreencom-vstack-iced-rs": {
    "title_zh": "用 Rust Iced 写桌面图形界面",
@@ -3983,8 +3974,8 @@
    "tagline_en": "A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.",
    "why_zh": "这个生态罕见的「减法」工具：装得多不等于装得好，它同时管省上下文、防注入、看清成本。",
    "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/khendzel-skills-janitor.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "limit_zh": "它会真动手删：左滑就把那个 MCP server 从配置文件里移除，只留一个带时间戳的 .bak。判断依据是本机会话记录里的调用次数——刚装没多久的 skill 天然显示成「没用过」，容易误杀。安全扫描作者写明是启发式。",
    "limit_en": "It actually deletes: swipe left and the MCP server is removed from your config file, leaving a timestamped .bak. Its verdict comes from call counts in your local transcripts, so anything installed recently reads as 'never used'. The security scan is explicitly heuristic.",
@@ -3992,8 +3983,9 @@
    "_无封面原因": "唯一的图是 303 帧终端录屏 GIF。**首帧非背景像素只占 0.2%**（实测），懒加载从第 0 帧起，卡片刚出现就是个空框；而且终端界面录屏不是产出物 —— 这条线跟「界面截图不算产出物」是同一条。中段确实有它的裁决卡（Verdict ✓ Used recently — keep + 快捷键条），但取不出一张能当静态封面的帧。",
    "hide": false,
    "gate_score": 6,
-   "cover_w": 1200,
-   "cover_h": 600
+   "cover_w": 1600,
+   "cover_h": 900,
+   "cover_src": "https://raw.githubusercontent.com/khendzel/skills-janitor/HEAD/hero.png"
   },
   "312362115-claude-diagram": {
    "title_zh": "自动选对图表类型再画出来",
@@ -4589,13 +4581,10 @@
    "limit_zh": "是英文 12 页绘本。要中文长篇、要每页换脸，会漂。",
    "limit_en": "It produces an English picture book — Chinese needs another pass. Costs scale with pages since it calls an image model and TTS; changing the style key or character sheet forces a full regeneration.",
    "cover_kind": "none",
-   "cover_real": false,
    "title_en": "A bedtime book read in your own cloned voice",
    "hide": false,
    "gate_score": 8,
-   "cover": "",
-   "cover_w": 1200,
-   "cover_h": 600
+   "cover": ""
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -6792,13 +6781,10 @@
    "limit_en": "Don't install this outside Doubao — the author calls the built-in image_gen its entire reason to exist, and the default seedream_5.0_pro is members-only, falling back to 4.5 for everyone else. Slides come out as flat images with no editable text unless you explicitly ask for editable output, or generation fails three times.",
    "cover": "",
    "cover_kind": "none",
-   "cover_real": false,
    "_无封面原因": "3 张图逐张开过：① assets/personal-brand/像素公众号头图示例.png(2560x1088) 是花叔本人的像素风公众号头图「一人公司，也有品牌部了」，右下角印着 hUasheng.ai；② 像素品牌资产.png(3560x4712) 是九宫格品牌资产册（主标识/色板/字体/名片/T恤/渔夫帽/马克杯/贴纸/数字资产），做得很好看、比例 1.32 很合卡片，**但名片那一格里有二维码，还有 hello@huashu.dev 和 Beijing, China",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref",
-   "cover_w": 1200,
-   "cover_h": 600
+   "gate_drop": "not-taste-ref"
   },
   "luji12-luji-pet-streetwear-mood-avatar": {
    "title_zh": "宠物收成街头情绪头像",
@@ -10246,10 +10232,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
-   "cover_w": 1200,
-   "cover_h": 600
+   "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
+   "cover_kind": "hero",
+   "cover_w": 941,
+   "cover_h": 1672,
+   "cover_real": false,
+   "cover_src": "https://raw.githubusercontent.com/liuzihe849-png/silhouette-group-collage/HEAD/silhouette-group-collage/assets/approved-style-examples/01-same-team-every-time.png"
   },
   "zzzlc0405-photo-abstract-editorial": {
    "title_zh": "照片抽成抽象编辑页",
@@ -10564,13 +10552,15 @@
    "cover": ""
   },
   "codeswithroh-tastemaker-tastemaker": {
-   "cover_w": 1200,
-   "cover_h": 600,
-   "cover_kind": "none",
-   "cover_real": false,
+   "cover_kind": "hero",
    "title_zh": "拒绝AI味界面，只产能上线的品牌级UI",
    "title_en": "Brand-grade UI that kills AI slop, ready to ship",
-   "cover": ""
+   "cover": "/skill/assets/covers/codeswithroh-tastemaker-tastemaker.png",
+   "cover_real": false,
+   "cover_w": 1440,
+   "cover_h": 900,
+   "cover_src": "https://raw.githubusercontent.com/codeswithroh/tastemaker/HEAD/product-hunt-shots/captures/landing-hero.png",
+   "cover_note": "仓即产品，仓级图就是这件的图"
   },
   "copilotkit-copilotkit-a2ui-renderer": {
    "cover_w": 1200,
@@ -10688,12 +10678,13 @@
    "tagline_en": "Four fixed layouts (3:4 nine-square, 3:4 four-panel, 4:3 six-square, 4:3 four-panel) with locked coordinates; ivory paper plus one ink of your choice.",
    "why_en": "No drawing, hatching or photo detail — reduced flat masses with separate halation and restrained ink bleed, so it reads as printed, not filtered.",
    "limit_en": "Only those four layouts; one ink; the two-line typewriter footer is fixed.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1200,
-   "cover_h": 600,
-   "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
+   "cover_h": 1600,
+   "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
+   "cover_src": "https://raw.githubusercontent.com/Lixorn/deconstructed-duotone-poster/HEAD/deconstructed-duotone-poster/assets/layout-guide-vertical-4.png"
   },
   "hongfamonvai-vintage-travel-ticket": {
    "title_zh": "66 张老车票里抽一套设计语法，每次出票都像翻到旧藏",
@@ -10906,7 +10897,59 @@
   },
   "karanb192-itr-wala-itr-wala": {
    "title_zh": "只认印度税表 ITR-1 到 4，旧新税制哪个省一算",
-   "title_en": "Indian ITR filer that picks the right form and regime for."
+   "title_en": "Indian ITR filer that picks the right form and regime for.",
+   "cover": "",
+   "cover_kind": "none"
+  },
+  "op7418-guizang-yingzao-skill-yingzao": {
+   "cover": "/skill/assets/covers/op7418-guizang-yingzao-skill-yingzao.jpg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 989,
+   "cover_h": 1400,
+   "cover_src": "https://raw.githubusercontent.com/op7418/guizang-yingzao-skill/HEAD/yingzao/assets/reference-plates/0286594d2e794b7b903641c7ed2bc7f9.jpg"
+  },
+  "cli-cli-code-review": {
+   "cover": "",
+   "cover_kind": "none"
+  },
+  "rohitg00-agentmemory-agentmemory-config": {
+   "cover": "/skill/assets/covers/rohitg00-agentmemory-agentmemory-config.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 2503,
+   "cover_h": 1344,
+   "cover_src": "https://raw.githubusercontent.com/rohitg00/agentmemory/HEAD/website/public/states.png",
+   "cover_note": "仓即产品，仓级图就是这件的图"
+  },
+  "jimliu-doubao-multimodal-skill-doubao-multimodal": {
+   "cover": "",
+   "cover_kind": "none"
+  },
+  "oil-oil-kimi": {
+   "cover": "",
+   "cover_kind": "none"
+  },
+  "dacnay816y62-hub-window-scenery-skill": {
+   "cover": "/skill/assets/covers/dacnay816y62-hub-window-scenery-skill.jpg",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1024,
+   "cover_h": 1365,
+   "cover_src": "https://raw.githubusercontent.com/dacnay816y62-hub/window-scenery-skill/HEAD/examples/chongqing-hongyadong-final-cn.jpg"
+  },
+  "cli-cli-dependabot-triager": {
+   "cover": "",
+   "cover_kind": "none"
+  },
+  "lincwang123-bot-moonlit-stories-moonlit-book": {
+   "cover": "/skill/assets/covers/lincwang123-bot-moonlit-stories-moonlit-book.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1536,
+   "cover_h": 1024,
+   "cover_src": "https://raw.githubusercontent.com/lincwang123-bot/moonlit-stories/HEAD/design/cover-state-concept.png",
+   "cover_note": "仓即产品，仓级图就是这件的图"
   }
  },
  "gate": {
