@@ -19,5 +19,7 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: |
           python scouts/taste_backtest.py --holdout 18 --shots 8
+          echo "──────── 成对比较 ────────"
+          python scouts/taste_backtest.py --pairwise --holdout 18
           echo "──────── 新数据验门槛 ────────"
           python scouts/taste_backtest.py --verify-refs --shots 8

@@ -157,7 +157,7 @@ def check_coverage() -> None:
         note("坏", "覆盖账是空的", []); return
     last = runs[0]
     t = datetime.datetime.strptime(last["time"], "%Y-%m-%dT%H:%MZ")
-    age_h = (datetime.datetime.utcnow() - t).total_seconds() / 3600
+    age_h = (datetime.datetime.now(datetime.timezone.utc) - t.replace(tzinfo=datetime.timezone.utc)).total_seconds() / 3600
     if age_h > 30:
         note("坏", f"流式全扫已 {age_h:.0f} 小时没跑（上次 {last['time']}）—— 这期间新出的 SKILL.md 一个都没看", [])
     if last.get("gaps"):

@@ -89,7 +89,12 @@ jobs:
         # 每天几百个仓 × 一次 LLM 调用，钱是小数；时间上限 6 小时够。
         run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 800 }} --min-score 80
 
-      - name: 高分的走完整管线
+      # 2026-09-02 暂停：绝对打分在难负样本（08-28 判为「有用但通用」的 150 件）上 +0pt，
+      # 正负分布重叠在 62-75，负样本均分（72.4）反而高于正样本（66.6）。
+      # 判官分得开好和烂，分不开好和平庸 —— 而这家店的分界线正在好和平庸之间。
+      # 在成对比较法验出信号之前，sweep 只判只记，不上架。判过的分都在 sweep_seen.json 里。
+      - name: 高分的走完整管线（暂停 —— 判官在好/平庸线上 +0pt）
+        if: ${{ false }}
         env:
           GH_TOKEN: ${{ github.token }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}

@@ -66,7 +66,7 @@ def main() -> int:
     seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
     prev_run = {k for k, v in seen.items() if v.get("last_run")}   # 上一轮见过的 = 锚点
     today = datetime.date.today().isoformat()
-    now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ")
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     print(f"已见 {len(seen)} 个仓 · 上一轮锚点 {len(prev_run)} 个\n")
 
     new_total, report, touched = {}, [], set()

@@ -57,6 +57,62 @@ JUDGE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一�
 ---"""
 
 
+PAIR_PROMPT = """你在替一家中文 Agent Skill 精选店判货。这家店卖的是判断不是索引——
+店主留的货，都是「有人真的想过这件事该怎么做」的那种：会拒绝做某些事、说清产出物到哪儿为止、
+在一个具体场景里给出别处拿不到的做法。不看功能多不多、star 高不高、题材是什么。
+
+下面 A 是店主亲手留下的一件。B 是待判的。
+**如果货架上只能留一件，店主会留哪一件？** 只回一个 JSON：{{"keep": "A" 或 "B", "why": "不超过20字"}}
+不许回「都留」。B 明显不如 A 就答 A；B 至少不输 A 才答 B。
+
+=== A（店主留的）===
+{a}
+
+=== B（待判）===
+{b}
+"""
+
+
+def pair_winrate(S, body: str, anchors: list[str], cur: dict, k: int = 3) -> float:
+    """B 对 k 件心选锚点的赢率。赢 = 判官说「留 B」。"""
+    import random as _r
+    wins = tot = 0
+    for ai in _r.sample(anchors, min(k, len(anchors))):
+        ab = body_of(ai)
+        if not ab:
+            continue
+        prompt = PAIR_PROMPT.format(a=ab[:3500], b=body[:3500])
+        r = _call(S, prompt)
+        if r is None:
+            continue
+        tot += 1
+        wins += 1 if str(r.get("keep", "")).strip().upper() == "B" else 0
+    return wins / tot if tot else -1.0
+
+
+def _call(S, prompt: str):
+    import urllib.request
+    ant = S.LLM_KEY.startswith("sk-ant-") or "anthropic" in S.LLM_BASE
+    if ant:
+        url = (S.LLM_BASE if "anthropic" in S.LLM_BASE else "https://api.anthropic.com") + "/v1/messages"
+        data = json.dumps({"model": S.LLM_MODEL, "max_tokens": 120,
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        hdr = {"x-api-key": S.LLM_KEY, "anthropic-version": "2023-06-01", "Content-Type": "application/json"}
+    else:
+        url = S.LLM_BASE + "/chat/completions"
+        data = json.dumps({"model": S.LLM_MODEL, "max_tokens": 120,
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        hdr = {"Authorization": "Bearer " + S.LLM_KEY, "Content-Type": "application/json"}
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=hdr, method="POST"), timeout=60) as r:
+            resp = json.loads(r.read())
+        txt = (resp["content"][0]["text"] if ant else resp["choices"][0]["message"]["content"])
+        txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        return json.loads(txt)
+    except Exception:
+        return None
+
+
 def body_of(i: str) -> str | None:
     # "!" 前缀 = 真负样本（拒收榜的上游正文，抓在 methods_rejected/）
     if i.startswith("!"):
@@ -77,6 +133,9 @@ def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--holdout", type=int, default=18, help="每边留出多少件")
     ap.add_argument("--shots", type=int, default=8, help="每边给几个例子")
+    ap.add_argument("--pairwise", action="store_true",
+                    help="成对比较代替绝对打分：B 对 k 件心选锚点的赢率。绝对打分在难负样本上 +0pt，"
+                         "正负分布重叠在 62-75；LLM 做「二选一」比做「打分」可靠得多，验一下")
     ap.add_argument("--verify-refs", action="store_true",
                     help="拿 taste_refs.json（店主指名、从没进过训练/留出）当新数据验门槛")
     a = ap.parse_args()
@@ -166,6 +225,26 @@ def main() -> int:
             print(f"    ! {i}: {type(e).__name__}: {e}")
             return None
 
+    if a.pairwise:
+        anchors = [i for i in pos if i not in ho_pos]        # 锚点只从非留出的正样本里取
+        print(f"成对比较：每件对 3 个心选锚点，赢率 = 判官说「留 B」的比例\n")
+        wp = [pair_winrate(S, body_of(i), anchors, cur) for i in ho_pos]
+        wn = [pair_winrate(S, body_of(i), anchors, cur) for i in ho_neg]
+        wp = [x for x in wp if x >= 0]; wn = [x for x in wn if x >= 0]
+        if not wp or not wn:
+            print("判不出来"); return 2
+        print(f"留出正样本 {len(wp)} 件 · 平均赢率 {sum(wp)/len(wp):.2f} · 分布 {sorted(round(x,2) for x in wp)}")
+        print(f"留出负样本 {len(wn)} 件 · 平均赢率 {sum(wn)/len(wn):.2f} · 分布 {sorted(round(x,2) for x in wn)}")
+        best = (-9, 0, 0, 0)
+        for th in (0.34, 0.5, 0.67, 1.0):
+            a_ = sum(1 for x in wp if x >= th) / len(wp); b_ = sum(1 for x in wn if x >= th) / len(wn)
+            if (a_ - b_) * 100 > best[0]:
+                best = ((a_ - b_) * 100, th, a_, b_)
+        lift, th, a_, b_ = best
+        print(f"\n最佳赢率线 ≥{th}：正样本过 {a_*100:.0f}% · 负样本过 {b_*100:.0f}%")
+        print(f"**区分力 {lift:+.0f}pt**（绝对打分在同一批难负样本上是 +0pt）")
+        print("→ " + ("成对法有信号，值得替换绝对打分" if lift >= 25 else "成对法也分不开 —— 那问题不在问法，在负样本标签或判官本身"))
+        return 0
     if a.verify_refs:
         # **门槛是在留出集上挑的，必须在没见过的数据上再验一次。**
         # taste_refs 里是店主 2026-09-02 指名说「这是有品味的」的四件，
