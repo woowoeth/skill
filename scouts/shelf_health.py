@@ -36,7 +36,9 @@ def check_covers(items, sample: int) -> None:
     """没图，以及**图挂了**。字段有值不等于图能显示 —— 这两件事分开查。"""
     miss = [x for x in items if not (x.get("cover") or x.get("cover_url"))]
     if miss:
-        note("坏", f"{len(miss)} 张卡没有封面（访客下拉会撞到空洞）",
+        # 09-03 起没图的卡走排版底（大字衬线首字 + 分类小字，见 index.html .shot.plate-only），访客不再撞到空洞。
+        # 没图仍是待办（能取到作者真图就该取），但不是「坏」—— 一条永远红着的红灯会被人学会忽略。
+        note("注意", f"{len(miss)} 张卡没有封面（走排版底；能取到作者真图的还该取）",
              [f"第{items.index(x)+1}位 {x.get('title_zh','')[:26]}" for x in miss[:8]])
     # 指向我们自己仓的封面**查本地文件**，不发 HTTP。
     # 2026-09-02 的坑：这一步在工作流里排在 Commit 之前，本轮新写的封面还没推上去，
