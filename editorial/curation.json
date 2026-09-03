@@ -11066,6 +11066,258 @@
    "cover_w": 1024,
    "cover_h": 1024,
    "cover_src": "https://raw.githubusercontent.com/pale-knight/redteam-skill/HEAD/assets/pale0knight.png"
+  },
+  "tengj-article-poster-generator": {
+   "title_zh": "一篇文章拆成六页竖版信息图，每页都能单独发朋友圈",
+   "why_zh": "不是简单截图排版，而是按内容语义切分段落、匹配版式，让每页信息密度均衡，读图节奏像翻卡片。",
+   "limit_zh": "只吃纯文本或 Markdown 文章，不解析 PDF/网页里的复杂图表；输出是 2400×3600 PNG。",
+   "tagline_zh": "长文没人看完？它把 2400×3600 的竖版海报按段落自动拆成 6 种版式，风格模板任选，每页独立成图。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "y1fe1-yang-resume-assistant-skill": {
+   "title_zh": "五个代理围着你转，从挖故事到模拟面试一条龙",
+   "why_zh": "五个代理各管一段，故事挖掘不靠你回忆，而是用提问逼出细节；简历优化不是泛泛而谈。",
+   "limit_zh": "需要你提供原始经历素材和至少一份目标JD，否则故事代理和优化代理没东西可挖；模拟面试只覆盖行为面试题，不碰技术笔试。",
+   "tagline_zh": "简历不是写出来的，是问出来的。它先派一个代理挖你干过的活里的亮点，再派一个代理拿JD逐条比对改写。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "momozi1996-directoragents": {
+   "title_zh": "31位导演的分镜会，你当主席还是当观众",
+   "why_zh": "不是风格混搭，是机制性对抗：顺序链推剧情、辩论投票逼出冲突、主席团模式强制收敛。",
+   "limit_zh": "只输出创作建议与分镜描述，不生成可直接拍摄的完整剧本格式（无场景编号/对白格式规范）。",
+   "tagline_zh": "写剧本卡在第三幕？让库布里克和诺兰在后台吵一架，你只负责拍板。多智能体辩论投票，每次产出都带导演署名和理由。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "cattlez-dance-video-to-prompt-dance-video-to-prompt": {
+   "title_zh": "模糊帧不编手指，卡点动作拆成七段可生成提示词",
+   "why_zh": "节奏由本地脚本算 BPM 和拍点，画面由多模态逐帧观察，两路融合后才落笔，杜绝凭空编造动作细节。",
+   "limit_zh": "只吃本地视频文件，需 Agent 具备多模态看图能力；产物是结构化提示词，不含生成视频；音轨缺失时节奏段留空不补。",
+   "tagline_zh": "跳舞/变装/穿搭短视频反推成 AI 视频提示词，本地算节奏、多模态看图，动作五要素强制细化，模糊帧不瞎编手指五官。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "m1n-n9-academic-figures-drawer": {
+   "title_zh": "论文配图直接产出可编辑 draw.io 源文件",
+   "why_zh": "它把「看懂论文结构」和「画图」拆开：先解析你的方法描述，再映射成 draw.io 的图层与连线。",
+   "limit_zh": "只认机器学习/深度学习论文的常见图型（框架、模块、张量流、消融、流程）。不处理复杂数学公式排版、不生成矢量插图风格。",
+   "tagline_zh": "从摘要、代码或参考图出发，生成 ICML/NeurIPS 级别的框架图、张量流、消融对比图。改字体、调颜色。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "itshen-source-reading-methodology": {
+   "title_zh": "每句话都能回溯到源码行号的开源仓库精读器",
+   "why_zh": "别的工具给你总结，它给你证据链。锁版本锚点+机器校验+并行子Agent。",
+   "limit_zh": "只服务「读懂+产出」闭环：需已有可编译/可解析的源码树，且产出限于书稿/课程/文档，不生成可运行补丁或重构建议。",
+   "tagline_zh": "带 AI 啃陌生大型仓库，产出书稿/课程/文档。零幻觉是底线：引用逐字节核实，行号实读。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "mumdark-nature-writing-studio-nature-writing-studio": {
+   "title_zh": "657 篇 Nature 原文蒸馏出的学术英语改写器",
+   "why_zh": "不是通用润色，是 87.6% 覆盖率的逐篇观察知识库，外加 5 个确定性 TSV（gap 转换。",
+   "limit_zh": "只改写科学文本为 Nature Portfolio 风格，不生成新内容；需输入英文或可翻译的学术草稿；不处理图表。",
+   "tagline_zh": "投 Nature 前，摘要和引言总被批「不够 native」。它用 657 篇原文逐篇观察出的语料库改写。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "yuanchen-home-cumcm-step-review": {
+   "title_zh": "每步先交方案再写代码的国赛建模流水线",
+   "why_zh": "把「审核」做成流程关卡而非事后检查——思路、代码、论文三段各自设卡，逼你在写代码前就想清算法。",
+   "limit_zh": "只服务国赛真题或完整建模流程，不接单问速解；要求你逐段审核，急性子会嫌慢。",
+   "tagline_zh": "建模题不再闷头冲：每问先给候选思路，你点头才写代码，每段结果自动落成论文草稿，再审完再走下一步。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "gary149-h3-game-sprites-h3-game-sprites": {
+   "title_zh": "视频生成转逐帧精灵图，动作全对齐绿幕抠像",
+   "why_zh": "拿视频模型当动作演员，再用待机帧当锚点锁住角色形变。比直接抽帧多一道数值质检，废帧当场筛掉。",
+   "limit_zh": "只出绿幕抠好的精灵帧和质检报告，不打包成引擎动画、不处理透明背景合成。需要 MiniMax H3 视频 API 权限。",
+   "tagline_zh": "用 MiniMax H3 生成动作视频再切帧，省掉逐帧手绘。角色静止帧打底、待机帧锁形，每招每式都能循环且不跑型。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "locoda-duizuo-reading-companion-skill": {
+   "title_zh": "读书记不住进度？它替你记着，还防剧透",
+   "why_zh": "它把读书变成有状态的对话：记得版本、媒介、进度，还能验证文本细节。每次回应都贴合当下情节。",
+   "limit_zh": "只支持文本类书籍，不处理有声书或视频；需要你主动汇报进度，它不会自动翻页；对长篇复杂情节的跨章记忆有限。",
+   "tagline_zh": "小说、散文、非虚构都能陪读。它记住你读到哪、什么感受，下次接着聊，绝不提前剧透。读不下去时，它会问你怎么了。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "xiaohuailabs-xiaohu-ip-studio": {
+   "title_zh": "31个固定角色出演的正文配图，不靠选风格靠选认知锚点",
+   "why_zh": "机制上反着来：不让你从风格库里挑「好看」，而是先锁定文章里最扎人的那个认知点，再让固定角色把它演出来。",
+   "limit_zh": "只服务中文深度文/方法拆解类正文配图，不做封面、不做信息图、不做多格漫画。需要你提供原文或清晰段落。",
+   "tagline_zh": "深度文配图总在「选个好看的图」上翻车？它先挑认知锚点，再现编隐喻，最后反 PPT 自检。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "fuwenhao12-academic-ref-inserter": {
+   "title_zh": "docx 里引文乱序、缺超链接时，它按 GB/T 7",
+   "why_zh": "它读的是 docx 内部的引用关系，不是表面文字，所以能真正重排编号并同步正文，而不是只改个格式。",
+   "limit_zh": "只处理 docx 文件，且要求文档内已有可识别的引文标记；纯文本或 PDF 需先转换。不负责检索文献元数据。",
+   "tagline_zh": "改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "zy-zmc-tianming-skill": {
+   "title_zh": "七卷本起步的协同写作系统，大纲到存档全管",
+   "why_zh": "它把写作拆成七个指令，每个阶段都强制对照《世界基石》《角色档案》等知识库。",
+   "limit_zh": "必须自备五个 Markdown 知识库文件（世界基石、世界观规则、角色档案、档案事件、文风样本），缺一个就罢工。",
+   "tagline_zh": "写长篇最怕前后矛盾、伏笔烂尾。这套系统用外部知识库锁死世界观和文风，每章动笔前先体检，节奏失控会直接叫停。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "vivixiao980-xhs-cover-skill": {
+   "title_zh": "先出图后改字的小红书封面，风格学一次就记住",
+   "why_zh": "把「生成」和「编辑」拆成两条独立通道：改字走局部重绘，不推翻整张构图；风格学习单独存模板。",
+   "limit_zh": "只认 GPT Image 2 和 Gemini CLI 两条出图通道，本地无 Gemini 密钥时编辑功能不可用。",
+   "tagline_zh": "GPT Image 2 打底、Gemini 兜底，封面改字不重画。你说「学这个风格」，它提取配色排版，下次直接套用。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "xianxie6-stamp-edge-skill": {
+   "title_zh": "原图四周直接打半圆孔，真透明背景的邮票生成器",
+   "why_zh": "孔洞不是画上去的白色模拟，而是 alpha=0 的真透明；投影柔和且只在孔洞外缘，叠深色底不露灰块。",
+   "limit_zh": "只处理位图（PNG/JPG/WebP），不认 SVG/PDF；输出固定 300 DPI 的 PNG。",
+   "tagline_zh": "不用抠图、不用白边，孔洞处 alpha 全零，拖到深色海报上也干净。多张还能自动拼成等宽瀑布流邮票合集。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "larashero3-dotcom-lieflat-less-ai-tone": {
+   "title_zh": "只删清单上那七种AI腔，其余一字不动",
+   "why_zh": "靠显式白名单而非模型直觉，改什么由你定死。规则透明可审计，不会自作主张把个人风格也当AI味洗掉。",
+   "limit_zh": "只处理SKILL.md列出的规则；未命中文字原样保留。不识别清单外的AI痕迹，也不动文章框架。适合成稿清理。",
+   "tagline_zh": "成稿后过一遍，把「值得注意的是」「总的来说」这类机器惯用语揪出来改掉。不在清单里的句子原样放行，不重排段落。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "chengyi-ai-native-subtitle-quote-image-native-subtitle-quote-image": {
+   "title_zh": "视频字幕截图直接拼社交长图，不重绘不超分",
+   "why_zh": "把「选句→取帧→裁切→拼图」做成一条流水线，且原生字幕与脚本字幕两种模式严格分开，不混不糊。",
+   "limit_zh": "只认本地视频或你有权处理的在线视频；字幕必须已烧录在画面内，外挂字幕不取。输出为 3:4 长图，不做竖版单图。",
+   "tagline_zh": "别再用播放器截图拼图了。它从视频帧里取原生字幕，自动裁切、拼成 3:4 长图，连台词间隔和主图比例都替你调好。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "qianye-wuyu-yueyuan-bazi": {
+   "title_zh": "先立假设再找证据的子平八字推演台",
+   "why_zh": "别的 skill 给结论，它给裁决链。规则分五级、冲突有优先级，用神过六维检查才放行——像审稿人。",
+   "limit_zh": "只覆盖子平体系与盲派交叉验证，不碰紫微斗数、奇门遁甲。需用户提供公历出生时间与地点；无准确时辰则旺衰。",
+   "tagline_zh": "不信一眼断命。它把《渊海子平》到《穷通宝鉴》拆成可复核的规则层，每步留证据、标不确定度，盲派交叉验证后才给结论。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "xiaoou-waou-xiaoou-gzh-layout": {
+   "title_zh": "Markdown 进去，公众号编辑器样式直接粘贴出来",
+   "why_zh": "它把排版偏好固化成主题，输入杂格式、输出统一风格；目录、关键词标记、图片/GIF 位置都替你决定好。",
+   "limit_zh": "只输出公众号编辑器可粘贴的 HTML，不负责生成图片、不处理复杂表格、不适用于普通网页或 PPT。",
+   "tagline_zh": "Word、PDF、纯文本都能进，按你的主题偏好自动配好章节编号、引言卡片、代码块和署名区。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "work-fisher-reference-first-motion-director-reference-first-motion-director": {
+   "title_zh": "先出整片视觉总表，再逐镜找参考的导演工作流",
+   "why_zh": "先定整片视觉骨架再逐镜找参考，避免边剪边想导致的风格漂移；本地知识库让参考检索可追溯、可复用。",
+   "limit_zh": "只认本地《剪辑学习》知识库，未先建库或库内无对应案例时它不会硬编；产物止于 2K 参考图和视频提示词。",
+   "tagline_zh": "口播稿不直接进剪辑，先路由成人物/证据/录屏/素材四类镜头，存好总表和动效清单，再为每镜检索精确参考。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "sherlyryn-make-tape-collage": {
+   "title_zh": "照片旁留一块暖白纸，胶带拼贴不遮原图",
+   "why_zh": "不是把胶带糊在照片上，而是先分离画布：原图无损，拼贴独立成区。构图由程序算，不靠手抖。",
+   "limit_zh": "只吃单张照片或文字描述，不做多图合成；输出是栅格图（PNG/JPG），不返回可编辑的矢量分层文件。",
+   "tagline_zh": "要胶带拼贴又舍不得原图？它把照片完整保留，另配暖白纸板用胶带做局部诠释。适合手账、装饰画，出图即贴纸质感。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "v-yun-vuln-report-skill": {
+   "title_zh": "漏洞确认后直接产出可提交的 DOCX 报告",
+   "why_zh": "把报告格式变成硬门禁而非软建议：验证不过不出稿，截图缺失不落盘，驳回自动追补。",
+   "limit_zh": "只收已确认的漏洞，不负责挖掘和验证；只出 DOCX，不生成 PDF/Markdown；截图必须真实存在。",
+   "tagline_zh": "查重、分层验证门、固定骨架、Step 式 PoC、真实截图、语义化命名、放对目录——从确认到成稿一条龙。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "songzhi-lab-chinese-font-selector-chinese-font-selector": {
+   "title_zh": "中文字体选配不靠眼缘，靠授权安全分级和场景矩阵",
+   "why_zh": "不拿审美当借口跳过法律风险。把字体决策拆成授权安全、场景气质、排版规则三层，先筛掉不能商用的。",
+   "limit_zh": "只覆盖中文为主的设计场景，不含纯英文排版、品牌 VI 全案、动态字体。免费商用判断基于内置库。",
+   "tagline_zh": "小红书卡片、产品册、网页、图书、海报——每个场景先查授权再谈气质。内置 OFL 铁稳/厂商免费/慎用三级，避头尾。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "liufanshan11-cumcm-c-problem-lfs": {
+   "title_zh": "C题专用：从附件到LaTeX成稿的72小时全流程建模",
+   "why_zh": "内置评委视角终检机制，每一步都对照评分标准自查；72小时方案按比赛节奏倒排。",
+   "limit_zh": "只服务C题（本科组），不处理A/B/D/E题套路；需要用户提供附件数据或明确题目背景，不负责从零虚构赛题。",
+   "tagline_zh": "只认国赛C题，不碰A/B/D/E。从选题判断到评委视角终检，连LaTeX代码工程都替你生成，省下通宵排版的命。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "larashero3-dotcom-lieflat-charts": {
+   "title_zh": "图表先问数据语义再选色，报告模板十二套",
+   "why_zh": "以 Mono 为保底，按数据语义自动挑彩色预设，也可用你给的色板——但同一份交付绝不混色系。",
+   "limit_zh": "只认 Lupi/Basics/Glance/Maps/Interactive 五类图表实现；地图必须显式点名才启用。",
+   "tagline_zh": "从真实图表库实现生成 HTML，不靠截图或手写。十二套中英整页报告模板，地图只在你要时才启用，色系不混搭。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "feichangai-team-china-compliance-skills-cn-compliance-guard": {
+   "title_zh": "上架前扫一遍，广告法违禁词当场标红",
+   "why_zh": "把广告法、消保法的抽象条款编译成可执行的检查清单，连平台SEO偏好也纳入同一套规则。",
+   "limit_zh": "只认简体中文营销文案，不覆盖合同、公告等非广告文体；替换建议基于通用合规，不保证特定平台审核必过。",
+   "tagline_zh": "200+违禁词、6类法律风险、5大平台SEO规则一次查完。不只告诉你哪里违规，还给出能安全替换的说法。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "mikuz12-exampass-assistant": {
+   "title_zh": "期末复习把整门课压成三张纸的讲义生成器",
+   "why_zh": "不是摘要工具，是教学引擎：先按章节拆解知识密度，再决定讲多深、考什么。讲解口吻像教授划重点。",
+   "limit_zh": "只吃课程资料，不接教材以外的杂文档；输出是复习讲义和测试题，不含记忆曲线排期；图片需文字清晰，手写潦草会识别错。",
+   "tagline_zh": "PPT、Word、PDF、截图混着丢进去，按章节吐出知识清单、教授式讲解和自测题。不用自己划重点。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "juneyaooo-xhs-writer-skill": {
+   "title_zh": "素材丢进来，小红书图文或视频稿成套落盘",
+   "why_zh": "它不只会写文案——把素材拆成一套能直接发的成品：图文模式出卡片，视频模式出分镜。",
+   "limit_zh": "只认小红书单篇笔记的格式，不写公众号或抖音脚本；素材要你自己给，它不负责找图找视频；产物是排版好的卡片/脚本+文案。",
+   "tagline_zh": "不用再对着空白页想封面、想文案、想话题。丢文字/图片/视频进去，出来就是竖版卡片或分镜脚本。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
   }
  },
  "gate": {
