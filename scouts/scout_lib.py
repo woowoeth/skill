@@ -655,24 +655,70 @@ def refresh() -> dict:
     # 店长不该也不需要手写它；存档补齐后重建一次就自动更新，没有第二份真相。
     prep_ev = prep.load_all()
     prep.annotate(items, prep_ev)
-    # 「店长推荐」（英文 Editor's picks）= 编辑读过原文亲挑的，由 editorial/editor_picks.json 驱动，最新 12 件轮换。
-    # 09-03 同事查出：pick 标记只在 8/28 那轮门禁时打过一次，之后没有任何流程更新它，首页那组 12 件十二天没换。
-    # 编辑登记表（免过判官那条道）和展示标记是两套，这里接上：登记即上榜，旧的自然轮出。
+    # 「店长推荐」（英文 Editor's picks）—— 首页第一眼的 12 张卡，就是这家店的脸。
+    # 店主 09-03：「店长推荐你自己想一下推荐标准，我觉得至少要有图」。标准定这样（docs/CURATION.md 同步）：
+    #   硬条件 ① 有作者真图，且文件真在仓里     ② 编辑读过原文挑的（editorial/editor_picks.json，理由 ≥30 字）
+    #          ③ 四段文案齐全，标题不是套路开头、不是半句话   ④ 分散：同一分类最多 4 件，同一仓最多 1 件
+    #   补位   编辑挑的不够 12 件时，用店主心选里有真图、文案齐的补（心选是店主亲手过的眼）
+    #   排序   登记时间新的在前 → 同日先摆过了红线扫描存档的 → 再按上架时间、id 稳定
+    # 09-03 同事查出：pick 标记只在 8/28 那轮门禁时打过一次，之后没有任何流程更新它，首页那组十二天没换。现在每次 refresh 重算。
     _eds = (read_json(os.path.join(ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
-    def _pick_key(it):
+    _scan = read_json(os.path.join(ROOT, "scouts", "scan_archive.json"), {}) or {}
+    _scan = _scan.get("entries") if isinstance(_scan.get("entries"), dict) else {}   # scan_archive.json 的形状是 {"entries": {sid: …}}
+    _ban = re.compile(r"^(只认|只剪|拒绝|把|一句话|一张|用)")
+    _half = re.compile(r"[被的是把在和与或了到会就将向给让对从]。$")
+    _REAL = ("hero", "artwork", "ours", "diagram")
+
+    def _pick_entry(it):
         e = _eds.get((it.get("repo") or "").lower())
-        if not e:
+        if not e or len((e.get("reason") or "").strip()) < 30:
             return None
         want = [q.strip("/") for q in ([e.get("path")] if e.get("path") else []) + list(e.get("paths") or [])]
         if want and (it.get("path") or "").strip("/") not in want:
             return None
-        # 同一天登记的：有作者真图的排前面（推荐位要看得见东西），再按上架时间、id 稳定
-        return (e.get("picked_at") or "", 1 if it.get("cover_kind") in ("hero", "artwork", "ours", "diagram") else 0,
-                it.get("added_at") or "", it.get("id") or "")
-    _cands = sorted((( _pick_key(it), it) for it in items.values() if not it.get("hide") and _pick_key(it)), key=lambda kv: kv[0], reverse=True)
-    _top = {it["id"] for _, it in _cands[:12]}
+        return e
+
+    def _has_real_cover(it):
+        u = it.get("cover") or ""
+        if it.get("cover_kind") not in _REAL or not u:
+            return False
+        if u.startswith("/skill/"):
+            return os.path.exists(os.path.join(ROOT, u[len("/skill/"):]))
+        return u.startswith("http")
+
+    def _copy_ok(it):
+        if any(len((it.get(k) or "").strip()) < 8 for k in ("title_zh", "tagline_zh", "why_zh", "limit_zh")):
+            return False
+        t = (it.get("title_zh") or "").strip()
+        return not _ban.match(t) and not _half.search(t) and not any(_half.search((it.get(k) or "").strip()) for k in ("tagline_zh", "why_zh"))
+
+    _cands = []
+    for it in items.values():
+        if it.get("hide"):
+            continue
+        e = _pick_entry(it)
+        if not e or not _has_real_cover(it) or not _copy_ok(it):
+            continue
+        _cands.append(((e.get("picked_at") or "", 1 if it.get("id") in _scan else 0, it.get("added_at") or "", it.get("id") or ""), it))
+    _cands.sort(key=lambda kv: kv[0], reverse=True)
+    # 编辑挑的凑不够 12 时，用店主心选补位：心选是店主亲手过的眼，读过原文这条它天然满足；同样要有真图、文案齐。
+    _hearts = set((read_json(os.path.join(ROOT, "editorial", "hearts.json"), {}) or {}).get("ids", []))
+    _heart_cands = sorted(((it.get("added_at") or "", it.get("id") or ""), it) for it in items.values()
+                          if not it.get("hide") and it.get("id") in _hearts and _has_real_cover(it) and _copy_ok(it)
+                          and not _pick_entry(it))
+    _heart_cands.sort(key=lambda kv: kv[0], reverse=True)
+    _top, _per_cat, _per_repo = set(), {}, set()
+    for _, it in _cands + _heart_cands:
+        cat, repo = it.get("category") or "", (it.get("repo") or "").lower()
+        if _per_cat.get(cat, 0) >= 4 or repo in _per_repo:
+            continue
+        _top.add(it["id"]); _per_cat[cat] = _per_cat.get(cat, 0) + 1; _per_repo.add(repo)
+        if len(_top) >= 12:
+            break
     for it in items.values():
         it["pick"] = it.get("id") in _top
+    if len(_top) < 12:
+        print(f"[lib] 店长推荐只凑出 {len(_top)} 件（候选 {len(_cands)}）—— 有图、文案齐、读过原文的不够 12 件，缺的不硬凑")
     visible = [it for it in items.values() if not it.get("hide")]
     # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars.
     # 完全并列的再按 id —— 否则并列项的先后取决于 glob() 的文件系统顺序，同一份数据

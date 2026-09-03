@@ -1187,6 +1187,21 @@ def main() -> None:
     print(f"\n【23】编辑挑的 {len(_eds)} 件 · 理由不足 30 字 {len(_short)} 件")
     if _short:
         err(f"{len(_short)} 件编辑挑的理由不到 30 字（门闸不认）：{', '.join(_short[:5])}")
+    # 【24】店长推荐：每一件都得有作者真图（文件真在）且四段文案齐 —— 店主 09-03：「至少要有图」。标准见 scout_lib.refresh()。
+    _picks = [_it for _it in (items.values() if isinstance(items, dict) else items) if _it.get("pick") and not _it.get("hide")]
+    _bad_pick = []
+    for _it in _picks:
+        _u = _it.get("cover") or ""
+        _ok_cover = _it.get("cover_kind") in ("hero", "artwork", "ours", "diagram") and _u and (
+            os.path.exists(os.path.join(lib.ROOT, _u[len("/skill/"):])) if _u.startswith("/skill/") else _u.startswith("http"))
+        _ok_copy = all(len((_it.get(k) or "").strip()) >= 8 for k in ("title_zh", "tagline_zh", "why_zh", "limit_zh"))
+        if not (_ok_cover and _ok_copy):
+            _bad_pick.append((_it["id"], "没真图" if not _ok_cover else "文案缺"))
+    print(f"\n【24】店长推荐 {len(_picks)} 件 · 不合格 {len(_bad_pick)} 件")
+    if _bad_pick:
+        err(f"{len(_bad_pick)} 件店长推荐没有真图或文案不齐：{_bad_pick[:5]} —— 推荐位是店的脸，refresh() 应该已经筛掉，查 scout_lib")
+    if len(_picks) > 12:
+        err(f"店长推荐 {len(_picks)} 件 > 12")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:
