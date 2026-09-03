@@ -95,10 +95,24 @@ def main() -> int:
     # 而库房里的货是**未判**，不是**判过不要**，里面本来就混着大量好货。
     # 拿「没判过」当「不好」，任何判据都会被压平。三轮结论都可能是这个错造出来的。
     # 真负样本：按问一/问二/问三拒收的，上游正文抓在 methods_rejected/。
-    neg_dir = os.path.join(ROOT, "methods_rejected")
-    neg = ["!" + f[:-3] for f in sorted(os.listdir(neg_dir))] if os.path.isdir(neg_dir) else []
+    # **难负样本优先。** 2026-09-02 sweep 第一轮上架的 5 件，判官自己的理由每条都写着
+    # 「但本质是流程编排 / 安装配置 / 脚本封装」——那正是 08-28 砍架清掉的
+    # useful-but-generic 那一类，而它们拿了 68-75 分、和店主指名的 OJO/goldie（72）
+    # 挤在同一档。此前 +61pt 是拿问一/问二/问三拒收的**烂货**当负样本测的，
+    # 从没拿「扎实但通用」的验过 —— 那才是这家店真正的分界线。
+    # editorial/hard_negatives.json 就是 08-28 那次砍掉、且不在心选里的 174 件
+    # （150 件有上游正文存档），本店唯一一批带着「有用但通用」标签的货。
+    hn = os.path.join(ROOT, "editorial", "hard_negatives.json")
+    neg = []
+    if os.path.exists(hn) and not os.environ.get("EASY_NEG"):
+        neg = list(json.load(open(hn, encoding="utf-8")).get("有存档") or [])
+        print(f"负样本 = 难负样本（08-28 判为「有用但通用」的）{len(neg)} 件")
     if not neg:
-        print("methods_rejected/ 是空的 —— 先跑抓取，别拿库房当负样本"); return 2
+        neg_dir = os.path.join(ROOT, "methods_rejected")
+        neg = ["!" + f[:-3] for f in sorted(os.listdir(neg_dir))] if os.path.isdir(neg_dir) else []
+        print(f"负样本 = 易负样本（问一/二/三拒收的）{len(neg)} 件  （EASY_NEG=1 或没有难负样本时）")
+    if not neg:
+        print("没有任何负样本可用"); return 2
     random.seed(20260902)
     random.shuffle(pos); random.shuffle(neg)
     ho_pos, ho_neg = pos[:a.holdout], neg[:a.holdout]
@@ -190,7 +204,9 @@ def main() -> int:
             best = ((a - b) * 100, th, a, b)
     lift, th, a, b = best
     print(f"\n最佳分数线 ≥{th}：正样本过 {a*100:.0f}% · 负样本过 {b*100:.0f}%")
-    print(f"**区分力 {lift:+.0f}pt**   （题材词 +1pt · 上游形态 +6pt · 上一版二元问法 −17pt）")
+    print(f"**区分力 {lift:+.0f}pt**   （题材词 +1pt · 上游形态 +6pt · 二元问法 −17pt · 易负样本 +61pt）")
+    print("  这次对面站的是「扎实但通用」的货 —— 这才是这家店真正的分界线。"
+          "易负样本上的 +61pt 证明它分得开好和烂，不证明它分得开好和平庸。")
     print("\n" + ("→ 够格当门闸。**但门槛是在留出集上挑的，真用之前要在新一批上再验一次**，"
                   "否则就是拿留出集当训练集。" if lift >= 25 else
                   "→ 还不够格。"))
