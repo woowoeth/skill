@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 183 skills.
+# Full corpus, plain text. 188 skills.
 
 ========================================================================
 ## vintage-travel-ticket
@@ -70,6 +70,28 @@ git clone --depth 1 https://github.com/anthropics/claude-plugins-community.git T
 Repository: anthropics/claude-plugins-community The repository ships 1 skills in total.
 
 ========================================================================
+## bigfish-ink-wash-photo
+## 把照片画成寥寥数笔、大面积留白的当代写意水墨
+URL: https://ourword.ai/skill/i/bigfish-zzz-bigfish-ink-wash-photo/
+Source: https://github.com/BigFish-zZz/bigfish-ink-wash-photo
+Updated: 2026-09-03
+Tags: images, skill, BigFish-zZz
+
+Not reconstruction — only essential identifying anchors; canvas direction is decided from the photo's subject extension and visual center before generating.
+
+### What does this skill do?
+Not reconstruction — only essential identifying anchors; canvas direction is decided from the photo's subject extension and visual center before generating.
+
+### Why is it worth installing?
+It explicitly avoids two fakes: photorealistic pasted subjects, and jelly-like AI watercolor marks.
+
+### How do you install it?
+git clone --depth 1 https://github.com/BigFish-zZz/bigfish-ink-wash-photo.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: BigFish-zZz/bigfish-ink-wash-photo The repository ships 1 skills in total.
+
+========================================================================
 ## tait-crt-interface-skill
 ## 把人像或物件重画成 80 年代 CRT 界面里的位图漫画
 URL: https://ourword.ai/skill/i/tait-tt-tait-crt-interface-skill/
@@ -90,6 +112,94 @@ git clone --depth 1 https://github.com/TaiT-tt/tait-crt-interface-skill.git Then
 
 ### Where does it come from?
 Repository: TaiT-tt/tait-crt-interface-skill The repository ships 1 skills in total.
+
+========================================================================
+## starryear-threefold-memory
+## 一张旅行照片出成三联画：所见、所在、所留
+URL: https://ourword.ai/skill/i/starryear-starryear-threefold-memory/
+Source: https://github.com/Starryear/Starryear-Threefold-Memory
+Updated: 2026-09-03
+Tags: everyday, skill, Starryear
+
+Top: the photo recomposed as large fragments of visual memory. Middle: the untouched photo as evidence. Bottom: route, direction and mood drawn as a memory map.
+
+### What does this skill do?
+Top: the photo recomposed as large fragments of visual memory. Middle: the untouched photo as evidence. Bottom: route, direction and mood drawn as a memory map.
+
+### Why is it worth installing?
+Every route, node, fragment, pictogram and palette must derive from this photo — no hard-coded places, no decorative constellations.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Starryear/Starryear-Threefold-Memory.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Starryear/Starryear-Threefold-Memory The repository ships 1 skills in total.
+
+========================================================================
+## deconstructed-duotone-poster
+## 把照片主体拆成平面色块，排进双色纸纹编辑海报
+URL: https://ourword.ai/skill/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/
+Source: https://github.com/Lixorn/deconstructed-duotone-poster/tree/HEAD/deconstructed-duotone-poster
+Updated: 2026-09-03
+Tags: images, skill, Lixorn
+
+Four fixed layouts (3:4 nine-square, 3:4 four-panel, 4:3 six-square, 4:3 four-panel) with locked coordinates; ivory paper plus one ink of your choice.
+
+### What does this skill do?
+Four fixed layouts (3:4 nine-square, 3:4 four-panel, 4:3 six-square, 4:3 four-panel) with locked coordinates; ivory paper plus one ink of your choice.
+
+### Why is it worth installing?
+No drawing, hatching or photo detail — reduced flat masses with separate halation and restrained ink bleed, so it reads as printed, not filtered.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Lixorn/deconstructed-duotone-poster.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Lixorn/deconstructed-duotone-poster The repository ships 1 skills in total.
+
+========================================================================
+## dnr-flat-pic
+## 把照片压成无渐变、高饱和、一眼认得出的扁平插画
+URL: https://ourword.ai/skill/i/createlafont-dnr-flat-pic/
+Source: https://github.com/CreateLafont/dnr-flat-pic
+Updated: 2026-09-03
+Tags: images, skill, CreateLafont
+
+Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
+
+### What does this skill do?
+Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
+
+### Why is it worth installing?
+It defines simplification as checkable rules — fixed-HSB solid fills, crisp edges, no light effects — so a set stays in one language.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CreateLafont/dnr-flat-pic The repository ships 1 skills in total.
+
+========================================================================
+## arch-kele-structure-photo
+## 把一张照片画成分层爆炸的水彩结构研究图
+URL: https://ourword.ai/skill/i/architect-kele-arch-kele-structure-photo/
+Source: https://github.com/Architect-kele/arch-kele-structure-photo
+Updated: 2026-09-03
+Tags: everyday, skill, Architect-kele
+
+Two outputs per photo: a clean structural-study artwork, and one with the untouched source inset top-right. Warm paper, construction lines, restrained labels, palette derived from the photo.
+
+### What does this skill do?
+Two outputs per photo: a clean structural-study artwork, and one with the untouched source inset top-right. Warm paper, construction lines, restrained labels, palette derived from the photo.
+
+### Why is it worth installing?
+Geometry must stay recognizable — architecture, objects, people, plants, streetscapes all follow one method; it is not a watercolor filter.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Architect-kele/arch-kele-structure-photo.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Architect-kele/arch-kele-structure-photo The repository ships 1 skills in total.
 
 ========================================================================
 ## a2ui-renderer

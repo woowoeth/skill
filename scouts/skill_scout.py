@@ -983,6 +983,13 @@ def _taste_pass(it: dict) -> str:
     lim = (it.get("limit_zh") or "").strip()
     if len(lim) < 20:
         return _log(False, f"局限只有 {len(lim)} 字（要 ≥20）：{lim}")
+    # **店主亲手标过的（hearts）和指名的（taste_refs）不过判官。** 它们是判据的来源，不是对象。
+    # 2026-09-03 栽的：五件店主从公众号指名的货被判官打 72、被我按「<80」撤下 —— 判据判掉基准，
+    # 是判据错。hearts.json 第三条本来就写着这句，我在门闸里没实现它。
+    _refs = {k.lower() for k in (lib.read_json(os.path.join(lib.ROOT, "editorial", "taste_refs.json"), {}) or {}).get("items", {})}
+    _hearts = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), {}) or {}).get("ids", []))
+    if (it.get("repo") or "").lower() in _refs or sid in _hearts:
+        return _log(True, "店主指名 / 心选 —— 不过判官，直接放行")
     # 品味判据。**读不到正文或判官不通 → 不当作过**（沿用「没扫到不算干净」那条）。
     sc, why = taste_score(it)
     if sc < 0:
