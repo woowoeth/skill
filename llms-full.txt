@@ -1,29 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 240 skills.
-
-========================================================================
-## editable-design
-## 固定画布出图还附可编辑源文件与鼠标编辑器
-URL: https://ourword.ai/skill/i/yejy53-editable-design-editable-design/
-Source: https://github.com/yejy53/Editable-Design/tree/HEAD/skills/editable-design
-Updated: 2026-09-03
-Tags: images, skill, yejy53
-
-Posters, covers, menus, social cards—get PNG plus editable HTML, a mouse editor with layer scan/explode, and a.
-
-### What does this skill do?
-Create and render fixed-canvas editable visual designs, including posters, marketing graphics, covers, menus, banners, and social cards. Default outputs include fixed and editable HTML, PNG, a mouse editor with scan and exploded layer views, and an evidence-backed Design Replay. Do not use for websites, slide decks, videos, or standalone logo systems. Always use this skill when the project contain
-
-### Why is it worth installing?
-Turns design iterations into auditable artifacts: every version carries a replayable trace, so edits target exact layers instead.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yejy53/Editable-Design.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yejy53/Editable-Design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 2 skills in total.
+# Full corpus, plain text. 238 skills.
 
 ========================================================================
 ## styleseed
@@ -5696,28 +5674,6 @@ git clone --depth 1 https://github.com/Zgdfsgd/pet-nutritionist.git Then point y
 
 ### Where does it come from?
 Repository: Zgdfsgd/pet-nutritionist The repository ships 1 skills in total.
-
-========================================================================
-## cn-aigc-detector
-## 五维统计信号，专挑中文AI腔的段落级检测器
-URL: https://ourword.ai/skill/i/feichangai-team-china-compliance-skills-cn-aigc-detector/
-Source: https://github.com/feichangai-team/china-compliance-skills/tree/HEAD/skills/cn-aigc-detector
-Updated: 2026-05-27
-Tags: everyday, skill, feichangai-team
-
-Sentence-length variance, TTR, structural templates, starter uniformity, punctuation density—cross-checked to.
-
-### What does this skill do?
-Detect AI-generated Chinese text using 5 statistical signals: sentence length variance (perplexity), vocabulary TTR (burstiness), structural pattern matching (首先...其次...最后), sentence starter uniformity, and punctuation density analysis. Highlights suspicious sections. Use when: verifying if Chinese text is AI-generated, checking content authenticity before publishing, auditing user-generated conte
-
-### Why is it worth installing?
-Instead of a whole-text score, it localizes where signals overlap per paragraph. Decomposes 'AI flavor' into computable stats.
-
-### How do you install it?
-git clone --depth 1 https://github.com/feichangai-team/china-compliance-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: feichangai-team/china-compliance-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## cn-compliance-guard

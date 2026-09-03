@@ -485,6 +485,10 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
             _u = it["cover"] or ""
             if _u.startswith("/skill/"):
                 _wh = cover_dims(os.path.join(lib.ROOT, _u[len("/skill/"):]))
+                # 09-03：托管下来的是 GitHub 预览卡（1200×600/630）就标 og —— 卡片上不铺，详情页才放；
+                # 之前不标，33 件新货全顶着预览卡上了首页。
+                if _wh and (tuple(_wh) in ((1200, 600), (1200, 630))) and not it.get("cover_kind"):
+                    it["cover_kind"] = "og"
                 if _wh:
                     it["cover_w"], it["cover_h"] = _wh
         if not save_method(it):
