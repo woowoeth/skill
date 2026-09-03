@@ -120,6 +120,19 @@ def main() -> int:
     feed = json.load(open(os.path.join(ROOT, "skills", "feed.json"), encoding="utf-8"))["skills"]
     cur = json.load(open(os.path.join(ROOT, "editorial", "curation.json"), encoding="utf-8"))
     todo = [x for x in feed if (x.get("cover_kind") in ("og", "none", None, "")) or not x.get("cover")]
+    # 09-03：CI 每班只跑 --max 40，若每次都从头扫同一批「确实没图」的，新货永远排不到。
+    # 试过没取到的记 cover_tried_at，7 天内不再试；没试过的排最前。
+    import datetime as _dt
+    _today = _dt.date.today()
+    def _tried_recently(x):
+        t = (cur["items"].get(x["id"], {}) or {}).get("cover_tried_at")
+        try:
+            return t and (_today - _dt.date.fromisoformat(t)).days < 7
+        except Exception:
+            return False
+    todo = [x for x in todo if not _tried_recently(x)]
+    todo.sort(key=lambda x: (1 if (cur["items"].get(x["id"], {}) or {}).get("cover_tried_at") else 0, x.get("added_at") or ""), reverse=False)
+    todo.sort(key=lambda x: 0 if not (cur["items"].get(x["id"], {}) or {}).get("cover_tried_at") else 1)
     print(f"在架 {len(feed)} · 靠预览卡或无图的 {len(todo)} 件 · 本轮试 {min(len(todo), a.max)} 件 · 翻树={a.tree}\n", flush=True)
     got = 0
     for x in todo[:a.max]:
@@ -141,6 +154,7 @@ def main() -> int:
             got += 1
             print(f"  ✓ {sid[:46]:46s} {w}x{h}  [{src}] {u[-50:]}", flush=True)
         else:
+            e["cover_tried_at"] = _today.isoformat()
             if e.get("cover_kind") in ("og", None) or not e.get("cover"):
                 e["cover"] = ""
                 e["cover_kind"] = "none"
