@@ -32,6 +32,10 @@ permissions:
 # 之前整条工作流占锁，判 800 个候选 × 3 票要一两个小时，restock 和 enrich-backfill 全排在后面；
 # 而 GitHub 同一个锁组只留一个 pending —— 新来的把老的 pending 踢掉。改标题那趟就是这样等了一小时。
 # 「确保每日更新」的前提是进货不能被判官堵住。
+# 09-03 第一轮积压：管线那步 TASTE_MIN=80 拒了 72 分的 8 件，后面「补扫红线」那步没带这个变量，
+# release_clean 里的 _taste_pass 按默认 60 又把它们放上了架。同一条工作流里的门槛只能有一个 —— 放到 job 级。
+env:
+  TASTE_MIN: "80"
 jobs:
   find_and_judge:
     runs-on: ubuntu-latest
