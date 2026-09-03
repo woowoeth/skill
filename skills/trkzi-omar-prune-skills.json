@@ -2,14 +2,14 @@
  "id": "trkzi-omar-prune-skills",
  "kind": "skill",
  "name": "skill-library-pruner",
- "title_zh": "先盘点再动手，删技能前会问你三遍的整理师",
- "tagline_zh": "技能库长到 200 个、一半没碰过？它先列清单标出从未使用的，再逐个禁用试运行。",
- "tagline_en": "Skills piled up, half unused? It inventories, flags never-used, disables safely, then deletes only what you.",
+ "title_zh": "先盘点后动手的技能库瘦身师，删前必问三遍",
+ "tagline_zh": "技能多到找不到北？它先列全清单、标出零使用和重复项，再让你逐个确认。不点头的绝不删，删完还能反悔。",
+ "tagline_en": "Too many skills? It inventories all, flags unused & duplicates, then asks before each delete. Nothing vanishes.",
  "desc_en": "Read-first, reversible workflow for pruning an overgrown Claude Code skills library. Inventories every skill, spots duplicates and dead weight, reports what has not been used, disables safely, then deletes only what goes unmissed. Use when the user wants to prune, declutter, audit, consolidate, or shrink their skills, or says \"I have too many skills\", \"clean up my skills\", \"which of my skills are ",
- "why_zh": "别人直接删，它先禁用一周。用「未使用时长」排序而非文件名，逼你面对真实习惯，而不是凭印象砍错宝贝。",
- "why_en": "Others delete outright; it disables first. Ranks by last-used date, not filename, forcing honest pruning instead of gut-feel.",
- "limit_zh": "只处理 Claude Code 的 skills 目录，不碰插件或全局配置；需要你手动确认每个禁用项，不能无人值守。",
- "limit_en": "Only prunes Claude Code's skills dir, not plugins or global config; requires manual confirmation per disable—no unattended mode; deleted skills.",
+ "why_zh": "别的清理工具上来就删，它先建只读清单，把「禁用」和「删除」分成两步——先安全关掉，等你确认真不怀念。",
+ "why_en": "Unlike delete-first tools, it separates disabling from deleting: quarantine first, confirm you don't miss it, then purge.",
+ "limit_zh": "只认 Claude Code 的 skills 目录结构；不碰全局配置或非本项目的技能。",
+ "limit_en": "Only handles Claude Code's skills folder; ignores global config or non-project skills. Outputs report + disable/delete actions; no backup—ensure.",
  "repo": "Trkzi-Omar/prune-skills",
  "owner": "Trkzi-Omar",
  "path": "",
@@ -21,7 +21,7 @@
  "category": "work",
  "fun_score": 0.43,
  "pick": false,
- "hide": false,
+ "hide": true,
  "source": "human-suggested",
  "added_at": "2026-09-03",
  "install": {
@@ -32,5 +32,5 @@
  "cover": "/skill/assets/covers/trkzi-omar-prune-skills.png",
  "cover_w": 1546,
  "cover_h": 124,
- "title_en": "Inventory-first skill pruner that asks thrice before."
+ "title_en": "Skill-library pruner that inventories before it deletes"
 }

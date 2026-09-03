@@ -2,14 +2,14 @@
  "id": "zhx8702-wechat-colleague",
  "kind": "skill",
  "name": "wechat-colleague",
- "title_zh": "微信聊天记录里蒸馏出可对话的同事 AI",
- "tagline_zh": "不用翻聊天记录猜人设。它把你们的历史对话变成能问能聊的同事分身，连说话习惯都像本人。",
- "tagline_en": "Stop guessing from chat logs. Turn your WeChat history into a colleague AI that talks like the real person.",
+ "title_zh": "聊天记录里炼出同事数字替身，代码按需现写",
+ "tagline_zh": "不用翻遍半年群聊，它把每个人的说话习惯、决策偏好、知识盲区蒸馏成可对话的替身。全程文档驱动，代码现写现跑。",
+ "tagline_en": "Stop scrolling endless chats. It distills each colleague's tone, biases, and blind spots into a talkable AI twin.",
  "desc_en": "微信同事蒸馏器 — 从微信聊天记录中解密数据、查看消息、蒸馏人物 AI Skill。全流程文档驱动，按需生成代码。",
- "why_zh": "文档驱动，按需生成代码，不搞黑箱。解密、读取、蒸馏全流程透明，你能看到每一步在做什么。",
- "why_en": "Document-driven and code-on-demand, no black boxes. Every step from decrypt to distill is transparent and auditable.",
- "limit_zh": "只认本地 Windows 微信 PC 版数据库，需已登录且未清理聊天记录。不处理语音、视频、文件，产物是文字人设快照。",
- "limit_en": "Windows WeChat PC only, requires logged-in local DB with intact history. No voice/video/files. Output is a text persona snapshot, not a live API.",
+ "why_zh": "不是静态导出，而是按需生成代码去解密、查询、蒸馏——每步都有文档兜底，换个人换个群，改参数就能复用。",
+ "why_en": "Not a static export—it generates code on demand to decrypt, query, and distill. Docs guide each step, so new chats or people.",
+ "limit_zh": "只认微信本地聊天记录文件，且需能解密（旧版或已备份）。蒸馏出的替身仅限文本风格模拟，不含语音、图片语义。",
+ "limit_en": "Only works with decryptable local WeChat chat files (older versions or backups). Distilled twin mimics text style only—no voice/image meaning, no.",
  "repo": "zhx8702/wechat-colleague",
  "owner": "zhx8702",
  "path": "",
@@ -21,7 +21,7 @@
  "category": "work",
  "fun_score": 1.61,
  "pick": false,
- "hide": true,
+ "hide": false,
  "source": "human-suggested",
  "added_at": "2026-09-03",
  "install": {
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Distill a colleague AI from WeChat chats"
+ "title_en": "Distill a colleague AI from chat logs"
 }

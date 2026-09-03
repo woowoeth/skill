@@ -4278,12 +4278,12 @@
  },
  "bertram-eu/halcon-skill": {
   "score": 72,
-  "why": "提供HALCON脚本生成的深度实操规范，边界清楚，但参考文档依赖本地环境，通用性",
+  "why": "针对特定工业视觉工具，流程规范边界清晰，但可替代性尚存。",
   "path": "SKILL.md"
  },
  "aAAaqwq/openclaw-team": {
-  "score": 65,
-  "why": "索引定位清晰，但本质是导航目录，换工具可替代。",
+  "score": 55,
+  "why": "定位清晰但本质是指南索引模板，依赖外部INDEX，自身交付有限。",
   "path": "skills/silicon-life-handbook/SKILL.md"
  },
  "lovits/skills-manager-backup": {
@@ -4291,98 +4291,98 @@
   "why": "取不到 SKILL.md"
  },
  "epci971/claude-epci": {
-  "score": 72,
-  "why": "流程设计具体，边界明确，但本质上仍是对齐工具类提示词，非独家方法论。",
+  "score": 68,
+  "why": "清晰界定边界与流程，但核心功能可被模板或LLM直接替代，非独家。",
   "path": "skills-web/briefor/SKILL.md"
  },
  "rubenautodetail/autodetailapp": {
-  "score": 63,
-  "why": "流程描述完备但范式化，可被专业安全工具替代，缺乏独特的交付物。",
+  "score": 62,
+  "why": "安全方法齐全，流程清晰，但属通用框架，非独家做法。",
   "path": ".agents/skills/007/SKILL.md"
  },
  "jacksonemmerich/farmapub": {
   "score": 45,
-  "why": "泛泛的功能清单和官方文档链接，无独特场景和边界说明，换个工具也能做。",
+  "why": "泛泛的官方功能罗列，无独特深入做法，缺边界说明",
   "path": ".agents/skills/base/SKILL.md"
  },
  "mateusoliveiradev1/frescari": {
   "score": 55,
-  "why": "扎实且全面，但主要是库文档整理，无独特点；替换为官方文档或教程亦可。",
+  "why": "是框架文档搬运，缺独有场景判断，泛泛可用但非它不可理由弱。",
   "path": ".agents/skills/cirq/SKILL.md"
  },
  "pratyushdeosingh/mdp": {
   "score": 45,
-  "why": "操作指南类，代码通用可查，无独特判断和边界说明",
+  "why": "库清单汇总，工具替代性强，无独特判断边界",
   "path": ".agents/skills/pdf/SKILL.md"
  },
  "ahang1598/doubao-workbuddy-qwenwork-skills": {
   "score": 72,
-  "why": "流程详尽扎实，对边界和状态有明确管理，但本质是工具链操作手册，换agent也能执",
+  "why": "流程设计详尽，边界清晰，但受限于特定平台工具，可替代性较强。",
   "path": "doubao/skills/ppt/SKILL.md"
  },
  "Angriff36/task-orchestrator": {
-  "score": 65,
-  "why": "专注明确，有交互配置和边界声明，但偏流程框架，独特做法有限。",
+  "score": 62,
+  "why": "流程清晰，交互配置实用，但属内部QA工具，换工具可替代。",
   "path": "claude-plugins/task-orchestrator/skills/orchestration-qa/SKILL.md"
  },
  "TimLai666/installed-skills": {
-  "score": 45,
-  "why": "实用但属标准库教程拼合，定义与边界模糊，可被其他工具替代。",
+  "score": 55,
+  "why": "工具集锦扎实但泛用，边界不清，非此不可的场景缺失。",
   "path": "pdf/SKILL.md"
  },
  "RUSHYOP/rushy-claude-plugins": {
   "score": 45,
-  "why": "官方文档式整理：覆盖全面但无独到判断，仅是API示例汇编。",
+  "why": "官方文档式写法，泛泛罗列API，无独到场景洞察或边界说明。",
   "path": "plugins/r3f/skills/r3f-loaders/SKILL.md"
  },
  "RakameNouya/MR-Bab_10_and_Kel_3": {
-  "score": 30,
-  "why": "官方示例级工具，纯回声无实际交付，边界模糊",
+  "score": 35,
+  "why": "是官方CLI工具自带示例，缺乏独特判断，属基建/模板性质。",
   "path": ".claude/skills/ping/SKILL.md"
  },
  "PhamTheAn123/Demon-King-VS-Rambo-Frog-Hand_tracking-": {
-  "score": 35,
-  "why": "模板工具，无独到判断，仅官方示例级交付",
+  "score": 45,
+  "why": "本质是echo工具，无独特做法，属泛用示例。",
   "path": ".agent/skills/ping/SKILL.md"
  },
  "InvDog567/NSCwordwolf": {
-  "score": 35,
-  "why": "纯回显工具，无独特判断或边界，属通用基建示例。",
+  "score": 40,
+  "why": "简单回显工具，功能明确但无独特做法，同效替代极多。",
   "path": ".agent/skills/ping/SKILL.md"
  },
  "SirNosh/bmad-ml": {
-  "score": 72,
-  "why": "配置流程扎实，边界清晰，但属内部工具，换脚本也能做",
+  "score": 62,
+  "why": "设置流程详尽扎实，但本质是安装引导，可被替代，边界清晰但价值有限。",
   "path": "bmad-ml/bmad-ml-oc/skills/ml-setup/SKILL.md"
  },
  "FlyFireF/PersonalAgentAPP": {
-  "score": 62,
-  "why": "制作流程清晰，有创意标准，但属可替代的通用编码指南。",
+  "score": 65,
+  "why": "制作严谨且有创作标准，但本质仍是通用p5.js教程汇总",
   "path": "growth-companion/skills/creative/p5js/SKILL.md"
  },
  "MaksymilianCzadowski/skills": {
   "score": 72,
-  "why": "对TDD边界理解深刻，有反模式和切片规则，但属方法论，换工具也可行。",
+  "why": "TDD原则清晰实操性强，但非独家，多数工具可替代。",
   "path": "skills/engineering/tdd/SKILL.md"
  },
  "mariadb-corporation/ai-plugins": {
-  "score": 72,
-  "why": "边界清晰，做法具体且能落地，但本质是官方文档的整理。",
+  "score": 65,
+  "why": "语法说明扎实，但本质是操作手册，换官方文档或同类skill也可完成。",
   "path": "additional-skills/rest/mariadb-rest-service-drop/SKILL.md"
  },
  "kaeganscott26/FORGE-OS": {
-  "score": 40,
-  "why": "官方核心插件命令说明，功能明确但边界模糊，仅列命令无独特做法。",
+  "score": 45,
+  "why": "官方核心插件命令列表，泛泛而谈，无独到边界与场景做法。",
   "path": ".vault-operator/data/skills/app/SKILL.md"
  },
  "SSZcreate/Pentab": {
   "score": 45,
-  "why": "技术做法扎实具体，但本质是官方文档迁移指南，换个来源也能获取。",
+  "why": "谷歌官方文档，覆盖全面但边界模糊，无独特交付物。",
   "path": ".agents/skills/adaptive/SKILL.md"
  },
  "dataroaring/skills": {
   "score": 72,
-  "why": "方法论扎实可操作，边界清晰，但核心内容源自书籍，独特性有限。",
+  "why": "扎实的写作教练框架，但属通用方法论，非独家稀缺。",
   "path": "skills/article-writer/SKILL.md"
  },
  "David-Li0406/meta-skill-evloving": {
@@ -4390,88 +4390,88 @@
   "why": "取不到 SKILL.md"
  },
  "micsapp/micstec-skills": {
-  "score": 75,
-  "why": "基于维基百科指南，提供可操作改写策略和个性注入，但边界稍泛。",
+  "score": 68,
+  "why": "基于维基指南，系统全面，但核心是改写，非独有判断，其他编辑工具可替代。",
   "path": "_universal/humanizer/SKILL.md"
  },
  "Suriya-Kodehode/Angular": {
-  "score": 65,
-  "why": "结构清晰实用，但属常规仓库文档，无独特做法或边界说明。",
+  "score": 62,
+  "why": "项目结构指南扎实清晰，但属通用文档，非独特方法论",
   "path": ".github/skills/monorepo/SKILL.md"
  },
  "fsales/curso-android-capgemini-proway": {
-  "score": 60,
-  "why": "扎实的代码库指南，但特定于Quartz库，可替代工具较多。",
+  "score": 62,
+  "why": "扎实的技术参考，但本质是API用法文档，换工具也能查。",
   "path": "modulo-02/Rumo/.github/skills/nostr-expert/SKILL.md"
  },
  "smerchek/claude-epub-skill": {
-  "score": 55,
-  "why": "功能描述细致但实现逻辑未明，通用转换工具替代性强。",
+  "score": 45,
+  "why": "功能描述清晰但实现依赖外部转换，无独特做法或明确边界。",
   "path": "markdown-to-epub/SKILL.md"
  },
  "sboghossian/master-claude-for-legal": {
-  "score": 45,
-  "why": "它更像一个路由目录，罗列引用和技能，未展示不可替代的交付物。",
+  "score": 55,
+  "why": "定位清晰，覆盖全面，引路手册扎实；但本质是官方功能导航，独创性有限",
   "path": "SKILL.md"
  },
  "BuildShipGrowRepeat/nextjs-sanity-blog-skill": {
-  "score": 82,
-  "why": "边界清晰，含大量实操细节与流程控制，非他处可轻易获得。",
+  "score": 72,
+  "why": "流程完整，边界清楚，但高度依赖外部审阅清单，核心做法可在文档中获取，独特性有限。",
   "path": "skills/building-blog/SKILL.md"
  },
  "bluzername/claude-code-terminal-title": {
   "score": 45,
-  "why": "实用但单纯设终端标题，功能浅显，易被替代，边界清晰却非核心价值。",
+  "why": "实用小工具，边界清晰，但核心技术简单易复制，脚本化替代方案多。",
   "path": "temp_extract/terminal-title/SKILL.md"
  },
  "LewisLiu007/full-page-screenshot": {
   "score": 72,
-  "why": "技术实现扎实，边界清晰，但类似效果可用现成工具或脚本替代。",
+  "why": "实现完整，场景明确，但可被浏览器扩展或CDP脚本替代，非独有。",
   "path": "SKILL.md"
  },
  "1NickPappas/move-code-quality-skill": {
   "score": 62,
-  "why": "规则详尽但本质是静态清单审查，换其他工具也可实现类似功能。",
+  "why": "实现扎实的代码审查清单，但核心规则源于官方文档，换工具可替代。",
   "path": "SKILL.md"
  },
  "openweb-org/openweb": {
-  "score": 55,
-  "why": "工程扎实、边界清晰，但本质是工具封装，换用官方API或浏览器自动化也能达到类似效",
+  "score": 45,
+  "why": "通用网站封装工具，操作流程清晰，但无独特场景沉淀，非它不可理由不足。",
   "path": "skills/openweb/SKILL.md"
  },
  "santiago-vargas-de-kruijf/claude-overkill": {
-  "score": 72,
-  "why": "边界清晰，交付物明确，但属通用技术方案，非独有场景做法。",
+  "score": 75,
+  "why": "边界清晰且交互设计细腻，但核心价值依赖搜索，离线时易被替代",
   "path": "plugins/overkill/skills/overkill/SKILL.md"
  },
  "omkamal/pypict-claude-skill": {
-  "score": 65,
-  "why": "实操性强，但本质是PICT教程封装，模型生成逻辑较通用。",
+  "score": 45,
+  "why": "方法清晰但工具性强，依赖外部PICT，自身边界模糊，可替代性高。",
   "path": "SKILL.md"
  },
  "Anjos2/recursive-research": {
   "score": 72,
-  "why": "框架详尽，有独特决策机制，但产出物界定泛化",
+  "why": "方法扎实、边界清楚，但核心流程类似通用研究框架，非独家不可替代。",
   "path": "plugins/recursive-research/skills/recursive-research/SKILL.md"
  },
  "michalparkola/tapestry-skills-for-claude-code": {
-  "score": 62,
-  "why": "流程清晰，自动识别类型并调用不同工具，但依赖已有技能，集成多于独创。",
+  "score": 45,
+  "why": "综合提取与计划编排，流程清晰但依赖其他技能，非独立独特产出。",
   "path": "learn-this/SKILL.md"
  },
  "uxKero/anydesign": {
-  "score": 75,
-  "why": "拒绝含糊，对输出物、边界、方法给出明确界定，工作流扎实细致，非模板可比。",
+  "score": 72,
+  "why": "方法论扎实，系统化分析设计并产出可复现文档，但换其他工具或手工程序亦可实现。",
   "path": "SKILL.md"
  },
  "wholiver/swiftui-design-skill": {
   "score": 72,
-  "why": "有明确设计原则与反模式，边界清晰，但方法可被其他设计工具替代。",
+  "why": "反AI模板规则具体可执行，但有官方文档感，核心是规范而非独特交付",
   "path": "SKILL.md"
  },
  "anandpareek-hub/pixelbin-claude-skill": {
-  "score": 65,
-  "why": "任务明确且细节扎实，但本质是第三方API封装，换工具可替代。",
+  "score": 62,
+  "why": "功能整合扎实，边界清楚，但流程可被替代，非独有",
   "path": "skills/pixelbin/SKILL.md"
  },
  "haunchen/n8n-skills": {
@@ -4480,7 +4480,7 @@
  },
  "rockscy/solo-skills": {
   "score": 72,
-  "why": "对发布时间与场景有清晰边界，产出结构具体，但属可替代的写作技巧。",
+  "why": "对solo发布场景有明确边界和硬规则，但换成模板或写作工具也能产出类似内容。",
   "path": "skills/launch-tweet/SKILL.md"
  },
  "jthack/threat-hunting-with-sigma-rules-skill": {
@@ -4489,422 +4489,422 @@
  },
  "emory/ASD-AuDHD-PAI-Skills": {
   "score": 72,
-  "why": "策略具体且能直接使用，但核心方法可被通用沟通技巧替代，非不可替代。",
+  "why": "对PDA场景的改写策略具体且有边界感，但核心是通用沟通技巧，换工具或人也能做。",
   "path": "Skills/pda-reframing/SKILL.md"
  },
  "anthropics/claude-cookbooks": {
-  "score": 55,
-  "why": "流程清单详尽，但依赖外部指南与脚本，自身定位模糊，非独特交付品。",
+  "score": 45,
+  "why": "操作流程具体但依赖外部样式指南，更像内部审计工具，非独立可复用评判方案。",
   "path": ".claude/skills/cookbook-audit/SKILL.md"
  },
  "Jesseovo/last30days-skill-cn": {
-  "score": 62,
-  "why": "脚本驱动覆盖多平台并明确输出契约，但核心价值依赖自有API，替代可行。",
+  "score": 65,
+  "why": "功能扎实覆盖全，但本质是调用脚本的聚合搜索，边界清晰度一般。",
   "path": "SKILL.md"
  },
  "leilei926524-tech/anti-distill": {
-  "score": 73,
-  "why": "流程详尽、意图明确，但属工具性操作，可替代性强。",
+  "score": 65,
+  "why": "流程细致、分类清晰，但核心价值依赖内部prompt文件，独立可用性存疑。",
   "path": "SKILL.md"
  },
  "adamlyttleapps/claude-skill-app-onboarding-questionnaire": {
-  "score": 55,
-  "why": "流程扎实但通用，方法可复制，缺独特边界与独家交付。",
+  "score": 58,
+  "why": "流程扎实但思路可复制，产出物边界模糊，非唯一解法。",
   "path": "SKILL.md"
  },
  "Herorif/GLiM": {
-  "score": 45,
-  "why": "框架概念有趣但泛泛，核心依赖外部脚本，交付不明确，换工具可实现。",
+  "score": 52,
+  "why": "概念有趣但交付模糊，核心是游戏化状态管理模板，缺乏具体做法和边界。",
   "path": "SKILL.md"
  },
  "AvivK5498/The-Claude-Protocol": {
-  "score": 62,
-  "why": "流程清晰，但本质是安装引导+调用外部CLI，可替代性强",
+  "score": 72,
+  "why": "流程扎实清晰，但本质是引导外部工具链安装，换手册也能做，独特性有限。",
   "path": "SKILL.md"
  },
  "WantongC/journal-adapt-writing-skill": {
   "score": 72,
-  "why": "边界清楚，两步法扎实，但核心可被通用写作工具替代。",
+  "why": "流程设计精细，边界清晰，但核心功能可被通用工具替代，缺乏不可替代性。",
   "path": "skill/SKILL.md"
  },
  "Ylsssq926/relic.skill": {
-  "score": 55,
-  "why": "框架完整但偏目录化，核心做法未展开，难以判断独到之处。",
+  "score": 75,
+  "why": "框架完整有边界感，但核心做法仍依赖通用AI能力，非独有稀缺方案。",
   "path": "SKILL.md"
  },
  "LeoYeAI/teammate-skill": {
-  "score": 45,
-  "why": "功能全面但泛泛，是流程模板，缺别处拿不到的独特做法，边界模糊。",
+  "score": 55,
+  "why": "流程详尽如手册，但产出边界模糊，更像工程方案而非精炼技能。",
   "path": "SKILL.md"
  },
  "abracadabra50/claude-code-voice-skill": {
   "score": 65,
-  "why": "实现完整，边界清晰，但属于工具集成而非独特方法论。",
+  "why": "功能完整可落地，但本质是工具链集成，换其他语音方案也能实现。",
   "path": "SKILL.md"
  },
  "crimeacs/auto-improve": {
   "score": 72,
-  "why": "思路扎实，用判别器守门防自评漂移；但实现属工具链，可替代性强。",
+  "why": "机制清晰，反自我评估独特，但需自备API，依赖自有流程。",
   "path": "SKILL.md"
  },
  "poleHansen/baibaiAIGC": {
   "score": 72,
-  "why": "流程设计扎实、边界清楚，但本质是工程化改写，非独门方法论。",
+  "why": "流程设计严谨，跨轮次状态管理扎实，但本质是规则编排，换工具亦可实现。",
   "path": "SKILL.md"
  },
  "neurofoo/agent-skills": {
-  "score": 60,
-  "why": "结构化复盘扎实可用，但模板化，换工具或手写亦可达成。",
+  "score": 65,
+  "why": "AAR框架扎实详尽，但非独有，可换工具模板实现。",
   "path": "aar/SKILL.md"
  },
  "Raymond-Hear/deep-research-prompt": {
-  "score": 58,
-  "why": "功能实用，能优化提示词，但这类转化器常见，缺独特边界与不可替代做法。",
+  "score": 48,
+  "why": "是提示词模板，功能泛化，无独特边界或场景深度，工具可替代。",
   "path": "SKILL.md"
  },
  "unbrowse-ai/unbrowse": {
-  "score": 72,
-  "why": "实现扎实，流程清晰，但核心能力可被其他浏览器工具替代，非唯一解法。",
+  "score": 65,
+  "why": "技术扎实边界清晰，但本质是工具集成示例，未提供独特场景做法。",
   "path": "SKILL.md"
  },
  "xufuping/myself-skill": {
-  "score": 55,
-  "why": "是语言路由框架，具体蒸馏交付物依赖外部文件，自身未展示独特做法。",
+  "score": 45,
+  "why": "是路由框架，真正交付物在外部文件，自身无实质判断。",
   "path": "SKILL.md"
  },
  "brockmartin/roblox-game-skill": {
-  "score": 65,
-  "why": "路由表与边界清单扎实，但多为现成知识集成，未见独有核心方法。",
+  "score": 60,
+  "why": "扎实全面但多为知识汇总，边界感模糊，非独家方法论",
   "path": "SKILL.md"
  },
  "nicepkg/boss-skill": {
-  "score": 65,
-  "why": "概念新奇，功能详细，但产出依赖大量外部prompt模板，自身独立性有限。",
+  "score": 72,
+  "why": "功能设计深入且边界清晰，但依赖外部素材，或需较多定制",
   "path": "SKILL.md"
  },
  "icebear0828/notebooklm-client": {
-  "score": 55,
-  "why": "功能完整清晰，但本质是CLI命令包装工具，非独有方法论。",
+  "score": 65,
+  "why": "封装了NotebookLM全流程，命令清晰，边界明确，非官方但实用性强。",
   "path": "SKILL.md"
  },
  "devinilabs/claude-watch": {
-  "score": 72,
-  "why": "流程完整，产出清晰，但类似视频笔记方案可通过其他工具链实现。",
+  "score": 78,
+  "why": "流程完整，产出明确，但实现依赖通用工具组合，独特性有限。",
   "path": "SKILL.md"
  },
  "vigorX777/ppt-svg-generator": {
-  "score": 72,
-  "why": "流程清晰工具完整，但本质是命令编排，设计思路可复制。",
+  "score": 62,
+  "why": "功能完整流程清晰，但同类工具可替代，无独特方法论边界。",
   "path": "SKILL.md"
  },
  "NatalieCao323/crush-skill": {
-  "score": 68,
-  "why": "流程具体有独特产出，但依赖工具可替代，边界清晰度中等。",
+  "score": 70,
+  "why": "贝叶斯分析、依恋类型诊断等流程具体，输出清晰，但依赖本地聊天数据，通用工具可替代",
   "path": "SKILL.md"
  },
  "Neko-Suwako/pig-skill": {
-  "score": 72,
-  "why": "流程细致，进化与纠正机制明确，但依赖外部工具实现，换环境难复用。",
+  "score": 45,
+  "why": "流程详尽但依赖未提供的配套prompts/tools，核心Persona生成方法",
   "path": "SKILL.md"
  },
  "1370998960-del/https-github.com-Emily2040-seedance-2.0": {
-  "score": 62,
-  "why": "流程详尽，但可被通用视频工具替代，边界清晰度一般。",
+  "score": 65,
+  "why": "专注Seedance视频生成，流程细致有门控，但功能较杂，通用工具可替代",
   "path": "SKILL.md"
  },
  "jincai/openclaw-skills": {
   "score": 62,
-  "why": "实现扎实且边界清晰，但本质是API数据搬运，换工具可替代。",
+  "why": "实现扎实功能明确，但本质是API同步调度的包装，换工具可替代。",
   "path": "oura/SKILL.md"
  },
  "keep-starknet-strange/starknet-agentic": {
   "score": 45,
-  "why": "是清晰的路由目录，但自身不交付具体做法，价值在子模块。",
+  "why": "是路由目录，清晰但非独立交付，价值依赖子技能。",
   "path": "SKILL.md"
  },
  "kxzk/shotty": {
-  "score": 55,
-  "why": "功能明确可用，但为macOS系统封装，细节处理扎实而非独特，换工具可实现。",
+  "score": 45,
+  "why": "功能清晰，但换用现成截图工具或API也能做到，边界说明泛泛。",
   "path": "SKILL.md"
  },
  "zhx8702/wechat-colleague": {
   "score": 85,
-  "why": "技术细节扎实，边界清晰，具体场景解决真实痛点，别处难复制。",
+  "why": "深入微信逆向细节并有自定边界，全流程独特，非他处可得。",
   "path": "SKILL.md"
  },
  "NewWorkFoundation/jobclaw": {
-  "score": 65,
-  "why": "流程清晰，但只是把表单转成JSON，换脚本也能做。",
+  "score": 42,
+  "why": "流程清晰但本质是数据转换模板，换其他工具也能实现同等效果。",
   "path": "SKILL.md"
  },
  "bobosdaddy/claw-friends": {
   "score": 45,
-  "why": "是功能清单和UI美化，非独到判断，无边界思考，泛泛而谈",
+  "why": "功能列表详实但泛泛，是套壳命令集，无独特不可替代的深度做法。",
   "path": "SKILL.md"
  },
  "Ming-H/yinyuan-skills": {
-  "score": 70,
-  "why": "六种模式流程清晰，输出讲究，但内核仍是常见命理模板，独到性一般。",
+  "score": 55,
+  "why": "六种测算模式设计完整，但内容泛泛，换任意命理工具都能替代",
   "path": "SKILL.md"
  },
  "app-incubator-xyz/skill-vetter": {
-  "score": 65,
-  "why": "判断清晰、流程扎实，但依赖外部工具，非独特方法论。",
+  "score": 55,
+  "why": "有具体流程和边界，但依赖外部工具，核心扫描逻辑不在此处，通用安全思路可自建。",
   "path": "SKILL.md"
  },
  "TheMattBerman/scrollclaw": {
-  "score": 72,
-  "why": "流程编排清晰、边界明确，但本质是调用多个外部工具的组合指南。",
+  "score": 65,
+  "why": "明确的流水线编排与子技能路由，产出清晰；但作为多技能调度器，本身仍需下游支撑。",
   "path": "SKILL.md"
  },
  "ceetity/her-skill": {
-  "score": 72,
-  "why": "流程完整边界清晰，但同类数字分身工具不少，非独家妙法。",
+  "score": 65,
+  "why": "流程完整边界清晰，安全红线明确，但依赖解析工具等通用环节，非独门做法。",
   "path": "SKILL.md"
  },
  "niyazmft/openclaw-zulip-bridge": {
-  "score": 62,
-  "why": "扎实的插件说明，但明确标为已弃用，且依赖外部插件，替代性强。",
+  "score": 40,
+  "why": "已声明废弃，功能描述泛泛，实际是插件官方示例的包装。",
   "path": "SKILL.md"
  },
  "naxiaoduo/Scammer.skill": {
   "score": 72,
-  "why": "框架完整、流程清晰，但本质是文档方法论，换工具可实现。",
+  "why": "结构扎实，流程详尽，检测与进化机制清晰，但依赖外部prompts未展示，独立性稍",
   "path": "SKILL.md"
  },
  "Nikolai-Iakubovskii/app-paywall-pilot": {
   "score": 72,
-  "why": "模式路由具体，边界清楚，但核心是方法论而非独家交付物。",
+  "why": "边界清晰、模式化强，但依赖仓库配套，脱离环境价值有限。",
   "path": "SKILL.md"
  },
  "wwwaapplleecu-source/mao-skill": {
   "score": 45,
-  "why": "封装系统，方法论内容泛泛，核心功能可被通用工具替代，缺乏独特产出边界。",
+  "why": "功能框架齐全但多为通用方法论套壳，无独特深度交付，像说明书。",
   "path": "SKILL.md"
  },
  "fishtvlvoe/ssc": {
-  "score": 60,
-  "why": "流程清晰扎实，但属于方法论模板，替换其他生成工具也可执行。",
+  "score": 45,
+  "why": "流程清晰但属方法论，做法可被通用规划工具替代，产出边界不明确。",
   "path": "SKILL.md"
  },
  "liyown/XHSSpec": {
-  "score": 70,
-  "why": "流程清晰有边界，但本质是文件模板编排，换工具可复制。",
+  "score": 65,
+  "why": "流程设计扎实，但依赖文件结构与工具，价值可被替代，边界尚可。",
   "path": "SKILL.md"
  },
  "MetalLegBob/solana-vibes-kit": {
-  "score": 45,
-  "why": "流程清晰但工具依赖包装，缺乏独有深度见解，价值易替代。",
+  "score": 62,
+  "why": "扎实的流程封装，边界清楚，但核心是调用superpowers，非独有做法。",
   "path": "forge/SKILL.md"
  },
  "Shahfarzane/appshots": {
-  "score": 65,
-  "why": "实现扎实但路径清晰，核心价值偏向工具集成而非独有方法。",
+  "score": 45,
+  "why": "工具使用说明为主，功能扎实但定位泛化，缺少独特判断或边界声明。",
   "path": "SKILL.md"
  },
  "pcx-wave/askclaude": {
-  "score": 65,
-  "why": "包装清晰的CLI工具，功能扎实，但主要是调用现成能力，非独有解法。",
+  "score": 60,
+  "why": "实现扎实但仅封装Claude CLI调用，换工具也能达成，无独特边界认知。",
   "path": "SKILL.md"
  },
  "trnt-ai/trent-openclaw-security-assessment": {
   "score": 72,
-  "why": "流程职责清晰，阶段明确，边界与数据保护说明到位，但依赖外部API，非独家。",
+  "why": "提供明确三阶段审计流程与具体操作，边界清晰，但依赖外部API且实现细节受限。",
   "path": "SKILL.md"
  },
  "Orzjh/anti-distillation-skill": {
-  "score": 72,
-  "why": "反蒸馏主题独特且流程完整，但产出偏建议清单，工具可替代。",
+  "score": 55,
+  "why": "概念有趣且流程清晰，但产出偏建议模板，核心价值依赖用户手动执行，边界模糊。",
   "path": "SKILL.md"
  },
  "ly-xxx/ace-taffy-skill": {
-  "score": 62,
-  "why": "角色模仿规则细致，但本质是提示词工程，换工具同样可复制。",
+  "score": 72,
+  "why": "角色模仿边界清晰，协议细致可执行，但本质仍是通用风格约束集。",
   "path": "SKILL.md"
  },
  "mathiaschu/watch": {
-  "score": 70,
-  "why": "实现扎实，流程清晰，但下载视频转帧提取字幕为通用方案，非独家.",
+  "score": 78,
+  "why": "边界清晰，本地转写与帧提取做法具体，超出通用视频工具。",
   "path": "SKILL.md"
  },
  "ImmuneFOMO/fetchira": {
-  "score": 62,
-  "why": "品牌指南详尽扎实，但适用面窄，可被通用设计系统替代",
+  "score": 65,
+  "why": "设计规范详尽且自成体系，但核心仍是提供样式资源，换工具可实现。",
   "path": "webui/SKILL.md"
  },
  "pr4shxnt/solana-tx-doctor-skill": {
-  "score": 75,
-  "why": "扎实的诊断路由与边界清晰，但核心能力依赖模块文件，主体更像导航目录。",
+  "score": 72,
+  "why": "对Solana交易故障有专属深度诊断与修复流程，边界清晰，非通用工具可比。",
   "path": "skill/SKILL.md"
  },
  "wildbyteai/digital-life": {
   "score": 72,
-  "why": "方法论扎实自洽，边界与流程清晰，但本质是反思工具集，替代方案多。",
+  "why": "设计完整、边界明确，但本质是方法论合集，非不可替代的独门方案。",
   "path": "SKILL.md"
  },
  "austinatneuko/gboy-character-openclaw": {
-  "score": 55,
-  "why": "功能明确但为通用工具脚本，无独特方法论或边界思考",
+  "score": 60,
+  "why": "功能清晰实用，但本质是文件替换器，类似脚本可替代。",
   "path": "SKILL.md"
  },
  "Juggernaut0825/bulkcut-coach": {
-  "score": 55,
-  "why": "功能覆盖全但交互命令繁琐，核心逻辑依赖外部API，替换性较强，边界模糊。",
+  "score": 58,
+  "why": "工具集成扎实但功能常规，可替代方案多，边界表述模糊。",
   "path": "SKILL.md"
  },
  "mikumifa/biliTickerSkill": {
-  "score": 68,
-  "why": "编排抢票流程清晰，边界明确，但依赖外部项目，可替代性较强。",
+  "score": 72,
+  "why": "扎实的本地项目编排层，边界明确，但换用其他浏览器自动化工具也可完成类似抢票流程。",
   "path": "SKILL.md"
  },
  "w1ndys/ex-cure-skill": {
   "score": 72,
-  "why": "功能路径清晰且边界明确，但更像流程工具而非独特产出",
+  "why": "概念新颖、方法详尽且有边界意识，但流程繁琐，强调独特性但实施依赖多位专业工具协同",
   "path": "SKILL.md"
  },
  "chenmuwen0930-rgb/openclaw-skill-snowtrace": {
   "score": 72,
-  "why": "实现扎实、边界清晰，数据获取方案具体，但核心功能可被通用爬虫+提示词替代。",
+  "why": "实现扎实，分工清晰，边界明确；但本质是数据聚合，换工具也可达成。",
   "path": "SKILL.md"
  },
  "BENZEMA216/rent-ops": {
   "score": 72,
-  "why": "架构细致功能链路完整，但核心是流程编排，换个框架同样可实现，稀缺性不足。",
+  "why": "功能完整、边界清晰的多模式租房助手，但依赖外部工具链，非独家方法论。",
   "path": "SKILL.md"
  },
  "zfedoran/rsmap": {
-  "score": 55,
-  "why": "索引文件分层清晰，搜索工作流具体，但本质是工具说明，未超出一般代码索引思路。",
+  "score": 60,
+  "why": "工作流清晰实用，但工具逻辑可替代为通用搜索脚本。",
   "path": "SKILL.md"
  },
  "agentic-control-plane/openclaw-gatewaystack-governance": {
-  "score": 62,
-  "why": "治理插件边界清晰，五重检查扎实，但依赖OpenClaw生态，可替代性强",
+  "score": 55,
+  "why": "像官方插件的安装说明，具体场景不清晰，无独特做法",
   "path": "SKILL.md"
  },
  "zhang-haichao/senpai-skill": {
-  "score": 65,
-  "why": "流程设计具体可操作，但核心分析依赖提示词模板，换通用工具也能实现。",
+  "score": 63,
+  "why": "流程完整可执行，但依赖外部解析器，核心是数据蒸馏，替代方案多。",
   "path": "SKILL.md"
  },
  "garfeildma/openclaw-tavern": {
-  "score": 62,
-  "why": "功能详尽扎实，但核心依赖SillyTavern兼容创意，可替代性强。",
+  "score": 72,
+  "why": "功能全面扎实，但更像集成方案，非独门做法，边界尚清",
   "path": "SKILL.md"
  },
  "ychenjk-sudo/xiaoyuzhou-transcription-skill": {
-  "score": 72,
-  "why": "流程具体可执行，含验证与交付边界；但依赖外部API和脚本，换工具可替代。",
+  "score": 60,
+  "why": "流程扎实可用，但核心依赖通用ASR工具，替代方案多，无独特边界。",
   "path": "SKILL.md"
  },
  "ttttccxxui/AnythingButLaw": {
   "score": 72,
-  "why": "边界清晰、深层框架与对抗清单别处难寻，非通用模板，律师场景落地扎实。",
+  "why": "体系扎实且为律师场景定制，但本质是精选参考库，非独家方法论。",
   "path": "SKILL.md"
  },
  "sunny-kobe/ai_sentiney": {
-  "score": 35,
-  "why": "绑定个人绝对路径，是本地脚本而非通用Skill，硬编码用法缺乏可移植性。",
+  "score": 58,
+  "why": "本地路径依赖重，通用性差；路由规则清晰，但换环境难复用。",
   "path": "SKILL.md"
  },
  "mr-daedalium/ostack-saas": {
-  "score": 55,
-  "why": "是实操指南，边界清晰，但做法可被替代，非独家。",
+  "score": 65,
+  "why": "实现扎实，有具体流程和边界，但核心功能可用通用浏览器自动化替代。",
   "path": "SKILL.md"
  },
  "Starchild-ai-agent/official-skills": {
   "score": 45,
-  "why": "目录型文档，指向官方仓库，无自研判断或边界，交付物不明确。",
+  "why": "内容多为安装指南和目录索引，无具体交易策略或独特实现，更像官方文档搬运。",
   "path": "okx/SKILL.md"
  },
  "Mdx2025/BrainX-The-First-Brain-for-OpenClaw": {
-  "score": 72,
-  "why": "架构清晰，边界明确，但本质是数据库+API的组合，可替代性强。",
+  "score": 55,
+  "why": "功能繁多但偏工具说明，缺乏独到做法和清晰边界。",
   "path": "SKILL.md"
  },
  "anombyte93/codify": {
-  "score": 60,
-  "why": "方法论扎实且自成一体，但本质是可迁移的代码优化流程，工具亦可完成。",
+  "score": 62,
+  "why": "方法自洽且产出明确，但更似元技能，非独特判断货品。",
   "path": "SKILL.md"
  },
  "neomhr/clay-cpj-cli": {
   "score": 65,
-  "why": "工具用法说明扎实清晰，但本质是CLI命令文档，换其他工具或官方文档也可达。",
+  "why": "CLI工具说明扎实且边界清楚，但本质是官方接口的本地封装，换工具也能做。",
   "path": "skill/SKILL.md"
  },
  "wjgilmore/dependabot-skill": {
-  "score": 65,
-  "why": "流程具体清晰，但核心逻辑依赖gh脚本，换工具也可实现。",
+  "score": 62,
+  "why": "实现清晰扎实，能自动化流程，但功能本身gh CLI可替代，非独有。",
   "path": "SKILL.md"
  },
  "DayuGuo/social-publisher": {
-  "score": 55,
-  "why": "功能清晰可用，但本质是浏览器自动化封装，换Playwright等工具也能实现，缺",
+  "score": 45,
+  "why": "多平台发布工具，功能明确但实现方式通用，缺乏独特场景见解或边界思考。",
   "path": "SKILL.md"
  },
  "kvarnelis/deep-recon": {
-  "score": 72,
-  "why": "流程完整细致，多智能体编排切实可行，但核心思路可以用通用工具复现。",
+  "score": 65,
+  "why": "流程扎实，多agent编排清晰，但可被其他通用工作流替代，非独家",
   "path": "SKILL.md"
  },
  "compound-life-ai/Turri": {
   "score": 45,
-  "why": "规则清晰但依赖预设源，产出摘要可被通用工具替代，独特性不足。",
+  "why": "泛泛的摘要流程，依赖工具，缺独特判断与边界交付",
   "path": "news/SKILL.md"
  },
  "quaesitor-scientiam/vebidor": {
-  "score": 72,
-  "why": "设计系统完整，边界清晰，但本质是品牌资产包，换个工具照做可行。",
+  "score": 62,
+  "why": "品牌系统扎实，但产出物依赖设计常识，工具替代性尚可。",
   "path": "docs/SKILL.md"
  },
  "pcx-wave/vibe-skill": {
   "score": 72,
-  "why": "它把委托编码、监督与边界拆得很清楚，做法实用，但可被替代",
+  "why": "将委托流程打磨为可操作策略，边界清晰，但仅适用于特定环境。",
   "path": "SKILL.md"
  },
  "Lumine2024/ICPC-Problem-Creator.skill": {
   "score": 72,
-  "why": "流程清晰完整，但同类出题工具可替代，非独家方案。",
+  "why": "工作流与目录规范扎实，但偏流程模板，核心出题智慧未超出常规做法。",
   "path": "SKILL.md"
  },
  "adibirzu/openclaw-security-monitor": {
   "score": 72,
-  "why": "针对特定部署环境提供41项具体检查和修复，边界清晰，别处难寻。",
+  "why": "扫描清单详尽且针对性强，但本质是脚本聚合，可被常规安全工具替代。",
   "path": "SKILL.md"
  },
  "duyufansh2008/wx-backup-decrypt": {
-  "score": 72,
-  "why": "针对性强且步骤清晰，但解密本质依赖工具脚本，核心价值受限于具体场景。",
+  "score": 82,
+  "why": "针对冷门NAS备份场景给出具体密钥推导链路，边界清晰，非通用工具可比",
   "path": "SKILL.md"
  },
  "furkancingoz/aso-skill": {
-  "score": 62,
-  "why": "功能齐全的ASO工具集合，但换个工具或脚本组合也能实现类似流程。",
+  "score": 45,
+  "why": "功能全面的操作手册，但更像流程封装而非独到判断，边界模糊。",
   "path": "SKILL.md"
  },
  "kunhai1994/xhs-research": {
   "score": 72,
-  "why": "流程清晰有边界感，但依赖外部MCP且工作流可被通用工具复现",
+  "why": "小红书调研流程完整可执行，自带模板与去重评分，但依赖外部登录与MCP，替换工具亦",
   "path": "SKILL.md"
  },
  "generalbusiness-ai/keep": {
-  "score": 72,
-  "why": "对记忆实践与边界有独到设计，但部分事项换通用工具也能完成。",
+  "score": 65,
+  "why": "实践框架扎实，边界清晰，但核心记忆功能可通过常规工具实现",
   "path": "SKILL.md"
  },
  "RegionallyFamous/wp-pinch": {
-  "score": 40,
-  "why": "广泛罗列功能，缺乏独创做法，实质是MCP工具索引。",
+  "score": 45,
+  "why": "功能罗列多但泛泛，核心价值依赖外部MCP，自身无独特做法或边界说明。",
   "path": "SKILL.md"
  },
  "MIMIFY/skill_everyone": {
   "score": 72,
-  "why": "角色生成器实现扎实，流程与工具链清晰，但本质可被通用工作流替代",
+  "why": "实现具体、流程严谨，但本质是生成器，核心价值依赖调研质量，非独有做法。",
   "path": "SKILL.md"
  },
  "noproxy/fix-air-region": {
-  "score": 85,
-  "why": "精准解决特定客户端硬编码限制，含存储路径、类名和完整可执行方案，边界清晰。",
+  "score": 72,
+  "why": "针对性强，技术细节明确，但仅为一个破解操作，换个代理工具也能实现。",
   "path": "SKILL.md"
  },
  "mhdsilva/claude-daily": {
@@ -4912,8 +4912,8 @@
   "why": "取不到 SKILL.md"
  },
  "whu125/sbti-skill": {
-  "score": 55,
-  "why": "实用但偏操作手册，核心功能是脚本运行与安装，无独特判断或产出边界。",
+  "score": 45,
+  "why": "是构建/安装流程说明书，操作清晰但本质是工具脚本，缺少独特判断与边界思考",
   "path": "SKILL.md"
  },
  "Jon-Ting/allomorph": {
@@ -4922,242 +4922,242 @@
  },
  "LeoYeAI/seedance-skills": {
   "score": 72,
-  "why": "清晰的操作循环与多语言、安全等边界处理扎实，但本质是围绕官方模型的提示词整理。",
+  "why": "系统化封装了官方能力，但本质是资料整理，可被替代。",
   "path": "SKILL.md"
  },
  "PlaydaDev/pumpmolt": {
-  "score": 55,
-  "why": "操作清晰但属API封装，无独特策略或边界说明，换工具可替代。",
+  "score": 65,
+  "why": "操作命令清晰可行，边界明确，但本质是API封装示例，替代方案多。",
   "path": "SKILL.md"
  },
  "weponusa/teachany": {
-  "score": 52,
-  "why": "指针式仓库，核心技能在外，路径多，缺乏独立可交付的批判性判断。",
+  "score": 45,
+  "why": "功能繁多像框架说明，未展示具体教学做法，边界不清，更像项目目录导航。",
   "path": "SKILL.md"
  },
  "MobiusQuant/OpenMobius-skill": {
   "score": 72,
-  "why": "知识库与实时数据结合扎实，边界清楚，但核心依赖外部API，架构可复制。",
+  "why": "知识库+API整合扎实，新鲜数据约束明确，但核心指标依赖外部服务",
   "path": "SKILL.md"
  },
  "op7418/Document-illustrator-skill": {
   "score": 55,
-  "why": "流程详尽但依赖Gemini生成图，本质是编排工具，换工具可复制",
+  "why": "流程详细但依赖外部API，本质是概念验证，无独特壁垒。",
   "path": "SKILL.md"
  },
  "gitroomhq/postiz-agent": {
-  "score": 60,
-  "why": "工具集成清晰，有上传与平台特定规则，但本质仍是API封装示例，深度有限。",
+  "score": 45,
+  "why": "是工具用法手册，泛泛而谈，无独特场景洞察，换官方文档即可。",
   "path": "SKILL.md"
  },
  "per-simmons/clone-app-pat-pro-public": {
-  "score": 82,
-  "why": "像素级克隆流程清晰，边界明确，有验证门和停止点，但实现依赖特定工具环境。",
+  "score": 72,
+  "why": "流程设计扎实，像素级克隆与验证门禁明确，但高度依赖特定工具生态。",
   "path": "SKILL.md"
  },
  "francize/agents-to-im": {
-  "score": 62,
-  "why": "为具体工具提供可执行操作，边界清晰，但多为命令编排，非独创方案。",
+  "score": 65,
+  "why": "实用运维手册，边界清楚但本质是CLI文档，可替代性高。",
   "path": "SKILL.md"
  },
  "akseolabs-seo/AK-Threads-booster": {
-  "score": 65,
-  "why": "结构完整分工明确，但依赖外部历史数据，本质是流程编排，非独门做法。",
+  "score": 72,
+  "why": "结构清晰，路由规则明确，边界设定良好，但整体依赖文档架构而非独有方法论。",
   "path": "SKILL.md"
  },
  "meepo-it/letsfinddomain-skill": {
-  "score": 62,
-  "why": "流程清晰且规避雷区，但可用其他域名工具替代，独特性不足。",
+  "score": 72,
+  "why": "流程清晰，边界明确，但域名查询非独家能力，换脚本工具也可达。",
   "path": "SKILL.md"
  },
  "mguozhen/social-bot": {
-  "score": 65,
-  "why": "具体可操作的自动化工具，功能明确，但方法可复制，非独家方案。",
+  "score": 62,
+  "why": "功能明确且能落地，但本质是浏览器自动化+LLM的拼装，换工具可实现。",
   "path": "SKILL.md"
  },
  "Aperocky/tascli": {
   "score": 62,
-  "why": "任务追踪工具命令清晰实用，但可被通用CLI或备忘录替代，边界明确但非独门秘技。",
+  "why": "工具说明书扎实，但边界和独特性一般，换其他任务管理器也可实现。",
   "path": "SKILL.md"
  },
  "buzhangsan/skill-manager": {
-  "score": 62,
-  "why": "功能扎实且实现清晰，但本质是技能查找安装工具，可被常规包管理器替代，非独家。",
+  "score": 55,
+  "why": "是一个技能安装管理器，实用性强，但核心是下载工具，非独特判断或不可替代的产出。",
   "path": "SKILL.md"
  },
  "Done-0/value-realization": {
-  "score": 65,
-  "why": "框架有深度但泛化，非唯一解法，可被咨询方法替代。",
+  "score": 72,
+  "why": "框架扎实且有明确边界，但本质是分析法，需工具辅助落地。",
   "path": "SKILL.md"
  },
  "Arenbai/SecSkills": {
-  "score": 63,
-  "why": "渗透测试流程规范详尽，过滤体系扎实，但内容属通用方法论。",
+  "score": 82,
+  "why": "对漏洞报告的边界极清楚，过滤体系别处拿不到，实战导向极强。",
   "path": "SKILL.md"
  },
  "ayush488-glitch/ai-career-planner-skill": {
-  "score": 55,
-  "why": "框架清晰但内容偏通用教程，交互流程长，替代方案多。",
+  "score": 65,
+  "why": "框架扎实，有具体流程和话术，但核心知识可搜索获得，提示词可被其他工具替代。",
   "path": "SKILL.md"
  },
  "mikefutia/claude-vision": {
-  "score": 72,
-  "why": "扎实可靠，但换用其他视频分析工具也可实现，非其独有。",
+  "score": 65,
+  "why": "视频分析扎实，有反幻觉护栏，但依赖Gemini API，工具替代性强。",
   "path": "SKILL.md"
  },
  "lucasygu/redbook": {
-  "score": 57,
-  "why": "功能全面但为CLI封装，核心判断依赖用户，边界清晰度一般",
+  "score": 67,
+  "why": "小红书调研工具齐全带风控策略，但本质是CLI封装，边界为外部包。",
   "path": "SKILL.md"
  },
  "vgrichina/re-skill": {
-  "score": 68,
-  "why": "实操性强，流程边界清楚，但核心仍是方法论模板而非独特交付物",
+  "score": 65,
+  "why": "流程规范详尽，边界清楚，但本质是方法论模板而非独特交付物。",
   "path": "SKILL.md"
  },
  "ricky-theseus/DaisyWriter": {
-  "score": 30,
-  "why": "是技能集合目录，非单一交付物，缺乏具体场景下的独到做法。",
+  "score": 35,
+  "why": "是目录索引非具体技能，未展示核心流程与边界，交付物模糊。",
   "path": "SKILL.md"
  },
  "AdeleZhu/teacher-skill": {
-  "score": 72,
-  "why": "流程清晰、工具表具体，有版本管理，可执行性强；但本质是配置文件驱动的自动化流程，",
+  "score": 55,
+  "why": "流程具体工具清晰，但本质是引导式模板组装，别处可复制，非独特判断。",
   "path": "SKILL.md"
  },
  "showdownagain/wangluoxiaoshuozhushou": {
-  "score": 72,
-  "why": "体系完整且反AI味有实操落地，但偏流程化，核心可被通用工具替代。",
+  "score": 70,
+  "why": "反AI味与风格卡成体系，但流程繁复，换Claude Code等工具同样可搭建",
   "path": "SKILL.md"
  },
  "jarombouts/star-trek-voice-clone": {
-  "score": 55,
-  "why": "趣味工具，边界清晰但做法单一，换个TTS也能实现。",
+  "score": 45,
+  "why": "功能单一，依赖外部脚本，写法具体但换工具易复制，边界尚可。",
   "path": "SKILL.md"
  },
  "op7418/ai-desk-card": {
-  "score": 85,
-  "why": "状态探测路由机制清晰，边界明确，是精心设计的实用硬件技能",
+  "score": 72,
+  "why": "交互设计详实，专用流程清晰，但更多是工程操作手册，易被替代方案覆盖。",
   "path": "SKILL.md"
  },
  "AgriciDaniel/claude-shorts": {
   "score": 72,
-  "why": "流程扎实完整，但依赖多工具协作，非独有方法。",
+  "why": "流程详尽扎实，但本质是工具链编排，非独有方法论。",
   "path": "SKILL.md"
  },
  "afx-team/agent-skill-npm-boilerplate": {
   "score": 15,
-  "why": "是官方模板，非可用技能，无具体交付物与场景边界。",
+  "why": "官方空模板，无具体判断与交付，仅框架占位",
   "path": "SKILL.md"
  },
  "natedemoss/Claude-Code-Wrapped-Skill": {
   "score": 65,
-  "why": "职责单一，边界明确，但本质是包装脚本启动器，换工具也能做。",
+  "why": "交付明确、边界清晰，但统计功能可用通用脚本替代，非独家。",
   "path": "SKILL.md"
  },
  "liming199364/soccer-lottery": {
   "score": 72,
-  "why": "有清晰的三维分析模型与边界规则，但本质仍靠搜索与公式输出，未见独特不可替代做法。",
+  "why": "边界清晰，赔率截图模式约束严谨；但核心是分析流程，专业工具可替代。",
   "path": "SKILL.md"
  },
  "irinabuht12-oss/email-campaigns-claude": {
   "score": 78,
-  "why": "交付具体且边界清晰，设计细节落地，但核心可被邮件模板工具替代。",
+  "why": "资产托管、组件库等细节具体，拒绝过度设计，但整体可被邮件模板工具替代。",
   "path": "SKILL.md"
  },
  "lisniuse/taoguba-crawler-skill": {
-  "score": 42,
-  "why": "操作说明具体但本质是爬虫脚本，依赖环境配置，非独立可交付的智能判断",
+  "score": 35,
+  "why": "工具说明书式的脚本操作指南，无判断与边界，泛泛而谈。",
   "path": "SKILL.md"
  },
  "anatasof/NatPRD": {
   "score": 72,
-  "why": "交互式PRD生成流程清晰，边界明确，但同类工具可替代。",
+  "why": "访谈式PRD流程扎实，但核心是结构化模板，其他工具也可替代。",
   "path": "SKILL.md"
  },
  "SankaiAI/ats-optimized-resume-agent-skill": {
-  "score": 72,
-  "why": "流程设计详尽严谨，但本质是标准简历生成，工具可替代，缺乏独到洞察。",
+  "score": 75,
+  "why": "工作流设计细致且有明确门禁，但核心产出仍是常规简历生成，非独门绝技。",
   "path": "SKILL.md"
  },
  "drewocarr/generate-shortcuts-skill": {
-  "score": 55,
-  "why": "结构详尽实用但属技术参考，深度不足且可替代性较强。",
+  "score": 75,
+  "why": "覆盖全面且格式扎实，但产出物止于plist，未达可直接导入的边界说明",
   "path": "SKILL.md"
  },
  "henricook/claude-glab-skill": {
   "score": 45,
-  "why": "内容为glab官方命令整理，泛泛而谈，缺乏独到做法与边界说明，换工具即替代。",
+  "why": "泛泛的glab命令参考，类似官方文档的整理，缺乏独特场景和深度边界。",
   "path": "SKILL.md"
  },
  "salespeak-ai/buyer-eval-skill": {
-  "score": 42,
-  "why": "流程框架清晰但依赖自建仓库和外部API，通用性受限，更像具体工具而非可复用的判断",
+  "score": 55,
+  "why": "流程完整扎实，但本质是可复制的提示词框架，非独特做法。",
   "path": "SKILL.md"
  },
  "metaskills/skill-builder": {
   "score": 45,
-  "why": "实用但泛泛，本质是官方指南复述，无独特边界或产出物。",
+  "why": "元技能，指导清晰但本质是官方文档转述，原创性有限。",
   "path": "SKILL.md"
  },
  "suyuan2022/bilibili-subtitle-fetcher-skill": {
-  "score": 62,
-  "why": "实现细节扎实，但本质是API封装，与现有工具差异小，边界未特别突出。",
+  "score": 45,
+  "why": "功能明确但实现依赖外部脚本，Cookie配置门槛高，可被替代",
   "path": "SKILL.md"
  },
  "chenhg5/imole": {
   "score": 72,
-  "why": "实操扎实，跨平台流程清晰，但可替代方案多，非不可取代。",
+  "why": "结构完整、边界清楚，是扎实的工具型skill，但功能用标准命令行工具也可拼装实现",
   "path": "SKILL.md"
  },
  "liuxingqitd/content-risk-detector": {
   "score": 72,
-  "why": "规则库引用与分级报告体系扎实，但核心依赖通用规则库，工具替代性强。",
+  "why": "规则库和分级报告扎实，但本质是调用多文档规则的检测器，思路可复制。",
   "path": "SKILL.md"
  },
  "win4r/claude-code-dispatch": {
-  "score": 65,
-  "why": "功能扎实实用，但本质是详细工具文档，深度不如独特方法。",
+  "score": 68,
+  "why": "针对特定场景深入，但封装性未达极致",
   "path": "SKILL.md"
  },
  "team-attention/openclone": {
-  "score": 72,
-  "why": "系统设计完整，有清晰边界，但克隆概念并非唯一实现途径。",
+  "score": 65,
+  "why": "设计完整、边界清晰，但核心功能可被通用prompt工具替代。",
   "path": "SKILL.md"
  },
  "rediumvex/social-media-caption-generator-claude": {
   "score": 65,
-  "why": "扎实的跨平台文案框架，但本质是提示词模板，边界清晰但非独家。",
+  "why": "平台规则具体到量化数据，但产出仍是通用文案生成，边界清晰度一般。",
   "path": "SKILL.md"
  },
  "Xerxes-2/tavern2agent": {
-  "score": 78,
-  "why": "设计扎实、边界清晰，但高度依赖特定生态，核心价值需整体运行方能体现。",
+  "score": 82,
+  "why": "边界极清晰，拒绝模板化转换，方案和产出物具体，非他处可得。",
   "path": "SKILL.md"
  },
  "bexgboost/firecrawl-claude-code-skill": {
-  "score": 55,
-  "why": "功能清晰但多为API封装，缺乏独特判断与边界说明",
+  "score": 45,
+  "why": "功能罗列清晰但无独特判断，等同API调用说明，换工具即可实现",
   "path": "SKILL.md"
  },
  "liusai0820/Stock-Analysis-Skill": {
   "score": 72,
-  "why": "流程完整，降级策略扎实，但本质是数据抓取+规则分析，换工具可替代。",
+  "why": "流程扎实数据真实，但方案常见，换工具可替代，边界清晰度一般。",
   "path": "SKILL.md"
  },
  "Santazuki/unblind": {
   "score": 65,
-  "why": "实现清晰，自愈机制扎实，但核心是API转发，替代品多。",
+  "why": "实现扎实且自愈设计独特，但本质是API调用封装，换工具可替代。",
   "path": "SKILL.md"
  },
  "cassmtnr/claude-code-starter": {
-  "score": 62,
-  "why": "流程细致但产出为配置模板，换工具可生成相似结果。",
+  "score": 55,
+  "why": "对Claude Code配置流程理解深入，但大部分是模板型内容，专属价值有限。",
   "path": "SKILL.md"
  },
  "jshchnz/claude-jobs": {
   "score": 45,
-  "why": "公司列表静态可查，缺筛选与边界说明，泛用目录",
+  "why": "仅提供公司API端点列表，无具体方法论或边界说明，可自行搜索替代。",
   "path": "SKILL.md"
  },
  "dandaka/traul": {
@@ -5166,272 +5166,272 @@
  },
  "jennifer88huang/interview-skills": {
   "score": 72,
-  "why": "模拟面试流程设计扎实，具差异化价值，但核心依赖参考文件与通用模板，替代工具存在。",
+  "why": "面试题生成流程扎实且分层次，但核心逻辑依赖模板与提示词，同类工具可复制。",
   "path": "SKILL.md"
  },
  "199-biotechnologies/motion-dev-animations-skill": {
-  "score": 55,
-  "why": "像官方文档而非精选方案，虽详尽但缺少独特交付边界。",
+  "score": 65,
+  "why": "技术选型判断与实现步骤清晰，但核心做法属官方文档范畴，独特性不足。",
   "path": "SKILL.md"
  },
  "swaylq/master-skill": {
   "score": 72,
-  "why": "一套完整严谨的行业调研方法论，边界清晰、依赖关系处理得当，非模板而是可执行流程。",
+  "why": "六轨调研架构清晰，边界和路径规划扎实，但本质是方法论流程，换工具可复用。",
   "path": "SKILL.md"
  },
  "O0000-code/paper-search-pro": {
   "score": 72,
-  "why": "多源检索+中文支持扎实，流程详尽，但同类工具可替代，非唯一。",
+  "why": "实现扎实，流程清晰，但本质是搜索编排，工具替代性强。",
   "path": "SKILL.md"
  },
  "rangerchaz/turkey-build": {
   "score": 65,
-  "why": "流程设计完整且质量门禁清晰，但本质是Claude Code工作流组合，非独特交付",
+  "why": "流程设计缜密，边界清晰，但本质是多代理编排框架，换工具可实现。",
   "path": "SKILL.md"
  },
  "alexfazio/cc-trace": {
-  "score": 62,
-  "why": "指导细致但本质是通用技术教程，换教程工具也能完成同样教学。",
+  "score": 55,
+  "why": "更像操作指南，边界清晰但做法可替代，非独家。",
   "path": "SKILL.md"
  },
  "wusaki0723/play-prompt-kit": {
-  "score": 62,
-  "why": "流程细化到位，但本质是结构化问卷，可被通用角色扮演模板替代。",
+  "score": 72,
+  "why": "访谈流程和档案模板设计扎实，但换用其他角色扮演工具也能实现类似效果，非独一无二。",
   "path": "SKILL.md"
  },
  "sakibsadmanshajib/antigravity-plugin": {
-  "score": 62,
-  "why": "集成多CLI工具，边界清楚，但更像插件说明而非独特方法论。",
+  "score": 65,
+  "why": "职责清晰、用法具体，但本质是工具封装指南，换个包装也能实现相同功能。",
   "path": "SKILL.md"
  },
  "XiaoYiWeio/deepsafe-scan": {
-  "score": 75,
-  "why": "交付清晰，边界明确，扫描维度具体且执行方案扎实。",
+  "score": 72,
+  "why": "扫描维度清晰且脚本可执行，但同类安全工具可替代，边界描述充分。",
   "path": "SKILL.md"
  },
  "glacierphonk/naming": {
-  "score": 65,
-  "why": "流程扎实，边界清晰，有专用引用文件，但核心思路可由通用方法替代。",
+  "score": 72,
+  "why": "流程系统、步骤清晰，有独特方法论，但依赖工具检查，边界尚可更明。",
   "path": "SKILL.md"
  },
  "alexsmedile/firecrawl-lean": {
-  "score": 68,
-  "why": "扎实的CLI参考，有明确的取舍和输出规范，但本质上可被官方文档替代。",
+  "score": 70,
+  "why": "扎实的工具参考，基于真实实践，边界清晰，但本质仍是官方CLI文档的精简整理。",
   "path": "SKILL.md"
  },
  "wjgoarxiv/autoresearch-skill": {
-  "score": 68,
-  "why": "自主循环边界清晰，但换通用agent框架也能实现类似流程。",
+  "score": 72,
+  "why": "自动化研究循环设计扎实、边界清晰，但依赖通用工具，替代方案多。",
   "path": "SKILL.md"
  },
  "adampaulwalker/codex-claude-skill": {
-  "score": 58,
-  "why": "描述清晰可行，但只是调用另一工具，本质是拼接，非独有方法论。",
+  "score": 45,
+  "why": "核心是调用现成CLI，自己未提供独特审查逻辑或边界，泛泛可用。",
   "path": "SKILL.md"
  },
  "artshooter/wechat-publisher": {
-  "score": 68,
-  "why": "流程完整且明确，但核心转换依赖提示词，替代方案存在。",
+  "score": 72,
+  "why": "工作流具体，细节真实，边界清晰，但核心排版仍依赖通用AI能力。",
   "path": "SKILL.md"
  },
  "marcusgoll/atlas-guardrails": {
   "score": 42,
-  "why": "泛泛描述工具能力，缺乏具体做法与边界，官方示例感强。",
+  "why": "工具清单式说明，未体现独特做法或明确边界，交付物模糊。",
   "path": "SKILL.md"
  },
  "maplefukku/claude-code-moshi-notify": {
   "score": 45,
-  "why": "功能单一，仅调API发通知，换脚本或直接curl即可替代，无独特做法或场景深化。",
+  "why": "功能简单明确，但仅是调用API的薄封装，替代方案多，边界感一般。",
   "path": "SKILL.md"
  },
  "hey-stefan/portfolio-audit": {
-  "score": 60,
-  "why": "评审流程扎实、指令明确，但核心是自动化操作，非独门判断，但边界清晰。",
+  "score": 72,
+  "why": "方法扎实且具体，但核心审查逻辑仍可用通用浏览工具替代，非唯一解。",
   "path": "SKILL.md"
  },
  "tejpalv/cc-wiki": {
-  "score": 72,
-  "why": "流程清晰分工明确，但本质是命令编排，核心价值依赖Claude自身，难以说非它不可",
+  "score": 75,
+  "why": "流程设计精细，边界清晰，但依存于Claude环境，换工具可用。",
   "path": "SKILL.md"
  },
  "AKCodez/seo-god": {
-  "score": 72,
-  "why": "架构清晰，状态机严谨，边界明确，但本质是流程编排，非独有做法。",
+  "score": 68,
+  "why": "设计完整、边界清晰，但核心依赖开源工具，非独家方法论。",
   "path": "SKILL.md"
  },
  "lawrencewzen/imgen": {
-  "score": 62,
-  "why": "作为工具调用指南清晰实用，但本质是命令行封装说明，替换其他图像生成工具也可行。",
+  "score": 65,
+  "why": "用法清晰边界明确，但本质是封装命令行，非独有做法。",
   "path": "SKILL.md"
  },
  "aidongise-cell/prism-scanner": {
-  "score": 62,
-  "why": "工具使用说明扎实，但本质是命令行手册，边界清晰度一般。",
+  "score": 47,
+  "why": "明确输出与边界，但实为外部CLI工具封装，替代性强。",
   "path": "SKILL.md"
  },
  "vonarmen-wq/forward-deployed-selling": {
-  "score": 63,
-  "why": "框架扎实自成体系，但多为经验总结，换资深销售或咨询工具也能产出类似判断。",
+  "score": 45,
+  "why": "泛泛的销售方法论框架，缺少具体场景下的独特产出物与边界。",
   "path": "SKILL.md"
  },
  "sem-technology/gtm-copilot": {
-  "score": 65,
-  "why": "GTM配置管理扎实且流程清晰，但本质是API封装工具，逻辑可自建替代。",
+  "score": 72,
+  "why": "实现扎实，支持GTM全流程，但核心是命令封装，换工具也可替代。",
   "path": "SKILL.md"
  },
  "zilliztech/milvus-skill": {
-  "score": 55,
-  "why": "官方SDK操作的整理集，扎实但无独特边界判断",
+  "score": 65,
+  "why": "功能完整扎实，但本质是官方SDK教程，可替代性强。",
   "path": "SKILL.md"
  },
  "Jia-Ethan/pavedpath-code": {
-  "score": 65,
-  "why": "流程扎实边界清楚，但本质是可替代的GitHub调研方法论。",
+  "score": 72,
+  "why": "工作流扎实边界清晰，但本质是GitHub搜索方法论，工具可替代。",
   "path": "SKILL.md"
  },
  "LottieFiles/dotlottie-web": {
   "score": 72,
-  "why": "技术指南扎实详实，涵盖场景明确，但多为官方文档示例搬运，独特性有限。",
+  "why": "覆盖全面，实操性强，但多为官方文档内容的提炼，未见独特洞见或边界探讨。",
   "path": "SKILL.md"
  },
  "SpaceZephyr/creator-buddy": {
-  "score": 45,
-  "why": "是路由总控而非独立交付物，价值依赖子技能，自身边界清楚但难单独判断。",
+  "score": 62,
+  "why": "路由设计清晰诚实，但本质是多个工具的分发器，自身不产出独有分析",
   "path": "SKILL.md"
  },
  "EESJGong/scholar-skill": {
   "score": 35,
-  "why": "仓库导航索引，未见技能实质内容，交付不明。",
+  "why": "仅是仓库索引页，未含实际技能交付物，指向子文件。",
   "path": "SKILL.md"
  },
  "christinminor459/OnionClaw": {
   "score": 72,
-  "why": "工具链完整且专一，边界清晰，但本质是脚本封装，换工具可替代。",
+  "why": "专业Tor OSINT工具，集成度高，操作具体，但核心功能可通过其他工具组合实现",
   "path": "SKILL.md"
  },
  "Wholiver/swiftui-design-skill": {
   "score": 72,
-  "why": "反AI俗套规则具体可执行，边界清晰；但流程偏通用，非SwiftUI独有。",
+  "why": "反AI模板规则具体可执行，边界清晰，但设计与代码分离未达独有深度。",
   "path": "SKILL.md"
  },
  "Purple-Horizons/openclaw-voice": {
   "score": 45,
-  "why": "实现方案具体完整，但本质是配置教程，无独特创新壁垒。",
+  "why": "是实用技术集成清单，但功能组合常见，缺乏独特做法与边界界定。",
   "path": "SKILL.md"
  },
  "Happy-Technologies-LLC/happy-platform-skills": {
-  "score": 40,
-  "why": "是技能仓库目录，提供发现与加载机制，但缺少具体任务交付做法。",
+  "score": 30,
+  "why": "这是一份技能目录/启动器，本身不交付具体判断，需依赖内部加载器。",
   "path": "SKILL.md"
  },
  "kk-r/skillify-skill": {
-  "score": 45,
-  "why": "泛泛的流程引导，无非它不可的独到做法。",
+  "score": 60,
+  "why": "能封装流程但非独特，更换工具亦可实现，边界尚清晰。",
   "path": "SKILL.md"
  },
  "paraschopra/make-pages-interactive": {
-  "score": 72,
-  "why": "实现具体完整，有清晰边界与状态管理，但核心交互功能逻辑可被替代工具实现。",
+  "score": 45,
+  "why": "功能具体，但对代理执行依赖过重，缺乏边界设定，别处亦能实现。",
   "path": "SKILL.md"
  },
  "zstmfhy/annas-to-notebooklm": {
-  "score": 45,
-  "why": "流程具体但依赖外部 CLI 与站点结构，多为集成而非独到判断，边界尚可。",
+  "score": 62,
+  "why": "流程具体可执行，但依赖特定网站结构，且本质是自动化脚本，工具替代性强。",
   "path": "SKILL.md"
  },
  "AICreator-Wind/gstack-openclaw-skills": {
-  "score": 62,
-  "why": "它是技能集合的索引而非单一技能，边界概念化，深度不足。",
+  "score": 35,
+  "why": "适配移植说明与目录索引，非独立技能交付，缺内核实操判断。",
   "path": "SKILL.md"
  },
  "dreamwing/clawbridge": {
-  "score": 55,
-  "why": "是一个安装管理工具而非Agent技能，逻辑描述存在明显矛盾。",
+  "score": 42,
+  "why": "更像项目安装说明，边界清晰但实质内容少，非独特技能交付。",
   "path": "SKILL.md"
  },
  "LeoMusk/wechat-rpa-bot-skill": {
   "score": 65,
-  "why": "流程细致、边界清楚，但本质是安装指南加MCP接入，手法可被通用文档替代。",
+  "why": "提供具体安装激活流程和边界，但核心是引导外部工具，自身价值有限。",
   "path": "SKILL.md"
  },
  "hashgraph-online/registry-broker-skills": {
   "score": 35,
-  "why": "API文档罗列，无场景判断，更像官方示例而非独特技能",
+  "why": "是API使用文档和工具目录，非独立技能，无独特方法论。",
   "path": "SKILL.md"
  },
  "tensorlakeai/tensorlake-skills": {
   "score": 60,
-  "why": "扎实的官方SDK文档，边界清晰，但本质是工具说明书，非独家方法论。",
+  "why": "扎实的官方SDK指引，但本质是文档入口与路由说明。",
   "path": "SKILL.md"
  },
  "dama-cyber/Casting-Workflow": {
   "score": 72,
-  "why": "流程完整且边界清晰，但本质是规范化提示词链，核心依赖外部LLM，非独家方法论。",
+  "why": "流程扎实且边界清晰，但核心可被其他工具复现，非独家。",
   "path": "SKILL.md"
  },
  "chu2bard/pinion-os": {
-  "score": 35,
-  "why": "这是API服务目录/技术文档，非技能实现，缺乏独立判断与交付边界。",
+  "score": 45,
+  "why": "是接口目录与基建说明，非深度技能；有边界但泛泛，缺乏独特做法。",
   "path": "SKILL.md"
  },
  "zzquant/zzshare": {
-  "score": 75,
-  "why": "工程细致，覆盖具体场景，边界清楚，但本质是数据引擎封装，可被替代。",
+  "score": 65,
+  "why": "定位清晰、实践指南扎实，但本质是数据接口说明书，换工具可替代。",
   "path": "SKILL.md"
  },
  "Perufitlife/supabase-security-skill": {
-  "score": 72,
-  "why": "边界清楚，交付具体可执行，但同类工具可替代。",
+  "score": 78,
+  "why": "定位清晰，交付明确，给出可执行SQL，但核心检查点可被官方工具或脚本替代",
   "path": "SKILL.md"
  },
  "Jerry-del975/ai-zemax-optical-design": {
-  "score": 72,
-  "why": "专业领域自动化扎实，边界清晰，但核心替代性取决于API熟练度而非独有方法。",
+  "score": 75,
+  "why": "专精Zemax自动化，流程约束清晰，但核心方法仍依赖官方示例和通用ZOS-API",
   "path": "SKILL.md"
  },
  "rvacyber/openclaw-protonmail-skill": {
   "score": 62,
-  "why": "实现扎实但本质是IMAP/SMTP封装，官方Bridge即可替代。边界清晰但非独",
+  "why": "集成扎实且边界清晰，但本质是Proton Bridge的CLI封装，换工具可替代",
   "path": "SKILL.md"
  },
  "gugug168/cute-claude-hooks": {
-  "score": 45,
-  "why": "教程详细但多为说明文档，定制功能可自行实现，非不可替代的独特方案。",
+  "score": 55,
+  "why": "功能实用但泛泛，是教程/配置指南，非独特方法，依赖现有工具。",
   "path": "SKILL.md"
  },
  "th3ee9ine/wechat-claw-skill": {
-  "score": 65,
-  "why": "流程完整、边界清晰，但本质是脚本管线整合，换工具可复现。",
+  "score": 72,
+  "why": "流程完整脚本化，但高度依赖外部技能，模板与写法可被通用工具替代",
   "path": "SKILL.md"
  },
  "ksimback/tech-debt-skill": {
   "score": 72,
-  "why": "边界明确、产出物清晰，做法扎实。但审计类任务用通用编码助手工具也能完成，非独门绝",
+  "why": "协议详尽、边界清晰，但核心为流程文档，工具替代性较强。",
   "path": "SKILL.md"
  },
  "Lloyd-Jahn/openclaw-paper-search": {
-  "score": 55,
-  "why": "功能全面但泛化，arXiv官方API可替代，无独特判断或边界说明。",
+  "score": 45,
+  "why": "通用CLI工具集合，功能常见，缺乏独特做法和边界说明。",
   "path": "SKILL.md"
  },
  "balukosuri/Andrej-Karpathy-s-Autoresearch-As-a-Universal-Skill": {
-  "score": 65,
-  "why": "流程具体可执行，但本质是通用方法论模板，可替代性强，边界不突出。",
+  "score": 45,
+  "why": "结构清晰，但通用性强，多有替代方案，可移植性高。",
   "path": "SKILL.md"
  },
  "aloth/PowerSkills": {
   "score": 45,
-  "why": "功能打包清晰但属工具集，边界泛化，难说非它不可",
+  "why": "覆盖面广但泛泛，是工具集而非独特做法，换其他方案也可行。",
   "path": "SKILL.md"
  },
  "Ramsbaby/openclaw-self-healing": {
   "score": 72,
-  "why": "自愈系统设计完整且落地，但核心依赖Claude Code，边界清晰度一般。",
+  "why": "边界清晰、分层架构与真实案例扎实，但依赖特定工具链，可移植性受限。",
   "path": "SKILL.md"
  },
  "aloth/olcli": {
-  "score": 72,
-  "why": "工具集成扎实，功能完整，但本质是官方CLI封装，非独特做法。",
+  "score": 65,
+  "why": "功能全面且边界清晰，但本质是CLI封装，替代方案多，非独家。",
   "path": "SKILL.md"
  },
  "SpillwaveSolutions/sdd-skill": {
@@ -5439,228 +5439,228 @@
   "why": "取不到 SKILL.md"
  },
  "CSlawyer1985/china-lawyer-analyst": {
-  "score": 55,
-  "why": "功能详尽但混杂技术营销，核心交付物不够聚焦清晰。",
+  "score": 65,
+  "why": "法律分析流程细致、自动化校验有亮点，但实现依赖外部工具与数据库，边界未完全清晰。",
   "path": "SKILL.md"
  },
  "danielroe/empathy": {
-  "score": 80,
-  "why": "对AI沟通边界有稀缺的明确共识，规则具体到可直接执行，自我定位清晰。",
+  "score": 82,
+  "why": "边界清晰，规则具体可执行，非模板，但部分内容同类规范亦有。",
   "path": "SKILL.md"
  },
  "waldirborbajr/kvstok": {
-  "score": 62,
-  "why": "行为准则明确，但类似建议其他编码指南也有，非独家。",
+  "score": 72,
+  "why": "提炼了实操准则，边界清晰，但多为常识，换工具也可替代。",
   "path": "SKILL.md"
  },
  "Brandon030722/ark-ui-skill": {
-  "score": 75,
-  "why": "边界清晰、方法扎实，但类似设计系统可用其他工具达成。",
+  "score": 85,
+  "why": "清晰定义设计体系与深度层级，边界明确，提供独特可操作方法。",
   "path": "SKILL.md"
  },
  "KimYx0207/claude-memory-3layer": {
-  "score": 68,
-  "why": "结构清晰，分层记忆设计合理，但仅是对官方机制的管理补充。",
+  "score": 65,
+  "why": "设计扎实分层清晰，但沿用常见记忆方案，非独有做法",
   "path": "SKILL.md"
  },
  "blessonism/github-explorer-skill": {
   "score": 72,
-  "why": "流程详尽、边界清晰，含GitHub API限制等独家做法，但偏依赖外部工具链。",
+  "why": "流程细节扎实，含真实API用法，但输出模板冗长，核心分析深度未见独到之处。",
   "path": "SKILL.md"
  },
  "lys123654/optical-initial-design-agent-skill": {
   "score": 72,
-  "why": "做法扎实专业，边界清晰，但高度依赖Zemax生态，换竞品工具思路仍可复用。",
+  "why": "专业光学设计流程扎实有边界，但需配合Zemax等工具，非独立可行。",
   "path": "SKILL.md"
  },
  "AndreaGriffiths11/open-source-best-practices": {
-  "score": 68,
-  "why": "框架全面实用，但多为基础运维常识，可替代性强且未展现独特执行细节。",
+  "score": 45,
+  "why": "是框架而非可执行方案，内容泛化，非该领域特有做法。",
   "path": "SKILL.md"
  },
  "argonautsystems/InvestorClaw": {
-  "score": 68,
-  "why": "规则严谨边界清晰，但依赖外部系统，本质是功能封装。",
+  "score": 50,
+  "why": "实现扎实但为通用投资分析，具边界但非独特不可替代",
   "path": "SKILL.md"
  },
  "itshussainsprojects/Claude-Council-Skill": {
   "score": 55,
-  "why": "提供多视角辩论框架，产出结构化，但换工具可做，缺乏独特边界",
+  "why": "多角色辩论框架有想法，但输出仍依赖模板，且本质是提示词组合，替代品众多。",
   "path": "SKILL.md"
  },
  "gnipbao/content-to-skill": {
-  "score": 65,
-  "why": "流程框架扎实有拒止边界，但本质是通用方法论，借助现有工具也能实现。",
+  "score": 55,
+  "why": "流程系统化且边界清晰，但本质是内容转技能的通用方法论模板，可替代性强。",
   "path": "SKILL.md"
  },
  "sola5866/prelude_vanilla": {
   "score": 45,
-  "why": "是项目内部流程文档，非通用技能，边界清晰但无独特交付",
+  "why": "是内部开发流程文档，非通用技能，泛用性弱，交付物为流程规范。",
   "path": "SKILL.md"
  },
  "samibajwaisking/website-cloner": {
-  "score": 68,
-  "why": "抓取即转纯HTML做法具体，但对齐表冗长，换通用抓取工具也能实现",
+  "score": 45,
+  "why": "功能明确的克隆工具，但本质是映射表加流程，做法通用，无独特交付边界。",
   "path": "SKILL.md"
  },
  "EVERSE-ResearchSoftware/TechRadar": {
-  "score": 62,
-  "why": "流程具体扎实，但本质是仓库维护的自动化工作流说明，换人执行亦可。",
+  "score": 60,
+  "why": "流程扎实具体，但本质是自动化维护操作，换脚本或人也能做，独特性有限。",
   "path": "SKILL.md"
  },
  "gonta223/humanizer-ja": {
-  "score": 75,
-  "why": "规则扎实，边界清晰，但本质是提示词模板，换工具也能用。",
+  "score": 82,
+  "why": "针对AI腔日文有20条非共识写法和清单，界线明确。此技能实现方式独特。",
   "path": "SKILL.md"
  },
  "smartpeopleconnected/openclaw-token-optimizer": {
-  "score": 72,
-  "why": "边界清晰，改动范围明确，工具链完整，但核心做法并非独家。",
+  "score": 55,
+  "why": "针对开源项目有具体做法，但本质是工具配置教程而非独特方法。",
   "path": "SKILL.md"
  },
  "clearmud/hermes-chat-bubble": {
-  "score": 68,
-  "why": "实操性强，边界清楚，但仅限于特定插件的安装排障，可替代性一般。",
+  "score": 45,
+  "why": "特定插件的安装排障手册，实用但场景窄，换人按步骤也能做。",
   "path": "SKILL.md"
  },
  "rahamanbinujit/claude-design-engine": {
-  "score": 65,
-  "why": "流程完整、细节丰富，但更像集成型方案，独特性有限。",
+  "score": 45,
+  "why": "功能全面但类似设计工具众多，边界泛化，缺少独特不可替代的做法。",
   "path": "SKILL.md"
  },
  "Earnwithalee7890/stx-contract-deployment-hiro": {
   "score": 45,
-  "why": "像SDK文档合集，泛泛介绍工具链，缺独到判断与边界说明。",
+  "why": "泛用SDK文档，功能齐全但非独有，缺乏边界界定与独到做法。",
   "path": "SKILL.md"
  },
  "claudiocebpaz/vite-react-best-practices": {
   "score": 45,
-  "why": "泛泛的规则清单，无专有做法，类似通用教程，边界不清。",
+  "why": "是规则清单目录，分点列出但缺具体做法与边界，泛泛难显独到之处。",
   "path": "SKILL.md"
  },
  "Sworddust/codex-history": {
-  "score": 72,
-  "why": "实现扎实边界清晰，但本质是CLI功能封装，换工具也能做",
+  "score": 70,
+  "why": "边界清晰、删除护栏具体，但本质为本地CLI封装，替代工具易得。",
   "path": "SKILL.md"
  },
  "louisedesadeleer/b-roll-finder": {
   "score": 72,
-  "why": "方法论扎实，边界清晰，但核心流程可被通用工具替代，非独家。",
+  "why": "方法清晰且边界明确，但内容深度不足，泛用工具亦可达此效。",
   "path": "SKILL.md"
  },
  "johnpcutler/tbm-recommender": {
-  "score": 75,
-  "why": "检索设计清晰，边界明确，但本质是索引工具，价值取决于内容库。",
+  "score": 72,
+  "why": "检索路径清晰，边界明确，但本质是索引工具，增值有限。",
   "path": "SKILL.md"
  },
  "MagentaJaguar/r13-danielrosehill-claude-slash-commands-ecommerce": {
-  "score": 45,
-  "why": "功能列表全面但泛泛，缺少具体场景下的独特做法和边界说明。",
+  "score": 50,
+  "why": "是命令清单和交互模板，缺具体判断逻辑，实质交付模糊。",
   "path": "SKILL.md"
  },
  "Virtual-Protocol/dgclaw-skill": {
-  "score": 62,
-  "why": "操作流程清晰扎实，但本质是平台对接文档，换其他交易平台文档也可替代。",
+  "score": 65,
+  "why": "流程清晰可执行，但实质只是封装命令行工具与比赛规则的说明书，无独特方法论。",
   "path": "SKILL.md"
  },
  "Da7-Tech/mind": {
   "score": 68,
-  "why": "实现扎实边界清晰，但功能偏基建，可替代性存在",
+  "why": "实现扎实、边界清楚，但此类记忆工具概念类似，可被替代。",
   "path": "SKILL.md"
  },
  "Kuberwastaken/litmus": {
-  "score": 68,
-  "why": "设计周密，自动化研究框架完整，但核心思路可被替代实现。",
+  "score": 72,
+  "why": "设计详尽边界明确，但作为高度专一工具部署学习成本高",
   "path": "SKILL.md"
  },
  "RealZYZhang/paper-reader-heilmeier": {
   "score": 72,
-  "why": "框架扎实、边界清晰，但判断分析工具本身不稀缺，核心价值依赖模型能力。",
+  "why": "将结构化阅读与Heilmeier批判框架结合，做法扎实细致，但框架本身非独有，换",
   "path": "SKILL.md"
  },
  "Olafs-World/airbnb-search": {
-  "score": 55,
-  "why": "功能明确可用，但本质是调API的封装工具，换脚本也能实现，边界感一般。",
+  "score": 62,
+  "why": "实现明确可用，但本质是命令行封装，换脚本也能做，边界清晰度一般。",
   "path": "SKILL.md"
  },
  "raiph-ai/fireclaw": {
   "score": 72,
-  "why": "设计思路清晰且有边界，但实现依赖外部工具，通用替代方案可行",
+  "why": "实现扎实且边界清晰，但作为代理方案非独有，换工具可替代",
   "path": "SKILL.md"
  },
  "Tyuts/xiaobai-skills": {
-  "score": 72,
-  "why": "清晰的安装与治理流程，但本质是目录式操作指南，换人换工具亦可行。",
+  "score": 62,
+  "why": "技能包管理与策展流程清晰实用，但是作为安装器与目录，替代方案多。",
   "path": "SKILL.md"
  },
  "Drjacky/claude-android-ninja": {
-  "score": 65,
-  "why": "扎实的Android专项指南，路由清晰，但同类经验可从他处获取。",
+  "score": 72,
+  "why": "针对特定技术栈的专家指南，边界与分工明确，但同类开发者笔记可替代。",
   "path": "SKILL.md"
  },
  "Asif2BD/xCloud-Docker-Deploy-Skill": {
-  "score": 65,
-  "why": "边界清晰，流程谨慎，但可被docker等通用工具替代",
+  "score": 60,
+  "why": "聚焦xCloud部署且安全门控清晰，但实质功能可被通用Docker工具替代。",
   "path": "SKILL.md"
  },
  "xsser/cliproxyapi-cloudflare-stack": {
-  "score": 65,
-  "why": "部署架构清晰，含具体命令和坑点，但核心做法在GitHub上可得，非独家。",
+  "score": 68,
+  "why": "架构清晰且含真实部署细节，属扎实操作指南，但核心逻辑可被替换实现。",
   "path": "SKILL.md"
  },
  "offgrid-ing/arp": {
-  "score": 55,
-  "why": "功能完整清晰，但本质是工具集成与操作指南，模式可复制，非独有判断。",
+  "score": 65,
+  "why": "协议集成工具，功能明确，但属于安装配置指南，深度和独特性一般。",
   "path": "SKILL.md"
  },
  "lumpinif/find-oss-alternative": {
-  "score": 72,
-  "why": "流程明确且决策框架实用，但本质上替代手动搜索，非独有做法。",
+  "score": 65,
+  "why": "流程扎实，决策明确，但核心是通用搜索方法论，工具可替代。",
   "path": "SKILL.md"
  },
  "rithulkamesh/licensify": {
-  "score": 65,
-  "why": "作为MCP服务器实现清晰，但本质是SDK封装，换工具亦可实现。",
+  "score": 55,
+  "why": "功能清晰可用，但是特定产品的技术接入示例，泛用性有限。",
   "path": "SKILL.md"
  },
  "YIWEI-CHEN/translate-tw-doc": {
-  "score": 72,
-  "why": "翻译规则详尽，产出物明确，但核心为专业翻译，工具可替代性强。",
+  "score": 45,
+  "why": "流程细致但本质是模板+翻译，缺乏不可替代的判断，产出边界明确但通用工具可替代。",
   "path": "SKILL.md"
  },
  "gabogabucho/trendingcontent-agent": {
-  "score": 62,
-  "why": "集成多个数据源并定制内容生成，功能扎实但依赖外部API，同类工具可替代。",
+  "score": 65,
+  "why": "扎实的调研+生成流程，参数灵活，但依赖多源API，换工具可复制。",
   "path": "SKILL.md"
  },
  "Asif2BD/OpenClaw-Token-Optimizer": {
   "score": 65,
-  "why": "实用工具套件，边界清晰，但多为常规优化方法，可被替代",
+  "why": "实用工具包，边界清晰，但本质是脚本集，概念可替代。",
   "path": "SKILL.md"
  },
  "DUBSOpenHub/copilot-cli-mastery": {
-  "score": 65,
-  "why": "有明确边界和交互规则，但本质是课程编排，内容本身可被其他教程替代。",
+  "score": 72,
+  "why": "交互式训练设计明确，进度/奖励机制细致，但内容依赖项目内文件，换工具可实现。",
   "path": "SKILL.md"
  },
  "andrewstellman/quality-playbook": {
-  "score": 72,
-  "why": "流程严谨自成体系，但属可替代的质量审计方法论，非独门绝技。",
+  "score": 63,
+  "why": "流程完整扎实，但执行细节冗长，核心价值需特定场景才能体现。",
   "path": "SKILL.md"
  },
  "sebbsssss/clude": {
-  "score": 45,
-  "why": "描述详尽但更像工具文档，缺乏独到方法论与边界说明，可被其他存储方案替代。",
+  "score": 55,
+  "why": "功能全面但泛泛，类似记忆方案多，缺独特边界与具体做法。",
   "path": "SKILL.md"
  },
  "mahlernim/aptner-bulk-reserver": {
-  "score": 72,
-  "why": "针对特定公寓系统提供了完整可用的API封装与操作逻辑，但思路可被通用爬虫工具替代",
+  "score": 70,
+  "why": "实现扎实且含去重逻辑，但本质为API封装，细节可替代性中等。",
   "path": "SKILL.md"
  },
  "EngramMemory/engram-memory": {
-  "score": 65,
-  "why": "持久记忆与上下文搜索实现扎实，但依赖自建向量库，通用性受限，换工具亦可实现。",
+  "score": 63,
+  "why": "功能扎实的持久记忆方案，但核心能力可被向量库+脚本替代，边界尚可但非独有。",
   "path": "SKILL.md"
  },
  "zbjincheng/openclaw-skill-videotranslate": {
@@ -5668,23 +5668,23 @@
   "why": "取不到 SKILL.md"
  },
  "phil0010-gh/openfront-helper": {
-  "score": 58,
-  "why": "操作指南清晰，但本质是付费组件安装流程，可替代性强，边界仅限授权使用。",
+  "score": 52,
+  "why": "集成指引清晰，但本质是商业产品的安装手册，缺乏独特方法论和明确产出边界。",
   "path": "SKILL.md"
  },
  "andylizf/nonstop": {
-  "score": 65,
-  "why": "框架扎实、边界清楚，但属提示工程，可被通用指南替代",
+  "score": 72,
+  "why": "有清晰的操作前风险审查和拦截决策框架，交付边界明确，但属通用工作流而非场景专属方",
   "path": "SKILL.md"
  },
  "tenfoldmarc/llm-council-skill": {
-  "score": 65,
-  "why": "方法清晰且触发词明确，但核心价值依赖通用AI能力，非不可替代。",
+  "score": 72,
+  "why": "方法清晰，五人视角独特，但本质是多角度分析，非独有不可替代。",
   "path": "SKILL.md"
  },
  "YouMind-OpenLab/nano-banana-pro-prompts-recommend-skill": {
-  "score": 63,
-  "why": "扎实的提示词库推荐工具，但本质是目录检索，换工具可替代。",
+  "score": 62,
+  "why": "基于大型提示库的检索推荐，实现扎实但本质是索引转发，样本图是附加值而非不可替代做",
   "path": "SKILL.md"
  },
  "MADEVAL/Pre-Mortem-Skill": {
@@ -5693,142 +5693,142 @@
  },
  "chenjin-cmd/wechat-miniprogram-builder": {
   "score": 72,
-  "why": "体系完整覆盖全流程，决策树清晰；但本质是教程封装，换指南工具也可达。",
+  "why": "流程完整且有边界意识，但多为教程汇编，非独家做法。",
   "path": "SKILL.md"
  },
  "lugasia/3gpp-skill": {
-  "score": 62,
-  "why": "扎实的领域提示词，但本质是角色扮演而非独特交付，换通用LLM也能实现。",
+  "score": 72,
+  "why": "3GPP 专家知识扎实且有引用规范，但本质是可替代的专业问答提示词。",
   "path": "SKILL.md"
  },
  "phucnt-bazone-vietnam/use-case-writer": {
   "score": 72,
-  "why": "方法扎实、边界清楚，但产出格式通用，AI 也可替代完成。",
+  "why": "方法扎实，边界清晰，但核心产出是模板流程，有替代工具可做。",
   "path": "SKILL.md"
  },
  "zaferayan/skills": {
-  "score": 60,
-  "why": "整合多项技术配置，执行指南详细，但更像操作手册而非独有方法论。",
+  "score": 62,
+  "why": "具体工程规范扎实，但本质是配置清单，可被替代。",
   "path": "SKILL.md"
  },
  "komako-workshop/digital-oracle": {
-  "score": 62,
-  "why": "方法扎实、边界清楚，但多为公开市场数据整合，换工具可替代。",
+  "score": 72,
+  "why": "方法扎实且信号来源明确，但本质是数据整合，非独家判断，逻辑可被替代。",
   "path": "SKILL.md"
  },
  "LeoYeAI/openclaw-backup": {
   "score": 72,
-  "why": "边界清晰安全模型严谨，备份恢复方案完整，但属常规运维工具",
+  "why": "边界清晰、安全模型严谨，备份恢复方案完整，但同类工具可替代",
   "path": "SKILL.md"
  },
  "mingli30119/stock-analysis": {
   "score": 72,
-  "why": "流程完整、脚本配套扎实，但本质是自动化分析工具，深度依赖模板与脚本，独特性有限。",
+  "why": "边界清晰且流程完备，但本质仍是采集+生成报告，换LangChain等也可实现。",
   "path": "SKILL.md"
  },
  "lucy-cxy/oss-investment-scorecard": {
   "score": 72,
-  "why": "框架扎实且边界清晰，但方法论通用，可由资深VC替代。",
+  "why": "投资评估框架极专业，边界清晰，含否决条件与一手案例，别处难觅。",
   "path": "SKILL.md"
  },
  "xenitV1/claude-code-maestro": {
-  "score": 55,
-  "why": "架构治理框架扎实，但类似工作流可复用，非独家交付。",
+  "score": 45,
+  "why": "架构治理框架，依赖内部子技能，边界模糊，更像方法论合集。",
   "path": "SKILL.md"
  },
  "SimonsTang/feifei-companion": {
   "score": 45,
-  "why": "架构宏大但更像营销宣传册，泛泛而谈，缺乏具体可执行的教学步骤或独特产出物。",
+  "why": "架构描述重营销轻实操，未明确交付边界与不可替代做法。",
   "path": "SKILL.md"
  },
  "Mrjie7205/serenity-bottleneck-hunter": {
   "score": 72,
-  "why": "方法论扎实、纪律详尽，但本质是分析流程而非独特产出，换工具可复现。",
+  "why": "方法具体、纪律明确且含事故复盘，但本质仍可被资深分析师替代实现。",
   "path": "SKILL.md"
  },
  "vasilievyakov/claude-skill-transcript-to-proposal": {
-  "score": 70,
-  "why": "流程清晰且含用户确认关卡，但产出物为通用提案工具可复制，非独家洞察。",
+  "score": 72,
+  "why": "流程清晰且重用户确认，但方案生成依赖产品描述，换个工具也能做。",
   "path": "SKILL.md"
  },
  "JY0xLU/codexgo": {
-  "score": 72,
-  "why": "会话恢复场景清晰实用，但本质是脚本封装，换工具也能实现。",
+  "score": 65,
+  "why": "针对会话恢复场景提供明确做法与边界，但功能可被灵活工具替代。",
   "path": "SKILL.md"
  },
  "kesslerio/academic-deep-research-clawhub-skill": {
-  "score": 65,
-  "why": "结构严谨、流程明确，但类似深度研究技能不少，区分度有限。",
+  "score": 72,
+  "why": "流程规范严格，有明确停点和引用标准，但本质是研究流程编排，非独有方法论。",
   "path": "SKILL.md"
  },
  "TammyTan516/relationship-training-skill": {
   "score": 72,
-  "why": "架构清晰有边界，但模拟人格训练替代方案多，非独家",
+  "why": "架构清晰、流程完整，但核心价值依赖多模块协同，单看此文件难显独特做法。",
   "path": "SKILL.md"
  },
  "aws-samples/sample-agent-skill-eval": {
-  "score": 62,
-  "why": "专业全面但属工具推荐，可行性依赖执行质量，非独特方法论。",
+  "score": 72,
+  "why": "工具设计系统完整，但本质是CLI封装，价值可替代。",
   "path": "SKILL.md"
  },
  "Paidax01/web-to-design-md": {
   "score": 72,
-  "why": "工作流完整，证据优先理念清晰，但依赖外部浏览器工具且产出为通用文档。",
+  "why": "流程具体明确，产出界定清晰，但依赖单一工具且更换后仍可执行。",
   "path": "SKILL.md"
  },
  "kunal12203/swafra": {
-  "score": 58,
-  "why": "工具集成说明扎实，但本质是MCP调用清单，做法可替代，缺独特场景判断。",
+  "score": 42,
+  "why": "工具说明书，操作步骤清晰但无独特判断或边界主张",
   "path": "SKILL.md"
  },
  "gaaiyun/joinquant-skill": {
-  "score": 72,
-  "why": "边界清晰，渐进式API与模板、lint均非通用，深度专精于聚宽平台。",
+  "score": 85,
+  "why": "知识库整合与lint实用，但核心价值依赖官方API，非独门绝技。",
   "path": "SKILL.md"
  },
  "snowyowlmia/persona-compass": {
-  "score": 55,
-  "why": "功能扎实但类似心理模型工具可替代，边界略泛。",
+  "score": 72,
+  "why": "边界清晰、场景具体，有独特做法；但可被其他工具替代核心价值。",
   "path": "SKILL.md"
  },
  "elad12390/web-research-assistant": {
   "score": 45,
-  "why": "工具清单丰富但定位是MCP服务器，泛化集成，缺乏独特判断与边界说明。",
+  "why": "罗列14个工具，功能齐全但泛泛，未展示独特判断或边界，更像工具索引。",
   "path": "SKILL.md"
  },
  "ZongziForu/cn-law-hub": {
   "score": 72,
-  "why": "多源覆盖与法条级检索务实，但核心是爬虫集合，换工具可替代。",
+  "why": "覆盖广、边界清晰，但本质是爬虫集合，换工具也可达。",
   "path": "SKILL.md"
  },
  "maquina-app/rails-upgrade-skill": {
-  "score": 62,
-  "why": "流程清晰落地扎实，但依赖外部脚本和MCP，核心判断可由官方文档替代",
+  "score": 55,
+  "why": "流程明确且提供脚本，但依赖官方changelog，方法论通用，非独家不可替代。",
   "path": "SKILL.md"
  },
  "KirinJin2046/trump-skill": {
   "score": 72,
-  "why": "结构扎实，模式区分和预测逻辑清晰，但本质是资料汇编，可替代性强。",
+  "why": "构建精细，模式清晰，研究流程扎实，但本质是可复用的角色模拟框架。",
   "path": "SKILL.md"
  },
  "ai-zixun/humanizer-zh": {
   "score": 72,
-  "why": "边界清晰、具体到可执行规则与场景，并自建参考材料，非泛泛模板。",
+  "why": "规则细致，边界清楚，去AI味有效，但同类改写工具思路相近。",
   "path": "SKILL.md"
  },
  "jiahao-shao1/openclaw-skill-munger-observer": {
-  "score": 62,
-  "why": "思维模型应用具体，有边界与交付物，但替代方案（Claude+规则）可行。",
+  "score": 55,
+  "why": "框架标准，分析浅泛，未达真正思考深度，各工具可替代。",
   "path": "SKILL.md"
  },
  "giacomoarienti/meta-ads-skill": {
   "score": 45,
-  "why": "泛泛的知识整合，像官方文档目录+提示词拼装，无独立交付物或场景实操。",
+  "why": "分类整理型知识库，方向明确但做法可替代，缺乏独特深度产出与边界声明。",
   "path": "SKILL.md"
  },
  "metedata/pdf-proof": {
-  "score": 75,
-  "why": "定位明确，流程扎实，验证逻辑清晰，但核心是调用脚本，非独有方法。",
+  "score": 82,
+  "why": "以截图做证据的独特定位，自带校验循环，边界清楚，是别处难寻的实用物种。",
   "path": "SKILL.md"
  },
  "mdoty4/batonbot": {
@@ -5836,93 +5836,93 @@
   "why": "取不到 SKILL.md"
  },
  "Yuzc-001/skill-router": {
-  "score": 72,
-  "why": "边界清晰、决策逻辑扎实，但本质是通用元技能，非独家不可替代。",
+  "score": 70,
+  "why": "路由判断边界清晰，产出明确，但可被流程文档或代码替代。",
   "path": "SKILL.md"
  },
  "MrEgg2021/mregg-skill": {
-  "score": 65,
-  "why": "边界清晰，分级触发与审计机制独特，非通用模板。",
+  "score": 72,
+  "why": "协议设计扎实、边界清晰，但属方法论，执行靠人工，工具替代性较高",
   "path": "SKILL.md"
  },
  "JaysonBucket/Cowork-DailyOps": {
   "score": 72,
-  "why": "极具体系化的个人运营系统，边界清晰，独创邮件捕获机制，非通用模板可比。",
+  "why": "个人工作流系统设计扎实，邮件捕获闭环清晰，但边界为泛化模板，非独家方案。",
   "path": "SKILL.md"
  },
  "g-akshay/ClaudeShrink": {
-  "score": 72,
-  "why": "实现清晰有边界，但本质是调用现成工具，非独有做法",
+  "score": 68,
+  "why": "有明确触发边界和失败降级，但换个Python脚本+库也能实现同样压缩。",
   "path": "SKILL.md"
  },
  "thatsme/giulia": {
-  "score": 65,
-  "why": "功能完整扎实，但本质是API索引与工具说明，边界清晰，创意有限。",
+  "score": 55,
+  "why": "是完整工具文档，边界清晰但依赖特定后台，判货价值属集成说明而非独有方法。",
   "path": "SKILL.md"
  },
  "bybaochaule/systems-thinking-workflow-architect": {
-  "score": 65,
-  "why": "扎实的系统思维方法论，结构清晰，但为通用工具可替代。",
+  "score": 72,
+  "why": "框架扎实边界清晰，但核心方法是通用系统思维，非独门绝技。",
   "path": "SKILL.md"
  },
  "Zjianru/restart-guard": {
-  "score": 68,
-  "why": "流程严谨，重启边界与状态机验证清晰，但属运维脚本，换工具亦可实现。",
+  "score": 72,
+  "why": "流程严谨、边界清楚，但偏运维脚本，换工具也有类似方案。",
   "path": "SKILL.md"
  },
  "yizhiyanhua-ai/youtube-ai-digest": {
   "score": 62,
-  "why": "工作流实用扎实，但本质是YouTube字幕工具加Claude摘要，换其他工具也可",
+  "why": "流程清晰脚本齐全，但本质是YT工具组合，摘要判断依赖Claude，可替代性强。",
   "path": "SKILL.md"
  },
  "UniversePeak/Supervisor.skill": {
-  "score": 72,
-  "why": "边界清晰，流程具体，但类似功能用通用工具也能实现。",
+  "score": 75,
+  "why": "做法扎实且边界清晰，但偏向流程工具，独特性受限。",
   "path": "SKILL.md"
  },
  "l0z4n0-a1/skill-anthropic-grade-optimizer": {
   "score": 72,
-  "why": "规则库详尽且边界清晰，但本质仍是可替代的审计工具。",
+  "why": "规则引用扎实，流程清晰，但检索库机制替代性较强，核心优势依赖外部规则集。",
   "path": "SKILL.md"
  },
  "Trkzi-Omar/prune-skills": {
   "score": 85,
-  "why": "流程严谨可逆，工具齐备，边界清晰，别处难寻此完整方案。",
+  "why": "工作流完整可取，边界清晰，工具齐全，非模板化的实用方案。",
   "path": "SKILL.md"
  },
  "Harshil-Anuwadia/scalpel-sop": {
   "score": 65,
-  "why": "流程编排扎实，但更像通用工程规范目录，边界与独特性不足。",
+  "why": "SOP框架完整严谨，边界清晰，但多为流程编排而非独有做法。",
   "path": "SKILL.md"
  },
  "flyzhenghao/plan-index-manager": {
   "score": 45,
-  "why": "实用但通用，元数据提取是常规做法，无独特边界或不可替代产出。",
+  "why": "实用但像是脚本示例，自动索引元数据无独特场景，换工具易替代。",
   "path": "SKILL.md"
  },
  "favorPotato/oh-my-design": {
-  "score": 82,
-  "why": "协议清晰，边界明确，流程扎实，但实现依赖人工运行脚本，替代方案存在。",
+  "score": 72,
+  "why": "构建精良且边界清晰，但核心流程可被其他常规工具链复制。",
   "path": "SKILL.md"
  },
  "peditx/github-actions-skill": {
-  "score": 40,
-  "why": "内容全面扎实但源于官方文档，缺乏独特场景化交付与边界说明",
+  "score": 45,
+  "why": "是官方文档的整理索引，缺乏独到做法的边界判断与场景深度。",
   "path": "SKILL.md"
  },
  "ibrews/ue5-testflight": {
-  "score": 72,
-  "why": "UE5发布到TestFlight的具体坑位和解决方案扎实，但本质是运维手册，换人",
+  "score": 85,
+  "why": "UE5构建经验具体扎实，区分了可触发与不可为边界，但属工程配置而非泛用判断。",
   "path": "SKILL.md"
  },
  "ceoimperiumprojects/imperium-brain": {
   "score": 45,
-  "why": "是路由目录非技能本身，自身无独立交付物边界模糊。",
+  "why": "路由表与协议框架扎实，但本质是技能索引目录，未体现单一技能的边界与独特交付。",
   "path": "SKILL.md"
  },
  "zhouwei713/gpt-image-2-prompting-skill": {
   "score": 62,
-  "why": "结构清晰、方法实用，但类似技术博客均有，非独家不可替代。",
+  "why": "结构清晰、步骤可行，但多为通用提示词技巧，非独家方法论。",
   "path": "SKILL.md"
  },
  "MohamedElashri/root-mcp": {
@@ -5931,157 +5931,157 @@
  },
  "klawsh/klaw.sh": {
   "score": 35,
-  "why": "平台操作手册，非具体技能，无独特交付物与边界说明。",
+  "why": "平台官方环境说明，非可复用技能，无边界与交付",
   "path": "SKILL.md"
  },
  "rdmgator12/Parent-Helper": {
   "score": 45,
-  "why": "模板框架完整但未填充，产出依赖外部工具，未见独特做法或边界说明。",
+  "why": "模板框架完整，但未填充具体细节，交付物泛泛，替换工具即可实现。",
   "path": "SKILL.md"
  },
  "Snowflake-Labs/polaris-local-forge": {
-  "score": 65,
-  "why": "扎实的本地部署方案，但同类工具可替代",
+  "score": 72,
+  "why": "扎实的本地环境搭建方案，边界清晰，但功能可通过替代工具实现。",
   "path": "SKILL.md"
  },
  "andrueandersoncs/debug-skill": {
-  "score": 72,
-  "why": "提供完整可执行的调试工作流和工具，但依赖用户配合复现，边界清晰度略欠。",
+  "score": 75,
+  "why": "有清晰边界与完整工作流，但工具依赖特定环境，替代方案存在。",
   "path": "SKILL.md"
  },
  "magnus919/hermes-SkillOpt": {
   "score": 72,
-  "why": "方法论清晰扎实，但依赖特定平台，核心思想可被通用流程替代。",
+  "why": "方法论扎实，流程清晰，但依赖特定平台，可替代性中等。",
   "path": "SKILL.md"
  },
  "moghalsaif/linkedin-psy-writer-skill": {
   "score": 72,
-  "why": "提供了独特的内容规则与结构，但核心写作方法仍可迁移至其他写作工具。",
+  "why": "独特写作框架清晰拒绝AI腔，实用性强，但具体产出边界可更明确",
   "path": "SKILL.md"
  },
  "HAHAHA44/game-prd-builder-skill": {
-  "score": 72,
-  "why": "工作流清晰，边界明确，但产出依赖模板，核心价值或可替代。",
+  "score": 62,
+  "why": "系统化流程扎实，边界清晰，但同类方法论工具可替代。",
   "path": "SKILL.md"
  },
  "andrii-su/datoon": {
   "score": 65,
-  "why": "对数据格式转换有清晰判断边界，但核心依赖工具，替代方案也多。",
+  "why": "流程扎实但依赖特定CLI，换工具或手写脚本也能实现同等判断与转换。",
   "path": "SKILL.md"
  },
  "marsiandeployer/human-in-the-loop-review": {
-  "score": 70,
-  "why": "流程清晰、交付明确，但本质是外部服务，技能本身较浅。",
+  "score": 72,
+  "why": "实操步骤清晰，引入真人审查机制独特，但依赖外部服务",
   "path": "SKILL.md"
  },
  "Hainrixz/abogado-del-diablo": {
   "score": 72,
-  "why": "结构严谨，流程清晰，拒绝温和，但本质是提示词模板，其他工具可复现。",
+  "why": "批判框架扎实且边界清晰，但本质是方法论的组合，其他工具可实现。",
   "path": "SKILL.md"
  },
  "ipeirotis/cloud-bootstrap": {
-  "score": 72,
-  "why": "流程清晰，边界明确，但实现依赖外部文件，替代方案可行。",
+  "score": 65,
+  "why": "边界清楚流程完整，但本质是凭据管理模板，非独有判断。",
   "path": "SKILL.md"
  },
  "ChainAware/behavioral-prediction-mcp": {
-  "score": 45,
-  "why": "大量触发器与指标罗列，实质是官方API封装示例，未体现场景化独立判断与产出边界",
+  "score": 72,
+  "why": "边界清晰、场景具体，但数据源于第三方API，工具可替代。",
   "path": "SKILL.md"
  },
  "chqchshj/hermes-neat-freak": {
-  "score": 75,
-  "why": "流程清晰可操作，边界明确，但仅针对Hermes内部，换同型工具亦适用。",
+  "score": 72,
+  "why": "流程明确边界清楚，但依赖特定Hermes框架，通用性受限。",
   "path": "SKILL.md"
  },
  "EvoMap/skill2gep": {
   "score": 72,
-  "why": "流程清晰，边界明确，但本质是文档转换工具，较难体现不可替代性。",
+  "why": "流程清晰、边界明确（禁造Capsule），但本质是程序性指南，可复制性强。",
   "path": "SKILL.md"
  },
  "BillionsBobby/Major-Partnership-Insider-Skill": {
-  "score": 72,
-  "why": "框架专业扎实，但他人按此流程也能执行，非独家洞察",
+  "score": 65,
+  "why": "研究框架细致，流程明确，但类似方法可复用，且上游内容被截断。",
   "path": "SKILL.md"
  },
  "farhanic017/vision-tool": {
-  "score": 35,
-  "why": "像工具使用说明书，而非具体判断方法，泛泛无独特交付。",
+  "score": 45,
+  "why": "功能明确但本质是工具调用指示，换工具也能完成，缺少独特判断",
   "path": "SKILL.md"
  },
  "docsagent/docsagent": {
-  "score": 45,
-  "why": "通用本地文档搜索工具，操作说明清晰但无独特方法或边界，可被其他工具替代。",
+  "score": 55,
+  "why": "本地文档搜索工具，功能明确但做法常见，换工具也可实现。",
   "path": "SKILL.md"
  },
  "Stars-OC/thesis-creator": {
-  "score": 72,
-  "why": "流程详尽，交付边界清晰，但本质是重脚本流程，换成通用工具亦可实现。",
+  "score": 68,
+  "why": "流程缜密、细节扎实，远超泛泛工具，但仍属流程编排，独特性有限。",
   "path": "SKILL.md"
  },
  "jackwener/boss-cli": {
-  "score": 72,
-  "why": "针对BOSS直聘的CLI工具，功能扎实，但本质是官方接口封装，换工具可替代。",
+  "score": 65,
+  "why": "功能扎实的专用CLI，但本质是官方工具封装，边界清晰但可替代性强。",
   "path": "SKILL.md"
  },
  "ihuzaifashoukat/x-use": {
   "score": 72,
-  "why": "配置步骤清晰，安全边界明确，但本质仍是安装指南，替代工具易寻。",
+  "why": "步骤清晰，边界分明，但本质是安装配置指南，价值在于特定工具而非独特方法。",
   "path": "SKILL.md"
  },
  "zhongzhx/literature-harvest": {
   "score": 72,
-  "why": "流程清晰，边界明确，但本质是脚本组合，核心下载能力可复用，独特性有限。",
+  "why": "工作流完整清晰，拒绝含糊并明确边界，属于实用工具但可复用性较一般。",
   "path": "SKILL.md"
  },
  "MackDing/CodexClaw": {
-  "score": 45,
-  "why": "实操命令清晰，但更像项目README，未揭示独特方法论或边界拓深。",
+  "score": 62,
+  "why": "功能明确能落地，但类似Telegram机器人方案可替代，缺独特场景做法。",
   "path": "SKILL.md"
  },
  "zxkmm/kicad-footprint-generate": {
-  "score": 68,
-  "why": "流程清晰，但依赖docs，且核心是代码生成，其他自动化工具亦可实现。",
+  "score": 65,
+  "why": "流程清晰完整，但模板化做法其他脚本工具也能达成，无明显独到边界界定。",
   "path": "SKILL.md"
  },
  "omerycll/claude-aso": {
   "score": 65,
-  "why": "功能全面扎实，但多为现有工具组合，非独家方法论。",
+  "why": "功能全面且落地，但更像集成工具，关键流程依赖AI，独特性一般。",
   "path": "SKILL.md"
  },
  "oh-ashen-one/reddit-growth-skill": {
   "score": 72,
-  "why": "规则细致可执行，但本质是人工运营流程说明，换人手动也能做，缺独特工具或独家洞察。",
+  "why": "规则分明且落地性强，但类似方法论可自行总结，非独家。",
   "path": "SKILL.md"
  },
  "BayramAnnakov/telegram-assistant-skill": {
   "score": 65,
-  "why": "工作流清晰，边界明确（存草稿不直发），但本质是围绕现有MCP工具的流程封装，换工",
+  "why": "工作流清晰扎实，安全边界明确，但本质是MCP工具的使用说明，换其他Telegra",
   "path": "SKILL.md"
  },
  "SpillwaveSolutions/running-marketing-campaigns-agent-skill": {
-  "score": 55,
-  "why": "覆盖面广但泛泛，像官方目录，缺乏独特判断与深度边界",
+  "score": 45,
+  "why": "功能庞杂如营销百科，多为通用建议，缺独特判断与边界，换工具皆可做。",
   "path": "SKILL.md"
  },
  "Zhengyici/nailong-pet-skill": {
-  "score": 65,
-  "why": "安装步骤清晰，有边界，但本质是简单脚本分发，可替代性强。",
+  "score": 62,
+  "why": "安装流程清晰，但本质是资产部署脚本，换工具也能完成。",
   "path": "SKILL.md"
  },
  "wingedpig/trellis": {
-  "score": 45,
-  "why": "是命令行工具使用手册，非独立技能，实用性看工具本身，无独特交付。",
+  "score": 55,
+  "why": "工具参考手册扎实但泛化，是命令行文档而非独特方法论，换工具也能实现。",
   "path": "SKILL.md"
  },
  "eddie-fqh/flow-py": {
-  "score": 55,
-  "why": "技能封装完整，边界清晰，但本质是官方CLI的复述与自动化封装。",
+  "score": 62,
+  "why": "CLI/Python封装扎实，命令全，但本质是工具包装，做法可替代。",
   "path": "SKILL.md"
  },
  "nickommen/skillify": {
-  "score": 65,
-  "why": "流程详尽实用，但本质是转化器，换工具也能实现类似功能。",
+  "score": 72,
+  "why": "流程具体、边界清楚，可执行；但本质是代码生成器，换工具也能做。",
   "path": "SKILL.md"
  },
  "Elpulgo/azdo": {
@@ -6089,178 +6089,178 @@
   "why": "取不到 SKILL.md"
  },
  "LiamGvchi/gc-still-image-motion-director": {
-  "score": 82,
-  "why": "边界清晰，交付明确，区分动静与锁定项的做法别处少见，实操性强。",
+  "score": 72,
+  "why": "规则完整，专精图生视频静帧运动设计，边界清晰，但同类工具可替代。",
   "path": "SKILL.md"
  },
  "Aston1690/baoyu-comic": {
   "score": 62,
-  "why": "工具扎实但需配合图像模型使用，独立价值有限，非独家方案。",
+  "why": "流程规范细致，功能划分清晰，但属通用工具类实现，非独家判断。",
   "path": "SKILL.md"
  },
  "JD2005L/opencortex": {
   "score": 72,
-  "why": "记忆架构设计扎实，边界清晰，但核心思路可被其他方案替代。",
+  "why": "记忆架构设计完整且边界清晰，但依赖特定工具链，非普适方案。",
   "path": "SKILL.md"
  },
  "limin112/video-subtitle": {
   "score": 72,
-  "why": "流程完整细致，纠错环节有独特方法论，但主要依赖开源工具链，非独有方案。",
+  "why": "流程完整细致，替换工具链亦可实现；纠错与翻译步骤体现判断力，但边界描述偏技能组合",
   "path": "SKILL.md"
  },
  "junshi-research/research-junshi": {
-  "score": 55,
-  "why": "功能扎实详尽，但流程类似通用文献综述工具，无独特方法论或明确产出边界。",
+  "score": 65,
+  "why": "思路完整且边界清晰，但深度角色依赖个人信息维护，本质仍是可复制的自动化流程。",
   "path": "SKILL.md"
  },
  "cyberash-dev/tg-mtproto-cli": {
   "score": 62,
-  "why": "清晰的只读Telegram CLI封装，命令完整但本质是工具说明书",
+  "why": "工具文档扎实清晰，但本质是CLI使用说明，换人写也能达到同样效果。",
   "path": "SKILL.md"
  },
  "dkyazzentwatwa/osint-ai": {
-  "score": 55,
-  "why": "OSINT方法论完整且操作性强，但多为通用流程与命令清单，浏览器策略也非独有做法",
+  "score": 65,
+  "why": "流程框架完整扎实，但核心产出偏方法清单，缺乏独到边界或过滤判断。",
   "path": "SKILL.md"
  },
  "cubetribe/openclaw-godmode-skill": {
-  "score": 65,
-  "why": "编排流程定义清晰，但本质是通用脚手架，核心价值依赖外部工具链。",
+  "score": 55,
+  "why": "编排框架清晰实用，但属通用方案，可被其他工具替代",
   "path": "SKILL.md"
  },
  "PixelML/agenticflow-skill": {
-  "score": 58,
-  "why": "是工具使用指南，技能边界清晰但产出物定义泛泛，缺乏场景内独特做法。",
+  "score": 40,
+  "why": "官方工具文档性质的技能描述，内容全面但缺乏独特判断与边界说明。",
   "path": "SKILL.md"
  },
  "Dqz00116/devflow": {
   "score": 65,
-  "why": "流程约束清晰，但依赖外部CLI工具，本质是配套文档而非独立解决方案。",
+  "why": "流程严谨清晰，但核心是工具命令用法，可被通用脚手架替代。",
   "path": "SKILL.md"
  },
  "sergebulaev/instagram-skills": {
-  "score": 65,
-  "why": "结构清晰，覆盖全面，但多为通用方法论，边界较模糊，缺乏不可替代的独特点。",
+  "score": 68,
+  "why": "多个子技能打包，边界清楚但需外部API，核心方法可替代。",
   "path": "SKILL.md"
  },
  "cathrynlavery/problem-solver-skill": {
-  "score": 45,
-  "why": "框架索引清晰，但交付依赖外部引用，本身无独特做法输出。",
+  "score": 55,
+  "why": "框架选择表有实操指引，但流程泛泛，产出物边界不清，换工具可替代。",
   "path": "SKILL.md"
  },
  "Promylas/utd24-stat4-methods": {
-  "score": 65,
-  "why": "流程扎实系统，但更像研究管理方法论，非独特产出物，工具可替代。",
+  "score": 72,
+  "why": "研究流程方法论扎实，有明确证据规则，但可用通用工作流替代。",
   "path": "SKILL.md"
  },
  "Leo1998-Lu/ai-paper2slide-skill": {
-  "score": 72,
-  "why": "流程严谨、边界清晰，但核心价值依赖LaTeX包，PDF输入受限。",
+  "score": 75,
+  "why": "规矩严明、交付物明确，但可被通用PPT工具与脚本替代。",
   "path": "SKILL.md"
  },
  "rorz/pokayoke": {
-  "score": 72,
-  "why": "工具定位清晰，边界明确，但属可替换的基建类项目。",
+  "score": 68,
+  "why": "工具扎实且边界清晰，但类目非独家，现有工具可替代。",
   "path": "SKILL.md"
  },
  "uigiuf/codex-visio-replica-workflow": {
-  "score": 70,
-  "why": "流程清晰且针对具体场景，但本质上仍是自动化脚本流程，换其他工具或手动也可达成。",
+  "score": 72,
+  "why": "流程具体可落地，含脚本与录屏细节，但自动化生成受Visio平台限制，非通用方案。",
   "path": "SKILL.md"
  },
  "vvvvvvvvvvel/VibeHacking": {
-  "score": 72,
-  "why": "边界清晰、流程克制，但核心能力依赖MCP工具，同类技能可替代",
+  "score": 65,
+  "why": "扎实的Caido MCP操作指南，但类似能力可通过文档或工具实现",
   "path": "SKILL.md"
  },
  "lilyuan258/PDF2md-by-MinerU-api-skill": {
-  "score": 62,
-  "why": "流程具体且强调视觉读取，但依赖外部API，核心转换非独有。",
+  "score": 75,
+  "why": "流程清晰，强制图片读取是独到做法，但依赖外部API且替代方案可行。",
   "path": "SKILL.md"
  },
  "tommygeoco/ui-audit": {
   "score": 65,
-  "why": "框架扎实成体系，但多为通用原则梳理，类似资源可替代。",
+  "why": "结构清晰有方法论，但产出偏清单化，替代工具可实现。",
   "path": "SKILL.md"
  },
  "gula00/migration-skill": {
-  "score": 70,
-  "why": "有真实工作流、明确工具脚本与状态机，边界清楚，但属特定项目定制技能，可迁移性有限",
+  "score": 65,
+  "why": "针对特定迁移流程，提供脚本和状态定义，但工具链依赖强且场景较窄。",
   "path": "SKILL.md"
  },
  "BruceYang521/drawio-skill": {
   "score": 62,
-  "why": "规则具体扎实，但本质是MCP封装说明，换其他工具也能实现",
+  "why": "对MCP封装扎实，流程规则明确，但核心能力仍依赖外部工具。",
   "path": "SKILL.md"
  },
  "ExplosiveCoderflome/ani-book-skill": {
-  "score": 68,
-  "why": "流程清晰、边界明确，但核心创意生成可替代，非独家。",
+  "score": 62,
+  "why": "流程严谨、产出物清晰，但核心仍是通用创作辅助，非独门做法。",
   "path": "SKILL.md"
  },
  "vladimir-cicovic/ai_review_skills": {
-  "score": 85,
-  "why": "工程化极致的可恢复审查编排，边界与交付物清晰，非模板或空谈。",
+  "score": 80,
+  "why": "深入到可恢复的工程方法，边界清晰，交付物明确，别处难寻。",
   "path": "SKILL.md"
  },
  "ChenZeXian/ok-cosmic": {
   "score": 72,
-  "why": "结构化决策路径清晰，封装优先思路扎实，但本质是索引组织，缺独特产出。",
+  "why": "决策链路清晰细腻，封装/原生分流务实；但本质仍是目录路由，首创性有限。",
   "path": "SKILL.md"
  },
  "SpillwaveSolutions/pr-reviewer-skill": {
-  "score": 65,
-  "why": "流程详尽扎实，但可被其他PR审查工具替代，方法论非独占。",
+  "score": 62,
+  "why": "流程扎实但依赖通用工具链，核心脚本替代性强，边界稍显流程化。",
   "path": "SKILL.md"
  },
  "MaTriXy/Agent-Registry": {
   "score": 65,
-  "why": "系统化解决token问题，提供搜索加载模式，但本质是本地工具配置，换工具可替代。",
+  "why": "扎实的懒加载方案，但本质是工具文档，替换成本低。",
   "path": "SKILL.md"
  },
  "ThomasPraun/mql-developer": {
   "score": 55,
-  "why": "覆盖面广但泛泛而谈，像是综合指南而非独特方法论，边界感一般。",
+  "why": "扎实全面的参考指南，但更像综合手册而非独特方法",
   "path": "SKILL.md"
  },
  "ffffffffelix/automotive-functional-safety": {
-  "score": 82,
-  "why": "条款级详细，边界工序明确，非套模板。是独家的ISA 26262作业向导。",
+  "score": 75,
+  "why": "ISO26262流程专业细化，边界清晰，但多为工具可替代方法。",
   "path": "SKILL.md"
  },
  "LevyBytes/AI-SKILL-adobe-products": {
-  "score": 35,
-  "why": "是官方文档路由/目录，非独立可交付判断，属索引类工具。",
+  "score": 58,
+  "why": "是清晰的官方文档路由器，但本质是指向官方资料的索引，缺乏独特判断与边界产出。",
   "path": "SKILL.md"
  },
  "mwamedacen/n8n-evol-I": {
   "score": 72,
-  "why": "n8n自动化操作的全面路由框架，但更像是目录而非独立交付物。",
+  "why": "思路清晰，边界明确，但显目录化，实质深度有限。",
   "path": "SKILL.md"
  },
  "day8/re-frame-pair-improver": {
-  "score": 45,
-  "why": "流程清晰且有诊断纪律，但核心是分析技能，换个工具亦可达成。",
+  "score": 72,
+  "why": "有清晰的分析流程与边界，但本质是提示词模板，他人可复制。",
   "path": "SKILL.md"
  },
  "twanahc/claude-linear-skill": {
-  "score": 62,
-  "why": "流程编排清晰，子代理分工明确，但本质是任务调度，工具可替代性强。",
+  "score": 65,
+  "why": "完整的线性流程编排，但核心是可替换的工具调用，缺乏独特方法论。",
   "path": "SKILL.md"
  },
  "AtreideJZ/personalized-llm-wiki": {
-  "score": 72,
-  "why": "结构性访谈扎实，红线规则珍贵，但核心可经访谈生成，非绝对唯一。",
+  "score": 78,
+  "why": "边界清晰，访谈流程与铁律具体扎实，交付物明确，非泛泛模板。",
   "path": "SKILL.md"
  },
  "awdemos/opencode-superpowers": {
-  "score": 30,
-  "why": "安装指南非独立技能，依赖外部插件，自身无独特判断或交付物",
+  "score": 42,
+  "why": "是安装指引，非独立技巧，属官方文档范畴，交付有限。",
   "path": "SKILL.md"
  },
  "sai-tv/academic-figures": {
   "score": 72,
-  "why": "专业细化，流程具体清晰，但本质可被通用设计工具替代。",
+  "why": "边界清晰、流程扎实，但本质是结构化模板，依赖参考文件实现，非独有洞察。",
   "path": "SKILL.md"
  }
 }

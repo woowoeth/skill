@@ -2,14 +2,14 @@
  "id": "danielroe-empathy",
  "kind": "skill",
  "name": "empathy",
- "title_zh": "动笔前先过一遍人类沟通守则的 AI 礼貌开关",
- "tagline_zh": "PR、评论、邮件、聊天……凡是人要看的话，它都先拦一道。不是改措辞，是让你想清楚该不该说、怎么说，再开口。",
- "tagline_en": "PRs, issues, replies, emails, chats—anything a person reads gets a pre-check. Not a rewrite, but a pause to ask.",
+ "title_zh": "动笔前先过一遍人类沟通守则的 AI 助手",
+ "tagline_zh": "PR、评论、邮件、聊天……凡是要给人看的文字，先读规则再落笔。省得发出去才后悔，收回来又尴尬。",
+ "tagline_en": "For PRs, comments, emails, chats—anything a person will read. Loads the rules first, so you don't regret sending.",
  "desc_en": "Rules for communicating with humans as an AI agent. Read in full BEFORE composing any text another person will read: PR titles and descriptions, issues, code review replies, comments, discussion summaries, emails, chat and forum posts, commit messages, changelogs. Also before replying when someone responds to you, and before deciding whether to post at all. Do not draft first and check after. Mini",
- "why_zh": "它把「沟通规则」前置成写作前的强制检查，而不是写完后补救。你还没落笔，它已帮你避开冷硬、含糊、冒犯的坑。",
- "why_en": "It enforces communication rules as a pre-writing gate, not a post-hoc fix. Before you type, it already steers you clear of cold.",
- "limit_zh": "只约束文本沟通，不处理语音、代码逻辑或视觉输出；且需你主动在每次写作前调用，不会自动拦截后台生成内容。",
- "limit_en": "Text-only; no speech, code logic, or visuals. Requires manual activation per writing task—won't auto-scan background-generated content.",
+ "why_zh": "它不是事后检查，而是前置约束。在起草任何对外文本前强制加载规则，从源头减少冒犯与误解。",
+ "why_en": "Enforces rules before drafting, not after. Cuts friction and faux pas at the source.",
+ "limit_zh": "仅约束 AI 生成的对外文本，不覆盖语音、表情符号或非文字媒介；若你已习惯手动检查，此技能可能显得多余。",
+ "limit_en": "Text-only; no voice, emoji, or visual media. Redundant if you already self-check every message.",
  "repo": "danielroe/empathy",
  "owner": "danielroe",
  "path": "",
@@ -30,5 +30,5 @@
   "dir": "~/.claude/skills/empathy"
  },
  "cover": "/skill/assets/covers/danielroe-empathy.png",
- "title_en": "Human-communication rule check before any text you write"
+ "title_en": "AI that reads human-communication rules before you write"
 }

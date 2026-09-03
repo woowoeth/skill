@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>断点续审的千文件代码库深挖器 — 品味</title>
+<meta name="description" content="几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, vladimir-cicovic">
+<link rel="canonical" href="https://ourword.ai/skill/i/vladimir-cicovic-ai_review_skills/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="断点续审的千文件代码库深挖器 — 品味">
+<meta property="og:description" content="几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。">
+<meta property="og:url" content="https://ourword.ai/skill/i/vladimir-cicovic-ai_review_skills/">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/vladimir-cicovic-ai_review_skills.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/vladimir-cicovic-ai_review_skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="断点续审的千文件代码库深挖器 — 品味">
+<meta name="twitter:description" content="几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"断点续审的千文件代码库深挖器","description":"几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。","url":"https://ourword.ai/skill/i/vladimir-cicovic-ai_review_skills/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"vladimir-cicovic"},"image":"https://ourword.ai/skill/assets/covers/vladimir-cicovic-ai_review_skills.png","codeRepository":"https://github.com/vladimir-cicovic/ai_review_skills"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/i/vladimir-cicovic-ai_review_skills/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">工作</span>
+      <span>vladimir-cicovic</span>
+      <span class="date">2026-09-03</span>
+    </div>
+    <h1 class="ttl">断点续审的千文件代码库深挖器</h1>
+    <p class="lede">几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。</p>
+    <div class="tags"><span class="tag">vladimir-cicovic</span></div>
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/vladimir-cicovic-ai_review_skills.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/vladimir-cicovic-ai_review_skills.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什么用</h2><p>几万行代码、跨服务调用、并发与泄漏，它分阶段审完还能续上——token 断了也不丢已查过的线索。把审查拆成可恢复的多阶段流水线，每阶段产出物落盘，token 耗尽后从断点接着跑，不重审已查文件。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。只认代码库整体审查，不处理单文件或小改动；需要能跑构建/静态分析的环境；不生成修复补丁，只输出问题清单与证据链。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「断点续审的千文件代码库深挖器」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/vladimir-cicovic/ai_review_skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/vladimir-cicovic/ai_review_skills.git">复制</button></div><div class="cmd"><code>mv ai_review_skills ~/.claude/skills/phased-code-review</code><button type="button" data-copy="mv ai_review_skills ~/.claude/skills/phased-code-review">复制</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分类</dt><dd>工作</dd>
+        <dt>作者</dt><dd>vladimir-cicovic</dd>
+        <dt>上架</dt><dd>2026-09-03</dd>
+      </dl>
+      <a class="pill" href="https://github.com/vladimir-cicovic/ai_review_skills" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../yejy53-editable-design-html-to-pptx/">HTML 版式拆成可编辑 PPT 的转换器</a><a href="../bitjaru-styleseed-styleseed/">只认当前画布边界，把 StyleSeed 请求派给唯</a><a href="../cli-cli-code-review/">合代码前先过一遍仓库规矩的 gh 评审员</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人类生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声播客</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../y1fe1-yang-resume-assistant-skill/">← 五个代理围着你转，从挖故事到模拟面试一条龙</a><a href="../createlafont-dnr-flat-pic/">不描边不追光影，只留身份与空间关系的扁平化压缩 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>
