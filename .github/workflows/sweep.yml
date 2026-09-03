@@ -93,7 +93,8 @@ jobs:
           python3 - <<'PY2'
           import json,os
           a=json.load(open('/tmp/stream_new.json')) if os.path.exists('/tmp/stream_new.json') else {}
-          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json'):
+          # editorial/backfill_backlog.json：本地一次性回填的 21 天积压清单，跑一轮就消化一批
+          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json','editorial/backfill_backlog.json'):
               b=json.load(open(fn)) if os.path.exists(fn) else {}
               for k,v in b.items(): a.setdefault(k,v)
           json.dump(a,open('/tmp/candidates.json','w'),ensure_ascii=False,indent=1)
