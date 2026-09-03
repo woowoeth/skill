@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把任意图片拆解成留白双色海报版式 — 品味</title>
-<meta name="description" content="给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。">
+<title>把照片主体拆成平面色块，排进双色纸纹编辑海报 — 品味</title>
+<meta name="description" content="四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, Lixorn">
 <link rel="canonical" href="https://ourword.ai/skill/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把任意图片拆解成留白双色海报版式 — 品味">
-<meta property="og:description" content="给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。">
+<meta property="og:title" content="把照片主体拆成平面色块，排进双色纸纹编辑海报 — 品味">
+<meta property="og:description" content="四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。">
 <meta property="og:url" content="https://ourword.ai/skill/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把任意图片拆解成留白双色海报版式 — 品味">
-<meta name="twitter:description" content="给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把任意图片拆解成留白双色海报版式","description":"给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。","url":"https://ourword.ai/skill/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"Lixorn"},"codeRepository":"https://github.com/Lixorn/deconstructed-duotone-poster/tree/HEAD/deconstructed-duotone-poster"}</script>
+<meta name="twitter:title" content="把照片主体拆成平面色块，排进双色纸纹编辑海报 — 品味">
+<meta name="twitter:description" content="四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把照片主体拆成平面色块，排进双色纸纹编辑海报","description":"四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。","url":"https://ourword.ai/skill/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"Lixorn"},"codeRepository":"https://github.com/Lixorn/deconstructed-duotone-poster/tree/HEAD/deconstructed-duotone-poster"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>Lixorn</span>
       <span class="date">2026-09-03</span>
     </div>
-    <h1 class="ttl">把任意图片拆解成留白双色海报版式</h1>
-    <p class="lede">给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。</p>
+    <h1 class="ttl">把照片主体拆成平面色块，排进双色纸纹编辑海报</h1>
+    <p class="lede">四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。</p>
     <div class="tags"><span class="tag">Lixorn</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>给一张图、一段文字或一个主题，自动生成杂志级双色印刷排版。支持 3:4 九宫格、4:3 六宫格、竖/横四联幅。不是滤镜，是排版引擎：坐标、边距、网格全部硬编码，输出即印刷稿。同一套方形瓦片模板复用所有布局。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只处理静态位图输入（JPG/PNG），不读 SVG 或 PDF；输出为排版坐标与切图建议，不直接生成成品印刷文件。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把任意图片拆解成留白双色海报版式」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>四种版式：3:4 九宫格、3:4 竖向四联、4:3 六宫格、4:3 横向四联，坐标写死、纸边等宽、瓷砖模板共用。象牙纸底加一种你选的墨色。它不画不描不用照片细节，全靠大幅简化的平面色块，加分开处理的光晕和克制的墨渗——所以像印出来的，不像滤镜。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只有那四种固定版式，坐标不可改；想要自由构图的别装。墨色只能选一种。底部固定两行英文打字机小字加极简图标，不能去掉。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把照片主体拆成平面色块，排进双色纸纹编辑海报」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/Lixorn/deconstructed-duotone-poster.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/Lixorn/deconstructed-duotone-poster.git">复制</button></div><div class="cmd"><code>cp -r deconstructed-duotone-poster/deconstructed-duotone-poster ~/.claude/skills/deconstructed-duotone-poster</code><button type="button" data-copy="cp -r deconstructed-duotone-poster/deconstructed-duotone-poster ~/.claude/skills/deconstructed-duotone-poster">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/Lixorn/deconstructed-duotone-poster/tree/HEAD/deconstructed-duotone-poster" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../createlafont-dnr-flat-pic/">把照片压缩成高饱和扁平插画，保留构图不描边</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片重绘成留白写意水墨，保留主体与构图</a><a href="../touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/">把「高级感」翻译成能查的数值再动手做设计</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../fihaaade-skills-outsider-art/">把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片画成寥寥数笔、大面积留白的当代写意水墨</a><a href="../tait-tt-tait-crt-interface-skill/">把人像或物件重画成 80 年代 CRT 界面里的位图漫画</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../bigfish-zzz-bigfish-ink-wash-photo/">← 把照片重绘成留白写意水墨，保留主体与构图</a><a href="../wesammustafa-claude-code-everything-you-need-to-know-claude.md-review/">审计 CLAUDE.md，揪出拖垮输出的四类病灶 →</a></nav>
+  <nav class="foot"><a href="../starryear-starryear-threefold-memory/">← 一张旅行照片出成三联画：所见、所在、所留</a><a href="../createlafont-dnr-flat-pic/">把照片压成无渐变、高饱和、一眼认得出的扁平插画 →</a></nav>
 </div>
 <script>
 (function(){

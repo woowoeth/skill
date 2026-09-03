@@ -534,14 +534,18 @@ def check_covers(items: dict) -> dict:
 
     # 图托在谁家：声称是产出物 ⇒ 必须是作者自己的仓库。
     from urllib.parse import urlparse
-    foreign = [it for it in live
-               if not OWN_HOST.search(urlparse(cov(it)).netloc or "")]
+    # 2026-09-03：封面改成同源相对路径 /skill/assets/covers/… 之后，urlparse 的 netloc 是空串，
+    # OWN_HOST 匹不到，40 张自家托管的图被报成「不在作者自己的仓库里」。
+    # 不是图错了，是我改了一头没改另一头（和 shelf_health 里同一个坑）。相对路径 = 我们自己的仓。
+    def _host_ok(u: str) -> bool:
+        return u.startswith("/skill/") or bool(OWN_HOST.search(urlparse(u).netloc or ""))
+    foreign = [it for it in live if not _host_ok(cov(it))]
     # 域名对了但仓库不对：混进来的是别人（含我们自己）仓库里的图
     ours, other_repo = [], []
     for it in live:
         if it in foreign:
             continue
-        orp = cover_owner_repo(cov(it))
+        orp = OUR_REPO if cov(it).startswith("/skill/") else cover_owner_repo(cov(it))
         if not orp or orp.lower() == (it.get("repo") or "").lower():
             continue
         (ours if orp.lower() == OUR_REPO else other_repo).append((it, orp))
