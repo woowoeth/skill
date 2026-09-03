@@ -2,14 +2,14 @@
  "id": "moonlin1213-muted-zine-poster-v01",
  "kind": "skill",
  "name": "gc-muted-zine-poster-v0-1",
- "title_zh": "低饱和刊物海报",
- "tagline_zh": "纸感、哑光、一个色彩重音就够",
- "tagline_en": "",
+ "title_zh": "把一句话变成日韩系静默海报的提示词生成器",
+ "tagline_zh": "给一句主题、一张照片或一种情绪，它产出带纸张纹理与留白排印的杂志风海报提示词，并配好对应图像。适合想要安静。",
+ "tagline_en": "Turn a theme, photo, or mood into muted zine-poster prompts with aged-paper texture and quiet typography—plus the.",
  "desc_en": "Generate Muted Zine Poster v0.1 poetic paper-poster prompts and the matching generated image. Use when the user gives a theme, sentence, object, mood, article idea, photo, or content brief and wants a quiet Japanese/Korean zine-like editorial poster with large negative space, aged paper texture, experimental typography, and a restrained muted palette without high-chroma color blocks. This is the l",
- "why_zh": "主题或句子压成竖版纸感海报，饱和度被按住。",
- "why_en": "",
- "limit_zh": "不是热闹大片。要霓虹、要满版字，对不上。",
- "limit_en": "",
+ "why_zh": "它把「留白」「纸张老化」「低饱和」拆成可复用的结构参数，而不是笼统说『日系风』——每次生成都带一致的纸。",
+ "why_en": "It decomposes 'negative space', 'aged paper', and 'muted palette' into reusable structural parameters—not vague 'Japanese.",
+ "limit_zh": "只产出海报级提示词与单张生成图，不含排版文件或印刷出血。若主题需要高饱和撞色或动态插画，它会直接拒绝——它只认安静。",
+ "limit_en": "Outputs only poster prompts + one image; no layout files or print bleed. Rejects high-chroma or dynamic illustration themes—it only speaks quiet.",
  "repo": "moonlin1213/muted-zine-poster-v01",
  "owner": "moonlin1213",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv muted-zine-poster-v01 ~/.claude/skills/gc-muted-zine-poster-v0-1",
   "dir": "~/.claude/skills/gc-muted-zine-poster-v0-1"
  },
- "cover": "/skill/assets/covers/moonlin1213-muted-zine-poster-v01.png"
+ "cover": "/skill/assets/covers/moonlin1213-muted-zine-poster-v01.png",
+ "gate_score": 5,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

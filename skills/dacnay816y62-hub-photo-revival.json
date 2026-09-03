@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-photo-revival",
  "kind": "skill",
  "name": "photo-revival",
- "title_zh": "日常快照收成手绘诗意稿",
- "tagline_zh": "普通现场留下，笔触盖上去，不像精修",
- "tagline_en": "",
+ "title_zh": "把随手拍变成手绘诗意插画",
+ "tagline_zh": "照片滤镜看腻了？想要留白、色块和手写小字，而不是磨皮和锐化。它把日常瞬间重画成纸上作品，像寄出的明信片。",
+ "tagline_en": "Tired of filters that just beautify? Turn snapshots into hand-drawn illustrations with white space, vivid color.",
  "desc_en": "Turn ordinary photos or everyday snapshots into poetic hand-drawn illustrations with large white-paper negative space, vivid localized color, subtle collage accents, and tiny handwritten captions. Use when a user wants a real photo reimagined as an illustration rather than filtered, beautified, or photorealistically edited.",
- "why_zh": "把随手拍抽成手绘插画，诗意在省略，不在加光。",
- "why_en": "",
+ "why_zh": "不是风格迁移，而是重构画面：先抽结构再上色，留白和拼贴是主动设计，手写小字给照片加了一层叙事时间。",
+ "why_en": "Not style transfer—it rebuilds the image: extracts structure, then applies color with deliberate negative space and collage.",
  "repo": "dacnay816y62-hub/photo-revival",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -27,8 +27,12 @@
   "copy": "mv photo-revival ~/.claude/skills/photo-revival",
   "dir": "~/.claude/skills/photo-revival"
  },
- "limit_zh": "要证件照、要原片细节全留，会画丢。",
+ "limit_zh": "只处理单张静物/人像/街拍，不接多图合成或文字密集的截图；输出为扁平插画风，不保留原图光影细节；需要网络调用模型。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-photo-revival.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 3,
+ "cover_w": 933,
+ "cover_h": 1400,
+ "limit_en": "Single stills/portraits/street shots only; no multi-image composites or text-heavy screenshots. Output is flat illustration—no original lighting."
 }

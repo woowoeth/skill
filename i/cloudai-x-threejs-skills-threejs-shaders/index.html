@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>在 Three.js 里直接写 GLSL 着色器做自 — 品味</title>
-<meta name="description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
+<title>Three.js 着色器：从零写 GLSL 自定义特 — 品味</title>
+<meta name="description" content="想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 写字, CloudAI-X">
 <link rel="canonical" href="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="在 Three.js 里直接写 GLSL 着色器做自 — 品味">
-<meta property="og:description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
+<meta property="og:title" content="Three.js 着色器：从零写 GLSL 自定义特 — 品味">
+<meta property="og:description" content="想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="在 Three.js 里直接写 GLSL 着色器做自 — 品味">
-<meta name="twitter:description" content="内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在 Three.js 里直接写 GLSL 着色器做自","description":"内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
+<meta name="twitter:title" content="Three.js 着色器：从零写 GLSL 自定义特 — 品味">
+<meta name="twitter:description" content="想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Three.js 着色器：从零写 GLSL 自定义特","description":"想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/","applicationCategory":"写字","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>CloudAI-X</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">在 Three.js 里直接写 GLSL 着色器做自</h1>
-    <p class="lede">内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。</p>
+    <h1 class="ttl">Three.js 着色器：从零写 GLSL 自定义特</h1>
+    <p class="lede">想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。它把 ShaderMaterial 的样板代码和常见 uniform 约定打包好。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只覆盖 Three.js 的 ShaderMaterial 路径，不处理 post-processing 链。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「在 Three.js 里直接写 GLSL 着色器做自」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。它把 GLSL 的坑提前填平：内置常见特效模板，uniform 类型与 Three.js 绑定方式直接。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只覆盖 Three.js 的 ShaderMaterial 与 RawShaderMaterial。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「Three.js 着色器：从零写 GLSL 自定义特」这一件来做，不要中途改风格。</li><li>按它的句式改这一段，能删就删。</li><li>先标出越界的句子，再重写，不要通篇润色。</li><li>写完对照应用范围，串味就停。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git">复制</button></div><div class="cmd"><code>cp -r threejs-skills/skills/threejs-shaders ~/.claude/skills/threejs-shaders</code><button type="button" data-copy="cp -r threejs-skills/skills/threejs-shaders ~/.claude/skills/threejs-shaders">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,7 +76,7 @@
       </dl>
       <a class="pill" href="https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../op7418-youtube-clipper-skill/">把 YouTube 长视频剪成带双语字幕的短视频片段</a><a href="../ayi-ai-ayi-nonviolent-communication/">把吵架话术翻译成观察感受需要请求</a><a href="../zzzlc0405-photo-chromatic-abstraction-style-1/">把照片压成 1-5 个色块的色彩记忆抽象画</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../op7418-youtube-clipper-skill/">把 YouTube 长视频剪成带双语字幕的短视频片段</a><a href="../ayi-ai-ayi-nonviolent-communication/">把任何冲突话语翻译成观察-感受-需要-请求</a><a href="../zzzlc0405-photo-chromatic-abstraction-style-1/">把照片转成色块记忆的极简抽象画</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>

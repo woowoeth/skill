@@ -2,14 +2,14 @@
  "id": "copilotkit-copilotkit-a2ui-renderer",
  "kind": "skill",
  "name": "a2ui-renderer",
- "title_zh": "把 Agent 的界面声明渲染成可交互 UI",
- "tagline_zh": "CopilotKit v2 里，Agent 说一句界面声明，你这边自动渲染成组件。不用手写 renderActiv。",
- "tagline_en": "In CopilotKit v2, let your agent declare UI and get it rendered automatically. No manual renderActivityMessages.",
+ "title_zh": "让 CopilotKit 自动渲染 Agent 声明",
+ "tagline_zh": "Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。",
+ "tagline_en": "Stop hand-wiring renderActivityMessages. This skill auto-renders Agent-declared A2UI surfaces via /info, with.",
  "desc_en": "Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via <CopilotKit a2ui={{ theme }}>. Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot",
- "why_zh": "声明式渲染，运行时自动激活。底层原语齐全，主题可配，省掉胶水代码。",
- "why_en": "Declarative rendering with auto-activation at runtime. Full low-level primitives, themeable, zero glue code.",
- "limit_zh": "只认 CopilotKit v2 的 A2UI 协议；v1 不兼容。必须自行启用 runtime 和 provider。",
- "limit_en": "Only works with CopilotKit v2's A2UI protocol; v1 incompatible. Requires manual a2ui config on both runtime and provider, or /info won't trigger.",
+ "why_zh": "它把 A2UI 的运行时与 Provider 两处开关一次配齐，并拦截 /info 自动激活。",
+ "why_en": "Wires both runtime and provider flags in one pass, auto-activates via /info, and skips manual message plumbing—without touching.",
+ "limit_zh": "只认 CopilotKit v2 的 A2UI 协议；若你的 Agent 返回非声明式 payload（如纯 mark。",
+ "limit_en": "Only handles CopilotKit v2 A2UI payloads; non-declarative outputs (e.g., markdown) won't render. Requires both runtime and provider a2ui flags.",
  "repo": "CopilotKit/CopilotKit",
  "owner": "CopilotKit",
  "path": "packages/a2ui-renderer/skills/a2ui-renderer",
@@ -29,5 +29,9 @@
   "copy": "cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer",
   "dir": "~/.claude/skills/a2ui-renderer"
  },
- "cover": "/skill/assets/covers/copilotkit-copilotkit-a2ui-renderer.png"
+ "cover": "/skill/assets/covers/copilotkit-copilotkit-a2ui-renderer.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

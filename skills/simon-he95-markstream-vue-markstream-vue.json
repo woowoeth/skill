@@ -2,14 +2,14 @@
  "id": "simon-he95-markstream-vue-markstream-vue",
  "kind": "skill",
  "name": "markstream-vue",
- "title_zh": "把 Markdown 流式渲染器装进 Vue 3 项",
- "tagline_zh": "AI 长回复在 Vue 3 里逐字蹦出，光标不抖、代码块不闪。内置虚拟时间轴，千行流式输出也稳如本地渲染。",
- "tagline_en": "Stream AI markdown into Vue 3 without cursor jitter or code flash. Built-in virtual timeline keeps 1000-line.",
+ "title_zh": "把 Markdown 流式渲染接进 Vue 3 的官",
+ "tagline_zh": "Codex 要往 Vue 3 里加流式 Markdown？CSS 顺序、渲染器、虚拟滚动、长 AI 输出——这份 。",
+ "tagline_en": "Adding streaming Markdown to Vue 3? CSS order, renderer choice, virtual scrolling, long AI output—this skill.",
  "desc_en": "Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream",
- "why_zh": "它把渲染器拆成可插拔路径，并用虚拟时间轴对齐 AI 的异步输出——不是简单 v-html。",
- "why_en": "Pluggable renderer paths plus a virtual timeline that paces async AI output—not a v-html hack, but rhythmic, recyclable.",
- "limit_zh": "只服务 Vue 3 + 浏览器 DOM；不处理 Markdown 解析本身，需自带或另配 markdown-it。",
- "limit_en": "Vue 3 + DOM only; no markdown parsing included—pair with markdown-it. Virtual scrolling needs vue-virtual-scroller, else long-list perf is not.",
+ "why_zh": "它把散落在文档各处的集成决策（渲染器/DOM 模式/数据源/虚拟时间线）收拢成一份带上下文的行动清单。",
+ "why_en": "It consolidates scattered integration decisions (renderer/DOM mode/data source/virtual timeline) into one context-aware.",
+ "limit_zh": "只覆盖 markstream-vue 的接入与配置，不含业务组件设计；需要你已有 Vue 3 项目与 npm 环境。",
+ "limit_en": "Only covers markstream-vue integration/config, not your business components. Requires an existing Vue 3 project + npm. Steps on virtual scrolling.",
  "repo": "Simon-He95/markstream-vue",
  "owner": "Simon-He95",
  "path": ".agents/skills/markstream-vue",
@@ -29,5 +29,9 @@
   "copy": "cp -r markstream-vue/.agents/skills/markstream-vue ~/.claude/skills/markstream-vue",
   "dir": "~/.claude/skills/markstream-vue"
  },
- "cover": "/skill/assets/covers/simon-he95-markstream-vue-markstream-vue.png"
+ "cover": "/skill/assets/covers/simon-he95-markstream-vue-markstream-vue.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

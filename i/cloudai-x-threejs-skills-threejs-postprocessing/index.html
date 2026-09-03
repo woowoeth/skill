@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>给 Three.js 场景加电影级后期特效 — 品味</title>
-<meta name="description" content="Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。">
+<meta name="description" content="Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 玩乐, CloudAI-X">
 <link rel="canonical" href="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/">
@@ -19,13 +19,13 @@
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="给 Three.js 场景加电影级后期特效 — 品味">
-<meta property="og:description" content="Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。">
+<meta property="og:description" content="Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="给 Three.js 场景加电影级后期特效 — 品味">
-<meta name="twitter:description" content="Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"给 Three.js 场景加电影级后期特效","description":"Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/","applicationCategory":"玩乐","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-postprocessing"}</script>
+<meta name="twitter:description" content="Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"给 Three.js 场景加电影级后期特效","description":"Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-postprocessing/","applicationCategory":"玩乐","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-postprocessing"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -57,12 +57,12 @@
       <span class="date">2026-09-01</span>
     </div>
     <h1 class="ttl">给 Three.js 场景加电影级后期特效</h1>
-    <p class="lede">Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。</p>
+    <p class="lede">Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。把官方示例里散落的后期代码收敛成声明式配置，按需组合 pass，自动处理尺寸与顺序，改参数即时生效。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「玩乐」这一格。只覆盖 WebGLRenderer 的 EffectComposer 链路，不碰 CSS3DRenderer 或 We。</p></section>
+    <section class="sec"><h2>做什么用</h2><p>Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。它把 EffectComposer 的管线封装成声明式配置，按需组合效果器，避免样板代码。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「玩乐」这一格。只适配 Three.js 的 WebGLRenderer，不兼容 WebGPU。需要 r150+ 版本。</p></section>
     <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「给 Three.js 场景加电影级后期特效」这一件来做，不要中途改风格。</li><li>按规则玩一轮，把依据留在结果里。</li><li>编不出来就停，不要圆。</li><li>玩完对照应用范围，别拿它当正事工具。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git">复制</button></div><div class="cmd"><code>cp -r threejs-skills/skills/threejs-postprocessing ~/.claude/skills/threejs-postprocessing</code><button type="button" data-copy="cp -r threejs-skills/skills/threejs-postprocessing ~/.claude/skills/threejs-postprocessing">复制</button></div></div></section>
   </article>
@@ -76,7 +76,7 @@
       </dl>
       <a class="pill" href="https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-postprocessing" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../yeyulangzi-personal-reflector/">把情绪卡点拆成可复盘的思维回放</a><a href="../moonlin1213-cove-tarot-companion/">把塔罗牌阵变成一场本地私密对话仪式</a><a href="../whiplashzeb-photo-to-zine-postcard/">照片收成一张可寄的刊物明信片</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../yeyulangzi-personal-reflector/">把情绪卡点拆成可复盘的系统信号</a><a href="../moonlin1213-cove-tarot-companion/">把塔罗牌阵变成一场本地私密对话</a><a href="../whiplashzeb-photo-to-zine-postcard/">照片收成一张可寄的刊物明信片</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>

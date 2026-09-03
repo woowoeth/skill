@@ -2,14 +2,14 @@
  "id": "jinchenma94-bazi-skill",
  "kind": "skill",
  "name": "bazi",
- "title_zh": "四柱八字，把生辰当成一张表来排",
- "tagline_zh": "按作者那套排盘，不当鸡汤运势",
- "tagline_en": "",
+ "title_zh": "把出生信息排成八字命盘并引经据典解读",
+ "tagline_zh": "报上生日时辰，它排出四柱大运流年；再翻穷通宝典、滴天髓等古籍，给你一份有出处的命理分析，不是随口胡诌。",
+ "tagline_en": "Give it your birth details, get a full BaZi chart with luck pillars—then it cites classics like Qiong Tong Bao.",
  "desc_en": "四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年. Triggers: \"算八字\", \"看八字\", \"批八字\", \"排八字\", \"四柱\", \"命盘\", \"算命\", \"帮我看看八字\", \"我想算八字\", \"分析八字\", \"排盘\", \"bazi\", \"bazi analysis\", \"fortune telling\", \"birth chart\", \"算一卦\", \"看运势",
- "why_zh": "中文现场里少见把八字写成可装 skill 的。它卖的是排盘方法，不是鸡汤运势。",
- "why_en": "",
- "limit_zh": "术数有门派。它按作者那一套排，跟你师傅不是同一宗时，结论对不上。不算命准不准的担保。",
- "limit_en": "",
+ "why_zh": "不靠模型记忆硬编，而是交互式确认出生信息后按规则排盘，再检索五部经典原文对应分析，结论可回溯到典籍出处。",
+ "why_en": "No memorized horoscopes—it interactively confirms birth data, computes the chart by rules, then cross-references five classical.",
+ "limit_zh": "只认中国农历/阳历出生信息，需用户明确提供时辰；排盘后仅输出文本分析，不生成可视化命盘图；若出生时间未知或跨时区。",
+ "limit_en": "Requires explicit birth time (Chinese calendar); outputs text-only analysis, no chart visuals; unreliable for unknown times or non-China timezones.",
  "repo": "jinchenma94/bazi-skill",
  "owner": "jinchenma94",
  "path": "",
@@ -30,5 +30,8 @@
   "dir": "~/.claude/skills/bazi"
  },
  "gate_score": 8,
- "cover": "/skill/assets/covers/jinchenma94-bazi-skill.png"
+ "cover": "/skill/assets/covers/jinchenma94-bazi-skill.png",
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

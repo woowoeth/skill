@@ -2,12 +2,12 @@
  "id": "twentyfivebtea-ink-wash-poster",
  "kind": "skill",
  "name": "ink-wash-poster",
- "title_zh": "照片收成水墨海报",
- "tagline_zh": "墨色和留白锁死，不是淡淡滤镜",
- "tagline_en": "",
+ "title_zh": "把任意素材变成一张水墨风海报与配图",
+ "tagline_zh": "诗句、照片、活动、情绪……丢进来，还你一张留白得当、纸纹可见的水墨海报。构图和排版都替你拿捏，不用会设计。",
+ "tagline_en": "Feed it a poem, photo, mood, or event—get back a quiet ink-wash poster with real paper grain and restraint. No.",
  "desc_en": "Generate an ink-wash editorial poster prompt and the matching bitmap image from a user's theme, sentence, object, mood, article idea, photo, content brief, poem, memory, event, place, or other creative material. Use when the user wants a quiet, spacious, tactile ink-wash poster, cover, cultural visual, or reference-photo reinterpretation with thoughtful composition, paper texture, restrained typog",
- "why_zh": "按水墨海报的浓淡和空白重做照片，笔是结构不是装饰。",
- "why_en": "",
+ "why_zh": "不是滤镜套壳：它先解析素材里的意象与结构，再重排构图和文字层级，让水墨感长在内容上，而不是糊在表面。",
+ "why_en": "Not a filter: it parses the source's imagery and structure, then rebuilds composition and typographic hierarchy so the ink-wash.",
  "repo": "TwentyfiveBTea/ink-wash-poster",
  "owner": "TwentyfiveBTea",
  "path": "",
@@ -27,8 +27,12 @@
   "copy": "mv ink-wash-poster ~/.claude/skills/ink-wash-poster",
   "dir": "~/.claude/skills/ink-wash-poster"
  },
- "limit_zh": "要彩色插画、要写实人像，墨会把你按回去。",
+ "limit_zh": "只出单张竖版海报图（含对应提示词），不生成系列、不排版多页。需要你本机装好图像生成环境；若素材是照片，只做风格化重绘。",
  "cover": "/skill/assets/covers/twentyfivebtea-ink-wash-poster.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 4,
+ "cover_w": 1050,
+ "cover_h": 1400,
+ "limit_en": "Outputs one vertical poster image + its prompt only—no series, no multi-page layout. Requires a local image-gen setup; photos get stylized redraws."
 }

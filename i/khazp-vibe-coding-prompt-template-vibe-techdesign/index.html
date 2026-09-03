@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把 MVP 技术选型变成一张可执行的设计图 — 品味</title>
-<meta name="description" content="当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。">
+<title>把 MVP 技术选型变成一张可执行的架构设计图 — 品味</title>
+<meta name="description" content="还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, KhazP">
 <link rel="canonical" href="https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把 MVP 技术选型变成一张可执行的设计图 — 品味">
-<meta property="og:description" content="当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。">
+<meta property="og:title" content="把 MVP 技术选型变成一张可执行的架构设计图 — 品味">
+<meta property="og:description" content="还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。">
 <meta property="og:url" content="https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把 MVP 技术选型变成一张可执行的设计图 — 品味">
-<meta name="twitter:description" content="当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 MVP 技术选型变成一张可执行的设计图","description":"当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。","url":"https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"KhazP"},"codeRepository":"https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign"}</script>
+<meta name="twitter:title" content="把 MVP 技术选型变成一张可执行的架构设计图 — 品味">
+<meta name="twitter:description" content="还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 MVP 技术选型变成一张可执行的架构设计图","description":"还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。","url":"https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"KhazP"},"codeRepository":"https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>KhazP</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">把 MVP 技术选型变成一张可执行的设计图</h1>
-    <p class="lede">当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。</p>
+    <h1 class="ttl">把 MVP 技术选型变成一张可执行的架构设计图</h1>
+    <p class="lede">还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。</p>
     <div class="tags"><span class="tag">KhazP</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>当你纠结“该用什么栈、怎么搭”时，它把架构、依赖、风险一次性摊开成文档，省掉你反复找资料、问 AI 的来回拉扯。不是泛泛给建议，而是按你的 MVP 目标强制输出结构化 TDD：先定边界，再选组件，最后列风险。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只服务 MVP 阶段的技术设计，不覆盖已有系统的重构、性能调优或迁移方案；输出是文档不是代码，拿到后仍需自己写实现。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把 MVP 技术选型变成一张可执行的设计图」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>还在为技术栈纠结到深夜？给它一句「帮我规划技术设计」，它直接产出架构图、数据流和依赖清单，连迁移路径都替你标好。它不写代码，而是把需求翻译成决策树：每个选型都带权衡说明，让你在动手前看清所有岔路，而不是闷头踩坑。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只服务 MVP 阶段，不覆盖已有系统的重构或微服务拆分；产物是设计文档，不含代码骨架；需要你提供业务约束。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把 MVP 技术选型变成一张可执行的架构设计图」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git">复制</button></div><div class="cmd"><code>cp -r vibe-coding-prompt-template/.agents/skills/vibe-techdesign ~/.claude/skills/vibe-techdesign</code><button type="button" data-copy="cp -r vibe-coding-prompt-template/.agents/skills/vibe-techdesign ~/.claude/skills/vibe-techdesign">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -83,7 +83,7 @@
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../cloudai-x-threejs-skills-threejs-animation/">← 在浏览器里编排三维动画的完整工作台</a><a href="../codeswithroh-tastemaker-tastemaker/">把参考图变成同风格 UI 代码，告别 AI 味 →</a></nav>
+  <nav class="foot"><a href="../cloudai-x-threejs-skills-threejs-animation/">← 让 Three.js 对象按你的剧本动起来</a><a href="../codeswithroh-tastemaker-tastemaker/">把参考图变成同风格 UI 的生成器 →</a></nav>
 </div>
 <script>
 (function(){

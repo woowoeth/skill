@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-fantasy-movie-poster-skill",
  "kind": "skill",
  "name": "fantasy-movie-poster",
- "title_zh": "中文竖版电影海报，9:16 锁死",
- "tagline_zh": "一场戏一张海报，字少，场面要像院线",
- "tagline_en": "",
+ "title_zh": "把一句话故事变成 9:16 电影海报，背景与字分层出",
+ "tagline_zh": "给编剧、短片导演、小说作者当概念海报草稿机。输入类型关键词或一句梗概，它先出背景图再叠标题字，两层分开可改。",
+ "tagline_en": "Turn a logline or genre tag into a 9:16 cinematic poster with separate background and typography layers—built for.",
  "desc_en": "Design original 9:16 Chinese-language cinematic movie posters from story briefs, genre keywords, or visual references, including layered cover workflows with separate image-designed background and typography layers. Use for romance, sports, historical/legal drama, road films, crime thrillers, war, Eastern ink, sci-fi isolation, ensemble casts, and playful concept films. Do not use to copy an exist",
- "why_zh": "从故事场面压成一张能上墙的中文电影海报，比例不许改。",
- "why_en": "",
+ "why_zh": "不是文生图后硬加字。它把背景与字型拆成两条独立工作流，先定画面再排字，中文排版不崩。",
+ "why_en": "Unlike one-shot image generators, it splits background and typography into two passes—so Chinese title layout stays clean and.",
  "repo": "dacnay816y62-hub/fantasy-movie-poster-skill",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -27,8 +27,12 @@
   "copy": "mv fantasy-movie-poster-skill ~/.claude/skills/fantasy-movie-poster-skill",
   "dir": "~/.claude/skills/fantasy-movie-poster-skill"
  },
- "limit_zh": "不是横版大片，也不是剧照滤镜。要多页分镜，装不下。",
+ "limit_zh": "只出 9:16 竖版概念稿，不做横版、不做系列延展、不修图。输入需是原创故事或类型关键词，若给现成电影名或剧照。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 4,
+ "cover_w": 932,
+ "cover_h": 1400,
+ "limit_en": "Outputs only 9:16 vertical concept posters—no horizontal, no series, no retouching. Requires original story or genre input; refuses existing film."
 }

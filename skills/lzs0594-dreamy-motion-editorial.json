@@ -2,14 +2,14 @@
  "id": "lzs0594-dreamy-motion-editorial",
  "kind": "skill",
  "name": "dreamy-motion-editorial",
- "title_zh": "日常照片收成雾面编辑稿",
- "tagline_zh": "抽出主角，大留白，像在动的杂志页",
- "tagline_en": "",
+ "title_zh": "把随手拍蒸成一张带呼吸感的高级氛围海报",
+ "tagline_zh": "你手机里那张过曝的废片、虚焦的街角、逆光的背影——它不删，它把主体捞出来，留白、压暗、晕开，变成 Pinteres。",
+ "tagline_en": "That blurry, blown-out, forgettable shot? It rescues the subject, clears the noise, and reissues it as a dreamy.",
  "desc_en": "Extract the semantic hero from any casual photo and rebuild it as a premium hazy dreamlike motion-editorial image with large negative space, simplified context, selective preservation, and restrained poster hierarchy. Use when the user provides or references a photo and asks for 高级感、朦胧感、梦幻感、电影感、慢门拖影、柔焦、胶片感、诗意海报、Pinterest 同类氛围、图生图提示词、AI 生图提示词、照片风格改造、帖子视觉、封面图、艺术摄影、青春残影、玻璃倒影、花卉虚焦、逆光晕染, or wants a reu",
- "why_zh": "从随便一张里找出该被看见的那个，重建成带雾的编辑图。",
- "why_en": "",
- "limit_zh": "现场杂物和背景故事会让路。要纪录完整场景，别装这件。",
- "limit_en": "",
+ "why_zh": "不是套滤镜。它先语义拆解主体与杂物，再按“大留白、弱环境、保细节、压层级”四步重建——像给照片做了次策。",
+ "why_en": "No filter stack. It semantically separates subject from clutter, then rebuilds via negative space, context stripping, selective.",
+ "limit_zh": "只吃单张照片，不吃视频帧序列；输出是图生图提示词+构图方案，不直接出成品图。人像多、场景杂的纪实照会因主体不清而效果打。",
+ "limit_en": "Single stills only, no video frames. Outputs prompt + layout plan, not final images. Busy scenes with multiple subjects dilute the effect.",
  "repo": "lzs0594/dreamy-motion-editorial",
  "owner": "lzs0594",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv dreamy-motion-editorial ~/.claude/skills/dreamy-motion-editorial",
   "dir": "~/.claude/skills/dreamy-motion-editorial"
  },
- "cover": "/skill/assets/covers/lzs0594-dreamy-motion-editorial.png"
+ "cover": "/skill/assets/covers/lzs0594-dreamy-motion-editorial.png",
+ "gate_score": 8,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

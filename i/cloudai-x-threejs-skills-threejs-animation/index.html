@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>在浏览器里编排三维动画的完整工作台 — 品味</title>
-<meta name="description" content="GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。">
+<title>让 Three.js 对象按你的剧本动起来 — 品味</title>
+<meta name="description" content="GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, CloudAI-X">
 <link rel="canonical" href="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="在浏览器里编排三维动画的完整工作台 — 品味">
-<meta property="og:description" content="GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。">
+<meta property="og:title" content="让 Three.js 对象按你的剧本动起来 — 品味">
+<meta property="og:description" content="GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。">
 <meta property="og:url" content="https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="在浏览器里编排三维动画的完整工作台 — 品味">
-<meta name="twitter:description" content="GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在浏览器里编排三维动画的完整工作台","description":"GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation"}</script>
+<meta name="twitter:title" content="让 Three.js 对象按你的剧本动起来 — 品味">
+<meta name="twitter:description" content="GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"让 Three.js 对象按你的剧本动起来","description":"GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。","url":"https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CloudAI-X"},"codeRepository":"https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>CloudAI-X</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">在浏览器里编排三维动画的完整工作台</h1>
-    <p class="lede">GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。</p>
+    <h1 class="ttl">让 Three.js 对象按你的剧本动起来</h1>
+    <p class="lede">GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。</p>
     <div class="tags"><span class="tag">CloudAI-X</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。不是零散示例，而是把 Three.js 动画四件套串成一条流水线：从加载到混合，状态机替你管好每一帧。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只覆盖 Three.js 动画域，不碰物理引擎或自定义着色器。需要你已有 GLTF 模型或基本场景；不负责建模。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「在浏览器里编排三维动画的完整工作台」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。它把动画状态机抽象成自然语言指令，自动处理骨骼/形变/关键帧的底层同步，你只管说『让角色从走到跑』。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只覆盖 Three.js 运行时动画编排，不生成模型、不处理材质贴图、不导出文件；骨骼动画需模型自带蒙皮数据。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「让 Three.js 对象按你的剧本动起来」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git">复制</button></div><div class="cmd"><code>cp -r threejs-skills/skills/threejs-animation ~/.claude/skills/threejs-animation</code><button type="button" data-copy="cp -r threejs-skills/skills/threejs-animation ~/.claude/skills/threejs-animation">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -83,7 +83,7 @@
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../yeyulangzi-personal-reflector/">← 把情绪卡点拆成可复盘的思维回放</a><a href="../khazp-vibe-coding-prompt-template-vibe-techdesign/">把 MVP 技术选型变成一张可执行的设计图 →</a></nav>
+  <nav class="foot"><a href="../yeyulangzi-personal-reflector/">← 把情绪卡点拆成可复盘的系统信号</a><a href="../khazp-vibe-coding-prompt-template-vibe-techdesign/">把 MVP 技术选型变成一张可执行的架构设计图 →</a></nav>
 </div>
 <script>
 (function(){

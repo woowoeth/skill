@@ -3,13 +3,13 @@
  "kind": "skill",
  "name": "youtube-clipper",
  "title_zh": "把 YouTube 长视频剪成带双语字幕的短视频片段",
- "tagline_zh": "下载、AI 分章、选段、翻译、烧字幕一条龙。不用再开五个软件来回倒腾，几分钟级章节定位让找素材像翻目录。",
- "tagline_en": "Download, AI-chapter, pick, translate, burn subs—no more juggling five apps. Minute-level chapters make finding.",
+ "tagline_zh": "下载、AI 切分到分钟级章节，你圈选即剪。字幕自动翻成中英双语并烧录，还附一段总结文案，省掉整套剪辑流水线。",
+ "tagline_en": "Download, AI-split into minute-level chapters, pick & clip. Subtitles auto-translated to bilingual and burned in.",
  "desc_en": "YouTube 视频智能剪辑工具。下载视频和字幕，AI 分析生成精细章节（几分钟级别）， 用户选择片段后自动剪辑、翻译字幕为中英双语、烧录字幕到视频，并生成总结文案。 使用场景：当用户需要剪辑 YouTube 视频、生成短视频片段、制作双语字幕版本时。 关键词：视频剪辑、YouTube、字幕翻译、双语字幕、视频下载、clip video",
- "why_zh": "它把剪辑的脏活——字幕对齐、时间轴同步、翻译烧录——全包了，你只做选择题。AI 分章细到分钟级。",
- "why_en": "It automates the grunt work—subtitle sync, timeline alignment, translation burning—so you only make choices. AI chapters hit.",
- "limit_zh": "只吃 YouTube 链接，其他平台不认；需要本机有 yt-dlp 和 ffmpeg；字幕翻译走默认引擎。",
- "limit_en": "YouTube links only; requires yt-dlp & ffmpeg locally; translation uses default engine (jargon may slip); outputs raw mp4 clips—no color grading or.",
+ "why_zh": "不是粗剪，是 AI 先把视频切成可读的章节地图，你只做选择题；字幕翻译和烧录在同一流程里闭环。",
+ "why_en": "It maps the video into readable chapters first, so you only choose—not scrub. Translation and burning happen in one closed loop.",
+ "limit_zh": "只吃 YouTube 公开链接，需本机装 yt-dlp 和 ffmpeg；字幕翻译走默认 API，不支持自定义术语表。",
+ "limit_en": "YouTube public links only; requires yt-dlp & ffmpeg locally. Translation uses default API—no custom glossary. Burned output caps at source bitrate.",
  "repo": "op7418/Youtube-clipper-skill",
  "owner": "op7418",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv Youtube-clipper-skill ~/.claude/skills/youtube-clipper",
   "dir": "~/.claude/skills/youtube-clipper"
  },
- "cover": "https://opengraph.githubassets.com/1/op7418/Youtube-clipper-skill"
+ "cover": "/skill/assets/covers/op7418-youtube-clipper-skill.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

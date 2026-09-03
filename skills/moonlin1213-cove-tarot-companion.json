@@ -2,14 +2,14 @@
  "id": "moonlin1213-cove-tarot-companion",
  "kind": "skill",
  "name": "cove-tarot-companion",
- "title_zh": "把塔罗牌阵变成一场本地私密对话仪式",
- "tagline_zh": "不联网、不云端，牌阵在本地浏览器里展开。当对话出现合适契机，它轻声邀你抽一张，聊回最初的解读。",
- "tagline_en": "No cloud, no accounts—your spread unfolds in a local browser. When the chat hits the right beat, it gently.",
+ "title_zh": "把塔罗牌阵变成一场本地私密对话",
+ "tagline_zh": "当你抽完牌想找人聊聊，它不占卜、不解读，只陪你回溯原牌意。适合已有浏览器和本地环境的你，在仪式感里多一个安静听众。",
+ "tagline_en": "After your draw, it won't divine or reinterpret—just walks back the original reading with you. For those with a.",
  "desc_en": "Use when a user wants a local Tarot Ritual, returns from one to discuss its original reading, or a companion conversation offers a suitable moment to invite them. Requires an existing local shell and browser; not for independently drawing or reinterpreting cards.",
- "why_zh": "它不替你解牌，而是把牌阵当作对话的锚点。每次返回都重新连接你与那张牌的原始语境，让仪式感长在本地而非服。",
- "why_en": "It doesn't read for you—it anchors the conversation to the spread. Every return reconnects you to the card's original context.",
- "limit_zh": "需要你已有一个本地 shell 和浏览器环境，且只能用于讨论既有牌阵，不能独立抽牌或重新解读。若对话里没有合适契机。",
- "limit_en": "Requires an existing local shell and browser; only discusses existing spreads—no independent draws or reinterpretations. It stays silent unless the.",
+ "why_zh": "它不抢牌师的活，只做回溯引导。机制上卡在“讨论原解读”这一环，让陪伴不越界，对话有锚点。",
+ "why_en": "It never hijacks the reading—only anchors back to the original interpretation. A companion that knows its lane, so the ritual.",
+ "limit_zh": "需要本机已有 shell 和浏览器环境；不独立抽牌或重新解读，只处理“已有牌阵后的回溯讨论”。若想让它算新牌或改牌意。",
+ "limit_en": "Requires existing local shell and browser. Won't draw or reinterpret cards—only discusses original readings. New spreads or altered meanings: it.",
  "repo": "moonlin1213/cove-tarot-companion",
  "owner": "moonlin1213",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv cove-tarot-companion ~/.claude/skills/cove-tarot-companion",
   "dir": "~/.claude/skills/cove-tarot-companion"
  },
- "cover": "/skill/assets/covers/moonlin1213-cove-tarot-companion.png"
+ "cover": "/skill/assets/covers/moonlin1213-cove-tarot-companion.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

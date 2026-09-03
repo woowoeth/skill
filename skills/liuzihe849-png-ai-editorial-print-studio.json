@@ -2,14 +2,14 @@
  "id": "liuzihe849-png-ai-editorial-print-studio",
  "kind": "skill",
  "name": "editorial-illustration-generator",
- "title_zh": "照片收成复古编辑印刷插画",
- "tagline_zh": "不是滤镜，是印刷插画那一档",
- "tagline_en": "",
+ "title_zh": "把照片转成复古编辑部插画，保留构图与主体关系",
+ "tagline_zh": "不是滤镜，是排版级插画。日式档案印刷、世纪中叶图形、Riso 孔版、标本页——上传食物、建筑、人像。",
+ "tagline_en": "Not a filter—editorial-grade illustration. Japanese archive print, mid-century graphics, risograph, specimen.",
  "desc_en": "Transform any user-uploaded photo into a vintage editorial print illustration—not a photo filter. Use for food, beverage, landscape, architecture, portrait, or product images that need Japanese archive print, mid-century graphic, risograph, specimen-sheet, or handmade editorial-art direction while preserving source aspect ratio, composition, and subject relationships.",
- "why_zh": "食物、风景、建筑、人像都能进编辑室，出来是插画稿不是加了颗粒的原片。",
- "why_en": "",
- "limit_zh": "要原片细节、要证件照、要美颜，会跟印刷插画的立场打架。",
- "limit_en": "",
+ "why_zh": "它先解析照片的构图与主体关系，再按风格库重绘，而非像素级套色。五种复古印刷方向各自有独立的纹理与色域映。",
+ "why_en": "It parses composition and subject hierarchy first, then redraws per style library—not pixel recoloring. Five print aesthetics.",
+ "limit_zh": "只吃单张照片，不吃多图拼贴或透明背景 PNG；输出是静态位图，不生成矢量或分层文件；风格限定五种复古印刷方向。",
+ "limit_en": "Single photos only—no collages or transparent PNGs. Output is static raster, no vectors or layers. Five print styles only; outside that it stops.",
  "repo": "liuzihe849-png/ai-editorial-print-studio",
  "owner": "liuzihe849-png",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv ai-editorial-print-studio ~/.claude/skills/editorial-illustration-generator",
   "dir": "~/.claude/skills/editorial-illustration-generator"
  },
- "cover": "/skill/assets/covers/liuzihe849-png-ai-editorial-print-studio.png"
+ "cover": "/skill/assets/covers/liuzihe849-png-ai-editorial-print-studio.png",
+ "gate_score": 8,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

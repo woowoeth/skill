@@ -3,13 +3,13 @@
  "kind": "skill",
  "name": "threejs-postprocessing",
  "title_zh": "给 Three.js 场景加电影级后期特效",
- "tagline_zh": "Bloom 辉光、景深、调色、屏幕空间着色器，一行接入 EffectComposer。不用翻文档拼管线。",
- "tagline_en": "Bloom, DOF, color grading, screen-space shaders — drop into EffectComposer without digging through docs. Plug.",
+ "tagline_zh": "Bloom 辉光、景深、色彩校正，一行代码接入 EffectComposer。不用手写 GLSL。",
+ "tagline_en": "Bloom, DOF, color grading—drop in EffectComposer without writing GLSL. Make clients go wow with one line.",
  "desc_en": "Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.",
- "why_zh": "把官方示例里散落的后期代码收敛成声明式配置，按需组合 pass，自动处理尺寸与顺序，改参数即时生效。",
- "why_en": "Consolidates scattered official examples into declarative pass configs — auto-handles sizing and order, tweak params live.",
- "limit_zh": "只覆盖 WebGLRenderer 的 EffectComposer 链路，不碰 CSS3DRenderer 或 We。",
- "limit_en": "Only for WebGLRenderer's EffectComposer chain, not CSS3D/WebGPU. Requires three ≥ r150 installed; older versions break API calls.",
+ "why_zh": "它把 EffectComposer 的管线封装成声明式配置，按需组合效果器，避免样板代码。",
+ "why_en": "Wraps EffectComposer into declarative config, composing passes without boilerplate. Built-in common passes plus clear slots for.",
+ "limit_zh": "只适配 Three.js 的 WebGLRenderer，不兼容 WebGPU。需要 r150+ 版本。",
+ "limit_en": "WebGLRenderer only, no WebGPU. Needs r150+. Conflicts with existing custom render targets or post chains. No auto-tuning—you tweak glow intensity.",
  "repo": "CloudAI-X/threejs-skills",
  "owner": "CloudAI-X",
  "path": "skills/threejs-postprocessing",
@@ -29,5 +29,9 @@
   "copy": "cp -r threejs-skills/skills/threejs-postprocessing ~/.claude/skills/threejs-postprocessing",
   "dir": "~/.claude/skills/threejs-postprocessing"
  },
- "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-postprocessing.png"
+ "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-postprocessing.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-fantasy-minimal-magazine",
  "kind": "skill",
  "name": "fantasy-minimal-magazine",
- "title_zh": "3:4 极简杂志封面",
- "tagline_zh": "编辑页的留白和字号，不是方图加字",
- "tagline_en": "",
+ "title_zh": "把任意照片转译成留白极简的杂志海报",
+ "tagline_zh": "随手一张图，丢进来就变成 FANTASY 风格的 3:4 编辑海报。不是滤镜，是先把画面拆成抽象素材，再重新排版。",
+ "tagline_en": "Drop any photo in, get a FANTASY 3:4 editorial poster. No filters—it reduces the image to abstract material, then.",
  "desc_en": "Create FANTASY-branded 3:4 minimal editorial magazine posters from user-provided images by reading the image, reducing visual information, translating it into abstract editorial material, composing with large whitespace, and generating content-driven typography. Use when the user asks for \"fantasy-极简杂志\", \"极简杂志海报\", \"编辑出版海报\", \"图片转译海报\", \"FANTASY magazine poster\", or wants a quiet archival/minimal pub",
- "why_zh": "按杂志封面的格子重排主题。品牌味在版式里，不在滤镜里。",
- "why_en": "",
+ "why_zh": "它先读图、再减信息，把画面翻译成可排版的抽象元素，最后生成与内容咬合的字体。排版不是套模板。",
+ "why_en": "It reads the image, strips visual noise, translates it into abstract editorial components, then sets type that responds to.",
  "repo": "dacnay816y62-hub/FANTASY-Minimal-Magazine",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -27,8 +27,12 @@
   "copy": "mv FANTASY-Minimal-Magazine ~/.claude/skills/FANTASY-Minimal-Magazine",
   "dir": "~/.claude/skills/FANTASY-Minimal-Magazine"
  },
- "limit_zh": "页是 3:4 封面。要长图文、要视频封面，格不对。",
+ "limit_zh": "只吃单张图片输入，输出是 3:4 单页海报；不处理多图拼贴、不生成系列版式、不导出印刷分色文件。超出单张叙事。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-minimal-magazine.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 5,
+ "cover_w": 1050,
+ "cover_h": 1400,
+ "limit_en": "Single image in, one 3:4 poster out. No multi-photo collages, no series layouts, no print-separation exports. Beyond one-image storytelling, it stops."
 }

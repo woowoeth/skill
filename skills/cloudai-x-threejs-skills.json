@@ -2,14 +2,14 @@
  "id": "cloudai-x-threejs-skills",
  "kind": "collection",
  "name": "threejs-skills",
- "title_zh": "Three.js 场景搭建的十件套技能包",
- "tagline_zh": "从零搭建 3D 场景，相机、灯光、几何体、动画、交互一次配齐。不用再翻文档拼代码，装完即用。",
- "tagline_en": "Build Three.js scenes without the docs—cameras, lights, geometry, animation, and interaction in one pack.",
+ "title_zh": "Three.js 十连装：从零到能跑的通关技能包",
+ "tagline_zh": "别从文档啃起了。十个技能覆盖建场景、加光照、调相机、导出模型，每个都带可运行示例，装完就能改着玩。",
+ "tagline_en": "Stop reading docs. Ten skills cover scene, lights, camera, export—each with runnable examples you can tweak.",
  "desc_en": "A pack of 10 skills.",
- "why_zh": "十个技能按场景生命周期编排，从初始化到渲染循环无缝衔接，省去你反复查找 API 和调试样板代码的时间。",
- "why_en": "Ten skills sequenced along the scene lifecycle—init to render loop—so you skip API hunting and boilerplate debugging.",
- "limit_zh": "只覆盖 Three.js 核心场景搭建，不含 GLSL 着色器、后期特效、物理引擎或模型加载优化。超出这些范围。",
- "limit_en": "Covers core scene setup only—no GLSL shaders, post-processing, physics, or model-loading optimization. Stops and prompts you beyond that.",
+ "why_zh": "按真实开发顺序编排，技能间共享上下文，不用重复传参。示例代码刻意精简，去掉无关噪声。",
+ "why_en": "Sequenced like real dev workflow, skills share context so no repeated setup. Examples stripped to core API calls—no noise, just.",
+ "limit_zh": "只覆盖 Three.js r150+ 的常规 Web 渲染路径；不含 VR/AR、着色器调试、性能优化。",
+ "limit_en": "Covers standard WebGL render path for r150+ only. No VR/AR, shader debugging, or perf tuning. Each skill outputs a single-file sample—no bundler or.",
  "repo": "CloudAI-X/threejs-skills",
  "owner": "CloudAI-X",
  "path": "",
@@ -31,5 +31,9 @@
   "browse": "https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills",
   "note": "clone 下来，挑你要的那件复制进 ~/.claude/skills/。这是一个合集，没有「装它」这个动作。"
  },
- "cover": "/skill/assets/covers/cloudai-x-threejs-skills.png"
+ "cover": "/skill/assets/covers/cloudai-x-threejs-skills.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

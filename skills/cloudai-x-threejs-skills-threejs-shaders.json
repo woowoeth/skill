@@ -2,14 +2,14 @@
  "id": "cloudai-x-threejs-skills-threejs-shaders",
  "kind": "skill",
  "name": "threejs-shaders",
- "title_zh": "在 Three.js 里直接写 GLSL 着色器做自",
- "tagline_zh": "内置材质不够用？想改顶点、写片元、加 uniform？这个 skill 让你在 Three.js 里直接上手 GL。",
- "tagline_en": "Built-in materials not enough? Edit vertices, write fragment shaders, add uniforms — this skill gets you straight.",
+ "title_zh": "Three.js 着色器：从零写 GLSL 自定义特",
+ "tagline_zh": "想给 3D 场景加个会呼吸的波纹、顶点扭曲或发光边缘？不用再翻文档拼凑，直接照着 GLSL 的写法。",
+ "tagline_en": "Want breathing waves, vertex twists, or glowing edges in Three.js? Stop hunting docs — get ShaderMaterial +.",
  "desc_en": "Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.",
- "why_zh": "它把 ShaderMaterial 的样板代码和常见 uniform 约定打包好。",
- "why_en": "It wraps ShaderMaterial boilerplate and common uniform conventions, so you focus on the GLSL core instead of re-building.",
- "limit_zh": "只覆盖 Three.js 的 ShaderMaterial 路径，不处理 post-processing 链。",
- "limit_en": "Only covers Three.js ShaderMaterial path — no post-processing chains, texture generation, or WebGL state tweaks. Beyond that, you're on your own.",
+ "why_zh": "它把 GLSL 的坑提前填平：内置常见特效模板，uniform 类型与 Three.js 绑定方式直接。",
+ "why_en": "Pre-flattens GLSL pitfalls: ships ready effect templates, maps uniform types straight to Three.js bindings — tweak and run, no.",
+ "limit_zh": "只覆盖 Three.js 的 ShaderMaterial 与 RawShaderMaterial。",
+ "limit_en": "Only ShaderMaterial/RawShaderMaterial; no EffectComposer post-processing, no GLSL basics. Multi-pass or custom render targets? It stops there.",
  "repo": "CloudAI-X/threejs-skills",
  "owner": "CloudAI-X",
  "path": "skills/threejs-shaders",
@@ -29,5 +29,9 @@
   "copy": "cp -r threejs-skills/skills/threejs-shaders ~/.claude/skills/threejs-shaders",
   "dir": "~/.claude/skills/threejs-shaders"
  },
- "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png"
+ "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-shaders.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

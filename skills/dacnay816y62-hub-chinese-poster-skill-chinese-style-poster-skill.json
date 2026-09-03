@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill",
  "kind": "skill",
  "name": "chinese-style-poster-skill",
- "title_zh": "当代中式海报，配方锁在东方审美",
- "tagline_zh": "留白和印色是规矩，不是随便新中式",
- "tagline_en": "",
+ "title_zh": "把东方美学主题变成可直接出图的海报提示词",
+ "tagline_zh": "从节气、非遗、茶香到城市展览，输入主题就产出中式当代风格海报与提示词。不用会设计，也能让 AI 出片有杂志级东方质。",
+ "tagline_en": "Turn any Chinese cultural theme—tea, heritage, city, festival—into refined contemporary Oriental poster prompts.",
  "desc_en": "Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seasonal festivals, tea, incense, craft, museum, commercial brands, fashion, urban culture, editorial campaigns, or experimental cultural subjects. Use when the use",
- "why_zh": "当代东方海报的版式和色，按作者那套走，不跟国潮贴纸混。",
- "why_en": "",
+ "why_zh": "它不套模板，而是从主题语义拆解出构图、留白、墨色与字体气质，让提示词自带东方美学的内在逻辑。",
+ "why_en": "It doesn't recycle templates—it parses theme semantics into composition, negative space, ink tones, and typeface mood, so.",
  "repo": "dacnay816y62-hub/chinese-poster-skill",
  "owner": "dacnay816y62-hub",
  "path": "chinese-style-poster-skill",
@@ -27,8 +27,12 @@
   "copy": "cp -r chinese-poster-skill/chinese-style-poster-skill ~/.claude/skills/chinese-style-poster-skill",
   "dir": "~/.claude/skills/chinese-style-poster-skill"
  },
- "limit_zh": "不是喜茶那件，也不是水墨写意。要品牌 VI，另找。",
+ "limit_zh": "只产出提示词与海报方案，不生成图片文件；需配合外部图像生成工具使用。偏重当代中式与东方审美，对欧美复古或极简北欧风不适。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 4,
+ "cover_w": 1050,
+ "cover_h": 1400,
+ "limit_en": "Outputs prompts & poster specs only, no image files—requires an external generator. Focused on contemporary Chinese/Oriental aesthetics; not for."
 }

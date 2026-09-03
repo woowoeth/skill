@@ -225,19 +225,19 @@ Repository: karanb192/itr-wala The repository ships 1 skills in total.
 
 ========================================================================
 ## a2ui-renderer
-## 把 Agent 的界面声明渲染成可交互 UI
+## 让 CopilotKit 自动渲染 Agent 声明
 URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
 Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
 Updated: 2026-09-02
 Tags: images, skill, CopilotKit
 
-In CopilotKit v2, let your agent declare UI and get it rendered automatically. No manual renderActivityMessages.
+Stop hand-wiring renderActivityMessages. This skill auto-renders Agent-declared A2UI surfaces via /info, with.
 
 ### What does this skill do?
 Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
 
 ### Why is it worth installing?
-Declarative rendering with auto-activation at runtime. Full low-level primitives, themeable, zero glue code.
+Wires both runtime and provider flags in one pass, auto-activates via /info, and skips manual message plumbing—without touching.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
@@ -357,19 +357,19 @@ Repository: kacperkapusciak/goldie The repository ships 1 skills in total.
 
 ========================================================================
 ## tastemaker
-## 把参考图变成同风格 UI 代码，告别 AI 味
+## 把参考图变成同风格 UI 的生成器
 URL: https://ourword.ai/skill/i/codeswithroh-tastemaker-tastemaker/
 Source: https://github.com/codeswithroh/tastemaker/tree/HEAD/skills/tastemaker
 Updated: 2026-09-01
 Tags: work, skill, codeswithroh
 
-Paste a Pinterest/Dribbble link or screenshot — it extracts colors, type, spacing, and texture to ship on-brand.
+Tired of generic AI blue-and-white UI? Paste a Pinterest or Dribbble link, and it makes your landing page.
 
 ### What does this skill do?
 Generate genuinely beautiful, on-brand UI instead of generic "AI slop" — use whenever the user asks to build, design, style, or improve a UI, landing page, dashboard, app screen, or component, whenever a PRD/spec needs a design pass before implementation, whenever the user pastes reference images/Pinterest/Dribbble links and wants the app to look like them, or whenever the user complains the AI-ge
 
 ### Why is it worth installing?
-It doesn't apply templates — it parses the visual grammar of your reference and maps it into maintainable Tailwind/component.
+It doesn't guess style from prompts—it parses the reference image's visual DNA (palette, spacing, type, texture) and maps it.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/codeswithroh/tastemaker.git Then point your agent at the skill directory.
@@ -379,19 +379,19 @@ Repository: codeswithroh/tastemaker The repository ships 2 skills in total. Home
 
 ========================================================================
 ## cove-tarot-companion
-## 把塔罗牌阵变成一场本地私密对话仪式
+## 把塔罗牌阵变成一场本地私密对话
 URL: https://ourword.ai/skill/i/moonlin1213-cove-tarot-companion/
 Source: https://github.com/moonlin1213/cove-tarot-companion
 Updated: 2026-09-01
 Tags: play, skill, moonlin1213
 
-No cloud, no accounts—your spread unfolds in a local browser. When the chat hits the right beat, it gently.
+After your draw, it won't divine or reinterpret—just walks back the original reading with you. For those with a.
 
 ### What does this skill do?
 Use when a user wants a local Tarot Ritual, returns from one to discuss its original reading, or a companion conversation offers a suitable moment to invite them. Requires an existing local shell and browser; not for independently drawing or reinterpreting cards.
 
 ### Why is it worth installing?
-It doesn't read for you—it anchors the conversation to the spread. Every return reconnects you to the card's original context.
+It never hijacks the reading—only anchors back to the original interpretation. A companion that knows its lane, so the ritual.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/moonlin1213/cove-tarot-companion.git Then point your agent at the skill directory.
@@ -401,19 +401,19 @@ Repository: moonlin1213/cove-tarot-companion The repository ships 1 skills in to
 
 ========================================================================
 ## markstream-vue
-## 把 Markdown 流式渲染器装进 Vue 3 项
+## 把 Markdown 流式渲染接进 Vue 3 的官
 URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
 Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
 Updated: 2026-09-01
 Tags: work, skill, Simon-He95
 
-Stream AI markdown into Vue 3 without cursor jitter or code flash. Built-in virtual timeline keeps 1000-line.
+Adding streaming Markdown to Vue 3? CSS order, renderer choice, virtual scrolling, long AI output—this skill.
 
 ### What does this skill do?
 Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
 
 ### Why is it worth installing?
-Pluggable renderer paths plus a virtual timeline that paces async AI output—not a v-html hack, but rhythmic, recyclable.
+It consolidates scattered integration decisions (renderer/DOM mode/data source/virtual timeline) into one context-aware.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
@@ -423,20 +423,20 @@ Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. H
 
 ========================================================================
 ## easy-humanizer-zh
-## 把AI中文文本改写成四种真人声纹的润色器
+## 给AI中文文本套上四种真人声纹的改写器
 URL: https://ourword.ai/skill/i/fxw-labs-easy-humanizer-zh/
 URL (中文): https://ourword.ai/skill/zh/i/fxw-labs-easy-humanizer-zh/
 Source: https://github.com/fxw-labs/easy-humanizer-zh
 Updated: 2026-09-01
 Tags: writing, skill, fxw-labs
 
-Four preset voices—tech blogger, WeChat writer, PM, academic—rewrite AI Chinese text. Detects 24 AI tells and.
+Four author voices for your AI Chinese text. It detects 24 AI tells, then rewrites the rhythm, not just the words.
 
 ### What does this skill do?
 按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
 
 ### Why is it worth installing?
-Not generic 'humanizing'—it converges vocabulary, syntax, and rhythm toward a chosen persona, with quantifiable before/after.
+It rewrites by voiceprint—sentence length, filler-word density, and logical connectors—not by synonym swapping.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git Then point your agent at the skill directory.
@@ -445,13 +445,13 @@ git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git Then point
 Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
 
 --- 中文 ---
-技术博客、公号主、产品经理、学术作者，四种预设人格任选。检测24种AI痕迹，逐句重写，让审稿人看不出是机器写的。
+技术博客、公众号、产品经理、学术论文——24种AI腔一次扫净。不是换词，是连句子的呼吸节奏都换成那个人。
 
 ### Q：这个 skill 做什么？
 按 4 种预设声纹（技术博客 / 公号号主 / 产品经理 / 学术作者） 改写 AI 生成的中文文本。检测 24 种 AI 写作痕迹并按声纹特征重写。 使用时机：需要把 AI 文本改成特定作者风格时。
 
 ### Q：为什么值得装？
-不是泛泛的'更像人'，而是按声纹特征做定向改写：词汇、句式、节奏都朝目标人格收敛。
+按声纹特征重写而非同义词替换，连句式长短、语气词密度、逻辑连接方式都对齐目标作者。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把智能体指向这个 skill 目录即可。
@@ -468,10 +468,13 @@ Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/textile-toy-por
 Updated: 2026-09-01
 Tags: images, skill, Vieeeeeee
 
-Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
+Turn a real photo into a plush, knitted-toy portrait. Perfect for avatars, gifts, or keepsakes—feels handcrafted.
 
 ### What does this skill do?
 Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
+
+### Why is it worth installing?
+It reads the photo first, then adapts the knit texture and lighting to match the subject—so the toy feels tactile and lived-in.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
@@ -480,7 +483,7 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your 
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
 
 --- 中文 ---
-布料、缝线、玩具脸，一种材质做到底
+上传一张真实照片，立刻得到毛绒绒的玩偶版自己。适合做头像、礼物或纪念品，质感像手工针织，不是廉价滤镜。
 
 ### Q：这个 skill 做什么？
 Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
@@ -502,10 +505,13 @@ Source: https://github.com/Hchen1218/heytea-style
 Updated: 2026-09-01
 Tags: images, skill, Hchen1218
 
-Turn an uploaded photo into either a HEYTEA-inspired object-and-doodle poster or a personalized hand-drawn desktop pet with approved character concepts, schema-v2 source-faithful actions or schema-v3 flavor-monster behaviors, optional physi
+Turn one photo into a HEYTEA-style doodle poster with wobbly kid-font, or a living desktop pet from your.
 
 ### What does this skill do?
 Turn an uploaded photo into either a HEYTEA-inspired object-and-doodle poster or a personalized hand-drawn desktop pet with approved character concepts, schema-v2 source-faithful actions or schema-v3 flavor-monster behaviors, optional physical interactions, and an importable pet pack. Use for 喜茶简笔画海报, 歪扭儿童字, 实物加小人涂鸦, 桌宠, 照片变桌面宠物, 食物桌宠, or 饮料桌宠.
+
+### Why is it worth installing?
+Not a filter: schema-v2 stays faithful to your photo's pose, schema-v3 lets it mutate into a monster—both ship with an.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Hchen1218/heytea-style.git Then point your agent at the skill directory.
@@ -593,19 +599,38 @@ Repository: redfox-data/redfox-community The repository ships 1 skills in total.
 ## glitch-pixel-collage
 ## 故障像素拼贴
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
+URL (中文): https://ourword.ai/skill/zh/i/vieeeeeee-wibi-style-glitch-pixel-collage/
 Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/glitch-pixel-collage
 Updated: 2026-09-01
 Tags: images, skill, Vieeeeeee
 
-Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
+Drop one photo, get a glitch-pixel collage instantly. Perfect for avatars, covers, memes—but single image only.
 
 ### What does this skill do?
 Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
+
+### Why is it worth installing?
+Not just noise—it reorders pixels per Wibi's official algorithm, weaving glitch glyphs with color blocks for layered, crisp.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
 
 ### Where does it come from?
+Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
+
+--- 中文 ---
+上传自拍或截图，立刻得到赛博故障感拼贴。适合做头像、封面、表情包，但只认单张图，多图合成请绕道。
+
+### Q：这个 skill 做什么？
+Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
+
+### Q：为什么值得装？
+同一作者的另一件单风格。拼贴和故障是两套语法，不混装。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
 
 ========================================================================
@@ -824,20 +849,20 @@ Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's 
 
 ========================================================================
 ## huashu-report
-## 把顶级机构报告的结构规范蒸馏成写作技能
+## 把顶级机构报告范式装进一个写作框架
 URL: https://ourword.ai/skill/i/alchaincyf-huashu-report/
 URL (中文): https://ourword.ai/skill/zh/i/alchaincyf-huashu-report/
 Source: https://github.com/alchaincyf/huashu-report
 Updated: 2026-08-31
 Tags: work, skill, alchaincyf
 
-Stop staring at a blank page for industry reports, whitepapers, and annual surveys. Built on 42 top-tier reports.
+Tired of reports that feel amateur? Distilled from 42 top-tier institutional reports (Stanford/BCG/McKinsey), it.
 
 ### What does this skill do?
 做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
 
 ### Why is it worth installing?
-Not a template dump—a reverse-engineered skeleton from 42 elite reports. It sets chapter logic and visual systems; you just fill.
+Not just templates—it encodes the implicit norms of institutional reports (argument pacing, evidence density, visual.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point your agent at the skill directory.
@@ -846,13 +871,13 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point y
 Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
 
 --- 中文 ---
-写行业报告、白皮书、年度调研，不用再对着空白页发怵。内置 Stanford/BCG/McKinsey 等 42 份。
+写行业报告/白皮书/论文总被说“不够专业”？从42份Stanford、BCG、McKinsey实测提炼，定结构。
 
 ### Q：这个 skill 做什么？
 做机构级研究报告与学术论文——行业报告、白皮书、年度调研、数据洞察、arXiv论文。定结构、写发现、建图表视觉系统。规范提炼自2026年42份顶级机构报告实测（Stanford/BCG/McKinsey/OpenAI/Reuters等）。单篇文章、PPT不适用。
 
 ### Q：为什么值得装？
-不是模板堆砌，是从 42 份顶级报告里逆向出的写作骨架。它替你定好章节逻辑和视觉系统，你只需填内容。
+不是模板堆砌，而是把机构级报告的隐性规范——论证节奏、证据密度、图表叙事——编码成可执行的写作协议。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然后把智能体指向这个 skill 目录即可。
@@ -1070,10 +1095,13 @@ Source: https://github.com/carolinaaafy/travel-memory-card-duo
 Updated: 2026-08-29
 Tags: everyday, skill, carolinaaafy
 
-Transform one user-supplied travel, street, landscape, lifestyle, portrait, or pet photo into a coordinated two-image deliverable: one complete horizontal collectible travel memory card and one separate transparent-background PNG containing
+Turn one travel snap into a collectible card plus six matching die-cut stickers with transparent.
 
 ### What does this skill do?
 Transform one user-supplied travel, street, landscape, lifestyle, portrait, or pet photo into a coordinated two-image deliverable: one complete horizontal collectible travel memory card and one separate transparent-background PNG containing the exact same six die-cut sticker motifs. Use when Codex needs to P图, stylize a photo as a tactile gouache/cut-paper memory card, provide reusable transparent
+
+### Why is it worth installing?
+Not a filter—it outputs a full horizontal card AND six matching die-cut stickers from the same source art, so the set looks like.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/carolinaaafy/travel-memory-card-duo.git Then point your agent at the skill directory.
@@ -1149,10 +1177,13 @@ Source: https://github.com/oil-oil/oil-motion
 Updated: 2026-08-28
 Tags: images, skill, oil-oil
 
-Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, dia
+Scroll, pointer, drag, audio, tilt, data—one skill to design, build, and explain motion for any interactive page.
 
 ### What does this skill do?
 Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
+
+### Why is it worth installing?
+It separates motion into state machine → driver → code, so you understand why something moves, not just copy-paste a snippet.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
@@ -1310,10 +1341,13 @@ Source: https://github.com/haorantang97/antibes-holiday/tree/HEAD/plugins/antibe
 Updated: 2026-08-27
 Tags: images, skill, haorantang97
 
-Create original relaxed black-pen graphics from concepts or visual references, including sparse illustrations, narrative scenes, animals, objects, abstract relationships, icons, and logo marks. Use when the user wants quick hand-drawn line
+Need quick hand-drawn line energy or casual story scenes without drawing every stroke? Feed it a concept or.
 
 ### What does this skill do?
 Create original relaxed black-pen graphics from concepts or visual references, including sparse illustrations, narrative scenes, animals, objects, abstract relationships, icons, and logo marks. Use when the user wants quick hand-drawn line energy, causal story staging, non-equilibrium proportion, shorthand forms, open contours, structural line drift, misregistered junctions, selective retracing, p
+
+### Why is it worth installing?
+It redraws, not traces—reconstructing references into shorthand forms, open contours, and selective retracing, keeping the human.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/haorantang97/antibes-holiday.git Then point your agent at the skill directory.
@@ -1352,10 +1386,13 @@ Source: https://github.com/eternityspring/shuohao-skills/tree/HEAD/skills/novel-
 Updated: 2026-08-26
 Tags: writing, skill, eternityspring
 
-从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词， 并给每个角色出角色设定图（左半身像 + 右全身三视图 + 细节条），产出 JSON + Markdown + 可交互的 report.html。 报告语言可指定（--lang），默认中文，任意语言都支持； 出图风格可指定（--style），默认半写实，也可以出吉卜力动画风。 零依赖、零 API key，用当前会话额度；出图走 codex 内置 $imagegen（可选）。 Use when asked to 拆小
+Turn any novel's cast into reusable character sheets, portraits, and style prompts—plus generated concept art.
 
 ### What does this skill do?
 从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词， 并给每个角色出角色设定图（左半身像 + 右全身三视图 + 细节条），产出 JSON + Markdown + 可交互的 report.html。 报告语言可指定（--lang），默认中文，任意语言都支持； 出图风格可指定（--style），默认半写实，也可以出吉卜力动画风。 零依赖、零 API key，用当前会话额度；出图走 codex 内置 $imagegen（可选）。 Use when asked to 拆小说角色、分析人物、生成角色卡、character sheets from a novel。
+
+### Why is it worth installing?
+No dependencies, no API keys—runs on your current session. Outputs JSON, Markdown, and an interactive HTML report, with language.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/eternityspring/shuohao-skills.git Then point your agent at the skill directory.
@@ -1364,7 +1401,7 @@ git clone --depth 1 https://github.com/eternityspring/shuohao-skills.git Then po
 Repository: eternityspring/shuohao-skills The repository ships 1 skills in total.
 
 --- 中文 ---
-开拍前先把人设、关系和能演的动作拆开
+读完一本小说，角色还留在脑子里？把它拆成角色表、画像、形象提示词、音色提示词，再生成设定图——左半身像+三视图+细。
 
 ### Q：这个 skill 做什么？
 从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词， 并给每个角色出角色设定图（左半身像 + 右全身三视图 + 细节条），产出 JSON + Markdown + 可交互的 report.html。 报告语言可指定（--lang），默认中文，任意语言都支持； 出图风格可指定（--style），默认半写实，也可以出吉卜力动画风。 零依赖、零 API key，用当前会话额度；出图走 codex 内置 $imagegen（可选）。 Use when asked to 拆小说角色、分析人物、生成角色卡、character sheets from a novel。
@@ -1386,10 +1423,13 @@ Source: https://github.com/carolinaaafy/travel-memory-sticker-card
 Updated: 2026-08-26
 Tags: everyday, skill, carolinaaafy
 
-Transform a user-uploaded photograph into one horizontal collectible memory card with a large quiet editorial illustration, six integrated journaling-sticker motifs, three small English keywords beneath the left illustration, tactile paper
+One upload becomes a horizontal keepsake card: quiet editorial art, six journaling stickers, three tiny English.
 
 ### What does this skill do?
 Transform a user-uploaded photograph into one horizontal collectible memory card with a large quiet editorial illustration, six integrated journaling-sticker motifs, three small English keywords beneath the left illustration, tactile paper grain, and deliberately clumsy flat color fields. Use when Codex needs to P图, edit, redraw, stylize, or turn a travel, street, landscape, lifestyle, portrait, o
+
+### Why is it worth installing?
+Not a filter—it redraws your photo into clumsy flat color fields with paper grain, and integrates sticker motifs into the.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/carolinaaafy/travel-memory-sticker-card.git Then point your agent at the skill directory.
@@ -1651,10 +1691,13 @@ Source: https://github.com/Zeejay0/gathered-scenes-zine-skill/tree/HEAD/skills/m
 Updated: 2026-08-24
 Tags: images, skill, Zeejay0
 
-Transform a user-supplied personal photograph into a source-faithful, typography-driven Morandi cinematic poster without stars or decorative collage symbols. Use film-poster title design, optional poetic byline and tagline, atmospheric meta
+Turn one travel photo into a Morandi-toned film poster with typography and negative space—no stars, no collage.
 
 ### What does this skill do?
 Transform a user-supplied personal photograph into a source-faithful, typography-driven Morandi cinematic poster without stars or decorative collage symbols. Use film-poster title design, optional poetic byline and tagline, atmospheric metadata, optional fictional credits, intentional negative-space placement, perspective alignment, and selective subject occlusion. Use for architecture, travel, st
+
+### Why is it worth installing?
+No filter presets—it rebuilds your photo using film-poster typography, perspective-aware negative space, and selective.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Then point your agent at the skill directory.
@@ -1670,10 +1713,13 @@ Source: https://github.com/Zeejay0/gathered-scenes-zine-skill/tree/HEAD/skills/s
 Updated: 2026-08-24
 Tags: images, skill, Zeejay0
 
-Transform a user-supplied photo into an expressive minimal zine poster made only from original source-derived illustration, an artistic proposition, emotional tension, visual metaphor, spacious negative space, art-directed high-chroma color
+Stop editing photos—distill them. Keep only your lines and colors, add loud hues and hand-drawn type, and turn a.
 
 ### What does this skill do?
 Transform a user-supplied photo into an expressive minimal zine poster made only from original source-derived illustration, an artistic proposition, emotional tension, visual metaphor, spacious negative space, art-directed high-chroma color, and unconstrained authorial typography. Let wording, language, amount, placement, type voices, scale, direction, legibility, and image interaction follow expr
+
+### Why is it worth installing?
+No filters, no templates—it mines your photo for geometry and color logic, then re-composes them as a visual argument. Every.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Then point your agent at the skill directory.
@@ -1733,10 +1779,13 @@ Source: https://github.com/LiamGvchi/gc-minimal-ip-doodle
 Updated: 2026-08-23
 Tags: everyday, skill, LiamGvchi
 
-Preserve an IP character's identity while redrawing it as a sparse, flat, hand-drawn sticker illustration on white or a light grainy background. Use for requests such as "把这个角色做成极简手绘风格", "生成五张不同生活场景", "做一个浅色背景轻颗粒版", "再来五张不要重复", or when a fr
+Same character, redrawn as deadpan flat doodles on grainy white. Five varied scenes per batch, no repeats—like.
 
 ### What does this skill do?
 Preserve an IP character's identity while redrawing it as a sparse, flat, hand-drawn sticker illustration on white or a light grainy background. Use for requests such as "把这个角色做成极简手绘风格", "生成五张不同生活场景", "做一个浅色背景轻颗粒版", "再来五张不要重复", or when a frog, capybara, fish, mascot, toy, or other character reference must become a consistent batch of cute deadpan doodles.
+
+### Why is it worth installing?
+It locks identity cues first, then strips to sparse lines on grainy white. Scene variation drives the batch, so deadpan charm.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/LiamGvchi/gc-minimal-ip-doodle.git Then point your agent at the skill directory.
@@ -1768,19 +1817,19 @@ Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: r
 
 ========================================================================
 ## vibe-techdesign
-## 把 MVP 技术选型变成一张可执行的设计图
+## 把 MVP 技术选型变成一张可执行的架构设计图
 URL: https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/
 Source: https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign
 Updated: 2026-08-21
 Tags: images, skill, KhazP
 
-Stuck on stack choices? It turns architecture, dependencies, and risks into one clear spec—no more back-and-forth.
+Stop agonizing over stacks at 2 AM. Say "plan technical design" and get architecture, data flow, and dependency.
 
 ### What does this skill do?
 Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says "plan technical design", "choose tech stack", or "how should I build this".
 
 ### Why is it worth installing?
-It doesn't just suggest—it forces a structured TDD: scope first, then components, then risks. The order is fixed, so you end.
+It doesn't code—it translates requirements into a decision tree, weighing each option so you see every fork before you commit.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git Then point your agent at the skill directory.
@@ -1834,10 +1883,13 @@ Source: https://github.com/N1kO724/scene-to-art-lab/tree/HEAD/scene-to-art-lab
 Updated: 2026-08-20
 Tags: images, skill, N1kO724
 
-Transform a user-supplied photograph into an original vertical 3:4 art-directed poster using watercolor, pop-art screenprint, expressive painting, ink-wash, relief print, editorial surrealism, or a controlled hybrid. Use when the user asks
+Turn a casual snapshot into a curated 3:4 poster—watercolor, pop, ink-wash, relief. Real redrawing, not filters.
 
 ### What does this skill do?
 Transform a user-supplied photograph into an original vertical 3:4 art-directed poster using watercolor, pop-art screenprint, expressive painting, ink-wash, relief print, editorial surrealism, or a controlled hybrid. Use when the user asks to reinterpret a real scene, portrait, object, vehicle, landscape, architecture, or travel photo as creative visual art, an exhibition poster, editorial poster,
+
+### Why is it worth installing?
+Rebuilds composition and strokes per art movement, not just color grading. Seven styles plus controlled hybrids, output is.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/N1kO724/scene-to-art-lab.git Then point your agent at the skill directory.
@@ -1853,10 +1905,13 @@ Source: https://github.com/ZzzLc0405/photo-abstract-editorial
 Updated: 2026-08-19
 Tags: images, skill, ZzzLc0405
 
-Create a clean, vertical editorial artwork that preserves an uploaded photograph as the original image and pairs it with a restrained, photo-derived abstract memory panel and poetic English title. Use when asked to transform a photo into an
+Keep the photo untouched, add one restrained abstract panel derived from it plus a poetic English title. For.
 
 ### What does this skill do?
 Create a clean, vertical editorial artwork that preserves an uploaded photograph as the original image and pairs it with a restrained, photo-derived abstract memory panel and poetic English title. Use when asked to transform a photo into an abstract editorial diptych, photo-plus-abstraction composition, visual memory panel, or minimalist archival poster without redrawing or stylizing the source ph
+
+### Why is it worth installing?
+The abstract panel is distilled from the photo's own palette and structure, not randomly generated—so it dialogues with the.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/ZzzLc0405/photo-abstract-editorial.git Then point your agent at the skill directory.
@@ -1954,10 +2009,13 @@ Source: https://github.com/KKenny0/card-skill
 Updated: 2026-08-18
 Tags: images, skill, KKenny0
 
-Render text and evidence into polished, shareable PNG visuals with one consistent Kenny Style visual grammar. Use this skill whenever the user asks to turn words, notes, articles, quotes, arguments, stories, open-source repository or tool m
+Drop in notes, quotes, arguments, repo docs, or WeRead highlights—get a share-ready PNG in one consistent visual.
 
 ### What does this skill do?
 Render text and evidence into polished, shareable PNG visuals with one consistent Kenny Style visual grammar. Use this skill whenever the user asks to turn words, notes, articles, quotes, arguments, stories, open-source repository or tool material, technical commands/workflows, explicit WeChat Reading highlights/thoughts, or WeChat Reading personal statistics into an 信息图/infographic, 海报/poster, 卡片
+
+### Why is it worth installing?
+Not just a renderer—it enforces one visual grammar across every card: same type, spacing, and emphasis hierarchy, so disparate.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/KKenny0/card-skill.git Then point your agent at the skill directory.
@@ -1973,10 +2031,13 @@ Source: https://github.com/liuzihe849-png/silhouette-group-collage/tree/HEAD/sil
 Updated: 2026-08-18
 Tags: images, skill, liuzihe849-png
 
-Frozen v1 baseline for transforming user-supplied group photos into vertical diptych silhouette collages using reciprocal positive-negative masks, source-pixel-locked original people, tactile paper fields, preserved film texture, scene-matc
+Old group photos losing faces? It locks original pixels with reciprocal masks, adds paper grain, handwriting &.
 
 ### What does this skill do?
 Frozen v1 baseline for transforming user-supplied group photos into vertical diptych silhouette collages using reciprocal positive-negative masks, source-pixel-locked original people, tactile paper fields, preserved film texture, scene-matched handwriting, and sparse handmade stars. Use when the user asks for 剪影群像风格, 剪影群像风格 v1, silhouette group collage, 群像剪影拼贴, 正负形镜空, 上下双联画, youth-memory group art
+
+### Why is it worth installing?
+Not a filter—geometric reciprocal masks anchor every face from the source at pixel level. Paper & film grain stay layered.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/liuzihe849-png/silhouette-group-collage.git Then point your agent at the skill directory.
@@ -2014,10 +2075,13 @@ Source: https://github.com/N1kO724/kodak-2383-film-look/tree/HEAD/skills/kodak-2
 Updated: 2026-08-17
 Tags: images, skill, N1kO724
 
-Turn a user-supplied photograph into a vertical film-board artwork using a strict 1086×1449 locked template: an ungraded upper crop at 810×624 px and a smaller 2383-inspired lower crop at 628×456 px, with identical coordinates across a seri
+Lock every shot into the same 1086×1449 film-board template—identical crops, brushed pigment, and red/cyan.
 
 ### What does this skill do?
 Turn a user-supplied photograph into a vertical film-board artwork using a strict 1086×1449 locked template: an ungraded upper crop at 810×624 px and a smaller 2383-inspired lower crop at 628×456 px, with identical coordinates across a series. Use an adaptive source-derived board with visible low-contrast brushed/rolled pigment texture, plus irregular emulsion overflow, short red/cyan registration
+
+### Why is it worth installing?
+Not a filter—a locked template. Fixed dual-crop coordinates plus source-derived pigment and overflow give series a machine-like.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/N1kO724/kodak-2383-film-look.git Then point your agent at the skill directory.
@@ -2034,10 +2098,13 @@ Source: https://github.com/jinchenma94/bazi-skill
 Updated: 2026-08-17
 Tags: play, skill, jinchenma94
 
-四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年.
+Give it your birth details, get a full BaZi chart with luck pillars—then it cites classics like Qiong Tong Bao.
 
 ### What does this skill do?
 四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年. Triggers: "算八字", "看八字", "批八字", "排八字", "四柱", "命盘", "算命", "帮我看看八字", "我想算八字", "分析八字", "排盘", "bazi", "bazi analysis", "fortune telling", "birth chart", "算一卦", "看运势
+
+### Why is it worth installing?
+No memorized horoscopes—it interactively confirms birth data, computes the chart by rules, then cross-references five classical.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/jinchenma94/bazi-skill.git Then point your agent at the skill directory.
@@ -2046,7 +2113,7 @@ git clone --depth 1 https://github.com/jinchenma94/bazi-skill.git Then point you
 Repository: jinchenma94/bazi-skill The repository ships 1 skills in total.
 
 --- 中文 ---
-按作者那套排盘，不当鸡汤运势
+报上生日时辰，它排出四柱大运流年；再翻穷通宝典、滴天髓等古籍，给你一份有出处的命理分析，不是随口胡诌。
 
 ### Q：这个 skill 做什么？
 四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年. Triggers: "算八字", "看八字", "批八字", "排八字", "四柱", "命盘", "算命", "帮我看看八字", "我想算八字", "分析八字", "排盘", "bazi", "bazi analysis", "fortune telling", "birth chart", "算一卦", "看运势
@@ -2134,10 +2201,13 @@ Source: https://github.com/dacnay816y62-hub/FANTASY-Minimal-Magazine
 Updated: 2026-08-15
 Tags: images, skill, dacnay816y62-hub
 
-Create FANTASY-branded 3:4 minimal editorial magazine posters from user-provided images by reading the image, reducing visual information, translating it into abstract editorial material, composing with large whitespace, and generating cont
+Drop any photo in, get a FANTASY 3:4 editorial poster. No filters—it reduces the image to abstract material, then.
 
 ### What does this skill do?
 Create FANTASY-branded 3:4 minimal editorial magazine posters from user-provided images by reading the image, reducing visual information, translating it into abstract editorial material, composing with large whitespace, and generating content-driven typography. Use when the user asks for "fantasy-极简杂志", "极简杂志海报", "编辑出版海报", "图片转译海报", "FANTASY magazine poster", or wants a quiet archival/minimal pub
+
+### Why is it worth installing?
+It reads the image, strips visual noise, translates it into abstract editorial components, then sets type that responds to.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/dacnay816y62-hub/FANTASY-Minimal-Magazine.git Then point your agent at the skill directory.
@@ -2197,10 +2267,13 @@ Source: https://github.com/dacnay816y62-hub/chinese-poster-skill/tree/HEAD/chine
 Updated: 2026-08-14
 Tags: images, skill, dacnay816y62-hub
 
-Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seas
+Turn any Chinese cultural theme—tea, heritage, city, festival—into refined contemporary Oriental poster prompts.
 
 ### What does this skill do?
 Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seasonal festivals, tea, incense, craft, museum, commercial brands, fashion, urban culture, editorial campaigns, or experimental cultural subjects. Use when the use
+
+### Why is it worth installing?
+It doesn't recycle templates—it parses theme semantics into composition, negative space, ink tones, and typeface mood, so.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/dacnay816y62-hub/chinese-poster-skill.git Then point your agent at the skill directory.
@@ -2270,20 +2343,20 @@ Repository: staruhub/ClaudeSkills Prep work visible in the skill's own text: ref
 
 ========================================================================
 ## personal-reflector
-## 把情绪卡点拆成可复盘的思维回放
+## 把情绪卡点拆成可复盘的系统信号
 URL: https://ourword.ai/skill/i/yeyulangzi-personal-reflector/
 URL (中文): https://ourword.ai/skill/zh/i/yeyulangzi-personal-reflector/
 Source: https://github.com/yeyulangzi/personal-reflector
 Updated: 2026-08-12
 Tags: play, skill, yeyulangzi
 
-Anxious, doubting, stuck in loops? No platitudes—just replay the trigger moment to see if it's an old pattern or.
+When you say 'I messed up again' or 'I'm anxious', it skips comfort and treats emotions as data to reveal.
 
 ### What does this skill do?
 Use when the user discusses personal emotions, anxiety, self-doubt, behavior patterns, relationships, career identity confusion, or life direction. Triggers on: 焦虑、难受、怀疑自己、模式、重复、关系、职业身份、方向迷茫、转型期、恢复期、意义感、新旧系统交替。
 
 ### Why is it worth installing?
-Treats emotions as signals, not defects—reframes stuck points through a 'system transition' lens, turning each struggle into a.
+It never asks 'how do you feel'. Instead, it maps emotional events into input-response-outcome loops, exposing the switch behind.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/yeyulangzi/personal-reflector.git Then point your agent at the skill directory.
@@ -2292,13 +2365,13 @@ git clone --depth 1 https://github.com/yeyulangzi/personal-reflector.git Then po
 Repository: yeyulangzi/personal-reflector The repository ships 1 skills in total.
 
 --- 中文 ---
-焦虑、自我怀疑、关系反复？它不灌鸡汤，只带你回放触发瞬间，看清是旧模式在重播，还是新系统在磨合。
+当你说“又搞砸了”“好焦虑”“我不适合这行”，它不灌鸡汤，而是带你把情绪当数据，找出重复出现的触发模式。
 
 ### Q：这个 skill 做什么？
 Use when the user discusses personal emotions, anxiety, self-doubt, behavior patterns, relationships, career identity confusion, or life direction. Triggers on: 焦虑、难受、怀疑自己、模式、重复、关系、职业身份、方向迷茫、转型期、恢复期、意义感、新旧系统交替。
 
 ### Q：为什么值得装？
-它把情绪当信号而非故障，用「新旧系统交替」视角重审卡点，让每次难受都变成可定位的版本升级日志。
+它不追问“你感觉如何”，而是用系统视角把情绪事件拆成输入-反应-后果，让你看见自己循环的开关在哪。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/yeyulangzi/personal-reflector.git 然后把智能体指向这个 skill 目录即可。
@@ -2314,10 +2387,13 @@ Source: https://github.com/traveler0621/reality-restaged
 Updated: 2026-08-12
 Tags: everyday, skill, traveler0621
 
-Reinterpret documentary, travel, street, cultural, and human-centered photographs through the distinctive Reality Restaged visual language: radically simplified theatrical environments, large saturated color fields, strong negative space, c
+Tired of flat documentary shots? Turn street moments into cinematic stage photos with minimal sets, bold colors.
 
 ### What does this skill do?
 Reinterpret documentary, travel, street, cultural, and human-centered photographs through the distinctive Reality Restaged visual language: radically simplified theatrical environments, large saturated color fields, strong negative space, cinematic recomposition, one impossible relationship, monumental scale, and believable analog photographic realism. Preserve the documentary identity of people,
+
+### Why is it worth installing?
+Not just a filter—it's a full visual grammar: re-composes scenes, invents impossible relations, scales up, and stretches reality.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/traveler0621/reality-restaged.git Then point your agent at the skill directory.
@@ -2334,10 +2410,13 @@ Source: https://github.com/yokel1121/muyang-illustration-skills/tree/HEAD/skills
 Updated: 2026-08-11
 Tags: images, skill, yokel1121
 
-风格包含：庭院手绘插画、东方青绿插画、极简墨灰插画。用于收集用户指定的主体和具体风格，将主体原样填入对应固定配方并直接生成图片；不得展示提示词、扩写或增加东方意象。
+Three fixed Oriental styles—courtyard sketch, blue-green, ink-gray. Give a subject, get an image. No prompts, no.
 
 ### What does this skill do?
 风格包含：庭院手绘插画、东方青绿插画、极简墨灰插画。用于收集用户指定的主体和具体风格，将主体原样填入对应固定配方并直接生成图片；不得展示提示词、扩写或增加东方意象。
+
+### Why is it worth installing?
+Style is locked into fixed recipes; subjects are inserted verbatim. Built for batch consistency, zero prompt fiddling.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/yokel1121/muyang-illustration-skills.git Then point your agent at the skill directory.
@@ -2346,7 +2425,7 @@ git clone --depth 1 https://github.com/yokel1121/muyang-illustration-skills.git 
 Repository: yokel1121/muyang-illustration-skills The repository ships 1 skills in total.
 
 --- 中文 ---
-只装诗意水墨这一款，风格锁死
+庭院手绘、青绿山水、极简墨灰——你给主体，它按固定配方出图。不扩写、不添意象，所见即所得。
 
 ### Q：这个 skill 做什么？
 风格包含：庭院手绘插画、东方青绿插画、极简墨灰插画。用于收集用户指定的主体和具体风格，将主体原样填入对应固定配方并直接生成图片；不得展示提示词、扩写或增加东方意象。
@@ -2368,10 +2447,13 @@ Source: https://github.com/zhu930824/poetic-line-zine-poster
 Updated: 2026-08-11
 Tags: images, skill, zhu930824
 
-Create a clean vertical photo-and-abstraction editorial artwork from an uploaded portrait, travel photo, animal, plant, architecture, object, or scene. Preserve the source photo, distill its relationships into broad charcoal sweeps and one
+Turn any portrait, travel shot, or object into a clean vertical editorial poster — charcoal sweeps, one chromatic.
 
 ### What does this skill do?
 Create a clean vertical photo-and-abstraction editorial artwork from an uploaded portrait, travel photo, animal, plant, architecture, object, or scene. Preserve the source photo, distill its relationships into broad charcoal sweeps and one structural chromatic scribble, add restrained experimental English typography, and deliver an exact requested aspect ratio through deterministic composition and
+
+### Why is it worth installing?
+It doesn't filter — it analyzes the photo's internal relationships, then rebuilds with deterministic composition. Output is.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/zhu930824/poetic-line-zine-poster.git Then point your agent at the skill directory.
@@ -2387,10 +2469,13 @@ Source: https://github.com/liigoQi/photo-to-travel-sketch
 Updated: 2026-08-11
 Tags: everyday, skill, liigoQi
 
-Convert a user-provided photo into a fast, loose observational travel sketch using economical wandering black contours, aggressive omission, dry fiber-tip marker strokes, source-aware but gray-muted color, and naive compressed perspective.
+Tired of realistic edits? Turn photos into loose pen-and-marker travel sketches—broken contours, bold omission.
 
 ### What does this skill do?
 Convert a user-provided photo into a fast, loose observational travel sketch using economical wandering black contours, aggressive omission, dry fiber-tip marker strokes, source-aware but gray-muted color, and naive compressed perspective. Use when the user asks to turn a photo, streetscape, building, landscape, or travel memory into a spontaneous personal sketchbook, urban-sketch, pen-and-marker,
+
+### Why is it worth installing?
+Not a style-transfer filter—it redraws with sketch logic: extract lines, compress perspective, mute color, preserving the.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/liigoQi/photo-to-travel-sketch.git Then point your agent at the skill directory.
@@ -2429,10 +2514,13 @@ Source: https://github.com/yokel1121/muyang-illustration-skills/tree/HEAD/skills
 Updated: 2026-08-11
 Tags: images, skill, yokel1121
 
-风格包含：暗调黑红插画、暗黑韩系插画、暗黑冷光插画。用于收集用户指定的主体和具体风格，将主体原样填入对应固定配方并直接生成图片；不得展示提示词、扩写、改写或混合光色。
+Drop in any subject, get dark-red, Korean noir, or cold-glow illustration—no prompt tweaking, no style drift.
 
 ### What does this skill do?
 风格包含：暗调黑红插画、暗黑韩系插画、暗黑冷光插画。用于收集用户指定的主体和具体风格，将主体原样填入对应固定配方并直接生成图片；不得展示提示词、扩写、改写或混合光色。
+
+### Why is it worth installing?
+Locked recipes, raw subject injection—no prompt leakage or style drift. Three noir presets for batch-consistent output.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/yokel1121/muyang-illustration-skills.git Then point your agent at the skill directory.
@@ -2539,40 +2627,24 @@ Repository: Alisa0808/vox-director Prep work visible in the skill's own text: re
 
 ========================================================================
 ## photo-chromatic-abstraction-style-1
-## 把照片压成 1-5 个色块的色彩记忆抽象画
+## 把照片转成色块记忆的极简抽象画
 URL: https://ourword.ai/skill/i/zzzlc0405-photo-chromatic-abstraction-style-1/
-URL (中文): https://ourword.ai/skill/zh/i/zzzlc0405-photo-chromatic-abstraction-style-1/
 Source: https://github.com/ZzzLc0405/photo-chromatic-abstraction-style-1
 Updated: 2026-08-10
 Tags: writing, skill, ZzzLc0405
 
-Forget details, keep the hues. Adaptive flat fields plus 1-5 restrained source-derived accents turn any photo.
+Turn photos into flat-field color memories—1-5 restrained accents, hierarchy over placement. For palette studies.
 
 ### What does this skill do?
 Translate an uploaded or local photograph into a color-first chromatic-memory abstraction (Style 1) built from adaptive flat fields and 1-5 restrained, source-derived accents. Use for palette-memory composition, color-weight studies, minimalist color-block translation, 色块抽象、照片色彩记忆、色彩构成、照片色卡转译，or explicit Style-1 requests where broad color hierarchy matters more than subject placement. Do not use w
 
 ### Why is it worth installing?
-It segments by color weight, not subject placement—flat fields adapt to tonal hierarchy, accents stay source-derived, yielding a.
+Segments by color weight, not subject placement—flat fields carry the composition, so hue hierarchy drives structure, not.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/ZzzLc0405/photo-chromatic-abstraction-style-1.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 The repository ships 1 skills in total.
-
---- 中文 ---
-照片记不住细节？那就只留颜色。自适应平涂色块 + 源图提取的克制点缀，让色彩权重自己说话，适合色卡转译与色彩构成练。
-
-### Q：这个 skill 做什么？
-Translate an uploaded or local photograph into a color-first chromatic-memory abstraction (Style 1) built from adaptive flat fields and 1-5 restrained, source-derived accents. Use for palette-memory composition, color-weight studies, minimalist color-block translation, 色块抽象、照片色彩记忆、色彩构成、照片色卡转译，or explicit Style-1 requests where broad color hierarchy matters more than subject placement. Do not use w
-
-### Q：为什么值得装？
-不靠构图叙事，只按色彩层级切分画面——色块边界由颜色权重自适应生成，点缀色严格取自原图。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ZzzLc0405/photo-chromatic-abstraction-style-1.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
 Repository: ZzzLc0405/photo-chromatic-abstraction-style-1 The repository ships 1 skills in total.
 
 ========================================================================
@@ -2584,10 +2656,13 @@ Source: https://github.com/ayi-ai/nie-grassroots-logic
 Updated: 2026-08-10
 Tags: learn, skill, ayi-ai
 
-聂辉华《基层中国的运行逻辑》方法论工具箱：政治经济学/组织经济学视角解释基层权力与治理， 并落到个人抉择（求学/考公/投资/养老/创业）。 核心框架：内外冲突的双均衡、条块结合以块为主、等级制资源配置（人跟资源走、资源跟权力走）、 职务含权量三因子、县委书记三座大山（维稳/招商/借债）、压力型体制与注意力分配、 政企四象限博弈、土地财政闭环、活力—秩序城市化权衡、上下同治。 当用户要理解基层/县域/乡镇治理、条块矛盾、属地责任、央地关系、官员晋升与考核、 一票否决、形式主义、
+Decode county politics, street offices, and central-local games. Turn Nie Huihua's frameworks into templates for.
 
 ### What does this skill do?
 聂辉华《基层中国的运行逻辑》方法论工具箱：政治经济学/组织经济学视角解释基层权力与治理， 并落到个人抉择（求学/考公/投资/养老/创业）。 核心框架：内外冲突的双均衡、条块结合以块为主、等级制资源配置（人跟资源走、资源跟权力走）、 职务含权量三因子、县委书记三座大山（维稳/招商/借债）、压力型体制与注意力分配、 政企四象限博弈、土地财政闭环、活力—秩序城市化权衡、上下同治。 当用户要理解基层/县域/乡镇治理、条块矛盾、属地责任、央地关系、官员晋升与考核、 一票否决、形式主义、招商引资、土地财政、地方债、街道办与村官、考公选岗、 高考志愿/选城读书、买房与区域投资风险、回哪养老、创业对接园区政府、 撤县设区/县改市对家庭影响、谁适合当村支书、大学生村官值不值得去、 新型职业农民/致富能手/回乡创业、昆山式改革/自下而上推项目/西气东输式立项、 营商环境比较、投资不过山海关、政商关系亲清、容错
+
+### Why is it worth installing?
+Not scattered opinions—it converts academic concepts like 'power-content index' and 'tiao-kuai tension' into computable.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/ayi-ai/nie-grassroots-logic.git Then point your agent at the skill directory.
@@ -2596,7 +2671,7 @@ git clone --depth 1 https://github.com/ayi-ai/nie-grassroots-logic.git Then poin
 Repository: ayi-ai/nie-grassroots-logic The repository ships 1 skills in total.
 
 --- 中文 ---
-一本书收成方法，不含原文
+读懂县委大院、街道办和央地博弈，考公选岗、买房养老不再靠猜。聂辉华框架落地为可套用的分析模板，附真实案例对照。
 
 ### Q：这个 skill 做什么？
 聂辉华《基层中国的运行逻辑》方法论工具箱：政治经济学/组织经济学视角解释基层权力与治理， 并落到个人抉择（求学/考公/投资/养老/创业）。 核心框架：内外冲突的双均衡、条块结合以块为主、等级制资源配置（人跟资源走、资源跟权力走）、 职务含权量三因子、县委书记三座大山（维稳/招商/借债）、压力型体制与注意力分配、 政企四象限博弈、土地财政闭环、活力—秩序城市化权衡、上下同治。 当用户要理解基层/县域/乡镇治理、条块矛盾、属地责任、央地关系、官员晋升与考核、 一票否决、形式主义、招商引资、土地财政、地方债、街道办与村官、考公选岗、 高考志愿/选城读书、买房与区域投资风险、回哪养老、创业对接园区政府、 撤县设区/县改市对家庭影响、谁适合当村支书、大学生村官值不值得去、 新型职业农民/致富能手/回乡创业、昆山式改革/自下而上推项目/西气东输式立项、 营商环境比较、投资不过山海关、政商关系亲清、容错
@@ -2618,10 +2693,13 @@ Source: https://github.com/liuzihe849-png/ai-editorial-print-studio
 Updated: 2026-08-10
 Tags: images, skill, liuzihe849-png
 
-Transform any user-uploaded photo into a vintage editorial print illustration—not a photo filter. Use for food, beverage, landscape, architecture, portrait, or product images that need Japanese archive print, mid-century graphic, risograph,
+Not a filter—editorial-grade illustration. Japanese archive print, mid-century graphics, risograph, specimen.
 
 ### What does this skill do?
 Transform any user-uploaded photo into a vintage editorial print illustration—not a photo filter. Use for food, beverage, landscape, architecture, portrait, or product images that need Japanese archive print, mid-century graphic, risograph, specimen-sheet, or handmade editorial-art direction while preserving source aspect ratio, composition, and subject relationships.
+
+### Why is it worth installing?
+It parses composition and subject hierarchy first, then redraws per style library—not pixel recoloring. Five print aesthetics.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/liuzihe849-png/ai-editorial-print-studio.git Then point your agent at the skill directory.
@@ -2637,10 +2715,13 @@ Source: https://github.com/wnby/paper-spirit-zine/tree/HEAD/skills/paper-spirit-
 Updated: 2026-08-09
 Tags: images, skill, wnby
 
-Transform a user-supplied photo into a tactile Paper Spirit Zine poster where the original photograph remains emotionally primary and the lower paper field becomes a source-derived living afterimage: ridge, shoreline, shadow, wind trace, br
+Your photo stays the soul, while the lower paper field bleeds ridges, shorelines, breath marks—like a negative.
 
 ### What does this skill do?
 Transform a user-supplied photo into a tactile Paper Spirit Zine poster where the original photograph remains emotionally primary and the lower paper field becomes a source-derived living afterimage: ridge, shoreline, shadow, wind trace, breath mark, or only-if-earned animal-like vessel. Use for photo-to-zine editorial posters, paper afterimages, photographic memory specimens, Douyin-ready art ser
+
+### Why is it worth installing?
+No filter stack—it mines the source photo's own forms to grow a living afterimage that shares its DNA, turning paper into.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/wnby/paper-spirit-zine.git Then point your agent at the skill directory.
@@ -2657,10 +2738,13 @@ Source: https://github.com/lzs0594/dreamy-motion-editorial
 Updated: 2026-08-09
 Tags: images, skill, lzs0594
 
-Extract the semantic hero from any casual photo and rebuild it as a premium hazy dreamlike motion-editorial image with large negative space, simplified context, selective preservation, and restrained poster hierarchy. Use when the user prov
+That blurry, blown-out, forgettable shot? It rescues the subject, clears the noise, and reissues it as a dreamy.
 
 ### What does this skill do?
 Extract the semantic hero from any casual photo and rebuild it as a premium hazy dreamlike motion-editorial image with large negative space, simplified context, selective preservation, and restrained poster hierarchy. Use when the user provides or references a photo and asks for 高级感、朦胧感、梦幻感、电影感、慢门拖影、柔焦、胶片感、诗意海报、Pinterest 同类氛围、图生图提示词、AI 生图提示词、照片风格改造、帖子视觉、封面图、艺术摄影、青春残影、玻璃倒影、花卉虚焦、逆光晕染, or wants a reu
+
+### Why is it worth installing?
+No filter stack. It semantically separates subject from clutter, then rebuilds via negative space, context stripping, selective.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/lzs0594/dreamy-motion-editorial.git Then point your agent at the skill directory.
@@ -2752,10 +2836,13 @@ Source: https://github.com/luji12/handdrawn-photo-poster
 Updated: 2026-08-08
 Tags: images, skill, luji12
 
-将日常照片改造成“暗化原照＋居中高饱和手绘邮签＋克制 ZINE 文案”的编辑海报。用于用户要求从照片提取重点元素，重绘为统一的高饱和手绘插画，并以邮票贴纸形式叠加回原照片时使用。
+Your snapshot becomes a poster: the key element redrawn in vivid hand-drawn style, stamped back onto a darkened.
 
 ### What does this skill do?
 将日常照片改造成“暗化原照＋居中高饱和手绘邮签＋克制 ZINE 文案”的编辑海报。用于用户要求从照片提取重点元素，重绘为统一的高饱和手绘插画，并以邮票贴纸形式叠加回原照片时使用。
+
+### Why is it worth installing?
+Not a filter—it parses the photo, redraws the focal subject in saturated hand-drawn style, then composites it as a stamp on a.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/luji12/handdrawn-photo-poster.git Then point your agent at the skill directory.
@@ -2786,10 +2873,13 @@ Source: https://github.com/joeyhu1108-maker/selective-ink-sketch
 Updated: 2026-08-08
 Tags: images, skill, joeyhu1108-maker
 
-Turn a user-uploaded photograph into an original monochrome observational pen-and-ink sketch through deliberate omission, negative space, density control, and source fidelity. Use when the user asks for 钢笔速写, 建筑速写, 风景速写, 人物速写, 肖像速写, photo-t
+Turn a photo into a deliberate pen-and-ink sketch with real omissions, not filters—density and negative space.
 
 ### What does this skill do?
 Turn a user-uploaded photograph into an original monochrome observational pen-and-ink sketch through deliberate omission, negative space, density control, and source fidelity. Use when the user asks for 钢笔速写, 建筑速写, 风景速写, 人物速写, 肖像速写, photo-to-ink sketch, architectural sketch, landscape sketch, figure sketch, portrait sketch, or wants an attached JPG/PNG/WebP photo redrawn with selective hand-drawn
+
+### Why is it worth installing?
+It mimics an artist's eye: decides what to omit, then rebuilds density from the source—fidelity over mimicry.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/joeyhu1108-maker/selective-ink-sketch.git Then point your agent at the skill directory.
@@ -2805,10 +2895,13 @@ Source: https://github.com/liyue-aigc/xianxia-visual-director/tree/HEAD/xianxia-
 Updated: 2026-08-08
 Tags: images, skill, liyue-aigc
 
-Generate, derive, optimize, and diagnose structured AI image prompts for luminous cinematic Eastern xianxia environments under one inherited master canon with measurable divine scale, fixed five-layer space, 40–60% content-bearing breathing
+Stop rolling dice on prompts: fixed 5-layer space, 40–60% breathing air, railing-free edges—every word has a.
 
 ### What does this skill do?
 Generate, derive, optimize, and diagnose structured AI image prompts for luminous cinematic Eastern xianxia environments under one inherited master canon with measurable divine scale, fixed five-layer space, 40–60% content-bearing breathing air, monumental Eastern architecture, railing-free edges, and coherent immortals and costume. Cover one-location scenic landmarks, immense inhabited celestial
+
+### Why is it worth installing?
+Not a word bank—a generator with a built-in critic. Derives wide shots from one landmark, then audits prompts for canon drift.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/liyue-aigc/xianxia-visual-director.git Then point your agent at the skill directory.
@@ -2825,10 +2918,13 @@ Source: https://github.com/crawfordxx/xiaoma-durex-copywriter
 Updated: 2026-08-08
 Tags: writing, skill, crawfordxx
 
-用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
+Stop hard-selling trends. It serves 3-5 dual-meaning angles first, then copy + 5-ratio visuals—so your brand.
 
 ### What does this skill do?
 用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
+
+### Why is it worth installing?
+It doesn't hand you one line—it maps your intent to 3-5 candidate angles, then forces restraint via whitespace. That's the.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git Then point your agent at the skill directory.
@@ -2837,7 +2933,7 @@ git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git Th
 Repository: crawfordxx/xiaoma-durex-copywriter The repository ships 1 skills in total.
 
 --- 中文 ---
-从二百六十张原海报拆双关，不是写性感一点
+热点来了只会硬蹭？它用双层语义+留白，先给3-5个方案供你选，再出短文案和五种比例配图，让借势不再尴尬。
 
 ### Q：这个 skill 做什么？
 用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
@@ -2860,10 +2956,13 @@ Source: https://github.com/gnipbao/flat-poster-op
 Updated: 2026-08-08
 Tags: images, skill, gnipbao
 
-只生成“纯二维赛璐璐 × 抽象 MG × 动态平面海报”视频的可复制提示词，包括全局风格锁、逐镜图像提示词、独立运动/I2V 提示词、可选标题合成提示词与负向约束。Use when the user asks for 黄黑白高反差、赭橙西部剪影、黑底动态字体、波普分割构图、节拍硬切、定格 pose、电影宣传片或海螺/MiniMax/OpenArt 提示词，尤其是“只输出提示词”“别做其他操作”“prompt only”。本 Skill 不创建文件、不生成或渲染媒体、不调用外部
+Need high-contrast flat posters with kinetic type or film-style cuts? It distills cel-anime × MG × motion-poster.
 
 ### What does this skill do?
 只生成“纯二维赛璐璐 × 抽象 MG × 动态平面海报”视频的可复制提示词，包括全局风格锁、逐镜图像提示词、独立运动/I2V 提示词、可选标题合成提示词与负向约束。Use when the user asks for 黄黑白高反差、赭橙西部剪影、黑底动态字体、波普分割构图、节拍硬切、定格 pose、电影宣传片或海螺/MiniMax/OpenArt 提示词，尤其是“只输出提示词”“别做其他操作”“prompt only”。本 Skill 不创建文件、不生成或渲染媒体、不调用外部平台，也不附加分析报告。
+
+### Why is it worth installing?
+It's a structured prompt kit, not vague style tags. Global style lock, per-shot image prompts, separate motion/I2V prompts, and.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/gnipbao/flat-poster-op.git Then point your agent at the skill directory.
@@ -2872,7 +2971,7 @@ git clone --depth 1 https://github.com/gnipbao/flat-poster-op.git Then point you
 Repository: gnipbao/flat-poster-op The repository ships 1 skills in total.
 
 --- 中文 ---
-对照原作再画，不许凭感觉扁平化
+要黄黑白高反差、赭橙西部剪影、黑底动态字体？别自己憋词。它把纯二维赛璐璐×MG×动态平面海报拆成逐镜提示词。
 
 ### Q：这个 skill 做什么？
 只生成“纯二维赛璐璐 × 抽象 MG × 动态平面海报”视频的可复制提示词，包括全局风格锁、逐镜图像提示词、独立运动/I2V 提示词、可选标题合成提示词与负向约束。Use when the user asks for 黄黑白高反差、赭橙西部剪影、黑底动态字体、波普分割构图、节拍硬切、定格 pose、电影宣传片或海螺/MiniMax/OpenArt 提示词，尤其是“只输出提示词”“别做其他操作”“prompt only”。本 Skill 不创建文件、不生成或渲染媒体、不调用外部平台，也不附加分析报告。
@@ -2916,10 +3015,13 @@ Source: https://github.com/wnby/travel-photo-soft-abstraction/tree/HEAD/skills/t
 Updated: 2026-08-07
 Tags: everyday, skill, wnby
 
-Analyze a user-uploaded travel photograph and reconstruct it as a CLEAN upper-photo/lower-abstraction editorial artwork. Use when Codex should preserve the original photo unchanged above, generate a source-readable softly abstract lower pan
+Keep the photo intact above, distill a soft abstract below. Perfect for editorial spreads, exhibit catalogs, or.
 
 ### What does this skill do?
 Analyze a user-uploaded travel photograph and reconstruct it as a CLEAN upper-photo/lower-abstraction editorial artwork. Use when Codex should preserve the original photo unchanged above, generate a source-readable softly abstract lower panel guided by bundled references, and add a number, date, and short phrase. This is subtle visual distillation, not style transfer, heavy symbolism, or a miniatu
+
+### Why is it worth installing?
+Not style transfer—visual distillation. The lower panel is code-generated, source-readable, and guided by bundled references.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/wnby/travel-photo-soft-abstraction.git Then point your agent at the skill directory.
@@ -2935,10 +3037,13 @@ Source: https://github.com/Whiplashzeb/photo-to-zine-postcard
 Updated: 2026-08-07
 Tags: play, skill, Whiplashzeb
 
-Turn a user-provided photograph into a minimal two-sided 2:3 zine-style postcard. Preserve the original photo above, then create a sparse hand-drawn source-specific motif, minimal metadata, three sampled color swatches, and a matching funct
+Don't just print photos—mail them. Turn any snapshot into a minimal 2:3 zine postcard with hand-drawn motifs.
 
 ### What does this skill do?
 Turn a user-provided photograph into a minimal two-sided 2:3 zine-style postcard. Preserve the original photo above, then create a sparse hand-drawn source-specific motif, minimal metadata, three sampled color swatches, and a matching functional postcard back.
+
+### Why is it worth installing?
+It doesn't slap on a filter—it extracts motifs and swatches from your actual photo, so every card's back grows out of the image.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Whiplashzeb/photo-to-zine-postcard.git Then point your agent at the skill directory.
@@ -3080,10 +3185,13 @@ Source: https://github.com/wnby/photo-relic-editorial
 Updated: 2026-08-05
 Tags: images, skill, wnby
 
-Create distinctive Photo Relic editorial artworks from user-provided photographs: preserve the real photo and pair it with a recognizable, artful abstract relic shaped like memory, modern printmaking, quiet Eastern restraint, and source-der
+Keep the real photo, add a relic that looks like memory itself — printmaking, quiet restraint, light from the.
 
 ### What does this skill do?
 Create distinctive Photo Relic editorial artworks from user-provided photographs: preserve the real photo and pair it with a recognizable, artful abstract relic shaped like memory, modern printmaking, quiet Eastern restraint, and source-derived light. Use when the user asks to turn a photo into minimal art, photographic relic posters, abstract editorial photography, gallery-like photo posters, Dou
+
+### Why is it worth installing?
+It never overwrites the original — it distills light from the photo into an abstract relic placed beside it. The Eastern.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/wnby/photo-relic-editorial.git Then point your agent at the skill directory.
@@ -3181,10 +3289,13 @@ Source: https://github.com/luckdvr/photo-riso-poster
 Updated: 2026-08-04
 Tags: images, skill, luckdvr
 
-Turn a photo or a text theme into one quiet riso-print archive poster. For a photo, deconstruct its observable facts (counts, spacing, occlusion, direction, color roles) and rebuild them as a sparse 2–3 ink risograph composition on temperat
+Turn a photo into a riso archive poster—not a filter, but a teardown: count spacing, occlusion, direction, color.
 
 ### What does this skill do?
 Turn a photo or a text theme into one quiet riso-print archive poster. For a photo, deconstruct its observable facts (counts, spacing, occlusion, direction, color roles) and rebuild them as a sparse 2–3 ink risograph composition on temperature-matched paper, with typography that also carries the evidence; for a text theme, distill one imageable idea. Aspect ratio follows the source photo. Generate
+
+### Why is it worth installing?
+No templates—it extracts observable facts from the photo and lets them dictate composition and ink choice. Every poster is a.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/luckdvr/photo-riso-poster.git Then point your agent at the skill directory.
@@ -3200,10 +3311,13 @@ Source: https://github.com/threerocks/hand-drawn-styles
 Updated: 2026-08-04
 Tags: images, skill, threerocks
 
-Use when users ask for a hand-drawn or illustrated image prompt, name one of the repository's 18 numbered styles or the 3.1 stable variant, or mention triggers such as 亲子手绘、家庭蜡笔画、蜡笔、吉卜力、水墨、像素、淡彩速写、动画概念、水粉、北欧绘本、纸雕、软胶潮玩、墨线绘本、暖色扁平绘本、family-cra
+Want Ghibli, ink-wash, or crayon art but can't describe it? Name a style; it packs the details into ready-to-use.
 
 ### What does this skill do?
 Use when users ask for a hand-drawn or illustrated image prompt, name one of the repository's 18 numbered styles or the 3.1 stable variant, or mention triggers such as 亲子手绘、家庭蜡笔画、蜡笔、吉卜力、水墨、像素、淡彩速写、动画概念、水粉、北欧绘本、纸雕、软胶潮玩、墨线绘本、暖色扁平绘本、family-crayon-card、warm-flat-storybook. Produces prompt text or a formal reference-bearing call bundle and does not generate images.
+
+### Why is it worth installing?
+Not a vague style list—18 numbered styles plus a stable variant, with precise triggers and reference-bearing call bundles to cut.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/threerocks/hand-drawn-styles.git Then point your agent at the skill directory.
@@ -3242,10 +3356,13 @@ Source: https://github.com/iamkong/photo-to-minimal-illustration
 Updated: 2026-08-03
 Tags: images, skill, iamkong
 
-将任意参考照片提炼成极简编辑式 Field Study 插画。自动识别主体类型，保留最有辨识度的关系，用少量颜色、细墨线、大面积留白和暖奶油色背景重构画面。适用于风景、建筑、动物、人物、车辆、鱼群、鸟群、烟花、室内物件及其他照片。
+Turn messy snapshots—blurry views, blown-out fireworks, chaotic fish schools—into calm cream-paper illustrations.
 
 ### What does this skill do?
 将任意参考照片提炼成极简编辑式 Field Study 插画。自动识别主体类型，保留最有辨识度的关系，用少量颜色、细墨线、大面积留白和暖奶油色背景重构画面。适用于风景、建筑、动物、人物、车辆、鱼群、鸟群、烟花、室内物件及其他照片。
+
+### Why is it worth installing?
+It doesn't stack filters—it classifies the subject first, then rebuilds the scene's visual hierarchy. Few colors, hairline.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/iamkong/photo-to-minimal-illustration.git Then point your agent at the skill directory.
@@ -3276,10 +3393,13 @@ Source: https://github.com/liigoQi/vinyl-image-generator
 Updated: 2026-08-03
 Tags: images, skill, liigoQi
 
-Transform a memory, sentence, emotion, story, object, place, or source image into one cohesive fictional vinyl release artifact containing a front sleeve, back sleeve, vinyl Side A, and vinyl Side B. Use when generating a believable 4:3 lan
+Feed it a memory, line, or photo—get a 4-piece fictional vinyl: sleeve, back, Side A/B, like a real indie label.
 
 ### What does this skill do?
 Transform a memory, sentence, emotion, story, object, place, or source image into one cohesive fictional vinyl release artifact containing a front sleeve, back sleeve, vinyl Side A, and vinyl Side B. Use when generating a believable 4:3 landscape product photograph of an independent-label record whose visual language, typography, printing history, packaging, and physical materials express the sour
+
+### Why is it worth installing?
+Not collage—it reasons across typography, print history, and materials as one coherent system, so the artifact feels physically.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/liigoQi/vinyl-image-generator.git Then point your agent at the skill directory.
@@ -3295,10 +3415,13 @@ Source: https://github.com/Evianis/travel-photo-abstraction/tree/HEAD/travel-pho
 Updated: 2026-08-03
 Tags: everyday, skill, Evianis
 
-Analyze the photograph uploaded by the user, deconstruct its visual evidence, abstract and distill the essential relationships, then reconstruct them as a new nonliteral lower-panel composition guided by 19 bundled references. Use for CLEAN
+Tired of same-y filters? Upload a photo, it deconstructs visual evidence and rebuilds a numbered, dated.
 
 ### What does this skill do?
 Analyze the photograph uploaded by the user, deconstruct its visual evidence, abstract and distill the essential relationships, then reconstruct them as a new nonliteral lower-panel composition guided by 19 bundled references. Use for CLEAN upper-photo/lower-abstraction editorial artworks with a number, date, and short phrase in the lower panel. This is abstraction and reconstruction, never style
+
+### Why is it worth installing?
+Not style transfer—it dissects then rebuilds: extracts lines, shapes, and proportions, reorchestrating them abstractly while.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Evianis/travel-photo-abstraction.git Then point your agent at the skill directory.
@@ -3390,10 +3513,13 @@ Source: https://github.com/dacnay816y62-hub/photo-revival
 Updated: 2026-08-02
 Tags: images, skill, dacnay816y62-hub
 
-Turn ordinary photos or everyday snapshots into poetic hand-drawn illustrations with large white-paper negative space, vivid localized color, subtle collage accents, and tiny handwritten captions. Use when a user wants a real photo reimagin
+Tired of filters that just beautify? Turn snapshots into hand-drawn illustrations with white space, vivid color.
 
 ### What does this skill do?
 Turn ordinary photos or everyday snapshots into poetic hand-drawn illustrations with large white-paper negative space, vivid localized color, subtle collage accents, and tiny handwritten captions. Use when a user wants a real photo reimagined as an illustration rather than filtered, beautified, or photorealistically edited.
+
+### Why is it worth installing?
+Not style transfer—it rebuilds the image: extracts structure, then applies color with deliberate negative space and collage.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/dacnay816y62-hub/photo-revival.git Then point your agent at the skill directory.
@@ -3469,10 +3595,13 @@ Source: https://github.com/TwentyfiveBTea/ink-wash-poster
 Updated: 2026-07-30
 Tags: images, skill, TwentyfiveBTea
 
-Generate an ink-wash editorial poster prompt and the matching bitmap image from a user's theme, sentence, object, mood, article idea, photo, content brief, poem, memory, event, place, or other creative material. Use when the user wants a qu
+Feed it a poem, photo, mood, or event—get back a quiet ink-wash poster with real paper grain and restraint. No.
 
 ### What does this skill do?
 Generate an ink-wash editorial poster prompt and the matching bitmap image from a user's theme, sentence, object, mood, article idea, photo, content brief, poem, memory, event, place, or other creative material. Use when the user wants a quiet, spacious, tactile ink-wash poster, cover, cultural visual, or reference-photo reinterpretation with thoughtful composition, paper texture, restrained typog
+
+### Why is it worth installing?
+Not a filter: it parses the source's imagery and structure, then rebuilds composition and typographic hierarchy so the ink-wash.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/TwentyfiveBTea/ink-wash-poster.git Then point your agent at the skill directory.
@@ -3548,10 +3677,13 @@ Source: https://github.com/dacnay816y62-hub/fantasy-movie-poster-skill
 Updated: 2026-07-27
 Tags: images, skill, dacnay816y62-hub
 
-Design original 9:16 Chinese-language cinematic movie posters from story briefs, genre keywords, or visual references, including layered cover workflows with separate image-designed background and typography layers. Use for romance, sports,
+Turn a logline or genre tag into a 9:16 cinematic poster with separate background and typography layers—built for.
 
 ### What does this skill do?
 Design original 9:16 Chinese-language cinematic movie posters from story briefs, genre keywords, or visual references, including layered cover workflows with separate image-designed background and typography layers. Use for romance, sports, historical/legal drama, road films, crime thrillers, war, Eastern ink, sci-fi isolation, ensemble casts, and playful concept films. Do not use to copy an exist
+
+### Why is it worth installing?
+Unlike one-shot image generators, it splits background and typography into two passes—so Chinese title layout stays clean and.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/dacnay816y62-hub/fantasy-movie-poster-skill.git Then point your agent at the skill directory.
@@ -3605,10 +3737,13 @@ Source: https://github.com/v92388375-gif/pixel-style-poster-skill
 Updated: 2026-07-25
 Tags: images, skill, v92388375-gif
 
-Generate Pixel Style Poster prompts and matching raster images. Use when the user gives a theme, phrase, object, mood, photo, or content idea and wants a 3:4 editorial bitmap poster with a large fine dot-matrix subject, optional title-led o
+Drop a theme, photo, or mood and get an editorial 3:4 poster with fine dot-matrix subjects, typographic.
 
 ### What does this skill do?
 Generate Pixel Style Poster prompts and matching raster images. Use when the user gives a theme, phrase, object, mood, photo, or content idea and wants a 3:4 editorial bitmap poster with a large fine dot-matrix subject, optional title-led or quiet microtype typography, close subject-text composition, optional colored-wash reverse halftone backgrounds, restrained color transitions, and low-resoluti
+
+### Why is it worth installing?
+It decomposes poster design into reproducible rules—dot density, subject–text proximity, halftone wash—so output follows.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/v92388375-gif/pixel-style-poster-skill.git Then point your agent at the skill directory.
@@ -3624,10 +3759,13 @@ Source: https://github.com/moonlin1213/muted-zine-poster-v01
 Updated: 2026-07-22
 Tags: images, skill, moonlin1213
 
-Generate Muted Zine Poster v0.1 poetic paper-poster prompts and the matching generated image. Use when the user gives a theme, sentence, object, mood, article idea, photo, or content brief and wants a quiet Japanese/Korean zine-like editori
+Turn a theme, photo, or mood into muted zine-poster prompts with aged-paper texture and quiet typography—plus the.
 
 ### What does this skill do?
 Generate Muted Zine Poster v0.1 poetic paper-poster prompts and the matching generated image. Use when the user gives a theme, sentence, object, mood, article idea, photo, or content brief and wants a quiet Japanese/Korean zine-like editorial poster with large negative space, aged paper texture, experimental typography, and a restrained muted palette without high-chroma color blocks. This is the l
+
+### Why is it worth installing?
+It decomposes 'negative space', 'aged paper', and 'muted palette' into reusable structural parameters—not vague 'Japanese.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/moonlin1213/muted-zine-poster-v01.git Then point your agent at the skill directory.
@@ -3719,19 +3857,19 @@ Repository: zx029w/zhuangxiu-laoshi-skill Prep work visible in the skill's own t
 
 ========================================================================
 ## threejs-animation
-## 在浏览器里编排三维动画的完整工作台
+## 让 Three.js 对象按你的剧本动起来
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-animation/
 Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-animation
 Updated: 2026-07-09
 Tags: images, skill, CloudAI-X
 
-Keyframe, skeletal, morph, and mixing—all in one. Stop hunting docs, start directing motion like a pro.
+Stuck with GLTF animations that won't play? Keyframes written by hand? Bones, morphs, blends—one command to.
 
 ### What does this skill do?
 Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.
 
 ### Why is it worth installing?
-Not scattered snippets—a pipeline linking load, play, and blend, with a state machine owning every frame.
+It abstracts the animation state machine into natural-language commands, auto-syncing bones, morphs, and keyframes—you just say.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3747,13 +3885,13 @@ Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-pos
 Updated: 2026-07-09
 Tags: play, skill, CloudAI-X
 
-Bloom, DOF, color grading, screen-space shaders — drop into EffectComposer without digging through docs. Plug.
+Bloom, DOF, color grading—drop in EffectComposer without writing GLSL. Make clients go wow with one line.
 
 ### What does this skill do?
 Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.
 
 ### Why is it worth installing?
-Consolidates scattered official examples into declarative pass configs — auto-handles sizing and order, tweak params live.
+Wraps EffectComposer into declarative config, composing passes without boilerplate. Built-in common passes plus clear slots for.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3763,19 +3901,19 @@ Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## threejs-shaders
-## 在 Three.js 里直接写 GLSL 着色器做自
+## Three.js 着色器：从零写 GLSL 自定义特
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills-threejs-shaders/
 Source: https://github.com/CloudAI-X/threejs-skills/tree/HEAD/skills/threejs-shaders
 Updated: 2026-07-09
 Tags: writing, skill, CloudAI-X
 
-Built-in materials not enough? Edit vertices, write fragment shaders, add uniforms — this skill gets you straight.
+Want breathing waves, vertex twists, or glowing edges in Three.js? Stop hunting docs — get ShaderMaterial +.
 
 ### What does this skill do?
 Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.
 
 ### Why is it worth installing?
-It wraps ShaderMaterial boilerplate and common uniform conventions, so you focus on the GLSL core instead of re-building.
+Pre-flattens GLSL pitfalls: ships ready effect templates, maps uniform types straight to Three.js bindings — tweak and run, no.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -3785,19 +3923,19 @@ Repository: CloudAI-X/threejs-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## threejs-skills
-## Three.js 场景搭建的十件套技能包
+## Three.js 十连装：从零到能跑的通关技能包
 URL: https://ourword.ai/skill/i/cloudai-x-threejs-skills/
 Source: https://github.com/CloudAI-X/threejs-skills
 Updated: 2026-07-09
 Tags: play, collection, CloudAI-X
 
-Build Three.js scenes without the docs—cameras, lights, geometry, animation, and interaction in one pack.
+Stop reading docs. Ten skills cover scene, lights, camera, export—each with runnable examples you can tweak.
 
 ### What does this skill do?
 A pack of 10 skills.
 
 ### Why is it worth installing?
-Ten skills sequenced along the scene lifecycle—init to render loop—so you skip API hunting and boilerplate debugging.
+Sequenced like real dev workflow, skills share context so no repeated setup. Examples stripped to core API calls—no noise, just.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/CloudAI-X/threejs-skills.git Then point your agent at the skill directory.
@@ -4125,19 +4263,19 @@ Repository: wangchangwei/arb-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## ResumeSkills
-## 把求职全流程打包成可复用的技能集
+## 把求职全流程装进 Agent 的简历优化工具箱
 URL: https://ourword.ai/skill/i/paramchoudhary-resumeskills/
 Source: https://github.com/Paramchoudhary/ResumeSkills
 Updated: 2026-06-19
 Tags: everyday, collection, Paramchoudhary
 
-Resume, ATS, interviews, job-search strategy in one kit. Stop using AI for typos—let it pave the road from.
+Resume rewrite, ATS pass, mock interview, job strategy — one kit. Have Claude diff your resume against each JD.
 
 ### What does this skill do?
 A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with resume writing, ATS optimization, interview prep, and strategic job search.
 
 ### Why is it worth installing?
-Modular skills per job-search stage—call one or chain them. Built around ATS parsing rules and interview follow-up logic, not.
+Not a single trick but a job-search pipeline: drafting, ATS tuning, interview prep, and follow-up each get their own skill.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Paramchoudhary/ResumeSkills.git Then point your agent at the skill directory.
@@ -4355,20 +4493,20 @@ Repository: helloianneo/ian-xiaohei-illustrations The repository ships 1 skills 
 
 ========================================================================
 ## ayi-nonviolent-communication
-## 把吵架话术翻译成观察感受需要请求
+## 把任何冲突话语翻译成观察-感受-需要-请求
 URL: https://ourword.ai/skill/i/ayi-ai-ayi-nonviolent-communication/
 URL (中文): https://ourword.ai/skill/zh/i/ayi-ai-ayi-nonviolent-communication/
 Source: https://github.com/ayi-ai/ayi-nonviolent-communication
 Updated: 2026-05-31
 Tags: writing, skill, ayi-ai
 
-When you're about to snap, feel attacked, or can't mediate, it decodes emotional talk into four elements—so you.
+Before you snap back, send that text, or decide alone—run it through the NVC engine. It doesn't polish words; it.
 
 ### What does this skill do?
 马歇尔·卢森堡《非暴力沟通》(NVC/善意沟通/长颈鹿语言) 的可执行工具箱。核心引擎是把任何信息(自己的或他人的)翻译成"观察—感受—需要—请求" (Observation-Feeling-Need-Request) 四要素,重新与普世"需要"连结。覆盖五类用法:① 决策/自我教练(理清自己的需要再行动); ② 话术改写(把指责/评判式表达改成 NVC 表达); ③ 同理倾听(听见对方话语背后的感受和需要); ④ 冲突调解/复盘(区分需要vs策略,设计满足各方的方案); ⑤ 以马歇尔的语气产出内容。当用户要"帮我想想怎么说/这话该怎么回""我该不该做这个决定/理一理我现在的情绪""改一下这条消息别那么冲" "他这么说我该怎么回应/怎么劝""化解一段冲突/调解吵架/复盘一次难谈话""表达感谢/反馈/批评""我好生气/好委屈/好内疚怎么办", 或提到 非暴力沟通 / NVC / 善意沟通 /
 
 ### Why is it worth installing?
-No scripted phrases—it uses a Marshall-style questioning engine to drill down past judgments to needs and strategies, so your.
+Not a phrasebook—a single parsing engine that maps any input to Observation-Feeling-Need-Request, powering five modes from.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/ayi-ai/ayi-nonviolent-communication.git Then point your agent at the skill directory.
@@ -4377,13 +4515,13 @@ git clone --depth 1 https://github.com/ayi-ai/ayi-nonviolent-communication.git T
 Repository: ayi-ai/ayi-nonviolent-communication The repository ships 1 skills in total.
 
 --- 中文 ---
-当你想怼人、被怼懵、劝不动架时，它把情绪话拆成四要素，让你听见对方真正要什么，也让自己把话说到点子上。
+吵架前、回消息前、做决定前，先过一遍 NVC 引擎。它不教你说漂亮话，而是帮你听见自己和对方话里真正要的是什么。
 
 ### Q：这个 skill 做什么？
 马歇尔·卢森堡《非暴力沟通》(NVC/善意沟通/长颈鹿语言) 的可执行工具箱。核心引擎是把任何信息(自己的或他人的)翻译成"观察—感受—需要—请求" (Observation-Feeling-Need-Request) 四要素,重新与普世"需要"连结。覆盖五类用法:① 决策/自我教练(理清自己的需要再行动); ② 话术改写(把指责/评判式表达改成 NVC 表达); ③ 同理倾听(听见对方话语背后的感受和需要); ④ 冲突调解/复盘(区分需要vs策略,设计满足各方的方案); ⑤ 以马歇尔的语气产出内容。当用户要"帮我想想怎么说/这话该怎么回""我该不该做这个决定/理一理我现在的情绪""改一下这条消息别那么冲" "他这么说我该怎么回应/怎么劝""化解一段冲突/调解吵架/复盘一次难谈话""表达感谢/反馈/批评""我好生气/好委屈/好内疚怎么办", 或提到 非暴力沟通 / NVC / 善意沟通 /
 
 ### Q：为什么值得装？
-不是教你背模板，而是内置马歇尔式提问引擎，逐句追问观察与评判、需要与策略，直到对话底层浮现。
+不是话术模板库，而是把任何输入都拆成四要素的转换引擎，覆盖自我教练、改写、倾听、调解。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/ayi-ai/ayi-nonviolent-communication.git 然后把智能体指向这个 skill 目录即可。
@@ -4854,10 +4992,13 @@ Source: https://github.com/kagurananaga/official-document-writing-skill
 Updated: 2026-01-26
 Tags: work, skill, kagurananaga
 
-专业的党政机关公文写作指南。当用户需要撰写、修改或审核党政机关公文（如请示、通知、函、总结、纪要等）时使用。提供GB/T 9704-2012格式规范指导、常用公文模板、语言规范建议和公文质量检查。适用于以下场景：(1) 撰写新公文，(2) 修改完善公文，(3) 检查公文格式规范，(4) 提供公文写作指导，(5) 审核公文质量。
+Drafting official Party/government documents? It checks layout per GB/T 9704-2012 and polishes register—even the.
 
 ### What does this skill do?
 专业的党政机关公文写作指南。当用户需要撰写、修改或审核党政机关公文（如请示、通知、函、总结、纪要等）时使用。提供GB/T 9704-2012格式规范指导、常用公文模板、语言规范建议和公文质量检查。适用于以下场景：(1) 撰写新公文，(2) 修改完善公文，(3) 检查公文格式规范，(4) 提供公文写作指导，(5) 审核公文质量。
+
+### Why is it worth installing?
+Not generic writing tips—it turns layout rules, template variants, and language norms into a checklist a proofreader would run.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/kagurananaga/official-document-writing-skill.git Then point your agent at the skill directory.
@@ -4889,13 +5030,13 @@ Source: https://github.com/op7418/Youtube-clipper-skill
 Updated: 2026-01-22
 Tags: writing, skill, op7418
 
-Download, AI-chapter, pick, translate, burn subs—no more juggling five apps. Minute-level chapters make finding.
+Download, AI-split into minute-level chapters, pick & clip. Subtitles auto-translated to bilingual and burned in.
 
 ### What does this skill do?
 YouTube 视频智能剪辑工具。下载视频和字幕，AI 分析生成精细章节（几分钟级别）， 用户选择片段后自动剪辑、翻译字幕为中英双语、烧录字幕到视频，并生成总结文案。 使用场景：当用户需要剪辑 YouTube 视频、生成短视频片段、制作双语字幕版本时。 关键词：视频剪辑、YouTube、字幕翻译、双语字幕、视频下载、clip video
 
 ### Why is it worth installing?
-It automates the grunt work—subtitle sync, timeline alignment, translation burning—so you only make choices. AI chapters hit.
+It maps the video into readable chapters first, so you only choose—not scrub. Translation and burning happen in one closed loop.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/op7418/Youtube-clipper-skill.git Then point your agent at the skill directory.
@@ -4904,13 +5045,13 @@ git clone --depth 1 https://github.com/op7418/Youtube-clipper-skill.git Then poi
 Repository: op7418/Youtube-clipper-skill The repository ships 1 skills in total.
 
 --- 中文 ---
-下载、AI 分章、选段、翻译、烧字幕一条龙。不用再开五个软件来回倒腾，几分钟级章节定位让找素材像翻目录。
+下载、AI 切分到分钟级章节，你圈选即剪。字幕自动翻成中英双语并烧录，还附一段总结文案，省掉整套剪辑流水线。
 
 ### Q：这个 skill 做什么？
 YouTube 视频智能剪辑工具。下载视频和字幕，AI 分析生成精细章节（几分钟级别）， 用户选择片段后自动剪辑、翻译字幕为中英双语、烧录字幕到视频，并生成总结文案。 使用场景：当用户需要剪辑 YouTube 视频、生成短视频片段、制作双语字幕版本时。 关键词：视频剪辑、YouTube、字幕翻译、双语字幕、视频下载、clip video
 
 ### Q：为什么值得装？
-它把剪辑的脏活——字幕对齐、时间轴同步、翻译烧录——全包了，你只做选择题。AI 分章细到分钟级。
+不是粗剪，是 AI 先把视频切成可读的章节地图，你只做选择题；字幕翻译和烧录在同一流程里闭环。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/op7418/Youtube-clipper-skill.git 然后把智能体指向这个 skill 目录即可。

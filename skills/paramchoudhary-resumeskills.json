@@ -2,14 +2,14 @@
  "id": "paramchoudhary-resumeskills",
  "kind": "collection",
  "name": "ResumeSkills",
- "title_zh": "把求职全流程打包成可复用的技能集",
- "tagline_zh": "简历、ATS、面试、求职策略，一次装齐。别让 AI 只帮你改错别字，让它从投递前到谈薪都替你铺路。",
- "tagline_en": "Resume, ATS, interviews, job-search strategy in one kit. Stop using AI for typos—let it pave the road from.",
+ "title_zh": "把求职全流程装进 Agent 的简历优化工具箱",
+ "tagline_zh": "改简历、过 ATS、练面试、定策略——四类 skill 打包上架。投递前让 Claude 按岗位逐条比对。",
+ "tagline_en": "Resume rewrite, ATS pass, mock interview, job strategy — one kit. Have Claude diff your resume against each JD.",
  "desc_en": "A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with resume writing, ATS optimization, interview prep, and strategic job search.",
- "why_zh": "按求职阶段拆成独立 skill，可单点调用也可串联。针对 ATS 解析规则和面试追问逻辑做了专门适配。",
- "why_en": "Modular skills per job-search stage—call one or chain them. Built around ATS parsing rules and interview follow-up logic, not.",
- "limit_zh": "只覆盖英文求职市场，中文简历格式与国内 ATS 规则未适配。技能产出为策略与文本草稿，不保证投递系统兼容性。",
- "limit_en": "English job market only; CN resume formats & domestic ATS untested. Outputs are drafts/strategy, not guaranteed ATS-compliant—verify against each.",
+ "why_zh": "不是单点技巧，而是按求职动线组织的 skill 集合：从简历初稿到投递后复盘都有对应工具。",
+ "why_en": "Not a single trick but a job-search pipeline: drafting, ATS tuning, interview prep, and follow-up each get their own skill.",
+ "limit_zh": "只覆盖英文求职场景；skill 输出的是修改建议与问答稿，不代投、不代填网申系统。ATS 优化基于通用规则。",
+ "limit_en": "English job search only. Outputs advice and drafts, not auto-apply or form filling. ATS tips follow general rules, no guarantee against specific.",
  "repo": "Paramchoudhary/ResumeSkills",
  "owner": "Paramchoudhary",
  "path": "",
@@ -31,5 +31,9 @@
   "browse": "https://github.com/Paramchoudhary/ResumeSkills",
   "note": "clone 下来，挑你要的那件复制进 ~/.claude/skills/。这是一个合集，没有「装它」这个动作。"
  },
- "cover": "/skill/assets/covers/paramchoudhary-resumeskills.png"
+ "cover": "/skill/assets/covers/paramchoudhary-resumeskills.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

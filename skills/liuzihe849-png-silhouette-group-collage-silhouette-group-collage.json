@@ -2,14 +2,14 @@
  "id": "liuzihe849-png-silhouette-group-collage-silhouette-group-collage",
  "kind": "skill",
  "name": "silhouette-group-collage",
- "title_zh": "一群人收成剪影拼贴",
- "tagline_zh": "认人靠轮廓，脸被故意拿掉",
- "tagline_en": "",
+ "title_zh": "把合影剪成正负形双联画，人像像素级锁定",
+ "tagline_zh": "老照片翻新怕丢脸？它用正负形互锁，原人像像素级保留，配纸纹、手写字和手绘星，把青春记忆做成能挂墙的上下双联画。",
+ "tagline_en": "Old group photos losing faces? It locks original pixels with reciprocal masks, adds paper grain, handwriting &.",
  "desc_en": "Frozen v1 baseline for transforming user-supplied group photos into vertical diptych silhouette collages using reciprocal positive-negative masks, source-pixel-locked original people, tactile paper fields, preserved film texture, scene-matched handwriting, and sparse handmade stars. Use when the user asks for 剪影群像风格, 剪影群像风格 v1, silhouette group collage, 群像剪影拼贴, 正负形镜空, 上下双联画, youth-memory group art",
- "why_zh": "群体剪影拼在一张纸上。要认五官的合影，会只剩影子。",
- "why_en": "",
- "limit_zh": "要证件合影、要笑脸特写，卸掉。",
- "limit_en": "",
+ "why_zh": "不是滤镜叠加，是几何级正负形互锁：每张脸都从原图抠出、像素级锚定，纸纹与胶片颗粒分层保留。",
+ "why_en": "Not a filter—geometric reciprocal masks anchor every face from the source at pixel level. Paper & film grain stay layered.",
+ "limit_zh": "只吃单人或多人的合影原图，且要求人物轮廓清晰可抠；输出固定为上下双联画竖版，不做横版或三联。超出此构图或轮廓模糊时。",
+ "limit_en": "Only accepts group photos with clear, extractable silhouettes; output is fixed vertical diptych—no horizontal or triptych. If contours are blurry or.",
  "repo": "liuzihe849-png/silhouette-group-collage",
  "owner": "liuzihe849-png",
  "path": "silhouette-group-collage",
@@ -29,5 +29,9 @@
   "copy": "cp -r silhouette-group-collage/silhouette-group-collage ~/.claude/skills/silhouette-group-collage",
   "dir": "~/.claude/skills/silhouette-group-collage"
  },
- "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png"
+ "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
+ "gate_score": 8,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

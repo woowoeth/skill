@@ -2,14 +2,14 @@
  "id": "zzzlc0405-photo-chromatic-abstraction-style-1",
  "kind": "skill",
  "name": "photo-chromatic-abstraction-style-1",
- "title_zh": "把照片压成 1-5 个色块的色彩记忆抽象画",
- "tagline_zh": "照片记不住细节？那就只留颜色。自适应平涂色块 + 源图提取的克制点缀，让色彩权重自己说话，适合色卡转译与色彩构成练。",
- "tagline_en": "Forget details, keep the hues. Adaptive flat fields plus 1-5 restrained source-derived accents turn any photo.",
+ "title_zh": "把照片转成色块记忆的极简抽象画",
+ "tagline_zh": "照片变画布：只留大色块与1-5个克制点缀，色彩权重优先于构图。适合色卡转译、色彩构成练习，让记忆以颜色留存。",
+ "tagline_en": "Turn photos into flat-field color memories—1-5 restrained accents, hierarchy over placement. For palette studies.",
  "desc_en": "Translate an uploaded or local photograph into a color-first chromatic-memory abstraction (Style 1) built from adaptive flat fields and 1-5 restrained, source-derived accents. Use for palette-memory composition, color-weight studies, minimalist color-block translation, 色块抽象、照片色彩记忆、色彩构成、照片色卡转译，or explicit Style-1 requests where broad color hierarchy matters more than subject placement. Do not use w",
- "why_zh": "不靠构图叙事，只按色彩层级切分画面——色块边界由颜色权重自适应生成，点缀色严格取自原图。",
- "why_en": "It segments by color weight, not subject placement—flat fields adapt to tonal hierarchy, accents stay source-derived, yielding a.",
- "limit_zh": "只认照片输入（上传或本地文件），不处理纯文字描述；输出为静态色块图，不生成矢量或可编辑分层；若原图色彩层次过杂。",
- "limit_en": "Input must be a photo (upload/local), not text; output is a static raster, no vector or layers; if source has chaotic color hierarchy, accents drop.",
+ "why_zh": "不按主体位置切分，而是按色彩权重自适应生成色场，让颜色本身成为构图骨架，而非附庸于轮廓。",
+ "why_en": "Segments by color weight, not subject placement—flat fields carry the composition, so hue hierarchy drives structure, not.",
+ "limit_zh": "只处理单张静态照片，不生成多图序列；输出为抽象色块图，不保留可辨识主体；需本地有Python图像库。",
+ "limit_en": "Single static photo only; output is abstract blocks, no recognizable subject; requires local Python imaging libs; high-noise images compress to.",
  "repo": "ZzzLc0405/photo-chromatic-abstraction-style-1",
  "owner": "ZzzLc0405",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv photo-chromatic-abstraction-style-1 ~/.claude/skills/photo-chromatic-abstraction-style-1",
   "dir": "~/.claude/skills/photo-chromatic-abstraction-style-1"
  },
- "cover": "/skill/assets/covers/zzzlc0405-photo-chromatic-abstraction-style-1.png"
+ "cover": "/skill/assets/covers/zzzlc0405-photo-chromatic-abstraction-style-1.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

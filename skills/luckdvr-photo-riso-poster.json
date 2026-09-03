@@ -2,12 +2,12 @@
  "id": "luckdvr-photo-riso-poster",
  "kind": "skill",
  "name": "photo-riso-poster",
- "title_zh": "照片收成孔版印刷海报",
- "tagline_zh": "套色和网点是规矩，不是复古滤镜",
- "tagline_en": "",
+ "title_zh": "把一张照片拆成可印刷的孔版档案海报",
+ "tagline_zh": "照片变海报，不是滤镜，是拆解：数出画面里的数量、间距、遮挡、方向、颜色角色，再用 2–3 色孔版油墨和证据字体重排。",
+ "tagline_en": "Turn a photo into a riso archive poster—not a filter, but a teardown: count spacing, occlusion, direction, color.",
  "desc_en": "Turn a photo or a text theme into one quiet riso-print archive poster. For a photo, deconstruct its observable facts (counts, spacing, occlusion, direction, color roles) and rebuild them as a sparse 2–3 ink risograph composition on temperature-matched paper, with typography that also carries the evidence; for a text theme, distill one imageable idea. Aspect ratio follows the source photo. Generate",
- "why_zh": "按孔版印刷的套色层数做海报，颜色少、边毛、故意不准。",
- "why_en": "",
+ "why_zh": "它不套模板，而是从照片里提取可观测事实，再按事实决定构图和用色。每张海报都是唯一解。",
+ "why_en": "No templates—it extracts observable facts from the photo and lets them dictate composition and ink choice. Every poster is a.",
  "repo": "luckdvr/photo-riso-poster",
  "owner": "luckdvr",
  "path": "",
@@ -27,5 +27,12 @@
   "copy": "mv photo-riso-poster ~/.claude/skills/photo-riso-poster",
   "dir": "~/.claude/skills/photo-riso-poster"
  },
- "limit_zh": "不是高清写真。要渐变商业海报，对不上。"
+ "limit_zh": "只处理单张照片或单一文本主题；不生成多页 PDF，不输出印刷分色文件，只给 RGB 预览。需要本地有 Python 和。",
+ "gate_score": 5,
+ "cover": "/skill/assets/covers/luckdvr-photo-riso-poster.png",
+ "cover_kind": "og",
+ "cover_real": false,
+ "cover_w": 1200,
+ "cover_h": 600,
+ "limit_en": "Single photo or one text theme only; no multi-page PDF, no print-ready separations—just RGB preview. Requires local Python + imaging libs; busy."
 }

@@ -2,14 +2,14 @@
  "id": "zhu930824-poetic-line-zine-poster",
  "kind": "skill",
  "name": "poetic-line-zine-poster",
- "title_zh": "上半原片，下半抽成线",
- "tagline_zh": "竖版照片加抽象，像一本薄刊物的一页",
- "tagline_en": "",
+ "title_zh": "把一张照片改造成竖版诗性杂志海报",
+ "tagline_zh": "人像、旅行、动物、建筑都行，保留原图，用炭笔扫出结构关系，加一条彩色涂鸦和克制英文排版，输出指定比例。",
+ "tagline_en": "Turn any portrait, travel shot, or object into a clean vertical editorial poster — charcoal sweeps, one chromatic.",
  "desc_en": "Create a clean vertical photo-and-abstraction editorial artwork from an uploaded portrait, travel photo, animal, plant, architecture, object, or scene. Preserve the source photo, distill its relationships into broad charcoal sweeps and one structural chromatic scribble, add restrained experimental English typography, and deliver an exact requested aspect ratio through deterministic composition and",
- "why_zh": "上面保住照片，下面用线重新说一遍。",
- "why_en": "",
- "limit_zh": "页是竖的编辑页，不是横版大片，也不是九宫格。",
- "limit_en": "",
+ "why_zh": "不是滤镜堆叠，而是先解析照片内在关系，再以确定性构图重排，每次输出比例精确、风格统一。",
+ "why_en": "It doesn't filter — it analyzes the photo's internal relationships, then rebuilds with deterministic composition. Output is.",
+ "limit_zh": "只吃单张静态图片，不支持多图合成或视频帧；文字仅限英文，且排版为实验性风格，不适合正式商用；输出为静态海报。",
+ "limit_en": "Single static image only; no multi-image or video. English-only experimental typography, not for formal branding. Output is a static poster, no.",
  "repo": "zhu930824/poetic-line-zine-poster",
  "owner": "zhu930824",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv poetic-line-zine-poster ~/.claude/skills/poetic-line-zine-poster",
   "dir": "~/.claude/skills/poetic-line-zine-poster"
  },
- "cover": "/skill/assets/covers/zhu930824-poetic-line-zine-poster.png"
+ "cover": "/skill/assets/covers/zhu930824-poetic-line-zine-poster.png",
+ "gate_score": 8,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

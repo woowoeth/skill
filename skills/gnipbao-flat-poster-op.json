@@ -2,14 +2,14 @@
  "id": "gnipbao-flat-poster-op",
  "kind": "skill",
  "name": "flat-poster-op",
- "title_zh": "有证据的扁平海报复刻",
- "tagline_zh": "对照原作再画，不许凭感觉扁平化",
- "tagline_en": "",
+ "title_zh": "把动态海报的镜头语言蒸馏成可复制的提示词",
+ "tagline_zh": "要黄黑白高反差、赭橙西部剪影、黑底动态字体？别自己憋词。它把纯二维赛璐璐×MG×动态平面海报拆成逐镜提示词。",
+ "tagline_en": "Need high-contrast flat posters with kinetic type or film-style cuts? It distills cel-anime × MG × motion-poster.",
  "desc_en": "只生成“纯二维赛璐璐 × 抽象 MG × 动态平面海报”视频的可复制提示词，包括全局风格锁、逐镜图像提示词、独立运动/I2V 提示词、可选标题合成提示词与负向约束。Use when the user asks for 黄黑白高反差、赭橙西部剪影、黑底动态字体、波普分割构图、节拍硬切、定格 pose、电影宣传片或海螺/MiniMax/OpenArt 提示词，尤其是“只输出提示词”“别做其他操作”“prompt only”。本 Skill 不创建文件、不生成或渲染媒体、不调用外部平台，也不附加分析报告。",
- "why_zh": "作者要求对照原作再画，不是凭感觉「扁平化一下」。",
- "why_en": "",
- "limit_zh": "没有对照图就不要跑。它复刻的是扁平 OP，不是你品牌的新视觉系统。",
- "limit_en": "",
+ "why_zh": "它给的是可复制的提示词结构，不是泛泛风格词。全局风格锁、逐镜图像、独立运动/I2V。",
+ "why_en": "It's a structured prompt kit, not vague style tags. Global style lock, per-shot image prompts, separate motion/I2V prompts, and.",
+ "limit_zh": "只覆盖纯二维赛璐璐×MG×动态平面海报这一格，且只输出提示词——不建文件、不渲染、不调外部平台。超出此风格域或要成片。",
+ "limit_en": "Only covers cel-anime × MG × motion-poster prompts; outputs text only—no files, no rendering, no external APIs. Outside this style niche or needing.",
  "repo": "gnipbao/flat-poster-op",
  "owner": "gnipbao",
  "path": "",
@@ -30,5 +30,8 @@
   "dir": "~/.claude/skills/flat-poster-op"
  },
  "gate_score": 8,
- "cover": "/skill/assets/covers/gnipbao-flat-poster-op.png"
+ "cover": "/skill/assets/covers/gnipbao-flat-poster-op.png",
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

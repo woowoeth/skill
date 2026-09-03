@@ -2,14 +2,14 @@
  "id": "liigoqi-vinyl-image-generator",
  "kind": "skill",
  "name": "vinyl-image-generator",
- "title_zh": "照片压成一张黑胶封面",
- "tagline_zh": "圆盘、沟槽、封套，不是方图加贴纸",
- "tagline_en": "",
+ "title_zh": "把记忆与情绪压成一张可触摸的虚构黑胶唱片",
+ "tagline_zh": "输入一句话、一段故事或一张旧照，输出四件套：封面、封底、A/B 面盘面，像独立厂牌刚寄来的样片。",
+ "tagline_en": "Feed it a memory, line, or photo—get a 4-piece fictional vinyl: sleeve, back, Side A/B, like a real indie label.",
  "desc_en": "Transform a memory, sentence, emotion, story, object, place, or source image into one cohesive fictional vinyl release artifact containing a front sleeve, back sleeve, vinyl Side A, and vinyl Side B. Use when generating a believable 4:3 landscape product photograph of an independent-label record whose visual language, typography, printing history, packaging, and physical materials express the sour",
- "why_zh": "按黑胶封套的规矩重做照片。圆心和环是结构，不是装饰。",
- "why_en": "",
- "limit_zh": "页是一张唱片。要海报、要九宫格、要证件照，对不上。",
- "limit_en": "",
+ "why_zh": "不是贴图拼贴，而是把视觉语言、字体、印刷史、包装材质当成一个连贯的设计系统来推理，产物有物理可信度。",
+ "why_en": "Not collage—it reasons across typography, print history, and materials as one coherent system, so the artifact feels physically.",
+ "limit_zh": "只产出 4:3 横版产品摄影图，不生成可播放音频；需要你提供足够具体的源素材（情绪/故事/物件）。",
+ "limit_en": "Outputs only 4:3 landscape product shots, no playable audio; needs a concrete source (emotion/story/object) or covers become hollow decoration.",
  "repo": "liigoQi/vinyl-image-generator",
  "owner": "liigoQi",
  "path": "",
@@ -29,5 +29,9 @@
   "copy": "mv vinyl-image-generator ~/.claude/skills/vinyl-image-generator",
   "dir": "~/.claude/skills/vinyl-image-generator"
  },
- "cover": "/skill/assets/covers/liigoqi-vinyl-image-generator.png"
+ "cover": "/skill/assets/covers/liigoqi-vinyl-image-generator.png",
+ "gate_score": 8,
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

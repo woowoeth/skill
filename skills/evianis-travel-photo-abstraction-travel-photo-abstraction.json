@@ -2,14 +2,14 @@
  "id": "evianis-travel-photo-abstraction-travel-photo-abstraction",
  "kind": "skill",
  "name": "travel-photo-abstraction",
- "title_zh": "旅行照片蒸成稀疏编辑稿",
- "tagline_zh": "度假照抽成还能上杂志的薄稿",
- "tagline_en": "",
+ "title_zh": "把旅行照片拆成视觉证据，重组成抽象下栏艺术",
+ "tagline_zh": "厌倦了千篇一律的滤镜？上传一张照片，它拆解构图关系，用19张参考图引导你重构出带编号日期的编辑风下栏。",
+ "tagline_en": "Tired of same-y filters? Upload a photo, it deconstructs visual evidence and rebuilds a numbered, dated.",
  "desc_en": "Analyze the photograph uploaded by the user, deconstruct its visual evidence, abstract and distill the essential relationships, then reconstruct them as a new nonliteral lower-panel composition guided by 19 bundled references. Use for CLEAN upper-photo/lower-abstraction editorial artworks with a number, date, and short phrase in the lower panel. This is abstraction and reconstruction, never style ",
- "why_zh": "把一张过曝的度假照收成还能上杂志的薄稿，跟蒸馏海报是同一类手艺。",
- "why_en": "",
- "limit_zh": "原片信息会被抽走。要保留路牌、菜单、人脸细节，会丢。",
- "limit_en": "",
+ "why_zh": "不是风格迁移，而是先拆解再重构：它提取照片中的线条、色块与比例关系，用抽象语言重新编排。",
+ "why_en": "Not style transfer—it dissects then rebuilds: extracts lines, shapes, and proportions, reorchestrating them abstractly while.",
+ "limit_zh": "只处理单张上传照片，且必须包含清晰主体或场景；输出为下栏抽象构图，不生成完整海报排版；需联网获取19张参考图。",
+ "limit_en": "Single uploaded photo with clear subject only; outputs lower-panel abstraction, not full layout; requires internet for 19 references; cluttered.",
  "repo": "Evianis/travel-photo-abstraction",
  "owner": "Evianis",
  "path": "travel-photo-abstraction",
@@ -30,5 +30,8 @@
   "dir": "~/.claude/skills/travel-photo-abstraction"
  },
  "gate_score": 8,
- "cover": "/skill/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png"
+ "cover": "/skill/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600
 }

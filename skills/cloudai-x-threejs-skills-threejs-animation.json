@@ -2,14 +2,14 @@
  "id": "cloudai-x-threejs-skills-threejs-animation",
  "kind": "skill",
  "name": "threejs-animation",
- "title_zh": "在浏览器里编排三维动画的完整工作台",
- "tagline_zh": "GLTF 动画、骨骼蒙皮、形变目标、动画混合，一次装齐。不用再翻文档拼 API，直接上手调出电影级动效。",
- "tagline_en": "Keyframe, skeletal, morph, and mixing—all in one. Stop hunting docs, start directing motion like a pro.",
+ "title_zh": "让 Three.js 对象按你的剧本动起来",
+ "tagline_zh": "GLTF 动画不会播？关键帧手写到吐？骨骼、形变、混合，一句指令就编排好，还能叠加出自然过渡。",
+ "tagline_en": "Stuck with GLTF animations that won't play? Keyframes written by hand? Bones, morphs, blends—one command to.",
  "desc_en": "Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.",
- "why_zh": "不是零散示例，而是把 Three.js 动画四件套串成一条流水线：从加载到混合，状态机替你管好每一帧。",
- "why_en": "Not scattered snippets—a pipeline linking load, play, and blend, with a state machine owning every frame.",
- "limit_zh": "只覆盖 Three.js 动画域，不碰物理引擎或自定义着色器。需要你已有 GLTF 模型或基本场景；不负责建模。",
- "limit_en": "Only Three.js animation—no physics or shaders. Requires your own GLTF models and scene; no modeling, no collision handling.",
+ "why_zh": "它把动画状态机抽象成自然语言指令，自动处理骨骼/形变/关键帧的底层同步，你只管说『让角色从走到跑』。",
+ "why_en": "It abstracts the animation state machine into natural-language commands, auto-syncing bones, morphs, and keyframes—you just say.",
+ "limit_zh": "只覆盖 Three.js 运行时动画编排，不生成模型、不处理材质贴图、不导出文件；骨骼动画需模型自带蒙皮数据。",
+ "limit_en": "Runtime animation only—no model generation, textures, or file export. Skeletal animation requires rigged models; otherwise falls back to keyframes.",
  "repo": "CloudAI-X/threejs-skills",
  "owner": "CloudAI-X",
  "path": "skills/threejs-animation",
@@ -29,5 +29,9 @@
   "copy": "cp -r threejs-skills/skills/threejs-animation ~/.claude/skills/threejs-animation",
   "dir": "~/.claude/skills/threejs-animation"
  },
- "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png"
+ "cover": "/skill/assets/covers/cloudai-x-threejs-skills-threejs-animation.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }

@@ -2,12 +2,12 @@
  "id": "v92388375-gif-pixel-style-poster-skill",
  "kind": "skill",
  "name": "pixel-style-poster-skill",
- "title_zh": "像素风海报，格点锁死",
- "tagline_zh": "格子是结构，不是加一层马赛克",
- "tagline_en": "",
+ "title_zh": "把主题、照片或情绪变成一张3:4像素风编辑海报",
+ "tagline_zh": "丢个词、一张照片或一种情绪，就得到一张带点阵主体的编辑风海报。不是滤镜，是像素级构图；标题排版、网点背景。",
+ "tagline_en": "Drop a theme, photo, or mood and get an editorial 3:4 poster with fine dot-matrix subjects, typographic.",
  "desc_en": "Generate Pixel Style Poster prompts and matching raster images. Use when the user gives a theme, phrase, object, mood, photo, or content idea and wants a 3:4 editorial bitmap poster with a large fine dot-matrix subject, optional title-led or quiet microtype typography, close subject-text composition, optional colored-wash reverse halftone backgrounds, restrained color transitions, and low-resoluti",
- "why_zh": "按像素海报的格点重排主题，边要齐，色要少。",
- "why_en": "",
+ "why_zh": "它把海报拆成可复现的规则：主体点阵密度、文字与主体的咬合距离、背景半调网屏，每一步都按画报逻辑生成。",
+ "why_en": "It decomposes poster design into reproducible rules—dot density, subject–text proximity, halftone wash—so output follows.",
  "repo": "v92388375-gif/pixel-style-poster-skill",
  "owner": "v92388375-gif",
  "path": "",
@@ -27,8 +27,12 @@
   "copy": "mv pixel-style-poster-skill ~/.claude/skills/pixel-style-poster-skill",
   "dir": "~/.claude/skills/pixel-style-poster-skill"
  },
- "limit_zh": "要高清写实、要渐变插画，格会对不上。",
+ "limit_zh": "只出3:4位图，不输出矢量或HTML；需要本机有Python图像库（Pillow等）；文字排版只支持英文。",
  "cover": "/skill/assets/covers/v92388375-gif-pixel-style-poster-skill.jpg",
  "cover_kind": "artwork",
- "cover_real": true
+ "cover_real": true,
+ "gate_score": 5,
+ "cover_w": 1050,
+ "cover_h": 1400,
+ "limit_en": "Outputs only 3:4 bitmaps, no vector/HTML; requires local Python imaging libs (e.g., Pillow); typography is English-only—Chinese titles need manual."
 }

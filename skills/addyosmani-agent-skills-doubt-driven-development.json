@@ -2,12 +2,12 @@
  "id": "addyosmani-agent-skills-doubt-driven-development",
  "kind": "skill",
  "name": "doubt-driven-development",
- "title_zh": "每个关键决定都先过一场对抗式复审再落地",
- "tagline_zh": "写错一行生产代码的代价，远大于多花两分钟自问。在陌生代码库、高 stakes 场景，让每个非平凡决策先被新上下文里。",
- "tagline_en": "A wrong line in prod costs more than two minutes of self-doubt. In unfamiliar code or high-stakes changes, every.",
+ "title_zh": "每个关键决策先过一轮对抗式复审再落地",
+ "tagline_zh": "写生产代码、碰陌生库、动不可逆操作时，别再靠自信拍板。每次非平凡决定都拉一个全新上下文的杠精来挑刺。",
+ "tagline_en": "Before any non-trivial call stands, get a fresh-context adversary to poke holes. Cheaper to verify now than to.",
  "desc_en": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later.",
- "why_zh": "不是检查清单，是强制切换上下文重审——用新视角攻击自己的结论，专治‘写得太顺’带来的盲区。",
- "why_en": "Not a checklist—it forces a context switch to re-attack your own conclusion, targeting the blind spots that smooth writing hides.",
+ "why_zh": "不是自查，是强制换上下文重审——让确认偏差没机会扎根。专治那种'我写的我信'的盲区。",
+ "why_en": "Forces a context-switched adversarial pass, starving confirmation bias. Kills the 'I wrote it, so it's fine' blind spot.",
  "repo": "addyosmani/agent-skills",
  "owner": "addyosmani",
  "path": "skills/doubt-driven-development",
@@ -31,6 +31,8 @@
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 8,
- "limit_zh": "只审‘非平凡决策’，琐碎改动不触发；需要你主动调用，不会自动拦截；若你已极度熟悉该代码域，复审收益递减。",
- "limit_en": "Only fires on non-trivial decisions; trivial edits pass. You must invoke it—no auto-hook. In code you know cold, the review yields diminishing."
+ "limit_zh": "只覆盖决策复审，不生成代码、不跑测试、不查依赖。若你只是写脚本或改注释，它不会触发；若你拒绝被质疑，它会拖慢你。",
+ "limit_en": "Reviews decisions only—no codegen, no tests, no dep checks. Won't fire on trivial edits; slows you down if you hate being challenged.",
+ "cover_w": 1376,
+ "cover_h": 768
 }

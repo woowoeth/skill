@@ -2,14 +2,14 @@
  "id": "codeswithroh-tastemaker-tastemaker",
  "kind": "skill",
  "name": "tastemaker",
- "title_zh": "把参考图变成同风格 UI 代码，告别 AI 味",
- "tagline_zh": "粘贴 Pinterest/Dribbble 链接或截图，它就能拆解配色、字体、间距、质感，生成真正有品牌感的界面。",
- "tagline_en": "Paste a Pinterest/Dribbble link or screenshot — it extracts colors, type, spacing, and texture to ship on-brand.",
+ "title_zh": "把参考图变成同风格 UI 的生成器",
+ "tagline_zh": "受够了千篇一律的 AI 蓝白界面？贴一张 Pinterest 或 Dribbble 图，它就能让落地页、仪表盘。",
+ "tagline_en": "Tired of generic AI blue-and-white UI? Paste a Pinterest or Dribbble link, and it makes your landing page.",
  "desc_en": "Generate genuinely beautiful, on-brand UI instead of generic \"AI slop\" — use whenever the user asks to build, design, style, or improve a UI, landing page, dashboard, app screen, or component, whenever a PRD/spec needs a design pass before implementation, whenever the user pastes reference images/Pinterest/Dribbble links and wants the app to look like them, or whenever the user complains the AI-ge",
- "why_zh": "不是套模板，而是逐层解析参考图的视觉语法，再映射到可维护的 Tailwind/组件代码。",
- "why_en": "It doesn't apply templates — it parses the visual grammar of your reference and maps it into maintainable Tailwind/component.",
- "limit_zh": "只认静态视觉参考（截图/链接），不处理动效或交互规范；产物是前端代码，不含设计系统文档；复杂设计需人工微调。",
- "limit_en": "Only static visual refs (screenshots/links); no motion or interaction specs. Output is frontend code, not design-system docs; complex designs need.",
+ "why_zh": "它不靠提示词猜风格，而是直接解析参考图的视觉特征（配色、间距、字体、质感），再映射到目标界面。",
+ "why_en": "It doesn't guess style from prompts—it parses the reference image's visual DNA (palette, spacing, type, texture) and maps it.",
+ "limit_zh": "只认静态参考图（PNG/JPG/链接），不解析视频或动效；产物是前端代码（HTML/CSS/React）。",
+ "limit_en": "Only static images (PNG/JPG/links); no video/motion parsing. Output is front-end code (HTML/CSS/React), not design files. Highly abstract or chaotic.",
  "repo": "codeswithroh/tastemaker",
  "owner": "codeswithroh",
  "path": "skills/tastemaker",
@@ -29,5 +29,9 @@
   "copy": "cp -r tastemaker/skills/tastemaker ~/.claude/skills/tastemaker",
   "dir": "~/.claude/skills/tastemaker"
  },
- "cover": "/skill/assets/covers/codeswithroh-tastemaker-tastemaker.png"
+ "cover": "/skill/assets/covers/codeswithroh-tastemaker-tastemaker.png",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "cover_kind": "og",
+ "cover_real": false
 }
