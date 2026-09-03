@@ -147,26 +147,29 @@ def check_clumping(items) -> None:
 
 
 def check_coverage() -> None:
-    """流式全扫有没有按天跑、有没有断口。**看不见的漏比看得见的坏更危险。**"""
+    """流式全扫：**每一片**在最近 30 小时内有没有一轮「连上」。
+    片是分班跑的（一班一片），所以不能只看最新一轮，要按片各自找最近一次成功。"""
     cov = os.path.join(ROOT, "editorial", "coverage_log.json")
     if not os.path.exists(cov):
         note("坏", "还没有覆盖账（stream.py 一次都没跑过）—— 「每天新发的都扫一遍」目前是空话", [])
         return
     runs = (json.load(open(cov, encoding="utf-8")).get("runs") or [])
-    if not runs:
-        note("坏", "覆盖账是空的", []); return
-    last = runs[0]
-    t = datetime.datetime.strptime(last["time"], "%Y-%m-%dT%H:%MZ")
-    age_h = (datetime.datetime.now(datetime.timezone.utc) - t.replace(tzinfo=datetime.timezone.utc)).total_seconds() / 3600
-    if age_h > 30:
-        note("坏", f"流式全扫已 {age_h:.0f} 小时没跑（上次 {last['time']}）—— 这期间新出的 SKILL.md 一个都没看", [])
-    if last.get("gaps"):
-        note("坏", f"上一轮有断口：{', '.join(last['gaps'])} —— 这些片翻满上限还没接上上一轮，那一天没扫全",
-             [f"{r['slice']}: 翻 {r['pages']} 页 · 新 {r['new']} · {r['status']}" for r in last["slices"]])
-    if last.get("unreadable"):
-        note("坏", f"上一轮有读不到的片：{', '.join(last['unreadable'])} —— API 没给数据，这些片那一轮没看", [])
-    if age_h <= 30 and not last.get("gaps") and not last.get("unreadable"):
-        print(f"  ✓ 流式全扫 {age_h:.0f} 小时前跑过，新见 {last['new']} 个仓，五片都连上了")
+    now = datetime.datetime.now(datetime.timezone.utc)
+    ok_slices, bad = {}, []
+    for r in runs:
+        t = datetime.datetime.strptime(r["time"], "%Y-%m-%dT%H:%MZ").replace(tzinfo=datetime.timezone.utc)
+        if (now - t).total_seconds() > 30 * 3600:
+            break
+        for sl in r.get("slices", []):
+            if sl["status"] in ("连上", "无锚点（首轮）") and sl["slice"] not in ok_slices:
+                ok_slices[sl["slice"]] = r["time"]
+    for name in ("skills", "claude", "agents", "plugins", "rest"):
+        if name not in ok_slices:
+            bad.append(name)
+    if bad:
+        note("坏", f"这些片 30 小时内没有一轮接上：{', '.join(bad)} —— 那一段的新 SKILL.md 没看全", [])
+    else:
+        print(f"  ✓ 五片 30 小时内都接上过：" + " · ".join(f"{k}@{v[5:16]}" for k, v in ok_slices.items()))
 
 
 def main() -> int:

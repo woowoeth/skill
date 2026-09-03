@@ -9,12 +9,21 @@ name: sweep
 # 有渔网也有秤，却在等店主把鱼递过来。这条工作流就是那根接线。
 on:
   schedule:
-    - cron: "40 3 * * *"      # ~11:40 北京，和三班进货错开
+    # 一班一片。CI 的 GITHUB_TOKEN 做代码搜索被限得很狠（实测 try again in 733s），
+    # 一轮跑五片必被打断；拆成五班，每班 ≤10 次请求。片由 cron 分钟位决定（见下一步）。
+    - cron: "40 2 * * *"
+    - cron: "40 5 * * *"
+    - cron: "40 8 * * *"
+    - cron: "40 11 * * *"
+    - cron: "40 14 * * *"
   workflow_dispatch:
     inputs:
       max:
         description: "本轮判多少个候选"
         default: "800"
+      slice:
+        description: "只跑哪一片（空=按时刻自动选）"
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -57,11 +66,19 @@ jobs:
       # 每片读到碰上上一轮的边为止。翻满还碰不到 = 断口 = 这一步红。
       # 2026-09-02 量的：一天新出的 SKILL.md 超过 1000 个文件，之前每轮翻 1 页
       # 是在一条河里舀一勺 —— 店主：「不然无论如何你都会错过一些优质的 skill」。
-      - name: 流式全扫（新索引的 SKILL.md 一个不漏）
+      - name: 流式全扫（一班一片）
         id: stream
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scouts/stream.py --out /tmp/stream_new.json
+          SLICE_IN: ${{ github.event.inputs.slice }}
+        run: |
+          # 手动给了片就用；没给按 UTC 小时选：2→skills 5→claude 8→agents 11→plugins 14→rest
+          S="$SLICE_IN"
+          if [ -z "$S" ]; then
+            case "$(date -u +%H)" in 02) S=skills;; 05) S=claude;; 08) S=agents;; 11) S=plugins;; 14) S=rest;; *) S=skills;; esac
+          fi
+          echo "本班跑片：$S"
+          python scouts/stream.py --slice "$S" --out /tmp/stream_new.json
 
       # 老的四条通道保留：topic / awesome 能捞到没有 SKILL.md 但值得看的仓
       - name: 补充通道（topic / awesome）

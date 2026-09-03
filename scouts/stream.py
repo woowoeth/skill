@@ -60,17 +60,25 @@ def gh(url: str) -> dict:
 def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--pages", type=int, default=PAGES)
+    ap.add_argument("--slice", default="", help="只跑这一片（skills/claude/agents/plugins/rest）。"
+                    "CI 里 GITHUB_TOKEN 做代码搜索被限得很狠（try again in 733s），一轮五片会被打断；"
+                    "拆成五班 cron 各跑一片，每班 ≤10 次请求。")
     ap.add_argument("--out", default="/tmp/stream_new.json", help="本轮新见的仓，交给 sweep 判")
     a = ap.parse_args()
 
     seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
-    prev_run = {k for k, v in seen.items() if v.get("last_run")}   # 上一轮见过的 = 锚点
+    # 锚点 = **任何已经见过的仓**。第一版用「上一轮打了 last_run 标记的」当锚点，
+    # 结果一轮限频读不到，last_run 被整体清掉，下一轮 agents 片读满 1000 条全是已知仓
+    # 却「无锚可碰」→ 报断口。**假断口。** 一页里只要有见过的仓，窗口就和过去接上了。
+    prev_run = set(seen)
     today = datetime.date.today().isoformat()
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     print(f"已见 {len(seen)} 个仓 · 上一轮锚点 {len(prev_run)} 个\n")
 
     new_total, report, touched = {}, [], set()
     for name, q in SLICES:
+        if a.slice and name != a.slice:
+            continue
         qq = urllib.parse.quote(q)
         new_here, anchored, pages_used, hits = 0, False, 0, 0
         unreadable = ""
@@ -127,8 +135,6 @@ def main() -> int:
         print(f"  {name:<8} 翻 {pages_used:>2} 页 · {hits:>4} 条 · 新 {new_here:>3} · {status}")
 
     # 下一轮的锚点 = 本轮真正读到的仓。旧锚点不再刷新，自然退出，锚点集才会往前走。
-    for v in seen.values():
-        v.pop("last_run", None)
     for full in touched:
         if full in seen:
             seen[full]["last_run"] = now
