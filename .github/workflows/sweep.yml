@@ -83,7 +83,10 @@ jobs:
           # 手动给了片就用；没给按 UTC 小时选：2→skills 5→claude 8→agents 11→plugins 14→rest
           S="$SLICE_IN"
           if [ -z "$S" ]; then
-            case "$(date -u +%H)" in 02) S=skills;; 05) S=claude;; 08) S=agents;; 11) S=plugins;; 14) S=rest;; *) S=skills;; esac
+            # 09-03：GitHub 的 schedule 对这个工作流一次都没触发过（daily-restock 同仓 53 次正常），watchdog 会补跑；
+            # 补跑不在整点班，按 3 小时一段轮片，不然永远只扫 skills 那一片
+            case "$(date -u +%H)" in 02) S=skills;; 05) S=claude;; 08) S=agents;; 11) S=plugins;; 14) S=rest;;
+              *) SL=(skills claude agents plugins rest); S=${SL[$(( (10#$(date -u +%H) / 3) % 5 ))]};; esac
           fi
           echo "本班跑片：$S"
           python scouts/stream.py --slice "$S" --out /tmp/stream_new.json

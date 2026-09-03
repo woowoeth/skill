@@ -14,6 +14,7 @@ on:
 permissions:
   contents: read
   actions: read
+  actions: write   # 09-03：补跑 sweep 要能 dispatch
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -48,6 +49,19 @@ jobs:
           echo "sweep 上次成功: $last2 （$h2 小时前）"
           if [ "$h2" -gt "$MAX_HOURS" ]; then echo "::error::sweep 已 $h2 小时没成功 —— 新出的 SKILL.md 没人扫"; exit 1; fi
           echo "✓ sweep 在 $MAX_HOURS 小时内跑成功过"
+      # 09-03：sweep 的 cron 从来没被 GitHub 触发过（0 次 schedule 事件，同仓 daily-restock 53 次正常）。
+      # 不等它修好：4 小时内没有成功的 sweep，看门狗自己 dispatch 一趟。看门狗每 6 小时一班，等于兜住每天至少 4 班。
+      - name: 4 小时内没跑过 sweep 就补一趟
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(gh run list -R "$GITHUB_REPOSITORY" --workflow sweep.yml --status success --limit 1 --json createdAt --jq '.[0].createdAt')
+          running=$(gh run list -R "$GITHUB_REPOSITORY" --workflow sweep.yml --status in_progress --limit 1 --json databaseId --jq 'length')
+          now=$(date -u +%s); h=99
+          [ -n "$last" ] && [ "$last" != "null" ] && h=$(( (now - $(date -u -d "$last" +%s)) / 3600 ))
+          echo "sweep 上次成功 ${h}h 前 · 在跑 ${running:-0} 个"
+          if [ "$h" -ge 4 ] && [ "${running:-0}" = "0" ]; then gh workflow run sweep.yml -R "$GITHUB_REPOSITORY" && echo "已补跑 sweep"; else echo "不用补"; fi
 
       # 看门狗顺手也做一次访客视角体检 —— daily-restock 万一整轮没跑，
       # 那边的体检也不会跑，坏了照样没人知道。这里补一道。
