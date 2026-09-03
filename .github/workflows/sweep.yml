@@ -20,18 +20,22 @@ on:
     inputs:
       max:
         description: "本轮判多少个候选"
-        default: "800"
+        default: "400"
       slice:
         description: "只跑哪一片（空=按时刻自动选）"
         default: ""
 permissions:
   contents: write
-concurrency:
-  group: skill-store-write
-  cancel-in-progress: false
+# 2026-09-03 拆成两个 job：
+#   find_and_judge —— 发现 + 判品味，不写仓，**不占写锁**，最多跑 150 分钟；
+#   publish        —— 走管线、补扫、提交，占 skill-store-write 锁，几分钟就完。
+# 之前整条工作流占锁，判 800 个候选 × 3 票要一两个小时，restock 和 enrich-backfill 全排在后面；
+# 而 GitHub 同一个锁组只留一个 pending —— 新来的把老的 pending 踢掉。改标题那趟就是这样等了一小时。
+# 「确保每日更新」的前提是进货不能被判官堵住。
 jobs:
-  sweep:
+  find_and_judge:
     runs-on: ubuntu-latest
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -112,8 +116,44 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         # 判**全部**新见的，不再只判 40 个 —— 发现做到全量之后，判只判一角就白扫了。
-        # 每天几百个仓 × 一次 LLM 调用，钱是小数；时间上限 6 小时够。
-        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 800 }} --min-score 80
+        # 每天几百个仓 × 三票取中位。sweep.py 第一票离线 15 分以上就不投后两票，省掉大半调用。
+        # 这个 job 不占写锁，判多久都不堵进货。
+        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 400 }} --min-score 80
+
+      - name: 判分结果交给发布 job
+        if: always()
+        run: |
+          mkdir -p /tmp/handoff
+          cp /tmp/sweep_keep.json /tmp/handoff/ 2>/dev/null || echo "[]" > /tmp/handoff/sweep_keep.json
+          for f in editorial/sweep_seen.json editorial/stream_seen.json editorial/coverage_log.json editorial/backfill_seen.json editorial/skillsmp_seen.json editorial/discover_seen.json; do
+            [ -e "$f" ] && cp "$f" /tmp/handoff/ || true
+          done
+          ls -la /tmp/handoff
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: sweep-handoff, path: /tmp/handoff, retention-days: 3 }
+
+  publish:
+    needs: find_and_judge
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: skill-store-write
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/download-artifact@v4
+        with: { name: sweep-handoff, path: /tmp/handoff }
+      - name: 接过判分结果和各通道的「见过」清单
+        run: |
+          cp /tmp/handoff/sweep_keep.json /tmp/sweep_keep.json
+          for f in sweep_seen stream_seen coverage_log backfill_seen skillsmp_seen discover_seen; do
+            [ -e "/tmp/handoff/$f.json" ] && cp "/tmp/handoff/$f.json" "editorial/$f.json" || true
+          done
+          python3 -c "import json;k=json.load(open('/tmp/sweep_keep.json'));print(f'≥80 分的 {len(k)} 个')"
 
       # 2026-09-02 暂停：绝对打分在难负样本（08-28 判为「有用但通用」的 150 件）上 +0pt，
       # 正负分布重叠在 62-75，负样本均分（72.4）反而高于正样本（66.6）。

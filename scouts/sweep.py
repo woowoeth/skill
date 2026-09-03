@@ -69,6 +69,8 @@ def main() -> int:
     ap.add_argument("--audit", action="store_true",
                     help="拿店主指名的那些回测：这套现在能不能自己找到它们")
     a = ap.parse_args()
+    import os as _os
+    _os.environ.setdefault("TASTE_MIN", str(getattr(a, "min_score", 80)))
 
     import skill_scout as S
     if not S.LLM_KEY:
@@ -124,13 +126,19 @@ def main() -> int:
 
 def _score(S, body: str) -> tuple[int, str]:
     """直接拿正文去判（候选还没落库，没有 methods/ 存档）。判 TASTE_VOTES 遍取中位，和管线口径一致。"""
-    n = max(1, int(__import__("os").environ.get("TASTE_VOTES") or 3))
+    import os
+    n = max(1, int(os.environ.get("TASTE_VOTES") or 3))
+    line = int(os.environ.get("TASTE_MIN") or 80)
     votes, why = [], ""
-    for _ in range(n):
+    for i in range(n):
         sc, w = _score_once(S, body)
         if sc < 0:
             return sc, w
         votes.append(sc); why = why or w
+        # 两段投票（09-03）：第一票就离线 15 分以上的，后两票不投 —— 回测里三票跨度中位 5、最大 27，
+        # 差 15 分翻盘的概率可以忽略；能省掉大半 LLM 调用，判官不再把进货堵一两个小时。
+        if i == 0 and sc < line - 15:
+            return sc, w
     votes.sort()
     return votes[len(votes) // 2], why
 
