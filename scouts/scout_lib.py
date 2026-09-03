@@ -655,6 +655,22 @@ def refresh() -> dict:
     # 店长不该也不需要手写它；存档补齐后重建一次就自动更新，没有第二份真相。
     prep_ev = prep.load_all()
     prep.annotate(items, prep_ev)
+    # 「店长推荐」（英文 Editor's picks）= 编辑读过原文亲挑的，由 editorial/editor_picks.json 驱动，最新 12 件轮换。
+    # 09-03 同事查出：pick 标记只在 8/28 那轮门禁时打过一次，之后没有任何流程更新它，首页那组 12 件十二天没换。
+    # 编辑登记表（免过判官那条道）和展示标记是两套，这里接上：登记即上榜，旧的自然轮出。
+    _eds = (read_json(os.path.join(ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
+    def _pick_key(it):
+        e = _eds.get((it.get("repo") or "").lower())
+        if not e:
+            return None
+        want = [q.strip("/") for q in ([e.get("path")] if e.get("path") else []) + list(e.get("paths") or [])]
+        if want and (it.get("path") or "").strip("/") not in want:
+            return None
+        return (e.get("picked_at") or "", it.get("added_at") or "", it.get("id") or "")
+    _cands = sorted((( _pick_key(it), it) for it in items.values() if not it.get("hide") and _pick_key(it)), key=lambda kv: kv[0], reverse=True)
+    _top = {it["id"] for _, it in _cands[:12]}
+    for it in items.values():
+        it["pick"] = it.get("id") in _top
     visible = [it for it in items.values() if not it.get("hide")]
     # newest first (店里天天上新，新货朝前); same-day ties break by fun, then stars.
     # 完全并列的再按 id —— 否则并列项的先后取决于 glob() 的文件系统顺序，同一份数据
