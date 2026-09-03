@@ -474,6 +474,12 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
             continue
         if cover:
             it["cover"] = host_cover(it["id"], cover) or cover
+            # 写 cover 的同时写宽高 —— 没宽高前端不渲染。托到本地的才读得到；外部图读不到就留空不编。
+            _u = it["cover"] or ""
+            if _u.startswith("/skill/"):
+                _wh = cover_dims(os.path.join(lib.ROOT, _u[len("/skill/"):]))
+                if _wh:
+                    it["cover_w"], it["cover_h"] = _wh
         if not save_method(it):
             # 取不回正文 = path 多半记错了（或仓库没了）。过去这里是静默的，
             # 于是错的 install.copy 一路上架，用户照抄装不上都没人知道。
@@ -576,6 +582,45 @@ def resolve_cover(repo: str) -> str:
             continue
     # last resort: GitHub generated social card
     return "https://opengraph.githubassets.com/1/" + repo
+
+
+def cover_dims(path: str):
+    """从文件头读宽高（PNG / JPEG / WebP-VP8X），不依赖 sips（CI 是 Linux）。读不出返回 None。
+
+    封面没宽高前端就不渲染（读的是 it.cover_w || 0）。2026-09-02 到 09-03 手补了三次：
+    138 件、4 件、5 件 —— 每次都是「写了 cover 没写宽高」。**根治在写 cover 的那一处。**"""
+    try:
+        with open(path, "rb") as fh:
+            h = fh.read(32)
+            if h[:8] == b"\x89PNG\r\n\x1a\n":
+                import struct
+                return struct.unpack(">II", h[16:24])
+            if h[:2] == b"\xff\xd8":                       # JPEG：找 SOF 段
+                fh.seek(2)
+                while True:
+                    b = fh.read(1)
+                    if not b:
+                        return None
+                    if b != b"\xff":
+                        continue
+                    m = fh.read(1)
+                    while m == b"\xff":
+                        m = fh.read(1)
+                    if m in (b"\xc0", b"\xc1", b"\xc2", b"\xc3", b"\xc5", b"\xc6", b"\xc7",
+                             b"\xc9", b"\xca", b"\xcb", b"\xcd", b"\xce", b"\xcf"):
+                        seg = fh.read(7)
+                        import struct
+                        hgt, wid = struct.unpack(">HH", seg[3:7])
+                        return (wid, hgt)
+                    ln = fh.read(2)
+                    import struct
+                    fh.seek(struct.unpack(">H", ln)[0] - 2, 1)
+            if h[:4] == b"RIFF" and h[8:12] == b"WEBP" and h[12:16] == b"VP8X":
+                w = 1 + int.from_bytes(h[24:27], "little"); ht = 1 + int.from_bytes(h[27:30], "little")
+                return (w, ht)
+    except Exception:
+        return None
+    return None
 
 
 def host_cover(sid: str, url: str) -> str:
