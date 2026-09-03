@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>docx 里引文乱序、缺超链接时，它按 GB/T 7 — 品味</title>
+<title>Word 参考文献乱了，按 GB/T 7714 重排补链接 — 品味</title>
 <meta name="description" content="改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, fuwenhao12">
@@ -20,14 +20,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="docx 里引文乱序、缺超链接时，它按 GB/T 7 — 品味">
+<meta property="og:title" content="Word 参考文献乱了，按 GB/T 7714 重排补链接 — 品味">
 <meta property="og:description" content="改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。">
 <meta property="og:url" content="https://ourword.ai/skill/i/fuwenhao12-academic-ref-inserter/">
 <meta property="og:image" content="https://ourword.ai/skill/assets/covers/fuwenhao12-academic-ref-inserter.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/fuwenhao12-academic-ref-inserter.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="docx 里引文乱序、缺超链接时，它按 GB/T 7 — 品味">
+<meta name="twitter:title" content="Word 参考文献乱了，按 GB/T 7714 重排补链接 — 品味">
 <meta name="twitter:description" content="改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"docx 里引文乱序、缺超链接时，它按 GB/T 7","description":"改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。","url":"https://ourword.ai/skill/i/fuwenhao12-academic-ref-inserter/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"fuwenhao12"},"image":"https://ourword.ai/skill/assets/covers/fuwenhao12-academic-ref-inserter.png","codeRepository":"https://github.com/fuwenhao12/academic-ref-inserter"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word 参考文献乱了，按 GB/T 7714 重排补链接","description":"改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。","url":"https://ourword.ai/skill/i/fuwenhao12-academic-ref-inserter/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"fuwenhao12"},"image":"https://ourword.ai/skill/assets/covers/fuwenhao12-academic-ref-inserter.png","codeRepository":"https://github.com/fuwenhao12/academic-ref-inserter"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -58,14 +58,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       <span>fuwenhao12</span>
       <span class="date">2026-09-03</span>
     </div>
-    <h1 class="ttl">docx 里引文乱序、缺超链接时，它按 GB/T 7</h1>
+    <h1 class="ttl">Word 参考文献乱了，按 GB/T 7714 重排补链接</h1>
     <p class="lede">改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。</p>
     <div class="tags"><span class="tag">fuwenhao12</span></div>
     <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/fuwenhao12-academic-ref-inserter.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/fuwenhao12-academic-ref-inserter.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什么用</h2><p>改稿到一半发现参考文献编号全乱了？它自动重排引文顺序、补交叉引用超链接，还能一键切换中英文标准，不用手动数序号。它读的是 docx 内部的引用关系，不是表面文字，所以能真正重排编号并同步正文，而不是只改个格式。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。只处理 docx 文件，且要求文档内已有可识别的引文标记；纯文本或 PDF 需先转换。不负责检索文献元数据。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「docx 里引文乱序、缺超链接时，它按 GB/T 7」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「Word 参考文献乱了，按 GB/T 7714 重排补链接」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/fuwenhao12/academic-ref-inserter.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/fuwenhao12/academic-ref-inserter.git">复制</button></div><div class="cmd"><code>mv academic-ref-inserter ~/.claude/skills/academic-ref-inserter</code><button type="button" data-copy="mv academic-ref-inserter ~/.claude/skills/academic-ref-inserter">复制</button></div></div></section>
   </article>
   <aside class="aside">

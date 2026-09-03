@@ -813,8 +813,13 @@ TITLE_BANNED_OPENER = re.compile(r"^(只认|只剪|拒绝|把|一句话|一张|�
 
 def _clamp_patch(patch: dict) -> dict:
     """把模型产出的文案硬性压进规范长度——模型不听字数指令，代码兜底。"""
-    if patch.get("title_zh"):
-        patch["title_zh"] = patch["title_zh"][:26]
+    if patch.get("title_zh") and len(patch["title_zh"]) > 26:
+        # 09-03：硬切到 26 字出了「docx 里引文乱序、缺超链接时，它按 GB/T 7」这种半截标题。退到最后一个标点处；退不了才硬切。
+        t = patch["title_zh"][:26]
+        for i in range(len(t) - 1, 10, -1):
+            if t[i] in "，、；：":
+                t = t[:i]; break
+        patch["title_zh"] = t
     if patch.get("tagline_zh"):
         patch["tagline_zh"] = _clamp_cjk(patch["tagline_zh"], 58)
     if patch.get("why_zh"):
