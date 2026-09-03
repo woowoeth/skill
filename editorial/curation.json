@@ -10613,9 +10613,10 @@
    "why_zh": "不猜宿主、不写死路径。它先自报家门再给图，按图施工，两条缝都接上才算完。卸载也走同一张图，不留半截线头。",
    "limit_zh": "只处理 memU 自身的安装/卸载，不碰其他插件或系统配置。需要你有终端执行权限；若宿主是封闭平台（如纯网页版）。",
    "tagline_zh": "不管你是 Claude、GPT 还是本地脚本，一条命令识别宿主、打印专属接线图，把记录和注入两条缝都焊上——或干净。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：安装路由清晰，边界明确，但核心步骤仍依赖官方包自带指南，非完全独特。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "wesammustafa-claude-code-everything-you-need-to-know-claude.md-review": {
    "title_zh": "审计 CLAUDE.md，揪出拖垮输出的四类病灶",
@@ -10631,45 +10632,50 @@
    "why_zh": "非交互式安装，用隐藏 CLI 旗标跑完 setup，自动配库连 embedding。",
    "limit_zh": "只覆盖 ktx 的安装与配置，不负责后续数据质量。需要本地已有目标数据库和 embedding 服务。",
    "tagline_zh": "当你的 agent 每次都要重新问一遍数据库结构，装上 ktx 它就记得住。一条命令装好，连 embedding 。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：对坑点与隐藏参数处理详尽，流程扎实，但本质仍是安装配置向导。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "bayramannakov-claude-reflect": {
    "title_zh": "把每次纠正沉淀成永久记忆的自我进化系统",
    "why_zh": "不是事后总结，而是捕获机制：在错误发生的当下就标记，再通过主动提醒闭环。记忆不是靠它自觉。",
    "limit_zh": "只记录你明确纠正过的内容，不会自动发现隐性错误；且必须手动跑 /reflect 才写入，忘了跑就白记。",
    "tagline_zh": "会话中你纠正它的每个错误，它都记进 CLAUDE.md。下次开场前提醒你跑 /reflect。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：系统化学习机制设计完整，边界清晰，但可被通用记忆工具替代。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "minsight-ai-info-ai-search-hub": {
    "title_zh": "一条命令把七个AI网站变成你的自动化测试台",
    "why_zh": "不是模拟点击的脆皮脚本，而是直接接管真实浏览器会话：复用你本地的Cookie和指纹，登录态自己续。",
    "limit_zh": "只认本机Chrome且必须开9222调试端口；不支持Firefox/Safari；登录环节只做到'等你手动点完'。",
    "tagline_zh": "Yuanbao、LongCat、豆包、通义、Gemini、Grok、MiniMax——不用写爬虫，不用管登录态。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：执行细节扎实，但本质是脚本封装；路由策略有思考，非模板，边界清晰。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "bevibing-tutor-skills-tutor-setup": {
    "title_zh": "把任意知识源变成可提问的 Obsidian 学习库",
    "why_zh": "不是模板填充，而是按项目标记自动切换文档/代码两种模式，产物直接是 Obsidian 库结构。",
    "limit_zh": "只认 CWD 里的项目标记（如 .git、package.json）来判定代码模式；纯图片 PDF 无法提取文字。",
    "tagline_zh": "PDF、网页或代码仓库，自动识别模式并生成带练习题的笔记库。新成员看代码库不再从零摸索，直接拿到一份带路地图。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：概念级追踪与错题再测的设计扎实，但核心流程仍可被通用工具替代。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   },
   "bevibing-tutor-skills-tutor": {
    "title_zh": "把 Obsidian 笔记变成自适应测验的私教",
    "why_zh": "它不按章节顺序出题，而是先跑诊断、再按你的错误模式动态选题，把每次测验变成一次针对性的知识修复。",
    "limit_zh": "只认 Obsidian 的 StudyVault 库结构，笔记需带标签或 MOC 链接；不解析 PDF/网页。",
    "tagline_zh": "学完就忘？让它先诊断再出题，专攻你的薄弱点。不是随机抽题，是每次测验都比上次更懂你哪里不会。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "unshelf_reason": "sweep 自动上架线从 60 抬到 80 后撤下（判官给 72 分：概念级追踪与错题再测的设计扎实，但核心流程仍可被通用工具替代。）。60-79 是我自己写的评分档里「做得扎实，但换个工具也能做」那一档。"
   }
  },
  "gate": {

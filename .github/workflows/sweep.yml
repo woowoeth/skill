@@ -28,6 +28,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
 
+      # 自动上架线取 80，不取 70 —— 2026-09-02 第一轮跑完立刻发现的：
+      # 判官给上架的 5 件，**每一条理由里都写着「但本质是流程编排／安装配置／脚本封装」**，
+      # 那正是 08-28 砍架要清掉的 useful-but-generic 那一类。
+      # 而我自己写的评分档明写着「60-79 做得扎实，但换个工具也能做」——
+      # **我把自己定义为「可替代」的那一档放进了货架。**
+      # 抬到 80（这轮 31 个有效分里只有 2 个）。
+      #
+      # 代价说清楚：店主指名的 OJO 和 goldie 都是 72 分，抬到 80 它们也会被挡。
+      # 也就是说**这个判官分不开「OJO 的含糊词防火墙」和「一份配置指南」**——
+      # 顶部 31 个分里 10 个挤在 72。根因是我的验证集：+61pt 是拿
+      # 「按问一/问二/问三拒收的」当负样本测的，那些是烂货，不是「扎实但通用」的货，
+      # **我从来没拿真正的难负样本验过它**。下一步是补那批负样本重训判官，
+      # 不是继续调分数线。
       # 先自查：店主指名过的那些，现在这套能不能自己判出来。
       # **失败不阻断后面** —— 它是尺子不是闸；但结果要留在日志里，
       # 因为「这套还差多少」比「这轮捞到几个」更值得看。
@@ -51,7 +64,7 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: python scouts/sweep.py --max ${{ github.event.inputs.max || 40 }} --min-score 70
+        run: python scouts/sweep.py --max ${{ github.event.inputs.max || 40 }} --min-score 80
 
       - name: 高分的走完整管线
         env:
