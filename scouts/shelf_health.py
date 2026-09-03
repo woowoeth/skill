@@ -163,7 +163,9 @@ def check_coverage() -> None:
     if last.get("gaps"):
         note("坏", f"上一轮有断口：{', '.join(last['gaps'])} —— 这些片翻满上限还没接上上一轮，那一天没扫全",
              [f"{r['slice']}: 翻 {r['pages']} 页 · 新 {r['new']} · {r['status']}" for r in last["slices"]])
-    if age_h <= 30 and not last.get("gaps"):
+    if last.get("unreadable"):
+        note("坏", f"上一轮有读不到的片：{', '.join(last['unreadable'])} —— API 没给数据，这些片那一轮没看", [])
+    if age_h <= 30 and not last.get("gaps") and not last.get("unreadable"):
         print(f"  ✓ 流式全扫 {age_h:.0f} 小时前跑过，新见 {last['new']} 个仓，五片都连上了")
 
 

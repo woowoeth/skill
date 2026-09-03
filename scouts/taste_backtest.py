@@ -81,12 +81,16 @@ def pair_winrate(S, body: str, anchors: list[str], cur: dict, k: int = 3) -> flo
         ab = body_of(ai)
         if not ab:
             continue
-        prompt = PAIR_PROMPT.format(a=ab[:3500], b=body[:3500])
-        r = _call(S, prompt)
-        if r is None:
+        # 守擂偏置：第一版 A 永远是心选、B 永远是待判，判官 90% 答 A（正样本赢率也只有 0.11）。
+        # 它在选「A 那个位置」不是在选货。两个位置各站一次，两次都选待判件才算赢。
+        r1 = _call(S, PAIR_PROMPT.format(a=ab[:3500], b=body[:3500]))          # 待判在 B
+        r2 = _call(S, PAIR_PROMPT.format(a=body[:3500], b=ab[:3500]))          # 待判在 A
+        if r1 is None or r2 is None:
             continue
         tot += 1
-        wins += 1 if str(r.get("keep", "")).strip().upper() == "B" else 0
+        w1 = str(r1.get("keep", "")).strip().upper() == "B"
+        w2 = str(r2.get("keep", "")).strip().upper() == "A"
+        wins += 1 if (w1 and w2) else (0.5 if (w1 or w2) else 0)
     return wins / tot if tot else -1.0
 
 

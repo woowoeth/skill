@@ -73,13 +73,24 @@ def main() -> int:
     for name, q in SLICES:
         qq = urllib.parse.quote(q)
         new_here, anchored, pages_used, hits = 0, False, 0, 0
+        unreadable = ""
         for page in range(1, a.pages + 1):
-            d = gh(f"search/code?q={qq}&sort=indexed&order=desc&per_page=100&page={page}")
-            items = d.get("items") or []
+            d, items = {}, []
+            for attempt in range(3):                     # 空页/限频重试三次，退避
+                d = gh(f"search/code?q={qq}&sort=indexed&order=desc&per_page=100&page={page}")
+                items = d.get("items") or []
+                if items or d.get("total_count") == 0:
+                    break
+                time.sleep(SLEEP * (attempt + 2))
             pages_used = page
             if not items:
                 if page == 1:
-                    print(f"  {name:<8} 第 1 页就空：{str(d.get('message',''))[:70]}")
+                    # **这不是断口，是读不到。** 2026-09-03 CI 首轮：skills 片第 1 页就连上，
+                    # 随后四片「翻 1 页 · 0 条」被我报成了断口 —— 其实是 skills 片没歇就接着
+                    # 打下一片，撞了二级限频，API 回的是错误不是空结果。
+                    # 断口 = 读满 10 页没碰到锚点；读不到 = API 没给数据。两个都要红，但原因不同。
+                    unreadable = str(d.get("message") or "空响应")[:80]
+                    print(f"  {name:<8} 读不到：{unreadable}")
                 break
             for it in items:
                 hits += 1
@@ -97,7 +108,13 @@ def main() -> int:
             if anchored:
                 break
             time.sleep(SLEEP)
-        status = ("连上" if anchored else "**断口**") if prev_run else "无锚点（首轮）"
+        if unreadable:
+            status = "**读不到**"
+        elif not prev_run:
+            status = "无锚点（首轮）"
+        else:
+            status = "连上" if anchored else "**断口**"
+        time.sleep(SLEEP)                                # 片与片之间也歇，别撞二级限频
         report.append({"slice": name, "pages": pages_used, "hits": hits,
                        "new": new_here, "status": status})
         print(f"  {name:<8} 翻 {pages_used:>2} 页 · {hits:>4} 条 · 新 {new_here:>3} · {status}")
@@ -112,22 +129,28 @@ def main() -> int:
     json.dump(new_total, open(a.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     gaps = [r["slice"] for r in report if r["status"] == "**断口**"]
+    unread = [r["slice"] for r in report if r["status"] == "**读不到**"]
     cov = json.load(open(COV, encoding="utf-8")) if os.path.exists(COV) else {
         "_说明": "每轮流式全扫的覆盖账：每片翻了几页、新见几个、有没有连上上一轮。"
                 "「断口」= 翻满上限还没碰到上一轮的边，那一片这一天没扫全 —— 必须红。",
         "runs": []}
     cov["runs"].insert(0, {"time": now, "new": len(new_total), "seen_total": len(seen),
-                           "slices": report, "gaps": gaps})
+                           "slices": report, "gaps": gaps, "unreadable": unread})
     cov["runs"] = cov["runs"][:60]
     json.dump(cov, open(COV, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     print(f"\n本轮新见 {len(new_total)} 个仓 → {a.out}")
     print(f"覆盖账 editorial/coverage_log.json · 累计见过 {len(seen)} 个")
+    rc = 0
+    if unread:
+        print(f"\n::error::读不到的片：{', '.join(unread)} —— API 没给数据（多半是限频），"
+              f"这些片这一轮**没看**。不是断口，是没读到；重跑即可。")
+        rc = 1
     if gaps:
         print(f"\n::error::有断口的片：{', '.join(gaps)} —— 翻满 {a.pages} 页还没碰到上一轮的边，"
               f"这一天这些片**没扫全**。要么加密度（每天跑两次），要么再切。")
-        return 1
-    return 0
+        rc = 1
+    return rc
 
 
 if __name__ == "__main__":
