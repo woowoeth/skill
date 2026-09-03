@@ -1162,7 +1162,8 @@ def main() -> None:
     _mis = []
     for _it in (items.values() if isinstance(items, dict) else items):
         _u = (_it.get("cover") or "")
-        if not _u.startswith("/skill/"):
+        # 只看在架、且记录了宽高的：没记宽高的是【20】/宽高守卫的事，不在架的没人看
+        if _it.get("hide") or not _u.startswith("/skill/") or not (_it.get("cover_w") and _it.get("cover_h")):
             continue
         _p = os.path.join(lib.ROOT, _u[len("/skill/"):])
         if not os.path.exists(_p):
