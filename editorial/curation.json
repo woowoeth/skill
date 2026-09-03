@@ -30,17 +30,16 @@
    "pick": false,
    "limit_zh": "要 novel-game-analyze、game-concept、game-qa 一整家子都在才转得动。默认做的是验证切片不是全本游戏；完成只认启动、渲染、输入、核心循环、一次结果、重开六项。",
    "limit_en": "Only turns if the whole family is installed — novel-game-analyze, game-concept, game-build, game-qa. Default scope is a verification slice, not a full game, and it says outright that fun and balance are not things it can prove.",
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_dup_of": "worldwonderer-novel-to-game-game-concept",
    "title_en": "Turns a novel you love into a playable game",
    "hide": false,
    "gate_score": 10,
-   "cover": "",
+   "cover": "/skill/assets/covers/worldwonderer-novel-to-game-novel-to-game.jpg",
    "cover_w": 1440,
    "cover_h": 900,
-   "cover_src": "https://raw.githubusercontent.com/worldwonderer/novel-to-game/HEAD/examples/journey-to-the-west/screenshots/hero.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/worldwonderer/novel-to-game/HEAD/examples/journey-to-the-west/screenshots/hero.jpg"
   },
   "worldwonderer-oh-story-claudecode": {
    "title_zh": "网文写作全家桶",
@@ -755,8 +754,8 @@
    "why_en": "Design handoff, solved visually — the whole system in one graph.",
    "limit_zh": "要自备 FIGMA_TOKEN，还要 Node ≥22、pnpm ≥10 并先 build 出 core 才跑得动。正文明说它会外连 api.figma.com，不像 /understand 那样离线。分析批次失败只记警告不重试。",
    "limit_en": "You supply your own FIGMA_TOKEN, plus Node >= 22, pnpm >= 10 and a core build before it runs. The text states it calls out to api.figma.com and is not offline like /understand. Failed analysis batches are logged as warnings, not retried.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/egonex-ai-understand-anything-understand-figma.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_dup_of": "egonex-ai-understand-anything-understand-chat",
    "title_en": "Maps a Figma file into one design-system graph",
@@ -766,8 +765,7 @@
    "gate_drop": "not-taste-ref",
    "cover_w": 1774,
    "cover_h": 887,
-   "cover_src": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png"
   },
   "egonex-ai-understand-anything-understand-chat": {
    "title_zh": "按调用结构而不是搜字符串，回答改这里会牵动谁",
@@ -848,8 +846,7 @@
    "hide": false,
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "wshobson-agents": {
    "title_zh": "多平台插件市场",
@@ -1229,8 +1226,8 @@
    "why_en": "Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.",
    "limit_zh": "只对中文网文有用，禁用词表和脚本都是照网文口味调的。文件模式要 Node 跑 check-ai-patterns.js 等三个脚本，没有就只剩肉眼判断。默认把正文里的 …… 和 —— 全清掉，不吃这套排版口味的别装。",
    "limit_en": "Chinese web-novel prose only — the banned-word list and scripts are tuned for it. File mode needs Node for check-ai-patterns.js and two sibling scripts. By default it strips ellipses and em dashes, and promises no detector score.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/worldwonderer-oh-story-claudecode-story-deslop.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_dup_of": "worldwonderer-oh-story-claudecode-story-cover",
    "title_en": "Strip AI clichés from web fiction",
@@ -1240,8 +1237,7 @@
    "gate_drop": "not-taste-ref",
    "cover_w": 1440,
    "cover_h": 900,
-   "cover_src": "https://raw.githubusercontent.com/worldwonderer/oh-story-claudecode/HEAD/demo/story-dashboard.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/worldwonderer/oh-story-claudecode/HEAD/demo/story-dashboard.png"
   },
   "worldwonderer-oh-story-claudecode-story-long-scan": {
    "title_zh": "长篇扫榜雷达",
@@ -1693,8 +1689,7 @@
    "title_en": "Kills the fabricated citation before your reviewer finds it",
    "_无封面原因": "docs/images/ 下有 170 张 1536x864 的同模板图，一件 skill 一张 —— 这是宣传/说明卡阵列，正是「OG 卡片混进产出物」那个坑。我开了对题的那张 citation-management.png：是一幅做得挺漂亮的信息图（DISCOVERY 三列 OpenAlex/PubMed/Google Scholar → METADATA extract_metadata.py + WebSearch enrichment → references.bi",
    "hide": false,
-   "gate_score": 7,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "gate_score": 7
   },
   "k-dense-ai-scientific-agent-skills-latex-posters": {
    "title_zh": "学术海报",
@@ -2118,8 +2113,7 @@
    "hide": false,
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "dzcmemory-web-bazi-ziwei-skill": {
    "title_zh": "排盘交给算法库算，不让模型瞎编的八字与紫微斗数",
@@ -2166,8 +2160,7 @@
    "hide": false,
    "gate_score": 6,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "danilo-znamerovszkij-draw-your-font-draw-your-font": {
    "title_zh": "拍一张手写字母，本地生成能装进系统的 TTF 字体",
@@ -2272,8 +2265,7 @@
    "limit_brief_en": "It does not make the audio; you generate that on Suno.",
    "_无封面原因": "全仓唯一一张 docs/images/be-excellent-to-each-other.jpg(1400x700)，开过：《比尔和泰德历险记》的电影剧照（画面里能认出年轻的基努·里维斯和 Alex Winter 双手张开站在舞台上），底部叠白色大字 'Be Excellent To Each Other'。第三方版权画面 + 真人肖像，两条都撞线，坚决不用。这件其余产出要接 Suno（外部账号）。",
    "hide": false,
-   "gate_score": 7,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "gate_score": 7
   },
   "superdesigndev-superdesign-skill-superdesign": {
    "title_zh": "Superdesign 画布",
@@ -2620,8 +2612,7 @@
    "title_en": "Design rules for screens where color means money",
    "_无封面原因": "心选的 skills/trading-design 目录里只有一个 SKILL.md（纯规则文档：密度、配色、组件规范，没有 examples/ 也没有 scripts/）。仓库里 40+ 张图我抽查开过代表性的几张：docs/img/home.png(1440x900) 是 vstack 这个 App 自己的 Home 界面（Needs attention / Recently changed 列表），pi-extensions/*/assets/*.png|gif 是各个",
    "hide": false,
-   "gate_score": 7,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "gate_score": 7
   },
   "vanillagreencom-vstack-iced-rs": {
    "title_zh": "用 Rust Iced 写桌面图形界面",
@@ -2819,8 +2810,7 @@
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "dongbeixiaohuo-writing-agent-workflow-producer": {
    "title_zh": "调度长文写作的总入口",
@@ -3214,8 +3204,7 @@
    "hide": false,
    "gate_score": 5,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "aidevgtm-gtm-cofounder-positioning-and-story": {
    "title_zh": "把产品叙事改写成开发者当英雄的故事",
@@ -3396,8 +3385,7 @@
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "deusyu-translate-book": {
    "title_zh": "整本书拆给多个分身并行翻译，再拼回原排版",
@@ -3504,8 +3492,7 @@
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "cosmoblk-email-marketing-bible": {
    "title_zh": "做邮件营销的顾问",
@@ -3524,8 +3511,7 @@
    "hide": false,
    "gate_score": 5,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "coffeefuelbump-csv-data-summarizer-claude-skill": {
    "title_zh": "拿到陌生 CSV 先给它做个体检",
@@ -3988,8 +3974,8 @@
    "tagline_en": "A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.",
    "why_zh": "这个生态罕见的「减法」工具：装得多不等于装得好，它同时管省上下文、防注入、看清成本。",
    "why_en": "More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/khendzel-skills-janitor.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "limit_zh": "它会真动手删：左滑就把那个 MCP server 从配置文件里移除，只留一个带时间戳的 .bak。判断依据是本机会话记录里的调用次数——刚装没多久的 skill 天然显示成「没用过」，容易误杀。安全扫描作者写明是启发式。",
    "limit_en": "It actually deletes: swipe left and the MCP server is removed from your config file, leaving a timestamped .bak. Its verdict comes from call counts in your local transcripts, so anything installed recently reads as 'never used'. The security scan is explicitly heuristic.",
@@ -3999,8 +3985,7 @@
    "gate_score": 6,
    "cover_w": 1600,
    "cover_h": 900,
-   "cover_src": "https://raw.githubusercontent.com/khendzel/skills-janitor/HEAD/hero.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/khendzel/skills-janitor/HEAD/hero.png"
   },
   "312362115-claude-diagram": {
    "title_zh": "自动选对图表类型再画出来",
@@ -4599,8 +4584,7 @@
    "title_en": "A bedtime book read in your own cloned voice",
    "hide": false,
    "gate_score": 8,
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "worldwonderer-drama-skills": {
    "title_zh": "短剧漫剧工厂",
@@ -4842,8 +4826,7 @@
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "wshuyi-research-to-diagram-research-to-diagram": {
    "title_zh": "调研完自动画成知识关系图 PDF",
@@ -5411,13 +5394,12 @@
    "why_zh": "按孔版印刷的套色层数做海报，颜色少、边毛、故意不准。",
    "limit_zh": "不是高清写真。要渐变商业海报，对不上。",
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/luckdvr-photo-riso-poster.jpg",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1086,
    "cover_h": 1448,
-   "cover_src": "https://raw.githubusercontent.com/luckdvr/photo-riso-poster/HEAD/poster.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/luckdvr/photo-riso-poster/HEAD/poster.jpg"
   },
   "jiemianduan-image-to-prompt": {
    "hide": true,
@@ -5849,8 +5831,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "wolke-bazi-mingli": {
    "title_zh": "排八字四柱并给出命理分析",
@@ -5885,8 +5866,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "panmax-hemingway-skill": {
    "title_zh": "短句砍到骨头里，海明威式改稿人",
@@ -5906,8 +5886,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "yangcodingmaster-photo-distill": {
    "title_zh": "照片蒸馏成可印刷的极简海报，全程代码绘制零生成模型",
@@ -5945,8 +5924,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "zexuanw958-svg-travel-plan-viz": {
    "title_zh": "离线可读的手机旅行页，地图时间轴订票提醒一页装完",
@@ -5985,8 +5963,7 @@
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "chenklein26-maker-fitness-coach-rpg": {
    "title_zh": "训练数据自己攒，剧情推进看成绩的 RPG 健身教练",
@@ -6006,8 +5983,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "joeseesun-qiaomu-campus-resume": {
    "title_zh": "给应届生从零做一份可投递的简历",
@@ -6046,8 +6022,7 @@
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "dacnay816y62-hub-fantasy-movie-poster-skill": {
    "hide": false,
@@ -6188,8 +6163,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "jangviktor-web-wujutong": {
    "title_zh": "按三焦辨证给温病方，古人矛盾处照原样留着",
@@ -6206,8 +6180,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "voidforall-fengshui-skill": {
    "title_zh": "先说自己不算命的风水顾问",
@@ -6225,8 +6198,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "seiya89757-naming-skill": {
    "title_zh": "全家为起名吵架时出来当中间人",
@@ -6244,8 +6216,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "mrchendev-cantonese-lyrics": {
    "title_zh": "逐字查九声六调，填不倒字的粤语词",
@@ -6276,8 +6247,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "sunnypanzhen-fishing-skill": {
    "title_zh": "新手买竿，老手看天：从选位讲起",
@@ -6295,8 +6265,7 @@
    "hide": false,
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "alaric1098-china-pension-strategy-skill": {
    "title_zh": "社保断缴要不要补，用脚本算给你看",
@@ -6314,8 +6283,7 @@
    "hide": false,
    "gate_score": 6,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "mixiaxiaoyu-scraply": {
    "title_zh": "照片排成带票据和胶带的手账跨页",
@@ -6370,16 +6338,15 @@
    "tagline_en": "Labour arbitration is hard at both ends: the evidence is scattered across attendance logs and chat history, and you have no idea what number to ask for. This parses attendance files, computes overtime, severance and social-insurance shortfalls, and writes it up.",
    "why_en": "It is unambiguously on the employee's side — not an HR compliance tool, an evidence tool for the person who was let go. Knowing whose side you're on is itself taste.",
    "limit_en": "Calculations use general formulas; local arbitration commissions differ a great deal in practice, so the report is a negotiating draft, not a conclusion. Mainland China labour law only.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/wangchangwei-arb-skill.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "_无封面原因": "仓库只有一张图的两个格式：docs/flow-architecture.png 和 .svg（1200x540），开过：仲裁 skill 的完整流程图（输入 INPUT → 核心计算 CORE COMPUTATION 五个方框 → 输出 OUTPUT / 补充说明 四层），是文档流程图，不是产出物。要当 cover_kind=diagram 用是对题的（宽高比 2.22，没过线），但它不是 artwork。产出是劳动仲裁的证据和算钱结论（内容），也不做 ours。",
    "hide": false,
    "gate_score": 6,
    "cover_w": 1200,
    "cover_h": 540,
-   "cover_src": "https://raw.githubusercontent.com/wangchangwei/arb-skill/HEAD/docs/flow-architecture.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/wangchangwei/arb-skill/HEAD/docs/flow-architecture.png"
   },
   "bh-m87-futu-statement-skill": {
    "title_en": "Find the numbers a broker statement hides",
@@ -6393,8 +6360,7 @@
    "hide": false,
    "gate_score": 6,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "tong666-bit-liu-xiaoyan-skill": {
    "title_en": "Liu Xiaoyan-style English: every real-exam sentence broken.",
@@ -6410,8 +6376,7 @@
    "gate_score": 6,
    "cover_w": 1200,
    "cover_h": 600,
-   "title_zh": "刘晓艳考研英语真题逐句精讲，不懂的句子当场拆给你看",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "title_zh": "刘晓艳考研英语真题逐句精讲，不懂的句子当场拆给你看"
   },
   "xntj-ai-baoxiao": {
    "title_en": "Loose receipts into a filed expense claim",
@@ -6435,8 +6400,7 @@
    "cover": "",
    "cover_w": 1200,
    "cover_h": 600,
-   "title_zh": "LARP 角色卡生成器：从一句话到可扮演的完整人设",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "title_zh": "LARP 角色卡生成器：从一句话到可扮演的完整人设"
   },
   "weante-city-salary": {
    "title_en": "Take-home pay by the rules of your actual city",
@@ -6461,8 +6425,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "r0ses1r-dev-birdsight": {
    "title_zh": "查稀有鸟最近落在哪，顺带说清中文名是台湾译名",
@@ -6480,8 +6443,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "wei011-heat-risk-calc": {
    "title_zh": "体感温度骗过你时，它用湿球温度叫停训练",
@@ -6499,8 +6461,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "fxw-labs-beachcombing": {
    "title_zh": "潮水退去后替你扫三遍滩面的拾遗器",
@@ -6518,8 +6479,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "yeyulangzi-parenting-advisor": {
    "title_zh": "专防「假托崔玉涛」文章的 0–13 岁育儿参谋",
@@ -6536,8 +6496,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "violasi-reading-diary": {
    "title_zh": "把分级读物 PDF 里嵌的真人音频一页页抠出来",
@@ -6583,8 +6542,7 @@
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "marcotini-fraudi": {
    "title_zh": "一轮只问一个问题，帮你把自己想清楚",
@@ -6656,8 +6614,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "rubyzhu26-see-life-wallpaper-skill": {
    "title_zh": "把手机壁纸变成每天更新的生活观察窗",
@@ -6691,8 +6648,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "reluctant2828-system-fitness-advisor-skill-system-fitness-advisor": {
    "title_zh": "按你的训练记录算下一次该练什么",
@@ -6706,8 +6662,8 @@
    "limit_brief_zh": "没有训练记录，它只能给通用建议。",
    "limit_brief_en": "With no training log, it can only give generic advice.",
    "category": "body",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/reluctant2828-system-fitness-advisor-skill-system-fitness-advisor.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "_无封面原因": "全仓唯一一张 concept.png(1672x941)，开过：AI 生成的宣传概念图 —— 浅灰渐变背景上立着一台平板，屏幕里是「用户数据 / 知识库 / 增肌减脂 / RPE·RM 7.5」四张卡片和一条 用户数据→安全边界→训练逻辑→输出计划 的流程条，顶部大字「系统健身 System Fitness Advisor.skill」。这是 hero 宣传图（1672x941 这个尺寸站上已经有好几件是当 hero 收的），不是产出物。",
    "hide": false,
@@ -6715,8 +6671,7 @@
    "gate_drop": "not-taste-ref",
    "cover_w": 1672,
    "cover_h": 941,
-   "cover_src": "https://raw.githubusercontent.com/Reluctant2828/System-Fitness-Advisor-skill/HEAD/concept.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/Reluctant2828/System-Fitness-Advisor-skill/HEAD/concept.png"
   },
   "zhlmi-moodboard-alignment": {
    "title_zh": "把客户嘴里的“高级感”翻译成能打勾的审美条目",
@@ -6780,8 +6735,7 @@
    "hide": false,
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "aldefy-compose-expert": {
    "title_zh": "答 Compose 问题必附 androidx 源码出处",
@@ -6804,8 +6758,7 @@
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "nolangz-breathing-montage-skill": {
    "title_zh": "把高密度剪辑排成骨架，白闪只准一帧、全片四次",
@@ -6833,8 +6786,7 @@
    "_无封面原因": "3 张图逐张开过：① assets/personal-brand/像素公众号头图示例.png(2560x1088) 是花叔本人的像素风公众号头图「一人公司，也有品牌部了」，右下角印着 hUasheng.ai；② 像素品牌资产.png(3560x4712) 是九宫格品牌资产册（主标识/色板/字体/名片/T恤/渔夫帽/马克杯/贴纸/数字资产），做得很好看、比例 1.32 很合卡片，**但名片那一格里有二维码，还有 hello@huashu.dev 和 Beijing, China",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "gate_drop": "not-taste-ref"
   },
   "luji12-luji-pet-streetwear-mood-avatar": {
    "title_zh": "宠物收成街头情绪头像",
@@ -6851,8 +6803,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "zgdfsgd-pet-nutritionist": {
    "title_zh": "严禁给龙猫洗澡、也给矮脚马算食谱的宠物营养师",
@@ -6871,8 +6822,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "pengchenge-pet-skill": {
    "title_zh": "先填九项档案，之后叫一声名字它就用「我」接话",
@@ -6926,8 +6876,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "the-data-galaxy-child-reading-adventures-skill-design-child-reading-adventures": {
    "title_zh": "给孩子设计读书任务，页码只在核过这一版分页后才写",
@@ -6981,8 +6930,7 @@
    "_无封面原因": "全仓 0 张图片。产出是装修报价单的漏项审阅结论（判断类内容），不做 ours。",
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "zeoxcode-gaokao-advisor-skill-gaokao-advisor": {
    "title_zh": "按经济下行期算账、和招生办天然对立的志愿顾问",
@@ -7161,8 +7109,7 @@
    "_无封面原因": "全仓 0 张图片。这件的输入必须是本人一整年的日记 = 真实个人数据，按铁律宁可没封面，明确不跑。",
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "terkelg-anki-markdown-anki": {
    "title_zh": "你不点头一张都不写进 Anki 的闪卡生成器",
@@ -7269,8 +7216,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "mayuwen18-china-primary-school-tutor": {
    "title_zh": "批改只圈第一个影响结果的错，讲解先给提示再给半成品",
@@ -7323,8 +7269,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "ryunana-xbloom-studio-recipe-skill": {
    "title_zh": "翻车只准改一个变量的 xBloom 冲煮配方",
@@ -7379,8 +7324,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "zgdfsgd-balcony-farmer": {
    "title_zh": "把「采收前 7 天停药」写成硬规则的阳台种菜参谋",
@@ -7468,8 +7412,7 @@
    "gate_score": 10,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "mantyke-game-notebook-skill": {
    "title_zh": "奇数页孔在左偶数页在右，把攻略印成活页手账",
@@ -7576,8 +7519,7 @@
    "cover_real": false,
    "gate_score": 7,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "aryaminus-astro-astrology": {
    "title_zh": "本地星历实算西洋·印度·八字三盘",
@@ -7597,8 +7539,7 @@
    "gate_score": 8,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "hiyeshu-trip-map-builder": {
    "title_zh": "会替你删掉一半心愿单的行程地图生成器",
@@ -7619,8 +7560,7 @@
    "gate_score": 10,
    "gate_drop": "not-taste-ref",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "emaynard-claude-family-history-research-skill": {
    "title_zh": "你一说出祖先名字它就拒绝立刻开搜",
@@ -7760,8 +7700,7 @@
    "_无封面原因": "全仓 0 张图片。产出物是苏格拉底式追问对话（判断/评语类内容），按规矩不拿 demo 对话当自截图。",
    "gate_score": 6,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "evan715823-cheatsheet-generator-skill-cheatsheet-generator": {
    "title_zh": "认为页脚留白就是浪费考试资源的速查表",
@@ -7902,8 +7841,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "flowful-ai-cad-skill": {
    "title_zh": "动一行几何代码之前先去查真实尺寸的建模台",
@@ -8029,8 +7967,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "senzhang88-socialist-workers-power-work-powers-shanghai": {
    "title_zh": "门禁被关了也让你去打卡，被拦就报警拿回执",
@@ -8386,8 +8323,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "dougcompton-guitar-coach-guitar-coach": {
    "title_zh": "每次练琴出一份计时日志，三份之后自己排出纠正练习",
@@ -8601,8 +8537,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "elhamid-as-told-to-as-told-to": {
    "title_zh": "只记你说过的话，不替你补半句的人生访谈录",
@@ -8621,8 +8556,7 @@
    "gate_score": 9,
    "cover": "",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "brendanbank-fix-my-text-skill-fix-my-text": {
    "title_zh": "b/d 写反了帮你改、口语拼法一个不动的改字台",
@@ -9510,8 +9444,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "pqpo-pragma-code-cleanup-audit": {
    "hide": true,
@@ -9845,14 +9778,13 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay.png",
+   "cover_kind": "hero",
    "cover_w": 1414,
    "cover_h": 1112,
    "title_en": "Turn your photo into a film poster using only its real light",
    "cover_src": "https://raw.githubusercontent.com/Zeejay0/gathered-scenes-zine-skill/HEAD/assets/brand/zine-ai-gpt-claude-recharge.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3": {
    "title_zh": "一张照片蒸馏成一本敢留白的迷你zine",
@@ -9863,14 +9795,13 @@
    "hide": false,
    "gate_score": 9,
    "tagline_zh": "可翻的薄刊物，不是一张海报",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3.png",
+   "cover_kind": "hero",
    "cover_w": 1414,
    "cover_h": 1112,
    "title_en": "Distill one photo into a bold, airy mini zine",
    "cover_src": "https://raw.githubusercontent.com/Zeejay0/gathered-scenes-zine-skill/HEAD/assets/brand/zine-ai-gpt-claude-recharge.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "jinchenma94-bazi-skill": {
    "title_zh": "四柱八字，把生辰当成一张表来排",
@@ -9883,8 +9814,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "eternityspring-shuohao-skills-novel-characters": {
    "title_zh": "短剧开拍前先把角色拆开",
@@ -9908,13 +9838,12 @@
    "pick": true,
    "hide": false,
    "gate_score": 9,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/crawfordxx-xiaoma-durex-copywriter.jpg",
+   "cover_kind": "hero",
    "cover_w": 1200,
    "cover_h": 1600,
    "cover_src": "https://raw.githubusercontent.com/crawfordxx/xiaoma-durex-copywriter/HEAD/examples/output/lays_onechip_3x4.jpg",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "yokel1121-muyang-illustration-skills-muyang-oriental-poetry": {
    "title_zh": "东方诗意插画，一款一装",
@@ -9970,8 +9899,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "liamgvchi-gc-minimal-ip-doodle": {
    "title_zh": "保住角色的手绘涂鸦",
@@ -9996,13 +9924,12 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/evianis-travel-photo-abstraction-travel-photo-abstraction.png",
+   "cover_kind": "hero",
    "cover_w": 1003,
    "cover_h": 1568,
    "cover_src": "https://raw.githubusercontent.com/Evianis/travel-photo-abstraction/HEAD/showcase/sky-balloon.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "liyue-aigc-xianxia-visual-director-xianxia-visual-director": {
    "title_zh": "仙侠静帧导演",
@@ -10015,8 +9942,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "carolinaaafy-travel-memory-sticker-card": {
    "title_zh": "旅行照片做成记忆贴纸卡",
@@ -10040,14 +9966,13 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/wnby-photo-relic-editorial.png",
+   "cover_kind": "hero",
    "cover_w": 1024,
    "cover_h": 1536,
    "title_en": "Keep the photo, grow a memory relic beside it",
    "cover_src": "https://raw.githubusercontent.com/wnby/photo-relic-editorial/HEAD/examples/paper-beijing/geese-procession.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "ayi-ai-nie-grassroots-logic": {
    "title_zh": "聂辉华《基层中国的运行逻辑》方法箱",
@@ -10148,8 +10073,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "iamkong-photo-to-minimal-illustration": {
    "title_zh": "照片收成田野速写式极简稿",
@@ -10173,13 +10097,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/haorantang97-antibes-holiday-antibes-holiday.jpg",
+   "cover_kind": "hero",
    "cover_w": 1600,
    "cover_h": 2000,
    "cover_src": "https://raw.githubusercontent.com/haorantang97/antibes-holiday/HEAD/plugins/antibes-holiday/assets/examples/waiter-and-tray.jpg",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "wnby-paper-spirit-zine-paper-spirit-zine": {
    "title_zh": "原片还在，下面铺一层纸",
@@ -10217,13 +10140,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/zhu930824-poetic-line-zine-poster.png",
+   "cover_kind": "hero",
    "cover_w": 1024,
    "cover_h": 1536,
    "cover_src": "https://raw.githubusercontent.com/zhu930824/poetic-line-zine-poster/HEAD/docs/examples/wuhan-sunset-river.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "liigoqi-photo-to-travel-sketch": {
    "title_zh": "旅行照片收成赶路速写",
@@ -10236,8 +10158,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "traveler0621-reality-restaged": {
    "title_zh": "纪实照片重新搭台",
@@ -10264,8 +10185,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "n1ko724-scene-to-art-lab-scene-to-art-lab": {
    "title_zh": "一场戏收进艺术实验室",
@@ -10289,13 +10209,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/hchen1218-heytea-style.jpg",
+   "cover_kind": "hero",
    "cover_w": 1280,
    "cover_h": 1707,
    "cover_src": "https://raw.githubusercontent.com/Hchen1218/heytea-style/HEAD/assets/examples/poster/source-food.jpg",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "whiplashzeb-photo-to-zine-postcard": {
    "title_zh": "照片收成一张可寄的刊物明信片",
@@ -10319,13 +10238,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/liuzihe849-png-silhouette-group-collage-silhouette-group-collage.png",
+   "cover_kind": "hero",
    "cover_w": 941,
    "cover_h": 1672,
    "cover_src": "https://raw.githubusercontent.com/liuzihe849-png/silhouette-group-collage/HEAD/silhouette-group-collage/assets/approved-style-examples/01-same-team-every-time.png",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "zzzlc0405-photo-abstract-editorial": {
    "title_zh": "照片抽成抽象编辑页",
@@ -10335,13 +10253,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/zzzlc0405-photo-abstract-editorial.jpg",
+   "cover_kind": "hero",
    "cover_w": 1138,
    "cover_h": 1280,
    "cover_src": "https://raw.githubusercontent.com/ZzzLc0405/photo-abstract-editorial/HEAD/assets/examples/case-10.jpg",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction": {
    "title_zh": "旅行照片收成软抽象",
@@ -10368,8 +10285,7 @@
    "cover": "",
    "cover_kind": "none",
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "carolinaaafy-travel-memory-card-duo": {
    "title_zh": "旅行记忆卡成对出",
@@ -10528,13 +10444,12 @@
    "why_en": "A vague-word firewall: premium, refined, elegant, tasteful are never justifications; they must become saturation, spacing, radius and motion numbers.",
    "limit_en": "Outputs design specs and a single preview page, not a full front-end. Long document, context-hungry. One skill only.",
    "hide": false,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1600,
    "cover_h": 706,
-   "cover_src": "https://raw.githubusercontent.com/touchine-ojo/OJO-Design-Skills/HEAD/docs/images/showcase-design-3.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/touchine-ojo/OJO-Design-Skills/HEAD/docs/images/showcase-design-3.png"
   },
   "kvnkld-aicss": {
    "title_zh": "AI 对话界面不重造轮子，现成思考态与流式输出组件",
@@ -10550,8 +10465,7 @@
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "kacperkapusciak-goldie-goldie": {
    "title_zh": "重放 App 操作录屏，套上真实商店页边框和文案",
@@ -10567,8 +10481,7 @@
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "op7418-youtube-clipper-skill": {
    "cover": "",
@@ -10577,8 +10490,7 @@
    "cover_kind": "none",
    "cover_real": false,
    "title_zh": "YouTube 长视频先切章再剪段，字幕同步烧进画面",
-   "title_en": "Clip YouTube by chapter, burn bilingual subs in",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "title_en": "Clip YouTube by chapter, burn bilingual subs in"
   },
   "fxw-labs-easy-humanizer-zh": {
    "cover": "",
@@ -10587,19 +10499,17 @@
    "cover_kind": "none",
    "cover_real": false,
    "title_zh": "四种声纹任选，把AI稿改成看不出机器味的中文",
-   "title_en": "Pick one of 4 voices to strip AI tells from Chinese text",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "title_en": "Pick one of 4 voices to strip AI tells from Chinese text"
   },
   "ayi-ai-ayi-nonviolent-communication": {
    "cover_w": 1536,
    "cover_h": 1024,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "把指责翻译成需要的长颈鹿语言翻译官",
    "title_en": "NVC translator: turns blame into needs",
-   "cover": "",
-   "cover_src": "https://raw.githubusercontent.com/ayi-ai/ayi-nonviolent-communication/HEAD/cover.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/ayi-ai-ayi-nonviolent-communication.png",
+   "cover_src": "https://raw.githubusercontent.com/ayi-ai/ayi-nonviolent-communication/HEAD/cover.png"
   },
   "paramchoudhary-resumeskills": {
    "cover_w": 1200,
@@ -10608,19 +10518,17 @@
    "cover_real": false,
    "title_zh": "只改动词和数字就过筛的简历润色师",
    "title_en": "Resume editor that fixes verbs & numbers to pass ATS filters",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "zzzlc0405-photo-chromatic-abstraction-style-1": {
    "cover_w": 3072,
    "cover_h": 3456,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "只留 1~5 个源图色，把照片译成色块记忆卡",
    "title_en": "Photo to 1–5-color memory blocks, not a copy",
-   "cover": "",
-   "cover_src": "https://raw.githubusercontent.com/ZzzLc0405/photo-chromatic-abstraction-style-1/HEAD/assets/examples/01-cloud-bank-circles.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/zzzlc0405-photo-chromatic-abstraction-style-1.jpg",
+   "cover_src": "https://raw.githubusercontent.com/ZzzLc0405/photo-chromatic-abstraction-style-1/HEAD/assets/examples/01-cloud-bank-circles.jpg"
   },
   "yeyulangzi-personal-reflector": {
    "cover_w": 1200,
@@ -10629,8 +10537,7 @@
    "cover_real": false,
    "title_zh": "不喂鸡汤只拆模式的自我复盘镜",
    "title_en": "A self-reflection mirror that dissects patterns, not.",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "cloudai-x-threejs-skills-threejs-animation": {
    "cover_w": 1200,
@@ -10639,8 +10546,7 @@
    "cover_real": false,
    "title_zh": "骨骼、变形、混合全包，GLTF 动画直接上手",
    "title_en": "Keyframe, skeletal, morph, mixing—GLTF animation ready",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "khazp-vibe-coding-prompt-template-vibe-techdesign": {
    "cover_w": 1200,
@@ -10649,19 +10555,18 @@
    "cover_real": false,
    "title_zh": "先写技术设计再写代码，让 MVP 不返工",
    "title_en": "Write the tech design first, so your MVP survives",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "codeswithroh-tastemaker-tastemaker": {
    "cover_w": 1440,
    "cover_h": 900,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "看一眼参考图就生成同气质界面的设计手",
    "title_en": "A UI stylist that matches the vibe of your reference image",
-   "cover": "",
+   "cover": "/skill/assets/covers/codeswithroh-tastemaker-tastemaker.png",
    "cover_src": "https://raw.githubusercontent.com/codeswithroh/tastemaker/HEAD/product-hunt-shots/captures/landing-hero.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_note": "仓即产品，仓级图就是这件的图"
   },
   "copilotkit-copilotkit-a2ui-renderer": {
    "cover_w": 1200,
@@ -10670,8 +10575,7 @@
    "cover_kind": "none",
    "cover_real": false,
    "title_zh": "A2UI 界面渲染器，装上就能让 Agent 画表单",
-   "title_en": "A2UI renderer that turns Agent output into tappable UI",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "title_en": "A2UI renderer that turns Agent output into tappable UI"
   },
   "moonlin1213-cove-tarot-companion": {
    "cover_w": 1200,
@@ -10680,19 +10584,17 @@
    "cover_real": false,
    "title_zh": "只做仪式不占卜的本地塔罗陪谈，回看原牌不重抽",
    "title_en": "Local Tarot Ritual Companion: revisit, never re-draw",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "simon-he95-markstream-vue-markstream-vue": {
    "cover_w": 1214,
    "cover_h": 1572,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚",
    "title_en": "Vue 3 streaming renderer with virtual timeline for long AI.",
-   "cover": "",
-   "cover_src": "https://raw.githubusercontent.com/Simon-He95/markstream-vue/main/docs/public/sponsor/zhifubao.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/simon-he95-markstream-vue-markstream-vue.jpg",
+   "cover_src": "https://raw.githubusercontent.com/Simon-He95/markstream-vue/main/docs/public/sponsor/zhifubao.jpg"
   },
   "alchaincyf-huashu-report": {
    "cover_w": 1200,
@@ -10702,7 +10604,6 @@
    "title_zh": "42份顶级机构报告实测出的排版骨架",
    "title_en": "Report skeleton distilled from 42 top-tier institutional.",
    "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡",
    "limit_zh": "只覆盖机构级报告与学术论文（行业报告/白皮书/年度调研/arXiv）。单篇文章、PPT。"
   },
   "cloudai-x-threejs-skills-threejs-postprocessing": {
@@ -10712,8 +10613,7 @@
    "cover_real": false,
    "title_zh": "会先问你「要辉光还是景深」的Three.js后期链搭",
    "title_en": "A Three.js post-processing chain builder that asks 'bloom.",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "cloudai-x-threejs-skills-threejs-shaders": {
    "cover_w": 1200,
@@ -10722,8 +10622,7 @@
    "cover_real": false,
    "title_zh": "不碰内置材质，直接写 GLSL 顶点与片元着色器",
    "title_en": "Write GLSL vertex & fragment shaders directly, skip.",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "cloudai-x-threejs-skills": {
    "cover_w": 1200,
@@ -10732,8 +10631,7 @@
    "cover_real": false,
    "title_zh": "不写一行渲染代码，Three.js 场景从口述到可交",
    "title_en": "Describe a 3D scene, get a working Three.js sketch",
-   "cover": "",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": ""
   },
   "architect-kele-arch-kele-structure-photo": {
    "title_zh": "每张照片出两张图：一张结构研究稿，一张带原图角标",
@@ -10747,14 +10645,13 @@
    "tagline_en": "Two outputs per photo: a clean structural-study artwork, and one with the untouched source inset top-right. Warm paper, construction lines, restrained labels, palette derived from the photo.",
    "why_en": "Geometry must stay recognizable — architecture, objects, people, plants, streetscapes all follow one method; it is not a watercolor filter.",
    "limit_en": "Bundled examples are for style calibration only, never subject or palette. Image output only.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/architect-kele-arch-kele-structure-photo.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1086,
    "cover_h": 1448,
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
-   "cover_src": "https://raw.githubusercontent.com/Architect-kele/arch-kele-structure-photo/HEAD/assets/examples/oriental-pearl-tower-structural-editorial.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/Architect-kele/arch-kele-structure-photo/HEAD/assets/examples/oriental-pearl-tower-structural-editorial.png"
   },
   "createlafont-dnr-flat-pic": {
    "title_zh": "不描边不追光影，只留身份与空间关系的扁平化压缩",
@@ -10768,14 +10665,13 @@
    "tagline_en": "Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.",
    "why_en": "It defines simplification as checkable rules — fixed-HSB solid fills, crisp edges, no light effects — so a set stays in one language.",
    "limit_en": "Detail-heavy photos get heavily cut; text, numbers and UI are removed as a hard rule.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/createlafont-dnr-flat-pic.jpg",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 900,
    "cover_h": 1200,
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
-   "cover_src": "https://raw.githubusercontent.com/CreateLafont/dnr-flat-pic/HEAD/docs/showcase/01-waterfront-bench.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/CreateLafont/dnr-flat-pic/HEAD/docs/showcase/01-waterfront-bench.jpg"
   },
   "lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster": {
    "title_zh": "版式坐标锁死，只留象牙纸和一种墨的双色海报",
@@ -10789,14 +10685,13 @@
    "tagline_en": "Four fixed layouts (3:4 nine-square, 3:4 four-panel, 4:3 six-square, 4:3 four-panel) with locked coordinates; ivory paper plus one ink of your choice.",
    "why_en": "No drawing, hatching or photo detail — reduced flat masses with separate halation and restrained ink bleed, so it reads as printed, not filtered.",
    "limit_en": "Only those four layouts; one ink; the two-line typewriter footer is fixed.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1200,
    "cover_h": 1600,
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
-   "cover_src": "https://raw.githubusercontent.com/Lixorn/deconstructed-duotone-poster/HEAD/deconstructed-duotone-poster/assets/layout-guide-vertical-4.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/Lixorn/deconstructed-duotone-poster/HEAD/deconstructed-duotone-poster/assets/layout-guide-vertical-4.png"
   },
   "hongfamonvai-vintage-travel-ticket": {
    "title_zh": "66 张老车票里抽一套设计语法，每次出票都像翻到旧藏",
@@ -10810,13 +10705,12 @@
    "tagline_en": "A design grammar distilled from 66 historical tickets — archetype, illustration, palette, paper, type, information layout, print ageing — one coherent set picked at random each time.",
    "why_en": "It verifies the official place or food name before generating; the words on the ticket are checked, not invented.",
    "limit_en": "One finished ticket, no editable source. The 66 reference images are not distributed.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/hongfamonvai-vintage-travel-ticket.jpg",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1213,
    "cover_h": 1600,
-   "cover_src": "https://raw.githubusercontent.com/hongfamonvAI/vintage-travel-ticket/HEAD/examples/paris-source.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/hongfamonvAI/vintage-travel-ticket/HEAD/examples/paris-source.jpg"
   },
   "starryear-starryear-threefold-memory": {
    "title_zh": "照片分三层：记忆碎片、证据原件、心情路线图",
@@ -10830,14 +10724,13 @@
    "tagline_en": "Top: the photo recomposed as large fragments of visual memory. Middle: the untouched photo as evidence. Bottom: route, direction and mood drawn as a memory map.",
    "why_en": "Every route, node, fragment, pictogram and palette must derive from this photo — no hard-coded places, no decorative constellations.",
    "limit_en": "One locked photo, three equal stacked panels, fixed layout. The map is a spatial signal, not navigation.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/starryear-starryear-threefold-memory.jpg",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1920,
    "cover_h": 3240,
    "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
-   "cover_src": "https://raw.githubusercontent.com/Starryear/Starryear-Threefold-Memory/HEAD/versions/v2/assets/examples/01-city-threefold-memory.jpg",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/Starryear/Starryear-Threefold-Memory/HEAD/versions/v2/assets/examples/01-city-threefold-memory.jpg"
   },
   "bigfish-zzz-bigfish-ink-wash-photo": {
    "title_zh": "不重绘只锚定主体走向，落笔前先定画心与延展向",
@@ -10856,8 +10749,7 @@
    "cover_real": false,
    "cover_w": 1200,
    "cover_h": 600,
-   "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "_note": "2026-09-03 被我按「<80 分」误撤一次。它在 taste_refs 里 —— 店主指名的货不归判官管，判据判掉它是判据错。已恢复，并在门闸里加了豁免。"
   },
   "nevamind-ai-memu": {
    "title_zh": "给任何 Agent 装上或卸下 memU 记忆插件",
@@ -10944,8 +10836,7 @@
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1200,
-   "cover_h": 600,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_h": 600
   },
   "tait-tt-tait-crt-interface-skill": {
    "title_zh": "CRT 屏曲边加三档中文预设的夸张位图漫画窗",
@@ -10957,13 +10848,12 @@
    "why_en": "No tracing, no auto-pixelation — each subject is re-authored as a distinct identity on one shared pixel lattice.",
    "limit_en": "A strict two-stage intake asks for palette and aspect ratio if not supplied; the title-bar signature is immutable; one image per run.",
    "hide": false,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/tait-tt-tait-crt-interface-skill.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1913,
    "cover_h": 822,
-   "cover_src": "https://raw.githubusercontent.com/TaiT-tt/tait-crt-interface-skill/HEAD/assets/banner.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/TaiT-tt/tait-crt-interface-skill/HEAD/assets/banner.png"
   },
   "fihaaade-skills-outsider-art": {
    "title_zh": "大色块平涂加手工纹理，小人做日常事，只留一个高饱和点",
@@ -10975,47 +10865,43 @@
    "why_en": "That single highlight must do real compositional work — it turns folk-art naivety into an executable constraint.",
    "limit_en": "Figures are solid silhouettes, faceless, never stick figures. The photo is a semantic reference only. One of three skills in the repo.",
    "hide": false,
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/fihaaade-skills-outsider-art.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "cover_w": 1448,
    "cover_h": 1086,
-   "cover_src": "https://raw.githubusercontent.com/fihaaade/skills/HEAD/phosphor-relay-style/tokyo-tower-phosphor-relay.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_src": "https://raw.githubusercontent.com/fihaaade/skills/HEAD/phosphor-relay-style/tokyo-tower-phosphor-relay.png"
   },
   "zenstory-ai-video-recap-skills-video-script": {
    "cover_w": 2000,
    "cover_h": 1381,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "先定镜头再落笔的解说稿，时间戳卡到帧",
    "title_en": "Shot-by-shot narration script with frame-accurate timestamps",
-   "cover": "",
+   "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-script.png",
    "cover_src": "https://raw.githubusercontent.com/zenstory-ai/video-recap-skills/HEAD/docs/jianying-export.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡",
    "why_zh": "不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环。"
   },
   "zenstory-ai-video-recap-skills-video-understanding": {
    "cover_w": 2000,
    "cover_h": 1381,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "视频拆成六层索引，写稿前先看清素材全貌",
    "title_en": "Video into 6-layer index before you write",
-   "cover": "",
-   "cover_src": "https://raw.githubusercontent.com/zenstory-ai/video-recap-skills/HEAD/docs/jianying-export.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-understanding.png",
+   "cover_src": "https://raw.githubusercontent.com/zenstory-ai/video-recap-skills/HEAD/docs/jianying-export.png"
   },
   "zenstory-ai-video-recap-skills-video-assemble": {
    "cover_w": 2000,
    "cover_h": 1381,
-   "cover_kind": "none",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_zh": "旁白落定才压原声，字幕烧完再响度归一",
    "title_en": "Duck audio under narration, burn subs, normalize loudness",
-   "cover": "",
-   "cover_src": "https://raw.githubusercontent.com/zenstory-ai/video-recap-skills/HEAD/docs/jianying-export.png",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png",
+   "cover_src": "https://raw.githubusercontent.com/zenstory-ai/video-recap-skills/HEAD/docs/jianying-export.png"
   },
   "karanb192-itr-wala-itr-wala": {
    "title_zh": "旧新税制并排算完再决定报哪套的印度报税员",
@@ -11032,13 +10918,12 @@
    "gate_score": 8,
    "category": "creative",
    "title_en": "Real photos into art posters, with source comparison",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/op7418-guizang-yingzao-skill-yingzao.jpg",
+   "cover_kind": "hero",
    "cover_w": 989,
    "cover_h": 1400,
    "cover_src": "https://raw.githubusercontent.com/op7418/guizang-yingzao-skill/HEAD/yingzao/assets/reference-plates/0286594d2e794b7b903641c7ed2bc7f9.jpg",
-   "cover_real": false,
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_real": false
   },
   "cli-cli-code-review": {
    "title_zh": "合代码前先过一遍仓库规矩的 gh 评审员",
@@ -11088,8 +10973,7 @@
    "gate_score": 8,
    "category": "creative",
    "cover": "",
-   "cover_kind": "none",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover_kind": "none"
   },
   "oil-oil-kimi": {
    "title_zh": "设计稿交给它，前端代码拿回来就能跑",
