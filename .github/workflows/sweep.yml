@@ -87,11 +87,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python scouts/discover_by_artifact.py --pages 1 --out /tmp/artifact_candidates.json || true
+          # 存量回填：按创建日回看 3 天（每天一班，五班合起来覆盖过去两周多），只验 ≥3 星的。
+          # 流扫只看最新索引，几天前建的仓永远碰不到 —— 实测一天里 40% 的候选有 SKILL.md 且从没见过。
+          python scouts/backfill.py --days 3 --out /tmp/backfill_candidates.json || true
           python3 - <<'PY2'
           import json,os
           a=json.load(open('/tmp/stream_new.json')) if os.path.exists('/tmp/stream_new.json') else {}
-          b=json.load(open('/tmp/artifact_candidates.json')) if os.path.exists('/tmp/artifact_candidates.json') else {}
-          for k,v in b.items(): a.setdefault(k,v)
+          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json'):
+              b=json.load(open(fn)) if os.path.exists(fn) else {}
+              for k,v in b.items(): a.setdefault(k,v)
           json.dump(a,open('/tmp/candidates.json','w'),ensure_ascii=False,indent=1)
           print(f"合并候选 {len(a)} 个（流 {len(a)-len([k for k in b if k not in a])} + 补充）")
           PY2
