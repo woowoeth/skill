@@ -5,6 +5,9 @@ on:
       retitle_since:
         description: "只重写这个日期起入库的货的标题（留空=补缺的句子）"
         default: ""
+      retitle_match:
+        description: "重写标题匹配此正则的货（如 ^(只认|只剪|拒绝|把)）"
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -24,8 +27,8 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: |
-          if [ -n "${{ github.event.inputs.retitle_since }}" ]; then
-            python scouts/skill_scout.py --retitle-since "${{ github.event.inputs.retitle_since }}"
+          if [ -n "${{ github.event.inputs.retitle_since }}" ] || [ -n "${{ github.event.inputs.retitle_match }}" ]; then
+            python scouts/skill_scout.py --retitle-since "${{ github.event.inputs.retitle_since }}" --retitle-match "${{ github.event.inputs.retitle_match }}"
           else
             python scouts/skill_scout.py --enrich-missing
           fi

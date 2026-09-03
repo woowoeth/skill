@@ -672,9 +672,13 @@ ENRICH_PROMPT = """你是「Skill 商店」店长，为一件候选 Agent Skill 
 
 - title_zh：**一句话说清这是什么**（12~24 个汉字）。不是外号、不是产品名。
   ✗ 错：「女娲造 skill」「技能饕餮」——用户不知道那是啥
-  **禁止以「把」「一句话」「一张」「用」开头。** 2026-09-03 店主说新货标题不吸引人，
-  查近三天 15 条**全是「把 X 做成 Y」**——同一个句式排成一列，读者滑三张就疲了。
-  先亮**钩子**（它拒绝什么 / 它多懂行 / 别处拿不到的那一点），再说产出物。店主亲手标过的好标题长这样：
+  **禁止用固定句式开头**：「把 X 做成 Y」「只认 X」「只剪 X」「拒绝 X」「一句话」「一张」「用 X」都不许。
+  2026-09-03 两轮教训：第一轮 15 条全是「把…」；我改成「先亮它拒绝什么」，第二轮就变成一排「只认…」。
+  **换一个套路不是去掉套路。** 标题要像店主亲手写的那批一样各有各的形状：
+  有的是名词起头（「报价单先看漏项不看总价的 20 年装修老师傅」），有的是场景起头（「植被多就换品红键色」），
+  有的带数字（「本地星历实算西洋·印度·八字三盘」），有的是一句反常识（「你不点头一张都不写进 Anki」）。
+  写完自问：**这条和上一条的开头两个字一样吗？一样就重写。** 钩子是它独有的那一点，不是一个万能前缀。
+  店主亲手标过的好标题长这样：
   ✓ 「植被多就换品红键色，把照片做成能剪下来的贴纸页」
   ✓ 「会替你删掉一半心愿单的行程地图生成器」
   ✓ 「会打断你含糊用词的苏格拉底式陪练」
@@ -1694,6 +1698,8 @@ def main() -> None:
                     help="人工通道：直接收录指定仓库，完全绕过星门槛（仅 fork 与命名黑名单仍生效）")
     ap.add_argument("--verify-paths", action="store_true",
                     help="复核在架商品的 path 能不能取回 SKILL.md（只报告，不改数据）")
+    ap.add_argument("--retitle-match", default="",
+                    help="给标题匹配这个正则的在架货重写标题（如 '^(只认|只剪|拒绝|把)'）")
     ap.add_argument("--retitle-since", default="",
                     help="给这个日期起入库的在架货重写 title_zh/title_en（其余句不动）。"
                          "09-03 店主说新货标题不吸引；查近三天 15 条全是「把…」开头")
@@ -1706,10 +1712,13 @@ def main() -> None:
         seed(a.seed, a.meta)
         return
     existing, sources = lib.load_items(), lib.load_sources()
-    if a.retitle_since:
+    if a.retitle_since or a.retitle_match:
         _m = lib.apply_editorial(dict(existing))
-        ids = [sid for sid, it in _m.items() if not it.get("hide") and (it.get("added_at") or "")[:10] >= a.retitle_since]
-        print(f"[scout] retitle: {len(ids)} 件（{a.retitle_since} 起入库）只重写标题")
+        import re as _re
+        ids = [sid for sid, it in _m.items() if not it.get("hide") and (
+            (a.retitle_since and (it.get("added_at") or "")[:10] >= a.retitle_since)
+            or (a.retitle_match and _re.search(a.retitle_match, it.get("title_zh") or "")))]
+        print(f"[scout] retitle: {len(ids)} 件（since={a.retitle_since or '-'} match={a.retitle_match or '-'}）只重写标题")
         keep = {sid: {k: existing[sid].get(k) for k in ("tagline_zh","tagline_en","why_zh","why_en","limit_zh","limit_en")} for sid in ids}
         enrich_items(ids, existing)
         cur = lib.read_json(lib.EDITORIAL, {"items": {}})
