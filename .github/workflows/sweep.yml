@@ -178,8 +178,9 @@ jobs:
           # 这一步的门槛必须和挑选的门槛一致。
           TASTE_MIN: "80"
         run: |
-          R=$(python3 -c "import json;print(' '.join(k['repo'] for k in json.load(open('/tmp/sweep_keep.json'))[:10]))" 2>/dev/null || true)
-          [ -n "$R" ] || { echo "本轮没有 ≥70 分的"; exit 0; }
+          R=$(python3 -c "import json;print(' '.join(k['repo'] for k in json.load(open('/tmp/sweep_keep.json'))[:25]))" 2>/dev/null || true)
+          # 09-03 第一轮积压：22 个 ≥80 只交了前 10 个，剩下 12 个进了 sweep_seen「已判」再也不会被交 —— 放宽到 25。
+          [ -n "$R" ] || { echo "本轮没有 ≥80 分的"; exit 0; }
           echo "交给管线：$R"
           python scouts/skill_scout.py --suggest $R
 

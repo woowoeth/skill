@@ -26,6 +26,12 @@ for attempt in 1 2 3 4 5 6; do
       git diff --name-only --diff-filter=U | while IFS= read -r f; do
         [ -z "$f" ] && continue
         if echo "$f" | grep -Eq "$GEN"; then git checkout --ours -- "$f" 2>/dev/null || git rm -q --cached -- "$f" 2>/dev/null || true
+        elif echo "$f" | grep -Eq '^editorial/.*\.json$'; then
+          # 09-03：editorial 的 JSON 冲突按条目三方合并（base=:1 ours=:2 theirs=:3），整份取一侧会抹掉另一侧的全部改动
+          git show ":1:$f" > /tmp/_m_base.json 2>/dev/null || echo '{}' > /tmp/_m_base.json
+          git show ":2:$f" > /tmp/_m_ours.json 2>/dev/null || echo '{}' > /tmp/_m_ours.json
+          git show ":3:$f" > /tmp/_m_theirs.json 2>/dev/null || echo '{}' > /tmp/_m_theirs.json
+          python3 scouts/merge_json.py /tmp/_m_base.json /tmp/_m_ours.json /tmp/_m_theirs.json "$f" || git checkout --theirs -- "$f" 2>/dev/null || true
         else git checkout --theirs -- "$f" 2>/dev/null || true; fi
         [ -e "$f" ] && git add -- "$f" || true
       done
