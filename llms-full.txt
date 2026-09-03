@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 247 skills.
+# Full corpus, plain text. 251 skills.
 
 ========================================================================
 ## html-to-pptx
@@ -184,6 +184,28 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-03
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
+
+========================================================================
 ## glitch-pixel-collage
 ## 故障像素拼贴
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
@@ -220,28 +242,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-03
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## trading-design
@@ -4391,19 +4391,19 @@ Repository: DPWelsh/basilisk Prep work visible in the skill's own text: runnable
 
 ========================================================================
 ## empathy
-## 动笔前先过一遍人类沟通守则的 AI 礼貌开关
+## 动笔前先过一遍人类沟通守则的 AI 助手
 URL: https://ourword.ai/skill/i/danielroe-empathy/
 Source: https://github.com/danielroe/empathy
 Updated: 2026-07-30
 Tags: work, skill, danielroe
 
-PRs, issues, replies, emails, chats—anything a person reads gets a pre-check. Not a rewrite, but a pause to ask.
+For PRs, comments, emails, chats—anything a person will read. Loads the rules first, so you don't regret sending.
 
 ### What does this skill do?
 Rules for communicating with humans as an AI agent. Read in full BEFORE composing any text another person will read: PR titles and descriptions, issues, code review replies, comments, discussion summaries, emails, chat and forum posts, commit messages, changelogs. Also before replying when someone responds to you, and before deciding whether to post at all. Do not draft first and check after. Mini
 
 ### Why is it worth installing?
-It enforces communication rules as a pre-writing gate, not a post-hoc fix. Before you type, it already steers you clear of cold.
+Enforces rules before drafting, not after. Cuts friction and faux pas at the source.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/danielroe/empathy.git Then point your agent at the skill directory.
@@ -4740,6 +4740,28 @@ git clone --depth 1 https://github.com/wr5912/human-allegory-engine.git Then poi
 Repository: wr5912/human-allegory-engine The repository ships 1 skills in total.
 
 ========================================================================
+## ark-ui
+## 鹰角视觉语言先问产品线再定深度的界面设计器
+URL: https://ourword.ai/skill/i/brandon030722-ark-ui-skill/
+Source: https://github.com/Brandon030722/ark-ui-skill
+Updated: 2026-07-20
+Tags: images, skill, Brandon030722
+
+Arknights, Endfield, or industrial sci-fi? State product family & depth, get evidence-based Hypergryph UI—no.
+
+### What does this skill do?
+Design, implement, audit, or refactor web and game-adjacent interfaces using an evidence-based Hypergryph visual language with two independent choices: product family and application depth (1 minimal, 2 moderate, 3 complex, 4 maximal). Use for Hypergryph-, Arknights-, Endfield-, Rhodes Island-, industrial sci-fi-, editorial game-UI-, or bilingual technical-interface requests; for landing pages, da
+
+### Why is it worth installing?
+Turns 'does it feel Hypergryph' into auditable process: every visual choice ties to product family & depth evidence, so.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Brandon030722/ark-ui-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Brandon030722/ark-ui-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## schengen-visa-guide
 ## 申根签材料清单，按身份拆到每张纸
 URL: https://ourword.ai/skill/i/endlessbluewjl-schengen-visa-guide/
@@ -4954,6 +4976,28 @@ git clone --depth 1 https://github.com/hiyeshu/trip-map-builder.git Then point y
 Repository: hiyeshu/trip-map-builder The repository ships 1 skills in total.
 
 ========================================================================
+## phased-code-review
+## 断点续审的千文件代码库深挖器
+URL: https://ourword.ai/skill/i/vladimir-cicovic-ai-review-skills/
+Source: https://github.com/vladimir-cicovic/ai_review_skills
+Updated: 2026-07-07
+Tags: work, skill, vladimir-cicovic
+
+Multi-phase review that survives token limits: cross-file bugs, concurrency, leaks, lifecycle. Pick up where you.
+
+### What does this skill do?
+Systematic, resumable, multi-phase deep review of a large or multi-component codebase (thousands of files; Windows services, RPC/IPC, daemons, libraries, external integrations) to dig out technical, logical, security, concurrency, lifecycle, resource-leak and cross-file bugs — engineered so token/session limits never lose progress. Use when the user wants to audit or review an entire codebase or a
+
+### Why is it worth installing?
+Checkpointed pipeline persists per-phase findings; resume mid-way after context exhaustion. Built for monorepos where.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vladimir-cicovic/ai_review_skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vladimir-cicovic/ai_review_skills The repository ships 1 skills in total.
+
+========================================================================
 ## TCM.Skill
 ## 会劝你去挂急诊的中医参谋
 URL: https://ourword.ai/skill/i/yuanzhao321-tcm-skill/
@@ -5027,13 +5071,13 @@ Source: https://github.com/Trkzi-Omar/prune-skills
 Updated: 2026-07-03
 Tags: work, skill, Trkzi-Omar
 
-Skills piled up, half unused? It inventories, flags never-used, disables safely, then deletes only what you.
+Too many skills? It inventories all, flags unused & duplicates, then asks before each delete. Nothing vanishes.
 
 ### What does this skill do?
 Read-first, reversible workflow for pruning an overgrown Claude Code skills library. Inventories every skill, spots duplicates and dead weight, reports what has not been used, disables safely, then deletes only what goes unmissed. Use when the user wants to prune, declutter, audit, consolidate, or shrink their skills, or says "I have too many skills", "clean up my skills", "which of my skills are
 
 ### Why is it worth installing?
-Others delete outright; it disables first. Ranks by last-used date, not filename, forcing honest pruning instead of gut-feel.
+Unlike delete-first tools, it separates disabling from deleting: quarantine first, confirm you don't miss it, then purge.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/Trkzi-Omar/prune-skills.git Then point your agent at the skill directory.
@@ -6314,6 +6358,44 @@ git clone --depth 1 https://github.com/tengj/article-poster-generator.git 然后
 Repository: tengj/article-poster-generator The repository ships 1 skills in total.
 
 ========================================================================
+## wechat-colleague
+## 聊天记录里炼出同事数字替身，代码按需现写
+URL: https://ourword.ai/skill/i/zhx8702-wechat-colleague/
+URL (中文): https://ourword.ai/skill/zh/i/zhx8702-wechat-colleague/
+Source: https://github.com/zhx8702/wechat-colleague
+Updated: 2026-04-14
+Tags: work, skill, zhx8702
+
+Stop scrolling endless chats. It distills each colleague's tone, biases, and blind spots into a talkable AI twin.
+
+### What does this skill do?
+微信同事蒸馏器 — 从微信聊天记录中解密数据、查看消息、蒸馏人物 AI Skill。全流程文档驱动，按需生成代码。
+
+### Why is it worth installing?
+Not a static export—it generates code on demand to decrypt, query, and distill. Docs guide each step, so new chats or people.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zhx8702/wechat-colleague.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zhx8702/wechat-colleague The repository ships 1 skills in total.
+
+--- 中文 ---
+不用翻遍半年群聊，它把每个人的说话习惯、决策偏好、知识盲区蒸馏成可对话的替身。全程文档驱动，代码现写现跑。
+
+### Q：这个 skill 做什么？
+微信同事蒸馏器 — 从微信聊天记录中解密数据、查看消息、蒸馏人物 AI Skill。全流程文档驱动，按需生成代码。
+
+### Q：为什么值得装？
+不是静态导出，而是按需生成代码去解密、查询、蒸馏——每步都有文档兜底，换个人换个群，改参数就能复用。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zhx8702/wechat-colleague.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zhx8702/wechat-colleague The repository ships 1 skills in total.
+
+========================================================================
 ## fishing
 ## 新手买竿，老手看天：从选位讲起
 URL: https://ourword.ai/skill/i/sunnypanzhen-fishing-skill/
@@ -6400,6 +6482,28 @@ git clone --depth 1 https://github.com/zzzzzzza/larp-skill.git Then point your a
 
 ### Where does it come from?
 Repository: zzzzzzza/larp-skill Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## pdf-proof
+## PDF 里哪个数在哪一页，截图圈给你看
+URL: https://ourword.ai/skill/i/metedata-pdf-proof/
+Source: https://github.com/metedata/pdf-proof
+Updated: 2026-04-02
+Tags: work, skill, metedata
+
+Cross-checking numbers in contracts or reports? It jumps to the exact line, highlights it, and hands you a.
+
+### What does this skill do?
+Use this skill when the user needs visual proof that specific values exist in a PDF — not just to read a PDF, but to see exactly where a number, amount, clause, or field appears on the page with a highlighted screenshot. Trigger when someone is cross-referencing a PDF against something else (a form they're filling out, a claim, a conversation, another document) and needs confirmation with evidence
+
+### Why is it worth installing?
+No summaries, no quotes—it nails visual proof right on the page. What you see is what they see, ending the 'go check page X'.
+
+### How do you install it?
+git clone --depth 1 https://github.com/metedata/pdf-proof.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: metedata/pdf-proof Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## beijing-pollen-monitor
