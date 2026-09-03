@@ -60,12 +60,9 @@
    "pick": false,
    "limit_zh": "任何新设计都是先出三版真初稿、然后停下等你选，无人值守的会话跑不完。生产级 Web App、SEO 站、要后端的系统作者写明不接。动画产出默认压上 Created by Huashu-Design 水印。",
    "limit_en": "Every new design starts with three real drafts and then stops for your pick — it won't self-select even in unattended sessions. Production web apps, SEO sites and backend systems are out of scope. Animations carry a Huashu-Design watermark.",
-   "cover": "/skill/assets/covers/alchaincyf-huashu-design.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
-   "cover_w": 1280,
-   "cover_h": 720,
-   "cover_note": "原封面是 img.youtube.com 的视频缩略图——全站唯一一个第三方图片请求，意味着每个访客的浏览器都会去 ping 一次 Google。隐私判断不是审美判断：一个卖信任的站，不该为一张缩略图让所有读者被第三方看一眼。置空。2026-08-19。",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "09-03 对账：文件不存在，和记录不符且拿不回真图，下卡",
    "title_en": "HTML prototyping that shows 3 directions first",
    "hide": false,
    "gate_score": 8
@@ -111,12 +108,12 @@
    "pick": false,
    "limit_zh": "35 条特征和全部例句都来自英文维基的 Signs of AI writing，破折号、弯引号、标题大小写那几条挪到中文基本落空。文件模式会直接把原文件改写成最终稿。",
    "limit_en": "All 35 patterns and every example come from English Wikipedia's \"Signs of AI writing\"; the em-dash, curly-quote and title-case rules do not carry over to Chinese. In file mode it rewrites your file in place, leaving only the final version.",
-   "cover": "/skill/assets/covers/blader-humanizer.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "",
+   "cover_kind": "none",
    "title_en": "Deletes every \"it's worth noting\" you wrote",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover_note": "09-03 对账：文件不存在，和记录不符且拿不回真图，下卡"
   },
   "aldegad-sprite-gen": {
    "title_zh": "组件行流水线出精灵图集，带 QA 报告和运行时清单",
@@ -1993,8 +1990,8 @@
    "cover_kind": "artwork",
    "cover_real": true,
    "title_en": "Auto-compose 3-shot Live Photo cards from your pile",
-   "cover_w": 2160,
-   "cover_h": 2880,
+   "cover_w": 1400,
+   "cover_h": 787,
    "cover_note": "命令：`git clone --depth 1 https://github.com/op7418/guizang-social-card-skill; 按 references/production-workflow.md 在 local-tests/swiss-three-rules/index.html 用 assets/template-swiss-card`。我造的 demo（卡片上的文字是我写的，内容取自这件 skill 自己 references/style-system.md 里的硬规则，不是编的）",
    "hide": false,
    "gate_score": 9
@@ -3176,15 +3173,13 @@
    "why_en": "Nails a real creator pain — not another article-illustrator, but a way to establish your own visual persona first, then reuse it across every piece. One consistent \"you\" running through all your content is a recognition moat. Photos stay local; no sensitive-attribute inference.",
    "limit_zh": "不是一次性贴纸。要每张换人，卸掉。",
    "limit_en": "The character stays locked until you explicitly confirm it — drafts can't be activated, and handing it an article won't skip that gate. With no image tool on the host it returns prompts instead of pictures. Character packs stay local only.",
-   "cover": "/skill/assets/covers/adrianpunk-punk-ip-illustrations.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
-   "cover_w": 1122,
-   "cover_h": 1402,
+   "cover": "",
+   "cover_kind": "none",
    "title_en": "Lock the character look first, then illustrate every.",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_note": "09-03 对账：文件是 1200x600，和记录不符且拿不回真图，下卡"
   },
   "aidevgtm-gtm-cofounder": {
    "title_zh": "给独自做产品的技术创始人当 GTM 合伙人",
@@ -6781,12 +6776,16 @@
    "tagline_en": "Course decks, WeChat headers and Bilibili thumbnails all bill you per generated image. This one pins that step to Doubao's built-in seedream, and gives covers, section breaks, content pages and closers four separate density ceilings.",
    "why_en": "The word ceiling comes with a counterweight: the text warns that a model told \"220 characters max\" will write to 220, so every page must first name the one line the audience should remember.",
    "limit_en": "Don't install this outside Doubao — the author calls the built-in image_gen its entire reason to exist, and the default seedream_5.0_pro is members-only, falling back to 4.5 for everyone else. Slides come out as flat images with no editable text unless you explicitly ask for editable output, or generation fails three times.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/alchaincyf-huashu-slide-doubao.png",
+   "cover_kind": "hero",
    "_无封面原因": "3 张图逐张开过：① assets/personal-brand/像素公众号头图示例.png(2560x1088) 是花叔本人的像素风公众号头图「一人公司，也有品牌部了」，右下角印着 hUasheng.ai；② 像素品牌资产.png(3560x4712) 是九宫格品牌资产册（主标识/色板/字体/名片/T恤/渔夫帽/马克杯/贴纸/数字资产），做得很好看、比例 1.32 很合卡片，**但名片那一格里有二维码，还有 hello@huashu.dev 和 Beijing, China",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_real": false,
+   "cover_w": 3560,
+   "cover_h": 4712,
+   "cover_src": "https://raw.githubusercontent.com/alchaincyf/huashu-slide-doubao/HEAD/assets/personal-brand/像素品牌资产.png"
   },
   "luji12-luji-pet-streetwear-mood-avatar": {
    "title_zh": "宠物收成街头情绪头像",
@@ -8068,12 +8067,10 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "cover": "/skill/assets/covers/gnipbao-codex-whiteboard-video-skill.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "",
+   "cover_kind": "none",
    "gate_score": 10,
-   "cover_w": 1045,
-   "cover_h": 1400
+   "cover_note": "09-03 对账：文件不存在，和记录不符且拿不回真图，下卡"
   },
   "choism4-macos-disk-cleanup": {
    "title_zh": "删缓存前先查这个 App 在不在跑的 Mac 清理工",
@@ -8139,12 +8136,10 @@
    "category": "life",
    "pick": false,
    "hide": false,
-   "cover": "/skill/assets/covers/geekjourneyx-travel-guidebook.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
-   "cover_w": 1920,
-   "cover_h": 1080,
-   "gate_score": 9
+   "cover": "",
+   "cover_kind": "none",
+   "gate_score": 9,
+   "cover_note": "09-03 对账：文件是 64x64，和记录不符且拿不回真图，下卡"
   },
   "rimagination-bili-note": {
    "title_zh": "字幕太稀就不许写成完整笔记的 B 站视频提炼",
@@ -9824,11 +9819,9 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "/skill/assets/covers/eternityspring-shuohao-skills-novel-characters.webp",
-   "cover_kind": "artwork",
-   "cover_real": true,
-   "cover_w": 2720,
-   "cover_h": 2480
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "09-03 对账：文件不存在，和记录不符且拿不回真图，下卡"
   },
   "crawfordxx-xiaoma-durex-copywriter": {
    "title_zh": "按杜蕾斯海报那套双关写文案",
@@ -11011,9 +11004,13 @@
    "cover_note": "仓即产品，仓级图就是这件的图"
   },
   "agiwhitelist-auteur": {
-   "cover": "",
-   "cover_kind": "none",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡"
+   "cover": "/skill/assets/covers/agiwhitelist-auteur.webp",
+   "cover_kind": "hero",
+   "cover_note": "托管的是 GitHub 预览卡（1200×600/630），不上卡",
+   "cover_real": false,
+   "cover_w": 680,
+   "cover_h": 426,
+   "cover_src": "https://raw.githubusercontent.com/agiwhitelist/auteur/HEAD/assets/readme/hero-anim.webp"
   },
   "img2threejs-img2threejs": {
    "cover": "",
@@ -11059,9 +11056,13 @@
    "hide": true
   },
   "pale-knight-redteam-skill-ad-recon": {
-   "cover": "",
-   "cover_kind": "none",
-   "cover_note": "托管的是 GitHub 预览卡（1200×600），不上卡；等 repo_covers 去仓里找真图"
+   "cover": "/skill/assets/covers/pale-knight-redteam-skill-ad-recon.png",
+   "cover_kind": "hero",
+   "cover_note": "托管的是 GitHub 预览卡（1200×600），不上卡；等 repo_covers 去仓里找真图",
+   "cover_real": false,
+   "cover_w": 1024,
+   "cover_h": 1024,
+   "cover_src": "https://raw.githubusercontent.com/pale-knight/redteam-skill/HEAD/assets/pale0knight.png"
   }
  },
  "gate": {
