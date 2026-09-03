@@ -1605,9 +1605,12 @@ def main() -> None:
         # 已经有文案的货全部当成缺的重写一遍（实测差点这么干），
         # 既烧调用又可能盖掉人写的那份。
         _merged = lib.apply_editorial(dict(existing))
+        # 英文四句也算「缺」：守卫【?】一直红着 69/47/47/49 件缺 *_en —— 那是 08-31 恢复的
+        # 心选件带过来的欠账，提示词早就要七个键了，只是这里从没把 _en 算进「缺」。
+        EN = ("title_en", "tagline_en", "why_en", "limit_en")
         miss = [sid for sid, it in _merged.items()
                 if not it.get("hide") and (
-                    any(not (it.get(k) or "").strip() for k in GATE_FIELDS)
+                    any(not (it.get(k) or "").strip() for k in GATE_FIELDS + EN)
                     or "见下" in (it.get("tagline_zh") or ""))]
         print(f"[scout] enrich-missing: {len(miss)} 件在架占位货待补")
         enrich_items(miss, existing)
