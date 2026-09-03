@@ -976,7 +976,9 @@ TASTE_PROMPT = """你在替一家中文 Agent Skill 精选店判货。给这一�
 # 而店主要的是「为什么过、为什么不过都讲清楚」。写进 editorial/gate_log.json。
 GATE_LOG: list[dict] = []
 
-TASTE_MIN = int(os.environ.get("TASTE_MIN", "60"))
+# 09-03：默认从 60 提到 80。60 是 08-31 给日常进货定的，但今天两次出现「管线那步 80 拒了、
+# 补扫那步没带变量按 60 又放行」—— 同一个仓库里只该有一个门槛。店主指名 / 心选 / 编辑亲挑三条道不过判官，不受影响。
+TASTE_MIN = int(os.environ.get("TASTE_MIN", "80"))
 
 
 TASTE_VOTES = int(os.environ.get("TASTE_VOTES") or 3)
@@ -1638,9 +1640,15 @@ def suggest_repos(repos: list[str], existing: dict, sources: dict) -> None:
     直接 clone + 收录，绕过星门槛；仍尊重 fork/命名黑名单，避免明显垃圾。"""
     for repo in repos:
         repo = repo.strip().removeprefix("https://github.com/").rstrip("/")
-        if SKIP_REPO_PAT.search(repo):
+        _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
+        _pick = _eds.get(repo.lower())
+        if SKIP_REPO_PAT.search(repo) and not _pick:
             print(f"[scout] suggest 拒绝（命名黑名单）: {repo}")
             continue
+        if SKIP_REPO_PAT.search(repo) and _pick:
+            # 09-03：schengen-visa-guide / lanshu-…-kit / awesome-chinese-ai-tools 三件编辑读过原文挑的，被名字里的
+            # guide/awesome 拦在门外。黑名单防的是没人读过的索引仓；读过原文挑的，名字不作数。
+            print(f"[scout] suggest 命名黑名单放行（编辑读过原文挑的）: {repo}")
         meta = {"stars": 0, "description": "", "pushed_at": ""}
         try:
             info = lib.gh_json(f"https://api.github.com/repos/{repo}")
