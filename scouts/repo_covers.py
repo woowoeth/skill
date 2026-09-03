@@ -23,7 +23,7 @@ import argparse, json, os, re, subprocess, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scouts"))
-BAD = re.compile(r"(logo|icon|favicon|avatar|badge|shield|qr|wechat|weixin|donate|sponsor|alipay|pay|banner-?small)", re.I)
+BAD = re.compile(r"(logo|icon|favicon|avatar|头像|personal|selfie|portrait|badge|shield|qr|wechat|weixin|donate|sponsor|alipay|pay|banner-?small)", re.I)
 GOOD = re.compile(r"(example|demo|screenshot|preview|output|sample|showcase|result|cover|hero|poster)", re.I)
 IMG = re.compile(r"!\[[^\]]*\]\(([^)\s]+)|<img[^>]+src=[\"']([^\"']+)", re.I)
 EXTS = ("png", "jpg", "jpeg", "webp")
@@ -82,8 +82,11 @@ def tree_images(repo: str, path: str) -> list[str]:
     files = [p for p in r.stdout.split("\n") if p.rsplit(".", 1)[-1].lower() in EXTS]
     pre = path.rstrip("/") + "/" if path else ""
     files = [p for p in files if not BAD.search(os.path.basename(p)) and "node_modules" not in p and "/." not in "/" + p]
+    # 只看 SKILL.md 目录之内。09-03 第一轮翻全仓兜底，捞回来 cli/cli 的 docs/primer 组件截图当
+    # dependabot-triager 的封面 —— 图是真的，但不是这件 skill 的。仓根的 skill 才允许看全仓。
     inside = [p for p in files if pre and p.startswith(pre)]
-    pool = inside or files
+    pool = inside if pre else files
+    pool = [p for p in pool if not re.search(r"(^|/)(docs?|node_modules|\.github|test|tests|__pycache__)/", p)]
     pool.sort(key=lambda p: (0 if GOOD.search(p) else 1, len(p)))
     return [f"https://raw.githubusercontent.com/{repo}/HEAD/{p}" for p in pool[:6]]
 
