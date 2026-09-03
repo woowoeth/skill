@@ -1116,6 +1116,15 @@ def _taste_pass(it: dict) -> str:
     _hearts = set((lib.read_json(os.path.join(lib.ROOT, "editorial", "hearts.json"), {}) or {}).get("ids", []))
     if (it.get("repo") or "").lower() in _refs or sid in _hearts:
         return _log(True, "店主指名 / 心选 —— 不过判官，直接放行")
+    # 编辑读过原文挑的（editorial/editor_picks.json）。09-03 店主：「我需要判品味你来做，你做的不好我会告诉你」。
+    # 判官（haiku 打分）分不开「好」和「扎实但通用」，800 个里只放 3 个；店主指名的 OJO、goldie 都只有 72 分。
+    # 所以编辑亲自读原文挑的走这条道，不过判官 —— 但理由必须写够 30 字，写不出 30 字理由的不算挑过。
+    _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
+    _ed = _eds.get((it.get("repo") or "").lower()) or _eds.get(sid)
+    if _ed and len((_ed.get("reason") or "").strip()) >= 30:
+        return _log(True, f"编辑读过原文挑的 —— {_ed['reason'][:80]}")
+    if _ed:
+        _log(False, "编辑挑了但理由不到 30 字 → 不算挑过，照常过判官")
     # 品味判据。**读不到正文或判官不通 → 不当作过**（沿用「没扫到不算干净」那条）。
     sc, why = taste_score(it)
     if sc < 0:

@@ -1181,6 +1181,12 @@ def main() -> None:
     if _mis:
         err(f"{len(_mis)} 件封面文件和记录的宽高对不上（或文件不存在）—— 容器按记录撑开、装的是别的图，卡下面就是一条灰。"
             f"跑 scouts/repair_covers.py")
+    # 【23】编辑挑的（editor_picks）理由要 ≥30 字，否则门闸不认，等于白挑
+    _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
+    _short = [k for k, v in _eds.items() if len((v.get("reason") or "").strip()) < 30]
+    print(f"\n【23】编辑挑的 {len(_eds)} 件 · 理由不足 30 字 {len(_short)} 件")
+    if _short:
+        err(f"{len(_short)} 件编辑挑的理由不到 30 字（门闸不认）：{', '.join(_short[:5])}")
     badnames = check_upstream_names(items)
     badtitles = check_title_shape(items)
     if badtitles:
