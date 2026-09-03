@@ -1293,16 +1293,30 @@ function shelfItems(){
 /* 下拉到底自动加载（店主：「下拉分页加载，不要每次加载全部」）。
    原来是点「再看 N 件」按钮；现在按钮进视口就自动触发，按钮本身保留当兜底（观察器不可用时还能点）。
    数据仍是一次取整份 feed（190 件的 JSON 很小），重的是 DOM 和图，所以分批渲染即可。 */
-var _moreIO = null;
+var _moreIO = null, _moreBusy = false;
+function _nearMore(){
+  var btn = document.getElementById("more");
+  if(!btn || _moreBusy) return;
+  var top = btn.getBoundingClientRect().top;
+  if(top < innerHeight + 600){ _moreBusy = true; btn.click(); setTimeout(function(){ _moreBusy = false; }, 200); }
+}
 function armAutoMore(){
   var btn = document.getElementById("more");
-  if(!btn || !("IntersectionObserver" in window)) return;
-  if(_moreIO) _moreIO.disconnect();
-  _moreIO = new IntersectionObserver(function(es){
-    if(es.some(function(e){ return e.isIntersecting })){ _moreIO.disconnect(); btn.click(); }
-  }, {rootMargin:"600px 0px"});
-  _moreIO.observe(btn);
+  if(!btn) return;
+  // 两条路都挂：IntersectionObserver 为主；scroll 事件兜底。
+  // 2026-09-03 在嵌入式浏览器面板里实测：按钮明明在视口内（top 658 < 900），
+  // 新建的 IntersectionObserver 800ms 内不触发 —— 后台/隐藏标签页里 IO 回调会被节流。
+  // 真实浏览器里 IO 没问题，但不能只靠它；scroll 兜底一行的成本，换一个不会静默失效的功能。
+  if("IntersectionObserver" in window){
+    if(_moreIO) _moreIO.disconnect();
+    _moreIO = new IntersectionObserver(function(es){
+      if(es.some(function(e){ return e.isIntersecting })){ _moreIO.disconnect(); _nearMore(); }
+    }, {rootMargin:"600px 0px"});
+    _moreIO.observe(btn);
+  }
+  _nearMore();                                  // 首屏就够到按钮的情况（短列表/大屏）
 }
+addEventListener("scroll", _nearMore, {passive:true});
 
 function renderShelf(keepScroll){
   if(!D) return;
@@ -1589,7 +1603,7 @@ el("q").addEventListener("input", function(){
   clearTimeout(qt);
   qt = setTimeout(function(){
     state.q = v; state.limit = 60;
-    if(D){ el("main").innerHTML = renderFlow(shelfItems()); }
+    if(D){ el("main").innerHTML = renderFlow(shelfItems()); armAutoMore(); }
   }, 120);
 });
 el("clr").addEventListener("click", function(){
