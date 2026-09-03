@@ -957,13 +957,18 @@ function syncURL(){
   if(next !== location.pathname+location.search+location.hash) history.replaceState(null, "", next);
 }
 function posKey(){ return "pinwei:pos:"+location.search; }
-function savePos(){ try{ sessionStorage.setItem(posKey(), JSON.stringify({y:window.scrollY, limit:state.limit})); }catch(_){} }
+function savePos(){
+  var y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  try{ sessionStorage.setItem(posKey(), JSON.stringify({y:y, limit:state.limit})); }catch(_){}
+}
 function restorePos(){
   var raw=null; try{ raw = sessionStorage.getItem(posKey()); }catch(_){}
   if(!raw) return null;
   try{ return JSON.parse(raw); }catch(_){ return null; }
 }
 window.addEventListener("pagehide", savePos);
+// iOS Safari 上 pagehide 有时不触发，页面转后台时也存一次
+document.addEventListener("visibilitychange", function(){ if(document.visibilityState==="hidden") savePos(); });
 
 function el(id){return document.getElementById(id)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
