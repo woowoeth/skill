@@ -1160,7 +1160,7 @@ def main() -> None:
     # 【22】封面文件和记录对不上 —— 09-03 店主：「卡片图下面多了一条灰色」。CI 把预览卡同名覆盖了真图，
     # 记录还是真图的宽高，容器按真图撑开、装的是 1200×600 的卡。这条不是待办，是事故：亮红。
     _mis = []
-    for _it in items:
+    for _it in (items.values() if isinstance(items, dict) else items):
         _u = (_it.get("cover") or "")
         if not _u.startswith("/skill/"):
             continue

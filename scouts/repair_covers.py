@@ -3,7 +3,7 @@
 """封面文件和记录对账并修复：文件不存在 / 尺寸和记录不符（多半是被 CI 用 OG 预览卡同名覆盖了）。
 - 有 cover_src 的（repo_covers 取的真图）：从 cover_src 重新下载，记录改成实际尺寸；下不到就下卡。
 - 没 cover_src 的：文件是 1200×600/630（预览卡）或小于 300 宽（图标）→ 下卡；否则记录改成实际尺寸。"""
-import json, os, sys
+import json, os, sys, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import skill_scout as S, repo_covers as R
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,6 +15,12 @@ for x in f:
     if not u.startswith("/skill/"):
         continue
     p = os.path.join(ROOT, u.replace("/skill/", "", 1))
+    if not os.path.exists(p):
+        # 同 id 换过后缀（PNG→JPEG 压缩）而记录没跟上：先找兄弟文件
+        alts = [q for q in glob.glob(os.path.join(ROOT, "assets", "covers", x["id"] + ".*")) if os.path.getsize(q) > 20000]
+        if alts:
+            p = alts[0]; e = cur["items"].setdefault(x["id"], {}); e["cover"] = "/skill/" + os.path.relpath(p, ROOT)
+            print(f"  ~ 换后缀 {x['id'][:44]:44s} → {os.path.basename(p)}")
     real = S.cover_dims(p) if os.path.exists(p) else None
     if real and (real[0], real[1]) == (x.get("cover_w"), x.get("cover_h")):
         continue
