@@ -2,6 +2,52 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-03T05:15:48Z",
+   "判了": 5,
+   "过": 0,
+   "明细": [
+    {
+     "id": "karanb192-itr-wala-itr-wala",
+     "repo": "karanb192/itr-wala",
+     "title": "帮你算清印度个税并生成 ITR 申报表",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 边界规则清晰，工程化扎实；但核心计算仍依赖Python，换工具可达类似效果。",
+     "分": 72
+    },
+    {
+     "id": "zenstory-ai-video-recap-skills",
+     "repo": "zenstory-ai/video-recap-skills",
+     "title": "把任意视频剪成带解说的中文短视频",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "zenstory-ai-video-recap-skills-video-script",
+     "repo": "zenstory-ai/video-recap-skills",
+     "title": "把视频分析结果变成带时间戳的导演级解说稿",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程扎实细致，导演判定与校验闭环清晰，但换工具或人工同样可做，非独门方法论。",
+     "分": 72
+    },
+    {
+     "id": "zenstory-ai-video-recap-skills-video-understanding",
+     "repo": "zenstory-ai/video-recap-skills",
+     "title": "把视频拆成六层结构，让 AI 真正看懂镜头",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 管线完整边界清晰，但依赖专有工具且流程偏基建，非独特方法论。",
+     "分": 75
+    },
+    {
+     "id": "zenstory-ai-video-recap-skills-video-assemble",
+     "repo": "zenstory-ai/video-recap-skills",
+     "title": "把旁白、字幕、响度一次合成最终成片",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 边界清楚、契约完整，是扎实的合成方案，但可被ffmpeg等工具替代实现",
+     "分": 72
+    }
+   ]
+  },
+  {
    "时间": "2026-09-03T03:04:40Z",
    "判了": 10,
    "过": 7,

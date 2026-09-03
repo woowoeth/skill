@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 188 skills.
+# Full corpus, plain text. 192 skills.
 
 ========================================================================
 ## vintage-travel-ticket
@@ -200,6 +200,28 @@ git clone --depth 1 https://github.com/Architect-kele/arch-kele-structure-photo.
 
 ### Where does it come from?
 Repository: Architect-kele/arch-kele-structure-photo The repository ships 1 skills in total.
+
+========================================================================
+## itr-wala
+## 帮你算清印度个税并生成 ITR 申报表
+URL: https://ourword.ai/skill/i/karanb192-itr-wala-itr-wala/
+Source: https://github.com/karanb192/itr-wala/tree/HEAD/skills/itr-wala
+Updated: 2026-09-02
+Tags: work, skill, karanb192
+
+Old vs new regime, capital gains, crypto—it reads Form 16, AIS, TIS & 26AS, reconciles Zerodha/Groww/Upstox.
+
+### What does this skill do?
+File Indian income tax returns (ITR) for FY 2025-26 / AY 2026-27. Use when the user wants to file their ITR, compute or verify Indian income tax, compare the old vs new tax regime, read a Form 16, AIS, TIS or Form 26AS, reconcile TDS, handle capital gains from Zerodha/Groww/Upstox statements, check their tax refund, or asks about ITR-1/ITR-2/ITR-3/ITR-4, sections 80C/80D/87A/111A/112A, crypto tax,
+
+### Why is it worth installing?
+Not a template—it maps your income structure to ITR-1/2/3/4 and sections 80C/80D/87A/111A/112A, cross-checking TDS like a tax.
+
+### How do you install it?
+git clone --depth 1 https://github.com/karanb192/itr-wala.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: karanb192/itr-wala The repository ships 1 skills in total.
 
 ========================================================================
 ## a2ui-renderer
@@ -1082,6 +1104,44 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
+## video-script
+## 把视频分析结果变成带时间戳的导演级解说稿
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-script/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-script/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-script
+Updated: 2026-08-28
+Tags: images, skill, zenstory-ai
+
+Got VLM analysis but no edit plan? It picks the story, splits visuals/audio/narration, and delivers a.
+
+### What does this skill do?
+对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
+
+### Why is it worth installing?
+It consumes your existing analysis index, forces a director's plan before writing, and validates timestamps so narration never.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+已有 VLM 分析但不知怎么剪？它替你定故事线、分镜画面与旁白分工，最后产出逐秒校验过的中文解说，写完就能用。
+
+### Q：这个 skill 做什么？
+对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
+
+### Q：为什么值得装？
+不是从零写稿，而是消费 work_dir 里的理解索引，强制先定导演策略再落笔，解说与画面分工有据可查。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## oil-motion
 ## 一套切开的网页动效
 URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
@@ -1099,6 +1159,82 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 
 ### Where does it come from?
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
+
+========================================================================
+## video-understanding
+## 把视频拆成六层结构，让 AI 真正看懂镜头
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-understanding/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding
+Updated: 2026-08-28
+Tags: images, skill, zenstory-ai
+
+Others give you a subtitle summary. This one flags even the silences—scenes, speech, visuals, and pauses fused.
+
+### What does this skill do?
+把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
+
+### Why is it worth installing?
+No single model brute-forces the whole video. Scene detection, ASR, and VLM each do their own pass, then fuse into a brief—each.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+别人只给字幕摘要，它连静音都替你标出来。场景、台词、画面、留白各自成层，再熔成一条可查的创作时间线。
+
+### Q：这个 skill 做什么？
+把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
+
+### Q：为什么值得装？
+不是单模型硬读全片，而是场景检测、ASR、VLM 各干各的活，再融合成 brief。每层独立可查。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## video-assemble
+## 把旁白、字幕、响度一次合成最终成片
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-assemble/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble
+Updated: 2026-08-28
+Tags: images, skill, zenstory-ai
+
+Tired of manually ducking music, burning subs, and normalizing audio? This skill auto-ducks by narration windows.
+
+### What does this skill do?
+合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
+
+### Why is it worth installing?
+It ties ducking decisions to the narration timeline, not a fixed volume—curves breathe with speech pace and pauses, mimicking.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。
+
+### Q：这个 skill 做什么？
+合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
+
+### Q：为什么值得装？
+它把混音决策绑定在旁白时间轴上，而非固定音量——压声曲线随语速和停顿自然起伏，比统一衰减更接近人工混音。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## agent-skills
@@ -2263,6 +2399,28 @@ git clone --depth 1 https://github.com/liigoQi/photo-to-travel-sketch.git Then p
 Repository: liigoQi/photo-to-travel-sketch The repository ships 1 skills in total.
 
 ========================================================================
+## parenting-advisor
+## 专防「假托崔玉涛」文章的 0–13 岁育儿参谋
+URL: https://ourword.ai/skill/i/yeyulangzi-parenting-advisor/
+Source: https://github.com/yeyulangzi/parenting-advisor
+Updated: 2026-08-11
+Tags: everyday, skill, yeyulangzi
+
+Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
+
+### What does this skill do?
+Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
+
+### Why is it worth installing?
+It keeps a table of the excuses an AI is likely to make. "The symptoms are textbook, I can basically confirm it" is listed there as a signal to stop, not to proceed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
+
+========================================================================
 ## muyang-dark-fashion
 ## 牧羊暗黑时装，一款一装
 URL: https://ourword.ai/skill/i/yokel1121-muyang-illustration-skills-muyang-dark-fashion/
@@ -2296,28 +2454,6 @@ git clone --depth 1 https://github.com/yokel1121/muyang-illustration-skills.git 
 
 ### Q：它从哪来？
 Repository: yokel1121/muyang-illustration-skills The repository ships 1 skills in total.
-
-========================================================================
-## parenting-advisor
-## 专防「假托崔玉涛」文章的 0–13 岁育儿参谋
-URL: https://ourword.ai/skill/i/yeyulangzi-parenting-advisor/
-Source: https://github.com/yeyulangzi/parenting-advisor
-Updated: 2026-08-11
-Tags: everyday, skill, yeyulangzi
-
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### What does this skill do?
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### Why is it worth installing?
-It keeps a table of the excuses an AI is likely to make. "The symptoms are textbook, I can basically confirm it" is listed there as a signal to stop, not to proceed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
 
 ========================================================================
 ## human-writing

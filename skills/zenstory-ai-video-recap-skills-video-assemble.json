@@ -1,0 +1,33 @@
+{
+ "id": "zenstory-ai-video-recap-skills-video-assemble",
+ "kind": "skill",
+ "name": "video-assemble",
+ "title_zh": "把旁白、字幕、响度一次合成最终成片",
+ "tagline_zh": "剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。",
+ "tagline_en": "Tired of manually ducking music, burning subs, and normalizing audio? This skill auto-ducks by narration windows.",
+ "desc_en": "合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。",
+ "why_zh": "它把混音决策绑定在旁白时间轴上，而非固定音量——压声曲线随语速和停顿自然起伏，比统一衰减更接近人工混音。",
+ "why_en": "It ties ducking decisions to the narration timeline, not a fixed volume—curves breathe with speech pace and pauses, mimicking.",
+ "limit_zh": "只做最终合成，不修源视频画质或旁白音质；需要你已有 tts_meta.json 和旁白位置，否则它无法判断哪里该压声。",
+ "limit_en": "Final assembly only—no video/audio quality fixes. Requires existing tts_meta.json & narration timings; without them it can't duck. Subs limited to.",
+ "repo": "zenstory-ai/video-recap-skills",
+ "owner": "zenstory-ai",
+ "path": "skills/video-assemble",
+ "url": "https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble",
+ "homepage": "",
+ "stars": 490,
+ "pushed_at": "2026-08-28T02:52:46Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.92,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git",
+  "copy": "cp -r video-recap-skills/skills/video-assemble ~/.claude/skills/video-assemble",
+  "dir": "~/.claude/skills/video-assemble"
+ },
+ "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png"
+}
