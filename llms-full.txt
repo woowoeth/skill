@@ -477,7 +477,7 @@ Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in tota
 把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
 
 ### Q：为什么值得装？
-「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的，不是坐在电脑前设计出来的。
+「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
@@ -1249,7 +1249,7 @@ Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own 
 对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
 
 ### Q：为什么值得装？
-不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环，解说与画面错位会当场被。
+不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环。
 
 ### Q：怎么装？
 git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
@@ -4899,7 +4899,7 @@ git clone --depth 1 https://github.com/helloianneo/ian-xiaohei-illustrations.git
 Repository: helloianneo/ian-xiaohei-illustrations The repository ships 1 skills in total.
 
 --- 中文 ---
-写完文章配图最头疼：截图太丑、AI 插画太飘。它专画流程、结构、隐喻——16:9 白底手绘，少量红橙蓝批注，一篇文章配下来像一个人画的。
+写完文章配图最头疼：截图太丑、AI 插画太飘。它专画流程、结构、隐喻——16:9 白底手绘，少量红橙蓝批注。
 
 ### Q：这个 skill 做什么？
 生成 Ian 风格的中文正文配图。用于用户要求为中文文章、帖子、博客、Notion 文档、工作流文档、方法论、流程、结构、状态、隐喻或观点生成“怪诞”“小黑”“手绘”“正文配图”“文章插图”“配图建议”“shot list”“去标题/改图”等任务；默认使用小黑 IP、纯白手绘、少量红橙蓝批注、简洁清爽但天马行空的视觉风格。

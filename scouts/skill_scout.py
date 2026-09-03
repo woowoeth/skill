@@ -717,10 +717,12 @@ def _clamp_cjk(text: str, limit: int) -> str:
     if len(text) <= limit:
         return text
     cut = text[:limit - 1]
-    for i in range(len(cut) - 1, max(0, len(cut) - 12), -1):
+    # 09-03：原来只回看 12 个字，找不到标点就硬切再补句号，线上出了「解说与画面错位会当场被。」这种半句话（19 条）。
+    # 现在回看到一半处；实在没有标点就加省略号 —— 半句就是半句，不伪造成整句。
+    for i in range(len(cut) - 1, max(0, len(cut) // 2), -1):
         if cut[i] in "，。；、！？":
             return cut[:i + 1] if cut[i] in "。！？" else cut[:i] + "。"
-    return cut.rstrip("，、；") + "。"
+    return cut.rstrip("，、；") + "…"
 
 
 def _clamp_en(text: str, limit: int) -> str:
