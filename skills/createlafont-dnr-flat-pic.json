@@ -1,0 +1,33 @@
+{
+ "id": "createlafont-dnr-flat-pic",
+ "kind": "skill",
+ "name": "dnr-flat-pic",
+ "title_zh": "把照片压缩成高饱和扁平插画，保留构图不描边",
+ "tagline_zh": "参考图太密？要图标化但怕丢构图？它做语义压缩，不是描边复刻。出图自带高饱和无渐变，一眼扁平。",
+ "tagline_en": "Dense photo in, sparse flat vector out—semantic compression, not tracing. Keeps composition, drops detail, boosts.",
+ "desc_en": "Transform reference photographs and visually dense images into sparse, recognizable, high-saturation flat-vector-style illustrations through semantic compression rather than literal tracing. Use when the user asks for photo-to-flat illustration, photo-to-vector-style redraw, 照片转扁平插画, 无渐变高饱和插画, iconification, visual simplification, composition-preserving abstraction, a consistent minimal illustrati",
+ "why_zh": "它不逐像素描轮廓，而是先理解画面里的“物体关系”，再按扁平语法重画。所以构图稳，细节却敢删。",
+ "why_en": "It reads scene structure first, then redraws in flat-vector grammar—so composition survives while clutter gets dropped.",
+ "limit_zh": "只吃单张静态参考图，不吃多图合成或视频帧。产物是扁平插画风格，不是可编辑 SVG 路径。复杂光影会压成纯色块。",
+ "limit_en": "Single static image only; no video or multi-shot. Output is flat-style raster, not editable SVG. Gradients and fine lighting are flattened away.",
+ "repo": "CreateLafont/dnr-flat-pic",
+ "owner": "CreateLafont",
+ "path": "",
+ "url": "https://github.com/CreateLafont/dnr-flat-pic",
+ "homepage": "",
+ "stars": 13,
+ "pushed_at": "2026-08-28T10:42:56Z",
+ "skill_count": 1,
+ "category": "creative",
+ "fun_score": 6.5,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git",
+  "copy": "mv dnr-flat-pic ~/.claude/skills/dnr-flat-pic",
+  "dir": "~/.claude/skills/dnr-flat-pic"
+ },
+ "cover": "/skill/assets/covers/createlafont-dnr-flat-pic.png"
+}

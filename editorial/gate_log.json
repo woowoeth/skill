@@ -1,0 +1,67 @@
+{
+ "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
+ "rounds": [
+  {
+   "时间": "2026-09-03T02:52:24Z",
+   "判了": 7,
+   "过": 6,
+   "明细": [
+    {
+     "id": "anthropics-claude-plugins-community",
+     "repo": "anthropics/claude-plugins-community",
+     "title": "",
+     "过": false,
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "architect-kele-arch-kele-structure-photo",
+     "repo": "Architect-kele/arch-kele-structure-photo",
+     "title": "把一张照片拆成带分析线的水彩结构分解图",
+     "过": true,
+     "为什么": "品味 72 分 —— 流程极详实，边界清晰，但本质是用提示词与脚本复现，同类工具或人工亦可达成。",
+     "分": 72
+    },
+    {
+     "id": "createlafont-dnr-flat-pic",
+     "repo": "CreateLafont/dnr-flat-pic",
+     "title": "把照片压缩成高饱和扁平插画，保留构图不描边",
+     "过": true,
+     "为什么": "品味 72 分 —— 流程规范边界清晰，但核心做法可被其他工具替代。",
+     "分": 72
+    },
+    {
+     "id": "lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster",
+     "repo": "Lixorn/deconstructed-duotone-poster",
+     "title": "把任意图片拆解成留白双色海报版式",
+     "过": true,
+     "为什么": "品味 72 分 —— 结构精专边界清晰，但核心是风格化图生流程，类似工具可替代，非不可复制。",
+     "分": 72
+    },
+    {
+     "id": "hongfamonvai-vintage-travel-ticket",
+     "repo": "hongfamonvAI/vintage-travel-ticket",
+     "title": "把一张照片变成一张有年代感的中国老门票",
+     "过": true,
+     "为什么": "品味 82 分 —— 设计语法源自66张历史票根，边界明确，拒绝照片滤镜，产出独有仿古票证。",
+     "分": 82
+    },
+    {
+     "id": "starryear-starryear-threefold-memory",
+     "repo": "Starryear/Starryear-Threefold-Memory",
+     "title": "把一张照片变成上中下三段式记忆圣物",
+     "过": true,
+     "为什么": "品味 72 分 —— 方法独特、边界清晰，但依赖手工流程，实用门槛较高。",
+     "分": 72
+    },
+    {
+     "id": "bigfish-zzz-bigfish-ink-wash-photo",
+     "repo": "BigFish-zZz/bigfish-ink-wash-photo",
+     "title": "把照片重绘成留白写意水墨，保留主体与构图",
+     "过": true,
+     "为什么": "品味 72 分 —— 技法约束极细密，边界清楚，但核心是风格迁移，换工具亦可行。",
+     "分": 72
+    }
+   ]
+  }
+ ]
+}
