@@ -10854,6 +10854,69 @@
   "karanb192-itr-wala-itr-wala": {
    "title_zh": "只认印度税表 ITR-1 到 4，旧新税制哪个省一算",
    "title_en": "Indian ITR filer that picks the right form and regime for."
+  },
+  "op7418-guizang-yingzao-skill-yingzao": {
+   "title_zh": "只认真实中国建筑与在地文化，出片即杂志编辑版式",
+   "why_zh": "不是滤镜堆叠，而是按建筑类型与地域文化做版式决策：构图、留白、字距都服务于场所精神。",
+   "limit_zh": "只处理真实存在的中国建筑/街景/文化场所照片；虚构场景、纯商业广告、普通磨皮修图它会乱来。输入需是照片而非草图。",
+   "tagline_zh": "拍过老街、老店、老宅却总出不来高级感？它把照片重排成杂志跨页，还能拼多图场景，附原图对比。别处没有的：连门头招牌的。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "cli-cli-code-review": {
+   "title_zh": "只认代码库自家规矩的 GitHub PR 审查员",
+   "why_zh": "它不套通用规则，而是先解析仓库里的约定文件，再对照 PR 逐项检查，像老同事一样懂你们项目的脾气。",
+   "limit_zh": "只针对 GitHub CLI 的 PR 做静态审查，不跑测试、不查运行时问题；需要仓库有明确的约定文档。",
+   "tagline_zh": "PR 一上来就按你仓库的约定逐条核对，不靠通用模板。它先读 CONTRIBUTING 和现有代码风格，再挑刺。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "cli-cli-dependabot-triager": {
+   "title_zh": "只评不批的Dependabot PR分流员，三档结论",
+   "why_zh": "结论扎根于上游源码变更而非依赖元数据，能识别版本跳跃中的真实风险；状态机确保同一PR状态只评论一次。",
+   "limit_zh": "只处理Dependabot开的PR，且需能访问上游仓库源码；不合并、不批准、不打标签，仅输出建议。",
+   "tagline_zh": "每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "rohitg00-agentmemory-agentmemory-config": {
+   "title_zh": "不翻源码就改配置，环境变量端口开关全在这",
+   "why_zh": "把散落在代码里的配置项、环境变量、端口和 feature flag 收拢成一张清单。",
+   "limit_zh": "只覆盖 agentmemory 这一个项目的配置面，不解释业务逻辑；改完配置不负责验证生效，也不管重启流程。",
+   "tagline_zh": "改端口、设 API key、开功能开关，翻遍 README 找不到的默认关闭原因，它直接告诉你。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "jimliu-doubao-multimodal-skill-doubao-multimodal": {
+   "title_zh": "音视频丢给它，回来的是字幕、时间轴和谁在说话",
+   "why_zh": "它把火山方舟的多模态能力包成了顺手工具：自动传 TOS、自动下载结果，ASR 还分纯文本/逐字时间戳/。",
+   "limit_zh": "只认火山方舟的豆包模型，需要你已有 Ark API Key 且开通 TOS 存储；本地文件必须能上传。",
+   "tagline_zh": "开会录音、采访视频、技术讲座——不用本地装 Whisper，豆包多模态直接出带时间戳的字幕、说话人分离和关键帧。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "oil-oil-kimi": {
+   "title_zh": "设计稿交给它，前端代码拿回来就能跑",
+   "why_zh": "把 Kimi 的设计判断力直接接进你的工作流，不用开 IDE、不用陪聊。它懂界面好坏，能审仓库。",
+   "limit_zh": "只认 Kimi Code CLI 且需预先登录；不能生成或编辑图片素材，只能分析已有的本地图和视频。",
+   "tagline_zh": "本地 Kimi Code CLI 的非交互封装，专治视觉方向、设计系统、界面评审和前端打磨。能看本地图和视频。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "dacnay816y62-hub-window-scenery-skill": {
+   "title_zh": "左下角永远钉着地名徽章的车窗风景照",
+   "why_zh": "不是简单贴图，而是把车窗框、玻璃反光和窗外景深一起算出来，徽章位置固定，批量出图时风格统一得像同一台相。",
+   "limit_zh": "只认交通工具窗景（车/船/飞机/缆车），不生成窗外特写或人像；地名徽章仅限左下角，不能改位置；要真实地名需自备列表。",
+   "tagline_zh": "坐在车里想发朋友圈，却总拍出反光玻璃和脏边框？它直接生成从车窗望出去的写实风景，每张左下角自动盖好地名徽章。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
   }
  },
  "gate": {

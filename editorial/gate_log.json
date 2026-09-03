@@ -2,6 +2,131 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-03T06:26:36Z",
+   "判了": 15,
+   "过": 7,
+   "明细": [
+    {
+     "id": "op7418-guizang-yingzao-skill-yingzao",
+     "repo": "op7418/guizang-yingzao-skill",
+     "title": "只认真实中国建筑与在地文化，出片即杂志编辑版式",
+     "过": true,
+     "为什么": "品味 72 分 —— 工作流完整，边界清晰，但核心是图像生成技巧，非独特判断。（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "bitjaru-styleseed-styleseed",
+     "repo": "bitjaru/styleseed",
+     "title": "只认当前画布边界，把 StyleSeed 请求派给唯",
+     "过": false,
+     "为什么": "品味 47 分 < 60 —— 路由分发清晰有边界，但本质是指南目录，具体做法在别处。（3 判：[45, 47, 65]）",
+     "分": 47
+    },
+    {
+     "id": "cli-cli",
+     "repo": "cli/cli",
+     "title": "不打开浏览器就能改 Issue 合并 PR 的 Gi",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "cli-cli-agentic-workflows",
+     "repo": "cli/cli",
+     "title": "只认 gh 命令行的四类 workflow 请求，自",
+     "过": false,
+     "为什么": "品味 40 分 < 60 —— 功能是路由分发，但产出物泛泛，泛用工具也可替代。（3 判：[35, 40, 45]）",
+     "分": 40
+    },
+    {
+     "id": "cli-cli-code-review",
+     "repo": "cli/cli",
+     "title": "只认代码库自家规矩的 GitHub PR 审查员",
+     "过": true,
+     "为什么": "品味 72 分 —— 审查规范详细且可执行，但本质仍依赖模型遵循，深度略逊于人工专家，非独有做法。（3 判：[72, 72, 78]）",
+     "分": 72
+    },
+    {
+     "id": "cli-cli-dependabot-triager",
+     "repo": "cli/cli",
+     "title": "只评不批的Dependabot PR分流员，三档结论",
+     "过": true,
+     "为什么": "品味 72 分 —— 流程严谨，边界清晰，但本质是规则化操作，易被替代。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "rohitg00-agentmemory",
+     "repo": "rohitg00/agentmemory",
+     "title": "跑分第一的持久记忆，让编码 Agent 不再失忆",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "rohitg00-agentmemory-agentmemory-agents",
+     "repo": "rohitg00/agentmemory",
+     "title": "只认官方适配器，装错路径当场报错的内存接线员",
+     "过": false,
+     "为什么": "品味 55 分 < 60 —— 实用但文档化，连接流程清晰，却非独特不可替代（3 判：[45, 55, 55]）",
+     "分": 55
+    },
+    {
+     "id": "rohitg00-agentmemory-agentmemory-architecture",
+     "repo": "rohitg00/agentmemory",
+     "title": "拆开记忆引擎看存储与检索全链路，附端口与查看器",
+     "过": false,
+     "为什么": "品味 55 分 < 60 —— 描述清晰但属架构说明，非实操做法，边界感一般。（3 判：[45, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "rohitg00-agentmemory-agentmemory-config",
+     "repo": "rohitg00/agentmemory",
+     "title": "不翻源码就改配置，环境变量端口开关全在这",
+     "过": true,
+     "为什么": "品味 62 分 —— 配置说明清晰实用，但属工具文档，非独特方法论。（3 判：[55, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "geekjourneyx-meme-generator-skill-generating-memes",
+     "repo": "geekjourneyx/meme-generator-skill",
+     "title": "298 个模板随叫随到，连 petpet 都能现做",
+     "过": false,
+     "为什么": "品味 55 分 < 60 —— 扎实收录工具用法，但功能可由CLI直接替代，无独特判断边界。（3 判：[45, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "jimliu-doubao-multimodal-skill-doubao-multimodal",
+     "repo": "JimLiu/doubao-multimodal-skill",
+     "title": "音视频丢给它，回来的是字幕、时间轴和谁在说话",
+     "过": true,
+     "为什么": "品味 72 分 —— 功能扎实且边界清晰，但本质是火山方舟API的封装，换其他多云厂商工具可实现。（3 判：[72, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "oil-oil-kimi",
+     "repo": "oil-oil/kimi",
+     "title": "设计稿交给它，前端代码拿回来就能跑",
+     "过": true,
+     "为什么": "品味 70 分 —— 边界清晰、封装实用，但本质是CLI包装器，非独有核心价值。（3 判：[62, 70, 72]）",
+     "分": 70
+    },
+    {
+     "id": "aldegad-tenstorrent",
+     "repo": "aldegad/tenstorrent",
+     "title": "跳过网页控制台，直接调 Tenstorrent 全家",
+     "过": false,
+     "为什么": "品味 55 分 < 60 —— API目录加curl示例，边界清晰但做法通用，官方文档可替代，无独特判断。（3 判：[45, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "dacnay816y62-hub-window-scenery-skill",
+     "repo": "dacnay816y62-hub/window-scenery-skill",
+     "title": "左下角永远钉着地名徽章的车窗风景照",
+     "过": true,
+     "为什么": "品味 72 分 —— 细节丰富，流程完整，但本质可被其他图像工具复现，且依赖个人路径。（3 判：[70, 72, 72]）",
+     "分": 72
+    }
+   ]
+  },
+  {
    "时间": "2026-09-03T05:15:48Z",
    "判了": 5,
    "过": 0,
