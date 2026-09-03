@@ -587,7 +587,8 @@ def build_rejected_feed(items: dict) -> dict:
             "rejected_at": e.get("rejected_at", ""),
             "by": e.get("by", "店长"),
         })
-    human.sort(key=lambda r: (r.get("rejected_at", ""), r.get("stars", 0)), reverse=True)
+    # 09-03：一条手写的拒收把 stars 写成了 ""，整条 refresh 崩掉、上架那趟白跑 —— 排序键先归一类型
+    human.sort(key=lambda r: (str(r.get("rejected_at") or ""), int(r.get("stars") or 0) if str(r.get("stars") or "0").lstrip("-").isdigit() else 0), reverse=True)
 
     log = read_json(SCAN_LOG, None) or {}
     rounds = [r for r in log.get("rounds", []) if isinstance(r, dict)]
