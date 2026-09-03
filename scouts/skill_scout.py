@@ -473,7 +473,14 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
         if it["id"] in existing:
             continue
         if cover:
-            it["cover"] = host_cover(it["id"], cover) or cover
+            # 09-03：店主指出「卡片图下面多了一条灰色」—— 查出来是这里：CI 每轮把机器层的 OG 预览卡重新托管到
+            # assets/covers/<id>.png，**同名覆盖了 repo_covers 取回的作者真图**，而 curation 里记的还是真图的宽高，
+            # 容器按真图比例撑开、里面装的却是 1200×600 的预览卡 → 下面一条灰。
+            # 人工层已经定了封面（真图或明确无图）的，机器层不许再碰这张文件。
+            if _curated_cover_kind(it["id"]) in ("hero", "artwork", "ours", "diagram", "none"):
+                pass
+            else:
+                it["cover"] = host_cover(it["id"], cover) or cover
             # 写 cover 的同时写宽高 —— 没宽高前端不渲染。托到本地的才读得到；外部图读不到就留空不编。
             _u = it["cover"] or ""
             if _u.startswith("/skill/"):
@@ -621,6 +628,20 @@ def cover_dims(path: str):
     except Exception:
         return None
     return None
+
+
+def _curated_cover_kind(sid: str) -> str:
+    """人工层（editorial/curation.json）给这件定的 cover_kind；没定返回空串。"""
+    global _CUR_COVER_KIND
+    try:
+        _CUR_COVER_KIND
+    except NameError:
+        try:
+            _CUR_COVER_KIND = {k: (v.get("cover_kind") or "") for k, v in
+                               json.load(open(os.path.join(lib.ROOT, "editorial", "curation.json"), encoding="utf-8"))["items"].items()}
+        except Exception:
+            _CUR_COVER_KIND = {}
+    return _CUR_COVER_KIND.get(sid, "")
 
 
 def host_cover(sid: str, url: str) -> str:
