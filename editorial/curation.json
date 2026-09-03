@@ -10515,8 +10515,11 @@
    "cover_real": false
   },
   "copilotkit-copilotkit-a2ui-renderer": {
-   "cover_w": 256,
-   "cover_h": 256
+   "cover_w": 1200,
+   "cover_h": 600,
+   "cover": "/skill/assets/covers/copilotkit-copilotkit-a2ui-renderer.png",
+   "cover_kind": "og",
+   "cover_real": false
   },
   "moonlin1213-cove-tarot-companion": {
    "cover_w": 1200,
@@ -10677,9 +10680,10 @@
    "why_zh": "不是泛泛的『写得更好』，而是按四类已知劣化模式逐条扫描，每条给出可执行改法。机制上像 lint。",
    "limit_zh": "只审 CLAUDE.md 单文件，不碰其他配置或代码库；不自动改写，只输出诊断与建议；若你的 CLAUDE.md 本就。",
    "tagline_zh": "当 Claude 反复重读同一段上下文、结果忽好忽坏时，别猜了。它专查模糊表述、未命名文件、过期事实和臃肿段落——。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "unshelf_reason": "sweep 判 85 分 < 80 线（审计标准具体且可操作，边界清晰，产出物专业，优于泛泛建议。）。上一次撤下后被 CI 那轮 hide:false 覆盖回来，再撤一次，两层都写。"
   },
   "kaelio-ktx-ktx": {
    "title_zh": "给数据代理装上可检索的记忆层",
