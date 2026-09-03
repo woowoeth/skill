@@ -29,9 +29,20 @@ MAX_ITEMS_PER_REPO = 3          # individual cards sampled from one multi-skill 
 COLLECTION_MIN = 6              # >= this many skills → also gets a collection card
 COLLECTION_ONLY = 26            # >= this many skills → collection card ONLY
 # ---- admission: 相信新鲜度 + 认真程度 + 人的判断，而非人气存量 ----
-MIN_STARS_ESTABLISHED = 40      # 老仓库（>30 天）的人气底线
-MIN_STARS_NEWCOMER = 3          # 新品快车道：近 7 天发布，几乎不看星
-NEWCOMER_WINDOW_DAYS = 7        # “新”的定义
+# ---- 2026-09-02：星数是品质的代理变量，而我们现在有了直接量 ----
+# 店主一次给了 10 个他认可的仓，星数是 1 / 4 / 7 / 13 / 23 / 32 / 45 / 78 / 459 / 3289。
+# 按原门槛，**1 星那个（hongfamonvAI/vintage-travel-ticket）连准入都过不了**，
+# 4 星和 7 星的也只有在「刚建 7 天内」才有机会。
+# 而这个函数自己的注释写着「召回优先——漏掉的好货无法追回」——
+# **门槛和它自己写的原则是矛盾的。**
+#
+# 门槛存在的理由是：放太多进来，人工判不过来。**那个理由今天不成立了** ——
+# 品味判据已经接进门闸（真负样本回测 +61pt，店主指名的四件新数据 3/4 过）。
+# 有了直接量，就该让代理变量退位：星数只用来排「先看谁」，不再用来决定「能不能进」。
+# 每轮进货量仍由 MAX_NEW_REPOS 兜底，不会失控。
+MIN_STARS_ESTABLISHED = 12      # 原 40。老仓库的人气底线，留一点防纯噪音
+MIN_STARS_NEWCOMER = 0          # 原 3。新品快车道：刚建的仓不看星，交给品味判据
+NEWCOMER_WINDOW_DAYS = 21       # 原 7。中文圈很多货是在公众号/X 传开后才涨星，7 天太短
 FAST_RISER_STARS = 25           # 星速度：14 天内涨到这个数即视为正在被认可
 FAST_RISER_WINDOW_DAYS = 14
 MIN_STARS_DISCOVER = MIN_STARS_ESTABLISHED   # 向后兼容旧引用
@@ -73,7 +84,13 @@ def _admit(item: dict) -> tuple[bool, str]:
         serious += 1
     if pushed_age <= 30:
         serious += 1
-    if stars >= 10 and serious >= 2:
+    if stars >= 3 and serious >= 2:      # 原 10 —— 同上，代理变量退位
+    # 零星但三个认真信号全中（有主页 + 描述够长 + 近期仍在维护）也放行。
+    # 店主认可的那批里最低的是 1 星（hongfamonvAI/vintage-travel-ticket）——
+    # 星数少不代表做得差，只代表还没人看见，而**没人看见正是这家店存在的理由**。
+    # 品味判据在后面等着，进来不等于上架。
+        return True, "serious-signal"
+    if serious >= 3:
         return True, "serious-signal"
     # 通道四（老仓库常规线）：站住了一段时间，用较高星兜底
     if stars >= MIN_STARS_ESTABLISHED:

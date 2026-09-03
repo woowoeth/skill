@@ -111,6 +111,26 @@ def main() -> int:
             time.sleep(1)
         print(f"  topic:{t:<22} 新增 {n:3d}  （累计 {len(found)}）")
 
+    # ②' 按**索引时间**排的代码搜索 —— 唯一不看星的一条。
+    # 2026-09-02 逼出来的：店主一次给了 10 个仓，我三条通道抓到 **0 个**。
+    # 看星数就明白了：1 / 4 / 7 / 13 / 23 / 32 / 45 / 78 / 459 / 3289 ——
+    # **六个 ≤45 星**。topic / awesome / 按星排的枚举全都要星数，
+    # 而星数要时间。**一个昨天建的 1 星仓，对那三条通道永远不存在。**
+    # 店主的信息源是人的分享（X、公众号），那是新东西唯一先出现的地方。
+    # 我够不着那里，但 sort=indexed 够得着「刚被 GitHub 索引到的 SKILL.md」——
+    # 实测取 60 个，58 个没见过。
+    for page in (1, 2, 3):
+        d = gh("search/code?q=" + urllib.parse.quote("filename:SKILL.md")
+               + f"&sort=indexed&order=desc&per_page=100&page={page}")
+        n = 0
+        for it in d.get("items") or []:
+            full = (it.get("repository") or {}).get("full_name") or ""
+            if full and full.lower() not in seen and full not in found:
+                found[full] = {"via": "indexed(最新被索引)"}
+                n += 1
+        print(f"  indexed 第 {page} 页        新增 {n:3d}  （累计 {len(found)}）")
+        time.sleep(2)
+
     # ② 别人已经筛过一轮的精选清单
     import re as _re, urllib.request as _U
     for r in AWESOME:
