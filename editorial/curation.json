@@ -11435,7 +11435,7 @@
    "why_zh": "它不只会写文案——把素材拆成一套能直接发的成品：图文模式出卡片，视频模式出分镜。",
    "limit_zh": "只认小红书单篇笔记的格式，不写公众号或抖音脚本；素材要你自己给，它不负责找图找视频；产物是排版好的卡片/脚本+文案。",
    "tagline_zh": "不用再对着空白页想封面、想文案、想话题。丢文字/图片/视频进去，出来就是竖版卡片或分镜脚本。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "creative",
    "cover": "/skill/assets/covers/juneyaooo-xhs-writer-skill.jpg",
@@ -11443,7 +11443,8 @@
    "cover_real": false,
    "cover_w": 1199,
    "cover_h": 2268,
-   "cover_src": "https://raw.githubusercontent.com/JuneYaooo/xhs-writer-skill/HEAD/docs/assets/input-github-screenshot.jpg"
+   "cover_src": "https://raw.githubusercontent.com/JuneYaooo/xhs-writer-skill/HEAD/docs/assets/input-github-screenshot.jpg",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · references/image-sourcing.md: 转载正文 第56行"
   },
   "yejy53-editable-design-editable-design": {
    "hide": true,
@@ -11613,6 +11614,33 @@
    "cover_kind": "none",
    "cover_dup_of": "cclank-lanshu-awesome-ai-video-kit",
    "cover_note": "和同仓母件同一张 README 图，同图四张摆一起像刷屏，只留母件"
+  },
+  "danielroe-empathy": {
+   "title_zh": "动笔前先过一遍人类沟通守则的 AI 礼貌开关",
+   "why_zh": "它把「沟通规则」前置成写作前的强制检查，而不是写完后补救。你还没落笔，它已帮你避开冷硬、含糊、冒犯的坑。",
+   "limit_zh": "只约束文本沟通，不处理语音、代码逻辑或视觉输出；且需你主动在每次写作前调用，不会自动拦截后台生成内容。",
+   "tagline_zh": "PR、评论、邮件、聊天……凡是人要看的话，它都先拦一道。不是改措辞，是让你想清楚该不该说、怎么说，再开口。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "trkzi-omar-prune-skills": {
+   "title_zh": "先盘点再动手，删技能前会问你三遍的整理师",
+   "why_zh": "别人直接删，它先禁用一周。用「未使用时长」排序而非文件名，逼你面对真实习惯，而不是凭印象砍错宝贝。",
+   "limit_zh": "只处理 Claude Code 的 skills 目录，不碰插件或全局配置；需要你手动确认每个禁用项，不能无人值守。",
+   "tagline_zh": "技能库长到 200 个、一半没碰过？它先列清单标出从未使用的，再逐个禁用试运行。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "ffffffffelix-automotive-functional-safety": {
+   "title_zh": "ISO 26262 安全档案的起草、挑错与质询台",
+   "why_zh": "内置依赖失效分析与 ASIL 分解一致性校验，能主动指出安全目标与 FMEA 之间的逻辑裂缝。",
+   "limit_zh": "只覆盖 ISO 26262 第 3~6 部分及第 8 部分相关工件；不处理 SOTIF（ISO 21448）。",
+   "tagline_zh": "做 HARA、安全目标、ASIL 分解、FTA 时，它不只生成文档，还会以审核员口吻反问你的假设，直到证据链闭合。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
   }
  },
  "gate": {

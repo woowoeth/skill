@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 245 skills.
+# Full corpus, plain text. 247 skills.
 
 ========================================================================
 ## html-to-pptx
@@ -162,6 +162,28 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
 
 ========================================================================
+## comfyui-mcp
+## 自然语言改工作流，178 个工具随叫随到
+URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
+Source: https://github.com/artokun/comfyui-mcp
+Updated: 2026-09-03
+Tags: images, collection, artokun
+
+A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+
+### What does this skill do?
+Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+
+### Why is it worth installing?
+ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+
+### How do you install it?
+git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
 ## glitch-pixel-collage
 ## 故障像素拼贴
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
@@ -198,28 +220,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## comfyui-mcp
-## 自然语言改工作流，178 个工具随叫随到
-URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
-Source: https://github.com/artokun/comfyui-mcp
-Updated: 2026-09-03
-Tags: images, collection, artokun
-
-A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
-
-### What does this skill do?
-Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
-
-### Why is it worth installing?
-ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
-
-### How do you install it?
-git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
 ## design-review
@@ -4390,6 +4390,28 @@ git clone --depth 1 https://github.com/DPWelsh/basilisk.git Then point your agen
 Repository: DPWelsh/basilisk Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## empathy
+## 动笔前先过一遍人类沟通守则的 AI 礼貌开关
+URL: https://ourword.ai/skill/i/danielroe-empathy/
+Source: https://github.com/danielroe/empathy
+Updated: 2026-07-30
+Tags: work, skill, danielroe
+
+PRs, issues, replies, emails, chats—anything a person reads gets a pre-check. Not a rewrite, but a pause to ask.
+
+### What does this skill do?
+Rules for communicating with humans as an AI agent. Read in full BEFORE composing any text another person will read: PR titles and descriptions, issues, code review replies, comments, discussion summaries, emails, chat and forum posts, commit messages, changelogs. Also before replying when someone responds to you, and before deciding whether to post at all. Do not draft first and check after. Mini
+
+### Why is it worth installing?
+It enforces communication rules as a pre-writing gate, not a post-hoc fix. Before you type, it already steers you clear of cold.
+
+### How do you install it?
+git clone --depth 1 https://github.com/danielroe/empathy.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: danielroe/empathy The repository ships 1 skills in total.
+
+========================================================================
 ## legal-language-bridge
 ## 把吵架说成法言法语，把判决书说回人话
 URL: https://ourword.ai/skill/i/yunpeng192-legal-language-bridge/
@@ -4996,6 +5018,28 @@ git clone --depth 1 https://github.com/fcakyon/phd-skills.git Then point your ag
 
 ### Where does it come from?
 Repository: fcakyon/phd-skills The repository ships 1 skills in total.
+
+========================================================================
+## skill-library-pruner
+## 先盘点再动手，删技能前会问你三遍的整理师
+URL: https://ourword.ai/skill/i/trkzi-omar-prune-skills/
+Source: https://github.com/Trkzi-Omar/prune-skills
+Updated: 2026-07-03
+Tags: work, skill, Trkzi-Omar
+
+Skills piled up, half unused? It inventories, flags never-used, disables safely, then deletes only what you.
+
+### What does this skill do?
+Read-first, reversible workflow for pruning an overgrown Claude Code skills library. Inventories every skill, spots duplicates and dead weight, reports what has not been used, disables safely, then deletes only what goes unmissed. Use when the user wants to prune, declutter, audit, consolidate, or shrink their skills, or says "I have too many skills", "clean up my skills", "which of my skills are
+
+### Why is it worth installing?
+Others delete outright; it disables first. Ranks by last-used date, not filename, forcing honest pruning instead of gut-feel.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Trkzi-Omar/prune-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Trkzi-Omar/prune-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## whiteboard-video
@@ -6210,44 +6254,6 @@ git clone --depth 1 https://github.com/c1375/noir-interrogation.git Then point y
 Repository: c1375/noir-interrogation Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## xhs-writer
-## 素材丢进来，小红书图文或视频稿成套落盘
-URL: https://ourword.ai/skill/i/juneyaooo-xhs-writer-skill/
-URL (中文): https://ourword.ai/skill/zh/i/juneyaooo-xhs-writer-skill/
-Source: https://github.com/JuneYaooo/xhs-writer-skill
-Updated: 2026-04-25
-Tags: images, skill, JuneYaooo
-
-Stop staring at a blank page. Drop in text, images, or video—get vertical cards or a storyboard script with.
-
-### What does this skill do?
-生成小红书(RedNote)笔记：把主题或用户提供的素材(文字/图片/视频)做成一套竖版卡片(图文) 或一段带分镜脚本的视频稿(视频)，配 caption + hashtags，落盘到 output/小红书/。 使用时机：用户说 写小红书 / 做小红书笔记 / 小红书图文 / 小红书种草 / 出一套 xhs 卡片 / 小红书视频 / write a Xiaohongshu note / make a RedNote post。
-
-### Why is it worth installing?
-It doesn't just draft—it assembles: image mode yields a card set, video mode yields a shot list, both with platform-native.
-
-### How do you install it?
-git clone --depth 1 https://github.com/JuneYaooo/xhs-writer-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: JuneYaooo/xhs-writer-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-不用再对着空白页想封面、想文案、想话题。丢文字/图片/视频进去，出来就是竖版卡片或分镜脚本。
-
-### Q：这个 skill 做什么？
-生成小红书(RedNote)笔记：把主题或用户提供的素材(文字/图片/视频)做成一套竖版卡片(图文) 或一段带分镜脚本的视频稿(视频)，配 caption + hashtags，落盘到 output/小红书/。 使用时机：用户说 写小红书 / 做小红书笔记 / 小红书图文 / 小红书种草 / 出一套 xhs 卡片 / 小红书视频 / write a Xiaohongshu note / make a RedNote post。
-
-### Q：为什么值得装？
-它不只会写文案——把素材拆成一套能直接发的成品：图文模式出卡片，视频模式出分镜。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/JuneYaooo/xhs-writer-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: JuneYaooo/xhs-writer-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## travel-guidebook
 ## 从踩点笔记到排版成册，一趟生成旅行指南 PDF
 URL: https://ourword.ai/skill/i/geekjourneyx-travel-guidebook/
@@ -6350,6 +6356,28 @@ git clone --depth 1 https://github.com/voidforall/fengshui.skill.git Then point 
 
 ### Where does it come from?
 Repository: voidforall/fengshui.skill The repository ships 1 skills in total.
+
+========================================================================
+## automotive-functional-safety
+## ISO 26262 安全档案的起草、挑错与质询台
+URL: https://ourword.ai/skill/i/ffffffffelix-automotive-functional-safety/
+Source: https://github.com/ffffffffelix/automotive-functional-safety
+Updated: 2026-04-08
+Tags: play, skill, ffffffffelix
+
+Beyond drafting HARA, FSC/TSC, FTA—it cross-examines your assumptions like an auditor until the safety evidence.
+
+### What does this skill do?
+Draft, review, and challenge ISO 26262 functional safety work products for automotive E/E systems. Use when Codex needs to perform or review HARA, safety goals, FSC/TSC, ASIL decomposition, dependent-failure analysis, FMEA/FMEDA/FTA, software safety requirements, verification and validation plans, safety assessment findings, safety cases, or release-readiness evidence for a vehicle item, ECU, subs
+
+### Why is it worth installing?
+Built-in consistency checks across ASIL decomposition, DFA, and safety goals expose logical gaps in your FMEA/FTA—not just.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ffffffffelix/automotive-functional-safety.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ffffffffelix/automotive-functional-safety The repository ships 1 skills in total.
 
 ========================================================================
 ## create-larp-character
