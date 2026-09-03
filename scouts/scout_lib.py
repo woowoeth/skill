@@ -666,7 +666,9 @@ def refresh() -> dict:
         want = [q.strip("/") for q in ([e.get("path")] if e.get("path") else []) + list(e.get("paths") or [])]
         if want and (it.get("path") or "").strip("/") not in want:
             return None
-        return (e.get("picked_at") or "", it.get("added_at") or "", it.get("id") or "")
+        # 同一天登记的：有作者真图的排前面（推荐位要看得见东西），再按上架时间、id 稳定
+        return (e.get("picked_at") or "", 1 if it.get("cover_kind") in ("hero", "artwork", "ours", "diagram") else 0,
+                it.get("added_at") or "", it.get("id") or "")
     _cands = sorted((( _pick_key(it), it) for it in items.values() if not it.get("hide") and _pick_key(it)), key=lambda kv: kv[0], reverse=True)
     _top = {it["id"] for _, it in _cands[:12]}
     for it in items.values():
