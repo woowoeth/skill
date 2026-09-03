@@ -1127,7 +1127,27 @@ def restock_existing(existing: dict, sources: dict) -> None:
                                            "last_seen": lib.today()})
             time.sleep(0.35)
         except Exception as e:
-            print(f"[scout] restock skip {repo}: {e}")
+            msg = str(e)
+            # 上游仓 404（删了/改名没留跳转）或 451（法律原因下架）：**装不上的东西不该在架上。**
+            # 2026-09-03 之前这里只打一行 skip，dzcmemory-web/bazi-ziwei-skill 被 451 之后
+            # 在架上又挂了两天。现在探到就下架，两层都写 hide，留 unshelf_reason。
+            if "404" in msg or "451" in msg:
+                why = "451 法律原因下架" if "451" in msg else "404 不存在"
+                cur = lib.read_json(lib.EDITORIAL, {"items": {}})
+                n = 0
+                for it in existing.values():
+                    if it["repo"] == repo and not it.get("hide"):
+                        it["hide"] = True
+                        lib.save_item(it)
+                        e2 = cur.setdefault("items", {}).setdefault(it["id"], {})
+                        e2["hide"] = True
+                        e2["unshelf_reason"] = f"上游仓 {why}（{lib.today()} 进货探到）。装不上的东西不该在架上。"
+                        n += 1
+                if n:
+                    lib.write_json(lib.EDITORIAL, cur)
+                    print(f"[scout] restock 下架 {n} 件：{repo} —— {why}")
+                    continue
+            print(f"[scout] restock skip {repo}: {msg}")
 
 
 def _chart_skip(full: str) -> bool:
