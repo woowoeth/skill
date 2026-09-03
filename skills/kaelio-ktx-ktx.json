@@ -1,0 +1,33 @@
+{
+ "id": "kaelio-ktx-ktx",
+ "kind": "skill",
+ "name": "ktx",
+ "title_zh": "给数据代理装上可检索的记忆层",
+ "tagline_zh": "当你的 agent 每次都要重新问一遍数据库结构，装上 ktx 它就记得住。一条命令装好，连 embedding 。",
+ "tagline_en": "Tired of your agent re-discovering your schema every session? ktx gives it a persistent, searchable context layer.",
+ "desc_en": "Installs and configures ktx, the open-source context layer for data agents — runs ktx setup non-interactively with hidden CLI flags, configures database connections and embeddings, installs agent integration, and verifies readiness. Use when the user asks an agent to add ktx to a project, connect data sources, install agent rules, ingest schema, or troubleshoot a local ktx install.",
+ "why_zh": "非交互式安装，用隐藏 CLI 旗标跑完 setup，自动配库连 embedding。",
+ "why_en": "Non-interactive setup via hidden flags: configures DB + embeddings, installs agent rules, verifies readiness — fully scriptable.",
+ "limit_zh": "只覆盖 ktx 的安装与配置，不负责后续数据质量。需要本地已有目标数据库和 embedding 服务。",
+ "limit_en": "Only installs/configures ktx — no data curation. Requires an existing DB and embedding endpoint; schema ingestion is your job, not its.",
+ "repo": "Kaelio/ktx",
+ "owner": "Kaelio",
+ "path": "skills/ktx",
+ "url": "https://github.com/Kaelio/ktx/tree/HEAD/skills/ktx",
+ "homepage": "",
+ "stars": 1571,
+ "pushed_at": "2026-09-02T12:44:39Z",
+ "skill_count": 17,
+ "category": "work",
+ "fun_score": 4.38,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/Kaelio/ktx.git",
+  "copy": "cp -r ktx/skills/ktx ~/.claude/skills/ktx",
+  "dir": "~/.claude/skills/ktx"
+ },
+ "cover": "/skill/assets/covers/kaelio-ktx-ktx.png"
+}

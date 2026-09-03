@@ -1,0 +1,33 @@
+{
+ "id": "wesammustafa-claude-code-everything-you-need-to-know-claude.md-review",
+ "kind": "skill",
+ "name": "CLAUDE.md Review",
+ "title_zh": "审计 CLAUDE.md，揪出拖垮输出的四类病灶",
+ "tagline_zh": "当 Claude 反复重读同一段上下文、结果忽好忽坏时，别猜了。它专查模糊表述、未命名文件、过期事实和臃肿段落——。",
+ "tagline_en": "When Claude keeps re-reading the same context and results swing wildly, stop guessing. It hunts vagueness.",
+ "desc_en": "Audit a CLAUDE.md file for the patterns that actually degrade Claude Code's output — vagueness, unnamed files, stale facts, and bloat. Use when asked to review, audit, improve, shrink, or fix a CLAUDE.md, and when a project's results feel inconsistent or Claude keeps rediscovering the same context.",
+ "why_zh": "不是泛泛的『写得更好』，而是按四类已知劣化模式逐条扫描，每条给出可执行改法。机制上像 lint。",
+ "why_en": "Not generic 'write better' advice—it scans against four known degradation patterns and gives actionable fixes per hit. Works.",
+ "limit_zh": "只审 CLAUDE.md 单文件，不碰其他配置或代码库；不自动改写，只输出诊断与建议；若你的 CLAUDE.md 本就。",
+ "limit_en": "Audits CLAUDE.md only—no other configs or codebase. Diagnoses but never auto-edits. If your file is already minimal (<30 lines), few issues will.",
+ "repo": "wesammustafa/Claude-Code-Everything-You-Need-to-Know",
+ "owner": "wesammustafa",
+ "path": ".claude/skills/claude-md-review",
+ "url": "https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know/tree/HEAD/.claude/skills/claude-md-review",
+ "homepage": "",
+ "stars": 2891,
+ "pushed_at": "2026-07-28T11:00:38Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 3.11,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know.git",
+  "copy": "cp -r Claude-Code-Everything-You-Need-to-Know/.claude/skills/claude-md-review ~/.claude/skills/claude.md-review",
+  "dir": "~/.claude/skills/claude.md-review"
+ },
+ "cover": "/skill/assets/covers/wesammustafa-claude-code-everything-you-need-to-know-claude.md-review.png"
+}

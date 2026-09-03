@@ -1,0 +1,33 @@
+{
+ "id": "bayramannakov-claude-reflect",
+ "kind": "skill",
+ "name": "claude-reflect",
+ "title_zh": "把每次纠正沉淀成永久记忆的自我进化系统",
+ "tagline_zh": "会话中你纠正它的每个错误，它都记进 CLAUDE.md。下次开场前提醒你跑 /reflect。",
+ "tagline_en": "Every correction you make gets saved to CLAUDE.md. It nudges you to run /reflect before next session, turning.",
+ "desc_en": "Self-learning system that captures corrections during sessions and reminds users to run /reflect to update CLAUDE.md. Use when discussing learnings, corrections, or when the user mentions remembering something for future sessions.",
+ "why_zh": "不是事后总结，而是捕获机制：在错误发生的当下就标记，再通过主动提醒闭环。记忆不是靠它自觉。",
+ "why_en": "It captures corrections at the moment they happen, not after the fact, then closes the loop with a nudge. Memory depends on your.",
+ "limit_zh": "只记录你明确纠正过的内容，不会自动发现隐性错误；且必须手动跑 /reflect 才写入，忘了跑就白记。",
+ "limit_en": "Only captures explicit corrections, not implicit errors. Requires manual /reflect to persist—skip it and it's lost. CLAUDE.md grows unbounded; you.",
+ "repo": "BayramAnnakov/claude-reflect",
+ "owner": "BayramAnnakov",
+ "path": "",
+ "url": "https://github.com/BayramAnnakov/claude-reflect",
+ "homepage": "",
+ "stars": 1425,
+ "pushed_at": "2026-03-16T19:41:15Z",
+ "skill_count": 1,
+ "category": "life",
+ "fun_score": 2.84,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/BayramAnnakov/claude-reflect.git",
+  "copy": "mv claude-reflect ~/.claude/skills/claude-reflect",
+  "dir": "~/.claude/skills/claude-reflect"
+ },
+ "cover": "/skill/assets/covers/bayramannakov-claude-reflect.jpg"
+}

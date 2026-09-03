@@ -1,0 +1,33 @@
+{
+ "id": "minsight-ai-info-ai-search-hub",
+ "kind": "skill",
+ "name": "ai-search-hub",
+ "title_zh": "一条命令把七个AI网站变成你的自动化测试台",
+ "tagline_zh": "Yuanbao、LongCat、豆包、通义、Gemini、Grok、MiniMax——不用写爬虫，不用管登录态。",
+ "tagline_en": "Drive Yuanbao, LongCat, Doubao, Qwen, Gemini, Grok & MiniMax via one skill. Auto-attach to Chrome DevTools on.",
+ "desc_en": "Run the AI Search Hub browser automation scripts for Yuanbao, LongCat, Doubao, Qwen, Gemini, Grok, and MiniMax. Use this skill when the user wants to ask one of those sites a prompt, auto-start or attach to a Chrome DevTools session on port 9222, seed an isolated debug browser profile from the user's local browser data, detect whether login is required, wait for the user to finish logging in if ne",
+ "why_zh": "不是模拟点击的脆皮脚本，而是直接接管真实浏览器会话：复用你本地的Cookie和指纹，登录态自己续。",
+ "why_en": "Not brittle DOM-clicking—it hijacks a real Chrome session via DevTools, inherits your cookies and fingerprint, survives.",
+ "limit_zh": "只认本机Chrome且必须开9222调试端口；不支持Firefox/Safari；登录环节只做到'等你手动点完'。",
+ "limit_en": "Requires local Chrome with --remote-debugging-port=9222; no Firefox/Safari. Login waits for you—no auto-CAPTCHA. If a site's DOM changes, it halts.",
+ "repo": "minsight-ai-info/AI-Search-Hub",
+ "owner": "minsight-ai-info",
+ "path": "",
+ "url": "https://github.com/minsight-ai-info/AI-Search-Hub",
+ "homepage": "",
+ "stars": 1254,
+ "pushed_at": "2026-04-27T07:47:18Z",
+ "skill_count": 1,
+ "category": "work",
+ "fun_score": 4.79,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/minsight-ai-info/AI-Search-Hub.git",
+  "copy": "mv AI-Search-Hub ~/.claude/skills/ai-search-hub",
+  "dir": "~/.claude/skills/ai-search-hub"
+ },
+ "cover": "/skill/assets/covers/minsight-ai-info-ai-search-hub.png"
+}

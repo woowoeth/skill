@@ -1,0 +1,33 @@
+{
+ "id": "bevibing-tutor-skills-tutor",
+ "kind": "skill",
+ "name": "tutor",
+ "title_zh": "把 Obsidian 笔记变成自适应测验的私教",
+ "tagline_zh": "学完就忘？让它先诊断再出题，专攻你的薄弱点。不是随机抽题，是每次测验都比上次更懂你哪里不会。",
+ "tagline_en": "Stop forgetting what you learn. It diagnoses first, then drills your exact weak spots. Not random quizzes—each.",
+ "desc_en": "Interactive quiz tutor for Obsidian StudyVault learning. Use when the user wants to: (1) Take a diagnostic assessment of their knowledge, (2) Study or review specific sections/topics, (3) Drill weak areas identified in previous sessions, (4) Check their learning progress or dashboard, or says things like \"quiz me\", \"test me\", \"let's study\", \"/tutor\", \"학습\", \"퀴즈\", \"평가\".",
+ "why_zh": "它不按章节顺序出题，而是先跑诊断、再按你的错误模式动态选题，把每次测验变成一次针对性的知识修复。",
+ "why_en": "No chapter-order quizzes. It runs a diagnostic first, then selects questions based on your error patterns—turning each test into.",
+ "limit_zh": "只认 Obsidian 的 StudyVault 库结构，笔记需带标签或 MOC 链接；不解析 PDF/网页。",
+ "limit_en": "Requires Obsidian StudyVault structure with tagged notes or MOC links; no PDF/web parsing. Results stay in-vault; sync across devices is on you.",
+ "repo": "bevibing/tutor-skills",
+ "owner": "bevibing",
+ "path": "skills/tutor",
+ "url": "https://github.com/bevibing/tutor-skills/tree/HEAD/skills/tutor",
+ "homepage": "",
+ "stars": 1126,
+ "pushed_at": "2026-02-28T14:41:09Z",
+ "skill_count": 1,
+ "category": "life",
+ "fun_score": 2.75,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/bevibing/tutor-skills.git",
+  "copy": "cp -r tutor-skills/skills/tutor ~/.claude/skills/tutor",
+  "dir": "~/.claude/skills/tutor"
+ },
+ "cover": "/skill/assets/covers/bevibing-tutor-skills-tutor.png"
+}

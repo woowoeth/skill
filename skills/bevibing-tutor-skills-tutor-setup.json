@@ -1,0 +1,33 @@
+{
+ "id": "bevibing-tutor-skills-tutor-setup",
+ "kind": "skill",
+ "name": "tutor-setup",
+ "title_zh": "把任意知识源变成可提问的 Obsidian 学习库",
+ "tagline_zh": "PDF、网页或代码仓库，自动识别模式并生成带练习题的笔记库。新成员看代码库不再从零摸索，直接拿到一份带路地图。",
+ "tagline_en": "Drop in a PDF, webpage, or codebase—it auto-detects the mode and builds a study vault with practice questions.",
+ "desc_en": "Transforms knowledge sources into an Obsidian StudyVault. Two modes: (1) Document Mode — PDF/text/web sources → study notes with practice questions. (2) Codebase Mode — source code project → onboarding vault for new developers. Mode is auto-detected based on project markers in CWD.",
+ "why_zh": "不是模板填充，而是按项目标记自动切换文档/代码两种模式，产物直接是 Obsidian 库结构。",
+ "why_en": "No template stuffing—it switches between document and codebase modes via project markers, outputting a ready-to-use Obsidian.",
+ "limit_zh": "只认 CWD 里的项目标记（如 .git、package.json）来判定代码模式；纯图片 PDF 无法提取文字。",
+ "limit_en": "Code mode only triggers on project markers in CWD (e.g., .git, package.json). Scanned-image PDFs yield no text. Questions are generative, not.",
+ "repo": "bevibing/tutor-skills",
+ "owner": "bevibing",
+ "path": "skills/tutor-setup",
+ "url": "https://github.com/bevibing/tutor-skills/tree/HEAD/skills/tutor-setup",
+ "homepage": "",
+ "stars": 1126,
+ "pushed_at": "2026-02-28T14:41:09Z",
+ "skill_count": 1,
+ "category": "life",
+ "fun_score": 2.75,
+ "pick": false,
+ "hide": false,
+ "source": "human-suggested",
+ "added_at": "2026-09-03",
+ "install": {
+  "clone": "git clone --depth 1 https://github.com/bevibing/tutor-skills.git",
+  "copy": "cp -r tutor-skills/skills/tutor-setup ~/.claude/skills/tutor-setup",
+  "dir": "~/.claude/skills/tutor-setup"
+ },
+ "cover": "/skill/assets/covers/bevibing-tutor-skills-tutor-setup.png"
+}

@@ -1,7 +1,51 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 187 skills.
+# Full corpus, plain text. 193 skills.
+
+========================================================================
+## install-memu
+## 给任何 Agent 装上或卸下 memU 记忆插件
+URL: https://ourword.ai/skill/i/nevamind-ai-memu/
+Source: https://github.com/NevaMind-AI/memU
+Updated: 2026-09-03
+Tags: play, skill, NevaMind-AI
+
+No matter which agent you are, it detects your host, prints your exact wiring guide, and connects or disconnects.
+
+### What does this skill do?
+Install or uninstall memU for whatever agent you are — identify your host, print its packaged guide, and follow it to wire (or unwire) both seams (record and inject). Use when the user asks to install, set up, integrate, remove, or uninstall memU.
+
+### Why is it worth installing?
+No guessing your runtime. It introspects first, then hands you the exact map—both seams must be wired before it calls it done.
+
+### How do you install it?
+git clone --depth 1 https://github.com/NevaMind-AI/memU.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: NevaMind-AI/memU The repository ships 1 skills in total.
+
+========================================================================
+## ktx
+## 给数据代理装上可检索的记忆层
+URL: https://ourword.ai/skill/i/kaelio-ktx-ktx/
+Source: https://github.com/Kaelio/ktx/tree/HEAD/skills/ktx
+Updated: 2026-09-02
+Tags: work, skill, Kaelio
+
+Tired of your agent re-discovering your schema every session? ktx gives it a persistent, searchable context layer.
+
+### What does this skill do?
+Installs and configures ktx, the open-source context layer for data agents — runs ktx setup non-interactively with hidden CLI flags, configures database connections and embeddings, installs agent integration, and verifies readiness. Use when the user asks an agent to add ktx to a project, connect data sources, install agent rules, ingest schema, or troubleshoot a local ktx install.
+
+### Why is it worth installing?
+Non-interactive setup via hidden flags: configures DB + embeddings, installs agent rules, verifies readiness — fully scriptable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Kaelio/ktx.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Kaelio/ktx The repository ships 17 skills in total.
 
 ========================================================================
 ## a2ui-renderer
@@ -601,28 +645,6 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
-
-========================================================================
-## ppt-master
-## 出可编辑的 PPTX，也能把做好的稿子重排和加旁白
-URL: https://ourword.ai/skill/i/hugohe3-ppt-master-ppt-master/
-Source: https://github.com/hugohe3/ppt-master/tree/HEAD/skills/ppt-master
-Updated: 2026-08-31
-Tags: docs, skill, hugohe3
-
-Routed workflow: author new decks, reconstruct page visuals, fill native PPTX templates, enhance finished files, or add narration and animation for a self-running video.
-
-### What does this skill do?
-Routed workflow: author new decks, reconstruct page visuals, fill native PPTX templates, enhance finished files, or add narration and animation for a self-running video.
-
-### Why is it worth installing?
-It hands back a real editable PPTX rather than images posing as slides; templates are filled natively so the deck stays a deck.
-
-### How do you install it?
-git clone --depth 1 https://github.com/hugohe3/ppt-master.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: hugohe3/ppt-master The repository ships 1 skills in total. Homepage: https://hugohe3.github.io/ppt-master-examples/
 
 ========================================================================
 ## huashu-report
@@ -2235,6 +2257,28 @@ git clone --depth 1 https://github.com/liigoQi/photo-to-travel-sketch.git Then p
 Repository: liigoQi/photo-to-travel-sketch The repository ships 1 skills in total.
 
 ========================================================================
+## parenting-advisor
+## 专防「假托崔玉涛」文章的 0–13 岁育儿参谋
+URL: https://ourword.ai/skill/i/yeyulangzi-parenting-advisor/
+Source: https://github.com/yeyulangzi/parenting-advisor
+Updated: 2026-08-11
+Tags: everyday, skill, yeyulangzi
+
+Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
+
+### What does this skill do?
+Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
+
+### Why is it worth installing?
+It keeps a table of the excuses an AI is likely to make. "The symptoms are textbook, I can basically confirm it" is listed there as a signal to stop, not to proceed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
+
+========================================================================
 ## muyang-dark-fashion
 ## 牧羊暗黑时装，一款一装
 URL: https://ourword.ai/skill/i/yokel1121-muyang-illustration-skills-muyang-dark-fashion/
@@ -2268,28 +2312,6 @@ git clone --depth 1 https://github.com/yokel1121/muyang-illustration-skills.git 
 
 ### Q：它从哪来？
 Repository: yokel1121/muyang-illustration-skills The repository ships 1 skills in total.
-
-========================================================================
-## parenting-advisor
-## 专防「假托崔玉涛」文章的 0–13 岁育儿参谋
-URL: https://ourword.ai/skill/i/yeyulangzi-parenting-advisor/
-Source: https://github.com/yeyulangzi/parenting-advisor
-Updated: 2026-08-11
-Tags: everyday, skill, yeyulangzi
-
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### What does this skill do?
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### Why is it worth installing?
-It keeps a table of the excuses an AI is likely to make. "The symptoms are textbook, I can basically confirm it" is listed there as a signal to stop, not to proceed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
 
 ========================================================================
 ## human-writing
@@ -3377,6 +3399,28 @@ git clone --depth 1 https://github.com/XLT-6/boardgame-creator.git 然后把智�
 Repository: XLT-6/boardgame-creator Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
+## CLAUDE.md Review
+## 审计 CLAUDE.md，揪出拖垮输出的四类病灶
+URL: https://ourword.ai/skill/i/wesammustafa-claude-code-everything-you-need-to-know-claude-md-review/
+Source: https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know/tree/HEAD/.claude/skills/claude-md-review
+Updated: 2026-07-28
+Tags: work, skill, wesammustafa
+
+When Claude keeps re-reading the same context and results swing wildly, stop guessing. It hunts vagueness.
+
+### What does this skill do?
+Audit a CLAUDE.md file for the patterns that actually degrade Claude Code's output — vagueness, unnamed files, stale facts, and bloat. Use when asked to review, audit, improve, shrink, or fix a CLAUDE.md, and when a project's results feel inconsistent or Claude keeps rediscovering the same context.
+
+### Why is it worth installing?
+Not generic 'write better' advice—it scans against four known degradation patterns and gives actionable fixes per hit. Works.
+
+### How do you install it?
+git clone --depth 1 https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: wesammustafa/Claude-Code-Everything-You-Need-to-Know The repository ships 1 skills in total.
+
+========================================================================
 ## fantasy-movie-poster
 ## 中文竖版电影海报，9:16 锁死
 URL: https://ourword.ai/skill/i/dacnay816y62-hub-fantasy-movie-poster-skill/
@@ -4430,6 +4474,28 @@ git clone --depth 1 https://github.com/Jiang59991/qiaopi.git 然后把智能体�
 Repository: Jiang59991/qiaopi Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## ai-search-hub
+## 一条命令把七个AI网站变成你的自动化测试台
+URL: https://ourword.ai/skill/i/minsight-ai-info-ai-search-hub/
+Source: https://github.com/minsight-ai-info/AI-Search-Hub
+Updated: 2026-04-27
+Tags: work, skill, minsight-ai-info
+
+Drive Yuanbao, LongCat, Doubao, Qwen, Gemini, Grok & MiniMax via one skill. Auto-attach to Chrome DevTools on.
+
+### What does this skill do?
+Run the AI Search Hub browser automation scripts for Yuanbao, LongCat, Doubao, Qwen, Gemini, Grok, and MiniMax. Use this skill when the user wants to ask one of those sites a prompt, auto-start or attach to a Chrome DevTools session on port 9222, seed an isolated debug browser profile from the user's local browser data, detect whether login is required, wait for the user to finish logging in if ne
+
+### Why is it worth installing?
+Not brittle DOM-clicking—it hijacks a real Chrome session via DevTools, inherits your cookies and fingerprint, survives.
+
+### How do you install it?
+git clone --depth 1 https://github.com/minsight-ai-info/AI-Search-Hub.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: minsight-ai-info/AI-Search-Hub Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## noir-interrogation
 ## 用 SHA-256 锁死凶手的黑色电影审讯游戏
 URL: https://ourword.ai/skill/i/c1375-noir-interrogation/
@@ -4622,6 +4688,28 @@ git clone --depth 1 https://github.com/op7418/Claude-to-IM-skill.git Then point 
 Repository: op7418/Claude-to-IM-skill The repository ships 1 skills in total.
 
 ========================================================================
+## claude-reflect
+## 把每次纠正沉淀成永久记忆的自我进化系统
+URL: https://ourword.ai/skill/i/bayramannakov-claude-reflect/
+Source: https://github.com/BayramAnnakov/claude-reflect
+Updated: 2026-03-16
+Tags: everyday, skill, BayramAnnakov
+
+Every correction you make gets saved to CLAUDE.md. It nudges you to run /reflect before next session, turning.
+
+### What does this skill do?
+Self-learning system that captures corrections during sessions and reminds users to run /reflect to update CLAUDE.md. Use when discussing learnings, corrections, or when the user mentions remembering something for future sessions.
+
+### Why is it worth installing?
+It captures corrections at the moment they happen, not after the fact, then closes the loop with a nudge. Memory depends on your.
+
+### How do you install it?
+git clone --depth 1 https://github.com/BayramAnnakov/claude-reflect.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: BayramAnnakov/claude-reflect The repository ships 1 skills in total.
+
+========================================================================
 ## excalidraw-diagram
 ## 生成手绘白板风格的示意图
 URL: https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/
@@ -4642,6 +4730,50 @@ git clone --depth 1 https://github.com/coleam00/excalidraw-diagram-skill.git The
 
 ### Where does it come from?
 Repository: coleam00/excalidraw-diagram-skill The repository ships 1 skills in total.
+
+========================================================================
+## tutor
+## 把 Obsidian 笔记变成自适应测验的私教
+URL: https://ourword.ai/skill/i/bevibing-tutor-skills-tutor/
+Source: https://github.com/bevibing/tutor-skills/tree/HEAD/skills/tutor
+Updated: 2026-02-28
+Tags: everyday, skill, bevibing
+
+Stop forgetting what you learn. It diagnoses first, then drills your exact weak spots. Not random quizzes—each.
+
+### What does this skill do?
+Interactive quiz tutor for Obsidian StudyVault learning. Use when the user wants to: (1) Take a diagnostic assessment of their knowledge, (2) Study or review specific sections/topics, (3) Drill weak areas identified in previous sessions, (4) Check their learning progress or dashboard, or says things like "quiz me", "test me", "let's study", "/tutor", "학습", "퀴즈", "평가".
+
+### Why is it worth installing?
+No chapter-order quizzes. It runs a diagnostic first, then selects questions based on your error patterns—turning each test into.
+
+### How do you install it?
+git clone --depth 1 https://github.com/bevibing/tutor-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: bevibing/tutor-skills The repository ships 1 skills in total.
+
+========================================================================
+## tutor-setup
+## 把任意知识源变成可提问的 Obsidian 学习库
+URL: https://ourword.ai/skill/i/bevibing-tutor-skills-tutor-setup/
+Source: https://github.com/bevibing/tutor-skills/tree/HEAD/skills/tutor-setup
+Updated: 2026-02-28
+Tags: everyday, skill, bevibing
+
+Drop in a PDF, webpage, or codebase—it auto-detects the mode and builds a study vault with practice questions.
+
+### What does this skill do?
+Transforms knowledge sources into an Obsidian StudyVault. Two modes: (1) Document Mode — PDF/text/web sources → study notes with practice questions. (2) Codebase Mode — source code project → onboarding vault for new developers. Mode is auto-detected based on project markers in CWD.
+
+### Why is it worth installing?
+No template stuffing—it switches between document and codebase modes via project markers, outputting a ready-to-use Obsidian.
+
+### How do you install it?
+git clone --depth 1 https://github.com/bevibing/tutor-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: bevibing/tutor-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## deep-research
