@@ -21,11 +21,4 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: python scouts/skill_scout.py --enrich-missing
       - name: 提交
-        run: |
-          git config user.name "skill-store-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add skills/*.json
-          git diff --cached --quiet && { echo "无变化"; exit 0; }
-          git commit -m "enrich: 补写在架占位货文案"
-          for i in $(seq 1 6); do git pull --rebase --autostash origin main && git push && exit 0; sleep 3; done
-          echo "push failed"; exit 1
+        run: bash scouts/git_sync.sh "enrich: 补写在架占位货文案"
