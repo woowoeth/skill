@@ -969,7 +969,7 @@ def _taste_pass(it: dict) -> str:
                          "过": ok, "为什么": why,
                          **({"分": score} if score is not None else {})})
         print(f"[gate] {'✓' if ok else '✗'} {sid}  {why}")
-        return f"taste{score}" if ok else ""
+        return (f"taste{score}" if score is not None else "owner") if ok else ""
     # 「缺」和「太短」要分开说 —— 说错理由比说少更糟：
     # 写了「对不上就卸」5 个字被报成「缺 limit_zh」，看日志的人会去找一个不存在的空字段。
     empty = [k for k in GATE_FIELDS if not (it.get(k) or "").strip()]
