@@ -13,8 +13,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  actions: read
-  actions: write   # 09-03：补跑 sweep 要能 dispatch
+  actions: write   # 09-03：补跑 sweep 要能 dispatch（读也够用）
 jobs:
   check:
     runs-on: ubuntu-latest
