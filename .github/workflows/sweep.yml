@@ -1,0 +1,92 @@
+name: sweep
+# 自己去找有品味的货 —— 发现 → 判品味 → 值得的交给完整管线。
+#
+# 2026-09-02 店主：「你要去不断迭代自己，不要每次让我告诉你哪些漏掉了，
+# 你要自己有能力发现漏掉的有品味的 skill」。
+#
+# 在这之前两半是断的：discover_by_artifact 已经翻出 1276 个没进过库的仓，
+# 品味判据也回测到 +61pt —— **但从来没拿判据去扫过那个候选池**。
+# 有渔网也有秤，却在等店主把鱼递过来。这条工作流就是那根接线。
+on:
+  schedule:
+    - cron: "40 3 * * *"      # ~11:40 北京，和三班进货错开
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "本轮判多少个候选"
+        default: "40"
+permissions:
+  contents: write
+concurrency:
+  group: skill-store-write
+  cancel-in-progress: false
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      # 先自查：店主指名过的那些，现在这套能不能自己判出来。
+      # **失败不阻断后面** —— 它是尺子不是闸；但结果要留在日志里，
+      # 因为「这套还差多少」比「这轮捞到几个」更值得看。
+      - name: 自查 —— 店主指名的那些，现在能自己判到吗
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: python scouts/sweep.py --audit
+
+      - name: 发现（四条通道，其中 indexed 那条不看星）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scouts/discover_by_artifact.py --pages 1 --out /tmp/artifact_candidates.json
+
+      - name: 判品味，挑出值得写文案的
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: python scouts/sweep.py --max ${{ github.event.inputs.max || 40 }} --min-score 70
+
+      - name: 高分的走完整管线
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          SAME_DAY_SHELF: "1"
+        run: |
+          R=$(python3 -c "import json;print(' '.join(k['repo'] for k in json.load(open('/tmp/sweep_keep.json'))[:10]))" 2>/dev/null || true)
+          [ -n "$R" ] || { echo "本轮没有 ≥70 分的"; exit 0; }
+          echo "交给管线：$R"
+          python scouts/skill_scout.py --suggest $R
+
+      - name: 上架之后补扫红线，命中的撤下
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: |
+          python scouts/release_clean.py --max 12 --chunk 3 --timeout 240 || true
+          python scouts/scout_lib.py || true
+
+      - name: 提交
+        if: always()
+        run: |
+          git config user.name "skill-store-bot"
+          git config user.email "skill-store-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "没有变化"; exit 0; }
+          git commit -m "sweep: 自动发现并判品味"
+          for i in $(seq 1 6); do
+            git pull --rebase --autostash origin main && git push && exit 0
+            sleep $(( (RANDOM % 5) + 2 ))
+          done
+          exit 1
