@@ -1,51 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 210 skills.
-
-========================================================================
-## img2threejs
-## 拒绝贴图骗人的代码建模，从参考图长出可动三维骨架
-URL: https://ourword.ai/skill/i/img2threejs-img2threejs/
-Source: https://github.com/img2threejs/img2threejs
-Updated: 2026-09-03
-Tags: images, skill, img2threejs
-
-Feed it one reference image; get a staged, quality-gated Three.js model built in code—real geometry for.
-
-### What does this skill do?
-Turn an object or character reference image into a quality-gated, animation-ready procedural Three.js model built in code. Use for image-to-3D reconstruction, detail-accurate object rebuilds, stylized/likeness-maximized human characters, sculpt specs, and staged code generation.
-
-### Why is it worth installing?
-It turns likeness into staged, quality-gated checkpoints—delivering editable code, not a black-box mesh, so you tweak the.
-
-### How do you install it?
-git clone --depth 1 https://github.com/img2threejs/img2threejs.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: img2threejs/img2threejs Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## stop-that-shit
-## 只准改该改的，越界一步就喊停的代码审查员
-URL: https://ourword.ai/skill/i/lennney-stop-that-shit-stop-that-shit/
-Source: https://github.com/lennney/stop-that-shit/tree/HEAD/skills/stop-that-shit
-Updated: 2026-09-03
-Tags: work, skill, lennney
-
-Tired of agents adding deps, tweaking configs, or looping audits? It watches your.
-
-### What does this skill do?
-Keep coding agents focused on requested and necessary work. Use when a request sets a read-only, answer-only, file, action, or stopping boundary; when evidence shows scope creep, speculative hardening, unnecessary hashing or dependencies, repeated audit loops, or valueless delegation; or when the user invokes Stop That Shit. Do not invoke for an ordinary focused fix without a boundary or scope-cre
-
-### Why is it worth installing?
-It doesn't summarize after the fact—it parses explicit boundaries from the request and intercepts with evidence, more reliable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/lennney/stop-that-shit.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: lennney/stop-that-shit The repository ships 2 skills in total.
+# Full corpus, plain text. 201 skills.
 
 ========================================================================
 ## huashu-report
@@ -426,28 +382,6 @@ git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your
 Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
 
 ========================================================================
-## dependabot-triager
-## 只评不批的Dependabot PR分流员，三档结论
-URL: https://ourword.ai/skill/i/cli-cli-dependabot-triager/
-Source: https://github.com/cli/cli/tree/HEAD/.github/skills/dependabot-triager
-Updated: 2026-09-02
-Tags: writing, skill, cli
-
-For every open Dependabot PR, it reads the upstream diff, then posts one comment: Merge, Review first, or Don't.
-
-### What does this skill do?
-Assesses an open Dependabot pull request and emits a recommendation (Merge / Review before merging / Do not merge) plus confidence (High / Medium / Low) with concise prose grounded in upstream source changes. Advisory only: it posts a single comment and never merges, approves, or labels. Designed to run as a scheduled reconciler that comments exactly once per PR state and re-comments only when the
-
-### Why is it worth installing?
-Verdicts are grounded in the actual upstream source diff, not just version numbers — so it catches risky jumps. A state machine.
-
-### How do you install it?
-git clone --depth 1 https://github.com/cli/cli.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: cli/cli The repository ships 1 skills in total. Homepage: https://cli.github.com
-
-========================================================================
 ## travel-plan-viz
 ## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
 URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
@@ -484,6 +418,28 @@ git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后
 
 ### Q：它从哪来？
 Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+========================================================================
+## dependabot-triager
+## 只评不批的Dependabot PR分流员，三档结论
+URL: https://ourword.ai/skill/i/cli-cli-dependabot-triager/
+Source: https://github.com/cli/cli/tree/HEAD/.github/skills/dependabot-triager
+Updated: 2026-09-02
+Tags: writing, skill, cli
+
+For every open Dependabot PR, it reads the upstream diff, then posts one comment: Merge, Review first, or Don't.
+
+### What does this skill do?
+Assesses an open Dependabot pull request and emits a recommendation (Merge / Review before merging / Do not merge) plus confidence (High / Medium / Low) with concise prose grounded in upstream source changes. Advisory only: it posts a single comment and never merges, approves, or labels. Designed to run as a scheduled reconciler that comments exactly once per PR state and re-comments only when the
+
+### Why is it worth installing?
+Verdicts are grounded in the actual upstream source diff, not just version numbers — so it catches risky jumps. A state machine.
+
+### How do you install it?
+git clone --depth 1 https://github.com/cli/cli.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: cli/cli The repository ships 1 skills in total. Homepage: https://cli.github.com
 
 ========================================================================
 ## multi-copywrite-alchemy
@@ -1012,50 +968,6 @@ git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your 
 Repository: rohitg00/agentmemory The repository ships 1 skills in total. Homepage: https://agent-memory.dev
 
 ========================================================================
-## ai-visibility
-## 不靠猜，直接读 GA4 原始流量，看 ChatGPT
-URL: https://ourword.ai/skill/i/ryze-ai-adgent-open-seo-mcp-skills-ai-visibility/
-Source: https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills/tree/HEAD/skills/ai-visibility
-Updated: 2026-08-31
-Tags: work, skill, Ryze-AI-Adgent
-
-Stop asking LLMs 'have you seen me?'—that's hallucination. Pull real ChatGPT, Perplexity, Claude, Gemini.
-
-### What does this skill do?
-Measure real AI-engine visibility — traffic from ChatGPT, Perplexity, Claude, Gemini and which pages they cite — from actual GA4 referral data, not prompt sampling. Use when asked "AI visibility", "GEO/AEO check", "do LLMs cite us", "traffic from ChatGPT", or "how do we show up in AI search".
-
-### Why is it worth installing?
-No sampling, no prompt guessing—it maps real AI-engine referrals to cited landing pages straight from GA4. Data is the ledger.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Ryze-AI-Adgent/open-seo-mcp-skills The repository ships 1 skills in total.
-
-========================================================================
-## backlink-check
-## 不只看外链数量，连锚文本分布都摊开给你看的反链体检
-URL: https://ourword.ai/skill/i/ryze-ai-adgent-open-seo-mcp-skills-backlink-check/
-Source: https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills/tree/HEAD/skills/backlink-check
-Updated: 2026-08-31
-Tags: work, skill, Ryze-AI-Adgent
-
-Stop counting links. See referring domains, authority, anchors, and new/lost links at a glance, plus a.
-
-### What does this skill do?
-Backlink profile for any domain — referring domains, authority, anchors, new/lost links, and a side-by-side vs a competitor. Use when asked "check my backlinks", "backlink profile of X", "who links to them", or "link gap vs competitor".
-
-### Why is it worth installing?
-Most tools give a vanity score. This one breaks link quality into actionable dimensions and hands you a direct gap list against.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Ryze-AI-Adgent/open-seo-mcp-skills The repository ships 1 skills in total.
-
-========================================================================
 ## hotclip
 ## 长视频不出本机，剪成带卡拉OK字幕的竖屏爆点
 URL: https://ourword.ai/skill/i/xixihhhh-hotclip-hotclip/
@@ -1302,6 +1214,28 @@ git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git Then point 
 Repository: CreateLafont/dnr-flat-pic The repository ships 1 skills in total.
 
 ========================================================================
+## oil-motion
+## 一套切开的网页动效
+URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
+Source: https://github.com/oil-oil/oil-motion
+Updated: 2026-08-28
+Tags: images, skill, oil-oil
+
+Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
+
+### What does this skill do?
+Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
+
+### Why is it worth installing?
+It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
+
+### How do you install it?
+git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: oil-oil/oil-motion The repository ships 1 skills in total.
+
+========================================================================
 ## video-understanding
 ## 视频拆成六层索引，写稿前先看清素材全貌
 URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/
@@ -1338,28 +1272,6 @@ git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后
 
 ### Q：它从哪来？
 Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## oil-motion
-## 一套切开的网页动效
-URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
-Source: https://github.com/oil-oil/oil-motion
-Updated: 2026-08-28
-Tags: images, skill, oil-oil
-
-Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
-
-### What does this skill do?
-Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
-
-### Why is it worth installing?
-It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
-
-### How do you install it?
-git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: oil-oil/oil-motion The repository ships 1 skills in total.
 
 ========================================================================
 ## video-assemble
@@ -1882,20 +1794,20 @@ git clone --depth 1 https://github.com/hongfamonvAI/vintage-travel-ticket.git Th
 Repository: hongfamonvAI/vintage-travel-ticket Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
-## ad-attack
-## 拿到域账号后不再卡壳的 AD 全链路攻击手册
-URL: https://ourword.ai/skill/i/pale-knight-redteam-skill-ad-attack/
-Source: https://github.com/pale-knight/redteam-skill/tree/HEAD/skills/ad-attack
+## ad-recon
+## 不碰密码不越权，把AD域摸成一张可下手的图
+URL: https://ourword.ai/skill/i/pale-knight-redteam-skill-ad-recon/
+Source: https://github.com/pale-knight/redteam-skill/tree/HEAD/skills/ad-recon
 Updated: 2026-08-23
 Tags: work, skill, pale-knight
 
-From Kerberoast to ADCS ESC17, crack then use, relay, abuse ACLs, cross trusts—one continuous chain to own the.
+Recon AD with or without creds: users, ACLs, ADCS, LAPS, BloodHound, dMSA/Ghost SPN, trusts. Maps only—no.
 
 ### What does this skill do?
-Active Directory exploitation after domain credentials exist: Kerberos (AS-REP/Kerberoast including cracking the ticket then using the account), delegation, NTLM coercion/relay, lateral movement, ACL abuse, ADCS ESC1-ESC17 and CVE paths, dMSA/BadSuccessor, Kerberos reflection, identity confusion, management-plane, domain trust, and domain persistence. Own the current AD chain through crack-and-use
+Active Directory reconnaissance with or without credentials: user/group/computer enumeration, ACL/delegation, ADCS, modern Windows LAPS, BloodHound, Server 2025/dMSA/Ghost SPN candidates, and trust mapping. Recon only — do not exploit Kerberoast-to-DA, DCSync, or change passwords. Operator may select /ad-attack after cards are ready.
 
 ### Why is it worth installing?
-Not a PoC dump—it's chain-ordered: each step's output feeds the next, cracked accounts auto-flow into later moves, no.
+Hard separation between recon and attack—you explicitly opt into /ad-attack after cards are ready. Covers bleeding-edge Server.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/pale-knight/redteam-skill.git Then point your agent at the skill directory.
@@ -1926,28 +1838,6 @@ git clone --depth 1 https://github.com/LiamGvchi/gc-minimal-ip-doodle.git Then p
 Repository: LiamGvchi/gc-minimal-ip-doodle The repository ships 1 skills in total.
 
 ========================================================================
-## ad-recon
-## 不碰密码不越权，把AD域摸成一张可下手的图
-URL: https://ourword.ai/skill/i/pale-knight-redteam-skill-ad-recon/
-Source: https://github.com/pale-knight/redteam-skill/tree/HEAD/skills/ad-recon
-Updated: 2026-08-23
-Tags: work, skill, pale-knight
-
-Recon AD with or without creds: users, ACLs, ADCS, LAPS, BloodHound, dMSA/Ghost SPN, trusts. Maps only—no.
-
-### What does this skill do?
-Active Directory reconnaissance with or without credentials: user/group/computer enumeration, ACL/delegation, ADCS, modern Windows LAPS, BloodHound, Server 2025/dMSA/Ghost SPN candidates, and trust mapping. Recon only — do not exploit Kerberoast-to-DA, DCSync, or change passwords. Operator may select /ad-attack after cards are ready.
-
-### Why is it worth installing?
-Hard separation between recon and attack—you explicitly opt into /ad-attack after cards are ready. Covers bleeding-edge Server.
-
-### How do you install it?
-git clone --depth 1 https://github.com/pale-knight/redteam-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: pale-knight/redteam-skill The repository ships 1 skills in total.
-
-========================================================================
 ## wujutong
 ## 按三焦辨证给温病方，古人矛盾处照原样留着
 URL: https://ourword.ai/skill/i/jangviktor-web-wujutong/
@@ -1968,28 +1858,6 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 
 ### Where does it come from?
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## cicd
-## 专挑 CI/CD 软肋下手的红队渗透手册
-URL: https://ourword.ai/skill/i/pale-knight-redteam-skill-cicd/
-Source: https://github.com/pale-knight/redteam-skill/tree/HEAD/skills/cicd
-Updated: 2026-08-23
-Tags: work, skill, pale-knight
-
-Stop guessing on Jenkins, GitHub Actions, self-hosted runners. Covers poisoned pipelines, dependency confusion.
-
-### What does this skill do?
-CI/CD pipeline and software-supply-chain exploitation: Jenkins, GitHub Actions, GitLab CI/CD, Azure DevOps, Gitea/Forgejo, self-hosted runners/agents, poisoned pipeline execution, artifact/cache abuse, dependency confusion, third-party Action trust, GitOps/registry poisoning, workload identity/OIDC, and emerging agentic CI/CD. Use this skill when the operator has access to a CI/CD system, source r
-
-### Why is it worth installing?
-Organized by attack flow, not CVE lists. Each phase from initial access to lateral movement includes concrete exploitation steps.
-
-### How do you install it?
-git clone --depth 1 https://github.com/pale-knight/redteam-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: pale-knight/redteam-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## vibe-techdesign
@@ -4136,44 +4004,6 @@ git clone --depth 1 https://github.com/oil-oil/kimi.git Then point your agent at
 Repository: oil-oil/kimi The repository ships 1 skills in total.
 
 ========================================================================
-## clean-c-drive
-## 只动你点头的C盘清理，先扫后议再备份
-URL: https://ourword.ai/skill/i/iziqing-disk-cleaner/
-URL (中文): https://ourword.ai/skill/zh/i/iziqing-disk-cleaner/
-Source: https://github.com/iziqing/-disk-cleaner
-Updated: 2026-07-17
-Tags: play, skill, iziqing
-
-WizTree scans, two-layer analysis flags risks, every step awaits your OK. Backs up before deleting, auto-rollback.
-
-### What does this skill do?
-小白安全清理C盘（Windows）。当用户想清理C盘、磁盘空间不足、系统盘快满了、想安全释放空间时使用。WizTree扫描→模式库+知识库两层分析→清理方案经用户批复→备份后执行→观察期收尾。安全第一，不确定的一律不动。
-
-### Why is it worth installing?
-It's a safety-first pipeline—scan, analyze, approve, backup, execute, observe—never touches what's uncertain, cutting 90% of.
-
-### How do you install it?
-git clone --depth 1 https://github.com/iziqing/-disk-cleaner.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: iziqing/-disk-cleaner The repository ships 1 skills in total.
-
---- 中文 ---
-WizTree扫出大文件，两层分析辨风险，每步都等你批复。备份后才动手，观察期自动回滚——小白也能放心清出10GB。
-
-### Q：这个 skill 做什么？
-小白安全清理C盘（Windows）。当用户想清理C盘、磁盘空间不足、系统盘快满了、想安全释放空间时使用。WizTree扫描→模式库+知识库两层分析→清理方案经用户批复→备份后执行→观察期收尾。安全第一，不确定的一律不动。
-
-### Q：为什么值得装？
-不是闷头删，而是把「安全」做成流程：扫描→分析→批复→备份→执行→观察，六步闭环，不确定的绝不碰。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/iziqing/-disk-cleaner.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: iziqing/-disk-cleaner The repository ships 1 skills in total.
-
-========================================================================
 ## vibe-check
 ## 带纯新手把模糊点子变成计划，顺手教会他用 GitHub
 URL: https://ourword.ai/skill/i/texasbedouin-vibe-check/
@@ -4386,50 +4216,6 @@ git clone --depth 1 https://github.com/wei011/heat-risk-calc.git Then point your
 
 ### Where does it come from?
 Repository: wei011/heat-risk-calc The repository ships 1 skills in total.
-
-========================================================================
-## compare
-## 同一步伐对齐训练曲线，拒绝拿终局当基准的对比
-URL: https://ourword.ai/skill/i/fcakyon-phd-skills-compare/
-Source: https://github.com/fcakyon/phd-skills/tree/HEAD/plugin/skills/compare
-Updated: 2026-07-03
-Tags: images, skill, fcakyon
-
-Mid-training? Align runs at the current step across wandb/Neptune/TB/MLflow, separating proxy metrics from.
-
-### What does this skill do?
-Same-epoch comparison of training runs across wandb, neptune, tensorboard, or mlflow. Aligns runs at the student's current step (never current-vs-final-of-baseline) and separates proxy metrics from downstream targets. Use when the user asks to compare runs, check if a run is improving, track lag against a baseline, rank experiments, or evaluate run-vs-run performance.
-
-### Why is it worth installing?
-Most tools compare live runs to finished baselines, skewing judgment. This forces same-step alignment and separates proxies from.
-
-### How do you install it?
-git clone --depth 1 https://github.com/fcakyon/phd-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: fcakyon/phd-skills The repository ships 1 skills in total.
-
-========================================================================
-## experiment-design
-## 只认消融实验的对照设计器，基线矩阵自动排
-URL: https://ourword.ai/skill/i/fcakyon-phd-skills-experiment-design/
-Source: https://github.com/fcakyon/phd-skills/tree/HEAD/plugin/skills/experiment-design
-Updated: 2026-07-03
-Tags: images, skill, fcakyon
-
-When you ask 'what experiments to run', it skips generic advice and hands you a concrete matrix for ablations.
-
-### What does this skill do?
-Use when the user wants to design experiments, plan ablation studies, structure baselines, or create incremental evaluation strategies. Triggers on phrases like "design ablation", "plan experiment", "what experiments should I run", "baseline comparison", or "experiment matrix".
-
-### Why is it worth installing?
-Treats experiment design as a structural puzzle, not a brainstorm—auto-generates comparable ablation branches and baseline tiers.
-
-### How do you install it?
-git clone --depth 1 https://github.com/fcakyon/phd-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: fcakyon/phd-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## whiteboard-video
