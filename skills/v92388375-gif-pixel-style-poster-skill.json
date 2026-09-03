@@ -2,12 +2,12 @@
  "id": "v92388375-gif-pixel-style-poster-skill",
  "kind": "skill",
  "name": "pixel-style-poster-skill",
- "title_zh": "把主题、照片或情绪变成一张3:4像素风编辑海报",
- "tagline_zh": "丢个词、一张照片或一种情绪，就得到一张带点阵主体的编辑风海报。不是滤镜，是像素级构图；标题排版、网点背景。",
- "tagline_en": "Drop a theme, photo, or mood and get an editorial 3:4 poster with fine dot-matrix subjects, typographic.",
+ "title_zh": "把主题变成 3:4 像素风海报与配套位图",
+ "tagline_zh": "给一句主题、情绪或照片，直接拿到杂志感点阵海报：大号细点主体、克制配色、低分辨率复古味，标题与留白排版也一并给到。",
+ "tagline_en": "Give a theme, mood, or photo; get an editorial dot-matrix poster: fine-grained subject, restrained palette.",
  "desc_en": "Generate Pixel Style Poster prompts and matching raster images. Use when the user gives a theme, phrase, object, mood, photo, or content idea and wants a 3:4 editorial bitmap poster with a large fine dot-matrix subject, optional title-led or quiet microtype typography, close subject-text composition, optional colored-wash reverse halftone backgrounds, restrained color transitions, and low-resoluti",
- "why_zh": "它把海报拆成可复现的规则：主体点阵密度、文字与主体的咬合距离、背景半调网屏，每一步都按画报逻辑生成。",
- "why_en": "It decomposes poster design into reproducible rules—dot density, subject–text proximity, halftone wash—so output follows.",
+ "why_zh": "不是只给提示词——它同时渲染出位图成品，且排版与主体间距按 3:4 构图强制收紧。",
+ "why_en": "Not just prompts—it renders the bitmap too, with 3:4 composition and tight subject-text spacing enforced, avoiding the usual.",
  "repo": "v92388375-gif/pixel-style-poster-skill",
  "owner": "v92388375-gif",
  "path": "",
@@ -27,12 +27,13 @@
   "copy": "mv pixel-style-poster-skill ~/.claude/skills/pixel-style-poster-skill",
   "dir": "~/.claude/skills/pixel-style-poster-skill"
  },
- "limit_zh": "只出3:4位图，不输出矢量或HTML；需要本机有Python图像库（Pillow等）；文字排版只支持英文。",
+ "limit_zh": "只认 3:4 竖版；输入需是主题/情绪/照片等可描述内容，不接受纯技术参数。输出为低分辨率位图（非矢量）。",
  "cover": "/skill/assets/covers/v92388375-gif-pixel-style-poster-skill.jpg",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 5,
  "cover_w": 1050,
  "cover_h": 1400,
- "limit_en": "Outputs only 3:4 bitmaps, no vector/HTML; requires local Python imaging libs (e.g., Pillow); typography is English-only—Chinese titles need manual."
+ "limit_en": "Only 3:4 portrait; needs a describable theme/mood/photo, not raw specs. Output is low-res bitmap (not vector); no 300dpi print files or local edits.",
+ "title_en": "Turn any theme into a 3:4 pixel poster + bitmap"
 }

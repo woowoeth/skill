@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-fantasy-movie-poster-skill",
  "kind": "skill",
  "name": "fantasy-movie-poster",
- "title_zh": "把一句话故事变成 9:16 电影海报，背景与字分层出",
- "tagline_zh": "给编剧、短片导演、小说作者当概念海报草稿机。输入类型关键词或一句梗概，它先出背景图再叠标题字，两层分开可改。",
- "tagline_en": "Turn a logline or genre tag into a 9:16 cinematic poster with separate background and typography layers—built for.",
+ "title_zh": "把一句话故事梗概变成 9:16 中文电影海报",
+ "tagline_zh": "给一句梗概、类型词或参考图，它产出分层海报：背景图与字体排版分离，可单独微调。覆盖爱情、体育、律政、公路、犯罪。",
+ "tagline_en": "Feed it a logline, genre tag, or reference image—get a layered poster with separate background and typography.",
  "desc_en": "Design original 9:16 Chinese-language cinematic movie posters from story briefs, genre keywords, or visual references, including layered cover workflows with separate image-designed background and typography layers. Use for romance, sports, historical/legal drama, road films, crime thrillers, war, Eastern ink, sci-fi isolation, ensemble casts, and playful concept films. Do not use to copy an exist",
- "why_zh": "不是文生图后硬加字。它把背景与字型拆成两条独立工作流，先定画面再排字，中文排版不崩。",
- "why_en": "Unlike one-shot image generators, it splits background and typography into two passes—so Chinese title layout stays clean and.",
+ "why_zh": "不是套模板，而是按片种自动匹配视觉语法：水墨留白、犯罪低饱和、科幻冷调。排版层独立于画面层。",
+ "why_en": "Not a template mill—it maps genre to visual grammar: ink-wash negative space, crime desaturation, sci-fi cool tones. Typography.",
  "repo": "dacnay816y62-hub/fantasy-movie-poster-skill",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -27,12 +27,13 @@
   "copy": "mv fantasy-movie-poster-skill ~/.claude/skills/fantasy-movie-poster-skill",
   "dir": "~/.claude/skills/fantasy-movie-poster-skill"
  },
- "limit_zh": "只出 9:16 竖版概念稿，不做横版、不做系列延展、不修图。输入需是原创故事或类型关键词，若给现成电影名或剧照。",
+ "limit_zh": "只做原创合成，不复制任何现存海报或剧照；输入需为中文梗概或明确类型词，纯英文或抽象意象会降低匹配度。输出为设计稿。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-fantasy-movie-poster-skill.png",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 4,
  "cover_w": 932,
  "cover_h": 1400,
- "limit_en": "Outputs only 9:16 vertical concept posters—no horizontal, no series, no retouching. Requires original story or genre input; refuses existing film."
+ "limit_en": "Original compositions only—no copying existing posters or stills. Needs Chinese brief or clear genre tags; pure English or abstract mood words.",
+ "title_en": "Turn a story brief into a 9:16 Chinese movie poster"
 }

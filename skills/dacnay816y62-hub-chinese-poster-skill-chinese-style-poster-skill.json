@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill",
  "kind": "skill",
  "name": "chinese-style-poster-skill",
- "title_zh": "把东方美学主题变成可直接出图的海报提示词",
- "tagline_zh": "从节气、非遗、茶香到城市展览，输入主题就产出中式当代风格海报与提示词。不用会设计，也能让 AI 出片有杂志级东方质。",
- "tagline_en": "Turn any Chinese cultural theme—tea, heritage, city, festival—into refined contemporary Oriental poster prompts.",
+ "title_zh": "把任意主题转成当代中式美学海报与生成提示词",
+ "tagline_zh": "给活动、品牌、非遗、节气、茶香、建筑写海报，不靠素材库堆砌。输入一句主题，输出可直接落地的版式方向与东方美学文案。",
+ "tagline_en": "From festivals to heritage brands, get poster layouts & poetic copy with contemporary Chinese aesthetics — no.",
  "desc_en": "Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seasonal festivals, tea, incense, craft, museum, commercial brands, fashion, urban culture, editorial campaigns, or experimental cultural subjects. Use when the use",
- "why_zh": "它不套模板，而是从主题语义拆解出构图、留白、墨色与字体气质，让提示词自带东方美学的内在逻辑。",
- "why_en": "It doesn't recycle templates—it parses theme semantics into composition, negative space, ink tones, and typeface mood, so.",
+ "why_zh": "不是滤镜套壳，而是先拆解主题的意象内核，再匹配版式、留白、字体气质与文案调性，产出成体系的设计方向。",
+ "why_en": "It doesn't slap on a filter — it dissects the theme's imagery core, then pairs layout, whitespace, typography & copy tone into a.",
  "repo": "dacnay816y62-hub/chinese-poster-skill",
  "owner": "dacnay816y62-hub",
  "path": "chinese-style-poster-skill",
@@ -27,12 +27,13 @@
   "copy": "cp -r chinese-poster-skill/chinese-style-poster-skill ~/.claude/skills/chinese-style-poster-skill",
   "dir": "~/.claude/skills/chinese-style-poster-skill"
  },
- "limit_zh": "只产出提示词与海报方案，不生成图片文件；需配合外部图像生成工具使用。偏重当代中式与东方审美，对欧美复古或极简北欧风不适。",
+ "limit_zh": "只产出海报设计方案与生成提示词，不输出最终图像文件；需要你另有图像生成工具或设计师执行。对纯西方极简或赛博朋克风格不擅。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill.jpg",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 4,
  "cover_w": 1050,
  "cover_h": 1400,
- "limit_en": "Outputs prompts & poster specs only, no image files—requires an external generator. Focused on contemporary Chinese/Oriental aesthetics; not for."
+ "limit_en": "Delivers design blueprints & prompts only, no image files — you'll need a separate generator or designer. Weak on pure Western minimalism or.",
+ "title_en": "Turn any theme into refined Chinese-style poster art &."
 }

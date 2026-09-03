@@ -2,12 +2,12 @@
  "id": "mattpocock-skills",
  "kind": "collection",
  "name": "skills",
- "title_zh": "把真实工程师的 .agents 技能目录直接搬进你的",
- "tagline_zh": "不是玩具 demo，是 Matt Pocock 自己机器上跑着的真家伙。装完就能用，省去你从零摸索 prompt 。",
- "tagline_en": "Real skills from a real engineer's .agents folder. Skip the toy demos—grab what actually runs in production.",
+ "title_zh": "把 Matt Pocock 的 .agents 目录",
+ "tagline_zh": "你写代码时卡在类型报错、重构犹豫、测试漏网？这里是他本人调教过的 skill，从真实提交里长出来。",
+ "tagline_en": "Stuck on type errors, refactors, or blind spots? These are skills Matt actually runs in his own .agents — grown.",
  "desc_en": "Skills for Real Engineers. Straight from my .agents directory.",
- "why_zh": "每个 skill 都经过作者日常实战打磨，不是纸上谈兵。结构即插即用，省掉你设计 prompt 和工具。",
- "why_en": "Each skill is battle-tested in daily dev work, not theoretical. Plug-and-play structure saves you from designing prompts and.",
+ "why_zh": "不是包装过的教程，是他仓库里正在用的原文件。装完即得他处理 TS 边界、提交信息、代码评审时的判断路径。",
+ "why_en": "Not a curated tutorial — raw skills from his live .agents directory. You inherit his actual decision paths for TS edge cases.",
  "repo": "mattpocock/skills",
  "owner": "mattpocock",
  "path": "",
@@ -28,11 +28,12 @@
   "dir": "~/.claude/skills/skills"
  },
  "cover": "/skill/assets/covers/mattpocock-skills.png",
- "limit_zh": "仅覆盖 Matt 个人工作流（TypeScript/前端为主），不含通用办公或数据分析。装前需自备对应 CLI 工具。",
+ "limit_zh": "只覆盖他个人工作流覆盖到的场景（TypeScript、短提交、PR 评审）。不含通用脚手架或框架无关的万能 agent。",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 8,
  "cover_w": 738,
  "cover_h": 388,
- "limit_en": "Only covers Matt's personal workflow (TS/frontend-heavy), no generic office or data analysis. Requires your own CLIs; prompt style is."
+ "limit_en": "Only covers his personal workflow (TS, short commits, PR review). No generic scaffolding. Outputs carry his taste — may clash with your team's.",
+ "title_en": "Drop Matt Pocock's .agents skills into your repo"
 }

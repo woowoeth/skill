@@ -2,14 +2,14 @@
  "id": "zenstory-ai-video-recap-skills-video-script",
  "kind": "skill",
  "name": "video-script",
- "title_zh": "把视频分析结果变成带时间戳的导演级解说稿",
- "tagline_zh": "已有 VLM 分析但不知怎么剪？它替你定故事线、分镜画面与旁白分工，最后产出逐秒校验过的中文解说，写完就能用。",
- "tagline_en": "Got VLM analysis but no edit plan? It picks the story, splits visuals/audio/narration, and delivers a.",
+ "title_zh": "把视频分析结果变成导演级剪辑与解说稿",
+ "tagline_zh": "已有 VLM 分析但不知怎么剪？它替你定故事线、挑片段、分镜分工，再写出带时间戳的中文解说并自动校验，一步到位。",
+ "tagline_en": "Stuck with VLM analysis but no cut? It picks the story, selects shots, assigns audio/visual roles, writes.",
  "desc_en": "对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。",
- "why_zh": "不是从零写稿，而是消费 work_dir 里的理解索引，强制先定导演策略再落笔，解说与画面分工有据可查。",
- "why_en": "It consumes your existing analysis index, forces a director's plan before writing, and validates timestamps so narration never.",
- "limit_zh": "只认 work_dir 里已有 agent_narration_brief.md 和 vlm_analysis.jso。",
- "limit_en": "Requires agent_narration_brief.md + vlm_analysis.json in work_dir. No raw video input, no image generation, no non-Chinese output. Errors outside.",
+ "why_zh": "不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环，解说与画面错位会当场被。",
+ "why_en": "Not a fill-in-the-blank template. It thinks like a director: story first, then shot selection and audio/visual split; outputs.",
+ "limit_zh": "只吃已含 agent_narration_brief.md 和 vlm_analysis.json 的 work_di。",
+ "limit_en": "Requires work_dir with agent_narration_brief.md & vlm_analysis.json; no raw video. Outputs plans & narration script, not final video.",
  "repo": "zenstory-ai/video-recap-skills",
  "owner": "zenstory-ai",
  "path": "skills/video-script",
@@ -29,5 +29,6 @@
   "copy": "cp -r video-recap-skills/skills/video-script ~/.claude/skills/video-script",
   "dir": "~/.claude/skills/video-script"
  },
- "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-script.png"
+ "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-script.png",
+ "title_en": "Turn video analysis into a director-level cut & narration."
 }

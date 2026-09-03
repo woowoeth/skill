@@ -2,12 +2,12 @@
  "id": "dacnay816y62-hub-photo-revival",
  "kind": "skill",
  "name": "photo-revival",
- "title_zh": "把随手拍变成手绘诗意插画",
- "tagline_zh": "照片滤镜看腻了？想要留白、色块和手写小字，而不是磨皮和锐化。它把日常瞬间重画成纸上作品，像寄出的明信片。",
- "tagline_en": "Tired of filters that just beautify? Turn snapshots into hand-drawn illustrations with white space, vivid color.",
+ "title_zh": "把随手拍变成留白诗意手绘插画",
+ "tagline_zh": "厌倦了滤镜和美颜？这张照片想要的是被画下来。大留白、局部色彩、拼贴小纸片、手写小字——像寄自旧时光的明信片。",
+ "tagline_en": "Tired of filters and beauty modes? This photo wants to be drawn, not edited. Big white space, local color.",
  "desc_en": "Turn ordinary photos or everyday snapshots into poetic hand-drawn illustrations with large white-paper negative space, vivid localized color, subtle collage accents, and tiny handwritten captions. Use when a user wants a real photo reimagined as an illustration rather than filtered, beautified, or photorealistically edited.",
- "why_zh": "不是风格迁移，而是重构画面：先抽结构再上色，留白和拼贴是主动设计，手写小字给照片加了一层叙事时间。",
- "why_en": "Not style transfer—it rebuilds the image: extracts structure, then applies color with deliberate negative space and collage.",
+ "why_zh": "不是风格迁移，是重新构图：先抽掉背景杂物，再按诗意逻辑分配留白与色块，最后手工拼贴。",
+ "why_en": "Not style transfer—it recomposes first: strips clutter, redistributes white space and color by poetic logic, then adds collage.",
  "repo": "dacnay816y62-hub/photo-revival",
  "owner": "dacnay816y62-hub",
  "path": "",
@@ -27,12 +27,13 @@
   "copy": "mv photo-revival ~/.claude/skills/photo-revival",
   "dir": "~/.claude/skills/photo-revival"
  },
- "limit_zh": "只处理单张静物/人像/街拍，不接多图合成或文字密集的截图；输出为扁平插画风，不保留原图光影细节；需要网络调用模型。",
+ "limit_zh": "只处理单张照片，不批量；需要原图有至少一个清晰主体（人/物/景），纯风景或极暗光会退化成空白纸。输出为PNG插画。",
  "cover": "/skill/assets/covers/dacnay816y62-hub-photo-revival.jpg",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 3,
  "cover_w": 933,
  "cover_h": 1400,
- "limit_en": "Single stills/portraits/street shots only; no multi-image composites or text-heavy screenshots. Output is flat illustration—no original lighting."
+ "limit_en": "Single photo only, no batch. Needs one clear subject (person/object/scene); pure landscapes or very low light degrade to blank paper. Output is PNG.",
+ "title_en": "Turn snapshots into poetic hand-drawn illustrations"
 }

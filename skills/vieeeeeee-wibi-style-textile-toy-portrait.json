@@ -3,13 +3,13 @@
  "kind": "skill",
  "name": "textile-toy-portrait",
  "title_zh": "把真人照片变成颗粒绒玩偶肖像",
- "tagline_zh": "上传一张真实照片，立刻得到毛绒绒的玩偶版自己。适合做头像、礼物或纪念品，质感像手工针织，不是廉价滤镜。",
- "tagline_en": "Turn a real photo into a plush, knitted-toy portrait. Perfect for avatars, gifts, or keepsakes—feels handcrafted.",
+ "tagline_zh": "上传一张脸，得到一只毛绒绒的你。不是滤镜贴纸，是重新理解五官后生成的颗粒绒质感玩偶，适合头像、礼物、纪念品。",
+ "tagline_en": "Upload a face, get a fuzzy plush you. Not a filter—it re-reads your features into a tufted toy portrait. For.",
  "desc_en": "Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。",
- "why_zh": "先理解照片内容再选风格，不是套模板。能动态匹配颗粒绒的纹理走向和光影，让玩偶有“被摸过”的柔软感。",
- "why_en": "It reads the photo first, then adapts the knit texture and lighting to match the subject—so the toy feels tactile and lived-in.",
- "limit_zh": "只处理人像照片，且需要主体清晰、光线均匀。宠物、多人合影或低分辨率图会直接失败。生成的是静态肖像，不包含场景或动作重绘。",
- "limit_en": "Only single-person portraits with clear subject and even lighting. Pets, group shots, or low-res images fail. Output is a static bust—no scene or.",
+ "why_zh": "先解析照片内容再选风格参考，而非套模板。五官比例、光影、绒面走向都按原图重建，所以每只玩偶都长得像本人。",
+ "why_en": "It understands the photo first, then picks a style reference—rebuilding face proportions, lighting, and tuft direction from the.",
+ "limit_zh": "只接受清晰正脸或半侧脸照片，侧脸/低头/遮挡超30%会直接失败。产物是静态成图，不输出动画、3D模型或可打印文件。",
+ "limit_en": "Needs a clear frontal or slight 3/4 face; profile, downcast, or >30% occlusion fails. Output is a static image only—no animation, 3D, or print file.",
  "repo": "Vieeeeeee/wibi-style",
  "owner": "Vieeeeeee",
  "path": "skills/textile-toy-portrait",
@@ -34,5 +34,6 @@
  "cover_kind": "artwork",
  "cover_real": true,
  "cover_w": 1400,
- "cover_h": 931
+ "cover_h": 931,
+ "title_en": "Turn real photos into plush toy portraits"
 }

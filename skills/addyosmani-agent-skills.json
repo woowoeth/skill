@@ -2,12 +2,12 @@
  "id": "addyosmani-agent-skills",
  "kind": "collection",
  "name": "agent-skills",
- "title_zh": "把 Addy Osmani 的生产级工程经验装进你的",
- "tagline_zh": "面对遗留代码库、性能瓶颈或架构决策时，你的 Agent 不再泛泛而谈——它直接调用谷歌前工程总监验证过的实战套路。",
- "tagline_en": "When your coding agent hits legacy code, perf bottlenecks, or architecture calls, it taps battle-tested playbooks.",
+ "title_zh": "把 Addy Osmani 的工程实战经验装进你的编",
+ "tagline_zh": "面对生产级代码不再靠猜。这是 Chrome 前工程总监沉淀的 skill 合集，覆盖从代码审查到性能剖析的真实工程。",
+ "tagline_en": "Stop guessing at production code. A battle-tested skill pack from Chrome's former engineering director — covering.",
  "desc_en": "Production-grade engineering skills for AI coding agents by Addy Osmani",
- "why_zh": "不是零散提示词，而是按工程阶段组织的可执行技能包，每个都带真实项目验证过的决策树和反模式清单。",
- "why_en": "Not scattered prompts—executable skill packs organized by engineering phase, each with real-world decision trees and.",
+ "why_zh": "不是零散提示词，而是按工程流程组织的 skill 体系。每个 skill 都经过真实项目验证。",
+ "why_en": "Not random prompts, but a structured skill system mapped to real engineering workflows. Each skill encodes proven practices.",
  "repo": "addyosmani/agent-skills",
  "owner": "addyosmani",
  "path": "",
@@ -28,11 +28,12 @@
   "dir": "~/.claude/skills/agent-skills"
  },
  "cover": "/skill/assets/covers/addyosmani-agent-skills.jpg",
- "limit_zh": "只覆盖 Web 前端与性能优化领域，不含后端、数据或移动端；技能包是方法论模板，不绑定具体代码库。",
+ "limit_zh": "仅适用于编码类 Agent（如 Claude Code、Cursor）。不包含 UI 设计、运维部署等非编码域。",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 8,
  "cover_w": 1376,
  "cover_h": 768,
- "limit_en": "Web frontend & performance only—no backend, data, or mobile. Skills are methodology templates, not repo-bound; you must adapt to your codebase. No."
+ "limit_en": "For coding agents only (e.g., Claude Code, Cursor). No UI/ops coverage. Skills provide checklists & flows, not auto-fixes; complex architecture.",
+ "title_en": "Production-grade engineering skills for AI coding agents."
 }

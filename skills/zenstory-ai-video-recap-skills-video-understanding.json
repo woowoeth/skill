@@ -2,14 +2,14 @@
  "id": "zenstory-ai-video-recap-skills-video-understanding",
  "kind": "skill",
  "name": "video-understanding",
- "title_zh": "把视频拆成六层结构，让 AI 真正看懂镜头",
- "tagline_zh": "别人只给字幕摘要，它连静音都替你标出来。场景、台词、画面、留白各自成层，再熔成一条可查的创作时间线。",
- "tagline_en": "Others give you a subtitle summary. This one flags even the silences—scenes, speech, visuals, and pauses fused.",
+ "title_zh": "把任意视频拆成六层结构化理解索引",
+ "tagline_zh": "看完一部纪录片，你只记得'好像不错'。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。",
+ "tagline_en": "After a documentary, you only remember 'it was nice'. This turns video into scenes, transcripts, visual notes.",
  "desc_en": "把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。",
- "why_zh": "不是单模型硬读全片，而是场景检测、ASR、VLM 各干各的活，再融合成 brief。每层独立可查。",
- "why_en": "No single model brute-forces the whole video. Scene detection, ASR, and VLM each do their own pass, then fuse into a brief—each.",
- "limit_zh": "只吃本地视频文件，需要 ffmpeg 和 GPU 跑 VLM；输出是分析产物不是成片，写稿还得自己来。",
- "limit_en": "Local video files only; needs ffmpeg + GPU for VLM. Outputs analysis artifacts, not a finished edit. Videos over 2h may hit API quotas with no resume.",
+ "why_zh": "不是单一转录，而是六层产物互相咬合：ASR 对齐场景，VLM 观察画面，静音窗补叙事空隙。",
+ "why_en": "Not just transcription—six interlocking layers: ASR aligns scenes, VLM reads visuals, silence gaps fill narrative holes, fused.",
+ "limit_zh": "只吃本地视频文件，不吃 YouTube 链接；需预装 ffmpeg 和一台能跑 VLM 的 GPU（无 GPU 则视觉。",
+ "limit_en": "Local video files only, no URLs. Requires ffmpeg & a GPU for VLM (else visual layer skipped). Outputs scene-level analysis, not final prose—pair.",
  "repo": "zenstory-ai/video-recap-skills",
  "owner": "zenstory-ai",
  "path": "skills/video-understanding",
@@ -29,5 +29,6 @@
   "copy": "cp -r video-recap-skills/skills/video-understanding ~/.claude/skills/video-understanding",
   "dir": "~/.claude/skills/video-understanding"
  },
- "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-understanding.png"
+ "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-understanding.png",
+ "title_en": "Turn any video into a 6-layer structured understanding index"
 }

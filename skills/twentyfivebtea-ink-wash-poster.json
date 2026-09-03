@@ -2,12 +2,12 @@
  "id": "twentyfivebtea-ink-wash-poster",
  "kind": "skill",
  "name": "ink-wash-poster",
- "title_zh": "把任意素材变成一张水墨风海报与配图",
- "tagline_zh": "诗句、照片、活动、情绪……丢进来，还你一张留白得当、纸纹可见的水墨海报。构图和排版都替你拿捏，不用会设计。",
- "tagline_en": "Feed it a poem, photo, mood, or event—get back a quiet ink-wash poster with real paper grain and restraint. No.",
+ "title_zh": "把任意素材变成一张水墨编辑海报与配图",
+ "tagline_zh": "一句诗、一张照片、一段回忆，都能落成有纸纹、留白克制的海报。它先写提示词再出图，构图和排版替你拿捏，不靠撞大运。",
+ "tagline_en": "Turn a line, photo, or memory into a quiet, spacious ink-wash poster. It drafts the prompt first, then renders.",
  "desc_en": "Generate an ink-wash editorial poster prompt and the matching bitmap image from a user's theme, sentence, object, mood, article idea, photo, content brief, poem, memory, event, place, or other creative material. Use when the user wants a quiet, spacious, tactile ink-wash poster, cover, cultural visual, or reference-photo reinterpretation with thoughtful composition, paper texture, restrained typog",
- "why_zh": "不是滤镜套壳：它先解析素材里的意象与结构，再重排构图和文字层级，让水墨感长在内容上，而不是糊在表面。",
- "why_en": "Not a filter: it parses the source's imagery and structure, then rebuilds composition and typographic hierarchy so the ink-wash.",
+ "why_zh": "提示词与位图分两步走：先锁定构图与字型，再生成画面，避免文生图常见的失控。纸纹与留白是内置默认。",
+ "why_en": "Two-step pipeline: lock the prompt with composition and typography first, then render the image—taming text-to-image drift.",
  "repo": "TwentyfiveBTea/ink-wash-poster",
  "owner": "TwentyfiveBTea",
  "path": "",
@@ -27,12 +27,13 @@
   "copy": "mv ink-wash-poster ~/.claude/skills/ink-wash-poster",
   "dir": "~/.claude/skills/ink-wash-poster"
  },
- "limit_zh": "只出单张竖版海报图（含对应提示词），不生成系列、不排版多页。需要你本机装好图像生成环境；若素材是照片，只做风格化重绘。",
+ "limit_zh": "只输出单张竖版编辑海报风格，不处理多页、横版或动态。依赖外部图像生成 API，本机无模型；若素材是纯音频或视频。",
  "cover": "/skill/assets/covers/twentyfivebtea-ink-wash-poster.jpg",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 4,
  "cover_w": 1050,
  "cover_h": 1400,
- "limit_en": "Outputs one vertical poster image + its prompt only—no series, no multi-page layout. Requires a local image-gen setup; photos get stylized redraws."
+ "limit_en": "Single vertical editorial poster only—no multi-page, landscape, or motion. Requires an external image API (no local model). Pure audio/video input.",
+ "title_en": "Turn any material into an ink-wash editorial poster with."
 }

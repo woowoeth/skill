@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>让 CopilotKit 自动渲染 Agent 声明 — 品味</title>
-<meta name="description" content="Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。">
+<title>把 CopilotKit 的 A2UI 声明式界面渲 — 品味</title>
+<meta name="description" content="你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, CopilotKit">
 <link rel="canonical" href="https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="让 CopilotKit 自动渲染 Agent 声明 — 品味">
-<meta property="og:description" content="Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。">
+<meta property="og:title" content="把 CopilotKit 的 A2UI 声明式界面渲 — 品味">
+<meta property="og:description" content="你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。">
 <meta property="og:url" content="https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="让 CopilotKit 自动渲染 Agent 声明 — 品味">
-<meta name="twitter:description" content="Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"让 CopilotKit 自动渲染 Agent 声明","description":"Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。","url":"https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CopilotKit"},"codeRepository":"https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer"}</script>
+<meta name="twitter:title" content="把 CopilotKit 的 A2UI 声明式界面渲 — 品味">
+<meta name="twitter:description" content="你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 CopilotKit 的 A2UI 声明式界面渲","description":"你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。","url":"https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"CopilotKit"},"codeRepository":"https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>CopilotKit</span>
       <span class="date">2026-09-01</span>
     </div>
-    <h1 class="ttl">让 CopilotKit 自动渲染 Agent 声明</h1>
-    <p class="lede">Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。</p>
+    <h1 class="ttl">把 CopilotKit 的 A2UI 声明式界面渲</h1>
+    <p class="lede">你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。</p>
     <div class="tags"><span class="tag">CopilotKit</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>Agent 说我要一个表单，你还在手写 renderActivityMessages？装上它。它把 A2UI 的运行时与 Provider 两处开关一次配齐，并拦截 /info 自动激活。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只认 CopilotKit v2 的 A2UI 协议；若你的 Agent 返回非声明式 payload（如纯 mark。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「让 CopilotKit 自动渲染 Agent 声明」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>你的 Agent 开始返回 JSON 界面描述，但前端还停在纯文本聊天？这个 skill 让 A2UI 声明自动变。它把渲染管线拆成两层：运行时负责激活，provider 负责主题，底层原语（Provider/Rend。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只认 CopilotKit v2 的 A2UI 格式；非 A2UI 的 Agent 消息不会渲染。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把 CopilotKit 的 A2UI 声明式界面渲」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git">复制</button></div><div class="cmd"><code>cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer</code><button type="button" data-copy="cp -r CopilotKit/packages/a2ui-renderer/skills/a2ui-renderer ~/.claude/skills/a2ui-renderer">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,14 +76,14 @@
       </dl>
       <a class="pill" href="https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">把视频分析结果变成带时间戳的导演级解说稿</a><a href="../fihaaade-skills-outsider-art/">把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片画成寥寥数笔、大面积留白的当代写意水墨</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">把视频分析结果变成导演级剪辑与解说稿</a><a href="../fihaaade-skills-outsider-art/">把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片画成寥寥数笔、大面积留白的当代写意水墨</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>
     <a href="https://ourword.ai/podcast/">原声播客</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
   </nav>
-  <nav class="foot"><a href="../codeswithroh-tastemaker-tastemaker/">← 把参考图变成同风格 UI 的生成器</a><a href="../moonlin1213-cove-tarot-companion/">把塔罗牌阵变成一场本地私密对话 →</a></nav>
+  <nav class="foot"><a href="../codeswithroh-tastemaker-tastemaker/">← 把参考图变成同风格UI，告别AI味</a><a href="../moonlin1213-cove-tarot-companion/">本地塔罗仪式：抽牌、回看与陪伴对话的邀请 →</a></nav>
 </div>
 <script>
 (function(){

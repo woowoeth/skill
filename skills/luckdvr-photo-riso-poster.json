@@ -2,12 +2,12 @@
  "id": "luckdvr-photo-riso-poster",
  "kind": "skill",
  "name": "photo-riso-poster",
- "title_zh": "把一张照片拆成可印刷的孔版档案海报",
- "tagline_zh": "照片变海报，不是滤镜，是拆解：数出画面里的数量、间距、遮挡、方向、颜色角色，再用 2–3 色孔版油墨和证据字体重排。",
- "tagline_en": "Turn a photo into a riso archive poster—not a filter, but a teardown: count spacing, occlusion, direction, color.",
+ "title_zh": "把一张照片蒸馏成一张安静的孔版印刷档案海报",
+ "tagline_zh": "照片太吵？它把可见事实拆成计数、间距、遮挡、方向、色彩角色，再用 2–3 色油墨和证据型排版重组成一张温度匹配的纸。",
+ "tagline_en": "Too noisy? It deconstructs counts, spacing, occlusion, direction, color roles, then rebuilds them as a 2–3 ink.",
  "desc_en": "Turn a photo or a text theme into one quiet riso-print archive poster. For a photo, deconstruct its observable facts (counts, spacing, occlusion, direction, color roles) and rebuild them as a sparse 2–3 ink risograph composition on temperature-matched paper, with typography that also carries the evidence; for a text theme, distill one imageable idea. Aspect ratio follows the source photo. Generate",
- "why_zh": "它不套模板，而是从照片里提取可观测事实，再按事实决定构图和用色。每张海报都是唯一解。",
- "why_en": "No templates—it extracts observable facts from the photo and lets them dictate composition and ink choice. Every poster is a.",
+ "why_zh": "不是滤镜，是分析。它把照片的客观事实变成构图语法，油墨和纸张温度都按证据选择，排版也承载数据——每根线。",
+ "why_en": "Not a filter—an analysis. It turns observable facts into compositional grammar, with ink and paper temperature chosen by.",
  "repo": "luckdvr/photo-riso-poster",
  "owner": "luckdvr",
  "path": "",
@@ -27,12 +27,13 @@
   "copy": "mv photo-riso-poster ~/.claude/skills/photo-riso-poster",
   "dir": "~/.claude/skills/photo-riso-poster"
  },
- "limit_zh": "只处理单张照片或单一文本主题；不生成多页 PDF，不输出印刷分色文件，只给 RGB 预览。需要本地有 Python 和。",
+ "limit_zh": "只接受单张照片或一个文字主题；输出是静态海报，不生成多页或动效。需要本地有 Python 3.9+ 和 riso 相关。",
  "gate_score": 5,
  "cover": "/skill/assets/covers/luckdvr-photo-riso-poster.png",
  "cover_kind": "og",
  "cover_real": false,
  "cover_w": 1200,
  "cover_h": 600,
- "limit_en": "Single photo or one text theme only; no multi-page PDF, no print-ready separations—just RGB preview. Requires local Python + imaging libs; busy."
+ "limit_en": "Single photo or one text theme only; outputs a static poster, no multi-page or motion. Requires Python 3.9+ and riso libs (pypdf, Pillow); no.",
+ "title_en": "Distill a photo into one quiet riso-print archive poster"
 }

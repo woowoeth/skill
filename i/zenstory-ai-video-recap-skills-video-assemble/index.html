@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>把旁白、字幕、响度一次合成最终成片 — 品味</title>
-<meta name="description" content="剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。">
+<title>把旁白压进视频，自动压低原声并烧录字幕的成片合成器 — 品味</title>
+<meta name="description" content="旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, zenstory-ai">
 <link rel="canonical" href="https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/">
@@ -18,14 +18,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="把旁白、字幕、响度一次合成最终成片 — 品味">
-<meta property="og:description" content="剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。">
+<meta property="og:title" content="把旁白压进视频，自动压低原声并烧录字幕的成片合成器 — 品味">
+<meta property="og:description" content="旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。">
 <meta property="og:url" content="https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把旁白、字幕、响度一次合成最终成片 — 品味">
-<meta name="twitter:description" content="剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把旁白、字幕、响度一次合成最终成片","description":"剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble"}</script>
+<meta name="twitter:title" content="把旁白压进视频，自动压低原声并烧录字幕的成片合成器 — 品味">
+<meta name="twitter:description" content="旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把旁白压进视频，自动压低原声并烧录字幕的成片合成器","description":"旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。","url":"https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"zenstory-ai"},"codeRepository":"https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -56,14 +56,14 @@
       <span>zenstory-ai</span>
       <span class="date">2026-09-03</span>
     </div>
-    <h1 class="ttl">把旁白、字幕、响度一次合成最终成片</h1>
-    <p class="lede">剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。</p>
+    <h1 class="ttl">把旁白压进视频，自动压低原声并烧录字幕的成片合成器</h1>
+    <p class="lede">旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。</p>
     <div class="tags"><span class="tag">zenstory-ai</span></div>
     
     
-    <section class="sec"><h2>做什么用</h2><p>剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。它把混音决策绑定在旁白时间轴上，而非固定音量——压声曲线随语速和停顿自然起伏，比统一衰减更接近人工混音。</p></section>
-    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只做最终合成，不修源视频画质或旁白音质；需要你已有 tts_meta.json 和旁白位置，否则它无法判断哪里该压声。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把旁白、字幕、响度一次合成最终成片」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>做什么用</h2><p>旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。它把「混音决策」编码成规则：ducking 深度随旁白能量动态调，而不是固定衰减。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只吃 tts_meta.json 的旁白窗口，手动标注的旁白位置不认。源视频须含音轨，纯画面素材会中断。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把旁白压进视频，自动压低原声并烧录字幕的成片合成器」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
     <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git">复制</button></div><div class="cmd"><code>cp -r video-recap-skills/skills/video-assemble ~/.claude/skills/video-assemble</code><button type="button" data-copy="cp -r video-recap-skills/skills/video-assemble ~/.claude/skills/video-assemble">复制</button></div></div></section>
   </article>
   <aside class="aside">
@@ -76,7 +76,7 @@
       </dl>
       <a class="pill" href="https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">把视频分析结果变成带时间戳的导演级解说稿</a><a href="../fihaaade-skills-outsider-art/">把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片画成寥寥数笔、大面积留白的当代写意水墨</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../zenstory-ai-video-recap-skills-video-script/">把视频分析结果变成导演级剪辑与解说稿</a><a href="../fihaaade-skills-outsider-art/">把照片或一段文字画成局外人艺术海报：平摊视角、手作纹理、一点高亮</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">把照片画成寥寥数笔、大面积留白的当代写意水墨</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类生存法则</a>

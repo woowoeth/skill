@@ -2,14 +2,14 @@
  "id": "zenstory-ai-video-recap-skills-video-assemble",
  "kind": "skill",
  "name": "video-assemble",
- "title_zh": "把旁白、字幕、响度一次合成最终成片",
- "tagline_zh": "剪完视频还要手动压音乐、烧字幕、调响度？这个 skill 按旁白窗口自动压低原声，生成 SRT/ASS 并烧录。",
- "tagline_en": "Tired of manually ducking music, burning subs, and normalizing audio? This skill auto-ducks by narration windows.",
+ "title_zh": "把旁白压进视频，自动压低原声并烧录字幕的成片合成器",
+ "tagline_zh": "旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。",
+ "tagline_en": "The last mile where narration, subtitles, and source audio tangle. It ducks background by narration windows.",
  "desc_en": "合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。",
- "why_zh": "它把混音决策绑定在旁白时间轴上，而非固定音量——压声曲线随语速和停顿自然起伏，比统一衰减更接近人工混音。",
- "why_en": "It ties ducking decisions to the narration timeline, not a fixed volume—curves breathe with speech pace and pauses, mimicking.",
- "limit_zh": "只做最终合成，不修源视频画质或旁白音质；需要你已有 tts_meta.json 和旁白位置，否则它无法判断哪里该压声。",
- "limit_en": "Final assembly only—no video/audio quality fixes. Requires existing tts_meta.json & narration timings; without them it can't duck. Subs limited to.",
+ "why_zh": "它把「混音决策」编码成规则：ducking 深度随旁白能量动态调，而不是固定衰减。",
+ "why_en": "Encodes mixing decisions as rules: ducking depth adapts to narration energy, not fixed attenuation. Subtitle timing comes.",
+ "limit_zh": "只吃 tts_meta.json 的旁白窗口，手动标注的旁白位置不认。源视频须含音轨，纯画面素材会中断。",
+ "limit_en": "Requires tts_meta.json for narration windows; manual timestamps unsupported. Source must have an audio track. SRT/ASS limited to preset styles, no.",
  "repo": "zenstory-ai/video-recap-skills",
  "owner": "zenstory-ai",
  "path": "skills/video-assemble",
@@ -29,5 +29,6 @@
   "copy": "cp -r video-recap-skills/skills/video-assemble ~/.claude/skills/video-assemble",
   "dir": "~/.claude/skills/video-assemble"
  },
- "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png"
+ "cover": "/skill/assets/covers/zenstory-ai-video-recap-skills-video-assemble.png",
+ "title_en": "Final video assembler: duck audio, burn subtitles."
 }
