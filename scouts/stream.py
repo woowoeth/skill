@@ -46,7 +46,7 @@ SLICES = [
     ("rest",    'filename:SKILL.md -path:skills/ -path:.claude/ -path:.agents/ -path:plugins/'),
 ]
 PAGES = 10          # 每片上限 10×100 = 1000
-SLEEP = 6.5         # 代码搜索 10 次/分钟
+SLEEP = 8.0         # 代码搜索 10 次/分钟；6.5 在 CI 上仍撞二级限频，放宽
 
 
 def gh(url: str) -> dict:
@@ -76,12 +76,19 @@ def main() -> int:
         unreadable = ""
         for page in range(1, a.pages + 1):
             d, items = {}, []
-            for attempt in range(3):                     # 空页/限频重试三次，退避
+            for attempt in range(4):
                 d = gh(f"search/code?q={qq}&sort=indexed&order=desc&per_page=100&page={page}")
                 items = d.get("items") or []
                 if items or d.get("total_count") == 0:
                     break
-                time.sleep(SLEEP * (attempt + 2))
+                # 2026-09-03 CI：四片全「读不到：try again in 70.78s / 157.77s」。
+                # 我的退避是 6.5×2、×3、×4 —— 最长 26 秒，服务器要的是 70–157 秒。
+                # **它把该等多久写在回复里了，听它的**，不听就是在同一堵墙上撞四次。
+                import re as _re
+                m = _re.search(r"try again in ([\d.]+)s", str(d.get("message", "")))
+                wait = float(m.group(1)) + 3 if m else SLEEP * (attempt + 2)
+                print(f"    {name}: 第 {page} 页限频，等 {wait:.0f}s 再试（{attempt+1}/4）")
+                time.sleep(min(wait, 300))
             pages_used = page
             if not items:
                 if page == 1:
