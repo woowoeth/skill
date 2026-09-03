@@ -921,7 +921,27 @@ GATE_LOG: list[dict] = []
 TASTE_MIN = int(os.environ.get("TASTE_MIN", "60"))
 
 
+TASTE_VOTES = int(os.environ.get("TASTE_VOTES") or 3)
+
+
 def taste_score(it: dict) -> tuple[int, str]:
+    """判 TASTE_VOTES 遍取中位数。
+
+    2026-09-03 量的抖动（同一件判 3 遍）：12 件里跨度中位 5 分，但 3 件跨度 10–27 分
+    （[45,55,72]、[65,72,85]、[75,85,85]）。**单次打分在 80 线附近就是抛硬币。**
+    取 3 次中位数：极端一次被吃掉，成本 3 倍 —— 每天几十到几百件，钱是小数。"""
+    votes = []
+    why = ""
+    for _ in range(max(1, TASTE_VOTES)):
+        sc, w = _taste_once(it)
+        if sc < 0:
+            return sc, w                      # 读不到 / 判官不通：直接返回，不投票
+        votes.append(sc); why = why or w
+    votes.sort()
+    return votes[len(votes) // 2], why + (f"（{TASTE_VOTES} 判：{votes}）" if len(votes) > 1 else "")
+
+
+def _taste_once(it: dict) -> tuple[int, str]:
     """让判官读上游正文打 0-100 分。读不到正文或调不通 → 返回 -1（**不当作过**）。
 
     2026-09-02 立。此前三轮测量说「机器判不了品味」（题材词 +1pt、上游形态 +6pt、

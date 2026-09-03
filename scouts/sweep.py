@@ -123,7 +123,19 @@ def main() -> int:
 
 
 def _score(S, body: str) -> tuple[int, str]:
-    """直接拿正文去判，不经过 methods/ 存档（候选还没落库，没有存档）。"""
+    """直接拿正文去判（候选还没落库，没有 methods/ 存档）。判 TASTE_VOTES 遍取中位，和管线口径一致。"""
+    n = max(1, int(__import__("os").environ.get("TASTE_VOTES") or 3))
+    votes, why = [], ""
+    for _ in range(n):
+        sc, w = _score_once(S, body)
+        if sc < 0:
+            return sc, w
+        votes.append(sc); why = why or w
+    votes.sort()
+    return votes[len(votes) // 2], why
+
+
+def _score_once(S, body: str) -> tuple[int, str]:
     import urllib.request
     prompt = S.TASTE_PROMPT.format(body=body[:6000])
     ant = S.LLM_KEY.startswith("sk-ant-") or "anthropic" in S.LLM_BASE
