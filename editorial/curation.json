@@ -1982,13 +1982,17 @@
    "why_en": "\"Verifiable\" is the keyword — diagrams that match reality, not pretty fiction.",
    "limit_zh": "靠 node bin/archify.mjs 出图；收尾的 visual-check 要本机有 Chrome，没有就退出码 2 给张 skipped 收据。只做架构、流程、时序、数据流、生命周期五类，主节点建议不超过 12 个。",
    "limit_en": "Everything runs through node bin/archify.mjs, and the closing visual-check needs local Chrome — without it you get exit code 2 and a skipped receipt. Five diagram types only, ~12 primary nodes max, and the layout targets desktop widths.",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/tt-a1i-archify-archify.png",
+   "cover_kind": "hero",
    "title_en": "Architecture diagrams that get checked against the code",
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_note": "托管下来是预览卡尺寸，不上卡"
+   "cover_note": "托管下来是预览卡尺寸，不上卡",
+   "cover_real": false,
+   "cover_w": 1440,
+   "cover_h": 810,
+   "cover_src": "https://raw.githubusercontent.com/tt-a1i/archify/HEAD/docs/assets/archify-readme-hero.png"
   },
   "op7418-guizang-social-card-skill": {
    "title_zh": "照片多到选不出就让它自己拼三张动图卡",
@@ -12461,12 +12465,13 @@
    "why_zh": "不是泛泛的敏感词库，而是按平台、按场景分级标注风险，给出可替换的说法。",
    "limit_zh": "只处理短视频逐字稿文本，不读视频画面和音频；平台规则基于公开资料整理，不保证覆盖最新内部审核细则；输出是建议。",
    "tagline_zh": "抖音、小红书、视频号规则天天变，你背不全。它逐句比对社区规范，标出违规词和风险点，连修改建议都写好。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "creative",
    "cover_tried_at": "2026-09-04",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/common-rules.md: 取盗版 第31行"
   },
   "zxc123aa-cc-proxy-detector": {
    "title_zh": "拆中转站底牌，看它到底连的谁家模型",
@@ -12717,12 +12722,13 @@
    "why_zh": "先问清白天小睡、入睡时机等上下文再开口，避免一刀切；没日志也能靠对话给真建议，不是只会要数据。",
    "limit_zh": "只覆盖4-36个月婴幼儿睡眠；不诊断疾病（如呼吸问题、胃食管反流），也不替代医生。无日志时不做趋势判断，只给当下建议。",
    "tagline_zh": "4-36个月娃早醒、拒睡、夜醒、短觉，先聊就值；有睡眠日志还能看趋势。不贩卖焦虑，只给循证建议。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "life",
    "cover_tried_at": "2026-09-04",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · skills/lullsense/references/safety-triage.md: 绕反爬 第48行"
   },
   "stellaqiu27-claude-skill-patent-writing-chinese": {
    "title_zh": "技术交底书变Word专利稿，仿宋黑体公式图表一步到位",
@@ -12744,7 +12750,7 @@
    "why_zh": "不是一次性吐稿机，而是把创作拆成可回退的工件链。受众渠道、题材热度、参考书拆解都先过你这一关。",
    "limit_zh": "只服务中文长篇小说的规划与诊断，不产出最终排版文稿；需要你提供授权参考书或榜单元数据，否则只能停在通用大纲。",
    "tagline_zh": "新手写长篇最怕开头定错调、中途推倒重来。它把大纲、设定、章节拆成可编辑工件，每步先确认高影响创意选择。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "writing",
    "cover": "/skill/assets/covers/explosivecoderflome-ani-book-skill.png",
@@ -12752,7 +12758,8 @@
    "cover_real": false,
    "cover_w": 1672,
    "cover_h": 941,
-   "cover_src": "https://raw.githubusercontent.com/ExplosiveCoderflome/ani-book-skill/HEAD/assets/workflow-hero.png"
+   "cover_src": "https://raw.githubusercontent.com/ExplosiveCoderflome/ani-book-skill/HEAD/assets/workflow-hero.png",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 3 处 · references/book-analysis.md: 绕反爬 第22行"
   },
   "zhlmi-weibo-cocoon-judge": {
    "title_zh": "关注列表一拉，算出你的信息茧房浓度",
@@ -13111,9 +13118,13 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "",
-   "cover_kind": "none",
-   "cover_note": "托管下来是预览卡尺寸，不上卡"
+   "cover": "/skill/assets/covers/tw93-kami-kami.png",
+   "cover_kind": "hero",
+   "cover_note": "托管下来是预览卡尺寸，不上卡",
+   "cover_real": false,
+   "cover_w": 1241,
+   "cover_h": 1754,
+   "cover_src": "https://raw.githubusercontent.com/tw93/kami/HEAD/site/assets/demos/demo-musk-resume.png"
   },
   "kagurananaga-document-format-skills": {
    "title_zh": "中文公文排版一步到位，连修订痕迹都替你管好",
@@ -13133,12 +13144,13 @@
    "why_zh": "不是画图工具，是可视化顾问：先剖析数据再推荐图型，主动拦截科研绘图经典错误。",
    "limit_zh": "只覆盖纯数据图（折线/柱/散点/箱线/小提琴/热力/误差棒/分布/相关/多面板），不含流程图、示意图、地图。",
    "tagline_zh": "小样本别画均值柱、双Y轴先劝退、饼图直接拦——它先剖析你的数据分布和结构，再按论证目标推荐图型。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "creative",
    "cover_kind": "none",
    "cover": "",
-   "cover_tried_at": "2026-09-04"
+   "cover_tried_at": "2026-09-04",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/viz_pitfalls.md: 剂量 第151行"
   },
   "geeklee-srt-whiteboard-animation": {
    "title_zh": "字幕进、笔迹出：SRT 转白板手绘动画的流水线",
@@ -13165,7 +13177,8 @@
    "category": "life",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "托管下来是预览卡尺寸，不上卡"
+   "cover_note": "托管下来是预览卡尺寸，不上卡",
+   "cover_tried_at": "2026-09-04"
   },
   "wubing2023-exampass-assistant": {
    "title_zh": "章节知识清单带原PPT对照，测完才放你走",
@@ -13202,7 +13215,8 @@
    "category": "work",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "托管下来是预览卡尺寸，不上卡"
+   "cover_note": "托管下来是预览卡尺寸，不上卡",
+   "cover_tried_at": "2026-09-04"
   },
   "larashero3-dotcom-writing-dna-skill": {
    "title_zh": "20篇原文榨出一份写作DNA，新稿自动对齐老笔锋",
