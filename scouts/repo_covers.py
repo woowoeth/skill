@@ -119,6 +119,24 @@ def main() -> int:
     a = ap.parse_args()
     feed = json.load(open(os.path.join(ROOT, "skills", "feed.json"), encoding="utf-8"))["skills"]
     cur = json.load(open(os.path.join(ROOT, "editorial", "curation.json"), encoding="utf-8"))
+    # 外链到 raw.githubusercontent 的封面先托管到同源（那边限流，首屏几十张一起请求会被掐；09-04 抽查 25 张 7 张 429）
+    _ext = [x for x in feed if (x.get("cover") or "").startswith("http") and "ourword.ai" not in x["cover"]]
+    for x in _ext[:20]:
+        ok = None
+        for _try in range(3):
+            ok = try_download(x["id"], [x["cover"]])
+            if ok:
+                break
+            time.sleep(3)
+        if ok:
+            _, out, (w, h) = ok
+            e = cur["items"].setdefault(x["id"], {})
+            kind = x.get("cover_kind") if x.get("cover_kind") in ("artwork", "ours", "diagram") else "hero"
+            if (w, h) in ((1200, 600), (1200, 630)):
+                e.update({"cover": "", "cover_kind": "none", "cover_note": "外链是预览卡尺寸，不上卡"})
+            else:
+                e.update({"cover": "/skill/" + os.path.relpath(out, ROOT), "cover_kind": kind, "cover_w": w, "cover_h": h, "cover_src": x["cover"]})
+            print(f"  ⇩ 托管外链 {x['id'][:46]:46s} {w}x{h}", flush=True)
     todo = [x for x in feed if (x.get("cover_kind") in ("og", "none", None, "")) or not x.get("cover")]
     # 09-03：CI 每班只跑 --max 40，若每次都从头扫同一批「确实没图」的，新货永远排不到。
     # 试过没取到的记 cover_tried_at，7 天内不再试；没试过的排最前。
