@@ -1005,7 +1005,7 @@
    "why_en": "If the book won't stay in your head, put it in your agent — the premise alone earns a star.",
    "limit_zh": "MOBI/AZW 要先装 Calibre，技术书走 Docling 每页约 1.5 秒，EPUB 里的插图直接丢掉。两百页的书约 7.5 万 token，钱按你自己的模型价算。第三方版权书生成的技能只准建私有仓库。",
    "limit_en": "Runs scripts/extract.py under Python; MOBI/AZW need Calibre, technical mode uses Docling at ~1.5s a page, EPUB images are dropped. A 200-page book is ~75k tokens at your own model's rates. Copyrighted sources: private repo only.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp",
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1600,
@@ -1013,7 +1013,7 @@
    "title_en": "Turn PDFs & EPUBs into agent-ready skill packs",
    "hide": false,
    "gate_score": 6,
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "op7418-humanizer-zh": {
    "title_zh": "去 AI 味·中文版",
@@ -1978,15 +1978,13 @@
    "why_en": "\"Verifiable\" is the keyword — diagrams that match reality, not pretty fiction.",
    "limit_zh": "靠 node bin/archify.mjs 出图；收尾的 visual-check 要本机有 Chrome，没有就退出码 2 给张 skipped 收据。只做架构、流程、时序、数据流、生命周期五类，主节点建议不超过 12 个。",
    "limit_en": "Everything runs through node bin/archify.mjs, and the closing visual-check needs local Chrome — without it you get exit code 2 and a skipped receipt. Five diagram types only, ~12 primary nodes max, and the layout targets desktop widths.",
-   "cover": "/skill/assets/covers/tt-a1i-archify-archify.png",
-   "cover_kind": "hero",
-   "cover_w": 1200,
-   "cover_h": 630,
+   "cover": "",
+   "cover_kind": "none",
    "title_en": "Architecture diagrams that get checked against the code",
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_src": "https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1"
+   "cover_note": "托管下来是预览卡尺寸，不上卡"
   },
   "op7418-guizang-social-card-skill": {
    "title_zh": "照片多到选不出就让它自己拼三张动图卡",
@@ -2015,7 +2013,7 @@
    "why_en": "Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot.",
    "limit_zh": "脚本层要 Python 3.10+ 和 uv，/x-read、/x-pulse 必须自备 xAI Grok key。正文自认在 1000+ 笔记库首跑 recall@10 是 0%——raw/ 与 log.md 会压垮词频排序。",
    "limit_en": "The script layer needs Python 3.10+ with uv, and /x-read and /x-pulse require your own xAI Grok key. The text reports a first retrieval run on a 1,000+ note vault scoring 0% recall@10 - long raw/ transcripts and log.md dominate ranking.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/eugeniughelbur/obsidian-second-brain/HEAD/media/banner.png",
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1536,
@@ -2024,7 +2022,7 @@
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "francyjglisboa-agent-skill-creator": {
    "title_zh": "把口头流程变成能跑的跨平台技能，三步内交付",
@@ -2565,7 +2563,7 @@
    "why_en": "The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage.",
    "limit_zh": "本体是要装的 kinocut CLI（uvx + FFmpeg），先跑 kino doctor。只碰本地文件，上云要另开 egress 审批。360 只吃拼好的等距 MP4，.insv 直接拒。图层合成不当 NLE 用，音频合成 fail-closed。",
    "limit_en": "Drives an installed CLI (uvx kinocut + FFmpeg); run kino doctor first. Local files only - cloud needs a separate egress approval. 360 wants a pre-stitched equirect MP4, .insv rejected. Not an NLE: audio compositing fails closed.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/KyaniteLabs/kinocut/HEAD/assets/kinocut-hero.webp",
    "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1672,
@@ -2573,7 +2571,7 @@
    "title_en": "Video editing that plans before it cuts anything",
    "hide": false,
    "gate_score": 7,
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "dimetron-pi-go-design-review": {
    "title_zh": "给 Go 代码库做地道性评审",
@@ -2583,7 +2581,7 @@
    "why_en": "In Go, \"works\" and \"idiomatic\" are far apart; per-dimension scoring makes the feedback actionable.",
    "limit_zh": "正文明说单个 PR 或未提交 diff 不归它管，那要另一件 code-review。而且末尾嵌着 pi-go 这个项目自己的检查项（ADK、internal/provider/、禁 init()），换仓库得先删。",
    "limit_en": "The text excludes single PRs and uncommitted diffs (it points you to a separate code-review skill). It also carries a hardcoded \"Project-Specific Checks (pi-go)\" block - ADK, internal/provider/, no init() - other repos must strip.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif",
    "cover_kind": "none",
    "cover_real": true,
    "cover_w": 3448,
@@ -2592,7 +2590,7 @@
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "dimetron-pi-go-bubbletea-testing": {
    "title_zh": "给跑在终端里的 Bubble Tea 界面拍快照做断言",
@@ -3155,7 +3153,7 @@
    "why_en": "The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.",
    "limit_zh": "没告诉它平台和风格，它就停在提问那一步，不会先出一版给你看。预置比例只有小红书 3:4、公众号 2.35:1、X 5:2；一次一张、不给多版对比，也不许两种风格混用。",
    "limit_en": "Without a platform and a style it stops at the question and won't draft anything first. Preset ratios cover only Xiaohongshu 3:4, WeChat 2.35:1 and X 5:2. One image per run — no side-by-side options, and mixing two styles is forbidden.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/adrianpunk/Punk-Skill/HEAD/screenshots/punk-cover-styles/anthropic-research-style.png",
    "cover_kind": "none",
    "cover_real": true,
    "title_en": "One punk style library, covers for articles, XHS, WeChat, X",
@@ -3164,7 +3162,7 @@
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "adrianpunk-punk-skill-punk-avatar": {
    "title_zh": "用照片生成头像和宠物纪念卡",
@@ -3451,7 +3449,7 @@
    "why_en": "The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion.",
    "limit_zh": "战役数据全在本机 ~/.claude/dnd，换台机器就从零开。随包只有 5e SRD 数据集，跑正式模组得你自己导入书。影院画面是本地/局域网起的 Flask 面板。默认 roll_mode 是玩家自己掷骰，它不替你的 PC 代掷。",
    "limit_en": "Campaign data lives locally under ~/.claude/dnd - a new machine starts empty. Only the 5e SRD dataset ships; published modules you import yourself. The cinematic display is a local/LAN Flask app. Default roll_mode never auto-rolls your PC.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif",
    "cover_kind": "none",
    "cover_real": true,
    "cover_w": 900,
@@ -3460,7 +3458,7 @@
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "jame581-godotprompter": {
    "title_zh": "按 Godot 引擎的范式做游戏",
@@ -6677,14 +6675,14 @@
    "tagline_en": "You smelled osmanthus today, or heard rain. One sentence becomes hairline serif type over a hand-authored abstract SVG, rendered straight into a lock-screen wallpaper that keeps clear of the clock.",
    "why_en": "The quoted poets are put on a leash: small type, low opacity, never allowed to upstage the line you wrote yourself.",
    "limit_en": "The default output is 1264×2780 — the author's own OnePlus 13 — so other phones mean picking an alternate resolution by hand. Rendering needs Playwright, and finished files are copied to ~/Downloads. Six moods map to six fixed artists and six fixed gradients, and the quote bank is a small hard-coded set, so anything outside it has no match.",
-   "cover": "",
+   "cover": "https://raw.githubusercontent.com/rubyzhu26/see-life-wallpaper-skill/HEAD/example-wallpaper.png",
    "cover_kind": "none",
    "cover_real": true,
    "cover_w": 1264,
    "cover_h": 2780,
    "hide": false,
    "gate_score": 8,
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
   },
   "wr5912-human-allegory-engine": {
    "title_zh": "把人生事件转成可复用的寓言引擎",
@@ -12992,7 +12990,7 @@
    "category": "fun",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
   },
   "zhlmi-shotsaver": {
    "title_zh": "不动像素只叠 HTML/CSS 层的废片拯救术",
@@ -13031,7 +13029,7 @@
    "category": "creative",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
   },
   "joeseesun-qiaomu-info-card-designer": {
    "title_zh": "网页链接丢进来，吐出一张能发朋友圈的杂志卡片",
@@ -13059,11 +13057,9 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "/skill/assets/covers/tw93-kami-kami.png",
-   "cover_kind": "hero",
-   "cover_w": 1200,
-   "cover_h": 600,
-   "cover_src": "https://opengraph.githubassets.com/1/tw93/kami"
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "托管下来是预览卡尺寸，不上卡"
   },
   "kagurananaga-document-format-skills": {
    "title_zh": "中文公文排版一步到位，连修订痕迹都替你管好",
@@ -13075,7 +13071,7 @@
    "category": "work",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
   },
   "haojae-scipilot-figure-skill": {
    "title_zh": "先查数据再选图，拦下科研绘图的经典错误",
@@ -13105,11 +13101,9 @@
    "hide": false,
    "gate_score": 8,
    "category": "life",
-   "cover": "/skill/assets/covers/edu-ai-builders-language-learning-sop-kit-skill-option-anatomy.png",
-   "cover_kind": "hero",
-   "cover_w": 1200,
-   "cover_h": 600,
-   "cover_src": "https://opengraph.githubassets.com/1/edu-ai-builders/language-learning-sop-kit"
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "托管下来是预览卡尺寸，不上卡"
   },
   "wubing2023-exampass-assistant": {
    "title_zh": "章节知识清单带原PPT对照，测完才放你走",
@@ -13121,7 +13115,7 @@
    "category": "life",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "外链图取不到，走排版底"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
   },
   "milec-towers-of-saeroth-pf2e-gm": {
    "title_zh": "翻开本地规则库的 PF2e 主持人副驾",
@@ -13140,11 +13134,9 @@
    "hide": false,
    "gate_score": 8,
    "category": "work",
-   "cover": "/skill/assets/covers/chaogao512-literature-deep-reading-assistant-literature-deep-reading-assistant.png",
-   "cover_kind": "hero",
-   "cover_w": 1200,
-   "cover_h": 600,
-   "cover_src": "https://opengraph.githubassets.com/1/chaogao512/Literature-Deep-Reading-Assistant"
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "托管下来是预览卡尺寸，不上卡"
   },
   "larashero3-dotcom-writing-dna-skill": {
    "title_zh": "20篇原文榨出一份写作DNA，新稿自动对齐老笔锋",
