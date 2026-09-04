@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 316 skills.
+# Full corpus, plain text. 319 skills.
 
 ========================================================================
 ## grilling
@@ -26,6 +26,50 @@ git clone --depth 1 https://github.com/mattpocock/skills.git Then point your age
 Repository: mattpocock/skills The repository ships 1 skills in total.
 
 ========================================================================
+## ffmpeg-skill
+## 本地 FFmpeg 剪片，说人话就出片
+URL: https://ourword.ai/skill/i/kajisho5-ffmpeg-skill/
+Source: https://github.com/kajisho5/ffmpeg-skill
+Updated: 2026-09-04
+Tags: images, skill, kajisho5
+
+No CLI memorizing—say “cut silences, reframe to 9:16, add karaoke subs” and it runs FFmpeg locally. Trim, join.
+
+### What does this skill do?
+Edit video and audio with local FFmpeg from natural-language requests: cut, trim, join, resize/reframe (9:16, 1:1), speed change, captions and subtitles (SRT/ASS, animated, karaoke), logos and text overlays, lower-thirds and titles, silence removal, multicam and external-mic sync, loudness normalisation, HDR/Dolby Vision to SDR, LUTs, background music with ducking, platform exports (YouTube, Reels
+
+### Why is it worth installing?
+Translates plain language into FFmpeg command chains, with battle-tested templates for ducking, HDR→SDR, and animated ASS.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kajisho5/ffmpeg-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kajisho5/ffmpeg-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## cangjie-skill
+## 长内容拆成可执行技能包，一本书变一套动作
+URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
+Source: https://github.com/kangarooking/cangjie-skill
+Updated: 2026-09-04
+Tags: images, skill, kangarooking
+
+Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
+
+### What does this skill do?
+Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
+
+### Why is it worth installing?
+It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
+
+========================================================================
 ## pf2e-gm
 ## 翻开本地规则库的 PF2e 主持人副驾
 URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
@@ -46,6 +90,44 @@ git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point yo
 
 ### Where does it come from?
 Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## web-ppt
+## 离线双击即用的网页版 PPT，45 套主题随便换
+URL: https://ourword.ai/skill/i/leujasyoh-vueppt/
+URL (中文): https://ourword.ai/skill/zh/i/leujasyoh-vueppt/
+Source: https://github.com/LeuJasYoh/VuePPT
+Updated: 2026-09-04
+Tags: images, skill, LeuJasYoh
+
+No Office, no internet—one exe is your whole deck studio. Vue motion, charts, code highlight. Tech talks to.
+
+### What does this skill do?
+制作现代、带精美动效的网页版 PPT（Web PPT）：Vue 3 + Vite 前端、Go go:embed 静态服务器，构建为单个可离线双击运行的 exe。三种风格 × 45 套主题——风格 A「电子杂志 × 电子墨水」（衬线大标题 + WebGL 流体背景）、风格 B「瑞士国际主义」（无衬线极致字号对比 + 点阵网格 + 22 版式锁）、风格 C「主题工坊」（token 化多主题系统，完全消费主题的圆角/阴影/渐变/display 字体）。动效库：27 个 CSS 入场动画 + 26 种 Motion recipes + 20 个 Canvas FX 持续动效（知识图谱/星域/粒子/烟花…）。内置 Chart.js 图表、highlight.js 代码高亮、ESC 总览宫格。键盘：方向键翻页。
+
+### Why is it worth installing?
+Ships as a single exe, skipping browser and deployment pain. Motion isn't garnish: 27 entrances + 20 Canvas FX give your deck.
+
+### How do you install it?
+git clone --depth 1 https://github.com/LeuJasYoh/VuePPT.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: LeuJasYoh/VuePPT Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+不用装 Office、不用连网，一个 exe 就是整套演示工具。Vue 动效 + 图表 + 代码高亮。
+
+### Q：这个 skill 做什么？
+制作现代、带精美动效的网页版 PPT（Web PPT）：Vue 3 + Vite 前端、Go go:embed 静态服务器，构建为单个可离线双击运行的 exe。三种风格 × 45 套主题——风格 A「电子杂志 × 电子墨水」（衬线大标题 + WebGL 流体背景）、风格 B「瑞士国际主义」（无衬线极致字号对比 + 点阵网格 + 22 版式锁）、风格 C「主题工坊」（token 化多主题系统，完全消费主题的圆角/阴影/渐变/display 字体）。动效库：27 个 CSS 入场动画 + 26 种 Motion recipes + 20 个 Canvas FX 持续动效（知识图谱/星域/粒子/烟花…）。内置 Chart.js 图表、highlight.js 代码高亮、ESC 总览宫格。键盘：方向键翻页。
+
+### Q：为什么值得装？
+把 PPT 做成单文件 exe，彻底绕开浏览器兼容和部署问题。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/LeuJasYoh/VuePPT.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: LeuJasYoh/VuePPT Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## seedance-prompt-library
@@ -474,6 +556,28 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-04
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
+
+========================================================================
 ## video-clip-stitching
 ## 接缝诊断师：专治AI分段影片的卡顿与重复
 URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
@@ -510,28 +614,6 @@ git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能
 
 ### Q：它从哪来？
 Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-04
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## trading-design
@@ -578,6 +660,28 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
+## ponytail
+## 先问「这真的需要做吗」，能不写的代码一行不写
+URL: https://ourword.ai/skill/i/dietrichgebert-ponytail-ponytail/
+Source: https://github.com/DietrichGebert/ponytail/tree/HEAD/.openclaw/skills/ponytail
+Updated: 2026-09-04
+Tags: dev, skill, DietrichGebert
+
+An unbothered senior engineer moves in — few words, strong opinions, asks before acting, and writes not one line of code that needn't exist.
+
+### What does this skill do?
+Lazy senior dev mode for any coding task (write, refactor, fix, review): YAGNI, stdlib first, no unrequested abstractions. Not for non-coding requests.
+
+### Why is it worth installing?
+Its favorite question is "do we even need this?" — killing overengineering saves more than writing code.
+
+### How do you install it?
+git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
+
+========================================================================
 ## understand-figma
 ## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
 URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
@@ -598,6 +702,50 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## archify
+## 画出来的架构图要和代码对得上，导出自带动效的 HTML
+URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
+Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
+Updated: 2026-09-04
+Tags: docs, skill, tt-a1i
+
+Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
+
+### What does this skill do?
+Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
+
+### Why is it worth installing?
+"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## obsidian-second-brain
+## 让新资料改写旧笔记，而不是在 Obsidian 里越堆越多
+URL: https://ourword.ai/skill/i/eugeniughelbur-obsidian-second-brain/
+Source: https://github.com/eugeniughelbur/obsidian-second-brain
+Updated: 2026-09-04
+Tags: work, skill, eugeniughelbur
+
+Runs your Obsidian vault as a self-rewriting second brain — new sources revise existing pages instead of piling notes.
+
+### What does this skill do?
+Operate any Obsidian vault as a living, self-rewriting second brain (an evolution of Karpathy's LLM Wiki pattern: sources rewrite existing pages, contradictions reconcile automatically, scheduled agents maintain the vault while you sleep). Use this skill whenever the user asks Claude to read, write, update, search, or manage their Obsidian vault - including saving notes from conversation, creating
+
+### Why is it worth installing?
+Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot.
+
+### How do you install it?
+git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## glitch-pixel-collage
@@ -1020,28 +1168,6 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
 
 ========================================================================
-## obsidian-second-brain
-## 让新资料改写旧笔记，而不是在 Obsidian 里越堆越多
-URL: https://ourword.ai/skill/i/eugeniughelbur-obsidian-second-brain/
-Source: https://github.com/eugeniughelbur/obsidian-second-brain
-Updated: 2026-09-03
-Tags: work, skill, eugeniughelbur
-
-Runs your Obsidian vault as a self-rewriting second brain — new sources revise existing pages instead of piling notes.
-
-### What does this skill do?
-Operate any Obsidian vault as a living, self-rewriting second brain (an evolution of Karpathy's LLM Wiki pattern: sources rewrite existing pages, contradictions reconcile automatically, scheduled agents maintain the vault while you sleep). Use this skill whenever the user asks Claude to read, write, update, search, or manage their Obsidian vault - including saving notes from conversation, creating
-
-### Why is it worth installing?
-Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot.
-
-### How do you install it?
-git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## scene-distillation-zine-v1-3
 ## 一张照片蒸馏成一本敢留白的迷你zine
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3/
@@ -1314,6 +1440,44 @@ git clone --depth 1 https://github.com/Lucian1u/learning-coach.git 然后把智�
 Repository: Lucian1u/learning-coach The repository ships 1 skills in total.
 
 ========================================================================
+## fight-prompt-director
+## 打戏分镜喂给视频模型前，先过一遍它的调度
+URL: https://ourword.ai/skill/i/irenerachel-fight-prompt-director/
+URL (中文): https://ourword.ai/skill/zh/i/irenerachel-fight-prompt-director/
+Source: https://github.com/irenerachel/fight-prompt-director
+Updated: 2026-09-02
+Tags: images, skill, irenerachel
+
+Text-to-video turns fights into flailing? This arranges keyframes, storyboards & action notes into model-ready.
+
+### What does this skill do?
+将图片、文字、首尾帧或分镜素材编排成可直接用于视频模型的动作戏提示词。适用于打斗、武打、追逐、对抗、演武、人兽战和风格化动作场景，支持 Seedance、MiniMax-H3 及通用文生视频模型。
+
+### Why is it worth installing?
+It structures violence as shot-to-shot causality — who strikes, who reacts, where the camera cuts — so models infer motion from.
+
+### How do you install it?
+git clone --depth 1 https://github.com/irenerachel/fight-prompt-director.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: irenerachel/fight-prompt-director Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。
+
+### Q：这个 skill 做什么？
+将图片、文字、首尾帧或分镜素材编排成可直接用于视频模型的动作戏提示词。适用于打斗、武打、追逐、对抗、演武、人兽战和风格化动作场景，支持 Seedance、MiniMax-H3 及通用文生视频模型。
+
+### Q：为什么值得装？
+不是写形容词，而是把动作拆成镜头间的因果链——谁先动、谁受力、镜头怎么切。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/irenerachel/fight-prompt-director.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: irenerachel/fight-prompt-director Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## anti-ai-defensive-writing
 ## 删掉AI腔的防御性写作：不请自来的免责声明
 URL: https://ourword.ai/skill/i/zf-utokyo-anti-ai-defensive-writing-anti-ai-defensive-writing/
@@ -1432,28 +1596,6 @@ git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然
 
 ### Q：它从哪来？
 Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## archify
-## 画出来的架构图要和代码对得上，导出自带动效的 HTML
-URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
-Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
-Updated: 2026-09-02
-Tags: docs, skill, tt-a1i
-
-Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
-
-### What does this skill do?
-Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
-
-### Why is it worth installing?
-"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## planning-with-files
@@ -2208,28 +2350,6 @@ git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git 然�
 
 ### Q：它从哪来？
 Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
-
-========================================================================
-## cangjie-skill
-## 长内容拆成可执行技能包，一本书变一套动作
-URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
-Source: https://github.com/kangarooking/cangjie-skill
-Updated: 2026-08-30
-Tags: images, skill, kangarooking
-
-Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
-
-### What does this skill do?
-Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
-
-### Why is it worth installing?
-It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
 
 ========================================================================
 ## interview-master
@@ -5522,28 +5642,6 @@ git clone --depth 1 https://github.com/op7418/guizang-ppt-skill.git 然后把智
 
 ### Q：它从哪来？
 Repository: op7418/guizang-ppt-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## ponytail
-## 先问「这真的需要做吗」，能不写的代码一行不写
-URL: https://ourword.ai/skill/i/dietrichgebert-ponytail-ponytail/
-Source: https://github.com/DietrichGebert/ponytail/tree/HEAD/.openclaw/skills/ponytail
-Updated: 2026-08-07
-Tags: dev, skill, DietrichGebert
-
-An unbothered senior engineer moves in — few words, strong opinions, asks before acting, and writes not one line of code that needn't exist.
-
-### What does this skill do?
-Lazy senior dev mode for any coding task (write, refactor, fix, review): YAGNI, stdlib first, no unrequested abstractions. Not for non-coding requests.
-
-### Why is it worth installing?
-Its favorite question is "do we even need this?" — killing overengineering saves more than writing code.
-
-### How do you install it?
-git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
 
 ========================================================================
 ## auteur

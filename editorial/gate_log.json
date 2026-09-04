@@ -2,6 +2,192 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-04T17:41:33Z",
+   "判了": 23,
+   "过": 0,
+   "明细": [
+    {
+     "id": "jadel-kemo-safe-recycle-skill",
+     "repo": "JadeL-Kemo/safe-recycle-skill",
+     "title": "回收站只清你点过头的文件，临时区自动归位",
+     "过": false,
+     "为什么": "品味 47 分 < 80 —— 操作规范清晰但属开发工具链，非普通用户题材，换工具可复制。（3 判：[45, 47, 62]）",
+     "分": 47
+    },
+    {
+     "id": "fxw-labs-tcm-constitution",
+     "repo": "fxw-labs/tcm-constitution",
+     "title": "九种体质自测后，给到的是吃穿按的调理单",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 结构完整、边界清晰，将标准落地为可执行流程；但问卷算法属常规做法，非独家。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "ruochenlyu-raytally-briefs",
+     "repo": "RuochenLyu/raytally-briefs",
+     "title": "今天就能开工的产品点子，每条都带来源链接",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 用法清晰但本质是指南文档，换个工具照做即可，缺乏不可替代的独到做法。（3 判：[30, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "yokel1121-muyang-handdrawn-video",
+     "repo": "yokel1121/muyang-handdrawn-video",
+     "title": "白板动画全流程：脚本、手绘、配音、字幕一条龙",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程完整，对边界有考虑，但高度依赖特定工具链，普通创作者难以直接使用。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "molefrog-moi-moi-workspace",
+     "repo": "molefrog/moi",
+     "title": "聊天框里直接长出的工作台，小部件随叫随到",
+     "过": false,
+     "为什么": "品味判不了 —— JSONDecodeError: Extra data: line 3 column 1 (char 45) → 留库房"
+    },
+    {
+     "id": "molefrog-moi-agent-browser",
+     "repo": "molefrog/moi",
+     "title": "浏览器操作先截屏再动手，每一步都看得见",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具文档，扎实但无独特场景做法，换其他浏览器工具亦可（3 判：[40, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "molefrog-moi-publish-release",
+     "repo": "molefrog/moi",
+     "title": "本地验完才交给门禁流水线的发版手",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 发布流程清晰但面向开发者工具链，非大众题材。（3 判：[40, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "getpaseo-paseo-paseo",
+     "repo": "getpaseo/paseo",
+     "title": "项目心跳、日程、脚本一屏管完的 Paseo 操作手册",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 产品工具链参考，内容泛泛，无独特边界或场景洞察（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "citrolabs-ego-lite-ego-browser",
+     "repo": "citrolabs/ego-lite",
+     "title": "人机同席的浏览器，Agent 用你的登录态不抢方向盘",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具文档扎实，但属开发工具链，非生活创作题材，边界清晰但非独家（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "brhiza-mingyu-aov-mingyu-api",
+     "repo": "Brhiza/mingyu",
+     "title": "先问你想问什么，再选术数的排盘师傅",
+     "过": false,
+     "为什么": "品味 70 分 < 80 —— 玄学工作流严谨，证据分层与边界清晰，但排盘功能依赖特定API，略偏工具链。（3 判：[45, 70, 72]）",
+     "分": 70
+    },
+    {
+     "id": "oubigfa-de-ai-prompt-enhancer-writer-booster-skill",
+     "repo": "OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+     "title": "删掉AI腔，留下你人味的改写器",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "oubigfa-de-ai-prompt-enhancer-writer-booster-skill-writer-pro-one",
+     "repo": "OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+     "title": "半文半白冷面热心，复现作者笔力的中文写作台",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 风格复现系统扎实详尽，但核心逻辑通用写作指南亦可达到。（3 判：[55, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "oubigfa-de-ai-prompt-enhancer-writer-booster-skill-de-ai-writing",
+     "repo": "OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+     "title": "删掉路标词和讲义腔，留下你原本的笔迹",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 规则具体可执行，边界清晰，但本质是文本处理技能，工具可替代。（3 判：[72, 75, 78]）",
+     "分": 75
+    },
+    {
+     "id": "oubigfa-de-ai-prompt-enhancer-writer-booster-skill-good-writing",
+     "repo": "OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+     "title": "复刻你给的三篇范文，新写改写都按那个味儿来",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 写作风格复现工具，功能能实现但非独家，边界尚清晰。（3 判：[47, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "zhanghandong-makepad-skills",
+     "repo": "ZhangHanDong/makepad-skills",
+     "title": "Makepad 界面，AI 照着草图直接生成可运行代",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "zhanghandong-makepad-skills-makepad-2.0-shaders",
+     "repo": "ZhangHanDong/makepad-skills",
+     "title": "Makepad 2.0 着色器",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 特定框架的技术文档，面向开发者，非大众创作题材，边界清楚但受众局限。（3 判：[40, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "zhanghandong-makepad-skills-makepad-2.0-animation",
+     "repo": "ZhangHanDong/makepad-skills",
+     "title": "悬停、过渡、循环全交给 Animator 状态机",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具的专门文档，内容具体但属产品内部知识，对普通人不适用。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "zhanghandong-makepad-skills-makepad-2.0-design-judgment",
+     "repo": "ZhangHanDong/makepad-skills",
+     "title": "Makepad 2.0 开工前先过一遍的设计判断尺",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 针对特定框架提供了设计判断锚点，但本质是开发工具链的思维指南，非独立创作者可用的（3 判：[40, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "realkimbarrett-advertising-skills",
+     "repo": "realkimbarrett/advertising-skills",
+     "title": "广告文案先写钩子再写正文的直复响应模板库",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "realkimbarrett-advertising-skills-scroll-stopping-creative",
+     "repo": "realkimbarrett/advertising-skills",
+     "title": "前3秒定生死的广告创意生成器",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 泛用创意模板，边界模糊，非它不可的理由不足。（3 判：[45, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "realkimbarrett-advertising-skills-ad-angle-multiplier",
+     "repo": "realkimbarrett/advertising-skills",
+     "title": "一个卖点拆出 12 条不重样的广告角度",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 泛泛的广告角度生成框架，方法通用，无独特边界或深度交付。（3 判：[35, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "realkimbarrett-advertising-skills-conversion-path-builder",
+     "repo": "realkimbarrett/advertising-skills",
+     "title": "从点击到成交，每一步都替你算过账的漏斗设计师",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 泛泛的通用模板，无具体场景与独特做法。（3 判：[40, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "garethmanning-education-agent-skills",
+     "repo": "GarethManning/education-agent-skills",
+     "title": "165 个教学技能，每个都标了证据出处",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    }
+   ]
+  },
+  {
    "时间": "2026-09-04T16:03:10Z",
    "判了": 45,
    "过": 0,
@@ -3488,68 +3674,6 @@
      "title": "Claude Code 全栈技能包：React、Ta",
      "过": false,
      "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-03T02:52:24Z",
-   "判了": 7,
-   "过": 6,
-   "明细": [
-    {
-     "id": "anthropics-claude-plugins-community",
-     "repo": "anthropics/claude-plugins-community",
-     "title": "",
-     "过": false,
-     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
-    },
-    {
-     "id": "architect-kele-arch-kele-structure-photo",
-     "repo": "Architect-kele/arch-kele-structure-photo",
-     "title": "把一张照片拆成带分析线的水彩结构分解图",
-     "过": true,
-     "为什么": "品味 72 分 —— 流程极详实，边界清晰，但本质是用提示词与脚本复现，同类工具或人工亦可达成。",
-     "分": 72
-    },
-    {
-     "id": "createlafont-dnr-flat-pic",
-     "repo": "CreateLafont/dnr-flat-pic",
-     "title": "把照片压缩成高饱和扁平插画，保留构图不描边",
-     "过": true,
-     "为什么": "品味 72 分 —— 流程规范边界清晰，但核心做法可被其他工具替代。",
-     "分": 72
-    },
-    {
-     "id": "lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster",
-     "repo": "Lixorn/deconstructed-duotone-poster",
-     "title": "把任意图片拆解成留白双色海报版式",
-     "过": true,
-     "为什么": "品味 72 分 —— 结构精专边界清晰，但核心是风格化图生流程，类似工具可替代，非不可复制。",
-     "分": 72
-    },
-    {
-     "id": "hongfamonvai-vintage-travel-ticket",
-     "repo": "hongfamonvAI/vintage-travel-ticket",
-     "title": "把一张照片变成一张有年代感的中国老门票",
-     "过": true,
-     "为什么": "品味 82 分 —— 设计语法源自66张历史票根，边界明确，拒绝照片滤镜，产出独有仿古票证。",
-     "分": 82
-    },
-    {
-     "id": "starryear-starryear-threefold-memory",
-     "repo": "Starryear/Starryear-Threefold-Memory",
-     "title": "把一张照片变成上中下三段式记忆圣物",
-     "过": true,
-     "为什么": "品味 72 分 —— 方法独特、边界清晰，但依赖手工流程，实用门槛较高。",
-     "分": 72
-    },
-    {
-     "id": "bigfish-zzz-bigfish-ink-wash-photo",
-     "repo": "BigFish-zZz/bigfish-ink-wash-photo",
-     "title": "把照片重绘成留白写意水墨，保留主体与构图",
-     "过": true,
-     "为什么": "品味 72 分 —— 技法约束极细密，边界清楚，但核心是风格迁移，换工具亦可行。",
-     "分": 72
     }
    ]
   }

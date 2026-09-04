@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>打戏分镜喂给视频模型前，先过一遍它的调度 — 品味</title>
+<meta name="description" content="文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, irenerachel">
+<link rel="canonical" href="https://ourword.ai/skill/i/irenerachel-fight-prompt-director/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="打戏分镜喂给视频模型前，先过一遍它的调度 — 品味">
+<meta property="og:description" content="文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。">
+<meta property="og:url" content="https://ourword.ai/skill/i/irenerachel-fight-prompt-director/">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/irenerachel-fight-prompt-director.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/irenerachel-fight-prompt-director.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="打戏分镜喂给视频模型前，先过一遍它的调度 — 品味">
+<meta name="twitter:description" content="文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"打戏分镜喂给视频模型前，先过一遍它的调度","description":"文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。","url":"https://ourword.ai/skill/i/irenerachel-fight-prompt-director/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"irenerachel"},"image":"https://ourword.ai/skill/assets/covers/irenerachel-fight-prompt-director.png","codeRepository":"https://github.com/irenerachel/fight-prompt-director"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/i/irenerachel-fight-prompt-director/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">做图</span>
+      <span>irenerachel</span>
+      <span class="date">2026-09-03</span>
+    </div>
+    <h1 class="ttl">打戏分镜喂给视频模型前，先过一遍它的调度</h1>
+    <p class="lede">文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。</p>
+    <div class="tags"><span class="tag">irenerachel</span></div>
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/irenerachel-fight-prompt-director.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/irenerachel-fight-prompt-director.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什么用</h2><p>文生视频总把对打拍成各打各的？它把首尾帧、分镜和动作描述编排成模型听得懂的调度指令，Seedance。不是写形容词，而是把动作拆成镜头间的因果链——谁先动、谁受力、镜头怎么切。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只处理动作戏提示词编排，不生成分镜图、不调模型参数；素材需自带画面内容，纯文字描述需足够具体否则输出会泛化。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「打戏分镜喂给视频模型前，先过一遍它的调度」这一件来做，不要中途改风格。</li><li>把我手上这张按它的规矩重做，风格不许换。</li><li>只要成品，过程里的解释可以没有。</li><li>做完对照应用范围，越界的那一稿丢掉。</li></ul></section>
+    <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/irenerachel/fight-prompt-director.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/irenerachel/fight-prompt-director.git">复制</button></div><div class="cmd"><code>mv fight-prompt-director ~/.claude/skills/fight-prompt-director</code><button type="button" data-copy="mv fight-prompt-director ~/.claude/skills/fight-prompt-director">复制</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分类</dt><dd>做图</dd>
+        <dt>作者</dt><dd>irenerachel</dd>
+        <dt>上架</dt><dd>2026-09-03</dd>
+      </dl>
+      <a class="pill" href="https://github.com/irenerachel/fight-prompt-director" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../geeklee-srt-whiteboard-animation/">字幕进、笔迹出：SRT 转白板手绘动画的流水线</a><a href="../joeseesun-qiaomu-mondo-poster-design/">33位传奇设计师替你选风格，一句话出海报</a><a href="../dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/">东方文字海报，版式排好再交给 Image 2 成图</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人类世界生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
+  </nav>
+  <nav class="foot"><a href="../endlessbluewjl-schengen-visa-guide/">← 申根签材料清单，按身份拆到每张纸</a><a href="../y1fe1-yang-resume-assistant-skill/">五个代理围着你转，从挖故事到模拟面试一条龙 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>
