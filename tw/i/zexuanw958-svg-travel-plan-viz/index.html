@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完 — 品味</title>
 <meta name="description" content="到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, zexuanw958-svg">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完 — 品味">
 <meta property="og:description" content="到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/">
-<meta property="og:image" content="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/zexuanw958-svg-travel-plan-viz.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/zexuanw958-svg-travel-plan-viz.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完 — 品味">
 <meta name="twitter:description" content="到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完","description":"到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。","url":"https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"zexuanw958-svg"},"image":"https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png","codeRepository":"https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完","description":"到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。","url":"https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"zexuanw958-svg"},"image":"https://ourword.ai/skill/tw/assets/covers/zexuanw958-svg-travel-plan-viz.png","codeRepository":"https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完</h1>
     <p class="lede">到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。</p>
     <div class="tags"><span class="tag">zexuanw958-svg</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/zexuanw958-svg-travel-plan-viz.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/zexuanw958-svg-travel-plan-viz.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。「離線可讀、手機優先、單文件」——這三個約束是真在國外用過才想得到的。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「生活」這一格。地圖引的是 Leaflet CDN，所謂「離線可讀」保得住文字和時間軸，地圖那塊斷網就是空的。實時票價、代訂票、多語言、後端，作者在「不做」一節裡明寫一概不做。最後那步校驗要本機有 node 跑 assets/validate.js。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../hongfamonvai-vintage-travel-ticket/">66 張老車票裡抽一套設計語法，每次出票都像翻到舊藏</a><a href="../gram-ax-gramax-ci/">GitLab CI 黑屋裡先摸清牆再動手的探路杖</a><a href="../dacnay816y62-hub-window-scenery-skill/">左下角永遠釘著地名徽章的車窗風景照</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../tw93-kami-kami/">羊皮紙底色配墨藍強調的文檔排版師</a><a href="../kagurananaga-kaogong-study-tracker/">錯題截圖進來，按原因分類的國考錯題本出去</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片裡只挑有故事的那幾樣，畫成手帳貼紙</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../dacnay816y62-hub-fantasy-movie-poster-skill/">← 中文豎版電影海報，9:16 鎖死</a><a href="../cclank-recipe-generator/">每一步都告訴你怎麼算做好了的菜譜 →</a></nav>
+  <nav class="foot"><a href="../dacnay816y62-hub-fantasy-movie-poster-skill/">← 中文豎版電影海報，9:16 鎖死</a><a href="../zhlmi-moodboard-alignment/">把客戶嘴裡的“高級感”翻譯成能打勾的審美條目 →</a></nav>
 </div>
 <script>
 (function(){

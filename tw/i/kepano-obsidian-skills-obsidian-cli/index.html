@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>在 Obsidian 庫裡搜、寫、改、查，不用開編輯 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>在 Obsidian 庫裡搜、寫、改、查，不用開編輯 — 品味</title>
 <meta name="description" content="筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, kepano">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="在 Obsidian 庫裡搜、寫、改、查，不用開編輯 — 品味">
 <meta property="og:description" content="筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/">
-<meta property="og:image" content="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab"><meta name="twitter:image" content="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/kepano-obsidian-skills-obsidian-cli.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/kepano-obsidian-skills-obsidian-cli.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="在 Obsidian 庫裡搜、寫、改、查，不用開編輯 — 品味">
 <meta name="twitter:description" content="筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在 Obsidian 庫裡搜、寫、改、查，不用開編輯","description":"筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。","url":"https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"kepano"},"image":"https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab","codeRepository":"https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"在 Obsidian 庫裡搜、寫、改、查，不用開編輯","description":"筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。","url":"https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"kepano"},"image":"https://ourword.ai/skill/tw/assets/covers/kepano-obsidian-skills-obsidian-cli.png","codeRepository":"https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">在 Obsidian 庫裡搜、寫、改、查，不用開編輯</h1>
     <p class="lede">筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。</p>
     <div class="tags"><span class="tag">kepano</span></div>
-    <img class="cover" src="https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/kepano-obsidian-skills-obsidian-cli.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/kepano-obsidian-skills-obsidian-cli.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。一手權威：沒人比作者更懂這個庫的數據模型，比任何第三方封裝都可靠。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。要裝 obsidian 命令行，而且 Obsidian 必須開著，關掉就全斷。命令清單以 obsidian help 為準，這裡只列了常用幾條。不寫 vault= 時動的是最近聚焦的那個庫。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../yejy53-editable-design-html-to-pptx/">HTML 版式拆成可編輯 PPT 的轉換器</a><a href="../oil-oil-kimi/">設計稿交給它，前端代碼拿回來就能跑</a><a href="../xiaoou-waou-xiaoou-gzh-layout/">Markdown 進去，公眾號編輯器樣式直接粘貼出來</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../mattpocock-skills-grilling/">連續追問直到你自相矛盾的方案壓力測試器</a><a href="../ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations/">白底黑線火柴人，給中文文章配安靜小圖</a><a href="../kagurananaga-document-format-skills/">中文公文排版一步到位，連修訂痕跡都替你管好</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../312362115-claude-diagram/">← 自動選對圖表類型再畫出來</a><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent →</a></nav>
+  <nav class="foot"><a href="../312362115-claude-diagram/">← 自動選對圖表類型再畫出來</a><a href="../deusyu-translate-book/">整本書拆給多個分身並行翻譯，再拼回原排版 →</a></nav>
 </div>
 <script>
 (function(){

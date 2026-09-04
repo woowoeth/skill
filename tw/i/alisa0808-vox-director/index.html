@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/alisa0808-vox-director/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/alisa0808-vox-director/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/alisa0808-vox-director/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>給一個主題，出一支 Vox 式紙拼貼解說視頻 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/alisa0808-vox-director/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/alisa0808-vox-director/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/alisa0808-vox-director/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>給一個主題，出一支 Vox 式紙拼貼解說視頻 — 品味</title>
 <meta name="description" content="一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做圖, Alisa0808">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="給一個主題，出一支 Vox 式紙拼貼解說視頻 — 品味">
 <meta property="og:description" content="一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/alisa0808-vox-director/">
-<meta property="og:image" content="https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg"><meta name="twitter:image" content="https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/alisa0808-vox-director.jpg"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/alisa0808-vox-director.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="給一個主題，出一支 Vox 式紙拼貼解說視頻 — 品味">
 <meta name="twitter:description" content="一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"給一個主題，出一支 Vox 式紙拼貼解說視頻","description":"一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。","url":"https://ourword.ai/skill/tw/i/alisa0808-vox-director/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"Alisa0808"},"image":"https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg","codeRepository":"https://github.com/Alisa0808/vox-director"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"給一個主題，出一支 Vox 式紙拼貼解說視頻","description":"一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。","url":"https://ourword.ai/skill/tw/i/alisa0808-vox-director/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"Alisa0808"},"image":"https://ourword.ai/skill/tw/assets/covers/alisa0808-vox-director.jpg","codeRepository":"https://github.com/Alisa0808/vox-director"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">給一個主題，出一支 Vox 式紙拼貼解說視頻</h1>
     <p class="lede">一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。</p>
     <div class="tags"><span class="tag">Alisa0808</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/alisa0808-vox-director.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/alisa0808-vox-director.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。Vox 的拼貼美學是解說視頻的天花板之一，這件把整個片場壓進了一條命令。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。整條鏈只跑 Atlas Cloud 一家，沒有 ATLASCLOUD_API_KEY 就只剩一份提示詞清單讓你自己去粘。本機還要 ffmpeg 和 Pillow。真人和品牌 Omni 會拒，得改用 Kling。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/Alisa0808/vox-director" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../gary149-h3-game-sprites-h3-game-sprites/">視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像</a><a href="../zenstory-ai-video-recap-skills-video-script/">先定鏡頭再落筆的解說稿，時間戳卡到幀</a><a href="../brandon030722-ark-ui-skill/">鷹角視覺語言先問產品線再定深度的界面設計器</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../geeklee-srt-whiteboard-animation/">字幕進、筆跡出：SRT 轉白板手繪動畫的流水線</a><a href="../joeseesun-qiaomu-mondo-poster-design/">33位傳奇設計師替你選風格，一句話出海報</a><a href="../dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/">東方文字海報，版式排好再交給 Image 2 成圖</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../cloudai-x-threejs-skills-threejs-shaders/">← 不碰內置材質，直接寫 GLSL 頂點與片元著色器</a><a href="../juliusbrussee-caveman-caveman/">讓 Claude 用原始人腔說話，據稱省下 65% 的 token →</a></nav>
+  <nav class="foot"><a href="../alchaincyf-huashu-design/">← HTML 原型先出三稿再動手的設計師</a><a href="../worldwonderer-oh-story-claudecode-story-deslop/">刪掉「她眸色一暗」的網文去AI味改稿器 →</a></nav>
 </div>
 <script>
 (function(){

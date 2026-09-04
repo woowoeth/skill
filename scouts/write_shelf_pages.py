@@ -281,9 +281,9 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     %s
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人类生存法则</a>
-    <a href="https://ourword.ai/podcast/">原声播客</a>
-    <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人类世界生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
   <nav class="foot">%s</nav>
 </div>

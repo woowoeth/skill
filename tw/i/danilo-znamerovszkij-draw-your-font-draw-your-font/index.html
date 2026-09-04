@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>拍一張手寫字母，本地生成能裝進系統的 TTF 字體 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>拍一張手寫字母，本地生成能裝進系統的 TTF 字體 — 品味</title>
 <meta name="description" content="拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做圖, danilo-znamerovszkij">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="拍一張手寫字母，本地生成能裝進系統的 TTF 字體 — 品味">
 <meta property="og:description" content="拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/">
-<meta property="og:image" content="https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="拍一張手寫字母，本地生成能裝進系統的 TTF 字體 — 品味">
 <meta name="twitter:description" content="拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"拍一張手寫字母，本地生成能裝進系統的 TTF 字體","description":"拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。","url":"https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"danilo-znamerovszkij"},"image":"https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png","codeRepository":"https://github.com/danilo-znamerovszkij/draw-your-font/tree/HEAD/skills/draw-your-font"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"拍一張手寫字母，本地生成能裝進系統的 TTF 字體","description":"拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。","url":"https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"danilo-znamerovszkij"},"image":"https://ourword.ai/skill/tw/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png","codeRepository":"https://github.com/danilo-znamerovszkij/draw-your-font/tree/HEAD/skills/draw-your-font"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">拍一張手寫字母，本地生成能裝進系統的 TTF 字體</h1>
     <p class="lede">拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。</p>
     <div class="tags"><span class="tag">danilo-znamerovszkij</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/danilo-znamerovszkij-draw-your-font-draw-your-font.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。「擁有自己筆跡的字體」是很多人想過沒做過的浪漫，本地處理這點尤其體面。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。只做拉丁字母：字符集就 minimal 和 spanish 兩套，漢字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只認文件路徑。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/danilo-znamerovszkij/draw-your-font/tree/HEAD/skills/draw-your-font" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../gary149-h3-game-sprites-h3-game-sprites/">視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像</a><a href="../zenstory-ai-video-recap-skills-video-script/">先定鏡頭再落筆的解說稿，時間戳卡到幀</a><a href="../brandon030722-ark-ui-skill/">鷹角視覺語言先問產品線再定深度的界面設計器</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../geeklee-srt-whiteboard-animation/">字幕進、筆跡出：SRT 轉白板手繪動畫的流水線</a><a href="../joeseesun-qiaomu-mondo-poster-design/">33位傳奇設計師替你選風格，一句話出海報</a><a href="../dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/">東方文字海報，版式排好再交給 Image 2 成圖</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../op7418-guizang-social-card-skill/">← 照片多到選不出就讓它自己拼三張動圖卡</a><a href="../garrytan-gstack/">YC 掌門的 Claude Code 全套配置，23 個角色分工 →</a></nav>
+  <nav class="foot"><a href="../egonex-ai-understand-anything-understand-figma/">← 接上 Figma API，把設計稿拆成一張設計系統知識圖譜</a><a href="../tt-a1i-archify-archify/">畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML →</a></nav>
 </div>
 <script>
 (function(){

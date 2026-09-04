@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>把口頭流程變成能跑的跨平臺技能，三步內交付 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>把口頭流程變成能跑的跨平臺技能，三步內交付 — 品味</title>
 <meta name="description" content="把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, FrancyJGLisboa">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="把口頭流程變成能跑的跨平臺技能，三步內交付 — 品味">
 <meta property="og:description" content="把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/">
-<meta property="og:image" content="https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/francyjglisboa-agent-skill-creator.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/francyjglisboa-agent-skill-creator.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="把口頭流程變成能跑的跨平臺技能，三步內交付 — 品味">
 <meta name="twitter:description" content="把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把口頭流程變成能跑的跨平臺技能，三步內交付","description":"把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。","url":"https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"FrancyJGLisboa"},"image":"https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png","codeRepository":"https://github.com/FrancyJGLisboa/agent-skill-creator"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把口頭流程變成能跑的跨平臺技能，三步內交付","description":"把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。","url":"https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"FrancyJGLisboa"},"image":"https://ourword.ai/skill/tw/assets/covers/francyjglisboa-agent-skill-creator.png","codeRepository":"https://github.com/FrancyJGLisboa/agent-skill-creator"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">把口頭流程變成能跑的跨平臺技能，三步內交付</h1>
     <p class="lede">把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。</p>
     <div class="tags"><span class="tag">FrancyJGLisboa</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/francyjglisboa-agent-skill-creator.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/francyjglisboa-agent-skill-creator.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。跨平臺是 skill 生態的下一站。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。17 個平臺裡只有 12 個原樣能裝，Cursor、Windsurf 等 4 個要轉格式，Zed、Aider 等 4 個得你手抄進配置。校驗和安全掃描都是 python3 腳本，過了它會直接裝進你的配置目錄。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/FrancyJGLisboa/agent-skill-creator" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">給你裝的技能庫做體檢和減法</a><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../virgiliojr94-book-to-skill/">把 PDF 和 EPUB 拆成能裝進 Agent 的</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">給你裝的技能庫做體檢和減法</a><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../othmanadi-planning-with-files-planning-with-files/">任務拆解寫到磁盤，/clear 後自動續上進度</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../eugeniughelbur-obsidian-second-brain/">← 讓新資料改寫舊筆記，而不是在 Obsidian 裡越堆越多</a><a href="../hao0321-claude-skill-social-post-social-post/">學你的語氣排好 14 天日曆，再替你按下發布鍵 →</a></nav>
+  <nav class="foot"><a href="../othmanadi-planning-with-files-planning-with-files/">← 任務拆解寫到磁盤，/clear 後自動續上進度</a><a href="../texasbedouin-vibe-check/">帶純新手把模糊點子變成計劃，順手教會他用 GitHub →</a></nav>
 </div>
 <script>
 (function(){

@@ -205,23 +205,48 @@ HWL_A, HWL_B = "<!--TW:LANG-->", "<!--/TW:LANG-->"
 
 _LANG_JS = (
     "<script>(function(){try{"
-    "var K='skill_lang',p=location.pathname,tw=/^\\/skill\\/tw(\\/|$)/.test(p);"
-    "var cur=tw?'tw':'sc';"
-    "var other=tw?p.replace(/^\\/skill\\/tw/,'/skill')||'/skill/'"
-    ":p.replace(/^\\/skill/,'/skill/tw');"
+    # 语言偏好的键**三个站共用**：主站、原声、品味同域，localStorage 是通的。
+    # 原来各站一个键（hwx_lang / podcast_lang / skill_lang），读者在主站选了
+    # 繁體，进品味还是简体 —— 同一个人同一个域，选一次却不通用。
+    "var K='hwx_lang',p=location.pathname,tw=/^\\/skill\\/tw(\\/|$)/.test(p);"
+    "var en=new URLSearchParams(location.search).get('lang')==='en';"
+    "var cur=en?'en':(tw?'tw':'sc');"
+    "var to={sc:tw?(p.replace(/^\\/skill\\/tw/,'/skill')||'/skill/'):p,"
+    # 英文统一落在简体路径上：繁体页的静态文字已经转过形，再叠一层英文
+    # 界面会中英繁三种混在一页。
+    "tw:tw?p:p.replace(/^\\/skill/,'/skill/tw'),"
+    "en:(tw?(p.replace(/^\\/skill\\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};"
     "var saved=null;try{saved=localStorage.getItem(K)}catch(e){}"
-    "var want=saved||((/zh-(hant|tw|hk|mo)/i.test("
-    "(navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');"
-    "if(want!==cur){location.replace(other);return}"
+    # **URL 里已经写了语言，就以 URL 为准。**
+    # 原来无条件跟随浏览器语言，后果实测过：打开 /skill/tw/ 会被改写回
+    # /skill/ —— 只要浏览器的语言列表里有 zh。分享出去的繁体链接全失效。
+    "if(cur!=='sc'){"
+    "if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}"
+    "}else{"
+    "var L=(navigator.languages||[navigator.language||'']).join(',');"
+    "var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));"
+    "if(want!=='sc'&&to[want]){location.replace(to[want]);return}"
+    "}"
     "document.addEventListener('DOMContentLoaded',function(){"
     "var host=document.querySelector('.mast-side');if(!host)return;"
-    "var b=document.createElement('button');b.className='pill';b.type='button';"
-    "b.id='twBtn';b.textContent=tw?'简体':'繁體';"
-    "b.setAttribute('aria-label',tw?'切换到简体':'切換到繁體');"
-    "b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};"
-    "location.href=other};host.insertBefore(b,host.firstChild)})"
+    # 一个下拉，三种语言。原来是两个控件：繁體（正文简繁，路径）和 EN
+    # （界面语言，查询参数）。轴不同，但读者看到的是两个都写着语言的按钮，
+    # 猜不出差别 —— 而且三个站三种样子，同一个人要学三次。
+    #
+    # 页面自己那个 #langBtn 只藏起来不删：站里的 JS 还在读它
+    # （el("langBtn").textContent = t("btn")），删了会抛错。
+    "var old=document.getElementById('langBtn');if(old)old.style.display='none';"
+    "var sel=document.createElement('select');sel.id='langPick';sel.className='pill';"
+    "sel.setAttribute('aria-label','\\u8bed\\u8a00 Language');"
+    "[['sc','\\u7b80\\u4f53'],['tw','\\u7e41\\u9ad4'],['en','English']].forEach(function(kv){"
+    "var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];"
+    "if(kv[0]===cur)o.selected=true;sel.appendChild(o)});"
+    "sel.onchange=function(){if(sel.value===cur)return;"
+    "try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};"
+    "host.insertBefore(sel,host.firstChild)})"
     "}catch(e){}})();</script>"
 )
+
 
 
 def patch_lang():

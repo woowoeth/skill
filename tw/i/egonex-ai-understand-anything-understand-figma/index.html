@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-figma/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>接上 Figma API，把設計稿拆成一張設計系統知識圖譜 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-figma/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>接上 Figma API，把設計稿拆成一張設計系統知識圖譜 — 品味</title>
 <meta name="description" content="接上 Figma API，把設計稿拆成頁面、組件、變體、設計令牌的知識圖譜，設計系統長什麼樣一張圖看明白。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, Egonex-AI">
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../dietrichgebert-ponytail-ponytail/">先問「這真的需要做嗎」，能不寫的代碼一行不寫</a><a href="../egonex-ai-understand-anything-understand-chat/">按調用結構而不是搜字符串，回答改這裡會牽動誰</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../adrianpunk-punk-xhs-cards-punk-xhs-cards/">同一套主題色貫穿封面、IP 圖與編號正文卡</a><a href="../dietrichgebert-ponytail-ponytail/">先問「這真的需要做嗎」，能不寫的代碼一行不寫</a><a href="../egonex-ai-understand-anything-understand-chat/">按調用結構而不是搜字符串，回答改這裡會牽動誰</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../leonxlnx-taste-skill-image-to-code/">← 截圖變代碼時先對齊設計意圖，不做像素級復刻</a><a href="../imbad0202-academic-research-skills-deep-research/">13 個子代理組隊做研究，互相審稿和事實核查 →</a></nav>
+  <nav class="foot"><a href="../leonxlnx-taste-skill-image-to-code/">← 截圖變代碼時先對齊設計意圖，不做像素級復刻</a><a href="../danilo-znamerovszkij-draw-your-font-draw-your-font/">拍一張手寫字母，本地生成能裝進系統的 TTF 字體 →</a></nav>
 </div>
 <script>
 (function(){

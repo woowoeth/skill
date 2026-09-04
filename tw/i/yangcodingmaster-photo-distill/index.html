@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型 — 品味</title>
 <meta name="description" content="不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做圖, yangcodingmaster">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型 — 品味">
 <meta property="og:description" content="不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/">
-<meta property="og:image" content="https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg"><meta name="twitter:image" content="https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/yangcodingmaster-photo-distill.jpg"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/yangcodingmaster-photo-distill.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型 — 品味">
 <meta name="twitter:description" content="不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型","description":"不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。","url":"https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"yangcodingmaster"},"image":"https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg","codeRepository":"https://github.com/yangcodingmaster/photo-distill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型","description":"不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。","url":"https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"yangcodingmaster"},"image":"https://ourword.ai/skill/tw/assets/covers/yangcodingmaster-photo-distill.jpg","codeRepository":"https://github.com/yangcodingmaster/photo-distill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型</h1>
     <p class="lede">不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。</p>
     <div class="tags"><span class="tag">yangcodingmaster</span><span class="tag">店長推薦</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/yangcodingmaster-photo-distill.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/yangcodingmaster-photo-distill.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。「不用生圖模型」是個很硬的自我約束，也正是它出品統一的原因：所有效果都來自可控的代碼，而不是抽卡。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。要本機跑得起無頭 Chrome 和 Python PIL；缺一樣它就降級——交你一個 HTML 自己開、顏色請你自己報。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/yangcodingmaster/photo-distill" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../gary149-h3-game-sprites-h3-game-sprites/">視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像</a><a href="../zenstory-ai-video-recap-skills-video-script/">先定鏡頭再落筆的解說稿，時間戳卡到幀</a><a href="../brandon030722-ark-ui-skill/">鷹角視覺語言先問產品線再定深度的界面設計器</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../geeklee-srt-whiteboard-animation/">字幕進、筆跡出：SRT 轉白板手繪動畫的流水線</a><a href="../joeseesun-qiaomu-mondo-poster-design/">33位傳奇設計師替你選風格，一句話出海報</a><a href="../dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/">東方文字海報，版式排好再交給 Image 2 成圖</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../zhlmi-moodboard-alignment/">← 把客戶嘴裡的“高級感”翻譯成能打勾的審美條目</a><a href="../joeseesun-qiaomu-campus-resume/">給應屆生從零做一份可投遞的簡歷 →</a></nav>
+  <nav class="foot"><a href="../zhlmi-moodboard-alignment/">← 把客戶嘴裡的“高級感”翻譯成能打勾的審美條目</a><a href="../sumanasj-coc-kp-host/">寫到第三段就把回合交回來的克蘇魯跑團 KP →</a></nav>
 </div>
 <script>
 (function(){

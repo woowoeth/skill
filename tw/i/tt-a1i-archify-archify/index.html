@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/tt-a1i-archify-archify/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/tt-a1i-archify-archify/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/tt-a1i-archify-archify/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/tt-a1i-archify-archify/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML — 品味</title>
 <meta name="description" content="產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, tt-a1i">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML — 品味">
 <meta property="og:description" content="產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/">
-<meta property="og:image" content="https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1"><meta name="twitter:image" content="https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/tt-a1i-archify-archify.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/tt-a1i-archify-archify.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML — 品味">
 <meta name="twitter:description" content="產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML","description":"產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。","url":"https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"tt-a1i"},"image":"https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1","codeRepository":"https://github.com/tt-a1i/archify/tree/HEAD/archify"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML","description":"產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。","url":"https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"tt-a1i"},"image":"https://ourword.ai/skill/tw/assets/covers/tt-a1i-archify-archify.png","codeRepository":"https://github.com/tt-a1i/archify/tree/HEAD/archify"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML</h1>
     <p class="lede">產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。</p>
     <div class="tags"><span class="tag">tt-a1i</span></div>
-    <img class="cover" src="https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/tt-a1i-archify-archify.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/tt-a1i-archify-archify.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。「可驗證」是關鍵詞：圖和描述對得上號，不是好看但騙人的裝飾畫。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。靠 node bin/archify.mjs 出圖；收尾的 visual-check 要本機有 Chrome，沒有就退出碼 2 給張 skipped 收據。只做架構、流程、時序、數據流、生命週期五類，主節點建議不超過 12 個。</p></section>
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/tt-a1i/archify/tree/HEAD/archify" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../wshuyi-deep-research-deep-research/">八步把模糊問題走成一份可引用的調研報告</a><a href="../312362115-claude-diagram/">自動選對圖表類型再畫出來</a><a href="../imbad0202-academic-research-skills-deep-research/">13 個子代理組隊做研究，互相審稿和事實核查</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../wshuyi-deep-research-deep-research/">八步把模糊問題走成一份可引用的調研報告</a><a href="../op7418-guizang-ppt-skill/">做能雙屏演講的網頁版 PPT</a><a href="../312362115-claude-diagram/">自動選對圖表類型再畫出來</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../dominikmartn-hue/">← 學一次你的品牌，之後 agent 做的每個界面都照著來</a><a href="../k-dense-ai-scientific-agent-skills-citation-management/">每條引用都回數據庫核驗，揪出 AI 編造的參考文獻 →</a></nav>
+  <nav class="foot"><a href="../danilo-znamerovszkij-draw-your-font-draw-your-font/">← 拍一張手寫字母，本地生成能裝進系統的 TTF 字體</a><a href="../cclank-lanshu-awesome-ai-video-kit-seedance-debugger/">視頻里人臉飄了先別刪，它給你換提示詞的根因 →</a></nav>
 </div>
 <script>
 (function(){

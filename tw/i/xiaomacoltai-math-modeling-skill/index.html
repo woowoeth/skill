@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>三天賽程裡做完數學建模競賽全流程 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>三天賽程裡做完數學建模競賽全流程 — 品味</title>
 <meta name="description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, XiaoMaColtAI">
@@ -23,11 +23,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="三天賽程裡做完數學建模競賽全流程 — 品味">
 <meta property="og:description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/">
-<meta property="og:image" content="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/xiaomacoltai-math-modeling-skill.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/xiaomacoltai-math-modeling-skill.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="三天賽程裡做完數學建模競賽全流程 — 品味">
 <meta name="twitter:description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"三天賽程裡做完數學建模競賽全流程","description":"建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。","url":"https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"XiaoMaColtAI"},"image":"https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png","codeRepository":"https://github.com/XiaoMaColtAI/math-modeling-skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"三天賽程裡做完數學建模競賽全流程","description":"建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。","url":"https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"XiaoMaColtAI"},"image":"https://ourword.ai/skill/tw/assets/covers/xiaomacoltai-math-modeling-skill.png","codeRepository":"https://github.com/XiaoMaColtAI/math-modeling-skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +61,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">三天賽程裡做完數學建模競賽全流程</h1>
     <p class="lede">建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。</p>
     <div class="tags"><span class="tag">XiaoMaColtAI</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/xiaomacoltai-math-modeling-skill.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/xiaomacoltai-math-modeling-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
     
     <section class="sec"><h2>做什麼用</h2><p>建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。按競賽真實節奏設計的，不是把「數學建模」當學科名詞做個通用助手。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「生活」這一格。作者自己寫明產出的論文不能直接當作品交，格式還得對當屆官方模板。運行環境派不出 Subagent 時，M1/P1/P2/W1/W2 五道門禁只能標 BLOCKED；LaTeX 分支缺編譯引擎會直接阻塞。</p></section>
@@ -81,11 +81,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../anthropics-claude-plugins-community-eli5/">把任何概念講成帶大圖的幼兒園繪本</a><a href="../ayi-ai-nie-grassroots-logic/">聶輝華《基層中國的運行邏輯》方法箱</a><a href="../duskyelf-teach-me-teach-me/">會打斷你含糊用詞的蘇格拉底式陪練</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../deusyu-translate-book/">← 整本書拆給多個分身並行翻譯，再拼回原排版</a><a href="../cosmoblk-email-marketing-bible/">做郵件營銷的顧問 →</a></nav>
+  <nav class="foot"><a href="../deusyu-translate-book/">← 整本書拆給多個分身並行翻譯，再拼回原排版</a><a href="../adrianpunk-punk-ip-illustrations/">角色定妝照先於文章，插圖全按它來演 →</a></nav>
 </div>
 <script>
 (function(){

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--TW:LANG--><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'简体':'繁體';b.setAttribute('aria-label',tw?'切换到简体':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>品味 — 帮你发现有品位的 Skills</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>品味 — 帮你发现有品位的 Skills</title>
 <link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/apple-touch-icon.png">
 <meta name="theme-color" content="#f4efe6">
@@ -735,9 +735,9 @@ footer .fam a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
   <footer>
       <p id="colo2"></p>
     <div class="links fam">
-      <a href="https://ourword.ai/">人类生存法则</a>
-      <a href="https://ourword.ai/podcast/">原声播客</a>
-      <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+      <a href="https://ourword.ai/" data-fam="hw">人类世界生存法则</a>
+      <a href="https://ourword.ai/podcast/" data-fam="pc">原声</a>
+      <a href="https://ourword.ai/skill/" aria-current="page" data-fam="sk">品味</a>
     </div>
   </footer>
   <!-- 生成器写「可爬取层」的落点。SEO_PATCH_INDEX=1 打开后 seo/build_seo.py 往这里写。 -->
@@ -756,6 +756,9 @@ footer .fam a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
 var I18N = {
  zh:{
   brand:"品味", brandSub:"帮你发现有品位的 Skills", btn:"EN",
+  // 页脚家族导航的三个站名。英文模式下整段是中文，读者点之前不知道
+  // 自己要去哪 —— 而这是他离开这一页的唯一出口。
+  famHw:"人类世界生存法则", famPc:"原声", famSk:"品味",
   title:"品味 — 帮你发现有品位的 Skills",
   // 这句原先写的是「生态里有 266 万条 Agent Skill」，错了两层：266 万是 SkillsMP 首页
   // 自报的「2,664,116 Collected SKILL.md files」，被我们记成了 skills.sh 的；更要紧的是
@@ -808,7 +811,8 @@ var I18N = {
   dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
  },
  en:{
-  brand:"品味", brandSub:"Helping you find Skills with taste", btn:"中",
+  brand:"Taste", brandSub:"Helping you find Skills with taste", btn:"中",
+  famHw:"Human World Rules", famPc:"Podcast", famSk:"Taste",
   title:"Taste — curated agent skills",
   say:'There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is.',
   search:"Search titles, verdicts, repos…",
@@ -1057,6 +1061,17 @@ function renderChrome(){
   el("brand").textContent = t("brand");
   el("brandSub").textContent = t("brandSub");
   el("langBtn").textContent = t("btn");
+  // 家族导航跟着语言换。原声没有英文版，链接仍指简体；品味的英文版是
+  // 同一个 URL 加 ?lang=en，所以自指那条带上参数。
+  var famMap = {hw:"famHw", pc:"famPc", sk:"famSk"};
+  Array.prototype.forEach.call(document.querySelectorAll("[data-fam]"), function(a){
+    var k = famMap[a.getAttribute("data-fam")];
+    if(k) a.textContent = t(k);
+    if(a.getAttribute("data-fam") === "sk"){
+      a.href = lang === "en" ? "https://ourword.ai/skill/?lang=en"
+                             : "https://ourword.ai/skill/";
+    }
+  });
   var ss = el("shareSite"); if(ss) ss.textContent = t("share");
   el("q").placeholder = t("search");
   if(!D) el("colo2").textContent = "";

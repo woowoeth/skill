@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/dongbeixiaohuo-writing-agent/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/dongbeixiaohuo-writing-agent/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/dongbeixiaohuo-writing-agent/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>從選題到發布的去 AI 味中文寫作系統 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/dongbeixiaohuo-writing-agent/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/dongbeixiaohuo-writing-agent/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/dongbeixiaohuo-writing-agent/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>從選題到發布的去 AI 味中文寫作系統 — 品味</title>
 <meta name="description" content="AI 寫的文章一眼假，改起來比自己寫還累。它強制注入人類觀點和細節，配讀者測試評估和自動圖文排版，全流程走完。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 寫字, dongbeixiaohuo">
@@ -78,12 +78,12 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/dongbeixiaohuo/writing-agent" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../zy-zmc-tianming-skill/">七卷本起步的協同寫作系統，大綱到存檔全管</a><a href="../nulightjens-humanizer-stack-structural-humanizer/">專刪AI味敘事骨架，留下你原本的毛邊</a><a href="../tance-mang-chinese-webnovel-skills-aidetect/">AI味指數0到10，逐句標出扣分位置的中文網文質檢員</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../zhlmi-script-forging/">故事進，分鏡出，中間每一步都留痕的劇本鍛造臺</a><a href="../larashero3-dotcom-writing-dna-skill/">20篇原文榨出一份寫作DNA，新稿自動對齊老筆鋒</a><a href="../larashero3-dotcom-lieflat-gongwen/">六類公文族骨架公式，黨建經驗另起千字爐</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
   <nav class="foot"><a href="../vanillagreencom-vstack-trading-design/">← 按專業交易軟件的規範設計盯盤界面</a><a href="../aldegad-sprite-gen/">組件行流水線出精靈圖集，帶 QA 報告和運行時清單 →</a></nav>
 </div>

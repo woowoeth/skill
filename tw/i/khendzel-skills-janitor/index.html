@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/khendzel-skills-janitor/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/khendzel-skills-janitor/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/khendzel-skills-janitor/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>給你裝的技能庫做體檢和減法 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/khendzel-skills-janitor/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/khendzel-skills-janitor/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/khendzel-skills-janitor/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80\u4f53'],['tw','\u7e41\u9ad4'],['en','English']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>給你裝的技能庫做體檢和減法 — 品味</title>
 <meta name="description" content="裝得越多上下文越擠，還不知道哪個在偷偷吃 token、哪個藏著提示注入。它左滑扔掉浪費的、掃風險、給誠實的 token 賬單。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, khendzel">
@@ -78,14 +78,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/khendzel/skills-janitor" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../virgiliojr94-book-to-skill/">把 PDF 和 EPUB 拆成能裝進 Agent 的</a><a href="../othmanadi-planning-with-files-planning-with-files/">任務拆解寫到磁盤，/clear 後自動續上進度</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../othmanadi-planning-with-files-planning-with-files/">任務拆解寫到磁盤，/clear 後自動續上進度</a><a href="../francyjglisboa-agent-skill-creator/">把口頭流程變成能跑的跨平臺技能，三步內交付</a></div></div>
   </aside>
   <nav class="foot fam">
-    <a href="https://ourword.ai/">人類生存法則</a>
-    <a href="https://ourword.ai/podcast/">原聲播客</a>
-    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    <a href="https://ourword.ai/">人類世界生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../alchemint-inc-curtoom-video-clip-stitching/">← 接縫診斷師：專治AI分段影片的卡頓與重複</a><a href="../cclank-lanshu-awesome-ai-video-kit-seedance-debugger/">視頻里人臉飄了先別刪，它給你換提示詞的根因 →</a></nav>
+  <nav class="foot"><a href="../op7418-guizang-ppt-skill/">← 做能雙屏演講的網頁版 PPT</a><a href="../zenstory-ai-video-recap-skills-video-assemble/">旁白落定才壓原聲，字幕燒完再響度歸一 →</a></nav>
 </div>
 <script>
 (function(){
