@@ -504,6 +504,8 @@ def stock(items: list[dict], existing: dict, sources: dict, repo: str, meta: dic
                 # 之前不标，33 件新货全顶着预览卡上了首页。
                 if _wh and (tuple(_wh) in ((1200, 600), (1200, 630))) and not it.get("cover_kind"):
                     it["cover_kind"] = "og"
+                elif _wh and not it.get("cover_kind"):
+                    it["cover_kind"] = "hero"   # resolve_cover 第一步取的是 README 里作者自己的图
                 if _wh:
                     it["cover_w"], it["cover_h"] = _wh
         if not save_method(it):
