@@ -11,14 +11,14 @@
    "pick": false,
    "limit_zh": "65% 是作者自己标注的实测，正文没给测法。凡是写到聊天之外的字——代码注释、commit、文档、issue、记忆文件——一律恢复正常散文，那部分省不到。安全警告也自动切回。",
    "limit_en": "The 65% is the author's own \"(measured)\" claim with no method shown in the file. Anything persisted outside chat (code comments, commits, docs, issues, memory files) reverts to normal prose. Security warnings drop the style too.",
-   "cover": "https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/juliusbrussee-caveman-caveman.png",
+   "cover_kind": "hero",
    "title_en": "Claude speaks caveman, your token bill drops",
    "cover_w": 1254,
    "cover_h": 806,
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover_src": "https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png"
   },
   "worldwonderer-novel-to-game-novel-to-game": {
    "title_zh": "喂进一本小说，产出的不是概念稿是真能玩的游戏",
@@ -131,14 +131,14 @@
    "category": "creative",
    "limit_zh": "生成那步要本机装好 codex 或 grok CLI 并登录。脚本只认仓库自建的 .venv，缺 NumPy 就在 import 处硬报错——作者明写没有纯 Python 降级。正文大半是韩文。",
    "limit_en": "Generation shells out to the codex or grok CLI with their OAuth logins. Scripts run only from the repo's own .venv; the entry point hard-errors without NumPy and the text states there is no pure-Python fallback. Much of the doc is Korean.",
-   "cover": "https://repository-images.githubusercontent.com/1236336437/c2256b15-9938-486e-8d72-8ee4054431b9",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/aldegad-sprite-gen.png",
+   "cover_kind": "hero",
    "cover_w": 1280,
    "cover_h": 640,
    "title_en": "Component-row pipeline for clean sprite sheets with QA and.",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover_src": "https://repository-images.githubusercontent.com/1236336437/c2256b15-9938-486e-8d72-8ee4054431b9"
   },
   "vincentwei1021-video-shotcraft": {
    "title_zh": "照着 106 张分镜配方卡，把一句话拍成产品宣传片",
@@ -149,16 +149,16 @@
    "pick": false,
    "limit_zh": "要 Remotion 工程和 npm，真实页面镜头必须起本地 dev server 用无头浏览器截图。剪映导出走 pyJianYingDraft，Mac 剪映 11.2 实测过，Windows 那支没真机验证。",
    "limit_en": "Needs a Remotion project and npm; real-page shots require a local dev server plus headless-browser capture. Jianying export runs on pyJianYingDraft: the Mac path was tested against Jianying 11.2, the Windows one never was.",
-   "cover": "https://repository-images.githubusercontent.com/1305663861/4b328b82-5651-427a-a3db-57fe949bdcf9",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/vincentwei1021-video-shotcraft.png",
+   "cover_kind": "hero",
    "cover_w": 1280,
    "cover_h": 640,
    "title_en": "Product films built from 106 shot recipes",
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "unhide_note": "2026-09-04 店主指名，撤销旧的 hide（原因：早先门禁/判官）"
+   "unhide_note": "2026-09-04 店主指名，撤销旧的 hide（原因：早先门禁/判官）",
+   "cover_src": "https://repository-images.githubusercontent.com/1305663861/4b328b82-5651-427a-a3db-57fe949bdcf9"
   },
   "dietrichgebert-ponytail-ponytail": {
    "title_zh": "先问「这真的需要做吗」，能不写的代码一行不写",
@@ -170,14 +170,14 @@
    "pick": false,
    "limit_zh": "它是常驻人格：ACTIVE EVERY RESPONSE，要说 stop ponytail 才关。作者写明非编码请求不适用，而且只管「建什么」不管「怎么说话」，文风得另配 Caveman。",
    "limit_en": "A persistent persona: ACTIVE EVERY RESPONSE until you say \"stop ponytail\" or \"normal mode\". The author states it is not for non-coding requests, and it governs what you build, not how you talk - prose style needs a separate skill (Caveman).",
-   "cover": "https://repository-images.githubusercontent.com/1266797999/b20d9cb8-11f0-4db8-965a-7e22ab2b6bb6",
+   "cover": "/skill/assets/covers/dietrichgebert-ponytail-ponytail.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1280,
    "cover_h": 640,
    "title_en": "A senior engineer who talks you out of code",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_src": "https://repository-images.githubusercontent.com/1266797999/b20d9cb8-11f0-4db8-965a-7e22ab2b6bb6"
   },
   "ayghri-i-have-adhd-i-have-adhd": {
    "title_zh": "把注意力当稀缺资源，让 Claude 一次只说一件事",
@@ -452,14 +452,14 @@
    "why_en": "Recovers design intent rather than chasing pixel parity — the smart trade-off.",
    "limit_zh": "正文讲的是它自己先生成设计图再照着实现，通篇没写怎么读你手上的截图。环境必须能生图，Codex 里每段单独出一张大图，八段落地页就是八张图的钱。范围只到落地页、hero、作品集这类营销页。",
    "limit_en": "It generates its own design image and then implements that — nowhere does it describe reading a screenshot you already have. Needs image generation available; in Codex that means one large image per section, so an eight-section page costs eight images. Scope stops at landing, marketing and portfolio pages.",
-   "cover": "https://repository-images.githubusercontent.com/1162099055/0a968964-fdca-4781-853b-84afc2bc2d31",
+   "cover": "/skill/assets/covers/leonxlnx-taste-skill-image-to-code.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1731,
    "cover_h": 909,
    "title_en": "Screenshot to code that chases intent, not pixels",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_src": "https://repository-images.githubusercontent.com/1162099055/0a968964-fdca-4781-853b-84afc2bc2d31"
   },
   "leonxlnx-taste-skill-design-taste-frontend": {
    "title_zh": "前端品味指南",
@@ -779,14 +779,14 @@
    "why_en": "A tier above grep: answers by structure, not string match.",
    "limit_zh": "它只读 .ua/knowledge-graph.json，那张图得先跑 /understand 生成，没有就只能劝你去跑。图按 git commit 记时。",
    "limit_en": "It only reads .ua/knowledge-graph.json, which the sibling /understand skill must build first - without it, all it can do is tell you to run that. The graph is stamped with a git commit, so after code edits it only warns of staleness.",
-   "cover": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png",
+   "cover": "/skill/assets/covers/egonex-ai-understand-anything-understand-chat.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1774,
    "cover_h": 887,
    "title_en": "Ask what breaks if you touch this function",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_src": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/HEAD/assets/hero.png"
   },
   "egonex-ai-understand-anything-understand-dashboard": {
    "title_zh": "图谱仪表盘",
@@ -952,15 +952,15 @@
    "why_en": "Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.",
    "limit_zh": "装法决定功能：npx skills add 装的没有 /plan-goal 和 /plan-loop。「没做完不许停」的门也只在 Claude Code、Codex CLI 真拦得住，OpenCode、Gemini CLI 只弹提示。",
    "limit_en": "The install route decides what you get: `npx skills add` ships no /plan-goal or /plan-loop; only the plugin route does. The completion gate hard-blocks on Claude Code, Codex CLI and Continue.dev; OpenCode and Gemini CLI just get a notice.",
-   "cover": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg",
+   "cover": "/skill/assets/covers/othmanadi-planning-with-files-planning-with-files.jpg",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1400,
    "cover_h": 600,
    "title_en": "File-based task planning that survives /clear",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/HEAD/media/v3-banner-1400.jpg"
   },
   "nutlope-hallmark-hallmark": {
    "title_zh": "一眼看出页面像 AI 生成的，并给出改法",
@@ -971,14 +971,14 @@
    "why_en": "From a builder with a string of viral open-source apps — shipped taste, not theory.",
    "limit_zh": "只管网页与组件这一层的视觉。防重复靠项目根目录的 .hallmark/log.json，换个项目就从头轮，组件级的活压根不记账。study 读网页走 WebFetch，碰到要登录或纯 JS 的 SPA 只能改让你截图。",
    "limit_en": "Scope is web page and component visuals. Anti-repetition memory is .hallmark/log.json at the project root, so a new project restarts the rotation and component runs log nothing. study reads URLs via WebFetch, else asks for a screenshot.",
-   "cover": "https://raw.githubusercontent.com/Nutlope/hallmark/HEAD/site/OG-hallmark.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/nutlope-hallmark-hallmark.png",
+   "cover_kind": "hero",
    "cover_w": 2400,
    "cover_h": 1260,
    "title_en": "Spot why a page looks AI-generated, then fix it",
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover_src": "https://raw.githubusercontent.com/Nutlope/hallmark/HEAD/site/OG-hallmark.png"
   },
   "teng-lin-notebooklm-py": {
    "title_zh": "用脚本驱动 NotebookLM，连网页版没有的功能也能调",
@@ -1005,14 +1005,15 @@
    "why_en": "If the book won't stay in your head, put it in your agent — the premise alone earns a star.",
    "limit_zh": "MOBI/AZW 要先装 Calibre，技术书走 Docling 每页约 1.5 秒，EPUB 里的插图直接丢掉。两百页的书约 7.5 万 token，钱按你自己的模型价算。第三方版权书生成的技能只准建私有仓库。",
    "limit_en": "Runs scripts/extract.py under Python; MOBI/AZW need Calibre, technical mode uses Docling at ~1.5s a page, EPUB images are dropped. A 200-page book is ~75k tokens at your own model's rates. Copyrighted sources: private repo only.",
-   "cover": "https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp",
-   "cover_kind": "hero",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1600,
    "cover_h": 686,
    "title_en": "Turn PDFs & EPUBs into agent-ready skill packs",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_note": "外链图取不到，走排版底"
   },
   "op7418-humanizer-zh": {
    "title_zh": "去 AI 味·中文版",
@@ -1977,15 +1978,15 @@
    "why_en": "\"Verifiable\" is the keyword — diagrams that match reality, not pretty fiction.",
    "limit_zh": "靠 node bin/archify.mjs 出图；收尾的 visual-check 要本机有 Chrome，没有就退出码 2 给张 skipped 收据。只做架构、流程、时序、数据流、生命周期五类，主节点建议不超过 12 个。",
    "limit_en": "Everything runs through node bin/archify.mjs, and the closing visual-check needs local Chrome — without it you get exit code 2 and a skipped receipt. Five diagram types only, ~12 primary nodes max, and the layout targets desktop widths.",
-   "cover": "https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1",
+   "cover": "/skill/assets/covers/tt-a1i-archify-archify.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1200,
    "cover_h": 630,
    "title_en": "Architecture diagrams that get checked against the code",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://repository-images.githubusercontent.com/1211139949/484a27cf-6888-472b-9f58-46615a4429b1"
   },
   "op7418-guizang-social-card-skill": {
    "title_zh": "照片多到选不出就让它自己拼三张动图卡",
@@ -2014,15 +2015,16 @@
    "why_en": "Rewrite-don't-accumulate, à la Karpathy's LLM Wiki — aimed at the exact reason vaults rot.",
    "limit_zh": "脚本层要 Python 3.10+ 和 uv，/x-read、/x-pulse 必须自备 xAI Grok key。正文自认在 1000+ 笔记库首跑 recall@10 是 0%——raw/ 与 log.md 会压垮词频排序。",
    "limit_en": "The script layer needs Python 3.10+ with uv, and /x-read and /x-pulse require your own xAI Grok key. The text reports a first retrieval run on a 1,000+ note vault scoring 0% recall@10 - long raw/ transcripts and log.md dominate ranking.",
-   "cover": "https://raw.githubusercontent.com/eugeniughelbur/obsidian-second-brain/HEAD/media/banner.png",
-   "cover_kind": "diagram",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1536,
    "cover_h": 512,
    "title_en": "Notes that rewrite themselves instead of piling up",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_note": "外链图取不到，走排版底"
   },
   "francyjglisboa-agent-skill-creator": {
    "title_zh": "把口头流程变成能跑的跨平台技能，三步内交付",
@@ -2032,14 +2034,14 @@
    "why_en": "Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early.",
    "limit_zh": "17 个平台里只有 12 个原样能装，Cursor、Windsurf 等 4 个要转格式，Zed、Aider 等 4 个得你手抄进配置。校验和安全扫描都是 python3 脚本，过了它会直接装进你的配置目录。",
    "limit_en": "Of 17 platforms only 12 install SKILL.md as-is; 4 (Cursor, Windsurf, Trae, Junie) are auto-rewritten and 4 (Zed, Augment, Aider, Continue) need manual copying. Validation and security scan are python3 scripts; it auto-installs on pass.",
-   "cover": "https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png",
-   "cover_kind": "diagram",
-   "cover_real": false,
+   "cover": "/skill/assets/covers/francyjglisboa-agent-skill-creator.png",
+   "cover_kind": "hero",
    "cover_w": 1640,
    "cover_h": 1064,
    "title_en": "Turn spoken workflows into installable cross-platform.",
    "hide": false,
-   "gate_score": 5
+   "gate_score": 5,
+   "cover_src": "https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/HEAD/assets/architecture.png"
   },
   "nolangz-pixel2motion": {
    "title_zh": "把 PNG 的 Logo 转成 SVG 再动起来，附动效 QA 证据",
@@ -2076,14 +2078,14 @@
    "why_en": "Vox's collage aesthetic is explainer royalty; this compresses the whole studio into a command.",
    "limit_zh": "整条链只跑 Atlas Cloud 一家，没有 ATLASCLOUD_API_KEY 就只剩一份提示词清单让你自己去粘。本机还要 ffmpeg 和 Pillow。真人和品牌 Omni 会拒，得改用 Kling。",
    "limit_en": "Every media call goes to Atlas Cloud; without ATLASCLOUD_API_KEY you get only a manual prompt pack to paste elsewhere. Needs local ffmpeg and Pillow. Omni and Seedance refuse real people and brand logos, so those runs must switch to Kling.",
-   "cover": "https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/alisa0808-vox-director.jpg",
+   "cover_kind": "hero",
    "cover_w": 640,
    "cover_h": 360,
    "title_en": "Explainer videos in Vox's paper-collage style",
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover_src": "https://raw.githubusercontent.com/Alisa0808/vox-director/HEAD/assets/thumbs/football.jpg"
   },
   "juneyaooo-gpt-image2-ppt-skills": {
    "title_zh": "让 gpt-image-2 照着别人的 pptx 仿版式，你只换内容",
@@ -2179,14 +2181,14 @@
    "category": "creative",
    "limit_zh": "只做拉丁字母：字符集就 minimal 和 spanish 两套，汉字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只认文件路径。",
    "limit_en": "Latin only: the charsets are minimal and spanish (A-Z, a-z, 0-9, punctuation, accents) - no CJK. Needs Node >= 18 and scripts/resolve-cli.js first, and the CLI takes file paths only, so an image pasted into chat cannot be processed.",
-   "cover": "https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png",
+   "cover_kind": "hero",
    "cover_w": 1200,
    "cover_h": 675,
    "title_en": "Photograph your handwriting, install it as a font",
    "hide": false,
-   "gate_score": 9
+   "gate_score": 9,
+   "cover_src": "https://raw.githubusercontent.com/danilo-znamerovszkij/draw-your-font/HEAD/assets/hero.png"
   },
   "feichanggege-ecommerce-visual-copywriting-skill": {
    "title_zh": "先判断什么带来转化，再出电商主图的分镜和文案",
@@ -2231,15 +2233,15 @@
    "why_en": "The vibe-coding era's missing ingredient is a steady hand; this is that hand, professionally trained.",
    "limit_zh": "调研这步靠抓 Reddit 和 G2 评论，抓不动就退成把网址和搜索词交给你自己去粘。作图引擎要浏览器和临时文件，跑不起来退回 mermaid。正文全英文，且明说不管有经验开发者的调试、重构和 CI/CD。",
    "limit_en": "Discovery depends on fetching Reddit and review sites; when the environment blocks that, it hands you the sites and search phrases to paste yourself. The diagram engine needs a browser and temp files or falls back to mermaid. English only.",
-   "cover": "https://repository-images.githubusercontent.com/1260580223/3e1af143-04fa-40fd-971d-70992a637e1f",
+   "cover": "/skill/assets/covers/texasbedouin-vibe-check.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1280,
    "cover_h": 640,
    "title_en": "A veteran PM walks your first build",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://repository-images.githubusercontent.com/1260580223/3e1af143-04fa-40fd-971d-70992a637e1f"
   },
   "alirezarezvani-claudeforge-claude-md-enhancer": {
    "title_zh": "把随手记的 CLAUDE.md 重写成有模块结构的项目说明",
@@ -2563,14 +2565,15 @@
    "why_en": "The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage.",
    "limit_zh": "本体是要装的 kinocut CLI（uvx + FFmpeg），先跑 kino doctor。只碰本地文件，上云要另开 egress 审批。360 只吃拼好的等距 MP4，.insv 直接拒。图层合成不当 NLE 用，音频合成 fail-closed。",
    "limit_en": "Drives an installed CLI (uvx kinocut + FFmpeg); run kino doctor first. Local files only - cloud needs a separate egress approval. 360 wants a pre-stitched equirect MP4, .insv rejected. Not an NLE: audio compositing fails closed.",
-   "cover": "https://raw.githubusercontent.com/KyaniteLabs/kinocut/HEAD/assets/kinocut-hero.webp",
-   "cover_kind": "hero",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": false,
    "cover_w": 1672,
    "cover_h": 941,
    "title_en": "Video editing that plans before it cuts anything",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_note": "外链图取不到，走排版底"
   },
   "dimetron-pi-go-design-review": {
    "title_zh": "给 Go 代码库做地道性评审",
@@ -2580,15 +2583,16 @@
    "why_en": "In Go, \"works\" and \"idiomatic\" are far apart; per-dimension scoring makes the feedback actionable.",
    "limit_zh": "正文明说单个 PR 或未提交 diff 不归它管，那要另一件 code-review。而且末尾嵌着 pi-go 这个项目自己的检查项（ADK、internal/provider/、禁 init()），换仓库得先删。",
    "limit_en": "The text excludes single PRs and uncommitted diffs (it points you to a separate code-review skill). It also carries a hardcoded \"Project-Specific Checks (pi-go)\" block - ADK, internal/provider/, no init() - other repos must strip.",
-   "cover": "https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif",
-   "cover_kind": "artwork",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": true,
    "cover_w": 3448,
    "cover_h": 1978,
    "title_en": "Scores your Go on idiomatic, not on working",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_note": "外链图取不到，走排版底"
   },
   "dimetron-pi-go-bubbletea-testing": {
    "title_zh": "给跑在终端里的 Bubble Tea 界面拍快照做断言",
@@ -2781,16 +2785,16 @@
    "tagline_en": "A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.",
    "why_zh": "把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。",
    "why_en": "ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.",
-   "cover": "https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/artokun-comfyui-mcp.png",
+   "cover_kind": "hero",
    "limit_zh": "本体是 npm 上的 MCP server，39 件 skill 给它当外围。前提是有一台跑着 ComfyUI 的机器——没有 ComfyUI，这一整包一件都用不上。另外推荐管线里含一个 abliterated（去掉了拒答方向）的文本编码器 LoRA，作者标它是修脸用的；模型表另有一行 abliterated 出图模型标着 uncensored，可换成同表的普通写实模型。",
    "limit_en": "The product is an npm MCP server (node ≥22); the 39 skills under plugin/skills are its periphery. You need a running ComfyUI — local, LAN, VPS or Comfy Cloud. Without one, none of it does anything.",
    "title_en": "Drive ComfyUI workflows by plain language, 178 tools ready",
    "cover_w": 1920,
    "cover_h": 1080,
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_src": "https://raw.githubusercontent.com/artokun/comfyui-mcp/HEAD/assets/krea2_demo.png"
   },
   "jasoncolapietro-suede-creator-skills": {
    "title_zh": "创作者 71 件套",
@@ -3020,14 +3024,14 @@
    "why_en": "Fully local, nothing uploaded — clip tools are everywhere, but few will touch your unreleased footage without phoning home.",
    "limit_zh": "装 skill 还不够：得先 git clone 仓库再 pnpm install，首次跑自动下约 1GB 的 ASR 模型。高光检测要一个 OpenAI 兼容端点，接云端时转写文本会出机器（媒体文件不会），本地则要自己起 Ollama。",
    "limit_en": "Installing the skill is not enough: git clone the repo and pnpm install, and the first run pulls a ~1GB ASR model. Highlight detection needs an OpenAI-compatible endpoint — with a cloud one the transcript text does leave the machine.",
-   "cover": "https://repository-images.githubusercontent.com/1289069066/5b00d697-d8a3-4867-bddf-abcb2363893d",
+   "cover": "/skill/assets/covers/xixihhhh-hotclip-hotclip.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1280,
    "cover_h": 640,
    "title_en": "Local long-video to vertical shorts with karaoke captions",
    "hide": false,
-   "gate_score": 7
+   "gate_score": 7,
+   "cover_src": "https://repository-images.githubusercontent.com/1289069066/5b00d697-d8a3-4867-bddf-abcb2363893d"
   },
   "staruhub-claudeskills-deck-studio": {
    "title_zh": "演示稿工作室",
@@ -3048,14 +3052,14 @@
    "why_en": "The no-materials-no-tutoring rule is honest — it forces study against the real syllabus, not a generic AI-invented one.",
    "limit_zh": "没传课本/PPT/考纲它就只要材料，不开讲。PDF、Word 得另借 docx/pdf skill 提取。正文全中文，射程锁在大学期中期末，脚本只有 analyze_material.py 和 generate_questions.py。",
    "limit_en": "With no textbook, slides or syllabus uploaded it only asks for material and refuses to tutor. PDFs and Word files need a separate docx/pdf skill to extract. The body is all Chinese and scoped strictly to university midterms and finals.",
-   "cover": "https://raw.githubusercontent.com/staruhub/ClaudeSkills/HEAD/assets/social/agent-skills-concept-hero.png",
-   "cover_kind": "diagram",
-   "cover_real": false,
+   "cover": "/skill/assets/covers/staruhub-claudeskills-university-exam-prep.png",
+   "cover_kind": "hero",
    "cover_w": 1672,
    "cover_h": 941,
    "title_en": "Refuses to tutor you without the actual syllabus",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_src": "https://raw.githubusercontent.com/staruhub/ClaudeSkills/HEAD/assets/social/agent-skills-concept-hero.png"
   },
   "staruhub-claudeskills": {
    "hide": true,
@@ -3151,15 +3155,16 @@
    "why_en": "The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.",
    "limit_zh": "没告诉它平台和风格，它就停在提问那一步，不会先出一版给你看。预置比例只有小红书 3:4、公众号 2.35:1、X 5:2；一次一张、不给多版对比，也不许两种风格混用。",
    "limit_en": "Without a platform and a style it stops at the question and won't draft anything first. Preset ratios cover only Xiaohongshu 3:4, WeChat 2.35:1 and X 5:2. One image per run — no side-by-side options, and mixing two styles is forbidden.",
-   "cover": "https://raw.githubusercontent.com/adrianpunk/Punk-Skill/HEAD/screenshots/punk-cover-styles/anthropic-research-style.png",
-   "cover_kind": "artwork",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": true,
    "title_en": "One punk style library, covers for articles, XHS, WeChat, X",
    "cover_w": 1983,
    "cover_h": 793,
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_note": "外链图取不到，走排版底"
   },
   "adrianpunk-punk-skill-punk-avatar": {
    "title_zh": "用照片生成头像和宠物纪念卡",
@@ -3411,15 +3416,15 @@
    "why_en": "Parallel sub-agents are the trick — serial translation of a whole book takes forever; chunked parallelism cuts hours to minutes, layout intact.",
    "limit_zh": "本机要有 python3 和 pandoc，DOCX/EPUB/PDF 还得装 Calibre，缺了只剩 HTML。默认放 8 个子 agent 并发，整本书的 token 你自己付；术语表只从 5 个抽样块里提。",
    "limit_en": "Needs python3 and pandoc locally; DOCX/EPUB/PDF conversions require Calibre, otherwise you only get HTML. Default 8 parallel sub-agents, so the whole book is billed as tokens, and the glossary is extracted from only 5 sampled chunks.",
-   "cover": "https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg",
-   "cover_kind": "diagram",
-   "cover_real": false,
+   "cover": "/skill/assets/covers/deusyu-translate-book.jpg",
+   "cover_kind": "hero",
    "cover_w": 1440,
    "cover_h": 1920,
    "title_en": "Translate whole books via parallel sub-agents, rebuild.",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/deusyu/translate-book/HEAD/assets/poster/translate-book-poster-en.jpg"
   },
   "joeseesun-qiaomu-anything-to-notebooklm": {
    "title_zh": "把公众号视频播客一股脑喂进 NotebookLM",
@@ -3446,15 +3451,16 @@
    "why_en": "The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion.",
    "limit_zh": "战役数据全在本机 ~/.claude/dnd，换台机器就从零开。随包只有 5e SRD 数据集，跑正式模组得你自己导入书。影院画面是本地/局域网起的 Flask 面板。默认 roll_mode 是玩家自己掷骰，它不替你的 PC 代掷。",
    "limit_en": "Campaign data lives locally under ~/.claude/dnd - a new machine starts empty. Only the 5e SRD dataset ships; published modules you import yourself. The cinematic display is a local/LAN Flask app. Default roll_mode never auto-rolls your PC.",
-   "cover": "https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif",
-   "cover_kind": "artwork",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": true,
    "cover_w": 900,
    "cover_h": 489,
    "title_en": "A dungeon master for a table of one",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_note": "外链图取不到，走排版底"
   },
   "jame581-godotprompter": {
    "title_zh": "按 Godot 引擎的范式做游戏",
@@ -3917,14 +3923,14 @@
    "why_en": "Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly.",
    "limit_zh": "要装 obsidian 命令行，而且 Obsidian 必须开着，关掉就全断。命令清单以 obsidian help 为准，这里只列了常用几条。不写 vault= 时动的是最近聚焦的那个库。",
    "limit_en": "Requires the obsidian CLI and a running Obsidian instance; close the app and everything stops. The command list here is partial, with `obsidian help` as the authority. Without vault=, commands act on whichever vault was focused last.",
-   "cover": "https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab",
+   "cover": "/skill/assets/covers/kepano-obsidian-skills-obsidian-cli.png",
    "cover_kind": "hero",
-   "cover_real": false,
    "cover_w": 1280,
    "cover_h": 670,
    "title_en": "Search, write, edit your Obsidian vault from the CLI",
    "hide": false,
-   "gate_score": 6
+   "gate_score": 6,
+   "cover_src": "https://repository-images.githubusercontent.com/1126947080/074349e0-1fc4-47ce-a412-9b9eef6a81ab"
   },
   "greensock-gsap-skills": {
    "title_zh": "GSAP 官方动效",
@@ -3974,15 +3980,15 @@
    "why_en": "Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.",
    "limit_zh": "作者自己写明产出的论文不能直接当作品交，格式还得对当届官方模板。运行环境派不出 Subagent 时，M1/P1/P2/W1/W2 五道门禁只能标 BLOCKED；LaTeX 分支缺编译引擎会直接阻塞。",
    "limit_en": "The author states the paper is not a directly submittable entry, and formatting must follow the current year's official template. Without Subagents the M1/P1/P2/W1/W2 gates can only be marked BLOCKED; LaTeX blocks without a compiler.",
-   "cover": "https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png",
-   "cover_kind": "diagram",
-   "cover_real": false,
+   "cover": "/skill/assets/covers/xiaomacoltai-math-modeling-skill.png",
+   "cover_kind": "hero",
    "cover_w": 1672,
    "cover_h": 941,
    "title_en": "A three-day contest team with its own QA critic",
    "hide": false,
    "gate_score": 8,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png"
   },
   "khendzel-skills-janitor": {
    "title_zh": "给你装的技能库做体检和减法",
@@ -4013,15 +4019,15 @@
    "why_en": "Most people stall on which chart, not how to draw it; choosing the type before rendering is more useful than handing over templates.",
    "limit_zh": "出 PNG 必须跑 scripts/capture.py 和 bridge.py（内部调 Playwright），正文禁止你手动截图。雷达、热力、散点、漏斗、瀑布不支持 Mermaid 文本输出，只能留 PNG。",
    "limit_en": "PNGs only come out of scripts/capture.py and bridge.py, which drive Playwright internally — screenshotting by hand is forbidden. Radar, heatmap, scatter, funnel and waterfall get no Mermaid text output, only PNG.",
-   "cover": "https://raw.githubusercontent.com/312362115/claude/HEAD/docs/assets/workflow-panorama.png",
-   "cover_kind": "diagram",
-   "cover_real": false,
+   "cover": "/skill/assets/covers/312362115-claude-diagram.png",
+   "cover_kind": "hero",
    "cover_w": 1920,
    "cover_h": 858,
    "title_en": "Decides which of 29 diagram types you actually meant",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/312362115/claude/HEAD/docs/assets/workflow-panorama.png"
   },
   "312362115-claude-code-walkthrough": {
    "title_zh": "带你读懂一个陌生代码库",
@@ -4759,15 +4765,15 @@
    "why_en": "Rare in that what it sells is restraint — the hardest thing for a prompt to reproduce reliably. It ships an eval set, so the author is actually maintaining that consistency.",
    "limit_zh": "只出竖版纸感海报。字必须短，长文案会写糊。",
    "limit_en": "Needs a built-in image tool, fed by referenced_image_paths or at most five in-session images. One form only: vertical, paper-textured, heavy negative space. Keep poster text short — image models garble long copy. On a fidelity miss it regenerates once, then says outright that it failed.",
-   "cover": "https://raw.githubusercontent.com/LiamGvchi/gc-minimal-zine-poster/HEAD/examples/night-door.jpeg",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/liamgvchi-gc-minimal-zine-poster.jpeg",
+   "cover_kind": "hero",
    "cover_w": 686,
    "cover_h": 1144,
    "title_en": "Poetic paper-texture poster maker with bold whitespace",
    "hide": false,
    "gate_score": 10,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/LiamGvchi/gc-minimal-zine-poster/HEAD/examples/night-door.jpeg"
   },
   "openai-skills": {
    "title_zh": "Codex 官方目录",
@@ -4789,15 +4795,15 @@
    "why_en": "A model of committing to one look: no menu of options, one voice held all the way through, which is why a whole article stays visually coherent.",
    "limit_zh": "出图靠宿主内置的 image_gen，没这条能力就画不了。风格锁死 16:9、纯白底、小黑当主体，不给第二种选。图上中文批注由模型写，正文把错字严重列进重生成条件。",
    "limit_en": "Rendering needs the host's built-in `image_gen`. The look is locked: 16:9, white ground, Xiaohei as the actor, no alternatives. The Chinese annotations are drawn by the model, and its QA list makes bad characters grounds for a re-roll.",
-   "cover": "https://raw.githubusercontent.com/helloianneo/ian-xiaohei-illustrations/HEAD/examples/images/01-two-breakpoints.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/helloianneo-ian-xiaohei-illustrations-ian-xiaohei-illustrations.png",
+   "cover_kind": "hero",
    "cover_w": 1672,
    "cover_h": 941,
    "title_en": "Article diagrams that look like one hand drew them",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/helloianneo/ian-xiaohei-illustrations/HEAD/examples/images/01-two-breakpoints.png"
   },
   "ningzimu-codex-ppt-skill-codex-ppt": {
    "title_zh": "把文章变成视觉统一的图片式 PPT",
@@ -5921,9 +5927,8 @@
    "pick": true,
    "limit_zh": "要本机跑得起无头 Chrome 和 Python PIL；缺一样它就降级——交你一个 HTML 自己开、颜色请你自己报。",
    "limit_en": "Needs headless Chrome and Python PIL locally. Missing either, it degrades — hands you the raw HTML and asks you to name the colors. Unusable on a phone.",
-   "cover": "https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/yangcodingmaster-photo-distill.jpg",
+   "cover_kind": "hero",
    "cover_w": 1600,
    "cover_h": 1066,
    "cover_note": "作者 examples/ 里的成品海报（-poster），不是 -original 输入原片。抓取误取输入，2026-08-19 人工更正。",
@@ -5931,7 +5936,8 @@
    "tagline_en": "No image model anywhere in the pipeline — it draws with hand-written HTML/CSS/SVG and exports a PNG through headless Chrome. Give it a photo you took; you get a print-feeling minimal poster.",
    "why_en": "Refusing to generate is a hard constraint, and it's exactly why the output is consistent: every effect comes from code you can control, not from rerolling.",
    "hide": false,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover_src": "https://raw.githubusercontent.com/yangcodingmaster/photo-distill/HEAD/examples/09-lamp-poster.jpg"
   },
   "ruochenlyu-beijing-pollen-monitor": {
    "title_zh": "查北京 16 区花粉浓度和过敏预报",
@@ -5957,9 +5963,8 @@
    "category": "life",
    "tagline_zh": "到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。",
    "why_zh": "「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。",
-   "cover": "https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/zexuanw958-svg-travel-plan-viz.png",
+   "cover_kind": "hero",
    "limit_zh": "地图引的是 Leaflet CDN，所谓「离线可读」保得住文字和时间轴，地图那块断网就是空的。实时票价、代订票、多语言、后端，作者在「不做」一节里明写一概不做。最后那步校验要本机有 node 跑 assets/validate.js。",
    "limit_en": "The map is a Leaflet CDN embed, so 'offline' holds for the text and timeline but the map goes blank. Live fares, booking, multi-language and any backend are listed under what it deliberately does not do.",
    "cover_w": 1000,
@@ -5969,7 +5974,8 @@
    "why_en": "Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.",
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/zexuanw958-svg/travel-plan-viz/HEAD/docs/banner.png"
   },
   "lijigang-ljg-skills": {
    "title_zh": "一个观点经得住反例才肯落笔的写作引擎",
@@ -6020,9 +6026,8 @@
    "why_zh": "乔木出品。「要求—证据映射」这个设计防的正是简历造假式优化——挖你真有的，而不是替你编。",
    "limit_zh": "全程靠 Python 脚本串起来：extract、assess、validate、render 一个都少不了。中文 PDF 要本机真装了主题字体，Kami 认 TsangerJinKai02。学术 CV、高管履历、求职信都不做。",
    "limit_en": "The whole flow runs through Python scripts — extract, assess, validate, render — none optional. Chinese PDF output needs the theme font actually installed locally. Academic CVs, executive résumés and cover letters are out of scope.",
-   "cover": "https://raw.githubusercontent.com/joeseesun/qiaomu-campus-resume/HEAD/docs/assets/resume-before-after-comparison.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/joeseesun-qiaomu-campus-resume.png",
+   "cover_kind": "hero",
    "cover_w": 3200,
    "cover_h": 2200,
    "title_en": "A first résumé built from an interview, not invented",
@@ -6030,7 +6035,8 @@
    "why_en": "The requirement-to-evidence mapping is aimed squarely at résumé inflation: it digs out what you have rather than writing what you don't.",
    "hide": false,
    "gate_score": 10,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/joeseesun/qiaomu-campus-resume/HEAD/docs/assets/resume-before-after-comparison.png"
   },
   "redfox-data-redfox-community": {
    "title_zh": "分析某位作者的多篇文章复刻其文风",
@@ -6671,13 +6677,14 @@
    "tagline_en": "You smelled osmanthus today, or heard rain. One sentence becomes hairline serif type over a hand-authored abstract SVG, rendered straight into a lock-screen wallpaper that keeps clear of the clock.",
    "why_en": "The quoted poets are put on a leash: small type, low opacity, never allowed to upstage the line you wrote yourself.",
    "limit_en": "The default output is 1264×2780 — the author's own OnePlus 13 — so other phones mean picking an alternate resolution by hand. Rendering needs Playwright, and finished files are copied to ~/Downloads. Six moods map to six fixed artists and six fixed gradients, and the quote bank is a small hard-coded set, so anything outside it has no match.",
-   "cover": "https://raw.githubusercontent.com/rubyzhu26/see-life-wallpaper-skill/HEAD/example-wallpaper.png",
-   "cover_kind": "artwork",
+   "cover": "",
+   "cover_kind": "none",
    "cover_real": true,
    "cover_w": 1264,
    "cover_h": 2780,
    "hide": false,
-   "gate_score": 8
+   "gate_score": 8,
+   "cover_note": "外链图取不到，走排版底"
   },
   "wr5912-human-allegory-engine": {
    "title_zh": "把人生事件转成可复用的寓言引擎",
@@ -6754,14 +6761,14 @@
    "limit_brief_zh": "不联网它就退化成模型自己编。",
    "limit_brief_en": "Offline it degrades to the model inventing steps.",
    "category": "life",
-   "cover": "https://raw.githubusercontent.com/cclank/recipe-generator/HEAD/assets/demo-result.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/cclank-recipe-generator.png",
+   "cover_kind": "hero",
    "cover_w": 1024,
    "cover_h": 571,
    "hide": false,
    "gate_score": 9,
-   "gate_drop": "not-taste-ref"
+   "gate_drop": "not-taste-ref",
+   "cover_src": "https://raw.githubusercontent.com/cclank/recipe-generator/HEAD/assets/demo-result.png"
   },
   "liyue-aigc-outfit-director-outfit-director": {
    "title_zh": "一次拍出多套造型的换装视频脚本",
@@ -7503,12 +7510,12 @@
    "category": "creative",
    "pick": false,
    "hide": false,
-   "cover": "https://raw.githubusercontent.com/RollingAlei/Sticker-Puzzle-Photo-Memory-Card-Skill/HEAD/examples/example-1-lake-sunset.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/rollingalei-sticker-puzzle-photo-memory-card-skill.png",
+   "cover_kind": "hero",
    "cover_w": 2048,
    "cover_h": 1365,
-   "gate_score": 10
+   "gate_score": 10,
+   "cover_src": "https://raw.githubusercontent.com/RollingAlei/Sticker-Puzzle-Photo-Memory-Card-Skill/HEAD/examples/example-1-lake-sunset.png"
   },
   "veriyoung-toy-design-skills-plush-doll-designer": {
    "title_zh": "给玩偶眼睛定 90 牛拉力的毛绒版型设计台",
@@ -10075,9 +10082,11 @@
    "pick": false,
    "hide": false,
    "gate_score": 8,
-   "cover": "https://raw.githubusercontent.com/oil-oil/oil-motion/HEAD/assets/readme/source/hero-illustration-crop-v1.png",
+   "cover": "/skill/assets/covers/oil-oil-oil-motion.png",
    "cover_kind": "hero",
-   "cover_real": false
+   "cover_w": 1507,
+   "cover_h": 876,
+   "cover_src": "https://raw.githubusercontent.com/oil-oil/oil-motion/HEAD/assets/readme/source/hero-illustration-crop-v1.png"
   },
   "zeejay0-gathered-scenes-zine-skill-scenes-gathered-zine-v1-3": {
    "hide": true
@@ -12980,7 +12989,10 @@
    "tagline_zh": "AI 总爱偷偷发糖？这个 Skill 让它在悲剧角色扮演里守住防线：过程有拉扯质感，终局锚点锁死不在一起。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "外链图取不到，走排版底"
   },
   "zhlmi-shotsaver": {
    "title_zh": "不动像素只叠 HTML/CSS 层的废片拯救术",
@@ -13016,7 +13028,10 @@
    "tagline_zh": "不是教你撩，是帮你把每句回复都过一遍真心。已读不回、邀约试探、要不要继续，它先问清你的意思，再给你能直接发的字。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "外链图取不到，走排版底"
   },
   "joeseesun-qiaomu-info-card-designer": {
    "title_zh": "网页链接丢进来，吐出一张能发朋友圈的杂志卡片",
@@ -13043,7 +13058,12 @@
    "tagline_zh": "简历、白皮书、落地页、PPT 都排成同一套书香门第的气质。中文字体自动切 TsangerJinKai02。",
    "hide": false,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "cover": "/skill/assets/covers/tw93-kami-kami.png",
+   "cover_kind": "hero",
+   "cover_w": 1200,
+   "cover_h": 600,
+   "cover_src": "https://opengraph.githubassets.com/1/tw93/kami"
   },
   "kagurananaga-document-format-skills": {
    "title_zh": "中文公文排版一步到位，连修订痕迹都替你管好",
@@ -13052,7 +13072,10 @@
    "tagline_zh": "混排中英文标点、表格页码、公文模板一键归一。Codex 改完的 Word 不再被领导退回重排，修订痕迹想留就留。",
    "hide": false,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "外链图取不到，走排版底"
   },
   "haojae-scipilot-figure-skill": {
    "title_zh": "先查数据再选图，拦下科研绘图的经典错误",
@@ -13081,7 +13104,12 @@
    "tagline_zh": "学生问『为什么不选B』时，不再口干舌燥讲三遍。把阅读题变成能自学的交互页，练完自动浮出错题模式，老师备课。",
    "hide": false,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "cover": "/skill/assets/covers/edu-ai-builders-language-learning-sop-kit-skill-option-anatomy.png",
+   "cover_kind": "hero",
+   "cover_w": 1200,
+   "cover_h": 600,
+   "cover_src": "https://opengraph.githubassets.com/1/edu-ai-builders/language-learning-sop-kit"
   },
   "wubing2023-exampass-assistant": {
    "title_zh": "章节知识清单带原PPT对照，测完才放你走",
@@ -13090,7 +13118,10 @@
    "tagline_zh": "期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。",
    "hide": false,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_note": "外链图取不到，走排版底"
   },
   "milec-towers-of-saeroth-pf2e-gm": {
    "title_zh": "翻开本地规则库的 PF2e 主持人副驾",
@@ -13108,7 +13139,12 @@
    "tagline_zh": "从定位到批判再到迁移，七步走完一篇论文。每步产出都标原文页码。",
    "hide": false,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "cover": "/skill/assets/covers/chaogao512-literature-deep-reading-assistant-literature-deep-reading-assistant.png",
+   "cover_kind": "hero",
+   "cover_w": 1200,
+   "cover_h": 600,
+   "cover_src": "https://opengraph.githubassets.com/1/chaogao512/Literature-Deep-Reading-Assistant"
   },
   "larashero3-dotcom-writing-dna-skill": {
    "title_zh": "20篇原文榨出一份写作DNA，新稿自动对齐老笔锋",
