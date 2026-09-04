@@ -21,8 +21,12 @@ jobs:
           python-version: "3.11"
       - name: Build SEO/GEO artefacts
         run: |
+          python -m pip install --quiet "opencc==1.4.2"
           python seo/build_seo.py
           python scouts/write_shelf_pages.py
+          # 繁体站：拿刚构建好的简体树整树转一遍，必须排在所有生成步骤之后
+          python scouts/tw.py
+          python scouts/check_tw.py
       - name: Refuse to publish a broken page
         run: |
           # A merge marker or a second canonical in a committed page is worse than a

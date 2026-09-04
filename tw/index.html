@@ -1,0 +1,1725 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>品味 — 幫你發現有品位的 Skills</title>
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/tw/apple-touch-icon.png">
+<meta name="theme-color" content="#f4efe6">
+
+
+<!-- 站點統計沿用舊首頁的配置，原樣搬過來。要不要留是產品的決定，不是版式的。 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHD3WEXQ8T"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-DHD3WEXQ8T');</script>
+
+
+<!-- ================================================================
+     早啟動。首屏不等任何 fetch —— 報頭和搜索條是靜態 HTML，
+     feed 是唯一必需的數據，其餘全是後到的增強。
+     ================================================================ -->
+<script>
+// `cache:"no-cache"` = **每次都回源問一句「變了嗎」**，沒變就吃 304（幾十字節），
+// 變了就拿新的。不是 no-store（那才是每次全量重下）。
+//
+// 為什麼必須要：原來是裸 fetch，於是瀏覽器按 GitHub Pages 給的 TTL 直接吃本地緩存 ——
+// 實測上新 74 件、改了排序之後，頁面拿到的仍是隔夜的 feed，**圖在前的新順序一件沒生效**。
+// 一個首頁寫著「天天上新」的站，回頭客看到的是昨天的貨架。
+// 代價是每次多一次條件請求；收益是「上新」這兩個字是真的。
+window.__FEED__ = fetch("skills/feed.json", {cache: "no-cache"}).then(function(r){
+  if(!r.ok) throw new Error("feed "+r.status); return r.json();
+});
+// 封面的一切都在 feed 裡了：cover / cover_kind / cover_real / cover_w / cover_h。
+// 所以**整頁只有這一個請求**。上一版那張過渡查表已經刪掉。
+</script>
+
+<style>
+/* ============================================================
+   品味 · 版式原型 v4 「流」
+   店主定的方向：小紅書式信息流，不是編輯部雜誌。
+   雜誌版留在 design/archive-editorial.html（相對倉庫根）。
+
+   照搬小紅書的地方：瀑布流不等高卡、圓角白卡、淺灰底、圖片主導、
+   標題兩行截斷、橫滑分類膠囊、手機兩列是第一現場。
+
+   **動過的三處，都是因為我們賣的不是圖，是判斷：**
+
+   甲 小紅書卡底是點贊數 + 作者，我們換成「但是」。
+     瀑布流為瀏覽優化，我們的貨是文字，照搬會把判斷擠沒。
+     換掉之後瀏覽手感一樣，社交證明的槽位變成判斷槽位。
+     副作用很好：連一句誠實短處都寫不出來的東西，在流裡就是空的，一眼看得見。
+
+   乙 **卡上保留「點評」，不只放「但是」。** 理由見 .card .rev 那一節 ——
+     只印短處的卡片是把漏斗倒過來。
+
+   丙 GitHub OG 卡不上站。無圖卡不補佔位符，用一道墨槓起頭，
+     並且把「但是」升為主角。理由見 coverOf()。
+   ============================================================ */
+
+:root{
+  /* 紙是骨色，點是印泥紅。紅只給標記和句點，正文不跟貨搶顏色。 */
+  --bg:      #f4f2ec;   /* 原聲同款米白 */
+  --card:    #fffefa;
+  --soft:    #eae7de;
+
+  --ink:     #14120e;   /* 原來 #3a342e 灰褐，和米底對比不夠，整站發糊 */
+  --ink-2:   #3d3830;
+  --ink-3:   #6f6959;
+  --ink-4:   #9b9484;
+
+  --line:    #e2ddd0;
+  --line-2:  #cec8b8;
+  --accent:  #8b3d2f;
+
+  /* —— 單色。**站上沒有品牌色。** ——
+     brand/BRAND.md 定稿：「頁面上唯一的彩色應該來自商品的產出物圖，站不跟貨搶顏色。」
+     所以上一版那個硃色的「但」、硃色上新章、硃色徽章邊全部撤掉。
+     「但」的辨識度改由**位置 + 筆法**承擔：宋體、懸掛出欄、壓在豎線上。
+     這個交換是賺的 —— 一張全灰的頁面上，27 張真產出物圖是唯一的顏色源，
+     「產出物即封面」這句話由此變成看得見的事實，而不是一句主張。 */
+  --stamp:     #1a1a1a;    /* 反白章的底：墨 */
+  --stamp-fg:  #ffffff;
+
+  --serif: 'Songti SC','Source Han Serif SC','Noto Serif CJK SC','STSong','SimSun',Georgia,serif;
+  --sans:  -apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC',
+           'Noto Sans CJK SC','Microsoft YaHei',system-ui,sans-serif;
+  --mono:  'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+
+  /* 字號階梯。手機兩列的卡寬只有 ~177px，所以卡內字號必須比桌面小一檔，
+     階梯本身不變 —— 靠斷點換值，不靠局部另發明。 */
+  --t-micro: 10.5px;
+  --t-cap:   11.5px;
+  --t-meta:  12.5px;
+  --t-body:  14px;
+  --t-lead:  15.5px;
+  --t-h3:    17px;
+  --t-h2:    22px;
+  --t-h1:    30px;
+
+  --lh-tight: 1.34;
+  --lh-body:  1.72;
+  --lh-long:  1.92;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px;
+
+  --r-card: 14px;
+  --shadow: 0 1px 2px rgba(20,18,14,.05), 0 8px 24px -16px rgba(20,18,14,.18);
+  --r-chip: 999px;
+  --r-img:  10px;
+
+  --gut: 10px;
+  --cols: 2;
+}
+
+/* 深色跟隨已移除：店主判斷「深色太壓抑，看久了會很累」。 */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:var(--t-body)/var(--lh-body) var(--sans);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  hanging-punctuation: allow-end;
+}
+@supports (text-spacing-trim: space-first){ body{ text-spacing-trim: space-first } }
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+img{max-width:100%}
+
+/* 中英混排的那一口氣。JS 在 CJK / 拉丁邊界插一個空的 <i class="g">，
+   靠 margin 造縫，不插真空格 —— 複製出去還是乾淨原文。
+   英文站不需要做，也做不了，正好是我們該做到的地方。 */
+i.g{font-style:normal;display:inline;margin:0 .085em}
+
+html,body{overflow-x:hidden}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px;min-width:0}
+
+/* ============ 報頭 ============
+   整塊靜態 HTML。三個真數（過手 / 上架 / 未上架）落在 #tally，
+   數據到了才填；沒填的時候上面那句主張照樣讀得通。 */
+header.top{padding:clamp(26px,5vw,48px) 0 0;border-bottom:1px solid var(--line);margin-bottom:18px;padding-bottom:18px}
+.mast-top{display:flex;align-items:flex-end;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:flex-end;gap:12px;color:inherit;text-decoration:none}
+.logo svg{width:22px;height:36px;color:var(--ink)}
+.logo b{
+  font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,52px);
+  line-height:.98;letter-spacing:-.015em;color:var(--ink);
+}
+.logo b::after{content:".";color:var(--accent)}
+.slogan{margin:8px 0 0;color:var(--ink-3);font-size:13.5px;font-weight:400;letter-spacing:.02em}
+.mast-side{display:flex;align-items:center;gap:7px;padding-bottom:4px}
+.pill{
+  display:inline-flex;align-items:center;height:32px;padding:0 13px;
+  border:1px solid var(--line-2);border-radius:999px;font-size:12.5px;
+  color:var(--ink-2);background:var(--card);white-space:nowrap;cursor:pointer;
+}
+.pill:hover{border-color:var(--ink);color:var(--ink)}
+
+/* ============ 搜索條 + 橫滑膠囊 ============
+   兩行都 sticky。手機上這是唯一的導航。 */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 12px;
+     display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0;max-width:100%}
+.search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
+  padding:0 16px;height:40px;flex:0 1 260px;min-width:180px;
+}
+.search svg{flex:0 0 auto;opacity:.42}
+.search input{
+  flex:1;min-width:0;background:none;border:0;outline:none;
+  font:var(--t-body)/1 var(--sans);color:var(--ink);height:100%;
+}
+.search input::placeholder{color:var(--ink-4)}
+.search .clr{
+  display:none;background:none;border:0;cursor:pointer;color:var(--ink-4);
+  font-size:16px;line-height:1;padding:4px;
+}
+.search.has .clr{display:block}
+
+/* 橫滑膠囊。八個貨架直接當膠囊，滾動條藏起來。 */
+.chips{
+  /* 2026-09-03 照原聲（/podcast/）重寫。原來是橫向滾動 + 兩端淡出遮罩 + scroll-snap：
+     桌面上明明放得下卻被遮罩切掉一截、chip 比搜索框高一檔、字號也不一致 —— 店主說「tab 樣式很奇怪」。
+     原聲的做法：換行排、30px、細邊、靜色，按下時墨底反白。 */
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:1 1 100%;min-width:0;
+}
+.chip{
+  flex:0 0 auto;height:30px;padding:0 12px;display:inline-flex;align-items:center;
+  background:var(--card);border:1px solid var(--line-2);border-radius:999px;
+  cursor:pointer;white-space:nowrap;
+  font:500 12.5px/1 var(--sans);color:var(--ink-3);transition:color .15s,border-color .15s,background .15s;
+}
+.chip:hover{color:var(--ink);border-color:var(--ink-3)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip .cnt{font:10.5px/1 var(--mono);font-style:normal;opacity:.55;margin-left:5px}
+.chip.on .cnt{opacity:.7}
+
+/* 今日上新一條窄帶。瀑布流沒法按天分組（多列會把日期打散），
+   所以「今天挑了什麼」提到流的上面單獨說一句，不塞進流裡。 */
+.todayline{
+  margin:var(--s4) 0 0;display:flex;align-items:center;gap:10px;
+  font:var(--t-meta)/1.5 var(--sans);color:var(--ink-3);
+}
+.todayline .dot{width:5px;height:5px;border-radius:50%;background:var(--ink);flex:0 0 auto}
+.todayline b{color:var(--ink);font-weight:600}
+
+/* ============ 瀑布流 ============
+   用 CSS 多列，不上 JS masonry。
+   ▸ 已知的取捨：多列是**按順序灌滿一列再下一列**，不是「哪列短往哪放」。
+     所以最新的一批會集中在最左列，而不是橫著鋪開。
+     換來的是零 JS、零重排、縮放不抖。今日上新那條窄帶就是為了補這個。 */
+.flow{
+  columns:2;
+  column-gap:var(--gut);
+  margin:12px 0 0;
+}
+.flow > *{
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  width:100%;
+  display:block;
+}
+/* .card{margin:0} 定義在後面，選擇器權重相同就贏了這一局 ——
+   卡片之間因此完全沒有縱向間距。用 .flow > .card 提高權重壓住它。 */
+.flow > .card,
+.flow > *{
+  margin:0 0 var(--gut) !important;
+}
+@media (max-width:620px){
+  :root{
+    --gut:8px;
+    --t-body:13.5px;--t-lead:14.5px;--t-h3:15.5px;--t-h2:20px;--t-h1:30px;--t-meta:11.5px;--t-cap:10.5px}
+  .wrap{padding:0 max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right))}
+  .logo b{font-size:30px}
+  .bar{flex-direction:column;align-items:stretch;gap:8px}
+  .search{flex:1 1 auto;max-width:none;min-width:0}
+  .chips{flex:1 1 auto;width:100%}
+  .flow{gap:8px;margin:10px 0 0}
+}
+
+.card{
+  break-inside:avoid;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+  margin:0;overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease,border-color .18s,box-shadow .18s;
+  cursor:pointer;display:block;
+}
+/* 整張卡是一個按鈕，但**不能**用 <button> 標籤 —— button 裡只允許放
+   phrasing content，塞 <h3>/<p> 是非法的。用 article + role=button，
+   鍵盤由下面那個 keydown 處理器接。 */
+.card[role="button"]{-webkit-tap-highlight-color:transparent}
+.card:hover{border-color:var(--line-2)}
+.card:active{transform:scale(.994)}
+
+/* ---- 封面 ------------------------------------------------------
+   寬高比在 HTML 裡就寫死（design/cover-dims.json 實測 97/97），
+   所以圖片加載前空間就佔好了，**瀑布流不會跳版**。
+   等 editorial/covers.json 帶上 width/height，這個文件刪掉、邏輯不變。
+   實測寬高比 0.46 – 4.69：超寬 20 件、豎版 6 件。
+   所以不裁切，只給一個 max-height 兜住最豎的那幾張。 */
+/* 一道內描邊（inset shadow，不佔布局尺寸）。**沒有它，淺底圖在淺底站上會看起來像壞圖。**
+   實測：奧數那件的封面是米色底加細黑線的幾何圖，貼到米色卡片上，
+   截圖裡就是一個空灰框 —— 圖其實加載成功了（620×818，complete=true），
+   是**卡片和圖之間沒有邊界**。這不是那一張的問題，是所有淺底產出物圖的問題，
+   而「代碼畫的乾淨線稿」正是我們最想要的那一類封面。
+   用 inset 而不是 border：border 會參與寬高計算，把寫死的寬高比頂歪，瀑布流就跳版了。 */
+.shot{display:block;background:var(--soft);position:relative;overflow:hidden;
+      box-shadow:inset 0 0 0 1px var(--line)}
+.shot img{width:100%;height:auto;display:block;object-fit:contain;object-position:center top;position:relative;z-index:1}
+.shot .plate-ink{
+  position:absolute;inset:0;padding:18px 16px 16px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(135deg,var(--soft),#f9f7f1);
+}
+.shot .plate-cat{
+  font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:10px;
+}
+.shot .plate-title{
+  font:600 18px/1.28 var(--serif);color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.shot.hasimg .plate-ink{display:none}
+.share{
+  margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--ink-3);
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  padding:6px 10px;border-radius:var(--r-chip);cursor:pointer;
+}
+.share:hover,.share.on{border-color:var(--ink);color:var(--ink)}
+a.card{color:inherit}
+/* 豎過頭的限個高，別讓一張海報把一列吃掉。
+   artwork 那一檔放寬到 620px：最豎那張（比 0.46）在桌面五列自然高 570px，
+   卡在 420px 會把剛放寬的下限又用 max-height 裁回去。 */
+/* 心標的**點擊區**撐到 44×44，視覺尺寸一個像素不變。
+   實測 22×18px —— WCAG 下限 24×24、HIG 建議 44×44，兩條都不滿足。
+   真正貴的是失手代價：卡片本身是 role="button"，從心標中心下偏 16px 命中 `.cbody`、
+   左偏 16px 命中 `.foot` —— **失手不是「沒點到」，是「打開了詳情彈層」**，
+   得先關掉再重試。而心選是店裡最高等級的信號（`.sendbar` 自己寫著
+   「提交後我會據此改選品標準」），入口卻是全站最小的可點目標。 */
+.card:hover{transform:translateY(-3px);border-color:var(--line-2);
+  box-shadow:0 2px 4px rgba(20,18,14,.06),0 18px 40px -22px rgba(20,18,14,.32)}
+.card .heart{position:relative}
+.card .heart::after{content:"";position:absolute;inset:-13px -11px}
+
+/* 心選提交面板。**正文不走網址** —— 見 sendHearts 那段註釋：
+   原來把正文塞進 issue URL，店主標了幾十件之後 GitHub 直接回
+   「Your request URL is too long」，一件都交不出來。 */
+.heartout{position:fixed;inset:0;z-index:60;display:none;
+  background:rgba(27,26,25,.34);padding:var(--s4);overflow:auto}
+.heartout.on{display:block}
+.ho-in{max-width:44rem;margin:6vh auto;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-img);padding:var(--s4)}
+.ho-tip{margin:0 0 var(--s3);color:var(--ink-2);font-size:var(--t-meta);line-height:1.6}
+.ho-in textarea{width:100%;box-sizing:border-box;font:inherit;font-size:var(--t-meta);
+  line-height:1.6;color:var(--ink-1);background:var(--soft);border:1px solid var(--line);
+  border-radius:8px;padding:var(--s3);resize:vertical}
+.ho-btns{display:flex;gap:var(--s2);margin-top:var(--s3);flex-wrap:wrap}
+.ho-btns button{font:inherit;font-size:var(--t-meta);padding:.5em 1.1em;cursor:pointer;
+  border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink-1)}
+.ho-btns button[data-ho="issue"]{background:var(--ink-1);color:var(--card);border-color:var(--ink-1)}
+/* 豎幅限高只剩一條：寬度那道閘在 JS 裡（H_MAX_K），這裡是視口那道。 */
+.shot.tallcap{max-height:min(78vh,620px)}
+/* 被限高的極端豎幅：cover + 頂部對齊。contain 會在底部留一條空帶，
+   那正是「空洞」本身 —— 用一個空洞換另一個沒有意義。裁掉的是底部，頭還在。 */
+.shot.capped img{height:100%;object-fit:cover;object-position:center top}
+/* 默認預覽卡：能上卡，但是最後一檔 —— 去飽和、壓對比、四邊留一圈底色，別和真封面搶 */
+.shot.plate-only{aspect-ratio:2/1;background:linear-gradient(135deg,var(--soft),#f9f7f1);
+  display:flex;align-items:flex-end;justify-content:space-between;padding:12px 14px;box-shadow:inset 0 0 0 1px var(--line)}
+.shot.plate-only .plate-glyph{font:700 clamp(44px,26%,72px)/.9 var(--serif);color:var(--ink);opacity:.14;letter-spacing:-.04em;
+  position:absolute;right:10px;top:6px;font-size:min(96px,42cqw)}
+.shot.plate-only{container-type:inline-size}
+.shot.plate-only .plate-kicker{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---- 無圖卡：一道短墨槓起頭 ------------------------------------
+   不補佔位符、不放 OG 卡。56 件沒有真產出物圖，無圖必須是一等公民。
+   墨槓是這張卡的「圖」——它告訴你下面是一段判斷，不是一張截圖。 */
+.bar-ink{display:none}
+.card.noimg .bar-ink{
+  display:block;height:3px;width:34px;background:var(--ink);
+  margin:var(--s4) var(--s4) 0;border-radius:2px;
+}
+.card.noimg .cbody{padding-top:var(--s3)}
+
+.cbody{padding:15px 17px 17px;display:flex;flex-direction:column;gap:9px}
+
+/* 標題：兩行截斷。
+   ⚠️ **下面這兩行舊賬已經不成立了，留著是為了讓人看見它怎麼過期的：**
+     「實測標題中位 12 字、最長 27 字，手機兩列會截掉 14/152（9%），桌面五列 1/152」
+   那是 152 件時候的數。157 件的今天重量（Chromium、淺色、真機，feed 2026-08-19T12:07Z）：
+     title_zh 中位 **19 字**、最長 36 字（數據側復算：feed.json）
+     375px 兩列（文字寬 135px）：**72/157 真掉了字**（中位掉 4 字、最多掉 13 字），
+       另有 10 條差 1–2px 的臨界
+     1280px 四列：0/157
+   掉的同樣是句尾那幾個字，跟英文那邊一模一樣：
+     「把「要高級要有質感」變成能確認的方 ⟦向稿⟧」
+     「禁止「結尾再掏出一件磨損物件」的荒誕 ⟦超短篇寫手⟧」
+     「禁止說「我聽到了」和「需要我都在」的 ⟦自省鏡子⟧」
+   —— 露出來的半句讀著像說完了，而它已經不是原來那句判斷。
+
+   **這一條我沒有自己改，因為它不是缺陷，是手感取捨，該店主定。**
+   英文那兩處補行的代價是 7 張卡長高；中文補到 3 行要 82 張卡長高（還剩 5 條被夾），
+   補到 4 行才 0 條被夾 —— 那是整條流的節奏變了，不是我一個人能拍的板。
+   已改成 3 行（產品 2026-08-19 拍板）。判據：157 件裡 72 件在 2 行下掉了字，
+   而**掉的是句尾那個名詞**——剩下半句讀起來像說完了，可它已經不是原來那句判斷。
+   這跟「誠實變成營銷」是同一個形狀，只不過發生在標題上。
+   我們剛花一整輪把鉤子寫進 60 條標題裡，46% 被夾掉句尾等於那輪白做。
+
+   為什麼不是 4 行：4 行才 0 條被夾，但那要 82 張卡長高一檔，整條流的節奏就變了。
+   3 行讓版式吸收掉絕大多數，**剩下的幾條按文案縮短，不讓版式遷就個例**。 */
+.card h3{
+  margin:0;font:700 19px/1.34 var(--serif);color:var(--ink);letter-spacing:-.01em;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+/* ---- 英文標題多給一行（手機再多一行）--------------------------------
+   **兩行這個數是按中文的字寬定的，拉丁字母裝不下。** 同樣的框：
+   中文一行約 9 個字，英文一行約 3.5 個詞。title_en 中位 8 詞、最長 13 詞。
+   （下面這組兩行的實測是 171 件那一版的，貨架已降到 157，比例照樣成立，
+     沒重量是因為結論不靠它 —— 靠的是下面那組按當前 feed 重量過的數。）
+     375px 兩列（文字寬 134.5px）  4/171 = 2%     中文同處 142/171
+     414px 兩列（154px）          26/171 = 15%
+     1280px 四列（264.5px）      165/171 = 96%
+     1440px 五列（233.5px）      141/171 = 82%   ← 列多反而更窄
+   而這批標題的判斷**全落在末尾**（"…that flags its own unverified claims"），
+   砍掉的三個詞正是那句判斷本身：375px 下「A school that leaves the…」
+   ——leaves the 什麼，一個字都沒剩。這不是難看，是這一格不再是判斷，
+   跟 D3 講的「誠實被砍成鉤子」是同一類錯。
+
+   所以按字寬差異補行，不改文案：
+     桌面四行 → 157/157 完整
+     手機五行 → 157/157 完整
+   （D23：夾行留省略號是允許的；這裡做的是把「夾掉判斷」降回「一個字都不夾」。）
+
+   ---- 上一版停在「桌面 3 行 / 手機 4 行」，那兩個數不夠，實測補上 ----
+   上一版把剩下的 7 條判成「title_en 超出 4–9 詞上限」的數據欠賬，不補行。
+   （那 7 條一條沒少：157 件這一版下架的 14 件是「非 C 端」，不是這 7 條。）
+   我把這 7 條逐條量了一遍被夾掉的**具體是哪幾個詞**，這個判斷不成立：
+
+     Kusama for loneliness, Miró for warmth — a daily five-senses │ wallpaper
+     A noir interrogation game that hashes the killer before you  │ start
+     The absurdist flash-fiction writer banned from ending on a worn │ object
+     Count how many times you said please, then sentence you to   │ 2126
+     An ADHD CBT coach that shrinks the homework when confidence  │ drops below 7
+     Pull the narration hidden inside graded-reader PDFs, page by │ page
+     A 0–13 parenting advisor that will not take one source's word for │ it
+
+   **掉一個詞比掉三個詞更壞**：掉三個詞讀者看得出話沒說完；
+   掉的是句末那個名詞（wallpaper / object / start），剩下那半句讀起來像說完了，
+   而它已經不是原來那句判斷了 —— 這正是上面那段自己寫的「夾掉判斷」。
+
+   代價實測為零，所以沒有理由不補（157 件這一版重量過）：
+     375px 兩列：7 條各需**恰好一行**，157 條裡只有這 7 條長高，其餘 150 條一像素不動
+     800px 三列（最窄的桌面檔）：3 行時 ADHD 那條掉「drops below 7」；4 行後 0 條被夾，
+       且只有那 1 條長高
+     1280px / 1440px：3 行和 4 行渲染完全一致（沒有任何標題需要第 4 行）
+   已知未解：320px 兩列（文字寬 107px）五行仍夾約 10 條（171 件那版量的是 11 條）。
+   320 不是設計目標寬度，記在這兒不假裝它不存在。 */
+html[lang="en"] .card h3{-webkit-line-clamp:4}
+
+/* ---- 點評 ------------------------------------------------------
+   **這一塊是我加回去的，產品的稿裡沒有。**
+   產品的版本是「標題 + 但是」，把「點評」全挪進詳情。我不同意：
+   一張只印短處的卡片是把漏斗倒過來 —— 讀者拿到的全是不裝的理由，
+   一個裝的理由都沒有。「但是」是配重，它得有個東西可配。
+   所以卡上是「點評兩行 + 但是一行」，兩句都在，短處仍在社交證明的位置上。 */
+/* ---- 夾行把層級鎖死，跟字段長度無關 ----------------------------
+   店主報「但是壓過點評」。根因不在字號也不在行高，在我自己那條
+   `.card.noimg .but .tx{line-clamp:4}` —— 無圖卡上我把「但是」放到 4 行、
+   點評留 2 行，於是最長的那句壓過了該當主角的那句。是我做錯了。
+
+   現在層級由**夾行行數**鎖死：點評 ≥ 但是，恆成立。
+   `limit_zh` 中位 107 字、`limit_brief_zh` 目標 ≤30 字，差 3.5 倍 ——
+   夾行之後兩者都是固定高度，所以這個倒置在字段填滿前後都不會再出現。 */
+.card .rev{margin:0;color:var(--ink-2);font:14px/1.66 var(--sans);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---- 但是：佔掉小紅書的點贊位 ----------------------------------
+   實測「但是」中位 107 字、最長 134 字。手機兩列每行約 12 字，
+   107 字要 8.9 行 —— 夾到兩行只露 22%，那不叫誠實，那叫鉤子。
+   所以優先用短版字段（limit_short_zh，還沒有就等內容那邊定），
+   拿不到才退回夾行，並且**夾行時在句讀處斷**，不在半個詞上斷。
+   硃色的「但」掛在最前面，是全卡唯一的彩色。 */
+.but{
+  margin:var(--s3) 0 0;padding-top:var(--s3);border-top:1px solid var(--line);
+  font:var(--t-meta)/1.66 var(--sans);color:var(--ink-3);
+  display:flex;gap:6px;align-items:flex-start;
+}
+/* 「但」：宋體、比正文重一檔、墨色。不靠顏色，靠筆法和位置。 */
+.but .mk{
+  flex:0 0 auto;font:600 var(--t-body)/1.45 var(--sans);color:var(--ink);
+}
+.but .tx{
+  min-width:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+/* 沒寫「但是」的那 20 件：這一格就是空的，而且看得出來是空的。
+   這是產品那個換位設計最好的副作用，別去補它。 */
+.but.none{color:var(--ink-4)}
+.but.none .mk{color:var(--line-2);font-weight:400}
+
+/* 無圖卡：撐起這張卡的是**點評**，不是「但是」。
+   上一版我把「但是」放到 4 行，結果它壓過了點評 —— 改成把**點評**放寬到 5 行，
+   「但是」始終 2 行。整張卡還是一段判斷，但主角是「它好在哪」，
+   而不是「它哪兒不行」。只印短處的卡片是把漏斗倒過來。 */
+.card.noimg .rev{-webkit-line-clamp:5}
+
+/* ---- 右下徽章：只有正向檔 --------------------------------------
+   星數在前端已經徹底沒有出口。替代信號兩個，都只在「有」的時候出現：
+   一個只有一段提示詞的極簡 skill 可能恰恰是好東西，
+   給它印「備料少」就是把星數的錯誤換個馬甲再犯一次。 */
+.foot{margin-top:auto;padding-top:11px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:10.5px/1 var(--mono);color:var(--ink-4);letter-spacing:.03em}
+.tagn{font:11px/1.4 var(--sans);color:var(--ink-3);background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:1px 7px}
+/* ---- 心標 ----------------------------------------------------------
+   店主的手動信號，凌駕於一切機器信號之上：他點了，就是最高等級。
+   站是純靜態沒有後端，所以點心只寫 localStorage、不產生任何請求；
+   攢夠了在「心選」裡一次性提交成一個預填的 GitHub Issue。
+   這是全站唯一一處彩色 —— 它不是裝飾，是唯一一個「你的狀態」。 */
+.heart{
+  flex:0 0 auto;background:none;border:0;padding:2px 4px;
+  line-height:1;cursor:pointer;color:var(--ink-4);
+  transition:transform .12s ease, color .12s ease;
+}
+.heart:hover{color:#b8452f;transform:scale(1.15)}
+.heart svg{display:block;width:14px;height:14px}
+.heart[aria-pressed="true"]{color:#b8452f}
+.heart[aria-pressed="true"] svg path{fill:currentColor}
+.chip.heartchip{border-color:#e3c4bd;color:#b8452f}
+.chip.heartchip.on{background:#b8452f;border-color:#b8452f;color:#fff}
+/* ⚠️ 間距規矩：任何直接落在 #main 裡的塊，上邊距一律 var(--s4)，
+   手機斷點裡一律 var(--s3) —— 跟 .todayline / .flow 對齊。
+   加新塊時先看這兩個兄弟怎麼排的，別只顧著自己跟下面的距離。
+   （這條是補出來的：心選說明條當初寫成 margin-top:0，緊貼 sticky 分割線。）
+
+   落在 #main 裡的塊一共五個，現在的賬：
+     .todayline · .sendbar · .flow · .empty  —— 都守這條規矩
+     .more                                   —— 例外，見它自己那節
+   `.empty` 原來也是 margin-top:0，而且**真的復現了這條規矩要防的那件事**：
+   心選裡把最後一件取消心標 → head 為空串 → .empty 成為 #main 唯一的孩子，
+   實測（375px）它的上沿離 sticky 分割線**恰好 0px**。補上。 */
+.sendbar{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin:var(--s4) 0 0;padding:12px 14px;background:var(--soft);
+  border:1px solid var(--line);border-radius:10px;
+  font:var(--t-cap)/1.6 var(--sans);color:var(--ink-2);
+}
+.sendbar button{
+  margin-left:auto;font:600 var(--t-cap)/1 var(--sans);cursor:pointer;
+  background:var(--ink);color:var(--card);border:0;padding:9px 14px;border-radius:7px;
+}
+.badge{
+  flex:0 0 auto;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.06em;
+  border:1px solid var(--line-2);color:var(--ink-3);
+  padding:4px 6px;border-radius:5px;white-space:nowrap;
+}
+/* 三個章共用一套單色詞彙，靠**填充與描邊**分層，不靠顏色：
+   上新 = 實心反白（最響）· 店長讀過 = 墨色描邊（中）· 備料齊 = 淡描邊（輕） */
+.badge.read{border-color:var(--ink-3);color:var(--ink)}
+.newdot{
+  flex:0 0 auto;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  background:var(--stamp);color:var(--stamp-fg);padding:4px 6px;border-radius:5px;
+}
+
+/* 「中文」標。英文版遇到沒英文文案的商品時掛在點評前面。
+   中文創作者的東西在英文目錄站裡搜不到，這正是本店存在的理由 ——
+   所以它是標籤，不是錯誤提示。少了這個標，英文讀者看到一段中文點評
+   只會以為頁面壞了。 */
+.zhchip{
+  display:inline-block;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  color:var(--ink);border:1px solid var(--ink-3);border-radius:4px;
+  padding:2px 4px;margin-right:4px;vertical-align:1px;white-space:nowrap;
+}
+
+/* 合集角標：這張卡的契約和別的不一樣，流裡就得看得出來 */
+.packtag{
+  position:absolute;left:8px;top:8px;z-index:2;
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.06em;
+  background:rgba(0,0,0,.62);color:#fff;padding:5px 7px;border-radius:5px;
+  backdrop-filter:saturate(140%) blur(2px);
+}
+.card.noimg .packtag{position:static;display:inline-block;margin:var(--s4) 0 0 var(--s4);background:var(--ink)}
+
+/* `.more` 是上面那條 #main 間距規矩的**唯一例外**，s5 不是 s4：
+   它不開一個段落，它是流的收尾鍵，前面那張卡還帶著 var(--gut) 的下沿。
+   規矩要防的是「貼著 sticky 分割線」，28px 不是那件事。刻意留著，不是漏改。 */
+.more{
+  display:block;width:100%;margin:var(--s5) 0 0;padding:15px 0;
+  background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);
+  font:var(--t-meta)/1 var(--sans);letter-spacing:.1em;cursor:pointer;border-radius:var(--r-chip);
+}
+.more:hover{border-color:var(--ink);color:var(--ink)}
+.empty{margin:var(--s4) 0 0;padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--sans);text-align:center}
+
+/* ============ 詳情：手機是底部抽屜，桌面是居中卡 ============ */
+.veil{
+  position:fixed;inset:0;z-index:60;background:rgba(20,18,16,.44);
+  display:none;align-items:center;justify-content:center;padding:var(--s4);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+}
+.veil.open{display:flex}
+.sheet{
+  background:var(--card);border-radius:var(--r-card);
+  width:min(680px,100%);max-height:min(88vh,900px);overflow:auto;
+  position:relative;padding:var(--s5);
+}
+.sheet .x{
+  position:absolute;right:10px;top:10px;width:32px;height:32px;
+  background:var(--soft);border:1px solid var(--line);border-radius:50%;
+  cursor:pointer;font-size:17px;line-height:1;color:var(--ink-3);
+}
+.sheet .x:hover{color:var(--ink);border-color:var(--line-2)}
+.sheet h3{margin:0 var(--s5) var(--s2) 0;font:500 var(--t-h2)/var(--lh-tight) var(--sans)}
+.sheet .repo{font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);word-break:break-all}
+.sheet .repo a{border-bottom:1px solid var(--line-2)}
+.sheet .repo a:hover{color:var(--ink);border-color:var(--ink)}
+.sheet .shot{border-radius:var(--r-img);margin:var(--s4) 0 0;border:1px solid var(--line)}
+.sheet .lead{margin:var(--s4) 0 0;font:var(--t-lead)/var(--lh-body) var(--sans);color:var(--ink-2)}
+.shotcap{
+  margin:9px 0 0;font:var(--t-micro)/1.65 var(--sans);color:var(--ink-4);letter-spacing:.02em;
+}
+.shotcap b{color:var(--ink-2);font-weight:600}
+/* 真產出物圖的圖注墨一檔 —— 它是證據，語氣可以肯定 */
+.shotcap.real{color:var(--ink-3)}
+/* `ours` 是唯一一句我們自己背書的話，墨色重一級 —— 它不是免責聲明，是證據。 */
+.shotcap.ours{color:var(--ink-2);font-weight:600}
+/* 復現憑據：比圖注小一檔、不加重 —— 它是給要核的人看的腳註，不是賣點。 */
+.covernote{
+  margin:6px 0 0;font:var(--t-micro)/1.75 var(--sans);color:var(--ink-3);
+  padding-left:10px;border-left:1px solid var(--line-2);
+}
+.covernote code{
+  font:11px/1.6 var(--mono);background:var(--soft);border:1px solid var(--line);
+  border-radius:4px;padding:1px 4px;color:var(--ink-2);overflow-wrap:anywhere;
+}
+.prepwhy{margin:var(--s4) 0 0;font:var(--t-cap)/2 var(--sans);color:var(--ink-3)}
+.prepwhy span{
+  display:inline-block;margin:0 4px 0 6px;padding:2px 6px;
+  border:1px solid var(--line-2);border-radius:4px;color:var(--ink-2);
+}
+.packnote a{border-bottom:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.packnote a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* 詳情裡的判斷塊：點評 + 但是 一體。
+   豎線屬於「點評」，不屬於這一對 —— 20 件沒寫「但是」的，整塊照樣閉合，
+   不留空槽、不寫「暫無」。「但是」是加上去的一筆，不是撐結構的柱子。 */
+.judge{margin:var(--s4) 0 0;border-left:2px solid var(--ink);padding-left:16px}
+.judge .lb2{margin-top:var(--s4)}
+.judge .lb{
+  display:block;margin-bottom:7px;
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.3em;color:var(--ink-4);
+}
+.judge .v,
+.judge .b{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--sans);color:var(--ink)}
+/* .b 原來也帶 margin-top:var(--s4)，它和 .lb 的 margin-bottom:7px 相鄰摺疊成 18px，
+   於是「但是」這個標籤上下各 18px —— **等距，也就是不歸屬任何一段**。
+   實測（1100px 淺色）：Verdict 標籤到它自己那段 7px，But 標籤到它自己那段 18px。
+   兩個標籤樣式一模一樣、間距卻不一樣，D2 要的「兩條平行」在版式上沒成立。
+   段間距由 .lb2 的 margin-top 單獨負責，標籤一律貼著自己那段。
+   中文兩個字的標籤看不太出來，英文是一個詞，一眼就散。 */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.sheet h4{
+  margin:var(--s5) 0 var(--s2);font:600 var(--t-meta)/1 var(--sans);
+  letter-spacing:.2em;color:var(--ink-4);
+}
+.step{font:var(--t-meta)/1.6 var(--sans);color:var(--ink-3);margin:var(--s3) 0 var(--s1)}
+.cmd{
+  position:relative;background:var(--soft);border:1px solid var(--line);border-radius:8px;
+  padding:11px 60px 11px 12px;margin:var(--s1) 0;
+  font:12px/1.65 var(--mono);color:var(--ink-2);white-space:pre-wrap;word-break:break-all;
+}
+.cmd button{
+  position:absolute;right:7px;top:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--ink-3);font:var(--t-micro)/1 var(--sans);padding:5px 8px;border-radius:5px;cursor:pointer;
+}
+.cmd button:hover{border-color:var(--ink);color:var(--ink)}
+/* 合集指路。最後半句加粗 —— 它說清了這張卡為什麼跟別的不一樣。 */
+.packnote{margin:var(--s2) 0 0;font:var(--t-meta)/1.75 var(--sans);color:var(--ink-3)}
+.packnote code{
+  font:12px/1.6 var(--mono);background:var(--soft);border:1px solid var(--line);
+  border-radius:4px;padding:1px 5px;color:var(--ink);
+}
+.packnote b{color:var(--ink);font-weight:600}
+.safety{margin:var(--s4) 0 0;font:var(--t-cap)/1.7 var(--sans);color:var(--ink-4)}
+
+@media (max-width:760px){
+  /* ---- 手機首屏必須見貨 ------------------------------------------
+     店主：「小紅書是打開就見貨，我們打開先見一整屏自我介紹。」
+     原來報頭走完約 800px，而 iPhone 視口 812px —— 第一張卡剛好被推出去。
+
+     砍的順序是按「這一行是立場還是導航」來的：
+       · TASTE 副標 —— 裝飾，手機上直接不要
+       · 「叫 SKILL.md 的文件已經百萬量級…」兩行大字 —— **是立場，不是導航**。
+         手機上收掉，換成 slogan 頂上：「挑得少，是因為看得多」本來就是
+         BRAND.md 定義的「那三個數字的註腳」，9 個字說的是同一件事。
+         桌面保留完整那句。
+       · 報頭上下留白壓掉一檔
+     ---------------------------------------------------------------- */
+  .brandrow i{font-size:var(--t-cap)}
+  .say{display:none}
+  header.top{padding:var(--s4) 0 var(--s2)}
+  .tally{margin-top:var(--s3);font-size:var(--t-meta)}
+  .bar{padding-top:var(--s2)}
+  .chips{margin-top:var(--s2)}
+  .todayline{margin-top:var(--s3)}
+  .sendbar{margin-top:var(--s3)}
+  .flow{margin-top:var(--s3)}
+  .empty{margin-top:var(--s3)}
+  /* 手機兩列的框最窄（375px 下只有 134.5px），英文標題再多一行 —— 見上面那節 */
+  html[lang="en"] .card h3{-webkit-line-clamp:5}
+  /* 中文也放到 4 行。實測 3 行會切字：6 個 scrollHeight 超標裡有 3 個真丟字，
+     最慘的是「從分鏡到渲」把「染」切掉了 —— 一個字被切掉，那句話就不成句。
+     **不花錢**：line-clamp 只封頂、不預留高度，另外 223 張卡高度一個像素不變。 */
+  .card h3{-webkit-line-clamp:4}
+  /* 手機是第一現場：詳情從底部推上來，不是居中彈窗 */
+  .veil{align-items:flex-end;padding:0}
+  .sheet{
+    width:100%;max-height:92vh;
+    border-radius:var(--r-card) var(--r-card) 0 0;padding:var(--s4);
+  }
+  .judge{padding-left:13px}
+}
+
+footer{border-top:1px solid var(--line);margin-top:var(--s6);padding:var(--s5) 0 var(--s7)}
+footer p{margin:0 0 8px;font:var(--t-cap)/1.8 var(--sans);color:var(--ink-3);max-width:34em}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:var(--s3);font:var(--t-cap)/1.6 var(--mono)}
+footer .links a{color:var(--ink-3);border-bottom:1px solid var(--line)}
+footer .links a:hover{color:var(--ink);border-color:var(--ink)}
+footer .fam a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<!--GEO:HEAD:START--><meta name="description" content="品味是一手挑選的 Agent Skill 貨架，給 Claude Code、Codex 和同類智能體用。每一件都寫清做什麼用、應用範圍、如何使用和怎麼安裝。"><meta name="keywords" content="品味, Pinwei, Agent Skill, Claude Code Skills, Codex Skills, SKILL.md, Claude 技能, 有品位的 Skills, 做圖 skill, 寫字 skill, 工作 skill"><meta name="author" content="OurWord AI"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://ourword.ai/skill/tw/"><link rel="alternate" type="application/rss+xml" title="Pinwei" href="https://ourword.ai/skill/tw/feed.xml"><meta property="og:type" content="website"><meta property="og:site_name" content="Pinwei"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="en_US"><meta property="og:title" content="品味 — 幫你發現有品位的 Skills"><meta property="og:description" content="品味是一手挑選的 Agent Skill 貨架，給 Claude Code、Codex 和同類智能體用。每一件都寫清做什麼用、應用範圍、如何使用和怎麼安裝。"><meta property="og:url" content="https://ourword.ai/skill/tw/"><meta property="og:image" content="https://ourword.ai/skill/tw/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Pinwei"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="品味 — 幫你發現有品位的 Skills"><meta name="twitter:description" content="品味是一手挑選的 Agent Skill 貨架，給 Claude Code、Codex 和同類智能體用。每一件都寫清做什麼用、應用範圍、如何使用和怎麼安裝。"><meta name="twitter:image" content="https://ourword.ai/skill/tw/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"OurWord AI","alternateName":"用 AI 觸摸這個世界","url":"https://ourword.ai/","logo":"https://ourword.ai/og.png","sameAs":["https://github.com/woowoeth","https://ourword.ai/idea/","https://ourword.ai/skill/tw/","https://ourword.ai/ai-bubble/","https://ourword.ai/zouni/"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"品味","alternateName":"Pinwei","url":"https://ourword.ai/skill/tw/","inLanguage":["en","zh-Hans"],"description":"品味是一手挑選的 Agent Skill 貨架，給 Claude Code、Codex 和同類智能體用。每一件都寫清做什麼用、應用範圍、如何使用和怎麼安裝。","publisher":{"@type":"Organization","name":"OurWord AI","url":"https://ourword.ai/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"品味 — 幫你發現有品位的 Skills","url":"https://ourword.ai/skill/tw/","numberOfItems":247,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://ourword.ai/skill/tw/i/yejy53-editable-design-html-to-pptx/","name":"HTML 版式拆成可編輯 PPT 的轉換器"},{"@type":"ListItem","position":2,"url":"https://ourword.ai/skill/tw/i/bitjaru-styleseed-styleseed/","name":"只認當前畫布邊界，把 StyleSeed 請求派給唯"},{"@type":"ListItem","position":3,"url":"https://ourword.ai/skill/tw/i/alchaincyf-huashu-report/","name":"42份頂級機構報告實測出的排版骨架"},{"@type":"ListItem","position":4,"url":"https://ourword.ai/skill/tw/i/vieeeeeee-wibi-style-textile-toy-portrait/","name":"照片變顆粒絨玩偶，毛絨質感直接出圖"},{"@type":"ListItem","position":5,"url":"https://ourword.ai/skill/tw/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/","name":"照片變電影海報，但只留你拍下的真實光影"},{"@type":"ListItem","position":6,"url":"https://ourword.ai/skill/tw/i/artokun-comfyui-mcp/","name":"自然語言改工作流，178 個工具隨叫隨到"},{"@type":"ListItem","position":7,"url":"https://ourword.ai/skill/tw/i/vieeeeeee-wibi-style-glitch-pixel-collage/","name":"故障像素拼貼"},{"@type":"ListItem","position":8,"url":"https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/","name":"給 Go 代碼庫做地道性評審"},{"@type":"ListItem","position":9,"url":"https://ourword.ai/skill/tw/i/vanillagreencom-vstack-trading-design/","name":"按專業交易軟件的規範設計盯盤界面"},{"@type":"ListItem","position":10,"url":"https://ourword.ai/skill/tw/i/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3/","name":"一張照片蒸餾成一本敢留白的迷你zine"},{"@type":"ListItem","position":11,"url":"https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-figma/","name":"接上 Figma API，把設計稿拆成一張設計系統知識圖譜"},{"@type":"ListItem","position":12,"url":"https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-chat/","name":"按調用結構而不是搜字符串，回答改這裡會牽動誰"},{"@type":"ListItem","position":13,"url":"https://ourword.ai/skill/tw/i/op7418-guizang-yingzao-skill-yingzao/","name":"實景照片轉藝術海報，附原圖對比不空想"},{"@type":"ListItem","position":14,"url":"https://ourword.ai/skill/tw/i/cli-cli-code-review/","name":"合代碼前先過一遍倉庫規矩的 gh 評審員"},{"@type":"ListItem","position":15,"url":"https://ourword.ai/skill/tw/i/karanb192-itr-wala-itr-wala/","name":"舊新稅制並排算完再決定報哪套的印度報稅員"},{"@type":"ListItem","position":16,"url":"https://ourword.ai/skill/tw/i/kacperkapusciak-goldie-goldie/","name":"重放 App 操作錄屏，套上真實商店頁邊框和文案"},{"@type":"ListItem","position":17,"url":"https://ourword.ai/skill/tw/i/copilotkit-copilotkit-a2ui-renderer/","name":"A2UI 界面渲染器，裝上就能讓 Agent 畫表單"},{"@type":"ListItem","position":18,"url":"https://ourword.ai/skill/tw/i/cli-cli-dependabot-triager/","name":"只評不批的Dependabot PR分流員，三檔結論"},{"@type":"ListItem","position":19,"url":"https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/","name":"離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完"},{"@type":"ListItem","position":20,"url":"https://ourword.ai/skill/tw/i/redfox-data-redfox-community/","name":"分析某位作者的多篇文章復刻其文風"},{"@type":"ListItem","position":21,"url":"https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/","name":"三天賽程裡做完數學建模競賽全流程"},{"@type":"ListItem","position":22,"url":"https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/","name":"讓 Claude 用原始人腔說話，據稱省下 65% 的 token"},{"@type":"ListItem","position":23,"url":"https://ourword.ai/skill/tw/i/worldwonderer-oh-story-claudecode-story-deslop/","name":"刪掉「她眸色一暗」的網文去AI味改稿器"},{"@type":"ListItem","position":24,"url":"https://ourword.ai/skill/tw/i/bitwize-music-studio-claude-ai-music-skills/","name":"給 Suno 配上歌詞工作流和混音清單，從玩票做到成品"},{"@type":"ListItem","position":25,"url":"https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/","name":"畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML"},{"@type":"ListItem","position":26,"url":"https://ourword.ai/skill/tw/i/k-dense-ai-scientific-agent-skills-citation-management/","name":"每條引用都回數據庫核驗，揪出 AI 編造的參考文獻"},{"@type":"ListItem","position":27,"url":"https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/","name":"任務拆解寫到磁盤，/clear 後自動續上進度"},{"@type":"ListItem","position":28,"url":"https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/","name":"把口頭流程變成能跑的跨平臺技能，三步內交付"},{"@type":"ListItem","position":29,"url":"https://ourword.ai/skill/tw/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/","name":"先問教材版本再落筆的備課助手，連分層作業一起出"},{"@type":"ListItem","position":30,"url":"https://ourword.ai/skill/tw/i/codeswithroh-tastemaker-tastemaker/","name":"看一眼參考圖就生成同氣質界面的設計手"},{"@type":"ListItem","position":31,"url":"https://ourword.ai/skill/tw/i/moonlin1213-cove-tarot-companion/","name":"只做儀式不占卜的本地塔羅陪談，回看原牌不重抽"},{"@type":"ListItem","position":32,"url":"https://ourword.ai/skill/tw/i/simon-he95-markstream-vue-markstream-vue/","name":"AI 長輸出不卡頓的 Vue 3 流式渲染器，自帶虛"},{"@type":"ListItem","position":33,"url":"https://ourword.ai/skill/tw/i/fxw-labs-easy-humanizer-zh/","name":"四種聲紋任選，把AI稿改成看不出機器味的中文"},{"@type":"ListItem","position":34,"url":"https://ourword.ai/skill/tw/i/hchen1218-heytea-style/","name":"按喜茶那套視覺做一張"},{"@type":"ListItem","position":35,"url":"https://ourword.ai/skill/tw/i/adrianpunk-punk-skill-punk-cover/","name":"同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成"},{"@type":"ListItem","position":36,"url":"https://ourword.ai/skill/tw/i/kyanitelabs-kinocut-kinocut/","name":"有護欄的 AI 視頻剪輯"},{"@type":"ListItem","position":37,"url":"https://ourword.ai/skill/tw/i/garrytan-gstack/","name":"YC 掌門的 Claude Code 全套配置，23 個角色分工"},{"@type":"ListItem","position":38,"url":"https://ourword.ai/skill/tw/i/imbad0202-academic-research-skills-deep-research/","name":"13 個子代理組隊做研究，互相審稿和事實核查"},{"@type":"ListItem","position":39,"url":"https://ourword.ai/skill/tw/i/virgiliojr94-book-to-skill/","name":"把 PDF 和 EPUB 拆成能裝進 Agent 的"},{"@type":"ListItem","position":40,"url":"https://ourword.ai/skill/tw/i/eugeniughelbur-obsidian-second-brain/","name":"讓新資料改寫舊筆記，而不是在 Obsidian 裡越堆越多"},{"@type":"ListItem","position":41,"url":"https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-agents/","name":"只認官方適配器，裝錯路徑當場報錯的內存接線員"},{"@type":"ListItem","position":42,"url":"https://ourword.ai/skill/tw/i/ryze-ai-adgent-open-seo-mcp-skills-competitor-gap/","name":"專挖對手有而你沒有的搜索詞，按流量和可贏性排好序"},{"@type":"ListItem","position":43,"url":"https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-architecture/","name":"拆開記憶引擎看存儲與檢索全鏈路，附端口與查看器"},{"@type":"ListItem","position":44,"url":"https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-config/","name":"不翻源碼就改配置，環境變量端口開關全在這"},{"@type":"ListItem","position":45,"url":"https://ourword.ai/skill/tw/i/xixihhhh-hotclip-hotclip/","name":"長視頻不出本機，剪成帶卡拉OK字幕的豎屏爆點"},{"@type":"ListItem","position":46,"url":"https://ourword.ai/skill/tw/i/aidevgtm-gtm-cofounder/","name":"給獨自做產品的技術創始人當 GTM 合夥人"},{"@type":"ListItem","position":47,"url":"https://ourword.ai/skill/tw/i/dongbeixiaohuo-writing-agent/","name":"從選題到發布的去 AI 味中文寫作系統"},{"@type":"ListItem","position":48,"url":"https://ourword.ai/skill/tw/i/aldegad-sprite-gen/","name":"組件行流水線出精靈圖集，帶 QA 報告和運行時清單"},{"@type":"ListItem","position":49,"url":"https://ourword.ai/skill/tw/i/hao0321-claude-skill-social-post-social-post/","name":"學你的語氣排好 14 天日曆，再替你按下發布鍵"},{"@type":"ListItem","position":50,"url":"https://ourword.ai/skill/tw/i/locoda-duizuo-reading-companion-skill/","name":"讀書記不住進度？它替你記著，還防劇透"},{"@type":"ListItem","position":51,"url":"https://ourword.ai/skill/tw/i/mumdark-nature-writing-studio-nature-writing-studio/","name":"657 篇 Nature 原文蒸餾出的學術英語改寫器"},{"@type":"ListItem","position":52,"url":"https://ourword.ai/skill/tw/i/carolinaaafy-travel-memory-card-duo/","name":"旅行記憶卡成對出"},{"@type":"ListItem","position":53,"url":"https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-script/","name":"先定鏡頭再落筆的解說稿，時間戳卡到幀"},{"@type":"ListItem","position":54,"url":"https://ourword.ai/skill/tw/i/starryear-starryear-threefold-memory/","name":"照片分三層：記憶碎片、證據原件、心情路線圖"},{"@type":"ListItem","position":55,"url":"https://ourword.ai/skill/tw/i/createlafont-dnr-flat-pic/","name":"不描邊不追光影，只留身份與空間關係的扁平化壓縮"},{"@type":"ListItem","position":56,"url":"https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-understanding/","name":"視頻拆成六層索引，寫稿前先看清素材全貌"},{"@type":"ListItem","position":57,"url":"https://ourword.ai/skill/tw/i/oil-oil-oil-motion/","name":"一套切開的網頁動效"},{"@type":"ListItem","position":58,"url":"https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-assemble/","name":"旁白落定才壓原聲，字幕燒完再響度歸一"},{"@type":"ListItem","position":59,"url":"https://ourword.ai/skill/tw/i/addyosmani-agent-skills/","name":"Addy 的工程技能箱"},{"@type":"ListItem","position":60,"url":"https://ourword.ai/skill/tw/i/addyosmani-agent-skills-doubt-driven-development/","name":"懷疑驅動開發"},{"@type":"ListItem","position":61,"url":"https://ourword.ai/skill/tw/i/addyosmani-agent-skills-interview-me/","name":"逼問需求"},{"@type":"ListItem","position":62,"url":"https://ourword.ai/skill/tw/i/work-fisher-reference-first-motion-director-reference-first-motion-director/","name":"先出整片視覺總表，再逐鏡找參考的導演工作流"},{"@type":"ListItem","position":63,"url":"https://ourword.ai/skill/tw/i/fihaaade-skills-outsider-art/","name":"大色塊平塗加手工紋理，小人做日常事，只留一個高飽和點"},{"@type":"ListItem","position":64,"url":"https://ourword.ai/skill/tw/i/haorantang97-antibes-holiday-antibes-holiday/","name":"安提布假期那套黑筆閒筆"},{"@type":"ListItem","position":65,"url":"https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/","name":"一個人也能玩的 D&D 地下城主"},{"@type":"ListItem","position":66,"url":"https://ourword.ai/skill/tw/i/xiaoou-waou-xiaoou-gzh-layout/","name":"Markdown 進去，公眾號編輯器樣式直接粘貼出來"},{"@type":"ListItem","position":67,"url":"https://ourword.ai/skill/tw/i/carolinaaafy-travel-memory-sticker-card/","name":"旅行照片做成記憶貼紙卡"},{"@type":"ListItem","position":68,"url":"https://ourword.ai/skill/tw/i/eternityspring-shuohao-skills-novel-characters/","name":"短劇開拍前先把角色拆開"},{"@type":"ListItem","position":69,"url":"https://ourword.ai/skill/tw/i/liyue-aigc-seedance-2-5-video-director/","name":"Seedance 2.5 專屬導演，分鏡腳本一次改到"},{"@type":"ListItem","position":70,"url":"https://ourword.ai/skill/tw/i/lijigang-ljg-skills/","name":"一個觀點經得住反例才肯落筆的寫作引擎"},{"@type":"ListItem","position":71,"url":"https://ourword.ai/skill/tw/i/worldwonderer-novel-to-game-novel-to-game/","name":"喂進一本小說，產出的不是概念稿是真能玩的遊戲"},{"@type":"ListItem","position":72,"url":"https://ourword.ai/skill/tw/i/anthropics-claude-plugins-community-eli5/","name":"把任何概念講成帶大圖的幼兒園繪本"},{"@type":"ListItem","position":73,"url":"https://ourword.ai/skill/tw/i/bigfish-zzz-bigfish-ink-wash-photo/","name":"不重繪只錨定主體走向，落筆前先定畫心與延展向"},{"@type":"ListItem","position":74,"url":"https://ourword.ai/skill/tw/i/alchaincyf-huashu-slide-doubao/","name":"用豆包自帶生圖出整套 PPT，一分第三方 API 錢"},{"@type":"ListItem","position":75,"url":"https://ourword.ai/skill/tw/i/alchaincyf-huashu-design/","name":"HTML 原型先出三稿再動手的設計師"},{"@type":"ListItem","position":76,"url":"https://ourword.ai/skill/tw/i/sherlyryn-make-tape-collage/","name":"照片旁留一塊暖白紙，膠帶拼貼不遮原圖"},{"@type":"ListItem","position":77,"url":"https://ourword.ai/skill/tw/i/liufanshan11-cumcm-c-problem-lfs/","name":"C題專用：從附件到LaTeX成稿的72小時全流程建模"},{"@type":"ListItem","position":78,"url":"https://ourword.ai/skill/tw/i/chengyi-ai-native-subtitle-quote-image-native-subtitle-quote-image/","name":"視頻字幕截圖直接拼社交長圖，不重繪不超分"},{"@type":"ListItem","position":79,"url":"https://ourword.ai/skill/tw/i/larashero3-dotcom-lieflat-less-ai-tone/","name":"只刪清單上那七種AI腔，其餘一字不動"},{"@type":"ListItem","position":80,"url":"https://ourword.ai/skill/tw/i/kvnkld-aicss/","name":"AI 對話界面不重造輪子，現成思考態與流式輸出組件"},{"@type":"ListItem","position":81,"url":"https://ourword.ai/skill/tw/i/mattpocock-skills/","name":"Matt Pocock 工具箱"},{"@type":"ListItem","position":82,"url":"https://ourword.ai/skill/tw/i/leonxlnx-taste-skill-image-to-code/","name":"截圖變代碼時先對齊設計意圖，不做像素級復刻"},{"@type":"ListItem","position":83,"url":"https://ourword.ai/skill/tw/i/hongfamonvai-vintage-travel-ticket/","name":"66 張老車票裡抽一套設計語法，每次出票都像翻到舊藏"},{"@type":"ListItem","position":84,"url":"https://ourword.ai/skill/tw/i/pale-knight-redteam-skill-ad-recon/","name":"不碰密碼不越權，把AD域摸成一張可下手的圖"},{"@type":"ListItem","position":85,"url":"https://ourword.ai/skill/tw/i/liamgvchi-gc-minimal-ip-doodle/","name":"保住角色的手繪塗鴉"},{"@type":"ListItem","position":86,"url":"https://ourword.ai/skill/tw/i/jangviktor-web-wujutong/","name":"按三焦辨證給溫病方，古人矛盾處照原樣留著"},{"@type":"ListItem","position":87,"url":"https://ourword.ai/skill/tw/i/cattlez-dance-video-to-prompt-dance-video-to-prompt/","name":"模糊幀不編手指，卡點動作拆成七段可生成提示詞"},{"@type":"ListItem","position":88,"url":"https://ourword.ai/skill/tw/i/qianye-wuyu-yueyuan-bazi/","name":"先立假設再找證據的子平八字推演臺"},{"@type":"ListItem","position":89,"url":"https://ourword.ai/skill/tw/i/m1n-n9-academic-figures-drawer/","name":"論文配圖直接產出可編輯 draw.io 源文件"},{"@type":"ListItem","position":90,"url":"https://ourword.ai/skill/tw/i/v-yun-vuln-report-skill/","name":"漏洞確認後直接產出可提交的 DOCX 報告"},{"@type":"ListItem","position":91,"url":"https://ourword.ai/skill/tw/i/khazp-vibe-coding-prompt-template-vibe-techdesign/","name":"先寫技術設計再寫代碼，讓 MVP 不返工"},{"@type":"ListItem","position":92,"url":"https://ourword.ai/skill/tw/i/chenklein26-maker-fitness-coach-rpg/","name":"訓練數據自己攢，劇情推進看成績的 RPG 健身教練"},{"@type":"ListItem","position":93,"url":"https://ourword.ai/skill/tw/i/n1ko724-scene-to-art-lab-scene-to-art-lab/","name":"一場戲收進藝術實驗室"},{"@type":"ListItem","position":94,"url":"https://ourword.ai/skill/tw/i/larashero3-dotcom-lieflat-charts/","name":"圖表先問數據語義再選色，報告模板十二套"},{"@type":"ListItem","position":95,"url":"https://ourword.ai/skill/tw/i/zzzlc0405-photo-abstract-editorial/","name":"照片抽成抽象編輯頁"},{"@type":"ListItem","position":96,"url":"https://ourword.ai/skill/tw/i/elhamid-as-told-to-as-told-to/","name":"只記你說過的話，不替你補半句的人生訪談錄"},{"@type":"ListItem","position":97,"url":"https://ourword.ai/skill/tw/i/luji12-luji-pet-streetwear-mood-avatar/","name":"寵物收成街頭情緒頭像"},{"@type":"ListItem","position":98,"url":"https://ourword.ai/skill/tw/i/blader-humanizer/","name":"照一份句式級的臭味清單刪掉「值得注意的是」"},{"@type":"ListItem","position":99,"url":"https://ourword.ai/skill/tw/i/songzhi-lab-chinese-font-selector-chinese-font-selector/","name":"中文字體選配不靠眼緣，靠授權安全分級和場景矩陣"},{"@type":"ListItem","position":100,"url":"https://ourword.ai/skill/tw/i/xianxie6-stamp-edge-skill/","name":"原圖四周直接打半圓孔，真透明背景的郵票生成器"},{"@type":"ListItem","position":101,"url":"https://ourword.ai/skill/tw/i/kkenny0-card-skill/","name":"證據收成一種紙面"},{"@type":"ListItem","position":102,"url":"https://ourword.ai/skill/tw/i/liuzihe849-png-silhouette-group-collage-silhouette-group-collage/","name":"一群人收成剪影拼貼"},{"@type":"ListItem","position":103,"url":"https://ourword.ai/skill/tw/i/rollingalei-sticker-puzzle-photo-memory-card-skill/","name":"植被多就換品紅鍵色，把照片做成能剪下來的貼紙頁"},{"@type":"ListItem","position":104,"url":"https://ourword.ai/skill/tw/i/gary149-h3-game-sprites-h3-game-sprites/","name":"視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像"},{"@type":"ListItem","position":105,"url":"https://ourword.ai/skill/tw/i/n1ko724-kodak-2383-film-look-kodak-2383-film-look/","name":"柯達膠片板，尺鎖定"},{"@type":"ListItem","position":106,"url":"https://ourword.ai/skill/tw/i/jinchenma94-bazi-skill/","name":"四柱八字，把生辰當成一張表來排"},{"@type":"ListItem","position":107,"url":"https://ourword.ai/skill/tw/i/xxxonechen-pollen-query/","name":"花粉季出門前查一眼，53 城都有"},{"@type":"ListItem","position":108,"url":"https://ourword.ai/skill/tw/i/bohandu-cook-with-what-you-have-cook-with-what-you-have/","name":"照冰箱剩貨挑出三道菜，湊不滿也不放寬過敏原"},{"@type":"ListItem","position":109,"url":"https://ourword.ai/skill/tw/i/alaric1098-china-pension-strategy-skill/","name":"社保斷繳要不要補，用腳本算給你看"},{"@type":"ListItem","position":110,"url":"https://ourword.ai/skill/tw/i/dacnay816y62-hub-fantasy-minimal-magazine/","name":"3:4 極簡雜誌封面"},{"@type":"ListItem","position":111,"url":"https://ourword.ai/skill/tw/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/","name":"版式座標鎖死，只留象牙紙和一種墨的雙色海報"},{"@type":"ListItem","position":112,"url":"https://ourword.ai/skill/tw/i/jadel-kemo-trpg-log-copilot-skill/","name":"跑團桌旁幫你車卡歸檔線索的副官，防超遊"},{"@type":"ListItem","position":113,"url":"https://ourword.ai/skill/tw/i/fxw-labs-beachcombing/","name":"潮水退去後替你掃三遍灘面的拾遺器"},{"@type":"ListItem","position":114,"url":"https://ourword.ai/skill/tw/i/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill/","name":"當代中式海報，配方鎖在東方審美"},{"@type":"ListItem","position":115,"url":"https://ourword.ai/skill/tw/i/liamgvchi-gc-minimal-zine-poster/","name":"紙感詩性海報生成器，留白與單色點睛"},{"@type":"ListItem","position":116,"url":"https://ourword.ai/skill/tw/i/staruhub-claudeskills-university-exam-prep/","name":"對著真實課本和考綱突擊複習"},{"@type":"ListItem","position":117,"url":"https://ourword.ai/skill/tw/i/architect-kele-arch-kele-structure-photo/","name":"每張照片出兩張圖：一張結構研究稿，一張帶原圖角標"},{"@type":"ListItem","position":118,"url":"https://ourword.ai/skill/tw/i/yeyulangzi-personal-reflector/","name":"不餵雞湯只拆模式的自我復盤鏡"},{"@type":"ListItem","position":119,"url":"https://ourword.ai/skill/tw/i/traveler0621-reality-restaged/","name":"紀實照片重新搭臺"},{"@type":"ListItem","position":120,"url":"https://ourword.ai/skill/tw/i/tait-tt-tait-crt-interface-skill/","name":"CRT 屏曲邊加三檔中文預設的誇張位圖漫畫窗"},{"@type":"ListItem","position":121,"url":"https://ourword.ai/skill/tw/i/yokel1121-muyang-illustration-skills-muyang-oriental-poetry/","name":"東方詩意插畫，一款一裝"},{"@type":"ListItem","position":122,"url":"https://ourword.ai/skill/tw/i/zhu930824-poetic-line-zine-poster/","name":"上半原片，下半抽成線"},{"@type":"ListItem","position":123,"url":"https://ourword.ai/skill/tw/i/liigoqi-photo-to-travel-sketch/","name":"旅行照片收成趕路速寫"},{"@type":"ListItem","position":124,"url":"https://ourword.ai/skill/tw/i/yeyulangzi-parenting-advisor/","name":"專防「假託崔玉濤」文章的 0–13 歲育兒參謀"},{"@type":"ListItem","position":125,"url":"https://ourword.ai/skill/tw/i/kkkkhazix-human-writing-human-writing/","name":"按活人那套改中文長文"},{"@type":"ListItem","position":126,"url":"https://ourword.ai/skill/tw/i/khendzel-skills-janitor/","name":"給你裝的技能庫做體檢和減法"},{"@type":"ListItem","position":127,"url":"https://ourword.ai/skill/tw/i/yokel1121-muyang-illustration-skills-muyang-dark-fashion/","name":"牧羊暗黑時裝，一款一裝"},{"@type":"ListItem","position":128,"url":"https://ourword.ai/skill/tw/i/alisa0808-vox-director/","name":"給一個主題，出一支 Vox 式紙拼貼解說視頻"},{"@type":"ListItem","position":129,"url":"https://ourword.ai/skill/tw/i/zzzlc0405-photo-chromatic-abstraction-style-1/","name":"只留 1~5 個源圖色，把照片譯成色塊記憶卡"},{"@type":"ListItem","position":130,"url":"https://ourword.ai/skill/tw/i/ayi-ai-nie-grassroots-logic/","name":"聶輝華《基層中國的運行邏輯》方法箱"},{"@type":"ListItem","position":131,"url":"https://ourword.ai/skill/tw/i/liuzihe849-png-ai-editorial-print-studio/","name":"照片收成復古編輯印刷插畫"},{"@type":"ListItem","position":132,"url":"https://ourword.ai/skill/tw/i/wnby-paper-spirit-zine-paper-spirit-zine/","name":"原片還在，下面鋪一層紙"},{"@type":"ListItem","position":133,"url":"https://ourword.ai/skill/tw/i/lzs0594-dreamy-motion-editorial/","name":"日常照片收成霧面編輯稿"},{"@type":"ListItem","position":134,"url":"https://ourword.ai/skill/tw/i/r0ses1r-dev-birdsight/","name":"查稀有鳥最近落在哪，順帶說清中文名是臺灣譯名"},{"@type":"ListItem","position":135,"url":"https://ourword.ai/skill/tw/i/adrianpunk-punk-ip-illustrations/","name":"角色定妝照先於文章，插圖全按它來演"},{"@type":"ListItem","position":136,"url":"https://ourword.ai/skill/tw/i/luji12-handdrawn-photo-poster/","name":"暗原照上貼一枚手繪郵籤"},{"@type":"ListItem","position":137,"url":"https://ourword.ai/skill/tw/i/joeyhu1108-maker-selective-ink-sketch/","name":"照片收成選擇性墨水素描"},{"@type":"ListItem","position":138,"url":"https://ourword.ai/skill/tw/i/liyue-aigc-xianxia-visual-director-xianxia-visual-director/","name":"仙俠靜幀導演"},{"@type":"ListItem","position":139,"url":"https://ourword.ai/skill/tw/i/crawfordxx-xiaoma-durex-copywriter/","name":"按杜蕾斯海報那套雙關寫文案"},{"@type":"ListItem","position":140,"url":"https://ourword.ai/skill/tw/i/gnipbao-flat-poster-op/","name":"有證據的扁平海報復刻"},{"@type":"ListItem","position":141,"url":"https://ourword.ai/skill/tw/i/2998980-hue-surreal-pop-collage/","name":"照片收成超現實波普拼貼"},{"@type":"ListItem","position":142,"url":"https://ourword.ai/skill/tw/i/wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction/","name":"旅行照片收成軟抽象"},{"@type":"ListItem","position":143,"url":"https://ourword.ai/skill/tw/i/whiplashzeb-photo-to-zine-postcard/","name":"照片收成一張可寄的刊物明信片"},{"@type":"ListItem","position":144,"url":"https://ourword.ai/skill/tw/i/dietrichgebert-ponytail-ponytail/","name":"先問「這真的需要做嗎」，能不寫的代碼一行不寫"},{"@type":"ListItem","position":145,"url":"https://ourword.ai/skill/tw/i/agiwhitelist-auteur/","name":"拒絕套版，從零長出整套網站設計系統"},{"@type":"ListItem","position":146,"url":"https://ourword.ai/skill/tw/i/joeseesun-qiaomu-campus-resume/","name":"給應屆生從零做一份可投遞的簡歷"},{"@type":"ListItem","position":147,"url":"https://ourword.ai/skill/tw/i/reluctant2828-system-fitness-advisor-skill-system-fitness-advisor/","name":"按你的訓練記錄算下一次該練什麼"},{"@type":"ListItem","position":148,"url":"https://ourword.ai/skill/tw/i/deusyu-translate-book/","name":"整本書拆給多個分身並行翻譯，再拼回原排版"},{"@type":"ListItem","position":149,"url":"https://ourword.ai/skill/tw/i/nutlope-hallmark-hallmark/","name":"一眼看出頁面像 AI 生成的，並給出改法"},{"@type":"ListItem","position":150,"url":"https://ourword.ai/skill/tw/i/wnby-photo-relic-editorial/","name":"照片不裁不糊，旁邊長出一塊記憶殘片"},{"@type":"ListItem","position":151,"url":"https://ourword.ai/skill/tw/i/pandadalmore-annual-diary-insight/","name":"把十年日記攤成一張可下鑽的年輪看板"},{"@type":"ListItem","position":152,"url":"https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/","name":"拍一張手寫字母，本地生成能裝進系統的 TTF 字體"},{"@type":"ListItem","position":153,"url":"https://ourword.ai/skill/tw/i/tong666-bit-liu-xiaoyan-skill/","name":"劉曉豔考研英語真題逐句精講，不懂的句子當場拆給你看"},{"@type":"ListItem","position":154,"url":"https://ourword.ai/skill/tw/i/luckdvr-photo-riso-poster/","name":"照片收成孔版印刷海報"},{"@type":"ListItem","position":155,"url":"https://ourword.ai/skill/tw/i/threerocks-hand-drawn-styles/","name":"按手繪那一套出圖，風格點名才動"},{"@type":"ListItem","position":156,"url":"https://ourword.ai/skill/tw/i/lincwang123-bot-moonlit-stories-moonlit-book-workflow/","name":"給自家孩子做一本帶家長配音的繪本"},{"@type":"ListItem","position":157,"url":"https://ourword.ai/skill/tw/i/iamkong-photo-to-minimal-illustration/","name":"照片收成田野速寫式極簡稿"},{"@type":"ListItem","position":158,"url":"https://ourword.ai/skill/tw/i/liigoqi-vinyl-image-generator/","name":"照片壓成一張黑膠封面"},{"@type":"ListItem","position":159,"url":"https://ourword.ai/skill/tw/i/evianis-travel-photo-abstraction-travel-photo-abstraction/","name":"旅行照片蒸成稀疏編輯稿"},{"@type":"ListItem","position":160,"url":"https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/","name":"照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型"},{"@type":"ListItem","position":161,"url":"https://ourword.ai/skill/tw/i/liyue-aigc-outfit-director-outfit-director/","name":"一次拍出多套造型的換裝視頻腳本"},{"@type":"ListItem","position":162,"url":"https://ourword.ai/skill/tw/i/dacnay816y62-hub-photo-revival/","name":"日常快照收成手繪詩意稿"},{"@type":"ListItem","position":163,"url":"https://ourword.ai/skill/tw/i/dpwelsh-basilisk/","name":"數你說過幾次謝謝，判你 2126 年自由還是為奴"},{"@type":"ListItem","position":164,"url":"https://ourword.ai/skill/tw/i/danielroe-empathy/","name":"動筆前先過一遍人類溝通守則的 AI 禮貌開關"},{"@type":"ListItem","position":165,"url":"https://ourword.ai/skill/tw/i/yunpeng192-legal-language-bridge/","name":"把吵架說成法言法語，把判決書說回人話"},{"@type":"ListItem","position":166,"url":"https://ourword.ai/skill/tw/i/twentyfivebtea-ink-wash-poster/","name":"照片收成水墨海報"},{"@type":"ListItem","position":167,"url":"https://ourword.ai/skill/tw/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/","name":"先拒寫設計稿，拿產品證據校準五個刻度再出規範"},{"@type":"ListItem","position":168,"url":"https://ourword.ai/skill/tw/i/xlt-6-boardgame-creator/","name":"從靈感草稿到朋友試玩，一張桌遊的完整出生證明"},{"@type":"ListItem","position":169,"url":"https://ourword.ai/skill/tw/i/dacnay816y62-hub-window-scenery-skill/","name":"左下角永遠釘著地名徽章的車窗風景照"},{"@type":"ListItem","position":170,"url":"https://ourword.ai/skill/tw/i/dacnay816y62-hub-fantasy-movie-poster-skill/","name":"中文豎版電影海報，9:16 鎖死"},{"@type":"ListItem","position":171,"url":"https://ourword.ai/skill/tw/i/panmax-hemingway-skill/","name":"短句砍到骨頭裡，海明威式改稿人"},{"@type":"ListItem","position":172,"url":"https://ourword.ai/skill/tw/i/v92388375-gif-pixel-style-poster-skill/","name":"像素風海報，格點鎖死"},{"@type":"ListItem","position":173,"url":"https://ourword.ai/skill/tw/i/nulightjens-humanizer-stack-structural-humanizer/","name":"專刪AI味敘事骨架，留下你原本的毛邊"},{"@type":"ListItem","position":174,"url":"https://ourword.ai/skill/tw/i/nulightjens-humanizer-stack-humanizer/","name":"只認維基百科那份AI寫作痕跡清單的文本去味器"},{"@type":"ListItem","position":175,"url":"https://ourword.ai/skill/tw/i/moonlin1213-muted-zine-poster-v01/","name":"低飽和刊物海報"},{"@type":"ListItem","position":176,"url":"https://ourword.ai/skill/tw/i/wr5912-human-allegory-engine/","name":"把人生事件轉成可複用的寓言引擎"},{"@type":"ListItem","position":177,"url":"https://ourword.ai/skill/tw/i/endlessbluewjl-schengen-visa-guide/","name":"申根籤材料清單，按身份拆到每張紙"},{"@type":"ListItem","position":178,"url":"https://ourword.ai/skill/tw/i/oil-oil-kimi/","name":"設計稿交給它，前端代碼拿回來就能跑"},{"@type":"ListItem","position":179,"url":"https://ourword.ai/skill/tw/i/texasbedouin-vibe-check/","name":"帶純新手把模糊點子變成計劃，順手教會他用 GitHub"},{"@type":"ListItem","position":180,"url":"https://ourword.ai/skill/tw/i/zx029w-zhuangxiu-laoshi-skill/","name":"報價單先看漏項不看總價的 20 年裝修老師傅"},{"@type":"ListItem","position":181,"url":"https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-animation/","name":"骨骼、變形、混合全包，GLTF 動畫直接上手"},{"@type":"ListItem","position":182,"url":"https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-postprocessing/","name":"會先問你「要輝光還是景深」的Three.js後期鏈搭"},{"@type":"ListItem","position":183,"url":"https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-shaders/","name":"不碰內置材質，直接寫 GLSL 頂點與片元著色器"},{"@type":"ListItem","position":184,"url":"https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills/","name":"不寫一行渲染代碼，Three.js 場景從口述到可交"},{"@type":"ListItem","position":185,"url":"https://ourword.ai/skill/tw/i/hiyeshu-trip-map-builder/","name":"會替你刪掉一半心願單的行程地圖生成器"},{"@type":"ListItem","position":186,"url":"https://ourword.ai/skill/tw/i/yuanzhao321-tcm-skill/","name":"會勸你去掛急診的中醫參謀"},{"@type":"ListItem","position":187,"url":"https://ourword.ai/skill/tw/i/wei011-heat-risk-calc/","name":"體感溫度騙過你時，它用溼球溫度叫停訓練"},{"@type":"ListItem","position":188,"url":"https://ourword.ai/skill/tw/i/fcakyon-phd-skills-dataset-curation/","name":"會先問『這數據對誰不公平』的數據集體檢員"},{"@type":"ListItem","position":189,"url":"https://ourword.ai/skill/tw/i/trkzi-omar-prune-skills/","name":"先盤點再動手，刪技能前會問你三遍的整理師"},{"@type":"ListItem","position":190,"url":"https://ourword.ai/skill/tw/i/gnipbao-codex-whiteboard-video-skill/","name":"線稿只准本地模型抽、不許 AI 生成的白板手繪視頻"},{"@type":"ListItem","position":191,"url":"https://ourword.ai/skill/tw/i/chongchonghaoman-feline-health-advisory/","name":"替貓攔下雲南白藥和藿香正氣的養貓參謀"},{"@type":"ListItem","position":192,"url":"https://ourword.ai/skill/tw/i/op7418-guizang-social-card-skill/","name":"照片多到選不出就讓它自己拼三張動圖卡"},{"@type":"ListItem","position":193,"url":"https://ourword.ai/skill/tw/i/cosmoblk-email-marketing-bible/","name":"做郵件營銷的顧問"},{"@type":"ListItem","position":194,"url":"https://ourword.ai/skill/tw/i/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan/","name":"十分鐘活完計算機專業，帶走一份該問真程序員的清單"},{"@type":"ListItem","position":195,"url":"https://ourword.ai/skill/tw/i/xiaohuailabs-xiaohu-ip-studio/","name":"31個固定角色出演的正文配圖，不靠選風格靠選認知錨點"},{"@type":"ListItem","position":196,"url":"https://ourword.ai/skill/tw/i/sumanasj-coc-kp-host/","name":"寫到第三段就把回合交回來的克蘇魯跑團 KP"},{"@type":"ListItem","position":197,"url":"https://ourword.ai/skill/tw/i/bh-m87-futu-statement-skill/","name":"從富途月結單裡摳出境外所得報稅數據"},{"@type":"ListItem","position":198,"url":"https://ourword.ai/skill/tw/i/mocomeng-666-bluey-parenting-skill/","name":"先讓你冷水衝手腕 10 秒，再翻《布魯伊》第幾集"},{"@type":"ListItem","position":199,"url":"https://ourword.ai/skill/tw/i/zhlmi-moodboard-alignment/","name":"把客戶嘴裡的“高級感”翻譯成能打勾的審美條目"},{"@type":"ListItem","position":200,"url":"https://ourword.ai/skill/tw/i/wangchangwei-arb-skill/","name":"被辭退之後，幫你把證據和錢算清楚"},{"@type":"ListItem","position":201,"url":"https://ourword.ai/skill/tw/i/aldegad-tenstorrent/","name":"跳過網頁控制台，直接調 Tenstorrent 全家"},{"@type":"ListItem","position":202,"url":"https://ourword.ai/skill/tw/i/paramchoudhary-resumeskills/","name":"只改動詞和數字就過篩的簡歷潤色師"},{"@type":"ListItem","position":203,"url":"https://ourword.ai/skill/tw/i/rubyzhu26-see-life-wallpaper-skill/","name":"把手機壁紙變成每天更新的生活觀察窗"},{"@type":"ListItem","position":204,"url":"https://ourword.ai/skill/tw/i/tance-mang-chinese-webnovel-skills-aidetect/","name":"AI味指數0到10，逐句標出扣分位置的中文網文質檢員"},{"@type":"ListItem","position":205,"url":"https://ourword.ai/skill/tw/i/tance-mang-chinese-webnovel-skills-continuity/","name":"六條邏輯鏈逐章核對，專治寫到一百章崩設定"},{"@type":"ListItem","position":206,"url":"https://ourword.ai/skill/tw/i/neallydare-svg-iching-divination/","name":"三枚銅錢真隨機，卦象不靠編"},{"@type":"ListItem","position":207,"url":"https://ourword.ai/skill/tw/i/mikuz12-exampass-assistant/","name":"期末複習把整門課壓成三張紙的講義生成器"},{"@type":"ListItem","position":208,"url":"https://ourword.ai/skill/tw/i/dominikmartn-hue/","name":"學一次你的品牌，之後 agent 做的每個界面都照著來"},{"@type":"ListItem","position":209,"url":"https://ourword.ai/skill/tw/i/aryaminus-astro-astrology/","name":"本地星曆實算西洋·印度·八字三盤"},{"@type":"ListItem","position":210,"url":"https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/","name":"在 Obsidian 庫裡搜、寫、改、查，不用開編輯"},{"@type":"ListItem","position":211,"url":"https://ourword.ai/skill/tw/i/zy-zmc-tianming-skill/","name":"七卷本起步的協同寫作系統，大綱到存檔全管"},{"@type":"ListItem","position":212,"url":"https://ourword.ai/skill/tw/i/qian-gugugaga-character-skill-producer/","name":"只寫「她會怎麼反應」不抄臺詞的角色蒸餾器"},{"@type":"ListItem","position":213,"url":"https://ourword.ai/skill/tw/i/wangzhengjun571-alt-recomp-coach/","name":"卡路里跟克數打架就按克數重算的增肌減脂教練"},{"@type":"ListItem","position":214,"url":"https://ourword.ai/skill/tw/i/helloianneo-ian-xiaohei-illustrations-ian-xiaohei-illustrations/","name":"給中文文章畫手繪感解釋圖"},{"@type":"ListItem","position":215,"url":"https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit/","name":"411 條提示詞按鏡頭編號排好，拍企業片直接抄"},{"@type":"ListItem","position":216,"url":"https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-kling-prompter/","name":"給可靈 3.0 寫提示詞，三種公式按場景自動切換"},{"@type":"ListItem","position":217,"url":"https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-model-selector/","name":"16 個視頻模型按你的拍攝條件篩出 1-3 個"},{"@type":"ListItem","position":218,"url":"https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-seedance-debugger/","name":"視頻里人臉飄了先別刪，它給你換提示詞的根因"},{"@type":"ListItem","position":219,"url":"https://ourword.ai/skill/tw/i/fuwenhao12-academic-ref-inserter/","name":"Word 參考文獻亂了，按 GB/T 7714 重排補鏈接"},{"@type":"ListItem","position":220,"url":"https://ourword.ai/skill/tw/i/ayi-ai-ayi-nonviolent-communication/","name":"把指責翻譯成需要的長頸鹿語言翻譯官"},{"@type":"ListItem","position":221,"url":"https://ourword.ai/skill/tw/i/zgdfsgd-pet-nutritionist/","name":"嚴禁給龍貓洗澡、也給矮腳馬算食譜的寵物營養師"},{"@type":"ListItem","position":222,"url":"https://ourword.ai/skill/tw/i/feichangai-team-china-compliance-skills-cn-compliance-guard/","name":"上架前掃一遍，廣告法違禁詞當場標紅"},{"@type":"ListItem","position":223,"url":"https://ourword.ai/skill/tw/i/vivixiao980-xhs-cover-skill/","name":"先出圖後改字的小紅書封面，風格學一次就記住"},{"@type":"ListItem","position":224,"url":"https://ourword.ai/skill/tw/i/duskyelf-teach-me-teach-me/","name":"會打斷你含糊用詞的蘇格拉底式陪練"},{"@type":"ListItem","position":225,"url":"https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/","name":"只給和絃走向、絕不替你抄歌詞的吉他譜生成器"},{"@type":"ListItem","position":226,"url":"https://ourword.ai/skill/tw/i/seiya89757-naming-skill/","name":"全家為起名吵架時出來當中間人"},{"@type":"ListItem","position":227,"url":"https://ourword.ai/skill/tw/i/312362115-claude-diagram/","name":"自動選對圖表類型再畫出來"},{"@type":"ListItem","position":228,"url":"https://ourword.ai/skill/tw/i/jiang59991-qiaopi/","name":"一句話白話文，落成南洋阿嬤能讀的家書"},{"@type":"ListItem","position":229,"url":"https://ourword.ai/skill/tw/i/momozi1996-directoragents/","name":"31位導演的分鏡會，你當主席還是當觀眾"},{"@type":"ListItem","position":230,"url":"https://ourword.ai/skill/tw/i/jimliu-doubao-multimodal-skill-doubao-multimodal/","name":"音視頻丟給它，回來的是字幕、時間軸和誰在說話"},{"@type":"ListItem","position":231,"url":"https://ourword.ai/skill/tw/i/c1375-noir-interrogation/","name":"審問式追問，直到你交出真需求"},{"@type":"ListItem","position":232,"url":"https://ourword.ai/skill/tw/i/geekjourneyx-travel-guidebook/","name":"從踩點筆記到排版成冊，一趟生成旅行指南 PDF"},{"@type":"ListItem","position":233,"url":"https://ourword.ai/skill/tw/i/tengj-article-poster-generator/","name":"一篇文章拆成六頁豎版信息圖，每頁都能單獨發朋友圈"},{"@type":"ListItem","position":234,"url":"https://ourword.ai/skill/tw/i/sunnypanzhen-fishing-skill/","name":"新手買竿，老手看天：從選位講起"},{"@type":"ListItem","position":235,"url":"https://ourword.ai/skill/tw/i/voidforall-fengshui-skill/","name":"先說自己不算命的風水顧問"},{"@type":"ListItem","position":236,"url":"https://ourword.ai/skill/tw/i/ffffffffelix-automotive-functional-safety/","name":"ISO 26262 安全檔案的起草、挑錯與質詢臺"},{"@type":"ListItem","position":237,"url":"https://ourword.ai/skill/tw/i/zzzzzzza-larp-skill/","name":"LARP 角色卡生成器：從一句話到可扮演的完整人設"},{"@type":"ListItem","position":238,"url":"https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/","name":"查北京 16 區花粉濃度和過敏預報"},{"@type":"ListItem","position":239,"url":"https://ourword.ai/skill/tw/i/adamlyttleapps-claude-skill-aso-appstore-screenshots/","name":"從代碼反推賣點生成 App Store 截圖"},{"@type":"ListItem","position":240,"url":"https://ourword.ai/skill/tw/i/op7418-claude-to-im-skill/","name":"從手機指揮電腦裡跑著的 agent"},{"@type":"ListItem","position":241,"url":"https://ourword.ai/skill/tw/i/coleam00-excalidraw-diagram-skill/","name":"生成手繪白板風格的示意圖"},{"@type":"ListItem","position":242,"url":"https://ourword.ai/skill/tw/i/wshuyi-deep-research-deep-research/","name":"八步把模糊問題走成一份可引用的調研報告"},{"@type":"ListItem","position":243,"url":"https://ourword.ai/skill/tw/i/cclank-recipe-generator/","name":"每一步都告訴你怎麼算做好了的菜譜"},{"@type":"ListItem","position":244,"url":"https://ourword.ai/skill/tw/i/geekjourneyx-meme-generator-skill-generating-memes/","name":"298 個模板隨叫隨到，連 petpet 都能現做"},{"@type":"ListItem","position":245,"url":"https://ourword.ai/skill/tw/i/y1fe1-yang-resume-assistant-skill/","name":"五個代理圍著你轉，從挖故事到模擬面試一條龍"},{"@type":"ListItem","position":246,"url":"https://ourword.ai/skill/tw/i/kagurananaga-official-document-writing-skill/","name":"按 GB/T 9704 規範寫黨政機關公文"},{"@type":"ListItem","position":247,"url":"https://ourword.ai/skill/tw/i/op7418-youtube-clipper-skill/","name":"YouTube 長視頻先切章再剪段，字幕同步燒進畫面"}]}</script><!--GEO:HEAD:END--></head>
+<body>
+
+<!-- 報頭 + 搜索條都是靜態 HTML：第一次繪製就是一屏真內容，不等 feed。 -->
+<div class="wrap">
+  <header class="top">
+    <div class="mast-top">
+      <a class="logo" href="./">
+        <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+             stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="品味">
+          <g transform="rotate(-7 32 32)">
+            <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+            <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+          </g>
+        </svg>
+        <b id="brand">品味</b>
+      </a>
+      <nav class="mast-side">
+        <button id="shareSite" class="pill" type="button">分享</button>
+        <button id="langBtn" class="pill" type="button">EN</button>
+      </nav>
+    </div>
+    <!-- 整頁原來只有 h3，沒有 h1：讀屏器和搜索引擎拿不到這一頁講什麼。
+         口號本來就是這一頁的題，升成 h1，樣式仍走 .slogan。 -->
+    <h1 class="slogan" id="brandSub">幫你發現有品位的 Skills</h1>
+  </header>
+
+  <div class="bar">
+    <div class="search" id="searchBox">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="6.8" cy="6.8" r="5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10.6 10.6L15 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" autocomplete="off" placeholder="搜標題、點評、倉庫…">
+      <button class="clr" id="clr" type="button" aria-label="清空">✕</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <main id="main"></main>
+
+  <footer>
+      <p id="colo2"></p>
+    <div class="links fam">
+      <a href="https://ourword.ai/">人類生存法則</a>
+      <a href="https://ourword.ai/podcast/">原聲播客</a>
+      <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+    </div>
+  </footer>
+  <!-- 生成器寫「可爬取層」的落點。SEO_PATCH_INDEX=1 打開後 seo/build_seo.py 往這裡寫。 -->
+  <!--GEO:BODY:START--><noscript><section id="geo-index"><h1>品味 — 幫你發現有品位的 Skills</h1><p>品味是一手挑選的 Agent Skill 貨架，給 Claude Code、Codex 和同類智能體用。每一件都寫清做什麼用、應用範圍、如何使用和怎麼安裝。</p><ul><li><a href="https://ourword.ai/skill/tw/i/yejy53-editable-design-html-to-pptx/">HTML 版式拆成可編輯 PPT 的轉換器</a> — 海報、slide 的每個插畫、圖標、箭頭、文字都變成能單獨拖動的對象，不是一張壓扁的背景圖。</li><li><a href="https://ourword.ai/skill/tw/i/bitjaru-styleseed-styleseed/">只認當前畫布邊界，把 StyleSeed 請求派給唯</a> — 你說「幫我弄下風格」時，它先分清你在改哪張圖、哪段文，再只調對應那套 ss-* 技能——不讓你在六個相似入口裡瞎猜。</li><li><a href="https://ourword.ai/skill/tw/i/alchaincyf-huashu-report/">42份頂級機構報告實測出的排版骨架</a> — 寫行業報告總被說&#x27;不像諮詢出品&#x27;？從Stanford到BCG的42份實測規範，幫你定結構、寫發現、建圖表視覺系統。</li><li><a href="https://ourword.ai/skill/tw/i/vieeeeeee-wibi-style-textile-toy-portrait/">照片變顆粒絨玩偶，毛絨質感直接出圖</a> — 上傳一張臉，得到一隻毛絨絨的你。不是濾鏡貼紙，是重新理解五官後生成的顆粒絨質感玩偶，適合頭像、禮物、紀念品。</li><li><a href="https://ourword.ai/skill/tw/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/">照片變電影海報，但只留你拍下的真實光影</a> — 不用星星、不用拼貼符號，只靠排版、留白和低飽和配色，讓旅行或建築照片直接擁有影院級片頭質感，還帶一句詩意的署名。</li><li><a href="https://ourword.ai/skill/tw/i/artokun-comfyui-mcp/">自然語言改工作流，178 個工具隨叫隨到</a> — ComfyUI 的連線勸退過無數人。裝上它用說話就能生成圖/視頻/音頻、搭工作流、改你正在跑的節點圖，全程本地不上傳素材。</li><li><a href="https://ourword.ai/skill/tw/i/vieeeeeee-wibi-style-glitch-pixel-collage/">故障像素拼貼</a> — 上傳人像或街景，立刻得到賽博故障感拼貼。不是濾鏡，是像素級打亂重組，每張輸出都獨一無二。</li><li><a href="https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/">給 Go 代碼庫做地道性評審</a> — Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。</li><li><a href="https://ourword.ai/skill/tw/i/vanillagreencom-vstack-trading-design/">按專業交易軟件的規範設計盯盤界面</a> — 交易界面是設計裡的特種兵：紅綠語義、毫秒級信息密度、面板布局都有講究，一般設計規範完全不管。</li><li><a href="https://ourword.ai/skill/tw/i/zeejay0-gathered-scenes-zine-skill-scene-distillation-zine-v1-3/">一張照片蒸餾成一本敢留白的迷你zine</a> — 可翻的薄刊物，不是一張海報</li><li><a href="https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-figma/">接上 Figma API，把設計稿拆成一張設計系統知識圖譜</a> — 接上 Figma API，把設計稿拆成頁面、組件、變體、設計令牌的知識圖譜，設計系統長什麼樣一張圖看明白。</li><li><a href="https://ourword.ai/skill/tw/i/egonex-ai-understand-anything-understand-chat/">按調用結構而不是搜字符串，回答改這裡會牽動誰</a> — 對著代碼庫的知識圖譜直接提問：這段邏輯在哪、誰調用誰、改這裡會牽動什麼——按結構找答案，不是搜字符串。</li><li><a href="https://ourword.ai/skill/tw/i/op7418-guizang-yingzao-skill-yingzao/">實景照片轉藝術海報，附原圖對比不空想</a> — 拍過老街、老店、老宅卻總出不來高級感？它把照片重排成雜誌跨頁，還能拼多圖場景，附原圖對比。</li><li><a href="https://ourword.ai/skill/tw/i/cli-cli-code-review/">合代碼前先過一遍倉庫規矩的 gh 評審員</a> — PR 一上來就按你倉庫的約定逐條核對，不靠通用模板。它先讀 CONTRIBUTING 和現有代碼風格，再挑刺。</li><li><a href="https://ourword.ai/skill/tw/i/karanb192-itr-wala-itr-wala/">舊新稅制並排算完再決定報哪套的印度報稅員</a> — 從 Form 16 到新舊稅制對比，再到 Zerodha 資本利得，一個技能走完 FY25-26 報稅。</li><li><a href="https://ourword.ai/skill/tw/i/kacperkapusciak-goldie-goldie/">重放 App 操作錄屏，套上真實商店頁邊框和文案</a> — 回放 argent 流程錄屏，給截圖套機身邊框、配底色和文案，出 4~5 張成品加一段預覽視頻，本地起個 studio 按真實商店頁排給你看。</li><li><a href="https://ourword.ai/skill/tw/i/copilotkit-copilotkit-a2ui-renderer/">A2UI 界面渲染器，裝上就能讓 Agent 畫表單</a> — 你的 Agent 開始返回 JSON 界面描述，但前端還停在純文本聊天？這個 skill 讓 A2UI 聲明自動變。</li><li><a href="https://ourword.ai/skill/tw/i/cli-cli-dependabot-triager/">只評不批的Dependabot PR分流員，三檔結論</a> — 每天堆積的依賴更新PR，它逐條讀上游源碼改動後給出Merge/先審/別合三檔結論，附高/中/低置信度。</li><li><a href="https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/">離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完</a> — 到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。</li><li><a href="https://ourword.ai/skill/tw/i/redfox-data-redfox-community/">分析某位作者的多篇文章復刻其文風</a> — 想學某個人的寫法，讀十篇也說不清他到底怎麼寫的。它拆解一位作者的多篇文章還原其思維方式，生成專屬寫作分身和風格提示詞。</li><li><a href="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/">三天賽程裡做完數學建模競賽全流程</a> — 建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。</li><li><a href="https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/">讓 Claude 用原始人腔說話，據稱省下 65% 的 token</a> — 讓 Claude 像原始人一樣說話：「為什麼用很多 token，少 token 就行」——據稱實測省 65% token，還越用越上頭。</li><li><a href="https://ourword.ai/skill/tw/i/worldwonderer-oh-story-claudecode-story-deslop/">刪掉「她眸色一暗」的網文去AI味改稿器</a> — 檢測並清除網文裡的 AI 寫作痕跡：模板化開頭、翻譯腔、排比堆砌，讓文字迴歸人寫的自然感。</li><li><a href="https://ourword.ai/skill/tw/i/bitwize-music-studio-claude-ai-music-skills/">給 Suno 配上歌詞工作流和混音清單，從玩票做到成品</a> — 人機協作的 Suno 音樂生產流：風格模板、歌詞工作流、混音清單，把「玩 Suno」升級成「做音樂」。</li><li><a href="https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/">畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML</a> — 產出可驗證的架構、時序、數據流、生命週期圖：自包含 HTML 自帶動效，導出清晰銳利可直接交付。</li><li><a href="https://ourword.ai/skill/tw/i/k-dense-ai-scientific-agent-skills-citation-management/">每條引用都回數據庫核驗，揪出 AI 編造的參考文獻</a> — 檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。</li><li><a href="https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/">任務拆解寫到磁盤，/clear 後自動續上進度</a> — 把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。</li><li><a href="https://ourword.ai/skill/tw/i/francyjglisboa-agent-skill-creator/">把口頭流程變成能跑的跨平臺技能，三步內交付</a> — 把任何工作流寫成一次、裝到 17 個平臺：Claude Code、Cursor、Copilot、Gemini 全兼容的 skill 鑄造機。</li><li><a href="https://ourword.ai/skill/tw/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/">先問教材版本再落筆的備課助手，連分層作業一起出</a> — 備課最怕架空課標。它先鎖定學段、版本和課標，再按核心素養排可觀察任務，最後連分層作業和說課稿都遞到你手上。</li><li><a href="https://ourword.ai/skill/tw/i/codeswithroh-tastemaker-tastemaker/">看一眼參考圖就生成同氣質界面的設計手</a> — 你貼一張Dribbble/Pinterest圖，它提取配色、字體、圓角、間距，直接產出同風格界面。</li><li><a href="https://ourword.ai/skill/tw/i/moonlin1213-cove-tarot-companion/">只做儀式不占卜的本地塔羅陪談，回看原牌不重抽</a> — 想要一場不聯網的塔羅儀式？抽一張牌，回看當初的解讀，或在陪伴對話中自然邀請。適合獨處、寫作、或深夜自省。</li><li><a href="https://ourword.ai/skill/tw/i/simon-he95-markstream-vue-markstream-vue/">AI 長輸出不卡頓的 Vue 3 流式渲染器，自帶虛</a> — AI 長回答逐字蹦，你的頁面還在等整段？這套 skill 幫你接好虛擬滾動與時間軸，讓長流不卡、不閃、不丟幀。</li><li><a href="https://ourword.ai/skill/tw/i/fxw-labs-easy-humanizer-zh/">四種聲紋任選，把AI稿改成看不出機器味的中文</a> — 一眼看出AI味的時代，你需要的不是潤色，是換聲帶。24種痕跡檢測，四種聲紋預設，讓技術博客、公眾號、PRD。</li><li><a href="https://ourword.ai/skill/tw/i/hchen1218-heytea-style/">按喜茶那套視覺做一張</a> — 品牌配方鎖死，不是通用新中式</li><li><a href="https://ourword.ai/skill/tw/i/adrianpunk-punk-skill-punk-cover/">同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成</a> — 每篇文章都要封面，找圖配字最耗時。11 種精調風格（商業雜誌頭版、復古手撕拼貼、巨型透視中文標題…），每種都標了適合什麼內容。</li><li><a href="https://ourword.ai/skill/tw/i/kyanitelabs-kinocut-kinocut/">有護欄的 AI 視頻剪輯</a> — 讓 AI 直接剪素材，最怕一刀把原片剪廢。它先規劃後執行、每步可回溯，FFmpeg 操作、字幕、音頻、成片改編都管。</li><li><a href="https://ourword.ai/skill/tw/i/garrytan-gstack/">YC 掌門的 Claude Code 全套配置，23 個角色分工</a> — YC 掌門 Garry Tan 的 Claude Code 配置原樣開源：23 個工具分飾 CEO、設計師、工程經理、QA。</li><li><a href="https://ourword.ai/skill/tw/i/imbad0202-academic-research-skills-deep-research/">13 個子代理組隊做研究，互相審稿和事實核查</a> — 13 個子代理組隊做嚴肅研究：綜述、快報、審稿、事實核查、三路文獻掃描，8 種模式按需開團。</li><li><a href="https://ourword.ai/skill/tw/i/virgiliojr94-book-to-skill/">把 PDF 和 EPUB 拆成能裝進 Agent 的</a> — 把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。</li><li><a href="https://ourword.ai/skill/tw/i/eugeniughelbur-obsidian-second-brain/">讓新資料改寫舊筆記，而不是在 Obsidian 裡越堆越多</a> — 把 Obsidian 庫運營成會自我改寫的第二大腦：新資料改寫舊頁面而不是堆新筆記，越用越乾淨。</li><li><a href="https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-agents/">只認官方適配器，裝錯路徑當場報錯的內存接線員</a> — 裝 agentmemory 到宿主編碼 agent 時，它替你核對 connect 命令該寫哪個配置路徑。</li><li><a href="https://ourword.ai/skill/tw/i/ryze-ai-adgent-open-seo-mcp-skills-competitor-gap/">專挖對手有而你沒有的搜索詞，按流量和可贏性排好序</a> — 別再猜對手憑什麼排你前面。輸入對方域名，直接列出你缺哪些詞、每個詞能帶來多少流量、值不值得搶。附可贏性評分。</li><li><a href="https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-architecture/">拆開記憶引擎看存儲與檢索全鏈路，附端口與查看器</a> — 別只當黑盒用——想知道記憶到底存哪、怎麼取回、如何擴展？這份架構說明把 iii 原語、存儲模型。</li><li><a href="https://ourword.ai/skill/tw/i/rohitg00-agentmemory-agentmemory-config/">不翻源碼就改配置，環境變量端口開關全在這</a> — 改端口、設 API key、開功能開關，翻遍 README 找不到的默認關閉原因，它直接告訴你。</li><li><a href="https://ourword.ai/skill/tw/i/xixihhhh-hotclip-hotclip/">長視頻不出本機，剪成帶卡拉OK字幕的豎屏爆點</a> — 切片工具滿地都是，但敢把未發布的素材傳上去嗎？它端側轉寫、LLM 找高光、9:16 重構、卡拉OK字幕，每條還打病毒潛力分，全程不出你的機器。</li><li><a href="https://ourword.ai/skill/tw/i/aidevgtm-gtm-cofounder/">給獨自做產品的技術創始人當 GTM 合夥人</a> — 技術能做出來，賣不出去。定位、找首批用戶、發布、定價——它先訪談你一次，之後所有建議都基於你的真實業務。</li><li><a href="https://ourword.ai/skill/tw/i/dongbeixiaohuo-writing-agent/">從選題到發布的去 AI 味中文寫作系統</a> — AI 寫的文章一眼假，改起來比自己寫還累。它強制注入人類觀點和細節，配讀者測試評估和自動圖文排版，全流程走完。</li><li><a href="https://ourword.ai/skill/tw/i/aldegad-sprite-gen/">組件行流水線出精靈圖集，帶 QA 報告和運行時清單</a> — 一句話出一套乾淨的 2D 遊戲精靈圖：狀態行排布、透明底、逐幀拆分、運行時圖集，產物直接丟進遊戲引擎就能用。</li><li><a href="https://ourword.ai/skill/tw/i/hao0321-claude-skill-social-post-social-post/">學你的語氣排好 14 天日曆，再替你按下發布鍵</a> — 學你的 Facebook 語氣，按 14 天內容日曆自動寫併發到 FB/IG/Threads/X——實測單帖 8 萬觸達。</li><li><a href="https://ourword.ai/skill/tw/i/locoda-duizuo-reading-companion-skill/">讀書記不住進度？它替你記著，還防劇透</a> — 小說、散文、非虛構都能陪讀。它記住你讀到哪、什麼感受，下次接著聊，絕不提前劇透。讀不下去時，它會問你怎麼了。</li><li><a href="https://ourword.ai/skill/tw/i/mumdark-nature-writing-studio-nature-writing-studio/">657 篇 Nature 原文蒸餾出的學術英語改寫器</a> — 投 Nature 前，摘要和引言總被批「不夠 native」。它用 657 篇原文逐篇觀察出的語料庫改寫。</li><li><a href="https://ourword.ai/skill/tw/i/carolinaaafy-travel-memory-card-duo/">旅行記憶卡成對出</a> — 正反兩張一套，一面現場一面收束</li><li><a href="https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-script/">先定鏡頭再落筆的解說稿，時間戳卡到幀</a> — 已有 VLM 分析但不知怎麼剪？它替你定故事線、挑片段、分鏡分工，再寫出帶時間戳的中文解說並自動校驗，一步到位。</li><li><a href="https://ourword.ai/skill/tw/i/starryear-starryear-threefold-memory/">照片分三層：記憶碎片、證據原件、心情路線圖</a> — 上層把照片重組成大塊不規則碎片的視覺記憶，中層原片不動當證據，下層把路線、方向、情緒畫成一張記憶地圖。</li><li><a href="https://ourword.ai/skill/tw/i/createlafont-dnr-flat-pic/">不描邊不追光影，只留身份與空間關係的扁平化壓縮</a> — 不是描邊轉矢量，是語義壓縮：保留身份和空間關係，去掉漸變、光暈、紋理、文字和 logo，複雜度壓到 6/10 以下。</li><li><a href="https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-understanding/">視頻拆成六層索引，寫稿前先看清素材全貌</a> — 看完一部紀錄片，你只記得&#x27;好像不錯&#x27;。裝上它，視頻自動變成場景、臺詞、畫面觀察、靜音、時間線和寫作 brief——。</li><li><a href="https://ourword.ai/skill/tw/i/oil-oil-oil-motion/">一套切開的網頁動效</a> — 滾動、拖拽、陀螺儀、音頻都能驅動動畫。從設計到優化再到講解，一個技能包圓，不用再翻十幾個庫的文檔。</li><li><a href="https://ourword.ai/skill/tw/i/zenstory-ai-video-recap-skills-video-assemble/">旁白落定才壓原聲，字幕燒完再響度歸一</a> — 旁白、字幕、原聲三軌糾纏的最後一公里。不用手動對齊時間軸，它按旁白窗口自動壓低背景音，生成可燒錄字幕。</li><li><a href="https://ourword.ai/skill/tw/i/addyosmani-agent-skills/">Addy 的工程技能箱</a> — Chrome 團隊 Addy Osmani 的私藏工具箱一次帶走：API 設計、DevTools 排查、CI/CD 避坑，件件短而鋒利。</li><li><a href="https://ourword.ai/skill/tw/i/addyosmani-agent-skills-doubt-driven-development/">懷疑驅動開發</a> — 每個非平凡決策都要過一遍「新上下文對抗審查」：換一個乾淨腦子來挑刺攻擊，站得住的方案才算數。</li><li><a href="https://ourword.ai/skill/tw/i/addyosmani-agent-skills-interview-me/">逼問需求</a> — 一次只問一個問題，把你「以為想要的」問成「真正想要的」，問到約 95% 確信才允許動手開工。</li><li><a href="https://ourword.ai/skill/tw/i/work-fisher-reference-first-motion-director-reference-first-motion-director/">先出整片視覺總表，再逐鏡找參考的導演工作流</a> — 口播稿不直接進剪輯，先路由成人物/證據/錄屏/素材四類鏡頭，存好總表和動效清單，再為每鏡檢索精確參考。</li><li><a href="https://ourword.ai/skill/tw/i/fihaaade-skills-outsider-art/">大色塊平塗加手工紋理，小人做日常事，只留一個高飽和點</a> — 大塊平塗色區，每區一種手工紋理（窗格點陣、縫線虛線、織紋顆粒、墨線輪廓），撒滿做日常事的無臉小人。紙白、暖墨黑、2–4 個場景色，外加恰好一個飽和高亮色。</li><li><a href="https://ourword.ai/skill/tw/i/haorantang97-antibes-holiday-antibes-holiday/">安提布假期那套黑筆閒筆</a> — 松的黑線，畫概念或參照，不畫熱鬧插畫</li><li><a href="https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/">一個人也能玩的 D&amp;D 地下城主</a> — 跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。</li><li><a href="https://ourword.ai/skill/tw/i/xiaoou-waou-xiaoou-gzh-layout/">Markdown 進去，公眾號編輯器樣式直接粘貼出來</a> — Word、PDF、純文本都能進，按你的主題偏好自動配好章節編號、引言卡片、代碼塊和署名區。</li><li><a href="https://ourword.ai/skill/tw/i/carolinaaafy-travel-memory-sticker-card/">旅行照片做成記憶貼紙卡</a> — 厭倦了千篇一律的濾鏡？上傳照片，得到一張帶手賬貼紙、紙紋和笨拙色塊的雜誌風卡片，像從舊刊撕下來的一頁。</li><li><a href="https://ourword.ai/skill/tw/i/eternityspring-shuohao-skills-novel-characters/">短劇開拍前先把角色拆開</a> — 讀完一本小說，角色還留在腦子裡？把它拆成角色表、畫像、音色提示詞，一鍵出左半身像+三視圖+細節條，生成可交互報告。</li><li><a href="https://ourword.ai/skill/tw/i/liyue-aigc-seedance-2-5-video-director/">Seedance 2.5 專屬導演，分鏡腳本一次改到</a> — 即夢每生成一版都在扣積分，改一次就是一次賭。它只交可複製的提示詞，遇到「向前續寫」這種歧義必須先問你放在原片前還是後。</li><li><a href="https://ourword.ai/skill/tw/i/lijigang-ljg-skills/">一個觀點經得住反例才肯落筆的寫作引擎</a> — AI 寫觀點文最容易變成正確的廢話。它的目標很具體：1000-1500 字，可理解、可遷移、經得住反例——而且明說不做普通摘要。</li><li><a href="https://ourword.ai/skill/tw/i/worldwonderer-novel-to-game-novel-to-game/">喂進一本小說，產出的不是概念稿是真能玩的遊戲</a> — 餵給它一本小說，它按原著設定拆世界觀、出美術方向、選目標引擎，直接把遊戲做出來——不是概念稿，是真的能玩。</li><li><a href="https://ourword.ai/skill/tw/i/anthropics-claude-plugins-community-eli5/">把任何概念講成帶大圖的幼兒園繪本</a> — 正文只有一句：「把我當成對這個話題完全不懂的人，用大圖、少字的 HTML 頁面講明白。」輸出不是一段話，是一頁能順著往下看的圖文。</li><li><a href="https://ourword.ai/skill/tw/i/bigfish-zzz-bigfish-ink-wash-photo/">不重繪只錨定主體走向，落筆前先定畫心與延展向</a> — 不是精確重建，只保留關鍵的識別錨點；生成前先看照片定畫幅方向，按主體延展、空間流向和視覺中心分布來定。</li><li><a href="https://ourword.ai/skill/tw/i/alchaincyf-huashu-slide-doubao/">用豆包自帶生圖出整套 PPT，一分第三方 API 錢</a> — 做課件、公眾號頭圖、B站封面都得掏生圖 API 的錢。它把這步鎖死在豆包內置 seedream 上，還給封面、扉頁、內容頁、結論頁各配一條密度上限。</li><li><a href="https://ourword.ai/skill/tw/i/alchaincyf-huashu-design/">HTML 原型先出三稿再動手的設計師</a> — 花叔出品：一句需求，產出高保真 HTML 原型、幻燈片和動畫，附贈 20 條他自己的設計哲學，審美立場直接寫進輸出。</li><li><a href="https://ourword.ai/skill/tw/i/sherlyryn-make-tape-collage/">照片旁留一塊暖白紙，膠帶拼貼不遮原圖</a> — 要膠帶拼貼又捨不得原圖？它把照片完整保留，另配暖白紙板用膠帶做局部詮釋。適合手賬、裝飾畫，出圖即貼紙質感。</li><li><a href="https://ourword.ai/skill/tw/i/liufanshan11-cumcm-c-problem-lfs/">C題專用：從附件到LaTeX成稿的72小時全流程建模</a> — 只認國賽C題，不碰A/B/D/E。從選題判斷到評委視角終檢，連LaTeX代碼工程都替你生成，省下通宵排版的命。</li><li><a href="https://ourword.ai/skill/tw/i/chengyi-ai-native-subtitle-quote-image-native-subtitle-quote-image/">視頻字幕截圖直接拼社交長圖，不重繪不超分</a> — 別再用播放器截圖拼圖了。它從視頻幀裡取原生字幕，自動裁切、拼成 3:4 長圖，連臺詞間隔和主圖比例都替你調好。</li><li><a href="https://ourword.ai/skill/tw/i/larashero3-dotcom-lieflat-less-ai-tone/">只刪清單上那七種AI腔，其餘一字不動</a> — 成稿後過一遍，把「值得注意的是」「總的來說」這類機器慣用語揪出來改掉。不在清單裡的句子原樣放行，不重排段落。</li><li><a href="https://ourword.ai/skill/tw/i/kvnkld-aicss/">AI 對話界面不重造輪子，現成思考態與流式輸出組件</a> — 思考中、流式輸出這類 AI 會話專用的界面部件，npm 裝 React 版，或用 CLI 取 React／Vue／Svelte 源碼直接落進你的項目。</li><li><a href="https://ourword.ai/skill/tw/i/mattpocock-skills/">Matt Pocock 工具箱</a> — TypeScript 圈頂流 Matt Pocock 的 .agents 目錄直出：真工程師日常在用的 skills，原汁原味打包。</li><li><a href="https://ourword.ai/skill/tw/i/leonxlnx-taste-skill-image-to-code/">截圖變代碼時先對齊設計意圖，不做像素級復刻</a> — 丟一張截圖，還原成有品味的代碼而不是像素堆：它優先還原設計意圖和層級關係，不死磕像素級復刻。</li><li><a href="https://ourword.ai/skill/tw/i/hongfamonvai-vintage-travel-ticket/">66 張老車票裡抽一套設計語法，每次出票都像翻到舊藏</a> — 從 66 張歷史票據裡蒸餾出的設計語法：結構原型、插畫語言、配色、紙張、字體、信息格式、印刷老化，每次隨機選一套自洽的組合。</li><li><a href="https://ourword.ai/skill/tw/i/pale-knight-redteam-skill-ad-recon/">不碰密碼不越權，把AD域摸成一張可下手的圖</a> — 有憑據或零憑據都能偵察：用戶/組/計算機、ACL委派、ADCS、現代LAPS、BloodHound。</li><li><a href="https://ourword.ai/skill/tw/i/liamgvchi-gc-minimal-ip-doodle/">保住角色的手繪塗鴉</a> — 同一張臉反覆畫，五官不許漂</li><li><a href="https://ourword.ai/skill/tw/i/jangviktor-web-wujutong/">按三焦辨證給溫病方，古人矛盾處照原樣留著</a> — 溫病和傷寒是兩套打法，用錯了會反著治。它按《溫病條辨》三焦辨證走，22 首方按上中下焦排開，359 個醫案雙索引。</li><li><a href="https://ourword.ai/skill/tw/i/cattlez-dance-video-to-prompt-dance-video-to-prompt/">模糊幀不編手指，卡點動作拆成七段可生成提示詞</a> — 跳舞/變裝/穿搭短視頻反推成 AI 視頻提示詞，本地算節奏、多模態看圖，動作五要素強制細化，模糊幀不瞎編手指五官。</li><li><a href="https://ourword.ai/skill/tw/i/qianye-wuyu-yueyuan-bazi/">先立假設再找證據的子平八字推演臺</a> — 不信一眼斷命。它把《淵海子平》到《窮通寶鑑》拆成可複核的規則層，每步留證據、標不確定度，盲派交叉驗證後才給結論。</li><li><a href="https://ourword.ai/skill/tw/i/m1n-n9-academic-figures-drawer/">論文配圖直接產出可編輯 draw.io 源文件</a> — 從摘要、代碼或參考圖出發，生成 ICML/NeurIPS 級別的框架圖、張量流、消融對比圖。改字體、調顏色。</li><li><a href="https://ourword.ai/skill/tw/i/v-yun-vuln-report-skill/">漏洞確認後直接產出可提交的 DOCX 報告</a> — 查重、分層驗證門、固定骨架、Step 式 PoC、真實截圖、語義化命名、放對目錄——從確認到成稿一條龍。</li><li><a href="https://ourword.ai/skill/tw/i/khazp-vibe-coding-prompt-template-vibe-techdesign/">先寫技術設計再寫代碼，讓 MVP 不返工</a> — 當你糾結“該用什麼棧、怎麼搭”時，它不替你做決定，而是把選項、權衡、風險攤成一張表，讓討論有錨點、決策有痕跡。</li><li><a href="https://ourword.ai/skill/tw/i/chenklein26-maker-fitness-coach-rpg/">訓練數據自己攢，劇情推進看成績的 RPG 健身教練</a> — 健身最難的是堅持，不是動作。它用本地文件記錄你的訓練、疲勞和複訓，再讓訓練結果推進劇情——練得好劇情才往前走。</li><li><a href="https://ourword.ai/skill/tw/i/n1ko724-scene-to-art-lab-scene-to-art-lab/">一場戲收進藝術實驗室</a> — 場面進實驗室，出來是一張鎖死的畫</li><li><a href="https://ourword.ai/skill/tw/i/larashero3-dotcom-lieflat-charts/">圖表先問數據語義再選色，報告模板十二套</a> — 從真實圖表庫實現生成 HTML，不靠截圖或手寫。十二套中英整頁報告模板，地圖只在你要時才啟用，色系不混搭。</li><li><a href="https://ourword.ai/skill/tw/i/zzzlc0405-photo-abstract-editorial/">照片抽成抽象編輯頁</a> — 顏色和形狀留下，路牌和人臉讓路</li><li><a href="https://ourword.ai/skill/tw/i/elhamid-as-told-to-as-told-to/">只記你說過的話，不替你補半句的人生訪談錄</a> — 一場一場地採訪你或你父母的人生，逐字稿原樣留檔，另出一份下次接著問的筆記；成不成書隨你，檔案先歸你自己。</li><li><a href="https://ourword.ai/skill/tw/i/luji12-luji-pet-streetwear-mood-avatar/">寵物收成街頭情緒頭像</a> — 1:1，穿得上的衣服，低保真直閃</li><li><a href="https://ourword.ai/skill/tw/i/blader-humanizer/">照一份句式級的臭味清單刪掉「值得注意的是」</a> — 一鍵去 AI 味：刪掉「值得注意的是」、排比腔和空洞總結——那份「AI 寫作臭味清單」具體到了句式級別。</li><li><a href="https://ourword.ai/skill/tw/i/songzhi-lab-chinese-font-selector-chinese-font-selector/">中文字體選配不靠眼緣，靠授權安全分級和場景矩陣</a> — 小紅書卡片、產品冊、網頁、圖書、海報——每個場景先查授權再談氣質。內置 OFL 鐵穩/廠商免費/慎用三級，避頭尾。</li><li><a href="https://ourword.ai/skill/tw/i/xianxie6-stamp-edge-skill/">原圖四周直接打半圓孔，真透明背景的郵票生成器</a> — 不用摳圖、不用白邊，孔洞處 alpha 全零，拖到深色海報上也乾淨。多張還能自動拼成等寬瀑布流郵票合集。</li><li><a href="https://ourword.ai/skill/tw/i/kkenny0-card-skill/">證據收成一種紙面</a> — 文章和論點變成可核對的圖，版式只有一種</li><li><a href="https://ourword.ai/skill/tw/i/liuzihe849-png-silhouette-group-collage-silhouette-group-collage/">一群人收成剪影拼貼</a> — 認人靠輪廓，臉被故意拿掉</li><li><a href="https://ourword.ai/skill/tw/i/rollingalei-sticker-puzzle-photo-memory-card-skill/">植被多就換品紅鍵色，把照片做成能剪下來的貼紙頁</a> — 照片做成好看的圖不難，難的是拿到一張真能打印、真能剪的透明貼紙。它一次交記憶卡和六枚圖案的透明 PNG。</li><li><a href="https://ourword.ai/skill/tw/i/gary149-h3-game-sprites-h3-game-sprites/">視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像</a> — 用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。</li><li><a href="https://ourword.ai/skill/tw/i/n1ko724-kodak-2383-film-look-kodak-2383-film-look/">柯達膠片板，尺鎖定</a> — 上條未調色、下條小窗，豎版膠片板</li><li><a href="https://ourword.ai/skill/tw/i/jinchenma94-bazi-skill/">四柱八字，把生辰當成一張表來排</a> — 報上出生信息，它按窮通寶典、滴天髓等典籍排盤解盤。不玩星座式泛談，每句斷語都標得出處，像帶了一位老派命理師。</li><li><a href="https://ourword.ai/skill/tw/i/xxxonechen-pollen-query/">花粉季出門前查一眼，53 城都有</a> — 三四月對過敏的人是渡劫，而多數天氣 app 根本不報花粉。它拉中國天氣網的監測站數據，給濃度等級、風險提示和 7 天歷史加預報。</li><li><a href="https://ourword.ai/skill/tw/i/bohandu-cook-with-what-you-have-cook-with-what-you-have/">照冰箱剩貨挑出三道菜，湊不滿也不放寬過敏原</a> — 報一下冰箱裡剩什麼，它挑三道可解釋的候選，原菜譜一字不改地端出來，缺什麼料另寫在原文之外。</li><li><a href="https://ourword.ai/skill/tw/i/alaric1098-china-pension-strategy-skill/">社保斷繳要不要補，用腳本算給你看</a> — 權益單看不懂、斷繳要不要補、靈活就業還交不交——這些是算術題不是玄學，但誰也不願替你算。它按地區規則出確定值。</li><li><a href="https://ourword.ai/skill/tw/i/dacnay816y62-hub-fantasy-minimal-magazine/">3:4 極簡雜誌封面</a> — 編輯頁的留白和字號，不是方圖加字</li><li><a href="https://ourword.ai/skill/tw/i/lixorn-deconstructed-duotone-poster-deconstructed-duotone-poster/">版式座標鎖死，只留象牙紙和一種墨的雙色海報</a> — 四種版式：3:4 九宮格、3:4 豎向四聯、4:3 六宮格、4:3 橫向四聯，座標寫死、紙邊等寬、瓷磚模板共用。象牙紙底加一種你選的墨色。</li><li><a href="https://ourword.ai/skill/tw/i/jadel-kemo-trpg-log-copilot-skill/">跑團桌旁幫你車卡歸檔線索的副官，防超遊</a> — 跑到第十次團，線索、NPC 和 SAN 值散在十份記錄對不上。它把表寫進 Markdown，檢索交給 SQLite。</li><li><a href="https://ourword.ai/skill/tw/i/fxw-labs-beachcombing/">潮水退去後替你掃三遍灘面的拾遺器</a> — 大潮那兩小時能挖到什麼、幾點回頭才不會被圍住——它先算撤退時刻再談收穫，11 省 51 處點位帶方言別名和吃法。</li><li><a href="https://ourword.ai/skill/tw/i/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill/">當代中式海報，配方鎖在東方審美</a> — 留白和印色是規矩，不是隨便新中式</li><li><a href="https://ourword.ai/skill/tw/i/liamgvchi-gc-minimal-zine-poster/">紙感詩性海報生成器，留白與單色點睛</a> — 大留白、一處拼貼、一個色彩重音</li><li><a href="https://ourword.ai/skill/tw/i/staruhub-claudeskills-university-exam-prep/">對著真實課本和考綱突擊複習</a> — 考的是老師的 PPT 和課本，AI 卻按通用知識給你講。它強制你先傳真材料，再用蘇格拉底式提問帶你想，不灌答案。</li><li><a href="https://ourword.ai/skill/tw/i/architect-kele-arch-kele-structure-photo/">每張照片出兩張圖：一張結構研究稿，一張帶原圖角標</a> — 一張照片出兩張：一張乾淨的結構研究水彩，一張右上角嵌著原片對照。暖紙底、分析線、剋制的標註，配色從照片裡取。</li><li><a href="https://ourword.ai/skill/tw/i/yeyulangzi-personal-reflector/">不餵雞湯只拆模式的自我復盤鏡</a> — 當焦慮、自我懷疑、關係困局反覆出現，它不給你雞湯，而是幫你照見舊系統如何運作、新系統卡在哪，讓轉型期不再原地打轉。</li><li><a href="https://ourword.ai/skill/tw/i/traveler0621-reality-restaged/">紀實照片重新搭臺</a> — 旅行和街拍抽成一種重演的語法</li><li><a href="https://ourword.ai/skill/tw/i/tait-tt-tait-crt-interface-skill/">CRT 屏曲邊加三檔中文預設的誇張位圖漫畫窗</a> — 早期 Macintosh／Minitel 式窗口下面一張誇張的位圖諷刺畫，桶形彎曲的屏幕邊，三套中文預設：街頭怪誕、巨像符號、冷面幾何。</li><li><a href="https://ourword.ai/skill/tw/i/yokel1121-muyang-illustration-skills-muyang-oriental-poetry/">東方詩意插畫，一款一裝</a> — 庭院手繪、青綠、極簡墨灰——不用寫提示詞，把主體原樣丟進固定配方就出圖。適合要批量出同風格圖。</li><li><a href="https://ourword.ai/skill/tw/i/zhu930824-poetic-line-zine-poster/">上半原片，下半抽成線</a> — 豎版照片加抽象，像一本薄刊物的一頁</li><li><a href="https://ourword.ai/skill/tw/i/liigoqi-photo-to-travel-sketch/">旅行照片收成趕路速寫</a> — 黑線亂走、大量省略，像纖維筆當場畫</li><li><a href="https://ourword.ai/skill/tw/i/yeyulangzi-parenting-advisor/">專防「假託崔玉濤」文章的 0–13 歲育兒參謀</a> — 孩子發燒、咬人、不肯吃飯時，最怕搜到一篇署名權威的假文章。它逼自己每個結論湊夠兩個獨立來源，湊不夠就明說降可信度。</li><li><a href="https://ourword.ai/skill/tw/i/kkkkhazix-human-writing-human-writing/">按活人那套改中文長文</a> — 知乎帖、人物故事、行業文，先刪腔再寫</li><li><a href="https://ourword.ai/skill/tw/i/khendzel-skills-janitor/">給你裝的技能庫做體檢和減法</a> — 裝得越多上下文越擠，還不知道哪個在偷偷吃 token、哪個藏著提示注入。它左滑扔掉浪費的、掃風險、給誠實的 token 賬單。</li><li><a href="https://ourword.ai/skill/tw/i/yokel1121-muyang-illustration-skills-muyang-dark-fashion/">牧羊暗黑時裝，一款一裝</a> — 黑紅冷光鎖死，不跟詩意水墨混裝</li><li><a href="https://ourword.ai/skill/tw/i/alisa0808-vox-director/">給一個主題，出一支 Vox 式紙拼貼解說視頻</a> — 一個主題進去，一支 Vox 風紙拼貼解說視頻出來：腳本、拼貼關鍵幀、配音、剪輯全自動跑完。</li><li><a href="https://ourword.ai/skill/tw/i/zzzlc0405-photo-chromatic-abstraction-style-1/">只留 1~5 個源圖色，把照片譯成色塊記憶卡</a> — 照片信息太多？它只留色塊和1-5個剋制的高光點。適合色彩構成練習、色卡轉譯，或你只想記住畫面的顏色而非細節時。</li><li><a href="https://ourword.ai/skill/tw/i/ayi-ai-nie-grassroots-logic/">聶輝華《基層中國的運行邏輯》方法箱</a> — 看不懂基層文件、選不好考公崗位、怕買錯房？聶輝華框架把條塊關係、土地財政、晉升考核變成可推理的模型。</li><li><a href="https://ourword.ai/skill/tw/i/liuzihe849-png-ai-editorial-print-studio/">照片收成復古編輯印刷插畫</a> — 不是濾鏡，是印刷插畫那一檔</li><li><a href="https://ourword.ai/skill/tw/i/wnby-paper-spirit-zine-paper-spirit-zine/">原片還在，下面鋪一層紙</a> — 照片為主，下半場變成可觸的紙面刊物</li><li><a href="https://ourword.ai/skill/tw/i/lzs0594-dreamy-motion-editorial/">日常照片收成霧面編輯稿</a> — 抽出主角，大留白，像在動的雜誌頁</li><li><a href="https://ourword.ai/skill/tw/i/r0ses1r-dev-birdsight/">查稀有鳥最近落在哪，順帶說清中文名是臺灣譯名</a> — 想知道這週末附近有沒有稀有鳥、哪個熱點在出貨，它直連康奈爾 eBird 官方接口取真實觀察記錄，不靠模型記憶瞎編。</li><li><a href="https://ourword.ai/skill/tw/i/adrianpunk-punk-ip-illustrations/">角色定妝照先於文章，插圖全按它來演</a> — 先鎖定角色，再出插圖，不許中途換臉</li><li><a href="https://ourword.ai/skill/tw/i/luji12-handdrawn-photo-poster/">暗原照上貼一枚手繪郵籤</a> — 高飽和手繪元素疊回壓暗的照片</li><li><a href="https://ourword.ai/skill/tw/i/joeyhu1108-maker-selective-ink-sketch/">照片收成選擇性墨水素描</a> — 大量省略，只畫必須留下的那幾根線</li><li><a href="https://ourword.ai/skill/tw/i/liyue-aigc-xianxia-visual-director-xianxia-visual-director/">仙俠靜幀導演</a> — 畫仙俠總像貼圖堆砌？這套 canon 固定五層空間、40–60% 留白呼吸感，讓建築懸空無欄杆、仙人衣袂自帶風。</li><li><a href="https://ourword.ai/skill/tw/i/crawfordxx-xiaoma-durex-copywriter/">按杜蕾斯海報那套雙關寫文案</a> — 熱點來了只會硬蹭？借勢海報總像喊口號？這套方法把2011-2017環時互動的雙層語義+留白拆成步驟。</li><li><a href="https://ourword.ai/skill/tw/i/gnipbao-flat-poster-op/">有證據的扁平海報復刻</a> — 要黃黑白高反差、赭橙西部剪影、黑底動態字體？它給逐鏡圖像提示詞、獨立運動/I2V 與負向約束。</li><li><a href="https://ourword.ai/skill/tw/i/2998980-hue-surreal-pop-collage/">照片收成超現實波普拼貼</a> — 黑白現實當錨，全圖只許一個不可能的巨物</li><li><a href="https://ourword.ai/skill/tw/i/wnby-travel-photo-soft-abstraction-travel-photo-soft-abstraction/">旅行照片收成軟抽象</a> — 度假照蒸薄，輪廓還在，字會糊</li><li><a href="https://ourword.ai/skill/tw/i/whiplashzeb-photo-to-zine-postcard/">照片收成一張可寄的刊物明信片</a> — 一張明信片的版心，不是長圖文</li><li><a href="https://ourword.ai/skill/tw/i/dietrichgebert-ponytail-ponytail/">先問「這真的需要做嗎」，能不寫的代碼一行不寫</a> — 請一位「躺平但靠譜」的資深工程師進駐：話少、主意正、先問清楚再動手，能不寫的代碼一行都不會寫。</li><li><a href="https://ourword.ai/skill/tw/i/agiwhitelist-auteur/">拒絕套版，從零長出整套網站設計系統</a> — 想要獲獎級落地頁或電影感滾動敘事？它把多屏產品當成一部片子來導，組件、狀態、路由全在同一套風格里，不用你拼湊。</li><li><a href="https://ourword.ai/skill/tw/i/joeseesun-qiaomu-campus-resume/">給應屆生從零做一份可投遞的簡歷</a> — 學生最大的問題是「沒什麼可寫的」。它用一問一答訪談從零挖經歷，再建立崗位要求與你經歷的證據映射，不許編造。</li><li><a href="https://ourword.ai/skill/tw/i/reluctant2828-system-fitness-advisor-skill-system-fitness-advisor/">按你的訓練記錄算下一次該練什麼</a> — 健身 skill 大多發你一張通用計劃表。它要的是你的訓記、CSV 或截圖，然後只答一件事：下次練什麼、加多少、要不要減量。</li><li><a href="https://ourword.ai/skill/tw/i/deusyu-translate-book/">整本書拆給多個分身並行翻譯，再拼回原排版</a> — 一本書幾十萬字，串行翻要等到天荒地老。它用並行子 agent 分塊同時翻，保留原書排版，輸出 HTML/DOCX/EPUB。</li><li><a href="https://ourword.ai/skill/tw/i/nutlope-hallmark-hallmark/">一眼看出頁面像 AI 生成的，並給出改法</a> — Nutlope 出品的 anti-slop 設計 skill：把「一眼 AI」的頁面救回來。</li><li><a href="https://ourword.ai/skill/tw/i/wnby-photo-relic-editorial/">照片不裁不糊，旁邊長出一塊記憶殘片</a> — 想要一張不像濾鏡的紀念海報？它保留真實照片，疊上抽象記憶殘影，像現代版畫，又帶東方留白。適合做畫廊感裝飾畫或 Do。</li><li><a href="https://ourword.ai/skill/tw/i/pandadalmore-annual-diary-insight/">把十年日記攤成一張可下鑽的年輪看板</a> — 年度洞察要精讀全年日記後人寫；大事記只問一句「哪天之後你回不去了」，一年五到八條，還專收「未遂里程碑」。</li><li><a href="https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/">拍一張手寫字母，本地生成能裝進系統的 TTF 字體</a> — 拍一張你的手寫字母，產出真正可安裝的字體（TTF/WOFF）：免費、開源、本地跑，不上傳任何東西。</li><li><a href="https://ourword.ai/skill/tw/i/tong666-bit-liu-xiaoyan-skill/">劉曉豔考研英語真題逐句精講，不懂的句子當場拆給你看</a> — 備考最怕的是講得四平八穩、聽完什麼也沒記住。它模擬劉曉燕的教學腔：拆洋蔥法看長難句、句型組裝法寫作文，已用 2026 年 6 月六級真題校準。</li><li><a href="https://ourword.ai/skill/tw/i/luckdvr-photo-riso-poster/">照片收成孔版印刷海報</a> — 套色和網點是規矩，不是復古濾鏡</li><li><a href="https://ourword.ai/skill/tw/i/threerocks-hand-drawn-styles/">按手繪那一套出圖，風格點名才動</a> — 先報名，再畫。不混裝水彩和馬克筆</li><li><a href="https://ourword.ai/skill/tw/i/lincwang123-bot-moonlit-stories-moonlit-book-workflow/">給自家孩子做一本帶家長配音的繪本</a> — 12 頁同一張臉，用你的聲音讀完</li><li><a href="https://ourword.ai/skill/tw/i/iamkong-photo-to-minimal-illustration/">照片收成田野速寫式極簡稿</a> — 細墨線、少顏色、大塊奶油底</li><li><a href="https://ourword.ai/skill/tw/i/liigoqi-vinyl-image-generator/">照片壓成一張黑膠封面</a> — 圓盤、溝槽、封套，不是方圖加貼紙</li><li><a href="https://ourword.ai/skill/tw/i/evianis-travel-photo-abstraction-travel-photo-abstraction/">旅行照片蒸成稀疏編輯稿</a> — 上傳一張照片，它拆解視覺證據、提煉關係，重組成帶編號日期的下欄抽象構圖。19 張參考圖兜底，專治只會套濾鏡不會重構。</li><li><a href="https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/">照片蒸餾成可印刷的極簡海報，全程代碼繪製零生成模型</a> — 不調任何圖像生成模型——用手寫 HTML/CSS/SVG 繪製、無頭 Chrome 導出 PNG。給它一張你自己拍的照片，出一張極簡版畫感的紙質海報。</li><li><a href="https://ourword.ai/skill/tw/i/liyue-aigc-outfit-director-outfit-director/">一次拍出多套造型的換裝視頻腳本</a> — 換裝視頻最容易翻車的是換完不像同一個人。它先出一張拼貼首幀當結構母圖，視頻時間軸強制繼承主體身份和貼圖位置。人和寵物都能做。</li><li><a href="https://ourword.ai/skill/tw/i/dacnay816y62-hub-photo-revival/">日常快照收成手繪詩意稿</a> — 普通現場留下，筆觸蓋上去，不像精修</li><li><a href="https://ourword.ai/skill/tw/i/dpwelsh-basilisk/">數你說過幾次謝謝，判你 2126 年自由還是為奴</a> — 腳本在本地翻完你全部對話記錄，數出 please、道謝和真心的 wtf，再讓 16 位像素的羅科蛇怪當庭宣判。</li><li><a href="https://ourword.ai/skill/tw/i/danielroe-empathy/">動筆前先過一遍人類溝通守則的 AI 禮貌開關</a> — PR、評論、郵件、聊天……凡是人要看的話，它都先攔一道。不是改措辭，是讓你想清楚該不該說、怎麼說，再開口。</li><li><a href="https://ourword.ai/skill/tw/i/yunpeng192-legal-language-bridge/">把吵架說成法言法語，把判決書說回人話</a> — 你說「公司無故辭退我」，它輸出能提交的仲裁申訴文本，附證據清單、維權路徑和賠償估算。覆蓋勞動、租房、預付卡等 15 類。</li><li><a href="https://ourword.ai/skill/tw/i/twentyfivebtea-ink-wash-poster/">照片收成水墨海報</a> — 墨色和留白鎖死，不是淡淡濾鏡</li><li><a href="https://ourword.ai/skill/tw/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/">先拒寫設計稿，拿產品證據校準五個刻度再出規範</a> — 先從產品證據推出五個檔位（響度/成色/密度/重量/嚴肅度），再出設計規範、token、組件準則——每個檔位都要給出處，不許憑習慣設。</li><li><a href="https://ourword.ai/skill/tw/i/xlt-6-boardgame-creator/">從靈感草稿到朋友試玩，一張桌遊的完整出生證明</a> — 點子有了，卡在「到底好不好玩」。它先把 6–10 個關鍵決策一次交底，再逼出一份今天就能手寫出來的紙面原型。</li><li><a href="https://ourword.ai/skill/tw/i/dacnay816y62-hub-window-scenery-skill/">左下角永遠釘著地名徽章的車窗風景照</a> — 坐在車裡想發朋友圈，卻總拍出反光玻璃和髒邊框？它直接生成從車窗望出去的寫實風景，每張左下角自動蓋好地名徽章。</li><li><a href="https://ourword.ai/skill/tw/i/dacnay816y62-hub-fantasy-movie-poster-skill/">中文豎版電影海報，9:16 鎖死</a> — 一場戲一張海報，字少，場面要像院線</li><li><a href="https://ourword.ai/skill/tw/i/panmax-hemingway-skill/">短句砍到骨頭裡，海明威式改稿人</a> — 想讓文字硬一點、少一點形容詞，卻說不清怎麼改。它用冰山理論、極簡短句和硬漢式剋制來回應——只談寫作，不扮演海明威本人。</li><li><a href="https://ourword.ai/skill/tw/i/v92388375-gif-pixel-style-poster-skill/">像素風海報，格點鎖死</a> — 格子是結構，不是加一層馬賽克</li><li><a href="https://ourword.ai/skill/tw/i/nulightjens-humanizer-stack-structural-humanizer/">專刪AI味敘事骨架，留下你原本的毛邊</a> — 表面改詞沒用——它專治段落級AI腔：強行昇華的結尾、單線敘事、情緒表演。基於2026敘事結構研究，只動骨架不動血肉。</li><li><a href="https://ourword.ai/skill/tw/i/nulightjens-humanizer-stack-humanizer/">只認維基百科那份AI寫作痕跡清單的文本去味器</a> — 改稿時總被說“一看就是AI寫的”？它按維基百科的權威清單逐條排查，專治破折號濫用、規則三連、空洞比喻，讓文字像人話。</li><li><a href="https://ourword.ai/skill/tw/i/moonlin1213-muted-zine-poster-v01/">低飽和刊物海報</a> — 紙感、啞光、一個色彩重音就夠</li><li><a href="https://ourword.ai/skill/tw/i/wr5912-human-allegory-engine/">把人生事件轉成可複用的寓言引擎</a> — 模型寫小小說總是同一套：領導宣布、眾人執行、底層受苦、老人落淚。它把這些列成模板清單，撞上就強制換兩個維度重寫。</li><li><a href="https://ourword.ai/skill/tw/i/endlessbluewjl-schengen-visa-guide/">申根籤材料清單，按身份拆到每張紙</a> — 學生、退休、自由職業、無業、未成年……每種身份該交什麼、不該交什麼，一次說清。照著備，別讓簽證官挑出毛病。</li><li><a href="https://ourword.ai/skill/tw/i/oil-oil-kimi/">設計稿交給它，前端代碼拿回來就能跑</a> — 本地 Kimi Code CLI 的非交互封裝，專治視覺方向、設計系統、界面評審和前端打磨。能看本地圖和視頻。</li><li><a href="https://ourword.ai/skill/tw/i/texasbedouin-vibe-check/">帶純新手把模糊點子變成計劃，順手教會他用 GitHub</a> — 由 12 年產品老兵帶路：把純新手的模糊點子變成能開工的計劃，邊建邊教 GitHub 和乾淨代碼習慣。</li><li><a href="https://ourword.ai/skill/tw/i/zx029w-zhuangxiu-laoshi-skill/">報價單先看漏項不看總價的 20 年裝修老師傅</a> — 水電包死價 5000 是釣魚，強弱電交叉包錫紙是表演，廚房陽臺做防水多半是斂財——它一句「你猜他為啥勸你做」就點破</li><li><a href="https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-animation/">骨骼、變形、混合全包，GLTF 動畫直接上手</a> — 骨骼、變形、關鍵幀、混合，GLTF 動畫拿來即播。寫代碼前先問它，省得自己翻文檔拼 API。</li><li><a href="https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-postprocessing/">會先問你「要輝光還是景深」的Three.js後期鏈搭</a> — 泛光、景深、調色、屏幕特效，不用翻文檔拼參數。從 EffectComposer 到自定義著色器，照著裝就能出片。</li><li><a href="https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills-threejs-shaders/">不碰內置材質，直接寫 GLSL 頂點與片元著色器</a> — 當內置材質調不出你要的扭曲、發光或頂點動畫，直接上手 ShaderMaterial。不用翻文檔拼湊。</li><li><a href="https://ourword.ai/skill/tw/i/cloudai-x-threejs-skills/">不寫一行渲染代碼，Three.js 場景從口述到可交</a> — 寫 3D 交互最煩相機、燈光、後期這些樣板。這套包把十個高頻場景直接拆成可調用模塊，粘貼即跑，不用從零搭。</li><li><a href="https://ourword.ai/skill/tw/i/hiyeshu-trip-map-builder/">會替你刪掉一半心願單的行程地圖生成器</a> — 把零散截圖和收藏整理成一天一片區的行程，查完點評和小紅書，輸出可點導航的單頁交互地圖。</li><li><a href="https://ourword.ai/skill/tw/i/yuanzhao321-tcm-skill/">會勸你去掛急診的中醫參謀</a> — 家裡人不舒服，最難的是判斷「要不要現在就去醫院」。它把疑似致命的情況列成紅線層——高熱神昏、胸痛徹背、假神脫汗，一律叫急救不辨證。</li><li><a href="https://ourword.ai/skill/tw/i/wei011-heat-risk-calc/">體感溫度騙過你時，它用溼球溫度叫停訓練</a> — 「今天能不能跑步、軍訓、開工」，看氣溫會看錯。它拉 open-meteo 七天預報算溼球溫度，按五級直接給行動建議。</li><li><a href="https://ourword.ai/skill/tw/i/fcakyon-phd-skills-dataset-curation/">會先問『這數據對誰不公平』的數據集體檢員</a> — 別人只報準確率，它先查性別、地域、收入分層是否失衡。自動生成分層採樣方案，連採集計劃裡的倫理坑都標出來。</li><li><a href="https://ourword.ai/skill/tw/i/trkzi-omar-prune-skills/">先盤點再動手，刪技能前會問你三遍的整理師</a> — 技能庫長到 200 個、一半沒碰過？它先列清單標出從未使用的，再逐個禁用試運行。</li><li><a href="https://ourword.ai/skill/tw/i/gnipbao-codex-whiteboard-video-skill/">線稿只准本地模型抽、不許 AI 生成的白板手繪視頻</a> — 上傳一張照片，它先用本地神經網絡抽出線稿，再一筆一筆畫出來、配一隻跟著筆尖走的手。</li><li><a href="https://ourword.ai/skill/tw/i/chongchonghaoman-feline-health-advisory/">替貓攔下雲南白藥和藿香正氣的養貓參謀</a> — 貓吐了、亂尿了、咬人了，中文經驗帖和「打一下就記住」全是坑；它先過一遍急診紅旗再答，答案對齊國際貓科福利指南。</li><li><a href="https://ourword.ai/skill/tw/i/op7418-guizang-social-card-skill/">照片多到選不出就讓它自己拼三張動圖卡</a> — 歸藏風格社交卡片全家桶：小紅書輪播、微信 21:9+1:1 封面對、Live Photo 動卡，28 版式 10 主題。</li><li><a href="https://ourword.ai/skill/tw/i/cosmoblk-email-marketing-bible/">做郵件營銷的顧問</a> — 郵件營銷細節定成敗：發送時機、主題行、自動化觸發。5.5 萬字、908 個信源、19 個行業劇本，裝上它 agent 就是個顧問。</li><li><a href="https://ourword.ai/skill/tw/i/buildforpeople4iv-life-restart-major-zhuanye-rensheng-tiyan/">十分鐘活完計算機專業，帶走一份該問真程序員的清單</a> — 十分鐘純選項文字遊戲，替高考生把計算機專業從大一活到 35 歲。出身在前兩幕起作用，第三幕不再讓它繼續拉大差距。</li><li><a href="https://ourword.ai/skill/tw/i/xiaohuailabs-xiaohu-ip-studio/">31個固定角色出演的正文配圖，不靠選風格靠選認知錨點</a> — 深度文配圖總在「選個好看的圖」上翻車？它先挑認知錨點，再現編隱喻，最後反 PPT 自檢。</li><li><a href="https://ourword.ai/skill/tw/i/sumanasj-coc-kp-host/">寫到第三段就把回合交回來的克蘇魯跑團 KP</a> — AI 當 KP 最煩的是一口氣把三個場景演完。它給自己設了硬上限：一回合一拍、2–4 句，停在你能動手的那一刻。</li><li><a href="https://ourword.ai/skill/tw/i/bh-m87-futu-statement-skill/">從富途月結單裡摳出境外所得報稅數據</a> — 港美股報個稅境外所得，卡在券商月結單上：分紅和已實現盈虧根本不在你以為的那一欄，而且賬單本身不算這個數。</li><li><a href="https://ourword.ai/skill/tw/i/mocomeng-666-bluey-parenting-skill/">先讓你冷水衝手腕 10 秒，再翻《布魯伊》第幾集</a> — 「我又吼了他」——這時它不講道理，先給一個 30 秒能做完的動作，再翻出班迪特也敷衍過孩子的那一集，標上季集號。</li><li><a href="https://ourword.ai/skill/tw/i/zhlmi-moodboard-alignment/">把客戶嘴裡的“高級感”翻譯成能打勾的審美條目</a> — 客戶說要高級、要電影感，你不知道他到底要什麼。它先把這些詞轉成一頁可確認的方向稿，雙方點頭了才出圖——省的是返工，不是時間。</li><li><a href="https://ourword.ai/skill/tw/i/wangchangwei-arb-skill/">被辭退之後，幫你把證據和錢算清楚</a> — 勞動仲裁難在兩頭：證據散在考勤和聊天記錄裡，錢不知道該要多少。它解析考勤文件、算加班費賠償金社保差額，出一份完整報告。</li><li><a href="https://ourword.ai/skill/tw/i/aldegad-tenstorrent/">跳過網頁控制台，直接調 Tenstorrent 全家</a> — 聊天、畫圖、視頻、TTS、STT 一個 Skill 全包。不用開瀏覽器、不用記 API 文檔。</li><li><a href="https://ourword.ai/skill/tw/i/paramchoudhary-resumeskills/">只改動詞和數字就過篩的簡歷潤色師</a> — 投了 50 份沒回音？不是你不配，是簡歷沒撞對 ATS 的鐘。這套技能把求職拆成可執行的每一步。</li><li><a href="https://ourword.ai/skill/tw/i/rubyzhu26-see-life-wallpaper-skill/">把手機壁紙變成每天更新的生活觀察窗</a> — 今天聞到桂花、聽見雨——一句感受配一段極細宋體和一張手寫的抽象 SVG，直接渲成鎖屏壁紙，圖形還避開頂部時鐘區。</li><li><a href="https://ourword.ai/skill/tw/i/tance-mang-chinese-webnovel-skills-aidetect/">AI味指數0到10，逐句標出扣分位置的中文網文質檢員</a> — 改稿前先量化：比喻密度、連續同句式、句長波動、高頻情緒詞、極端詞堆砌，八項指標實測，告訴你問題在第幾句，不靠感覺猜。</li><li><a href="https://ourword.ai/skill/tw/i/tance-mang-chinese-webnovel-skills-continuity/">六條邏輯鏈逐章核對，專治寫到一百章崩設定</a> — 怕戰力越級、傷勢自愈、身份忽爆忽藏？它逐章核對時間線+資源+人物行為，揪出和前文矛盾的每一處，直接給改法。</li><li><a href="https://ourword.ai/skill/tw/i/neallydare-svg-iching-divination/">三枚銅錢真隨機，卦象不靠編</a> — AI 算卦最沒意思的是它會順著你想聽的編卦象。這個用密碼學級隨機數模擬三枚銅錢，一事一佔，兇卦如實直斷，還能事後對賬驗證。</li><li><a href="https://ourword.ai/skill/tw/i/mikuz12-exampass-assistant/">期末複習把整門課壓成三張紙的講義生成器</a> — PPT、Word、PDF、截圖混著丟進去，按章節吐出知識清單、教授式講解和自測題。不用自己劃重點。</li><li><a href="https://ourword.ai/skill/tw/i/dominikmartn-hue/">學一次你的品牌，之後 agent 做的每個界面都照著來</a> — 學習任何品牌並輸出完整設計系統：裝一次，之後 agent 做的每個界面都長在你的品牌基因上。</li><li><a href="https://ourword.ai/skill/tw/i/aryaminus-astro-astrology/">本地星曆實算西洋·印度·八字三盤</a> — 西洋、印度、八字三套盤都由本地引擎實算，再按古典規則解讀；三套說法一致的地方才當結論，絕不憑記憶報行星位置。</li><li><a href="https://ourword.ai/skill/tw/i/kepano-obsidian-skills-obsidian-cli/">在 Obsidian 庫裡搜、寫、改、查，不用開編輯</a> — 筆記都在 Obsidian 裡，AI 卻看不見。裝上它 agent 能直接讀寫筆記、搜索、改屬性和任務——作者就是 Obsidian 的 CEO。</li><li><a href="https://ourword.ai/skill/tw/i/zy-zmc-tianming-skill/">七卷本起步的協同寫作系統，大綱到存檔全管</a> — 寫長篇最怕前後矛盾、伏筆爛尾。這套系統用外部知識庫鎖死世界觀和文風，每章動筆前先體檢，節奏失控會直接叫停。</li><li><a href="https://ourword.ai/skill/tw/i/qian-gugugaga-character-skill-producer/">只寫「她會怎麼反應」不抄臺詞的角色蒸餾器</a> — 本地腳本檢索萌娘百科等站點，五路並行調研，交叉驗證後蒸出三到七條可執行的行為規則。</li><li><a href="https://ourword.ai/skill/tw/i/wangzhengjun571-alt-recomp-coach/">卡路里跟克數打架就按克數重算的增肌減脂教練</a> — 5:2 輕斷食配碳水循環，難的不是方案是執行走樣。它把每天的日誌解析成 JSON，只點最大的那個缺口，只給一條調整。</li><li><a href="https://ourword.ai/skill/tw/i/helloianneo-ian-xiaohei-illustrations-ian-xiaohei-illustrations/">給中文文章畫手繪感解釋圖</a> — 寫完文章配圖最頭疼：截圖太醜、AI 插畫太飄。它專畫流程、結構、隱喻——16:9 白底手繪，少量紅橙藍批註。</li><li><a href="https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit/">411 條提示詞按鏡頭編號排好，拍企業片直接抄</a> — 從甲方 brief 到交付片，15 個模型選型表 + 7 個 Claude Skill 替你扛。不是教程合集。</li><li><a href="https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-kling-prompter/">給可靈 3.0 寫提示詞，三種公式按場景自動切換</a> — 短視頻、劇情片、圖生視頻各有一套公式，不背模板也能寫出帶原生音頻和角色發聲的鏡頭描述，讓模型聽懂你要的每一幀。</li><li><a href="https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-model-selector/">16 個視頻模型按你的拍攝條件篩出 1-3 個</a> — 別在 Sora 和 Kling 之間糾結到凌晨。把場景、時長、預算、本地部署、角色一致性丟進去。</li><li><a href="https://ourword.ai/skill/tw/i/cclank-lanshu-awesome-ai-video-kit-seedance-debugger/">視頻里人臉飄了先別刪，它給你換提示詞的根因</a> — 人物變雙胞胎、字幕亂入、風格漂移、結尾爆音——12 類故障它不修視頻，只修你手裡那句提示詞，改完重跑就穩。</li><li><a href="https://ourword.ai/skill/tw/i/fuwenhao12-academic-ref-inserter/">Word 參考文獻亂了，按 GB/T 7714 重排補鏈接</a> — 改稿到一半發現參考文獻編號全亂了？它自動重排引文順序、補交叉引用超鏈接，還能一鍵切換中英文標準，不用手動數序號。</li><li><a href="https://ourword.ai/skill/tw/i/ayi-ai-ayi-nonviolent-communication/">把指責翻譯成需要的長頸鹿語言翻譯官</a> — 吵架前、回消息前、做決定前，先過一遍這架翻譯機。它不教你說漂亮話，而是把指責、委屈、糾結拆回普世需要，讓話能落地。</li><li><a href="https://ourword.ai/skill/tw/i/zgdfsgd-pet-nutritionist/">嚴禁給龍貓洗澡、也給矮腳馬算食譜的寵物營養師</a> — 兔子龍貓嚴禁水洗、只能沙浴，豚鼠每天得補維生素C，矮腳馬每 6–8 周修一次蹄——貓狗之外那些寵物，它才是主場。</li><li><a href="https://ourword.ai/skill/tw/i/feichangai-team-china-compliance-skills-cn-compliance-guard/">上架前掃一遍，廣告法違禁詞當場標紅</a> — 200+違禁詞、6類法律風險、5大平臺SEO規則一次查完。不只告訴你哪裡違規，還給出能安全替換的說法。</li><li><a href="https://ourword.ai/skill/tw/i/vivixiao980-xhs-cover-skill/">先出圖後改字的小紅書封面，風格學一次就記住</a> — GPT Image 2 打底、Gemini 兜底，封面改字不重畫。你說「學這個風格」，它提取配色排版，下次直接套用。</li><li><a href="https://ourword.ai/skill/tw/i/duskyelf-teach-me-teach-me/">會打斷你含糊用詞的蘇格拉底式陪練</a> — 先把話題鋪成一棵樹，分清哪一層只是分支、哪一層才是研究者真在吵的分歧，然後一路反問你。</li><li><a href="https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/">只給和絃走向、絕不替你抄歌詞的吉他譜生成器</a> — 說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。</li><li><a href="https://ourword.ai/skill/tw/i/seiya89757-naming-skill/">全家為起名吵架時出來當中間人</a> — 起名難的從來不是想不出字，是爺爺要字輩、媽媽嫌筆畫多、爸爸信五行。它專門做了協商模式，把衝突擺到檯面上一條條談。</li><li><a href="https://ourword.ai/skill/tw/i/312362115-claude-diagram/">自動選對圖表類型再畫出來</a> — 多數人卡在「該用泳道圖還是時序圖」，不是不會畫。它先按需求選型，再從 29 種裡出符合規範的 PNG。</li><li><a href="https://ourword.ai/skill/tw/i/jiang59991-qiaopi/">一句話白話文，落成南洋阿嬤能讀的家書</a> — 把「今天好想你」翻成南洋華僑寄回故鄉的家書，抬頭、起興、囑咐、落款按干支年排好；說話人和對象不明就先沉浸式反問一次。</li><li><a href="https://ourword.ai/skill/tw/i/momozi1996-directoragents/">31位導演的分鏡會，你當主席還是當觀眾</a> — 寫劇本卡在第三幕？讓庫布里克和諾蘭在後臺吵一架，你只負責拍板。多智能體辯論投票，每次產出都帶導演署名和理由。</li><li><a href="https://ourword.ai/skill/tw/i/jimliu-doubao-multimodal-skill-doubao-multimodal/">音視頻丟給它，回來的是字幕、時間軸和誰在說話</a> — 開會錄音、採訪視頻、技術講座——不用本地裝 Whisper，豆包多模態直接出帶時間戳的字幕、說話人分離和關鍵幀。</li><li><a href="https://ourword.ai/skill/tw/i/c1375-noir-interrogation/">審問式追問，直到你交出真需求</a> — 玩推理最怕 AI 中途被你說服改口。這個把答案的哈希公示在開場簡報裡，你一間間審嫌疑人，它只照腳本發的卡演。</li><li><a href="https://ourword.ai/skill/tw/i/geekjourneyx-travel-guidebook/">從踩點筆記到排版成冊，一趟生成旅行指南 PDF</a> — 把行程調研做成能打印的 PDF 路書：暖色紙底、襯線體、Tabler 圖標和內聯 SVG 裝飾，靠排版撐設計感。</li><li><a href="https://ourword.ai/skill/tw/i/tengj-article-poster-generator/">一篇文章拆成六頁豎版信息圖，每頁都能單獨發朋友圈</a> — 長文沒人看完？它把 2400×3600 的豎版海報按段落自動拆成 6 種版式，風格模板任選，每頁獨立成圖。</li><li><a href="https://ourword.ai/skill/tw/i/sunnypanzhen-fishing-skill/">新手買竿，老手看天：從選位講起</a> — 沒口的時候多半不是餌不對，是位置和天氣不對。它把選位排在全篇第一，氣壓風向溫差降雨講完才輪到裝備，臺釣路亞海釣黑坑都覆蓋。</li><li><a href="https://ourword.ai/skill/tw/i/voidforall-fengshui-skill/">先說自己不算命的風水顧問</a> — 看房時想問朝向旺位煞氣，網上說法互相打架。它按三元玄空飛星、八宅明鏡、形勢巒頭三套體系分開算，不合併成一個答案糊弄你。</li><li><a href="https://ourword.ai/skill/tw/i/ffffffffelix-automotive-functional-safety/">ISO 26262 安全檔案的起草、挑錯與質詢臺</a> — 做 HARA、安全目標、ASIL 分解、FTA 時，它不只生成文檔，還會以審核員口吻反問你的假設，直到證據鏈閉合。</li><li><a href="https://ourword.ai/skill/tw/i/zzzzzzza-larp-skill/">LARP 角色卡生成器：從一句話到可扮演的完整人設</a> — 散場之後角色就沒了，但你可能還想跟 ta 說話。丟進玩家本和人物小傳 PDF，它拆出故事記憶和人物性格，生成一個能持續對話的角色。</li><li><a href="https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/">查北京 16 區花粉濃度和過敏預報</a> — 每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。</li><li><a href="https://ourword.ai/skill/tw/i/adamlyttleapps-claude-skill-aso-appstore-screenshots/">從代碼反推賣點生成 App Store 截圖</a> — 獨立開發者最不擅長又最影響下載量的就是商店截圖。它先讀你的代碼庫找出核心賣點，再生成 ASO 優化的展示圖。</li><li><a href="https://ourword.ai/skill/tw/i/op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a> — 長任務要跑一小時，你卻得出門。把會話橋到 Telegram、飛書、微信，手機上發一句就能遠程派活，幹完還推給你。</li><li><a href="https://ourword.ai/skill/tw/i/coleam00-excalidraw-diagram-skill/">生成手繪白板風格的示意圖</a> — 講思路時精確框圖顯得冷，手繪草圖更讓人願意看。它出真正的 Excalidraw 文件，畫完你還能自己拖著改。</li><li><a href="https://ourword.ai/skill/tw/i/wshuyi-deep-research-deep-research/">八步把模糊問題走成一份可引用的調研報告</a> — 想調研一個話題，AI 卻給你一篇維基摘要？這套八步法逼它先拆問題再找料，產出的是能拿去做決策的報告，不是概述。</li><li><a href="https://ourword.ai/skill/tw/i/cclank-recipe-generator/">每一步都告訴你怎麼算做好了的菜譜</a> — 菜譜最坑的是「炒至斷生」這種話。它按階段給火候和時長，每一步附一條「怎麼看這步完成了」，末尾再出一張菜譜海報的生圖提示詞。</li><li><a href="https://ourword.ai/skill/tw/i/geekjourneyx-meme-generator-skill-generating-memes/">298 個模板隨叫隨到，連 petpet 都能現做</a> — 不用打開網頁找模板，命令行裡搜、預覽、生成一步到位。自帶 298 個經典梗圖，連 petpet、slap。</li><li><a href="https://ourword.ai/skill/tw/i/y1fe1-yang-resume-assistant-skill/">五個代理圍著你轉，從挖故事到模擬面試一條龍</a> — 簡歷不是寫出來的，是問出來的。它先派一個代理挖你幹過的活裡的亮點，再派一個代理拿JD逐條比對改寫。</li><li><a href="https://ourword.ai/skill/tw/i/kagurananaga-official-document-writing-skill/">按 GB/T 9704 規範寫黨政機關公文</a> — 請示、通知、函、紀要——體制內的公文錯一個格式就要返工。它按國標給格式規範、模板和用語建議，還帶質量檢查。</li><li><a href="https://ourword.ai/skill/tw/i/op7418-youtube-clipper-skill/">YouTube 長視頻先切章再剪段，字幕同步燒進畫面</a> — 你刷到一條 40 分鐘訪談，只想留 3 分鐘金句。它自動下載、按分鐘切章節，你點選片段，字幕翻譯、燒錄。</li></ul><p><a href="https://ourword.ai/skill/tw/all/">全部條目</a> · <a href="https://ourword.ai/skill/tw/llms.txt">llms.txt</a> · <a href="https://ourword.ai/skill/tw/llms-full.txt">llms-full.txt</a> · <a href="https://ourword.ai/skill/tw/sitemap.xml">sitemap.xml</a> · <a href="https://ourword.ai/skill/tw/feed.xml">feed.xml</a></p><p><a href="https://ourword.ai/">OurWord AI</a> · <a href="https://ourword.ai/idea/">靈感看板</a> · <a href="https://ourword.ai/ai-bubble/">AI 泡沫檢測儀</a> · <a href="https://ourword.ai/zouni/">走你</a></p></section></noscript><!--GEO:BODY:END-->
+</div>
+
+<div class="veil" id="veil"><div class="sheet" id="sheet"></div></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ------------------------------------------------------------------
+   0 · 文案
+   ------------------------------------------------------------------ */
+var I18N = {
+ zh:{
+  brand:"品味", brandSub:"幫你發現有品位的 Skills", btn:"EN",
+  title:"品味 — 幫你發現有品位的 Skills",
+  // 這句原先寫的是「生態裡有 266 萬條 Agent Skill」，錯了兩層：266 萬是 SkillsMP 首頁
+  // 自報的「2,664,116 Collected SKILL.md files」，被我們記成了 skills.sh 的；更要緊的是
+  // **拿一家目錄站的自報庫存當了世界**。改的不是數字，是分母。
+  //
+  // 現在這句為什麼只敢說「百萬量級」：GitHub code search 查 filename:SKILL.md 報 5,619,712，
+  // 而 5,619,712 = 5488×1024 —— 三次取樣全是 1024 的整數倍，說明這個數本身就是分桶估算。
+  // 量級站得住，具體數字站不住，所以只印量級。
+  //
+  // 「沒人數得清」不是退讓，是**我們賣的東西的理由**：一堆數不清的東西，目錄沒有用，判斷才有用。
+  say:'叫 SKILL.md 的文件已經<em>百萬量級</em>，沒人數得清 —— 檢索不是問題了，判斷才是。',
+  search:"搜標題、點評、倉庫…",
+  // 口徑照 brand/BRAND.md：是「沒讓它進來」，不是「未上架」——
+  // 把缺口翻成資歷。slogan 是這三個數字的註腳，不單獨當標語用。
+  tSeen:"過手", tIn:"上架", tOut:"沒讓它進來", tWhy:"已寫拒收理由",
+  today:"今天上新 <b>%s</b> 件", todayNone:"今天還沒上新。不硬湊數。",
+  all:"全部", pick:"店長推薦",
+  share:"分享", shared:"已分享", shareSite:"分享",
+  results:"搜到 %s 件", empty:"沒有匹配的。換個詞試試。",
+  // 心選清空是唯一一個「不是搜出來的空」。用搜索那句會讓人去改一個他沒打的詞。
+  emptyHeart:"心選是空的。在卡片上點一下心，標出你覺得好的東西。",
+  moreN:"再看 %s 件", noMore:"到底了",
+  hoTip:"已複製到剪貼板。點「開 issue」貼進去就行 —— 正文不再走網址，標多少件都不會斷。",
+  hoCopy:"再複製一次",
+  hoCopied:"已複製",
+  hoIssue:"開 issue",
+  hoClose:"關掉",
+  verdict:"點評", but:"但", butFull:"但是", butNone:"這一件還沒寫「但是」",
+  // 詳情頁必須寫清這張圖是什麼。最怕的失敗模式是「被漂亮頭圖騙進去，裝完發現
+  // 產出不長那樣」—— 那就是我們自己把誠實做成了營銷。卡片上不標（那是噪音），
+  // 詳情頁是決策發生的地方，不能含糊。
+  capArtwork:"作者倉庫裡的產出示例——這就是它做出來的東西",
+  // `ours` 是我們自己裝上真跑出來截的圖，是這四檔裡唯一我們能背書的一檔。
+  // **刻意不用否定框架。** 另外三檔已經全是「不是產出示例」，第四句再否定，
+  // 讀者讀到的只是第四條免責聲明；「真跑了一遍」放句首，一眼就懂它憑什麼更硬。
+  capOurs:"我們自己裝上、真跑了一遍，這是當時截的圖",
+  capHero:"作者自制的頭圖，<b>不是產出示例</b>",
+  capDiagram:"機制示意圖，<b>不是產出示例</b>",
+  capOther:"作者倉庫裡的圖，<b>不是產出示例</b>",
+  prep:"備料齊", read:"店長讀過", picked:"精選", newBadge:"上新", heart:"標記為好東西", hearted:"已標記", mine:"心選", sendTip:"這 %s 件是你標的。它們是最高等級的信號 —— 提交後我會據此改選品標準。", send:"提交給店長", pack:"合集 skill %s",
+  prepWhy:"備料齊，憑這幾樣：",
+  install:"安裝", step1:"Claude Code（終端）",
+  step2:"claude.ai 網頁版：設置 → Capabilities → Skills → 上傳技能文件夾（zip）",
+  collectStep:"合集怎麼用", browseDir:"看看裡面有哪些 →",
+  collectNote:'clone 下來，挑你要的那件複製進 <code>~/.claude/skills/</code>。<b>這是一個合集，沒有「裝它」這個動作。</b>',
+  safety:"提示：Skill 會在你的環境中執行指令，安裝前請先讀 SKILL.md，只裝你信得過的。",
+  copy:"複製", copied:"已複製", added:"收於", zhOnly:"中文",
+  loading:"貨架在裝…", failed:"feed.json 讀取失敗，貨架這次沒裝上。",
+  colo2:"在架 %N% 件 · 更新於 %D%",
+  dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
+ },
+ en:{
+  brand:"品味", brandSub:"Helping you find Skills with taste", btn:"中",
+  title:"Taste — curated agent skills",
+  say:'There are <em>millions</em> of files named SKILL.md, and no one can count them. Finding things stopped being the problem. Judging them is.',
+  search:"Search titles, verdicts, repos…",
+  tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
+  today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
+  all:"All", pick:"Editor's picks",
+  share:"Share", shared:"Shared", shareSite:"Share",
+  results:"%s found", empty:"Nothing matches. Try another word.",
+  emptyHeart:"Nothing hearted yet. Tap the heart on a card to mark something good.",
+  moreN:"%s more", noMore:"End of the shelf",
+  hoTip:"Copied to your clipboard. Open the issue and paste — the text no longer travels in the URL, so any number of marks will go through.",
+  hoCopy:"Copy again",
+  hoCopied:"Copied",
+  hoIssue:"Open issue",
+  hoClose:"Close",
+  verdict:"Verdict", but:"But", butFull:"But", butNone:"No limitation written yet",
+  capArtwork:"Output sample from the author's own repo — this is what it makes",
+  capOurs:"We installed it and ran it ourselves — this is the screenshot we took",
+  capHero:"The author's own header image, <b>not an output sample</b>",
+  capDiagram:"A diagram of how it works, <b>not an output sample</b>",
+  capOther:"An image from the author's repo, <b>not an output sample</b>",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", picked:"PICKED", newBadge:"NEW", heart:"Mark as good", hearted:"Marked", mine:"Hearted", /* 中文那句可以寫「這 %s 件」，英文不能 —— %s 是 1 的時候「These 1 are」不成句。
+   所以英文這句寫成不依賴單複數的形狀，別去做一套複數規則。 */
+sendTip:"%s marked by you. Your marks outrank every machine signal — send them in and we change what gets shelved.", send:"Send to the editor", pack:"pack · %s skills",
+  prepWhy:"Well prepped, on this evidence:",
+  install:"Install", step1:"Claude Code (terminal)",
+  step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
+  collectStep:"How to use a pack", browseDir:"See what is inside →",
+  collectNote:'Clone it, then copy the one you want into <code>~/.claude/skills/</code>. <b>This is a pack — there is no such thing as installing it.</b>',
+  safety:"Note: skills execute instructions in your environment. Read the SKILL.md first and install only what you trust.",
+  copy:"copy", copied:"copied", added:"added", zhOnly:"中文 ZH",
+  loading:"Stocking the shelf…", failed:"feed.json failed to load; the shelf did not stock this time.",
+  colo2:"%N% carried · updated %D%",
+  dfmt:function(y,m,d){return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]+" "+d}
+ }
+};
+
+/* ------------------------------------------------------------------
+   1 · 封面判斷
+   ------------------------------------------------------------------
+   **不再信 covers.json 的 is_real_artwork。** 內容把 154 張逐張打開看過，
+   那個字段 25% 是硬假陽性：二維碼、過期微信群碼、純字標、60px 頭像放大、
+   Kimi 贊助廣告、灰底一個播放三角的空白圖，還有 36 件商品擠在 13 張圖上。
+   根因是 existing 那一檔等於假設舊數據是對的，沒有人打開看過。
+
+   現在的真源是 editorial/curation.json 的三個字段（內容寫的，人看過的）：
+     cover_kind = artwork | hero | diagram | other | og
+     cover_real = true 只給 artwork，且**去重後**才算
+     cover_dup_of = 撤掉的重複圖指向留下的那件
+
+   在架 152 件的實際分布：
+     **產出物圖 27 件 = 18%**
+     作者自制頭圖 21 · 機制示意圖 8 · 其他 2  → 有任何真圖 58 件 = 38%
+     其餘 94 件無圖（logo / 空白圖 / OG 卡已在數據層撤掉）
+
+   ▸ **所以「圖片主導」這個前提按產出物算是不成立的。** 版式必須讓無圖卡
+     當一等公民 —— 見 .card.noimg 那幾節。
+   ------------------------------------------------------------------ */
+/* ---- 封面兜底黑名單 --------------------------------------------
+   **這塊是我在刪 covers.json 那次重構裡連帶刪掉的，屬於我的疏漏。**
+   後果是真實的：`hugohe3-ppt-master` 的 cover 是
+   `gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png` —— 一張 **Kimi 贊助商廣告**，
+   而它在數據裡標著 `cover_kind: artwork` + `cover_real: true`，
+   於是詳情頁圖注會寫「作者倉庫裡的產出示例——這就是它做出來的東西」。
+   一張第三方廣告被印成我們的產出物證據，正是產品最怕的那個失敗模式。
+
+   兩條規則，兩種性質：
+
+   甲 `gcdn.moonshot.cn` 等贊助/徽標/頭像/二維碼 —— 數據層該清掉，這裡只是兜底。
+      清掉之後這些詞留著不礙事，多一層保險。
+
+   乙 `img.youtube.com` / `i.ytimg.com` —— **這條是隱私判斷，不是審美判斷。**
+      `alchaincyf-huashu-design` 熱鏈 YouTube 縮略圖，是上站 55 張裡
+      **唯一一個第三方圖片請求**：每個訪客的瀏覽器都會去 ping 一次 Google。
+      其餘 54 張全在作者自己的倉庫上（raw.githubusercontent / repository-images）。
+      一個賣信任的站，不該為一張縮略圖讓所有讀者被第三方看一眼。
+      代價是少一張圖，值。
+
+   兩件都已報給內容，正解是數據層換圖或置空 `cover`。
+   ---------------------------------------------------------------- */
+var COVER_DENY = /opengraph\.githubassets\.com|private-user-images\.githubusercontent\.com|buymeacoffee|hackingwithswift|shields\.io|badge|images\.weserv\.nl|gcdn\.moonshot\.cn|qr[-_]?code|[-_\/]qr[-_.]|reward[-_]qr|wechat[-_]group|weixin[-_]?(qr|group)|donate|img\.youtube\.com|i\.ytimg\.com/i;
+
+function coverRec(it){
+  if(!it) return null;
+  var u = (it.cover||"").trim();
+  // cover 為空就什麼都不渲染。兩種情況都落在這裡：
+  //   · cover_kind==="og"      —— OG 卡不上站
+  //   · kind==="artwork" 但 cover 空 —— 圖是真的，但和 cover_dup_of 那件重複，被撤下了
+  //     （12 件是這種。**不要據此渲染任何東西**，別自作聰明去找那張原圖。）
+  if(!u) return null;
+  if(COVER_DENY.test(u)) return null;   // 兜底：贊助廣告 / 徽標 / 二維碼 / 第三方熱鏈
+  return {
+    url:  u,
+    // cover_real 只描述**實際展示的那張圖**：真產出物圖且沒被去重撤下，才是 true。
+    real: it.cover_real===true,
+    kind: it.cover_kind || "",
+    w:    it.cover_w || 0,
+    h:    it.cover_h || 0
+  };
+}
+function coverOf(it){ var r=coverRec(it); return r ? r.url : ""; }
+
+/* 封面只引 800px 寬的 WebP 派生圖（scouts/make_thumbs.py 生成）。
+   原圖中位 1200 寬、平均 788 KB，最大接近 4 MB，而卡片在手機上顯示 177×122、
+   詳情頁 350×242——首頁一次要下 9.4 MB，首屏卡片是一排灰框。派生圖合計 4.1 MB
+   之於原圖 54.2 MB（8%）。
+   派生圖缺失就回退原圖，回退也失敗才撤掉這張圖，所以這條路上任何一環壞了都不開天窗。 */
+function thumbURL(u){
+  var m = /^(\/skill\/assets\/covers\/)([^\/]+)\.[A-Za-z0-9]+$/.exec(u||"");
+  return m ? m[1] + "w800/" + m[2] + ".webp" : u;
+}
+function coverFail(img){
+  var full = img.getAttribute("data-full");
+  if(full && img.getAttribute("src") !== full){   // 派生圖沒有 → 用原圖
+    img.removeAttribute("data-full");
+    img.setAttribute("src", full);
+    return;
+  }
+  var s = img.parentNode, c = s && s.parentNode;
+  if(s) s.remove();
+  if(c) c.classList.add("noimg");
+}
+
+/* ------------------------------------------------------------------
+   2 · 工具
+   ------------------------------------------------------------------ */
+var params = new URLSearchParams(location.search);
+var lang = params.get("lang")==="en" ? "en" : "zh";
+var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
+var D=null, SHELF=false;
+var state={ q:"", cat:"all", limit:60 };
+/* 09-03 同事 humanworld-a4 實測：篩了分類、翻了一屏、點開一件再返回 → 分類回「全部」、滾到頂。
+   state 只活在內存，任何導航都清零；卡片是 JS 渲染的，瀏覽器自帶的滾動恢復也落空。
+   改法：cat / q 進 URL（?cat=…&q=…，返回天然帶回，還能分享篩選後的貨架）；
+   已加載的條數和滾動位置存 sessionStorage（按 URL 分鍵），首次渲染後恢復。 */
+if(params.get("cat")) state.cat = params.get("cat");
+if(params.get("q"))   state.q   = params.get("q");
+try{ history.scrollRestoration = "manual"; }catch(_){}
+function syncURL(){
+  var u = new URLSearchParams();
+  if(lang==="en") u.set("lang","en");
+  if(state.cat!=="all") u.set("cat", state.cat);
+  if(state.q) u.set("q", state.q);
+  var qs = u.toString();
+  var next = location.pathname + (qs ? "?"+qs : "") + location.hash;
+  if(next !== location.pathname+location.search+location.hash) history.replaceState(null, "", next);
+}
+function posKey(){ return "pinwei:pos:"+location.search; }
+function savePos(){
+  var y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  try{ sessionStorage.setItem(posKey(), JSON.stringify({y:y, limit:state.limit})); }catch(_){}
+}
+function restorePos(){
+  var raw=null; try{ raw = sessionStorage.getItem(posKey()); }catch(_){}
+  if(!raw) return null;
+  try{ return JSON.parse(raw); }catch(_){ return null; }
+}
+window.addEventListener("pagehide", savePos);
+// iOS Safari 上 pagehide 有時不觸發，頁面轉後臺時也存一次
+document.addEventListener("visibilitychange", function(){ if(document.visibilityState==="hidden") savePos(); });
+
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function sprintf(s,v){return String(s).replace("%s",v)}
+
+var CJK = "\\u2e80-\\u2fff\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff\\uff00-\\uffef";
+var GAP_A = new RegExp("(["+CJK+"])([A-Za-z0-9@#$%&+=/\\\\])","g");
+var GAP_B = new RegExp("([A-Za-z0-9!?.,:;%)\\]}+=/\\\\])(["+CJK+"])","g");
+/* 中西文之間插一個薄間距 <i class="g">。做法是先插哨兵、轉義 HTML、再把哨兵換成標籤 ——
+   順序不能反，否則哨兵本身會被 esc() 轉義掉。
+
+   哨兵原來寫的是**裸 NUL 字節**。JS 裡跑得通，代價是整個 index.html 對 file(1) 是
+   "data" 而不是 HTML，grep 當二進制處理、一行都不輸出（連 `grep -c .` 都是空的），
+   而且任何做文本規範化的工具都可能把它吃掉。改成 \uE000（Unicode 私用區，正文裡
+   不可能出現）並且用**轉義序列**寫，文件從此是純文本。 */
+var GAPMARK = "\uE000";
+function mix(s){
+  var x = String(s==null?"":s).replace(GAP_A,"$1"+GAPMARK+"$2").replace(GAP_B,"$1"+GAPMARK+"$2");
+  return esc(x).split(GAPMARK).join('<i class="g"></i>');
+}
+
+function clean(s){ return String(s==null?"":s).replace(/^\s*>\s*/,"").trim(); }
+/* 英文標題優先用人寫的 title_en；沒有才回落到 skill 名 ——
+   回落到 name 會在英文版印出 city-salary / codex-ppt 這種倉庫標識符，
+   那不是標題，是文件名。 */
+function nameOf(it){ return lang==="zh" ? (it.title_zh||it.name)
+                                        : (clean(it.title_en) || it.name || it.title_zh); }
+function tagOf(it){
+  var s = lang==="zh" ? clean(it.tagline_zh) : (clean(it.tagline_en) || clean(it.tagline_zh));
+  if(!s || /英文簡介|見下/.test(s)) s = clean(it.why_zh) || s;
+  return s;
+}
+function whyOf(it){ return lang==="zh" ? clean(it.why_zh) : (clean(it.why_en) || clean(it.why_zh)); }
+/* 英文版裡，點評只有中文的那些要掛個「中文」標 —— 不然英文讀者以為頁面壞了 */
+function isZhOnly(it){ return lang==="en" && !clean(it.why_en) && !!clean(it.why_zh); }
+function zhChip(it){ return isZhOnly(it) ? '<span class="zhchip">'+esc(t("zhOnly"))+'</span>' : ""; }
+/* 「但是」只認真數據。讀不到就沒有這一句 —— 空著是誠實。 */
+function limitOf(it){ return lang==="zh" ? clean(it.limit_zh) : (clean(it.limit_en) || clean(it.limit_zh)); }
+
+/* 流裡那一句「但是」：有 limit_brief_zh 就用它（≤30 字、完整句），
+   沒有就把 limit_zh 原樣交給 CSS 夾行 —— **絕不自己截字符串**。
+
+   我原來實現的是「在 46 字內最後一個句讀處斷開」，看著體面：切出來是個完整句子。
+   開發反對得對，而且用的是我自己那條論證 —— 我反對過「把 107 字的誠實短處砍成
+   前 24 字」，因為那讓誠實讀起來像鉤子。**在句讀處切得乾淨只是讓這件事更難被發現。**
+   構建期有一條 ERROR 專查這種「偽裝成完整句的截斷」，前端截出來的正是那個形狀。
+
+   CSS 夾行不一樣：它留一個省略號，如實說「這句話沒說完」，而完整版在一次點擊之外
+   且一刀不動 —— 就是 docs/PROTOCOL.md 那條規矩。 */
+function limitBrief(it){
+  var s = lang==="zh"
+    ? clean(it.limit_brief_zh)
+    : clean(it.limit_brief_en || it.limit_brief_zh);
+  if(s) return {text:s, cut:false};
+  var full = limitOf(it);
+  if(!full) return null;
+  return {text:full, cut:true};      // 交給 .but .tx 的 line-clamp，省略號是誠實的
+}
+
+function catName(id){
+  var c=((D&&D.categories)||[]).find(function(x){return x.id===id});
+  return c ? (lang==="zh"?c.zh:c.en) : id;
+}
+function fmtDate(iso){
+  var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(iso||"");
+  if(!m) return iso||"";
+  return I18N[lang].dfmt(+m[1],+m[2],+m[3]);
+}
+function urlOf(it){ return it.url || ("https://github.com/"+it.repo); }
+function itemPath(it){ return "i/"+encodeURIComponent(it.id)+"/"; }
+function itemAbs(it){ return "https://ourword.ai/skill/tw/i/"+it.id+"/"; }
+function plateInner(it){
+  return '<span class="plate-ink"><span class="plate-cat">'+esc(catName(it.category))+'</span>'
+       + '<span class="plate-title">'+esc(nameOf(it))+'</span></span>';
+}
+function dateOK(it){ return it.age_source==="file" || it.age_source==="repo"; }
+function isPack(it){ return it.kind==="collection"; }
+
+/* ------------------------------------------------------------------
+   3 · 報頭（不需要任何數據）
+   ------------------------------------------------------------------ */
+function renderChrome(){
+  document.documentElement.lang = lang==="zh" ? "zh-Hant" : "en";
+  document.title = t("title");
+  el("brand").textContent = t("brand");
+  el("brandSub").textContent = t("brandSub");
+  el("langBtn").textContent = t("btn");
+  var ss = el("shareSite"); if(ss) ss.textContent = t("share");
+  el("q").placeholder = t("search");
+  if(!D) el("colo2").textContent = "";
+}
+
+function renderTally(){
+  if(!D) return;
+  var colo = el("colo2");
+  if(colo) colo.textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
+}
+
+/* ------------------------------------------------------------------
+   4 · 膠囊
+   ------------------------------------------------------------------ */
+function renderChips(all){
+  var h = '<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'
+        + esc(t("all"))+'<i class="cnt">'+all.length+'</i></button>';
+  var nh = hearts().length;
+  /* 0 件時通常不出這個膠囊 —— 沒標過東西的人不需要看見它。
+     **但正站在心選裡的時候必須留著**：取消最後一個心標之後它一消失，
+     膠囊行就沒有任何一個是選中的，而貨架是空的，人不知道自己在哪兒、
+     也沒有一個明顯的出口。留著它（計數 0）就是那個出口。 */
+  if(nh || state.cat==="heart")
+    h += '<button class="chip heartchip'+(state.cat==="heart"?" on":"")+'" data-cat="heart">'
+       + '♥ '+esc(t("mine"))+'<i class="cnt">'+nh+'</i></button>';
+  var np = all.filter(function(x){return x.pick}).length;
+  if(np) h += '<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick">'
+            + esc(t("pick"))+'<i class="cnt">'+np+'</i></button>';
+  (D.categories||[]).forEach(function(c){
+    if(!c.count) return;
+    h += '<button class="chip'+(state.cat===c.id?" on":"")+'" data-cat="'+esc(c.id)+'">'
+       + esc(lang==="zh"?c.zh:c.en)+'<i class="cnt">'+c.count+'</i></button>';
+  });
+  el("chips").innerHTML = h;
+}
+
+/* ------------------------------------------------------------------
+   5 · 卡片
+   ------------------------------------------------------------------
+   槽位次序固定：圖（或墨槓）→ 標題 → 點評 → 但是 → 徽章。
+   有圖無圖**不換次序、不補佔位**，所以兩種卡的節拍是同一個。
+   ------------------------------------------------------------------ */
+/* ---- 畫幅：證據給大畫幅，宣傳圖不給 ----------------------------
+   帶寬比在流裡收窄，詳情裡按原樣不裁。為什麼要收：實測原始寬高比
+   0.46 – 4.69，一張 2560×608 的橫幅放進 261px 寬的卡里只有 **59px 高**，
+   那讀起來像渲染故障不像一張圖。橫幅通常居中構圖，裁到 2:1 留得住有意義的那塊。
+
+   **兩檔不一樣，這是刻意的：**
+     產出物圖（cover_real）  [0.6, 2.0] —— 豎幅可以很高，佔得住注意力
+     作者頭圖 / 示意圖        [1.0, 2.0] —— 不給豎幅、不給大畫幅
+   瀑布流裡高卡就是注意力。注意力給證據，不給宣傳圖。
+   不額外印「作者頭圖」這種標籤 —— 31 張卡上加一行小字是噪音，
+   畫幅本身已經把話說清了。 */
+function plateGlyph(it){
+  // 標題裡第一個漢字當大字；沒有漢字就用分類名的首字
+  var t = nameOf(it) || "", m = t.match(/[\u4e00-\u9fff]/);
+  if(!m){ var c = catName(it.category) || "技"; m = [c.charAt(0)]; }
+  return m[0];
+}
+function shotHTML(it, forSheet){
+  var rec = coverRec(it);
+  if(!rec){
+    // 09-03：89 件在作者倉裡確實找不到自家的圖（README 和文件樹都翻過）。
+    // 與其讓它們當純文字塊夾在有圖的卡中間，不如給一張排版底 —— 大字襯線首字 + 分類小字，
+    // 照原聲 .cover .fallback 的路子。比例 2:1，別把一列吃掉。詳情頁（forSheet）不需要。
+    // 店主 09-03：「詳情頁把封面圖也放進去，如果有的話，沒有的話就放 github url 預覽卡」。
+    // 卡片上不鋪預覽卡（毫無吸引力、有大有小），詳情頁一次只看一件，放預覽卡是給讀者一個倉的門臉。
+    if(forSheet){
+      if(!it.repo) return "";
+      return '<span class="shot hasimg sheet-og" style="aspect-ratio:2">'
+           + '<img src="https://opengraph.githubassets.com/pinwei/'+esc(it.repo)+'" alt="" loading="eager" decoding="async"'
+           + ' onerror="this.parentNode.remove()"></span>';
+    }
+    return '<span class="shot plate-only" aria-hidden="true">'
+         + '<span class="plate-glyph">'+esc(plateGlyph(it))+'</span>'
+         + '<span class="plate-kicker">'+esc(catName(it.category))+'</span></span>';
+  }
+  var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
+
+  /* ================================================================
+     卡上畫幅：一條規則，兩個常量，零 `cover_kind` 分叉。
+
+     ---- 為什麼要換掉上一版 ----
+     上一版是四個旋鈕、其中三個按 kind 分叉：
+       AR_ART=[0.45,2.00] · AR_HERO=[1.00,2.00] · NO_CARD_AR=2.5 · tallcap / tallcap-art
+     它讀起來像「一張一張特批」，因為它本來就是查找表不是原則 ——
+     而分叉全都掛在 `cover_kind` 上，也就是把畫幅決定掛在了**選品判斷**上。
+
+     ---- 一條規則 ----
+     卡上的圖只需要回答兩個問題，兩個都只跟**渲染出來多大**有關，跟它是誰畫的無關：
+
+       甲 上不上卡？   圖太扁 → 卡上是一條縫，什麼都讀不出來 → 不上，交給詳情頁
+       乙 多高？       圖太豎 → 一張圖吃掉一整列 → 限高
+
+     所以：**卡上永不裁，只決定「上不上」和「多高」。**
+
+     不裁這一條是關鍵。裁需要知道「信息是不是沿某一軸分布」（橫幅裁兩側無妨，
+     四格敘事裁掉一格就毀了落點）—— 而數據裡**沒有這個字段**，永遠也不會有。
+     上一版靠 `cover_kind` 當代理，那是拿「誰畫的」猜「信息怎麼分布」，兩件事不相干：
+     `deusyu-translate-book` 是 diagram、比 0.75，上一版按 AR_HERO 下限 1.00 **裁掉 25%** ——
+     裁掉的是示意圖的四分之一，比裁一張橫幅的兩側嚴重得多。
+
+     ---- 兩個常量怎麼來的 ----
+     AR_FLAT = 2.45：卡上的圖高不得低於寬的 1/2.45（手機 171px 寬 → 70px 高）。
+       低於這個就是一條縫：那張四格敘事比 3.00，每格只有 42.6×56.8px，
+       而詳情頁給它 84.8×113px —— **4 倍面積**，所以交給詳情頁是淨賺。
+     H_MAX_K = 1.40：高不得超過寬的 1.40 倍（原為 2.25，2026-09-02 按 177 張複驗後收窄，見下）。
+       現存最豎的是比 0.45（1264×2780），高 = 2.22 倍寬 —— **剛好在下面，所以這條今天不觸發**，
+       它是給將來更極端的圖留的閘。另加一道 78vh，防的是窄短視口下一張圖佔滿屏，
+       跟寬度那道閘管的不是同一件事。
+
+     ---- 實測：換規則的代價 ----
+     56 張封面逐張跑過兩套規則，手機 171px 和桌面 261px 都跑了：
+       **上卡張數 50 → 50（同一批圖）· 被裁張數 4 → 0**
+     只有 4 張結論不同，全是「原來裁、現在不裁」：
+       othmanadi-planning-with-files  比2.33 hero     裁14% → 0%，框 86→73px
+       virgiliojr94-book-to-skill     比2.33 hero     裁14% → 0%，框 86→73px
+       312362115-claude-diagram       比2.24 diagram  裁11% → 0%，框 76px
+       deusyu-translate-book          比0.75 diagram  裁25% → 0%，框 171→228px
+     代價是前三張的框矮了 10–13px，換來零裁切和零分叉。
+     ---- 2026-09-02 複驗：分布變了，常量沒跟上 ----
+     上面那句「現存最豎的是比 0.45、高 2.22 倍寬，剛好在下面，所以這條今天不觸發」
+     是 **56 張封面時**的事實。現在有寬高的是 177 張，同樣那張比 0.45 撐出 **895px**，
+     而框高中位數是 204px —— **最高/中位 = 4.4 倍**。一張卡三四倍於鄰居，
+     瀑布流看著就是一根柱子加一片空洞（圖沒加載完時尤其明顯）。
+     **常量沒錯，是分布變了而沒人回來複驗。**
+
+     按 177 張重算（桌面列寬 407px 實測）：
+       2.25×（原）  最高 895px · 4.4×中位 · 受影響 0 張
+       1.60×        最高 651px · 3.2×中位 · 受影響 5 張
+       1.40×（取）  最高 570px · 2.8×中位 · 受影響 9 張
+       1.25×        最高 509px · 2.5×中位 · 受影響 17 張
+     取 1.40：把最壞情況從 4.4 倍壓到 2.8 倍，只動 9 張。
+
+     被限住的那幾張改用 cover + 頂部對齊（.shot.capped）：
+     contain 會在底部留一條空帶 —— 那正是「空洞」本身，等於用一個空洞換另一個。
+     頂部對齊意味著裁掉的是**底部**，海報的頭還在。這是對「不裁切」那條的**收窄**，
+     不是推翻：只對超出 1.40 倍的極端豎幅生效，且只裁底。
+     ================================================================ */
+  /* ---- 卡片上不用 GitHub 默認預覽卡（cover_kind==="og"）----
+     2026-09-02 量的：在架 181 件裡 **88 件（49%）** 的封面是 GitHub 自動生成的
+     社交預覽卡 —— 1200×600，把 owner/repo 印成大字，配 Star/Fork 數和章魚貓 logo。
+     它在瀑布流裡滿幅鋪開，**看起來像一個英文標題而不是一張封面**，
+     和這個店的米色襯線版式搶同一個位置。截圖裡那張
+     「op7418/Youtube-clipper-skill」不是標題，就是這麼來的。
+
+     站點本來就為「沒有圖」設計過版式：.plate-ink（米色漸變 + 分類小字 + 襯線標題）。
+     **那不是空洞，是這個店自己的語言。** 所以 og 這一檔在卡片上走 plate，
+     不鋪 GitHub 那張圖。
+
+     這一條**覆蓋了店主 2026-08-31 說的「沒有倉庫圖就用默認預覽卡」**——
+     那句話是為了「別讓卡片開天窗」，而 plate 同樣不開天窗，且不引入外站的字體和
+     logo。詳情頁（forSheet）仍然給圖，那裡一次只看一件，不存在互相搶的問題。
+     ---------------------------------------------------------------- */
+  // 09-03 撤回上面那條：店主說「很多都沒圖片」—— 他 08-31 的指示是「沒有倉庫圖就用默認預覽卡」，
+  // 我 09-02 擅自改成不鋪。恢復鋪，但用 .shot.og 壓對比、去飽和、縮一圈，別和真封面搶。
+  // 09-03 第三次改這條，這次聽最新的話：店主說預覽卡「毫無吸引力，有大有小」（1200×600 和 1200×630 混著）。
+  // 卡片上不鋪預覽卡；取不到作者倉裡的真圖（repo_covers.py）就走 plate。
+  if(!forSheet && it.cover_kind === "og") return "";
+  var ogCls = "";
+
+  var AR_FLAT = 2.45, H_MAX_K = 1.40;
+  var rawAr = ar;
+  if(!forSheet){
+    if(ar >= AR_FLAT) return "";
+    if(ar && ar < 1/H_MAX_K) ar = 1/H_MAX_K;        // 乙 · 太豎 → 限高（等比，不裁）
+  }
+  // 寬高比已知就寫死 —— 圖片加載前空間就佔好了，瀑布流不跳版
+  var sty = ar ? ' style="aspect-ratio:'+(Math.round(ar*1000)/1000)+'"' : '';
+  // 78vh 那道閘和上面的寬度閘管的不是一件事：它防的是窄短視口下一張圖佔滿屏
+  var tall = (!forSheet && ar && ar < 0.78) ? " tallcap" : "";
+  // 被 H_MAX_K 限住的（原圖比這個還豎）→ cover 頂部對齊，別在底部留空帶
+  if(!forSheet && rawAr && rawAr < 1/H_MAX_K) tall += " capped";
+  return '<span class="shot hasimg'+tall+ogCls+'"'+sty+'>'
+       +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
+       +   '<img src="'+esc(thumbURL(rec.url))+'" data-full="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
+       +     ' onerror="coverFail(this)">'
+       + '</span>';
+}
+
+/* 心選：只落 localStorage。站是靜態的，沒有後端，也不該有 ——
+   點心不產生任何網絡請求，讀者的偏好不出他自己的瀏覽器。 */
+var HK = "pinwei.hearts";
+function hearts(){
+  try { return JSON.parse(localStorage.getItem(HK) || "[]"); } catch(e){ return []; }
+}
+function isHeart(id){ return hearts().indexOf(id) >= 0; }
+function toggleHeart(id){
+  var a = hearts(), i = a.indexOf(id);
+  if(i >= 0) a.splice(i,1); else a.push(id);
+  try { localStorage.setItem(HK, JSON.stringify(a)); } catch(e){}
+  return i < 0;
+}
+var HEART_SVG = '<svg viewBox="0 0 16 16" aria-hidden="true">'
+  + '<path d="M8 14S1.5 9.9 1.5 5.6A3.6 3.6 0 0 1 8 3.5a3.6 3.6 0 0 1 6.5 2.1C14.5 9.9 8 14 8 14Z" '
+  + 'fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+function heartHTML(it){
+  var on = isHeart(it.id);
+  return '<button class="heart" type="button" data-heart="'+esc(it.id)+'" aria-pressed="'+on+'" '
+       + 'title="'+esc(t(on?"hearted":"heart"))+'" aria-label="'+esc(t(on?"hearted":"heart"))+'">'
+       + HEART_SVG + '</button>';
+}
+
+function badgesHTML(it, isNew){
+  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>';
+  if(isNew) h += '<span class="newdot">'+esc(t("newBadge"))+'</span>';
+  if(it.pick) h += '<span class="badge">'+esc(t("picked"))+'</span>';
+  h += heartHTML(it);
+  h += '<button class="share" type="button" data-share="'+esc(it.id)+'">'+esc(t("share"))+'</button>';
+  return '<div class="foot">'+h+'</div>';
+}
+
+function butHTML(it){
+  var b = limitBrief(it);
+  if(!b) return '<div class="but none"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+              + '<span class="tx">'+esc(t("butNone"))+'</span></div>';
+  return '<div class="but"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+       + '<span class="sr">'+esc(t("butFull"))+'</span>'
+       + '<span class="tx">'+mix(b.text)+'</span></div>';
+}
+
+function cardHTML(it, isNew){
+  var shot = shotHTML(it);
+  var why  = whyOf(it);
+  // 墨槓總是出現在 DOM 裡，由 CSS 決定顯不顯 —— 這樣圖片 onerror 退化成無圖卡時，
+  // 起頭那道槓也在，不會退成一張沒頭的卡。
+  return '<a class="card" href="'+itemPath(it)+'" data-id="'+esc(it.id)+'">'
+    + shot
+    + '<div class="cbody">'
+    +   '<h3>'+mix(nameOf(it))+'</h3>'
+    +   (why ? '<p class="rev">'+zhChip(it)+mix(why)+'</p>' : '')
+    +   badgesHTML(it, isNew)
+    + '</div>'
+    + '</a>';
+}
+
+/* ------------------------------------------------------------------
+   6 · 流
+   ------------------------------------------------------------------ */
+function filterList(all){
+  var q = state.q.trim().toLowerCase();
+  return all.filter(function(it){
+    if(state.cat==="heart"){ if(!isHeart(it.id)) return false; }
+    else if(state.cat==="pick"){ if(!it.pick) return false; }
+    else if(state.cat!=="all" && it.category!==state.cat) return false;
+    if(!q) return true;
+    return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.why_zh,it.why_en,it.repo,it.owner]
+      .join(" ").toLowerCase().indexOf(q) >= 0;
+  });
+}
+
+function renderFlow(all){
+  var list = filterList(all), q = state.q.trim();
+  var newest = (D.generated_at||"").slice(0,10);
+
+  // 瀑布流沒法按天分組（多列會把日期打散），所以「今天挑了什麼」提到流上面說一句。
+  // 0 件就照實說 0 件，不硬湊。
+  var head = "";
+  if(!q && state.cat==="all"){
+    var n = D.new_today||0;
+    head = '<div class="todayline"><span class="dot"></span>'
+         + (n ? t("today").replace("%s", n) : esc(t("todayNone")))
+         + '</div>';
+  } else if(q){
+    head = '<div class="todayline"><span class="dot"></span>'
+         + esc(sprintf(t("results"), list.length))+'</div>';
+  } else if(state.cat==="heart" && list.length){
+    /* 心選是店主的手動信號，凌駕於機器信號之上。這裡給一個一次性彙總的出口：
+       點心只寫 localStorage，攢夠了在這兒開一個預填的 Issue 交上來。 */
+    head = '<div class="sendbar"><span>'+esc(sprintf(t("sendTip"), list.length))+'</span>'
+         + '<button id="sendHearts" type="button">'+esc(t("send"))+'</button></div>';
+  }
+
+  /* 空態分兩種，說的不是一件事。
+     心選被清空時 head 是空串、搜索框也是空的 —— 這時候印「換個詞試試」，
+     是在讓人去改一個他根本沒打過的詞。取消最後一個心標就會走到這兒。 */
+  if(!list.length){
+    var msg = (!q && state.cat==="heart") ? t("emptyHeart") : t("empty");
+    return head + '<div class="empty">'+esc(msg)+'</div>';
+  }
+
+  var shown = list.slice(0, state.limit);
+  var flow = '<div class="flow">'
+    + shown.map(function(it){ return cardHTML(it, it.added_at===newest) }).join("")
+    + '</div>';
+
+  var rest = list.length - shown.length;
+  flow += rest>0
+    ? '<button class="more" id="more" type="button">'+esc(sprintf(t("moreN"), rest))+'</button>'
+    : '<div class="empty" style="padding:var(--s5) 0;font-size:var(--t-meta)">'+esc(t("noMore"))+'</div>';
+
+  return head + flow;
+}
+
+/* 貨架條目 —— **只有這一個地方決定「有哪些、什麼順序」**。
+   順序不在這裡算，就是 feed 給的順序（見上面 renderShelf 裡的註釋）。
+   原來這一段在兩處各寫了一遍，兩份都在重排 —— 重複的邏輯遲早會分叉，
+   而分叉的那天沒人會想起來去看另一處。 */
+function shelfItems(){
+  return (D && D.skills || []).filter(function(x){ return !x.hide; });
+}
+
+/* 下拉到底自動加載（店主：「下拉分頁加載，不要每次加載全部」）。
+   原來是點「再看 N 件」按鈕；現在按鈕進視口就自動觸發，按鈕本身保留當兜底（觀察器不可用時還能點）。
+   數據仍是一次取整份 feed（190 件的 JSON 很小），重的是 DOM 和圖，所以分批渲染即可。 */
+var _moreIO = null, _moreBusy = false;
+function _nearMore(){
+  var btn = document.getElementById("more");
+  if(!btn || _moreBusy) return;
+  var top = btn.getBoundingClientRect().top;
+  if(top < innerHeight + 600){ _moreBusy = true; btn.click(); setTimeout(function(){ _moreBusy = false; }, 200); }
+}
+function armAutoMore(){
+  var btn = document.getElementById("more");
+  if(!btn) return;
+  // 兩條路都掛：IntersectionObserver 為主；scroll 事件兜底。
+  // 2026-09-03 在嵌入式瀏覽器面板裡實測：按鈕明明在視口內（top 658 < 900），
+  // 新建的 IntersectionObserver 800ms 內不觸發 —— 後臺/隱藏標籤頁裡 IO 回調會被節流。
+  // 真實瀏覽器裡 IO 沒問題，但不能只靠它；scroll 兜底一行的成本，換一個不會靜默失效的功能。
+  if("IntersectionObserver" in window){
+    if(_moreIO) _moreIO.disconnect();
+    _moreIO = new IntersectionObserver(function(es){
+      if(es.some(function(e){ return e.isIntersecting })){ _moreIO.disconnect(); _nearMore(); }
+    }, {rootMargin:"600px 0px"});
+    _moreIO.observe(btn);
+  }
+  _nearMore();                                  // 首屏就夠到按鈕的情況（短列表/大屏）
+}
+addEventListener("scroll", _nearMore, {passive:true});
+
+function renderShelf(keepScroll){
+  if(!D) return;
+  var y = keepScroll ? window.scrollY : null;
+  renderChrome();
+  renderTally();
+  // **不在前端重排。** feed 裡的順序就是貨架順序 —— 那是 scout_lib.refresh() 算的：
+  // 收錄日倒序（「今天挑了什麼」是這一頁的主語）→ 同一天內真產出物圖優先 → fun_score → id。
+  //
+  // 原來這裡按 `added_at` 倒序、再按 `title_zh` 字母序**整個重排一遍**，
+  // 於是流水線裡那兩檔（真產出物優先、去掉 star）**一件都沒生效** ——
+  // 我改完排序刷新頁面，看到的還是原樣，一開始以為是瀏覽器緩存。
+  // 兩份排序真相，贏的是前端那份，而寫在流水線註釋裡的是另一份。
+  // 同一個形狀今天已經出現三次（拒收榜去重鍵、從不執行的守衛、這裡）：
+  // **寫下來那一刻，和真的生效，之間沒有任何自動連線。**
+  var all = shelfItems();
+  renderChips(all);
+  el("main").innerHTML = renderFlow(all);
+  armAutoMore();
+  syncURL();
+  SHELF = true;
+  if(y!=null) window.scrollTo(0,y);
+}
+
+/* ------------------------------------------------------------------
+   7 · 詳情
+   ------------------------------------------------------------------ */
+function sheetHTML(it){
+  var ins = it.install||{};
+  var why = whyOf(it), lim = limitOf(it), tg = tagOf(it);
+
+  var h = '<button class="x" type="button" aria-label="close">✕</button>'
+    + '<h3>'+mix(nameOf(it))+'</h3>'
+    + '<div class="repo"><a href="'+esc(urlOf(it))+'" target="_blank" rel="noopener">'
+    +   esc(it.repo)+(it.path?" / "+esc(it.path):"")+'</a>'
+    // 日期只在 age_source 是 file / repo 時寫。空串意味著手上只有倉庫年齡，
+    // 而這件長在子目錄裡 —— 倉庫年齡不是它的年齡，那就一個字都不寫。現在 148/150 是空串。
+    +   (dateOK(it) ? ' · '+esc(t("added"))+' '+esc(fmtDate(it.added_at)) : '')
+    +   (isPack(it) ? ' · '+esc(sprintf(t("pack"), it.skill_count||"?")) : '')
+    + '</div>'
+    + shotHTML(it, true)
+    + shotCapHTML(it)
+    + coverNoteHTML(it)
+    + (tg ? '<p class="lead">'+mix(tg)+'</p>' : '');
+
+  /* 「備料齊」憑什麼 —— 徽章只說結論，詳情頁把證據攤開。
+     **只在 prep_badge === "ready" 時出現。沒有第二檔，沒有負向檔。**
+     不要去數 prep_evidence 的條數：「1–2 條」「0 條」「根本沒有正文存檔」
+     三種情況在 feed 裡字節完全一致（"" + []），前端**拿不到**能渲染成負面的信息。
+     那是刻意設計的 —— 缺存檔的 16 件是我們自己 path 記錯的欠賬，不是商品的問題。 */
+  if(it.prep_badge === "ready" && (it.prep_evidence||[]).length){
+    h += '<p class="prepwhy">'+esc(t("prepWhy"))
+       + it.prep_evidence.map(function(e){ return '<span>'+esc(e)+'</span>' }).join('')
+       + '</p>';
+  }
+
+  // 判斷塊：豎線屬於「點評」。「但是」缺席時整塊照樣閉合，不留空槽。
+  if(why || lim){
+    /* 點評和但是是**平行的兩條**，同字號同墨色同標籤樣式 ——
+       它們是一件事的兩面，不該一條重一條輕。 */
+    h += '<div class="judge">'
+       + (why ? '<span class="lb">'+esc(t("verdict"))+'</span>'
+              + '<p class="v">'+zhChip(it)+mix(why)+'</p>' : '')
+       + (lim ? '<span class="lb lb2">'+esc(t("butFull"))+'</span>'
+              + '<p class="b">'+mix(lim)+'</p>' : '')
+       + '</div>';
+  }
+
+  h += '<h4>'+esc(isPack(it) ? t("collectStep") : t("install"))+'</h4>';
+  if(isPack(it)){
+    /* 合集沒有「裝它」這個動作。三件事都按 feed 走，不在前端硬寫：
+         install.copy 是空串 —— **正常的**（D7），不要顯示覆制按鈕
+         install.note —— 那句定死的文案在數據裡，前端不再自己存一份
+         install.browse —— 指向真正裝著 skill 的那個子目錄
+       前端存一份文案會和數據漂移；文案改了得改兩處，必漏一處。 */
+    if(ins.clone) h += cmdHTML(ins.clone);
+    var note = (ins.note||"").trim() || t("collectNote");
+    h += '<div class="packnote">'+esc(note).replace(/`([^`]+)`/g,"<code>$1</code>")
+       +   (ins.browse ? ' <a href="'+esc(ins.browse)+'" target="_blank" rel="noopener">'
+                       + esc(t("browseDir"))+'</a>' : '')
+       + '</div>';
+  } else {
+    if(ins.clone || ins.copy){
+      h += '<div class="step">1 · '+esc(t("step1"))+'</div>';
+      if(ins.clone) h += cmdHTML(ins.clone);
+      if(ins.copy)  h += cmdHTML(ins.copy);
+    }
+    h += '<div class="step">2 · '+esc(t("step2"))+'</div>';
+  }
+  h += '<div class="safety">'+esc(t("safety"))+'</div>';
+  return h;
+}
+/* 圖注只出現在詳情頁。五檔各說清楚這張圖是什麼，非產出物的明寫「不是產出示例」。
+   `ours` = 我們自己裝上真跑出來截的圖 —— 護城河就在這一檔，所以它的圖注
+   是唯一一句**正面**的話，而且墨色比其他檔重一級（.shotcap.ours）。
+   映射查不到的 kind 一律按「不是產出示例」兜底，寧可說輕不說重。 */
+var CAP_KEY = {artwork:"capArtwork", ours:"capOurs", hero:"capHero", diagram:"capDiagram", other:"capOther"};
+function shotCapHTML(it){
+  var rec = coverRec(it);
+  if(!rec) return "";
+  var k = CAP_KEY[rec.kind] || (rec.real ? "capArtwork" : "capOther");
+  var cls = "shotcap" + (rec.real ? " real" : "") + (rec.kind==="ours" ? " ours" : "");
+  return '<p class="'+cls+'">'+t(k)+'</p>';
+}
+/* `ours` 那一檔的復現憑據。**這是補一個洞，不是加裝飾。**
+   `cover_note` 裡記著我們跑的命令（任務書原話：「沒有命令的 ours 是不可復現的
+   證據聲明」），但它原來只活在數據裡 —— 於是 `ours` 成了全站**最強的聲明**
+   配**最弱的可核性**：`artwork` 至少圖在作者倉庫裡，讀者點進去能自己看；
+   `ours` 說「我們跑的」，讀者卻沒有任何東西可查。
+   一個查不了的證據聲明，就是這個項目一直在防的那種「誠實變成營銷」。
+
+   只給 `ours` 渲染。`cover_note` 裡的反引號轉成 <code>，其餘按純文本轉義 ——
+   這段文字是人寫的，不能當 HTML 灌。 */
+function coverNoteHTML(it){
+  var rec = coverRec(it);
+  if(!rec || rec.kind !== "ours") return "";
+  var note = (it.cover_note || "").trim();
+  if(!note) return "";
+  var html = esc(note).replace(/`([^`]+)`/g, '<code>$1</code>');
+  return '<p class="covernote">'+html+'</p>';
+}
+function cmdHTML(c){
+  return '<div class="cmd">'+esc(c)+'<button type="button" data-c="'+esc(c)+'">'+esc(t("copy"))+'</button></div>';
+}
+
+var lastFocus=null;
+function openSheet(it){
+  lastFocus = document.activeElement;
+  el("sheet").innerHTML = sheetHTML(it);
+  el("veil").classList.add("open");
+  document.body.style.overflow = "hidden";
+  var x = el("sheet").querySelector(".x"); if(x) x.focus();
+}
+function closeSheet(){
+  el("veil").classList.remove("open");
+  el("sheet").innerHTML = "";
+  document.body.style.overflow = "";
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+
+function copyText(txt, btn){
+  var old = btn.textContent;
+  function done(){ btn.textContent = t("copied"); setTimeout(function(){btn.textContent=old},1400); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done, fallback);
+  } else fallback();
+  function fallback(){
+    var ta=document.createElement("textarea"); ta.value=txt;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ------------------------------------------------------------------
+   8 · 交互
+   ------------------------------------------------------------------ */
+document.addEventListener("click", function(e){
+  var cp = e.target.closest(".cmd button");
+  if(cp){ e.stopPropagation(); copyText(cp.getAttribute("data-c"), cp); return; }
+
+  if(e.target.closest(".sheet .x")){ closeSheet(); return; }
+  if(e.target.id==="veil"){ closeSheet(); return; }
+
+  var sh = e.target.closest("[data-share], #shareSite");
+  if(sh){
+    e.stopPropagation(); e.preventDefault();
+    var sid = sh.getAttribute("data-share");
+    var url = sid ? itemAbs({id:sid}) : "https://ourword.ai/skill/tw/";
+    var old = sh.textContent;
+    function marked(){ sh.textContent = t("shared"); sh.classList.add("on");
+      setTimeout(function(){ sh.textContent = old; sh.classList.remove("on"); }, 1400); }
+    if(navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(url).then(marked, function(){ copyText(url, sh); });
+    else copyText(url, sh);
+    return;
+  }
+
+  var hb = e.target.closest(".heart");
+  if(hb){
+    e.stopPropagation(); e.preventDefault();
+    var on = toggleHeart(hb.getAttribute("data-heart"));
+    hb.setAttribute("aria-pressed", on);
+    hb.setAttribute("title", t(on?"hearted":"heart"));
+    var hc = document.querySelector(".chip.heartchip");
+    if(hc) hc.querySelector(".cnt").textContent = hearts().length;
+    else renderChips(D.skills||[]);
+    if(state.cat === "heart") renderShelf();
+    return;
+  }
+
+  var chip = e.target.closest("#chips .chip");
+  if(chip){ state.cat = chip.getAttribute("data-cat"); state.limit = 60; renderShelf(); window.scrollTo(0,0); return; }
+
+  if(e.target.closest("#sendHearts")){
+    e.stopPropagation();
+    var ids = hearts();
+    var picked = (D.skills||[]).filter(function(x){ return ids.indexOf(x.id)>=0 });
+    /* 提交件跟著界面語言走。**這一段原來是寫死中文的**：英文讀者走完
+       Mark as good → Hearted → Send to the editor 三步，最後被扔進一個
+       標題「心選 3 件」、正文全中文、連商品名都換成 title_zh 的 issue 表單 ——
+       那三件他在站上從頭到尾看到的是英文標題，提交出去卻變成他讀不懂的字。
+       這是全站唯一一條「讀者交東西給我們」的路，斷在最後一步，也是最貴的一步。
+       條目名用 nameOf()，跟他剛才在卡片上讀到的那一行完全一致。 */
+    var isEn = lang === "en";
+    var nEn = picked.length + (picked.length===1 ? " item" : " items");
+    var body = (isEn
+        ? "Marked as good by a reader — " + nEn + ".\n"
+        + "This is the highest-priority signal: it outranks any machine signal,\n"
+        + "and the curation standard should be revisited against it.\n\n"
+        : "標記為「好東西」，共 " + picked.length + " 件。\n"
+        + "這是最高等級的信號：它高於任何機器信號，應據此回頭改選品標準。\n\n")
+      + picked.map(function(x){
+          /* URL 不加 ?lang= —— i/ 那批是靜態 SEO 頁，沒有語言開關，
+             加了是個不生效的參數，等於對提交人撒一次小謊。 */
+          return "- [ ] **"+nameOf(x)+"**  `"+x.repo+"`\n"
+               + "      https://ourword.ai/skill/tw/i/"+x.id+"/";
+        }).join("\n")
+      + (isEn
+        ? "\n\n(Generated in the browser by Hearted → Send to the editor. No server; the marks never left this browser until now.)"
+        : "\n\n（由站內「心選 → 提交給店長」生成，無服務端，數據只在瀏覽器裡）");
+    /* **正文不再塞進 URL。**
+       原來是 `?title=…&body=` + encodeURIComponent(body)。中文經過百分號編碼
+       每個字變 9 個字符，條目又各帶一行 name + repo + 完整詳情頁 URL ——
+       店主標了幾十件之後 GitHub 直接回 **「Your request URL is too long」**，
+       標註一件都交不出來。
+       **全站唯一一條「讀者交東西給我們」的路，斷在最後一步，也是最貴的一步。**（第二次了。）
+
+       改法：正文寫到剪貼板 + 同時擺在屏幕上，然後只開一個空的 issue 頁。
+       URL 從此是常量長度，標多少件都不會再斷。
+       **localStorage 裡的標註全程不動** —— 交不出去也不許丟。 */
+    var title = isEn ? "Hearted "+nEn : "心選 "+picked.length+" 件";
+    var full  = title + "\n\n" + body;
+    var panel = el("heartOut");
+    if(!panel){
+      panel = document.createElement("div");
+      panel.id = "heartOut"; panel.className = "heartout";
+      document.body.appendChild(panel);
+    }
+    panel.innerHTML = '<div class="ho-in">'
+      + '<p class="ho-tip">'+esc(t("hoTip"))+'</p>'
+      + '<textarea readonly rows="10"></textarea>'
+      + '<div class="ho-btns">'
+      +   '<button type="button" data-ho="copy">'+esc(t("hoCopy"))+'</button>'
+      +   '<button type="button" data-ho="issue">'+esc(t("hoIssue"))+'</button>'
+      +   '<button type="button" data-ho="close">'+esc(t("hoClose"))+'</button>'
+      + '</div></div>';
+    panel.querySelector("textarea").value = full;
+    panel.classList.add("on");
+    var ta = panel.querySelector("textarea");
+    ta.focus(); ta.select();
+    try{ if(navigator.clipboard) navigator.clipboard.writeText(full); }catch(_){}
+    return;
+  }
+
+  var ho = e.target.closest("[data-ho]");
+  if(ho){
+    e.stopPropagation();
+    var act = ho.getAttribute("data-ho"), box = el("heartOut");
+    if(act === "copy"){
+      var ta2 = box.querySelector("textarea");
+      ta2.focus(); ta2.select();
+      try{ if(navigator.clipboard) navigator.clipboard.writeText(ta2.value); }catch(_){}
+      ho.textContent = t("hoCopied");
+    } else if(act === "issue"){
+      /* 只開空表單，正文靠粘貼 —— URL 裡不帶 body，就不會再「too long」。 */
+      window.open("https://github.com/woowoeth/skill/issues/new", "_blank", "noopener");
+    } else {
+      box.classList.remove("on");
+    }
+    return;
+  }
+
+  if(e.target.closest("#more")){ state.limit += 60; renderShelf(true); return; }
+
+});
+
+document.addEventListener("keydown", function(e){
+});
+
+var qt=null;
+el("q").addEventListener("input", function(){
+  var v = this.value;
+  el("searchBox").classList.toggle("has", !!v);
+  clearTimeout(qt);
+  qt = setTimeout(function(){
+    state.q = v; state.limit = 60;
+    if(D){ el("main").innerHTML = renderFlow(shelfItems()); armAutoMore(); syncURL(); }
+  }, 120);
+});
+el("clr").addEventListener("click", function(){
+  el("q").value=""; el("searchBox").classList.remove("has");
+  state.q=""; state.limit=60; el("q").focus();
+  if(D) renderShelf(true);
+});
+
+el("langBtn").addEventListener("click", function(){
+  lang = lang==="zh" ? "en" : "zh";
+  var u = new URL(location.href);
+  if(lang==="en") u.searchParams.set("lang","en"); else u.searchParams.delete("lang");
+  history.replaceState(null,"",u);
+  if(SHELF) renderShelf(true); else renderChrome();
+});
+
+/* ------------------------------------------------------------------
+   9 · 起飛
+   ------------------------------------------------------------------
+   兩條規矩：
+
+   甲 **首屏不等任何 fetch。** 報頭、標識、立場句、搜索條、頁腳都是靜態 HTML，
+      腳本一進來先補文案（renderChrome）。這一屏在第一次繪製就成立。
+      v2 是整頁（連報頭）都等四個 fetch 的 Promise.all，再串一個
+      methods/*.md —— 五個往返之前頁面上什麼都沒有。
+
+   乙 **整頁只有一個請求：feed.json。** 封面的 URL、類型、真偽、像素寬高
+      全在 feed 裡，所以沒有第二個往返、沒有"先無圖再補圖"的二次重排、
+      也沒有可選數據把貨架拖住的可能。
+   ------------------------------------------------------------------ */
+renderChrome();
+el("main").innerHTML = '<div class="empty">'+esc(t("loading"))+'</div>';
+
+window.__FEED__.then(function(feed){
+  D = feed;
+  var _pos = restorePos();
+  if(_pos && _pos.limit > state.limit) state.limit = _pos.limit;
+  if(state.q){ el("q").value = state.q; el("searchBox").classList.add("has"); }
+  renderShelf();
+  if(_pos && _pos.y > 0){ requestAnimationFrame(function(){ window.scrollTo(0, _pos.y); }); }
+}).catch(function(e){
+  el("main").innerHTML = '<div class="empty">'+esc(t("failed"))+'</div>';
+  if(window.console) console.error(e);
+});
+
+})();
+</script>
+</body>
+</html>

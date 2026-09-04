@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/design/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/design/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/design/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<title>品味 — 中文 Agent Skill 精選</title>
+<meta name="description" content="生態裡有 266 萬條 Agent Skill。我們只挑值得裝的，並且把挑它的理由寫下來。">
+
+<!-- ================================================================
+     早啟動。首屏不等任何 fetch —— 報頭和搜索條是靜態 HTML，
+     feed 是唯一必需的數據，其餘全是後到的增強。
+     ================================================================ -->
+<script>
+window.__FEED__ = fetch("../skills/feed.json").then(function(r){
+  if(!r.ok) throw new Error("feed "+r.status); return r.json();
+});
+// 封面的一切都在 feed 裡了：cover / cover_kind / cover_real / cover_w / cover_h。
+// 所以**整頁只有這一個請求**。上一版那張過渡查表已經刪掉。
+</script>
+
+<style>
+/* ============================================================
+   品味 · 版式原型 v4 「流」
+   店主定的方向：小紅書式信息流，不是編輯部雜誌。
+   雜誌版留在 design/archive-editorial.html。
+
+   照搬小紅書的地方：瀑布流不等高卡、圓角白卡、淺灰底、圖片主導、
+   標題兩行截斷、橫滑分類膠囊、手機兩列是第一現場。
+
+   **動過的三處，都是因為我們賣的不是圖，是判斷：**
+
+   甲 小紅書卡底是點贊數 + 作者，我們換成「但是」。
+     瀑布流為瀏覽優化，我們的貨是文字，照搬會把判斷擠沒。
+     換掉之後瀏覽手感一樣，社交證明的槽位變成判斷槽位。
+     副作用很好：連一句誠實短處都寫不出來的東西，在流裡就是空的，一眼看得見。
+
+   乙 **卡上保留「點評」，不只放「但是」。** 理由見 .card .rev 那一節 ——
+     只印短處的卡片是把漏斗倒過來。
+
+   丙 GitHub OG 卡不上站。無圖卡不補佔位符，用一道墨槓起頭，
+     並且把「但是」升為主角。理由見 coverOf()。
+   ============================================================ */
+
+:root{
+  /* —— 底 —— 淺灰底 + 白卡，小紅書的基本盤 —— */
+  --bg:      #f4f4f5;
+  --card:    #ffffff;
+  --soft:    #f7f7f8;
+
+  /* —— 墨 —— 帶一點暖的炭黑，中文長文更耐讀 —— */
+  --ink:     #1b1a19;
+  --ink-2:   #45423e;
+  /* ink-3 / ink-4 比上一版壓暗過 —— 不是審美，是算出來的。
+     淺色下原值 #78736c 對灰底只有 4.28:1、#a5a09a 對白卡只有 2.59:1，
+     WCAG 正文要 4.5、次要要 3.0，兩處都不夠。
+     **這四處失效只發生在淺色**，而淺色是我和產品都沒法在本機看到的模式，
+     所以是算的不是看的：現在 #918c86 對白卡 3.33、#6d6861 對灰底 5.02，都留了餘量。 */
+  --ink-3:   #6d6861;
+  --ink-4:   #918c86;
+
+  --line:    #e6e4e0;
+  --line-2:  #d3d0ca;
+
+  /* —— 單色。**站上沒有品牌色。** ——
+     brand/BRAND.md 定稿：「頁面上唯一的彩色應該來自商品的產出物圖，站不跟貨搶顏色。」
+     所以上一版那個硃色的「但」、硃色上新章、硃色徽章邊全部撤掉。
+     「但」的辨識度改由**位置 + 筆法**承擔：宋體、懸掛出欄、壓在豎線上。
+     這個交換是賺的 —— 一張全灰的頁面上，27 張真產出物圖是唯一的顏色源，
+     「產出物即封面」這句話由此變成看得見的事實，而不是一句主張。 */
+  --stamp:     #1a1a1a;    /* 反白章的底：墨 */
+  --stamp-fg:  #ffffff;
+
+  --serif: 'Songti SC','Source Han Serif SC','Noto Serif CJK SC','STSong','SimSun',Georgia,serif;
+  --sans:  -apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC',
+           'Noto Sans CJK SC','Microsoft YaHei',system-ui,sans-serif;
+  --mono:  'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+
+  /* 字號階梯。手機兩列的卡寬只有 ~177px，所以卡內字號必須比桌面小一檔，
+     階梯本身不變 —— 靠斷點換值，不靠局部另發明。 */
+  --t-micro: 10.5px;
+  --t-cap:   11.5px;
+  --t-meta:  12.5px;
+  --t-body:  14px;
+  --t-lead:  15.5px;
+  --t-h3:    17px;
+  --t-h2:    22px;
+  --t-h1:    30px;
+
+  --lh-tight: 1.34;
+  --lh-body:  1.72;
+  --lh-long:  1.92;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:18px; --s5:28px; --s6:44px; --s7:72px;
+
+  --r-card: 14px;
+  --r-chip: 999px;
+  --r-img:  10px;
+
+  --gut: 14px;           /* 瀑布流列間距，也是卡內邊距的基數 */
+  --cols: 5;             /* 桌面五列，斷點逐級降到手機兩列 */
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121211; --card:#1c1b1a; --soft:#232221;
+    --ink:#ece8e2; --ink-2:#c5c0b8; --ink-3:#938d85; --ink-4:#6c665f;
+    --line:#2e2c2a; --line-2:#403d3a;
+    --stamp:#ece8e2; --stamp-fg:#141312;
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:var(--t-body)/var(--lh-body) var(--sans);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  hanging-punctuation: allow-end;
+}
+@supports (text-spacing-trim: space-first){ body{ text-spacing-trim: space-first } }
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+img{max-width:100%}
+
+/* 中英混排的那一口氣。JS 在 CJK / 拉丁邊界插一個空的 <i class="g">，
+   靠 margin 造縫，不插真空格 —— 複製出去還是乾淨原文。
+   英文站不需要做，也做不了，正好是我們該做到的地方。 */
+i.g{font-style:normal;display:inline;margin:0 .085em}
+
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+
+/* ============ 報頭 ============
+   整塊靜態 HTML。三個真數（過手 / 上架 / 未上架）落在 #tally，
+   數據到了才填；沒填的時候上面那句主張照樣讀得通。 */
+header.top{padding:var(--s5) 0 var(--s3)}
+.brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+/* ---- 標識 ---- brand/BRAND.md 定稿，數值一個都不許改 ----------------
+   viewBox 必須是 14 4 33 55（不是 0 0 64 64）—— 筆畫只落在 x∈[14,47]、
+   y∈[4,59]，用 64×64 會在兩側各留 15 單位透明空氣，任何 CSS 間距都被推開。
+   標記高 = 字號 × 1.13；寬高比 0.6（33:55）不許拉伸；與字的間距 0.22em；
+   字是宋體 600、字距 .05em；align-items:center。 */
+.logo{display:flex;align-items:center;gap:.22em;font-size:26px;line-height:1}
+.logo svg{height:calc(1em * 1.13);width:calc(1em * 1.13 * 0.6);flex:0 0 auto;display:block}
+.logo b{
+  font-family:var(--serif);font-weight:600;letter-spacing:.05em;
+  font-size:1em;line-height:1;color:var(--ink);
+}
+.brandrow i{
+  font:400 var(--t-micro)/1 var(--sans);font-style:normal;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--ink-4);
+}
+#langBtn{
+  margin-left:auto;background:none;border:1px solid var(--line-2);color:var(--ink-3);
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.12em;
+  padding:7px 11px;border-radius:var(--r-chip);cursor:pointer;
+}
+#langBtn:hover{border-color:var(--ink);color:var(--ink)}
+
+.say{
+  margin:var(--s4) 0 0;max-width:36em;
+  font:400 clamp(17px,2.1vw,21px)/1.68 var(--serif);color:var(--ink);
+}
+/* 數字不靠顏色跳出來，靠字重和墨度 —— 周圍的字退一檔，它就自然是重音 */
+.say em{font-style:normal;font-weight:600;color:var(--ink)}
+/* 三個真數。一個都不算、一個都不編，全部來自 feed；拿不到就整行不顯示。
+   將來「已寫拒收理由 N 條」掛在這一行末尾 —— 位置留著，0 條就不出現。 */
+.tally{
+  margin:var(--s2) 0 0;min-height:1.5em;
+  font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:2px 12px;
+}
+.tally .k{color:var(--ink-4)}
+.tally .sep{color:var(--line-2)}
+.tally b{font-weight:400;color:var(--ink)}
+.tally .bar{color:var(--line-2);margin:0 2px}
+/* slogan 用宋體，跟標識同一套筆法；它是數字的註腳，不搶分量 */
+.tally .slog{font-family:var(--serif);font-weight:600;color:var(--ink);letter-spacing:.02em}
+
+/* ============ 搜索條 + 橫滑膠囊 ============
+   兩行都 sticky。手機上這是唯一的導航。 */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);padding-top:var(--s3)}
+.bar:after{content:"";display:block;height:1px;background:var(--line);margin-top:var(--s3)}
+.search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
+  padding:0 16px;height:42px;
+}
+.search svg{flex:0 0 auto;opacity:.42}
+.search input{
+  flex:1;min-width:0;background:none;border:0;outline:none;
+  font:var(--t-body)/1 var(--sans);color:var(--ink);height:100%;
+}
+.search input::placeholder{color:var(--ink-4)}
+.search .clr{
+  display:none;background:none;border:0;cursor:pointer;color:var(--ink-4);
+  font-size:16px;line-height:1;padding:4px;
+}
+.search.has .clr{display:block}
+
+/* 橫滑膠囊。八個貨架直接當膠囊，滾動條藏起來。 */
+.chips{
+  display:flex;gap:8px;margin-top:var(--s3);
+  overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+  /* 邊緣淡出，暗示右邊還有 */
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 22px),transparent 100%);
+          mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 22px),transparent 100%);
+}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;scroll-snap-align:start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-chip);
+  padding:8px 14px;cursor:pointer;white-space:nowrap;
+  font:var(--t-meta)/1 var(--sans);color:var(--ink-2);transition:.14s;
+}
+.chip:hover{border-color:var(--line-2)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip sup{font:var(--t-micro)/1 var(--mono);opacity:.6;margin-left:4px;vertical-align:super}
+.chip.on sup{opacity:.75}
+
+/* 今日上新一條窄帶。瀑布流沒法按天分組（多列會把日期打散），
+   所以「今天挑了什麼」提到流的上面單獨說一句，不塞進流裡。 */
+.todayline{
+  margin:var(--s4) 0 0;display:flex;align-items:center;gap:10px;
+  font:var(--t-meta)/1.5 var(--sans);color:var(--ink-3);
+}
+.todayline .dot{width:5px;height:5px;border-radius:50%;background:var(--ink);flex:0 0 auto}
+.todayline b{color:var(--ink);font-weight:600}
+
+/* ============ 瀑布流 ============
+   用 CSS 多列，不上 JS masonry。
+   ▸ 已知的取捨：多列是**按順序灌滿一列再下一列**，不是「哪列短往哪放」。
+     所以最新的一批會集中在最左列，而不是橫著鋪開。
+     換來的是零 JS、零重排、縮放不抖。今日上新那條窄帶就是為了補這個。 */
+.flow{
+  column-count:var(--cols);
+  column-gap:var(--gut);
+  margin:var(--s4) 0 0;
+}
+@media (max-width:1320px){ :root{--cols:4} }
+@media (max-width:1040px){ :root{--cols:3} }
+@media (max-width:760px){
+  :root{--cols:2;--gut:10px;
+    --t-body:13px;--t-lead:14px;--t-h3:15px;--t-h2:19px;--t-h1:24px;--t-meta:11.5px;--t-cap:11px}
+}
+
+.card{
+  break-inside:avoid;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+  margin:0 0 var(--gut);overflow:hidden;
+  cursor:pointer;display:block;
+  transition:border-color .15s, transform .15s;
+}
+/* 整張卡是一個按鈕，但**不能**用 <button> 標籤 —— button 裡只允許放
+   phrasing content，塞 <h3>/<p> 是非法的。用 article + role=button，
+   鍵盤由下面那個 keydown 處理器接。 */
+.card[role="button"]{-webkit-tap-highlight-color:transparent}
+.card:hover{border-color:var(--line-2)}
+.card:active{transform:scale(.994)}
+
+/* ---- 封面 ------------------------------------------------------
+   寬高比在 HTML 裡就寫死（design/cover-dims.json 實測 97/97），
+   所以圖片加載前空間就佔好了，**瀑布流不會跳版**。
+   等 editorial/covers.json 帶上 width/height，這個文件刪掉、邏輯不變。
+   實測寬高比 0.46 – 4.69：超寬 20 件、豎版 6 件。
+   所以不裁切，只給一個 max-height 兜住最豎的那幾張。 */
+.shot{display:block;background:var(--soft);position:relative;overflow:hidden}
+.shot img{width:100%;height:100%;display:block;object-fit:cover}
+/* 豎過頭的限個高，別讓一張海報把一列吃掉。
+   artwork 那一檔放寬到 620px：最豎那張（比 0.46）在桌面五列自然高 570px，
+   卡在 420px 會把剛放寬的下限又用 max-height 裁回去。 */
+.shot.tallcap{max-height:min(64vh,420px)}
+.shot.tallcap-art{max-height:min(78vh,620px)}
+
+/* ---- 無圖卡：一道短墨槓起頭 ------------------------------------
+   不補佔位符、不放 OG 卡。56 件沒有真產出物圖，無圖必須是一等公民。
+   墨槓是這張卡的「圖」——它告訴你下面是一段判斷，不是一張截圖。 */
+.bar-ink{display:none}
+.card.noimg .bar-ink{
+  display:block;height:3px;width:34px;background:var(--ink);
+  margin:var(--s4) var(--s4) 0;border-radius:2px;
+}
+.card.noimg .cbody{padding-top:var(--s3)}
+
+.cbody{padding:var(--s4)}
+
+/* 標題：兩行截斷。實測標題中位 12 字、最長 27 字，
+   手機兩列會截掉 14/152（9%），桌面五列 1/152 —— 可以用。 */
+.card h3{
+  margin:0;font:400 var(--t-h3)/var(--lh-tight) var(--serif);color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* ---- 點評 ------------------------------------------------------
+   **這一塊是我加回去的，產品的稿裡沒有。**
+   產品的版本是「標題 + 但是」，把「點評」全挪進詳情。我不同意：
+   一張只印短處的卡片是把漏斗倒過來 —— 讀者拿到的全是不裝的理由，
+   一個裝的理由都沒有。「但是」是配重，它得有個東西可配。
+   所以卡上是「點評兩行 + 但是一行」，兩句都在，短處仍在社交證明的位置上。 */
+/* ---- 夾行把層級鎖死，跟字段長度無關 ----------------------------
+   店主報「但是壓過點評」。根因不在字號也不在行高，在我自己那條
+   `.card.noimg .but .tx{line-clamp:4}` —— 無圖卡上我把「但是」放到 4 行、
+   點評留 2 行，於是最長的那句壓過了該當主角的那句。是我做錯了。
+
+   現在層級由**夾行行數**鎖死：點評 ≥ 但是，恆成立。
+   `limit_zh` 中位 107 字、`limit_brief_zh` 目標 ≤30 字，差 3.5 倍 ——
+   夾行之後兩者都是固定高度，所以這個倒置在字段填滿前後都不會再出現。 */
+.card .rev{
+  margin:var(--s2) 0 0;font:var(--t-body)/var(--lh-body) var(--sans);color:var(--ink-2);
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* ---- 但是：佔掉小紅書的點贊位 ----------------------------------
+   實測「但是」中位 107 字、最長 134 字。手機兩列每行約 12 字，
+   107 字要 8.9 行 —— 夾到兩行只露 22%，那不叫誠實，那叫鉤子。
+   所以優先用短版字段（limit_short_zh，還沒有就等內容那邊定），
+   拿不到才退回夾行，並且**夾行時在句讀處斷**，不在半個詞上斷。
+   硃色的「但」掛在最前面，是全卡唯一的彩色。 */
+.but{
+  margin:var(--s3) 0 0;padding-top:var(--s3);border-top:1px solid var(--line);
+  font:var(--t-meta)/1.66 var(--sans);color:var(--ink-3);
+  display:flex;gap:6px;align-items:flex-start;
+}
+/* 「但」：宋體、比正文重一檔、墨色。不靠顏色，靠筆法和位置。 */
+.but .mk{
+  flex:0 0 auto;font:600 var(--t-body)/1.45 var(--serif);color:var(--ink);
+}
+.but .tx{
+  min-width:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+/* 沒寫「但是」的那 20 件：這一格就是空的，而且看得出來是空的。
+   這是產品那個換位設計最好的副作用，別去補它。 */
+.but.none{color:var(--ink-4)}
+.but.none .mk{color:var(--line-2);font-weight:400}
+
+/* 無圖卡：撐起這張卡的是**點評**，不是「但是」。
+   上一版我把「但是」放到 4 行，結果它壓過了點評 —— 改成把**點評**放寬到 5 行，
+   「但是」始終 2 行。整張卡還是一段判斷，但主角是「它好在哪」，
+   而不是「它哪兒不行」。只印短處的卡片是把漏斗倒過來。 */
+.card.noimg .rev{-webkit-line-clamp:5}
+
+/* ---- 右下徽章：只有正向檔 --------------------------------------
+   星數在前端已經徹底沒有出口。替代信號兩個，都只在「有」的時候出現：
+   一個只有一段提示詞的極簡 skill 可能恰恰是好東西，
+   給它印「備料少」就是把星數的錯誤換個馬甲再犯一次。 */
+.foot{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  margin:var(--s3) 0 0;
+}
+.tagn{
+  font:var(--t-micro)/1 var(--sans);color:var(--ink-4);letter-spacing:.04em;
+  margin-right:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;
+}
+.badge{
+  flex:0 0 auto;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.06em;
+  border:1px solid var(--line-2);color:var(--ink-3);
+  padding:4px 6px;border-radius:5px;white-space:nowrap;
+}
+/* 三個章共用一套單色詞彙，靠**填充與描邊**分層，不靠顏色：
+   上新 = 實心反白（最響）· 店長讀過 = 墨色描邊（中）· 備料齊 = 淡描邊（輕） */
+.badge.read{border-color:var(--ink-3);color:var(--ink)}
+.newdot{
+  flex:0 0 auto;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  background:var(--stamp);color:var(--stamp-fg);padding:4px 6px;border-radius:5px;
+}
+
+/* 「中文」標。英文版遇到沒英文文案的商品時掛在點評前面。
+   中文創作者的東西在英文目錄站裡搜不到，這正是本店存在的理由 ——
+   所以它是標籤，不是錯誤提示。少了這個標，英文讀者看到一段中文點評
+   只會以為頁面壞了。 */
+.zhchip{
+  display:inline-block;font:600 var(--t-micro)/1 var(--sans);letter-spacing:.08em;
+  color:var(--ink);border:1px solid var(--ink-3);border-radius:4px;
+  padding:2px 4px;margin-right:4px;vertical-align:1px;white-space:nowrap;
+}
+
+/* 合集角標：這張卡的契約和別的不一樣，流裡就得看得出來 */
+.packtag{
+  position:absolute;left:8px;top:8px;z-index:2;
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.06em;
+  background:rgba(0,0,0,.62);color:#fff;padding:5px 7px;border-radius:5px;
+  backdrop-filter:saturate(140%) blur(2px);
+}
+.card.noimg .packtag{position:static;display:inline-block;margin:var(--s4) 0 0 var(--s4);background:var(--ink)}
+
+.more{
+  display:block;width:100%;margin:var(--s5) 0 0;padding:15px 0;
+  background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);
+  font:var(--t-meta)/1 var(--sans);letter-spacing:.1em;cursor:pointer;border-radius:var(--r-chip);
+}
+.more:hover{border-color:var(--ink);color:var(--ink)}
+.empty{padding:var(--s6) 0;color:var(--ink-4);font:var(--t-lead)/1.7 var(--serif);text-align:center}
+
+/* ============ 詳情：手機是底部抽屜，桌面是居中卡 ============ */
+.veil{
+  position:fixed;inset:0;z-index:60;background:rgba(20,18,16,.44);
+  display:none;align-items:center;justify-content:center;padding:var(--s4);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+}
+.veil.open{display:flex}
+.sheet{
+  background:var(--card);border-radius:var(--r-card);
+  width:min(680px,100%);max-height:min(88vh,900px);overflow:auto;
+  position:relative;padding:var(--s5);
+}
+.sheet .x{
+  position:absolute;right:10px;top:10px;width:32px;height:32px;
+  background:var(--soft);border:1px solid var(--line);border-radius:50%;
+  cursor:pointer;font-size:17px;line-height:1;color:var(--ink-3);
+}
+.sheet .x:hover{color:var(--ink);border-color:var(--line-2)}
+.sheet h3{margin:0 var(--s5) var(--s2) 0;font:400 var(--t-h2)/var(--lh-tight) var(--serif)}
+.sheet .repo{font:var(--t-cap)/1.6 var(--mono);color:var(--ink-3);word-break:break-all}
+.sheet .repo a{border-bottom:1px solid var(--line-2)}
+.sheet .repo a:hover{color:var(--ink);border-color:var(--ink)}
+.sheet .shot{border-radius:var(--r-img);margin:var(--s4) 0 0;border:1px solid var(--line)}
+.sheet .lead{margin:var(--s4) 0 0;font:var(--t-lead)/var(--lh-body) var(--sans);color:var(--ink-2)}
+.shotcap{
+  margin:9px 0 0;font:var(--t-micro)/1.65 var(--sans);color:var(--ink-4);letter-spacing:.02em;
+}
+.shotcap b{color:var(--ink-2);font-weight:600}
+/* 真產出物圖的圖注墨一檔 —— 它是證據，語氣可以肯定 */
+.shotcap.real{color:var(--ink-3)}
+.prepwhy{margin:var(--s4) 0 0;font:var(--t-cap)/2 var(--sans);color:var(--ink-3)}
+.prepwhy span{
+  display:inline-block;margin:0 4px 0 6px;padding:2px 6px;
+  border:1px solid var(--line-2);border-radius:4px;color:var(--ink-2);
+}
+.packnote a{border-bottom:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.packnote a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* 詳情裡的判斷塊：點評 + 但是 一體。
+   豎線屬於「點評」，不屬於這一對 —— 20 件沒寫「但是」的，整塊照樣閉合，
+   不留空槽、不寫「暫無」。「但是」是加上去的一筆，不是撐結構的柱子。 */
+.judge{margin:var(--s4) 0 0;border-left:2px solid var(--ink);padding-left:16px}
+.judge .lb{
+  display:block;margin-bottom:7px;
+  font:600 var(--t-micro)/1 var(--sans);letter-spacing:.3em;color:var(--ink-4);
+}
+.judge .v{margin:0;font:400 var(--t-lead)/var(--lh-long) var(--serif);color:var(--ink)}
+.judge .b{
+  margin:.8em 0 0;padding-left:1.3em;position:relative;
+  font:400 var(--t-body)/var(--lh-long) var(--sans);color:var(--ink-2);
+}
+/* 懸掛的硃筆「但」，負位移壓在豎線上，像紙上的一記批註 */
+/* 懸掛的「但」，負位移壓在豎線上，像紙上的一記批註 */
+.judge .b .mk{
+  position:absolute;left:-17px;top:.06em;width:19px;text-align:center;
+  font:600 var(--t-lead)/1.4 var(--serif);color:var(--ink);background:var(--card);
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.sheet h4{
+  margin:var(--s5) 0 var(--s2);font:600 var(--t-meta)/1 var(--sans);
+  letter-spacing:.2em;color:var(--ink-4);
+}
+.step{font:var(--t-meta)/1.6 var(--sans);color:var(--ink-3);margin:var(--s3) 0 var(--s1)}
+.cmd{
+  position:relative;background:var(--soft);border:1px solid var(--line);border-radius:8px;
+  padding:11px 60px 11px 12px;margin:var(--s1) 0;
+  font:12px/1.65 var(--mono);color:var(--ink-2);white-space:pre-wrap;word-break:break-all;
+}
+.cmd button{
+  position:absolute;right:7px;top:7px;background:var(--card);border:1px solid var(--line);
+  color:var(--ink-3);font:var(--t-micro)/1 var(--sans);padding:5px 8px;border-radius:5px;cursor:pointer;
+}
+.cmd button:hover{border-color:var(--ink);color:var(--ink)}
+/* 合集指路。最後半句加粗 —— 它說清了這張卡為什麼跟別的不一樣。 */
+.packnote{margin:var(--s2) 0 0;font:var(--t-meta)/1.75 var(--sans);color:var(--ink-3)}
+.packnote code{
+  font:12px/1.6 var(--mono);background:var(--soft);border:1px solid var(--line);
+  border-radius:4px;padding:1px 5px;color:var(--ink);
+}
+.packnote b{color:var(--ink);font-weight:600}
+.safety{margin:var(--s4) 0 0;font:var(--t-cap)/1.7 var(--sans);color:var(--ink-4)}
+
+@media (max-width:760px){
+  /* ---- 手機首屏必須見貨 ------------------------------------------
+     店主：「小紅書是打開就見貨，我們打開先見一整屏自我介紹。」
+     原來報頭走完約 800px，而 iPhone 視口 812px —— 第一張卡剛好被推出去。
+
+     砍的順序是按「這一行是立場還是導航」來的：
+       · TASTE 副標 —— 裝飾，手機上直接不要
+       · 「生態裡有 266 萬條…」兩行大字 —— **是立場，不是導航**。
+         手機上收掉，換成 slogan 頂上：「挑得少，是因為看得多」本來就是
+         BRAND.md 定義的「那三個數字的註腳」，9 個字說的是同一件事。
+         桌面保留完整那句。
+       · 報頭上下留白壓掉一檔
+     ---------------------------------------------------------------- */
+  .brandrow i{display:none}
+  .say{display:none}
+  header.top{padding:var(--s4) 0 var(--s2)}
+  .tally{margin-top:0;font-size:var(--t-meta)}
+  .tally .bar{display:none}
+  .tally .slog{flex-basis:100%;margin-top:2px;font-size:var(--t-body)}
+  .bar{padding-top:var(--s2)}
+  .bar:after{margin-top:var(--s2)}
+  .chips{margin-top:var(--s2)}
+  .todayline{margin-top:var(--s3)}
+  .flow{margin-top:var(--s3)}
+  /* 手機是第一現場：詳情從底部推上來，不是居中彈窗 */
+  .veil{align-items:flex-end;padding:0}
+  .sheet{
+    width:100%;max-height:92vh;
+    border-radius:var(--r-card) var(--r-card) 0 0;padding:var(--s4);
+  }
+  .judge{padding-left:13px}
+  .judge .b{padding-left:0}
+  .judge .b .mk{position:static;background:none;display:inline;margin-right:.2em}
+}
+
+footer{border-top:1px solid var(--line);margin-top:var(--s6);padding:var(--s5) 0 var(--s7)}
+footer p{margin:0 0 8px;font:var(--t-cap)/1.8 var(--sans);color:var(--ink-3);max-width:34em}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:var(--s3);font:var(--t-cap)/1.6 var(--mono)}
+footer .links a{color:var(--ink-3);border-bottom:1px solid var(--line)}
+footer .links a:hover{color:var(--ink);border-color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- 報頭 + 搜索條都是靜態 HTML：第一次繪製就是一屏真內容，不等 feed。 -->
+<div class="wrap">
+  <header class="top">
+    <div class="brandrow">
+      <span class="logo">
+        <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+             stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="品味">
+          <g transform="rotate(-7 32 32)">
+            <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+            <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+          </g>
+        </svg>
+        <b id="brand">品味</b>
+      </span>
+      <i id="brandSub">Taste · curated agent skills</i>
+      <button id="langBtn" type="button">EN</button>
+    </div>
+    <p class="say" id="say">生態裡有 <em>266 萬</em>條 Agent Skill。檢索早就不是問題了，判斷才是。</p>
+    <p class="tally" id="tally"></p>
+  </header>
+
+  <div class="bar">
+    <div class="search" id="searchBox">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="6.8" cy="6.8" r="5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10.6 10.6L15 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" autocomplete="off" placeholder="搜標題、點評、倉庫…">
+      <button class="clr" id="clr" type="button" aria-label="清空">✕</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <main id="main"></main>
+
+  <footer>
+    <p id="colo1"></p>
+    <p id="colo2"></p>
+    <div class="links">
+      <a href="../skills/feed.json">feed.json</a>
+      <a href="../docs/CURATION.md">選品標準</a>
+      <a href="../llms.txt">llms.txt</a>
+      <a href="https://github.com/woowoeth/skill" target="_blank" rel="noopener">GitHub · MIT</a>
+    </div>
+  </footer>
+</div>
+
+<div class="veil" id="veil"><div class="sheet" id="sheet"></div></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ------------------------------------------------------------------
+   0 · 文案
+   ------------------------------------------------------------------ */
+var I18N = {
+ zh:{
+  brand:"品味", brandSub:"Taste · curated agent skills", btn:"EN",
+  title:"品味 — 中文 Agent Skill 精選",
+  say:'生態裡有 <em>266 萬</em>條 Agent Skill。檢索早就不是問題了，判斷才是。',
+  search:"搜標題、點評、倉庫…",
+  // 口徑照 brand/BRAND.md：是「沒讓它進來」，不是「未上架」——
+  // 把缺口翻成資歷。slogan 是這三個數字的註腳，不單獨當標語用。
+  tSeen:"過手", tIn:"上架", tOut:"沒讓它進來", tWhy:"已寫拒收理由",
+  slogan:"挑得少，是因為看得多",
+  today:"今天上新 <b>%s</b> 件", todayNone:"今天還沒上新。不硬湊數。",
+  all:"全部", pick:"店長推薦",
+  results:"搜到 %s 件", empty:"沒有匹配的。換個詞試試。",
+  moreN:"再看 %s 件", noMore:"到底了",
+  verdict:"點評", but:"但", butFull:"但是", butNone:"這一件還沒寫「但是」",
+  // 詳情頁必須寫清這張圖是什麼。最怕的失敗模式是「被漂亮頭圖騙進去，裝完發現
+  // 產出不長那樣」—— 那就是我們自己把誠實做成了營銷。卡片上不標（那是噪音），
+  // 詳情頁是決策發生的地方，不能含糊。
+  capArtwork:"作者倉庫裡的產出示例——這就是它做出來的東西",
+  capHero:"作者自制的頭圖，<b>不是產出示例</b>",
+  capDiagram:"機制示意圖，<b>不是產出示例</b>",
+  capOther:"作者倉庫裡的圖，<b>不是產出示例</b>",
+  prep:"備料齊", read:"店長讀過", newBadge:"上新", pack:"合集 ×%s",
+  prepWhy:"備料齊，憑這幾樣：",
+  install:"安裝", step1:"Claude Code（終端）",
+  step2:"claude.ai 網頁版：設置 → Capabilities → Skills → 上傳技能文件夾（zip）",
+  collectStep:"合集怎麼用", browseDir:"看看裡面有哪些 →",
+  collectNote:'clone 下來，挑你要的那件複製進 <code>~/.claude/skills/</code>。<b>這是一個合集，沒有「裝它」這個動作。</b>',
+  safety:"提示：Skill 會在你的環境中執行指令，安裝前請先讀 SKILL.md，只裝你信得過的。",
+  copy:"複製", copied:"已複製", added:"收於", zhOnly:"中文",
+  loading:"貨架在裝…", failed:"feed.json 讀取失敗，貨架這次沒裝上。",
+  colo1:"「品味」不是目錄站。目錄站解決“有沒有”，我們解決“值不值”。所有點評由人寫，所有下架可翻回。",
+  colo2:"生態在冊 266 萬 · 在架 %N% 件 · 更新於 %D%",
+  dfmt:function(y,m,d){return m+" 月 "+d+" 日"}
+ },
+ en:{
+  brand:"品味", brandSub:"Taste · curated agent skills", btn:"中",
+  title:"Taste — curated Chinese agent skills",
+  say:'There are <em>2.66 million</em> agent skills out there. Finding them stopped being the problem long ago. Judging them is the problem.',
+  search:"Search titles, verdicts, repos…",
+  tSeen:"handled", tIn:"shelved", tOut:"kept out", tWhy:"reasons written",
+  slogan:"We pick few because we look at many",
+  today:"<b>%s</b> added today", todayNone:"Nothing added today. We do not pad the count.",
+  all:"All", pick:"Editor's picks",
+  results:"%s found", empty:"Nothing matches. Try another word.",
+  moreN:"%s more", noMore:"End of the shelf",
+  verdict:"Verdict", but:"But", butFull:"But", butNone:"No limitation written yet",
+  capArtwork:"Output sample from the author's own repo — this is what it makes",
+  capHero:"The author's own header image, <b>not an output sample</b>",
+  capDiagram:"A diagram of how it works, <b>not an output sample</b>",
+  capOther:"An image from the author's repo, <b>not an output sample</b>",
+  prep:"WELL PREPPED", read:"EDITOR READ IT", newBadge:"NEW", pack:"pack ×%s",
+  prepWhy:"Well prepped, on this evidence:",
+  install:"Install", step1:"Claude Code (terminal)",
+  step2:"claude.ai: Settings → Capabilities → Skills → upload the skill folder (zip)",
+  collectStep:"How to use a pack", browseDir:"See what is inside →",
+  collectNote:'Clone it, then copy the one you want into <code>~/.claude/skills/</code>. <b>This is a pack — there is no such thing as installing it.</b>',
+  safety:"Note: skills execute instructions in your environment. Read the SKILL.md first and install only what you trust.",
+  copy:"copy", copied:"copied", added:"added", zhOnly:"中文 ZH",
+  loading:"Stocking the shelf…", failed:"feed.json failed to load; the shelf did not stock this time.",
+  colo1:"Taste is not a directory. Directories answer “does it exist”. We answer “is it worth it”. Every verdict is written by a person; nothing is deleted, only hidden.",
+  colo2:"2.66M in the wild · %N% carried · updated %D%",
+  dfmt:function(y,m,d){return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]+" "+d}
+ }
+};
+
+/* ------------------------------------------------------------------
+   1 · 封面判斷
+   ------------------------------------------------------------------
+   **不再信 covers.json 的 is_real_artwork。** 內容把 154 張逐張打開看過，
+   那個字段 25% 是硬假陽性：二維碼、過期微信群碼、純字標、60px 頭像放大、
+   Kimi 贊助廣告、灰底一個播放三角的空白圖，還有 36 件商品擠在 13 張圖上。
+   根因是 existing 那一檔等於假設舊數據是對的，沒有人打開看過。
+
+   現在的真源是 editorial/curation.json 的三個字段（內容寫的，人看過的）：
+     cover_kind = artwork | hero | diagram | other | og
+     cover_real = true 只給 artwork，且**去重後**才算
+     cover_dup_of = 撤掉的重複圖指向留下的那件
+
+   在架 152 件的實際分布：
+     **產出物圖 27 件 = 18%**
+     作者自制頭圖 21 · 機制示意圖 8 · 其他 2  → 有任何真圖 58 件 = 38%
+     其餘 94 件無圖（logo / 空白圖 / OG 卡已在數據層撤掉）
+
+   ▸ **所以「圖片主導」這個前提按產出物算是不成立的。** 版式必須讓無圖卡
+     當一等公民 —— 見 .card.noimg 那幾節。
+   ------------------------------------------------------------------ */
+/* ---- 封面兜底黑名單 --------------------------------------------
+   **這塊是我在刪 covers.json 那次重構裡連帶刪掉的，屬於我的疏漏。**
+   後果是真實的：`hugohe3-ppt-master` 的 cover 是
+   `gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png` —— 一張 **Kimi 贊助商廣告**，
+   而它在數據裡標著 `cover_kind: artwork` + `cover_real: true`，
+   於是詳情頁圖注會寫「作者倉庫裡的產出示例——這就是它做出來的東西」。
+   一張第三方廣告被印成我們的產出物證據，正是產品最怕的那個失敗模式。
+
+   兩條規則，兩種性質：
+
+   甲 `gcdn.moonshot.cn` 等贊助/徽標/頭像/二維碼 —— 數據層該清掉，這裡只是兜底。
+      清掉之後這些詞留著不礙事，多一層保險。
+
+   乙 `img.youtube.com` / `i.ytimg.com` —— **這條是隱私判斷，不是審美判斷。**
+      `alchaincyf-huashu-design` 熱鏈 YouTube 縮略圖，是上站 55 張裡
+      **唯一一個第三方圖片請求**：每個訪客的瀏覽器都會去 ping 一次 Google。
+      其餘 54 張全在作者自己的倉庫上（raw.githubusercontent / repository-images）。
+      一個賣信任的站，不該為一張縮略圖讓所有讀者被第三方看一眼。
+      代價是少一張圖，值。
+
+   兩件都已報給內容，正解是數據層換圖或置空 `cover`。
+   ---------------------------------------------------------------- */
+var COVER_DENY = /opengraph\.githubassets\.com|private-user-images\.githubusercontent\.com|buymeacoffee|hackingwithswift|shields\.io|badge|images\.weserv\.nl|gcdn\.moonshot\.cn|qr[-_]?code|[-_\/]qr[-_.]|reward[-_]qr|wechat[-_]group|weixin[-_]?(qr|group)|donate|img\.youtube\.com|i\.ytimg\.com/i;
+
+function coverRec(it){
+  if(!it) return null;
+  var u = (it.cover||"").trim();
+  // cover 為空就什麼都不渲染。兩種情況都落在這裡：
+  //   · cover_kind==="og"      —— OG 卡不上站
+  //   · kind==="artwork" 但 cover 空 —— 圖是真的，但和 cover_dup_of 那件重複，被撤下了
+  //     （12 件是這種。**不要據此渲染任何東西**，別自作聰明去找那張原圖。）
+  if(!u || it.cover_kind==="og") return null;
+  if(COVER_DENY.test(u)) return null;   // 兜底：贊助廣告 / 徽標 / 二維碼 / 第三方熱鏈
+  return {
+    url:  u,
+    // cover_real 只描述**實際展示的那張圖**：真產出物圖且沒被去重撤下，才是 true。
+    real: it.cover_real===true,
+    kind: it.cover_kind || "",
+    w:    it.cover_w || 0,
+    h:    it.cover_h || 0
+  };
+}
+function coverOf(it){ var r=coverRec(it); return r ? r.url : ""; }
+
+/* ------------------------------------------------------------------
+   2 · 工具
+   ------------------------------------------------------------------ */
+var params = new URLSearchParams(location.search);
+var lang = params.get("lang")==="en" ? "en" : "zh";
+var t = function(k){ var v=I18N[lang][k]; return v==null?k:v; };
+var D=null, SHELF=false;
+var state={ q:"", cat:"all", limit:60 };
+
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function sprintf(s,v){return String(s).replace("%s",v)}
+
+var CJK = "\\u2e80-\\u2fff\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff\\uff00-\\uffef";
+var GAP_A = new RegExp("(["+CJK+"])([A-Za-z0-9@#$%&+=/\\\\])","g");
+var GAP_B = new RegExp("([A-Za-z0-9!?.,:;%)\\]}+=/\\\\])(["+CJK+"])","g");
+function mix(s){
+  var x = String(s==null?"":s).replace(GAP_A,"$1只有中文的那些要掛個「中文」標 —— 不然英文讀者以為頁面壞了 */
+function isZhOnly(it){ return lang==="en" && !clean(it.why_en) && !!clean(it.why_zh); }
+function zhChip(it){ return isZhOnly(it) ? '<span class="zhchip">'+esc(t("zhOnly"))+'</span>' : ""; }
+/* 「但是」只認真數據。讀不到就沒有這一句 —— 空著是誠實。 */
+function limitOf(it){ return lang==="zh" ? clean(it.limit_zh) : (clean(it.limit_en) || clean(it.limit_zh)); }
+
+/* 流裡那一句「但是」：有 limit_brief_zh 就用它（≤30 字、完整句），
+   沒有就把 limit_zh 原樣交給 CSS 夾行 —— **絕不自己截字符串**。
+
+   我原來實現的是「在 46 字內最後一個句讀處斷開」，看著體面：切出來是個完整句子。
+   開發反對得對，而且用的是我自己那條論證 —— 我反對過「把 107 字的誠實短處砍成
+   前 24 字」，因為那讓誠實讀起來像鉤子。**在句讀處切得乾淨只是讓這件事更難被發現。**
+   構建期有一條 ERROR 專查這種「偽裝成完整句的截斷」，前端截出來的正是那個形狀。
+
+   CSS 夾行不一樣：它留一個省略號，如實說「這句話沒說完」，而完整版在一次點擊之外
+   且一刀不動 —— 就是 docs/PROTOCOL.md 那條規矩。 */
+function limitBrief(it){
+  var s = lang==="zh"
+    ? clean(it.limit_brief_zh)
+    : clean(it.limit_brief_en || it.limit_brief_zh);
+  if(s) return {text:s, cut:false};
+  var full = limitOf(it);
+  if(!full) return null;
+  return {text:full, cut:true};      // 交給 .but .tx 的 line-clamp，省略號是誠實的
+}
+
+function catName(id){
+  var c=((D&&D.categories)||[]).find(function(x){return x.id===id});
+  return c ? (lang==="zh"?c.zh:c.en) : id;
+}
+function fmtDate(iso){
+  var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(iso||"");
+  if(!m) return iso||"";
+  return I18N[lang].dfmt(+m[1],+m[2],+m[3]);
+}
+function urlOf(it){ return it.url || ("https://github.com/"+it.repo); }
+function dateOK(it){ return it.age_source==="file" || it.age_source==="repo"; }
+function isPack(it){ return it.kind==="collection"; }
+
+/* ------------------------------------------------------------------
+   3 · 報頭（不需要任何數據）
+   ------------------------------------------------------------------ */
+function renderChrome(){
+  document.documentElement.lang = lang==="zh" ? "zh-Hant" : "en";
+  document.title = t("title");
+  el("brand").textContent = t("brand");
+  el("brandSub").textContent = t("brandSub");
+  el("langBtn").textContent = t("btn");
+  el("say").innerHTML = t("say");
+  el("q").placeholder = t("search");
+  el("colo1").textContent = t("colo1");
+  if(!D) el("colo2").textContent = "";
+}
+
+function renderTally(){
+  if(!D) return;
+  var st = D.rejected_summary || {}, bits = [];
+  function put(k, v){
+    if(v==null) return;
+    bits.push('<span><span class="k">'+esc(t(k))+'</span> <b>'+esc(String(v))+'</b></span>');
+  }
+  if(st.shelved!=null && st.unshelved!=null) put("tSeen", st.shelved + st.unshelved);
+  put("tIn", st.shelved!=null ? st.shelved : D.count);
+  if(st.unshelved!=null) put("tOut", st.unshelved);
+  // 拒收理由 0 條就整項不顯示 —— 位置留著，不用 0 佔位、不拿樣張湊數
+  if(st.rejected_documented) put("tWhy", st.rejected_documented);
+  // slogan 跟在三個數字後面，一道豎線隔開。它是註腳，所以只在數字出來了才出現。
+  var line = bits.join('<span class="sep">·</span>');
+  if(bits.length) line += '<span class="bar">｜</span><b class="slog">'+esc(t("slogan"))+'</b>';
+  el("tally").innerHTML = line;
+  el("colo2").textContent = t("colo2").replace("%N%", D.count||0).replace("%D%", fmtDate(D.generated_at));
+}
+
+/* ------------------------------------------------------------------
+   4 · 膠囊
+   ------------------------------------------------------------------ */
+function renderChips(all){
+  var h = '<button class="chip'+(state.cat==="all"?" on":"")+'" data-cat="all">'
+        + esc(t("all"))+'<sup>'+all.length+'</sup></button>';
+  var np = all.filter(function(x){return x.pick}).length;
+  if(np) h += '<button class="chip'+(state.cat==="pick"?" on":"")+'" data-cat="pick">'
+            + esc(t("pick"))+'<sup>'+np+'</sup></button>';
+  (D.categories||[]).forEach(function(c){
+    if(!c.count) return;
+    h += '<button class="chip'+(state.cat===c.id?" on":"")+'" data-cat="'+esc(c.id)+'">'
+       + esc(lang==="zh"?c.zh:c.en)+'<sup>'+c.count+'</sup></button>';
+  });
+  el("chips").innerHTML = h;
+}
+
+/* ------------------------------------------------------------------
+   5 · 卡片
+   ------------------------------------------------------------------
+   槽位次序固定：圖（或墨槓）→ 標題 → 點評 → 但是 → 徽章。
+   有圖無圖**不換次序、不補佔位**，所以兩種卡的節拍是同一個。
+   ------------------------------------------------------------------ */
+/* ---- 畫幅：證據給大畫幅，宣傳圖不給 ----------------------------
+   帶寬比在流裡收窄，詳情裡按原樣不裁。為什麼要收：實測原始寬高比
+   0.46 – 4.69，一張 2560×608 的橫幅放進 261px 寬的卡里只有 **59px 高**，
+   那讀起來像渲染故障不像一張圖。橫幅通常居中構圖，裁到 2:1 留得住有意義的那塊。
+
+   **兩檔不一樣，這是刻意的：**
+     產出物圖（cover_real）  [0.6, 2.0] —— 豎幅可以很高，佔得住注意力
+     作者頭圖 / 示意圖        [1.0, 2.0] —— 不給豎幅、不給大畫幅
+   瀑布流裡高卡就是注意力。注意力給證據，不給宣傳圖。
+   不額外印「作者頭圖」這種標籤 —— 31 張卡上加一行小字是噪音，
+   畫幅本身已經把話說清了。 */
+/* 兩檔的**下限**不一樣，上限一樣。都是按實測的裁剪代價定的：
+     artwork      [0.45, 2.00]
+     hero/diagram [1.00, 2.00]
+
+   橫向為什麼兩檔都停在 2.0（不給 artwork 放寬）：
+   `docs/PROTOCOL.md` 那條「流裡可以裁，完整那份在一次點擊之外且一刀不動」成立之後，
+   卡上的圖就該為**好看**優化，不是為**完整**優化 —— 完整版點一下就有。
+   而這兩件是反向的：4.0 那張限到 2.0 是 130px 高的圖框、露出 50%；
+   限到 3.2 是 82px 高、露出 80%。**在瀑布流裡 130px 的框比 82px 的條有用得多**，
+   所以寧可少露一點。3 張橫向超限的 artwork 都按這個處理。
+
+   豎向為什麼只給 artwork 放到 0.45：豎裁掉的是海報的**頭和腳**（標題在上、內容在下），
+   而不是橫幅兩側的空白 —— 代價完全不同。放寬之後那兩張
+   （1194×2608 比 0.46、1199×2268 比 0.53）從裁 24% / 12% 變成**零裁**，
+   還順帶拿到 570px / 494px 的高卡 —— 高卡正是小紅書那個手感的來源。零代價。
+   實測：artwork 需裁 5 張 → 3 張，**豎裁 0 張**。 */
+var AR_ART = [0.45, 2.00], AR_HERO = [1.00, 2.00];
+function shotHTML(it, forSheet){
+  var rec = coverRec(it);
+  if(!rec) return "";
+  var ar = (rec.w && rec.h) ? rec.w/rec.h : 0;
+  var shown = ar;
+  if(ar && !forSheet){
+    var band = rec.real ? AR_ART : AR_HERO;
+    if(ar > band[1]) shown = band[1];
+    else if(ar < band[0]) shown = band[0];
+  }
+  // 寬高比已知就寫死 —— 圖片加載前空間就佔好了，瀑布流不跳版
+  var sty = shown ? ' style="aspect-ratio:'+(Math.round(shown*1000)/1000)+'"' : '';
+  // 豎幅限高分兩檔。artwork 若還按 420px 截，等於剛放寬的下限又被 max-height 裁回去 ——
+  // 桌面五列 261px 寬、比 0.46 的那張自然高 570px，所以 artwork 這一檔給到 620px。
+  var tall = shown && shown < 0.78 ? (rec.real ? " tallcap-art" : " tallcap") : "";
+  return '<span class="shot'+tall+'"'+sty+'>'
+       +   (isPack(it)&&!forSheet ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
+       +   '<img src="'+esc(rec.url)+'" alt="" loading="'+(forSheet?"eager":"lazy")+'" decoding="async"'
+       +     ' onerror="var s=this.parentNode;s.parentNode.classList.add(\'noimg\');s.remove()">'
+       + '</span>';
+}
+
+function badgesHTML(it, isNew){
+  var h = '<span class="tagn">'+esc(catName(it.category))+'</span>';
+  if(isNew) h += '<span class="newdot">'+esc(t("newBadge"))+'</span>';
+  // prep_badge 由功能開發那邊從 methods/ 存檔本地算（≥3 條證據）。
+  // 字段沒到就什麼都不印 —— 不猜、不估。
+  if(it.prep_badge) h += '<span class="badge">'+esc(t("prep"))+'</span>';
+  if(limitOf(it))   h += '<span class="badge read">'+esc(t("read"))+'</span>';
+  return '<div class="foot">'+h+'</div>';
+}
+
+function butHTML(it){
+  var b = limitBrief(it);
+  if(!b) return '<div class="but none"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+              + '<span class="tx">'+esc(t("butNone"))+'</span></div>';
+  return '<div class="but"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+       + '<span class="sr">'+esc(t("butFull"))+'</span>'
+       + '<span class="tx">'+mix(b.text)+'</span></div>';
+}
+
+function cardHTML(it, isNew){
+  var shot = shotHTML(it);
+  var why  = whyOf(it);
+  // 墨槓總是出現在 DOM 裡，由 CSS 決定顯不顯 —— 這樣圖片 onerror 退化成無圖卡時，
+  // 起頭那道槓也在，不會退成一張沒頭的卡。
+  return '<article class="card'+(shot?"":" noimg")+'" role="button" tabindex="0" data-id="'+esc(it.id)+'">'
+    + '<span class="bar-ink" aria-hidden="true"></span>'
+    + shot
+    + (isPack(it) && !shot ? '<span class="packtag">'+esc(sprintf(t("pack"), it.skill_count||"?"))+'</span>' : '')
+    + '<div class="cbody">'
+    +   '<h3>'+mix(nameOf(it))+'</h3>'
+    +   (why ? '<p class="rev">'+zhChip(it)+mix(why)+'</p>' : '')
+    +   butHTML(it)
+    +   badgesHTML(it, isNew)
+    + '</div>'
+    + '</article>';
+}
+
+/* ------------------------------------------------------------------
+   6 · 流
+   ------------------------------------------------------------------ */
+function filterList(all){
+  var q = state.q.trim().toLowerCase();
+  return all.filter(function(it){
+    if(state.cat==="pick"){ if(!it.pick) return false; }
+    else if(state.cat!=="all" && it.category!==state.cat) return false;
+    if(!q) return true;
+    return [it.name,it.title_zh,it.tagline_zh,it.tagline_en,it.why_zh,it.why_en,it.repo,it.owner]
+      .join(" ").toLowerCase().indexOf(q) >= 0;
+  });
+}
+
+function renderFlow(all){
+  var list = filterList(all), q = state.q.trim();
+  var newest = (D.generated_at||"").slice(0,10);
+
+  // 瀑布流沒法按天分組（多列會把日期打散），所以「今天挑了什麼」提到流上面說一句。
+  // 0 件就照實說 0 件，不硬湊。
+  var head = "";
+  if(!q && state.cat==="all"){
+    var n = D.new_today||0;
+    head = '<div class="todayline"><span class="dot"></span>'
+         + (n ? t("today").replace("%s", n) : esc(t("todayNone")))
+         + '</div>';
+  } else if(q){
+    head = '<div class="todayline"><span class="dot"></span>'
+         + esc(sprintf(t("results"), list.length))+'</div>';
+  }
+
+  if(!list.length) return head + '<div class="empty">'+esc(t("empty"))+'</div>';
+
+  var shown = list.slice(0, state.limit);
+  var flow = '<div class="flow">'
+    + shown.map(function(it){ return cardHTML(it, it.added_at===newest) }).join("")
+    + '</div>';
+
+  var rest = list.length - shown.length;
+  flow += rest>0
+    ? '<button class="more" id="more" type="button">'+esc(sprintf(t("moreN"), rest))+'</button>'
+    : '<div class="empty" style="padding:var(--s5) 0;font-size:var(--t-meta)">'+esc(t("noMore"))+'</div>';
+
+  return head + flow;
+}
+
+function renderShelf(keepScroll){
+  if(!D) return;
+  var y = keepScroll ? window.scrollY : null;
+  renderChrome();
+  renderTally();
+  var all = (D.skills||[]).filter(function(x){return !x.hide});
+  // 按收錄日倒序 —— 「今天挑了什麼」是這一頁的主語
+  all.sort(function(a,b){
+    return (b.added_at||"").localeCompare(a.added_at||"") || (a.title_zh||"").localeCompare(b.title_zh||"");
+  });
+  renderChips(all);
+  el("main").innerHTML = renderFlow(all);
+  SHELF = true;
+  if(y!=null) window.scrollTo(0,y);
+}
+
+/* ------------------------------------------------------------------
+   7 · 詳情
+   ------------------------------------------------------------------ */
+function sheetHTML(it){
+  var ins = it.install||{};
+  var why = whyOf(it), lim = limitOf(it), tg = tagOf(it);
+
+  var h = '<button class="x" type="button" aria-label="close">✕</button>'
+    + '<h3>'+mix(nameOf(it))+'</h3>'
+    + '<div class="repo"><a href="'+esc(urlOf(it))+'" target="_blank" rel="noopener">'
+    +   esc(it.repo)+(it.path?" / "+esc(it.path):"")+'</a>'
+    // 日期只在 age_source 是 file / repo 時寫。空串意味著手上只有倉庫年齡，
+    // 而這件長在子目錄裡 —— 倉庫年齡不是它的年齡，那就一個字都不寫。現在 148/150 是空串。
+    +   (dateOK(it) ? ' · '+esc(t("added"))+' '+esc(fmtDate(it.added_at)) : '')
+    +   (isPack(it) ? ' · '+esc(sprintf(t("pack"), it.skill_count||"?")) : '')
+    + '</div>'
+    + shotHTML(it, true)
+    + shotCapHTML(it)
+    + (tg ? '<p class="lead">'+mix(tg)+'</p>' : '');
+
+  /* 「備料齊」憑什麼 —— 徽章只說結論，詳情頁把證據攤開。
+     **只在 prep_badge === "ready" 時出現。沒有第二檔，沒有負向檔。**
+     不要去數 prep_evidence 的條數：「1–2 條」「0 條」「根本沒有正文存檔」
+     三種情況在 feed 裡字節完全一致（"" + []），前端**拿不到**能渲染成負面的信息。
+     那是刻意設計的 —— 缺存檔的 16 件是我們自己 path 記錯的欠賬，不是商品的問題。 */
+  if(it.prep_badge === "ready" && (it.prep_evidence||[]).length){
+    h += '<p class="prepwhy">'+esc(t("prepWhy"))
+       + it.prep_evidence.map(function(e){ return '<span>'+esc(e)+'</span>' }).join('')
+       + '</p>';
+  }
+
+  // 判斷塊：豎線屬於「點評」。「但是」缺席時整塊照樣閉合，不留空槽。
+  if(why || lim){
+    h += '<div class="judge"><span class="lb">'+esc(t("verdict"))+'</span>'
+       + (why ? '<p class="v">'+zhChip(it)+mix(why)+'</p>' : '')
+       + (lim ? '<p class="b"><span class="mk" aria-hidden="true">'+esc(t("but"))+'</span>'
+              + '<span class="sr">'+esc(t("butFull"))+'</span>'+mix(lim)+'</p>' : '')
+       + '</div>';
+  }
+
+  h += '<h4>'+esc(isPack(it) ? t("collectStep") : t("install"))+'</h4>';
+  if(isPack(it)){
+    /* 合集沒有「裝它」這個動作。三件事都按 feed 走，不在前端硬寫：
+         install.copy 是空串 —— **正常的**（D7），不要顯示覆制按鈕
+         install.note —— 那句定死的文案在數據裡，前端不再自己存一份
+         install.browse —— 指向真正裝著 skill 的那個子目錄
+       前端存一份文案會和數據漂移；文案改了得改兩處，必漏一處。 */
+    if(ins.clone) h += cmdHTML(ins.clone);
+    var note = (ins.note||"").trim() || t("collectNote");
+    h += '<div class="packnote">'+esc(note).replace(/`([^`]+)`/g,"<code>$1</code>")
+       +   (ins.browse ? ' <a href="'+esc(ins.browse)+'" target="_blank" rel="noopener">'
+                       + esc(t("browseDir"))+'</a>' : '')
+       + '</div>';
+  } else {
+    if(ins.clone || ins.copy){
+      h += '<div class="step">1 · '+esc(t("step1"))+'</div>';
+      if(ins.clone) h += cmdHTML(ins.clone);
+      if(ins.copy)  h += cmdHTML(ins.copy);
+    }
+    h += '<div class="step">2 · '+esc(t("step2"))+'</div>';
+  }
+  h += '<div class="safety">'+esc(t("safety"))+'</div>';
+  return h;
+}
+/* 圖注只出現在詳情頁。四種圖各說清楚是什麼，非產出物的明寫「不是產出示例」。 */
+var CAP_KEY = {artwork:"capArtwork", hero:"capHero", diagram:"capDiagram", other:"capOther"};
+function shotCapHTML(it){
+  var rec = coverRec(it);
+  if(!rec) return "";
+  var k = CAP_KEY[rec.kind] || (rec.real ? "capArtwork" : "capOther");
+  return '<p class="shotcap'+(rec.real?" real":"")+'">'+t(k)+'</p>';
+}
+function cmdHTML(c){
+  return '<div class="cmd">'+esc(c)+'<button type="button" data-c="'+esc(c)+'">'+esc(t("copy"))+'</button></div>';
+}
+
+var lastFocus=null;
+function openSheet(it){
+  lastFocus = document.activeElement;
+  el("sheet").innerHTML = sheetHTML(it);
+  el("veil").classList.add("open");
+  document.body.style.overflow = "hidden";
+  var x = el("sheet").querySelector(".x"); if(x) x.focus();
+}
+function closeSheet(){
+  el("veil").classList.remove("open");
+  el("sheet").innerHTML = "";
+  document.body.style.overflow = "";
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+
+function copyText(txt, btn){
+  var old = btn.textContent;
+  function done(){ btn.textContent = t("copied"); setTimeout(function(){btn.textContent=old},1400); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done, fallback);
+  } else fallback();
+  function fallback(){
+    var ta=document.createElement("textarea"); ta.value=txt;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ------------------------------------------------------------------
+   8 · 交互
+   ------------------------------------------------------------------ */
+document.addEventListener("click", function(e){
+  var cp = e.target.closest(".cmd button");
+  if(cp){ e.stopPropagation(); copyText(cp.getAttribute("data-c"), cp); return; }
+
+  if(e.target.closest(".sheet .x")){ closeSheet(); return; }
+  if(e.target.id==="veil"){ closeSheet(); return; }
+
+  var chip = e.target.closest("#chips .chip");
+  if(chip){ state.cat = chip.getAttribute("data-cat"); state.limit = 60; renderShelf(); window.scrollTo(0,0); return; }
+
+  if(e.target.closest("#more")){ state.limit += 60; renderShelf(true); return; }
+
+  var card = e.target.closest(".card");
+  if(card){
+    var it = (D.skills||[]).find(function(x){ return x.id===card.getAttribute("data-id") });
+    if(it) openSheet(it);
+    return;
+  }
+});
+
+document.addEventListener("keydown", function(e){
+  if(e.key==="Escape" && el("veil").classList.contains("open")){ closeSheet(); return; }
+  // article[role=button] 不像 <button> 自帶鍵盤，得自己接
+  if(e.key==="Enter" || e.key===" " || e.key==="Spacebar"){
+    var card = e.target.closest && e.target.closest('.card[role="button"]');
+    if(card){
+      e.preventDefault();
+      var it = (D.skills||[]).find(function(x){ return x.id===card.getAttribute("data-id") });
+      if(it) openSheet(it);
+    }
+  }
+});
+
+var qt=null;
+el("q").addEventListener("input", function(){
+  var v = this.value;
+  el("searchBox").classList.toggle("has", !!v);
+  clearTimeout(qt);
+  qt = setTimeout(function(){
+    state.q = v; state.limit = 60;
+    if(D){ el("main").innerHTML = renderFlow((D.skills||[]).filter(function(x){return !x.hide}).sort(function(a,b){
+      return (b.added_at||"").localeCompare(a.added_at||"") || (a.title_zh||"").localeCompare(b.title_zh||"");
+    })); }
+  }, 120);
+});
+el("clr").addEventListener("click", function(){
+  el("q").value=""; el("searchBox").classList.remove("has");
+  state.q=""; state.limit=60; el("q").focus();
+  if(D) renderShelf(true);
+});
+
+el("langBtn").addEventListener("click", function(){
+  lang = lang==="zh" ? "en" : "zh";
+  var u = new URL(location.href);
+  if(lang==="en") u.searchParams.set("lang","en"); else u.searchParams.delete("lang");
+  history.replaceState(null,"",u);
+  if(SHELF) renderShelf(true); else renderChrome();
+});
+
+/* ------------------------------------------------------------------
+   9 · 起飛
+   ------------------------------------------------------------------
+   兩條規矩：
+
+   甲 **首屏不等任何 fetch。** 報頭、標識、立場句、搜索條、頁腳都是靜態 HTML，
+      腳本一進來先補文案（renderChrome）。這一屏在第一次繪製就成立。
+      v2 是整頁（連報頭）都等四個 fetch 的 Promise.all，再串一個
+      methods/*.md —— 五個往返之前頁面上什麼都沒有。
+
+   乙 **整頁只有一個請求：feed.json。** 封面的 URL、類型、真偽、像素寬高
+      全在 feed 裡，所以沒有第二個往返、沒有"先無圖再補圖"的二次重排、
+      也沒有可選數據把貨架拖住的可能。
+   ------------------------------------------------------------------ */
+renderChrome();
+el("main").innerHTML = '<div class="empty">'+esc(t("loading"))+'</div>';
+
+window.__FEED__.then(function(feed){
+  D = feed;
+  renderShelf();
+}).catch(function(e){
+  el("main").innerHTML = '<div class="empty">'+esc(t("failed"))+'</div>';
+  if(window.console) console.error(e);
+});
+
+})();
+</script>
+</body>
+</html>

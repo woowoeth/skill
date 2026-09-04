@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>三天賽程裡做完數學建模競賽全流程 — 品味</title>
+<meta name="description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, XiaoMaColtAI">
+<link rel="canonical" href="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/tw/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/tw/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="三天賽程裡做完數學建模競賽全流程 — 品味">
+<meta property="og:description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
+<meta property="og:url" content="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/">
+<meta property="og:image" content="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="三天賽程裡做完數學建模競賽全流程 — 品味">
+<meta name="twitter:description" content="建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"三天賽程裡做完數學建模競賽全流程","description":"建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。","url":"https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"XiaoMaColtAI"},"image":"https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png","codeRepository":"https://github.com/XiaoMaColtAI/math-modeling-skill"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">貨架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">幫你發現有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">生活</span>
+      <span>XiaoMaColtAI</span>
+      <span class="date">2026-08-10</span>
+    </div>
+    <h1 class="ttl">三天賽程裡做完數學建模競賽全流程</h1>
+    <p class="lede">建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。</p>
+    <div class="tags"><span class="tag">XiaoMaColtAI</span></div>
+    <img class="cover" src="https://raw.githubusercontent.com/XiaoMaColtAI/math-modeling-skill/HEAD/imgs/%E4%B8%89%E8%A7%92%E8%89%B2%E6%B5%81%E7%A8%8B%E5%9B%BE-%E5%90%ABSubagent.png" alt="" onerror="this.remove()">
+    
+    <section class="sec"><h2>做什麼用</h2><p>建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。按競賽真實節奏設計的，不是把「數學建模」當學科名詞做個通用助手。</p></section>
+    <section class="sec"><h2>應用範圍</h2><p>用在「生活」這一格。作者自己寫明產出的論文不能直接當作品交，格式還得對當屆官方模板。運行環境派不出 Subagent 時，M1/P1/P2/W1/W2 五道門禁只能標 BLOCKED；LaTeX 分支缺編譯引擎會直接阻塞。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「三天賽程裡做完數學建模競賽全流程」這一件來做，不要中途改風格。</li><li>把我手上這張按它的規矩重做，風格不許換。</li><li>只要成品，過程裡的解釋可以沒有。</li><li>做完對照應用範圍，越界的那一稿丟掉。</li></ul></section>
+    <section class="sec"><h2>安裝</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git">複製</button></div><div class="cmd"><code>mv math-modeling-skill ~/.claude/skills/math-modeling-skill</code><button type="button" data-copy="mv math-modeling-skill ~/.claude/skills/math-modeling-skill">複製</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分類</dt><dd>生活</dd>
+        <dt>作者</dt><dd>XiaoMaColtAI</dd>
+        <dt>上架</dt><dd>2026-08-10</dd>
+      </dl>
+      <a class="pill" href="https://github.com/XiaoMaColtAI/math-modeling-skill" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../anthropics-claude-plugins-community-eli5/">把任何概念講成帶大圖的幼兒園繪本</a><a href="../ayi-ai-nie-grassroots-logic/">聶輝華《基層中國的運行邏輯》方法箱</a><a href="../duskyelf-teach-me-teach-me/">會打斷你含糊用詞的蘇格拉底式陪練</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人類生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲播客</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../deusyu-translate-book/">← 整本書拆給多個分身並行翻譯，再拼回原排版</a><a href="../cosmoblk-email-marketing-bible/">做郵件營銷的顧問 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已複製'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>

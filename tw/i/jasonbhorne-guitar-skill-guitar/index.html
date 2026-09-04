@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/jasonbhorne-guitar-skill-guitar/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/jasonbhorne-guitar-skill-guitar/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>只給和絃走向、絕不替你抄歌詞的吉他譜生成器 — 品味</title>
+<meta name="description" content="說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 玩樂, jasonbhorne">
+<link rel="canonical" href="https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/tw/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/tw/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="只給和絃走向、絕不替你抄歌詞的吉他譜生成器 — 品味">
+<meta property="og:description" content="說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。">
+<meta property="og:url" content="https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/jasonbhorne-guitar-skill-guitar.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/jasonbhorne-guitar-skill-guitar.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="只給和絃走向、絕不替你抄歌詞的吉他譜生成器 — 品味">
+<meta name="twitter:description" content="說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"只給和絃走向、絕不替你抄歌詞的吉他譜生成器","description":"說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。","url":"https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/","applicationCategory":"玩樂","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"jasonbhorne"},"image":"https://ourword.ai/skill/tw/assets/covers/jasonbhorne-guitar-skill-guitar.png","codeRepository":"https://github.com/jasonbhorne/guitar-skill/tree/HEAD/guitar"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">貨架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/tw/i/jasonbhorne-guitar-skill-guitar/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">幫你發現有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">玩樂</span>
+      <span>jasonbhorne</span>
+      <span class="date">2026-08-21</span>
+    </div>
+    <h1 class="ttl">只給和絃走向、絕不替你抄歌詞的吉他譜生成器</h1>
+    <p class="lede">說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。</p>
+    <div class="tags"><span class="tag">jasonbhorne</span></div>
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/jasonbhorne-guitar-skill-guitar.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/jasonbhorne-guitar-skill-guitar.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什麼用</h2><p>說一個歌名，它出一份坐下就能彈的譜：和絃圖、帶小節數的段落結構、前奏 riff 和 solo 的六線譜。譜裡只有和絃走向、不含歌詞——它讓你自己從有授權的來源補上，並寫明這些譜不許轉發。</p></section>
+    <section class="sec"><h2>應用範圍</h2><p>用在「玩樂」這一格。冷門曲目它會標 MEDIUM/LOW 置信度，讓你自己對著錄音核哪幾段是猜的。和絃圖靠隨件 python 腳本渲染成 ASCII，沒有五線譜也沒有音頻。譜固定存到 ~/Documents/Guitar/Songs 下。它給的是「大概是這樣」，不是官方譜。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「只給和絃走向、絕不替你抄歌詞的吉他譜生成器」這一件來做，不要中途改風格。</li><li>按規則玩一輪，把依據留在結果裡。</li><li>編不出來就停，不要圓。</li><li>玩完對照應用範圍，別拿它當正事工具。</li></ul></section>
+    <section class="sec"><h2>安裝</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/jasonbhorne/guitar-skill.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/jasonbhorne/guitar-skill.git">複製</button></div><div class="cmd"><code>cp -r guitar-skill/guitar ~/.claude/skills/guitar</code><button type="button" data-copy="cp -r guitar-skill/guitar ~/.claude/skills/guitar">複製</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分類</dt><dd>玩樂</dd>
+        <dt>作者</dt><dd>jasonbhorne</dd>
+        <dt>上架</dt><dd>2026-08-21</dd>
+      </dl>
+      <a class="pill" href="https://github.com/jasonbhorne/guitar-skill/tree/HEAD/guitar" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../geekjourneyx-meme-generator-skill-generating-memes/">298 個模板隨叫隨到，連 petpet 都能現做</a><a href="../larashero3-dotcom-lieflat-charts/">圖表先問數據語義再選色，報告模板十二套</a><a href="../ffffffffelix-automotive-functional-safety/">ISO 26262 安全檔案的起草、挑錯與質詢臺</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人類生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲播客</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../jiang59991-qiaopi/">← 一句話白話文，落成南洋阿嬤能讀的家書</a><a href="../tance-mang-chinese-webnovel-skills-continuity/">六條邏輯鏈逐章核對，專治寫到一百章崩設定 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已複製'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>

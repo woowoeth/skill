@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/ruochenlyu-beijing-pollen-monitor/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/ruochenlyu-beijing-pollen-monitor/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>查北京 16 區花粉濃度和過敏預報 — 品味</title>
+<meta name="description" content="每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, ruochenlyu">
+<link rel="canonical" href="https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/tw/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/tw/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="查北京 16 區花粉濃度和過敏預報 — 品味">
+<meta property="og:description" content="每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。">
+<meta property="og:url" content="https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/ruochenlyu-beijing-pollen-monitor.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/ruochenlyu-beijing-pollen-monitor.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="查北京 16 區花粉濃度和過敏預報 — 品味">
+<meta name="twitter:description" content="每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"查北京 16 區花粉濃度和過敏預報","description":"每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。","url":"https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"ruochenlyu"},"image":"https://ourword.ai/skill/tw/assets/covers/ruochenlyu-beijing-pollen-monitor.png","codeRepository":"https://github.com/ruochenlyu/beijing-pollen-monitor/tree/HEAD/skills/beijing-pollen-monitor"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">貨架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/tw/i/ruochenlyu-beijing-pollen-monitor/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">幫你發現有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">生活</span>
+      <span>ruochenlyu</span>
+      <span class="date">2026-08-19</span>
+    </div>
+    <h1 class="ttl">查北京 16 區花粉濃度和過敏預報</h1>
+    <p class="lede">每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。</p>
+    <div class="tags"><span class="tag">ruochenlyu</span></div>
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/ruochenlyu-beijing-pollen-monitor.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/ruochenlyu-beijing-pollen-monitor.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什麼用</h2><p>每年三四月對花粉過敏的人來說是渡劫。它拉 16 個站點的實時監測和分類預報，按區查，出門前知道今天該不該戴口罩。垂直到一個城市、一種過敏原——但對那批人是剛需。這種「窄得理直氣壯」正是大市場覆蓋不到的東西。</p></section>
+    <section class="sec"><h2>應用範圍</h2><p>用在「生活」這一格。metadata 裡明寫要本機有 curl 和 jq，全靠 scripts/beijing-pollen-query.sh 打公開接口。範圍釘死北京 16 區，作者寫明北京以外不要用。而且它只查不推——「每天早上發我」那種晨報要調用方自己接。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「查北京 16 區花粉濃度和過敏預報」這一件來做，不要中途改風格。</li><li>把我手上這張按它的規矩重做，風格不許換。</li><li>只要成品，過程裡的解釋可以沒有。</li><li>做完對照應用範圍，越界的那一稿丟掉。</li></ul></section>
+    <section class="sec"><h2>安裝</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/ruochenlyu/beijing-pollen-monitor.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/ruochenlyu/beijing-pollen-monitor.git">複製</button></div><div class="cmd"><code>cp -r beijing-pollen-monitor/skills/beijing-pollen-monitor ~/.claude/skills/beijing-pollen-monitor</code><button type="button" data-copy="cp -r beijing-pollen-monitor/skills/beijing-pollen-monitor ~/.claude/skills/beijing-pollen-monitor">複製</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分類</dt><dd>生活</dd>
+        <dt>作者</dt><dd>ruochenlyu</dd>
+        <dt>上架</dt><dd>2026-08-19</dd>
+      </dl>
+      <a class="pill" href="https://github.com/ruochenlyu/beijing-pollen-monitor/tree/HEAD/skills/beijing-pollen-monitor" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../chenklein26-maker-fitness-coach-rpg/">訓練數據自己攢，劇情推進看成績的 RPG 健身教練</a><a href="../yuanzhao321-tcm-skill/">會勸你去掛急診的中醫參謀</a><a href="../reluctant2828-system-fitness-advisor-skill-system-fitness-advisor/">按你的訓練記錄算下一次該練什麼</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人類生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲播客</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../seiya89757-naming-skill/">← 全家為起名吵架時出來當中間人</a><a href="../zzzzzzza-larp-skill/">LARP 角色卡生成器：從一句話到可扮演的完整人設 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已複製'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>

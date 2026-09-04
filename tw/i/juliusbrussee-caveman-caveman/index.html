@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/"><script>(function(){try{var K='skill_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var cur=tw?'tw':'sc';var other=tw?p.replace(/^\/skill\/tw/,'/skill')||'/skill/':p.replace(/^\/skill/,'/skill/tw');var saved=null;try{saved=localStorage.getItem(K)}catch(e){}var want=saved||((/zh-(hant|tw|hk|mo)/i.test((navigator.languages||[navigator.language||'']).join(',')))?'tw':'sc');if(want!==cur){location.replace(other);return}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var b=document.createElement('button');b.className='pill';b.type='button';b.id='twBtn';b.textContent=tw?'簡體':'繁體';b.setAttribute('aria-label',tw?'切換到簡體':'切換到繁體');b.onclick=function(){try{localStorage.setItem(K,tw?'sc':'tw')}catch(e){};location.href=other};host.insertBefore(b,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>讓 Claude 用原始人腔說話，據稱省下 65% 的 token — 品味</title>
+<meta name="description" content="让 Claude 像原始人一样说话：「为什么用很多 token，少 token 就行」——据称实测省 65% token，还越用越上头。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 玩樂, JuliusBrussee">
+<link rel="canonical" href="https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/tw/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/tw/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/tw/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="让 Claude 用原始人腔说话，据称省下 65% 的 token — 品味">
+<meta property="og:description" content="让 Claude 像原始人一样说话：「为什么用很多 token，少 token 就行」——据称实测省 65% token，还越用越上头。">
+<meta property="og:url" content="https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/">
+<meta property="og:image" content="https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png"><meta name="twitter:image" content="https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="让 Claude 用原始人腔说话，据称省下 65% 的 token — 品味">
+<meta name="twitter:description" content="让 Claude 像原始人一样说话：「为什么用很多 token，少 token 就行」——据称实测省 65% token，还越用越上头。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"讓 Claude 用原始人腔說話，據稱省下 65% 的 token","description":"讓 Claude 像原始人一樣說話：「為什麼用很多 token，少 token 就行」——據稱實測省 65% token，還越用越上頭。","url":"https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/","applicationCategory":"玩樂","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"JuliusBrussee"},"image":"https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png","codeRepository":"https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">貨架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">幫你發現有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">玩樂</span>
+      <span>JuliusBrussee</span>
+      <span class="date">2026-08-07</span>
+    </div>
+    <h1 class="ttl">讓 Claude 用原始人腔說話，據稱省下 65% 的 token</h1>
+    <p class="lede">讓 Claude 像原始人一樣說話：「為什麼用很多 token，少 token 就行」——據稱實測省 65% token，還越用越上頭。</p>
+    <div class="tags"><span class="tag">JuliusBrussee</span></div>
+    <img class="cover" src="https://raw.githubusercontent.com/JuliusBrussee/caveman/HEAD/docs/assets/learn-report.png" alt="" onerror="this.remove()">
+    
+    <section class="sec"><h2>做什麼用</h2><p>讓 Claude 像原始人一樣說話：「為什麼用很多 token，少 token 就行」——據稱實測省 65% token，還越用越上頭。一個玩笑做成了真產品：token 賬單實打實地降（據稱 65%），還順手治好了 AI 的囉嗦病。</p></section>
+    <section class="sec"><h2>應用範圍</h2><p>用在「玩樂」這一格。65% 是作者自己標註的實測，正文沒給測法。凡是寫到聊天之外的字——代碼註釋、commit、文檔、issue、記憶文件——一律恢復正常散文，那部分省不到。安全警告也自動切回。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「讓 Claude 用原始人腔說話，據稱省下 65% 的 token」這一件來做，不要中途改風格。</li><li>按規則玩一輪，把依據留在結果裡。</li><li>編不出來就停，不要圓。</li><li>玩完對照應用範圍，別拿它當正事工具。</li></ul></section>
+    <section class="sec"><h2>安裝</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/JuliusBrussee/caveman.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/JuliusBrussee/caveman.git">複製</button></div><div class="cmd"><code>cp -r caveman/plugins/caveman/skills/caveman ~/.claude/skills/caveman</code><button type="button" data-copy="cp -r caveman/plugins/caveman/skills/caveman ~/.claude/skills/caveman">複製</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分類</dt><dd>玩樂</dd>
+        <dt>作者</dt><dd>JuliusBrussee</dd>
+        <dt>上架</dt><dd>2026-08-07</dd>
+      </dl>
+      <a class="pill" href="https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../geekjourneyx-meme-generator-skill-generating-memes/">298 個模板隨叫隨到，連 petpet 都能現做</a><a href="../larashero3-dotcom-lieflat-charts/">圖表先問數據語義再選色，報告模板十二套</a><a href="../ffffffffelix-automotive-functional-safety/">ISO 26262 安全檔案的起草、挑錯與質詢臺</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人類生存法則</a>
+    <a href="https://ourword.ai/podcast/">原聲播客</a>
+    <a href="https://ourword.ai/skill/tw/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../alisa0808-vox-director/">← 給一個主題，出一支 Vox 式紙拼貼解說視頻</a><a href="../nutlope-hallmark-hallmark/">一眼看出頁面像 AI 生成的，並給出改法 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已複製'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>

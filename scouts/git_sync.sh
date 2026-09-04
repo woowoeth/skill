@@ -6,10 +6,13 @@
 # （scout_lib.refresh() 从 skills/*.json + editorial/*.json 重建），手合它们毫无意义。
 #
 # 规矩：先提交**源**，rebase 时生成物冲突随便取一侧，rebase 完从合并后的源重生成一次，再提交推送。
+#
+# tw/ 也算生成物：它由 scouts/tw.py 拿构建好的简体树整树转出来，
+# 手合它跟手合 i/ 一样没意义。
 # 这个脚本给所有工作流的提交步骤共用 —— 以前每个工作流各写一遍，各有各的坑。
 set -euo pipefail
 MSG="${1:-bot: update}"
-GEN='^(skills/feed\.json|skills/rejected-feed\.json|i/.*|sitemap\.xml|llms.*\.txt|feed\.xml|robots\.txt|index\.html)$'
+GEN='^(skills/feed\.json|skills/rejected-feed\.json|i/.*|tw/.*|sitemap\.xml|llms.*\.txt|feed\.xml|robots\.txt|index\.html)$'
 
 git config user.name  "skill-store-bot"
 git config user.email "skill-store-bot@users.noreply.github.com"
