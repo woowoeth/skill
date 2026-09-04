@@ -238,7 +238,11 @@ _LANG_JS = (
     "var old=document.getElementById('langBtn');if(old)old.style.display='none';"
     "var sel=document.createElement('select');sel.id='langPick';sel.className='pill';"
     "sel.setAttribute('aria-label','\\u8bed\\u8a00 Language');"
-    "[['sc','\\u7b80\\u4f53'],['tw','\\u7e41\\u9ad4'],['en','English']].forEach(function(kv){"
+    # 标签只用一个字／两个字母，和另外两个站一致：「English」一个词
+    # 就占 87px，窄屏页头放不下。原生 <select> 收起和展开是同一份文字，
+    # 所以列表里也是短的 —— 语言选择器的惯例是每一项用它自己的语言写，
+    # 简／繁／EN 三个都认得出。
+    "[['sc','\\u7b80'],['tw','\\u7e41'],['en','EN']].forEach(function(kv){"
     "var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];"
     "if(kv[0]===cur)o.selected=true;sel.appendChild(o)});"
     "sel.onchange=function(){if(sel.value===cur)return;"
