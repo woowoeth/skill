@@ -2,14 +2,14 @@
  "id": "liyue-aigc-xianxia-cinematic-video-director-xianxia-cinematic-video-director",
  "kind": "skill",
  "name": "xianxia-cinematic-video-director",
- "title_zh": "",
- "tagline_zh": "",
- "tagline_en": "",
+ "title_zh": "仙侠打斗戏运镜分镜导演，逐镜给提示词",
+ "tagline_zh": "不会运镜？它从分镜、推拉摇移到首尾帧逐镜拆解，还能诊断你给的参考视频哪里不成立，像有个古装剧副导演在边上。",
+ "tagline_en": "No camera instincts? It breaks down shots, motion, and keyframes, and diagnoses why your reference clip.",
  "desc_en": "Design, derive, optimize, explain, and diagnose cinematic Eastern xianxia camera direction, storyboards, motion choreography, pacing, continuity locks, keyframes, and per-shot image-to-video prompts. Use for 仙侠运镜、镜头语言、分镜、推拉摇移、跟拍、环绕、航拍、打斗追逐、情绪镜头、首尾帧、视频提示词、参考视频诊断, when users ask “怎么运镜/不会运镜/给案例/帮我改运镜”, or when an input contains invalid, contradictory, physically implausible, non-camera, or off-topic ",
- "why_zh": "",
- "why_en": "",
- "limit_zh": "",
- "limit_en": "",
+ "why_zh": "不是模板库，是能推导运镜逻辑的导演：先锁连续性，再排情绪节奏，最后才生成逐镜提示词。",
+ "why_en": "Not a template stash—it derives camera logic: locks continuity first, paces emotion, then writes per-shot prompts, rejecting.",
+ "limit_zh": "只认仙侠/古装影视镜头语言，现代戏、科幻、动画风格不适用；产物是分镜脚本与提示词，不生成视频；需自备图生视频工具执行。",
+ "limit_en": "Only xianxia/costume-drama cinematography; no sci-fi/modern/anime. Outputs storyboards & prompts, not video. Needs your own image-to-video tool.",
  "repo": "liyue-aigc/xianxia-cinematic-video-director",
  "owner": "liyue-aigc",
  "path": "xianxia-cinematic-video-director",
@@ -29,5 +29,8 @@
   "copy": "cp -r xianxia-cinematic-video-director/xianxia-cinematic-video-director ~/.claude/skills/xianxia-cinematic-video-director",
   "dir": "~/.claude/skills/xianxia-cinematic-video-director"
  },
- "cover": "/skill/assets/covers/liyue-aigc-xianxia-cinematic-video-director-xianxia-cinematic-video-director.png"
+ "cover": "",
+ "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide",
+ "cover_kind": "none",
+ "title_en": "Xianxia fight-scene camera director: shot-by-shot prompts"
 }

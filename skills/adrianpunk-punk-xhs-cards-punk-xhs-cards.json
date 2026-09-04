@@ -2,12 +2,12 @@
  "id": "adrianpunk-punk-xhs-cards-punk-xhs-cards",
  "kind": "skill",
  "name": "punk-xhs-cards",
- "title_zh": "把 Markdown 长文变成带个人 IP 的小红书",
- "tagline_zh": "上传一张照片或 IP 图，自动定下作者名与主题色；长文转成书封、16:9 窗口插图、从 01 编号的正文卡片。",
- "tagline_en": "Upload a photo or IP image to lock in your author name and theme color. Turn long Markdown into a book cover.",
+ "title_zh": "同一套主题色贯穿封面、IP 图与编号正文卡",
+ "tagline_zh": "传一张图或一句话，先确认你的个人 IP 和主题色，再把 Markdown 长文拆成书封＋窗口插图＋01 起编号的知…",
+ "tagline_en": "Send a photo or a line—it locks your IP and theme color, then turns Markdown into a book cover, a macOS-window.",
  "desc_en": "Punk XHS Cards：从用户照片或已有 IP 图建立并确认可复用个人 IP、作者名与主题色，再把带文字、截图、图表或流程图的 Markdown 长文制作成“主题色书封＋16:9 macOS 窗口 IP 插图＋从 01 开始编号的正文知识卡片”，保留理解文章不可缺少的关键图，同时生成小红书标题、正文和 tags。用户提到“上传照片生成个人 IP”“上传自己的 IP 形象”“把 Markdown 做成小红书图”“保留文章关键图”“先做封面再做内页”“个人 IP 知识卡片”或点名 $punk-xhs-cards 时使用。",
- "why_zh": "不是简单截图分页，而是先确认可复用 IP 再排版；封面、窗口图、卡片编号、关键图保留都围绕同一视觉体系。",
- "why_en": "It doesn't just slice text into images—it locks a reusable IP first, then builds cover, window art, and numbered cards around.",
+ "why_zh": "先定 IP 再排版，不是套模板：每张卡都从你确认过的形象和色板里长出来，长文里的截图、图表。",
+ "why_en": "It establishes your IP before laying out anything—cards grow from your confirmed avatar and palette, and key figures survive.",
  "repo": "adrianpunk/punk-xhs-cards",
  "owner": "adrianpunk",
  "path": "punk-xhs-cards",
@@ -27,6 +27,9 @@
   "copy": "cp -r punk-xhs-cards/punk-xhs-cards ~/.claude/skills/punk-xhs-cards",
   "dir": "~/.claude/skills/punk-xhs-cards"
  },
- "limit_zh": "只吃 Markdown 长文，且必须已有或当场生成个人 IP 图；输出到小红书图片与文案为止，不含发布排期或竞品分析。",
- "limit_en": "Only accepts Markdown long-form; needs an existing or newly uploaded IP image. Output stops at XHS images and copy—no scheduling or competitor."
+ "limit_zh": "只吃 Markdown 长文，且必须能提取出作者名或主题色；若原文没有可保留的关键图，它会跳过插图步骤。",
+ "limit_en": "Only Markdown long-form; needs an author name or theme color to proceed. Skips illustration if no key figures exist. Fixed 16:9 cover/cards—no.",
+ "gate_score": 5,
+ "unhide_note": "2026-09-04 编辑亲挑（参照通道 R1），撤销旧的 hide：",
+ "title_en": "One theme color across cover, IP art, and numbered cards"
 }
