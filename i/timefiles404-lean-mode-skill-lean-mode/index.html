@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>改代码前先问一句：这层防御真有必要吗 — 品味</title>
+<meta name="description" content="你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="品味, Agent Skill, Claude Code, 工作, Timefiles404">
+<link rel="canonical" href="https://ourword.ai/skill/i/timefiles404-lean-mode-skill-lean-mode/">
+<link rel="alternate" type="application/rss+xml" title="品味" href="https://ourword.ai/skill/feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://ourword.ai/skill/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ourword.ai/skill/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/item.css?v=12">
+<style>
+img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
+img.cover.og{aspect-ratio:2;object-fit:cover}
+.wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="品味">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="改代码前先问一句：这层防御真有必要吗 — 品味">
+<meta property="og:description" content="你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。">
+<meta property="og:url" content="https://ourword.ai/skill/i/timefiles404-lean-mode-skill-lean-mode/">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/timefiles404-lean-mode-skill-lean-mode.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/timefiles404-lean-mode-skill-lean-mode.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="改代码前先问一句：这层防御真有必要吗 — 品味">
+<meta name="twitter:description" content="你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"改代码前先问一句：这层防御真有必要吗","description":"你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。","url":"https://ourword.ai/skill/i/timefiles404-lean-mode-skill-lean-mode/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"Timefiles404"},"image":"https://ourword.ai/skill/assets/covers/timefiles404-lean-mode-skill-lean-mode.png","codeRepository":"https://github.com/Timefiles404/lean-mode-skill/tree/HEAD/skills/lean-mode"}</script>
+<meta name="theme-color" content="#f4efe6">
+</head>
+<body>
+<header class="wrap mast">
+  <div class="mast-top">
+    <a class="brand" href="../../">
+      <svg viewBox="14 4 33 55" fill="currentColor" stroke="currentColor" stroke-width="2.4"
+     stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+  <g transform="rotate(-7 32 32)">
+    <path d="M18.6 7 L21.4 7.3 L31.1 55.8 L30.9 55.8 Z"/>
+    <path d="M39.6 9 L42.4 8.7 L35.2 55.8 L35 55.8 Z"/>
+  </g>
+</svg>
+      <b>品味</b>
+    </a>
+    <nav class="mast-side">
+      <a class="pill" href="../../">货架</a>
+      <button class="pill" type="button" id="share" data-url="https://ourword.ai/skill/i/timefiles404-lean-mode-skill-lean-mode/">分享</button>
+    </nav>
+  </div>
+  <p class="slogan">帮你发现有品位的 Skills</p>
+</header>
+
+<div class="wrap ep-grid">
+  <article>
+    <div class="kicker">
+      <span class="src">工作</span>
+      <span>Timefiles404</span>
+      <span class="date">2026-09-03</span>
+    </div>
+    <h1 class="ttl">改代码前先问一句：这层防御真有必要吗</h1>
+    <p class="lede">你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。</p>
+    <div class="tags"><span class="tag">Timefiles404</span></div>
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/timefiles404-lean-mode-skill-lean-mode.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/timefiles404-lean-mode-skill-lean-mode.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    
+    <section class="sec"><h2>做什么用</h2><p>你正想加校验、try/catch、抽象层或兜底逻辑？它先拦你一下。把一轮构建测试从几十分钟压到几十秒。它不教你怎么写防御代码，而是教你怎么识别哪些防御是负债。机制上反着来：在你手痒加保护之前。</p></section>
+    <section class="sec"><h2>应用范围</h2><p>用在「工作」这一格。只覆盖个人编码决策，不处理团队规范、代码评审流程或架构评审。不提供自动化检测，需要你主动在改代码前阅读并自问。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「改代码前先问一句：这层防御真有必要吗」这一件来做，不要中途改风格。</li><li>按它的流程走完这一件，不要跳步骤。</li><li>输出要能进仓库或工单，不要只给感想。</li><li>做完对照应用范围，越权的活另找工具。</li></ul></section>
+    <section class="sec"><h2>安装</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/Timefiles404/lean-mode-skill.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/Timefiles404/lean-mode-skill.git">复制</button></div><div class="cmd"><code>cp -r lean-mode-skill/skills/lean-mode ~/.claude/skills/lean-mode</code><button type="button" data-copy="cp -r lean-mode-skill/skills/lean-mode ~/.claude/skills/lean-mode">复制</button></div></div></section>
+  </article>
+  <aside class="aside">
+    
+    <div class="box">
+      <dl class="kv">
+        <dt>分类</dt><dd>工作</dd>
+        <dt>作者</dt><dd>Timefiles404</dd>
+        <dt>上架</dt><dd>2026-09-03</dd>
+      </dl>
+      <a class="pill" href="https://github.com/Timefiles404/lean-mode-skill/tree/HEAD/skills/lean-mode" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations/">白底黑线火柴人，给中文文章配安静小图</a><a href="../yejy53-editable-design-html-to-pptx/">HTML 版式拆成可编辑 PPT 的转换器</a><a href="../oil-oil-kimi/">设计稿交给它，前端代码拿回来就能跑</a></div></div>
+  </aside>
+  <nav class="foot fam">
+    <a href="https://ourword.ai/">人类生存法则</a>
+    <a href="https://ourword.ai/podcast/">原声播客</a>
+    <a href="https://ourword.ai/skill/" aria-current="page">品味 Skill</a>
+  </nav>
+  <nav class="foot"><a href="../mumdark-nature-writing-studio-nature-writing-studio/">← 657 篇 Nature 原文蒸馏出的学术英语改写器</a><a href="../danielroe-empathy/">动笔前先过一遍人类沟通守则的 AI 助手 →</a></nav>
+</div>
+<script>
+(function(){
+  function copy(t, btn, done){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = done || '已复制'; btn.classList.add('on');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('on'); }, 1400); }
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok, ok); else ok();
+  }
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('#share');
+    if(s){ copy(s.getAttribute('data-url'), s, '已分享'); return; }
+    var c = e.target.closest('[data-copy]');
+    if(c) copy(c.getAttribute('data-copy'), c);
+  });
+})();
+</script>
+</body>
+</html>
