@@ -382,14 +382,15 @@
    "tagline_en": "Addy Osmani's (Chrome team) personal toolbox in one grab — API design, DevTools debugging and CI/CD, each piece short and sharp.",
    "why_zh": "作者是写过多本前端名著的谷歌工程负责人，工程口味极正：每件都短、准、能落地。",
    "why_en": "From the Google engineering lead behind several classic frontend books — short, sharp, immediately usable.",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/addyosmani-agent-skills.jpg",
    "cover_kind": "artwork",
    "cover_real": true,
    "cover_w": 1376,
-   "cover_h": 768
+   "cover_h": 768,
+   "unshelf_reason": "2026-09-04 编辑判：前端工程师的 agent 工具三件，英文开发工具链（冷在读者身上）"
   },
   "coreyhaines31-marketingskills": {
    "title_zh": "营销技能大礼包",
@@ -1431,13 +1432,14 @@
    "tagline_en": "One question at a time until ~95% confidence — extracting what you actually want, not what you think you should want.",
    "why_zh": "需求错了后面全白干，这个「先逼问再动手」的纪律省下的是整个项目的返工。",
    "why_en": "Wrong requirements waste everything downstream; interrogation-first saves the whole project's rework.",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "cover": "/skill/assets/covers/addyosmani-agent-skills-interview-me.jpg",
    "cover_kind": "artwork",
    "cover_real": true,
    "cover_w": 1376,
-   "cover_h": 768
+   "cover_h": 768,
+   "unshelf_reason": "2026-09-04 编辑判：前端工程师的 agent 工具三件，英文开发工具链（冷在读者身上）"
   },
   "addyosmani-agent-skills-doubt-driven-development": {
    "title_zh": "怀疑驱动开发",
@@ -1445,14 +1447,15 @@
    "tagline_en": "Every non-trivial decision faces a fresh-context adversarial review — a clean mind attacks it; only survivors stand.",
    "why_zh": "对抗自己确认偏误的聪明设计：正确性优先的场景里，这一步价值极高。",
    "why_en": "A clever weapon against your own confirmation bias — invaluable when correctness beats speed.",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/addyosmani-agent-skills-doubt-driven-development.jpg",
    "cover_kind": "artwork",
    "cover_real": true,
    "cover_w": 1376,
-   "cover_h": 768
+   "cover_h": 768,
+   "unshelf_reason": "2026-09-04 编辑判：前端工程师的 agent 工具三件，英文开发工具链（冷在读者身上）"
   },
   "addyosmani-agent-skills-code-review-and-quality": {
    "title_zh": "多轴代码评审",
@@ -10643,7 +10646,9 @@
    "title_zh": "骨骼、变形、混合全包，GLTF 动画直接上手",
    "title_en": "Keyframe, skeletal, morph, mixing—GLTF animation ready",
    "cover": "",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：three.js 动画/着色器/后处理四件，英文开发工具链（冷在读者身上）"
   },
   "khazp-vibe-coding-prompt-template-vibe-techdesign": {
    "cover_w": 1200,
@@ -10715,7 +10720,9 @@
    "title_zh": "会先问你「要辉光还是景深」的Three.js后期链搭",
    "title_en": "A Three.js post-processing chain builder that asks 'bloom.",
    "cover": "",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：three.js 动画/着色器/后处理四件，英文开发工具链（冷在读者身上）"
   },
   "cloudai-x-threejs-skills-threejs-shaders": {
    "cover_w": 1200,
@@ -10725,7 +10732,9 @@
    "title_zh": "不碰内置材质，直接写 GLSL 顶点与片元着色器",
    "title_en": "Write GLSL vertex & fragment shaders directly, skip.",
    "cover": "",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：three.js 动画/着色器/后处理四件，英文开发工具链（冷在读者身上）"
   },
   "cloudai-x-threejs-skills": {
    "cover_w": 1200,
@@ -10735,7 +10744,9 @@
    "title_zh": "不写一行渲染代码，Three.js 场景从口述到可交",
    "title_en": "Describe a 3D scene, get a working Three.js sketch",
    "cover": "",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：three.js 动画/着色器/后处理四件，英文开发工具链（冷在读者身上）"
   },
   "architect-kele-arch-kele-structure-photo": {
    "title_zh": "每张照片出两张图：一张结构研究稿，一张带原图角标",
@@ -11066,7 +11077,7 @@
    "why_zh": "把散落在代码里的配置项、环境变量、端口和 feature flag 收拢成一张清单。",
    "limit_zh": "只覆盖 agentmemory 这一个项目的配置面，不解释业务逻辑；改完配置不负责验证生效，也不管重启流程。",
    "tagline_zh": "改端口、设 API key、开功能开关，翻遍 README 找不到的默认关闭原因，它直接告诉你。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/rohitg00-agentmemory-agentmemory-config.png",
@@ -11075,7 +11086,8 @@
    "cover_h": 1344,
    "cover_src": "https://raw.githubusercontent.com/rohitg00/agentmemory/HEAD/website/public/states.png",
    "cover_real": false,
-   "cover_note": "仓即产品，仓级图就是这件的图"
+   "cover_note": "仓即产品，仓级图就是这件的图",
+   "unshelf_reason": "2026-09-04 编辑判：记忆引擎的配置/接线/拆解三件，英文开发工具链（冷在读者身上）"
   },
   "jimliu-doubao-multimodal-skill-doubao-multimodal": {
    "title_zh": "音视频丢给它，回来的是字幕、时间轴和谁在说话",
@@ -11518,7 +11530,7 @@
    "tagline_zh": "从真实图表库实现生成 HTML，不靠截图或手写。十二套中英整页报告模板，地图只在你要时才启用，色系不混搭。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun",
+   "category": "work",
    "cover": "/skill/assets/covers/larashero3-dotcom-lieflat-charts.png",
    "cover_kind": "hero",
    "cover_real": false,
@@ -11600,7 +11612,9 @@
   "rohitg00-agentmemory-agentmemory-agents": {
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：记忆引擎的配置/接线/拆解三件，英文开发工具链（冷在读者身上）"
   },
   "fcakyon-phd-skills-dataset-curation": {
    "cover": "",
@@ -11625,7 +11639,9 @@
   "rohitg00-agentmemory-agentmemory-architecture": {
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：记忆引擎的配置/接线/拆解三件，英文开发工具链（冷在读者身上）"
   },
   "nulightjens-humanizer-stack-humanizer": {
    "cover": "",
