@@ -699,7 +699,9 @@ def refresh() -> dict:
         e = _pick_entry(it)
         if not e or not _has_real_cover(it) or not _copy_ok(it):
             continue
-        _cands.append(((e.get("picked_at") or "", 1 if it.get("id") in _scan else 0, it.get("added_at") or "", it.get("id") or ""), it))
+        # 同仓只上一件时母件（path 空）优先 —— 昨晚 CI 又给子件取回同一张图，子件抢了母件的位
+        _cands.append(((e.get("picked_at") or "", 1 if not (it.get("path") or "").strip("/") else 0,
+                        1 if it.get("id") in _scan else 0, it.get("added_at") or "", it.get("id") or ""), it))
     _cands.sort(key=lambda kv: kv[0], reverse=True)
     # 店主 09-03：「12 件不要删，只是新增」。8/28 那 12 件钉在 editorial/picks_pinned.json，不看图不看文案，原样保留；
     # 编辑挑的满足上面四条就追加，不限总数、同一仓只上一件；不再用心选补位。

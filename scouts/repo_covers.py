@@ -130,7 +130,7 @@ def main() -> int:
             return t and (_today - _dt.date.fromisoformat(t)).days < 7
         except Exception:
             return False
-    todo = [x for x in todo if not _tried_recently(x)]
+    todo = [x for x in todo if not _tried_recently(x) and not (cur["items"].get(x["id"], {}) or {}).get("cover_dup_of")]   # 与同仓母件同图、故意留空的不重取
     todo.sort(key=lambda x: (1 if (cur["items"].get(x["id"], {}) or {}).get("cover_tried_at") else 0, x.get("added_at") or ""), reverse=False)
     todo.sort(key=lambda x: 0 if not (cur["items"].get(x["id"], {}) or {}).get("cover_tried_at") else 1)
     print(f"在架 {len(feed)} · 靠预览卡或无图的 {len(todo)} 件 · 本轮试 {min(len(todo), a.max)} 件 · 翻树={a.tree}\n", flush=True)
