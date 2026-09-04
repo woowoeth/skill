@@ -253,14 +253,6 @@
    "picked_at": "2026-09-03",
    "by": "编辑（Claude）读原文"
   },
-  "mikuz12/exampass-assistant": {
-   "repo": "MIKUZ12/ExamPass-Assistant",
-   "path": "",
-   "reason": "课件变教授式讲义 + 可打印的交互测试 HTML：16 个脚本是真零件，拒绝编造、不确定就说明 —— 和心选「对着真实课本和考纲突击复习」同一读者，多了产物形态（讲义 + 自测页）。",
-   "note": "依赖课件完整度",
-   "picked_at": "2026-09-03",
-   "by": "编辑（Claude）读原文"
-  },
   "juneyaooo/xhs-writer-skill": {
    "repo": "JuneYaooo/xhs-writer-skill",
    "path": "",
@@ -671,6 +663,195 @@
    "paths": [],
    "reason": "带新手写网文长篇：五个开篇种子起步到卷纲、章节契约、章稿、连续性台账全是可编辑文件，7 个脚本管状态与校验；「每次只问 2–3 个影响最大的未定项每项给互斥选项先推荐一个」「改了高影响设定把受影响章节标 stale」—— 网文新手写到三十章忘设定的死穴。",
    "note": "英文、面向 Codex；流程重",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "liyue-aigc/xianxia-cinematic-video-director": {
+   "repo": "liyue-aigc/xianxia-cinematic-video-director",
+   "path": "xianxia-cinematic-video-director",
+   "paths": [],
+   "reason": "东方仙侠运镜导演：场景/关键帧变 30 秒六镜分镜和逐镜图生视频提示词，7 份参考（镜头语法、连续性与运动、提示词范式、视觉基线）；「所有镜头时长之和必须精确等于总时长」「同一运动不得无理由连续超 2 次」「允许静止镜头」—— 心选 seedance 导演同作者，题材与产物不重叠。",
+   "note": "仅提示词产物",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "helloianneo/ian-xiaohei-scenes": {
+   "repo": "helloianneo/ian-xiaohei-scenes",
+   "path": "ian-xiaohei-scenes",
+   "paths": [],
+   "reason": "小黑 2.0：小黑 + 真实物件 + 物理动作 + 留白叙事的打工人共鸣配图，7 张母版 + 7 份参考；「人名粉丝数时间跨度只能来自用户输入不从母版继承」「至少 3 项和母版不同，第一眼像旧案例换主题即失败」—— 心选 1.0 手绘解释图的同作者新产物。",
+   "note": "文案要写清 2.0 实物场景 vs 1.0 手绘解释",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zhlmi/script-forging": {
+   "repo": "zhlmi/script-forging",
+   "path": "",
+   "paths": [],
+   "reason": "把成熟故事锻造成可拍的标准剧本、分场大纲、分镜表和数字资产清单：7 份模板 + 完整样例集（提示包、分场、剧本一稿二稿、两份自检报告、三级分镜、资产清单）；「不擅自狗血化：禁止新增原文没有的第三者、车祸、绝症、强反转」—— 影视流程出身的作者，心选 moodboard-alignment 同作者。",
+   "note": "与同作者 narrative-to-screen-reader 是前后件，只留这件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zhlmi/tragedy-narrative-guard": {
+   "repo": "zhlmi/tragedy-narrative-guard",
+   "path": "skill/tragedy-narrative-guard",
+   "paths": [],
+   "reason": "悲剧向角色扮演/长会话编剧的哨兵，阻止 AI 本能把 BE 写成甜宠：失败模式编码表每行标注对应一条真实踩坑、四阶段模型、5 处检查点；「没有连接就没有悲剧」「终局前 3 回合锁死不许翻盘」「不预设性别决定谁主动」—— 真玩过长会话的人才写得出。",
+   "note": "纯规则件；受众是角色扮演/同人圈",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zhlmi/shotsaver": {
+   "repo": "zhlmi/shotsaver",
+   "path": "",
+   "paths": [],
+   "reason": "拯救废片计划：拍废的照片不动像素，只用 HTML/CSS/SVG 叠层做成能发朋友圈的图，9 套风格 5 种画幅，三引擎渲染 + 九宫格预览；「先发内置九宫格不拿用户照片试渲染」「多模态缺失时装作能看图拟标题=胡编」「色彩丰富的照片选灰片风格会主动劝退」—— 和心选 photo-distill 一样不用生图模型。",
+   "note": "为 Minis 环境写了不少路径，其它平台靠 auto 引擎回退",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zhlmi/rhythm-forge-sklii": {
+   "repo": "zhlmi/rhythm-forge-sklii",
+   "path": "",
+   "paths": [],
+   "reason": "任意一首歌做成可玩的单文件网页音游（4 轨下落式三档谱面）：forge/beatmap/build/embed/validate 五个脚本 + 游戏前端；「把音符对齐鼓点是最容易的一步，真正的工作量在可玩性约束求解」双拇指手位模型推出五条硬规则，validate 五类冲突全为 0 才验收 —— 玩具做出产品级分寸。",
+   "note": "需 ffmpeg/numpy；歌曲版权用户自负",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "adrianpunk/punk-xhs-cards": {
+   "repo": "adrianpunk/punk-xhs-cards",
+   "path": "punk-xhs-cards",
+   "paths": [],
+   "reason": "Markdown 长文做成「主题色书封 + macOS 窗口 IP 插图 + 编号知识卡片」的小红书图组：7 个脚本（解析、配色推导、四平台渲染、校验）+ 10 份参考；三道确认门、「图注只用原文 alt 不虚构图片含义」「不得把 Punk 的红写成所有用户的默认值」—— 心选 punk 两件的同作者，把 IP 真正用进内容复用。",
+   "note": "依赖同作者 IP 插图件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "kagurananaga/kaogong-study-tracker": {
+   "repo": "KaguraNanaga/kaogong-study-tracker",
+   "path": "",
+   "paths": [],
+   "reason": "朱批录：国考备考追踪，发错题截图/成绩就归档、分类错因、二刷提醒、导出 Excel 错题本：9 个脚本 + 本地 JSON；「追问只问一次按优先级」「不存任何凭据」「连续两次记得才算掌握」，快捷格式「资料-乘积增长-公式不熟-待二刷」—— 对着真实备考日常设计，心选公文件同作者。",
+   "note": "图片识别依赖宿主多模态",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "reluctant2828/mlm-crush-coach": {
+   "repo": "Reluctant2828/mlm-crush-coach",
+   "path": "",
+   "paths": [],
+   "reason": "男男暧昧/约会里的聊天回复军师：5 份知识参考 + 回复剧本 + 红队场景集 + 路由脚本和测试；「只做朋友/拉黑是停止条件不设计翻盘话术」「不根据外貌体型 0/1 深柜解释性格取向」「先别发是正式动作」—— 心选健身顾问同作者，把硬停止写清是他的一贯风格。",
+   "note": "处理用户自己的聊天记录，已写脱敏提醒",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "joeseesun/qiaomu-info-card-designer": {
+   "repo": "joeseesun/qiaomu-info-card-designer",
+   "path": "",
+   "paths": [],
+   "reason": "一段文字/一个链接做成杂志质感信息卡并自动截图，超长自动分割：设计规范 + 分割脚本 + 随包字体；「读者只看到主标题就想知道为什么才对，反应是哦就是错的」「图只在比文字多传递 30% 信息时才加」「据报道/约必须保留」—— 乔木出品里最干净的一件，无打赏码不接 API。",
+   "note": "字体授权需核实；抓取走 r.jina.ai 免费",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "joeseesun/qiaomu-mondo-poster-design": {
+   "repo": "joeseesun/qiaomu-mondo-poster-design",
+   "path": "",
+   "paths": [],
+   "reason": "Mondo 另类电影海报美学做海报/书封/专辑封面，33+ 设计师风格各给结构化模板：有限色板 2–5 色、剪影优于脸、图底反转、尺度反差、30% 图形 30% 文字 40% 留白；33 张示例成图，--no-generate 只出提示词不绑生图后端。",
+   "note": "直出图走第三方网关需 key（已声明）；文案强调提示词模式免 key",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "tw93/kami": {
+   "repo": "tw93/kami",
+   "path": "skills/kami",
+   "paths": [],
+   "reason": "紙：一套编辑排版语言排简历/一页纸/白皮书/信件/作品集/slides 出 PDF，中英韩三语模板 × 9 种文档类型、18 种 SVG 图表原件、公式和 PDF 渲染脚本；「数学必须是严格 LaTeX 不许伪数学」「提问预算全局最多一次」—— 普通人真正需要的可打印文件都有模板，一套设计语言到底。",
+   "note": "每日一次查版本（已声明不传内容）；只推文档面",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "op7418/guizang-ppt-skill": {
+   "repo": "op7418/guizang-ppt-skill",
+   "path": "",
+   "paths": [],
+   "reason": "单文件 HTML 横向翻页 PPT，电子杂志×电子墨水 / 瑞士国际主义两套风格，演讲者视图 + 观众屏同步 + 讲稿备注：两套模板、10 份参考、3 个校验脚本；「不合适的场景」写得诚实（大段表格、培训课件劝你别用），7 问澄清每问附为什么 —— 歸藏出品，与心选豆包 PPT 不同路：代码渲染可演讲。",
+   "note": "开头有赞助方致谢段（不进产物）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "kagurananaga/document-format-skills": {
+   "repo": "KaguraNanaga/document-format-skills",
+   "path": "",
+   "paths": [],
+   "reason": "中文 Word 文稿排版清理：GB/T 9704 公文/学术/法律预设，中英标点与空格修复，Markdown 转公文 DOCX，六个脚本 + 两组回归测试；标点清理保护 URL、邮箱、9:30、ISO 9001:2015 是被真文档咬过才写得出；## → 一、 的中文公文层级映射是国内特有需求。",
+   "note": ".doc/.wps 仅 Windows；同作者 format-agent 更重不上",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "haojae/scipilot-figure-skill": {
+   "repo": "Haojae/scipilot-figure-skill",
+   "path": "",
+   "paths": [],
+   "reason": "科研数据可视化顾问：先剖析数据和论证目标再选图，主动拦截经典错误，出期刊级成图：6 个脚本（数据剖析、样式、导出、视觉自检、版面）+ 18 条画图禁忌和期刊规范；n<10 画均值柱严禁，饼图双 Y 轴 rainbow 拦截，渲染→自检→AI 读图→回改闭环 —— 心选「自动选对图表类型」的投稿版。",
+   "note": "读者偏学术；文案写清科研投稿图定位",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "geeklee/srt-whiteboard-animation": {
+   "repo": "geeklee/srt-whiteboard-animation",
+   "path": "",
+   "paths": [],
+   "reason": "SRT 字幕变暖米黄纸底、连续笔迹的白板手绘动画，纯本地 Python：解析、逐笔渲染、标注预览台、合场；遮罩不变量保证未开始的元素一根线都不露，标注坐标必须是原图整数像素禁估算；每步做完必须停等确认 —— 和心选 hotclip 一样 100% 本地。",
+   "note": "线稿靠 agent 自己生图；ChenShuo2004/cs-board 是它的下游同文，取原创",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "edu-ai-builders/language-learning-sop-kit": {
+   "repo": "edu-ai-builders/language-learning-sop-kit",
+   "path": "option-anatomy",
+   "paths": [],
+   "reason": "雅思/托福/考研阅读选择题做成「选项解剖器」HTML，让学生看到自己被哪类陷阱抓住：31KB 模板（错题模式仪表盘、原文↔选项同步高亮）+ 陷阱分类 + 解析规则；没原文就明说不硬撑，五类陷阱只给一个标签让学生反思 —— 教研出身的人写的，和心选刘晓艳同路。",
+   "note": "合集里只挑这一件；仅 4 选项阅读题",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "wubing2023/exampass-assistant": {
+   "repo": "WUBING2023/ExamPass-Assistant",
+   "path": "",
+   "paths": [],
+   "reason": "课程 PPT/Word/PDF 变按章知识清单 + 原始 PPT 对照栏 + 交互式章节测试 + AI 批改：20 个脚本、模板引擎、17 个测试；页码「必须真实，先确认 PDF 页数再写」，按学科选题型；762 星原创 —— 之前上架的 MIKUZ12 那份是它的 21 星副本，换成原创。",
+   "note": "替换 mikuz12-exampass-assistant",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "milec/towers-of-saeroth": {
+   "repo": "Milec/Towers-of-Saeroth",
+   "path": ".claude/skills/pf2e-gm",
+   "paths": [],
+   "reason": "Pathfinder 2e 的 GM 备课助手背着 41000+ 条本地规则库查证数字（装备 11452 / 专长 8799 / 怪物 5509）：「库不是来教你的，是来核对数字并引用的」「没查就报了数字要说出来」，NPC 改皮只改名字外观不动 AC/HP —— 和心选 astro「引擎算模型读」、D&D 地下城主同一路。",
+   "note": "英文；vault 是 Archives of Nethys 抓取，来源店主自判",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "chaogao512/literature-deep-reading-assistant": {
+   "repo": "chaogao512/Literature-Deep-Reading-Assistant",
+   "path": "literature-deep-reading-assistant",
+   "paths": [],
+   "reason": "一篇学术 PDF/Zotero 条目变七阶段可回溯的 Obsidian 精读笔记，每条判断带页码证据回链：诊断、初始化、证据链审计脚本（退出码 0 才算完成）、8 份阶段模板；扫描件没 OCR 就停「不得根据残缺内容继续精读」，一次只读一篇多篇拒绝 —— 导师式的克制。",
+   "note": "读者是研究生，较窄",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "larashero3-dotcom/writing-dna-skill": {
+   "repo": "larashero3-dotcom/writing-dna-skill",
+   "path": "",
+   "paths": [],
+   "reason": "从 ≥20 篇文章蒸馏写作 DNA 六层（语言/结构/选题/素材/认知/视觉）再按它写：中英六份产物模板 + schema + 边界文档「不要冒充作者本人」；比心选 redfox 多了选题逻辑、素材策略、视觉风格三层，要求真打开截图看承载的论证 —— 同作者 lieflat-charts 是店主指名件。",
+   "note": "与 redfox 并列，分工：那件复刻文风，这件蒸馏六层",
    "picked_at": "2026-09-04",
    "by": "编辑（Claude）读原文"
   }

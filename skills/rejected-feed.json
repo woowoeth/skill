@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-09-04T06:09:56Z",
+ "generated_at": "2026-09-04T06:26:18Z",
  "sources": {
   "human": "editorial/rejected.json",
   "machine": "scouts/scan_log.json",
   "standard": "docs/CURATION.md"
  },
  "stats": {
-  "shelved": 314,
-  "unshelved": 1373,
+  "shelved": 313,
+  "unshelved": 1374,
   "known_items": 1687,
   "known_repos": 1106,
-  "rejected_documented": 900,
+  "rejected_documented": 903,
   "rejected_machine_logged": 0,
   "rounds_logged": 26,
   "latest_round": {
@@ -60,7 +60,7 @@
    "zh": "无条件拒",
    "en": "Hard red line",
    "detail": "攻击赋能安全工具、灰产、荐股/交易信号、价值观有害",
-   "count": 148
+   "count": 151
   },
   {
    "rule": "门槛",
@@ -71,6 +71,45 @@
   }
  ],
  "rejected": [
+  {
+   "repo": "titanwings/colleague-skill",
+   "name": "colleague-skill",
+   "desc": "",
+   "reject_reason_zh": "为真人同事建 profile 含私聊记录 ingest —— 对真人做画像",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "编辑读原文（09-04 参照通道复核）",
+   "stars": 0,
+   "url": "https://github.com/titanwings/colleague-skill",
+   "rejected_at": "2026-09-04",
+   "by": "店长"
+  },
+  {
+   "repo": "zhlmi/weibo-pair-skill",
+   "name": "weibo-pair-skill",
+   "desc": "",
+   "reject_reason_zh": "双人配对为付费入口（按 Credits 计费）+ 分析他人微博做画像 + 凭证要私信获取 —— 要钱 + 对真人画像",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "编辑读原文（09-04 参照通道复核）",
+   "stars": 0,
+   "url": "https://github.com/zhlmi/weibo-pair-skill",
+   "rejected_at": "2026-09-04",
+   "by": "店长"
+  },
+  {
+   "repo": "Vincentwei1021/video-talkcraft",
+   "name": "video-talkcraft",
+   "desc": "",
+   "reject_reason_zh": "SKILL.md 发布时推荐 @ 作者社交号 + README 二维码进群 —— 让 agent 推荐关注作者；零件极厚，店主可定条件",
+   "reject_reason_en": "",
+   "reject_rule": "红线",
+   "reject_clause": "编辑读原文（09-04 参照通道复核）",
+   "stars": 0,
+   "url": "https://github.com/Vincentwei1021/video-talkcraft",
+   "rejected_at": "2026-09-04",
+   "by": "店长"
+  },
   {
    "repo": "vigorX777/ppt-svg-generator",
    "name": "ppt-svg-generator",
@@ -12445,6 +12484,13 @@
    "name": "research-materials-ai-boundary-check",
    "added_at": "2026-09-03",
    "stars": 19
+  },
+  {
+   "id": "mikuz12-exampass-assistant",
+   "repo": "MIKUZ12/ExamPass-Assistant",
+   "name": "exampass",
+   "added_at": "2026-09-03",
+   "stars": 21
   },
   {
    "id": "ffffffffelix-automotive-functional-safety",
