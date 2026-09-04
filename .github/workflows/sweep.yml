@@ -104,6 +104,9 @@ jobs:
           # 存量回填：按创建日回看 3 天（每天一班，五班合起来覆盖过去两周多），只验 ≥3 星的。
           # 流扫只看最新索引，几天前建的仓永远碰不到 —— 实测一天里 40% 的候选有 SKILL.md 且从没见过。
           python scouts/backfill.py --days 3 --out /tmp/backfill_candidates.json || true
+          # 09-04 漏网回归：店主发现过的 92 件里 21 件建于 3–7 月，任何通道都碰不到。每班往回走 15 天（游标），
+          # 只验树「含汉字或 ≥3 星」的仓，8 个月走一遍约 15 班 = 3 天，之后循环。
+          python scouts/backfill.py --walk 15 --cjk-or-stars 3 --out /tmp/backfill_deep.json || true
           # skillsmp.com（店主 09-03 指的新源）：只有关键词搜索接口、匿名 50 次/天，
           # 按班分片各跑 ≈12 次，五班合计 < 50。产出同样交给判官。
           case "$(date -u +%H)" in 02) SH=0;; 05) SH=1;; 08) SH=2;; 11) SH=3;; 14) SH=4;; *) SH=0;; esac
@@ -115,7 +118,7 @@ jobs:
           import json,os
           a=json.load(open('/tmp/stream_new.json')) if os.path.exists('/tmp/stream_new.json') else {}
           # editorial/backfill_backlog.json：本地一次性回填的 21 天积压清单，跑一轮就消化一批
-          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json','/tmp/skillsmp_candidates.json','/tmp/refs_candidates.json','editorial/backfill_backlog.json'):
+          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json','/tmp/backfill_deep.json','/tmp/skillsmp_candidates.json','/tmp/refs_candidates.json','editorial/backfill_backlog.json'):
               b=json.load(open(fn)) if os.path.exists(fn) else {}
               for k,v in b.items(): a.setdefault(k,v)
           json.dump(a,open('/tmp/candidates.json','w'),ensure_ascii=False,indent=1)
@@ -138,7 +141,7 @@ jobs:
         run: |
           mkdir -p /tmp/handoff
           cp /tmp/sweep_keep.json /tmp/handoff/ 2>/dev/null || echo "[]" > /tmp/handoff/sweep_keep.json
-          for f in editorial/sweep_seen.json editorial/stream_seen.json editorial/coverage_log.json editorial/backfill_seen.json editorial/skillsmp_seen.json editorial/discover_seen.json; do
+          for f in editorial/sweep_seen.json editorial/stream_seen.json editorial/coverage_log.json editorial/backfill_seen.json editorial/backfill_cursor.json editorial/refs_seen.json editorial/skillsmp_seen.json editorial/discover_seen.json; do
             [ -e "$f" ] && cp "$f" /tmp/handoff/ || true
           done
           ls -la /tmp/handoff
@@ -163,7 +166,7 @@ jobs:
       - name: 接过判分结果和各通道的「见过」清单
         run: |
           cp /tmp/handoff/sweep_keep.json /tmp/sweep_keep.json
-          for f in sweep_seen stream_seen coverage_log backfill_seen skillsmp_seen discover_seen; do
+          for f in sweep_seen stream_seen coverage_log backfill_seen backfill_cursor refs_seen skillsmp_seen discover_seen; do
             [ -e "/tmp/handoff/$f.json" ] && cp "/tmp/handoff/$f.json" "editorial/$f.json" || true
           done
           python3 - <<'PY2'

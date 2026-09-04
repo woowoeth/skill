@@ -50,6 +50,13 @@ jobs:
           echo "✓ sweep 在 $MAX_HOURS 小时内跑成功过"
       # 09-03：sweep 的 cron 从来没被 GitHub 触发过（0 次 schedule 事件，同仓 daily-restock 53 次正常）。
       # 不等它修好：4 小时内没有成功的 sweep，看门狗自己 dispatch 一趟。看门狗每 6 小时一班，等于兜住每天至少 4 班。
+      # 09-04 店主：「不能每次我发现的你都不知道」。他发现过的每一件当回归用例：现在的通道能不能自己捞到它。盲区只报不拦。
+      - name: 漏网回归（店主发现过的每一件，通道能不能自己找到）
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scouts/miss_test.py || echo "::warning::有盲区，见上面的清单"
       - name: 4 小时内没跑过 sweep 就补一趟
         if: always()
         env:

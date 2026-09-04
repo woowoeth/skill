@@ -55,6 +55,10 @@ def known() -> set[str]:
 def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--days", type=int, default=21)
+    ap.add_argument("--from-day", type=int, default=1, help="从几天前开始往回数（默认 1 = 昨天）")
+    ap.add_argument("--walk", type=int, default=0, help="游标模式：从 editorial/backfill_cursor.json 记的位置继续往回走 N 天，走到 --max-age 绕回 22 天处")
+    ap.add_argument("--max-age", type=int, default=240)
+    ap.add_argument("--cjk-or-stars", type=int, default=-1, help="只给「名字/描述含汉字」或「星 ≥ 此值」的仓验树（-1 = 全验）。深回看用 3")
     ap.add_argument("--min-stars", type=int, default=3)
     ap.add_argument("--low-pages", type=int, default=2, help="低星段（0..min_stars-1）每天再搜几页（每页 100）")
     ap.add_argument("--out", default="/tmp/backfill_candidates.json")
@@ -63,7 +67,17 @@ def main() -> int:
     seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
     today = datetime.date.today()
     found, checked, nosk = {}, 0, 0
-    for d in range(1, a.days + 1):
+    CURSOR = os.path.join(ROOT, "editorial", "backfill_cursor.json")
+    if a.walk:
+        # 09-04 漏网回归：店主发现过的 92 件里 21 件一条通道都碰不到，全是建于 3–7 月、低星、一次性作者的中文生活件。
+        # 流扫只看新索引、回填只看三周 —— 老仓没人回头看。游标模式每班往回走 N 天，走到 --max-age 绕回来。
+        cur = json.load(open(CURSOR, encoding="utf-8")) if os.path.exists(CURSOR) else {"next_day": 22}
+        a.from_day = int(cur.get("next_day", 22)); a.days = a.walk
+        if a.from_day > a.max_age:
+            a.from_day = 22
+        print(f"[backfill] 深回看游标：从 {a.from_day} 天前往回走 {a.days} 天")
+    _CJK = __import__("re").compile(r"[\u4e00-\u9fff]")
+    for d in range(a.from_day, a.from_day + a.days):
         day = (today - datetime.timedelta(days=d)).isoformat()
         q = urllib.parse.quote(f"created:{day} skill in:name,description,readme stars:>={a.min_stars}")
         items = []
@@ -90,6 +104,8 @@ def main() -> int:
             full = it["full_name"]
             if full.lower() in k or full in seen:
                 continue
+            if a.cjk_or_stars >= 0 and it.get("stargazers_count", 0) < a.cjk_or_stars and not _CJK.search(full + " " + (it.get("description") or "")):
+                continue   # 深回看只验树「含汉字或有点星」的，别把 API 配额烧在几万个英文开发件上
             t = gh(f"repos/{full}/git/trees/HEAD?recursive=1")
             paths = [x.get("path", "") for x in (t.get("tree") or [])]
             sk = [p for p in paths if p.endswith("SKILL.md")]
@@ -104,6 +120,8 @@ def main() -> int:
             time.sleep(0.4)
         print(f"  {day}  搜到 {len(items):3d} · 验树 {sum(1 for v in seen.values() if v['day']==day):3d} · 有 SKILL.md 且没见过 {new_day:3d}", flush=True)
         time.sleep(2.2)
+    if a.walk:
+        json.dump({"next_day": a.from_day + a.days, "updated": today.isoformat()}, open(CURSOR, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(seen, open(SEEN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(found, open(a.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"\n{a.days} 天 · 验树 {checked} 个 · 有 SKILL.md 且没见过 **{len(found)}** 个 · 没 SKILL.md {nosk} → {a.out}")
