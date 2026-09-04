@@ -52,6 +52,9 @@ def known() -> set[str]:
     return k
 
 
+_CJK = __import__('re').compile(r'[\u4e00-\u9fff]')
+
+
 def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--days", type=int, default=21)
@@ -72,6 +75,15 @@ def main() -> int:
             items += it
             if len(it) < 100:
                 break
+            time.sleep(2.2)
+        # 09-03 晚：心选 73 件里 12 件不到 3 星 —— 中国创作者的好货常常是零星几颗星，≥3 的门槛把它们筛在门外。
+        # 低星段再搜一页，只留名字/描述里带汉字的（GitHub 搜索不能按语言筛描述，只能拿回来自己挑）。
+        if a.min_stars > 0:
+            q2 = urllib.parse.quote(f"created:{day} skill in:name,description,readme stars:0..{a.min_stars - 1}")
+            r2 = gh(f"search/repositories?q={q2}&sort=updated&order=desc&per_page=100&page=1")
+            low = [x for x in (r2.get("items") or [])
+                   if _CJK.search((x.get("full_name") or "") + " " + (x.get("description") or ""))]
+            items += low
             time.sleep(2.2)
         new_day = 0
         for it in items:
