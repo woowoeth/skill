@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 332 skills.
+# Full corpus, plain text. 330 skills.
 
 ========================================================================
 ## pf2e-gm
@@ -300,26 +300,26 @@ git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at th
 Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## motion-sticker-pack
-## 静态图进、动图包出，中间不用你碰一次视频软件
-URL: https://ourword.ai/skill/i/kobingogo-motion-sticker-pack/
-Source: https://github.com/kobingogo/motion-sticker-pack
+## grilling
+## 连续追问直到你自相矛盾的方案压力测试器
+URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
+Source: https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling
 Updated: 2026-09-03
-Tags: images, skill, kobingogo
+Tags: work, skill, mattpocock
 
-Feed it a character image or text prompt; it locks style, lays out emoji reactions, renders a static sheet for.
+Think you've thought it through? It fires 20 straight 'whys', targeting the softest spot in your logic until you.
 
 ### What does this skill do?
-Create an animated sticker pack from a supplied character image or a text-defined character by collecting a style and Emoji or short reaction descriptions, generating and approving a static sheet, then routing video generation, cleanup, splitting, and packaging. Also process existing static sheets or grid videos. Use for animated emoji or sticker-pack production, not for designing a separate chara
+Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
 
 ### Why is it worth installing?
-The killer is the approval gate: no video generation credit is spent until you sign off on the static sheet, killing the most.
+No advice—engineered cognitive dissonance. Each follow-up builds on your last answer, forcing vague 'probablys' into testable.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/kobingogo/motion-sticker-pack.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: kobingogo/motion-sticker-pack Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+Repository: mattpocock/skills The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-to-journal-stickers
@@ -698,6 +698,28 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
 
 ========================================================================
+## skills
+## Matt Pocock 工具箱
+URL: https://ourword.ai/skill/i/mattpocock-skills/
+Source: https://github.com/mattpocock/skills
+Updated: 2026-09-03
+Tags: work, collection, mattpocock
+
+Straight from Matt Pocock's .agents directory — the skills a real engineer runs daily, shipped unedited.
+
+### What does this skill do?
+Skills for Real Engineers. Straight from my .agents directory.
+
+### Why is it worth installing?
+Pulled from his own working directory — the most honest endorsement a skill pack can have.
+
+### How do you install it?
+git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: mattpocock/skills The repository ships 35 skills in total.
+
+========================================================================
 ## morandi-cinematic-poster-zeejay
 ## 照片变电影海报，但只留你拍下的真实光影
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/
@@ -854,28 +876,6 @@ git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然�
 
 ### Q：它从哪来？
 Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
-========================================================================
-## skills
-## Matt Pocock 工具箱
-URL: https://ourword.ai/skill/i/mattpocock-skills/
-Source: https://github.com/mattpocock/skills
-Updated: 2026-09-03
-Tags: work, collection, mattpocock
-
-Straight from Matt Pocock's .agents directory — the skills a real engineer runs daily, shipped unedited.
-
-### What does this skill do?
-Skills for Real Engineers. Straight from my .agents directory.
-
-### Why is it worth installing?
-Pulled from his own working directory — the most honest endorsement a skill pack can have.
-
-### How do you install it?
-git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: mattpocock/skills The repository ships 35 skills in total.
 
 ========================================================================
 ## agent-skills
@@ -1776,44 +1776,6 @@ git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
-
-========================================================================
-## evidence-based-nutrition-advisor
-## 营养补剂宣称先过证据三道闸再谈买不买
-URL: https://ourword.ai/skill/i/buuaaa-evidence-based-nutrition-advisor/
-URL (中文): https://ourword.ai/skill/zh/i/buuaaa-evidence-based-nutrition-advisor/
-Source: https://github.com/BuuaaA/evidence-based-nutrition-advisor
-Updated: 2026-09-01
-Tags: everyday, skill, BuuaaA
-
-Before you buy that supplement, it checks guidelines, systematic reviews, and human trials—then tells you how.
-
-### What does this skill do?
-基于指南、系统综述和人体研究，帮助普通用户与专业人员判断可改善某种状态的营养干预、营养素、补充剂、功能成分或产品宣称是否可靠、适用于谁、效果多大及是否值得采用。只要用户询问“营养上能补什么、有没有用、证据够不够、是否适合、怎么选、是不是营销噱头”，即使以科普口吻提问也应触发；仅问定义、食物热量或不涉及功效判断的普通食谱时不触发。
-
-### Why is it worth installing?
-It doesn't just summarize—it rules by evidence hierarchy: guidelines over reviews over RCTs over mechanistic speculation. Each.
-
-### How do you install it?
-git clone --depth 1 https://github.com/BuuaaA/evidence-based-nutrition-advisor.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: BuuaaA/evidence-based-nutrition-advisor Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-刷到「吃XX能改善Y」先别下单。它替你查指南、系统综述和人体研究，告诉你证据到哪一级、对谁有效、效果多大。
-
-### Q：这个 skill 做什么？
-基于指南、系统综述和人体研究，帮助普通用户与专业人员判断可改善某种状态的营养干预、营养素、补充剂、功能成分或产品宣称是否可靠、适用于谁、效果多大及是否值得采用。只要用户询问“营养上能补什么、有没有用、证据够不够、是否适合、怎么选、是不是营销噱头”，即使以科普口吻提问也应触发；仅问定义、食物热量或不涉及功效判断的普通食谱时不触发。
-
-### Q：为什么值得装？
-不是搬运摘要，而是按证据金字塔分层裁决：指南>综述>RCT>机制推测。每条结论标注适用人群与效应量。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/BuuaaA/evidence-based-nutrition-advisor.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: BuuaaA/evidence-based-nutrition-advisor Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## minimax-h3-video
@@ -8680,44 +8642,6 @@ git clone --depth 1 https://github.com/momozi1996/DirectorAgents.git 然后把�
 
 ### Q：它从哪来？
 Repository: momozi1996/DirectorAgents The repository ships 32 skills in total.
-
-========================================================================
-## short-drama-scriptwriter
-## AI漫剧立项到交付的全流程编剧工作流
-URL: https://ourword.ai/skill/i/sumonehk-short-drama-scriptwriter/
-URL (中文): https://ourword.ai/skill/zh/i/sumonehk-short-drama-scriptwriter/
-Source: https://github.com/SumOneHK/short-drama-scriptwriter
-Updated: 2026-05-08
-Tags: images, skill, SumOneHK
-
-Lock premise, build world, write scenes—with status gates & production polish. For vertical AI comic dramas on.
-
-### What does this skill do?
-AI 制作的竖屏剧 / AI 漫剧（非真人拍摄）的全流程编剧工作流，从立项选题、剧本圣经设计、分集场次执行稿到 Markdown 交付包，含状态门禁与制作增强整理。当用户提到抖音 / TikTok 短剧、AI 漫剧、立项选题、锁题、世界观 / 人物 / 场景道具、故事梗概 / 大纲 / 节拍、分集大纲、场次执行稿、剧本圣经、复盘、交付清单、production-enhanced，或要为这类项目创建 / 续写 / 改编 / 复盘 / 交付时使用。不适用于真人拍摄短剧、分镜、视频提示词、配音脚本或音效表生成。
-
-### Why is it worth installing?
-Not scattered prompts—a gated pipeline from premise to script bible to episode drafts, each step yielding deliverable Markdown.
-
-### How do you install it?
-git clone --depth 1 https://github.com/SumOneHK/short-drama-scriptwriter.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: SumOneHK/short-drama-scriptwriter Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-从锁题、世界观到分集场次执行稿，带状态门禁和制作增强整理。适合抖音/TikTok竖屏AI漫剧，不碰真人拍摄。
-
-### Q：这个 skill 做什么？
-AI 制作的竖屏剧 / AI 漫剧（非真人拍摄）的全流程编剧工作流，从立项选题、剧本圣经设计、分集场次执行稿到 Markdown 交付包，含状态门禁与制作增强整理。当用户提到抖音 / TikTok 短剧、AI 漫剧、立项选题、锁题、世界观 / 人物 / 场景道具、故事梗概 / 大纲 / 节拍、分集大纲、场次执行稿、剧本圣经、复盘、交付清单、production-enhanced，或要为这类项目创建 / 续写 / 改编 / 复盘 / 交付时使用。不适用于真人拍摄短剧、分镜、视频提示词、配音脚本或音效表生成。
-
-### Q：为什么值得装？
-不是零散提示词，而是把立项、圣经、分集、执行稿串成一条带门禁的流水线。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/SumOneHK/short-drama-scriptwriter.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: SumOneHK/short-drama-scriptwriter Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## doubao-multimodal
