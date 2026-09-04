@@ -1,7 +1,67 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 304 skills.
+# Full corpus, plain text. 314 skills.
+
+========================================================================
+## motion-sticker-pack
+## 静态图进、动图包出，中间不用你碰一次视频软件
+URL: https://ourword.ai/skill/i/kobingogo-motion-sticker-pack/
+Source: https://github.com/kobingogo/motion-sticker-pack
+Updated: 2026-09-03
+Tags: images, skill, kobingogo
+
+Feed it a character image or text prompt; it locks style, lays out emoji reactions, renders a static sheet for.
+
+### What does this skill do?
+Create an animated sticker pack from a supplied character image or a text-defined character by collecting a style and Emoji or short reaction descriptions, generating and approving a static sheet, then routing video generation, cleanup, splitting, and packaging. Also process existing static sheets or grid videos. Use for animated emoji or sticker-pack production, not for designing a separate chara
+
+### Why is it worth installing?
+The killer is the approval gate: no video generation credit is spent until you sign off on the static sheet, killing the most.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kobingogo/motion-sticker-pack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kobingogo/motion-sticker-pack Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## hand-drawn-explainer-video-nikola
+## 边讲边画的中文手绘知识视频，交付可编辑工程与真MP4
+URL: https://ourword.ai/skill/i/hi-nikola-hand-drawn-explainer-video-nikola/
+URL (中文): https://ourword.ai/skill/zh/i/hi-nikola-hand-drawn-explainer-video-nikola/
+Source: https://github.com/hi-nikola/hand-drawn-explainer-video-nikola
+Updated: 2026-09-03
+Tags: images, skill, hi-nikola
+
+Two routes: pen-by-pen storytelling or GSAP-coded graphics. Voiceover, subtitles, timeline, editable project, and.
+
+### What does this skill do?
+制作、修改和验收中文手绘知识讲解视频，交付配音、字幕、时间轴、可编辑工程和真实 MP4。支持两条不可混淆的制作路线：同一画布持续落墨的逐笔故事动画，以及用 SVG/HTML/GSAP 编排流程卡片、关系图和知识图形的程序动画。逐笔路线可选择自然肤色 Q 版人物、小黑风格或其他手绘风格，并可采用单场景、多幕故事、左右双语义岛等画面结构。用户说“边讲边画”“一笔一笔画出来”“白板手绘”“先画左边再画右边”“知识讲解动画”或希望把文稿、SRT、人物故事做成手绘视频时使用。也支持只输出生图/图生视频提示词。不用于写实数字人或假装已经完成无法验证的成片。
+
+### Why is it worth installing?
+It turns 'hand-drawn feel' into a verifiable pipeline: pen strokes keep their order, GSAP drives cards & diagrams—edit by.
+
+### How do you install it?
+git clone --depth 1 https://github.com/hi-nikola/hand-drawn-explainer-video-nikola.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: hi-nikola/hand-drawn-explainer-video-nikola The repository ships 1 skills in total.
+
+--- 中文 ---
+不用假装成片——逐笔故事动画或GSAP程序动画两条路线任选，配音字幕时间轴齐全，连SVG工程都给你，改到满意再导出。
+
+### Q：这个 skill 做什么？
+制作、修改和验收中文手绘知识讲解视频，交付配音、字幕、时间轴、可编辑工程和真实 MP4。支持两条不可混淆的制作路线：同一画布持续落墨的逐笔故事动画，以及用 SVG/HTML/GSAP 编排流程卡片、关系图和知识图形的程序动画。逐笔路线可选择自然肤色 Q 版人物、小黑风格或其他手绘风格，并可采用单场景、多幕故事、左右双语义岛等画面结构。用户说“边讲边画”“一笔一笔画出来”“白板手绘”“先画左边再画右边”“知识讲解动画”或希望把文稿、SRT、人物故事做成手绘视频时使用。也支持只输出生图/图生视频提示词。不用于写实数字人或假装已经完成无法验证的成片。
+
+### Q：为什么值得装？
+机制上把「手绘感」拆成可验证的工程：逐笔路线保留每笔落墨顺序，程序路线用GSAP编排卡片关系图。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/hi-nikola/hand-drawn-explainer-video-nikola.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: hi-nikola/hand-drawn-explainer-video-nikola The repository ships 1 skills in total.
 
 ========================================================================
 ## huatu
@@ -1564,6 +1624,44 @@ git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git 然后把智能�
 Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
 
 ========================================================================
+## evidence-based-nutrition-advisor
+## 营养补剂宣称先过证据三道闸再谈买不买
+URL: https://ourword.ai/skill/i/buuaaa-evidence-based-nutrition-advisor/
+URL (中文): https://ourword.ai/skill/zh/i/buuaaa-evidence-based-nutrition-advisor/
+Source: https://github.com/BuuaaA/evidence-based-nutrition-advisor
+Updated: 2026-09-01
+Tags: everyday, skill, BuuaaA
+
+Before you buy that supplement, it checks guidelines, systematic reviews, and human trials—then tells you how.
+
+### What does this skill do?
+基于指南、系统综述和人体研究，帮助普通用户与专业人员判断可改善某种状态的营养干预、营养素、补充剂、功能成分或产品宣称是否可靠、适用于谁、效果多大及是否值得采用。只要用户询问“营养上能补什么、有没有用、证据够不够、是否适合、怎么选、是不是营销噱头”，即使以科普口吻提问也应触发；仅问定义、食物热量或不涉及功效判断的普通食谱时不触发。
+
+### Why is it worth installing?
+It doesn't just summarize—it rules by evidence hierarchy: guidelines over reviews over RCTs over mechanistic speculation. Each.
+
+### How do you install it?
+git clone --depth 1 https://github.com/BuuaaA/evidence-based-nutrition-advisor.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: BuuaaA/evidence-based-nutrition-advisor Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+刷到「吃XX能改善Y」先别下单。它替你查指南、系统综述和人体研究，告诉你证据到哪一级、对谁有效、效果多大。
+
+### Q：这个 skill 做什么？
+基于指南、系统综述和人体研究，帮助普通用户与专业人员判断可改善某种状态的营养干预、营养素、补充剂、功能成分或产品宣称是否可靠、适用于谁、效果多大及是否值得采用。只要用户询问“营养上能补什么、有没有用、证据够不够、是否适合、怎么选、是不是营销噱头”，即使以科普口吻提问也应触发；仅问定义、食物热量或不涉及功效判断的普通食谱时不触发。
+
+### Q：为什么值得装？
+不是搬运摘要，而是按证据金字塔分层裁决：指南>综述>RCT>机制推测。每条结论标注适用人群与效应量。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/BuuaaA/evidence-based-nutrition-advisor.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: BuuaaA/evidence-based-nutrition-advisor Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## minimax-h3-video
 ## MiniMax H3 成片级视频提示词方法论
 URL: https://ourword.ai/skill/i/liufelix2004-god-minmax-h3/
@@ -1748,6 +1846,28 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 
 ### Where does it come from?
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
+
+========================================================================
+## video-shotcraft
+## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
+URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
+Source: https://github.com/Vincentwei1021/video-shotcraft
+Updated: 2026-09-01
+Tags: images, skill, Vincentwei1021
+
+Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
+
+### What does this skill do?
+Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
+
+### Why is it worth installing?
+Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## gstack
@@ -3032,6 +3152,28 @@ git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git The
 
 ### Where does it come from?
 Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## figecho
+## 从一张架构图里抽出整套配色版式，再画十张都不走样
+URL: https://ourword.ai/skill/i/giszzt-figecho/
+Source: https://github.com/giszzt/FigEcho
+Updated: 2026-08-26
+Tags: play, skill, giszzt
+
+Stop redrawing from scratch to match a reference. It extracts colors, strokes, radii, type hierarchy into a Style.
+
+### What does this skill do?
+Extract reusable visual systems from reference technical diagrams, architecture diagrams, scientific schematics, roadmaps, workflows, frameworks, and technical infographics. Create complete modular prompts, generate style-consistent PNG figures from new content, and save, search, name, validate, or reuse Style Packs with their original reference images. Use for 参考图风格抽取、技术图视觉语法、同风格技术图、技术路线图、架构图、科研示
+
+### Why is it worth installing?
+Not a filter overlay. It parses visual grammar into modular prompts, saves named, validated Style Packs with source images, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/giszzt/FigEcho.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: giszzt/FigEcho The repository ships 1 skills in total.
 
 ========================================================================
 ## promo-film
@@ -5102,6 +5244,24 @@ git clone --depth 1 https://github.com/joeyhu1108-maker/selective-ink-sketch.git
 
 ### Where does it come from?
 Repository: joeyhu1108-maker/selective-ink-sketch The repository ships 1 skills in total.
+
+========================================================================
+## story-to-handdrawn-video
+URL: https://ourword.ai/skill/i/gnipbao-story-to-handdrawn-video-story-to-handdrawn-video/
+Source: https://github.com/gnipbao/story-to-handdrawn-video/tree/HEAD/skill-package/story-to-handdrawn-video
+Updated: 2026-08-08
+Tags: images, skill, gnipbao
+
+Convert Chinese story copy or ordered local images into a silent hand-drawn Remotion story video. Supports a locked user-approved colored-pencil diary default plus a built-in 20-style library covering doodle, crayon, line explainer, ink, wa
+
+### What does this skill do?
+Convert Chinese story copy or ordered local images into a silent hand-drawn Remotion story video. Supports a locked user-approved colored-pencil diary default plus a built-in 20-style library covering doodle, crayon, line explainer, ink, watercolor, gouache, storybook, zine, whiteboard, and printmaking looks. Use when the user asks to generate, import, restyle, preview, or render a hand-drawn stor
+
+### How do you install it?
+git clone --depth 1 https://github.com/gnipbao/story-to-handdrawn-video.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: gnipbao/story-to-handdrawn-video The repository ships 1 skills in total.
 
 ========================================================================
 ## xianxia-visual-director
@@ -7586,6 +7746,44 @@ git clone --depth 1 https://github.com/Zgdfsgd/pet-nutritionist.git Then point y
 Repository: Zgdfsgd/pet-nutritionist The repository ships 1 skills in total.
 
 ========================================================================
+## costing-master
+## 造价文件先挑漏项和特征不符的审核员
+URL: https://ourword.ai/skill/i/jayden-lg-costing-master/
+URL (中文): https://ourword.ai/skill/zh/i/jayden-lg-costing-master/
+Source: https://github.com/jayden-lg/costing-master
+Updated: 2026-05-27
+Tags: work, skill, jayden-lg
+
+For settlement reviews: it cross-checks BOQs against GB/T 50500-2024, contract, drawings, and price.
+
+### What does this skill do?
+面向中国工程造价实务的文件审核与工作流辅助 Skill。用于清单特征/漏项检查、预算编制辅助、 结算审核、合同商务风险识别、变更签证审核、材料价差分析、成本测算、投标报价和清标分析。 以 GB/T 50500-2024 为基准，结合项目合同、招标文件、图纸、工程量清单、地方计价依据、 信息价期别和用户上传资料，输出可复核的表格、台账、审核意见和需补资料清单。 触发词：工程造价、预算、结算、清单、项目特征、漏项、定额、综合单价、招标控制价、 最高投标限价、投标报价、不平衡报价、合同风险、变更签证、材料调差、进度款、定额换算、 组价、算量指标、新旧标准混用、目标成本。 不用于海外计价规则、国际合同范本、非造价维度法律解释，且不替代签章、评标或法律意见。
+
+### Why is it worth installing?
+It binds national standards, contract terms, drawings, and local pricing into one cross-check net, pinning each suspicion to a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/jayden-lg/costing-master.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: jayden-lg/costing-master Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+结算审核最怕清单漏项、特征写错、新旧定额混用。它按 GB/T 50500-2024 逐条比对。
+
+### Q：这个 skill 做什么？
+面向中国工程造价实务的文件审核与工作流辅助 Skill。用于清单特征/漏项检查、预算编制辅助、 结算审核、合同商务风险识别、变更签证审核、材料价差分析、成本测算、投标报价和清标分析。 以 GB/T 50500-2024 为基准，结合项目合同、招标文件、图纸、工程量清单、地方计价依据、 信息价期别和用户上传资料，输出可复核的表格、台账、审核意见和需补资料清单。 触发词：工程造价、预算、结算、清单、项目特征、漏项、定额、综合单价、招标控制价、 最高投标限价、投标报价、不平衡报价、合同风险、变更签证、材料调差、进度款、定额换算、 组价、算量指标、新旧标准混用、目标成本。 不用于海外计价规则、国际合同范本、非造价维度法律解释，且不替代签章、评标或法律意见。
+
+### Q：为什么值得装？
+把国标、合同、图纸、清单、信息价期别拉进同一张核对网，每个疑点都落到具体条款和行号，不是泛泛给结论。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/jayden-lg/costing-master.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: jayden-lg/costing-master Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## cn-compliance-guard
 ## 上架前扫一遍，广告法违禁词当场标红
 URL: https://ourword.ai/skill/i/feichangai-team-china-compliance-skills-cn-compliance-guard/
@@ -7918,6 +8116,44 @@ git clone --depth 1 https://github.com/momozi1996/DirectorAgents.git 然后把�
 Repository: momozi1996/DirectorAgents The repository ships 32 skills in total.
 
 ========================================================================
+## short-drama-scriptwriter
+## AI漫剧立项到交付的全流程编剧工作流
+URL: https://ourword.ai/skill/i/sumonehk-short-drama-scriptwriter/
+URL (中文): https://ourword.ai/skill/zh/i/sumonehk-short-drama-scriptwriter/
+Source: https://github.com/SumOneHK/short-drama-scriptwriter
+Updated: 2026-05-08
+Tags: images, skill, SumOneHK
+
+Lock premise, build world, write scenes—with status gates & production polish. For vertical AI comic dramas on.
+
+### What does this skill do?
+AI 制作的竖屏剧 / AI 漫剧（非真人拍摄）的全流程编剧工作流，从立项选题、剧本圣经设计、分集场次执行稿到 Markdown 交付包，含状态门禁与制作增强整理。当用户提到抖音 / TikTok 短剧、AI 漫剧、立项选题、锁题、世界观 / 人物 / 场景道具、故事梗概 / 大纲 / 节拍、分集大纲、场次执行稿、剧本圣经、复盘、交付清单、production-enhanced，或要为这类项目创建 / 续写 / 改编 / 复盘 / 交付时使用。不适用于真人拍摄短剧、分镜、视频提示词、配音脚本或音效表生成。
+
+### Why is it worth installing?
+Not scattered prompts—a gated pipeline from premise to script bible to episode drafts, each step yielding deliverable Markdown.
+
+### How do you install it?
+git clone --depth 1 https://github.com/SumOneHK/short-drama-scriptwriter.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: SumOneHK/short-drama-scriptwriter Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+从锁题、世界观到分集场次执行稿，带状态门禁和制作增强整理。适合抖音/TikTok竖屏AI漫剧，不碰真人拍摄。
+
+### Q：这个 skill 做什么？
+AI 制作的竖屏剧 / AI 漫剧（非真人拍摄）的全流程编剧工作流，从立项选题、剧本圣经设计、分集场次执行稿到 Markdown 交付包，含状态门禁与制作增强整理。当用户提到抖音 / TikTok 短剧、AI 漫剧、立项选题、锁题、世界观 / 人物 / 场景道具、故事梗概 / 大纲 / 节拍、分集大纲、场次执行稿、剧本圣经、复盘、交付清单、production-enhanced，或要为这类项目创建 / 续写 / 改编 / 复盘 / 交付时使用。不适用于真人拍摄短剧、分镜、视频提示词、配音脚本或音效表生成。
+
+### Q：为什么值得装？
+不是零散提示词，而是把立项、圣经、分集、执行稿串成一条带门禁的流水线。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/SumOneHK/short-drama-scriptwriter.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: SumOneHK/short-drama-scriptwriter Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## doubao-multimodal
 ## 音视频丢给它，回来的是字幕、时间轴和谁在说话
 URL: https://ourword.ai/skill/i/jimliu-doubao-multimodal-skill-doubao-multimodal/
@@ -7982,6 +8218,44 @@ git clone --depth 1 https://github.com/c1375/noir-interrogation.git Then point y
 
 ### Where does it come from?
 Repository: c1375/noir-interrogation Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## rent
+## 同一套房在五个中介嘴里差出三千块，它帮你把底价问出来
+URL: https://ourword.ai/skill/i/benzema216-rent-ops/
+URL (中文): https://ourword.ai/skill/zh/i/benzema216-rent-ops/
+Source: https://github.com/BENZEMA216/rent-ops
+Updated: 2026-04-23
+Tags: work, skill, BENZEMA216
+
+Scans Beike, 58, Xianyu for duplicate listings, flags inflated rents and risks, maps commute zones, and preps.
+
+### What does this skill do?
+AI 租房助手 — 扫描各平台房源、智能评估打分、跨平台去重、高德地图可视化、风险预警、看房准备。当用户提到租房、找房、房源评估、看房时使用。
+
+### Why is it worth installing?
+It doesn't just show prices—it cross-examines how different agents describe the same unit, exposing quote gaps and hidden fees.
+
+### How do you install it?
+git clone --depth 1 https://github.com/BENZEMA216/rent-ops.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: BENZEMA216/rent-ops Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+扫贝壳、58、闲鱼等平台，同一房源自动比对报价与中介话术，标出虚高和风险项，附高德地图通勤圈与看房清单。
+
+### Q：这个 skill 做什么？
+AI 租房助手 — 扫描各平台房源、智能评估打分、跨平台去重、高德地图可视化、风险预警、看房准备。当用户提到租房、找房、房源评估、看房时使用。
+
+### Q：为什么值得装？
+它不只看价格，而是把同一套房在不同中介嘴里的描述拆开比对，报价差、押金条款、隐性收费全摊在桌面上。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/BENZEMA216/rent-ops.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: BENZEMA216/rent-ops Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## travel-guidebook
@@ -8512,6 +8786,44 @@ git clone --depth 1 https://github.com/geekjourneyx/meme-generator-skill.git The
 
 ### Where does it come from?
 Repository: geekjourneyx/meme-generator-skill The repository ships 1 skills in total.
+
+========================================================================
+## china-lawyer-analyst
+## 请求权基础拆到要件层，再按司法解释回填的案情分析器
+URL: https://ourword.ai/skill/i/cslawyer1985-china-lawyer-analyst/
+URL (中文): https://ourword.ai/skill/zh/i/cslawyer1985-china-lawyer-analyst/
+Source: https://github.com/CSlawyer1985/china-lawyer-analyst
+Updated: 2026-02-02
+Tags: work, skill, CSlawyer1985
+
+Not just 'likely illegal' — it breaks 45 case types into six-part element checklists, cross-references guiding.
+
+### What does this skill do?
+通过中国法律视角分析事件，运用成文法解释、指导案例参照、请求权基础分析等方法， 理解权利义务、评估责任风险、识别法律依据并推荐合规策略。 **混合架构 v3.3**：三阶段自动化工作流程（初步分析→法律校验→反思修正）+ 静态核心 + 动态司法解释索引 + 智能检索增强 + 45类案件精确识别 + 六段式要件清单。
+
+### Why is it worth installing?
+Three-stage self-check (draft→verify→rethink) actually works: it cross-examines your conclusion against the judicial.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CSlawyer1985/china-lawyer-analyst.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CSlawyer1985/china-lawyer-analyst The repository ships 1 skills in total.
+
+--- 中文 ---
+不只是告诉你「可能违法」——把45类案由拆成六段式要件清单，逐项对照指导案例和成文法。
+
+### Q：这个 skill 做什么？
+通过中国法律视角分析事件，运用成文法解释、指导案例参照、请求权基础分析等方法， 理解权利义务、评估责任风险、识别法律依据并推荐合规策略。 **混合架构 v3.3**：三阶段自动化工作流程（初步分析→法律校验→反思修正）+ 静态核心 + 动态司法解释索引 + 智能检索增强 + 45类案件精确识别 + 六段式要件清单。
+
+### Q：为什么值得装？
+三阶段自检（初析→校验→反思）不是摆设：它会拿司法解释索引反查你的结论，漏掉的要件会当场被揪回来重写。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/CSlawyer1985/china-lawyer-analyst.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: CSlawyer1985/china-lawyer-analyst The repository ships 1 skills in total.
 
 ========================================================================
 ## resume-assistant
