@@ -1,7 +1,29 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 314 skills.
+# Full corpus, plain text. 316 skills.
+
+========================================================================
+## grilling
+## 连续追问直到你自相矛盾的方案压力测试器
+URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
+Source: https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling
+Updated: 2026-09-04
+Tags: work, skill, mattpocock
+
+Think you've thought it through? It fires 20 straight 'whys', targeting the softest spot in your logic until you.
+
+### What does this skill do?
+Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+
+### Why is it worth installing?
+No advice—engineered cognitive dissonance. Each follow-up builds on your last answer, forcing vague 'probablys' into testable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: mattpocock/skills The repository ships 1 skills in total.
 
 ========================================================================
 ## pf2e-gm
@@ -24,6 +46,28 @@ git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point yo
 
 ### Where does it come from?
 Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## seedance-prompt-library
+## Seedance 2.5 视频提示词模板库
+URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
+Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
+Updated: 2026-09-04
+Tags: images, skill, LearnPrompt
+
+Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
+
+### What does this skill do?
+Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
+
+### Why is it worth installing?
+Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
+
+### How do you install it?
+git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## literature-deep-reading-assistant
@@ -86,6 +130,44 @@ git clone --depth 1 https://github.com/yejy53/Editable-Design.git 然后把智�
 Repository: yejy53/Editable-Design The repository ships 1 skills in total.
 
 ========================================================================
+## encoding-hero-video-for-mobile
+## 手机竖屏 hero 视频压片台，只管码率不管播放
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
+Updated: 2026-09-04
+Tags: images, skill, ALCHEMINT-INC
+
+Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
+
+### What does this skill do?
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Why is it worth installing?
+Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
+
+### Q：这个 skill 做什么？
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Q：为什么值得装？
+专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
 ## chinese-lesson-plan
 ## 先问教材版本再落笔的备课助手，连分层作业一起出
 URL: https://ourword.ai/skill/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/
@@ -124,6 +206,148 @@ git clone --depth 1 https://github.com/sanhuang520-ship-it/awesome-chinese-ai-to
 Repository: sanhuang520-ship-it/awesome-chinese-ai-tools Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## markstream-vue
+## AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚
+URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
+Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
+Updated: 2026-09-04
+Tags: work, skill, Simon-He95
+
+AI tokens stream in, but your Vue page waits for the whole blob? This skill wires virtual scrolling & a timeline.
+
+### What does this skill do?
+Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
+
+### Why is it worth installing?
+Not just code snippets—it chains renderer, DOM mode, CSS order, and content/nodes choices into one decision path, with.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
+
+========================================================================
+## a2ui-renderer
+## A2UI 界面渲染器，装上就能让 Agent 画表单
+URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
+Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
+Updated: 2026-09-04
+Tags: images, skill, CopilotKit
+
+Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
+
+### What does this skill do?
+Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
+
+### Why is it worth installing?
+Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
+
+========================================================================
+## textile-toy-portrait
+## 照片变颗粒绒玩偶，毛绒质感直接出图
+URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-textile-toy-portrait/
+URL (中文): https://ourword.ai/skill/zh/i/vieeeeeee-wibi-style-textile-toy-portrait/
+Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/textile-toy-portrait
+Updated: 2026-09-04
+Tags: images, skill, Vieeeeeee
+
+Upload a face, get a fuzzy plush you. Not a filter—it re-reads your features into a tufted toy portrait. For.
+
+### What does this skill do?
+Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
+
+### Why is it worth installing?
+It understands the photo first, then picks a style reference—rebuilding face proportions, lighting, and tuft direction from the.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
+
+--- 中文 ---
+上传一张脸，得到一只毛绒绒的你。不是滤镜贴纸，是重新理解五官后生成的颗粒绒质感玩偶，适合头像、礼物、纪念品。
+
+### Q：这个 skill 做什么？
+Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
+
+### Q：为什么值得装？
+威比 22 款里只上这一件：布料、缝线、玩具脸，一种材质做到底。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
+
+========================================================================
+## skills
+## Matt Pocock 工具箱
+URL: https://ourword.ai/skill/i/mattpocock-skills/
+Source: https://github.com/mattpocock/skills
+Updated: 2026-09-04
+Tags: work, collection, mattpocock
+
+Straight from Matt Pocock's .agents directory — the skills a real engineer runs daily, shipped unedited.
+
+### What does this skill do?
+Skills for Real Engineers. Straight from my .agents directory.
+
+### Why is it worth installing?
+Pulled from his own working directory — the most honest endorsement a skill pack can have.
+
+### How do you install it?
+git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: mattpocock/skills The repository ships 35 skills in total.
+
+========================================================================
+## verifying-hero-video-on-mobile
+## 手机上看不见的卡顿，它替你分帧证明
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/verifying-hero-video-on-mobile
+Updated: 2026-09-04
+Tags: images, skill, ALCHEMINT-INC
+
+No physical phone? It isolates decode vs. autoplay failures frame-by-frame, so you stop guessing and start fixing.
+
+### What does this skill do?
+當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
+
+### Why is it worth installing?
+Splits 'video won't play' into two falsifiable claims, using frame callbacks for hard evidence instead of eyeballing and tweaking.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+没有实体手机也能验证自动播放？它把「没动静」拆成解码失败和播放策略两类，逐帧取证，不让你瞎改代码。
+
+### Q：这个 skill 做什么？
+當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
+
+### Q：为什么值得装？
+把「视频不动」拆成两个可证伪的假设，用浏览器帧回调拿硬证据，而不是靠肉眼和运气调参。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
 ## heytea-doodle-poster
 ## 按喜茶那套视觉做一张
 URL: https://ourword.ai/skill/i/hchen1218-heytea-style/
@@ -144,6 +368,44 @@ git clone --depth 1 https://github.com/Hchen1218/heytea-style.git Then point you
 
 ### Where does it come from?
 Repository: Hchen1218/heytea-style The repository ships 1 skills in total.
+
+========================================================================
+## travel-plan-viz
+## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
+URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
+URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
+Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
+Updated: 2026-09-04
+Tags: everyday, skill, zexuanw958-svg
+
+The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
+
+### What does this skill do?
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Why is it worth installing?
+Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+--- 中文 ---
+到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
+
+### Q：这个 skill 做什么？
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Q：为什么值得装？
+「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## hand-drawn
@@ -212,6 +474,44 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
+## video-clip-stitching
+## 接缝诊断师：专治AI分段影片的卡顿与重复
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
+Updated: 2026-09-04
+Tags: images, skill, ALCHEMINT-INC
+
+Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
+
+### What does this skill do?
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Why is it worth installing?
+It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
+
+### Q：这个 skill 做什么？
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Q：为什么值得装？
+它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
 ## design-review
 ## 给 Go 代码库做地道性评审
 URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
@@ -278,6 +578,88 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
+## understand-figma
+## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
+Updated: 2026-09-04
+Tags: dev, skill, Egonex-AI
+
+Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
+
+### What does this skill do?
+Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
+
+### Why is it worth installing?
+Design handoff, solved visually — the whole system in one graph.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## glitch-pixel-collage
+## 故障像素拼贴
+URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
+URL (中文): https://ourword.ai/skill/zh/i/vieeeeeee-wibi-style-glitch-pixel-collage/
+Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/glitch-pixel-collage
+Updated: 2026-09-04
+Tags: images, skill, Vieeeeeee
+
+Upload a portrait or street shot, get a cyber-glitch collage instantly. Not a filter—pixel-level shuffling makes.
+
+### What does this skill do?
+Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
+
+### Why is it worth installing?
+No filter—it reorders pixel blocks and injects code-like noise, keeping the original silhouette while destroying the surface.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
+
+--- 中文 ---
+上传人像或街景，立刻得到赛博故障感拼贴。不是滤镜，是像素级打乱重组，每张输出都独一无二。
+
+### Q：这个 skill 做什么？
+Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
+
+### Q：为什么值得装？
+同一作者的另一件单风格。拼贴和故障是两套语法，不混装。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
+
+========================================================================
+## understand-chat
+## 按调用结构而不是搜字符串，回答改这里会牵动谁
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
+Updated: 2026-09-04
+Tags: dev, skill, Egonex-AI
+
+Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
+
+### What does this skill do?
+Use when you need to ask questions about a codebase or understand code using a knowledge graph
+
+### Why is it worth installing?
+A tier above grep: answers by structure, not string match.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
 ## kami
 ## 羊皮纸底色配墨蓝强调的文档排版师
 URL: https://ourword.ai/skill/i/tw93-kami-kami/
@@ -298,28 +680,6 @@ git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at th
 
 ### Where does it come from?
 Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## grilling
-## 连续追问直到你自相矛盾的方案压力测试器
-URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
-Source: https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling
-Updated: 2026-09-03
-Tags: work, skill, mattpocock
-
-Think you've thought it through? It fires 20 straight 'whys', targeting the softest spot in your logic until you.
-
-### What does this skill do?
-Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
-
-### Why is it worth installing?
-No advice—engineered cognitive dissonance. Each follow-up builds on your last answer, forcing vague 'probablys' into testable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: mattpocock/skills The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-to-journal-stickers
@@ -420,44 +780,6 @@ git clone --depth 1 https://github.com/op7418/guizang-yingzao-skill.git Then poi
 Repository: op7418/guizang-yingzao-skill The repository ships 1 skills in total.
 
 ========================================================================
-## encoding-hero-video-for-mobile
-## 手机竖屏 hero 视频压片台，只管码率不管播放
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
-Updated: 2026-09-03
-Tags: images, skill, ALCHEMINT-INC
-
-Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
-
-### What does this skill do?
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Why is it worth installing?
-Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
-
-### Q：这个 skill 做什么？
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Q：为什么值得装？
-专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
 ## lieflat-charts
 ## 图表先问数据语义再选色，报告模板十二套
 URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-charts/
@@ -556,50 +878,6 @@ git clone --depth 1 https://github.com/KaguraNanaga/format-agent-01.git 然后�
 Repository: KaguraNanaga/format-agent-01 The repository ships 1 skills in total.
 
 ========================================================================
-## markstream-vue
-## AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚
-URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
-Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
-Updated: 2026-09-03
-Tags: work, skill, Simon-He95
-
-AI tokens stream in, but your Vue page waits for the whole blob? This skill wires virtual scrolling & a timeline.
-
-### What does this skill do?
-Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
-
-### Why is it worth installing?
-Not just code snippets—it chains renderer, DOM mode, CSS order, and content/nodes choices into one decision path, with.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
-
-========================================================================
-## a2ui-renderer
-## A2UI 界面渲染器，装上就能让 Agent 画表单
-URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
-Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
-Updated: 2026-09-03
-Tags: images, skill, CopilotKit
-
-Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
-
-### What does this skill do?
-Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
-
-### Why is it worth installing?
-Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
-
-========================================================================
 ## huashu-report
 ## 42份顶级机构报告实测出的排版骨架
 URL: https://ourword.ai/skill/i/alchaincyf-huashu-report/
@@ -638,66 +916,6 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然后把智
 Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
 
 ========================================================================
-## textile-toy-portrait
-## 照片变颗粒绒玩偶，毛绒质感直接出图
-URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-textile-toy-portrait/
-URL (中文): https://ourword.ai/skill/zh/i/vieeeeeee-wibi-style-textile-toy-portrait/
-Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/textile-toy-portrait
-Updated: 2026-09-03
-Tags: images, skill, Vieeeeeee
-
-Upload a face, get a fuzzy plush you. Not a filter—it re-reads your features into a tufted toy portrait. For.
-
-### What does this skill do?
-Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
-
-### Why is it worth installing?
-It understands the photo first, then picks a style reference—rebuilding face proportions, lighting, and tuft direction from the.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
---- 中文 ---
-上传一张脸，得到一只毛绒绒的你。不是滤镜贴纸，是重新理解五官后生成的颗粒绒质感玩偶，适合头像、礼物、纪念品。
-
-### Q：这个 skill 做什么？
-Wibi Style 官方视觉风格。把用户上传的真实照片转换成颗粒绒感玩偶肖像。只要用户提到颗粒绒感玩偶、纺织玩偶、绒面针织头像、把照片做成玩偶，或明确调用 $textile-toy-portrait，就使用本 Skill；先理解照片内容，再动态选择风格参考职责并直接生成成图。
-
-### Q：为什么值得装？
-威比 22 款里只上这一件：布料、缝线、玩具脸，一种材质做到底。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## skills
-## Matt Pocock 工具箱
-URL: https://ourword.ai/skill/i/mattpocock-skills/
-Source: https://github.com/mattpocock/skills
-Updated: 2026-09-03
-Tags: work, collection, mattpocock
-
-Straight from Matt Pocock's .agents directory — the skills a real engineer runs daily, shipped unedited.
-
-### What does this skill do?
-Skills for Real Engineers. Straight from my .agents directory.
-
-### Why is it worth installing?
-Pulled from his own working directory — the most honest endorsement a skill pack can have.
-
-### How do you install it?
-git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: mattpocock/skills The repository ships 35 skills in total.
-
-========================================================================
 ## morandi-cinematic-poster-zeejay
 ## 照片变电影海报，但只留你拍下的真实光影
 URL: https://ourword.ai/skill/i/zeejay0-gathered-scenes-zine-skill-morandi-cinematic-poster-zeejay/
@@ -720,44 +938,6 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
 
 ========================================================================
-## verifying-hero-video-on-mobile
-## 手机上看不见的卡顿，它替你分帧证明
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/verifying-hero-video-on-mobile
-Updated: 2026-09-03
-Tags: images, skill, ALCHEMINT-INC
-
-No physical phone? It isolates decode vs. autoplay failures frame-by-frame, so you stop guessing and start fixing.
-
-### What does this skill do?
-當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
-
-### Why is it worth installing?
-Splits 'video won't play' into two falsifiable claims, using frame callbacks for hard evidence instead of eyeballing and tweaking.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-没有实体手机也能验证自动播放？它把「没动静」拆成解码失败和播放策略两类，逐帧取证，不让你瞎改代码。
-
-### Q：这个 skill 做什么？
-當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
-
-### Q：为什么值得装？
-把「视频不动」拆成两个可证伪的假设，用浏览器帧回调拿硬证据，而不是靠肉眼和运气调参。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
 ## whiteboard-video
 ## 线稿只准本地模型抽、不许 AI 生成的白板手绘视频
 URL: https://ourword.ai/skill/i/gnipbao-codex-whiteboard-video-skill/
@@ -778,44 +958,6 @@ git clone --depth 1 https://github.com/gnipbao/codex-whiteboard-video-skill.git 
 
 ### Where does it come from?
 Repository: gnipbao/codex-whiteboard-video-skill The repository ships 1 skills in total.
-
-========================================================================
-## travel-plan-viz
-## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
-URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
-URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
-Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
-Updated: 2026-09-03
-Tags: everyday, skill, zexuanw958-svg
-
-The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
-
-### What does this skill do?
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Why is it worth installing?
-Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
---- 中文 ---
-到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
-
-### Q：这个 skill 做什么？
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Q：为什么值得装？
-「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## math-modeling
@@ -856,66 +998,6 @@ git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然�
 Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
-## video-clip-stitching
-## 接缝诊断师：专治AI分段影片的卡顿与重复
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
-Updated: 2026-09-03
-Tags: images, skill, ALCHEMINT-INC
-
-Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
-
-### What does this skill do?
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
-
-### Why is it worth installing?
-It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
-
-### Q：这个 skill 做什么？
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
-
-### Q：为什么值得装？
-它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
-## understand-figma
-## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
-Updated: 2026-09-03
-Tags: dev, skill, Egonex-AI
-
-Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
-
-### What does this skill do?
-Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
-
-### Why is it worth installing?
-Design handoff, solved visually — the whole system in one graph.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
-
-========================================================================
 ## agent-skill-creator
 ## 把口头流程变成能跑的跨平台技能，三步内交付
 URL: https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/
@@ -936,44 +1018,6 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
-
-========================================================================
-## glitch-pixel-collage
-## 故障像素拼贴
-URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
-URL (中文): https://ourword.ai/skill/zh/i/vieeeeeee-wibi-style-glitch-pixel-collage/
-Source: https://github.com/Vieeeeeee/wibi-style/tree/HEAD/skills/glitch-pixel-collage
-Updated: 2026-09-03
-Tags: images, skill, Vieeeeeee
-
-Upload a portrait or street shot, get a cyber-glitch collage instantly. Not a filter—pixel-level shuffling makes.
-
-### What does this skill do?
-Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
-
-### Why is it worth installing?
-No filter—it reorders pixel blocks and injects code-like noise, keeping the original silhouette while destroying the surface.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
---- 中文 ---
-上传人像或街景，立刻得到赛博故障感拼贴。不是滤镜，是像素级打乱重组，每张输出都独一无二。
-
-### Q：这个 skill 做什么？
-Wibi Style 官方视觉风格。把用户上传的一张照片转换成乱码像素拼贴风格。适用于用户要求乱码像素拼贴、上传照片换风格，或明确调用 $glitch-pixel-collage 时。
-
-### Q：为什么值得装？
-同一作者的另一件单风格。拼贴和故障是两套语法，不混装。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
 
 ========================================================================
 ## obsidian-second-brain
@@ -1018,28 +1062,6 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 
 ### Where does it come from?
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
-
-========================================================================
-## understand-chat
-## 按调用结构而不是搜字符串，回答改这里会牵动谁
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
-Updated: 2026-09-03
-Tags: dev, skill, Egonex-AI
-
-Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
-
-### What does this skill do?
-Use when you need to ask questions about a codebase or understand code using a knowledge graph
-
-### Why is it worth installing?
-A tier above grep: answers by structure, not string match.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
 ## mono-color
@@ -2562,28 +2584,6 @@ git clone --depth 1 https://github.com/Alto-R/nature-figure-craft.git Then point
 
 ### Where does it come from?
 Repository: Alto-R/nature-figure-craft Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## seedance-prompt-library
-## Seedance 2.5 视频提示词模板库
-URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
-Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
-Updated: 2026-08-28
-Tags: images, skill, LearnPrompt
-
-Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
-
-### What does this skill do?
-Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
-
-### Why is it worth installing?
-Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
-
-### How do you install it?
-git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## high-school-timetable
@@ -6038,6 +6038,28 @@ git clone --depth 1 https://github.com/DPWelsh/basilisk.git Then point your agen
 Repository: DPWelsh/basilisk Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## gc-still-image-motion-director
+## 先问画面里什么不能动，再谈怎么动的静图导演
+URL: https://ourword.ai/skill/i/liamgvchi-gc-still-image-motion-director/
+Source: https://github.com/LiamGvchi/gc-still-image-motion-director
+Updated: 2026-07-30
+Tags: images, skill, LiamGvchi
+
+For posters, illustrations, or screenshots: it pins down what must stay fixed, then designs restrained motion for.
+
+### What does this skill do?
+Analyze still images and design restrained, image-specific motion for image-to-video generation. Use when the user provides one or more images, screenshots, posters, collages, illustrations, editorial graphics, or an image folder and asks how the image should move, which elements must stay fixed, whether it should move at all, or how to write a prompt for Jimeng or another image-to-video model. Al
+
+### Why is it worth installing?
+Most tools assume everything can move; it assumes nothing can. By deriving motion from what must stay fixed, it prevents AI.
+
+### How do you install it?
+git clone --depth 1 https://github.com/LiamGvchi/gc-still-image-motion-director.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: LiamGvchi/gc-still-image-motion-director The repository ships 1 skills in total.
+
+========================================================================
 ## empathy
 ## 动笔前先过一遍人类沟通守则的 AI 助手
 URL: https://ourword.ai/skill/i/danielroe-empathy/
@@ -6440,6 +6462,44 @@ git clone --depth 1 https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyue
 
 ### Where does it come from?
 Repository: dacnay816y62-hub/fantasy-dongfang-jianyuehaibao The repository ships 1 skills in total.
+
+========================================================================
+## muyang-flat-animation
+## 静态插画长出会讲知识的暖色纸面动画
+URL: https://ourword.ai/skill/i/yokel1121-muyang-flat-animation-muyang-flat-animation/
+URL (中文): https://ourword.ai/skill/zh/i/yokel1121-muyang-flat-animation-muyang-flat-animation/
+Source: https://github.com/yokel1121/muyang-flat-animation/tree/HEAD/muyang-flat-animation
+Updated: 2026-07-22
+Tags: images, skill, yokel1121
+
+Turn scripts or still art into configurable explainer animation: warm paper, ink lines, colored pencil. Clean.
+
+### What does this skill do?
+将中文口播、抽象概念或一张静态插画转成可配置的“沐阳扁平动画”：以暖色纸面、自然钢笔线稿、选择性彩铅填色和编辑式图解留白为核心画风，采用适合知识讲解的归类、连接、对比、递进、转化与结果确认动画，配色自由，人物可选；支持自定义画布尺寸和同步动作音效。这里的“生长动画”指元素从固定起点按结构逐步生成或展开，不专指植物。默认音效轻量、干净且服从讲解节奏，禁止笔尖、铅笔、钢笔或马克笔在纸面摩擦和书写的声音，不含人声或配乐；用户可明确要求静音。用户说“沐阳扁平动画”“知识讲解动画”“手绘插画动效”“无人物动画”“纯内容可视化”“素材动画”“让图片动起来”“人物动作”“生长动画”，或希望制作可插入短视频的固定镜头 B-roll 时使用。强制先确认动画方案，再确认完成静帧，最后才调用 Gemini 视频生成并执行逐帧 QA。
+
+### Why is it worth installing?
+Locks storyboard & final frame before generation, then QA each frame — kills rework cost instead of letting the model freewheel.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yokel1121/muyang-flat-animation.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yokel1121/muyang-flat-animation Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+口播稿或一张图，变成可配置的图解动画：归类、递进、对比都有专属动势。默认音效干净，禁笔触摩擦声。
+
+### Q：这个 skill 做什么？
+将中文口播、抽象概念或一张静态插画转成可配置的“沐阳扁平动画”：以暖色纸面、自然钢笔线稿、选择性彩铅填色和编辑式图解留白为核心画风，采用适合知识讲解的归类、连接、对比、递进、转化与结果确认动画，配色自由，人物可选；支持自定义画布尺寸和同步动作音效。这里的“生长动画”指元素从固定起点按结构逐步生成或展开，不专指植物。默认音效轻量、干净且服从讲解节奏，禁止笔尖、铅笔、钢笔或马克笔在纸面摩擦和书写的声音，不含人声或配乐；用户可明确要求静音。用户说“沐阳扁平动画”“知识讲解动画”“手绘插画动效”“无人物动画”“纯内容可视化”“素材动画”“让图片动起来”“人物动作”“生长动画”，或希望制作可插入短视频的固定镜头 B-roll 时使用。强制先确认动画方案，再确认完成静帧，最后才调用 Gemini 视频生成并执行逐帧 QA。
+
+### Q：为什么值得装？
+先锁动画方案，再锁完成静帧，最后才生成视频并逐帧QA——把翻车成本压在最低，而不是让模型自由发挥后返工。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yokel1121/muyang-flat-animation.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yokel1121/muyang-flat-animation Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## gc-muted-zine-poster-v0-1
