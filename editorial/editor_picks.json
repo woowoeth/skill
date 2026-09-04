@@ -268,6 +268,411 @@
    "note": "生图要 OpenAI key（明说，可降级）",
    "picked_at": "2026-09-03",
    "by": "编辑（Claude）读原文"
+  },
+  "onlylt/wow-gongwen-writing": {
+   "repo": "onlyLT/wow-gongwen-writing",
+   "path": "",
+   "paths": [],
+   "reason": "体制内公文：文种手册、GB/T 9704 版式、负面清单 + export_docx.py 出 Word，6 份成品样稿；三种占位符把「宁可占位绝不杜撰」做成机制，先出大纲停下等确认；「函」对不相隶属机关用「请示」是硬伤先卡住 —— 对着真公文啃过的人写的。",
+   "note": "示例来自义乌，口径偏浙江",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "psychellluyuer-max/loisloiskill": {
+   "repo": "psychellluyuer-max/LoisLoiskill",
+   "path": "",
+   "paths": [],
+   "reason": "品牌方给产品资料，交出 13 页可直接给客户的小红书/抖音投放策划 PPT：10 维产品属性模型、内容类型权重矩阵、build_pptx.py + 三份真实项目数据（盒马榛子酱等）；铁律 D3 推测数据禁止进客户 PPT、案例必须给笔记 ID 可回查。",
+   "note": "仓名不友好；数据源多为付费工具，明写降级",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "benzema216/rent-ops": {
+   "repo": "BENZEMA216/rent-ops",
+   "path": "",
+   "paths": [],
+   "reason": "一线城市租房：贴一个贝壳/自如/58/豆瓣链接得到评分、假房源检测、高德定位和看房清单；6 城 yml、9 个模式文件、高德通勤脚本、59KB 地图页；RED 信号硬拦截「建议直接放弃」、低于均价 30% 即红 —— 和心选行程地图一样交付的是一张能看的地图。",
+   "note": "Playwright 爬各平台有反爬风险；高德 key 自备",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "tongdog/big-tech-rhetoric": {
+   "repo": "TongDog/big-tech-rhetoric",
+   "path": "",
+   "paths": [],
+   "reason": "把任何议题改写成大厂会议现场发言，黑话四档可调：34KB 黑话词库（黑话/实际含义/搭配三栏）、岗位视角、职级语气；「反驳必须针对具体缺口不能只靠拉齐」「删掉英文词逻辑仍成立」「不建立在羞辱职业上」—— 像心选 caveman，一个玩笑做成有纪律的产品。",
+   "note": "娱乐向",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "liuxingqitd/content-risk-detector": {
+   "repo": "liuxingqitd/content-risk-detector",
+   "path": "",
+   "paths": [],
+   "reason": "短视频逐字稿发抖音/小红书/视频号前按三平台规范逐句查违规，红橙黄蓝分级 + P0/P1/P2 改法；每条规则带关键词、判定标准、案例、改法（「提到推特会触发境外导流审核」）；每个风险点必须引原文，模糊情况建议人工复核 —— 和已上架的违禁词扫描分工：那件管文案，这件管口播稿。",
+   "note": "规则库 18KB 偏薄，平台规则变动要维护",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "miint-sunny/nai5-prompting": {
+   "repo": "Miint-Sunny/nai5-prompting",
+   "path": "",
+   "paths": [],
+   "reason": "NovelAI V5 提示词方法：基于 1844 条真实提示词统计 + 出图实测（权重档位分布、分段方式占比、字段分工、多角色绑定）84KB；四条铁律画师串只用用户给的、拿不准的 tag 标猜测 —— 和心选 seedance 导演一样把某个工具的方言啃透了。",
+   "note": "绑定 NovelAI 付费服务，skill 只产文字",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "edu-ai-builders/language-learning-studio-os": {
+   "repo": "edu-ai-builders/language-learning-studio-os",
+   "path": "intake-diagnostic",
+   "paths": [],
+   "reason": "托福/雅思培训老师用 15–45 分钟微探针诊断学生真正失分的机制，产出一页可交互诊断 HTML：探针库 7 机制×6 探针各带失败信号与排除条件、探针接口可换真题；「四项都在 5.0–5.5 且落差≤0.5 不该进应试训练当场告诉老师」「排除力比确认力值钱」。",
+   "note": "合集里只挑这一件；默认探针是示例",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "yvonnechen202608-byte/picture-design": {
+   "repo": "yvonnechen202608-byte/picture-design",
+   "path": "photo-to-journal-stickers",
+   "paths": [],
+   "reason": "一张旅行照拆成 6–8 个透明底手帐贴纸 PNG：视觉系统 + prompt 配方 + inspect_png_alpha.py 验真透明像素（不能用白色假装透明）；「素材不够宁可少做不凑数」「每个最多两次定向重试」单变量修正 —— 和心选 Sticker-Puzzle 验四角 alpha 同一路手艺。",
+   "note": "工作流写死 Codex 工具名；整仓 9 件只推这一件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "siyuanjia/magazine-grade-video": {
+   "repo": "SiyuanJia/magazine-grade-video",
+   "path": "",
+   "paths": [],
+   "reason": "访谈/演讲收成 3:4 杂志感竖版短视频：上半画面下半卡拉OK中文字幕加刊头刊尾，两套 Remotion 皮肤各 8–9 个组件 + 下载/转写/对齐四个脚本；「缺刊头四项就停下来问不从标题里猜」「中文字幕必须用户给或按条译出不机翻顶替」—— 和心选 hotclip 同赛道走编辑包装。",
+   "note": "依赖链重（Node+Remotion+ffmpeg+whisper）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "naxiaoduo/scammer.skill": {
+   "repo": "naxiaoduo/Scammer.skill",
+   "path": "",
+   "paths": [],
+   "reason": "可疑消息贴进来，告诉你是哪种骗局、走到第几阶段、骗子下一步会说什么：骗局写成剧本（杀猪盘 5 阶段 + 话术 + 进入下一阶段的信号），pattern_writer/version_manager 管本地骗局库；置信度三档、确认不是诈骗直接说 —— 比「这是诈骗请报警」有用得多。",
+   "note": "内置只有 1 个样本，其余靠用户添加",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "larashero3-dotcom/lieflat-gongwen": {
+   "repo": "larashero3-dotcom/lieflat-gongwen",
+   "path": "",
+   "paths": [],
+   "reason": "基层公务员写调研报告/讲话/党建材料：参数卡（各文种句长、顿号密度、层级配比）、22 篇范文、7 篇真实政策样例 + check_params.py 写完验收；「公文味是可测量的」—— 平均句长 53 字是自媒体两倍这种数字是对着语料统计过的；同作者 lieflat-charts 是店主指名件。",
+   "note": "真样本原文因版权移除",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "jayden-lg/costing-master": {
+   "repo": "jayden-lg/costing-master",
+   "path": "",
+   "paths": [],
+   "reason": "造价员审清单/结算书/变更签证，出带依据出处的审减台账、漏项清单、需补资料清单：8 份工作流、18 份参考（GB/T 50500-2024 新旧对比、钢筋平法）、13 份模板、9 个测试用例；「禁止凭空造价」「缺资料先列清单不用默认值」「未上传地区资料只给区间」—— 比心选装修老师傅更硬的同一路。",
+   "note": "不含地方定额库；输出是工作底稿",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "sumonehk/short-drama-scriptwriter": {
+   "repo": "SumOneHK/short-drama-scriptwriter",
+   "path": "",
+   "paths": [],
+   "reason": "抖音/TikTok 漫剧编剧团队用：从锁题到分集场次执行稿的交付包，28 份模板、25 份参考、状态机脚本；每集拆 5–7 个戏剧单位×在场/外在动作/内在心理/关系参数变化/可见后果，「商业化默认后置不用 IAP 倒推选题」「用户未确认方向前不建目录」。",
+   "note": "流程重，只到场次执行稿",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "limin112/video-subtitle": {
+   "repo": "limin112/video-subtitle",
+   "path": "",
+   "paths": [],
+   "reason": "给自己视频配硬字幕（英文视频配双语），全程本地：7 个脚本（同音字纠错合并、可拖时间轴的核对页、单双语样式、中英同时约束折行）；细节全是踩过的坑（-copyts、-ml 切词中间、片头音乐让 whisper 幻觉出 We'll be right back 要加 VAD）—— 和心选 hotclip 一样把 100% 本地当卖点。",
+   "note": "绑 macOS/Homebrew",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "hi-nikola/hand-drawn-explainer-video-nikola": {
+   "repo": "hi-nikola/hand-drawn-explainer-video-nikola",
+   "path": "",
+   "paths": [],
+   "reason": "中文文稿/SRT 变「边讲边画」手绘讲解视频：随仓打包逐笔渲染器、12 个脚本、14 份参考、两个完整案例；「不以 SVG 动画冒充真实逐笔绘制」「日期专名关键数字用字幕层不交给图片模型猜写」「成片必须完整解码检查最后 0.3 秒」；明标借鉴心选 Ian 小黑风格，来源诚实。",
+   "note": "依赖重；配音默认火山引擎付费音色（明示）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zongziforu/cn-law-hub": {
+   "repo": "ZongziForu/cn-law-hub",
+   "path": "",
+   "paths": [],
+   "reason": "查法条、核对是否现行有效、批量下载法规原文：13 个脚本覆盖国家法律法规库、规章库、司法解释、税务、生态环境等十个官方库 + 跨库条文搜索，16 个测试；「效力状态只在官方页面明确给出时才说」「不得从发布日期推断效力」—— 法律 AI 最常见的翻车（废止当现行）用七条硬规则堵死。",
+   "note": "依赖官网接口稳定性",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "rose-for-future/hit-lab": {
+   "repo": "rose-for-future/hit-lab",
+   "path": "",
+   "paths": [],
+   "reason": "观点类视频/教程图文的 7 维打分 + 发布前盲预测 + T+3 复盘，rubric 被真实数据反复校正：14 个平台数据适配器、评分脚本、状态机；「必须拒绝的请求」八条：不许先看播放量再反推预测、预测写完即不可改、不许降阈值让升级通过 —— 把创作者最自欺的环节封死。",
+   "note": "体量大学习成本高",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "chen3tu/interview-master-skill": {
+   "repo": "chen3tu/interview-master-skill",
+   "path": "",
+   "paths": [],
+   "reason": "准备面试、复盘失败、谈薪选 offer：四个岗位方向文件（产品运营/AI 产品/技术/管理）+ 六阶段路由 + 快速补课；「简历有硬伤直说」「有立场敢判断不说这个也可以那个也行」「用户说在哪个阶段就信他不强制回头」—— 和心选乔木简历是上下游。",
+   "note": "四方向之外覆盖不到",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "stellaqiu27/claude-skill-patent-writing-chinese": {
+   "repo": "StellaQIU27/claude-skill-patent-writing-chinese",
+   "path": "",
+   "paths": [],
+   "reason": "把方法/论文写成中国发明专利说明书：PatentDoc 类 + 真 OMML 公式构造器 + 黑白正交流程图图元，出能交给代理人的 .docx；「常见坑」全是对着 Word 撞过的（oMathPara 同段报错、x_t 显示下划线、箭头只能在终点），交付前解 zip 检查计数 —— 一年一年试错攒出来的。",
+   "note": "不含权利要求书策略",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "c0dedance/sbti-skill": {
+   "repo": "c0dedance/sbti-skill",
+   "path": "",
+   "paths": [],
+   "reason": "像聊天一样的人格测评，26 型人格卡：30 道题 + 2 道饮酒关卡题、26 型 15 维 pattern、维度解释全是数据；「内部机制对用户完全不可见」「不直接列 ABC 选项用对话抛场景」「同维度两题矛盾自然追问只引用用户说过的话」，结果页找反差点 —— 和心选 LARP/D&D 一样把娱乐做认真。",
+   "note": "26 型原始 IP 归属未标",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "dacnay816y62-hub/fantasy-dongfang-jianyuehaibao": {
+   "repo": "dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+   "path": "",
+   "paths": [],
+   "reason": "给展览/城市/非遗做东方编辑风海报或书封：111 组 prompt↔成图对照 + 13 张三联审美基准 + 6 份版式参考；「主标题 1–4 个汉字，景德镇青花只留青花」「地名不做地标拼贴只用一处本地材料线索」「标题错了简化重生成不许后期补字」—— 同作者车窗风景照已在架。",
+   "note": "强制走图像生成；测试图需抽查肖像",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zxc123aa/cc-proxy-detector": {
+   "repo": "zxc123aa/cc-proxy-detector",
+   "path": "",
+   "paths": [],
+   "reason": "国内买了 Claude Code 中转站的人，一份指纹报告说清后端是官方、Bedrock 还是伪装：detect.py 三重探测 + 八行指纹矩阵（toolu_ 前缀、msg id 格式、ratelimit 动态递减）；明写哪些字段可伪造哪个最难伪造 —— 中国用户独有的真实焦虑，海外没有这个题。",
+   "note": "指纹会随后端更新失效",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "alephaitech/moyuxl-ecom-image-prompt": {
+   "repo": "AlephAITech/moyuxl-ecom-image-prompt",
+   "path": "",
+   "paths": [],
+   "reason": "电商详情页豆包生图：先调研卖点经确认再逐屏出执行稿，参考图当「不可信数据」，卖点证据双态门禁，六份参考按模式路由 —— 电商运营的具体活，有硬拒绝。",
+   "note": "绑豆包，篇幅重",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "zhlmi/weibo-cocoon-judge": {
+   "repo": "zhlmi/weibo-cocoon-judge",
+   "path": "",
+   "paths": [],
+   "reason": "微博关注列表信息茧房自检：351 条判词的判定引擎 + 自带自检的报告生成 + 参考；「只测自己」「不做价值判断」—— 中国普通人具体事，作者 zhlmi 的 moodboard-alignment 是心选。",
+   "note": "需付费 WEIBO_CLI_TOKEN（已披露）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "ccxx1835/huatu-skill": {
+   "repo": "ccxx1835/huatu-skill",
+   "path": "",
+   "paths": [],
+   "reason": "参考图重绘成 Illustrator 原生可编辑矢量稿：中文竖排/路径文字做原生对象，JSX 居中脚本 + SVG 预览脚本，实际导出叠图差异图验证 —— 和心选 archify/excalidraw「可编辑源文件」同一判断。",
+   "note": "强依赖本机 Illustrator",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "yuema137/dongbeigpt": {
+   "repo": "yuema137/DongbeiGPT",
+   "path": "skills/dongbei-explainer",
+   "paths": [],
+   "reason": "用东北话把复杂内容讲明白，「东北话不是目的讲明白才是」，四个子技能组合 + eval 校准，不套用到代码文档 —— 有克制立场的讲解件，读者一看就想试。",
+   "note": "合集里只挑这一件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "syuancheng/my_markji": {
+   "repo": "syuancheng/my_markji",
+   "path": ".claude/skills/markji",
+   "paths": [],
+   "reason": "讲义/截图/一句英文做成能直接进墨墨记忆卡 App 的卡：一个 CLI 管牌组/lint/批量/续传/verify，7 个卡片模板，api.md 记了官方文档两处与实现不符的坑；「写入不可逆首次写卡前先确认」「batch 任一张语法错整体中止」—— Markji 语法写错静默乱码，它把坑变成 lint 门禁。",
+   "note": "需自己的 MAIMEMO_TOKEN",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "buuaaa/evidence-based-nutrition-advisor": {
+   "repo": "BuuaaA/evidence-based-nutrition-advisor",
+   "path": "",
+   "paths": [],
+   "reason": "「鱼油能降血脂吗、老人要不要吃钙片」给一张 HTML 证据卡，分开说证据确定性/与你的匹配度/值不值得买：14 个脚本（PubMed 导出、去重、筛选、Meta 合并）、16 份参考（GRADE、营养宣称陷阱）；「证据不充分不等于证据显示无效」五档分开、硬时间预算到点降级 —— 补剂宣传天天刷到，这种自我约束少见。",
+   "note": "体量大；健康话题标注不替代医疗",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "escap1ng/mathmodel-kit": {
+   "repo": "Escap1ng/mathmodel-kit",
+   "path": "skills/mathmodel-diagram",
+   "paths": [],
+   "reason": "数模/毕业论文的技术路线图、框架图、问题分析图：填 JSON 出 300dpi PNG + 矢量 PDF，5 个模板脚本逐槽跑中文字宽校验超框即非零退出；「说不出含义的箭头不要画」「不看渲染图不算画完」「模板不匹配就现绘不为套模板改数据语义」—— 心选数模件缺的那块配图。",
+   "note": "合集里只挑这一件；需中文字体",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "jiayuqi7813/shuodedaoli-skill": {
+   "repo": "jiayuqi7813/shuodedaoli-skill",
+   "path": "",
+   "paths": [],
+   "reason": "熊大熊二式竖屏对话短视频：写一份 YAML 台词出带背景、头像高亮、彩色字幕、配音的 mp4，14 个合成模块 + 无 TTS 预览不扣费 + 按句缓存；「禁止棋盘格假透明」「先预览再成片」—— 真做过成片才有的省钱设计。",
+   "note": "依赖 Fish Audio 付费 API（明说）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "liangdabiao/smy-seedance-storyboard": {
+   "repo": "liangdabiao/smy-seedance-storyboard",
+   "path": "",
+   "paths": [],
+   "reason": "神话/水浒/民间故事改成上美影复古手绘风的 Seedance 分镜与剧本：风格指南是单一事实来源（风格块/色盘/造型规范）+ 两个完整示例项目；「默认且仅输出上美影风格」「单剧只用一个子风格」「剧组色盘四色逐字引用」—— 解决 AI 短剧镜头间风格漂移，落在中国人自己的视觉记忆上。",
+   "note": "504 行偏长；绑 Seedance 2.0",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "giszzt/figecho": {
+   "repo": "giszzt/FigEcho",
+   "path": "",
+   "paths": [],
+   "reason": "给一张参考技术图提炼可复用的「视觉指纹」，再把新内容画成同一风格家族：6 个脚本（风格库检索、多后端出图、画幅配色密度实测、校验）、28 套已入库风格模板、9 个 schema；「跳过检索直接自造风格属于流程失败即使成图好看」—— 把「像某张图」拆成带权重置信度的锚点，和心选 moodboard-alignment 同路。",
+   "note": "出图要第三方图像 API（公开列出）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "gujiapeng1991-droid/gudemiao-advertising-creative-director": {
+   "repo": "gujiapeng1991-droid/gudemiao-advertising-creative-director",
+   "path": "",
+   "paths": [],
+   "reason": "广告创意总监：品牌问题做成 30 秒可拍可生成的广告，两份分开的 Word（干净剧本 + 含 Seedance 时间戳提示词的制作剧本）+ 资产清单；「先品牌与商业问题后创意」「去掉 Logo 还认得出品牌吗不能就重做」，禁止每 5 秒重启故事、禁止全员网红妆。",
+   "note": "references 每份很薄，厚度在本体",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "cslawyer1985/china-lawyer-analyst": {
+   "repo": "CSlawyer1985/china-lawyer-analyst",
+   "path": "",
+   "paths": [],
+   "reason": "中国法律分析：45 类案件识别 + 六段式要件清单 + IRAC 出意见，自动校验引用法条是否已修订废止：233KB SQLite（630 审查要点、495 证据清单）、四部司法解释逐条拆解、16 个工具；「法不溯及既往/程序法从新」写成自动判断，原告被告出不同清单 —— 专治引了 2018 版公司法。",
+   "note": "读者偏律师法务；文档营销味重",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "kangarooking/cangjie-skill": {
+   "repo": "kangarooking/cangjie-skill",
+   "path": "",
+   "paths": [],
+   "reason": "拆书成 skill：一本书/一场长播客蒸馏成一组能力卡，17 个脚本（编译、提取器、触发/输出评测、压力测试）、17 本已拆书目、rejected/ 保留淘汰理由；「做方法论/决策框架不做书摘/读后感/角色扮演」「没有文本不凭记忆蒸馏」—— 心选 book-to-skill 的中文深做版，管的是删掉什么。",
+   "note": "README 有作者社群二维码（封面不取）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "alto-r/nature-figure-craft": {
+   "repo": "Alto-R/nature-figure-craft",
+   "path": "chart-type-chooser",
+   "paths": [],
+   "reason": "画图前先决定画什么图：20KB 数据体检器算出 3–5 个带真实数字的候选结论让用户挑，再给 2–3 种图型及被否决的备选和反模式检查；「Never ask what do you want to plot before looking」「分辨率不一致本身就是发现不许放脚注」—— 心选「自动选对图表类型」的深做版。",
+   "note": "英文；合集里只挑这一件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "wangling-miao/mathmodel-latex-skill": {
+   "repo": "wangling-miao/mathmodel-latex-skill",
+   "path": "",
+   "paths": [],
+   "reason": "数模国赛/美赛论文 LaTeX 工程：能离线编译的 CUMCM/MCM 模板 + 四个校验脚本（环境、引用、关键词必须是建模术语、PDF 页数体积身份信息扫描）；「一级标题用一、问题重述」「假设必须假设 n：…解释：…」「附录 A 与附录之间不能有空格」—— 真交过卷的人才知道的潜规则。",
+   "note": "cls 是作者自写兼容层",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "ly398565721/high-school-timetable": {
+   "repo": "ly398565721/high-school-timetable",
+   "path": "",
+   "paths": [],
+   "reason": "高中排课 + 早读午休晚自习值班表：CP-SAT 求解器 + 独立校验器 + 两所学校适配器 + Excel 导出，出四张工作簿和一份约束确认表；「不解就先问完所有未定项」「无解报出违反的规则和最小放松方案等人批准」「硬规则必须同时存在于求解器和校验器」—— 教务主任排课是极具体的中学日常。",
+   "note": "只适配两所学校版式；需 ortools",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "kavender/lullsense": {
+   "repo": "Kavender/lullsense",
+   "path": "skills/lullsense",
+   "paths": [],
+   "reason": "知眠：4–36 个月婴幼儿睡眠顾问，先安全分诊再给假设与实验方案：每条医学主张标证据等级和来源、校验脚本强制安全类主张有指南级来源、CLI 支持 Huckleberry 导出；「4 个月以下一律不给作息建议」「红旗直接中止转医疗」「不编造引用」—— 育儿件肯先划不做什么的线，稀缺。",
+   "note": "英文；分析引擎 alpha",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "kobingogo/motion-sticker-pack": {
+   "repo": "kobingogo/motion-sticker-pack",
+   "path": "",
+   "paths": [],
+   "reason": "动态表情包：给一张角色图出 9 张独立循环、首帧透明的动图 + 报告 + ZIP，25 个脚本（透明度探针、网格检测、审批哈希、切格抠像、零成本仿射兜底）；「静态图未经批准绝不生成视频」「不信模型自称的透明通道本地解码验 alpha」「禁止往提示词塞未经请求的道德改写」—— 和心选贴纸件同一种手艺人。",
+   "note": "流程重；视频路由依赖外部 provider",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "ychenjk-sudo/xiaoyuzhou-transcription-skill": {
+   "repo": "ychenjk-sudo/xiaoyuzhou-transcription-skill",
+   "path": "",
+   "paths": [],
+   "reason": "贴一个小宇宙链接，得到带时间戳分说话人的逐字稿 + 要点 + 问答：transcribe.sh 抽音频地址提交 ASR 轮询拉结果（支持 8 小时长节目）、format_transcript.py 按内容标记分说话人；老实说明说话人识别靠内容线索不是声纹 —— 两小时节目没时间听的真痛点。",
+   "note": "依赖阿里 DashScope 付费 API（明写）",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "hetiankong/universal-video-notes": {
+   "repo": "hetiankong/universal-video-notes",
+   "path": "",
+   "paths": [],
+   "reason": "B 站/YouTube 视频转带 YAML 头的 Obsidian 结构化笔记，无字幕时本地 SenseVoice 转写：十个步骤模块 + 批处理 + 预检；「优先 CC 字幕没有再本地转写」700MB 模型不走云端，首次引导写成状态机并用真实 B 站视频做验收 —— 和心选 hotclip 同一种取舍。",
+   "note": "笔记生成需 DeepSeek key（明写）；首次配置繁琐",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "jincai/openclaw-skills": {
+   "repo": "jincai/openclaw-skills",
+   "path": "infographic",
+   "paths": [],
+   "reason": "一篇文章/推文做成微信群里能直接转发的 750px 信息图 PNG，纯 HTML+Playwright 截图不用生图模型：设计系统 + 3x 截图脚本；内容抽取写成硬限制（3–7 节每节 1–3 条超过三行就拆）—— 信息图的失败通常在字太多，它先管住这个。",
+   "note": "合集里只挑这一件；风格单一",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "learnprompt/awesome-seedance": {
+   "repo": "LearnPrompt/awesome-seedance",
+   "path": "agents/skills/seedance-prompt-library",
+   "paths": [],
+   "reason": "Seedance 视频提示词模板库：每个模板含 useWhen/structure/guidance/pitfalls/案例链接，由带热度分和复测记录的真实案例生成；「模板不贴切就直说从零构建」「对话口型强制用 2.5 原生 lip-sync 字段」—— 和心选 seedance 导演互补：一个管分镜，一个管单镜头模板。",
+   "note": "合集里只挑这一件",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
+  },
+  "explosivecoderflome/ani-book-skill": {
+   "repo": "ExplosiveCoderflome/ani-book-skill",
+   "path": "",
+   "paths": [],
+   "reason": "带新手写网文长篇：五个开篇种子起步到卷纲、章节契约、章稿、连续性台账全是可编辑文件，7 个脚本管状态与校验；「每次只问 2–3 个影响最大的未定项每项给互斥选项先推荐一个」「改了高影响设定把受影响章节标 stale」—— 网文新手写到三十章忘设定的死穴。",
+   "note": "英文、面向 Codex；流程重",
+   "picked_at": "2026-09-04",
+   "by": "编辑（Claude）读原文"
   }
  }
 }
