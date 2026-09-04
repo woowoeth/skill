@@ -1014,7 +1014,8 @@
    "title_en": "Turn PDFs & EPUBs into agent-ready skill packs",
    "hide": false,
    "gate_score": 6,
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "op7418-humanizer-zh": {
    "title_zh": "去 AI 味·中文版",
@@ -2025,7 +2026,8 @@
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "francyjglisboa-agent-skill-creator": {
    "title_zh": "把口头流程变成能跑的跨平台技能，三步内交付",
@@ -2574,7 +2576,8 @@
    "title_en": "Video editing that plans before it cuts anything",
    "hide": false,
    "gate_score": 7,
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "dimetron-pi-go-design-review": {
    "title_zh": "给 Go 代码库做地道性评审",
@@ -2593,7 +2596,8 @@
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "dimetron-pi-go-bubbletea-testing": {
    "title_zh": "给跑在终端里的 Bubble Tea 界面拍快照做断言",
@@ -3156,16 +3160,17 @@
    "why_en": "The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.",
    "limit_zh": "没告诉它平台和风格，它就停在提问那一步，不会先出一版给你看。预置比例只有小红书 3:4、公众号 2.35:1、X 5:2；一次一张、不给多版对比，也不许两种风格混用。",
    "limit_en": "Without a platform and a style it stops at the question and won't draft anything first. Preset ratios cover only Xiaohongshu 3:4, WeChat 2.35:1 and X 5:2. One image per run — no side-by-side options, and mixing two styles is forbidden.",
-   "cover": "https://raw.githubusercontent.com/adrianpunk/Punk-Skill/HEAD/screenshots/punk-cover-styles/anthropic-research-style.png",
-   "cover_kind": "artwork",
-   "cover_real": true,
+   "cover": "/skill/assets/covers/adrianpunk-punk-skill-punk-cover.png",
+   "cover_kind": "hero",
+   "cover_real": false,
    "title_en": "One punk style library, covers for articles, XHS, WeChat, X",
-   "cover_w": 1983,
-   "cover_h": 793,
+   "cover_w": 680,
+   "cover_h": 453,
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_src": "https://raw.githubusercontent.com/adrianpunk/Punk-Skill/HEAD/screenshots/punk-cover-styles/giant-perspective-chinese-title.png"
   },
   "adrianpunk-punk-skill-punk-avatar": {
    "title_zh": "用照片生成头像和宠物纪念卡",
@@ -3461,7 +3466,8 @@
    "hide": false,
    "gate_score": 9,
    "gate_drop": "not-taste-ref",
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "jame581-godotprompter": {
    "title_zh": "按 Godot 引擎的范式做游戏",
@@ -4414,14 +4420,17 @@
    "why_en": "Presenter view and second-screen sync are details almost no AI deck tool bothers with, and this one folds them into a single HTML file.",
    "limit_zh": "作者自己划的禁区：大段表格图表、培训课件、多人协作编辑都别用它，成品就是一份静态 HTML。主题只能从预设 5 套/4 套里挑，不收自定义 hex；两套风格类名互斥不能混。校验脚本要 Node，渲染实测还要 Playwright。",
    "limit_en": "The author rules out dense tables, courseware and collaborative editing - the artifact is one static HTML file. Themes come from the 5 or 4 presets, no custom hex, and the two styles' class names cannot be mixed. Validators need Node.",
-   "cover": "",
-   "cover_kind": "og",
+   "cover": "/skill/assets/covers/op7418-guizang-ppt-skill.png",
+   "cover_kind": "hero",
    "cover_real": false,
    "title_en": "Presenter view and dual screens, in one file",
    "hide": false,
    "gate_score": 8,
    "gate_drop": "not-taste-ref",
-   "unhide_note": "2026-09-04 编辑亲挑（参照通道 R1），撤销旧的 hide："
+   "unhide_note": "2026-09-04 编辑亲挑（参照通道 R1），撤销旧的 hide：",
+   "cover_h": 1350,
+   "cover_src": "https://raw.githubusercontent.com/op7418/guizang-ppt-skill/HEAD/assets/ppt-skill-showcase.png",
+   "cover_w": 2400
   },
   "alchaincyf-zhangxuefeng-skill": {
    "title_zh": "用张雪峰的框架分析升学和职业选择",
@@ -5662,7 +5671,10 @@
   "adrianpunk-punk-xhs-cards-punk-xhs-cards": {
    "hide": false,
    "gate_score": 5,
-   "unhide_note": "2026-09-04 编辑亲挑（参照通道 R1），撤销旧的 hide："
+   "unhide_note": "2026-09-04 编辑亲挑（参照通道 R1），撤销旧的 hide：",
+   "cover": "",
+   "cover_kind": "none",
+   "cover_tried_at": "2026-09-04"
   },
   "0xsline-dsh-spotlight-dsh-plugin-compose": {
    "hide": true,
@@ -6685,7 +6697,8 @@
    "cover_h": 2780,
    "hide": false,
    "gate_score": 8,
-   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管"
+   "cover_note": "外链图三次取不到（429），先保留外链，等 CI 再托管",
+   "cover_tried_at": "2026-09-04"
   },
   "wr5912-human-allegory-engine": {
    "title_zh": "把人生事件转成可复用的寓言引擎",
@@ -12358,7 +12371,13 @@
    "tagline_zh": "写方法论、流程、状态、隐喻时总找不到不抢戏的配图？这套自带轻表情的火柴人，默认大量留白，像文档页边的手绘注释。",
    "hide": false,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "cover_h": 941,
+   "cover_src": "https://raw.githubusercontent.com/AINoSleep/ainosleep-stickman-illustrations/HEAD/examples/images/00-reference-board.png",
+   "cover_kind": "hero",
+   "cover_real": false,
+   "cover_w": 1672,
+   "cover": "/skill/assets/covers/ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations.png"
   },
   "yanliudesign-mono-color-skill": {
    "title_zh": "单色孔版印刷海报生成器，两色封顶",
@@ -12583,12 +12602,13 @@
    "why_zh": "不是简单转文字：它把音频抽取、ASR识别、说话人分段、要点提炼串成一条流水线，你只给链接。",
    "limit_zh": "只认小宇宙单集链接，不支持合集或分P。ASR用Qwen，对重口音、多人抢话、背景音嘈杂的段落会识别错乱。",
    "tagline_zh": "别再手动拖音频、找转写工具了。贴个播客链接，它自己抽音轨、跑ASR，按说话人分段，还附要点总结和问答。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "writing",
    "cover_tried_at": "2026-09-04",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · scripts/format_transcript.py: 转载正文·体积路径 第0行"
   },
   "hi-nikola-hand-drawn-explainer-video-nikola": {
    "title_zh": "边讲边画的中文手绘知识视频，交付可编辑工程与真MP4",
@@ -12610,7 +12630,10 @@
    "gate_score": 8,
    "category": "work",
    "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · SKILL-v1.md: 剂量·中医 第2736行",
-   "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide（原因：先发后审：上架后补扫命中红线 —— 命中 2 处 · SKILL-v1.md: 剂量·中医 第2736行）"
+   "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide（原因：先发后审：上架后补扫命中红线 —— 命中 2 处 · SKILL-v1.md: 剂量·中医 第2736行）",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "buuaaa-evidence-based-nutrition-advisor": {
    "title_zh": "营养补剂宣称先过证据三道闸再谈买不买",
@@ -12853,7 +12876,10 @@
    "gate_score": 8,
    "category": "work",
    "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/13-step-cost-management.md: 破限·声明不做 第182行",
-   "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide（原因：先发后审：上架后补扫命中红线 —— 命中 1 处 · references/13-step-cost-managemen）"
+   "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide（原因：先发后审：上架后补扫命中红线 —— 命中 1 处 · references/13-step-cost-managemen）",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "gujiapeng1991-droid-gudemiao-advertising-creative-director": {
    "title_zh": "丢来一句品牌诉求，还你一套可拍可投放的广告工程",
@@ -12975,8 +13001,12 @@
   "gnipbao-story-to-handdrawn-video-story-to-handdrawn-video": {
    "hide": false,
    "unhide_note": "2026-09-04 店主指名，撤销旧的 hide（原因：早先门禁/判官）",
-   "cover": "",
-   "cover_kind": "none"
+   "cover": "/skill/assets/covers/gnipbao-story-to-handdrawn-video-story-to-handdrawn-video.jpg",
+   "cover_kind": "hero",
+   "cover_h": 2100,
+   "cover_w": 1440,
+   "cover_src": "https://raw.githubusercontent.com/gnipbao/story-to-handdrawn-video/HEAD/references/style-examples/handdrawn-style-library-contact-sheet.jpg",
+   "cover_real": false
   },
   "helloianneo-ian-xiaohei-scenes-ian-xiaohei-scenes": {
    "title_zh": "小黑撞上真实物件，一张图讲完打工人的隐喻",
@@ -13006,7 +13036,8 @@
    "category": "fun",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡",
+   "cover_tried_at": "2026-09-04"
   },
   "zhlmi-shotsaver": {
    "title_zh": "不动像素只叠 HTML/CSS 层的废片拯救术",
@@ -13024,7 +13055,10 @@
    "tagline_zh": "不用写谱、不用调判定。它自己听出起音、排好双拇指能按的轨，三档难度打包成单文件，发链接就能玩。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "kagurananaga-kaogong-study-tracker": {
    "title_zh": "错题截图进来，按原因分类的国考错题本出去",
@@ -13040,12 +13074,13 @@
    "why_zh": "它不背话术库，而是拿真实对话反推你的语气，再按你的真实意愿生成回复。遇到拒绝、出柜、控制或暴力。",
    "limit_zh": "只认中文对话文本，不处理语音或图片内容；只覆盖男男暧昧/约会场景，不提供泛用社交建议；生成的回复需你亲自确认发送。",
    "tagline_zh": "不是教你撩，是帮你把每句回复都过一遍真心。已读不回、邀约试探、要不要继续，它先问清你的意思，再给你能直接发的字。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "creative",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 4 处 · references/cross-platform-observations.md: 绕反爬 第148行"
   },
   "joeseesun-qiaomu-info-card-designer": {
    "title_zh": "网页链接丢进来，吐出一张能发朋友圈的杂志卡片",
@@ -13054,7 +13089,10 @@
    "tagline_zh": "不用排版、不用找图，X 文章或网页丢进去，自动提炼要点、套上瑞士字体排印，截图存好，超长内容自动切图，直接发小红书。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "joeseesun-qiaomu-mondo-poster-design": {
    "title_zh": "33位传奇设计师替你选风格，一句话出海报",
@@ -13087,7 +13125,8 @@
    "category": "work",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡",
+   "cover_tried_at": "2026-09-04"
   },
   "haojae-scipilot-figure-skill": {
    "title_zh": "先查数据再选图，拦下科研绘图的经典错误",
@@ -13096,7 +13135,10 @@
    "tagline_zh": "小样本别画均值柱、双Y轴先劝退、饼图直接拦——它先剖析你的数据分布和结构，再按论证目标推荐图型。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "geeklee-srt-whiteboard-animation": {
    "title_zh": "字幕进、笔迹出：SRT 转白板手绘动画的流水线",
@@ -13106,8 +13148,12 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none"
+   "cover": "/skill/assets/covers/geeklee-srt-whiteboard-animation.png",
+   "cover_kind": "hero",
+   "cover_h": 941,
+   "cover_src": "https://raw.githubusercontent.com/geeklee/srt-whiteboard-animation/HEAD/examples/scene-01-monkey-mountain.png",
+   "cover_real": false,
+   "cover_w": 1672
   },
   "edu-ai-builders-language-learning-sop-kit-skill-option-anatomy": {
    "title_zh": "选择题每个选项都标出题人陷阱的解剖器",
@@ -13131,7 +13177,8 @@
    "category": "life",
    "cover": "",
    "cover_kind": "none",
-   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡"
+   "cover_note": "原外链是 GitHub 预览卡尺寸，不上卡",
+   "cover_tried_at": "2026-09-04"
   },
   "milec-towers-of-saeroth-pf2e-gm": {
    "title_zh": "翻开本地规则库的 PF2e 主持人副驾",
@@ -13140,7 +13187,10 @@
    "tagline_zh": "41,000 条法术、怪物、装备笔记全在 Obsidian 里，跑团时随手查、随手平衡遭遇。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover_kind": "none",
+   "cover": "",
+   "cover_tried_at": "2026-09-04"
   },
   "chaogao512-literature-deep-reading-assistant-literature-deep-reading-assistant": {
    "title_zh": "七段式拆一篇论文，笔记带引用出处可回查",
@@ -13167,7 +13217,8 @@
    "hide": false,
    "unhide_note": "2026-09-04 编辑亲挑，撤销旧的 hide",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "cover_tried_at": "2026-09-04"
   },
   "mattpocock-skills-grilling": {
    "title_zh": "连续追问直到你自相矛盾的方案压力测试器",
