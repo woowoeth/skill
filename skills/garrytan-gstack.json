@@ -2,12 +2,12 @@
  "id": "garrytan-gstack",
  "kind": "skill",
  "name": "gstack",
- "title_zh": "YC 掌门的 Claude Code 全套配置，23 个角色分工",
- "tagline_zh": "YC 掌门 Garry Tan 的 Claude Code 配置原样开源：23 个工具分饰 CEO、设计师、工程经理、QA。",
- "tagline_en": "YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.",
+ "title_zh": "技能太多找不到？它给你一张按场景排好的索引卡",
+ "tagline_zh": "装了一堆 gstack 技能后，每次开工都要翻半天？它把「哪个场景该调哪个技能」编成一张可检索的目录。",
+ "tagline_en": "Tired of digging through your gstack skills before starting? This turns 'which skill for this task' into a.",
  "desc_en": "Router for the gstack skill suite. (gstack)",
- "why_zh": "看顶级投资人怎么用 agent 干活，光是角色分工这张图就值得装一遍。",
- "why_en": "How a top investor actually runs agents — the role division alone is worth the install.",
+ "why_zh": "它不执行任务，只做路由：按你描述的场景，从已装技能里挑出最匹配的那一个。",
+ "why_en": "It doesn't do the work—it routes. Given your scenario, it picks the best installed skill. The win is killing the hidden cost of.",
  "repo": "garrytan/gstack",
  "owner": "garrytan",
  "path": "",
@@ -19,7 +19,7 @@
  "category": "work",
  "fun_score": 4.5,
  "pick": false,
- "hide": true,
+ "hide": false,
  "source": "scout-manual-0807b",
  "added_at": "2026-08-07",
  "install": {
@@ -27,11 +27,13 @@
   "copy": "mv gstack ~/.claude/skills/gstack",
   "dir": "~/.claude/skills/gstack"
  },
- "limit_zh": "这是一套流程，不是一个会写代码的人设，只要聊天式回答会嫌它啰嗦。随件 scripts/preflight-agent-sdk.ts 里写着 permissionMode: 'bypassPermissions'，设计文档也把 --dangerously-skip-permissions 当 CI 用法写；跑之前知道这件事。59 件，大部分是给团队流程用的。",
+ "limit_zh": "只对 gstack 技能套件内的技能生效；非本套件技能不会出现在索引里。它不解释技能用法，只负责指路。",
  "cover": "/skill/assets/covers/garrytan-gstack.png",
  "cover_kind": "artwork",
  "cover_real": true,
  "gate_score": 8,
  "cover_w": 1398,
- "cover_h": 400
+ "cover_h": 400,
+ "title_en": "A scene-based index card for your gstack skills",
+ "limit_en": "Only indexes skills within the gstack suite. It won't explain how to use a skill—just points you to it. Actual execution is still on you."
 }

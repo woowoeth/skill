@@ -2,14 +2,14 @@
  "id": "gnipbao-story-to-handdrawn-video-story-to-handdrawn-video",
  "kind": "skill",
  "name": "story-to-handdrawn-video",
- "title_zh": "",
- "tagline_zh": "",
- "tagline_en": "",
+ "title_zh": "中文故事稿进，20 种手绘风无声动画出",
+ "tagline_zh": "不用学动画，不用剪时间轴。故事稿或本地图片丢进去，出来就是铅笔日记或水彩分镜的 Remotion 成片。",
+ "tagline_en": "No animation skills needed. Drop a story or local images, get a Remotion video in colored-pencil diary or.",
  "desc_en": "Convert Chinese story copy or ordered local images into a silent hand-drawn Remotion story video. Supports a locked user-approved colored-pencil diary default plus a built-in 20-style library covering doodle, crayon, line explainer, ink, watercolor, gouache, storybook, zine, whiteboard, and printmaking looks. Use when the user asks to generate, import, restyle, preview, or render a hand-drawn stor",
- "why_zh": "",
- "why_en": "",
- "limit_zh": "",
- "limit_en": "",
+ "why_zh": "内置 20 种画风库，但默认只走你点头的彩色铅笔日记风——风格是约束出来的，不是随机抽卡。",
+ "why_en": "20 built-in styles, but the default is a locked colored-pencil diary look you approve first. Style as constraint, not.",
+ "limit_zh": "只产无声视频，不生成配音或字幕轨；输入限中文故事稿或本地有序图片，不支持 URL 抓取；画风切换需重渲染。",
+ "limit_en": "Silent video only—no audio or subtitle tracks. Accepts Chinese story text or ordered local images, not URLs. Style changes require full re-render.",
  "repo": "gnipbao/story-to-handdrawn-video",
  "owner": "gnipbao",
  "path": "skill-package/story-to-handdrawn-video",
@@ -29,5 +29,8 @@
   "copy": "cp -r story-to-handdrawn-video/skill-package/story-to-handdrawn-video ~/.claude/skills/story-to-handdrawn-video",
   "dir": "~/.claude/skills/story-to-handdrawn-video"
  },
- "cover": "/skill/assets/covers/gnipbao-story-to-handdrawn-video-story-to-handdrawn-video.png"
+ "cover": "",
+ "unhide_note": "2026-09-04 店主指名，撤销旧的 hide（原因：早先门禁/判官）",
+ "cover_kind": "none",
+ "title_en": "Chinese story to silent hand-drawn video, 20 styles"
 }
