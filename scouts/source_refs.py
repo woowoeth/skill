@@ -74,8 +74,14 @@ def known() -> set[str]:
 
 def tree_skill_path(repo: str):
     t = gh_json(f"repos/{repo}/git/trees/HEAD?recursive=1")
-    paths = [x.get("path", "") for x in (t.get("tree") or []) if x.get("path", "").endswith("SKILL.md")]
+    allp = [x.get("path", "") for x in (t.get("tree") or []) if x.get("type") == "blob"]
+    paths = [p for p in allp if p.endswith("SKILL.md")]
     if not paths:
+        return None
+    # 09-04 R2 验证：kangarooking 名下 21 个「拆书生成器」批量产出的仓，每个只有 SKILL.md + test-prompts.json，
+    # 拆掉指令什么都不剩，0/24 选中。这种形状的仓不算候选 —— 好作者连着出好货，生成器不算作者。
+    names = {os.path.basename(p).lower() for p in allp}
+    if len(allp) <= 4 and names <= {"skill.md", "test-prompts.json", "readme.md", "license", ".gitignore"}:
         return None
     return os.path.dirname(sorted(paths, key=lambda p: (p.count("/"), len(p)))[0])
 
