@@ -20,7 +20,7 @@ on:
     inputs:
       max:
         description: "本轮判多少个候选"
-        default: "400"
+        default: "600"
       slice:
         description: "只跑哪一片（空=按时刻自动选）"
         default: ""
@@ -134,7 +134,7 @@ jobs:
         # 判**全部**新见的，不再只判 40 个 —— 发现做到全量之后，判只判一角就白扫了。
         # 每天几百个仓 × 三票取中位。sweep.py 第一票离线 15 分以上就不投后两票，省掉大半调用。
         # 这个 job 不占写锁，判多久都不堵进货。
-        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 400 }} --min-score 50
+        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 600 }} --min-score 50
 
       - name: 判分结果交给发布 job
         if: always()

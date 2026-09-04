@@ -57,7 +57,7 @@ def main() -> int:
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--from-day", type=int, default=1, help="从几天前开始往回数（默认 1 = 昨天）")
     ap.add_argument("--walk", type=int, default=0, help="游标模式：从 editorial/backfill_cursor.json 记的位置继续往回走 N 天，走到 --max-age 绕回 22 天处")
-    ap.add_argument("--max-age", type=int, default=240)
+    ap.add_argument("--max-age", type=int, default=300)   # taste-skill 建于 2 月，240 天够不着
     ap.add_argument("--cjk-or-stars", type=int, default=-1, help="只给「名字/描述含汉字」或「星 ≥ 此值」的仓验树（-1 = 全验）。深回看用 3")
     ap.add_argument("--min-stars", type=int, default=3)
     ap.add_argument("--low-pages", type=int, default=2, help="低星段（0..min_stars-1）每天再搜几页（每页 100）")

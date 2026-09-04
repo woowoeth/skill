@@ -63,6 +63,14 @@ def main() -> int:
             age = 9999
         if age <= 21:
             lanes.append("时间(回填)")
+        else:
+            # 深回看游标已经走过的区间也算「时间」通道能捞到（在架的仓被 known() 跳过，不会进 seen，所以不能只看 seen）
+            try:
+                nd = int(json.load(open(os.path.join(ROOT, "editorial", "backfill_cursor.json"), encoding="utf-8")).get("next_day", 22))
+            except Exception:
+                nd = 22
+            if 22 <= age < nd:
+                lanes.append("时间(深回看)")
         a = k.split("/")[0]
         if len(authors.get(a, set()) - {k}) > 0:
             lanes.append("同作者")
