@@ -2,6 +2,343 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-04T05:54:00Z",
+   "判了": 42,
+   "过": 0,
+   "明细": [
+    {
+     "id": "hermes2545-mojak-claude-agentic-os",
+     "repo": "hermes2545/mojak-claude-agentic-os",
+     "title": "一套八个技能，把 Claude 变成能自己跑完任务的",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "hermes2545-mojak-claude-agentic-os-backlog",
+     "repo": "hermes2545/mojak-claude-agentic-os",
+     "title": "收件箱清空器：把每行待办落成一张任务卡",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 属于个人工作流自动化工具，非通用生活/创作题材，对普通读者价值有限。（3 判：[42, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "hermes2545-mojak-claude-agentic-os-daily",
+     "repo": "hermes2545/mojak-claude-agentic-os",
+     "title": "早晨读三份清单，只给你今天该做的三件事",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 模板化日程规划，泛用易替代，无边界条件与独到做法。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "hermes2545-mojak-claude-agentic-os-done",
+     "repo": "hermes2545/mojak-claude-agentic-os",
+     "title": "验收先于归档，拿证据才算做完的任务收尾员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 流程清晰但属任务管理模板，交付物为存档文件，非创作者所需。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sakhadib-iut-thesis-skill-for-ai",
+     "repo": "sakhadib/IUT-Thesis-Skill-for-AI",
+     "title": "本地 LaTeX 模板直接长出整本毕业论文",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 针对特定模板的详尽写作流程，但换用其他工具或通用方法也能完成，非不可替代。（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "0nicell-data-deletion-skill",
+     "repo": "0nicell/data-deletion-skill",
+     "title": "挨个敲掉数据掮客存你的那份档案",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 极扎实的实操指南，边界清楚，但受众偏技术安全圈，普通创作者难用上。（3 判：[60, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "youngbeauty-anydesign",
+     "repo": "youngbeauty/AnyDesign",
+     "title": "参考图进，风格技能出：自带校验器的设计系统提取器",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 将参考图转为风格技能，流程完整扎实，但本质是生成工具而非成品。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "vaelkeep-hermes-paper-agent-vael-paper-write",
+     "repo": "vaelkeep/hermes-paper-agent",
+     "title": "每晚自动排版的个人日报，明早醒来就有新一版",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 流程具体且可执行，但属于个人工具链文档，非普适题材，价值有限。（3 判：[42, 58, 65]）",
+     "分": 58
+    },
+    {
+     "id": "lunarxuan-paper-reading-tutor",
+     "repo": "LunarXuan/paper-reading-tutor",
+     "title": "上传 PDF 或给个编号，还你一份能读懂的论文",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 论文研读引导细致，但普通工具或提示词亦可实现；边界清晰但非独门秘技。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "xukp20-build-beamer-slides",
+     "repo": "xukp20/build-beamer-slides",
+     "title": "Beamer 幻灯片从排版到渲染一条龙",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 规则清晰，流程细致，但属开发工具链，受众窄，非普适独特价值。（3 判：[45, 62, 82]）",
+     "分": 62
+    },
+    {
+     "id": "seajelly-foever-pulse-agent-project-progress-analysis",
+     "repo": "Seajelly-foever/Pulse-agent",
+     "title": "群聊碎片里挑出项目真进展的雷达",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 分析规则清晰实用，但结构输出易被其他工具替代，独特性一般。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "seajelly-foever-pulse-agent-project-task-extractor",
+     "repo": "Seajelly-foever/Pulse-agent",
+     "title": "项目语境里捞得出能验收的 Todo",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 规则清晰、边界明确，但本质是通用任务管理方法论，换工具亦可实现。（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "seajelly-foever-pulse-agent-weekly-report",
+     "repo": "Seajelly-foever/Pulse-agent",
+     "title": "只把证据链写进周报，不替你说半句好话",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 周报生成方法论扎实边界清晰，但通用流程工具亦可实现，非独家稀缺。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "996pm-interaction-prd",
+     "repo": "996pm/interaction-prd",
+     "title": "交互式 PRD 生成器",
+     "过": false,
+     "为什么": "品味 60 分 < 80 —— 流程严谨，产出可交互PRD，但核心玩法可被工具替代，非独有。（3 判：[35, 60, 65]）",
+     "分": 60
+    },
+    {
+     "id": "ervareza-boost-skill-boost",
+     "repo": "ervareza/boost-skill",
+     "title": "复杂编码任务先跑验证再动手的守门员",
+     "过": false,
+     "为什么": "品味 38 分 < 80 —— 官方开发工具链技模板，非创作者题材，交付边界模糊（3 判：[35, 38, 45]）",
+     "分": 38
+    },
+    {
+     "id": "mashbean-twdiw-vp-verifier-lite-deploy-twdiw-vp-verifier-lite",
+     "repo": "mashbean/twdiw-vp-verifier-lite",
+     "title": "台湾数字身份证验证器，部署到 Cloudflare ",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 技术部署指南扎实专业，但面向开发者非普通人，边界清晰无法覆盖题材冷度。（3 判：[42, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "bekahhw-skills",
+     "repo": "BekahHW/skills",
+     "title": "工程师练手用的仓库内嵌实操课",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "bekahhw-skills-build-agent-skills",
+     "repo": "BekahHW/skills",
+     "title": "先问该不该存在，再动手写技能的技能设计师",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 方法论扎实但属通用工程实践，换工具可复用，非日常创作者直接可用。（3 判：[62, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "bekahhw-skills-learn-to-design",
+     "repo": "BekahHW/skills",
+     "title": "需求到设计图的陪练，关键架构决策留给你拍板",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 练习框架扎实，但核心流程工具可替代，缺独特场景交付。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "bekahhw-skills-learn-to-review",
+     "repo": "BekahHW/skills",
+     "title": "不替你判断的代码审查陪练",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 扎实的教学框架，但可被通用教练或手册替代，非独有（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "tingqi-18040332311-fashion-editorial-skill",
+     "repo": "tingqi-18040332311/fashion-editorial-skill",
+     "title": "同一套衣服换八个姿势进同一张空镜，身份不穿帮",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 服装场景合成思路清晰，边界明确，但依赖特定工作流，其他人可复制。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "andrew-charles-baker-accessible-pdf-skill",
+     "repo": "andrew-charles-baker/accessible-pdf-skill",
+     "title": "单文件过 WCAG 2.1 AA 的课件无障碍改造",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 针对性强但场景小众，偏向校园课件制作工具，替换性尚存。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "996pm-pm-make",
+     "repo": "996pm/PM-Make",
+     "title": "产品经理的构思定型工作台：模糊想法到可写PRD",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程清晰，有明确交付物与边界，但非不可替代的独特方法。（3 判：[65, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "tanglele110-hash-museum-relic-stamp",
+     "repo": "tanglele110-hash/museum-relic-stamp",
+     "title": "一套能续画的馆藏印章海报生成器，纸纹印色已调好",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 文物海报制作领域做到细致严谨，边界清楚，但核心是图像生成模板，换工具亦可实现。（3 判：[72, 75, 82]）",
+     "分": 75
+    },
+    {
+     "id": "djyy1031-ai-comic-drama-director-skills-make-ai-comic-drama",
+     "repo": "djyy1031/ai-comic-drama-director-skills",
+     "title": "小说进、成片出的分集漫剧流水线，每镜提示词可审可改",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 将AI漫剧制作从小说到成片全流程拆解为可执行规范，边界与交付物清晰，但偏专业制作（3 判：[75, 78, 85]）",
+     "分": 78
+    },
+    {
+     "id": "djyy1031-ai-comic-drama-director-skills-ai-comic-scene-assets",
+     "repo": "djyy1031/ai-comic-drama-director-skills",
+     "title": "跨集场景不重画，同一栋楼每集门窗墙都认祖归宗",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 场景资产一致性设计专业扎实，流程清晰，但可被通用工具替代。（3 判：[72, 72, 78]）",
+     "分": 72
+    },
+    {
+     "id": "djyy1031-ai-comic-drama-director-skills-ai-cinematic-directing-assets",
+     "repo": "djyy1031/ai-comic-drama-director-skills",
+     "title": "分镜前先问「这场戏谁在看」的导演语法包",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 为AI导演提供专属模块库，边界清晰，非通用工具能替代。（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "sanjin666-eng-college-resume-coach",
+     "repo": "sanjin666-eng/college-resume-coach",
+     "title": "从零梳理真实经历到可打印 A4 简历的引导员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程严谨交付物明确，但本质是结构化访谈，通用工具可替代。（3 判：[68, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "astezelex-oops-i-did-it-again-poc-oops-i-did-it-again",
+     "repo": "Astezelex/oops-i-did-it-again-poc",
+     "title": "错误当场变机制，不许只道歉",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 把认知转化为机制，边界清楚，但偏工程/开发，非大众题材（3 判：[72, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "clickpm-skills-hub",
+     "repo": "ClickPM/skills-hub",
+     "title": "自用 Claude Code / Codex ski",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "clickpm-skills-hub-diagram",
+     "repo": "ClickPM/skills-hub",
+     "title": "文字落纸成图：Mermaid、Excalidraw",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 流程图生成技能，扎实通用但非独有，边界清晰度一般。（3 判：[45, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "clickpm-skills-hub-obsidian-cli",
+     "repo": "ClickPM/skills-hub",
+     "title": "终端里指挥 Obsidian 的遥控器",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 针对具体工具场景的扎实指南，但读者受限且非通用稀缺。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "clickpm-skills-hub-defuddle",
+     "repo": "ClickPM/skills-hub",
+     "title": "网页正文提取器，去导航去广告只留干净文本",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具封装清晰，但边界模糊，功能可被替代，非独特判断。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "metainflow-ctrip-hotel-price-collector",
+     "repo": "MetaInFLow/ctrip-hotel-price-collector",
+     "title": "复用你携程登录态，按日期批量抓房型价",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向特定岗位的携程自动化采集工具，逻辑清晰但场景窄，非通用创作者题材。（3 判：[45, 45, 48]）",
+     "分": 45
+    },
+    {
+     "id": "1343742141-kk-qinggan-daoshi",
+     "repo": "1343742141/KK-Qinggan-Daoshi",
+     "title": "八件情绪急救工具，按当下状态挑一件就用",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "1343742141-kk-qinggan-daoshi-qg-huaxiang",
+     "repo": "1343742141/KK-Qinggan-Daoshi",
+     "title": "先拆对方行为链再给话术的情感导师",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 框架详尽但属情感操控方法论，题材敏感且普适性存疑，换咨询师也能做。（3 判：[42, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "1343742141-kk-qinggan-daoshi-kk情感导师",
+     "repo": "1343742141/KK-Qinggan-Daoshi",
+     "title": "先分清是冷战还是内耗，再带你找对应情感工具的总入口",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "1343742141-kk-qinggan-daoshi-qg-celue",
+     "repo": "1343742141/KK-Qinggan-Daoshi",
+     "title": "三方需求拧成一股绳，行动清单当场落地",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 策略体系完整扎实，边界清晰，但同类情感策略内容可替代（3 判：[35, 45, 72]）",
+     "分": 45
+    },
+    {
+     "id": "qinxitong8666-mikihouse-luyao-issue-to-verified-push",
+     "repo": "qinxitong8666/mikihouse-luyao",
+     "title": "GitHub Issue 全流程闭环",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链，虽边界清晰但读者错位，非普通创作者可用（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sandonl-eve-kr-tutor-guided-korean-lesson",
+     "repo": "sandonl/eve-kr-tutor",
+     "title": "韩语陪练先问清你读到第几页，再决定说多难",
+     "过": false,
+     "为什么": "品味判不了 —— JSONDecodeError: Unterminated string starting at: line 1 column 22 (char 21) → 留库房"
+    },
+    {
+     "id": "sandonl-eve-kr-tutor-sentence-mine",
+     "repo": "sandonl/eve-kr-tutor",
+     "title": "从YouTube和Naver现挖地道韩语句子",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 挖掘韩语句子场景清晰，流程严谨，但核心依赖外部工具，替换亦可。（3 判：[62, 68, 72]）",
+     "分": 68
+    },
+    {
+     "id": "alexcpn-catalogify",
+     "repo": "alexcpn/catalogify",
+     "title": "代码仓库的活体知识图谱，随 git 历史自动更新",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者代码库文档化工具，读者受限，非生活创作题材。（3 判：[35, 45, 45]）",
+     "分": 45
+    }
+   ]
+  },
+  {
    "时间": "2026-09-04T04:30:23Z",
    "判了": 45,
    "过": 45,
