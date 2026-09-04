@@ -2,14 +2,14 @@
  "id": "kyle-bartlett-soundshuman",
  "kind": "skill",
  "name": "humanize",
- "title_zh": "写稿前先扫一遍 41 种 AI 腔的校对员",
- "tagline_zh": "起草、编辑、审稿时一键去 AI 味：不再有「显著提升」「值得注意的是」这类空话。还能整文件夹审计。",
- "tagline_en": "Draft, edit, review: strip out AI-slop like 'significantly' and 'it's worth noting.' Audit a whole docs folder to.",
+ "title_zh": "41 种 AI 腔逐个挑出，改完才准进仓库",
+ "tagline_zh": "写稿、改稿、审稿时自动揪出「显著性通胀」「-ing 尾巴」「模糊归因」等 41 种机器味。",
+ "tagline_en": "Drafting, editing, reviewing—it flags 41 AI-tells like significance inflation, -ing tails, vague attributions.",
  "desc_en": "Remove signs of AI-generated writing from prose, and keep it out of a repo. Use when drafting, editing, or reviewing text to make it sound natural and human, or when auditing a whole docs folder for AI slop. Detects 41 patterns across content, language, style, communication, filler, and rhetoric, including: significance inflation, promotional language, -ing tails, vague attributions, AI vocabulary",
- "why_zh": "不是简单替换词，而是按内容、语言、风格、修辞等六类 41 种模式逐条检测。",
- "why_en": "Not a find-replace hack: it flags 41 patterns across six categories—content, language, style, rhetoric, filler, communication—so.",
- "limit_zh": "只处理文本，不处理 Markdown 代码块或表格；对非英语文本无效；检测基于规则，可能漏掉语境相关的 AI 味。",
- "limit_en": "Text only; ignores code blocks/tables. Non-English text unsupported. Rule-based, so context-dependent AI tone may slip through. Manual review.",
+ "why_zh": "不是笼统说「这不像人话」，而是按内容、语言、风格、沟通、填充、修辞六类拆出 41 种可复现模式。",
+ "why_en": "Instead of vague 'this sounds robotic,' it breaks AI-slop into 41 reproducible patterns across six categories, pinpoints each.",
+ "limit_zh": "只认英文文本；对中文、代码混排、诗歌或刻意风格化文本无效。它挑的是模式不是品味，若你本就爱用排比或夸张修辞，会被误报。",
+ "limit_en": "English prose only; no code-mixed, poetic, or stylized text. It flags patterns, not taste—so deliberate anaphora or hyperbole will trigger false.",
  "repo": "kyle-bartlett/soundshuman",
  "owner": "kyle-bartlett",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "A proofreader that scans for 41 AI-writing patterns before."
+ "title_en": "Strip 41 AI-tells from prose before it hits the repo"
 }
