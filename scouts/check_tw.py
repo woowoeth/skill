@@ -132,7 +132,23 @@ def main():
             bad.append("%s 里还有 %s …%s…"
                        % (k, m.group(0), raw[max(0, i - 40):i + 12].replace("\n", " ")))
 
-    # ⑧ 运行时 fetch 的数据必须在繁体站里存在。
+    # ⑧ 英文排版那一块不许丢。
+    #    主站上这类「html[lang=en] 的字体覆盖」丢过两次 —— 写在样式表末尾
+    #    的东西，谁改一下、哪次回滚一下就没了，而页面照样渲染、构建照样
+    #    通过，只是整页英文换回了中文字体的西文字形（窄、低对比、字宽不匀，
+    #    「哪里不对但说不出」）。这里只查它在不在：静态一条，够拦住丢失。
+    idx = os.path.join(ROOT, "index.html")
+    if os.path.exists(idx):
+        raw = open(idx, encoding="utf-8", errors="ignore").read()
+        for what, needle in (("英文排版块", 'id="hwx-en-type"'),
+                             ("标题字体", "Playfair+Display"),
+                             ("正文字体", "Source+Serif+4"),
+                             ("英文变量覆盖", 'html[lang="en"]{')):
+            if needle not in raw:
+                bad.append("index.html 里没有%s（%s）—— 英文页会退回中文字体"
+                           % (what, needle))
+
+    # ⑨ 运行时 fetch 的数据必须在繁体站里存在。
     #    这一类静态检查全绿也照样坏：首页 fetch("skills/feed.json") 取货架，
     #    而 skills/ 被跳过了 —— 繁体首页显示「feed.json 讀取失敗，貨架這次沒裝上」，
     #    结构、链接、语言标记全对。只有真的打开页面才看得见。
