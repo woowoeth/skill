@@ -22,7 +22,7 @@ import json, os, re, sys, time, subprocess, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEEN = os.path.join(ROOT, "editorial", "refs_seen.json")
-STOP = set("skill skills claude codex agent agents ai the and for with your you 一个 一张 一份 一句 一次 把 用 给 让 不 的 了 是 和 与 或 在 从 到 就 也 都 会 能 要 有 没 这 那 它 你 我 他 们 上 下 里 中 出 来 去 做 看 说 写 生成 工具 助手 系统 专业 智能".split())
+STOP = set("skill skills claude codex agent agents ai the and for with your you 一个 一张 一份 一句 一次 把 用 给 让 不 的 了 是 和 与 或 在 从 到 就 也 都 会 能 要 有 没 这 那 它 你 我 他 们 上 下 里 中 出 来 去 做 看 说 写 生成 工具 助手 系统 专业 智能 token tokens create generate generated review language notes image images vault research design video writing 合集里只 挑这 只挑 这一件 编辑 心选 同仓 一件 那件 这件 读者 拿到 直接 自动 一套 一本 一条 全程 不是 而是 每次 先出 才写 出的 一份 一句 一个 一张".split())
 
 
 def sh(cmd: list[str]) -> str:
