@@ -52,13 +52,11 @@ def known() -> set[str]:
     return k
 
 
-_CJK = __import__('re').compile(r'[\u4e00-\u9fff]')
-
-
 def main() -> int:
     ap = __import__("argparse").ArgumentParser()
     ap.add_argument("--days", type=int, default=21)
     ap.add_argument("--min-stars", type=int, default=3)
+    ap.add_argument("--low-pages", type=int, default=2, help="低星段（0..min_stars-1）每天再搜几页（每页 100）")
     ap.add_argument("--out", default="/tmp/backfill_candidates.json")
     a = ap.parse_args()
     k = known()
@@ -76,15 +74,17 @@ def main() -> int:
             if len(it) < 100:
                 break
             time.sleep(2.2)
-        # 09-03 晚：心选 73 件里 12 件不到 3 星 —— 中国创作者的好货常常是零星几颗星，≥3 的门槛把它们筛在门外。
-        # 低星段再搜一页，只留名字/描述里带汉字的（GitHub 搜索不能按语言筛描述，只能拿回来自己挑）。
-        if a.min_stars > 0:
+        # 09-03 晚：心选 73 件里 12 件不到 3 星 —— 好货常常是零星几颗星，≥3 的门槛把它们筛在门外。
+        # 低星段（0–2 星）每天再搜 --low-pages 页全收，不按语言筛（店主：「低星不含汉字也可能有价值」）；验树那步照旧。
+        if a.min_stars > 0 and a.low_pages > 0:
             q2 = urllib.parse.quote(f"created:{day} skill in:name,description,readme stars:0..{a.min_stars - 1}")
-            r2 = gh(f"search/repositories?q={q2}&sort=updated&order=desc&per_page=100&page=1")
-            low = [x for x in (r2.get("items") or [])
-                   if _CJK.search((x.get("full_name") or "") + " " + (x.get("description") or ""))]
-            items += low
-            time.sleep(2.2)
+            for page in range(1, a.low_pages + 1):
+                r2 = gh(f"search/repositories?q={q2}&sort=updated&order=desc&per_page=100&page={page}")
+                low = r2.get("items") or []
+                items += low
+                if len(low) < 100:
+                    break
+                time.sleep(2.2)
         new_day = 0
         for it in items:
             full = it["full_name"]
