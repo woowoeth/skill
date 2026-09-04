@@ -12341,6 +12341,414 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative"
+  },
+  "kobingogo-motion-sticker-pack": {
+   "title_zh": "静态图进、动图包出，中间不用你碰一次视频软件",
+   "why_zh": "把「生成静态稿→人工审→再动视频」这个最容易返工的环节做成硬门禁：没你确认，绝不浪费一次视频生成额度。",
+   "limit_zh": "只做贴纸包流水线，不负责角色设计本身；输入得是单张角色图或清晰文字描述，已有网格图/视频可直接拆。",
+   "tagline_zh": "给角色图或一句文字描述，自动定风格、排表情、生成静态稿，你点头后才动视频，最后自动拆帧打包成贴纸集。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "edu-ai-builders-language-learning-studio-os-intake-diagnostic": {
+   "title_zh": "15分钟微探针，定位考场失分机制而非给分数",
+   "why_zh": "诊断的是失分机制，不是分数。每个假设都可被后续教学验证或推翻，排除项同样留档，让试听课真正接得上正课。",
+   "limit_zh": "只覆盖托福/雅思/GRE的机制诊断，不产出教学方案或练习材料。需要老师能区分「机制假设」与「事实结论」。",
+   "tagline_zh": "不做整套真题，用可排序的机制假设告诉你该教什么。已排除的假设也写入档案，下次试听不用重新摸底。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "naxiaoduo-scammer.skill": {
+   "title_zh": "一眼定位你正站在骗局第几步的套路识别器",
+   "why_zh": "不是简单关键词黑名单，而是把骗局拆成可识别的阶段模型，让你知道骗子现在在哪、下一步要干嘛。",
+   "limit_zh": "只识别文本消息中的套路，不处理语音、链接跳转后的页面内容；对新型骗局（未收录模式）可能误判为安全，仍需人工警惕。",
+   "tagline_zh": "收到可疑消息别急着删——它帮你定位骗局阶段，预判骗子下一步。像有个反诈老手在边上，专治「差点就信了」的瞬间。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "ccxx1835-huatu-skill": {
+   "title_zh": "先读图再落笔的AI矢量稿，路径文字竖排都验过",
+   "why_zh": "把「看懂图」和「画矢量」拆成两阶段，先解析语义与版式约束，再高保真重建；用实际导出和对象统计验证。",
+   "limit_zh": "只认参考图输入，不处理纯文字描述；输出为AI/SVG/EPS/PDF矢量稿，不负责后续排版微调。",
+   "tagline_zh": "图表、流程图、信息图，复刻成Illustrator原生可编辑稿。不只画得像，还逐项核对文字置信度、几何结构。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "miint-sunny-nai5-prompting": {
+   "title_zh": "半句话展开成分镜的 NovelAI V5 提示词写法",
+   "why_zh": "它把提示词从玄学变成工程：每个词组给实测判据，多角色绑定和分格有明确规则，排查问题像查表。",
+   "limit_zh": "只覆盖 NovelAI Diffusion V5 的提示词写法，不教 V3 或其他模型。",
+   "tagline_zh": "不会写 NAI 提示词？从半句灵感到完整分镜，字段分工、多角色绑定、漫画分格都有实测判据，出图不再靠抽卡。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "liuxingqitd-content-risk-detector": {
+   "title_zh": "逐字稿先过三平台社区规范再进剪辑台的审稿员",
+   "why_zh": "不是泛泛的敏感词库，而是按平台、按场景分级标注风险，给出可替换的说法。",
+   "limit_zh": "只处理短视频逐字稿文本，不读视频画面和音频；平台规则基于公开资料整理，不保证覆盖最新内部审核细则；输出是建议。",
+   "tagline_zh": "抖音、小红书、视频号规则天天变，你背不全。它逐句比对社区规范，标出违规词和风险点，连修改建议都写好。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "zxc123aa-cc-proxy-detector": {
+   "title_zh": "拆中转站底牌，看它到底连的谁家模型",
+   "why_zh": "不靠响应文本猜，直接探测网络路径与握手特征，连多模型混合渠道都能逐路标出。比看延迟和口吻靠谱一个量级。",
+   "limit_zh": "只检测 HTTP 层可达的中转站；需要你有该中转站的 API key 且能发起真实请求。",
+   "tagline_zh": "中转站说自己是官方直连？不信。装这个，一条命令拆穿它真实后端——Anthropic 官方。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "jincai-openclaw-skills-infographic": {
+   "title_zh": "文章丢给它，吐回一张能发朋友圈的高清信息图",
+   "why_zh": "不是把文字塞进现成模板，而是先解析内容结构，再按移动端阅读习惯重排视觉层级。出图即终稿。",
+   "limit_zh": "只吃结构化或半结构化文本（文章、推文、列表）；纯扫描 PDF 或手写笔记需先转文字。产物是 PNG 图。",
+   "tagline_zh": "公众号长文、推特长 thread、随便一段笔记，都能变成一张竖版高 DPI 信息图。不用排版、不用找模板。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "dacnay816y62-hub-fantasy-dongfang-jianyuehaibao": {
+   "title_zh": "东方文字海报，版式排好再交给 Image 2 成图",
+   "why_zh": "排版先行，文字不糊；Image 2 只负责画面，不猜字。中文、英文、竖排、网格，都能在骨架里定死。",
+   "limit_zh": "只做静态单页海报或封面，不产多页排版；需要 Image 2 生成，非 SD/其他模型；输入需为文字主题或关键词。",
+   "tagline_zh": "给标题、主题或关键词，先出排版骨架，再让 Image 2 画出成品。适合展览、书封、文化海报，省去反复抽卡。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "siyuanjia-magazine-grade-video": {
+   "title_zh": "访谈视频上屏配杂志级中英字幕的排版师",
+   "why_zh": "不是简单压字幕，而是按杂志开本逻辑重排画面与文字层级：中文逐句高亮跟读，英文题注固定在外框。",
+   "limit_zh": "只吃访谈/演讲类视频，需自备 Remotion 环境和 FFmpeg；输出为 3:4 竖版，横屏长片会被裁切。",
+   "tagline_zh": "把一段访谈变成 3:4 竖版视频：上方 16:9 画面，下方中文卡拉OK式字幕，外框英文题注。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "alephaitech-moyuxl-ecom-image-prompt": {
+   "title_zh": "看参考图就拆出构图打光与配色，落到你的产品上",
+   "why_zh": "不是泛泛分析风格，而是把参考图的构图、光线、色彩拆成可迁移的视觉配方，再结合产品特性生成生产级提示词。",
+   "limit_zh": "只服务电商产品图与详情页场景；需先有产品图或明确规格，纯文案、修图、翻译类需求不适用；生图需豆包平台。",
+   "tagline_zh": "给电商运营和设计：不用再对着竞品图干瞪眼。它把视觉手法拆成可执行参数，直接产出豆包生图指令，连详情页逐屏脚本都排好。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "escap1ng-mathmodel-kit-mathmodel-diagram": {
+   "title_zh": "论文插图先问清是给哪一章用的示意图师傅",
+   "why_zh": "别家画图工具只给画布，它给的是论文第二章的思维骨架。五套模板对应五种论证结构，改 JSON 就能换字。",
+   "limit_zh": "只认五套模板：五带技术路线、三栏框架、三栏阶段流程、横版流水线、问题分析。超出这五种结构它不硬画，会停下让你换工具。",
+   "tagline_zh": "五套学术示意图模板，JSON 驱动改字不改版。300dpi PNG 加矢量 PDF 双格式，答辩投论文都拿得出手。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "larashero3-dotcom-lieflat-gongwen": {
+   "title_zh": "六类公文族骨架公式，党建经验另起千字炉",
+   "why_zh": "基于真实公文全量统计，参数可验收、骨架可套用，不是空谈文风。",
+   "limit_zh": "只认六类公文族文体加党建千字材料，超出此范围（如学术论文、新闻稿、小说）它不会硬写，只会提示不适用。",
+   "tagline_zh": "调研报告、领导讲话、工作意见、经验材料、工作方案、经验总结，每类都给你可验收的数值参数和骨架公式，写完还能自动自检。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "wangling-miao-mathmodel-latex-skill": {
+   "title_zh": "MCM/ICM 论文模板一键生成，编译前先查页边距",
+   "why_zh": "不是丢个模板让你自己填，而是把「生成-适配-编译-预检」串成一条流水线，连 PDF 页边距都替你查好。",
+   "limit_zh": "只认 MCM/ICM 与 CUMCM 的 mcmthesis/cumcmthesis 模板。",
+   "tagline_zh": "给 Codex 装一套竞赛论文的 LaTeX 骨架：mcmthesis/cumcmthesis 双模板。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "psychellluyuer-max-loisloiskill": {
+   "title_zh": "一份能直接交付品牌客户的种草投放PPT",
+   "why_zh": "不是模板填空，而是真跑完研究→拆解→转译的决策链，把产品语言翻译成种草语言，输出物可直接交付品牌客户。",
+   "limit_zh": "只认小红书（默认）和抖音两个渠道；输入需含产品详情页或品牌资料（URL/PDF/截图/文字），无资料则无法启动。",
+   "tagline_zh": "输入品牌资料，自动跑完从品类研究、爆文拆解到卖点转译的整条管线，输出固定结构的PPT+数据附录，跨行业通用。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "limin112-video-subtitle": {
+   "title_zh": "本地 Whisper 先听写，Claude 再纠错",
+   "why_zh": "识别与纠错分离：whisper.cpp 只负责听写和真实时间戳，Claude 只负责读懂语义改错字。",
+   "limit_zh": "需本机装 whisper.cpp 与带 libass 的 ffmpeg；纯云端不可用。只处理视频音轨，不修画质。",
+   "tagline_zh": "同音字、专有名词错得离谱？先本地识别拿到逐句时间戳，再让 Claude 通读纠错，最后 ffmpeg 硬字幕上屏。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "ychenjk-sudo-xiaoyuzhou-transcription-skill": {
+   "title_zh": "小宇宙链接进来，出去的是带发言人标记的逐字稿",
+   "why_zh": "不是简单转文字：它把音频抽取、ASR识别、说话人分段、要点提炼串成一条流水线，你只给链接。",
+   "limit_zh": "只认小宇宙单集链接，不支持合集或分P。ASR用Qwen，对重口音、多人抢话、背景音嘈杂的段落会识别错乱。",
+   "tagline_zh": "别再手动拖音频、找转写工具了。贴个播客链接，它自己抽音轨、跑ASR，按说话人分段，还附要点总结和问答。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "hi-nikola-hand-drawn-explainer-video-nikola": {
+   "title_zh": "边讲边画的中文手绘知识视频，交付可编辑工程与真MP4",
+   "why_zh": "机制上把「手绘感」拆成可验证的工程：逐笔路线保留每笔落墨顺序，程序路线用GSAP编排卡片关系图。",
+   "limit_zh": "只做中文知识讲解类，不写实数字人。逐笔路线需文稿或故事板；程序路线需接受SVG/HTML结构。",
+   "tagline_zh": "不用假装成片——逐笔故事动画或GSAP程序动画两条路线任选，配音字幕时间轴齐全，连SVG工程都给你，改到满意再导出。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "cslawyer1985-china-lawyer-analyst": {
+   "title_zh": "请求权基础拆到要件层，再按司法解释回填的案情分析器",
+   "why_zh": "三阶段自检（初析→校验→反思）不是摆设：它会拿司法解释索引反查你的结论，漏掉的要件会当场被揪回来重写。",
+   "limit_zh": "只认中国现行法域，输入需为自然语言事件描述；不处理非诉合同审查、涉外法律冲突或未公开的裁判倾向。",
+   "tagline_zh": "不只是告诉你「可能违法」——把45类案由拆成六段式要件清单，逐项对照指导案例和成文法。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "work",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · SKILL-v1.md: 剂量·中医 第2736行"
+  },
+  "buuaaa-evidence-based-nutrition-advisor": {
+   "title_zh": "营养补剂宣称先过证据三道闸再谈买不买",
+   "why_zh": "不是搬运摘要，而是按证据金字塔分层裁决：指南>综述>RCT>机制推测。每条结论标注适用人群与效应量。",
+   "limit_zh": "只处理营养干预对健康状态的功效判断，不覆盖药物相互作用、疾病诊断或剂量处方。若问题超出指南与人体研究范围。",
+   "tagline_zh": "刷到「吃XX能改善Y」先别下单。它替你查指南、系统综述和人体研究，告诉你证据到哪一级、对谁有效、效果多大。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "learnprompt-awesome-seedance-seedance-prompt-library": {
+   "title_zh": "Seedance 2.5 视频提示词模板库",
+   "why_zh": "不是泛泛的提示词技巧，而是从真实高分案例里反向拆出的结构。它告诉你哪种镜头该用哪套句式。",
+   "limit_zh": "只覆盖 Seedance 2.5/2.0 文生视频的提示词撰写，不含图生视频、音频或运镜参数调优；模板基于公开案例。",
+   "tagline_zh": "写 Seedance 提示词总被生成器带偏？这里每个模板都来自 goodcase.ai 上跑通的高分案例。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "yvonnechen202608-byte-picture-design-photo-to-journal-stickers": {
+   "title_zh": "照片里只挑有故事的那几样，画成手帐贴纸",
+   "why_zh": "不是抠图，是翻译。它先理解场景里哪几样东西在讲故事，再用手绘语言重画，让贴纸和你的手帐纸面天生一体。",
+   "limit_zh": "只认暖调低饱和纸感手绘这一种视觉；原样抠图、照片修复、精确复刻参考图、矢量/logo 工作它不做。输出透明 PNG。",
+   "tagline_zh": "旅行照别整张贴——它替你选出叙事性元素，统一成暖调低饱和纸感手绘。复古编辑风，透明 PNG 直接拖进手帐。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "ly398565721-high-school-timetable": {
+   "title_zh": "早读午休晚自习值班表，从排班本和规则文件里生成",
+   "why_zh": "它读的是排班本和规则文件，不是让你重新录入。规则里写『单周周三』它就认单周周三。",
+   "limit_zh": "只认中文高中课表场景：早读、午休、晚自习三类值班。输入必须是排班本（.xlsx/.csv）和规则文件（.md/.txt…",
+   "tagline_zh": "排班本翻到哪页排到哪页，规则文件说哪天就哪天。早读、午休、晚自习值班，一次排清，不再对着Excel数人头。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "liangdabiao-smy-seedance-storyboard": {
+   "title_zh": "水墨线条矿物色块，把小说整成上美影分镜脚本",
+   "why_zh": "不是提示词拼接，而是先定剧组色盘和资产提示词，再生成分镜——文、资、视、剪一条线。",
+   "limit_zh": "只认Seedance 2.0平台的分镜格式；图像模型提示词仅覆盖Midjourney、GPT-Image-2。",
+   "tagline_zh": "小说、神话、民间传说进来，出去的是带说书人旁白、剧集分解、色盘声明和Seedance 2.0分镜的完整制片包。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "zongziforu-cn-law-hub": {
+   "title_zh": "现行有效还是已废止，它直接给你看官方原文状态",
+   "why_zh": "不靠二手汇编，直接对接官方数据源；对「现行有效/已修改/已废止/尚未生效」逐条核验。",
+   "limit_zh": "仅覆盖中国大陆法律法规规章及条约，不含港澳台地区。需联网访问官方数据库；若目标法规尚未收录或网络不可用。",
+   "tagline_zh": "查法条最怕查到旧版。它直连国家法规库，核验效力状态、下载全文、按关键词检索具体条文，连「尚未生效」都标得清清楚楚。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "kavender-lullsense-lullsense": {
+   "title_zh": "婴儿夜醒先问白天小睡再答的睡眠顾问",
+   "why_zh": "先问清白天小睡、入睡时机等上下文再开口，避免一刀切；没日志也能靠对话给真建议，不是只会要数据。",
+   "limit_zh": "只覆盖4-36个月婴幼儿睡眠；不诊断疾病（如呼吸问题、胃食管反流），也不替代医生。无日志时不做趋势判断，只给当下建议。",
+   "tagline_zh": "4-36个月娃早醒、拒睡、夜醒、短觉，先聊就值；有睡眠日志还能看趋势。不贩卖焦虑，只给循证建议。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "stellaqiu27-claude-skill-patent-writing-chinese": {
+   "title_zh": "技术交底书变Word专利稿，仿宋黑体公式图表一步到位",
+   "why_zh": "公式以OMML原生嵌入Word而非图片，附图用代码生成可编辑框图。",
+   "limit_zh": "只产出中文专利申请的说明书初稿，不含权利要求书、摘要附图；需要你已有技术交底书文本；框图仅支持数据流/模块分组样式。",
+   "tagline_zh": "不用再对着国知局格式要求手工调字体、编号和附图。输入交底书，输出带仿宋正文、黑体标题。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "explosivecoderflome-ani-book-skill": {
+   "title_zh": "分阶段产出可改稿的长篇中文小说，关键设定先问你",
+   "why_zh": "不是一次性吐稿机，而是把创作拆成可回退的工件链。受众渠道、题材热度、参考书拆解都先过你这一关。",
+   "limit_zh": "只服务中文长篇小说的规划与诊断，不产出最终排版文稿；需要你提供授权参考书或榜单元数据，否则只能停在通用大纲。",
+   "tagline_zh": "新手写长篇最怕开头定错调、中途推倒重来。它把大纲、设定、章节拆成可编辑工件，每步先确认高影响创意选择。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "zhlmi-weibo-cocoon-judge": {
+   "title_zh": "关注列表一拉，算出你的信息茧房浓度",
+   "why_zh": "不靠问卷不靠爬全文，只分析你主动关注了谁——这是你自己搭的茧房，它只负责把墙的高度报给你听。",
+   "limit_zh": "只认微博账号，需要你手动提供关注列表导出文件；不分析互动行为、不预测内容推荐，判词是统计启发式，不是社会科学结论。",
+   "tagline_zh": "别猜了，你关注的人里有多少是同一类声音？它数高危账号占比，给你一句扎心判词——比你自己以为的准。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "alto-r-nature-figure-craft-chart-type-chooser": {
+   "title_zh": "先算清数据能撑起哪句话，再定画什么图",
+   "why_zh": "把「画什么图」从拍脑袋变成数据驱动的决策：先做数值预检，再让用户挑结论和视觉复杂度。",
+   "limit_zh": "只做图表类型选择，不负责出图。需要数据文件可被脚本读取（CSV/表格）；若数据维度过多或含非结构化文本。",
+   "tagline_zh": "别人拿到数据就画图，它先摸清文件底细、算出可支撑的结论，让你在昂贵选项前选对人，而不是画完才发现图不配话。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "giszzt-figecho": {
+   "title_zh": "从一张架构图里抽出整套配色版式，再画十张都不走样",
+   "why_zh": "不是滤镜套壳，而是把视觉语法拆成可复用的模块化 prompt——存包、命名、校验、检索。",
+   "limit_zh": "只认技术类图：架构图、路线图、流程图、科研示意。照片、插画、UI 稿不在射程内；产物是 PNG。",
+   "tagline_zh": "盯着一张参考图发愁「怎么让新图长得像它」？它能拆出配色、线宽、圆角、字体层级，存成 Style Pack。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "fun",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/trust-boundary.md: 转载正文 第33行"
+  },
+  "chen3tu-interview-master-skill": {
+   "title_zh": "从岗位JD反推面试题，练完还带复盘和谈薪",
+   "why_zh": "它先解析目标岗位的能力权重，再据此生成问题与追问，模拟后按你的回答逐条对照JD差距。",
+   "limit_zh": "需要你提供具体岗位JD或简历文本；不覆盖线下面试的肢体语言、眼神接触；产出的模拟问答是文字稿，无语音交互。",
+   "tagline_zh": "把招聘要求拆成可演练的追问清单，模拟面试后自动生成改进点，连薪资谈判话术都备好——不是泛泛的面试题库。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "rose-for-future-hit-lab": {
+   "title_zh": "发完先别走，三天后回来对答案的内容预测循环",
+   "why_zh": "把「感觉会火」变成可验证的假设——先打分再盲猜，复盘时逼你面对偏差，rubric 随每次反馈进化。",
+   "limit_zh": "只适用于能拿到量化反馈的内容（播放/阅读/收听/点击）。首次必须跑 /hit-init 初始化。",
+   "tagline_zh": "发视频/文章前先盲猜数据，三天后复盘校准。内置观点视频 rubric，也能导入对标账号当初始信号源。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "kangarooking-cangjie-skill": {
+   "title_zh": "长内容拆成可执行技能包，一本书变一套动作",
+   "why_zh": "它不总结观点，只提取可执行程序：每个技能带触发条件和操作步骤，让知识从「读过」变成「能调用」。",
+   "limit_zh": "只处理长文本输入（书/文稿/字幕），不读 PDF 或音视频文件本身；产物是技能包而非笔记，若你只想要摘要或思维导图。",
+   "tagline_zh": "把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "hetiankong-universal-video-notes": {
+   "title_zh": "1700+ 视频站一键落成带 YAML 眉批的 Ob",
+   "why_zh": "不是剪藏，是重构：先抽元数据，再选字幕或本地 ASR。",
+   "limit_zh": "只认视频页 URL，不认本地文件；AI 摘要需自备 OpenAI 兼容接口。",
+   "tagline_zh": "B站、YouTube 看完就忘？它把元数据、字幕或本地语音转写、AI 摘要一次装进 Markdown。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "jiayuqi7813-shuodedaoli-skill": {
+   "title_zh": "游戏角色头像配彩色字幕，一段脚本出竖屏对话短视频",
+   "why_zh": "把视频制作拆成可复用的结构化流程，脚本、音色、画面分离管理，缺头像自动补图，无TTS也能先预览节奏。",
+   "limit_zh": "只产竖屏对话短视频，不处理横屏、多场景转场或复杂特效；头像生成依赖imagegen skill且需真实透明底。",
+   "tagline_zh": "不用剪映不用PR，YAML写脚本、Fish Audio配音、自动生成头像，从文案到成片一条流水线。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "c0dedance-sbti-skill": {
+   "title_zh": "四种人格玩法，测完还能让AI毒舌怼你",
+   "why_zh": "不是问卷+报告的一次性工具，而是把人格当素材库：同一套SBTI结果能切换成对话、反讽。",
+   "limit_zh": "只认SBTI框架，不覆盖MBTI/九型人格等其它体系；反向诊断和毒舌模式需要用户能接受被冒犯，玻璃心慎用。",
+   "tagline_zh": "不想只拿标签？对话式测评给结果，反向诊断揭你伪装，毒舌陪聊专治自我感动。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "jayden-lg-costing-master": {
+   "title_zh": "造价文件先挑漏项和特征不符的审核员",
+   "why_zh": "把国标、合同、图纸、清单、信息价期别拉进同一张核对网，每个疑点都落到具体条款和行号，不是泛泛给结论。",
+   "limit_zh": "只认中国内地房建与市政造价规则，海外计价、国际合同范本不适用；只出审核台账和意见，不替代签章、评标或法律意见。",
+   "tagline_zh": "结算审核最怕清单漏项、特征写错、新旧定额混用。它按 GB/T 50500-2024 逐条比对。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "work",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · references/13-step-cost-management.md: 破限·声明不做 第182行"
+  },
+  "gujiapeng1991-droid-gudemiao-advertising-creative-director": {
+   "title_zh": "丢来一句品牌诉求，还你一套可拍可投放的广告工程",
+   "why_zh": "它把品牌问题拆成可执行工序：先定叙事策略，再生成资产与分镜，最后输出投放级提示词。每一步都有检查点。",
+   "limit_zh": "只服务广告片/TVC 制作，不写公众号长文、小红书文案或纯卖点摘要。需要你至少给出品牌名或产品资料。",
+   "tagline_zh": "不堆提示词。从分镜、角色资产到 Seedance 2.5 提示词，把荒诞喜剧或情绪故事做成 30 秒能拍的片子。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "tongdog-big-tech-rhetoric": {
+   "title_zh": "项目启动会口吻把任何事拆成可挑战的OKR",
+   "why_zh": "不是简单贴黑话标签，而是按职位视角重构逻辑链——先立项再复盘，逼你补上缺失的假设、指标和风险。",
+   "limit_zh": "只输出中文互联网大厂风格的分析文本，不生成代码、不查数据、不冒充真实公司或个人发正式声明。",
+   "tagline_zh": "给方案、复盘、甚至朋友圈小作文套上大厂黑话铠甲。想被challenge？",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "yuema137-dongbeigpt-dongbei-explainer": {
+   "title_zh": "东北话讲技术，因果链拆到你能点头为止",
+   "why_zh": "它先搭因果骨架再填血肉，术语按听众水平现换，不堆概念。例子一定走完一遍，不让你卡在半路。",
+   "limit_zh": "只覆盖中文讲解场景，不处理英文原文。因果链最多拆到三层，超出后它不会自动加深，需要你追问。",
+   "tagline_zh": "不是翻译成东北腔，是用因果结构重讲一遍。术语换成你听得懂的话，每一步都带例子，讲到你不懵为止。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "syuancheng-my_markji-markji": {
+   "title_zh": "墨墨卡片的语法检查官，错一处当场标红",
+   "why_zh": "不是丢给官方接口碰运气，而是先本地解析整副牌组，把语法错误、缺字段、遮罩引用失效全揪出来。",
+   "limit_zh": "只认 Markji 官方语法，不兼容 Anki 或自定义模板；只处理卡片文本与媒体引用校验，不负责排版美化。",
+   "tagline_zh": "背单词最怕卡片格式错，导入全崩。它按官方语法逐条校验，挖空、答案线、遮罩图片音频，错一处当场标红告诉你改哪。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "onlylt-wow-gongwen-writing": {
+   "title_zh": "红头文件起草到排版一条龙，不越级不绕弯",
+   "why_zh": "把《党政机关公文处理工作条例》和 GB/T 9704 编码进规则引擎，不是模板填空。你给要点。",
+   "limit_zh": "只认体制内政府口径，国企/事业单位行文习惯不保证。不处理涉密内容，敏感词自查需另配工具。导出docx依赖Pandoc。",
+   "tagline_zh": "通知请示批复函，15种法定公文+8类事务材料全接。格式行文规则自动校验，改稿润色导出docx。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "sumonehk-short-drama-scriptwriter": {
+   "title_zh": "AI漫剧立项到交付的全流程编剧工作流",
+   "why_zh": "不是零散提示词，而是把立项、圣经、分集、执行稿串成一条带门禁的流水线。",
+   "limit_zh": "只服务AI漫剧/竖屏剧的编剧环节，不做真人短剧、分镜、视频提示词、配音脚本或音效表。需要你已有明确平台和题材方向。",
+   "tagline_zh": "从锁题、世界观到分集场次执行稿，带状态门禁和制作增强整理。适合抖音/TikTok竖屏AI漫剧，不碰真人拍摄。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "benzema216-rent-ops": {
+   "title_zh": "同一套房在五个中介嘴里差出三千块，它帮你把底价问出来",
+   "why_zh": "它不只看价格，而是把同一套房在不同中介嘴里的描述拆开比对，报价差、押金条款、隐性收费全摊在桌面上。",
+   "limit_zh": "仅覆盖中国大陆主流租房平台公开页面，需自行登录抓取；不含线下中介私盘与公寓直租；评分模型偏向通勤与安全。",
+   "tagline_zh": "扫贝壳、58、闲鱼等平台，同一房源自动比对报价与中介话术，标出虚高和风险项，附高德地图通勤圈与看房清单。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
   }
  },
  "gate": {

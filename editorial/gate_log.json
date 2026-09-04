@@ -2,23 +2,324 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-04T04:16:25Z",
-   "判了": 2,
-   "过": 2,
+   "时间": "2026-09-04T04:30:23Z",
+   "判了": 45,
+   "过": 45,
    "明细": [
     {
-     "id": "ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations",
-     "repo": "AINoSleep/ainosleep-stickman-illustrations",
-     "title": "白底黑线火柴人，给中文文章配安静小图",
+     "id": "onlylt-wow-gongwen-writing",
+     "repo": "onlyLT/wow-gongwen-writing",
+     "title": "红头文件起草到排版一条龙，不越级不绕弯",
      "过": true,
-     "为什么": "店主指名 / 心选 —— 不过判官，直接放行"
+     "为什么": "编辑读过原文挑的 —— 体制内公文：文种手册、GB/T 9704 版式、负面清单 + export_docx.py 出 Word，6 份成品样稿；三种占位符把「宁可占位绝不杜撰」做成机"
     },
     {
-     "id": "yanliudesign-mono-color-skill",
-     "repo": "yanliudesign/mono-color-skill",
-     "title": "单色孔版印刷海报生成器，两色封顶",
+     "id": "psychellluyuer-max-loisloiskill",
+     "repo": "psychellluyuer-max/LoisLoiskill",
+     "title": "一份能直接交付品牌客户的种草投放PPT",
      "过": true,
-     "为什么": "店主指名 / 心选 —— 不过判官，直接放行"
+     "为什么": "编辑读过原文挑的 —— 品牌方给产品资料，交出 13 页可直接给客户的小红书/抖音投放策划 PPT：10 维产品属性模型、内容类型权重矩阵、build_pptx.py + 三份真实项目"
+    },
+    {
+     "id": "benzema216-rent-ops",
+     "repo": "BENZEMA216/rent-ops",
+     "title": "同一套房在五个中介嘴里差出三千块，它帮你把底价问出来",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 一线城市租房：贴一个贝壳/自如/58/豆瓣链接得到评分、假房源检测、高德定位和看房清单；6 城 yml、9 个模式文件、高德通勤脚本、59KB 地图页；RED "
+    },
+    {
+     "id": "tongdog-big-tech-rhetoric",
+     "repo": "TongDog/big-tech-rhetoric",
+     "title": "项目启动会口吻把任何事拆成可挑战的OKR",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 把任何议题改写成大厂会议现场发言，黑话四档可调：34KB 黑话词库（黑话/实际含义/搭配三栏）、岗位视角、职级语气；「反驳必须针对具体缺口不能只靠拉齐」「删掉英"
+    },
+    {
+     "id": "liuxingqitd-content-risk-detector",
+     "repo": "liuxingqitd/content-risk-detector",
+     "title": "逐字稿先过三平台社区规范再进剪辑台的审稿员",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 短视频逐字稿发抖音/小红书/视频号前按三平台规范逐句查违规，红橙黄蓝分级 + P0/P1/P2 改法；每条规则带关键词、判定标准、案例、改法（「提到推特会触发境"
+    },
+    {
+     "id": "miint-sunny-nai5-prompting",
+     "repo": "Miint-Sunny/nai5-prompting",
+     "title": "半句话展开成分镜的 NovelAI V5 提示词写法",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— NovelAI V5 提示词方法：基于 1844 条真实提示词统计 + 出图实测（权重档位分布、分段方式占比、字段分工、多角色绑定）84KB；四条铁律画师串只用"
+    },
+    {
+     "id": "edu-ai-builders-language-learning-studio-os-intake-diagnostic",
+     "repo": "edu-ai-builders/language-learning-studio-os",
+     "title": "15分钟微探针，定位考场失分机制而非给分数",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 托福/雅思培训老师用 15–45 分钟微探针诊断学生真正失分的机制，产出一页可交互诊断 HTML：探针库 7 机制×6 探针各带失败信号与排除条件、探针接口可换"
+    },
+    {
+     "id": "yvonnechen202608-byte-picture-design-photo-to-journal-stickers",
+     "repo": "yvonnechen202608-byte/picture-design",
+     "title": "照片里只挑有故事的那几样，画成手帐贴纸",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 一张旅行照拆成 6–8 个透明底手帐贴纸 PNG：视觉系统 + prompt 配方 + inspect_png_alpha.py 验真透明像素（不能用白色假装透"
+    },
+    {
+     "id": "siyuanjia-magazine-grade-video",
+     "repo": "SiyuanJia/magazine-grade-video",
+     "title": "访谈视频上屏配杂志级中英字幕的排版师",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 访谈/演讲收成 3:4 杂志感竖版短视频：上半画面下半卡拉OK中文字幕加刊头刊尾，两套 Remotion 皮肤各 8–9 个组件 + 下载/转写/对齐四个脚本；"
+    },
+    {
+     "id": "naxiaoduo-scammer.skill",
+     "repo": "naxiaoduo/Scammer.skill",
+     "title": "一眼定位你正站在骗局第几步的套路识别器",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 可疑消息贴进来，告诉你是哪种骗局、走到第几阶段、骗子下一步会说什么：骗局写成剧本（杀猪盘 5 阶段 + 话术 + 进入下一阶段的信号），pattern_writ"
+    },
+    {
+     "id": "larashero3-dotcom-lieflat-gongwen",
+     "repo": "larashero3-dotcom/lieflat-gongwen",
+     "title": "六类公文族骨架公式，党建经验另起千字炉",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 基层公务员写调研报告/讲话/党建材料：参数卡（各文种句长、顿号密度、层级配比）、22 篇范文、7 篇真实政策样例 + check_params.py 写完验收；"
+    },
+    {
+     "id": "jayden-lg-costing-master",
+     "repo": "jayden-lg/costing-master",
+     "title": "造价文件先挑漏项和特征不符的审核员",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 造价员审清单/结算书/变更签证，出带依据出处的审减台账、漏项清单、需补资料清单：8 份工作流、18 份参考（GB/T 50500-2024 新旧对比、钢筋平法）"
+    },
+    {
+     "id": "sumonehk-short-drama-scriptwriter",
+     "repo": "SumOneHK/short-drama-scriptwriter",
+     "title": "AI漫剧立项到交付的全流程编剧工作流",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 抖音/TikTok 漫剧编剧团队用：从锁题到分集场次执行稿的交付包，28 份模板、25 份参考、状态机脚本；每集拆 5–7 个戏剧单位×在场/外在动作/内在心理"
+    },
+    {
+     "id": "limin112-video-subtitle",
+     "repo": "limin112/video-subtitle",
+     "title": "本地 Whisper 先听写，Claude 再纠错",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 给自己视频配硬字幕（英文视频配双语），全程本地：7 个脚本（同音字纠错合并、可拖时间轴的核对页、单双语样式、中英同时约束折行）；细节全是踩过的坑（-copyts"
+    },
+    {
+     "id": "hi-nikola-hand-drawn-explainer-video-nikola",
+     "repo": "hi-nikola/hand-drawn-explainer-video-nikola",
+     "title": "边讲边画的中文手绘知识视频，交付可编辑工程与真MP4",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 中文文稿/SRT 变「边讲边画」手绘讲解视频：随仓打包逐笔渲染器、12 个脚本、14 份参考、两个完整案例；「不以 SVG 动画冒充真实逐笔绘制」「日期专名关键"
+    },
+    {
+     "id": "zongziforu-cn-law-hub",
+     "repo": "ZongziForu/cn-law-hub",
+     "title": "现行有效还是已废止，它直接给你看官方原文状态",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 查法条、核对是否现行有效、批量下载法规原文：13 个脚本覆盖国家法律法规库、规章库、司法解释、税务、生态环境等十个官方库 + 跨库条文搜索，16 个测试；「效力"
+    },
+    {
+     "id": "rose-for-future-hit-lab",
+     "repo": "rose-for-future/hit-lab",
+     "title": "发完先别走，三天后回来对答案的内容预测循环",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 观点类视频/教程图文的 7 维打分 + 发布前盲预测 + T+3 复盘，rubric 被真实数据反复校正：14 个平台数据适配器、评分脚本、状态机；「必须拒绝的"
+    },
+    {
+     "id": "chen3tu-interview-master-skill",
+     "repo": "chen3tu/interview-master-skill",
+     "title": "从岗位JD反推面试题，练完还带复盘和谈薪",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 准备面试、复盘失败、谈薪选 offer：四个岗位方向文件（产品运营/AI 产品/技术/管理）+ 六阶段路由 + 快速补课；「简历有硬伤直说」「有立场敢判断不说这"
+    },
+    {
+     "id": "stellaqiu27-claude-skill-patent-writing-chinese",
+     "repo": "StellaQIU27/claude-skill-patent-writing-chinese",
+     "title": "技术交底书变Word专利稿，仿宋黑体公式图表一步到位",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 把方法/论文写成中国发明专利说明书：PatentDoc 类 + 真 OMML 公式构造器 + 黑白正交流程图图元，出能交给代理人的 .docx；「常见坑」全是对"
+    },
+    {
+     "id": "c0dedance-sbti-skill",
+     "repo": "c0dedance/sbti-skill",
+     "title": "四种人格玩法，测完还能让AI毒舌怼你",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 像聊天一样的人格测评，26 型人格卡：30 道题 + 2 道饮酒关卡题、26 型 15 维 pattern、维度解释全是数据；「内部机制对用户完全不可见」「不直"
+    },
+    {
+     "id": "dacnay816y62-hub-fantasy-dongfang-jianyuehaibao",
+     "repo": "dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+     "title": "东方文字海报，版式排好再交给 Image 2 成图",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 给展览/城市/非遗做东方编辑风海报或书封：111 组 prompt↔成图对照 + 13 张三联审美基准 + 6 份版式参考；「主标题 1–4 个汉字，景德镇青花"
+    },
+    {
+     "id": "zxc123aa-cc-proxy-detector",
+     "repo": "zxc123aa/cc-proxy-detector",
+     "title": "拆中转站底牌，看它到底连的谁家模型",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 国内买了 Claude Code 中转站的人，一份指纹报告说清后端是官方、Bedrock 还是伪装：detect.py 三重探测 + 八行指纹矩阵（toolu_"
+    },
+    {
+     "id": "alephaitech-moyuxl-ecom-image-prompt",
+     "repo": "AlephAITech/moyuxl-ecom-image-prompt",
+     "title": "看参考图就拆出构图打光与配色，落到你的产品上",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 电商详情页豆包生图：先调研卖点经确认再逐屏出执行稿，参考图当「不可信数据」，卖点证据双态门禁，六份参考按模式路由 —— 电商运营的具体活，有硬拒绝。"
+    },
+    {
+     "id": "zhlmi-weibo-cocoon-judge",
+     "repo": "zhlmi/weibo-cocoon-judge",
+     "title": "关注列表一拉，算出你的信息茧房浓度",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 微博关注列表信息茧房自检：351 条判词的判定引擎 + 自带自检的报告生成 + 参考；「只测自己」「不做价值判断」—— 中国普通人具体事，作者 zhlmi 的 "
+    },
+    {
+     "id": "ccxx1835-huatu-skill",
+     "repo": "ccxx1835/huatu-skill",
+     "title": "先读图再落笔的AI矢量稿，路径文字竖排都验过",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 参考图重绘成 Illustrator 原生可编辑矢量稿：中文竖排/路径文字做原生对象，JSX 居中脚本 + SVG 预览脚本，实际导出叠图差异图验证 —— 和心"
+    },
+    {
+     "id": "yuema137-dongbeigpt-dongbei-explainer",
+     "repo": "yuema137/DongbeiGPT",
+     "title": "东北话讲技术，因果链拆到你能点头为止",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 用东北话把复杂内容讲明白，「东北话不是目的讲明白才是」，四个子技能组合 + eval 校准，不套用到代码文档 —— 有克制立场的讲解件，读者一看就想试。"
+    },
+    {
+     "id": "syuancheng-my_markji-markji",
+     "repo": "syuancheng/my_markji",
+     "title": "墨墨卡片的语法检查官，错一处当场标红",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 讲义/截图/一句英文做成能直接进墨墨记忆卡 App 的卡：一个 CLI 管牌组/lint/批量/续传/verify，7 个卡片模板，api.md 记了官方文档两"
+    },
+    {
+     "id": "buuaaa-evidence-based-nutrition-advisor",
+     "repo": "BuuaaA/evidence-based-nutrition-advisor",
+     "title": "营养补剂宣称先过证据三道闸再谈买不买",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 「鱼油能降血脂吗、老人要不要吃钙片」给一张 HTML 证据卡，分开说证据确定性/与你的匹配度/值不值得买：14 个脚本（PubMed 导出、去重、筛选、Meta"
+    },
+    {
+     "id": "escap1ng-mathmodel-kit-mathmodel-diagram",
+     "repo": "Escap1ng/mathmodel-kit",
+     "title": "论文插图先问清是给哪一章用的示意图师傅",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 数模/毕业论文的技术路线图、框架图、问题分析图：填 JSON 出 300dpi PNG + 矢量 PDF，5 个模板脚本逐槽跑中文字宽校验超框即非零退出；「说不"
+    },
+    {
+     "id": "jiayuqi7813-shuodedaoli-skill",
+     "repo": "jiayuqi7813/shuodedaoli-skill",
+     "title": "游戏角色头像配彩色字幕，一段脚本出竖屏对话短视频",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 熊大熊二式竖屏对话短视频：写一份 YAML 台词出带背景、头像高亮、彩色字幕、配音的 mp4，14 个合成模块 + 无 TTS 预览不扣费 + 按句缓存；「禁止"
+    },
+    {
+     "id": "liangdabiao-smy-seedance-storyboard",
+     "repo": "liangdabiao/smy-seedance-storyboard",
+     "title": "水墨线条矿物色块，把小说整成上美影分镜脚本",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 神话/水浒/民间故事改成上美影复古手绘风的 Seedance 分镜与剧本：风格指南是单一事实来源（风格块/色盘/造型规范）+ 两个完整示例项目；「默认且仅输出上"
+    },
+    {
+     "id": "giszzt-figecho",
+     "repo": "giszzt/FigEcho",
+     "title": "从一张架构图里抽出整套配色版式，再画十张都不走样",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 给一张参考技术图提炼可复用的「视觉指纹」，再把新内容画成同一风格家族：6 个脚本（风格库检索、多后端出图、画幅配色密度实测、校验）、28 套已入库风格模板、9 "
+    },
+    {
+     "id": "gujiapeng1991-droid-gudemiao-advertising-creative-director",
+     "repo": "gujiapeng1991-droid/gudemiao-advertising-creative-director",
+     "title": "丢来一句品牌诉求，还你一套可拍可投放的广告工程",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 广告创意总监：品牌问题做成 30 秒可拍可生成的广告，两份分开的 Word（干净剧本 + 含 Seedance 时间戳提示词的制作剧本）+ 资产清单；「先品牌与"
+    },
+    {
+     "id": "cslawyer1985-china-lawyer-analyst",
+     "repo": "CSlawyer1985/china-lawyer-analyst",
+     "title": "请求权基础拆到要件层，再按司法解释回填的案情分析器",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 中国法律分析：45 类案件识别 + 六段式要件清单 + IRAC 出意见，自动校验引用法条是否已修订废止：233KB SQLite（630 审查要点、495 证"
+    },
+    {
+     "id": "kangarooking-cangjie-skill",
+     "repo": "kangarooking/cangjie-skill",
+     "title": "长内容拆成可执行技能包，一本书变一套动作",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 拆书成 skill：一本书/一场长播客蒸馏成一组能力卡，17 个脚本（编译、提取器、触发/输出评测、压力测试）、17 本已拆书目、rejected/ 保留淘汰理"
+    },
+    {
+     "id": "alto-r-nature-figure-craft-chart-type-chooser",
+     "repo": "Alto-R/nature-figure-craft",
+     "title": "先算清数据能撑起哪句话，再定画什么图",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 画图前先决定画什么图：20KB 数据体检器算出 3–5 个带真实数字的候选结论让用户挑，再给 2–3 种图型及被否决的备选和反模式检查；「Never ask w"
+    },
+    {
+     "id": "wangling-miao-mathmodel-latex-skill",
+     "repo": "wangling-miao/mathmodel-latex-skill",
+     "title": "MCM/ICM 论文模板一键生成，编译前先查页边距",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 数模国赛/美赛论文 LaTeX 工程：能离线编译的 CUMCM/MCM 模板 + 四个校验脚本（环境、引用、关键词必须是建模术语、PDF 页数体积身份信息扫描）"
+    },
+    {
+     "id": "ly398565721-high-school-timetable",
+     "repo": "ly398565721/high-school-timetable",
+     "title": "早读午休晚自习值班表，从排班本和规则文件里生成",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 高中排课 + 早读午休晚自习值班表：CP-SAT 求解器 + 独立校验器 + 两所学校适配器 + Excel 导出，出四张工作簿和一份约束确认表；「不解就先问完"
+    },
+    {
+     "id": "kavender-lullsense-lullsense",
+     "repo": "Kavender/lullsense",
+     "title": "婴儿夜醒先问白天小睡再答的睡眠顾问",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 知眠：4–36 个月婴幼儿睡眠顾问，先安全分诊再给假设与实验方案：每条医学主张标证据等级和来源、校验脚本强制安全类主张有指南级来源、CLI 支持 Huckleb"
+    },
+    {
+     "id": "kobingogo-motion-sticker-pack",
+     "repo": "kobingogo/motion-sticker-pack",
+     "title": "静态图进、动图包出，中间不用你碰一次视频软件",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 动态表情包：给一张角色图出 9 张独立循环、首帧透明的动图 + 报告 + ZIP，25 个脚本（透明度探针、网格检测、审批哈希、切格抠像、零成本仿射兜底）；「静"
+    },
+    {
+     "id": "ychenjk-sudo-xiaoyuzhou-transcription-skill",
+     "repo": "ychenjk-sudo/xiaoyuzhou-transcription-skill",
+     "title": "小宇宙链接进来，出去的是带发言人标记的逐字稿",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 贴一个小宇宙链接，得到带时间戳分说话人的逐字稿 + 要点 + 问答：transcribe.sh 抽音频地址提交 ASR 轮询拉结果（支持 8 小时长节目）、fo"
+    },
+    {
+     "id": "hetiankong-universal-video-notes",
+     "repo": "hetiankong/universal-video-notes",
+     "title": "1700+ 视频站一键落成带 YAML 眉批的 Ob",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— B 站/YouTube 视频转带 YAML 头的 Obsidian 结构化笔记，无字幕时本地 SenseVoice 转写：十个步骤模块 + 批处理 + 预检；「"
+    },
+    {
+     "id": "jincai-openclaw-skills-infographic",
+     "repo": "jincai/openclaw-skills",
+     "title": "文章丢给它，吐回一张能发朋友圈的高清信息图",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 一篇文章/推文做成微信群里能直接转发的 750px 信息图 PNG，纯 HTML+Playwright 截图不用生图模型：设计系统 + 3x 截图脚本；内容抽取"
+    },
+    {
+     "id": "learnprompt-awesome-seedance-seedance-prompt-library",
+     "repo": "LearnPrompt/awesome-seedance",
+     "title": "Seedance 2.5 视频提示词模板库",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— Seedance 视频提示词模板库：每个模板含 useWhen/structure/guidance/pitfalls/案例链接，由带热度分和复测记录的真实案例"
+    },
+    {
+     "id": "explosivecoderflome-ani-book-skill",
+     "repo": "ExplosiveCoderflome/ani-book-skill",
+     "title": "分阶段产出可改稿的长篇中文小说，关键设定先问你",
+     "过": true,
+     "为什么": "编辑读过原文挑的 —— 带新手写网文长篇：五个开篇种子起步到卷纲、章节契约、章稿、连续性台账全是可编辑文件，7 个脚本管状态与校验；「每次只问 2–3 个影响最大的未定项每项给互斥选项"
     }
    ]
   },
