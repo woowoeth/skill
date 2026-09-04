@@ -392,7 +392,8 @@ def ingest_repo(local: str, repo: str, meta: dict, source: str) -> list[dict]:
     # 09-03 编辑亲挑：挑的是合集里点名的那一两件（editor_picks 写了 path/paths）时，只收那几件，不出合集卡。
     # 网文合集 26 件 ≥ COLLECTION_ONLY 本来只出一张合集卡，编辑点名的 continuity / aidetect 根本没进库。
     _eds = (lib.read_json(os.path.join(lib.ROOT, "editorial", "editor_picks.json"), {}) or {}).get("items", {})
-    _pick = _eds.get(repo.lower()) or {}
+    _refs = (lib.read_json(os.path.join(lib.ROOT, "editorial", "taste_refs.json"), {}) or {}).get("items", {})
+    _pick = _eds.get(repo.lower()) or _refs.get(repo.lower()) or {}   # 店主指名（taste_refs）写了 path 的同样只收那一件
     _want = [q.strip("/") for q in ([_pick.get("path")] if _pick.get("path") else []) + list(_pick.get("paths") or [])]
     if _want:
         got = [p for p in parsed if (p[2] or "").strip("/") in _want]
