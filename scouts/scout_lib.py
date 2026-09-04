@@ -733,7 +733,10 @@ def refresh() -> dict:
     # —— 榜首是 flutter/bun/AutoGPT 这些只是带了个 skills 目录的产品仓库。
     # 既然不是质量信号，它就不该决定读者先看到谁。去掉它不影响确定性：
     # 上面那行按 id 的排序已经兜住了并列项的稳定顺序。
+    # 09-04：同一天内先摆**有作者真图**的（hero/artwork/diagram/ours），不只 cover_real。
+    # 首屏 60 张里 35 张是排版底 —— 新上的一天几十件，大半 README 没图，纯按收录顺序就是一屏文字墙。
     visible.sort(key=lambda x: (x.get("added_at", ""),
+                               1 if (x.get("cover") and x.get("cover_kind") in ("hero", "artwork", "diagram", "ours")) else 0,
                                1 if x.get("cover_real") else 0,
                                x.get("fun_score", 0)), reverse=True)
     # **同一个仓库的卡片不许连着出现。**

@@ -278,28 +278,6 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
-## kami
-## 羊皮纸底色配墨蓝强调的文档排版师
-URL: https://ourword.ai/skill/i/tw93-kami-kami/
-Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
-Updated: 2026-09-03
-Tags: everyday, skill, tw93
-
-Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
-
-### What does this skill do?
-Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一页纸 / 白皮书 / 作品集 / 简历 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地页 / 官网 / landing page / p
-
-### Why is it worth installing?
-Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## grilling
 ## 连续追问直到你自相矛盾的方案压力测试器
 URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
@@ -320,6 +298,28 @@ git clone --depth 1 https://github.com/mattpocock/skills.git Then point your age
 
 ### Where does it come from?
 Repository: mattpocock/skills The repository ships 1 skills in total.
+
+========================================================================
+## kami
+## 羊皮纸底色配墨蓝强调的文档排版师
+URL: https://ourword.ai/skill/i/tw93-kami-kami/
+Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
+Updated: 2026-09-03
+Tags: everyday, skill, tw93
+
+Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
+
+### What does this skill do?
+Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一页纸 / 白皮书 / 作品集 / 简历 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地页 / 官网 / landing page / p
+
+### Why is it worth installing?
+Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-to-journal-stickers
@@ -578,28 +578,6 @@ git clone --depth 1 https://github.com/KaguraNanaga/format-agent-01.git 然后�
 Repository: KaguraNanaga/format-agent-01 The repository ships 1 skills in total.
 
 ========================================================================
-## a2ui-renderer
-## A2UI 界面渲染器，装上就能让 Agent 画表单
-URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
-Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
-Updated: 2026-09-03
-Tags: images, skill, CopilotKit
-
-Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
-
-### What does this skill do?
-Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
-
-### Why is it worth installing?
-Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
-
-========================================================================
 ## markstream-vue
 ## AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚
 URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
@@ -620,6 +598,28 @@ git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point 
 
 ### Where does it come from?
 Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
+
+========================================================================
+## a2ui-renderer
+## A2UI 界面渲染器，装上就能让 Agent 画表单
+URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
+Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
+Updated: 2026-09-03
+Tags: images, skill, CopilotKit
+
+Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
+
+### What does this skill do?
+Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
+
+### Why is it worth installing?
+Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
 
 ========================================================================
 ## huashu-report
@@ -742,28 +742,6 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 Repository: Zeejay0/gathered-scenes-zine-skill The repository ships 1 skills in total.
 
 ========================================================================
-## whiteboard-video
-## 线稿只准本地模型抽、不许 AI 生成的白板手绘视频
-URL: https://ourword.ai/skill/i/gnipbao-codex-whiteboard-video-skill/
-Source: https://github.com/gnipbao/codex-whiteboard-video-skill
-Updated: 2026-09-03
-Tags: images, skill, gnipbao
-
-Hand it a photo and it pulls the line art with a local neural model, then draws it stroke by stroke with a hand trailing the pen tip — instead of asking an image model for something that merely looks hand-drawn.
-
-### What does this skill do?
-Hand it a photo and it pulls the line art with a local neural model, then draws it stroke by stroke with a hand trailing the pen tip — instead of asking an image model for something that merely looks hand-drawn.
-
-### Why is it worth installing?
-With neither local model installed it is required to fail outright — no edge-detection fallback, because a weak outline that looks finished is worse than an error.
-
-### How do you install it?
-git clone --depth 1 https://github.com/gnipbao/codex-whiteboard-video-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: gnipbao/codex-whiteboard-video-skill The repository ships 1 skills in total.
-
-========================================================================
 ## verifying-hero-video-on-mobile
 ## 手机上看不见的卡顿，它替你分帧证明
 URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
@@ -800,6 +778,28 @@ git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能
 
 ### Q：它从哪来？
 Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
+## whiteboard-video
+## 线稿只准本地模型抽、不许 AI 生成的白板手绘视频
+URL: https://ourword.ai/skill/i/gnipbao-codex-whiteboard-video-skill/
+Source: https://github.com/gnipbao/codex-whiteboard-video-skill
+Updated: 2026-09-03
+Tags: images, skill, gnipbao
+
+Hand it a photo and it pulls the line art with a local neural model, then draws it stroke by stroke with a hand trailing the pen tip — instead of asking an image model for something that merely looks hand-drawn.
+
+### What does this skill do?
+Hand it a photo and it pulls the line art with a local neural model, then draws it stroke by stroke with a hand trailing the pen tip — instead of asking an image model for something that merely looks hand-drawn.
+
+### Why is it worth installing?
+With neither local model installed it is required to fail outright — no edge-detection fallback, because a weak outline that looks finished is worse than an error.
+
+### How do you install it?
+git clone --depth 1 https://github.com/gnipbao/codex-whiteboard-video-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: gnipbao/codex-whiteboard-video-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## travel-plan-viz
@@ -878,6 +878,44 @@ git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然�
 Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
+## video-clip-stitching
+## 接缝诊断师：专治AI分段影片的卡顿与重复
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
+Updated: 2026-09-03
+Tags: images, skill, ALCHEMINT-INC
+
+Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
+
+### What does this skill do?
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Why is it worth installing?
+It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
+
+### Q：这个 skill 做什么？
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Q：为什么值得装？
+它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
 ## agent-skills
 ## Addy 的工程技能箱
 URL: https://ourword.ai/skill/i/addyosmani-agent-skills/
@@ -922,42 +960,26 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
-## video-clip-stitching
-## 接缝诊断师：专治AI分段影片的卡顿与重复
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
+## agent-skill-creator
+## 把口头流程变成能跑的跨平台技能，三步内交付
+URL: https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/
+Source: https://github.com/FrancyJGLisboa/agent-skill-creator
 Updated: 2026-09-03
-Tags: images, skill, ALCHEMINT-INC
+Tags: meta, skill, FrancyJGLisboa
 
-Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
+Write a workflow once, install it on 17 platforms — a skill foundry compatible with Claude Code, Cursor, Copilot and more.
 
 ### What does this skill do?
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+Create cross-platform agent skills from workflow descriptions. Activates when users ask to create an agent, automate a repetitive workflow, create a custom skill, or need advanced agent creation. Triggers on phrases like create agent for, automate workflow, create skill for, every day I have to, daily I need to, turn process into agent, need to automate, create a cross-platform skill, validate thi
 
 ### Why is it worth installing?
-It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
+Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
-
-### Q：这个 skill 做什么？
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
-
-### Q：为什么值得装？
-它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
 
 ========================================================================
 ## obsidian-second-brain
@@ -980,28 +1002,6 @@ git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git 
 
 ### Where does it come from?
 Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## agent-skill-creator
-## 把口头流程变成能跑的跨平台技能，三步内交付
-URL: https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/
-Source: https://github.com/FrancyJGLisboa/agent-skill-creator
-Updated: 2026-09-03
-Tags: meta, skill, FrancyJGLisboa
-
-Write a workflow once, install it on 17 platforms — a skill foundry compatible with Claude Code, Cursor, Copilot and more.
-
-### What does this skill do?
-Create cross-platform agent skills from workflow descriptions. Activates when users ask to create an agent, automate a repetitive workflow, create a custom skill, or need advanced agent creation. Triggers on phrases like create agent for, automate workflow, create skill for, every day I have to, daily I need to, turn process into agent, need to automate, create a cross-platform skill, validate thi
-
-### Why is it worth installing?
-Cross-platform is the ecosystem's next stop; this ships write-once-run-anywhere early.
-
-### How do you install it?
-git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
 
 ========================================================================
 ## glitch-pixel-collage
@@ -1342,28 +1342,6 @@ git clone --depth 1 https://github.com/sagirimo/BioDSH.git Then point your agent
 Repository: sagirimo/BioDSH The repository ships 1 skills in total.
 
 ========================================================================
-## anti-ai-defensive-writing
-## 删掉AI腔的防御性写作：不请自来的免责声明
-URL: https://ourword.ai/skill/i/zf-utokyo-anti-ai-defensive-writing-anti-ai-defensive-writing/
-Source: https://github.com/ZF-Utokyo/anti-ai-defensive-writing/tree/HEAD/skills/anti-ai-defensive-writing
-Updated: 2026-09-02
-Tags: writing, skill, ZF-Utokyo
-
-Six tells that scream "AI wrote this"—reflexive hedging, invented metrics, italicized drama. Cleans abstracts.
-
-### What does this skill do?
-Draft or revise academic writing without unrequested AI defensiveness: reflexive caveats, unsupported statistical machinery, invented metrics or probes, rhetorical insertions that manufacture cadence, gratuitous em dashes or italics, opaque abstraction, and claims weakened below what the evidence supports. Use for cleaning AI-generated abstracts, papers, methods, results, captions, tables, and con
-
-### Why is it worth installing?
-Not a thesaurus swap—it excises the defensive machinery AI adds to seem rigorous: unsupported stats, cadence fillers, hedged.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ZF-Utokyo/anti-ai-defensive-writing.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ZF-Utokyo/anti-ai-defensive-writing The repository ships 1 skills in total.
-
-========================================================================
 ## learning-coach
 ## 会先考你一遍再决定讲多细的学习陪练
 URL: https://ourword.ai/skill/i/lucian1u-learning-coach/
@@ -1400,6 +1378,28 @@ git clone --depth 1 https://github.com/Lucian1u/learning-coach.git 然后把智�
 
 ### Q：它从哪来？
 Repository: Lucian1u/learning-coach The repository ships 1 skills in total.
+
+========================================================================
+## anti-ai-defensive-writing
+## 删掉AI腔的防御性写作：不请自来的免责声明
+URL: https://ourword.ai/skill/i/zf-utokyo-anti-ai-defensive-writing-anti-ai-defensive-writing/
+Source: https://github.com/ZF-Utokyo/anti-ai-defensive-writing/tree/HEAD/skills/anti-ai-defensive-writing
+Updated: 2026-09-02
+Tags: writing, skill, ZF-Utokyo
+
+Six tells that scream "AI wrote this"—reflexive hedging, invented metrics, italicized drama. Cleans abstracts.
+
+### What does this skill do?
+Draft or revise academic writing without unrequested AI defensiveness: reflexive caveats, unsupported statistical machinery, invented metrics or probes, rhetorical insertions that manufacture cadence, gratuitous em dashes or italics, opaque abstraction, and claims weakened below what the evidence supports. Use for cleaning AI-generated abstracts, papers, methods, results, captions, tables, and con
+
+### Why is it worth installing?
+Not a thesaurus swap—it excises the defensive machinery AI adds to seem rigorous: unsupported stats, cadence fillers, hedged.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ZF-Utokyo/anti-ai-defensive-writing.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ZF-Utokyo/anti-ai-defensive-writing The repository ships 1 skills in total.
 
 ========================================================================
 ## goldie
@@ -1500,6 +1500,28 @@ git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然
 Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## planning-with-files
+## 任务拆解写到磁盘，/clear 后自动续上进度
+URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
+Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
+Updated: 2026-09-02
+Tags: meta, skill, OthmanAdi
+
+Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
+
+### What does this skill do?
+Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
+
+### Why is it worth installing?
+Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
+
+### How do you install it?
+git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
+
+========================================================================
 ## claude-ai-music-skills
 ## 给 Suno 配上歌词工作流和混音清单，从玩票做到成品
 URL: https://ourword.ai/skill/i/bitwize-music-studio-claude-ai-music-skills/
@@ -1566,28 +1588,6 @@ git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Th
 Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## planning-with-files
-## 任务拆解写到磁盘，/clear 后自动续上进度
-URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
-Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
-Updated: 2026-09-02
-Tags: meta, skill, OthmanAdi
-
-Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
-
-### What does this skill do?
-Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
-
-### Why is it worth installing?
-Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
-
-### How do you install it?
-git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
-
-========================================================================
 ## mathmodel-diagram
 ## 论文插图先问清是给哪一章用的示意图师傅
 URL: https://ourword.ai/skill/i/escap1ng-mathmodel-kit-mathmodel-diagram/
@@ -1624,6 +1624,44 @@ git clone --depth 1 https://github.com/Escap1ng/mathmodel-kit.git 然后把智�
 
 ### Q：它从哪来？
 Repository: Escap1ng/mathmodel-kit The repository ships 1 skills in total.
+
+========================================================================
+## dongbei-explainer
+## 东北话讲技术，因果链拆到你能点头为止
+URL: https://ourword.ai/skill/i/yuema137-dongbeigpt-dongbei-explainer/
+URL (中文): https://ourword.ai/skill/zh/i/yuema137-dongbeigpt-dongbei-explainer/
+Source: https://github.com/yuema137/DongbeiGPT/tree/HEAD/skills/dongbei-explainer
+Updated: 2026-09-01
+Tags: play, skill, yuema137
+
+Not dialect comedy. Rebuilds logic in causal order, swaps jargon for your level, walks one full example. Stops.
+
+### What does this skill do?
+Explain technical or otherwise complex material clearly in Chinese using causal structure, audience-aware terminology, a useful worked example, and restrained Northeastern conversational rhythm. Use when understanding is the main request, including “解释一下/给我讲讲/帮我理解/科普一下”, “说清楚/说明白/讲清楚/讲明白/理清楚”, “仔细讲讲/好好讲讲/详细讲讲/展开讲讲/从头讲/一步一步讲/捋一遍/讲透”, “通俗点/简单点/大白话/深入浅出/别绕/别堆术语”, or confusion such as “没听懂/看不懂/没看明白/不太
+
+### Why is it worth installing?
+Starts from causal skeleton, then fills flesh. Terminology adapts to listener. Every concept gets a worked example end-to-end.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
+
+--- 中文 ---
+不是翻译成东北腔，是用因果结构重讲一遍。术语换成你听得懂的话，每一步都带例子，讲到你不懵为止。
+
+### Q：这个 skill 做什么？
+Explain technical or otherwise complex material clearly in Chinese using causal structure, audience-aware terminology, a useful worked example, and restrained Northeastern conversational rhythm. Use when understanding is the main request, including “解释一下/给我讲讲/帮我理解/科普一下”, “说清楚/说明白/讲清楚/讲明白/理清楚”, “仔细讲讲/好好讲讲/详细讲讲/展开讲讲/从头讲/一步一步讲/捋一遍/讲透”, “通俗点/简单点/大白话/深入浅出/别绕/别堆术语”, or confusion such as “没听懂/看不懂/没看明白/不太
+
+### Q：为什么值得装？
+它先搭因果骨架再填血肉，术语按听众水平现换，不堆概念。例子一定走完一遍，不让你卡在半路。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
 
 ========================================================================
 ## nai5-prompting
@@ -1738,44 +1776,6 @@ git clone --depth 1 https://github.com/Reluctant2828/mlm-crush-coach.git 然后�
 
 ### Q：它从哪来？
 Repository: Reluctant2828/mlm-crush-coach Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## dongbei-explainer
-## 东北话讲技术，因果链拆到你能点头为止
-URL: https://ourword.ai/skill/i/yuema137-dongbeigpt-dongbei-explainer/
-URL (中文): https://ourword.ai/skill/zh/i/yuema137-dongbeigpt-dongbei-explainer/
-Source: https://github.com/yuema137/DongbeiGPT/tree/HEAD/skills/dongbei-explainer
-Updated: 2026-09-01
-Tags: play, skill, yuema137
-
-Not dialect comedy. Rebuilds logic in causal order, swaps jargon for your level, walks one full example. Stops.
-
-### What does this skill do?
-Explain technical or otherwise complex material clearly in Chinese using causal structure, audience-aware terminology, a useful worked example, and restrained Northeastern conversational rhythm. Use when understanding is the main request, including “解释一下/给我讲讲/帮我理解/科普一下”, “说清楚/说明白/讲清楚/讲明白/理清楚”, “仔细讲讲/好好讲讲/详细讲讲/展开讲讲/从头讲/一步一步讲/捋一遍/讲透”, “通俗点/简单点/大白话/深入浅出/别绕/别堆术语”, or confusion such as “没听懂/看不懂/没看明白/不太
-
-### Why is it worth installing?
-Starts from causal skeleton, then fills flesh. Terminology adapts to listener. Every concept gets a worked example end-to-end.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
-
---- 中文 ---
-不是翻译成东北腔，是用因果结构重讲一遍。术语换成你听得懂的话，每一步都带例子，讲到你不懵为止。
-
-### Q：这个 skill 做什么？
-Explain technical or otherwise complex material clearly in Chinese using causal structure, audience-aware terminology, a useful worked example, and restrained Northeastern conversational rhythm. Use when understanding is the main request, including “解释一下/给我讲讲/帮我理解/科普一下”, “说清楚/说明白/讲清楚/讲明白/理清楚”, “仔细讲讲/好好讲讲/详细讲讲/展开讲讲/从头讲/一步一步讲/捋一遍/讲透”, “通俗点/简单点/大白话/深入浅出/别绕/别堆术语”, or confusion such as “没听懂/看不懂/没看明白/不太
-
-### Q：为什么值得装？
-它先搭因果骨架再填血肉，术语按听众水平现换，不堆概念。例子一定走完一遍，不让你卡在半路。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/yuema137/DongbeiGPT.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: yuema137/DongbeiGPT The repository ships 1 skills in total.
 
 ========================================================================
 ## minimax-h3-video
@@ -2030,20 +2030,20 @@ git clone --depth 1 https://github.com/virgiliojr94/book-to-skill.git Then point
 Repository: virgiliojr94/book-to-skill The repository ships 1 skills in total.
 
 ========================================================================
-## agentmemory-agents
-## 只认官方适配器，装错路径当场报错的内存接线员
-URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-agents/
-Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-agents
+## agentmemory-config
+## 不翻源码就改配置，环境变量端口开关全在这
+URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-config/
+Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-config
 Updated: 2026-08-31
 Tags: work, skill, rohitg00
 
-When wiring agentmemory into a host coding agent, it double-checks which config path the connect command should.
+Change ports, set API keys, toggle features, and learn why defaults are off—without grepping the source.
 
 ### What does this skill do?
-How agentmemory wires into host coding agents via the connect command. Use when installing agentmemory into a specific agent, when asked which agents are supported, or when a connect adapter writes the wrong config path.
+agentmemory configuration, environment variables, ports, and feature flags. Use when enabling a feature, changing ports, setting an API key, configuring auth, or explaining why a feature is off by default.
 
 ### Why is it worth installing?
-It never guesses: every connect adapter ships with whitelisted path validation, halting on mismatch instead of silently writing.
+Centralizes scattered env vars, ports, and feature flags into one categorized reference—ask it instead of digging through code.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
@@ -2112,28 +2112,6 @@ git clone --depth 1 https://github.com/koinu32/y2k-pop-poster.git 然后把智�
 Repository: koinu32/y2k-pop-poster The repository ships 1 skills in total.
 
 ========================================================================
-## technical-english
-## 航天维修手册级英文改写器，专杀AI腔
-URL: https://ourword.ai/skill/i/jsath-simplified-technical-english-technical-english/
-Source: https://github.com/jsath/simplified-technical-english/tree/HEAD/skills/technical-english
-Updated: 2026-08-31
-Tags: writing, skill, jsath
-
-Turns AI-flavored prose into ASD-STE100 aerospace standard: short sentences, one meaning per word, active voice.
-
-### What does this skill do?
-Rewrite or audit any text using the principles of ASD-STE100 Simplified Technical English, the aerospace writing standard built for flight manuals. Kills AI slop by force - short sentences, one approved meaning per word, active voice, no filler. Use when asked to "simplify this", "de-slop this", "make this clearer", "rewrite in plain English", "apply STE", or when documentation, instructions, READ
-
-### Why is it worth installing?
-Not a gentle polish—it enforces ASD-STE100 rules: one approved sense per word, hard sentence splits, passive voice flagged. Far.
-
-### How do you install it?
-git clone --depth 1 https://github.com/jsath/simplified-technical-english.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: jsath/simplified-technical-english The repository ships 1 skills in total.
-
-========================================================================
 ## symperturb-analysis
 ## 虚拟敲除症状网络节点，先看七类效用再排干预顺序
 URL: https://ourword.ai/skill/i/zfrory15-max-symperturb-symperturb-analysis/
@@ -2194,20 +2172,42 @@ git clone --depth 1 https://github.com/liangdabiao/enterprise-rag-challenge-rele
 Repository: liangdabiao/enterprise-rag-challenge-release The repository ships 1 skills in total.
 
 ========================================================================
-## agentmemory-architecture
-## 拆开记忆引擎看存储与检索全链路，附端口与查看器
-URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-architecture/
-Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-architecture
+## technical-english
+## 航天维修手册级英文改写器，专杀AI腔
+URL: https://ourword.ai/skill/i/jsath-simplified-technical-english-technical-english/
+Source: https://github.com/jsath/simplified-technical-english/tree/HEAD/skills/technical-english
+Updated: 2026-08-31
+Tags: writing, skill, jsath
+
+Turns AI-flavored prose into ASD-STE100 aerospace standard: short sentences, one meaning per word, active voice.
+
+### What does this skill do?
+Rewrite or audit any text using the principles of ASD-STE100 Simplified Technical English, the aerospace writing standard built for flight manuals. Kills AI slop by force - short sentences, one approved meaning per word, active voice, no filler. Use when asked to "simplify this", "de-slop this", "make this clearer", "rewrite in plain English", "apply STE", or when documentation, instructions, READ
+
+### Why is it worth installing?
+Not a gentle polish—it enforces ASD-STE100 rules: one approved sense per word, hard sentence splits, passive voice flagged. Far.
+
+### How do you install it?
+git clone --depth 1 https://github.com/jsath/simplified-technical-english.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: jsath/simplified-technical-english The repository ships 1 skills in total.
+
+========================================================================
+## agentmemory-agents
+## 只认官方适配器，装错路径当场报错的内存接线员
+URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-agents/
+Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-agents
 Updated: 2026-08-31
 Tags: work, skill, rohitg00
 
-Stop treating memory as a black box. This skill maps agentmemory's iii primitives, storage model, ports, and.
+When wiring agentmemory into a host coding agent, it double-checks which config path the connect command should.
 
 ### What does this skill do?
-How agentmemory is built, the iii engine primitives it runs on, its storage model, ports, and the viewer. Use when reasoning about how memory is stored or retrieved end to end, when extending the system, or when answering how agentmemory works under the hood.
+How agentmemory wires into host coding agents via the connect command. Use when installing agentmemory into a specific agent, when asked which agents are supported, or when a connect adapter writes the wrong config path.
 
 ### Why is it worth installing?
-It traces the end-to-end write-to-retrieve path through concrete modules and ports—so you see the causal chain before touching.
+It never guesses: every connect adapter ships with whitelisted path validation, halting on mismatch instead of silently writing.
 
 ### How do you install it?
 git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
@@ -2258,6 +2258,28 @@ git clone --depth 1 https://github.com/AIDevGTM/gtm-cofounder.git Then point you
 
 ### Where does it come from?
 Repository: AIDevGTM/gtm-cofounder The repository ships 18 skills in total. Homepage: https://gtmcofounder.com
+
+========================================================================
+## agentmemory-architecture
+## 拆开记忆引擎看存储与检索全链路，附端口与查看器
+URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-architecture/
+Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-architecture
+Updated: 2026-08-31
+Tags: work, skill, rohitg00
+
+Stop treating memory as a black box. This skill maps agentmemory's iii primitives, storage model, ports, and.
+
+### What does this skill do?
+How agentmemory is built, the iii engine primitives it runs on, its storage model, ports, and the viewer. Use when reasoning about how memory is stored or retrieved end to end, when extending the system, or when answering how agentmemory works under the hood.
+
+### Why is it worth installing?
+It traces the end-to-end write-to-retrieve path through concrete modules and ports—so you see the causal chain before touching.
+
+### How do you install it?
+git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: rohitg00/agentmemory The repository ships 1 skills in total. Homepage: https://agent-memory.dev
 
 ========================================================================
 ## writing-agent
@@ -2318,28 +2340,6 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 
 ### Where does it come from?
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
-
-========================================================================
-## agentmemory-config
-## 不翻源码就改配置，环境变量端口开关全在这
-URL: https://ourword.ai/skill/i/rohitg00-agentmemory-agentmemory-config/
-Source: https://github.com/rohitg00/agentmemory/tree/HEAD/plugin/skills/agentmemory-config
-Updated: 2026-08-31
-Tags: work, skill, rohitg00
-
-Change ports, set API keys, toggle features, and learn why defaults are off—without grepping the source.
-
-### What does this skill do?
-agentmemory configuration, environment variables, ports, and feature flags. Use when enabling a feature, changing ports, setting an API key, configuring auth, or explaining why a feature is off by default.
-
-### Why is it worth installing?
-Centralizes scattered env vars, ports, and feature flags into one categorized reference—ask it instead of digging through code.
-
-### How do you install it?
-git clone --depth 1 https://github.com/rohitg00/agentmemory.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: rohitg00/agentmemory The repository ships 1 skills in total. Homepage: https://agent-memory.dev
 
 ========================================================================
 ## social-post
@@ -2478,6 +2478,44 @@ git clone --depth 1 https://github.com/edu-ai-builders/language-learning-studio-
 Repository: edu-ai-builders/language-learning-studio-os The repository ships 1 skills in total.
 
 ========================================================================
+## starryear-ink
+## 照片留一条证据带，碎成干印再晕成水墨
+URL: https://ourword.ai/skill/i/starryear-starryear-ink/
+URL (中文): https://ourword.ai/skill/zh/i/starryear-starryear-ink/
+Source: https://github.com/Starryear/Starryear-Ink
+Updated: 2026-08-30
+Tags: everyday, skill, Starryear
+
+Not a full-frame ink filter. Keeps a source-photo evidence band, fractures the scene into dry print memory, then.
+
+### What does this skill do?
+Transform one user-supplied photograph into a vertical Starryear-Ink artwork that keeps a direct source-photo evidence band, fractures the scene into dry printed memory, and releases it as a source-bound chromatic ink afterimage. Use for Starryear-Ink, 星年水墨, 鹅鹅鹅, 摄影印刷水墨转译, or requests for a photo-to-print-to-ink editorial sheet. Do not use for full-frame ink filters, traditional shanshui, generic
+
+### Why is it worth installing?
+Evidence band anchors truth, dry-print fracturing breaks soft-focus habits, chromatic afterimage derives from source hues—three.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
+
+--- 中文 ---
+不整幅糊成水墨，而是保留原图证据带，把画面碎成干涸印刷记忆，再晕出源图色相的彩色残像。适合做编辑感摄影印刷转译。
+
+### Q：这个 skill 做什么？
+Transform one user-supplied photograph into a vertical Starryear-Ink artwork that keeps a direct source-photo evidence band, fractures the scene into dry printed memory, and releases it as a source-bound chromatic ink afterimage. Use for Starryear-Ink, 星年水墨, 鹅鹅鹅, 摄影印刷水墨转译, or requests for a photo-to-print-to-ink editorial sheet. Do not use for full-frame ink filters, traditional shanshui, generic
+
+### Q：为什么值得装？
+证据带锁住真实，干印碎形切断柔焦惯性，色相残像从源图反推——三层机制让每张输出都是可核验的转译。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
+
+========================================================================
 ## duizuo-reading-companion
 ## 读书记不住进度？它替你记着，还防剧透
 URL: https://ourword.ai/skill/i/locoda-duizuo-reading-companion-skill/
@@ -2536,44 +2574,6 @@ git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git 然后�
 
 ### Q：它从哪来？
 Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
-
-========================================================================
-## starryear-ink
-## 照片留一条证据带，碎成干印再晕成水墨
-URL: https://ourword.ai/skill/i/starryear-starryear-ink/
-URL (中文): https://ourword.ai/skill/zh/i/starryear-starryear-ink/
-Source: https://github.com/Starryear/Starryear-Ink
-Updated: 2026-08-30
-Tags: everyday, skill, Starryear
-
-Not a full-frame ink filter. Keeps a source-photo evidence band, fractures the scene into dry print memory, then.
-
-### What does this skill do?
-Transform one user-supplied photograph into a vertical Starryear-Ink artwork that keeps a direct source-photo evidence band, fractures the scene into dry printed memory, and releases it as a source-bound chromatic ink afterimage. Use for Starryear-Ink, 星年水墨, 鹅鹅鹅, 摄影印刷水墨转译, or requests for a photo-to-print-to-ink editorial sheet. Do not use for full-frame ink filters, traditional shanshui, generic
-
-### Why is it worth installing?
-Evidence band anchors truth, dry-print fracturing breaks soft-focus habits, chromatic afterimage derives from source hues—three.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
-
---- 中文 ---
-不整幅糊成水墨，而是保留原图证据带，把画面碎成干涸印刷记忆，再晕出源图色相的彩色残像。适合做编辑感摄影印刷转译。
-
-### Q：这个 skill 做什么？
-Transform one user-supplied photograph into a vertical Starryear-Ink artwork that keeps a direct source-photo evidence band, fractures the scene into dry printed memory, and releases it as a source-bound chromatic ink afterimage. Use for Starryear-Ink, 星年水墨, 鹅鹅鹅, 摄影印刷水墨转译, or requests for a photo-to-print-to-ink editorial sheet. Do not use for full-frame ink filters, traditional shanshui, generic
-
-### Q：为什么值得装？
-证据带锁住真实，干印碎形切断柔焦惯性，色相残像从源图反推——三层机制让每张输出都是可核验的转译。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
 
 ========================================================================
 ## gudemiao-advertising-creative-director
@@ -2898,28 +2898,6 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Threefold-Memory.git 
 Repository: Starryear/Starryear-Threefold-Memory The repository ships 1 skills in total.
 
 ========================================================================
-## h3-storyboard
-## 剧本进 H3 分镜前先算好每颗镜头能装几个情绪节拍
-URL: https://ourword.ai/skill/i/phileiny-h3-storyboard-skill-h3-storyboard/
-Source: https://github.com/phileiny/h3-storyboard-skill/tree/HEAD/skills/h3-storyboard
-Updated: 2026-08-28
-Tags: work, skill, phileiny
-
-Stop writing H3 prompts that render wooden faces. This breaks your script into beat tables with shot counts.
-
-### What does this skill do?
-Turn a script into MiniMax H3 shot lists with working emotional performance — beat tables, shot counts, expression direction, and the acting techniques that actually render. Use when breaking a script or scene into H3 shots, writing beat timings, directing a character's face or emotion, fixing flat/wooden performance, deciding shot length or how many beats a shot can hold, or writing prompts for e
-
-### Why is it worth installing?
-It quantifies what other tools leave vague: beat durations, face angles, emotional pivots. Every prompt is built so H3's.
-
-### How do you install it?
-git clone --depth 1 https://github.com/phileiny/h3-storyboard-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: phileiny/h3-storyboard-skill The repository ships 1 skills in total.
-
-========================================================================
 ## dnr-flat-pic
 ## 不描边不追光影，只留身份与空间关系的扁平化压缩
 URL: https://ourword.ai/skill/i/createlafont-dnr-flat-pic/
@@ -2940,6 +2918,28 @@ git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git Then point 
 
 ### Where does it come from?
 Repository: CreateLafont/dnr-flat-pic The repository ships 1 skills in total.
+
+========================================================================
+## h3-storyboard
+## 剧本进 H3 分镜前先算好每颗镜头能装几个情绪节拍
+URL: https://ourword.ai/skill/i/phileiny-h3-storyboard-skill-h3-storyboard/
+Source: https://github.com/phileiny/h3-storyboard-skill/tree/HEAD/skills/h3-storyboard
+Updated: 2026-08-28
+Tags: work, skill, phileiny
+
+Stop writing H3 prompts that render wooden faces. This breaks your script into beat tables with shot counts.
+
+### What does this skill do?
+Turn a script into MiniMax H3 shot lists with working emotional performance — beat tables, shot counts, expression direction, and the acting techniques that actually render. Use when breaking a script or scene into H3 shots, writing beat timings, directing a character's face or emotion, fixing flat/wooden performance, deciding shot length or how many beats a shot can hold, or writing prompts for e
+
+### Why is it worth installing?
+It quantifies what other tools leave vague: beat durations, face angles, emotional pivots. Every prompt is built so H3's.
+
+### How do you install it?
+git clone --depth 1 https://github.com/phileiny/h3-storyboard-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: phileiny/h3-storyboard-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## video-understanding
@@ -3226,28 +3226,6 @@ git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git The
 Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
-## document-format-skills
-## 中文公文排版一步到位，连修订痕迹都替你管好
-URL: https://ourword.ai/skill/i/kagurananaga-document-format-skills/
-Source: https://github.com/KaguraNanaga/document-format-skills
-Updated: 2026-08-26
-Tags: work, skill, KaguraNanaga
-
-Fix mixed punctuation, tables, page numbers, and apply official templates in one pass. Keep or strip revision.
-
-### What does this skill do?
-Chinese Word document formatting toolkit for .docx/.doc/.wps workflows. Use when Codex needs to diagnose document formatting, fix mixed Chinese/English punctuation and spacing, apply official/academic/legal/custom presets, normalize tables and page numbers, preserve or output Word revision marks, convert plain text or Markdown into formatted DOCX, or batch/script document cleanup for Chinese offic
-
-### Why is it worth installing?
-Not scattered macros—a workflow-shaped suite: diagnose first, then fix. Official and custom templates coexist; revision marks.
-
-### How do you install it?
-git clone --depth 1 https://github.com/KaguraNanaga/document-format-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: KaguraNanaga/document-format-skills The repository ships 1 skills in total.
-
-========================================================================
 ## figecho
 ## 从一张架构图里抽出整套配色版式，再画十张都不走样
 URL: https://ourword.ai/skill/i/giszzt-figecho/
@@ -3268,6 +3246,28 @@ git clone --depth 1 https://github.com/giszzt/FigEcho.git Then point your agent 
 
 ### Where does it come from?
 Repository: giszzt/FigEcho The repository ships 1 skills in total.
+
+========================================================================
+## document-format-skills
+## 中文公文排版一步到位，连修订痕迹都替你管好
+URL: https://ourword.ai/skill/i/kagurananaga-document-format-skills/
+Source: https://github.com/KaguraNanaga/document-format-skills
+Updated: 2026-08-26
+Tags: work, skill, KaguraNanaga
+
+Fix mixed punctuation, tables, page numbers, and apply official templates in one pass. Keep or strip revision.
+
+### What does this skill do?
+Chinese Word document formatting toolkit for .docx/.doc/.wps workflows. Use when Codex needs to diagnose document formatting, fix mixed Chinese/English punctuation and spacing, apply official/academic/legal/custom presets, normalize tables and page numbers, preserve or output Word revision marks, convert plain text or Markdown into formatted DOCX, or batch/script document cleanup for Chinese offic
+
+### Why is it worth installing?
+Not scattered macros—a workflow-shaped suite: diagnose first, then fix. Official and custom templates coexist; revision marks.
+
+### How do you install it?
+git clone --depth 1 https://github.com/KaguraNanaga/document-format-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: KaguraNanaga/document-format-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## promo-film
@@ -3744,44 +3744,6 @@ git clone --depth 1 https://github.com/sherlyryn/make-tape-collage.git Then poin
 Repository: sherlyryn/make-tape-collage Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
-## cumcm-c-problem
-## C题专用：从附件到LaTeX成稿的72小时全流程建模
-URL: https://ourword.ai/skill/i/liufanshan11-cumcm-c-problem-lfs/
-URL (中文): https://ourword.ai/skill/zh/i/liufanshan11-cumcm-c-problem-lfs/
-Source: https://github.com/liufanshan11/cumcm-c-problem-lfs
-Updated: 2026-08-24
-Tags: images, skill, liufanshan11
-
-For C题 only. From problem selection to judge-perspective final check, it generates LaTeX and code projects—saving.
-
-### What does this skill do?
-专门用于全国大学生数学建模竞赛（CUMCM）本科组 C 题的选题判断、数据分析、模型设计、算法求解、创新设计、可视化、论文写作、LaTeX 成稿与评委视角终检。用于用户要求解决或复盘国赛 C 题、根据附件建立 C 题模型、设计 72 小时方案、撰写/修改 C 题论文、生成完整 LaTeX+代码工程、评估 C 题论文竞争力时。只服务 C 题；不要将 A/B/D/E 题套路机械迁入。
-
-### Why is it worth installing?
-Built-in judge-perspective review mirrors scoring rubrics at every step; 72h plan is reverse-scheduled from deadline, so you.
-
-### How do you install it?
-git clone --depth 1 https://github.com/liufanshan11/cumcm-c-problem-lfs.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: liufanshan11/cumcm-c-problem-lfs Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
---- 中文 ---
-只认国赛C题，不碰A/B/D/E。从选题判断到评委视角终检，连LaTeX代码工程都替你生成，省下通宵排版的命。
-
-### Q：这个 skill 做什么？
-专门用于全国大学生数学建模竞赛（CUMCM）本科组 C 题的选题判断、数据分析、模型设计、算法求解、创新设计、可视化、论文写作、LaTeX 成稿与评委视角终检。用于用户要求解决或复盘国赛 C 题、根据附件建立 C 题模型、设计 72 小时方案、撰写/修改 C 题论文、生成完整 LaTeX+代码工程、评估 C 题论文竞争力时。只服务 C 题；不要将 A/B/D/E 题套路机械迁入。
-
-### Q：为什么值得装？
-内置评委视角终检机制，每一步都对照评分标准自查；72小时方案按比赛节奏倒排。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/liufanshan11/cumcm-c-problem-lfs.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: liufanshan11/cumcm-c-problem-lfs Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
 ## lieflat-less-ai-tone
 ## 只删清单上那七种AI腔，其余一字不动
 URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-less-ai-tone/
@@ -3818,6 +3780,44 @@ git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-less-ai-tone.gi
 
 ### Q：它从哪来？
 Repository: larashero3-dotcom/lieflat-less-ai-tone The repository ships 1 skills in total.
+
+========================================================================
+## cumcm-c-problem
+## C题专用：从附件到LaTeX成稿的72小时全流程建模
+URL: https://ourword.ai/skill/i/liufanshan11-cumcm-c-problem-lfs/
+URL (中文): https://ourword.ai/skill/zh/i/liufanshan11-cumcm-c-problem-lfs/
+Source: https://github.com/liufanshan11/cumcm-c-problem-lfs
+Updated: 2026-08-24
+Tags: images, skill, liufanshan11
+
+For C题 only. From problem selection to judge-perspective final check, it generates LaTeX and code projects—saving.
+
+### What does this skill do?
+专门用于全国大学生数学建模竞赛（CUMCM）本科组 C 题的选题判断、数据分析、模型设计、算法求解、创新设计、可视化、论文写作、LaTeX 成稿与评委视角终检。用于用户要求解决或复盘国赛 C 题、根据附件建立 C 题模型、设计 72 小时方案、撰写/修改 C 题论文、生成完整 LaTeX+代码工程、评估 C 题论文竞争力时。只服务 C 题；不要将 A/B/D/E 题套路机械迁入。
+
+### Why is it worth installing?
+Built-in judge-perspective review mirrors scoring rubrics at every step; 72h plan is reverse-scheduled from deadline, so you.
+
+### How do you install it?
+git clone --depth 1 https://github.com/liufanshan11/cumcm-c-problem-lfs.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: liufanshan11/cumcm-c-problem-lfs Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+只认国赛C题，不碰A/B/D/E。从选题判断到评委视角终检，连LaTeX代码工程都替你生成，省下通宵排版的命。
+
+### Q：这个 skill 做什么？
+专门用于全国大学生数学建模竞赛（CUMCM）本科组 C 题的选题判断、数据分析、模型设计、算法求解、创新设计、可视化、论文写作、LaTeX 成稿与评委视角终检。用于用户要求解决或复盘国赛 C 题、根据附件建立 C 题模型、设计 72 小时方案、撰写/修改 C 题论文、生成完整 LaTeX+代码工程、评估 C 题论文竞争力时。只服务 C 题；不要将 A/B/D/E 题套路机械迁入。
+
+### Q：为什么值得装？
+内置评委视角终检机制，每一步都对照评分标准自查；72小时方案按比赛节奏倒排。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/liufanshan11/cumcm-c-problem-lfs.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: liufanshan11/cumcm-c-problem-lfs Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## aicss
@@ -4028,28 +4028,6 @@ git clone --depth 1 https://github.com/qianye-wuyu/yueyuan-bazi.git 然后把智
 Repository: qianye-wuyu/yueyuan-bazi The repository ships 1 skills in total.
 
 ========================================================================
-## academic-figures-drawer
-## 论文配图直接产出可编辑 draw.io 源文件
-URL: https://ourword.ai/skill/i/m1n-n9-academic-figures-drawer/
-Source: https://github.com/M1n-n9/academic-figures-drawer
-Updated: 2026-08-21
-Tags: images, skill, M1n-n9
-
-From abstracts, code, or reference images to camera-ready framework diagrams, tensor flows, and ablation.
-
-### What does this skill do?
-Create camera-ready, editable draw.io figures from papers, method descriptions, code, or reference images. Use for ICML, NeurIPS/NIPS, ICLR, and similar ML/AI research figures: concise framework overviews, module-detail diagrams, tensor and attention flows, ablations, training/inference pipelines, and downstream-task panels. Optionally use image generation for a non-semantic visual concept or inpu
-
-### Why is it worth installing?
-It separates understanding from drawing: parses your method description, maps it to draw.io layers and connectors, outputs.
-
-### How do you install it?
-git clone --depth 1 https://github.com/M1n-n9/academic-figures-drawer.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: M1n-n9/academic-figures-drawer The repository ships 1 skills in total.
-
-========================================================================
 ## report
 ## 漏洞确认后直接产出可提交的 DOCX 报告
 URL: https://ourword.ai/skill/i/v-yun-vuln-report-skill/
@@ -4086,6 +4064,28 @@ git clone --depth 1 https://github.com/v-yun/vuln-report-skill.git 然后把智�
 
 ### Q：它从哪来？
 Repository: v-yun/vuln-report-skill The repository ships 1 skills in total.
+
+========================================================================
+## academic-figures-drawer
+## 论文配图直接产出可编辑 draw.io 源文件
+URL: https://ourword.ai/skill/i/m1n-n9-academic-figures-drawer/
+Source: https://github.com/M1n-n9/academic-figures-drawer
+Updated: 2026-08-21
+Tags: images, skill, M1n-n9
+
+From abstracts, code, or reference images to camera-ready framework diagrams, tensor flows, and ablation.
+
+### What does this skill do?
+Create camera-ready, editable draw.io figures from papers, method descriptions, code, or reference images. Use for ICML, NeurIPS/NIPS, ICLR, and similar ML/AI research figures: concise framework overviews, module-detail diagrams, tensor and attention flows, ablations, training/inference pipelines, and downstream-task panels. Optionally use image generation for a non-semantic visual concept or inpu
+
+### Why is it worth installing?
+It separates understanding from drawing: parses your method description, maps it to draw.io layers and connectors, outputs.
+
+### How do you install it?
+git clone --depth 1 https://github.com/M1n-n9/academic-figures-drawer.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: M1n-n9/academic-figures-drawer The repository ships 1 skills in total.
 
 ========================================================================
 ## vibe-techdesign
@@ -4312,44 +4312,6 @@ git clone --depth 1 https://github.com/blader/humanizer.git Then point your agen
 Repository: blader/humanizer The repository ships 1 skills in total.
 
 ========================================================================
-## chinese-font-selector
-## 中文字体选配不靠眼缘，靠授权安全分级和场景矩阵
-URL: https://ourword.ai/skill/i/songzhi-lab-chinese-font-selector-chinese-font-selector/
-URL (中文): https://ourword.ai/skill/zh/i/songzhi-lab-chinese-font-selector-chinese-font-selector/
-Source: https://github.com/Songzhi-lab/chinese-font-selector/tree/HEAD/chinese-font-selector
-Updated: 2026-08-18
-Tags: images, skill, Songzhi-lab
-
-From Xiaohongshu cards to book layouts—license check before style talk. OFL-safe / vendor-free / caution tiers.
-
-### What does this skill do?
-中文字体选配与排版决策专家。为中文为主的设计场景（小红书卡片、产品册/宣传物料、 网页/UI、图书内页排版、海报标题）选择可免费商用的中文字体并给出中英混排方案。 内置授权安全分级（开源 OFL 铁稳 / 厂商免费商用 / 慎用），场景×气质选字矩阵， 中文排版规则（字号阶梯、行距、标点、避头尾）。当用户要求"选字体/字体搭配/字体推荐/ 中文排版/小红书字体/产品册字体/网页字体/标题字体"，或任何中文视觉设计任务涉及字体 决策时触发。Triggers on: 中文字体, 中文字体推荐, 字体选择, 字体搭配, 字体配对, 字体筛选, 字体审美, 免费商用字体, 可商用字体, 开源字体, 思源黑体, 思源宋体, 霞鹜文楷, 得意黑, 中文排版, 中英混排, 小红书字体, 海报字体, 标题字体, Chinese font, Chinese typography, CJK fonts, Ch
-
-### Why is it worth installing?
-Refuses to let taste skip legal risk. Splits font choice into license safety, scene tone, and typography rules—filters out.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Songzhi-lab/chinese-font-selector.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Songzhi-lab/chinese-font-selector The repository ships 1 skills in total.
-
---- 中文 ---
-小红书卡片、产品册、网页、图书、海报——每个场景先查授权再谈气质。内置 OFL 铁稳/厂商免费/慎用三级，避头尾。
-
-### Q：这个 skill 做什么？
-中文字体选配与排版决策专家。为中文为主的设计场景（小红书卡片、产品册/宣传物料、 网页/UI、图书内页排版、海报标题）选择可免费商用的中文字体并给出中英混排方案。 内置授权安全分级（开源 OFL 铁稳 / 厂商免费商用 / 慎用），场景×气质选字矩阵， 中文排版规则（字号阶梯、行距、标点、避头尾）。当用户要求"选字体/字体搭配/字体推荐/ 中文排版/小红书字体/产品册字体/网页字体/标题字体"，或任何中文视觉设计任务涉及字体 决策时触发。Triggers on: 中文字体, 中文字体推荐, 字体选择, 字体搭配, 字体配对, 字体筛选, 字体审美, 免费商用字体, 可商用字体, 开源字体, 思源黑体, 思源宋体, 霞鹜文楷, 得意黑, 中文排版, 中英混排, 小红书字体, 海报字体, 标题字体, Chinese font, Chinese typography, CJK fonts, Ch
-
-### Q：为什么值得装？
-不拿审美当借口跳过法律风险。把字体决策拆成授权安全、场景气质、排版规则三层，先筛掉不能商用的。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Songzhi-lab/chinese-font-selector.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Songzhi-lab/chinese-font-selector The repository ships 1 skills in total.
-
-========================================================================
 ## stamp-edge
 ## 原图四周直接打半圆孔，真透明背景的邮票生成器
 URL: https://ourword.ai/skill/i/xianxie6-stamp-edge-skill/
@@ -4386,6 +4348,44 @@ git clone --depth 1 https://github.com/xianxie6/stamp-edge-skill.git 然后把�
 
 ### Q：它从哪来？
 Repository: xianxie6/stamp-edge-skill The repository ships 1 skills in total.
+
+========================================================================
+## chinese-font-selector
+## 中文字体选配不靠眼缘，靠授权安全分级和场景矩阵
+URL: https://ourword.ai/skill/i/songzhi-lab-chinese-font-selector-chinese-font-selector/
+URL (中文): https://ourword.ai/skill/zh/i/songzhi-lab-chinese-font-selector-chinese-font-selector/
+Source: https://github.com/Songzhi-lab/chinese-font-selector/tree/HEAD/chinese-font-selector
+Updated: 2026-08-18
+Tags: images, skill, Songzhi-lab
+
+From Xiaohongshu cards to book layouts—license check before style talk. OFL-safe / vendor-free / caution tiers.
+
+### What does this skill do?
+中文字体选配与排版决策专家。为中文为主的设计场景（小红书卡片、产品册/宣传物料、 网页/UI、图书内页排版、海报标题）选择可免费商用的中文字体并给出中英混排方案。 内置授权安全分级（开源 OFL 铁稳 / 厂商免费商用 / 慎用），场景×气质选字矩阵， 中文排版规则（字号阶梯、行距、标点、避头尾）。当用户要求"选字体/字体搭配/字体推荐/ 中文排版/小红书字体/产品册字体/网页字体/标题字体"，或任何中文视觉设计任务涉及字体 决策时触发。Triggers on: 中文字体, 中文字体推荐, 字体选择, 字体搭配, 字体配对, 字体筛选, 字体审美, 免费商用字体, 可商用字体, 开源字体, 思源黑体, 思源宋体, 霞鹜文楷, 得意黑, 中文排版, 中英混排, 小红书字体, 海报字体, 标题字体, Chinese font, Chinese typography, CJK fonts, Ch
+
+### Why is it worth installing?
+Refuses to let taste skip legal risk. Splits font choice into license safety, scene tone, and typography rules—filters out.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Songzhi-lab/chinese-font-selector.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Songzhi-lab/chinese-font-selector The repository ships 1 skills in total.
+
+--- 中文 ---
+小红书卡片、产品册、网页、图书、海报——每个场景先查授权再谈气质。内置 OFL 铁稳/厂商免费/慎用三级，避头尾。
+
+### Q：这个 skill 做什么？
+中文字体选配与排版决策专家。为中文为主的设计场景（小红书卡片、产品册/宣传物料、 网页/UI、图书内页排版、海报标题）选择可免费商用的中文字体并给出中英混排方案。 内置授权安全分级（开源 OFL 铁稳 / 厂商免费商用 / 慎用），场景×气质选字矩阵， 中文排版规则（字号阶梯、行距、标点、避头尾）。当用户要求"选字体/字体搭配/字体推荐/ 中文排版/小红书字体/产品册字体/网页字体/标题字体"，或任何中文视觉设计任务涉及字体 决策时触发。Triggers on: 中文字体, 中文字体推荐, 字体选择, 字体搭配, 字体配对, 字体筛选, 字体审美, 免费商用字体, 可商用字体, 开源字体, 思源黑体, 思源宋体, 霞鹜文楷, 得意黑, 中文排版, 中英混排, 小红书字体, 海报字体, 标题字体, Chinese font, Chinese typography, CJK fonts, Ch
+
+### Q：为什么值得装？
+不拿审美当借口跳过法律风险。把字体决策拆成授权安全、场景气质、排版规则三层，先筛掉不能商用的。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Songzhi-lab/chinese-font-selector.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Songzhi-lab/chinese-font-selector The repository ships 1 skills in total.
 
 ========================================================================
 ## card-skill
@@ -5056,6 +5056,28 @@ git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then poi
 Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
 
 ========================================================================
+## skills-janitor
+## 给你装的技能库做体检和减法
+URL: https://ourword.ai/skill/i/khendzel-skills-janitor/
+Source: https://github.com/khendzel/skills-janitor
+Updated: 2026-08-11
+Tags: meta, collection, khendzel
+
+A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.
+
+### What does this skill do?
+Tinder for your Claude Code skills. Swipe away what wastes context, scan for prompt injection, get honest token costs. 6 commands, zero dependencies, Claude Code + Codex.
+
+### Why is it worth installing?
+More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.
+
+### How do you install it?
+git clone --depth 1 https://github.com/khendzel/skills-janitor.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: khendzel/skills-janitor The repository ships 6 skills in total.
+
+========================================================================
 ## human-writing
 ## 按活人那套改中文长文
 URL: https://ourword.ai/skill/i/kkkkhazix-human-writing-human-writing/
@@ -5092,28 +5114,6 @@ git clone --depth 1 https://github.com/KKKKhazix/human-writing.git 然后把智�
 
 ### Q：它从哪来？
 Repository: KKKKhazix/human-writing Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## skills-janitor
-## 给你装的技能库做体检和减法
-URL: https://ourword.ai/skill/i/khendzel-skills-janitor/
-Source: https://github.com/khendzel/skills-janitor
-Updated: 2026-08-11
-Tags: meta, collection, khendzel
-
-A health check for your installed skills — swipe away context wasters, scan for prompt injection, get an honest token bill. It calls itself Tinder for skills.
-
-### What does this skill do?
-Tinder for your Claude Code skills. Swipe away what wastes context, scan for prompt injection, get honest token costs. 6 commands, zero dependencies, Claude Code + Codex.
-
-### Why is it worth installing?
-More installed isn't better: it handles context waste, injection risk and real cost at once — a rare subtractive tool in this ecosystem.
-
-### How do you install it?
-git clone --depth 1 https://github.com/khendzel/skills-janitor.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: khendzel/skills-janitor The repository ships 6 skills in total.
 
 ========================================================================
 ## vox-director
@@ -5492,6 +5492,44 @@ git clone --depth 1 https://github.com/joeyhu1108-maker/selective-ink-sketch.git
 Repository: joeyhu1108-maker/selective-ink-sketch The repository ships 1 skills in total.
 
 ========================================================================
+## xiaoma-durex-copywriter
+## 按杜蕾斯海报那套双关写文案
+URL: https://ourword.ai/skill/i/crawfordxx-xiaoma-durex-copywriter/
+URL (中文): https://ourword.ai/skill/zh/i/crawfordxx-xiaoma-durex-copywriter/
+Source: https://github.com/crawfordxx/xiaoma-durex-copywriter
+Updated: 2026-08-08
+Tags: writing, skill, crawfordxx
+
+Tired of forced hot-topic posts and slogan-y posters? This kit turns Durex's 2011-2017 golden-era double-meaning.
+
+### What does this skill do?
+用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
+
+### Why is it worth installing?
+No cliché templates. It decodes intent, then branches into double-meaning candidates—turning 'write like Durex' from mystique.
+
+### How do you install it?
+git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: crawfordxx/xiaoma-durex-copywriter The repository ships 1 skills in total.
+
+--- 中文 ---
+热点来了只会硬蹭？借势海报总像喊口号？这套方法把2011-2017环时互动的双层语义+留白拆成步骤。
+
+### Q：这个 skill 做什么？
+用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
+
+### Q：为什么值得装？
+从 260 张原海报拆出双层语义和视觉公式，不是「写得性感一点」这种空指令。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: crawfordxx/xiaoma-durex-copywriter The repository ships 1 skills in total.
+
+========================================================================
 ## story-to-handdrawn-video
 ## 中文故事稿进，20 种手绘风无声动画出
 URL: https://ourword.ai/skill/i/gnipbao-story-to-handdrawn-video-story-to-handdrawn-video/
@@ -5534,44 +5572,6 @@ git clone --depth 1 https://github.com/liyue-aigc/xianxia-visual-director.git Th
 
 ### Where does it come from?
 Repository: liyue-aigc/xianxia-visual-director The repository ships 1 skills in total.
-
-========================================================================
-## xiaoma-durex-copywriter
-## 按杜蕾斯海报那套双关写文案
-URL: https://ourword.ai/skill/i/crawfordxx-xiaoma-durex-copywriter/
-URL (中文): https://ourword.ai/skill/zh/i/crawfordxx-xiaoma-durex-copywriter/
-Source: https://github.com/crawfordxx/xiaoma-durex-copywriter
-Updated: 2026-08-08
-Tags: writing, skill, crawfordxx
-
-Tired of forced hot-topic posts and slogan-y posters? This kit turns Durex's 2011-2017 golden-era double-meaning.
-
-### What does this skill do?
-用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
-
-### Why is it worth installing?
-No cliché templates. It decodes intent, then branches into double-meaning candidates—turning 'write like Durex' from mystique.
-
-### How do you install it?
-git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: crawfordxx/xiaoma-durex-copywriter The repository ships 1 skills in total.
-
---- 中文 ---
-热点来了只会硬蹭？借势海报总像喊口号？这套方法把2011-2017环时互动的双层语义+留白拆成步骤。
-
-### Q：这个 skill 做什么？
-用杜蕾斯黄金期（2011-2017 环时互动）那套「双层语义 + 留白」的方法产出文案与海报。先识别用户意图并给 3-5 个方案供选，再出短文案（长文案可选）+ 五种比例配图。适用于借势热点、节日节气、产品卖点、课程/知识付费推广、自媒体标题与封面、品牌人格化运营。当用户说「写个文案」「借势热点」「节日海报」「想句 slogan」「课程怎么推」「公众号/小红书封面」「像杜蕾斯那样写」「一语双关」时使用。
-
-### Q：为什么值得装？
-从 260 张原海报拆出双层语义和视觉公式，不是「写得性感一点」这种空指令。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/crawfordxx/xiaoma-durex-copywriter.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: crawfordxx/xiaoma-durex-copywriter The repository ships 1 skills in total.
 
 ========================================================================
 ## flat-poster-op
@@ -6066,28 +6066,6 @@ git clone --depth 1 https://github.com/iamkong/photo-to-minimal-illustration.git
 Repository: iamkong/photo-to-minimal-illustration The repository ships 1 skills in total.
 
 ========================================================================
-## vinyl-image-generator
-## 照片压成一张黑胶封面
-URL: https://ourword.ai/skill/i/liigoqi-vinyl-image-generator/
-Source: https://github.com/liigoQi/vinyl-image-generator
-Updated: 2026-08-03
-Tags: images, skill, liigoQi
-
-Feed it a sentence, mood, or old photo—get front/back sleeves plus Side A/B as one 4:3 product shot. Typography.
-
-### What does this skill do?
-Transform a memory, sentence, emotion, story, object, place, or source image into one cohesive fictional vinyl release artifact containing a front sleeve, back sleeve, vinyl Side A, and vinyl Side B. Use when generating a believable 4:3 landscape product photograph of an independent-label record whose visual language, typography, printing history, packaging, and physical materials express the sour
-
-### Why is it worth installing?
-It doesn't render one image—it reasons typography, print era, and physical materials as one constraint set, so all four pieces.
-
-### How do you install it?
-git clone --depth 1 https://github.com/liigoQi/vinyl-image-generator.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: liigoQi/vinyl-image-generator The repository ships 1 skills in total.
-
-========================================================================
 ## travel-photo-abstraction
 ## 旅行照片蒸成稀疏编辑稿
 URL: https://ourword.ai/skill/i/evianis-travel-photo-abstraction-travel-photo-abstraction/
@@ -6108,6 +6086,28 @@ git clone --depth 1 https://github.com/Evianis/travel-photo-abstraction.git Then
 
 ### Where does it come from?
 Repository: Evianis/travel-photo-abstraction The repository ships 1 skills in total.
+
+========================================================================
+## vinyl-image-generator
+## 照片压成一张黑胶封面
+URL: https://ourword.ai/skill/i/liigoqi-vinyl-image-generator/
+Source: https://github.com/liigoQi/vinyl-image-generator
+Updated: 2026-08-03
+Tags: images, skill, liigoQi
+
+Feed it a sentence, mood, or old photo—get front/back sleeves plus Side A/B as one 4:3 product shot. Typography.
+
+### What does this skill do?
+Transform a memory, sentence, emotion, story, object, place, or source image into one cohesive fictional vinyl release artifact containing a front sleeve, back sleeve, vinyl Side A, and vinyl Side B. Use when generating a believable 4:3 landscape product photograph of an independent-label record whose visual language, typography, printing history, packaging, and physical materials express the sour
+
+### Why is it worth installing?
+It doesn't render one image—it reasons typography, print era, and physical materials as one constraint set, so all four pieces.
+
+### How do you install it?
+git clone --depth 1 https://github.com/liigoQi/vinyl-image-generator.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: liigoQi/vinyl-image-generator The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-distill
