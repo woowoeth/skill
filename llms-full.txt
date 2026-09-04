@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 330 skills.
+# Full corpus, plain text. 332 skills.
 
 ========================================================================
 ## pf2e-gm
@@ -4910,6 +4910,44 @@ git clone --depth 1 https://github.com/traveler0621/reality-restaged.git Then po
 Repository: traveler0621/reality-restaged The repository ships 1 skills in total.
 
 ========================================================================
+## punk-xhs-cards
+## 把 Markdown 长文变成带个人 IP 的小红书
+URL: https://ourword.ai/skill/i/adrianpunk-punk-xhs-cards-punk-xhs-cards/
+URL (中文): https://ourword.ai/skill/zh/i/adrianpunk-punk-xhs-cards-punk-xhs-cards/
+Source: https://github.com/adrianpunk/punk-xhs-cards/tree/HEAD/punk-xhs-cards
+Updated: 2026-08-12
+Tags: dev, skill, adrianpunk
+
+Upload a photo or IP image to lock in your author name and theme color. Turn long Markdown into a book cover.
+
+### What does this skill do?
+Punk XHS Cards：从用户照片或已有 IP 图建立并确认可复用个人 IP、作者名与主题色，再把带文字、截图、图表或流程图的 Markdown 长文制作成“主题色书封＋16:9 macOS 窗口 IP 插图＋从 01 开始编号的正文知识卡片”，保留理解文章不可缺少的关键图，同时生成小红书标题、正文和 tags。用户提到“上传照片生成个人 IP”“上传自己的 IP 形象”“把 Markdown 做成小红书图”“保留文章关键图”“先做封面再做内页”“个人 IP 知识卡片”或点名 $punk-xhs-cards 时使用。
+
+### Why is it worth installing?
+It doesn't just slice text into images—it locks a reusable IP first, then builds cover, window art, and numbered cards around.
+
+### How do you install it?
+git clone --depth 1 https://github.com/adrianpunk/punk-xhs-cards.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: adrianpunk/punk-xhs-cards The repository ships 1 skills in total.
+
+--- 中文 ---
+上传一张照片或 IP 图，自动定下作者名与主题色；长文转成书封、16:9 窗口插图、从 01 编号的正文卡片。
+
+### Q：这个 skill 做什么？
+Punk XHS Cards：从用户照片或已有 IP 图建立并确认可复用个人 IP、作者名与主题色，再把带文字、截图、图表或流程图的 Markdown 长文制作成“主题色书封＋16:9 macOS 窗口 IP 插图＋从 01 开始编号的正文知识卡片”，保留理解文章不可缺少的关键图，同时生成小红书标题、正文和 tags。用户提到“上传照片生成个人 IP”“上传自己的 IP 形象”“把 Markdown 做成小红书图”“保留文章关键图”“先做封面再做内页”“个人 IP 知识卡片”或点名 $punk-xhs-cards 时使用。
+
+### Q：为什么值得装？
+不是简单截图分页，而是先确认可复用 IP 再排版；封面、窗口图、卡片编号、关键图保留都围绕同一视觉体系。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/adrianpunk/punk-xhs-cards.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: adrianpunk/punk-xhs-cards The repository ships 1 skills in total.
+
+========================================================================
 ## tait-crt-interface-skill
 ## CRT 屏曲边加三档中文预设的夸张位图漫画窗
 URL: https://ourword.ai/skill/i/tait-tt-tait-crt-interface-skill/
@@ -5656,6 +5694,44 @@ git clone --depth 1 https://github.com/Whiplashzeb/photo-to-zine-postcard.git Th
 
 ### Where does it come from?
 Repository: Whiplashzeb/photo-to-zine-postcard The repository ships 1 skills in total.
+
+========================================================================
+## guizang-ppt-skill
+## 做能双屏演讲的网页版 PPT
+URL: https://ourword.ai/skill/i/op7418-guizang-ppt-skill/
+URL (中文): https://ourword.ai/skill/zh/i/op7418-guizang-ppt-skill/
+Source: https://github.com/op7418/guizang-ppt-skill
+Updated: 2026-08-07
+Tags: docs, skill, op7418
+
+Single-file web decks with WebGL fluid backgrounds, presenter view, audience-screen sync and chapter covers — in editorial-magazine or Swiss-international styles.
+
+### What does this skill do?
+生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① "电子杂志 × 电子墨水"（衬线 + 流体背景 + 暖色） ② "瑞士国际主义"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
+
+### Why is it worth installing?
+Presenter view and second-screen sync are details almost no AI deck tool bothers with, and this one folds them into a single HTML file.
+
+### How do you install it?
+git clone --depth 1 https://github.com/op7418/guizang-ppt-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: op7418/guizang-ppt-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+上台讲的时候最想要演讲者视图和观众屏同步，普通 AI 做的 PPT 一概没有。它出的是单文件网页 deck，带 WebGL 流体背景和章节幕封。
+
+### Q：这个 skill 做什么？
+生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① "电子杂志 × 电子墨水"（衬线 + 流体背景 + 暖色） ② "瑞士国际主义"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
+
+### Q：为什么值得装？
+演讲者视图和双屏同步这种细节，市面上的 AI PPT 工具基本没人做，歸藏把它塞进了一个 HTML。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/op7418/guizang-ppt-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: op7418/guizang-ppt-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## ponytail
