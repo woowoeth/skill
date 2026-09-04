@@ -11004,7 +11004,9 @@
    "title_en": "Indian tax filer that computes old vs new regime.",
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：印度个税申报，读者不在这里。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "op7418-guizang-yingzao-skill-yingzao": {
    "title_zh": "实景照片转艺术海报，附原图对比不空想",
@@ -11027,25 +11029,27 @@
    "why_zh": "它不套通用规则，而是先解析仓库里的约定文件，再对照 PR 逐项检查，像老同事一样懂你们项目的脾气。",
    "limit_zh": "只针对 GitHub CLI 的 PR 做静态审查，不跑测试、不查运行时问题；需要仓库有明确的约定文档。",
    "tagline_zh": "PR 一上来就按你仓库的约定逐条核对，不靠通用模板。它先读 CONTRIBUTING 和现有代码风格，再挑刺。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "title_en": "A gh reviewer that checks PRs against repo rules",
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "unshelf_reason": "2026-09-04 编辑判：gh 仓库自家 PR 评审员，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "cli-cli-dependabot-triager": {
    "title_zh": "只评不批的Dependabot PR分流员，三档结论",
    "why_zh": "结论扎根于上游源码变更而非依赖元数据，能识别版本跳跃中的真实风险；状态机确保同一PR状态只评论一次。",
    "limit_zh": "只处理Dependabot开的PR，且需能访问上游仓库源码；不合并、不批准、不打标签，仅输出建议。",
    "tagline_zh": "每天堆积的依赖更新PR，它逐条读上游源码改动后给出Merge/先审/别合三档结论，附高/中/低置信度。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "writing",
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "unshelf_reason": "2026-09-04 编辑判：Dependabot PR 分流，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "rohitg00-agentmemory-agentmemory-config": {
    "title_zh": "不翻源码就改配置，环境变量端口开关全在这",
@@ -11595,7 +11599,9 @@
   "aldegad-tenstorrent": {
    "cover": "",
    "cover_kind": "none",
-   "cover_tried_at": "2026-09-03"
+   "cover_tried_at": "2026-09-03",
+   "hide": true,
+   "unshelf_reason": "2026-09-04 编辑判：Tenstorrent 硬件 CLI，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "ryze-ai-adgent-open-seo-mcp-skills-competitor-gap": {
    "cover": "/skill/assets/covers/ryze-ai-adgent-open-seo-mcp-skills-competitor-gap.png",
@@ -11773,12 +11779,13 @@
    "why_zh": "内置依赖失效分析与 ASIL 分解一致性校验，能主动指出安全目标与 FMEA 之间的逻辑裂缝。",
    "limit_zh": "只覆盖 ISO 26262 第 3~6 部分及第 8 部分相关工件；不处理 SOTIF（ISO 21448）。",
    "tagline_zh": "做 HARA、安全目标、ASIL 分解、FTA 时，它不只生成文档，还会以审核员口吻反问你的假设，直到证据链闭合。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "fun",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：ISO 26262 安全档案，英文企业工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "vladimir-cicovic-ai_review_skills": {
    "title_zh": "断点续审的千文件代码库深挖器",
@@ -11797,12 +11804,13 @@
    "why_zh": "不是静态导出，而是按需生成代码去解密、查询、蒸馏——每步都有文档兜底，换个人换个群，改参数就能复用。",
    "limit_zh": "只认微信本地聊天记录文件，且需能解密（旧版或已备份）。蒸馏出的替身仅限文本风格模拟，不含语音、图片语义。",
    "tagline_zh": "不用翻遍半年群聊，它把每个人的说话习惯、决策偏好、知识盲区蒸馏成可对话的替身。全程文档驱动，代码现写现跑。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：解密微信数据库、拿同事聊天记录炼数字替身 —— 收集他人个人信息，红线。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "brandon030722-ark-ui-skill": {
    "title_zh": "鹰角视觉语言先问产品线再定深度的界面设计器",
@@ -11851,19 +11859,20 @@
    "why_zh": "不是泛泛的 lint，而是按「AI 项目常见死法」逐项盘查：密钥泄漏、ORM 漂移、死路由、弱鉴权。",
    "limit_zh": "只审代码仓库状态，不跑测试、不查运行时性能；对纯前端静态页或单文件脚本覆盖有限。",
    "tagline_zh": "提交前问一句「这能发吗」？它扫结构、密钥、迁移、鉴权，专治 AI 写代码留下的隐蔽坑。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：AI 项目体检员，英文通用工具。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "leonardhope-claude-skill-for-patent-filing-quality-control": {
    "title_zh": "70 多项检查逐条过，交 USPTO 前先替你当一回",
    "why_zh": "不是单文件拼写检查，是跨文件一致性核验：同一术语在说明书和附图里写法不同。",
    "limit_zh": "只认美国临时/正式申请，不覆盖 PCT 或国外申请；只做提交前 QC，不写权利要求、不评可专利性。",
    "tagline_zh": "说明书、附图、ADS、声明、转让书、代理委托书，跨文件比对不一致、漏项、格式错。提交前跑一遍。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "fun",
    "cover": "/skill/assets/covers/leonardhope-claude-skill-for-patent-filing-quality-control.png",
@@ -11871,7 +11880,8 @@
    "cover_real": false,
    "cover_w": 2930,
    "cover_h": 2982,
-   "cover_src": "https://raw.githubusercontent.com/LeonardHope/Claude-Skill-for-Patent-Filing-Quality-Control/HEAD/docs/example-report.png"
+   "cover_src": "https://raw.githubusercontent.com/LeonardHope/Claude-Skill-for-Patent-Filing-Quality-Control/HEAD/docs/example-report.png",
+   "unshelf_reason": "2026-09-04 编辑判：USPTO 专利申请检查，读者不在这里。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "songz0-valuation-audit-reference": {
    "title_zh": "会揪出WACC第七种错误的评估底稿复核员",
@@ -11890,12 +11900,13 @@
    "why_zh": "文档从可验证证据生成，而非假设；机制上强制先探活再写，杜绝过时或臆测内容。",
    "limit_zh": "仅适用于 Jupiter API/feature 文档，需能访问主网和操作员工作台；不覆盖其他项目或离线场景。",
    "tagline_zh": "写 Jupiter API 文档不再靠猜：它先探活接口、跑真交易，再对照 SDK 和前端源码，最后才落笔。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：Jupiter 项目自己的文档工，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "alchemint-inc-curtoom-encoding-hero-video-for-mobile": {
    "title_zh": "手机竖屏 hero 视频压片台，只管码率不管播放",
@@ -11981,36 +11992,39 @@
    "why_zh": "它把「理解代码」从凭感觉变成可执行流程：先反向侦察再逐文件覆盖式分析，产出的是带严重度标签的缺陷清单。",
    "limit_zh": "只认本地已有代码库，不接远程仓库自动拉取；产物是审计报告与 bug 目录，不含修复补丁。",
    "tagline_zh": "接盘没文档、没测试、没维护者的老代码库？它先做侦察、映射清单、逐文件通读，再给你一份按严重度分级的 bug 目录。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：遗产代码逆向审计，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "janez-2006-anti-over-defense-anti-over-defense": {
    "title_zh": "代码直给，不铺防御工事的实现员",
    "why_zh": "机制上把『防御性编程』当噪音过滤掉：不解释、不请示、不铺验证，直接落到改动点。适合要速度。",
    "limit_zh": "只认『用户明确要求』的边界：若需求本身含糊、或你期待它主动提示风险/补测试/加日志，它会直接跳过。",
    "tagline_zh": "改需求、修 bug、补功能，它只写你要的那一层。不建审批流、不挖兜底分支、不叠抽象，提交的就是能跑的那版。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：代码不铺防御工事，英文开发流程件。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "gmessori-redazione-norme-redazione-norme": {
    "title_zh": "意大利国家法规起草与修订助手",
    "why_zh": "内置最新立法技术规范（含2024年DPCM与2025年法）。",
    "limit_zh": "仅覆盖意大利国家层面规范性文本（法律、法令、条例、统编文本），不含欧盟法规或大区法规；需用户提供原文或明确修订指令。",
    "tagline_zh": "起草法律、法令、条例时，自动套用意大利现行立法技术规则（1988/400法至2024年DPCM）。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：意大利国家法规起草，读者不在这里。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "sagirimo-biodsh-desktop-control": {
    "title_zh": "不看屏幕也能看见桌面的盲操手",
@@ -12074,12 +12088,13 @@
    "why_zh": "不是事后清理，而是拦截在写入动作前。它理解 git 全生命周期操作，在用户沉默时也默认执行。",
    "limit_zh": "只处理 git/github 写入操作，不碰文件内容本身；若你确实想让 AI 署名，需显式配置例外名单。",
    "tagline_zh": "每次 commit、PR、merge 都自动剥掉 Co-Authored-By 和 AI 生成脚注。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：git 提交不留 AI 署名，英文开发工具。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "martinsin0223-the-fool": {
    "title_zh": "先重建发售年舆论场，再陪你通关的老游戏向导",
@@ -12101,24 +12116,26 @@
    "why_zh": "别人用 prompt 写代码，它用 M1/M2/M3/M5/M6/M7/MU 七层本体当施工图。",
    "limit_zh": "只认业务系统开发场景，且必须走完需求探索才能建模构建。单阶段入口仅限已有完整七模型 YAML 的项目。",
    "tagline_zh": "业务系统开发最怕需求漂移。这套 Skill 用七模型本体锁死需求、模型、代码三方对齐，每个探索阶段强制人工确认。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：需求签字才生成代码，英文开发流程件。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "selfishclub-privacy-build": {
    "title_zh": "韩国三法一规自动起草，隐私政策·条款·同意书一次配齐",
    "why_zh": "不是模板填空，而是按韩国四部法律逐条生成，连营销同意勾选框的代码都给你，省掉律师初稿费。",
    "limit_zh": "仅覆盖韩国法域，且只做初稿——不替代律师终审。已有文档要检查请用 privacy-check。",
    "tagline_zh": "服务上线才发现缺法律文档？从零起草三件套，含可粘贴的网站代码。不用懂韩语法律术语。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "fun",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：韩国隐私法规起草，读者不在这里。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "liangdabiao-enterprise-rag-challenge-release-deepseek-v4-flash-vision-rag": {
    "title_zh": "问PDF哪页答哪页，连扫描图纸都认得出",
@@ -12140,24 +12157,26 @@
    "why_zh": "它把「行政性记账」和「实质推进」拆成两套优先级：记账永远可延迟、可跳过，而产物必须真实可验。",
    "limit_zh": "只适用于有明确中间产物或可验证输出的多阶段任务；若单步产出无法独立验证（如纯对话推理），它会失效。",
    "tagline_zh": "多阶段流水线、迁移、长跑实施里，Agent 常被哈希锁、验收章、仪表盘这类台账卡住。装上它，先产出可验证结果。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：先出活再记账，英文开发流程件。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "srlabs-skillforge-evolve-skill": {
    "title_zh": "拿真实代码库当考场，给已装技能做迭代升级",
    "why_zh": "它把「优化技能」从拍脑袋改成闭环：以真实代码库为测试集，用失败反推指令修改，每次迭代都有可验证的进步。",
    "limit_zh": "只针对已安装的 Claude Code 技能做迭代，不负责写新技能；需要你提供可运行的目标仓库和明确任务。",
    "tagline_zh": "别在空提示词里调技能了。丢给它一个仓库，它会跑任务、看失败、改指令，直到技能在你自己的代码上真正变强。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：给已装技能做迭代，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "starryear-starryear-ink": {
    "title_zh": "照片留一条证据带，碎成干印再晕成水墨",
@@ -12179,12 +12198,13 @@
    "why_zh": "不急着跑命令，先建立环境心智模型：仓库在哪、凭据通不通、有哪些工具、怎么和 GitLab 对话。",
    "limit_zh": "只认 Gramax 仓库的 `ai` 作业，且必须已有 glab/gh 认证。不处理其他 CI 平台、不写代码。",
    "tagline_zh": "在无头 CI 里两眼一抹黑？它先确认仓库、认证、工具链，再教你怎么读 GitLab 状态、查失败日志。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "life",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：GitLab CI 探路杖，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "anhao-jingtian-style": {
    "title_zh": "一份会替你按住抒情冲动的第一人称记账笔",
@@ -12213,19 +12233,20 @@
    "why_zh": "文档不是模板填空，而是从仓库现状推导责任边界。它替你算清哪些风险该写进合同，哪些操作细节必须留痕。",
    "limit_zh": "只认韩国法管辖的交接场景；不覆盖跨国合同、税务筹划或口头交接。文档止步于签名版PDF，不代你谈判。",
    "tagline_zh": "给发出去的活儿写技术交接书、开发者保护型责任合同、维护合同——按代码实际生成，风险越高文档越厚，韩国法基准。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：交接文档，英文开发流程件。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "fortun8te-hydo-hydo-self-improve": {
    "title_zh": "改完先跑测试和截图，才把分支交回给你的自我改造工具",
    "why_zh": "它把“改自己”变成隔离实验：不碰运行中的程序、不碰数据、不自动合并。验证靠真实截图而非嘴说。",
    "limit_zh": "只适用于 Hydo 自身代码的修改，不碰数据迁移或配置迁移；需要本机有 git 和测试环境；产物止于分支，合并、部署。",
    "tagline_zh": "想给 Hydo 加功能又怕弄坏正在用的它？在一次性工作树里改，跑测试、构建、截真图，最后只交回一个分支。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover": "/skill/assets/covers/fortun8te-hydo-hydo-self-improve.png",
@@ -12233,7 +12254,8 @@
    "cover_real": false,
    "cover_w": 1100,
    "cover_h": 682,
-   "cover_src": "https://raw.githubusercontent.com/fortun8te/hydo/HEAD/docs/screenshots/main-chat.png"
+   "cover_src": "https://raw.githubusercontent.com/fortun8te/hydo/HEAD/docs/screenshots/main-chat.png",
+   "unshelf_reason": "2026-09-04 编辑判：自我改造工具，英文开发工具链。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "chenshuo2004-cs-shotcraft-skill": {
    "title_zh": "152张运镜卡，产品宣传片按卡拍不重样",
@@ -12265,12 +12287,13 @@
    "why_zh": "它认的是「交付后状态未知」的站点，不是从零建站。能定位是 CMS 写入链路。",
    "limit_zh": "只认本 kit 生成并已交付的营销站；不接非 kit 站点、不处理设计改版、不负责 CMS 账号权限。",
    "tagline_zh": "客户说照片换不了、CMS 存完内容就没了、上传崩了构建——它不重做，只针对已交付的旧版本站点做状态诊断与修复。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：网站交付查修，英文通用工具。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   },
   "whyubel1eve-promo-film-skill": {
    "title_zh": "界面在片子里是真界面，不是录屏重放",
@@ -12301,12 +12324,13 @@
    "why_zh": "把文化治理权还给社区：从规划到同意、整理、描述、审查，每一步都有明确关卡，避免外部研究者越俎代庖。",
    "limit_zh": "仅适用于社区档案员、语言工作者、长者或授权伙伴发起的口述史相关任务；不处理非口述史类文档，也不自动生成最终元数据。",
    "tagline_zh": "原住民与少数族群自己掌控口述史、地名、亲属称谓的采集与开放权限。每个环节都要社区点头，不点头就不进入下一步。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
    "category": "writing",
    "cover_tried_at": "2026-09-03",
    "cover": "",
-   "cover_kind": "none"
+   "cover_kind": "none",
+   "unshelf_reason": "2026-09-04 编辑判：口述史归档治理流程，英文机构流程件。判官 ≥80 但冷在读者身上，不是这家店的货（店主：冷要冷在题材上，不能冷在读者身上）"
   }
  },
  "gate": {

@@ -35,7 +35,8 @@ permissions:
 # 09-03 第一轮积压：管线那步 TASTE_MIN=80 拒了 72 分的 8 件，后面「补扫红线」那步没带这个变量，
 # release_clean 里的 _taste_pass 按默认 60 又把它们放上了架。同一条工作流里的门槛只能有一个 —— 放到 job 级。
 env:
-  TASTE_MIN: "80"
+  # 09-03 晚：80 线一天放进 40 件，其中 24 件是英文开发工具链/他国法规 —— 冷在读者身上。自动线抬到 85，编辑亲挑不受影响。
+  TASTE_MIN: "85"
 jobs:
   find_and_judge:
     runs-on: ubuntu-latest
@@ -125,7 +126,7 @@ jobs:
         # 判**全部**新见的，不再只判 40 个 —— 发现做到全量之后，判只判一角就白扫了。
         # 每天几百个仓 × 三票取中位。sweep.py 第一票离线 15 分以上就不投后两票，省掉大半调用。
         # 这个 job 不占写锁，判多久都不堵进货。
-        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 400 }} --min-score 80
+        run: python scouts/sweep.py --candidates /tmp/candidates.json --max ${{ github.event.inputs.max || 400 }} --min-score 85
 
       - name: 判分结果交给发布 job
         if: always()
