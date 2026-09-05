@@ -2,14 +2,14 @@
  "id": "kajisho5-motion-graphics-skill",
  "kind": "skill",
  "name": "motion-graphics",
- "title_zh": "片头字幕、人名条、角标，它按时间码一帧帧画给你",
- "tagline_zh": "视频剪辑到一半，要加字幕条却不想开特效软件？它把「第几秒到第几秒显示什么字、什么动画」变成确定性的渲染指令，标题。",
- "tagline_en": "Need a deterministic way to burn in titles or logos at exact timestamps? It renders title cards, lower thirds.",
+ "title_zh": "动效渲染只认四样：标题条、下三路、浮字、图章",
+ "tagline_zh": "视频智能体已想好放什么、何时放、长啥样，就差一个不擅自动脑的渲染工。它把动画参数写死进模板。",
+ "tagline_en": "Your video agent already decided what, when, and how—this skill just renders it safely. Animations locked into.",
  "desc_en": "Deterministic motion-graphics rendering execution Skill for the AI Video Production Ecosystem. Use it when a caller (normally video-production-agent) has already decided what graphic to show, when to show it, and roughly how it should look, and needs it rendered safely: title cards, lower thirds, free-form text overlays, and image/logo overlays, with built-in template animation (title/lower-third ",
- "why_zh": "它不猜你要什么，只执行你已定好的画面与时间。确定性渲染意味着同一输入永远同一输出，剪辑管线里可预期。",
- "why_en": "Deterministic by design: same input, same frames, every time. Built for an AI video pipeline where a planner decides what/when.",
- "limit_zh": "只认四种元素：标题卡、人名条、自由文字、图片/Logo 叠加；动画仅限内置模板，自定义动效或 3D 场景它不接。",
- "limit_en": "Only 4 element types (title card, lower third, free text, image/logo) with built-in template animation. No custom motion or 3D. Outputs rendered.",
+ "why_zh": "确定性优先：动画参数全部模板化，不靠大模型临场发挥。四类图形各配一套内置动效，渲染结果可复现。",
+ "why_en": "Deterministic by design: all animation params come from templates, not LLM improvisation. Four graphic types each with built-in.",
+ "limit_zh": "只认四种图形：标题卡、下三分之一字幕、自由文本浮层、图片/Logo 叠加。超出这四类它直接不渲染；且它只负责出画面。",
+ "limit_en": "Only handles 4 types: title cards, lower thirds, free-text overlays, image/logo overlays. It renders only—no creative decisions on what/when to.",
  "repo": "kajisho5/motion-graphics-skill",
  "owner": "kajisho5",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Title cards, lower thirds, and overlays rendered."
+ "title_en": "Renders only 4 motion graphics: titles, lower thirds."
 }

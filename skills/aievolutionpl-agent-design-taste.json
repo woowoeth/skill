@@ -2,14 +2,14 @@
  "id": "aievolutionpl-agent-design-taste",
  "kind": "skill",
  "name": "agent-design-taste",
- "title_zh": "先问产品给谁用再动手的界面设计师",
- "tagline_zh": "受够了千篇一律的「现代 AI 风」？它逼你先定受众和风格，再从真实 token 搭界面。",
- "tagline_en": "Tired of generic 'modern AI SaaS' look? It forces audience analysis, deliberate style choice, real tokens, then.",
+ "title_zh": "先拆产品再挑风格的 UI 设计监理",
+ "tagline_zh": "受够了千篇一律的「现代 AI 风」？它逼你先想清楚给谁看、要什么，再挑一种风格，从真实 token 搭到渲染审计。",
+ "tagline_en": "Tired of generic 'modern AI' look? It forces product-audience analysis, deliberate style choice, real tokens, and.",
  "desc_en": "Use when generating, redesigning or reviewing any UI — landing page, dashboard, app screen, component, or design system. Teaches the agent to analyze product and audience first, choose one design style deliberately, build from real tokens, render it, and audit it — instead of producing generic \"modern premium AI SaaS\" output.",
- "why_zh": "机制上把「设计」拆成五步强制流程：分析→选风格→建 token→渲染→审计。每一步都有检查点。",
- "why_en": "Five-step enforced pipeline: analyze, style, token, render, audit. Each step has checkpoints, making generic output structurally.",
- "limit_zh": "只作用于 UI 生成/评审场景，不负责交互原型或动效。需要 agent 能访问渲染工具链。",
- "limit_en": "Only for UI generation/review. No prototyping or motion. Needs render toolchain access. Won't fake it for game UI or data-viz.",
+ "why_zh": "不是模板堆砌，而是先分析产品与受众，再刻意选择风格，用真实设计系统构建并审计。",
+ "why_en": "Not template-driven: it analyzes product and audience, picks one style deliberately, builds from real tokens, and audits—killing.",
+ "limit_zh": "只覆盖 UI 生成、重设计与审查流程，不处理交互原型或动效；需要你提供明确的产品背景或受众描述，否则它可能反复追问。",
+ "limit_en": "Only covers UI generation/redesign/review, not prototyping or motion. Needs explicit product/audience context, else it may keep asking.",
  "repo": "aievolutionpl/agent-design-taste",
  "owner": "aievolutionpl",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "hero",
  "cover_w": 2172,
  "cover_h": 724,
- "title_en": "A UI designer that asks who it's for before drawing"
+ "title_en": "UI design auditor that analyzes first, then styles"
 }

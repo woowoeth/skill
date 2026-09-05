@@ -2,14 +2,14 @@
  "id": "peggykangkang02-podcast-pipeline-boke",
  "kind": "skill",
  "name": "boke",
- "title_zh": "播客听完不白听，逐字稿+总结成对进 Obsidian",
- "tagline_zh": "说一句「找期讲 AI 的播客整理进库」，它自动检索→本地转录→写总结→按主题归文件夹→双向链接。每期两份产物。",
- "tagline_en": "Say \"find a podcast on AI and file it\" — it searches, transcribes locally, summarizes, sorts into themed folders.",
+ "title_zh": "播客从搜到存全自动，笔记和逐字稿成对进 Obsidi",
+ "tagline_zh": "听完一期播客，逐字稿和总结自动成对落进 Obsidian，按主题分好子文件夹，双向双链。",
+ "tagline_en": "Turn any podcast episode into paired transcript + summary in Obsidian, auto-filed by topic with backlinks. Your.",
  "desc_en": "中文播客「找→转→总→落→归」一条龙总指挥。串起 podcast-finder（检索）、podcast-transcribe-local（本地转录+标点）、总结写作、落库 Obsidian（xiaoyuzhou-podcast-notes）、按主题归类子文件夹。当用户说「找一期关于 XX 的播客然后整理进我的知识库」「把这几期播客转成逐字稿+总结放进 Obsidian 播客干货」「按类型给播客笔记分类」、或想批量沉淀播客素材时使用。产出：每期「逐字稿+总结」两份，笔记与逐字稿成对落库、按主题自动归入子文件夹、双向双链，可长期当选题素材库检索。",
- "why_zh": "不是丢个链接就完事。它把「找→转→总→落→归」串成闭环，转录在本地跑不烧 API 钱。",
- "why_en": "It doesn't just drop a link. The full loop — find, transcribe locally, summarize, file, link — runs as one command. Local.",
- "limit_zh": "只认中文播客；需要本机装好 ffmpeg 和 whisper.cpp；转录质量取决于源音频清晰度。",
- "limit_en": "Chinese podcasts only; requires local ffmpeg & whisper.cpp; noisy audio yields messy transcripts; summaries need an LLM API key — without it, only.",
+ "why_zh": "不是单点工具，是整条流水线：检索、转录、总结、归档、归类一次串完。笔记与逐字稿成对落库，双向双链。",
+ "why_en": "Not a single tool but a full pipeline: find, transcribe, summarize, and file in one flow. Transcripts and notes land as linked.",
+ "limit_zh": "只认中文播客；转录需本地模型，首次运行要下载；只落 Obsidian 库，不接 Notion 等；总结风格固定。",
+ "limit_en": "Chinese podcasts only; local transcription model needs initial download; outputs to Obsidian only; summary style is fixed; search limited to.",
  "repo": "peggykangkang02/podcast-pipeline",
  "owner": "peggykangkang02",
  "path": "boke",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Podcast episodes become paired transcripts & summaries in."
+ "title_en": "Podcast pipeline: search, transcribe, summarize, file into."
 }

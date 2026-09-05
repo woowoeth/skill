@@ -2,14 +2,14 @@
  "id": "whq02-mercurycli-slide-decks",
  "kind": "skill",
  "name": "slide-decks",
- "title_zh": "会先拆骨架再动手的 PPT 读写改三合一",
- "tagline_zh": "拿到 .pptx 先摸清母版布局，再往网格上放文字、表格、图表和图片。改完能渲染成图或 PDF 自查。",
- "tagline_en": "Inspect a deck's layout, generate slides from template masters, place text/tables/charts/images on a grid, and.",
+ "title_zh": "PPT 手术台：读大纲、套版式、渲染成图检查",
+ "tagline_zh": "改稿不用反复打开 PowerPoint——先读现有大纲，再按模板版式生成幻灯片，文字表格图表齐整落位。",
+ "tagline_en": "Stop reopening PowerPoint to edit. Outline first, generate slides from template layouts, place text/tables/charts.",
  "desc_en": "Build, read, and revise PowerPoint decks (.pptx) — outline an existing deck, generate slides from a template's layouts with python-pptx, place text, tables, charts, and images on a consistent grid, and render to images or PDF for a visual check. Use when the request names slides, a deck, a presentation, or a .pptx; not for Word, spreadsheets, PDFs, or web pages.",
- "why_zh": "先解析模板骨架再落内容，避免坐标瞎猜；渲染自查让你不反复开 PowerPoint。",
- "why_en": "Parses the template skeleton before placing content, so you never guess coordinates; renders to images/PDF for visual check.",
- "limit_zh": "只认 .pptx，Word、Excel、PDF、网页一概不管。渲染成图或 PDF 需要本机有 LibreOffice。",
- "limit_en": "Only .pptx; no Word/Excel/PDF/web. Rendering to images/PDF requires local LibreOffice. SmartArt & animations are dropped; static layout only.",
+ "why_zh": "它把「看稿」和「改稿」拆成两步：先读大纲让你知道动了什么，再渲染成图让你看见结果——不用盲改。",
+ "why_en": "It separates reading from editing: outline first to know what changed, render after to see the result—no blind edits, no GUI.",
+ "limit_zh": "只认 .pptx，不碰 Word/表格/PDF/网页。依赖 python-pptx 和本机渲染器（LibreOffic…",
+ "limit_en": "Only .pptx—no Word, sheets, PDF, or web. Needs python-pptx and a local renderer (LibreOffice/PowerPoint); complex master layouts may misalign.",
  "repo": "Whq02/MercuryCLI",
  "owner": "Whq02",
  "path": "mercury-skills/slide-decks",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Read, build & revise .pptx decks — skeleton first, then."
+ "title_en": "PPT Operating Table: Outline, Layouts, Render to Check"
 }

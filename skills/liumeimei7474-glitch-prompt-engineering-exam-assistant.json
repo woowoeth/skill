@@ -2,14 +2,14 @@
  "id": "liumeimei7474-glitch-prompt-engineering-exam-assistant",
  "kind": "skill",
  "name": "prompt-engineering-exam-assistant",
- "title_zh": "截图即解规则型 Prompt 题",
- "tagline_zh": "对着屏幕拍张照，或粘一段文字，它帮你拆解规则、算清分类，直接产出格式严丝合缝的 JSON 答案——不再手抖漏字段。",
- "tagline_en": "Snap a pic or paste text—it dissects rules, computes classifications, and outputs perfectly formatted JSON. No.",
+ "title_zh": "截图喂题，直接吐出带格式要求的JSON答案",
+ "tagline_zh": "对着屏幕上的Prompt工程题发愁？拍下来或贴文字，它按你要求的输出格式算好分类/计算题，JSON直接抄。",
+ "tagline_en": "Stuck on a rule-based prompt exercise? Snap or paste it—get the exact JSON output, formatted to spec, ready to.",
  "desc_en": "Solve rule-based Prompt engineering exercises from screenshots or text when the required final answer is structured JSON. Use when the user asks to create, revise, or debug a calculation or classification Prompt with exact output formatting.",
- "why_zh": "它把「规则→推理→JSON」整条链路焊死，每一步都校验格式，专治那种算对了却因少个引号被拒的憋屈。",
- "why_en": "It welds the whole chain from rules to reasoning to JSON, validating format at every step—cures the sting of being right but.",
- "limit_zh": "只认规则明确、答案需结构化 JSON 的题；自由发挥的开放题它不接。截图要清晰，文字要完整，否则它只会让你重发。",
- "limit_en": "Only handles rule-based exercises requiring structured JSON output; open-ended prompts are out. Needs clear screenshots or full text, else it asks.",
+ "why_zh": "不靠猜。它先拆解题目里的规则约束，再按你指定的JSON结构一步步推导，连格式错误都帮你避开。",
+ "why_en": "No guessing. It parses the rule constraints, then derives the answer step-by-step into your exact JSON schema—format errors.",
+ "limit_zh": "只认规则明确的Prompt工程题（计算/分类），且最终答案必须是结构化JSON。自由写作、开放式问答。",
+ "limit_en": "Only rule-based prompt exercises (calculation/classification) with structured JSON output. Free-form, open-ended, or knowledge-heavy tasks—it refuses.",
  "repo": "liumeimei7474-glitch/prompt-engineering-exam-assistant",
  "owner": "liumeimei7474-glitch",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Solve rule-based prompt exercises from screenshots to JSON"
+ "title_en": "Turn exercise screenshots into exact JSON answers"
 }

@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 320 skills.
+# Full corpus, plain text. 321 skills.
 
 ========================================================================
 ## lieflat-gongwen
@@ -444,6 +444,44 @@ git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent 
 
 ### Where does it come from?
 Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## podcast-transcribe-local
+## 本地 70 倍速转完一期播客，不烧一分 API 额度
+URL: https://ourword.ai/skill/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
+URL (中文): https://ourword.ai/skill/zh/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
+Source: https://github.com/peggykangkang02/podcast-pipeline/tree/HEAD/podcast-transcribe-local
+Updated: 2026-09-04
+Tags: work, skill, peggykangkang02
+
+Drop a Xiaoyuzhou/Ximalaya link or audio file. A 76-min episode becomes ~25k words in ~70s on Apple Silicon.
+
+### What does this skill do?
+把小宇宙、喜马拉雅播客单集（或任意音频文件/直链）在本地离线转成逐字稿，不联网、不烧 API 额度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 实测 60-70 倍实时（一期 76 分钟播客约 70 秒转完，输出约 2.5 万字）。当用户给出小宇宙链接（xiaoyuzhoufm.com/episode/...）、喜马拉雅链接（ximalaya.com/sound/...）、音频文件或音频直链，想要逐字稿、转录、转文字、字幕时，使用本技能。也可作为 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交给它生成结构化笔记落 Obsidian。
+
+### Why is it worth installing?
+Runs SenseVoiceSmall via onnxruntime, moving transcription from cloud APIs to your machine. Speed impresses, but the real edge.
+
+### How do you install it?
+git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
+
+--- 中文 ---
+小宇宙/喜马拉雅链接丢进来，76 分钟节目约 70 秒出 2.5 万字逐字稿。
+
+### Q：这个 skill 做什么？
+把小宇宙、喜马拉雅播客单集（或任意音频文件/直链）在本地离线转成逐字稿，不联网、不烧 API 额度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 实测 60-70 倍实时（一期 76 分钟播客约 70 秒转完，输出约 2.5 万字）。当用户给出小宇宙链接（xiaoyuzhoufm.com/episode/...）、喜马拉雅链接（ximalaya.com/sound/...）、音频文件或音频直链，想要逐字稿、转录、转文字、字幕时，使用本技能。也可作为 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交给它生成结构化笔记落 Obsidian。
+
+### Q：为什么值得装？
+用 onnxruntime 跑 SenseVoiceSmall，把转录从云端 API 搬回本地。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
 
 ========================================================================
 ## grilling

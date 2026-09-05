@@ -2,14 +2,14 @@
  "id": "johunsang-codex-claude-investment-committee-codex-claude-investment-committee",
  "kind": "skill",
  "name": "codex-claude-investment-committee",
- "title_zh": "每周五让两个AI互怼出美股投资纪要",
- "tagline_zh": "Codex 和 Claude 各查各的，再当面拆台。200 只大盘股 + 最新新闻，吵完给你 DOCX、图片。",
- "tagline_en": "Codex and Claude research separately, then argue. Top 200 US stocks + fresh news, ending in DOCX, images, and.",
+ "title_zh": "每周五让两个AI互怼出投资纪要，你只负责收邮件",
+ "tagline_zh": "Codex 和 Claude 各查各的、各写各的，再当面拆台。200 只美股大票 + 当周新闻。",
+ "tagline_en": "Two AIs research the top 200 US stocks separately, then debate. You get a DOCX, charts, and email-ready memo.",
  "desc_en": "매주 미국 대형주 상위 200개와 최신 시장·기업 뉴스를 조사하고 Codex와 Claude의 독립 분석 및 상호 반론을 거쳐 DOCX·이미지·이메일용 투자위원회 보고서를 만들 때 사용한다.",
- "why_zh": "不是汇总，是互审。两个模型独立分析后互相挑错，逼出单模型会糊弄过去的盲点，报告里留着分歧痕迹。",
- "why_en": "Not a summary—a cross-examination. Two models challenge each other's blind spots, leaving visible disagreements in the final.",
- "limit_zh": "只覆盖美股大盘股（约200只）和英文新闻源；不涉及港股、A股、加密货币。报告产出到 DOCX/图片/邮件草稿为止。",
- "limit_en": "US large-caps (~200) & English news only. No HK/A-shares/crypto. Output ends at DOCX/images/email draft—no trade orders. Needs internet + ample API.",
+ "why_zh": "不是把两个模型的结果拼在一起，而是让它们先独立成稿、再互相挑错。你看到的是被反驳过的结论。",
+ "why_en": "It doesn't stitch two outputs together—it makes each AI critique the other's draft. What you read is a conclusion that survived.",
+ "limit_zh": "只覆盖美股大盘股（约前200只）和当周公开新闻，不含财报电话会原文、不含小盘/中概/加密。",
+ "limit_en": "Covers only top ~200 US large caps & weekly public news; no earnings call transcripts, no small caps/China ADRs/ crypto. Requires local API access.",
  "repo": "johunsang/codex-claude-investment-committee",
  "owner": "johunsang",
  "path": "skill",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Two AIs debate weekly US stock picks into a report"
+ "title_en": "Weekly investment memo from two AIs debating each other"
 }

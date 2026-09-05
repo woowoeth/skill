@@ -2,14 +2,14 @@
  "id": "code1eo-logo-material-explorer",
  "kind": "skill",
  "name": "logo-material-explorer",
- "title_zh": "平面logo变立体材质，品牌特征一条不丢",
- "tagline_zh": "给甲方看效果前，先自己把字标挤出、倒角、上材质。内置常用表面库，不用翻贴图网站，品牌色和负空间自动守住。",
- "tagline_en": "Extrude, bevel, and surface your wordmark before client reviews. Built-in material library keeps brand colors and.",
+ "title_zh": "平面 Logo 变立体材质，品牌特征一条不丢",
+ "tagline_zh": "把扁平的 Logo、字标、花押送进三维空间，试挤塑厚度、换表面材质。自带参考材质库。",
+ "tagline_en": "Extrude wordmarks, monograms, brand marks into 3D. Try bevel depths, map surfaces from your own or built-in.",
  "desc_en": "Use when a user wants to turn a flat logo, wordmark, monogram, or brand mark into a dimensional 3D material study, compare extrusion geometry, or apply a supplied or built-in surface reference while preserving brand identity.",
- "why_zh": "不是简单加个厚度。它把品牌识别拆成可参数化的几何约束，挤出方向、倒角半径、表面纹理都跟着原标走。",
- "why_en": "Not just an extrude. It parameterizes brand identity into geometry constraints, so bevels and textures follow the original.",
- "limit_zh": "只吃纯色扁平源文件（SVG/PNG 白底），渐变或复杂描边需先手动简化。产物是静帧渲染图，不出动画。",
- "limit_en": "Accepts flat solid-color SVG/PNG on white only; gradients need manual cleanup. Outputs still renders—no animation, no printable mesh.",
+ "why_zh": "不是简单拉个厚度，而是把品牌识别当作硬约束：几何比例、负空间、笔画关系在挤压和贴材质后仍可辨认。",
+ "why_en": "It treats brand identity as a hard constraint, not an afterthought. Proportions, counters, and stroke relationships survive.",
+ "limit_zh": "只吃扁平矢量或高对比单色图；不生成新 Logo、不重绘细节，只做几何挤出和材质映射。输出为三维场景预览。",
+ "limit_en": "Input must be flat vector or high-contrast monochrome. No logo redrawing or detail recovery. Output is a 3D scene preview only—no rendered stills or.",
  "repo": "code1eo/logo-material-explorer",
  "owner": "code1eo",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Turn flat logos into 3D material studies"
+ "title_en": "Turn flat logos into dimensional material studies, brand."
 }

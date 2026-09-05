@@ -2,14 +2,14 @@
  "id": "kajisho5-video-editing-skill",
  "kind": "skill",
  "name": "video-editing-skill",
- "title_zh": "剪哪刀、接哪帧、变速多少都写进清单的剪辑执行器",
- "tagline_zh": "Agent 想好怎么剪，它负责不差分毫地执行：裁剪、拼接、转场、变速、缩放、叠图，每步操作都带来源映射。",
- "tagline_en": "Agent decides, it executes exactly: trim, concat, speed, resize, overlay—each op mapped to source frames.",
+ "title_zh": "剪哪刀、接哪帧、变速多少，全按你写的来",
+ "tagline_zh": "把剪辑意图写成结构化请求，它逐条映射到源素材时间轴并验证。不碰命令行、不传滤镜串。",
+ "tagline_en": "Turn a structured edit intent into verified timeline operations with exact source mapping. No argv, no filter.",
  "desc_en": "Deterministic video editing from a typed edit request (trim, cut, concat with transitions, speed change, fit / fill / resize, still-image overlay) with an exact source-to-timeline mapping and per-operation provenance. Executes through ffmpeg-skill; never takes commands, argv, filter strings or executables. Use when an agent has already decided what to edit and needs the edit performed, verified an",
- "why_zh": "不碰命令行、不拼滤镜串，只吃结构化编辑请求；每刀都有出处可溯，剪错了能指到具体那一步，而不是黑盒重来。",
- "why_en": "No argv, no filter strings—only typed edit intents. Every operation carries provenance, so failures trace to one step, not a.",
- "limit_zh": "只做已定稿的编辑执行，不负责创意决策；依赖 ffmpeg-skill 且本机需有 ffmpeg；不支持音频轨道处理。",
- "limit_en": "Executes only decided edits—no creative suggestions. Needs ffmpeg-skill + local ffmpeg. No audio tracks, subtitles, or keyframe animation.",
+ "why_zh": "每个操作都带来源到时间轴的精确映射和逐条溯源，执行后自动验证。不是黑盒调 ffmpeg，而是可审计。",
+ "why_en": "Every op carries source-to-timeline provenance and post-execution verification. It's not a ffmpeg wrapper—it's a deterministic.",
+ "limit_zh": "只处理已明确的剪辑操作（裁剪、拼接、变速、缩放、静图叠加），不含转场创意、调色、字幕生成。",
+ "limit_en": "Only trim/cut/concat/speed/resize/still-overlay; no creative transitions, color, or subtitles. Requires ffmpeg-skill installed and real input file.",
  "repo": "kajisho5/video-editing-skill",
  "owner": "kajisho5",
  "path": "",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Edit executor: every trim, cut, speed written as a checklist"
+ "title_en": "Deterministic cuts, joins, speeds from a typed edit request"
 }
