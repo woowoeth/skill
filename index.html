@@ -1620,7 +1620,13 @@ document.addEventListener("click", function(e){
   }
 
   var chip = e.target.closest("#chips .chip");
-  if(chip){ state.cat = chip.getAttribute("data-cat"); state.limit = 60; renderShelf(); window.scrollTo(0,0); return; }
+  if(chip){ state.cat = chip.getAttribute("data-cat"); state.limit = 60; renderShelf();
+    /* 换分类回到筛选条本身，不是回页首 —— 页首上面还有站名和搜索框，
+       读者刚刚才翻过去。回到 0 等于让他再翻一遍。 */
+    var bar = document.getElementById("chips");
+    var y = bar ? bar.getBoundingClientRect().top + scrollY - 8 : 0;
+    if(scrollY > y) window.scrollTo(0, Math.max(0, y));
+    return; }
 
   if(e.target.closest("#sendHearts")){
     e.stopPropagation();
@@ -1761,7 +1767,49 @@ window.__FEED__.then(function(feed){
   if(window.console) console.error(e);
 });
 
+  /* 这一段必须在主 IIFE **内部**：state / renderShelf / renderChips / D
+     都是它的私有变量。放在外面的话 pagehide 里一引用 state 就
+     ReferenceError，什么都存不下，而页面看起来一切正常。 */
+  /* ---- 从条目页返回，停在原来的位置 ---------------------------------- */
+  /* 货架是 JS 渲染的：浏览器恢复滚动位置的时候卡片还没画出来，页面高度是
+     零，恢复到哪都一样，结果就是回到顶部，读者得重新翻一遍。所以自己记 ——
+     离开前把分类、搜索词、已加载数量和位置一起存下来，回来渲染完再放回去，
+     然后立刻清掉：只有「返回」该恢复，重新打开货架不该跳到半截。
+     已加载数量（limit）必须一起存：只恢复位置而不恢复数量的话，页面高度
+     不够，滚不到那个位置。 */
+  (function(){
+    var KEY = "skill_shelf_pos";
+    addEventListener("pagehide", function(){
+      try{ sessionStorage.setItem(KEY, JSON.stringify({
+        y: scrollY, cat: state.cat, q: state.q, limit: state.limit })); }catch(e){}
+    });
+    var raw = null;
+    try{ raw = sessionStorage.getItem(KEY); sessionStorage.removeItem(KEY); }catch(e){}
+    if(!raw) return;
+    var st = null; try{ st = JSON.parse(raw); }catch(e){}
+    if(!st || !st.y) return;
+    var nav = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0]) || {};
+    var back = nav.type === "back_forward"
+      || (document.referrer && document.referrer.indexOf(location.origin) === 0);
+    if(!back) return;
+    addEventListener("load", function(){ setTimeout(function(){
+      try{
+        state.cat = st.cat || "all";
+        state.q = st.q || "";
+        state.limit = Math.max(60, st.limit || 60);
+        var box = document.getElementById("q");
+        if(box) box.value = state.q;
+        if(typeof renderChips === "function") renderChips((D&&D.skills)||[]);
+        if(typeof renderShelf === "function") renderShelf();
+        window.scrollTo(0, st.y);
+      }catch(e){}
+    }, 60); });
+  })();
+
 })();
+
+
+
 </script>
 </body>
 </html>
