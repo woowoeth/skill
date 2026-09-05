@@ -1,36 +1,52 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 319 skills.
+# Full corpus, plain text. 320 skills.
 
 ========================================================================
-## grilling
-## 连续追问直到你自相矛盾的方案压力测试器
-URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
-Source: https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling
-Updated: 2026-09-04
-Tags: work, skill, mattpocock
+## lieflat-gongwen
+## 六类公文族骨架公式，党建经验另起千字炉
+URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-gongwen/
+URL (中文): https://ourword.ai/skill/zh/i/larashero3-dotcom-lieflat-gongwen/
+Source: https://github.com/larashero3-dotcom/lieflat-gongwen
+Updated: 2026-09-05
+Tags: writing, skill, larashero3-dotcom
 
-Think you've thought it through? It fires 20 straight 'whys', targeting the softest spot in your logic until you.
+Research reports, speeches, opinions, experience briefs, plans, summaries—each with checkable metrics, skeleton.
 
 ### What does this skill do?
-Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+基于真实公文全量统计的公文写作 skill。分公文族与党建族两族，覆盖调研报告/领导讲话/工作意见/经验材料/工作方案/经验总结六类公文族文体，加千字级党建/基层经验材料一类，提供可验收的数值参数、骨架公式、标题技法和自动化自检脚本。触发场景："写一篇调研报告""起草领导讲话""写份工作意见""写篇党建经验材料""把材料写成经验总结""让这篇稿子更有公文味""检查这篇公文的参数对不对"。
 
 ### Why is it worth installing?
-No advice—engineered cognitive dissonance. Each follow-up builds on your last answer, forcing vague 'probablys' into testable.
+Built on full-corpus stats of real official docs—not vague style tips. Checkable metrics, skeleton formulas, and an auto-checker.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-gongwen.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: mattpocock/skills The repository ships 1 skills in total.
+Repository: larashero3-dotcom/lieflat-gongwen The repository ships 1 skills in total.
+
+--- 中文 ---
+调研报告、领导讲话、工作意见、经验材料、工作方案、经验总结，每类都给你可验收的数值参数和骨架公式，写完还能自动自检。
+
+### Q：这个 skill 做什么？
+基于真实公文全量统计的公文写作 skill。分公文族与党建族两族，覆盖调研报告/领导讲话/工作意见/经验材料/工作方案/经验总结六类公文族文体，加千字级党建/基层经验材料一类，提供可验收的数值参数、骨架公式、标题技法和自动化自检脚本。触发场景："写一篇调研报告""起草领导讲话""写份工作意见""写篇党建经验材料""把材料写成经验总结""让这篇稿子更有公文味""检查这篇公文的参数对不对"。
+
+### Q：为什么值得装？
+基于真实公文全量统计，参数可验收、骨架可套用，不是空谈文风。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-gongwen.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: larashero3-dotcom/lieflat-gongwen The repository ships 1 skills in total.
 
 ========================================================================
 ## ffmpeg-skill
 ## 本地 FFmpeg 剪片，说人话就出片
 URL: https://ourword.ai/skill/i/kajisho5-ffmpeg-skill/
 Source: https://github.com/kajisho5/ffmpeg-skill
-Updated: 2026-09-04
+Updated: 2026-09-05
 Tags: images, skill, kajisho5
 
 No CLI memorizing—say “cut silences, reframe to 9:16, add karaoke subs” and it runs FFmpeg locally. Trim, join.
@@ -48,33 +64,11 @@ git clone --depth 1 https://github.com/kajisho5/ffmpeg-skill.git Then point your
 Repository: kajisho5/ffmpeg-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## cangjie-skill
-## 长内容拆成可执行技能包，一本书变一套动作
-URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
-Source: https://github.com/kangarooking/cangjie-skill
-Updated: 2026-09-04
-Tags: images, skill, kangarooking
-
-Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
-
-### What does this skill do?
-Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
-
-### Why is it worth installing?
-It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
-
-========================================================================
 ## pf2e-gm
 ## 翻开本地规则库的 PF2e 主持人副驾
 URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
 Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
-Updated: 2026-09-04
+Updated: 2026-09-05
 Tags: play, skill, Milec
 
 41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
@@ -97,7 +91,7 @@ Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: r
 URL: https://ourword.ai/skill/i/leujasyoh-vueppt/
 URL (中文): https://ourword.ai/skill/zh/i/leujasyoh-vueppt/
 Source: https://github.com/LeuJasYoh/VuePPT
-Updated: 2026-09-04
+Updated: 2026-09-05
 Tags: images, skill, LeuJasYoh
 
 No Office, no internet—one exe is your whole deck studio. Vue motion, charts, code highlight. Tech talks to.
@@ -128,6 +122,372 @@ git clone --depth 1 https://github.com/LeuJasYoh/VuePPT.git 然后把智能体�
 
 ### Q：它从哪来？
 Repository: LeuJasYoh/VuePPT Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## video-script
+## 先定镜头再落笔的解说稿，时间戳卡到帧
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-script/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-script/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-script
+Updated: 2026-09-05
+Tags: images, skill, zenstory-ai
+
+Stuck with VLM analysis but no cut? It picks the story, selects shots, assigns audio/visual roles, writes.
+
+### What does this skill do?
+对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
+
+### Why is it worth installing?
+Not a fill-in-the-blank template. It thinks like a director: story first, then shot selection and audio/visual split; outputs.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+已有 VLM 分析但不知怎么剪？它替你定故事线、挑片段、分镜分工，再写出带时间戳的中文解说并自动校验，一步到位。
+
+### Q：这个 skill 做什么？
+对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
+
+### Q：为什么值得装？
+不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## lieflat-charts
+## 图表先问数据语义再选色，报告模板十二套
+URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-charts/
+URL (中文): https://ourword.ai/skill/zh/i/larashero3-dotcom-lieflat-charts/
+Source: https://github.com/larashero3-dotcom/lieflat-charts
+Updated: 2026-09-05
+Tags: work, skill, larashero3-dotcom
+
+Real chart implementations, not screenshots. 12 full-page report templates in CN/EN. Maps only on request.
+
+### What does this skill do?
+一套模板驱动的数据可视化与报告生成 skill，既能严格从 Lupi、Basics、Glance、Maps 与 Interactive gallery 的真实实现生成 HTML 图表，也能从 12 套中英文整页报告模板生成可发布的 HTML 报告；以 Mono 为保底，能按数据语义自动选择内置彩色预设，也支持用户明确提供的自定义色板。地图仅在用户明确要求时启用，同一交付禁止混用色系。
+
+### Why is it worth installing?
+Mono as fallback, semantic auto-palette, custom swatches allowed—but never mixed in one deliverable, so reports look art-directed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+从真实图表库实现生成 HTML，不靠截图或手写。十二套中英整页报告模板，地图只在你要时才启用，色系不混搭。
+
+### Q：这个 skill 做什么？
+一套模板驱动的数据可视化与报告生成 skill，既能严格从 Lupi、Basics、Glance、Maps 与 Interactive gallery 的真实实现生成 HTML 图表，也能从 12 套中英文整页报告模板生成可发布的 HTML 报告；以 Mono 为保底，能按数据语义自动选择内置彩色预设，也支持用户明确提供的自定义色板。地图仅在用户明确要求时启用，同一交付禁止混用色系。
+
+### Q：为什么值得装？
+以 Mono 为保底，按数据语义自动挑彩色预设，也可用你给的色板——但同一份交付绝不混色系。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## archi-prompt
+## 建筑生图提示词，先锁视角再换材质
+URL: https://ourword.ai/skill/i/jjhuangtw-archi-prompt-skill-archi-prompt/
+URL (中文): https://ourword.ai/skill/zh/i/jjhuangtw-archi-prompt-skill-archi-prompt/
+Source: https://github.com/jjhuangtw/archi-prompt-skill/tree/HEAD/plugins/archi-prompt/skills/archi-prompt
+Updated: 2026-09-05
+Tags: images, skill, jjhuangtw
+
+Tired of AI warping your renders? Same-angle material swaps, white-to-real, day-to-night—it locks perspective &.
+
+### What does this skill do?
+寫建築、室內、景觀的 AI 生圖與修圖提示詞。Write and fix AI image prompts for architecture, interior, and landscape design. 使用者提到建築透視圖、效果圖、外觀、立面、中庭、樣品屋、SU/SketchUp 模型轉渲染、白模轉實景、換材質、換天空、日轉夜、加人、平面圖轉透視、競圖表現圖、大師風格(安藤、Zaha、隈研吾…)、或任何 architectural rendering / archviz / interior render / landscape render 的生圖需求時,都應該用這個 skill。使用者說「生出來的圖不像建築」「改圖之後建築就跑掉了」「同一個角度換材質比較」這類問題時也要用。不要用在非空間類的生圖(人像、產品、插畫)。
+
+### Why is it worth installing?
+Most tools just rewrite words. This one parses the original view, mass, and material layers first—separating what to change from.
+
+### How do you install it?
+git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
+
+--- 中文 ---
+效果图总被AI改歪？同角度换材质、白模转实景、日转夜，它先锁住透视和结构，再动颜色和光影，改完建筑不跑。
+
+### Q：这个 skill 做什么？
+寫建築、室內、景觀的 AI 生圖與修圖提示詞。Write and fix AI image prompts for architecture, interior, and landscape design. 使用者提到建築透視圖、效果圖、外觀、立面、中庭、樣品屋、SU/SketchUp 模型轉渲染、白模轉實景、換材質、換天空、日轉夜、加人、平面圖轉透視、競圖表現圖、大師風格(安藤、Zaha、隈研吾…)、或任何 architectural rendering / archviz / interior render / landscape render 的生圖需求時,都應該用這個 skill。使用者說「生出來的圖不像建築」「改圖之後建築就跑掉了」「同一個角度換材質比較」這類問題時也要用。不要用在非空間類的生圖(人像、產品、插畫)。
+
+### Q：为什么值得装？
+多数生图工具只改词，它反过来先解析原图的视角、体量和材质层，把「改哪里」和「不能动哪里」分开写。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
+
+========================================================================
+## a2ui-renderer
+## A2UI 界面渲染器，装上就能让 Agent 画表单
+URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
+Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
+Updated: 2026-09-05
+Tags: images, skill, CopilotKit
+
+Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
+
+### What does this skill do?
+Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
+
+### Why is it worth installing?
+Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
+
+========================================================================
+## video-understanding
+## 视频拆成六层索引，写稿前先看清素材全貌
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-understanding/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding
+Updated: 2026-09-05
+Tags: images, skill, zenstory-ai
+
+After a documentary, you only remember 'it was nice'. This turns video into scenes, transcripts, visual notes.
+
+### What does this skill do?
+把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
+
+### Why is it worth installing?
+Not just transcription—six interlocking layers: ASR aligns scenes, VLM reads visuals, silence gaps fill narrative holes, fused.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+看完一部纪录片，你只记得'好像不错'。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。
+
+### Q：这个 skill 做什么？
+把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
+
+### Q：为什么值得装？
+不是单一转录，而是六层产物互相咬合：ASR 对齐场景，VLM 观察画面，静音窗补叙事空隙。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## video-assemble
+## 旁白落定才压原声，字幕烧完再响度归一
+URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/
+URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-assemble/
+Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble
+Updated: 2026-09-05
+Tags: images, skill, zenstory-ai
+
+The last mile where narration, subtitles, and source audio tangle. It ducks background by narration windows.
+
+### What does this skill do?
+合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
+
+### Why is it worth installing?
+Encodes mixing decisions as rules: ducking depth adapts to narration energy, not fixed attenuation. Subtitle timing comes.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。
+
+### Q：这个 skill 做什么？
+合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
+
+### Q：为什么值得装？
+它把「混音决策」编码成规则：ducking 深度随旁白能量动态调，而不是固定衰减。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## hotclip
+## 长视频不出本机，剪成带卡拉OK字幕的竖屏爆点
+URL: https://ourword.ai/skill/i/xixihhhh-hotclip-hotclip/
+Source: https://github.com/xixihhhh/hotclip/tree/HEAD/skills/hotclip
+Updated: 2026-09-05
+Tags: images, skill, xixihhhh
+
+Cuts long videos and livestream VODs into viral vertical shorts 100% locally — on-device transcription, LLM highlight detection, 9:16 reframe, karaoke captions, per-clip virality scores.
+
+### What does this skill do?
+Turn long videos & livestream VODs into viral vertical shorts, 100% locally — on-device transcription, LLM highlight detection, 9:16 reframe with karaoke captions, and a per-clip render-QA report. Use when the user asks to clip / cut / 切片 / 剪 a long video, podcast or stream replay into short clips, find highlights / 爆点 in a video, or transcribe a media file. Footage never leaves the machine.
+
+### Why is it worth installing?
+Fully local, nothing uploaded — clip tools are everywhere, but few will touch your unreleased footage without phoning home.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
+
+========================================================================
+## comfyui-mcp
+## 自然语言改工作流，178 个工具随叫随到
+URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
+Source: https://github.com/artokun/comfyui-mcp
+Updated: 2026-09-05
+Tags: images, collection, artokun
+
+A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+
+### What does this skill do?
+Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+
+### Why is it worth installing?
+ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+
+### How do you install it?
+git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
+## trading-design
+## 按专业交易软件的规范设计盯盘界面
+URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
+Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+Updated: 2026-09-05
+Tags: images, skill, vanillagreencom
+
+A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+
+### What does this skill do?
+Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+
+### Why is it worth installing?
+Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## novel-to-game
+## 喂进一本小说，产出的不是概念稿是真能玩的游戏
+URL: https://ourword.ai/skill/i/worldwonderer-novel-to-game-novel-to-game/
+Source: https://github.com/worldwonderer/novel-to-game/tree/HEAD/skills/novel-to-game
+Updated: 2026-09-05
+Tags: play, skill, worldwonderer
+
+Feed it a novel; it extracts the world, art-directs it, and builds a genuinely playable game grounded in the source text.
+
+### What does this skill do?
+Turn a novel into a fully playable game on the selected target platform. Orchestrates the whole adaptation pipeline — requirements intake, gameable deconstruction, concept selection, world and visual design, target-runtime build, and evidence-based QA — for a novel in any language. Use for novel to game, story to game, book to game, adapt this novel into a game, turn this book into a playable prot
+
+### Why is it worth installing?
+Turning a beloved book into a playable game is a childhood dream for a lot of people — this packages the whole pipeline so Claude Code can just get to work.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
+
+========================================================================
+## archify
+## 画出来的架构图要和代码对得上，导出自带动效的 HTML
+URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
+Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
+Updated: 2026-09-05
+Tags: docs, skill, tt-a1i
+
+Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
+
+### What does this skill do?
+Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
+
+### Why is it worth installing?
+"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## grilling
+## 连续追问直到你自相矛盾的方案压力测试器
+URL: https://ourword.ai/skill/i/mattpocock-skills-grilling/
+Source: https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling
+Updated: 2026-09-04
+Tags: work, skill, mattpocock
+
+Think you've thought it through? It fires 20 straight 'whys', targeting the softest spot in your logic until you.
+
+### What does this skill do?
+Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+
+### Why is it worth installing?
+No advice—engineered cognitive dissonance. Each follow-up builds on your last answer, forcing vague 'probablys' into testable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/mattpocock/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: mattpocock/skills The repository ships 1 skills in total.
+
+========================================================================
+## cangjie-skill
+## 长内容拆成可执行技能包，一本书变一套动作
+URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
+Source: https://github.com/kangarooking/cangjie-skill
+Updated: 2026-09-04
+Tags: images, skill, kangarooking
+
+Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
+
+### What does this skill do?
+Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
+
+### Why is it worth installing?
+It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
 
 ========================================================================
 ## seedance-prompt-library
@@ -308,28 +668,6 @@ git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point 
 
 ### Where does it come from?
 Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
-
-========================================================================
-## a2ui-renderer
-## A2UI 界面渲染器，装上就能让 Agent 画表单
-URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
-Source: https://github.com/CopilotKit/CopilotKit/tree/HEAD/packages/a2ui-renderer/skills/a2ui-renderer
-Updated: 2026-09-04
-Tags: images, skill, CopilotKit
-
-Agent returns JSON UI specs but your frontend still shows plain text? This skill turns A2UI declarations into.
-
-### What does this skill do?
-Render A2UI (Agent-to-UI declarative surfaces) in CopilotKit v2. Enable the runtime via CopilotRuntime({ a2ui: {...} }), then enable the provider via . Auto-activates via /info — do NOT manually pass renderActivityMessages. createA2UIMessageRenderer ships from @copilotkit/react-core/v2; low-level primitives (A2UIProvider, A2UIRenderer, createCatalog) ship from @copilot
-
-### Why is it worth installing?
-Splits rendering into runtime activation + themed provider, with low-level primitives (Provider/Renderer/catalog) fully exposed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/CopilotKit/CopilotKit.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: CopilotKit/CopilotKit The repository ships 1 skills in total. Homepage: https://docs.copilotkit.ai
 
 ========================================================================
 ## textile-toy-portrait
@@ -534,26 +872,42 @@ git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git Then 
 Repository: lincwang123-bot/moonlit-stories The repository ships 1 skills in total.
 
 ========================================================================
-## comfyui-mcp
-## 自然语言改工作流，178 个工具随叫随到
-URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
-Source: https://github.com/artokun/comfyui-mcp
+## math-modeling
+## 三天赛程里做完数学建模竞赛全流程
+URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
+URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
+Source: https://github.com/XiaoMaColtAI/math-modeling-skill
 Updated: 2026-09-04
-Tags: images, collection, artokun
+Tags: learn, skill, XiaoMaColtAI
 
-A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
 
 ### What does this skill do?
-Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
 
 ### Why is it worth installing?
-ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+--- 中文 ---
+建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
+
+### Q：这个 skill 做什么？
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+
+### Q：为什么值得装？
+按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
 ## design-review
@@ -616,26 +970,48 @@ git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能
 Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
 
 ========================================================================
-## trading-design
-## 按专业交易软件的规范设计盯盘界面
-URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
-Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+## gstack
+## YC 掌门的 Claude Code 全套配置，23 个角色分工
+URL: https://ourword.ai/skill/i/garrytan-gstack/
+Source: https://github.com/garrytan/gstack
 Updated: 2026-09-04
-Tags: images, skill, vanillagreencom
+Tags: work, skill, garrytan
 
-A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
 
 ### What does this skill do?
-Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+Router for the gstack skill suite. (gstack)
 
 ### Why is it worth installing?
-Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+How a top investor actually runs agents — the role division alone is worth the install.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+Repository: garrytan/gstack The repository ships 59 skills in total.
+
+========================================================================
+## video-shotcraft
+## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
+URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
+Source: https://github.com/Vincentwei1021/video-shotcraft
+Updated: 2026-09-04
+Tags: images, skill, Vincentwei1021
+
+Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
+
+### What does this skill do?
+Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
+
+### Why is it worth installing?
+Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## caveman
@@ -702,28 +1078,6 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
-
-========================================================================
-## archify
-## 画出来的架构图要和代码对得上，导出自带动效的 HTML
-URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
-Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
-Updated: 2026-09-04
-Tags: docs, skill, tt-a1i
-
-Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
-
-### What does this skill do?
-Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
-
-### Why is it worth installing?
-"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## obsidian-second-brain
@@ -928,44 +1282,6 @@ git clone --depth 1 https://github.com/op7418/guizang-yingzao-skill.git Then poi
 Repository: op7418/guizang-yingzao-skill The repository ships 1 skills in total.
 
 ========================================================================
-## lieflat-charts
-## 图表先问数据语义再选色，报告模板十二套
-URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-charts/
-URL (中文): https://ourword.ai/skill/zh/i/larashero3-dotcom-lieflat-charts/
-Source: https://github.com/larashero3-dotcom/lieflat-charts
-Updated: 2026-09-03
-Tags: work, skill, larashero3-dotcom
-
-Real chart implementations, not screenshots. 12 full-page report templates in CN/EN. Maps only on request.
-
-### What does this skill do?
-一套模板驱动的数据可视化与报告生成 skill，既能严格从 Lupi、Basics、Glance、Maps 与 Interactive gallery 的真实实现生成 HTML 图表，也能从 12 套中英文整页报告模板生成可发布的 HTML 报告；以 Mono 为保底，能按数据语义自动选择内置彩色预设，也支持用户明确提供的自定义色板。地图仅在用户明确要求时启用，同一交付禁止混用色系。
-
-### Why is it worth installing?
-Mono as fallback, semantic auto-palette, custom swatches allowed—but never mixed in one deliverable, so reports look art-directed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-从真实图表库实现生成 HTML，不靠截图或手写。十二套中英整页报告模板，地图只在你要时才启用，色系不混搭。
-
-### Q：这个 skill 做什么？
-一套模板驱动的数据可视化与报告生成 skill，既能严格从 Lupi、Basics、Glance、Maps 与 Interactive gallery 的真实实现生成 HTML 图表，也能从 12 套中英文整页报告模板生成可发布的 HTML 报告；以 Mono 为保底，能按数据语义自动选择内置彩色预设，也支持用户明确提供的自定义色板。地图仅在用户明确要求时启用，同一交付禁止混用色系。
-
-### Q：为什么值得装？
-以 Mono 为保底，按数据语义自动挑彩色预设，也可用你给的色板——但同一份交付绝不混色系。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## styleseed
 ## 只认当前画布边界，把 StyleSeed 请求派给唯
 URL: https://ourword.ai/skill/i/bitjaru-styleseed-styleseed/
@@ -1108,44 +1424,6 @@ git clone --depth 1 https://github.com/gnipbao/codex-whiteboard-video-skill.git 
 Repository: gnipbao/codex-whiteboard-video-skill The repository ships 1 skills in total.
 
 ========================================================================
-## math-modeling
-## 三天赛程里做完数学建模竞赛全流程
-URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
-URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
-Source: https://github.com/XiaoMaColtAI/math-modeling-skill
-Updated: 2026-09-03
-Tags: learn, skill, XiaoMaColtAI
-
-A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
-
-### What does this skill do?
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Why is it worth installing?
-Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
-
-### How do you install it?
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
---- 中文 ---
-建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
-
-### Q：这个 skill 做什么？
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Q：为什么值得装？
-按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
-========================================================================
 ## agent-skill-creator
 ## 把口头流程变成能跑的跨平台技能，三步内交付
 URL: https://ourword.ai/skill/i/francyjglisboa-agent-skill-creator/
@@ -1226,44 +1504,6 @@ git clone --depth 1 https://github.com/yanliudesign/mono-color-skill.git 然后�
 
 ### Q：它从哪来？
 Repository: yanliudesign/mono-color-skill The repository ships 1 skills in total.
-
-========================================================================
-## lieflat-gongwen
-## 六类公文族骨架公式，党建经验另起千字炉
-URL: https://ourword.ai/skill/i/larashero3-dotcom-lieflat-gongwen/
-URL (中文): https://ourword.ai/skill/zh/i/larashero3-dotcom-lieflat-gongwen/
-Source: https://github.com/larashero3-dotcom/lieflat-gongwen
-Updated: 2026-09-02
-Tags: writing, skill, larashero3-dotcom
-
-Research reports, speeches, opinions, experience briefs, plans, summaries—each with checkable metrics, skeleton.
-
-### What does this skill do?
-基于真实公文全量统计的公文写作 skill。分公文族与党建族两族，覆盖调研报告/领导讲话/工作意见/经验材料/工作方案/经验总结六类公文族文体，加千字级党建/基层经验材料一类，提供可验收的数值参数、骨架公式、标题技法和自动化自检脚本。触发场景："写一篇调研报告""起草领导讲话""写份工作意见""写篇党建经验材料""把材料写成经验总结""让这篇稿子更有公文味""检查这篇公文的参数对不对"。
-
-### Why is it worth installing?
-Built on full-corpus stats of real official docs—not vague style tips. Checkable metrics, skeleton formulas, and an auto-checker.
-
-### How do you install it?
-git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-gongwen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: larashero3-dotcom/lieflat-gongwen The repository ships 1 skills in total.
-
---- 中文 ---
-调研报告、领导讲话、工作意见、经验材料、工作方案、经验总结，每类都给你可验收的数值参数和骨架公式，写完还能自动自检。
-
-### Q：这个 skill 做什么？
-基于真实公文全量统计的公文写作 skill。分公文族与党建族两族，覆盖调研报告/领导讲话/工作意见/经验材料/工作方案/经验总结六类公文族文体，加千字级党建/基层经验材料一类，提供可验收的数值参数、骨架公式、标题技法和自动化自检脚本。触发场景："写一篇调研报告""起草领导讲话""写份工作意见""写篇党建经验材料""把材料写成经验总结""让这篇稿子更有公文味""检查这篇公文的参数对不对"。
-
-### Q：为什么值得装？
-基于真实公文全量统计，参数可验收、骨架可套用，不是空谈文风。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-gongwen.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: larashero3-dotcom/lieflat-gongwen The repository ships 1 skills in total.
 
 ========================================================================
 ## brand-placement-planning
@@ -1980,50 +2220,6 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
-## gstack
-## YC 掌门的 Claude Code 全套配置，23 个角色分工
-URL: https://ourword.ai/skill/i/garrytan-gstack/
-Source: https://github.com/garrytan/gstack
-Updated: 2026-09-01
-Tags: work, skill, garrytan
-
-YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
-
-### What does this skill do?
-Router for the gstack skill suite. (gstack)
-
-### Why is it worth installing?
-How a top investor actually runs agents — the role division alone is worth the install.
-
-### How do you install it?
-git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: garrytan/gstack The repository ships 59 skills in total.
-
-========================================================================
-## video-shotcraft
-## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
-URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
-Source: https://github.com/Vincentwei1021/video-shotcraft
-Updated: 2026-09-01
-Tags: images, skill, Vincentwei1021
-
-Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
-
-### What does this skill do?
-Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
-
-### Why is it worth installing?
-Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## deep-research
 ## 13 个子代理组队做研究，互相审稿和事实核查
 URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
@@ -2208,28 +2404,6 @@ git clone --depth 1 https://github.com/jsath/simplified-technical-english.git Th
 
 ### Where does it come from?
 Repository: jsath/simplified-technical-english The repository ships 1 skills in total.
-
-========================================================================
-## hotclip
-## 长视频不出本机，剪成带卡拉OK字幕的竖屏爆点
-URL: https://ourword.ai/skill/i/xixihhhh-hotclip-hotclip/
-Source: https://github.com/xixihhhh/hotclip/tree/HEAD/skills/hotclip
-Updated: 2026-08-31
-Tags: images, skill, xixihhhh
-
-Cuts long videos and livestream VODs into viral vertical shorts 100% locally — on-device transcription, LLM highlight detection, 9:16 reframe, karaoke captions, per-clip virality scores.
-
-### What does this skill do?
-Turn long videos & livestream VODs into viral vertical shorts, 100% locally — on-device transcription, LLM highlight detection, 9:16 reframe with karaoke captions, and a per-clip render-QA report. Use when the user asks to clip / cut / 切片 / 剪 a long video, podcast or stream replay into short clips, find highlights / 爆点 in a video, or transcribe a media file. Footage never leaves the machine.
-
-### Why is it worth installing?
-Fully local, nothing uploaded — clip tools are everywhere, but few will touch your unreleased footage without phoning home.
-
-### How do you install it?
-git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
 
 ========================================================================
 ## gtm-cofounder
@@ -2488,44 +2662,6 @@ git clone --depth 1 https://github.com/locoda/duizuo-reading-companion-skill.git
 Repository: locoda/duizuo-reading-companion-skill The repository ships 1 skills in total.
 
 ========================================================================
-## archi-prompt
-## 建筑生图提示词，先锁视角再换材质
-URL: https://ourword.ai/skill/i/jjhuangtw-archi-prompt-skill-archi-prompt/
-URL (中文): https://ourword.ai/skill/zh/i/jjhuangtw-archi-prompt-skill-archi-prompt/
-Source: https://github.com/jjhuangtw/archi-prompt-skill/tree/HEAD/plugins/archi-prompt/skills/archi-prompt
-Updated: 2026-08-30
-Tags: images, skill, jjhuangtw
-
-Tired of AI warping your renders? Same-angle material swaps, white-to-real, day-to-night—it locks perspective &.
-
-### What does this skill do?
-寫建築、室內、景觀的 AI 生圖與修圖提示詞。Write and fix AI image prompts for architecture, interior, and landscape design. 使用者提到建築透視圖、效果圖、外觀、立面、中庭、樣品屋、SU/SketchUp 模型轉渲染、白模轉實景、換材質、換天空、日轉夜、加人、平面圖轉透視、競圖表現圖、大師風格(安藤、Zaha、隈研吾…)、或任何 architectural rendering / archviz / interior render / landscape render 的生圖需求時,都應該用這個 skill。使用者說「生出來的圖不像建築」「改圖之後建築就跑掉了」「同一個角度換材質比較」這類問題時也要用。不要用在非空間類的生圖(人像、產品、插畫)。
-
-### Why is it worth installing?
-Most tools just rewrite words. This one parses the original view, mass, and material layers first—separating what to change from.
-
-### How do you install it?
-git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
-
---- 中文 ---
-效果图总被AI改歪？同角度换材质、白模转实景、日转夜，它先锁住透视和结构，再动颜色和光影，改完建筑不跑。
-
-### Q：这个 skill 做什么？
-寫建築、室內、景觀的 AI 生圖與修圖提示詞。Write and fix AI image prompts for architecture, interior, and landscape design. 使用者提到建築透視圖、效果圖、外觀、立面、中庭、樣品屋、SU/SketchUp 模型轉渲染、白模轉實景、換材質、換天空、日轉夜、加人、平面圖轉透視、競圖表現圖、大師風格(安藤、Zaha、隈研吾…)、或任何 architectural rendering / archviz / interior render / landscape render 的生圖需求時,都應該用這個 skill。使用者說「生出來的圖不像建築」「改圖之後建築就跑掉了」「同一個角度換材質比較」這類問題時也要用。不要用在非空間類的生圖(人像、產品、插畫)。
-
-### Q：为什么值得装？
-多数生图工具只改词，它反过来先解析原图的视角、体量和材质层，把「改哪里」和「不能动哪里」分开写。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
-
-========================================================================
 ## gudemiao-advertising-creative-director
 ## 丢来一句品牌诉求，还你一套可拍可投放的广告工程
 URL: https://ourword.ai/skill/i/gujiapeng1991-droid-gudemiao-advertising-creative-director/
@@ -2766,44 +2902,6 @@ git clone --depth 1 https://github.com/syuancheng/my_markji.git 然后把智能�
 Repository: syuancheng/my_markji Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
-## video-script
-## 先定镜头再落笔的解说稿，时间戳卡到帧
-URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-script/
-URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-script/
-Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-script
-Updated: 2026-08-28
-Tags: images, skill, zenstory-ai
-
-Stuck with VLM analysis but no cut? It picks the story, selects shots, assigns audio/visual roles, writes.
-
-### What does this skill do?
-对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
-
-### Why is it worth installing?
-Not a fill-in-the-blank template. It thinks like a director: story first, then shot selection and audio/visual split; outputs.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-已有 VLM 分析但不知怎么剪？它替你定故事线、挑片段、分镜分工，再写出带时间戳的中文解说并自动校验，一步到位。
-
-### Q：这个 skill 做什么？
-对已完成分析的视频进行导演与剪辑策划，再写带时间戳的中文解说并校验。work_dir 已包含 agent_narration_brief.md 与 vlm_analysis.json 时使用。适用于故事方向、片段选择、画面/原声/旁白分工、 解说写作与复核。输入 work_dir 中的理解索引；输出 recap_story_plan.json、visual_audio_board.json、 可选 style_card.json、cut 模式需要的 clip_plan.json，以及通过校验的 narration.json。触发词：解说词、写解说、视频旁白、 narration script、写稿、解说文案、剪辑思路、导演思路。
-
-### Q：为什么值得装？
-不是模板填空，而是按导演思维先立故事方向，再倒推片段与声画分工；产物带校验闭环。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## starryear-threefold-memory
 ## 照片分三层：记忆碎片、证据原件、心情路线图
 URL: https://ourword.ai/skill/i/starryear-starryear-threefold-memory/
@@ -2870,44 +2968,6 @@ git clone --depth 1 https://github.com/phileiny/h3-storyboard-skill.git Then poi
 Repository: phileiny/h3-storyboard-skill The repository ships 1 skills in total.
 
 ========================================================================
-## video-understanding
-## 视频拆成六层索引，写稿前先看清素材全貌
-URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/
-URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-understanding/
-Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-understanding
-Updated: 2026-08-28
-Tags: images, skill, zenstory-ai
-
-After a documentary, you only remember 'it was nice'. This turns video into scenes, transcripts, visual notes.
-
-### What does this skill do?
-把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
-
-### Why is it worth installing?
-Not just transcription—six interlocking layers: ASR aligns scenes, VLM reads visuals, silence gaps fill narrative holes, fused.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-看完一部纪录片，你只记得'好像不错'。装上它，视频自动变成场景、台词、画面观察、静音、时间线和写作 brief——。
-
-### Q：这个 skill 做什么？
-把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。输入视频文件；输出 scenes.json、 asr_result.json、vlm_analysis.json、silence_periods.json、timeline_fusion.json、agent_narration_brief.md。 触发词：视频理解、视频分析、视频索引、video understanding、analyze video、看懂视频。
-
-### Q：为什么值得装？
-不是单一转录，而是六层产物互相咬合：ASR 对齐场景，VLM 观察画面，静音窗补叙事空隙。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## oil-motion
 ## 一套切开的网页动效
 URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
@@ -2928,44 +2988,6 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 
 ### Where does it come from?
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
-
-========================================================================
-## video-assemble
-## 旁白落定才压原声，字幕烧完再响度归一
-URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/
-URL (中文): https://ourword.ai/skill/zh/i/zenstory-ai-video-recap-skills-video-assemble/
-Source: https://github.com/zenstory-ai/video-recap-skills/tree/HEAD/skills/video-assemble
-Updated: 2026-08-28
-Tags: images, skill, zenstory-ai
-
-The last mile where narration, subtitles, and source audio tangle. It ducks background by narration windows.
-
-### What does this skill do?
-合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
-
-### Why is it worth installing?
-Encodes mixing decisions as rules: ducking depth adapts to narration energy, not fixed attenuation. Subtitle timing comes.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-旁白、字幕、原声三轨纠缠的最后一公里。不用手动对齐时间轴，它按旁白窗口自动压低背景音，生成可烧录字幕。
-
-### Q：这个 skill 做什么？
-合成视频解说最终成片：把旁白音频铺到源视频上，按旁白窗口压低原声，生成 SRT / ASS 字幕并可烧录， 最后做响度标准化。作为最终合成阶段使用。输入源视频、tts_meta.json 与旁白位置； 输出 recap 成片和字幕。触发词：视频合成、混音、字幕、压字幕、assemble video、mux、ducking、subtitles、成片。
-
-### Q：为什么值得装？
-它把「混音决策」编码成规则：ducking 深度随旁白能量动态调，而不是固定衰减。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## magazine-grade-video
@@ -3430,28 +3452,6 @@ git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: lijigang/ljg-skills The repository ships 1 skills in total.
-
-========================================================================
-## novel-to-game
-## 喂进一本小说，产出的不是概念稿是真能玩的游戏
-URL: https://ourword.ai/skill/i/worldwonderer-novel-to-game-novel-to-game/
-Source: https://github.com/worldwonderer/novel-to-game/tree/HEAD/skills/novel-to-game
-Updated: 2026-08-26
-Tags: play, skill, worldwonderer
-
-Feed it a novel; it extracts the world, art-directs it, and builds a genuinely playable game grounded in the source text.
-
-### What does this skill do?
-Turn a novel into a fully playable game on the selected target platform. Orchestrates the whole adaptation pipeline — requirements intake, gameable deconstruction, concept selection, world and visual design, target-runtime build, and evidence-based QA — for a novel in any language. Use for novel to game, story to game, book to game, adapt this novel into a game, turn this book into a playable prot
-
-### Why is it worth installing?
-Turning a beloved book into a playable game is a childhood dream for a lot of people — this packages the whole pipeline so Claude Code can just get to work.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
 
 ========================================================================
 ## smy-seedance-storyboard
@@ -4238,6 +4238,28 @@ git clone --depth 1 https://github.com/blader/humanizer.git Then point your agen
 
 ### Where does it come from?
 Repository: blader/humanizer The repository ships 1 skills in total.
+
+========================================================================
+## humanize
+## 41 种 AI 腔逐个挑出，改完才准进仓库
+URL: https://ourword.ai/skill/i/kyle-bartlett-soundshuman/
+Source: https://github.com/kyle-bartlett/soundshuman
+Updated: 2026-08-18
+Tags: writing, skill, kyle-bartlett
+
+Drafting, editing, reviewing—it flags 41 AI-tells like significance inflation, -ing tails, vague attributions.
+
+### What does this skill do?
+Remove signs of AI-generated writing from prose, and keep it out of a repo. Use when drafting, editing, or reviewing text to make it sound natural and human, or when auditing a whole docs folder for AI slop. Detects 41 patterns across content, language, style, communication, filler, and rhetoric, including: significance inflation, promotional language, -ing tails, vague attributions, AI vocabulary
+
+### Why is it worth installing?
+Instead of vague 'this sounds robotic,' it breaks AI-slop into 41 reproducible patterns across six categories, pinpoints each.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kyle-bartlett/soundshuman.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kyle-bartlett/soundshuman The repository ships 1 skills in total.
 
 ========================================================================
 ## stamp-edge
