@@ -298,6 +298,28 @@ git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point 
 Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
 
 ========================================================================
+## vibe-techdesign
+## 先写技术设计再写代码，让 MVP 不返工
+URL: https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/
+Source: https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign
+Updated: 2026-09-05
+Tags: images, skill, KhazP
+
+Stuck on stack or structure? It won't decide for you—it lays out options, trade-offs, and risks as a table, so.
+
+### What does this skill do?
+Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says "plan technical design", "choose tech stack", or "how should I build this".
+
+### Why is it worth installing?
+It forces scattered opinions into 'because… therefore…' by templating constraints, alternatives, and rejections—turning gut-feel.
+
+### How do you install it?
+git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: KhazP/vibe-coding-prompt-template The repository ships 1 skills in total. Homepage: https://vibeworkflow.app/
+
+========================================================================
 ## a2ui-renderer
 ## A2UI 界面渲染器，装上就能让 Agent 画表单
 URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
@@ -378,6 +400,44 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 
 ### Where does it come from?
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
+
+========================================================================
+## ljg-writes
+## 一个观点经得住反例才肯落笔的写作引擎
+URL: https://ourword.ai/skill/i/lijigang-ljg-skills/
+URL (中文): https://ourword.ai/skill/zh/i/lijigang-ljg-skills/
+Source: https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes
+Updated: 2026-09-05
+Tags: writing, skill, lijigang
+
+AI opinion pieces default to being correct and empty. This one sets a specific bar: 1000–1500 words, understandable, transferable, and able to survive counterexamples — and it explicitly refuses to write summaries.
+
+### What does this skill do?
+"写作引擎。把一个观点写成可理解、可迁移、经得住反例的 1000-1500 字中文文章。USE WHEN 写文章 OR 优化思想内容 OR 展开观点 OR 改写成逻辑递进的中文。NOT FOR 普通摘要、事实查询或结构风洞（用 ljg-structure）。"
+
+### Why is it worth installing?
+'Survives counterexamples' is the most demanding thing I've seen a writing skill ask of itself. Far more concrete than claiming 'high quality'.
+
+### How do you install it?
+git clone --depth 1 https://github.com/lijigang/ljg-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: lijigang/ljg-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。
+
+### Q：这个 skill 做什么？
+"写作引擎。把一个观点写成可理解、可迁移、经得住反例的 1000-1500 字中文文章。USE WHEN 写文章 OR 优化思想内容 OR 展开观点 OR 改写成逻辑递进的中文。NOT FOR 普通摘要、事实查询或结构风洞（用 ljg-structure）。"
+
+### Q：为什么值得装？
+「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: lijigang/ljg-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## video-assemble
@@ -528,6 +588,44 @@ git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then poin
 Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
 
 ========================================================================
+## story-deslop
+## 删掉「她眸色一暗」的网文去AI味改稿器
+URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
+URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
+Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
+Updated: 2026-09-05
+Tags: writing, skill, worldwonderer
+
+Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
+
+### What does this skill do?
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Why is it worth installing?
+Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
+
+### Q：这个 skill 做什么？
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Q：为什么值得装？
+网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## video-shotcraft
 ## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
 URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
@@ -614,6 +712,28 @@ git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent 
 
 ### Where does it come from?
 Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## deep-research
+## 13 个子代理组队做研究，互相审稿和事实核查
+URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
+Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
+Updated: 2026-09-05
+Tags: docs, skill, Imbad0202
+
+A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
+
+### What does this skill do?
+Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
+
+### Why is it worth installing?
+A serious open-source take on deep research — the division of labor and cross-checks are well designed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## social-post
@@ -1996,44 +2116,6 @@ git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后�
 Repository: redfox-data/redfox-community The repository ships 1 skills in total.
 
 ========================================================================
-## story-deslop
-## 删掉「她眸色一暗」的网文去AI味改稿器
-URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
-URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
-Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
-Updated: 2026-09-02
-Tags: writing, skill, worldwonderer
-
-Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
-
-### What does this skill do?
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Why is it worth installing?
-Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
-
-### Q：这个 skill 做什么？
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Q：为什么值得装？
-网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## planning-with-files
 ## 任务拆解写到磁盘，/clear 后自动续上进度
 URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
@@ -2392,28 +2474,6 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 
 ### Where does it come from?
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
-
-========================================================================
-## deep-research
-## 13 个子代理组队做研究，互相审稿和事实核查
-URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
-Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
-Updated: 2026-09-01
-Tags: docs, skill, Imbad0202
-
-A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
-
-### What does this skill do?
-Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
-
-### Why is it worth installing?
-A serious open-source take on deep research — the division of labor and cross-checks are well designed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## book-to-skill
@@ -3530,44 +3590,6 @@ git clone --depth 1 https://github.com/liyue-aigc/seedance-2-5-video-director.gi
 Repository: liyue-aigc/seedance-2-5-video-director The repository ships 1 skills in total.
 
 ========================================================================
-## ljg-writes
-## 一个观点经得住反例才肯落笔的写作引擎
-URL: https://ourword.ai/skill/i/lijigang-ljg-skills/
-URL (中文): https://ourword.ai/skill/zh/i/lijigang-ljg-skills/
-Source: https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes
-Updated: 2026-08-26
-Tags: writing, skill, lijigang
-
-AI opinion pieces default to being correct and empty. This one sets a specific bar: 1000–1500 words, understandable, transferable, and able to survive counterexamples — and it explicitly refuses to write summaries.
-
-### What does this skill do?
-"写作引擎。把一个观点写成可理解、可迁移、经得住反例的 1000-1500 字中文文章。USE WHEN 写文章 OR 优化思想内容 OR 展开观点 OR 改写成逻辑递进的中文。NOT FOR 普通摘要、事实查询或结构风洞（用 ljg-structure）。"
-
-### Why is it worth installing?
-'Survives counterexamples' is the most demanding thing I've seen a writing skill ask of itself. Far more concrete than claiming 'high quality'.
-
-### How do you install it?
-git clone --depth 1 https://github.com/lijigang/ljg-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: lijigang/ljg-skills The repository ships 1 skills in total.
-
---- 中文 ---
-AI 写观点文最容易变成正确的废话。它的目标很具体：1000-1500 字，可理解、可迁移、经得住反例——而且明说不做普通摘要。
-
-### Q：这个 skill 做什么？
-"写作引擎。把一个观点写成可理解、可迁移、经得住反例的 1000-1500 字中文文章。USE WHEN 写文章 OR 优化思想内容 OR 展开观点 OR 改写成逻辑递进的中文。NOT FOR 普通摘要、事实查询或结构风洞（用 ljg-structure）。"
-
-### Q：为什么值得装？
-「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: lijigang/ljg-skills The repository ships 1 skills in total.
-
-========================================================================
 ## smy-seedance-storyboard
 ## 水墨线条矿物色块，把小说整成上美影分镜脚本
 URL: https://ourword.ai/skill/i/liangdabiao-smy-seedance-storyboard/
@@ -4128,28 +4150,6 @@ git clone --depth 1 https://github.com/M1n-n9/academic-figures-drawer.git Then p
 
 ### Where does it come from?
 Repository: M1n-n9/academic-figures-drawer The repository ships 1 skills in total.
-
-========================================================================
-## vibe-techdesign
-## 先写技术设计再写代码，让 MVP 不返工
-URL: https://ourword.ai/skill/i/khazp-vibe-coding-prompt-template-vibe-techdesign/
-Source: https://github.com/KhazP/vibe-coding-prompt-template/tree/HEAD/.agents/skills/vibe-techdesign
-Updated: 2026-08-21
-Tags: images, skill, KhazP
-
-Stuck on stack or structure? It won't decide for you—it lays out options, trade-offs, and risks as a table, so.
-
-### What does this skill do?
-Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says "plan technical design", "choose tech stack", or "how should I build this".
-
-### Why is it worth installing?
-It forces scattered opinions into 'because… therefore…' by templating constraints, alternatives, and rejections—turning gut-feel.
-
-### How do you install it?
-git clone --depth 1 https://github.com/KhazP/vibe-coding-prompt-template.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: KhazP/vibe-coding-prompt-template The repository ships 1 skills in total. Homepage: https://vibeworkflow.app/
 
 ========================================================================
 ## fitness-coach
