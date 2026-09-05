@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 322 skills.
+# Full corpus, plain text. 323 skills.
 
 ========================================================================
 ## anime-poster
@@ -276,6 +276,28 @@ git clone --depth 1 https://github.com/jjhuangtw/archi-prompt-skill.git 然后�
 Repository: jjhuangtw/archi-prompt-skill The repository ships 1 skills in total.
 
 ========================================================================
+## markstream-vue
+## AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚
+URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
+Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
+Updated: 2026-09-05
+Tags: work, skill, Simon-He95
+
+AI tokens stream in, but your Vue page waits for the whole blob? This skill wires virtual scrolling & a timeline.
+
+### What does this skill do?
+Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
+
+### Why is it worth installing?
+Not just code snippets—it chains renderer, DOM mode, CSS order, and content/nodes choices into one decision path, with.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
+
+========================================================================
 ## a2ui-renderer
 ## A2UI 界面渲染器，装上就能让 Agent 画表单
 URL: https://ourword.ai/skill/i/copilotkit-copilotkit-a2ui-renderer/
@@ -336,6 +358,28 @@ git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后
 Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## oil-motion
+## 一套切开的网页动效
+URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
+Source: https://github.com/oil-oil/oil-motion
+Updated: 2026-09-05
+Tags: images, skill, oil-oil
+
+Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
+
+### What does this skill do?
+Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
+
+### Why is it worth installing?
+It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
+
+### How do you install it?
+git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: oil-oil/oil-motion The repository ships 1 skills in total.
+
+========================================================================
 ## video-assemble
 ## 旁白落定才压原声，字幕烧完再响度归一
 URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-assemble/
@@ -394,6 +438,28 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 
 ### Where does it come from?
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
+
+========================================================================
+## punk-cover
+## 同一套朋克视觉库，文章、小红书、公众号封面一次生成
+URL: https://ourword.ai/skill/i/adrianpunk-punk-skill-punk-cover/
+Source: https://github.com/adrianpunk/Punk-Skill/tree/HEAD/skills/punk-cover
+Updated: 2026-09-05
+Tags: images, skill, adrianpunk
+
+Turn any article, note or tweet into a cover image in one line — 11 finely tuned styles (magazine front page, torn-paper collage, giant Chinese title…) for Xiaohongshu, WeChat and X.
+
+### What does this skill do?
+Generate cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, confirm platform/aspect ratio and visual style, sa
+
+### Why is it worth installing?
+The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.
+
+### How do you install it?
+git clone --depth 1 https://github.com/adrianpunk/Punk-Skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: adrianpunk/Punk-Skill The repository ships 1 skills in total.
 
 ========================================================================
 ## comfyui-mcp
@@ -462,6 +528,72 @@ git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then poin
 Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
 
 ========================================================================
+## video-shotcraft
+## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
+URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
+Source: https://github.com/Vincentwei1021/video-shotcraft
+Updated: 2026-09-05
+Tags: images, skill, Vincentwei1021
+
+Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
+
+### What does this skill do?
+Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
+
+### Why is it worth installing?
+Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## caveman
+## 让 Claude 用原始人腔说话，据称省下 65% 的 token
+URL: https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/
+Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
+Updated: 2026-09-05
+Tags: play, skill, JuliusBrussee
+
+Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
+
+### What does this skill do?
+Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
+
+### Why is it worth installing?
+A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
+
+### How do you install it?
+git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
+
+========================================================================
+## understand-figma
+## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
+Updated: 2026-09-05
+Tags: dev, skill, Egonex-AI
+
+Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
+
+### What does this skill do?
+Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
+
+### Why is it worth installing?
+Design handoff, solved visually — the whole system in one graph.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
 ## archify
 ## 画出来的架构图要和代码对得上，导出自带动效的 HTML
 URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
@@ -482,6 +614,66 @@ git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent 
 
 ### Where does it come from?
 Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## social-post
+## 学你的语气排好 14 天日历，再替你按下发布键
+URL: https://ourword.ai/skill/i/hao0321-claude-skill-social-post-social-post/
+URL (中文): https://ourword.ai/skill/zh/i/hao0321-claude-skill-social-post-social-post/
+Source: https://github.com/Hao0321/claude-skill-social-post/tree/HEAD/social-post
+Updated: 2026-09-05
+Tags: work, skill, Hao0321
+
+Learns your Facebook voice, then writes and posts to FB, IG, Threads and X on a 14-day calendar — 80K-reach validated.
+
+### What does this skill do?
+學使用者的 Facebook 個人貼文語氣，依 14 天內容策略日曆，自動產出並發佈到 FB / Instagram / Threads / X。使用時機：使用者說「發文」、「幫我寫一篇貼文」、「用我的風格發」、「今天發一篇」、「PO 一下」、「學我的語氣」、「分析我的貼文風格」、「重新規劃內容」、「排貼文」、「查流量」、「review」時一律觸發；即使只說「發一篇」、「PO 文」、「PO 個廢文」也要觸發。
+
+### Why is it worth installing?
+Voice-learning, calendaring and actual posting in one loop — rare full automation for personal brands.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
+
+--- 中文 ---
+学你的 Facebook 语气，按 14 天内容日历自动写并发到 FB/IG/Threads/X——实测单帖 8 万触达。
+
+### Q：这个 skill 做什么？
+學使用者的 Facebook 個人貼文語氣，依 14 天內容策略日曆，自動產出並發佈到 FB / Instagram / Threads / X。使用時機：使用者說「發文」、「幫我寫一篇貼文」、「用我的風格發」、「今天發一篇」、「PO 一下」、「學我的語氣」、「分析我的貼文風格」、「重新規劃內容」、「排貼文」、「查流量」、「review」時一律觸發；即使只說「發一篇」、「PO 文」、「PO 個廢文」也要觸發。
+
+### Q：为什么值得装？
+「学语气 + 排日历 + 真发布」三步闭环，是个人 IP 运营少见的全自动解。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
+
+========================================================================
+## understand-chat
+## 按调用结构而不是搜字符串，回答改这里会牵动谁
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
+Updated: 2026-09-05
+Tags: dev, skill, Egonex-AI
+
+Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
+
+### What does this skill do?
+Use when you need to ask questions about a codebase or understand code using a knowledge graph
+
+### Why is it worth installing?
+A tier above grep: answers by structure, not string match.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
 ## podcast-transcribe-local
@@ -722,28 +914,6 @@ git clone --depth 1 https://github.com/sanhuang520-ship-it/awesome-chinese-ai-to
 
 ### Q：它从哪来？
 Repository: sanhuang520-ship-it/awesome-chinese-ai-tools Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## markstream-vue
-## AI 长输出不卡顿的 Vue 3 流式渲染器，自带虚
-URL: https://ourword.ai/skill/i/simon-he95-markstream-vue-markstream-vue/
-Source: https://github.com/Simon-He95/markstream-vue/tree/HEAD/.agents/skills/markstream-vue
-Updated: 2026-09-04
-Tags: work, skill, Simon-He95
-
-AI tokens stream in, but your Vue page waits for the whole blob? This skill wires virtual scrolling & a timeline.
-
-### What does this skill do?
-Integrate markstream-vue into a Vue 3 app. Use when Codex needs to add the Vue 3 renderer, import CSS in the right order, choose renderer and DOM modes, choose built-in, plain, or custom code-block paths, choose between `content` and `nodes`, coordinate long AI timelines with `MarkstreamVirtualTimeline`, `useMarkstreamVirtualAdapter`, or `vue-virtual-scroller`, enable optional peers such as stream
-
-### Why is it worth installing?
-Not just code snippets—it chains renderer, DOM mode, CSS order, and content/nodes choices into one decision path, with.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Simon-He95/markstream-vue.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Simon-He95/markstream-vue The repository ships 11 skills in total. Homepage: https://markstream.simonhe.me
 
 ========================================================================
 ## textile-toy-portrait
@@ -1068,50 +1238,6 @@ git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent
 Repository: garrytan/gstack The repository ships 59 skills in total.
 
 ========================================================================
-## video-shotcraft
-## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
-URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
-Source: https://github.com/Vincentwei1021/video-shotcraft
-Updated: 2026-09-04
-Tags: images, skill, Vincentwei1021
-
-Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
-
-### What does this skill do?
-Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
-
-### Why is it worth installing?
-Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## caveman
-## 让 Claude 用原始人腔说话，据称省下 65% 的 token
-URL: https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/
-Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
-Updated: 2026-09-04
-Tags: play, skill, JuliusBrussee
-
-Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
-
-### What does this skill do?
-Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
-
-### Why is it worth installing?
-A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
-
-### How do you install it?
-git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
-
-========================================================================
 ## ponytail
 ## 先问「这真的需要做吗」，能不写的代码一行不写
 URL: https://ourword.ai/skill/i/dietrichgebert-ponytail-ponytail/
@@ -1132,28 +1258,6 @@ git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point yo
 
 ### Where does it come from?
 Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
-
-========================================================================
-## understand-figma
-## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
-Updated: 2026-09-04
-Tags: dev, skill, Egonex-AI
-
-Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
-
-### What does this skill do?
-Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
-
-### Why is it worth installing?
-Design handoff, solved visually — the whole system in one graph.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
 ## obsidian-second-brain
@@ -1214,28 +1318,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## understand-chat
-## 按调用结构而不是搜字符串，回答改这里会牵动谁
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
-Updated: 2026-09-04
-Tags: dev, skill, Egonex-AI
-
-Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
-
-### What does this skill do?
-Use when you need to ask questions about a codebase or understand code using a knowledge graph
-
-### Why is it worth installing?
-A tier above grep: answers by structure, not string match.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
 ## kami
@@ -1334,6 +1416,44 @@ git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## college-resume-coach
+## 从零梳理真实经历到可打印 A4 简历的引导员
+URL: https://ourword.ai/skill/i/sanjin666-eng-college-resume-coach/
+URL (中文): https://ourword.ai/skill/zh/i/sanjin666-eng-college-resume-coach/
+Source: https://github.com/sanjin666-eng/college-resume-coach
+Updated: 2026-09-03
+Tags: everyday, skill, sanjin666-eng
+
+No fluff, only facts: first a DOCX of your real experiences, then a text resume, finally a printable A4 HTML. For.
+
+### What does this skill do?
+引导大学生从零梳理真实个人经历，依次交付《个人经历梳理》DOCX、简历文字版 Markdown 和可编辑可打印的完整 A4 HTML 简历；也可仅凭用户提供的初版简历与岗位 JD，独立完成岗位定制、文字版确认和 HTML 排版。适用于从零制作简历或按 JD 优化已有简历；不用于虚构经历包装。
+
+### Why is it worth installing?
+It breaks resume writing into three deliverables, forcing you to organize before drafting—a coach, not a template generator.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sanjin666-eng/college-resume-coach.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sanjin666-eng/college-resume-coach The repository ships 1 skills in total.
+
+--- 中文 ---
+不会包装、只会挖真事：先交经历梳理 DOCX，再出文字版，最后排版成能打印的 HTML。
+
+### Q：这个 skill 做什么？
+引导大学生从零梳理真实个人经历，依次交付《个人经历梳理》DOCX、简历文字版 Markdown 和可编辑可打印的完整 A4 HTML 简历；也可仅凭用户提供的初版简历与岗位 JD，独立完成岗位定制、文字版确认和 HTML 排版。适用于从零制作简历或按 JD 优化已有简历；不用于虚构经历包装。
+
+### Q：为什么值得装？
+它把「写简历」拆成三步，每步交付一个文件，逼你先梳理再动笔，避免编造。机制上像教练，不是模板生成器。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/sanjin666-eng/college-resume-coach.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: sanjin666-eng/college-resume-coach The repository ships 1 skills in total.
 
 ========================================================================
 ## yingzao
@@ -2252,28 +2372,6 @@ git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把�
 Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
 
 ========================================================================
-## punk-cover
-## 同一套朋克视觉库，文章、小红书、公众号封面一次生成
-URL: https://ourword.ai/skill/i/adrianpunk-punk-skill-punk-cover/
-Source: https://github.com/adrianpunk/Punk-Skill/tree/HEAD/skills/punk-cover
-Updated: 2026-09-01
-Tags: images, skill, adrianpunk
-
-Turn any article, note or tweet into a cover image in one line — 11 finely tuned styles (magazine front page, torn-paper collage, giant Chinese title…) for Xiaohongshu, WeChat and X.
-
-### What does this skill do?
-Generate cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, confirm platform/aspect ratio and visual style, sa
-
-### Why is it worth installing?
-The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.
-
-### How do you install it?
-git clone --depth 1 https://github.com/adrianpunk/Punk-Skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: adrianpunk/Punk-Skill The repository ships 1 skills in total.
-
-========================================================================
 ## kinocut
 ## 有护栏的 AI 视频剪辑
 URL: https://ourword.ai/skill/i/kyanitelabs-kinocut-kinocut/
@@ -2562,44 +2660,6 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 
 ### Where does it come from?
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
-
-========================================================================
-## social-post
-## 学你的语气排好 14 天日历，再替你按下发布键
-URL: https://ourword.ai/skill/i/hao0321-claude-skill-social-post-social-post/
-URL (中文): https://ourword.ai/skill/zh/i/hao0321-claude-skill-social-post-social-post/
-Source: https://github.com/Hao0321/claude-skill-social-post/tree/HEAD/social-post
-Updated: 2026-08-31
-Tags: work, skill, Hao0321
-
-Learns your Facebook voice, then writes and posts to FB, IG, Threads and X on a 14-day calendar — 80K-reach validated.
-
-### What does this skill do?
-學使用者的 Facebook 個人貼文語氣，依 14 天內容策略日曆，自動產出並發佈到 FB / Instagram / Threads / X。使用時機：使用者說「發文」、「幫我寫一篇貼文」、「用我的風格發」、「今天發一篇」、「PO 一下」、「學我的語氣」、「分析我的貼文風格」、「重新規劃內容」、「排貼文」、「查流量」、「review」時一律觸發；即使只說「發一篇」、「PO 文」、「PO 個廢文」也要觸發。
-
-### Why is it worth installing?
-Voice-learning, calendaring and actual posting in one loop — rare full automation for personal brands.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
-
---- 中文 ---
-学你的 Facebook 语气，按 14 天内容日历自动写并发到 FB/IG/Threads/X——实测单帖 8 万触达。
-
-### Q：这个 skill 做什么？
-學使用者的 Facebook 個人貼文語氣，依 14 天內容策略日曆，自動產出並發佈到 FB / Instagram / Threads / X。使用時機：使用者說「發文」、「幫我寫一篇貼文」、「用我的風格發」、「今天發一篇」、「PO 一下」、「學我的語氣」、「分析我的貼文風格」、「重新規劃內容」、「排貼文」、「查流量」、「review」時一律觸發；即使只說「發一篇」、「PO 文」、「PO 個廢文」也要觸發。
-
-### Q：为什么值得装？
-「学语气 + 排日历 + 真发布」三步闭环，是个人 IP 运营少见的全自动解。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
 
 ========================================================================
 ## interview-master
@@ -3042,28 +3102,6 @@ git clone --depth 1 https://github.com/phileiny/h3-storyboard-skill.git Then poi
 
 ### Where does it come from?
 Repository: phileiny/h3-storyboard-skill The repository ships 1 skills in total.
-
-========================================================================
-## oil-motion
-## 一套切开的网页动效
-URL: https://ourword.ai/skill/i/oil-oil-oil-motion/
-Source: https://github.com/oil-oil/oil-motion
-Updated: 2026-08-28
-Tags: images, skill, oil-oil
-
-Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
-
-### What does this skill do?
-Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
-
-### Why is it worth installing?
-It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
-
-### How do you install it?
-git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: oil-oil/oil-motion The repository ships 1 skills in total.
 
 ========================================================================
 ## magazine-grade-video
