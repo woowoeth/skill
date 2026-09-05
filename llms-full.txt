@@ -1,7 +1,45 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 321 skills.
+# Full corpus, plain text. 322 skills.
+
+========================================================================
+## anime-poster
+## 九宫格拆解人物设定，出整张无字二次元海报提示词
+URL: https://ourword.ai/skill/i/qqy2275583297-stack-anime-poster-skill-anime-poster/
+URL (中文): https://ourword.ai/skill/zh/i/qqy2275583297-stack-anime-poster-skill-anime-poster/
+Source: https://github.com/qqy2275583297-stack/anime-poster-skill/tree/HEAD/anime-poster
+Updated: 2026-09-05
+Tags: images, skill, qqy2275583297-stack
+
+Feed it a ref image or character spec, and it locks down face, hair, outfit, pose, mood, scene, composition.
+
+### What does this skill do?
+将人物设定、参考图或场景概念转化为完整的无文字二次元平面海报提示词，统一设计脸部、发型、服装、动作、神态、场景、构图、色彩与光影。用于原创角色海报、参考图重设计、动漫封面视觉和既有提示词优化；不用于写实人像换装或需要实际排版文字的海报。
+
+### Why is it worth installing?
+Instead of vague prose, it forces nine explicit visual decisions per prompt, preventing omissions and style drift—so the same.
+
+### How do you install it?
+git clone --depth 1 https://github.com/qqy2275583297-stack/anime-poster-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: qqy2275583297-stack/anime-poster-skill The repository ships 1 skills in total.
+
+--- 中文 ---
+给一张参考图或一段人设，它把脸型、发型、服装、动作、神态、场景、构图、色彩、光影九项逐一敲定。
+
+### Q：这个 skill 做什么？
+将人物设定、参考图或场景概念转化为完整的无文字二次元平面海报提示词，统一设计脸部、发型、服装、动作、神态、场景、构图、色彩与光影。用于原创角色海报、参考图重设计、动漫封面视觉和既有提示词优化；不用于写实人像换装或需要实际排版文字的海报。
+
+### Q：为什么值得装？
+不是笼统描述，而是把视觉决策拆成九个固定槽位逐项填空，避免漏项和风格漂移；同一角色在不同姿势下脸型。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/qqy2275583297-stack/anime-poster-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: qqy2275583297-stack/anime-poster-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## lieflat-gongwen
