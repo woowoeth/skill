@@ -2,6 +2,318 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-05T13:50:16Z",
+   "判了": 39,
+   "过": 0,
+   "明细": [
+    {
+     "id": "shenquan520-reading-analysis",
+     "repo": "shenquan520/reading-analysis",
+     "title": "会拆穿每道错题出题人陷阱的英语阅读陪练",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 对教学场景拆解得极细，边界清楚，但核心方法换工具也能实现。（3 判：[65, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "dandjlab-cell-claude-for-adobe",
+     "repo": "dandjlab-cell/claude-for-adobe",
+     "title": "在 Premiere 里直接对话剪辑，说句话它就动手",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "dandjlab-cell-claude-for-adobe-cut-silences",
+     "repo": "dandjlab-cell/claude-for-adobe",
+     "title": "剪掉静音前先给你看时间轴标记，你点头才落刀",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工作流清晰，但属通用工具操作指南，换脚本也能做。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "dandjlab-cell-claude-for-adobe-edit-footage",
+     "repo": "dandjlab-cell/claude-for-adobe",
+     "title": "先看转录稿再动手的剪辑师，剪完还替你留好替换镜头",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 剪辑流程清晰，但属于工具链操作，普通用户难及。（3 判：[65, 72, 85]）",
+     "分": 72
+    },
+    {
+     "id": "dandjlab-cell-claude-for-adobe-how-to-use",
+     "repo": "dandjlab-cell/claude-for-adobe",
+     "title": "编辑器问你能干嘛时，照这份稿答三句就够",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 工具说明清晰实用，但依赖Premiere，普通用户门槛高，非生活题材，价值一般。（3 判：[45, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "kody-w-vbrainstem-ada",
+     "repo": "kody-w/vbrainstem",
+     "title": "开工前先读这页的私人工作协议",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 个人偏好模板，泛用但无独特做法，边界模糊，非刚需工具。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "kody-w-vbrainstem-hello-world",
+     "repo": "kody-w/vbrainstem",
+     "title": "",
+     "过": false,
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "kody-w-vbrainstem-vbrainstem-setup",
+     "repo": "kody-w/vbrainstem",
+     "title": "一份随身携带的「我是谁」文件",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 实用但思路可复制，价值受限于特定生态用户。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "across2005-harness-self-evolution-plugin",
+     "repo": "Across2005/harness-self-evolution-plugin",
+     "title": "原生 exe 单文件闭环",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 面向开发工具链的插件文档，扎实但非创作者题材，且多为工具使用说明。（3 判：[35, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "velklish-promptobus-orchestrate",
+     "repo": "Velklish/promptobus",
+     "title": "拆分大任务到多个工作会话，你点头才开工",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具文档，非生活创作题材；将任务拆解执行，边界清楚但换工具亦可。（3 判：[45, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "velklish-promptobus-solo-review",
+     "repo": "Velklish/promptobus",
+     "title": "只审自己刚改的那几行，不碰别的文件",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具链文档，边界清晰但读者特定，非生活创作题材（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "apiguru-app-agent-kit-apiguru-amazon-data",
+     "repo": "apiguru-app/agent-kit",
+     "title": "20 个亚马逊站点实时行情，一天白嫖三次",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 功能扎实但属开发者工具链，非普适生活题材，价格敏感需谨慎（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "olcayekin-job-hunter-job-research",
+     "repo": "OlcayEkin/job-hunter",
+     "title": "简历投出去前，先让这张活网页替你盯三天招聘页",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 做法清晰细致，但属个人求职工具流程，换工具可替代。（3 判：[42, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "sailorchina-us-stock-trading-agent",
+     "repo": "SailorChina/us-stock-trading-agent",
+     "title": "四路信号交叉验证后才给美股买卖点",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向专业交易工具链，非普通读者，泛泛罗列功能，缺乏独特判断边界。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "lumihelia-chinese-semantic-flow",
+     "repo": "lumihelia/chinese-semantic-flow",
+     "title": "先立住命题再落笔的中文语义流写作",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 对中文写作有独特方法论且边界清晰，但属通用文体规则，非特定场景绝活。（3 判：[42, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "dlyimoss-crypto-the-leap",
+     "repo": "dlyimoss-crypto/The-Leap",
+     "title": "37 个技能打包成一套，装完按场景挑着用",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "socisio-socis-agent-socis-agent",
+     "repo": "socisio/socis-agent",
+     "title": "SOCIS Agent 的遥控器：配置、换肤、扩展",
+     "过": false,
+     "为什么": "品味 40 分 < 80 —— 特定产品文档，非通用题材，但索引结构清晰有用。（3 判：[40, 40, 45]）",
+     "分": 40
+    },
+    {
+     "id": "pronvis-skills",
+     "repo": "pronvis/skills",
+     "title": "71 个技能一包带走，装完不占脑子",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "valon-jang-persistent-project-thread-persistent-project-thread",
+     "repo": "Valon-Jang/persistent-project-thread",
+     "title": "压缩后还能接着聊的项目线程，状态一字不丢",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者的工程方法论，内容扎实但读者错位，且同类工具可替代。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "parthghusarcoder-visual-architect-visual-architect",
+     "repo": "ParthGhusarCoder/visual-architect",
+     "title": "先画语义再落笔的架构图生成器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 体系化强、边界清晰，但定位偏技术工具链，换工具可替代，非不可替代。（3 判：[42, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "pelazas-adhd-pr-reviewer",
+     "repo": "pelazas/adhd-pr-reviewer",
+     "title": "竖屏脑腐风 PR 评审视频，自动配字幕旁白还能回贴",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程清晰、边界明确，但定位为开发工具链，读者过窄。（3 判：[45, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "mokuyoaxis-dsh-iris-iris-verify-ui",
+     "repo": "mokuyoaxis/dsh-iris",
+     "title": "截图对照设计稿，逐像素揪出视觉偏差",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 流程严谨且可执行，但本质是工具链说明，非通用创作题材。（3 判：[45, 65, 75]）",
+     "分": 65
+    },
+    {
+     "id": "mokuyoaxis-dsh-iris-iris-compose-media",
+     "repo": "mokuyoaxis/dsh-iris",
+     "title": "一条流水线串起图像、视频、语音的媒体编排器",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 多步媒体编排清晰，但手法似通用流程，工具即达。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "yuzhe-xu1-article-to-knowledge-cards-make-knowledge-cards",
+     "repo": "Yuzhe-XU1/article-to-knowledge-cards",
+     "title": "文章变 5~8 张可自测的知识卡片，不碰 Anki",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 功能可用，流程清晰，但本质是模板化转换，工具替代性强，缺独特见解。（3 判：[40, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "liora-0521-workbuddy-skills-concept-learner",
+     "repo": "Liora-0521/workbuddy-skills",
+     "title": "任意概念喂进去，吐出一份七段式自学 HTML",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 系统化学习法扎实，产出清晰；但核心价值可由提示词模板替代，非独家。（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "dptdptdpt1-clarifact-communication_letter",
+     "repo": "dptdptdpt1/ClariFact",
+     "title": "舆情回应函先给事实链再动笔，出处逐条可点开",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 流程具体且边界清晰，但核心逻辑可借通用工具实现，非独有做法。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "shakhaoathpappu-jpg-flyrank-ml-internship",
+     "repo": "shakhaoathpappu-jpg/FlyRank-ML-Internship",
+     "title": "13 个 ML 面试技能打包，按简历逐项击破",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "shakhaoathpappu-jpg-flyrank-ml-internship-flyrank-context",
+     "repo": "shakhaoathpappu-jpg/FlyRank-ML-Internship",
+     "title": "面试题里提到 FlyRank 时先读这份公司背景",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 公司内部背景说明，非通用技能，交付物不明确，读者受限。（3 判：[35, 42, 42]）",
+     "分": 42
+    },
+    {
+     "id": "shakhaoathpappu-jpg-flyrank-ml-internship-writing-honest-claims",
+     "repo": "shakhaoathpappu-jpg/FlyRank-ML-Internship",
+     "title": "证据扛不动的话，一个字都不许写",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 工具写作指导，扎实清晰，但可为通用方法论，非独有。（3 判：[35, 42, 60]）",
+     "分": 42
+    },
+    {
+     "id": "shakhaoathpappu-jpg-flyrank-ml-internship-auditing-signals",
+     "repo": "shakhaoathpappu-jpg/FlyRank-ML-Internship",
+     "title": "先看分布再谈相关的数据审计员",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 数据分析方法扎实清晰，但通用性强，非独门绝技。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "dslab-iust-dslab-iust.github.io-iust-dsys-lab-design",
+     "repo": "DSLab-IUST/dslab-iust.github.io",
+     "title": "分布式系统术语当设计语言的实验室官网皮肤",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 面向特定实验室的内部设计规范，受众过窄。虽有独特思路，但属产品定制文档，非通用可（3 判：[35, 62, 62]）",
+     "分": 62
+    },
+    {
+     "id": "0xsharkboy-lecture-outline-skills-lecture-notes-to-outline",
+     "repo": "0xsharkboy/lecture-outline-skills",
+     "title": "讲义进 Outline 前先过一遍你的口吻",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向特定工具链的转化流程，边界清晰但题材冷门，非普适创作场景。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "0xsharkboy-lecture-outline-skills-lecture-notes-to-revision-sheet",
+     "repo": "0xsharkboy/lecture-outline-skills",
+     "title": "Outline 笔记原地生成可打印的复习卡",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 做法扎实，边界清晰，但局限于特定工具生态，换工具不可用。（3 判：[62, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "ilien-dev-svipall-svipall",
+     "repo": "ilien-dev/svipall",
+     "title": "本地破墙抓网页，验证码不劳你亲手填",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 功能强大但属开发工具链，面向开发者，边界清晰但非普通创作者所需（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "zoneee-alphonse-studio",
+     "repo": "Zoneee/alphonse-studio",
+     "title": "33 个技能打包成一套，按场景挑着用",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "jasperberkel-portfolio-analyser-plugin",
+     "repo": "jasperberkel/portfolio-analyser-plugin",
+     "title": "同一套持仓分析技能，Codex 和 Claude C",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "jasperberkel-portfolio-analyser-plugin-finanzen-news-research",
+     "repo": "jasperberkel/portfolio-analyser-plugin",
+     "title": "德媒头条扫完直接落进本地持仓档案",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 新闻研究流程扎实，边界清晰，但本质是通用财经新闻整理，非独特题材。（3 判：[45, 62, 62]）",
+     "分": 62
+    },
+    {
+     "id": "jasperberkel-portfolio-analyser-plugin-market-opportunity-research",
+     "repo": "jasperberkel/portfolio-analyser-plugin",
+     "title": "德语市场周报生成器，四类资产筛完直接落本地",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 流程完整但产出为通用研究模板，非独特做法，边界尚可但非他处不可得。（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "jasperberkel-portfolio-analyser-plugin-portfolio-analyser-setup",
+     "repo": "jasperberkel/portfolio-analyser-plugin",
+     "title": "插件装完只差这一步：连上本地应用并排好定时任务",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 是企业工具链的配置指南，流程清晰但非普通人题材，因插件专属受限。（3 判：[35, 45, 45]）",
+     "分": 45
+    }
+   ]
+  },
+  {
    "时间": "2026-09-05T11:35:08Z",
    "判了": 19,
    "过": 0,
@@ -3689,240 +4001,6 @@
      "title": "HTML 版式拆成可编辑 PPT 的转换器",
      "过": true,
      "为什么": "编辑读过原文挑的 —— 把 slide/poster 的 HTML 确定性转成每个元素都能单独选中拖动的 PPTX，不是截图贴底：纯本地单命令无 LLM，render_check.py"
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-03T08:36:29Z",
-   "判了": 32,
-   "过": 28,
-   "明细": [
-    {
-     "id": "tengj-article-poster-generator",
-     "repo": "tengj/article-poster-generator",
-     "title": "一篇文章拆成六页竖版信息图，每页都能单独发朋友圈",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 长文拆成 5–8 张竖版信息图海报直接出 PNG：1290 行渲染脚本 + 6 种布局 schema + 5 套配色是真零件；「提取什么」和「卡片需要什么」反向"
-    },
-    {
-     "id": "y1fe1-yang-resume-assistant-skill",
-     "repo": "Y1fe1-Yang/resume-assistant-skill",
-     "title": "五个代理围着你转，从挖故事到模拟面试一条龙",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 学生从「没经历」到能投的简历：PDF/DOCX/网页三套生成脚本 + 模板 + 随包中文字体 + 样例 JSON，拆了照样出文件；差距分 A 类硬伤诚实告知、B"
-    },
-    {
-     "id": "momozi1996-directoragents",
-     "repo": "momozi1996/DirectorAgents",
-     "title": "31位导演的分镜会，你当主席还是当观众",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 31 位导演风格档案库（平均 14KB，有出处有片例有导演自我定位，侯孝贤篇引陈世骧、戴锦华并具体到《悲情城市》固定机位），中港台导演 13 位是中文创作者真用"
-    },
-    {
-     "id": "cattlez-dance-video-to-prompt-dance-video-to-prompt",
-     "repo": "CattleZ/dance-video-to-prompt",
-     "title": "模糊帧不编手指，卡点动作拆成七段可生成提示词",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 本地跳舞/变装短视频反推成能直接喂生成模型的 7 段中文提示词：抽帧、清晰度检测邻帧救援、本地音轨 BPM 拍点分析全是脚本干活，模型只读结果（和心选 astr"
-    },
-    {
-     "id": "m1n-n9-academic-figures-drawer",
-     "repo": "M1n-n9/academic-figures-drawer",
-     "title": "论文配图直接产出可编辑 draw.io 源文件",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 从论文/代码生成两栏可读、可编辑的 .drawio 学术配图：自动布局脚本 + 形状索引数据 + 十几篇质量契约；产物是可编辑源文件不是截图（同心选 excal"
-    },
-    {
-     "id": "itshen-source-reading-methodology",
-     "repo": "itshen/source-reading-methodology",
-     "title": "每句话都能回溯到源码行号的开源仓库精读器",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 带 AI 精读大型开源仓库并编成每句话可回溯到源码具体行的书稿：build_book.py 编 HTML 书、style_scan.py 抓静默删行、分阶段校验"
-    },
-    {
-     "id": "mumdark-nature-writing-studio-nature-writing-studio",
-     "repo": "mumdark/nature-writing-studio",
-     "title": "657 篇 Nature 原文蒸馏出的学术英语改写器",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 把中文/粗糙科研文本改成 Nature 家族英文并清 AI 味：14 个 TSV 真数据（反 AI 模式、短语库、领域句长统计、hedge 动词）标注来自 65"
-    },
-    {
-     "id": "yuanchen-home-cumcm-step-review",
-     "repo": "yuanchen-home/cumcm-step-review",
-     "title": "每步先交方案再写代码的国赛建模流水线",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 数学建模国赛逐步审核：先审思路算法、通过再写代码、每部分写进论文草稿再审；assets 七份算法说明 + raincloud/ROC-CI/SHAP/chord"
-    },
-    {
-     "id": "gary149-h3-game-sprites-h3-game-sprites",
-     "repo": "gary149/h3-game-sprites",
-     "title": "视频生成转逐帧精灵图，动作全对齐绿幕抠像",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 用 H3 视频当演员拍动作再切成校验过的透明底 2D 游戏精灵表：gen_still / sprite_cut / build_atlas 三个脚本 + ffm"
-    },
-    {
-     "id": "locoda-duizuo-reading-companion-skill",
-     "repo": "locoda/duizuo-reading-companion-skill",
-     "title": "读书记不住进度？它替你记着，还防剧透",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 对坐：陪你把一本书读完、只聊你读到的地方、绝不剧透。剧透拆成权限≠状态、临时授权不落盘等六条硬规则，连意象结构节奏也算剧透；6 种对话模式各一份规则 + 回归测"
-    },
-    {
-     "id": "xiaohuailabs-xiaohu-ip-studio",
-     "repo": "xiaohuailabs/xiaohu-ip-studio",
-     "title": "31个固定角色出演的正文配图，不靠选风格靠选认知锚点",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 给中文深度文配由固定 IP 角色出演的解释图，自带 31 个手绘角色（含 16 个谐音梗食物角色）各有锚点图和角色卡，14 份方法文件；「选 IP 和风格是用户"
-    },
-    {
-     "id": "fuwenhao12-academic-ref-inserter",
-     "repo": "fuwenhao12/academic-ref-inserter",
-     "title": "docx 里引文乱序、缺超链接时，它按 GB/T 7",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 给 Word 毕业论文/投稿稿插入、重排、超链接参考文献，GB/T 7714-2015 / IEEE / APA 7 等 7 种格式各一个 .py，valida"
-    },
-    {
-     "id": "zy-zmc-tianming-skill",
-     "repo": "zy-zmc/tianming-skill",
-     "title": "七卷本起步的协同写作系统，大纲到存档全管",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 多卷长篇小说协同写作系统：法则/协议/事实三层，冲突时「事实时效更高、法典永远胜出」，缺核心文件报绑定失败禁止捏造、事实不足只标待决议；conflict-sco"
-    },
-    {
-     "id": "vivixiao980-xhs-cover-skill",
-     "repo": "Vivixiao980/xhs-cover-skill",
-     "title": "先出图后改字的小红书封面，风格学一次就记住",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 一张人像 + 一句标题出小红书 3:4 封面，18 种风格是 JSON + 各配一张真实效果图（风格是数据不是形容词），风格学习流程能把用户喂的参考图提炼成同 "
-    },
-    {
-     "id": "xianxie6-stamp-edge-skill",
-     "repo": "xianxie6/stamp-edge-skill",
-     "title": "原图四周直接打半圆孔，真透明背景的邮票生成器",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 任意截图变四周打孔、带柔和投影的透明底邮票 PNG，多张拼成邮票合集图：两个 Pillow 脚本零 API 依赖，参数表可调；注意事项全是踩坑记录（微信会把透明"
-    },
-    {
-     "id": "larashero3-dotcom-lieflat-less-ai-tone",
-     "repo": "larashero3-dotcom/lieflat-less-ai-tone",
-     "title": "只删清单上那七种AI腔，其余一字不动",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 按白名单规则去中文成稿的 AI 味，没命中规则的句子逐字保留：629 篇（AI 300 / 人类 329）对照语料把每条规则证实或证伪，「不作为改写理由」表把句"
-    },
-    {
-     "id": "chengyi-ai-native-subtitle-quote-image-native-subtitle-quote-image",
-     "repo": "chengyi-ai/native-subtitle-quote-image",
-     "title": "视频字幕截图直接拼社交长图，不重绘不超分",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 把一段视频做成 3:4 的字幕金句长图（一张主画面 + 四条字幕帧，1440×1920）：752 行拼图脚本；原生字幕 / 脚本字幕两种模式硬分开，用户说保留原"
-    },
-    {
-     "id": "qianye-wuyu-yueyuan-bazi",
-     "repo": "qianye-wuyu/yueyuan-bazi",
-     "title": "先立假设再找证据的子平八字推演台",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 子平八字研究型分析：lunar-python 引擎排盘，模型只按 STRUCTURAL>CORE>SCHOOL>HEURISTIC 分层规则读盘，给「倾向 + "
-    },
-    {
-     "id": "yejy53-editable-design-editable-design",
-     "repo": "yejy53/Editable-Design",
-     "title": "固定画布出图还附可编辑源文件与鼠标编辑器",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 边界清晰、交付物明确，设计判断自主，但流程可替代。（3 判：[55, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "xiaoou-waou-xiaoou-gzh-layout",
-     "repo": "xiaoou-waou/xiaoou-gzh-layout",
-     "title": "Markdown 进去，公众号编辑器样式直接粘贴出来",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 把 Markdown/Word/PDF 排成粘进公众号编辑器样式不丢的 HTML：6 套主题组件库 + validate_gzh_html.py 校验平台禁用项"
-    },
-    {
-     "id": "work-fisher-reference-first-motion-director-reference-first-motion-director",
-     "repo": "Work-Fisher/reference-first-motion-director",
-     "title": "先出整片视觉总表，再逐镜找参考的导演工作流",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 口播视频整片视觉导演：先出视觉总表和动效清单，再为每个动效交付 2048×1152 成片级参考图 + 按内容定时的视频提示词；随包 33 图 15 视频的原创参"
-    },
-    {
-     "id": "sherlyryn-make-tape-collage",
-     "repo": "sherlyryn/make-tape-collage",
-     "title": "照片旁留一块暖白纸，胶带拼贴不遮原图",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 照片变和纸胶带拼贴画，或原照片零改动、旁边配留白胶带纸面：compose_direct_split.py 确定性合成（裁切上限 20%、纸面纹理、标题定位，--"
-    },
-    {
-     "id": "v-yun-vuln-report-skill",
-     "repo": "v-yun/vuln-report-skill",
-     "title": "漏洞确认后直接产出可提交的 DOCX 报告",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 白帽把已确认漏洞写成能直接投 SRC/CNVD/EDUSRC 的 DOCX：分层验证门把「什么够格写报告」写成硬判据（无 PoC 不算漏洞、只读到自己测试账号数"
-    },
-    {
-     "id": "songzhi-lab-chinese-font-selector-chinese-font-selector",
-     "repo": "Songzhi-lab/chinese-font-selector",
-     "title": "中文字体选配不靠眼缘，靠授权安全分级和场景矩阵",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 给小红书卡片/产品册/网页/书内页选可免费商用的中文字体，T0 开源 / T1 厂商免费商用 / 慎用三级 + 场景×气质矩阵，每条推荐必写授权类型和获取渠道；"
-    },
-    {
-     "id": "liufanshan11-cumcm-c-problem-lfs",
-     "repo": "liufanshan11/cumcm-c-problem-lfs",
-     "title": "C题专用：从附件到LaTeX成稿的72小时全流程建模",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 数模国赛 C 题 72 小时从读题到 LaTeX 成稿：init/validate/audit_figures 三个脚本 + 论文骨架 + 2018–2025 "
-    },
-    {
-     "id": "tance-mang-chinese-webnovel-skills",
-     "repo": "tance-mang/chinese-webnovel-skills",
-     "title": "23 件网文工具按场景分格，写哪段抽哪件",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "larashero3-dotcom-lieflat-charts",
-     "repo": "larashero3-dotcom/lieflat-charts",
-     "title": "图表先问数据语义再选色，报告模板十二套",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 给非程序员的图表品味法典：5 套 gallery + 12 套中英报告模板，硬立场是必须从模板生成禁止另画、图的数量由结论数决定、禁混色系 —— 和心选「自动选"
-    },
-    {
-     "id": "feichangai-team-china-compliance-skills-cn-ai-visibility",
-     "repo": "feichangai-team/china-compliance-skills",
-     "title": "五个国产AI搜一遍，你的品牌被引用没",
-     "过": false,
-     "为什么": "品味 65 分 < 80 —— 框架扎实但属方法论，换人也可产出，非独家数据或工具。（3 判：[62, 65, 65]）",
-     "分": 65
-    },
-    {
-     "id": "feichangai-team-china-compliance-skills-cn-aigc-detector",
-     "repo": "feichangai-team/china-compliance-skills",
-     "title": "五维统计信号，专挑中文AI腔的段落级检测器",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 方法详实可操作，五信号加权有原创性；但本质是统计工具，同类检测器可替代。（3 判：[75, 75, 78]）",
-     "分": 75
-    },
-    {
-     "id": "feichangai-team-china-compliance-skills-cn-compliance-guard",
-     "repo": "feichangai-team/china-compliance-skills",
-     "title": "上架前扫一遍，广告法违禁词当场标红",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 中文文案违禁词扫描：广告法 6 类 200+ 词逐条挂法条和罚款区间（绝对化用语 20–100 万），5 平台 SEO 规则，给安全替换词，check.sh 一"
-    },
-    {
-     "id": "mikuz12-exampass-assistant",
-     "repo": "MIKUZ12/ExamPass-Assistant",
-     "title": "期末复习把整门课压成三张纸的讲义生成器",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 课件变教授式讲义 + 可打印的交互测试 HTML：16 个脚本是真零件，拒绝编造、不确定就说明 —— 和心选「对着真实课本和考纲突击复习」同一读者，多了产物形态"
-    },
-    {
-     "id": "juneyaooo-xhs-writer-skill",
-     "repo": "JuneYaooo/xhs-writer-skill",
-     "title": "素材丢进来，小红书图文或视频稿成套落盘",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 小红书卡片组/短视频脚本，卖点按稀缺×实用×可感知打分而不是凭感觉，7 个脚本 + references；生图依赖自己的 key 且明说可降级 —— 和同批 x"
     }
    ]
   }
