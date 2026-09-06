@@ -98,6 +98,9 @@ jobs:
           # 取不到作者产出图的新货，当轮就配一张中性样张（图上无字），不让任何一张卡没脸上架；
           # --ci 表示图形是正则猜的、没人过目：cover_verdict 留空，货架体检在 48 小时内记「糙」、过期记「坏」，
           # 巡货的 agent 逐件看图后再写 ok / 换图形（CLAUDE.md 底线 1、2）。
+          # 先重建 feed：make_specimens 读的是 skills/feed.json，而本轮新货此时只在 skills/<id>.json 里、
+          # 还没进 feed —— 09-06 验证轮就是这样：样张那步说「没有要做的」，体检却报一张新卡没封面。
+          python3 scouts/scout_lib.py >/dev/null 2>&1 || true
           python3 scouts/make_specimens.py --ci || true
           python3 scouts/covers_publish.py || true
           python3 scouts/scout_lib.py >/dev/null 2>&1 || true
