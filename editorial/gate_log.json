@@ -2,6 +2,178 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-06T12:17:32Z",
+   "判了": 21,
+   "过": 0,
+   "明细": [
+    {
+     "id": "vieeeeeee-codex-connection-doctor",
+     "repo": "Vieeeeeee/codex-connection-doctor",
+     "title": "断连报错先分层定位再动手的 Codex 网络医生",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 诊断流程具体可操作，但属开发工具链官方问题排查，边界清晰非独家（3 判：[45, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "cloudflare-skills",
+     "repo": "cloudflare/skills",
+     "title": "让 Agent 学会 Cloudflare 官方基建",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "cloudflare-skills-cloudflare-one",
+     "repo": "cloudflare/skills",
+     "title": "Cloudflare One 零信任与 SASE 部",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业技术文档示例，面向开发者，非普通创作者题材。（3 判：[30, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "cloudflare-skills-agents-sdk",
+     "repo": "cloudflare/skills",
+     "title": "调试 Cloudflare Agents 时能直接看",
+     "过": false,
+     "为什么": "品味 41 分 < 80 —— 产品官方文档索引，边界清晰但对普通用户无用，属工具链基建。（3 判：[35, 41, 45]）",
+     "分": 41
+    },
+    {
+     "id": "cloudflare-skills-cloudflare-email-service",
+     "repo": "cloudflare/skills",
+     "title": "Cloudflare 邮件收发排障",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 产品官方集成指南，边界清晰但替代工具多，非独特题材。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "saadeghi-daisyui-daisyui",
+     "repo": "saadeghi/daisyui",
+     "title": "Tailwind 组件库",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 官方组件库示例，泛用目录而非独到做法（3 判：[35, 35, 35]）",
+     "分": 35
+    },
+    {
+     "id": "firecrawl-anydoc-convert-documents-to-markdown",
+     "repo": "firecrawl/anydoc",
+     "title": "喂它 .docx 还你干净 Markdown",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 工具使用说明清晰，边界明确，但换其他文档转换工具也能实现。（3 判：[45, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "millionco-react-doctor-react-doctor",
+     "repo": "millionco/react-doctor",
+     "title": "提交前先让 React 代码过一遍全科体检",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具链专用，功能扎实但题材局限，非生活创作类，亮点在于本地流程但略泛。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "baskduf-fablecodex-codex-fable5",
+     "repo": "baskduf/FableCodex",
+     "title": "Codex 里跑 Fable 5 工作法的行为适配器",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 企业工具链的移植教程，目标读者是开发者和Codex用户，非普通创作者，且为模板化（3 判：[35, 35, 45]）",
+     "分": 35
+    },
+    {
+     "id": "sanjay3290-ai-skills",
+     "repo": "sanjay3290/ai-skills",
+     "title": "一套技能同时喂给 Claude、Cursor",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "sanjay3290-ai-skills-imagen",
+     "repo": "sanjay3290/ai-skills",
+     "title": "Gemini 原生出图，草图到成品不换窗口",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 是Gemini官方能力封装，换工具即可实现，无独特边界思考（3 判：[40, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "sanjay3290-ai-skills-apple-container",
+     "repo": "sanjay3290/ai-skills",
+     "title": "苹果官方容器 CLI，macOS 上免 Docker",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具产品文档扎实，但读者是企业开发者，非普通人，通用可替代。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sanjay3290-ai-skills-atlassian",
+     "repo": "sanjay3290/ai-skills",
+     "title": "Jira 工单与 Confluence 页面共用一个",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业工具链文档，读者定位偏开发，非普通用户场景（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "brianrwagner-ai-marketing-claude-code-skills",
+     "repo": "BrianRWagner/ai-marketing-claude-code-skills",
+     "title": "营销框架不产空话，直接产出可执行任务清单",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "brianrwagner-ai-marketing-claude-code-skills-youtube-summarizer",
+     "repo": "BrianRWagner/ai-marketing-claude-code-skills",
+     "title": "自动抓取油管字幕，摘要与全文一起发到聊天框",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 实现扎实，但本质是转录加模板摘要，可被其他工具替代，边界清晰但创新有限。（3 判：[45, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "brianrwagner-ai-marketing-claude-code-skills-ai-discoverability-audit",
+     "repo": "BrianRWagner/ai-marketing-claude-code-skills",
+     "title": "在 ChatGPT 里搜不到你品牌？这份审计告诉你缺",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 方法框架扎实，但可被SEO咨询替代，非AI专属，边界清晰但非不可替代。（3 判：[55, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "brianrwagner-ai-marketing-claude-code-skills-case-study-builder",
+     "repo": "BrianRWagner/ai-marketing-claude-code-skills",
+     "title": "客户一句好评，它替你扩写成能进提案的案例页",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 流程扎实，产出清晰，但本质是通用模板，换工具亦可实现。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "zapier-zapier-mcp-zapier-demo",
+     "repo": "zapier/zapier-mcp",
+     "title": "当场跑通第一个 Zapier 动作的带路向导",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 方向清晰但为产品演示文档，边界和独特性一般（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "zapier-zapier-mcp-zapier-explore",
+     "repo": "zapier/zapier-mcp",
+     "title": "先问清你天天用哪五个应用",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具链场景，流程扎实但换任何助手都能做，非独家判断（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "zapier-zapier-mcp-zapier-onboard",
+     "repo": "zapier/zapier-mcp",
+     "title": "Zapier MCP 新用户上手指南，从认证到分流",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 是产品官方接入引导，扎实但属工具链示例，非通用创作题材。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "morluto-rea-reverse-engineer-anything",
+     "repo": "morluto/rea",
+     "title": "拿到安装包就能拆出它怎么工作的逆向师",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 技术逆向工具方法论，面向开发者，边界清楚但题材非大众生活创作。（3 判：[45, 45, 65]）",
+     "分": 45
+    }
+   ]
+  },
+  {
    "时间": "2026-09-06T09:26:51Z",
    "判了": 41,
    "过": 0,
@@ -4286,205 +4458,6 @@
      "过": false,
      "为什么": "品味 72 分 < 80 —— 流程清晰，状态机明确，但核心教学法依赖个人经验，非独特方法论。（3 判：[72, 72, 75]）",
      "分": 72
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-03T13:36:35Z",
-   "判了": 24,
-   "过": 12,
-   "明细": [
-    {
-     "id": "canine89-hwpxskill",
-     "repo": "Canine89/hwpxskill",
-     "title": "HWPX 文档的读写改，不碰老式 .hwp 二进制",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 边界清晰、流程严格，但技术门槛高，本质是工具集而非独特方法。（3 判：[68, 72, 80]）",
-     "分": 72
-    },
-    {
-     "id": "leonardhope-claude-skill-for-patent-filing-quality-control",
-     "repo": "LeonardHope/Claude-Skill-for-Patent-Filing-Quality-Control",
-     "title": "70 多项检查逐条过，交 USPTO 前先替你当一回",
-     "过": true,
-     "为什么": "品味 85 分 —— 专利QC流程极具体，边界清晰，脚本判断外别无他选，细节独到。（3 判：[72, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "songz0-valuation-audit-reference",
-     "repo": "songz0/valuation-audit-reference",
-     "title": "会揪出WACC第七种错误的评估底稿复核员",
-     "过": true,
-     "为什么": "品味 82 分 —— 领域知识极深，边界清晰，执行规约严格，非模板可替代。（3 判：[65, 82, 85]）",
-     "分": 82
-    },
-    {
-     "id": "newmcpe-ida-reverse-engineering-skill",
-     "repo": "Newmcpe/ida-reverse-engineering-skill",
-     "title": "IDA Pro 数据库在你手里，伪代码只是起点",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 实战性强，方法系统，但依赖MCP工具，思路可被其他工具复现。（3 判：[65, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "jzocb-upgrade-guard",
-     "repo": "jzOcb/upgrade-guard",
-     "title": "升级前先拍快照，翻车一键回滚的 OpenClaw 守",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 针对升级场景有完整快照、检查、回滚闭环，边界清晰，提供了别处拿不到的系统化方案。（3 判：[72, 72, 80]）",
-     "分": 72
-    },
-    {
-     "id": "jup-ag-docs-document-from-source",
-     "repo": "jup-ag/docs",
-     "title": "先打真实 API 再落笔的 Jupiter 文档工",
-     "过": true,
-     "为什么": "品味 85 分 —— 真实经验封装为可复用流程，边界清晰，证据驱动，非空泛模板。（3 判：[85, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "irenerachel-fight-prompt-director",
-     "repo": "irenerachel/fight-prompt-director",
-     "title": "打戏分镜喂给视频模型前，先过一遍它的调度",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 动作编排与速度分层扎实，方法自成体系，但核心仍是提示词模板延伸，非独家原理。（3 判：[72, 72, 85]）",
-     "分": 72
-    },
-    {
-     "id": "olivervvvv-plain-language-skill",
-     "repo": "olivervvvv/plain-language-skill",
-     "title": "术语堆三层就拆成三句人话的改写器",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 判断扎实，规则清晰有红线，但改写成白话的功夫别处也能做到。（3 判：[72, 75, 82]）",
-     "分": 75
-    },
-    {
-     "id": "daybigo-starcil-starcil",
-     "repo": "daybigo/starcil",
-     "title": "在终端分屏里指挥 AI 特工舰队，不切窗口",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 工具操作说明扎实，但本质是官方CLI手册，换人也能写。（3 判：[62, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "alchemint-inc-curtoom-encoding-hero-video-for-mobile",
-     "repo": "ALCHEMINT-INC/curtoom",
-     "title": "手机竖屏 hero 视频压片台，只管码率不管播放",
-     "过": true,
-     "为什么": "品味 82 分 —— 规则明确到参数与阈值，拒绝模糊场景，边界清晰，做法别处难直接拿到。（3 判：[72, 82, 82]）",
-     "分": 82
-    },
-    {
-     "id": "alchemint-inc-curtoom-verifying-hero-video-on-mobile",
-     "repo": "ALCHEMINT-INC/curtoom",
-     "title": "手机上看不见的卡顿，它替你分帧证明",
-     "过": true,
-     "为什么": "品味 85 分 —— 把手机视频播放问题拆解为饿死与被挡，提供分层验证与直接工具，边界清晰，做法具体难（3 判：[85, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "alchemint-inc-curtoom-video-clip-stitching",
-     "repo": "ALCHEMINT-INC/curtoom",
-     "title": "接缝诊断师：专治AI分段影片的卡顿与重复",
-     "过": true,
-     "为什么": "品味 85 分 —— 诊断先行+三类接缝图谱+踩坑判据，边界清晰，做法别处拿不到。（3 判：[82, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "owngoalstudio-platformize-bin-ios",
-     "repo": "OwnGoalStudio/platformize-bin-ios",
-     "title": "一条命令把 C/Rust 工具搬进越狱 iOS 双生",
-     "过": true,
-     "为什么": "品味 85 分 —— 边界清晰、契约严格，提供了别处拿不到的iOS打包实操细节，但依赖参考实现。（3 判：[85, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "liufelix2004-god-minmax-h3",
-     "repo": "LIUFelix2004/God-minmax-H3",
-     "title": "MiniMax H3 成片级视频提示词方法论",
-     "过": true,
-     "为什么": "品味 82 分 —— 实战性强，边界清楚，但核心是可替代的工作流方法（3 判：[72, 82, 82]）",
-     "分": 82
-    },
-    {
-     "id": "boringmarketer-meta-ads-skill",
-     "repo": "boringmarketer/meta-ads-skill",
-     "title": "从权限链到像素验证，Meta 广告全流程不靠猜",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 实战经验扎实，边界清晰，但核心内容官方文档可替代。（3 判：[72, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "socialpranker-zodchiy",
-     "repo": "Socialpranker/zodchiy",
-     "title": "审计先量改动代价再谈架构的 git 历史侦探",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 边界清晰，方法具体可执行，但理念可能被其他工具实现。（3 判：[72, 75, 78]）",
-     "分": 75
-    },
-    {
-     "id": "liangdabiao-dsh-plugin-developer-skill",
-     "repo": "liangdabiao/dsh-plugin-developer-skill",
-     "title": "照着 Cordis 生命周期写 dsh 插件",
-     "过": false,
-     "为什么": "品味 78 分 < 80 —— 内容详实，边界清晰，实操性强，但知识可能随版本迭代过时。（3 判：[72, 78, 85]）",
-     "分": 78
-    },
-    {
-     "id": "maxliebscher-threejs-procedural-rocks-cliffs-procedural-rocks-cliffs",
-     "repo": "maxliebscher/threejs-procedural-rocks-cliffs",
-     "title": "地形上长出的岩壁与碎石，拓扑水密且可交互重算",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 管线细节扎实，边界清楚，但本质是专家经验整理，非独家方法论。（3 判：[62, 75, 85]）",
-     "分": 75
-    },
-    {
-     "id": "zf-utokyo-anti-ai-defensive-writing-anti-ai-defensive-writing",
-     "repo": "ZF-Utokyo/anti-ai-defensive-writing",
-     "title": "删掉AI腔的防御性写作：不请自来的免责声明",
-     "过": true,
-     "为什么": "品味 82 分 —— 边界清晰、模式实用，但同类文本清理工具可替代，非独家。（3 判：[70, 82, 85]）",
-     "分": 82
-    },
-    {
-     "id": "hyetigran-legacy-skills-legacy-audit",
-     "repo": "hyetigran/legacy-skills",
-     "title": "先摸清遗产代码再动手的逆向审计员",
-     "过": true,
-     "为什么": "品味 85 分 —— 流程具体可执行，但本质是方法论，换工具也可实现。（3 判：[72, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "hyetigran-legacy-skills-legacy-migration",
-     "repo": "hyetigran/legacy-skills",
-     "title": "审计报告进门，迁移路线图出门",
-     "过": false,
-     "为什么": "品味 78 分 < 80 —— 将重写决策流程化，边界清晰，强调审计前提，提供可操作的分阶段方案，非模板可比。（3 判：[72, 78, 82]）",
-     "分": 78
-    },
-    {
-     "id": "gwagjiug-can-i-remove-this",
-     "repo": "gwagjiug/can-i-remove-this",
-     "title": "先查依赖能不能删再动手的瘦身审计员",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 方法论扎实且边界清晰，但类似决策工具或流程可被重复实现，非独家。（3 判：[72, 75, 85]）",
-     "分": 75
-    },
-    {
-     "id": "janez-2006-anti-over-defense-anti-over-defense",
-     "repo": "JaneZ-2006/Anti-Over-Defense",
-     "title": "代码直给，不铺防御工事的实现员",
-     "过": true,
-     "为什么": "品味 85 分 —— 边界清晰，反过度防御实操性强，但类似原则在Cline等工具说明中已存在。（3 判：[62, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "gmessori-redazione-norme-redazione-norme",
-     "repo": "gmessori/redazione-norme",
-     "title": "意大利国家法规起草与修订助手",
-     "过": true,
-     "为什么": "品味 85 分 —— 对意大利立法技术规则有深度、边界清晰，提供别处难寻的实操指引。（3 判：[85, 85, 85]）",
-     "分": 85
     }
    ]
   }
