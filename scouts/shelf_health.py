@@ -65,11 +65,26 @@ def check_covers(items, sample: int) -> None:
     if nothumb:
         note("坏", f"{len(nothumb)} 张封面没有 w800 派生图 —— 卡片会先 404 再回退原图，首屏一排灰框；跑 scouts/covers_publish.py",
              [x["id"][:48] for x in nothumb[:8]])
+    # 封面必须有人打开看过（cover_verdict=ok）。但进货是自动的、判图是人做的，两者不同步：
+    # 2026-09-06 早上这条闸第一次在 CI 上红，就是一件当轮新到的货 —— 它没坏，只是还没轮到人看。
+    # 按 2026-09-02 的「先发后审」：新到货 48 小时内没判记「糙」，过了 48 小时还没人看才是「坏」。
+    # 已经判了 replace / remove 却还挂着的，不享受宽限 —— 那是判完没执行。
+    def _age_days(x):
+        d = x.get("added_at") or x.get("cover_tried_at") or ""
+        try:
+            return (datetime.date.today() - datetime.date.fromisoformat(d[:10])).days
+        except ValueError:
+            return 999
     unj = [x for x in items if (x.get("cover") or "") and x.get("cover_verdict") != "ok"]
-    if unj:
-        byv = collections.Counter(x.get("cover_verdict") or "未判" for x in unj)
-        note("坏", f"{len(unj)} 张封面没有过目判 ok（{'、'.join(f'{k} {v}' for k, v in byv.most_common())}）",
-             [f"{x['id'][:40]} · {x.get('cover_verdict') or '未判'} · {(x.get('cover_verdict_why') or '')[:36]}" for x in unj[:8]])
+    fresh = [x for x in unj if not x.get("cover_verdict") and _age_days(x) <= 2]
+    stale = [x for x in unj if x not in fresh]
+    if fresh:
+        note("糙", f"新到货 {len(fresh)} 张封面还没人过目（48 小时内，先发后审）—— 巡货时逐件看图写 cover_verdict",
+             [f"{x['id'][:40]} · {(x.get('cover_verdict_why') or '')[:40]}" for x in fresh[:8]])
+    if stale:
+        byv = collections.Counter(x.get("cover_verdict") or "未判" for x in stale)
+        note("坏", f"{len(stale)} 张封面没有过目判 ok（{'、'.join(f'{k} {v}' for k, v in byv.most_common())}）",
+             [f"{x['id'][:40]} · {x.get('cover_verdict') or '未判'} · {(x.get('cover_verdict_why') or '')[:36]}" for x in stale[:8]])
     # 指向我们自己仓的封面**查本地文件**，不发 HTTP。
     # 2026-09-02 的坑：这一步在工作流里排在 Commit 之前，本轮新写的封面还没推上去，
     # raw.githubusercontent 自然 404 —— CI 里报「4 张打不开」，本地跑全 200。

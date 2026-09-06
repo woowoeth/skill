@@ -83,7 +83,9 @@ skills/feed.json → GitHub Pages 静态店面（this site）
 | GitHub search（fun/game/creative 关键词） | live |
 | 已上架仓库的星数/更新回访（restock） | live |
 
-> 选品标准见 [docs/CURATION.md](./docs/CURATION.md)。
+> 选品标准见 [docs/CURATION.md](./docs/CURATION.md)；封面标准见 [docs/COVERS.md](./docs/COVERS.md)（每件在架的都必须有图，图要有人打开看过）；
+> 数据契约见 [docs/PROTOCOL.md](./docs/PROTOCOL.md)；店主拍板的原话和踩过的坑见 [docs/DECISIONS-2026-09-06.md](./docs/DECISIONS-2026-09-06.md)、[docs/DECISIONS-2026-08-19.md](./docs/DECISIONS-2026-08-19.md)、[docs/DEBT.md](./docs/DEBT.md)。
+> 在这个仓库里干活的 agent 先读根目录的 [CLAUDE.md](./CLAUDE.md)，五条底线都在那。
 
 ## 日常巡货 / Daily curation
 

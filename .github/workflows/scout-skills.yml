@@ -89,7 +89,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python3 scouts/repo_covers.py --tree --only-none --max 40 || true
-          python3 scouts/make_thumbs.py || true
+          # 2026-09-06：改走 covers_publish（refresh → make_thumbs，顺序是产品的一部分，见 docs/DECISIONS-2026-09-06.md D34）。
+          # 此前这里单跑 make_thumbs，而且 CI 从没装过 Pillow —— 两个月来每轮都是 ModuleNotFoundError 被 || true 吞掉，
+          # 新货的 w800 派生图一张没出过，线上每张新卡先 404 再回退原图。
+          python3 -m pip install -q pillow playwright && python3 -m playwright install --with-deps chromium >/dev/null 2>&1
+          # 取不到作者产出图的新货，当轮就配一张中性样张（图上无字），不让任何一张卡没脸上架；
+          # --ci 表示图形是正则猜的、没人过目：cover_verdict 留空，货架体检在 48 小时内记「糙」、过期记「坏」，
+          # 巡货的 agent 逐件看图后再写 ok / 换图形（CLAUDE.md 底线 1、2）。
+          python3 scouts/make_specimens.py --ci || true
+          python3 scouts/covers_publish.py || true
           python3 scouts/scout_lib.py >/dev/null 2>&1 || true
 
       - name: 有新货却没人写文案 —— 灯要红

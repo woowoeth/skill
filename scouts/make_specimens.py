@@ -3,6 +3,7 @@
 
     python3 scouts/make_specimens.py                 # 所有在架且没图的
     python3 scouts/make_specimens.py --replace       # 连判成 replace 的一起做
+    python3 scouts/make_specimens.py --ci            # 进货工作流用：图形是猜的，cover_verdict 留空待人过目
     python3 scouts/make_specimens.py <id> [<id>…]    # 指定几件
     python3 scouts/make_specimens.py --tally         # 只看每件会分到哪个图形，不渲染
 
@@ -305,6 +306,7 @@ def main(argv):
         mp = argv[argv.index("--motifs") + 1]
         OVERRIDE.update(json.load(io.open(mp, encoding="utf-8")))
         argv = [a for a in argv if a != mp]
+    ci = "--ci" in argv
     ids = [a for a in argv if not a.startswith("--")]
     if ids:
         targets = [x for x in feed if x["id"] in set(ids)]
@@ -334,12 +336,18 @@ def main(argv):
             "cover": "/skill/" + os.path.relpath(out, ROOT),
             "cover_kind": "specimen", "cover_real": False,
             "cover_w": W, "cover_h": H, "cover_src": "", "cover_motif": m,
-            "cover_verdict": "ok",
-            "cover_verdict_why": "站方样张（%s）：作者仓里没有可用的图；图上只有能力图形，没有文字" % m,
-            "cover_judged_at": today,
+            # --ci：进货工作流自动跑的，图形是按标题正则猜的、没人打开看过。
+            # 不写 ok —— 「有人看过」是底线（CLAUDE.md 第 2 条），机器不能替人签字。
+            # 留空让货架体检在 48 小时内记「糙」，巡货的 agent 看图后再写 ok 或换图形。
+            **({"cover_verdict": "",
+                "cover_verdict_why": "CI 自动出的中性样张（图形 %s 按标题正则猜的），待判官过目" % m}
+               if ci else
+               {"cover_verdict": "ok",
+                "cover_verdict_why": "站方样张（%s）：作者仓里没有可用的图；图上只有能力图形，没有文字" % m,
+                "cover_judged_at": today}),
         })
     io.open(CUR, "w", encoding="utf-8").write(json.dumps(cur, ensure_ascii=False, indent=1))
-    print("样张 %d 张 → assets/covers/，curation.json 已记；接着跑 scouts/make_thumbs.py" % len(done))
+    print("样张 %d 张 → assets/covers/，curation.json 已记；接着跑 scouts/covers_publish.py（refresh → 派生图，顺序不能反）" % len(done))
     return 0
 
 
