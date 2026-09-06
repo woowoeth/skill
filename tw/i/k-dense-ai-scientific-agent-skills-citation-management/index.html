@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="每條引用都回數據庫核驗，揪出 AI 編造的參考文獻 — 品味">
 <meta property="og:description" content="檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/k-dense-ai-scientific-agent-skills-citation-management/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/K-Dense-AI/scientific-agent-skills"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/K-Dense-AI/scientific-agent-skills">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="每條引用都回數據庫核驗，揪出 AI 編造的參考文獻 — 品味">
 <meta name="twitter:description" content="檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"每條引用都回數據庫核驗，揪出 AI 編造的參考文獻","description":"檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。","url":"https://ourword.ai/skill/tw/i/k-dense-ai-scientific-agent-skills-citation-management/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"K-Dense-AI"},"image":"https://opengraph.githubassets.com/pinwei/K-Dense-AI/scientific-agent-skills","codeRepository":"https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"每條引用都回數據庫核驗，揪出 AI 編造的參考文獻","description":"檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。","url":"https://ourword.ai/skill/tw/i/k-dense-ai-scientific-agent-skills-citation-management/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"K-Dense-AI"},"image":"https://ourword.ai/skill/tw/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png","codeRepository":"https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">每條引用都回數據庫核驗，揪出 AI 編造的參考文獻</h1>
     <p class="lede">檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。</p>
     <div class="tags"><span class="tag">K-Dense-AI</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/K-Dense-AI/scientific-agent-skills" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/k-dense-ai-scientific-agent-skills-citation-management.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/k-dense-ai-scientific-agent-skills-citation-management.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>檢索 OpenAlex、PubMed、Google Scholar，抽取準確元數據、校驗引用、格式化文獻——引用錯誤終結者。AI 編造引用是學術圈最怕的事，它反其道而行：每條引用都可驗證、有出處。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。要 Python 3.9+ 和 requests，還要連得上 openalex、crossref、pubmed。Google Scholar 沒有 API，靠 scholarly 爬，每條歇 2 到 5 秒還常被封，作者自己說只能當補充。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../dominikmartn-hue/">← 學一次你的品牌，之後 agent 做的每個界面都照著來</a><a href="../blader-humanizer/">照一份句式級的臭味清單刪掉「值得注意的是」 →</a></nav>
+  <nav class="foot"><a href="../garrytan-gstack/">← YC 掌門的 Claude Code 全套配置，23 個角色分工</a><a href="../blader-humanizer/">照一份句式級的臭味清單刪掉「值得注意的是」 →</a></nav>
 </div>
 <script>
 (function(){

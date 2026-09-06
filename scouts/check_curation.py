@@ -567,7 +567,11 @@ def check_covers(items: dict) -> dict:
         # og 的来源是确定的（GitHub 生成，1200×600），不该被要求标成 ours；
         # artwork 的来源分不出来（转存 vs 自截），09-01 已记为「没有出处记录就不判」。
         # 所以这里只盯真正说不清的：kind 为空的。
-        wrong_kind = [(it, o) for it, o in ours if (it.get("cover_kind") or "") not in ("ours", "og", "artwork", "hero", "diagram")]
+        # specimen：作者仓里取不到图时我们按它的能力排的版（scouts/make_specimens.py，
+        # 标准见 docs/COVERS.md）。托在自家仓里，但**不是**截图 —— 图注另有一句
+        # （index.html capSpecimen「站方按它的能力做的样张，不是产出物截图」），
+        # 所以它和 ours 一样有自己的话，不该被当成「标错的自截图」。
+        wrong_kind = [(it, o) for it, o in ours if (it.get("cover_kind") or "") not in ("ours", "og", "artwork", "hero", "diagram", "specimen")]
         print(f"  我们自己跑出来的截图 {len(ours)} 张（图在 {OUR_REPO}）")
         if wrong_kind:
             err(f"{len(wrong_kind)} 张是我们自己截的图，但 cover_kind 不是 `ours` —— "

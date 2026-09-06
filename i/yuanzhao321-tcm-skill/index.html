@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>会劝你去挂急诊的中医参谋 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/yuanzhao321-tcm-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/yuanzhao321-tcm-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/yuanzhao321-tcm-skill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>会劝你去挂急诊的中医参谋 — 品味</title>
 <meta name="description" content="家里人不舒服，最难的是判断「要不要现在就去医院」。它把疑似致命的情况列成红线层——高热神昏、胸痛彻背、假神脱汗，一律叫急救不辨证。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, YuanZHAO321">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">会劝你去挂急诊的中医参谋</h1>
     <p class="lede">家里人不舒服，最难的是判断「要不要现在就去医院」。它把疑似致命的情况列成红线层——高热神昏、胸痛彻背、假神脱汗，一律叫急救不辨证。</p>
     <div class="tags"><span class="tag">YuanZHAO321</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/yuanzhao321-tcm-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/yuanzhao321-tcm-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/yuanzhao321-tcm-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/yuanzhao321-tcm-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>家里人不舒服，最难的是判断「要不要现在就去医院」。它把疑似致命的情况列成红线层——高热神昏、胸痛彻背、假神脱汗，一律叫急救不辨证。这类里我见过最安全的边界：先点名「传统框架拖成急诊」的失败模式，并在红线层直接拒绝辨证。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。定位是「家庭参谋而非医师」，不出处方。针刺绝对禁止自行操作，只解释指路。教材派立场，与经方派、温病派的结论会不一致，它不替你调和。 上游 SKILL.md 的 name 是中文「中医」，装上后可能不被识别，改成 tcm 更稳。 门面说不出处方，但硬约束文件给了 101 味毒性药的内服克数 —— 那是上限表，不是处方。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/YuanZHAO321/TCM.Skill" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../reluctant2828-system-fitness-advisor-skill-system-fitness-advisor/">按你的训练记录算下一次该练什么</a><a href="../chenklein26-maker-fitness-coach-rpg/">训练数据自己攒，剧情推进看成绩的 RPG 健身教练</a><a href="../jangviktor-web-wujutong/">按三焦辨证给温病方，古人矛盾处照原样留着</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../chenklein26-maker-fitness-coach-rpg/">训练数据自己攒，剧情推进看成绩的 RPG 健身教练</a><a href="../reluctant2828-system-fitness-advisor-skill-system-fitness-advisor/">按你的训练记录算下一次该练什么</a><a href="../jangviktor-web-wujutong/">按三焦辨证给温病方，古人矛盾处照原样留着</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类世界生存法则</a>
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../voidforall-fengshui-skill/">← 先说自己不算命的风水顾问</a><a href="../panmax-hemingway-skill/">短句砍到骨头里，海明威式改稿人 →</a></nav>
+  <nav class="foot"><a href="../voidforall-fengshui-skill/">← 先说自己不算命的风水顾问</a><a href="../sumanasj-coc-kp-host/">写到第三段就把回合交回来的克苏鲁跑团 KP →</a></nav>
 </div>
 <script>
 (function(){

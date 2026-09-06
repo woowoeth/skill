@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>拍一张手写字母，本地生成能装进系统的 TTF 字体 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/danilo-znamerovszkij-draw-your-font-draw-your-font/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>拍一张手写字母，本地生成能装进系统的 TTF 字体 — 品味</title>
 <meta name="description" content="拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, danilo-znamerovszkij">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">拍一张手写字母，本地生成能装进系统的 TTF 字体</h1>
     <p class="lede">拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。</p>
     <div class="tags"><span class="tag">danilo-znamerovszkij</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/danilo-znamerovszkij-draw-your-font-draw-your-font.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/danilo-znamerovszkij-draw-your-font-draw-your-font.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/danilo-znamerovszkij-draw-your-font-draw-your-font.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者自制的头图，<b>不是产出示例</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>拍一张你的手写字母，产出真正可安装的字体（TTF/WOFF）：免费、开源、本地跑，不上传任何东西。「拥有自己笔迹的字体」是很多人想过没做过的浪漫，本地处理这点尤其体面。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只做拉丁字母：字符集就 minimal 和 spanish 两套，汉字做不了。要 Node ≥18 先跑 scripts/resolve-cli.js，CLI 只认文件路径。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../egonex-ai-understand-anything-understand-figma/">← 接上 Figma API，把设计稿拆成一张设计系统知识图谱</a><a href="../tt-a1i-archify-archify/">画出来的架构图要和代码对得上，导出自带动效的 HTML →</a></nav>
+  <nav class="foot"><a href="../dietrichgebert-ponytail-ponytail/">← 先问「这真的需要做吗」，能不写的代码一行不写</a><a href="../tt-a1i-archify-archify/">画出来的架构图要和代码对得上，导出自带动效的 HTML →</a></nav>
 </div>
 <script>
 (function(){

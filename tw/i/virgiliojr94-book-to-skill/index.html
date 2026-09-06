@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="把 PDF 和 EPUB 拆成能裝進 Agent 的 — 品味">
 <meta property="og:description" content="把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/virgiliojr94-book-to-skill/">
-<meta property="og:image" content="https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp"><meta name="twitter:image" content="https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/virgiliojr94-book-to-skill.webp"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/virgiliojr94-book-to-skill.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="把 PDF 和 EPUB 拆成能裝進 Agent 的 — 品味">
 <meta name="twitter:description" content="把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 PDF 和 EPUB 拆成能裝進 Agent 的","description":"把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。","url":"https://ourword.ai/skill/tw/i/virgiliojr94-book-to-skill/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"virgiliojr94"},"image":"https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp","codeRepository":"https://github.com/virgiliojr94/book-to-skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把 PDF 和 EPUB 拆成能裝進 Agent 的","description":"把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。","url":"https://ourword.ai/skill/tw/i/virgiliojr94-book-to-skill/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"virgiliojr94"},"image":"https://ourword.ai/skill/tw/assets/covers/virgiliojr94-book-to-skill.webp","codeRepository":"https://github.com/virgiliojr94/book-to-skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">把 PDF 和 EPUB 拆成能裝進 Agent 的</h1>
     <p class="lede">把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。</p>
     <div class="tags"><span class="tag">virgiliojr94</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/virgiliojr94/book-to-skill/HEAD/docs/assets/banner.webp" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/virgiliojr94-book-to-skill.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/virgiliojr94-book-to-skill.webp" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者自制的頭圖，<b>不是產出示例</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>把一本書（PDF/EPUB/DOCX 都行）拆成框架、模型、原則，裝進 agent 當技能。「書讀完就忘」的解法：知識不進腦子沒關係，進 agent 也行——這個立意本身就值一顆星。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。MOBI/AZW 要先裝 Calibre，技術書走 Docling 每頁約 1.5 秒，EPUB 裡的插圖直接丟掉。兩百頁的書約 7.5 萬 token，錢按你自己的模型價算。第三方版權書生成的技能只准建私有倉庫。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../blader-humanizer/">← 照一份句式級的臭味清單刪掉「值得注意的是」</a><a href="../yokel1121-muyang-illustration-skills-muyang-dark-fashion/">牧羊暗黑時裝，一款一裝 →</a></nav>
+  <nav class="foot"><a href="../egonex-ai-understand-anything-understand-chat/">← 按調用結構而不是搜字符串，回答改這裡會牽動誰</a><a href="../eugeniughelbur-obsidian-second-brain/">讓新資料改寫舊筆記，而不是在 Obsidian 裡越堆越多 →</a></nav>
 </div>
 <script>
 (function(){

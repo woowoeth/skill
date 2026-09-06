@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>章节知识清单带原PPT对照，测完才放你走 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/wubing2023-exampass-assistant/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/wubing2023-exampass-assistant/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/wubing2023-exampass-assistant/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>章节知识清单带原PPT对照，测完才放你走 — 品味</title>
 <meta name="description" content="期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, WUBING2023">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="章节知识清单带原PPT对照，测完才放你走 — 品味">
 <meta property="og:description" content="期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。">
 <meta property="og:url" content="https://ourword.ai/skill/i/wubing2023-exampass-assistant/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/WUBING2023/ExamPass-Assistant"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/WUBING2023/ExamPass-Assistant">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/wubing2023-exampass-assistant.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/wubing2023-exampass-assistant.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="章节知识清单带原PPT对照，测完才放你走 — 品味">
 <meta name="twitter:description" content="期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"章节知识清单带原PPT对照，测完才放你走","description":"期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。","url":"https://ourword.ai/skill/i/wubing2023-exampass-assistant/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"WUBING2023"},"image":"https://opengraph.githubassets.com/pinwei/WUBING2023/ExamPass-Assistant","codeRepository":"https://github.com/WUBING2023/ExamPass-Assistant"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"章节知识清单带原PPT对照，测完才放你走","description":"期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。","url":"https://ourword.ai/skill/i/wubing2023-exampass-assistant/","applicationCategory":"生活","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"WUBING2023"},"image":"https://ourword.ai/skill/assets/covers/wubing2023-exampass-assistant.png","codeRepository":"https://github.com/WUBING2023/ExamPass-Assistant"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">章节知识清单带原PPT对照，测完才放你走</h1>
     <p class="lede">期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。</p>
     <div class="tags"><span class="tag">WUBING2023</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/WUBING2023/ExamPass-Assistant" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/wubing2023-exampass-assistant.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/wubing2023-exampass-assistant.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>期末周把PPT/Word/PDF喂进去，出来的是按章节排好的知识清单+原PPT对照+自测答案+交互测试。不是简单摘要——每章知识清单都锚定原始PPT页码，自测题按清单逐条生成，答错会回到对应PPT片段重看。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。只吃文本型课程资料（PPT/Word/PDF），扫描版或纯图片需先OCR；产出到章节测试为止，不做错题本。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/WUBING2023/ExamPass-Assistant" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../tw93-kami-kami/">羊皮纸底色配墨蓝强调的文档排版师</a><a href="../kagurananaga-kaogong-study-tracker/">错题截图进来，按原因分类的国考错题本出去</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片里只挑有故事的那几样，画成手帐贴纸</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../tw93-kami-kami/">羊皮纸底色配墨蓝强调的文档排版师</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片里只挑有故事的那几样，画成手帐贴纸</a><a href="../edu-ai-builders-language-learning-sop-kit-skill-option-anatomy/">选择题每个选项都标出题人陷阱的解剖器</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类世界生存法则</a>
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../learnprompt-awesome-seedance-seedance-prompt-library/">← Seedance 2.5 视频提示词模板库</a><a href="../joeseesun-qiaomu-info-card-designer/">网页链接丢进来，吐出一张能发朋友圈的杂志卡片 →</a></nav>
+  <nav class="foot"><a href="../larashero3-dotcom-lieflat-gongwen/">← 六类公文族骨架公式，党建经验另起千字炉</a><a href="../onlylt-wow-gongwen-writing/">红头文件起草到排版一条龙，不越级不绕弯 →</a></nav>
 </div>
 <script>
 (function(){

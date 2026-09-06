@@ -93,3 +93,42 @@ clone 看目录树，成本不低于重新过一遍三问。
 而读者实际看得到的是 27。**对外只报 27。**
 
 逐张判定存档：见 `editorial/curation.json` 的 `cover_kind` 字段。
+
+## 5. 判成「换」的 79 张封面，现在挂的是站方样张，其中几张作者仓里其实有更好的图
+
+**是什么。** 2026-09-06 四个判官逐张看图（`docs/COVERS.md` 标准），157 张现有封面里
+79 张判 `replace`。为了守住「每件都要有图」的底线，这 79 件当天全换成了站方样张
+（`cover_kind: specimen`）。但判官的批注里有几件，作者仓里明明有对得上的产出物，只是
+现在这张选错了或裁错了：
+
+- `onlyfl-wow-gongwen-writing`：红头文件被 WPS 工具栏和字幕条包住，**裁出文件本体即可**
+- `dacnay816y62-hub-chinese-poster-skill`：敦煌海报本身合格，只是右下角压着小红书账号水印，**去作者仓找无水印原图**
+- `coleam00-excalidraw-diagram-skill`：我们自己跑的，线条太直、字太多，**手绘风 + 少字 + 横版重出一张**
+- `zhlmi-moodboard-alignment`：我们自己截的方向稿页，**只截底部色板那段**
+- `yokel1121-*-dark-fashion`：五张样张里只有一张是暗黑时装，**换成那一张**
+
+**怎么查证的。** `editorial/curation.json` 里 `cover_verdict == "replace"` 的条目，
+`cover_verdict_why` 是判官看到的东西；上面五条的批注原文在
+`scouts` 那轮的 judge_out_*.json（scratchpad，已不在仓里）—— 关键结论抄在这儿了。
+
+**为什么现在不修。** 这五件每件都是一次手工作业（裁图 / 翻仓 / 重跑），而当天的目标是
+先让 314 件全部有一张不误导的图。样张不误导，只是不如产出物。
+
+**什么时候必须修。** 下次碰这几件里任何一件的时候顺手修；或者攒够十件一起做。
+修法：把作者产出物放进 `assets/covers/<id>.<ext>`，curation 里改 `cover / cover_kind
+(artwork|hero) / cover_verdict=ok / cover_verdict_why`，然后 `python3 scouts/covers_publish.py`。
+
+## 6. 做图类技能，站方样张不如「我们自己跑一遍截的产出物」
+
+**是什么。** 在架 314 件里 `creative`（做图）占 132 件，其中几十件现在是能力图形样张。
+这类技能的产出物本身就是图 —— 真装上跑一遍截出来（`cover_kind: ours`，图注「我们自己
+装上、真跑了一遍」）是四档里唯一能背书的一档，也最能回答「它做出来长什么样」。
+
+**怎么查证的。** `python3 scouts/make_specimens.py --replace --tally` 的分派表：
+`photo_to_art` 25、`poster` 25、`video_cut` 31 —— 这三类几乎全是可以跑出图的。
+
+**为什么现在不修。** 每件要装、要跑、要截、要判，是按件计的手工活；而且不少要
+图像模型的 key。当天没有这个预算。
+
+**什么时候必须修。** 每天上新一件的时候，新上架的做图类技能**直接**按 `ours` 出图，
+不再走样张；存量的从店长推荐那几件开始，逐件替换。

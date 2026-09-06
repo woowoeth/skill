@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="給 Go 代碼庫做地道性評審 — 品味">
 <meta property="og:description" content="Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/">
-<meta property="og:image" content="https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif"><meta name="twitter:image" content="https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/dimetron-pi-go-design-review.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/dimetron-pi-go-design-review.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="給 Go 代碼庫做地道性評審 — 品味">
 <meta name="twitter:description" content="Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"給 Go 代碼庫做地道性評審","description":"Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。","url":"https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"dimetron"},"image":"https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif","codeRepository":"https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"給 Go 代碼庫做地道性評審","description":"Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。","url":"https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"dimetron"},"image":"https://ourword.ai/skill/tw/assets/covers/dimetron-pi-go-design-review.png","codeRepository":"https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">給 Go 代碼庫做地道性評審</h1>
     <p class="lede">Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。</p>
     <div class="tags"><span class="tag">dimetron</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/dimetron/pi-go/HEAD/docs/screen/pi-go.gif" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/dimetron-pi-go-design-review.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/dimetron-pi-go-design-review.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>Go 裡「能跑」和「地道」差得遠。命名、結構、一致性、接口、錯誤處理逐維打分，還附可執行的修法。按維度打分讓評審意見特別可落地，不是籠統說「建議重構」。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。正文明說單個 PR 或未提交 diff 不歸它管，那要另一件 code-review。而且末尾嵌著 pi-go 這個項目自己的檢查項（ADK、internal/provider/、禁 init()），換倉庫得先刪。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../alchemint-inc-curtoom-video-clip-stitching/">← 接縫診斷師：專治AI分段影片的卡頓與重複</a><a href="../kyanitelabs-kinocut-kinocut/">有護欄的 AI 視頻剪輯 →</a></nav>
+  <nav class="foot"><a href="../artokun-comfyui-mcp/">← 自然語言改工作流，178 個工具隨叫隨到</a><a href="../vanillagreencom-vstack-trading-design/">按專業交易軟件的規範設計盯盤界面 →</a></nav>
 </div>
 <script>
 (function(){

@@ -108,7 +108,23 @@ def page(it, prev=None, nxt=None, related=None):
         return (m.group(1) + "w800/" + m.group(2) + ".webp") if m else u
     _t = _thumb(cover)
     _fb = (' data-full="%s" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}' % esc(cover)) if _t != cover else ' onerror="this.remove()'
-    media = ('<img class="cover%s" src="%s" alt=""%s">' % (" og" if cover_is_og else "", esc(_t), _fb)) if cover else ""
+    # 图注：详情页是决策发生的地方，必须写清这张图是什么（同 index.html 的 CAP_KEY 那套话）。
+    # 最怕的失败模式是「被漂亮头图骗进去，装完发现产出不长那样」—— 那是我们自己把诚实做成了营销。
+    # 2026-09-06 起多了一档 specimen（站方按能力排的图形样张，不是截图），更不能不标。
+    CAPS = {
+        "artwork": "作者仓库里的产出示例——这就是它做出来的东西",
+        "ours": "我们自己装上、真跑了一遍，这是当时截的图",
+        "hero": "作者自制的头图，<b>不是产出示例</b>",
+        "diagram": "机制示意图，<b>不是产出示例</b>",
+        "specimen": "站方按它的能力做的样张，<b>不是产出物截图</b>",
+        "other": "作者仓库里的图，<b>不是产出示例</b>",
+    }
+    if cover_is_og:
+        cap = "GitHub 自动生成的仓库预览卡，<b>不是产出示例</b>"
+    else:
+        cap = CAPS.get(it.get("cover_kind") or "", CAPS["other"])
+    media = (('<img class="cover%s" src="%s" alt=""%s">' % (" og" if cover_is_og else "", esc(_t), _fb))
+             + '<p class="shotcap">%s</p>' % cap) if cover else ""
 
     uses_map = {
         "creative": [
@@ -221,6 +237,8 @@ def page(it, prev=None, nxt=None, related=None):
 <style>
 img.cover{display:block;width:100%%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">

@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="PDF 裡哪個數在哪一頁，截圖圈給你看 — 品味">
 <meta property="og:description" content="核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/metedata-pdf-proof/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/metedata/pdf-proof"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/metedata/pdf-proof">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/metedata-pdf-proof.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/metedata-pdf-proof.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PDF 裡哪個數在哪一頁，截圖圈給你看 — 品味">
 <meta name="twitter:description" content="核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF 裡哪個數在哪一頁，截圖圈給你看","description":"核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。","url":"https://ourword.ai/skill/tw/i/metedata-pdf-proof/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"metedata"},"image":"https://opengraph.githubassets.com/pinwei/metedata/pdf-proof","codeRepository":"https://github.com/metedata/pdf-proof"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF 裡哪個數在哪一頁，截圖圈給你看","description":"核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。","url":"https://ourword.ai/skill/tw/i/metedata-pdf-proof/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"metedata"},"image":"https://ourword.ai/skill/tw/assets/covers/metedata-pdf-proof.png","codeRepository":"https://github.com/metedata/pdf-proof"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">PDF 裡哪個數在哪一頁，截圖圈給你看</h1>
     <p class="lede">核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。</p>
     <div class="tags"><span class="tag">metedata</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/metedata/pdf-proof" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/metedata-pdf-proof.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/metedata-pdf-proof.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>核對合同、報表、聊天記錄裡的數字時，不用再翻頁找半天。它直接定位到那一行，高亮截圖，讓你拿著圖去對質。不是摘要，不是引用——它把視覺證據直接釘在頁面上。你看到的就是對方看到的。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。只認 PDF 文件內的文字層；掃描版或圖片型 PDF 需先經 OCR 才能用。高亮截圖止於單頁。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/metedata/pdf-proof" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../mattpocock-skills-grilling/">連續追問直到你自相矛盾的方案壓力測試器</a><a href="../ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations/">白底黑線火柴人，給中文文章配安靜小圖</a><a href="../kagurananaga-document-format-skills/">中文公文排版一步到位，連修訂痕跡都替你管好</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../ainosleep-ainosleep-stickman-illustrations-ainosleep-stickman-illustrations/">白底黑線火柴人，給中文文章配安靜小圖</a><a href="../mattpocock-skills-grilling/">連續追問直到你自相矛盾的方案壓力測試器</a><a href="../kagurananaga-document-format-skills/">中文公文排版一步到位，連修訂痕跡都替你管好</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人類世界生存法則</a>
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../anthropics-claude-plugins-community-eli5/">← 把任何概念講成帶大圖的幼兒園繪本</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">不重繪只錨定主體走向，落筆前先定畫心與延展向 →</a></nav>
+  <nav class="foot"><a href="../larashero3-dotcom-lieflat-charts/">← 圖表先問數據語義再選色，報告模板十二套</a><a href="../bigfish-zzz-bigfish-ink-wash-photo/">不重繪只錨定主體走向，落筆前先定畫心與延展向 →</a></nav>
 </div>
 <script>
 (function(){

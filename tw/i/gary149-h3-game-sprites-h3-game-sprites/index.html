@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像 — 品味">
 <meta property="og:description" content="用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/gary149-h3-game-sprites-h3-game-sprites/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/gary149/h3-game-sprites"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/gary149/h3-game-sprites">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/gary149-h3-game-sprites-h3-game-sprites.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/gary149-h3-game-sprites-h3-game-sprites.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像 — 品味">
 <meta name="twitter:description" content="用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像","description":"用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。","url":"https://ourword.ai/skill/tw/i/gary149-h3-game-sprites-h3-game-sprites/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"gary149"},"image":"https://opengraph.githubassets.com/pinwei/gary149/h3-game-sprites","codeRepository":"https://github.com/gary149/h3-game-sprites/tree/HEAD/skills/h3-game-sprites"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像","description":"用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。","url":"https://ourword.ai/skill/tw/i/gary149-h3-game-sprites-h3-game-sprites/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"gary149"},"image":"https://ourword.ai/skill/tw/assets/covers/gary149-h3-game-sprites-h3-game-sprites.png","codeRepository":"https://github.com/gary149/h3-game-sprites/tree/HEAD/skills/h3-game-sprites"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">視頻生成轉逐幀精靈圖，動作全對齊綠幕摳像</h1>
     <p class="lede">用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。</p>
     <div class="tags"><span class="tag">gary149</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/gary149/h3-game-sprites" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/gary149-h3-game-sprites-h3-game-sprites.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/gary149-h3-game-sprites-h3-game-sprites.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>用 MiniMax H3 生成動作視頻再切幀，省掉逐幀手繪。角色靜止幀打底、待機幀鎖形，每招每式都能循環且不跑型。拿視頻模型當動作演員，再用待機幀當錨點鎖住角色形變。比直接抽幀多一道數值質檢，廢幀當場篩掉。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。只出綠幕摳好的精靈幀和質檢報告，不打包成引擎動畫、不處理透明背景合成。需要 MiniMax H3 視頻 API 權限。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../kagurananaga-format-agent-01-format-agent/">← AI只出規則、代碼動手改的格式排版工</a><a href="../zy-zmc-tianming-skill/">七卷本起步的協同寫作系統，大綱到存檔全管 →</a></nav>
+  <nav class="foot"><a href="../starryear-starryear-ink/">← 照片留一條證據帶，碎成幹印再暈成水墨</a><a href="../martinsin0223-the-fool/">先重建發售年輿論場，再陪你通關的老遊戲嚮導 →</a></nav>
 </div>
 <script>
 (function(){

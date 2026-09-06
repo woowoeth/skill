@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>读书记不住进度？它替你记着，还防剧透 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/locoda-duizuo-reading-companion-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/locoda-duizuo-reading-companion-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/locoda-duizuo-reading-companion-skill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>读书记不住进度？它替你记着，还防剧透 — 品味</title>
 <meta name="description" content="小说、散文、非虚构都能陪读。它记住你读到哪、什么感受，下次接着聊，绝不提前剧透。读不下去时，它会问你怎么了。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 写字, locoda">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">读书记不住进度？它替你记着，还防剧透</h1>
     <p class="lede">小说、散文、非虚构都能陪读。它记住你读到哪、什么感受，下次接着聊，绝不提前剧透。读不下去时，它会问你怎么了。</p>
     <div class="tags"><span class="tag">locoda</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/locoda-duizuo-reading-companion-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/locoda-duizuo-reading-companion-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/locoda-duizuo-reading-companion-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/locoda-duizuo-reading-companion-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>小说、散文、非虚构都能陪读。它记住你读到哪、什么感受，下次接着聊，绝不提前剧透。读不下去时，它会问你怎么了。它把读书变成有状态的对话：记得版本、媒介、进度，还能验证文本细节。每次回应都贴合当下情节。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「写字」这一格。只支持文本类书籍，不处理有声书或视频；需要你主动汇报进度，它不会自动翻页；对长篇复杂情节的跨章记忆有限。</p></section>

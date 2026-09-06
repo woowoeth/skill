@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="一個人也能玩的 D&amp;D 地下城主 — 品味">
 <meta property="og:description" content="跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/">
-<meta property="og:image" content="https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif"><meta name="twitter:image" content="https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/neuralinitiative-claude-dnd-skill-dnd.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/neuralinitiative-claude-dnd-skill-dnd.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="一個人也能玩的 D&amp;D 地下城主 — 品味">
 <meta name="twitter:description" content="跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一個人也能玩的 D&D 地下城主","description":"跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。","url":"https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/","applicationCategory":"玩樂","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"neuralinitiative"},"image":"https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif","codeRepository":"https://github.com/neuralinitiative/claude-dnd-skill/tree/HEAD/skills/dnd"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一個人也能玩的 D&D 地下城主","description":"跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。","url":"https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/","applicationCategory":"玩樂","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"neuralinitiative"},"image":"https://ourword.ai/skill/tw/assets/covers/neuralinitiative-claude-dnd-skill-dnd.png","codeRepository":"https://github.com/neuralinitiative/claude-dnd-skill/tree/HEAD/skills/dnd"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">一個人也能玩的 D&amp;D 地下城主</h1>
     <p class="lede">跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。</p>
     <div class="tags"><span class="tag">neuralinitiative</span></div>
-    <img class="cover" src="https://raw.githubusercontent.com/neuralinitiative/claude-dnd-skill/HEAD/screenshots/demo-v3.gif" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/neuralinitiative-claude-dnd-skill-dnd.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/neuralinitiative-claude-dnd-skill-dnd.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>跑團最難的是湊人和一個好 DM。它管戰役、角色卡、戰鬥輪次和 NPC，還帶可選的影院式畫面，一個人也能沉浸開團。它補上的是 DM 這個最難替代的位置，規則和狀態全託管，所以單人玩不塌。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「玩樂」這一格。戰役數據全在本機 ~/.claude/dnd，換臺機器就從零開。隨包只有 5e SRD 數據集，跑正式模組得你自己導入書。影院畫面是本地/局域網起的 Flask 面板。默認 roll_mode 是玩家自己擲骰，它不替你的 PC 代擲。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/neuralinitiative/claude-dnd-skill/tree/HEAD/skills/dnd" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../giszzt-figecho/">從一張架構圖裡抽出整套配色版式，再畫十張都不走樣</a><a href="../yuema137-dongbeigpt-dongbei-explainer/">東北話講技術，因果鏈拆到你能點頭為止</a><a href="../zhlmi-rhythm-forge-sklii/">音頻拖進來，出來一個能玩的網頁音遊</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../giszzt-figecho/">從一張架構圖裡抽出整套配色版式，再畫十張都不走樣</a><a href="../zhlmi-rhythm-forge-sklii/">音頻拖進來，出來一個能玩的網頁音遊</a><a href="../milec-towers-of-saeroth-pf2e-gm/">翻開本地規則庫的 PF2e 主持人副駕</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人類世界生存法則</a>
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../coleam00-excalidraw-diagram-skill/">← 生成手繪白板風格的示意圖</a><a href="../312362115-claude-diagram/">自動選對圖表類型再畫出來 →</a></nav>
+  <nav class="foot"><a href="../cosmoblk-email-marketing-bible/">← 做郵件營銷的顧問</a><a href="../adrianpunk-punk-skill-punk-cover/">同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成 →</a></nav>
 </div>
 <script>
 (function(){

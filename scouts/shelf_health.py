@@ -36,10 +36,40 @@ def check_covers(items, sample: int) -> None:
     """没图，以及**图挂了**。字段有值不等于图能显示 —— 这两件事分开查。"""
     miss = [x for x in items if not (x.get("cover") or x.get("cover_url"))]
     if miss:
-        # 09-03 起没图的卡走排版底（大字衬线首字 + 分类小字，见 index.html .shot.plate-only），访客不再撞到空洞。
-        # 没图仍是待办（能取到作者真图就该取），但不是「坏」—— 一条永远红着的红灯会被人学会忽略。
-        note("注意", f"{len(miss)} 张卡没有封面（走排版底；能取到作者真图的还该取）",
+        # 2026-09-06 店主定的底线（docs/COVERS.md）：**每一件在架的都必须有图。**
+        # 此前这条是「注意」不是「坏」，理由是「一条永远红着的红灯会被人学会忽略」——
+        # 结果就是它黄了两个月，货架上一半的卡没有脸（162/319）。
+        # 红灯被忽略的解法不是把它调成黄灯，是把红的原因清掉。
+        note("坏", f"{len(miss)} 张卡没有封面 —— 底线是每件都要有图；取不到作者的图就自己装上跑一遍截产出物，连这都做不到的下架",
              [f"第{items.index(x)+1}位 {x.get('title_zh','')[:26]}" for x in miss[:8]])
+    # 外链封面：会死（private-user-images 是带签名会过期的地址），也让每个访客去 ping 第三方。
+    # 一律本地化到 assets/covers/，站上只引自家路径。
+    ext = [x for x in items if (x.get("cover") or "").startswith("http")]
+    if ext:
+        note("坏", f"{len(ext)} 张封面还是外链 —— 迟早死图；下载到 assets/covers/ 再引本地路径",
+             [f"{x['id'][:40]} → {x['cover'][:60]}" for x in ext[:8]])
+    # 每张图都要**有人打开看过**并判过 ok（docs/COVERS.md「判决怎么落地」）。
+    # 字段齐不等于图对：二维码、赞助广告、作者头像、雪豹照片，从数据上一个都看不出来，
+    # 只有看图才知道。判成 replace 的也算坏 —— 图不对，只是还没换。
+    # 每张自家封面都要有 w800 派生图。没有的话，卡片先请求 w800/*.webp 撞 404，再
+    # onerror 回退到 800KB 的原图 —— 首屏一排灰框、几百个 404。这就是「图打不开」
+    # 在读者眼里的样子，而原图明明在盘上。派生图缺失多半是顺序错了：
+    # make_thumbs 跑在 refresh 之前，按旧 feed 出的图。收口用 scouts/covers_publish.py。
+    nothumb = []
+    for x in items:
+        c = x.get("cover") or ""
+        if c.startswith("/skill/assets/covers/") and "/w800/" not in c:
+            stem = os.path.splitext(os.path.basename(c))[0]
+            if not os.path.exists(os.path.join(ROOT, "assets", "covers", "w800", stem + ".webp")):
+                nothumb.append(x)
+    if nothumb:
+        note("坏", f"{len(nothumb)} 张封面没有 w800 派生图 —— 卡片会先 404 再回退原图，首屏一排灰框；跑 scouts/covers_publish.py",
+             [x["id"][:48] for x in nothumb[:8]])
+    unj = [x for x in items if (x.get("cover") or "") and x.get("cover_verdict") != "ok"]
+    if unj:
+        byv = collections.Counter(x.get("cover_verdict") or "未判" for x in unj)
+        note("坏", f"{len(unj)} 张封面没有过目判 ok（{'、'.join(f'{k} {v}' for k, v in byv.most_common())}）",
+             [f"{x['id'][:40]} · {x.get('cover_verdict') or '未判'} · {(x.get('cover_verdict_why') or '')[:36]}" for x in unj[:8]])
     # 指向我们自己仓的封面**查本地文件**，不发 HTTP。
     # 2026-09-02 的坑：这一步在工作流里排在 Commit 之前，本轮新写的封面还没推上去，
     # raw.githubusercontent 自然 404 —— CI 里报「4 张打不开」，本地跑全 200。

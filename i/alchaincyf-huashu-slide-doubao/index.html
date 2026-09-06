@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>用豆包自带生图出整套 PPT，一分第三方 API 钱 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/alchaincyf-huashu-slide-doubao/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/alchaincyf-huashu-slide-doubao/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/alchaincyf-huashu-slide-doubao/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>用豆包自带生图出整套 PPT，一分第三方 API 钱 — 品味</title>
 <meta name="description" content="做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, alchaincyf">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="用豆包自带生图出整套 PPT，一分第三方 API 钱 — 品味">
 <meta property="og:description" content="做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。">
 <meta property="og:url" content="https://ourword.ai/skill/i/alchaincyf-huashu-slide-doubao/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/alchaincyf/huashu-slide-doubao"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/alchaincyf/huashu-slide-doubao">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/alchaincyf-huashu-slide-doubao.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/alchaincyf-huashu-slide-doubao.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="用豆包自带生图出整套 PPT，一分第三方 API 钱 — 品味">
 <meta name="twitter:description" content="做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"用豆包自带生图出整套 PPT，一分第三方 API 钱","description":"做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。","url":"https://ourword.ai/skill/i/alchaincyf-huashu-slide-doubao/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"alchaincyf"},"image":"https://opengraph.githubassets.com/pinwei/alchaincyf/huashu-slide-doubao","codeRepository":"https://github.com/alchaincyf/huashu-slide-doubao"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"用豆包自带生图出整套 PPT，一分第三方 API 钱","description":"做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。","url":"https://ourword.ai/skill/i/alchaincyf-huashu-slide-doubao/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"alchaincyf"},"image":"https://ourword.ai/skill/assets/covers/alchaincyf-huashu-slide-doubao.png","codeRepository":"https://github.com/alchaincyf/huashu-slide-doubao"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">用豆包自带生图出整套 PPT，一分第三方 API 钱</h1>
     <p class="lede">做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。</p>
     <div class="tags"><span class="tag">alchaincyf</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/alchaincyf/huashu-slide-doubao" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/alchaincyf-huashu-slide-doubao.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/alchaincyf-huashu-slide-doubao.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>做课件、公众号头图、B站封面都得掏生图 API 的钱。它把这步锁死在豆包内置 seedream 上，还给封面、扉页、内容页、结论页各配一条密度上限。它给字数上限配了反向约束：正文明写「AI 看到 220 字上限就会朝 220 字写」，于是先逼你答这页要人记住哪一句。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。不在豆包环境就别装——作者写明它「存在的全部理由」就是豆包自带的 image_gen，默认的 seedream_5.0_pro 还是会员专属，非会员回退 4.5。产物默认是图片式 PPT，文字不可编辑，除非你明说要可编辑、或生图连挂三次。</p></section>

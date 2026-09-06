@@ -1,6 +1,20 @@
 {
- "version": "0.0.1",
- "configurations": [
-  {"name": "pinwei", "runtimeExecutable": "python3", "runtimeArgs": ["-m","http.server","8791"], "port": 8791}
- ]
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pinwei",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8791",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/jerryma/Desktop/skill/repo"
+      ],
+      "port": 8791
+    }
+  ],
+  "_why": "http.server 默认绑 0.0.0.0（实测：同一局域网可取），不写 --directory 时服务根就是 CWD。两者叠加曾把一个带明文 GitHub PAT 的文件对整个局域网服务了出去。"
 }

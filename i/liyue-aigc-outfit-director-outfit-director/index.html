@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>一次拍出多套造型的换装视频脚本 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/liyue-aigc-outfit-director-outfit-director/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>一次拍出多套造型的换装视频脚本 — 品味</title>
 <meta name="description" content="换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, liyue-aigc">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="一次拍出多套造型的换装视频脚本 — 品味">
 <meta property="og:description" content="换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。">
 <meta property="og:url" content="https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/">
-<meta property="og:image" content="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director"><meta name="twitter:image" content="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/liyue-aigc-outfit-director-outfit-director.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/liyue-aigc-outfit-director-outfit-director.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="一次拍出多套造型的换装视频脚本 — 品味">
 <meta name="twitter:description" content="换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一次拍出多套造型的换装视频脚本","description":"换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。","url":"https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"liyue-aigc"},"image":"https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director","codeRepository":"https://github.com/liyue-aigc/outfit-director/tree/HEAD/skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"一次拍出多套造型的换装视频脚本","description":"换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。","url":"https://ourword.ai/skill/i/liyue-aigc-outfit-director-outfit-director/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"liyue-aigc"},"image":"https://ourword.ai/skill/assets/covers/liyue-aigc-outfit-director-outfit-director.png","codeRepository":"https://github.com/liyue-aigc/outfit-director/tree/HEAD/skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">一次拍出多套造型的换装视频脚本</h1>
     <p class="lede">换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。</p>
     <div class="tags"><span class="tag">liyue-aigc</span></div>
-    <img class="cover og" src="https://opengraph.githubassets.com/pinwei/liyue-aigc/outfit-director" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/liyue-aigc-outfit-director-outfit-director.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/liyue-aigc-outfit-director-outfit-director.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>换装视频最容易翻车的是换完不像同一个人。它先出一张拼贴首帧当结构母图，视频时间轴强制继承主体身份和贴图位置。人和宠物都能做。把「身份一致性」当成硬约束而不是碰运气——先定首帧再派生视频，这个顺序就是它和一堆换装提示词的全部区别。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。它交付的是提示词和时间轴，不是视频——真出片要你自己拿去生视频模型跑，成片效果取决于那个模型不取决于它。参数预设、转场库、服装方案分散在三个 references 文件里，正文只给路由。</p></section>

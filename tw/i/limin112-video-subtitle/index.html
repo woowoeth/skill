@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">本地 Whisper 先聽寫，Claude 再糾錯</h1>
     <p class="lede">同音字、專有名詞錯得離譜？先本地識別拿到逐句時間戳，再讓 Claude 通讀糾錯，最後 ffmpeg 硬字幕上屏。</p>
     <div class="tags"><span class="tag">limin112</span></div>
-    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/limin112-video-subtitle.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/limin112-video-subtitle.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/limin112-video-subtitle.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/limin112-video-subtitle.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>同音字、專有名詞錯得離譜？先本地識別拿到逐句時間戳，再讓 Claude 通讀糾錯，最後 ffmpeg 硬字幕上屏。識別與糾錯分離：whisper.cpp 只負責聽寫和真實時間戳，Claude 只負責讀懂語義改錯字。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。需本機裝 whisper.cpp 與帶 libass 的 ffmpeg；純雲端不可用。只處理視頻音軌，不修畫質。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../kangarooking-cangjie-skill/">← 長內容拆成可執行技能包，一本書變一套動作</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片裡只挑有故事的那幾樣，畫成手帳貼紙 →</a></nav>
+  <nav class="foot"><a href="../zhlmi-script-forging/">← 故事進，分鏡出，中間每一步都留痕的劇本鍛造臺</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片裡只挑有故事的那幾樣，畫成手帳貼紙 →</a></nav>
 </div>
 <script>
 (function(){

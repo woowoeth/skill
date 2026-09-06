@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="任務拆解寫到磁盤，/clear 後自動續上進度 — 品味">
 <meta property="og:description" content="把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/">
-<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.jpg"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.jpg">
+<meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="任務拆解寫到磁盤，/clear 後自動續上進度 — 品味">
 <meta name="twitter:description" content="把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"任務拆解寫到磁盤，/clear 後自動續上進度","description":"把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。","url":"https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"OthmanAdi"},"image":"https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.jpg","codeRepository":"https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"任務拆解寫到磁盤，/clear 後自動續上進度","description":"把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。","url":"https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/","applicationCategory":"工作","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"OthmanAdi"},"image":"https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.png","codeRepository":"https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">任務拆解寫到磁盤，/clear 後自動續上進度</h1>
     <p class="lede">把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。</p>
     <div class="tags"><span class="tag">OthmanAdi</span></div>
-    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/othmanadi-planning-with-files-planning-with-files.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/othmanadi-planning-with-files-planning-with-files.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/othmanadi-planning-with-files-planning-with-files.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>把計劃寫成 Markdown 文件常駐磁盤：崩潰、/clear、上下文壓縮都不丟進度，隨時從斷點接著施工。長任務的命根子是「狀態不丟」，它用最樸素的文件方案解決，比花哨的記憶系統皮實。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「工作」這一格。裝法決定功能：npx skills add 裝的沒有 /plan-goal 和 /plan-loop。「沒做完不許停」的門也只在 Claude Code、Codex CLI 真攔得住，OpenCode、Gemini CLI 只彈提示。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">給你裝的技能庫做體檢和減法</a><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../francyjglisboa-agent-skill-creator/">把口頭流程變成能跑的跨平臺技能，三步內交付</a></div></div>
+    <div class="box"><p class="hd">同類 Skill</p><div class="rel"><a href="../khendzel-skills-janitor/">給你裝的技能庫做體檢和減法</a><a href="../op7418-claude-to-im-skill/">從手機指揮電腦裡跑著的 agent</a><a href="../virgiliojr94-book-to-skill/">把 PDF 和 EPUB 拆成能裝進 Agent 的</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人類世界生存法則</a>
     <a href="https://ourword.ai/podcast/">原聲</a>
     <a href="https://ourword.ai/skill/tw/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../cclank-lanshu-awesome-ai-video-kit-seedance-debugger/">← 視頻里人臉飄了先別刪，它給你換提示詞的根因</a><a href="../francyjglisboa-agent-skill-creator/">把口頭流程變成能跑的跨平臺技能，三步內交付 →</a></nav>
+  <nav class="foot"><a href="../blader-humanizer/">← 照一份句式級的臭味清單刪掉「值得注意的是」</a><a href="../francyjglisboa-agent-skill-creator/">把口頭流程變成能跑的跨平臺技能，三步內交付 →</a></nav>
 </div>
 <script>
 (function(){

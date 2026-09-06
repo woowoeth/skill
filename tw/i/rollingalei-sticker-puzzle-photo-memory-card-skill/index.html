@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">植被多就換品紅鍵色，把照片做成能剪下來的貼紙頁</h1>
     <p class="lede">照片做成好看的圖不難，難的是拿到一張真能打印、真能剪的透明貼紙。它一次交記憶卡和六枚圖案的透明 PNG。</p>
     <div class="tags"><span class="tag">RollingAlei</span></div>
-    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/rollingalei-sticker-puzzle-photo-memory-card-skill.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/rollingalei-sticker-puzzle-photo-memory-card-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/rollingalei-sticker-puzzle-photo-memory-card-skill.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/rollingalei-sticker-puzzle-photo-memory-card-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者自制的頭圖，<b>不是產出示例</b></p>
     
     <section class="sec"><h2>做什麼用</h2><p>照片做成好看的圖不難，難的是拿到一張真能打印、真能剪的透明貼紙。它一次交記憶卡和六枚圖案的透明 PNG。去揹走色度鍵，綠場景會撞色，所以植被多的圖改用品紅打底，最後還要驗四角 alpha 是不是 0。</p></section>
     <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。生圖模型被寫死成 seedream_5.0_pro，接不上這個模型的 agent 裝了沒用。貼紙恰好六枚、手寫關鍵詞恰好三個，都是定死的，不接受你要八枚。原圖裡的文字只在真的標識了地點時才留，廣告、菜單、價格、時間戳一律剔掉。 上游 SKILL.md 的 name 是中文，裝上後可能不被識別，改成英文更穩。</p></section>

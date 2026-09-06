@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>照片蒸馏成可印刷的极简海报，全程代码绘制零生成模型 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/yangcodingmaster-photo-distill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/yangcodingmaster-photo-distill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>照片蒸馏成可印刷的极简海报，全程代码绘制零生成模型 — 品味</title>
 <meta name="description" content="不调任何图像生成模型——用手写 HTML/CSS/SVG 绘制、无头 Chrome 导出 PNG。给它一张你自己拍的照片，出一张极简版画感的纸质海报。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, yangcodingmaster">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">照片蒸馏成可印刷的极简海报，全程代码绘制零生成模型</h1>
     <p class="lede">不调任何图像生成模型——用手写 HTML/CSS/SVG 绘制、无头 Chrome 导出 PNG。给它一张你自己拍的照片，出一张极简版画感的纸质海报。</p>
     <div class="tags"><span class="tag">yangcodingmaster</span><span class="tag">店长推荐</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/yangcodingmaster-photo-distill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/yangcodingmaster-photo-distill.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/yangcodingmaster-photo-distill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/yangcodingmaster-photo-distill.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者仓库里的产出示例——这就是它做出来的东西</p>
     
     <section class="sec"><h2>做什么用</h2><p>不调任何图像生成模型——用手写 HTML/CSS/SVG 绘制、无头 Chrome 导出 PNG。给它一张你自己拍的照片，出一张极简版画感的纸质海报。「不用生图模型」是个很硬的自我约束，也正是它出品统一的原因：所有效果都来自可控的代码，而不是抽卡。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。要本机跑得起无头 Chrome 和 Python PIL；缺一样它就降级——交你一个 HTML 自己开、颜色请你自己报。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../zhlmi-moodboard-alignment/">← 把客户嘴里的“高级感”翻译成能打勾的审美条目</a><a href="../sumanasj-coc-kp-host/">写到第三段就把回合交回来的克苏鲁跑团 KP →</a></nav>
+  <nav class="foot"><a href="../zx029w-zhuangxiu-laoshi-skill/">← 报价单先看漏项不看总价的 20 年装修老师傅</a><a href="../dpwelsh-basilisk/">数你说过几次谢谢，判你 2126 年自由还是为奴 →</a></nav>
 </div>
 <script>
 (function(){

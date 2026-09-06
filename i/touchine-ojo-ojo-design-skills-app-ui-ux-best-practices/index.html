@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>先拒写设计稿，拿产品证据校准五个刻度再出规范 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>先拒写设计稿，拿产品证据校准五个刻度再出规范 — 品味</title>
 <meta name="description" content="先从产品证据推出五个档位（响度/成色/密度/重量/严肃度），再出设计规范、token、组件准则——每个档位都要给出处，不许凭习惯设。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, touchine-ojo">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">先拒写设计稿，拿产品证据校准五个刻度再出规范</h1>
     <p class="lede">先从产品证据推出五个档位（响度/成色/密度/重量/严肃度），再出设计规范、token、组件准则——每个档位都要给出处，不许凭习惯设。</p>
     <div class="tags"><span class="tag">touchine-ojo</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/touchine-ojo-ojo-design-skills-app-ui-ux-best-practices.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者自制的头图，<b>不是产出示例</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>先从产品证据推出五个档位（响度/成色/密度/重量/严肃度），再出设计规范、token、组件准则——每个档位都要给出处，不许凭习惯设。它有一条含糊词防火墙：premium、精致、克制、高级感一律不许当理由，必须换算成饱和度、间距、圆角、动效幅度。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。它出的是设计规范和单页预览，不是整套前端工程。档位一旦从证据推定，后面所有步骤都跟着走，你想中途换风格得从证据改起。只有一件 skill，正文很长、很吃上下文。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../ayi-ai-ayi-nonviolent-communication/">← 把指责翻译成需要的长颈鹿语言翻译官</a><a href="../zzzlc0405-photo-chromatic-abstraction-style-1/">只留 1~5 个源图色，把照片译成色块记忆卡 →</a></nav>
+  <nav class="foot"><a href="../ayi-ai-ayi-nonviolent-communication/">← 把指责翻译成需要的长颈鹿语言翻译官</a><a href="../op7418-youtube-clipper-skill/">YouTube 长视频先切章再剪段，字幕同步烧进画面 →</a></nav>
 </div>
 <script>
 (function(){

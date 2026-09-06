@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>长内容拆成可执行技能包，一本书变一套动作 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/kangarooking-cangjie-skill/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/kangarooking-cangjie-skill/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/kangarooking-cangjie-skill/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>长内容拆成可执行技能包，一本书变一套动作 — 品味</title>
 <meta name="description" content="把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做图, kangarooking">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="长内容拆成可执行技能包，一本书变一套动作 — 品味">
 <meta property="og:description" content="把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。">
 <meta property="og:url" content="https://ourword.ai/skill/i/kangarooking-cangjie-skill/">
-<meta property="og:image" content="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.jpg"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.jpg">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="长内容拆成可执行技能包，一本书变一套动作 — 品味">
 <meta name="twitter:description" content="把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"长内容拆成可执行技能包，一本书变一套动作","description":"把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。","url":"https://ourword.ai/skill/i/kangarooking-cangjie-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"kangarooking"},"image":"https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.jpg","codeRepository":"https://github.com/kangarooking/cangjie-skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"长内容拆成可执行技能包，一本书变一套动作","description":"把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。","url":"https://ourword.ai/skill/i/kangarooking-cangjie-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"kangarooking"},"image":"https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.png","codeRepository":"https://github.com/kangarooking/cangjie-skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">长内容拆成可执行技能包，一本书变一套动作</h1>
     <p class="lede">把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。</p>
     <div class="tags"><span class="tag">kangarooking</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/kangarooking-cangjie-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.jpg" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/kangarooking-cangjie-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/kangarooking-cangjie-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>把书、播客、长视频里的框架和方法论，拆成 Agent 能直接调用的原子技能。不是笔记，是能上手干活的工具。它不总结观点，只提取可执行程序：每个技能带触发条件和操作步骤，让知识从「读过」变成「能调用」。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只处理长文本输入（书/文稿/字幕），不读 PDF 或音视频文件本身；产物是技能包而非笔记，若你只想要摘要或思维导图。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../liangdabiao-smy-seedance-storyboard/">← 水墨线条矿物色块，把小说整成上美影分镜脚本</a><a href="../limin112-video-subtitle/">本地 Whisper 先听写，Claude 再纠错 →</a></nav>
+  <nav class="foot"><a href="../liangdabiao-smy-seedance-storyboard/">← 水墨线条矿物色块，把小说整成上美影分镜脚本</a><a href="../zhlmi-script-forging/">故事进，分镜出，中间每一步都留痕的剧本锻造台 →</a></nav>
 </div>
 <script>
 (function(){

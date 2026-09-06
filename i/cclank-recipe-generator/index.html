@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>每一步都告诉你怎么算做好了的菜谱 — 品味</title>
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/cclank-recipe-generator/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/cclank-recipe-generator/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/cclank-recipe-generator/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>每一步都告诉你怎么算做好了的菜谱 — 品味</title>
 <meta name="description" content="菜谱最坑的是「炒至断生」这种话。它按阶段给火候和时长，每一步附一条「怎么看这步完成了」，末尾再出一张菜谱海报的生图提示词。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 生活, cclank">
@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">每一步都告诉你怎么算做好了的菜谱</h1>
     <p class="lede">菜谱最坑的是「炒至断生」这种话。它按阶段给火候和时长，每一步附一条「怎么看这步完成了」，末尾再出一张菜谱海报的生图提示词。</p>
     <div class="tags"><span class="tag">cclank</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/cclank-recipe-generator.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/cclank-recipe-generator.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/cclank-recipe-generator.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/cclank-recipe-generator.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>菜谱最坑的是「炒至断生」这种话。它按阶段给火候和时长，每一步附一条「怎么看这步完成了」，末尾再出一张菜谱海报的生图提示词。把「判断标准」写进每一步，正是新手和菜谱之间缺的那一层——不是配方不够细，是不知道什么时候该进下一步。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「生活」这一格。它靠 search_web 现查权威做法，没有联网工具就退化成模型自己编。检索源写死在中文站点（米其林指南、舌尖上的中国、下厨房），做西餐日料会明显变弱；末尾的海报提示词也写死「传统中式风格」。</p></section>
@@ -78,14 +80,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       </dl>
       <a class="pill" href="https://github.com/cclank/recipe-generator" rel="noopener">在 GitHub 查看</a>
     </div>
-    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../tw93-kami-kami/">羊皮纸底色配墨蓝强调的文档排版师</a><a href="../kagurananaga-kaogong-study-tracker/">错题截图进来，按原因分类的国考错题本出去</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片里只挑有故事的那几样，画成手帐贴纸</a></div></div>
+    <div class="box"><p class="hd">同类 Skill</p><div class="rel"><a href="../tw93-kami-kami/">羊皮纸底色配墨蓝强调的文档排版师</a><a href="../yvonnechen202608-byte-picture-design-photo-to-journal-stickers/">照片里只挑有故事的那几样，画成手帐贴纸</a><a href="../edu-ai-builders-language-learning-sop-kit-skill-option-anatomy/">选择题每个选项都标出题人陷阱的解剖器</a></div></div>
   </aside>
   <nav class="foot fam">
     <a href="https://ourword.ai/">人类世界生存法则</a>
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../rubyzhu26-see-life-wallpaper-skill/">← 把手机壁纸变成每天更新的生活观察窗</a><a href="../joeseesun-qiaomu-campus-resume/">给应届生从零做一份可投递的简历 →</a></nav>
+  <nav class="foot"><a href="../zexuanw958-svg-travel-plan-viz/">← 离线可读的手机旅行页，地图时间轴订票提醒一页装完</a><a href="../chenklein26-maker-fitness-coach-rpg/">训练数据自己攒，剧情推进看成绩的 RPG 健身教练 →</a></nav>
 </div>
 <script>
 (function(){
