@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">字幕进、笔迹出：SRT 转白板手绘动画的流水线</h1>
     <p class="lede">不用逐帧画，不用对时间轴。丢进 SRT，它自己出分镜策略、线稿和连续笔迹，渲染成暖米黄纸上的 MP4。</p>
     <div class="tags"><span class="tag">geeklee</span><span class="tag">店长推荐</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/geeklee-srt-whiteboard-animation.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/geeklee-srt-whiteboard-animation.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/geeklee-srt-whiteboard-animation.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/geeklee-srt-whiteboard-animation.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">作者自制的头图，<b>不是产出示例</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>不用逐帧画，不用对时间轴。丢进 SRT，它自己出分镜策略、线稿和连续笔迹，渲染成暖米黄纸上的 MP4。不是把字幕贴图上，而是按叙事语义分区，用连续笔迹（骨架/网格 ink→color）逐区揭示。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。只认 SRT 字幕输入；需本机配好 ffmpeg 与渲染环境。产物是 MP4 视频，不含配音与配乐。</p></section>

@@ -15,6 +15,8 @@
 <style>
 img.cover{display:block;width:100%;height:auto;margin:14px 0 6px;border-radius:12px;border:1px solid var(--rule,#e2ddd0);background:#eae7de}
 img.cover.og{aspect-ratio:2;object-fit:cover}
+.shotcap{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3,#8a857a)}
+.shotcap b{font-weight:600;color:var(--ink-2,#5a554b)}
 .wrap{padding-left:max(20px,env(safe-area-inset-left))!important;padding-right:max(20px,env(safe-area-inset-right))!important}
 </style>
 <meta property="og:type" content="article">
@@ -23,11 +25,11 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:title" content="生成手绘白板风格的示意图 — 品味">
 <meta property="og:description" content="讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。">
 <meta property="og:url" content="https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/">
-<meta property="og:image" content="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png">
+<meta property="og:image" content="https://ourword.ai/skill/assets/covers/coleam00-excalidraw-diagram-skill.png"><meta name="twitter:image" content="https://ourword.ai/skill/assets/covers/coleam00-excalidraw-diagram-skill.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="生成手绘白板风格的示意图 — 品味">
 <meta name="twitter:description" content="讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"生成手绘白板风格的示意图","description":"讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。","url":"https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"coleam00"},"image":"https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png","codeRepository":"https://github.com/coleam00/excalidraw-diagram-skill"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"生成手绘白板风格的示意图","description":"讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。","url":"https://ourword.ai/skill/i/coleam00-excalidraw-diagram-skill/","applicationCategory":"做图","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/"},"author":{"@type":"Person","name":"coleam00"},"image":"https://ourword.ai/skill/assets/covers/coleam00-excalidraw-diagram-skill.png","codeRepository":"https://github.com/coleam00/excalidraw-diagram-skill"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -61,7 +63,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <h1 class="ttl">生成手绘白板风格的示意图</h1>
     <p class="lede">讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。</p>
     <div class="tags"><span class="tag">coleam00</span></div>
-    <img class="cover" src="https://ourword.ai/skill/assets/ours/coleam00-excalidraw-diagram-skill.png" alt="" onerror="this.remove()">
+    <img class="cover" src="https://ourword.ai/skill/assets/covers/w800/coleam00-excalidraw-diagram-skill.webp" alt="" data-full="https://ourword.ai/skill/assets/covers/coleam00-excalidraw-diagram-skill.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的样张，<b>不是产出物截图</b></p>
     
     <section class="sec"><h2>做什么用</h2><p>讲思路时精确框图显得冷，手绘草图更让人愿意看。它出真正的 Excalidraw 文件，画完你还能自己拖着改。产物是可编辑源文件而不是截图——这一点决定了它能进日常工作流，而不只是配图。</p></section>
     <section class="sec"><h2>应用范围</h2><p>用在「做图」这一格。必做的渲染校验要用 uv 装 Playwright 和 Chromium。正文禁止写脚本生成、禁止转交别的 agent，只能一段段手敲 JSON，再渲染—看图—改，通常来回 2-4 轮。 随件的渲染模板从 esm.sh 拉 excalidraw，传递依赖现在 404、脚本会等到超时；钉版本到 0.18.0 才渲得出来。</p></section>
@@ -85,7 +87,7 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
     <a href="https://ourword.ai/podcast/">原声</a>
     <a href="https://ourword.ai/skill/" aria-current="page">品味</a>
   </nav>
-  <nav class="foot"><a href="../kkkkhazix-human-writing-human-writing/">← 按活人那套改中文长文</a><a href="../neuralinitiative-claude-dnd-skill-dnd/">一个人也能玩的 D&amp;D 地下城主 →</a></nav>
+  <nav class="foot"><a href="../312362115-claude-diagram/">← 自动选对图表类型再画出来</a><a href="../kepano-obsidian-skills-obsidian-cli/">在 Obsidian 库里搜、写、改、查，不用开编辑 →</a></nav>
 </div>
 <script>
 (function(){
