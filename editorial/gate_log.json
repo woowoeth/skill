@@ -2,6 +2,138 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-06T06:44:37Z",
+   "判了": 16,
+   "过": 0,
+   "明细": [
+    {
+     "id": "conorbronsdon-avoid-ai-writing",
+     "repo": "conorbronsdon/avoid-ai-writing",
+     "title": "删掉「值得注意的是」的 AI 腔校对员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 实用扎实的写作改写工具，检测编辑模式清晰，但替代品不少。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "parcadei-continuous-claude-v3",
+     "repo": "parcadei/Continuous-Claude-v3",
+     "title": "上下文账本式管理，Claude Code 长跑不掉链",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "sanyuan0704-sanyuan-skills",
+     "repo": "sanyuan0704/sanyuan-skills",
+     "title": "代码评审先查 SOLID 再谈改不改的资深审查员",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "sanyuan0704-sanyuan-skills-skill-forge",
+     "repo": "sanyuan0704/sanyuan-skills",
+     "title": "从一句话需求到可上架 Skill 的完整流水线",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具链，内容扎实但属官方示例变体，非生活题材（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sanyuan0704-sanyuan-skills-skill-review",
+     "repo": "sanyuan0704/sanyuan-skills",
+     "title": "给 Claude Code 技能做体检的审稿人",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链的元技能，自指性强，对普通读者无直接交付价值。（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sanyuan0704-sanyuan-skills-sigma",
+     "repo": "sanyuan0704/sanyuan-skills",
+     "title": "每次只教一个点，直到你答对才往下走的私教",
+     "过": false,
+     "为什么": "品味 74 分 < 80 —— 教学法扎实，有清晰边界与文件产出；但类似AI导师可替代。（3 判：[72, 74, 75]）",
+     "分": 74
+    },
+    {
+     "id": "alchaincyf-elon-musk-skill",
+     "repo": "alchaincyf/elon-musk-skill",
+     "title": "白痴指数低于 20% 就当场拆掉重算的成本顾问",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 框架完整且边界清晰，但可被通用角色扮演或提示工程替代。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "makenotion-claude-code-notion-plugin-notion-knowledge-capture",
+     "repo": "makenotion/claude-code-notion-plugin",
+     "title": "聊完天自动把结论归档成 Notion 知识页",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 流程清晰可复用，但本质是通用Notion操作手册，换工具也能做。（3 判：[55, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "makenotion-claude-code-notion-plugin-notion-meeting-intelligence",
+     "repo": "makenotion/claude-code-notion-plugin",
+     "title": "开会前自动翻遍 Notion 并备好两份材料的会议秘",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 扎实的会议准备流程，但本质是工作流编排，换别处Notion技能也能达成。（3 判：[48, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "makenotion-claude-code-notion-plugin-notion-research-documentation",
+     "repo": "makenotion/claude-code-notion-plugin",
+     "title": "Notion 全域检索器",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工作流编排清晰，但核心仍是调用官方API模板，无独特方法论。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "jimmysadek-youtube-fetcher-to-markdown",
+     "repo": "JimmySadek/youtube-fetcher-to-markdown",
+     "title": "YouTube 视频开口前先落成带章节和出处的 Ma",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 功能扎实且边界清晰，但本质是官方工具，换工具也能做。（3 判：[45, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "tjxj-z-skills",
+     "repo": "tjxj/z-skills",
+     "title": "",
+     "过": false,
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "tjxj-z-skills-z-xkcd-panda-comic",
+     "repo": "tjxj/z-skills",
+     "title": "文章丢给它，出来一张能直接发群的黑白熊猫四格",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程详尽、边界清楚，手法扎实；风格虽独特，但纯文本亦可实现类似表达。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "tjxj-z-skills-z-video-study-webpage-qwen",
+     "repo": "tjxj/z-skills",
+     "title": "视频逐段拆解成图文并茂的学习网页",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链且流程较重，换通用视频工具加多模态API亦可实现。（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "tjxj-z-skills-z-wanghong-handwritten-video",
+     "repo": "tjxj/z-skills",
+     "title": "王虹手写HTML原样转成16:9无声动画MP4",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 将手写PPT转视频实现扎实，但依赖上游生成器，功能可替代，非独立不可缺。（3 判：[45, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "gitroomhq-postiz-agent",
+     "repo": "gitroomhq/postiz-agent",
+     "title": "28 个平台共用一张排期表，发帖前先问你要不要改",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 是产品详细使用指南，覆盖广但非独特方法论，换官方文档可替代。（3 判：[40, 45, 45]）",
+     "分": 45
+    }
+   ]
+  },
+  {
    "时间": "2026-09-05T19:10:41Z",
    "判了": 35,
    "过": 0,
@@ -4199,109 +4331,6 @@
      "过": true,
      "为什么": "品味 82 分 —— 针对AI生成项目的检查，边界清晰，提供别处未见的具体操作清单与严重等级。（3 判：[75, 82, 85]）",
      "分": 82
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-03T10:33:41Z",
-   "判了": 12,
-   "过": 5,
-   "明细": [
-    {
-     "id": "zhx8702-wechat-colleague",
-     "repo": "zhx8702/wechat-colleague",
-     "title": "聊天记录里炼出同事数字替身，代码按需现写",
-     "过": true,
-     "为什么": "品味 85 分 —— 深度技术方案，文档驱动按需生成，边界清晰，产出明确，别处难寻。（3 判：[82, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "duyufansh2008-wx-backup-decrypt",
-     "repo": "duyufansh2008/wx-backup-decrypt",
-     "title": "NAS里躺了三年的微信备份，它一小时给你翻成明文",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 深入解密微信备份，明确边界与备选方案，技术细节扎实且非通用工具。（3 判：[72, 72, 82]）",
-     "分": 72
-    },
-    {
-     "id": "arenbai-secskills",
-     "repo": "Arenbai/SecSkills",
-     "title": "拿到IP先问一句你授权了吗的渗透全流程",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 渗透流程与过滤体系扎实具体，但边界依赖授权确认，非独家方法论。（3 判：[65, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "xerxes-2-tavern2agent",
-     "repo": "Xerxes-2/tavern2agent",
-     "title": "SillyTavern 角色卡原样搬进 pi",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 体系完整，边界清晰，但高度绑定特定runtime，换场景难复用。（3 判：[72, 75, 85]）",
-     "分": 75
-    },
-    {
-     "id": "danielroe-empathy",
-     "repo": "danielroe/empathy",
-     "title": "动笔前先过一遍人类沟通守则的 AI 助手",
-     "过": true,
-     "为什么": "品味 85 分 —— 边界清晰，规则具体可执行，但核心是行为准则，非独特交付物。（3 判：[72, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "brandon030722-ark-ui-skill",
-     "repo": "Brandon030722/ark-ui-skill",
-     "title": "鹰角视觉语言先问产品线再定深度的界面设计器",
-     "过": true,
-     "为什么": "品味 85 分 —— 有独特方法论与边界定义，但执行依赖多文件，参考性较高而非独有。（3 判：[78, 85, 88]）",
-     "分": 85
-    },
-    {
-     "id": "gonta223-humanizer-ja",
-     "repo": "gonta223/humanizer-ja",
-     "title": "AI腔日文改稿器，专治敬语过载和机械接续",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 针对日文AI腔的改写规则具体到可直接操作，远胜泛泛建议，且边界清晰。（3 判：[62, 75, 85]）",
-     "分": 75
-    },
-    {
-     "id": "gaaiyun-joinquant-skill",
-     "repo": "gaaiyun/joinquant-skill",
-     "title": "聚宽API长在代码里，写完直接能跑的回测生成器",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 提供了API分类、模板和lint工具，集成扎实但非独有，可见相似场景工具。（3 判：[68, 72, 82]）",
-     "分": 72
-    },
-    {
-     "id": "metedata-pdf-proof",
-     "repo": "metedata/pdf-proof",
-     "title": "PDF 里哪个数在哪一页，截图圈给你看",
-     "过": true,
-     "为什么": "品味 85 分 —— 视觉取证定位清晰，产出可分享HTML，但脚本细节繁琐，类似工具可替代。（3 判：[68, 85, 85]）",
-     "分": 85
-    },
-    {
-     "id": "trkzi-omar-prune-skills",
-     "repo": "Trkzi-Omar/prune-skills",
-     "title": "先盘点后动手的技能库瘦身师，删前必问三遍",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 流程严谨可逆，边界清晰，拒绝即决删除，是罕见的实操级技能清理方案。（3 判：[72, 72, 85]）",
-     "分": 72
-    },
-    {
-     "id": "ibrews-ue5-testflight",
-     "repo": "ibrews/ue5-testflight",
-     "title": "UE5 出包到 TestFlight 全自动流水线",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 该货对UE5到TestFlight的坑和流程刻画极深，非通用索引，边界清晰。但换（3 判：[72, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "vladimir-cicovic-ai_review_skills",
-     "repo": "vladimir-cicovic/ai_review_skills",
-     "title": "断点续审的千文件代码库深挖器",
-     "过": true,
-     "为什么": "品味 85 分 —— 流程设计扎实可恢复，但方法论核心在别处也能构建，非独此一家。（3 判：[65, 85, 85]）",
-     "分": 85
     }
    ]
   }

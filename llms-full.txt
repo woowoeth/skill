@@ -1,7 +1,237 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 296 skills.
+# Full corpus, plain text. 297 skills.
+
+========================================================================
+## kami
+## 羊皮纸底色配墨蓝强调的文档排版师
+URL: https://ourword.ai/skill/i/tw93-kami-kami/
+Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
+Updated: 2026-09-06
+Tags: everyday, skill, tw93
+
+Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
+
+### What does this skill do?
+Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一页纸 / 白皮书 / 作品集 / 简历 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地页 / 官网 / landing page / p
+
+### Why is it worth installing?
+Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## speak-human-tw
+## 繁體中文去 AI 味：把「綜上所述」改回人話
+URL: https://ourword.ai/skill/i/raymondhou0917-speak-human-tw/
+URL (中文): https://ourword.ai/skill/zh/i/raymondhou0917-speak-human-tw/
+Source: https://github.com/Raymondhou0917/speak-human-tw
+Updated: 2026-09-06
+Tags: writing, skill, Raymondhou0917
+
+Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+
+### What does this skill do?
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Why is it worth installing?
+Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+--- 中文 ---
+一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
+
+### Q：这个 skill 做什么？
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Q：为什么值得装？
+不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## cangjie-skill
+## 长内容拆成可执行技能包，一本书变一套动作
+URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
+Source: https://github.com/kangarooking/cangjie-skill
+Updated: 2026-09-06
+Tags: images, skill, kangarooking
+
+Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
+
+### What does this skill do?
+Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
+
+### Why is it worth installing?
+It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
+
+========================================================================
+## pf2e-gm
+## 翻开本地规则库的 PF2e 主持人副驾
+URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
+Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
+Updated: 2026-09-06
+Tags: play, skill, Milec
+
+41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
+
+### What does this skill do?
+Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
+
+### Why is it worth installing?
+It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## math-modeling
+## 三天赛程里做完数学建模竞赛全流程
+URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
+URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
+Source: https://github.com/XiaoMaColtAI/math-modeling-skill
+Updated: 2026-09-06
+Tags: learn, skill, XiaoMaColtAI
+
+A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
+
+### What does this skill do?
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+
+### Why is it worth installing?
+Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
+
+### How do you install it?
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+--- 中文 ---
+建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
+
+### Q：这个 skill 做什么？
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+
+### Q：为什么值得装？
+按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+========================================================================
+## comfyui-mcp
+## 自然语言改工作流，178 个工具随叫随到
+URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
+Source: https://github.com/artokun/comfyui-mcp
+Updated: 2026-09-06
+Tags: images, collection, artokun
+
+A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+
+### What does this skill do?
+Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+
+### Why is it worth installing?
+ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+
+### How do you install it?
+git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
+## trading-design
+## 按专业交易软件的规范设计盯盘界面
+URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
+Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+Updated: 2026-09-06
+Tags: images, skill, vanillagreencom
+
+A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+
+### What does this skill do?
+Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+
+### Why is it worth installing?
+Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## archify
+## 画出来的架构图要和代码对得上，导出自带动效的 HTML
+URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
+Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
+Updated: 2026-09-06
+Tags: docs, skill, tt-a1i
+
+Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
+
+### What does this skill do?
+Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
+
+### Why is it worth installing?
+"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## deep-research
+## 13 个子代理组队做研究，互相审稿和事实核查
+URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
+Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
+Updated: 2026-09-06
+Tags: docs, skill, Imbad0202
+
+A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
+
+### What does this skill do?
+Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
+
+### Why is it worth installing?
+A serious open-source take on deep research — the division of labor and cross-checks are well designed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## anime-poster
@@ -42,26 +272,26 @@ git clone --depth 1 https://github.com/qqy2275583297-stack/anime-poster-skill.gi
 Repository: qqy2275583297-stack/anime-poster-skill The repository ships 1 skills in total.
 
 ========================================================================
-## pf2e-gm
-## 翻开本地规则库的 PF2e 主持人副驾
-URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
-Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
+## oriental-editorial-poster
+## 东方文字海报，版式排好再交给 Image 2 成图
+URL: https://ourword.ai/skill/i/dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/
+Source: https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao
 Updated: 2026-09-05
-Tags: play, skill, Milec
+Tags: images, skill, dacnay816y62-hub
 
-41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
+Give it a title or keywords, get a typographic layout first, then Image 2 renders the final poster. Built for.
 
 ### What does this skill do?
-Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
+Create finished Chinese cultural, fantasy, and minimalist text-material editorial posters or publication covers with mandatory Image 2 style image generation. Use when a user gives a title, theme, exhibition/brand/cultural content, reference images, short keyword batches, ABC tests, or asks for 文字创意极简, fantasy text-driven visuals, 东方编辑海报, art-book covers, refined sparse poster tests, or culturally
 
 ### Why is it worth installing?
-It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
+Layout first, so text stays crisp; Image 2 only paints, never guesses glyphs. Chinese, English, vertical text, grids—locked in.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+Repository: dacnay816y62-hub/fantasy-dongfang-jianyuehaibao The repository ships 1 skills in total.
 
 ========================================================================
 ## lieflat-gongwen
@@ -102,6 +332,44 @@ git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-gongwen.git 然
 Repository: larashero3-dotcom/lieflat-gongwen The repository ships 1 skills in total.
 
 ========================================================================
+## window-scenery
+## 左下角永远钉着地名徽章的车窗风景照
+URL: https://ourword.ai/skill/i/dacnay816y62-hub-window-scenery-skill/
+URL (中文): https://ourword.ai/skill/zh/i/dacnay816y62-hub-window-scenery-skill/
+Source: https://github.com/dacnay816y62-hub/window-scenery-skill
+Updated: 2026-09-05
+Tags: everyday, skill, dacnay816y62-hub
+
+Tired of glare and dirty frames in your car-window shots? It renders photorealistic views from any vehicle, each.
+
+### What does this skill do?
+Generate photorealistic travel images from inside vehicles looking out through windows, with a consistent lower-left location badge. Use when the user asks for "车窗里的风景", "车窗美景", window-view scenery, travel photos from a car/train/boat/plane/cable-car window, or batch image prompts for locations viewed from transportation.
+
+### Why is it worth installing?
+It composites frame, glass reflections, and depth in one pass, with a fixed badge spot—so batch outputs look shot on the same.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dacnay816y62-hub/window-scenery-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dacnay816y62-hub/window-scenery-skill The repository ships 1 skills in total.
+
+--- 中文 ---
+坐在车里想发朋友圈，却总拍出反光玻璃和脏边框？它直接生成从车窗望出去的写实风景，每张左下角自动盖好地名徽章。
+
+### Q：这个 skill 做什么？
+Generate photorealistic travel images from inside vehicles looking out through windows, with a consistent lower-left location badge. Use when the user asks for "车窗里的风景", "车窗美景", window-view scenery, travel photos from a car/train/boat/plane/cable-car window, or batch image prompts for locations viewed from transportation.
+
+### Q：为什么值得装？
+不是简单贴图，而是把车窗框、玻璃反光和窗外景深一起算出来，徽章位置固定，批量出图时风格统一得像同一台相。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/dacnay816y62-hub/window-scenery-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: dacnay816y62-hub/window-scenery-skill The repository ships 1 skills in total.
+
+========================================================================
 ## video-understanding
 ## 视频拆成六层索引，写稿前先看清素材全貌
 URL: https://ourword.ai/skill/i/zenstory-ai-video-recap-skills-video-understanding/
@@ -138,6 +406,28 @@ git clone --depth 1 https://github.com/zenstory-ai/video-recap-skills.git 然后
 
 ### Q：它从哪来？
 Repository: zenstory-ai/video-recap-skills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## duizuo-reading-companion
+## 读书记不住进度？它替你记着，还防剧透
+URL: https://ourword.ai/skill/i/locoda-duizuo-reading-companion-skill/
+Source: https://github.com/locoda/duizuo-reading-companion-skill
+Updated: 2026-09-05
+Tags: writing, skill, locoda
+
+For novels, essays, nonfiction. It tracks where you are and how you feel, picks up next time, and won't spoil a.
+
+### What does this skill do?
+Stateful, spoiler-safe reading companionship for novels, short-story and essay collections, mixed anthologies, and nonfiction. Use when the reader is preparing to read, reading, stuck, reacting, interpreting, evaluating, or debriefing a book. It remembers edition, medium, status, and content-appropriate progress; verifies text claims; adapts each turn to plot, emotion, aesthetics, interpretation,
+
+### Why is it worth installing?
+Stateful, spoiler-safe reading chats. It remembers edition, medium, and progress, verifies text claims, and adapts to plot.
+
+### How do you install it?
+git clone --depth 1 https://github.com/locoda/duizuo-reading-companion-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: locoda/duizuo-reading-companion-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## archi-prompt
@@ -276,6 +566,28 @@ git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能�
 Repository: lijigang/ljg-skills The repository ships 1 skills in total.
 
 ========================================================================
+## chinese-style-poster-skill
+## 当代中式海报，配方锁在东方审美
+URL: https://ourword.ai/skill/i/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill/
+Source: https://github.com/dacnay816y62-hub/chinese-poster-skill/tree/HEAD/chinese-style-poster-skill
+Updated: 2026-09-05
+Tags: images, skill, dacnay816y62-hub
+
+From festivals to heritage brands, get poster layouts & poetic copy with contemporary Chinese aesthetics — no.
+
+### What does this skill do?
+Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seasonal festivals, tea, incense, craft, museum, commercial brands, fashion, urban culture, editorial campaigns, or experimental cultural subjects. Use when the use
+
+### Why is it worth installing?
+It doesn't slap on a filter — it dissects the theme's imagery core, then pairs layout, whitespace, typography & copy tone into a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dacnay816y62-hub/chinese-poster-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dacnay816y62-hub/chinese-poster-skill The repository ships 1 skills in total.
+
+========================================================================
 ## punk-cover
 ## 同一套朋克视觉库，文章、小红书、公众号封面一次生成
 URL: https://ourword.ai/skill/i/adrianpunk-punk-skill-punk-cover/
@@ -320,48 +632,48 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
 
 ========================================================================
-## comfyui-mcp
-## 自然语言改工作流，178 个工具随叫随到
-URL: https://ourword.ai/skill/i/artokun-comfyui-mcp/
-Source: https://github.com/artokun/comfyui-mcp
+## kinocut
+## 有护栏的 AI 视频剪辑
+URL: https://ourword.ai/skill/i/kyanitelabs-kinocut-kinocut/
+Source: https://github.com/KyaniteLabs/kinocut/tree/HEAD/skills/kinocut
 Updated: 2026-09-05
-Tags: images, collection, artokun
+Tags: images, skill, KyaniteLabs
 
-A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+Guarded AI video editing — FFmpeg ops, media analysis, subtitles, audio and repurposing, every step source-backed.
 
 ### What does this skill do?
-Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+Use Kinocut for guarded video editing, source-backed planning, FFmpeg operations, media analysis, subtitles, audio workflows, Hyperframes rendering, repurposing packages, and release checkpoints through an MCP server, Python client, or CLI. Trigger when an agent needs to inspect, plan, edit, render, validate, or package local media safely.
 
 ### Why is it worth installing?
-ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
-## trading-design
-## 按专业交易软件的规范设计盯盘界面
-URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
-Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
 Updated: 2026-09-05
-Tags: images, skill, vanillagreencom
+Tags: images, skill, dimetron
 
-A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
 
 ### What does this skill do?
-Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
 
 ### Why is it worth installing?
-Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## novel-to-game
@@ -384,28 +696,6 @@ git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then poin
 
 ### Where does it come from?
 Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
-
-========================================================================
-## archify
-## 画出来的架构图要和代码对得上，导出自带动效的 HTML
-URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
-Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
-Updated: 2026-09-05
-Tags: docs, skill, tt-a1i
-
-Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
-
-### What does this skill do?
-Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
-
-### Why is it worth installing?
-"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## understand-chat
@@ -512,26 +802,48 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
-## deep-research
-## 13 个子代理组队做研究，互相审稿和事实核查
-URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
-Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
+## gstack
+## YC 掌门的 Claude Code 全套配置，23 个角色分工
+URL: https://ourword.ai/skill/i/garrytan-gstack/
+Source: https://github.com/garrytan/gstack
 Updated: 2026-09-05
-Tags: docs, skill, Imbad0202
+Tags: work, skill, garrytan
 
-A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
+YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
 
 ### What does this skill do?
-Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
+Router for the gstack skill suite. (gstack)
 
 ### Why is it worth installing?
-A serious open-source take on deep research — the division of labor and cross-checks are well designed.
+How a top investor actually runs agents — the role division alone is worth the install.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+Repository: garrytan/gstack The repository ships 59 skills in total.
+
+========================================================================
+## planning-with-files
+## 任务拆解写到磁盘，/clear 后自动续上进度
+URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
+Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
+Updated: 2026-09-05
+Tags: meta, skill, OthmanAdi
+
+Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
+
+### What does this skill do?
+Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
+
+### Why is it worth installing?
+Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
+
+### How do you install it?
+git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## social-post
@@ -630,28 +942,6 @@ git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git 然�
 
 ### Q：它从哪来？
 Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
-
-========================================================================
-## cangjie-skill
-## 长内容拆成可执行技能包，一本书变一套动作
-URL: https://ourword.ai/skill/i/kangarooking-cangjie-skill/
-Source: https://github.com/kangarooking/cangjie-skill
-Updated: 2026-09-04
-Tags: images, skill, kangarooking
-
-Turn books, podcasts & courses into atomic skills your agent can actually invoke—not notes, but ready-to-use tools.
-
-### What does this skill do?
-Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world si
-
-### Why is it worth installing?
-It skips summaries and extracts executable procedures—each skill with triggers and steps, turning knowledge into invocable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
 
 ========================================================================
 ## grilling
@@ -1036,44 +1326,6 @@ git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git Then 
 Repository: lincwang123-bot/moonlit-stories The repository ships 1 skills in total.
 
 ========================================================================
-## math-modeling
-## 三天赛程里做完数学建模竞赛全流程
-URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
-URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
-Source: https://github.com/XiaoMaColtAI/math-modeling-skill
-Updated: 2026-09-04
-Tags: learn, skill, XiaoMaColtAI
-
-A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
-
-### What does this skill do?
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Why is it worth installing?
-Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
-
-### How do you install it?
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
---- 中文 ---
-建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
-
-### Q：这个 skill 做什么？
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Q：为什么值得装？
-按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
-========================================================================
 ## encoding-hero-video-for-mobile
 ## 手机竖屏 hero 视频压片台，只管码率不管播放
 URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
@@ -1110,28 +1362,6 @@ git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能
 
 ### Q：它从哪来？
 Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-04
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## ponytail
@@ -1178,28 +1408,6 @@ git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git 
 Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## gstack
-## YC 掌门的 Claude Code 全套配置，23 个角色分工
-URL: https://ourword.ai/skill/i/garrytan-gstack/
-Source: https://github.com/garrytan/gstack
-Updated: 2026-09-04
-Tags: work, skill, garrytan
-
-YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
-
-### What does this skill do?
-Router for the gstack skill suite. (gstack)
-
-### Why is it worth installing?
-How a top investor actually runs agents — the role division alone is worth the install.
-
-### How do you install it?
-git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: garrytan/gstack The repository ships 59 skills in total.
-
-========================================================================
 ## glitch-pixel-collage
 ## 故障像素拼贴
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-glitch-pixel-collage/
@@ -1236,28 +1444,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## kami
-## 羊皮纸底色配墨蓝强调的文档排版师
-URL: https://ourword.ai/skill/i/tw93-kami-kami/
-Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
-Updated: 2026-09-03
-Tags: everyday, skill, tw93
-
-Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
-
-### What does this skill do?
-Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一页纸 / 白皮书 / 作品集 / 简历 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地页 / 官网 / landing page / p
-
-### Why is it worth installing?
-Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-to-journal-stickers
@@ -1892,28 +2078,6 @@ git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Th
 Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## planning-with-files
-## 任务拆解写到磁盘，/clear 后自动续上进度
-URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
-Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
-Updated: 2026-09-02
-Tags: meta, skill, OthmanAdi
-
-Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
-
-### What does this skill do?
-Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
-
-### Why is it worth installing?
-Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
-
-### How do you install it?
-git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
-
-========================================================================
 ## mathmodel-diagram
 ## 论文插图先问清是给哪一章用的示意图师傅
 URL: https://ourword.ai/skill/i/escap1ng-mathmodel-kit-mathmodel-diagram/
@@ -2140,28 +2304,6 @@ git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把�
 
 ### Q：它从哪来？
 Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
-
-========================================================================
-## kinocut
-## 有护栏的 AI 视频剪辑
-URL: https://ourword.ai/skill/i/kyanitelabs-kinocut-kinocut/
-Source: https://github.com/KyaniteLabs/kinocut/tree/HEAD/skills/kinocut
-Updated: 2026-09-01
-Tags: images, skill, KyaniteLabs
-
-Guarded AI video editing — FFmpeg ops, media analysis, subtitles, audio and repurposing, every step source-backed.
-
-### What does this skill do?
-Use Kinocut for guarded video editing, source-backed planning, FFmpeg operations, media analysis, subtitles, audio workflows, Hyperframes rendering, repurposing packages, and release checkpoints through an MCP server, Python client, or CLI. Trigger when an agent needs to inspect, plan, edit, render, validate, or package local media safely.
-
-### Why is it worth installing?
-The guardrails are the soul — plan-then-execute, traceable cuts, no irreversible butchery of your footage.
-
-### How do you install it?
-git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
 ## book-to-skill
@@ -2500,28 +2642,6 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git 然后把智�
 
 ### Q：它从哪来？
 Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
-
-========================================================================
-## duizuo-reading-companion
-## 读书记不住进度？它替你记着，还防剧透
-URL: https://ourword.ai/skill/i/locoda-duizuo-reading-companion-skill/
-Source: https://github.com/locoda/duizuo-reading-companion-skill
-Updated: 2026-08-30
-Tags: writing, skill, locoda
-
-For novels, essays, nonfiction. It tracks where you are and how you feel, picks up next time, and won't spoil a.
-
-### What does this skill do?
-Stateful, spoiler-safe reading companionship for novels, short-story and essay collections, mixed anthologies, and nonfiction. Use when the reader is preparing to read, reading, stuck, reacting, interpreting, evaluating, or debriefing a book. It remembers edition, medium, status, and content-appropriate progress; verifies text claims; adapts each turn to plot, emotion, aesthetics, interpretation,
-
-### Why is it worth installing?
-Stateful, spoiler-safe reading chats. It remembers edition, medium, and progress, verifies text claims, and adapts to plot.
-
-### How do you install it?
-git clone --depth 1 https://github.com/locoda/duizuo-reading-companion-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: locoda/duizuo-reading-companion-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## gudemiao-advertising-creative-director
@@ -4294,28 +4414,6 @@ git clone --depth 1 https://github.com/fxw-labs/beachcombing.git Then point your
 Repository: fxw-labs/beachcombing Prep work visible in the skill's own text: runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## chinese-style-poster-skill
-## 当代中式海报，配方锁在东方审美
-URL: https://ourword.ai/skill/i/dacnay816y62-hub-chinese-poster-skill-chinese-style-poster-skill/
-Source: https://github.com/dacnay816y62-hub/chinese-poster-skill/tree/HEAD/chinese-style-poster-skill
-Updated: 2026-08-14
-Tags: images, skill, dacnay816y62-hub
-
-From festivals to heritage brands, get poster layouts & poetic copy with contemporary Chinese aesthetics — no.
-
-### What does this skill do?
-Create refined contemporary Chinese-style / Oriental aesthetic posters and poster-generation prompts from themes, titles, event information, brand copy, products, photos, architecture, intangible cultural heritage, cities, exhibitions, seasonal festivals, tea, incense, craft, museum, commercial brands, fashion, urban culture, editorial campaigns, or experimental cultural subjects. Use when the use
-
-### Why is it worth installing?
-It doesn't slap on a filter — it dissects the theme's imagery core, then pairs layout, whitespace, typography & copy tone into a.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dacnay816y62-hub/chinese-poster-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dacnay816y62-hub/chinese-poster-skill The repository ships 1 skills in total.
-
-========================================================================
 ## xianxia-cinematic-video-director
 ## 仙侠打斗戏运镜分镜导演，逐镜给提示词
 URL: https://ourword.ai/skill/i/liyue-aigc-xianxia-cinematic-video-director-xianxia-cinematic-video-director/
@@ -5932,44 +6030,6 @@ git clone --depth 1 https://github.com/geeklee/srt-whiteboard-animation.git 然�
 Repository: geeklee/srt-whiteboard-animation The repository ships 1 skills in total.
 
 ========================================================================
-## window-scenery
-## 左下角永远钉着地名徽章的车窗风景照
-URL: https://ourword.ai/skill/i/dacnay816y62-hub-window-scenery-skill/
-URL (中文): https://ourword.ai/skill/zh/i/dacnay816y62-hub-window-scenery-skill/
-Source: https://github.com/dacnay816y62-hub/window-scenery-skill
-Updated: 2026-07-27
-Tags: everyday, skill, dacnay816y62-hub
-
-Tired of glare and dirty frames in your car-window shots? It renders photorealistic views from any vehicle, each.
-
-### What does this skill do?
-Generate photorealistic travel images from inside vehicles looking out through windows, with a consistent lower-left location badge. Use when the user asks for "车窗里的风景", "车窗美景", window-view scenery, travel photos from a car/train/boat/plane/cable-car window, or batch image prompts for locations viewed from transportation.
-
-### Why is it worth installing?
-It composites frame, glass reflections, and depth in one pass, with a fixed badge spot—so batch outputs look shot on the same.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dacnay816y62-hub/window-scenery-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dacnay816y62-hub/window-scenery-skill The repository ships 1 skills in total.
-
---- 中文 ---
-坐在车里想发朋友圈，却总拍出反光玻璃和脏边框？它直接生成从车窗望出去的写实风景，每张左下角自动盖好地名徽章。
-
-### Q：这个 skill 做什么？
-Generate photorealistic travel images from inside vehicles looking out through windows, with a consistent lower-left location badge. Use when the user asks for "车窗里的风景", "车窗美景", window-view scenery, travel photos from a car/train/boat/plane/cable-car window, or batch image prompts for locations viewed from transportation.
-
-### Q：为什么值得装？
-不是简单贴图，而是把车窗框、玻璃反光和窗外景深一起算出来，徽章位置固定，批量出图时风格统一得像同一台相。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/dacnay816y62-hub/window-scenery-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: dacnay816y62-hub/window-scenery-skill The repository ships 1 skills in total.
-
-========================================================================
 ## 节奏锻造师
 ## 音频拖进来，出来一个能玩的网页音游
 URL: https://ourword.ai/skill/i/zhlmi-rhythm-forge-sklii/
@@ -6066,28 +6126,6 @@ git clone --depth 1 https://github.com/v92388375-gif/pixel-style-poster-skill.gi
 
 ### Where does it come from?
 Repository: v92388375-gif/pixel-style-poster-skill The repository ships 1 skills in total.
-
-========================================================================
-## oriental-editorial-poster
-## 东方文字海报，版式排好再交给 Image 2 成图
-URL: https://ourword.ai/skill/i/dacnay816y62-hub-fantasy-dongfang-jianyuehaibao/
-Source: https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao
-Updated: 2026-07-22
-Tags: images, skill, dacnay816y62-hub
-
-Give it a title or keywords, get a typographic layout first, then Image 2 renders the final poster. Built for.
-
-### What does this skill do?
-Create finished Chinese cultural, fantasy, and minimalist text-material editorial posters or publication covers with mandatory Image 2 style image generation. Use when a user gives a title, theme, exhibition/brand/cultural content, reference images, short keyword batches, ABC tests, or asks for 文字创意极简, fantasy text-driven visuals, 东方编辑海报, art-book covers, refined sparse poster tests, or culturally
-
-### Why is it worth installing?
-Layout first, so text stays crisp; Image 2 only paints, never guesses glyphs. Chinese, English, vertical text, grids—locked in.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dacnay816y62-hub/fantasy-dongfang-jianyuehaibao The repository ships 1 skills in total.
 
 ========================================================================
 ## muyang-flat-animation
