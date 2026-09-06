@@ -95,7 +95,7 @@ def pair_winrate(S, body: str, anchors: list[str], cur: dict, k: int = 3) -> flo
 
 
 def _score(S, body: str):
-    r = _call(S, S.TASTE_PROMPT.format(body=body[:6000]))
+    r = _call(S, S.TASTE_PROMPT.format(body=body[:6000], rubric=getattr(S, "TASTE_RUBRIC", "")))
     if not r: return -1, ""
     return int(r.get("score", -1)), str(r.get("why", ""))[:40]
 

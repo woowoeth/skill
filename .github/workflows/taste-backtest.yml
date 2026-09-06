@@ -3,6 +3,10 @@ name: taste-backtest
 # 前两轮都失败了（题材关键词 +1pt，上游形态特征 +6pt），所以这一轮先测再说。
 on:
   workflow_dispatch:
+    inputs:
+      rubric:
+        description: "1 = 判官提示词里带 docs/TASTE.md 的六个信号/五个反信号；0 = 09-03 的原提示词"
+        default: "0"
 permissions:
   contents: read
 jobs:
@@ -17,7 +21,9 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          TASTE_RUBRIC: ${{ inputs.rubric }}
         run: |
+          echo "TASTE_RUBRIC=$TASTE_RUBRIC"
           python scouts/taste_backtest.py --holdout 18 --shots 8
           echo "──────── 分数抖动 ────────"
           python scouts/taste_backtest.py --repeat 3 --holdout 18

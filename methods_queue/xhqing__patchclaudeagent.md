@@ -1,0 +1,149 @@
+---
+name: patch-claude
+description: 维护并重新应用针对本机 VSCode Claude Code 扩展的自定义补丁。当扩展升级后思考块等定制项失效、或用户要求"重新打补丁/检查补丁状态/更新补丁 Skill"时触发。包含前置检查、锚点重定位、失败回写 Skill 的自愈闭环。
+---
+
+# patch-claude —— 自维护补丁 Skill（自用）
+
+本 Skill 用于维护针对 **本机** 安装的 `anthropic.claude-code` VSCode 扩展的自定义补丁。每次扩展升级（版本号变化）后，重新应用这些补丁，恢复用户定制的界面/交互行为。
+
+
+## 目录结构
+
+```
+patch-claude/              ← 仓库只含原创逻辑，可多设备同步
+├── SKILL.md                    ← 本文件（智能体工作流 + 合规边界）
+├── .gitignore                  ← 排除 Anthropic 原始文件与本机产物
+├── patches/                    ← 补丁清单，每个补丁一个 .md，自描述自验证
+│   ├── 002-session-history-running-badge.md
+│   └── archive/                ← 已停用归档的补丁（移出生效清单，引擎不再应用）
+└── scripts/
+    ├── apply-patches.py        ← 核心引擎：定位→应用→校验→回写状态
+    └── rollback.py             ← 用本机备份回滚单条或全部补丁
+```
+
+**不入库（.gitignore 排除）**：
+
+- `rollback/` —— 从扩展拷出的 Anthropic 原始文件（专有，仅本机自用，绝不进 git）。
+- `~/.claude/patch-backups/` —— 引擎首次打补丁前当场从本机扩展拷出的原始文件备份（本机生成，各设备各自有，与 `rollback/` 互为回滚源）。
+- `version-map.json` —— 引擎回写的本机版本/补丁状态（各设备版本不同，本机生成）。
+
+引擎运行时定位机制：补丁 `.md` 不再存死字节串 `old/new`，而是声明一段 `type:locate` 定位器（Python，受限沙箱执行）。引擎在本机运行时用**稳定锚点**算出当前版本真实的 `old/new` 再替换，因此跨版本/跨设备自适应——只要锚点结构未变。`type:append`（纯追加自创类，天然可移植）与 `type:replace`（仅限确有稳定 old 串时兼容）保持不变。
+
+## 工作流
+
+收到"检查/重打补丁"请求时，**不要手动改文件**，而是调用引擎脚本，让它产出结构化报告。
+
+### 步骤 1：定位当前扩展副本
+
+扩展目录名含版本号，升级后会变。用通配定位（自 2.1.220 起目录名去掉了 `-darwin-arm64` 平台后缀、改用 universal 命名，故通配只按 `anthropic.claude-code-` 前缀匹配，新老两种命名都能覆盖）：
+
+```bash
+EXT_DIR=$(ls -d ~/.vscode/extensions/anthropic.claude-code-*)
+```
+
+若存在多个版本目录，取版本号最大的那个；若用户刚升级完旧的还在，提示用户旧目录可清理。
+
+读 `package.json` 的 `version` 字段，与 `version-map.json` 比对：
+- 版本相同且全部 `verified` → 报告"补丁已是最新，无需操作"。
+- 版本变化或有 `needs-reapply`/`broken` → 进入步骤 2。
+
+### 步骤 2：运行引擎，逐补丁应用
+
+在项目根（PatchClaudeAgent）执行——引擎脚本随 skill 就在项目内 `.claude/skills/patch-claude/`，本机未装到全局，故用项目内相对路径：
+
+```bash
+python3 .claude/skills/patch-claude/scripts/apply-patches.py "$EXT_DIR"
+```
+
+引擎对每个补丁文件依次执行：
+1. **定位**：`type:locate` 块跑定位器（受限沙箱），用稳定锚点算出当前版本真实 `old/new`；`type:replace`/`append` 按补丁声明的内容处理。定位器返回 `found=False` 或异常 → 标记 `broken`，绝不硬改。
+2. **幂等**：已应用则直接 `verified`（定位器算出的 `new` 已在文件、或声明的 `idempotent_marker` 命中），不重复改文件。
+3. **应用**：`hit_count==1` 才做替换；命中数 ≠ 1 → `broken`。
+4. **校验**：替换后再读一次确认 `new` 出现；失败则从本机备份回滚文件。
+5. **备份**：首次对某文件打补丁前，从**本机扩展当前文件**拷一份原始备份到 `~/.claude/patch-backups/<version>/`（已有则跳过，不入库）。
+6. **回写状态**：应用结果写回 `version-map.json`（`verified` / `needs-reapply` / `broken` + 失败原因）。
+
+### 步骤 3：解读报告，处理 broken 项
+
+引擎输出每个补丁的状态。对 `broken` 项（锚点在新版本里也对不上）：
+- **不要硬改。** 这是设计意图——上游重构导致定位失效。
+- 进入"更新 Skill"模式：在新版本 bundle 里用 `grep` 关键词（见下方"锚点重定位工具箱"）重新定位目标，**把新锚点写回对应的补丁 .md**，状态改回 `verified`（或标记仍待人工确认）。
+- 若定位后仍无法确认（变化太大），保持 `broken`，向用户报告需要人工介入。
+
+## 锚点重定位工具箱（broken 补丁修复用）
+
+补丁的可靠性取决于锚点的稳定性。优先用以下稳定度递减的锚点：
+
+| 稳定度 | 锚点类型 | 示例 |
+|--------|---------|------|
+| 高 | schema/settings 里的配置项名 | `alwaysThinkingEnabled`、`showThinkingSummaries` |
+| 高 | 明文 CSS 文件里的类名 | `webview/index.css` 中的 `.thinkingToggleOpen_aHyQPQ` |
+| 中 | 可读的 React/event 字符串 | `areThinkingBlocksExpanded`、`thinkingToggle` |
+| 中 | DOM 属性 / HTML 结构 | `<details ... open=` |
+| 低 | 混淆变量名 | `J`、`ie`、`Z8t`、`ne`（易变，仅作上下文辅助） |
+
+定位 useState 初值这类场景的通用手法：
+```bash
+# 找关键词命中位置，再看它附近 useState/ne( 的初值
+grep -ob "areThinkingBlocksExpanded" "$EXT_DIR/webview/index.js"
+# 然后偏移读上下文确认 ne(!1) → ne(!0) 的置换点
+```
+
+## 编写新补丁
+
+用户提出新定制项时，新增 `patches/NNN-描述.md`，frontmatter 写 `id`/`title`/`targets`/`default_status: needs-reapply`。改动块优先用 **`type:locate`**（跨版本自适应）：
+
+```markdown
+## 改动 1：<标题>
+### file: webview/index.js
+### type: locate
+### idempotent_marker: <稳定特征串，如 ccRunDot>
+
+### locator:
+```python
+def locate(src):
+    # 1. 稳定前置检查（锚点消失即返回 found=False，安全拒绝）
+    # 2. 用稳定锚点定位目标，动态提取本版本混淆符号名（正则组捕获）
+    # 3. 拼出本版本真实 old / new
+    return {"found": True, "old": old, "new": new, "hit_count": 1}
+```
+
+#### verify
+- 定位器 found=True 且 hit_count==1；替换后 new 在文件
+- `node --check` 通过
+
+#### 失败处理
+- 锚点消失 / 正则未匹配 / hit_count≠1 → broken，提示人工重定位锚点
+```
+
+要点：
+- **`type:locate`**：定位器在受限沙箱跑（只暴露 `re` 等内置），返回 `{found, old, new, hit_count, reason}`。引擎不信任输出：仍要求 `hit_count==1` 且替换后 `new` 实际出现，否则回滚。`idempotent_marker` 用稳定串判幂等。
+- **`type:append`**：纯追加自创类/样式，天然可移植，marker 用首个 `@keyframes` 名或类名判幂等。
+- **`type:replace`**：仅当确有稳定 old 串（不依赖混淆名）时用，否则优先 locate。
+- 锚点稳定度见下方表格；定位器用正则捕获组动态提取混淆符号名，**不写死任何混淆名**。
+- **多改动块的 idempotent 标记必须各自不同**：补丁含 ≥2 个改动块时，每块的 `### idempotent:` 要用各自唯一的稳定串（如各自改动点独有的前缀），**不能共享同一个标记**。引擎在跑定位器之前会先查 `### idempotent:`——共享标记会导致块 1 应用后、块 2 一查就误判「已应用」直接跳过，只改了块 1。007 曾因此只改了卡片 diff、漏掉全屏 diff（文件长度只 +54 而非 +108），改用各自含 `renderOverviewRuler:!1`/`:!0` 前缀的标记后修复。（引擎实际识别的字段名是 `### idempotent:`，不是 `idempotent_marker:`。）
+
+## 不可改的范围（向用户坦诚说明）
+
+- `resources/native-binary/` 下的 CLI 原生二进制——核心逻辑在此，Skill 无法可靠补丁。
+- `extension.js` 中无清晰锚点的深层业务逻辑——强改风险高，一般拒绝定制此类。
+
+## 已验证补丁与跨版本移植性（诚实说明）
+
+补丁的可移植性依锚点稳定度而异，升级后某补丁 `broken` 是正常预期：
+
+| 补丁 | 机制 | 移植性 | 说明 |
+|------|------|--------|------|
+| ~~001 思考默认展开~~（已归档） | `type:locate`（定位器） | — | 已于 2.1.217 用户停用并归档至 `patches/archive/`：让 thinking 块默认展开的定制取消，恢复官方折叠态。原机制见归档补丁 .md。 |
+| 002 历史会话运行标记 | `type:locate`（定位器） | **较好** | 用 `ariaLabel:"Session history"` + `.sessionName` 字段名 + `busy.value`/`pendingInput.value` 做稳定锚点，正则动态提取混淆符号名，跨版本自适应。CSS 块纯 append 天然可移植。已验证 `2.1.220`、`2.1.226`。 |
+| 007 diff 主题跟随明暗 | `type:locate`（两块） | **较好** | 用 `createDiffEditor` 的 option 序列（`renderOverviewRuler`/`scrollBeyondLastLine`/`minimap`/`automaticLayout`/`theme`，均为 Monaco 公开 API 名）做稳定锚点，按 `renderOverviewRuler:!1`/`:!0` 分卡片 / 全屏两块，锁定 `theme:"vs-dark"` 字面量。深色零影响（三元 else 仍取 `vs-dark`）。两块用各自不同的 `### idempotent:` 标记（含 `renderOverviewRuler:!?` 前缀）。已验证 `2.1.220`、`2.1.226`。 |
+| 008 浅色消除 diff 卡片黑阴影 | `type:append`（单块，v4） | **很好** | 在 webview/index.css 末尾追加三保险：① `body.vscode-light{--vscode-scrollbar-shadow:transparent!important}` 兜底所有吃该变量的 Monaco 滚动阴影；② 逐选择器 `.scroll-decoration`/`.shadow.top`/`.shadow.left`/`.shadow.top.left`/`.diff-review-shadow` 浅色下 `box-shadow:none`；③ `[class*=truncationGradient]` 浅色下渐变到白（v4 新增，根治内嵌卡片底部 30px 黑阴影——该截断淡出遮罩写死 `linear-gradient(#0000,#1e1e1e)`、不吃变量，是 007 切浅底后暴露的底部黑阴影真凶；v3 误判为 `.diff-review-shadow` 漏治）。007 的尾部盲区：007 只切 Monaco theme、管不到这些走变量/写死色的阴影与遮罩。哨兵类 `.cc-patch-008e`（演进 008→008b→008c→008d→008e，每次改 append 内容必须换新哨兵引擎才重新追加；旧块留在文件被新版在后覆盖，无害）。属性选择器 `[class*=truncationGradient]` 规避混淆后缀 `_s6OFow` 跨版本变化。深色零影响（前缀 `body.vscode-light` 不命中）。已验证 `2.1.220`、`2.1.226`。 |
+| ~~009 会话刷新按钮~~（已归档） | `type:locate`+`append` | — | 已于 2.1.217 用户停用并归档至 `patches/archive/`：会话面板「刷新当前会话」按钮定制取消，恢复官方无该按钮态（本机 2.1.217 已回滚 index.js 按钮注入与 index.css 旋转动画）。原机制与图标迭代记录见归档补丁 .md。 |
+| 010 图片链接可打开 | `type:locate`（单块） | **较好** | **首个改主进程 extension.js 的补丁**（前 001-009 都动 webview）。修 `openFile` 用 `showTextDocument` 打二进制图片失败被静默吞 → 点图片链接没反应。在 directory 分支 `}}catch{}` 与 `showTextDocument` 之间插图片 try 分支，命中图片扩展名走 `vscode.commands.executeCommand("vscode.open",uri)`（内置图片查看器），其它文件保留原 `showTextDocument`（代码文件 `revealRange` 行号定位不受影响）。两步定位器：第 1 步锚 `revealInExplorer`→`showTextDocument` 链（均 VSCode 公开 API 名，用 `(?P=ns)`/`(?P=uri)` 反向引用锁死 openFile），第 2 步向前 200 字找 `statSync(PATH)` 取路径变量；正则测扩展名结尾绕开被压没的 `Tn.extname`。幂等标记 `executeCommand("vscode.open",`（原生 0 次、补丁特有）。已验证 `2.1.220`、`2.1.226`。 |
+| 011 LaTeX 数学渲染 | 三块 `locate`（CSP）+ 一块 `append`（注入） | **较好**（CSP 块）/ **很好**（append 块） | **首个放开 CSP 的补丁**：三块 `locate` 把 `getHtmlForWebview` 里 CSP 的 `style-src`/`font-src`/`script-src` 各追加 `https://cdn.jsdelivr.net`（锚点为 CSP 指令名 + VSCode 公开 API `cspSource` + nonce 变量 `${u}`，三者在 extension.js 各唯一命中，追加式幂等）；一块 `append` 在 webview/index.js 末尾注入 KaTeX（0.18.1，jsdelivr CDN）链式加载 + `renderMathInElement` 扫 `#root` + `MutationObserver` 防抖 250ms 重渲染，哨兵 `.ccKatex011`（append 内容首个点号串）。**关键约束**：CC 的 DOMPurify 对 `<span style>` 只留 `color:` 开头，故 KaTeX 必须在**净化完成后**用 DOM 扫描注入（事后操作 DOM 不再经 DOMPurify，KaTeX 排版 style 得以保留）；若在 markdown→HTML 阶段注入会被剥光。依赖联网（CDN），`script-src` 仅放开 jsdelivr 单一可信域。已验证 `2.1.220`、`2.1.226`。 |
+| 012 会话状态写盘 | `type:locate`（单块，extension.js） | **较好** | 把每个会话的实时 `state`（idle/running/thinking/waiting_input）写到 `~/.claude/session_running/<sessionId>.txt`，供外部进程（如 DayTradingAgent watcher）读会话 Running 真相。定位 extension.js 的 `updateSessionState(e,t,r)` 方法（唯一状态更新入口），动态提取参数名，在 `this.broadcastSessionStates()` 后注入写盘（`require("fs")` + try/catch 兜底）。锚点均为产品级语义串。已验证 `2.1.226`。 |
+| 014 模型选择器显示 GLM 真名（v2） | 一块 `append` + 两块 `locate`（webview/index.js） | **较好** | CC VSCE 经 cc-bridge（GLM 桥）上游时显示层对齐 GLM 真名：① `append` 文件尾注入 `ccGlmMap2` 映射表（与 `~/.cc-bridge/glm.env` MODEL_MAP 同步 + 家族别名 opus/sonnet/haiku）+ `ccGlm2()`（值→GLM 名，前缀匹配兜底 `[1m]` 变体）+ `ccGlmM2()`（列表浅拷贝改写 displayName+description）；② `locate` 把命令菜单 `Switch model…` 指示器赋值包 `ccGlm2(...)??` 前缀（锚 `id:"model"` 注册链 + `lastServedModel.value`）；③ `locate` 把 IQe 弹窗 `availableModels`/`unavailableModels` 各包 `ccGlmM2()`（displayName 与 description 一起改写，清掉 Opus 误导字样）。纯显示层、选择逻辑零改动。三态定位器（v2 已在→v1 升级→fresh 注入）。已验证 `2.1.226`。 |
+| 015 footer 模型与 Effort 按钮（v2） | 十一块 `locate`（webview/index.js） | **较好** | 输入框 footer 常驻两个按钮、各自弹独立列表直选：模型按钮实时显示 GLM 真名（依赖 014 v2 的 `ccGlm2`）、点击 toggle 官方模型弹窗 IQe（再点收回）；Effort 按钮实时显示档位、点击弹自建档位列表（复用官方 menuPopup CSS 模块类名 + 勾选图标，点击 `setEffortLevel` 选中收起）。十一块：① OQe 体内追加 `[ccEffOpen,ccEffSet]=ie(!1)` 弹窗状态（锚：四连 `ie(!1)` + 后 30000 字内含 `availableModels:ccGlmM2(`）；② footer 渲染点传 `ccMdl`/`ccEff{cur,lv}`/`ccOpenMdl`（setter 从 IQe 渲染点之前最近一次 `[Z,z]=ie(!1)` 提取——v1 曾误取命令面板 setter，v2 修正）/`ccEffSet` props；2b ccEff IIFE `{cur,next}`→`{cur,lv}`；2c v1 残留的 `ccMdl` 调用 `ccGlm`→`ccGlm2`（v1 机器升级时改动 2 不动已注入的 IIFE，选 opus 别名项时按钮曾回退官方名，与列表不一致）；2d `ccOpenMdl` 只开 `z(!0)`→toggle `z(Z!==!0)`（官方关闭只走 scrim/Escape/选中三路、不含再点入口，footer 按钮在 scrim 下层点不穿——只开写法收不回弹窗；`!==!0` 为压缩器不产出的自造形态、天然幂等唯一）；2e props 补传 `ccEffOpen`（v2 漏传致 bQe 体内恒 undefined、弹窗条件恒假，补传后 Effort 按钮 toggle 闭环）；③ bQe 签名解构注入五 props（锚 `onTerminalCollaborator` 末位参数）；④ footer JSX 注入模型按钮 + Effort wrapper 弹窗；2f 删除 Effort 弹窗顶部「Effort」标题条目（用户指出它不可选、冗余——弹窗从按钮弹出语境已明，档位列表直开）；2g/2g-2 两按钮内联 `paddingLeft:"8px"` 使文字在背景块内水平居中（官方 `.inputFooterV2 .footerButton{padding:0 8px 0 0}` 左 0 右 8px、官方按钮靠左侧 26px svg 图标补位，注入按钮纯文字无图标 → 文字贴左，补 padding 后左右各 8px 对称）。实时性：IIFE 读 `.value` 落在 OQe 响应式作用域被追踪，变化即重渲染。十一块全三态定位器（v2 已在→v1 升级→fresh 注入）。已验证 `2.1.226`。 |
+
+> **locate 化补丁的 broken 兜底**：升级后若某定位器补丁报 broken，多为上游重构致锚点结构变化（如 003 在 2.1.217 因覆盖变量混淆名 `Bme→Hme` 失效，改以 CSS 明文 `usageContainer` 为主锚重定位后修复）。常规构建（混淆名/hook 名/透传函数名变化）定位器自动适配，无需人工；仅交互级大改才需按补丁 .md「人工重定位 fallback」手工重定位一次。核心：靠产品级行为锚点（明文类名、公开 API 名、UI 文案）而非混淆名，跨版本可靠性远胜死字节串——这是全系列补丁从 `type:replace` 升级到 `locate` 的统一方向。
