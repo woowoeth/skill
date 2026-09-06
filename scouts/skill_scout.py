@@ -199,6 +199,9 @@ T1_AUTHORS = [
     "lzs0594",
     "traveler0621",
     "zhu930824",
+    "yanliudesign",
+    "Kimberlying",
+    "kennyleung123",
 ]
 
 
@@ -234,6 +237,9 @@ T1_REPOS = [
     "LiamGvchi/gc-minimal-zine-poster",
     "Zeejay0/gathered-scenes-zine-skill",
     "yangcodingmaster/photo-distill",
+    "yanliudesign/french-illustration-skill",
+    "Kimberlying/watercolor-memory-poster",
+    "kennyleung123/photo-paper-scene-zine-v1",
 ]
 
 SEARCH_QUERIES = (
