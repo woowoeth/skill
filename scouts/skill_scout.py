@@ -209,6 +209,11 @@ T1_AUTHORS = [
     "cxcxy",
     "swping999",
     "taxueseek",
+    "helloianneo",
+    "orange2ai",
+    "s1dashu",
+    "EverettFish",
+    "TaiT-tt",
 ]
 
 
@@ -256,6 +261,13 @@ T1_REPOS = [
     "swping999/scene-card-studio",
     "taxueseek/taxue-solar-polaroid",
     "lazypay/Archscribe",
+    "helloianneo/ian-xiaohei-illustrations",
+    "helloianneo/ian-xiaohei-scenes",
+    "orange2ai/orange-line-illustration",
+    "orange2ai/renwei-writing",
+    "s1dashu/ip-as-logo-skill",
+    "EverettFish/ip_illustration_for_yourself",
+    "TaiT-tt/tait-crt-interface-skill",
 ]
 
 # X 时间线才是品味雷达（GitHub 搜索扫不到这些人刚发的仓）。
