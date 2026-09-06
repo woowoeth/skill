@@ -206,6 +206,9 @@ T1_AUTHORS = [
     "xianxie6",
     "dse120071750",
     "op7418",
+    "cxcxy",
+    "swping999",
+    "taxueseek",
 ]
 
 
@@ -249,11 +252,16 @@ T1_REPOS = [
     "xianxie6/algorithmic-sublime-poster",
     "zhu930824/photo-animal-transposition-poster",
     "dse120071750/paper-collage-design-skill",
+    "cxcxy/dy-travel-ticket-poster",
+    "swping999/scene-card-studio",
+    "taxueseek/taxue-solar-polaroid",
+    "lazypay/Archscribe",
 ]
 
 # X 时间线才是品味雷达（GitHub 搜索扫不到这些人刚发的仓）。
 # Action 里跟的是他们的 GitHub；人工复核盯：
 # @yanliudreamer @op7418 @AdrianPunk115 @LeiShifu79071 @Xian0063 @dotey
+# @cxcx_cxy @BTCqzy1 @Juanmao_shaw
 
 
 SEARCH_QUERIES = (
