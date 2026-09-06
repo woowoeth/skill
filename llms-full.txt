@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 297 skills.
+# Full corpus, plain text. 298 skills.
 
 ========================================================================
 ## kami
@@ -48,6 +48,44 @@ git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point
 Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
 
 ========================================================================
+## photo-to-journal-stickers
+## 照片里只挑有故事的那几样，画成手帐贴纸
+URL: https://ourword.ai/skill/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
+URL (中文): https://ourword.ai/skill/zh/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
+Source: https://github.com/yvonnechen202608-byte/picture-design/tree/HEAD/photo-to-journal-stickers
+Updated: 2026-09-06
+Tags: everyday, skill, yvonnechen202608-byte
+
+Don't paste whole photos. It picks narrative elements, redraws them warm, low-sat, paper-textured.
+
+### What does this skill do?
+将用户提供的任意照片提炼为可复用的透明背景 PNG 手帐插画素材：从场景中选择叙事性关键元素，并统一为暖调低饱和、纸感手绘、复古编辑式视觉。适用于照片转贴纸、旅行或生活场景素材包、透明 cutout 与配套展示页；不适用于原样抠图、照片修复、精确复刻参考图或矢量/logo 工作。
+
+### Why is it worth installing?
+Not cutout—translation. It reads the scene for story-bearing objects, then redraws them in hand-drawn language, so stickers.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+旅行照别整张贴——它替你选出叙事性元素，统一成暖调低饱和纸感手绘。复古编辑风，透明 PNG 直接拖进手帐。
+
+### Q：这个 skill 做什么？
+将用户提供的任意照片提炼为可复用的透明背景 PNG 手帐插画素材：从场景中选择叙事性关键元素，并统一为暖调低饱和、纸感手绘、复古编辑式视觉。适用于照片转贴纸、旅行或生活场景素材包、透明 cutout 与配套展示页；不适用于原样抠图、照片修复、精确复刻参考图或矢量/logo 工作。
+
+### Q：为什么值得装？
+不是抠图，是翻译。它先理解场景里哪几样东西在讲故事，再用手绘语言重画，让贴纸和你的手帐纸面天生一体。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## pf2e-gm
 ## 翻开本地规则库的 PF2e 主持人副驾
 URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
@@ -68,6 +106,28 @@ git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point yo
 
 ### Where does it come from?
 Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## seedance-prompt-library
+## Seedance 2.5 视频提示词模板库
+URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
+Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
+Updated: 2026-09-06
+Tags: images, skill, LearnPrompt
+
+Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
+
+### What does this skill do?
+Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
+
+### Why is it worth installing?
+Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
+
+### How do you install it?
+git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## speak-human-tw
@@ -212,6 +272,28 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-06
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
+
+========================================================================
 ## trading-design
 ## 按专业交易软件的规范设计盯盘界面
 URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
@@ -276,6 +358,44 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## story-deslop
+## 删掉「她眸色一暗」的网文去AI味改稿器
+URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
+URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
+Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
+Updated: 2026-09-06
+Tags: writing, skill, worldwonderer
+
+Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
+
+### What does this skill do?
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Why is it worth installing?
+Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
+
+### Q：这个 skill 做什么？
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Q：为什么值得装？
+网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## caveman
@@ -764,28 +884,6 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
 
 ========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-05
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
 ## novel-to-game
 ## 喂进一本小说，产出的不是概念稿是真能玩的游戏
 URL: https://ourword.ai/skill/i/worldwonderer-novel-to-game-novel-to-game/
@@ -806,44 +904,6 @@ git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then poin
 
 ### Where does it come from?
 Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
-
-========================================================================
-## story-deslop
-## 删掉「她眸色一暗」的网文去AI味改稿器
-URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
-URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
-Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
-Updated: 2026-09-05
-Tags: writing, skill, worldwonderer
-
-Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
-
-### What does this skill do?
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Why is it worth installing?
-Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
-
-### Q：这个 skill 做什么？
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Q：为什么值得装？
-网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## video-shotcraft
@@ -986,28 +1046,6 @@ git clone --depth 1 https://github.com/mattpocock/skills.git Then point your age
 
 ### Where does it come from?
 Repository: mattpocock/skills The repository ships 1 skills in total.
-
-========================================================================
-## seedance-prompt-library
-## Seedance 2.5 视频提示词模板库
-URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
-Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
-Updated: 2026-09-04
-Tags: images, skill, LearnPrompt
-
-Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
-
-### What does this skill do?
-Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
-
-### Why is it worth installing?
-Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
-
-### How do you install it?
-git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## literature-deep-reading-assistant
@@ -1466,44 +1504,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## photo-to-journal-stickers
-## 照片里只挑有故事的那几样，画成手帐贴纸
-URL: https://ourword.ai/skill/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
-URL (中文): https://ourword.ai/skill/zh/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
-Source: https://github.com/yvonnechen202608-byte/picture-design/tree/HEAD/photo-to-journal-stickers
-Updated: 2026-09-03
-Tags: everyday, skill, yvonnechen202608-byte
-
-Don't paste whole photos. It picks narrative elements, redraws them warm, low-sat, paper-textured.
-
-### What does this skill do?
-将用户提供的任意照片提炼为可复用的透明背景 PNG 手帐插画素材：从场景中选择叙事性关键元素，并统一为暖调低饱和、纸感手绘、复古编辑式视觉。适用于照片转贴纸、旅行或生活场景素材包、透明 cutout 与配套展示页；不适用于原样抠图、照片修复、精确复刻参考图或矢量/logo 工作。
-
-### Why is it worth installing?
-Not cutout—translation. It reads the scene for story-bearing objects, then redraws them in hand-drawn language, so stickers.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-旅行照别整张贴——它替你选出叙事性元素，统一成暖调低饱和纸感手绘。复古编辑风，透明 PNG 直接拖进手帐。
-
-### Q：这个 skill 做什么？
-将用户提供的任意照片提炼为可复用的透明背景 PNG 手帐插画素材：从场景中选择叙事性关键元素，并统一为暖调低饱和、纸感手绘、复古编辑式视觉。适用于照片转贴纸、旅行或生活场景素材包、透明 cutout 与配套展示页；不适用于原样抠图、照片修复、精确复刻参考图或矢量/logo 工作。
-
-### Q：为什么值得装？
-不是抠图，是翻译。它先理解场景里哪几样东西在讲故事，再用手绘语言重画，让贴纸和你的手帐纸面天生一体。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## huatu
@@ -6848,6 +6848,44 @@ git clone --depth 1 https://github.com/rubyzhu26/see-life-wallpaper-skill.git Th
 
 ### Where does it come from?
 Repository: rubyzhu26/see-life-wallpaper-skill Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## renwei-writing
+## 改完还像你写的，不是像AI写的
+URL: https://ourword.ai/skill/i/orange2ai-renwei-writing/
+URL (中文): https://ourword.ai/skill/zh/i/orange2ai-renwei-writing/
+Source: https://github.com/orange2ai/renwei-writing
+Updated: 2026-06-13
+Tags: writing, skill, orange2ai
+
+When polishing or rewriting, the risk is losing the human voice. Two-layer check: what to change, how to change.
+
+### What does this skill do?
+人味儿写作 - 打磨、润色、改写别人的文字时,保住文字背后那个人的存在感。 Use when: 用户拿来一段自己写的文字,要求打磨、润色、修改、精简、改写、 "帮我改改"、"这段怎么样"。也适用于代笔后用户说"AI 味儿太重"、"没有人味儿"、 "感受不到我"的返工场景。触发词:打磨文案、润色、帮我改、改写、修改这段、 人味儿、AI 味儿。内置两层:底层原理(动不动、怎么动)+ 事后检查清单 (动过的地方有没有 AI 味儿,源自 Wikipedia Signs of AI writing / blader humanizer)。
+
+### Why is it worth installing?
+Not blind synonym swap. It first decides what must not change—or it stops being your voice—then edits. Post-check scans for AI.
+
+### How do you install it?
+git clone --depth 1 https://github.com/orange2ai/renwei-writing.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: orange2ai/renwei-writing Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+润色、精简、改写别人的文字时，最怕改完变成AI腔。这个Skill内置两层检查：先问动不动、怎么动。
+
+### Q：这个 skill 做什么？
+人味儿写作 - 打磨、润色、改写别人的文字时,保住文字背后那个人的存在感。 Use when: 用户拿来一段自己写的文字,要求打磨、润色、修改、精简、改写、 "帮我改改"、"这段怎么样"。也适用于代笔后用户说"AI 味儿太重"、"没有人味儿"、 "感受不到我"的返工场景。触发词:打磨文案、润色、帮我改、改写、修改这段、 人味儿、AI 味儿。内置两层:底层原理(动不动、怎么动)+ 事后检查清单 (动过的地方有没有 AI 味儿,源自 Wikipedia Signs of AI writing / blader humanizer)。
+
+### Q：为什么值得装？
+不是无脑换词。它先判断哪些字不能动——动了就不是你的语气，再动手。事后用AI写作特征清单过一遍。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/orange2ai/renwei-writing.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: orange2ai/renwei-writing Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## aidetect
