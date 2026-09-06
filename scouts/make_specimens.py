@@ -311,8 +311,11 @@ def main(argv):
     if ids:
         targets = [x for x in feed if x["id"] in set(ids)]
     else:
+        # 默认连已有的样张一起重出（改了图形库要全刷）。--ci 只碰**没图**的新货：
+        # 已判过的样张带着判官分派的图形和 ok 签字，CI 重刷一遍等于用正则猜的图形
+        # 覆盖人判的、再把 227 个 ok 抹成空 —— 每 8 小时一次。第一版就是这么写的，推之前查出来。
         targets = [x for x in feed if not (x.get("cover") or "").strip()
-                   or (items.get(x["id"]) or {}).get("cover_kind") == "specimen"]
+                   or (not ci and (items.get(x["id"]) or {}).get("cover_kind") == "specimen")]
         if "--replace" in argv:
             targets += [x for x in feed if (items.get(x["id"]) or {}).get("cover_verdict") == "replace"]
     seen, uniq = set(), []
