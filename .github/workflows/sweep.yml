@@ -64,6 +64,8 @@ jobs:
       # 先自查：店主指名过的那些，现在这套能不能自己判出来。
       # **失败不阻断后面** —— 它是尺子不是闸；但结果要留在日志里，
       # 因为「这套还差多少」比「这轮捞到几个」更值得看。
+      - name: 装 Pillow（2026-09-06：CI 从没装过，所有碰图的脚本此前都在这里静默或直接死掉）
+        run: python3 -m pip install -q pillow
       - name: 自查 —— 店主指名的那些，现在能自己判到吗
         continue-on-error: true
         env:
@@ -161,6 +163,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: 装 Pillow（2026-09-06：CI 从没装过，所有碰图的脚本此前都在这里静默或直接死掉）
+        run: python3 -m pip install -q pillow
       - uses: actions/download-artifact@v4
         with: { name: sweep-handoff, path: /tmp/handoff }
       - name: 接过判分结果和各通道的「见过」清单
