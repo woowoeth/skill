@@ -202,6 +202,10 @@ T1_AUTHORS = [
     "yanliudesign",
     "Kimberlying",
     "kennyleung123",
+    "leishifu666",
+    "xianxie6",
+    "dse120071750",
+    "op7418",
 ]
 
 
@@ -240,7 +244,17 @@ T1_REPOS = [
     "yanliudesign/french-illustration-skill",
     "Kimberlying/watercolor-memory-poster",
     "kennyleung123/photo-paper-scene-zine-v1",
+    "op7418/guizang-yingzao-skill",
+    "leishifu666/lsf-trend-merch-poster",
+    "xianxie6/algorithmic-sublime-poster",
+    "zhu930824/photo-animal-transposition-poster",
+    "dse120071750/paper-collage-design-skill",
 ]
+
+# X 时间线才是品味雷达（GitHub 搜索扫不到这些人刚发的仓）。
+# Action 里跟的是他们的 GitHub；人工复核盯：
+# @yanliudreamer @op7418 @AdrianPunk115 @LeiShifu79071 @Xian0063 @dotey
+
 
 SEARCH_QUERIES = (
     [f"repo:{r}" for r in T1_REPOS]
