@@ -906,10 +906,11 @@
    "cover_h": 800,
    "cover_tried_at": "2026-09-03",
    "cull_note": "2026-09-06 三问复审曾判下架（问一·不是拿走就能用的商品：问一：单件装不起来，路由靠仓库根 .claude/CLAUDE.md 和 shared/、默认由 academic-pipeline 调度，是多智能体框），因店主标过心而保留。",
-   "cover_verdict_why": "站方样张：作者仓里没有可用的图，按它的能力排的版",
+   "cover_verdict_why": "站方样张（research）：作者仓里没有可用的图；图上只有能力图形，没有文字",
    "cover_judged_at": "2026-09-06",
    "cover_src": "",
-   "cover_verdict": "ok"
+   "cover_verdict": "ok",
+   "cover_motif": "research"
   },
   "wshobson-agents": {
    "title_zh": "多平台插件市场",
@@ -2162,9 +2163,10 @@
    "cull_note": "2026-09-06 三问复审曾判下架（问二·别处也拿得到：问二：第 N 个『做 skill 的 skill』，与 Anthropic 官方 skill-creator、book-to-skill、hue 重叠，卖点只有），因店主标过心而保留。",
    "cover_kind_seen": "hero",
    "cover_real": false,
-   "cover_verdict_why": "站方样张：作者仓里没有可用的图，按它的能力排的版",
+   "cover_verdict_why": "站方样张（code）：作者仓里没有可用的图；图上只有能力图形，没有文字",
    "cover_judged_at": "2026-09-06",
-   "cover_verdict": "ok"
+   "cover_verdict": "ok",
+   "cover_motif": "code"
   },
   "nolangz-pixel2motion": {
    "title_zh": "把 PNG 的 Logo 转成 SVG 再动起来，附动效 QA 证据",
@@ -3433,10 +3435,11 @@
    "cover_h": 800,
    "cover_tried_at": "2026-09-03",
    "cull_note": "2026-09-06 三问复审曾判下架（问二·别处也拿得到：问二：GTM 方法论英文全套、锁定开发者工具创始人这一窄人群，读者基本不在本店；GTM 建议到处都有。），因店主标过心而保留。",
-   "cover_verdict_why": "站方样张：作者仓里没有可用的图，按它的能力排的版",
+   "cover_verdict_why": "站方样张（make）：作者仓里没有可用的图；图上只有能力图形，没有文字",
    "cover_judged_at": "2026-09-06",
    "cover_src": "",
-   "cover_verdict": "ok"
+   "cover_verdict": "ok",
+   "cover_motif": "make"
   },
   "aidevgtm-gtm-cofounder-positioning-and-story": {
    "title_zh": "把产品叙事改写成开发者当英雄的故事",
@@ -3776,10 +3779,11 @@
    "cover_h": 800,
    "cover_tried_at": "2026-09-03",
    "cull_note": "2026-09-06 三问复审曾判下架（问一·不是拿走就能用的商品：问一：装进来只是索引，19 章全文在 emailmarketingskill.com 上，clone 下来用不起来；且邮件营销是通用大路货。），因店主标过心而保留。",
-   "cover_verdict_why": "站方样张：作者仓里没有可用的图，按它的能力排的版",
+   "cover_verdict_why": "站方样张（make）：作者仓里没有可用的图；图上只有能力图形，没有文字",
    "cover_judged_at": "2026-09-06",
    "cover_src": "",
-   "cover_verdict": "ok"
+   "cover_verdict": "ok",
+   "cover_motif": "make"
   },
   "coffeefuelbump-csv-data-summarizer-claude-skill": {
    "title_zh": "拿到陌生 CSV 先给它做个体检",
@@ -15190,8 +15194,16 @@
   },
   "kyle-bartlett-soundshuman": {
    "cover_tried_at": "2026-09-05",
-   "cover": "",
-   "cover_kind": "none"
+   "cover": "/skill/assets/covers/kyle-bartlett-soundshuman.png",
+   "cover_kind": "specimen",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "make",
+   "cover_verdict": "ok",
+   "cover_verdict_why": "站方样张（make）：作者仓里没有可用的图；图上只有能力图形，没有文字",
+   "cover_judged_at": "2026-09-06"
   },
   "peggykangkang02-podcast-pipeline-podcast-transcribe-local": {
    "title_zh": "本地 70 倍速转完一期播客，不烧一分 API 额度",
@@ -15202,8 +15214,16 @@
    "gate_score": 8,
    "category": "work",
    "cover_tried_at": "2026-09-05",
-   "cover": "",
-   "cover_kind": "none"
+   "cover": "/skill/assets/covers/peggykangkang02-podcast-pipeline-podcast-transcribe-local.png",
+   "cover_kind": "specimen",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "audio",
+   "cover_verdict": "ok",
+   "cover_verdict_why": "站方样张（audio）：作者仓里没有可用的图；图上只有能力图形，没有文字",
+   "cover_judged_at": "2026-09-06"
   },
   "qqy2275583297-stack-anime-poster-skill-anime-poster": {
    "title_zh": "九宫格拆解人物设定，出整张无字二次元海报提示词",
@@ -15213,16 +15233,32 @@
    "hide": false,
    "gate_score": 8,
    "category": "creative",
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/qqy2275583297-stack-anime-poster-skill-anime-poster.png",
+   "cover_kind": "specimen",
    "cover_note": "外链是预览卡尺寸，不上卡",
-   "cover_tried_at": "2026-09-05"
+   "cover_tried_at": "2026-09-05",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "poster",
+   "cover_verdict": "ok",
+   "cover_verdict_why": "站方样张（poster）：作者仓里没有可用的图；图上只有能力图形，没有文字",
+   "cover_judged_at": "2026-09-06"
   },
   "sanjin666-eng-college-resume-coach": {
-   "cover": "",
-   "cover_kind": "none",
+   "cover": "/skill/assets/covers/sanjin666-eng-college-resume-coach.png",
+   "cover_kind": "specimen",
    "cover_note": "外链是预览卡尺寸，不上卡",
-   "cover_tried_at": "2026-09-05"
+   "cover_tried_at": "2026-09-05",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "poster",
+   "cover_verdict": "ok",
+   "cover_verdict_why": "站方样张（poster）：作者仓里没有可用的图；图上只有能力图形，没有文字",
+   "cover_judged_at": "2026-09-06"
   },
   "jamesseseforce-ux-labor-rights-practice-strategy": {
    "title_zh": "试用期被约谈先别签字的劳动仲裁预演台",
