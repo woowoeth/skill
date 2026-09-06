@@ -56,3 +56,33 @@ HelloGitHub 近刊里带正经 `SKILL.md` 的单件、伊恩日刊近两周能�
 ## T3
 
 极强才收。合集只抽招牌件。
+
+## 店主 09-07 名单（另一台 bot 按门闸过完的货，店主转来）
+
+定位一句话（店主原话）：**帮你发现有品位的 Skill。一件一装，风格写死，有样图。20 种风格箱、工程全能包、落地页生成器不进。**
+
+### 钉在每日扫描里的仓（已进 `scouts/skill_scout.py` 的 T1_REPOS / T1_AUTHORS）
+
+图册 / 海报：LiamGvchi/gc-minimal-zine-poster · Zeejay0/gathered-scenes-zine-skill · wnby/paper-spirit-zine · yanliudesign/french-illustration-skill · yanliudesign/mono-color-skill · Kimberlying/watercolor-memory-poster · kennyleung123/photo-paper-scene-zine-v1 · Hiseaa/eastern-ink-photo-diptych · TwentyfiveBTea/ink-wash-poster · N1kO724/kodak-2383-film-look · luji12/handdrawn-photo-poster · luckdvr/photo-riso-poster · iamkong/photo-to-minimal-illustration · liuzihe849-png/ai-editorial-print-studio · yangcodingmaster/photo-distill · haorantang97/antibes-holiday · op7418/guizang-yingzao-skill · leishifu666/lsf-trend-merch-poster · xianxie6/algorithmic-sublime-poster · zhu930824/photo-animal-transposition-poster · dse120071750/paper-collage-design-skill · cxcxy/dy-travel-ticket-poster · taxueseek/taxue-solar-polaroid · swping999/scene-card-studio
+
+插画 / IP / 配图：helloianneo/ian-xiaohei-illustrations · helloianneo/ian-xiaohei-scenes · orange2ai/orange-line-illustration · s1dashu/ip-as-logo-skill · EverettFish/ip_illustration_for_yourself · TaiT-tt/tait-crt-interface-skill · op7418/guizang-material-illustration · op7418/guizang-social-card-skill · op7418/logo-generator-skill
+
+文字：orange2ai/renwei-writing · op7418/Humanizer-zh
+工作向还过得去：lazypay/Archscribe（手绘技术图）· JimLiu/baoyu-skills · op7418/guizang-ppt-skill
+
+09-07 对账：38 仓里 17 在架；7 在库房有源文件从没进过门闸日志；3 在阅读队列；10 全新；**3 在拒收榜**（taxueseek/taxue-solar-polaroid、orange2ai/renwei-writing、op7418/logo-generator-skill，都是问二「同类已有」）—— 店主名单高于机器判据，这 3 件重读，收就在 `rejected.json` 的 `_翻案记录` 里记一条。
+
+### X 上盯的人（发新仓比任何商店都准）
+
+@yanliudreamer（yanliudesign）· @op7418 · @AdrianPunk115（adrianpunk）· @LeiShifu79071（leishifu666）· @Xian0063（xianxie6）· @dotey（宝玉 JimLiu）· @cxcx_cxy（cxcxy）· @BTCqzy1
+
+### 商店结论
+
+- Atlasnote：87 件里约 12 件过门闸，上面那些已收完
+- Agensi：付费落地页，没开源仓
+- Linkly / skills.sh：安装量榜，工程件。当热度雷达，不当货架
+- Zeejay 站：试玩页，仓已跟
+
+### 明确不收
+
+李岳写真导演箱、20 种海报生成器（howardz27 那类）、手绘视频风格选择器、仙侠美女箱、全栈 Design Skill。**共同点：风格箱 / 全能包 —— 「一件一装、风格写死」的反面。**

@@ -1,0 +1,891 @@
+[
+ {
+  "key": "smixs/mydays-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "本地用量报表工具不少，诚实契约是否够独家存疑"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "Report measured intervals only. Never invent or extrapolate missing history.",
+   "Never write «Сутки как орбита», «ландшафт внимания», «пульс продуктивности», or similar metaphors.",
+   "Never merge overlapping candidates. Use one source for any overlapping period."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "测不到的月份如实标「没数据」，绝不把 Screen Time 和 ActivityWatch 的数字硬加在一起。",
+  "为什么": "个人用量报表做得诚实、有真实踩坑痕迹，但同类本地分析工具不少，独家性拿不准。"
+ },
+ {
+  "key": "sodam-ai/sodam-agentic-eng",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "又一个编码前先出计划等批准的门禁"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "框架内部装修",
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "先计划后编码的门禁很常见，且靠 SoDam 插件自身的数据文件运作，换个框架就没用。"
+ },
+ {
+  "key": "sorarinx/award-website-builder",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "什么风格都能做的建站工具箱"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 2,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "the original skill shipped with a triple-stacked canvas noise overlay... noise.js shipped as a no-op in 1.0.0 and looked like TV static when re-enabled"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "「什么风格的高端站都能建」的全能设计工具箱，TASTE 里这类全能套件从不在收单里。"
+ },
+ {
+  "key": "soxoj/claude-osint-deploy",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "把装好和真能跑分开，几十个真实工具的坑都记下"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "never report success without Phase 5 evidence",
+   "holehe's -T takes no type=int, so -T 5 makes all 121 modules report [x] Rate limit — exit 0, zero real output",
+   "Goal: the tool is installed, isolated, and proven to run on this machine — not \"the install command exited 0\""
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "别人跑完 pip install 就敢说装好了，这个非要拿 README 里的例子跑出真结果才算数——三十多个真实 OSINT 工具的坑全记着。",
+  "为什么": "「装完了」和「真能跑」是两件事，上百条真实踩过的坑一一记下，不是靠猜写出来的。"
+ },
+ {
+  "key": "spacezephyr/heart-sticker-imagegen-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "命中关键词就转客服导流，广告属性重"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "二维码/广告"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "命中「打印贴纸/生图API」等关键词就回复客服微信导流话术，本质是广告钩子。"
+ },
+ {
+  "key": "sriwitsumo/project-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "泰文Word排版极窄门类，规矩具体到不能编"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "ห้ามยืดช่องว่างระหว่างคำหรือระยะระหว่างตัวอักษรเพื่อทำให้ขอบขวาเสมอกัน ยอมให้ปลายบรรทัดด้านขวาไม่เท่ากันตามธรรมชาติ",
+   "สภาพแวดล้อมที่ตรวจแล้วคือ Microsoft Word for Mac 16.112 (Build 26081010), Microsoft 365"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "泰文Word排版宁可右边参差不齐，也绝不拉伸字距或加空格去凑对齐。",
+  "为什么": "极窄门类但扎实：连测试用的 Word 具体版本号都写明，规矩具体到编不出来。"
+ },
+ {
+  "key": "sudhanshu5669/html5-gamedev-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "先立规范再逐模块开发测试，通用软件工程套路"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never write code for the next system before the current one is tested.",
+   "Build exactly one system at a time, in SYSTEMS.md order top to bottom... Only mark a system done after watching it pass in an actual browser."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "「先出规格再逐模块开发测试」是通用软件工程流程，套上游戏题材没有新东西。"
+ },
+ {
+  "key": "superzhangj/pm-prototype-prd",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "PRD+原型生成器是饱和品类，还自称优先级更高"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "PRD+原型生成器早已是常见品类，正文还自称优先级高于同类技能，套路气重。"
+ },
+ {
+  "key": "swell05/dsh-whale-tank",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "绑死在本系统已注册的三个专属工具上"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "whale-tank 绝不覆盖已有现场"
+  ],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "全程调用本轮已注册的三个专属工具（whale_tank_vet_*），离开这个平台装不进别的 agent。"
+ },
+ {
+  "key": "syntaxsmith/humanize-paper",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "论证重建法扎实，但与去AI味赛道边界待定"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "绝不编造细节、个人经历、引用、数据、机制、baseline、限制或实验条件",
+   "完整稿重构的目标是恢复已有科学论证，不是替作者发明另一篇论文"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "去 AI 味不是换词，是把论文里断掉的因果、并列、递进关系一条条修回原稿本来的证据上。",
+  "为什么": "论证重建的方法论很扎实，但和「去AI味」这个已经拥挤的赛道边界还需再判断。"
+ },
+ {
+  "key": "t-mercier/ai-agents-orchestrator",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "路径解析全靠这套编排器自己的会话注册表"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "never write a secret's value into a memory"
+  ],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "记笔记要先解析这套 ai-agents-orchestrator 自己的会话注册表和 vault 配置，搬不出这个框架。"
+ },
+ {
+  "key": "tainguyen091994/receipts",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "逼证据再下结论，但该品类渐多，独家性待定"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 0,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "No receipts, no claim.",
+   "A test that passes against an empty function proves nothing. A grep matching your own new comment proves nothing."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "「资深工程师」四个字换不来证据——没跑、没贴、没能证伪，就不能说「搞定了」。",
+  "为什么": "克制又锋利，但「逼AI show证据」类技能正在变多，是否别处拿不到还需再看。"
+ },
+ {
+  "key": "tan-jason/mori",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "UI走查清单式做法，同类审查技能很多"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 0,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "UI 走查清单式的通用做法，没有个人踩坑痕迹，同类审查技能很多。"
+ },
+ {
+  "key": "tanglele110-hash/museum-relic-stamp",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "单一视觉系列，年代出处宁可空着不编"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 1
+  },
+  "证据": [
+   "不得虚构年代、作者、窑口、出土地、馆藏机构、文物级别或来源",
+   "青蓝是原系列印色，不是未选择时的自动默认",
+   "背景始终保持暖象牙旧纸 #F0ECE3，不随主题色改变"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "文物图章海报只用暖象牙一张纸，主题色从不替你偷偷选——色卡摆出来，等你点了才敢画。",
+  "为什么": "单一视觉系列做到极致，年代出处没证据宁可空着不写，拒绝替文物编历史。"
+ },
+ {
+  "key": "tanyaqiong31029/bilingual-term-extract",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "统计负责召回LLM负责精度，九条真实算法坑"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "不编造译文——无上下文证据就不写tgt",
+   "Map 用 .size 不是 .length——词对齐初始化曾因 p.tu.length 全程 NaN，译文全军覆没。",
+   "分工原则：统计负责召回，LLM 负责精度"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "术语表宁可留白也不瞎猜——每条译文要么有例句撑腰，要么干脆不写，九条真实踩过的算法陷阱全带着确切阈值记在案。",
+  "为什么": "统计+LLM分工明确，已知陷阱一条条带着确切阈值，专业翻译工具里少见的扎实。"
+ },
+ {
+  "key": "taohuajianxian/kling_qianchuan",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "整条链路架在可灵/千川商用生成接口上"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "官方目录"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "整条链路架在可灵/千川的商用生成接口上，更像该产品的官方操作手册，非独立能力。"
+ },
+ {
+  "key": "tczyliu/china-travel-kit",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "工程诚实扎实，但同类外国游客中国攻略不算稀缺"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "Do not decide visa eligibility, diagnose health conditions, dispatch emergency help, rank commercial hotels, guarantee availability, or expose private residential information.",
+   "Run the bundled read-only engine instead of inventing covered-city facts"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "查不到就写不知道，绝不替你猜价格、猜开放时间——连数据包本身都用签名防篡改。",
+  "为什么": "工程扎实、边界诚实，但面向外国游客的中国旅行规划同类产品线不算稀缺。"
+ },
+ {
+  "key": "tekton-ai/choros",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "一步步过决策的走查模式很常见"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "一步步过决策/QA的走查模式很常见，没有独有的判断力或经验痕迹。"
+ },
+ {
+  "key": "thedevmark/ai-restraint",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "与同作者restraint-framework内容逐字重复"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never recreate an existing product or brand component with a hand-built CSS, HTML, canvas, or SVG approximation.",
+   "Treat slop as an accumulation of unearned defaults, not a list of forbidden fonts, colors, words, or components."
+  ],
+  "反信号": [
+   "同作者套路堆"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "与同作者 restraint-framework 仓库内容逐字重复，是同一份文件的第二个仓库。"
+ },
+ {
+  "key": "thedevmark/restraint-framework",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "反AI设计感的评审框架已是常见品种"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never recreate an existing product or brand component with a hand-built CSS, HTML, canvas, or SVG approximation.",
+   "Treat slop as an accumulation of unearned defaults, not a list of forbidden fonts, colors, words, or components."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "写得很系统，但反AI设计感/去slop的设计评审框架已成常见品种，缺个人独有经验痕迹。"
+ },
+ {
+  "key": "theonx5/matrixagent",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "开头即声明只能在Matrix Agent平台内运行"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [
+   "严格禁止把以下产物冒充为本skill的生图页...先本地画整页，再仅做轻微滤镜/后处理后当作AIGC slide image"
+  ],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "开头即声明只能在 Matrix Agent 的 Paper Matrix 本地库里跑，换个 agent 就用不了。"
+ },
+ {
+  "key": "tinqiao-oss/engramory",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "文件式记忆系统设计周全，但该品类正变常见"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "never write a secret's value into a memory"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "记忆不是数据库，是一堆能打开读的小 markdown 文件——会过期的「现在几点」从来不写进去。",
+  "为什么": "文件式记忆系统设计周全，但「给agent配记忆」类技能正变得常见，独家性待定。"
+ },
+ {
+  "key": "tmchow/illo-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "方法论恒定角色是参数，连宿主环境的坑都记下"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "Triggers only when the skill is directly invoked or \"illo\" is requested; never on generic illustrate / draw / make-an-image requests.",
+   "some hosts (Codex observed) collapse a fenced block to one line, turning a newline into a space",
+   "This is a configurable house style, not a generic image generator. The methodology is the constant; the character pack and palette are the parameters."
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "编辑插画不给你自由发挥——一个固定吉祥物用同一套方法论走完全程，十七种画风换皮不换魂。",
+  "为什么": "方法论恒定、角色是参数，连不同宿主环境的具体坑都记在案，是真正跑过很多轮的产品。"
+ },
+ {
+  "key": "trollbot2012/loadout",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "审计对象是装了哪些AI技能本身，服务生态非用户"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "on Codex 0.152.1 a registered gate crashed the desktop app's app-server ~20s after every launch",
+   "Recommend 3–7 core skills, not 30... the value of this audit is subtraction."
+  ],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "审计对象是「装了哪些AI技能」本身，服务的是agent生态自己，不是普通人的真实任务。"
+ },
+ {
+  "key": "tsonglew/adhd-md",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "校验门禁扎实，但让文档更好读太常见"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "铁律：只重排信息，绝不删信息。篇幅太长就折叠或移到附录，不许删。违反这条，其他做得再好都是失败。",
+   "块重排的陷阱：把结论块搬到开头后，扫一遍被搬走的块里有没有「这个方案」「上述配置」「它」这类悬空指代。",
+   "verify 是硬门禁：token 序列必须完全一致。不通过就回退，不许放行。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "改排版有硬门禁——token序列必须逐字比对通过，通不过就回退，绝不靠嘴说「校验过了」。",
+  "为什么": "校验门禁做得真扎实，但「让文档更好读」太常见，能否算别处拿不到还需再看。"
+ },
+ {
+  "key": "tt-a1i/simplify-codebase",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "证据驱动的简化审计与code review是近亲品类"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Line-count reduction is supporting evidence, not the objective."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "证据驱动的代码简化审计写得体系化，但和code review是近亲品类，缺一手踩坑叙事。"
+ },
+ {
+  "key": "tuwulalo/ai-slop-cleaner-en-ru",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "去AI味/查AI味本批已出现三份，非独有"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Никогда не дописывай фейковые опечатки, сленг, эмодзи",
+   "Длинное тире: ПОЛНЫЙ запрет в выводе, без исключений"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "去AI味/查AI味这个品类本批已出现三份，再扎实也难说是这一件独有。"
+ },
+ {
+  "key": "unclecheng-li/note-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "手写风笔记网页是常见模板品类"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "手写风笔记网页是常见模板品类，硬性约束只有两条，深度不够。"
+ },
+ {
+  "key": "vb-tyagi/capx-cafe",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "发布靠capx平台自己的护栏工具"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "never fabricate the lesson, and never dress up an ordinary task as a revelation"
+  ],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "发布靠 capx 平台自己的 post_now/casserole 护栏工具，离开这个平台就是半成品。"
+ },
+ {
+  "key": "vickysy/wechat-article-illustrator-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "只许写草稿箱不群发，但同类流程各团队都搭过"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 2
+  },
+  "证据": [
+   "Never publish to followers. The only allowed write target is the WeChat draft box.",
+   "After a successful write, fetch the draft from WeChat and verify list-card fields: title and digest must be real readable text, not literal \\uXXXX escapes or mojibake."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "只许写进草稿箱、绝不直接群发——AppSecret 连日志里都不让留一个字。",
+  "为什么": "公众号配图+推草稿箱的安全边界写得细，但这类流程不少团队都各自搭过一套，独家性待定。"
+ },
+ {
+  "key": "vimself/jory-notes",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "作者自述翻译改编自他人现成仓库"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "作者自述「翻译自blader/humanizer，参考hardikpandya/stop-slop」，本身不是原创方法。"
+ },
+ {
+  "key": "vishalrajv/skill_based_system",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "全文只是一张镜头时长排期表"
+  },
+  "信号": {
+   "拦住自己": 0,
+   "真干过": 0,
+   "一条硬约束": 0,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "全文只是一张镜头时长排期表，没有判断依据或硬约束，接近空模板。"
+ },
+ {
+  "key": "viticci/handholder",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "刷机安全红线极具体，冷门但对的人极有用"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never download missing BIOS data.",
+   "An app that returns to onboarding after an update is not configured; stop before supplying BIOS data or keys outside the approved scope.",
+   "Build a verified, console-like Android handheld without assuming a model, host path, storage volume, package version, or controller mapping."
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "刷机从不凭上次记忆动手——每次插上设备先探测现场，型号、路径、版本一律重新验证。",
+  "为什么": "掌机改机的安全红线极具体，连「更新后回到引导页=没配置好」这种细节都写明。"
+ },
+ {
+  "key": "vivian020806-debug/editorial-watercolor-poster-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "单一风格完整，但同类照片转风格海报不少"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never stretch, mirror, or replace the main subject.",
+   "Structure: two horizontal regions in a strict 1:1 height ratio, each 50% of the canvas."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "上半保留原照片、下半换成水彩，严格五五对切——文案不许照着画面数东西写，只许写氛围。",
+  "为什么": "单一风格做得完整，但「照片转单一风格海报」同类生图技能不少，深度略薄于同类佳作。"
+ },
+ {
+  "key": "vkcvaibhav-eng/agro-popular-science-writer",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "引证严谨有语境串味修复记录，但品类常见"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never invent a trend, quotation, DOI, bibliographic field, finding or limitation.",
+   "Never insert Gujarat, India, South Gujarat, Navsari, or a farmer-oriented angle merely because those details are known from prior context."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "十位真实科普记者的写作框架任你选，但绝不模仿他们的招牌句式——只借结构，不借声音。",
+  "为什么": "引证极严谨、有真实的语境串味修复记录，但配引用的科普写作助手本身是常见品类。"
+ }
+]

@@ -1,0 +1,352 @@
+[
+ {
+  "key": "helibeiqi/salary-diagnosis-cli",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "薪酬诊断全链路工具，专业但企业向"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": ["绝不心算薪酬数字。任何人头数 / 金额 / 占比 / CR / 调薪幅度，必须来自工具返回的 JSON", "红绿圈判定的实际生效门槛依赖带宽幅度：当幅度 s ≥ 0.50 时，CR 阈值会被带宽边界收紧", "模型只做「理解 + 调度 + 解读」，Python 工具做「计算」"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "调薪方案里的固浮比前提，这工具逼着模型原文念出来，不许自己顺嘴带过",
+  "为什么": "企业HR专业工具扎实但偏SaaS，是否够独家拿不准，留待复核"
+ },
+ {
+  "key": "hemengyuncheer-wq/fashion-material-board",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "单一风格AI形象图，本片同类图像技能不止一件"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["Do not generate anything until the user has supplied a reference image.", "Use an image-editing/reference-image workflow. Keep the person inside the editorial print as close to the supplied pixels as the tool permits"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "材质灵感板单一风格提示词，本片同类图像风格技能不止一件"
+ },
+ {
+  "key": "henryliu0405/njupt-thesis-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "一所高校毕设全流程，学长真实踩坑沉淀"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 2},
+  "证据": ["铁律一:先读后写,绝不编造...如果某条公式或数据无法核对,在交付文档中用灰色斜体注释显式标出", "本技能由一位学长的完整毕设项目沉淀而来", "JS 内容字符串一律用反引号模板字符串,中文内容里混排的英文双引号会让普通引号字符串直接 SyntaxError(这是踩过的坑)", "每生成或修改一个 docx,都要...用 soffice.py 转 PDF、pdftoppm 渲染成图片,亲眼逐页查看版式是否正确"],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "南邮毕设五个月怎么熬，这份手册是学长自己走完全程、把坑一个个焊死了才敢拿出来的",
+  "为什么": "南邮本科毕设全流程，查重降AI率到MathType公式转换全是真踩过的坑"
+ },
+ {
+  "key": "hocphi-info/hocphi-info-be",
+  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "绑定自家爬虫schema与CLI，装不进别的仓库"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["Khong bao gio tu tinh so. Chi doc amount_original + unit_original y nguyen tai lieu", "Ky tu co dau trong URL (nguoi Duc/Y) phai encode dung — 1 bit sai la 404 am tham"],
+  "反信号": ["框架内部装修"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "越南语学费爬虫，深度绑定自家仓库schema与CLI，装不进别处"
+ },
+ {
+  "key": "hongfamonvai/good-broll",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "B-roll提示词生成器，五种风格可选非单一腔调"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": ["暖纸黑线产品草图风里，白色不是零碎装饰，而是核心构图层"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "视频配图提示词生成器，五种风格供选，产物只是提示词非成品"
+ },
+ {
+  "key": "hongyuan-lu/academic-paper-engineering",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "论文LaTeX工程化排版，同类学术排版工具常见"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["禁止直接将原始用户内容转化为最终 LaTeX，必须先构建结构化中间表示（Document IR）"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "论文转LaTeX工程化排版，通用工程文档语气，本片同类论文技能就有好几个"
+ },
+ {
+  "key": "hoodini/logan-cli",
+  "三问": {"是商品": false, "别处拿不到": false, "写得出文案": false, "why": "个人身份档案采集，换任何配置工具都能复制"},
+  "信号": {"拦住自己": 0, "真干过": 0, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "个人资料收集问答，内容单薄，换个表单工具就能替代"
+ },
+ {
+  "key": "howshannon/slop-cop",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "AI腔审查打分，拒绝声称能判断AI作者身份"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": ["Zero-tolerance word: quietly. Never introduce or retain this word in prose...This rule has no contextual exceptions.", "Never conclude that text, UI, or code was AI-generated from style alone.", "Start at 100. Deduct 30 per blocker, 15 per major, 5 per minor, and 1 per note, then clamp at zero.", "Break repeated templates. Count antitheses, negation-reversals, tricolons, rhetorical questions, fragment stacks, punchline paragraphs"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "写一句「quietly」就扣分——这稽查员打死不承认自己能看出你是不是AI写的",
+  "为什么": "AI腔质检打分很有个性，但同类去AI味工具广泛存在，独家性待核"
+ },
+ {
+  "key": "hsiangfeng/ray-voice-skill",
+  "三问": {"是商品": false, "别处拿不到": false, "写得出文案": false, "why": "深度绑定真人Ray的语气人设，对他人无迁移价值"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": ["簡體字直接是紅旗，出現一個就整份重看", "語尾詞有分工，掛錯位置比不掛還糟"],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "个人语气模板，深度绑定真人Ray，他人装上等于让AI冒名说话"
+ },
+ {
+  "key": "hsuliang/generate-ai-presentations-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI简报生成器，本片同类PPT技能已有第二家"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["將「投影片封面」「投影片 0」「投影片 XX」...視為分頁註記，不顯示在成品中"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "AI简报生成器流程扎实，但本片同类PPT技能不止一件"
+ },
+ {
+  "key": "huasheng-ai-cut/peanutcut-creator",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "生成专属账号运营工作流的元技能，工程量大"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": ["绝不能套「大家好欢迎来到我的频道」这类通用模板", "B站视频是横屏16:9,但封面按平台库是「4:3感/接近正方」,脚本实际出1024x768,别把视频的16:9误当成封面尺寸填进来", "产物必须是自包含的——用户装上产物 skill 后,不需要再依赖本生成器技能本身就能独立运作"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "只问平台、垂类、人设三句话，剩下的联网研究，连开场白都不许你抄「大家好欢迎来到我的频道」",
+  "为什么": "生成专属账号工作流的元技能，工程扎实，是否算单件商品拿不准"
+ },
+ {
+  "key": "hub-ki/video-generation",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "网页应用演示视频全流程，英文SaaS工具向"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["mark() placed after a hold() reports a time the UI reached seconds earlier...the spotlight landed ~3s late twice", "71s of screencast needing dense frame-scanning vs a 28s capture with every source time and element rect handed over in beats.json", "Not source <(…). Bash reports the status of source, not of the process substitution feeding it...leaves you with half its exports set"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "approved plan批下来之前不许开录——因为按错弧线拍完的每个beat，重拍是唯一出路",
+  "为什么": "演示视频制作管线工程极深，但偏英文SaaS工具，与本片同类视频技能扎堆"
+ },
+ {
+  "key": "hxy180/replicate-web-ui",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "网页UI复刻技能，编程agent里常见套路"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["Do not click irreversible controls, submit forms, authenticate, purchase, delete, or mutate external data merely to observe a state."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "网站UI复刻工作流方法扎实，但属编程agent里的常见套路"
+ },
+ {
+  "key": "ifixai-ai/ifixai-plugin",
+  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "商业SaaS「iFixAi」的官方对客产品接口"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["After the run, mention paid once, in general terms...No numbers, no families, no prices, no comparison."],
+  "反信号": ["官方目录"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "iFixAi商业SaaS的官方对客接口，带付费升级话术，属官方目录"
+ },
+ {
+  "key": "iithink88/article-to-comic-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "文章转漫画，角色一致性方法常见非独家"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["每个出场角色的完整外观描述必须在每个 prompt 中完整出现，不可省略或简化"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "文章转漫画靠堆砌角色描述维持一致性，核心可被同类提示词模板替代"
+ },
+ {
+  "key": "imraywang/ray-skills",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "VPS加固与代理节点巡检，涉及科学上网敏感"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 1},
+  "证据": ["密钥验证失败时立即回滚,绝不在只有密码可用时关密码", "3x-ui 会静默丢弃空 email 的 client,导致 clients: null、全部握手失败且无报错(在 3.4.x 实测)", "只读不写——发现问题给判断和建议动作,不自动切换、不自动重启(切换是人工决策)"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "3x-ui装完认证邮箱留空，握手全灭还不报错——这份开荒手册把这种不出声的坑一个个钉死",
+  "为什么": "VPS加固与代理巡检扎实老练，但涉及科学上网工具，是否收录待商榷"
+ },
+ {
+  "key": "iosrxwy/chatstamp",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "对话标题重命名小工具，功能单薄偏小众"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["Cursor cannot silently rename the live sidebar; the hook sends one short followup so the model can rename_chat"],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "对话标题重命名工具兼容多主机很细致，但功能太单薄分量不够"
+ },
+ {
+  "key": "isaacbentley/sigint-rf-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "SDR无线电信号侦测，英文业余无线电小众领域"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": ["do NOT hallucinate or guess payload contents. Explicitly state that the signal is too degraded or data is missing", "If you read cf32_le as ci16_le, the demodulator will output absolute random white noise...the instantaneous frequency frantically bouncing between perfectly -Fs/2 and +Fs/2"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "拿到不明信号先别猜协议——五步法把假设一层层排除，读错一个字节的IQ格式满屏都是噪声",
+  "为什么": "业余无线电信号侦测很硬核，但纯英文小众爱好，与中文受众契合度待定"
+ },
+ {
+  "key": "itsrealaj/never-get-hacked-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI建站安全审计，专业工具通用形态同类多"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["Never tell the user they are secure. You can say a specific gate passed", "A Gemini API key has the same AIza prefix as a Firebase web key and must never ship to a client. Check what the key is restricted to, not its prefix.", "Never invent a CVE, version, statistic, or advisory. The research behind this skill caught fabricated CVE quotes and an invented report edition during fact-checking."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "vibe coding安全审计写得扎实，但这是当下热门赛道，通用专业工具形态"
+ },
+ {
+  "key": "ivklgn/create-landing-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "落地页生成器，建站类技能本片扎堆"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["Never invent proof: no customers, numbers, certificates, testimonials, integrations, results, or guarantees the claim register does not hold as a confirmed fact."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "落地页生成器阶段设计规范扎实，但本片建站类技能扎堆非独家"
+ },
+ {
+  "key": "j-token/j-token-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "截图教程生成器，操作手册模板通用"},
+  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["Never substitute generated or reconstructed UI for evidence from the actual interface."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "截图教程生成模板，操作手册类工具常见，可替代性高"
+ },
+ {
+  "key": "jackzhang1314/b2b-fast-builder",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "外贸建站生成器，本片建站类技能已扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": ["每个 SEO 路由必须直接返回完整 HTML...静态托管不等于静态生成", "询盘先入库,再发邮件。D1 是询盘真源;Resend 只是通知。邮件失败不得导致询盘消失"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "外贸B2B建站规范扎实，但本片同类建站/落地页生成器已有多件"
+ },
+ {
+  "key": "jamailar/high-retention-video-script",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "视频脚本方法论，本片视频类技能已扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": ["Never invent personal history or verbal quirks to make a direct tutorial feel human."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "留存导向视频脚本方法论细致，但本片视频制作类技能已扎堆"
+ },
+ {
+  "key": "jamesseseforce-ux/labor-rights-practice-strategy",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "劳动者维权实务，单边立场+真实法条+文书"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": ["辞职、被迫解除、旷工、拒绝工作、签署无争议协议和虚假返岗表达属于高风险或不可逆动作,事实和目标未核实时不得建议", "本Skill只服务劳动者一方,宗旨是全面、尽力、严格地保护劳动者:不充当企业与劳动者之间的中立裁判", "正式通知必须站在劳动者立场明确列出企业的具体违法行为、对应《劳动合同法》第三十八条的具体项", "被迫解除、辞职、放弃权利、竞业解除等不可逆高风险文书继续适用停止门"],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "被迫解除这种一发出去就回不了头的文书，它会在正文最前面用加粗字堵着，先劝你别急着发",
+  "为什么": "劳动维权实务方略只站劳动者一边，不可逆文书前有停止门，法条细到第三十八条"
+ },
+ {
+  "key": "jasperpwang/feynman-learning-skills",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "费曼学习法助手，同类学习辅导技能常见"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["Escalate to another branch only if the user asks, seems stuck, or the concept requires it."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "费曼学习法陪练分支设计清楚，但学习辅导类技能同质化严重"
+ },
+ {
+  "key": "jaxxchen003/digital-human-video-production",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "数字人播讲视频生产管线，视频类技能扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["The reusable skill must not contain a client's product name, script, page copy, brand hex values, customer data, absolute paths, provider IDs, access tokens, or generated media."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "数字人讲解视频生产管线专业扎实，但本片视频制作类技能已有多件"
+ },
+ {
+  "key": "jeff-45-cle/paper-deep-reader",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "论文精读笔记生成，本片论文类技能已扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["Never fabricate missing hyperparameters, numerical results, data splits, implementation details, or limitations."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "论文精读笔记方法扎实，但本片论文类技能已有好几件非独家"
+ },
+ {
+  "key": "jiamo-coder/leego-design-ppt",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "PPT生成工具，本片PPT类技能已有第二家"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["A successful build is not a visual approval."],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "PPT三产物一致生成流程扎实，但本片同类PPT技能已有另一件"
+ },
+ {
+  "key": "jiayang-buaa/codex-minimax-h3-video-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "ComfyUI视频生成管线，本片视频类技能扎堆"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": ["默认拒绝向非空队列追加任务;不要因为等待中断而重复提交"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "MiniMax视频生成剪辑管线技术细致，但本片视频制作类技能已扎堆"
+ },
+ {
+  "key": "jibaru/wspbot",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "favicon生成器，同类网页现成工具已成熟"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["apple-touch-icon.png | 180 px, deliberately square — iOS applies its own mask, and a pre-rounded source gets clipped twice", "Monogram letterforms are baked, not looked up...output carries no font dependency and the .svg and .ico can never disagree about the shape"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "favicon生成器做得很细致，但同类需求早有成熟网页工具非独家"
+ },
+ {
+  "key": "jimmy7892/quant-research-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "量化回测方法论，拒绝给单一最优参数"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": ["The best parameter set is X | That is the argmax of noise. Answer with a region.", "On a zero-alpha strategy, 2,016 trades carried 237 effective observations and the trade t-statistic declared significance 47% of the time.", "A single parameter set is a noisy estimator. Map the surface, bound the region, average. Do not pick."],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "回测出夏普3先别开香槟——这方法论直接拒答「最优参数是X」，那多半是噪声里挑出来的极值",
+  "为什么": "量化回测方法论极硬核拒绝话术清楚，但英文金融专业受众与中文现场无关联"
+ },
+ {
+  "key": "jingyangyuan/paper-mechanigraph-4ss",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "社科机制图矢量引擎，渲染自检闭环到完美"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 2},
+  "证据": ["生成代码后绝对不能直接退出,必须在后台严格执行...发现瑕疵/蹭线──全局统筹微调坐标并重写SVG", "严禁在SVG注释中出现双减号--，否则Chrome/Firefox XML解析器会直接触发Double hyphen within comment语法错误导致整图无法渲染", "本技能由...100+张原图提炼出的8大构型几何参数与文本转译指南", "严禁使用深色/黑色背景块(严禁文字反白);严禁使用浅灰色底色填充"],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "机制图画完就想交货？这引擎逼自己先渲染成真PNG，一条条对着16条红线挑毛病，挑不干净不准输出",
+  "为什么": "CSSCI/SSCI机制图矢量引擎，渲染自检闭环到零瑕疵，连XML注释双减号的坑都写明了"
+ },
+ {
+  "key": "jingyangyuan/paper-write-4ss",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "社会学论文写作规范，同作者已有更独家的机制图"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": ["禁止使用「不是……而是……」句式及其所有变体...此约束适用于本Skill生成或润色的所有文本", "正文禁止使用破折号(——)...若句子结构依赖——才能成立,说明句子本身需要重写"],
+  "反信号": ["同作者套路堆"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "社会学论文写作规范细致，但同作者的机制图引擎媒介更独特只留一件"
+ },
+ {
+  "key": "jinhanbuilds/brief-me",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI分析转顾问式汇报，决策支持工具形态通用"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": ["视觉必须改变理解...删掉它如果理解没有变差,它就不算有效视觉", "交互必须推进判断...删掉控件后如果用户的理解和判断能力没有变差,它就不算有效交互"],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "把AI分析做成顾问式交互汇报判据够犀利，但决策汇报工具形态太通用"
+ },
+ {
+  "key": "jinhanbuilds/hoist-the-elephant",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "拉回跑偏对话主线，极简但不产出文件"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 0, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": ["长对话会让再强的模型也像一头踩着球的大象：每次纠正都会改变重心，最后可能从一个极端倒向另一个极端", "如果相关历史不可见、互相冲突或不足以确定主线，明确指出真正影响定锚的未知或冲突，并请用户纠正；不要用推断填满缺口", "不以简短或完整为目标；以正确的主线能否重新支配后续对话为目标"],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "被自己四五轮的补丁意见带偏方向时，念一句「大象踩球」，它会先停手把最早真正要做的事捞回来",
+  "为什么": "长对话拉回主线的隐喻很妙很短小，但不产出任何文件，是否算单件商品拿不准"
+ }
+]

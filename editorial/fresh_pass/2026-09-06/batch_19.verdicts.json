@@ -1,0 +1,449 @@
+[
+ {
+  "key": "wmltogether/agent-skills",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "透明底出图技法扎实，但chroma-key配rembg是成熟通用工具链"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "Never black, white, or a semi-transparent grid",
+   "Magenta surround makes the plate look duller; after keying, the same RGB reads stronger. That is display contrast, not a cue to boost saturation."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "透明底抠图坑点记得很具体，但chroma-key配rembg是成熟通用工具链，换个教程也能拼出来。"
+ },
+ {
+  "key": "wnallen/dpia-generator",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "跨法域DPIA工程极深，但DPIA/隐私合规软件已是成熟商用品类"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": [
+   "Never invent facts about the processing.",
+   "Never invent citations. If you cite a DPA decision, it must exist and the URL must work.",
+   "three cross-border test builds (EU/UK→US SaaS with a conditional Art. 36; a four-regime EU/UK/Brazil/Quebec HR hub; a China SCC-route two-document run — all gates behaved as documented"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "跨境合规工程极扎实（防伪引用、特权圈两文件拆分），但DPIA类隐私合规软件已有成熟商用品类，且与中文现场无关，收不收待复核。"
+ },
+ {
+  "key": "woniuniuniu/four-up-ppt-generator",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "正文是歸藏guizang-ppt-skill的原样搬运，非本仓库原创"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "正文是歸藏 guizang-ppt-skill 的原样搬运（源仓库 github.com/op7418/guizang-ppt-skill），别处本就拿得到。"
+ },
+ {
+  "key": "woyin2024/lengyi-shotlist",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "分镜时长字数硬约束齐全，但AI视频分镜提示词已扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "分镜数只能是 4/6/9/12/16；总时长只能是 8-15s；各镜时长之和 = 总时长",
+   "时长算术（唯一硬约束）：各镜时长之和 = 选定总时长，且总时长 ∈ [8,15]s"
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "镜头时长与字数的硬约束设计扎实，但AI视频分镜提示词类skill同库已扎堆，非独家。"
+ },
+ {
+  "key": "wubaijian/article-writing-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI产品经理写作流程完整，但个人写作工作流可替代性高"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": [],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "观点讨论、大纲确认、分章生成流程设计完整，但个人写作工作流类skill可替代性高，非独家方法论。"
+ },
+ {
+  "key": "wubaijian/deep-material-organizer-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "深度整理笔记规则清楚，但整理类工具很常见"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "This is deep organization, not ordinary summarization."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "笔记深度整理的取舍原则写得清楚，但换个整理提示词也能做到类似效果，非独家。"
+ },
+ {
+  "key": "wuhaoyupku/html-mender",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI生成HTML幻灯片可视化编辑实现扎实，但WYSIWYG编辑器可替代"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "Fixes injection for complex HTML files that contain embedded `</body>` strings inside JavaScript data.",
+   "Keeps the original source HTML as the clean-export baseline."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "把AI生成的HTML幻灯片变成可视化编辑器、洁净回写源文件的做法扎实，但同类网页可视化编辑器能替代。"
+ },
+ {
+  "key": "wwe-dog/ppt-image2-editable-rebuild",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "参考图转可编辑PPT裁剪规则具体，但PPT重建类skill本片不止一家"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "Never paste a full reference slide as the final PPT page.",
+   "Complex chart cards, especially pie charts, donut/ring charts, and dense radial visuals whose segment proportions or labels would be unreliable if redrawn"
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "参考图转可编辑PPT的裁剪取舍规则具体，但PPT图转可编辑类skill本片已有多件，属扎堆题材。"
+ },
+ {
+  "key": "wwjjqq888888-pixel/nanfeng-h3-comfyui",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "MiniMax H3连续性打光规则精细，但AI视频提示词工程已扎堆"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "Continue the unfinished action from its current phase. Never restart, repeat, skip, or reverse it.",
+   "the final shot of segment N and the first shot of segment N+1 must not use the same shot size and the same camera angle",
+   "Segment N+1 must begin from segment N's final visible state: same identity, costume, location, screen direction, pose, gaze, prop ownership/state, lighting, and camera-axis side unless the user explicitly changes one."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "跨镜连续性（轴线/道具状态/景别变化）规则做得很细，但AI视频分镜提示词本片已有至少两件同类，非独家。"
+ },
+ {
+  "key": "xcutingunicorn235/oral-english-practice",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "口语追踪与错题库设计扎实，但离不开配套Claude app做真练习"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "This skill never role-plays or does voice — that's the app's job.",
+   "never make backup conditional on `python`"
+  ],
+  "反信号": ["单装做不了完整事"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "错题库与趋势追踪工程扎实，但本体不练口语，必须靠另一个Claude app做练习，单装做不了完整事。"
+ },
+ {
+  "key": "xiaoboooovo/vrchat-world-codex-skills",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "VRChat世界分级风险工作流具体，但多少是通用agent安全模板待核"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": [
+   "Do not automatically upgrade an offline task, fast change, or lightweight patch into a high-risk workflow.",
+   "Never hard-code a one-run timestamp, old scene SHA, contract filename, or result filename into a reusable executor.",
+   "Choose exactly one primary mode and use the lowest-risk mode that satisfies the request"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "VRChat世界改一刀之前先过一道只读安全闸——不是Play Mode就重建、不是脚本就重跑，选风险最低的那条路径做完就收手。",
+  "为什么": "分级风险工作流与事务化Apply设计扎实，但多少内容是VRChat专属、多少是通用agent安全模板的重新包装，值得再读一轮确认。"
+ },
+ {
+  "key": "xiaofenggan01/aigc-reduce",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "学术论文AIGC查重规避的确定性替换纪律，实测数据支撑"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "当\"达到 40%\"与\"保持学术语体\"冲突时,语体优先。宁可修改率停在 38%,也不能靠口语化把它推到 45%。",
+   "用AI重写AI文本会叠加AI指纹（PaperPure 实测:重写后检测率升至 100%）。",
+   "每次操作只改一小处,保留原文大部分 token 不变。相邻段落的句式结构、开头方式和长度必须不同。",
+   "同篇论文知网 35%、万方 12%,属正常现象"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "用AI重写AI文本只会更像AI——PaperPure实测过，重写后检测率直接冲到100%；这份纪律只做确定性的逐处替换，绝不整段重写。",
+  "为什么": "对着知网/万方/PaperPass的真实检测率做过实测的降AI味纪律，语体优先于修改率，不是通用去AI味模板。"
+ },
+ {
+  "key": "xiaokebuyu/nodesign",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "Word排版军规极扎实，但离了NoDesign专有build_docx工具就跑不起来"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "永远不要直接改 .docx。它是构建产物,下一次 build 会把你的手改无声抹掉。",
+   "2026-08-19 真 Word 实证:这里 2 页的简历在用户 Word 里变 4 页",
+   "没写的值由打开文件的那个渲染器决定...凡是你在意的值就显式写出来,别指望默认。"
+  ],
+  "反信号": ["单装做不了完整事"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "中文Word排版的字体槽/行距踩坑记录极扎实，但整套流程绑死在NoDesign专有的build_docx/screenshot_canvas工具上，装不进通用agent。"
+ },
+ {
+  "key": "xiaotn/zelda-style-image-prompt",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "塞尔达截图风提示词模板具体，但游戏风格模仿类提示词很常见"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": [
+   "海拉鲁地图区块是风格锚点字段名;即使用于真实地点,也不代表 UI 文字要写海拉鲁地名"
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "塞尔达风格截图提示词的UI三段式规则写得细，但游戏风格模仿类提示词是常见题材，非独家。"
+ },
+ {
+  "key": "xiaoyuan-liu/national-team-position",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "用ETF份额估算国家队仓位思路清楚，但方法对懂AKShare的人不难复现"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "科创50/中证500 散户底仓重，绝对值会高估\"国家队持仓\"，解读时建议参考增量（相对早期基线）。",
+   "中央汇金是宽基 ETF 的绝对控盘方，追踪 ETF **份额**（而非规模）可准确反映买卖行为"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "国家队到底在买还是在换仓？别看ETF规模——规模会被行情自己推高，只有份额才骗不了人。",
+  "为什么": "追踪份额而非规模来分辨真加仓与换仓轮动，思路干净，但方法对懂AKShare的人不难自己复现，独家性还想再确认。"
+ },
+ {
+  "key": "xiongallen40-design/stickman-animation-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "火柴人揭示动画分层测绘与验收门做得细，但同类火柴人视频skill不止一家"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "禁止\"完整图先出现 → 被遮掉/变白 → 重新刷出\"。",
+   "每层第一可见帧必须是零面积遮罩;可见面积只能单调增加。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "白纸手绘揭示动画最容易穿帮的地方不是画得丑，是第一帧就露了底——完整图先出现再被遮掉重刷，这条本技能直接列为禁止项。",
+  "为什么": "语义图层揭示与四道验收门工程严谨，但火柴人解说视频类skill并非独此一家，独家性值得再掂量。"
+ },
+ {
+  "key": "xixicc186/clawd-emotes-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "纯SVG+CSS keyframe像素蟹表情，防脱体结构规则来自真实踩坑"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": [
+   "Do NOT color-key the background away -- the crab's eyes and shadow are also black and would be deleted",
+   "The original eating-crab bug: chopsticks far from the shoulder on a −52°→24° swing — they detached visually. Fixed by anchoring them to the hand and softening to −13°→3°.",
+   "Feet live *inside* the animated body group... This is structural: feet inside the group *cannot* detach."
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "帽子为什么老飘在头顶？因为旋转支点钉错了地方——每一种'零件脱体'的bug，连同治它的那条结构性规则，这份技能都替你踩过一遍了。",
+  "为什么": "纯SVG+CSS keyframe做像素蟹表情，五条防脱体规则全部来自真实踩过的具体bug，不是泛泛的可爱吉祥物生成器。"
+ },
+ {
+  "key": "xuanvinh1997/private-ai",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "mermaid mindmap语法坑点记录清楚，但本质是官方语法文档的补充"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "Nháy kép KHÔNG dùng được ở đây."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "mermaid mindmap语法坑点记得具体，但本质是官方语法文档的补充说明，属大型个人技能库里的一个零件。"
+ },
+ {
+  "key": "xuedai-mayi/humanities-report-writing-suite",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "AI味清除规则表详尽，但直接基于维基百科公开指南"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "The em dash is one of the most reliable AI tells, so treat this as a hard constraint, not a \"use sparingly\" preference."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "AI写作痕迹列举详尽，但直接基于维基百科公开的Signs of AI writing页面，是被复制最多的skill模板之一。"
+ },
+ {
+  "key": "xux06814-cell/public-opinion-monitoring-evolution",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "舆情报告证据分层与覆盖漏斗诚实克制，但同类商业舆情工具已成熟"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 2},
+  "证据": [
+   "\"信息不足\"不得自动转换成\"不满足\"\"低风险\"\"负面\"或\"正面\"。",
+   "不得声称\"全网全量\"。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "证据分层与覆盖漏斗的诚实克制少见，但舆情监测报告已是成熟商业工具品类，独家性与题材适配都想再看看。"
+ },
+ {
+  "key": "yangcodingmaster/yang-photography",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "相机直出坑点记录扎实，但绑死在作者自己网站的data.js结构上"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": [
+   "相机直出的文件**扩展名经常说谎**——`.jpeg` 实际是 HEIC/HIF;有的文件名还带**前导空格**（` 1.jpeg`），会让后续路径匹配失败。"
+  ],
+  "反信号": ["单装做不了完整事"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "HEIC伪扩展名、前导空格文件名这些坑记录得很实在，但整套流程绑死在作者自己网站的data.js具体结构上，换个仓库就用不了。"
+ },
+ {
+  "key": "yangyugang1218/econruc-skills",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "中英文经济学论文引言写作区分有见地，但学术写作辅助工具可替代"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": [
+   "Treat English and Chinese as different journal languages, not mirror translations."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "中英文经济学论文引言分开处理、不做镜像翻译的判断有见地，但学术写作辅助类工具常见，非独家方法论。"
+ },
+ {
+  "key": "yanliudesign/mono-color-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "单双色印刷视觉系统极工程化，但同作者本片还有一件同构骨架的skill"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
+  "证据": [
+   "never more than two printing inks... Never tint the whole page into a digital monochrome wash.",
+   "Ink density: darker coverage may appear near-black and sparse halftones may appear pale. These are density changes, not extra inks.",
+   "Plate limit: use two assigned printing plates by default and never more than two ink plates; explicit one-ink requests use one plate."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "两个色版谁负责什么，动笔前先定死角色——这套系统靠的不是'看着好看'，是印刷厂真实的两版套印逻辑。",
+  "为什么": "单/双色印刷视觉系统工程化程度很高，但同作者本片还有一件几乎同构的muji-style-skill，像风格生成流水线在批量产出，独家性想再核实。"
+ },
+ {
+  "key": "yanliudesign/muji-style-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "无印良品感视觉系统细致，但与同作者mono-color-skill同一套骨架换皮"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 0},
+  "证据": [
+   "Never include the MUJI name, wordmark, Japanese brand text, product codes, price labels, red brand block, or recognizable packaging system"
+  ],
+  "反信号": ["同作者套路堆"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "无印良品风视觉系统细致，但与同作者mono-color-skill结构几乎同构（manifest/决策流程/quality gate），本片只留后者。"
+ },
+ {
+  "key": "yatsu/productive-research",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "调研写作事实与观点分离讲得清楚，但底层是金字塔原理/BLUF的再表达"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
+  "证据": [
+   "the heading is the thesis sentence, not a topic title: \"WAL mode ends the reader stalls on the audit database, and the open question is the NFS-mounted volume\", not \"SQLite journaling modes\"",
+   "Facts and opinions are kept apart so the reader can check the facts and argue with the opinions."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "事实与观点分离、标题即论点的写法讲得很清楚，但核心思想是金字塔原理/BLUF的再表达，非独家框架。"
+ },
+ {
+  "key": "ycg-dream/novel-summary",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "子Agent拆分摘要长篇网文架构极扎实，但R18分级保留策略是否适合上架待人定"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "严禁编造——如果某段文本你没读懂,宁可省略也不要瞎猜",
+   "537 万字任务实测主 Agent 撑不住 5 个 part",
+   "把\"读 537 万字小说\"和\"写摘要\"两个任务解耦:前者由 Python 脚本做原子化切分 + 子 Agent 独立读全文生成;后者由子 Agent 在充足上下文中输出,主 Agent 只做进度维护与质量校验。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "500万字的小说怎么读到最后不失忆？把'读小说'和'写摘要'拆成两件事——每个子Agent只读20万字就翻篇，主Agent只攒一页进度笔记。",
+  "为什么": "子Agent拆分摘要长篇网文的工程解法极扎实，但其中R18内容的分级保留/规避审查策略是否适合公开上架，需要人工复核再定。"
+ },
+ {
+  "key": "yinjialu/ai-frontier-daily",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "多厂商AI日报全链路自动化精细，但绑死作者自己的站点与账号体系"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "实测国内厂商官网/changelog（火山/腾讯云/文心/智谱/MiniMax/DeepSeek 等）对 `WebFetch` 普遍返回 **403**（反爬 + 海外 IP 限制），不可靠。"
+  ],
+  "反信号": ["单装做不了完整事"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "多厂商日报抓取与发布链路做得极细，但整套流程绑死在作者自己的GitHub Pages网站、小红书/公众号账号和本机凭据上，换人用不了。"
+ },
+ {
+  "key": "yjz211/mathmodeling-ai-solver-skills",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "Nature级配图路由架构合理，但正文只是分派器，实质内容在未读引用文件里"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "The chart serves the scientific logic; aesthetic polish is subordinate to making the core conclusion clear, defensible, and reviewable."
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "路由式架构设计合理，但正文本身只是分派器，实质的图表设计经验都在未读到的引用文件里，看不到真正的硬功夫。"
+ },
+ {
+  "key": "yorihan/influencer-skills",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "KOL Notion工作流字段设计详尽，但依赖gstack CLI等外部生态"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": [],
+  "反信号": ["单装做不了完整事"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "Notion KOL库字段设计详尽，但抓取依赖gstack CLI这类外部工具生态，换一套工具就要重做，非自成一体的产品。"
+ },
+ {
+  "key": "ysjsgzq/ai-small-tools",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "标书格式体检专抓样式表继承来的隐藏错误，直查格式的工具查不出"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "只报告事实,不修改文档。改字号会牵动分页、目录、交叉引用,是否修改、如何修改由人决定,修改后可再复检。",
+   "预期结果为 3 项不符合、2 项需人工确认,其中第 3 段的宋体来自样式表继承(正是直接格式检查会漏掉的情形)",
+   "生效格式取值顺序:直接格式 > 段落样式链(含 basedOn 继承) > 文档默认(docDefaults)。样式表里埋的错误字体同样能查出。"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "标书废标常常就差一个字号——但错的字体未必是直接改出来的，是从样式表'继承'来的，只查直接格式的工具根本看不出这层。",
+  "为什么": "标书格式体检顺着样式表继承链查起，专抓'继承来的错'这种直接格式检查会漏掉的情形，不是通用文档检查器。"
+ },
+ {
+  "key": "ystyleb/claude-vpn-skill",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "VLESS+XHTTP+CF部署踩坑记录扎实，但翻墙代理部署对本店有政策风险"},
+  "信号": {"拦住自己": 1, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "CF 账户邮箱（注册 CF 时用的）**不一定等于** Q7 的证书邮箱。如选 Global API Key 方式，邮箱填错会报 `Unknown X-Auth-Key or X-Auth-Email`。"
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "VLESS+XHTTP+CF部署踩坑记录很实在，但翻墙代理部署对中文用户面向的精选店有法律与平台政策风险，独立于技术水准另设的硬底线。"
+ },
+ {
+  "key": "yu-0312/ppt-creator-skills",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "图表验算四铁律有真实跨平台实测支撑，但中文现场感比另一件弱"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 1},
+  "证据": [
+   "⛔ 若發現重大數字差異,停下來向使用者回報,等裁決再繼續,不要自己決定要用哪個數字",
+   "這份紀律來自一次真實的跨平台驗證——同一份 100 筆數據,三家 AI 的結果天差地遠",
+   "真算,不是假算。把原始數據完整嵌入,用程式（Python／SVG 繪圖）實際計算每一個統計值,並留下程式碼或計算過程。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "同一份100笔数据，三家AI算出来的结果天差地远——这份纪律能拿满分的诀窍，是宁可停下来问人，也不替你悄悄选一个数字。",
+  "为什么": "图表验算的四条铁律有真实跨平台对比实测撑腰，工程和克制都到位，只是中文生活现场感比另一件标书格式检查弱一点，放着再对比一轮。"
+ },
+ {
+  "key": "yuandian-ailaw/agent-for-legal-cn",
+  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "中国版权通知反通知三模式专防虚假通知责任，非通用DMCA模板"},
+  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
+  "证据": [
+   "\"有争议\"或\"可能成立\"的合理使用结论应停止起草并转交律师审查。",
+   "上述《电子商务法》条款与《信息网络传播权保护条例》的规定应一并考虑,二者在通知要素、处理时限和平台责任方面存在互补与重叠。",
+   "未经与警示门的明确互动,不写入最终输出。",
+   "抖音投诉中心、B站版权投诉通道、微博侵权投诉、微信侵权投诉、小红书投诉通道等"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "发版权反通知不是走个流程——签下去就等于同意接受人民法院管辖，这份技能会在写完最后一个字前先把这句话摆在你面前。",
+  "为什么": "依中国《条例》第14/16条起草通知/反通知，逐项过合理使用12情形与虚假通知责任警示门，不是套壳的DMCA模板。"
+ },
+ {
+  "key": "yuanfangqi0074/bigdata-ai-coursework",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "概念学习资料链接核验纪律不错，但学习笔记生成器是常见品类"},
+  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
+  "证据": [
+   "返回非 200 的一律剔除,不得写进资料。这一步不可跳过,也不可用记忆代替。"
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "逐条核验链接可访问性的纪律不错，但概念学习笔记生成器是常见品类，换个提示词也能做出类似结构。"
+ },
+ {
+  "key": "yunwuxin-666/coverdesign-skill",
+  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "小红书封面分类与prompt生成流程清楚，但封面设计类skill极常见"},
+  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 2},
+  "证据": [
+   "Do not add platform corner badges by default. Avoid red capsule labels, top-left app tags, and fixed \"小红书/家居分享/PLOG 日常/旅行\" badge elements unless the user explicitly requests them."
+  ],
+  "反信号": ["第N个通用件"],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "小红书封面按内容类型分类选模板的流程清楚，但封面/缩略图设计类skill在中文创作者赛道极常见，非独家。"
+ }
+]

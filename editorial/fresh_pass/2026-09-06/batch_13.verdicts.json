@@ -1,0 +1,867 @@
+[
+ {
+  "key": "langrenlibai/heatguard-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "Mac清热+进程护栏工具，同类维护脚本很多，非独家"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"PPID=1, high CPU, age, or a process name alone is not proof of an orphan\"",
+   "\"Automatic cleanup applies only to records created by heatguard run whose owner is gone and whose UID, PID start time, original PGID, marker token, marker device/inode...still match\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "系统运维护栏工具写得扎实，但同类Mac清理/进程管理脚本不少，非不可替代。"
+ },
+ {
+  "key": "laohubayi81/aigc-workflow-engineer-portfolio",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "硬编码作者D盘路径的个人工作流，非可迁移产品"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 0,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "写死D:\\my\\...本机路径和本地ComfyUI服务，是个人机器脚本，换台电脑就跑不动。"
+ },
+ {
+  "key": "latent-spaces/nanoclip-cutting-room",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "NanoClip/HyperFrames付费服务的对接壳，非独立方法"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "路由和花费闸写得清楚，但核心分析渲染都在作者自家付费API里，本质是产品导流壳。"
+ },
+ {
+  "key": "lauralin-lab/growth-reddit",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "Reddit增长营销方法论，同类打法很多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "安全边界写得细致，但本质是增长营销方法论，换一套打法也能做，非独家题材。"
+ },
+ {
+  "key": "layers/mcp",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "Layers平台自家付费发布流程的调用壳"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "核心判断逻辑都在layers://skills/v1/what-to-post里，本体只是调用顺序和报价提醒。"
+ },
+ {
+  "key": "leeguooooo/chatgpt-imagegen",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "蹭ChatGPT订阅出图的CLI，同类无API出图壳不少"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"gemini text-to-image results carry the Gemini 'sparkle' glyph, fixed at 65 px in from the bottom-right corner (measured identical across 5 runs)\"",
+   "\"agy returned 'Image generation model quota...has been exhausted (429)' while a --backend gemini run on the same Google account succeeded seconds later\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "工程极扎实、实测细节多，但蹭订阅出图不用Key这类CLI并不罕见，非不可替代。"
+ },
+ {
+  "key": "leishifu666/lsf-trend-merch-poster",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "潮玩海报模板+等概率抽签，生图模板类可替代"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "\"唯一生图母版是references/prompt-template.md...不得再根据视觉规范重新撰写一套生图提示词\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "母版不许改写这条约束不错，但潮玩视觉生图模板赛道本身拥挤，换一套也能做。"
+ },
+ {
+  "key": "leo1968/eli6",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "ELI5变体的可视化讲解页生成器，同类繁多"
+  },
+  "信号": {
+   "拦住自己": 0,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "像哄六岁小孩一样讲清楚这类可视化讲解生成器已经很多，非独家。"
+ },
+ {
+  "key": "leoerdman/ultra-audit",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "代码审计+自动修复，同类code review工具很多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Число находок себе заранее не назначай — и не добивай фантазией: нашлось 67, пиши 67\"（不许虚报或注水找到的bug数）"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "写得极狠极细，但本质是又一个code review+自动修复，TASTE明确点名这是常见通用件。"
+ },
+ {
+  "key": "leslieyeo/self-drive-planner-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "中国自驾游行程规划，接高德实算+社区证据分层核验"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"查询间隔至少2.5秒\"\"验证码出现时立即暂停，等待用户处理，禁止绕过\"",
+   "\"同一结论至少需要两个平台的独立来源，或同平台三个独立来源且包含评论证据\"",
+   "\"不能凭空补车型、油耗、预约、营业或拥挤事实\""
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "地图说的和小红书说的绝不混着写——两个平台各自独立印证不够，这条路书就只能算候选不算推荐。",
+  "为什么": "工程和证据分层都很扎实，但自驾规划本身是拥挤赛道，独此一家的程度还要再掂量。"
+ },
+ {
+  "key": "leujasyoh/web-ppt-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "网页版PPT生成器，同类AI做PPT工具已经很多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Windows雅黑无200字重，is-win类会自动补偿300——不要手动写死font-weight:200内联\"",
+   "\"相对原项目的改进：Motion动效与全部字体经npm打包内嵌——原版'离线时动效/字体降级'的缺陷在本方案中不存在\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "字体适配细节很见功力，但AI做网页PPT赛道本身拥挤，视觉系统也移植自他人项目。"
+ },
+ {
+  "key": "liiiyiiixiii/create-world-skills",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "独立游戏美术方向盲测决策法，流程完整但可复制"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 1,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"不得模拟、编造、复制或补齐玩家答卷；少于8份有效答卷只能得到tested_inconclusive\"",
+   "\"每套最多两次生成尝试，第二次只能修复可描述的生成硬伤\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "盲测+统计门槛的方法论少见地严谨，但流程偏重、受众极窄，换团队自己的评审也能替代。"
+ },
+ {
+  "key": "liqinling1994-cloud/qinling-qu-ai-wei",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "去AI味写作技法包，同类去味/仿人味工具已有更好的"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 1,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"不要三段论结构（引入-分析-总结）\"\"不要空洞升华和心灵鸡汤\"（针对AI写作套路给出的具体禁止项）"
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "去AI味是店里认可的题材，但这份更像模板化技法清单+微信接单广告，缺一手不可复制的细节。"
+ },
+ {
+  "key": "liubo0099/tangi-eye",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "给Agent装硬件检修的眼睛，明确照片证据的边界"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"No generated repair, super-resolution, sharpening, or inferred character completion may serve as diagnostic evidence\"",
+   "\"A still LED image cannot establish a blink pattern...a photo cannot prove continuity or voltage\""
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "一张照片证明不了通没通电——它把能看见和能证明这两件事分得很死。",
+  "为什么": "拦住自己的边界写得极具体、极少见，但受众窄（硬件调试），值不值得收要再比较。"
+ },
+ {
+  "key": "liuluhaixiu/davinci-autoedit-agent",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "DaVinci-AutoEdit-Agent里的一个子技能，装不进独立场景"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "路径就在skills/viral-video-writer下，是更大剪辑pipeline里的一节，脱离母项目跑不完整。"
+ },
+ {
+  "key": "locoda/photo-imprint-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "照片转手绘轮播，同类AI滤镜类产品很多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"ImageGen and similar tools ignore background: transparent — output remains RGB with background. You must explicitly negate environment in prompt\"",
+   "\"upscale or change proportions of small subjects (e.g., small cup becomes large mug) — preserve anchors and ~50% blank space\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "工程极其扎实（哈希锁定、失败矩阵20条），但照片转插画轮播这类滤镜产品竞争本身激烈。"
+ },
+ {
+  "key": "loerei/myskills",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "品牌视觉板生成的大段AI提示词模板"
+  },
+  "信号": {
+   "拦住自己": 0,
+   "真干过": 0,
+   "一条硬约束": 0,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "本质是一份很长的品牌视觉生图提示词，没有硬约束、没有一手痕迹，换套prompt也能做。"
+ },
+ {
+  "key": "longado/shifu",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "Shifu框架里的一个debug齿轮，离不开shifu:engage"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "文中直接写All gears. See shifu:engage for gear definitions，是更大框架的一个组件。"
+ },
+ {
+  "key": "longxiaohao/aivideo",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "Facebook DIY手工艺电商广告视频生产流程"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Do not edit, rewrite, optimize, translate, condense, extend, or merge any bundled prompt\"",
+   "\"Never carry over the Virgin Mary design, '1' and '2' labels, white pearls, pink pen, 95% completion, or any other example fact unless the supplied references confirm it\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "对拼豆/点钻电商广告的坑摸得很细，但更像一家广告代运营团队的内部SOP，受众极窄。"
+ },
+ {
+  "key": "loro-dev/afterray",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "AfterRay本机历史应用的官方CLI配套技能"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "官方目录"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "是AfterRay这款应用自带的CLI说明书，属于官方配套工具，不算独立单品。"
+ },
+ {
+  "key": "lovstudio/publish-event-onto-hdx-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "活动行分类曝光实测踩坑手册，平台专属细节独家"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"本 Skill 的历史教训：Agent 曾把从 DOM 片段推想出的页面路径、.edit-btn 数量和字段位置当作实测结果写入本文件，路径实为 404\"",
+   "\"任何一次从 /myevent/edit 基本信息页点'保存活动信息'之后，必须立刻再去 ?view=editbase 提交一次，并回读公开页确认三个字段\"",
+   "\"2026-09-02 在真实账号上逐页读取的结果。不要凭记忆推测路径。\""
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "活动行的保存活动信息按钮一点，分类就被服务端悄悄清零——这个坑连平台自己都没告诉你，得先hook住请求预演一遍才躲得掉。",
+  "为什么": "重新发现一个活跃中文平台的隐藏保存陷阱，连自己曾经踩过的历史教训都留作反面教材，独此一家。"
+ },
+ {
+  "key": "lsall357357/startup-problem-finder",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "VC视角的创业方案挑刺工具，同类批注型顾问不少"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "边界写得细致克制，但帮你挑创业方案的刺这类顾问型工具本身很常见。"
+ },
+ {
+  "key": "lucienll/writing-like-sun",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "故事仿写+转竖屏短剧本，题材当下极度饱和"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"Treat the title and opening as high-fidelity zones. Preserve the source title's grammatical slots...then replace proper nouns and semantic particulars\"",
+   "\"Do not put the user's full source article into this skill package. Quote only short, necessary evidence spans\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "标题/开篇仿写规则写得细，但爆文仿写转短剧本这个赛道2026年已经挤满同类工具。"
+ },
+ {
+  "key": "luciferdono/deglaze",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "逼AI自曝烂尾的元技巧，产物是对话不是交付物"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 0,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "点子够怪也有真实场景支撑，但这是审计AI自己产出的元技巧，不是给终端用户的成品。"
+ },
+ {
+  "key": "lunaark/yuelu-codeimg",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "SVG线框+AI上色的长图生成，代码控图并非孤例"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "\"风格统一靠的不是每屏都写得很像，而是所有屏对齐同一张风格参考图\"",
+   "\"风格基准定下后不要中途换——某一屏想微调风格，先改基准图，再整组重出，别只改一屏\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "多屏统一那条经验是真的，但代码定版式+AI上色这套思路已是长图生成的常见做法。"
+ },
+ {
+  "key": "lunarxuan/natural-sns-portrait",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "真实感SNS自拍提示词，同类写真类prompt极多"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 0,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "同作者套路堆"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "同作者本片还有video-prompt-reverse，媒介独立性更强，这件按套路堆处理。"
+ },
+ {
+  "key": "lunarxuan/video-prompt-reverse",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "视频反推分镜提示词，同类img2prompt工具不少"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Distinguish semantic recreation from exact reconstruction: a text prompt can preserve scene logic, action, camera language, pacing, and style, but cannot guarantee frame-identical output\"",
+   "\"Final evidence must be unedited source frames, not generated reconstructions\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "证据帧哈希、语义vs像素复现的区分很清醒，但视频反推提示词赛道本身已有不少同类工具。"
+ },
+ {
+  "key": "luoshi2025/skill-antifragile",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "A出方案B找茬上帝之手裁的对抗式方案打磨法"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 0,
+   "一条硬约束": 2,
+   "产物是东西": 0,
+   "腔调怪冷门": 2,
+   "中文现场": 1
+  },
+  "证据": [
+   "\"不说'整体不错'、'有道理'——这是糖衣，删掉\"",
+   "\"上帝之手必须独立判断——A说的不一定全对，B的反驳也不一定全对\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "人设分裂互怼的点子讨喜，但正反方对抗式自我批判的prompt模式并不新鲜，缺一手场景痕迹。"
+ },
+ {
+  "key": "lusionf/vocational-teaching-interview-prep",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "高职教师试讲面试准备，硕士生学情适配盲点独到"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"很多高学历应聘者会不自觉地把试讲讲成学术报告或理论灌输...但职业院校评委想看的恰恰相反\"",
+   "\"核心话术逻辑：把学术能力翻译成教学能力，把高学历从'疑虑点'变成'放心点'\""
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "评委不是嫌你懂得不够深，是怕你把高职学生当成没听懂的本科生在教——学情适配这把尺子，硕士生大多数栽在这。",
+  "为什么": "精准命中硕士考高职教师这个窄而真实的群体盲点，给出的诊断和话术都具体到能直接用。"
+ },
+ {
+  "key": "lykhan77/cooperagent-cli",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "CooperAgent框架里的交接检查点组件"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "依赖.cooper/context/和CooperAgent的AGENTS.md全局规则，是那个框架里的一个组件。"
+ },
+ {
+  "key": "lyn-77/daxueshenmai",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "考研数学严格推导+独立审计，拒绝空泛安慰话术"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 2,
+   "中文现场": 2
+  },
+  "证据": [
+   "\"不要附加重复的'考场精简版'，不要重复同一依据，也不要硬造易错点或写'细心一点'之类空泛提醒\"",
+   "\"若推导与工具、答案册或另一方法不一致，冻结最终答案，从双方最后一致的状态开始审查...仍无法解决就明确说无法可靠确认，不任选一个结果\"",
+   "\"不使用API Key，不保存密钥，不直接调用云端模型接口\""
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "推完还要自己把推导审一遍，答案册对不上就冻结重查，绝不为了给个交代硬造一句细心一点。",
+  "为什么": "把考研数学讲题做到可追溯、可审计，连不造安慰话这种反直觉的克制都写进了硬边界。"
+ },
+ {
+  "key": "m-romdhani/scholarly-mcp",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "联邦检索+撤稿谱系追踪的学术引用核验系统"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"searching the exact title of a well-known paper as 'amyloid-beta protein assembly' returned it in none of the top 100 results, while the identical query written 'amyloid-β protein assembly' returned it immediately\"",
+   "\"roughly 7% of known retractions aren't flagged there at all\"",
+   "\"Drop what won't verify. A DOI that doesn't resolve is not a source. No 'probably fine' tier.\""
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "别的工具把论文列表当结果；这个把查不到就等于不存在焊死——希腊字母打成beta还是β都能让检索漏掉那篇关键论文。",
+  "为什么": "工程和实测证据都极扎实（防幻觉引用），但英文学术向、受众技术门槛高，是否适合这家店还需再看。"
+ },
+ {
+  "key": "maddataanalyst/knowledge-graph-extract",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "文档抽知识图谱三元组，同类KG抽取工具很多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Core principle: the output directory is the state. Every step reads its inputs from and records its result in <output_dir> before moving on\"",
+   "\"Count lines with awk 'END{print NR}' <file> (counts a final line that has no trailing newline, which wc -l silently drops)\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "断点续跑的工程设计很讲究，但从文档抽知识图谱这个赛道本身LangChain/GraphRAG类工具已经很多。"
+ },
+ {
+  "key": "manavarya09/lookbook",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "25种设计语言任选的UI风格库，本质是设计工具箱"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"No status / indicator dots. The little pulsing-green availability dot...is a generic AI-UI cliché\"",
+   "\"Never design from scratch when a language fits...The reference is the source of truth for how the style actually looks\""
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "反AI感的品味确实好，但结构是25种风格任选的设计工具箱，TASTE明确排除这类什么都做的合集。"
+ },
+ {
+  "key": "manthanpatelll/leadgenman-video-skills",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "SRT字幕纠错工具，同类字幕清理脚本不少"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "\"Nothing is hardcoded, global, or universal...Every single correction is derived fresh from the specific file being processed\"",
+   "\"NEVER paste the SRT content back into the chat. Not in full, not in part, not truncated, not in a code block\""
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "只认当前文件证据、不吃历史记忆这条约束干净利落，但字幕纠错类脚本本身可替代性较高。"
+ }
+]

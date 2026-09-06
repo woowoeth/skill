@@ -199,21 +199,22 @@ T1_AUTHORS = [
     "lzs0594",
     "traveler0621",
     "zhu930824",
+    # 2026-09-07 店主给的内容源名单（docs/SOURCES.md「店主 09-07 名单」）
     "yanliudesign",
     "Kimberlying",
     "kennyleung123",
     "leishifu666",
     "xianxie6",
     "dse120071750",
-    "op7418",
     "cxcxy",
-    "swping999",
     "taxueseek",
+    "swping999",
     "helloianneo",
     "orange2ai",
     "s1dashu",
     "EverettFish",
     "TaiT-tt",
+    "lazypay",
 ]
 
 
@@ -249,7 +250,9 @@ T1_REPOS = [
     "LiamGvchi/gc-minimal-zine-poster",
     "Zeejay0/gathered-scenes-zine-skill",
     "yangcodingmaster/photo-distill",
+    # 2026-09-07 店主给的内容源名单（docs/SOURCES.md「店主 09-07 名单」）
     "yanliudesign/french-illustration-skill",
+    "yanliudesign/mono-color-skill",
     "Kimberlying/watercolor-memory-poster",
     "kennyleung123/photo-paper-scene-zine-v1",
     "op7418/guizang-yingzao-skill",
@@ -258,23 +261,17 @@ T1_REPOS = [
     "zhu930824/photo-animal-transposition-poster",
     "dse120071750/paper-collage-design-skill",
     "cxcxy/dy-travel-ticket-poster",
-    "swping999/scene-card-studio",
     "taxueseek/taxue-solar-polaroid",
-    "lazypay/Archscribe",
+    "swping999/scene-card-studio",
     "helloianneo/ian-xiaohei-illustrations",
     "helloianneo/ian-xiaohei-scenes",
     "orange2ai/orange-line-illustration",
-    "orange2ai/renwei-writing",
     "s1dashu/ip-as-logo-skill",
     "EverettFish/ip_illustration_for_yourself",
     "TaiT-tt/tait-crt-interface-skill",
+    "orange2ai/renwei-writing",
+    "lazypay/Archscribe",
 ]
-
-# X 时间线才是品味雷达（GitHub 搜索扫不到这些人刚发的仓）。
-# Action 里跟的是他们的 GitHub；人工复核盯：
-# @yanliudreamer @op7418 @AdrianPunk115 @LeiShifu79071 @Xian0063 @dotey
-# @cxcx_cxy @BTCqzy1 @Juanmao_shaw
-
 
 SEARCH_QUERIES = (
     [f"repo:{r}" for r in T1_REPOS]

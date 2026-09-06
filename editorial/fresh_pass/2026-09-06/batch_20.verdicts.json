@@ -1,0 +1,541 @@
+[
+ {
+  "key": "yysws5566/book-to-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "书变人设/方法论的元框架并不少见"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 0,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "生成的 SKILL.md 必须带标准 YAML 头，每个心智模型都要有「什么时候用/什么时候别用」，并可输出可视化思维框架图"
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "把书蒸馏成人设/方法论技能的框架并不少见，工整但无独有硬约束，别处能仿。"
+ },
+ {
+  "key": "zgl610329-wq/learn-anything-fast",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "通用学习方法论框架，同类极多"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "通用学习方法论框架，模式与市面学习类工具高度重叠，非独家。"
+ },
+ {
+  "key": "zgyxttk/industry-report-update-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "行业月报自动化含数据血缘与门禁，完整专业产品"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "旧月报是「结构模板 + 口径参考」，绝不当数值来源。每个承载数据的单元都按月重新采集、完整枚举、逐条溯源。",
+   "深交所 projectrends/query 的 start 分页参数失效、pageSize 上限 100（连续 2 期实测）——全量枚举改「top100 + 公告逐家核验」，勿反复尝试分页",
+   "生成器只从血缘图取数，禁止写裸文本（禁止 cell.text=\"373家\" 这种无出处写入）",
+   "把本 run 全产出（报告/变更摘要/专题/源文件/门禁报告/输入）镜像到当前对话工作区"
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "旧月报的数字不能沿用，连专题选题都不许照抄上个月的——每个数字都得挂血统证明，闯过十三道门禁和一次独立盲审才能出装订。",
+  "为什么": "行业研报自动化做到数据血缘+十三道门禁+独立盲审，专业密度国内少见。"
+ },
+ {
+  "key": "zhubowen-bot/guncat-ai",
+  "三问": {
+   "是商品": false,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "是App内部资源目录里的配置，非独立skill"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 0,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [],
+  "反信号": [
+   "框架内部装修"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "是 Guncat AI 鸿蒙 App 内部资源目录里的一份配置，不是独立可安装的 skill。"
+ },
+ {
+  "key": "ziguishian/xhs-visual-director-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "小红书图文策划类工具同类极多"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 1
+  },
+  "证据": [
+   "不要只会写「高级、科技、极简」，必须说明具体视觉做法。",
+   "在生成整套图片前，默认先生成 1 张「视觉确认图」……用户确认前，不要批量生成整套最终图。",
+   "每张图生成后应保存到本地项目目录，并按 page-01.png、page-02.png 命名。"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "小红书图文策划类工具市面同类饱和，通用创意导演框架换个平台皮肤即可复用。"
+ },
+ {
+  "key": "zihrou-zz/zz-skills-public",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "有版本号的完整前端设计评审产品，AI审美通病列得具体"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "Match-and-refuse. If you're about to write any of these, rewrite the element with different structure.",
+   "The cream / sand / beige body bg is the saturated AI default of 2026... Token names like --paper, --cream, --sand, --bone, --flour, --linen, --parchment, --wheat, --biscuit, --ivory are tells in themselves.",
+   "If someone could look at this interface and say \"AI made that\" without doubt, it's failed.",
+   "Produce ready-to-ship, production-grade code, not prototypes or starting points."
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "奶油色背景、渐变文字、编号小标题——这些「AI 审美」的常见药方，它一条条点名说不，见了就叫停重写。",
+  "为什么": "把「AI做的设计」的具体病征（配色/字体/动效）列成可执行的禁令清单，是罕见的精细度。"
+ },
+ {
+  "key": "zihui7896/pets",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "基准帧+分状态生成+打包是通用精灵图技法套壳"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "Create a Codex custom pet that feels like a real animated desktop companion, not a static image being moved around.",
+   "Codex package under ${CODEX_HOME:-$HOME/.codex}/pets/<pet-id>/ — pet.json, spritesheet.webp"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "核心是通用的「基准帧+分状态生成+打包质检」精灵图技法，套壳到 Codex 桌宠这一个格式。"
+ },
+ {
+  "key": "zillydev/claude-code-manager",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "从旧会话里挖可复用产物,概念新颖"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Read-only guarantee: this skill only READS sessions... It never rewrites or touches a session file — that's session-surgery's job, not this one.",
+   "The best candidate is the one the user will reach for again... NOT the impressive one-off diagnostic that happened to crack this particular incident. A clever technique used once is a story, not a skill.",
+   "weigh reuse frequency × time saved and lead the candidate list with the highest-reuse item"
+  ],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "靠专用二进制读取会话，产出技能又转手给另一个 skill 代写，自己装不满整个流程。"
+ },
+ {
+  "key": "zmgid/dsvideo-plugin",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "电商视频生成流程完整但需同套件多技能接力"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "素材上传、工作流准备或生成失败时只报告一条真实错误；不搜索替代工作流、不推测模型问题、不自动改走付费 API。",
+   "只有 queue_running=0 且 queue_pending=0 时，才向同一台 ComfyUI 的 /free 提交……绝不为了释放内存中断其他任务。",
+   "必须等用户在看到当前版本后明确确认，才能转换最终 H3 提示词、上传素材、准备或提交本地工作流、运行 API dry-run 或调用任何创建接口。",
+   "本地路线用 run_workflow 提交脚本输出的临时工作流并记录 prompt_id。生成成功后用 fetch_outputs 下载到员工当前工作区并提供本地成片链接，不能只报告服务器成功。"
+  ],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "路线要靠同级好几个技能接力（导演/提示词/各API各一个），自己是插件套件里的一环。"
+ },
+ {
+  "key": "zoih6/ai-film-studio",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": false,
+   "why": "自称31岗12阶8闸的全流程框架,是流程自我描述"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 0,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "**Frame Chain إلزامي** — SC(N+1)_START = SC(N)_END بصريًا",
+   "5 Output Files: production-blueprint.md, image-prompts-package.md, motion-prompts-package.md, audio-package.md, assembly-guide.md"
+  ],
+  "反信号": [],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "自称 31 专业岗位、12 阶段、8 道质量闸的全流程系统，通篇是流程图式自我描述，未见真正踩坑的具体细节。"
+ },
+ {
+  "key": "zwl827125-glitch/modeling-research-figure-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "数模科研绘图库+诚信规则,但同类是否已有替代不确定"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "不得从图片推测隐藏数值、样本量、置信区间、显著性或原始数据。不得把合成演示数据描述为实验、观测或竞赛结果。",
+   "把图库中的图片视为可复用的视觉语法，而不是隐藏数据的来源。",
+   "运行 scripts/reproduce_all.py 可重新生成 16 个 Python 模板，输出文字可编辑 SVG 与 300 dpi PNG。"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "35 张图库加诚信规则扎实，但难判断这类数模绘图库别处是否已有替代，留待复核。"
+ },
+ {
+  "key": "zxzin/zinxtick",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "贴纸包生成器是consumer AI工具里最饱和门类之一"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 1
+  },
+  "证据": [
+   "Do not claim a no-image-tool run produced finished sticker files. In those environments, produce a prompt pack, manifest plan, and post-production instructions until real image files exist.",
+   "Make transparent cutouts with edge/background masking, not by globally deleting white pixels.",
+   "A pack cannot be accepted if it is one pose with swapped captions or nearby props.",
+   "Land accepted source files inside the active pack folder before post-production. Do not treat image-generation cache paths as source of truth."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "贴纸/表情包生成器是 consumer AI 工具里最饱和的门类之一，执行扎实但非独家。"
+ },
+ {
+  "key": "zyrobbie/domain-crash-course-skill",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "会前速成+知乎三重角色+实测数据,但边界不够确定"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 2
+  },
+  "证据": [
+   "本产品的用户是无法判断对错的门外汉——错误内容没有用户侧防线，因此核验是硬规则，宁可少说，不可说错。",
+   "实测仅文字版约 9 分钟、全量约 12 分钟",
+   "数字类双源核验：市场规模、融资额、渗透率、价格等具体数字，至少两个相互独立的来源一致才可标「已验证」；两源不一致时并列呈现差异，不取平均、不挑顺眼的。",
+   "每一轮交付完成后，必须列「交付清单」逐一核对——承诺的每个产出物都已实际展示/提供给用户",
+   "所有知乎检索通过知乎官方 zhihu skill 执行"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "会前速成整体思路扎实、有实测数据和知乎分工设计，但与通用「快速学习」工具的边界不够确定，留待复核。"
+ },
+ {
+  "key": "3bsalam/jobs-finder-board",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "求职找工作类工具是简历/ATS同类重灾区"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "**Never estimate a number for a CV.** Every figure traces to the candidate's source-of-truth file or it does not appear.",
+   "An aggregator's tag is discovery data, never evidence... Country-locked roles are tagged \"worldwide\" constantly.",
+   "**Apply the eligibility gate before doing anything else.** Not after the fit analysis, and not after the excitement. The gate is cheap and everything after it is expensive.",
+   "python3 dashboard/add_job.py \"Company\" \"Role\" \"https://apply.url\" ... 移动卡片或 set_status.py，然后重建看板"
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "求职找工作类工具是简历/ATS 同类重灾区，写得扎实但仍是别处拿得到的通用件。"
+ },
+ {
+  "key": "aaron-bushnell/humanizer",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "AI味检测/去味工具是当下最饱和赛道之一"
+  },
+  "信号": {
+   "拦住自己": 1,
+   "真干过": 1,
+   "一条硬约束": 2,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "**Integrity gate:** Run scripts/integrity_check.py comparing original vs rewrite. Fix critical failures (numbers, URLs, citations, code blocks) before delivering."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "AI 味检测/去味工具同类产品（各种 humanizer/undetectable 站）极多，工程扎实但非独家。"
+ },
+ {
+  "key": "buluslan/amazon-keyword-strategy",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "打法框架具体,但与商用选词SaaS边界待确认"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 2
+  },
+  "证据": [
+   "钉死：必须先尝试适配器反查；数据源不可用时必须走「提示上传词表」降级，绝不脑补/编造关键词。",
+   "竞品详情里的品牌是竞品的，直接采用会反向翻车",
+   "把几百个关键词变成一份可执行的广告作战图——每个词都带打法（主攻 / 截流 / 否定），区别于一次性关键词报告的数据罗列。",
+   "落盘到 output/{ASIN}_{日期}/：关键词作战图_{ASIN}_{日期}.xlsx（精准词表 + 否定词表 + PPC 策略 + 词根汇总……）",
+   "由buluslan（公众号:新西楼.AI）研发……更多跨境电商 AI 实战内容，请关注公众号「新西楼.AI」"
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "打法框架具体、有反向翻车这类实操教训，但与商用选词 SaaS 的边界待确认，且每次调用需口播公众号。"
+ },
+ {
+  "key": "gfodor/legal-skills",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "专利提交前审计,含盲态对抗验证与红队,专业密度极高"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 2,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never let a model do arithmetic or exhaustive cross-referencing... Models find 19 of 20 numerals and report \"all consistent.\"",
+   "A 93-item fatal list with a 20% false-positive rate is worse than a clean 60-item list — attorneys stop reading audits that cry wolf.",
+   "**Silence is not a pass.** Every item ends as pass, fail, cannot_assess, not_applicable, or not_reached. An agent that omits an item has not passed it.",
+   "Every agent returns **only** a JSON array to findings/<agent>.json ... python scripts/synthesize.py findings/ ... -o audit_report.md --json audit_report.json",
+   "26 items are answerable only from intake facts. No document review reaches them: A19 A20 A22–A25 A36 C05 C08–C12 C21 D19–D26 D28 D29 I38 I42."
+  ],
+  "反信号": [],
+  "判决": "收",
+  "钩子": "查出的致命问题不能自己说了算——得让一个没看过理由的审核者在盲态下重新推翻一遍，活过两票才算数。",
+  "为什么": "316 项法条级检查清单+盲态对抗验证+红队攻防，专业密度和工程设计在同类里少见。"
+ },
+ {
+  "key": "kratagyaagarwaldots/flutter-engineering-kit",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": false,
+   "why": "价值依赖同套件其余脚手架技能接手"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "**Never ask the user something you could observe.** Dispatch flutter-explore for anything in the codebase... and read the design yourself.",
+   "**Money, time and units.** Currency, rounding, timezone, and the increment a duration or a time picker snaps to. These are the ones that come back as client feedback when guessed.",
+   "Do not write code until the user confirms the understanding is shared.",
+   "Close with the settled understanding as a numbered acceptance-criteria list... That list is the deliverable. Write it to docs/specs/"
+  ],
+  "反信号": [
+   "单装做不了完整事"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "只负责需求访谈，产出交给同套件里的脚手架技能接手，自己装不满整件事。"
+ },
+ {
+  "key": "vibemarketer94/vibemarketer-skills",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": false,
+   "写得出文案": true,
+   "why": "UGC带货脚本生成器是营销AI工具重灾区"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 1,
+   "一条硬约束": 1,
+   "产物是东西": 1,
+   "腔调怪冷门": 0,
+   "中文现场": 0
+  },
+  "证据": [
+   "Never copy exact hooks, scene order, jokes, personal stories, creator identity, or distinctive wording."
+  ],
+  "反信号": [
+   "第N个通用件"
+  ],
+  "判决": "不收",
+  "钩子": "",
+  "为什么": "UGC/短视频带货脚本生成器在营销 AI 工具里极常见，且依赖同套件 creative-angle-lab 才完整。"
+ },
+ {
+  "key": "yuhleo99/reasearch-ppt",
+  "三问": {
+   "是商品": true,
+   "别处拿不到": true,
+   "写得出文案": true,
+   "why": "图表诚信+审批闸具体,但品类边界不够确定"
+  },
+  "信号": {
+   "拦住自己": 2,
+   "真干过": 2,
+   "一条硬约束": 2,
+   "产物是东西": 2,
+   "腔调怪冷门": 1,
+   "中文现场": 0
+  },
+  "证据": [
+   "**Deterministic charts:** create exact quantitative charts with code-native plotting or editable slide primitives. Never redraw quantitative charts with a generative image model.",
+   "If the render changes any scientific value or sample, regenerate it through the deterministic path. Do not excuse a mismatch as an image-generation artifact.",
+   "**Approval gate:** propose the slide structure before generating a new visualization... Reuse a previously approved structure; do not ask twice.",
+   "Default deliverable: 1. Chinese conversational script; 2. Korean conversational script; 3. optional one-line transition..."
+  ],
+  "反信号": [],
+  "判决": "待读",
+  "钩子": "",
+  "为什么": "图表诚信与审批闸把关具体，但「研究 PPT 工具」这一品类是否已有替代仍不够确定，留待复核。"
+ }
+]
