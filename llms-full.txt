@@ -1,45 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 356 skills.
-
-========================================================================
-## close-reading-annotator
-## 四层批注拆开小说，连伏笔链都给你标出来
-URL: https://ourword.ai/skill/i/bestbeasthunter-close-reading-annotator/
-URL (中文): https://ourword.ai/skill/zh/i/bestbeasthunter-close-reading-annotator/
-Source: https://github.com/bestbeasthunter/close-reading-annotator
-Updated: 2026-09-06
-Tags: writing, skill, bestbeasthunter
-
-Stop just highlighting quotes. It splits narrative into structure, interpretation, emotion & style—plus.
-
-### What does this skill do?
-对小说、剧本等叙事文本进行四层精读批注。输出结构层(叙事功能/情绪/节奏/视角/时空/对话功能/描写类型) + 阐释层(信息控制/主题/叙述者可靠性) + 情感层(角色情感/情感对象/段内情感弧，P4 触发式) + 文笔层(佳句/修辞/意象/词汇/句式/人物语言指纹) + 跨段层(伏笔链/段间关系)。支持断点续跑、层粒度重跑、引文子串校验、span 位置断言、craft层自动修复(v3.8.1)、三项校准功能(v3.8.2：quality_score/confidence/DLUT交叉验证)。适用于：小说精读、故事拆解、叙事分析、文笔拆解。不用于技术文档、论文、代码。
-
-### Why is it worth installing?
-Not vague impressions—machine close reading with span-level anchors. Cross-paragraph foreshadowing chains auto-link, and.
-
-### How do you install it?
-git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-读小说只划金句？它把结构、阐释、情感、文笔拆成四层批注，连伏笔链和叙述者可靠性都标出来，适合精读拆解和写作复盘。
-
-### Q：这个 skill 做什么？
-对小说、剧本等叙事文本进行四层精读批注。输出结构层(叙事功能/情绪/节奏/视角/时空/对话功能/描写类型) + 阐释层(信息控制/主题/叙述者可靠性) + 情感层(角色情感/情感对象/段内情感弧，P4 触发式) + 文笔层(佳句/修辞/意象/词汇/句式/人物语言指纹) + 跨段层(伏笔链/段间关系)。支持断点续跑、层粒度重跑、引文子串校验、span 位置断言、craft层自动修复(v3.8.1)、三项校准功能(v3.8.2：quality_score/confidence/DLUT交叉验证)。适用于：小说精读、故事拆解、叙事分析、文笔拆解。不用于技术文档、论文、代码。
-
-### Q：为什么值得装？
-不是泛泛读后感，而是带位置断言的机器精读：每处批注都锚定原文 span，跨段伏笔链自动串联。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+# Full corpus, plain text. 359 skills.
 
 ========================================================================
 ## autosound-tuning
@@ -62,28 +24,6 @@ git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then p
 
 ### Where does it come from?
 Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
-
-========================================================================
-## kindle-highlights
-## Kindle 笔记导出器，连亚马逊截断的划线也捞回来
-URL: https://ourword.ai/skill/i/l3a0-claude-plugins-kindle-highlights/
-Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
-Updated: 2026-09-06
-Tags: work, skill, l3a0
-
-Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
-
-### What does this skill do?
-Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
-
-### Why is it worth installing?
-It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
-
-### How do you install it?
-git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: l3a0/claude-plugins The repository ships 1 skills in total.
 
 ========================================================================
 ## tts-director
@@ -124,6 +64,66 @@ git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.gi
 Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
 
 ========================================================================
+## close-reading-annotator
+## 四层批注拆开小说，连伏笔链都给你标出来
+URL: https://ourword.ai/skill/i/bestbeasthunter-close-reading-annotator/
+URL (中文): https://ourword.ai/skill/zh/i/bestbeasthunter-close-reading-annotator/
+Source: https://github.com/bestbeasthunter/close-reading-annotator
+Updated: 2026-09-06
+Tags: writing, skill, bestbeasthunter
+
+Stop just highlighting quotes. It splits narrative into structure, interpretation, emotion & style—plus.
+
+### What does this skill do?
+对小说、剧本等叙事文本进行四层精读批注。输出结构层(叙事功能/情绪/节奏/视角/时空/对话功能/描写类型) + 阐释层(信息控制/主题/叙述者可靠性) + 情感层(角色情感/情感对象/段内情感弧，P4 触发式) + 文笔层(佳句/修辞/意象/词汇/句式/人物语言指纹) + 跨段层(伏笔链/段间关系)。支持断点续跑、层粒度重跑、引文子串校验、span 位置断言、craft层自动修复(v3.8.1)、三项校准功能(v3.8.2：quality_score/confidence/DLUT交叉验证)。适用于：小说精读、故事拆解、叙事分析、文笔拆解。不用于技术文档、论文、代码。
+
+### Why is it worth installing?
+Not vague impressions—machine close reading with span-level anchors. Cross-paragraph foreshadowing chains auto-link, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+读小说只划金句？它把结构、阐释、情感、文笔拆成四层批注，连伏笔链和叙述者可靠性都标出来，适合精读拆解和写作复盘。
+
+### Q：这个 skill 做什么？
+对小说、剧本等叙事文本进行四层精读批注。输出结构层(叙事功能/情绪/节奏/视角/时空/对话功能/描写类型) + 阐释层(信息控制/主题/叙述者可靠性) + 情感层(角色情感/情感对象/段内情感弧，P4 触发式) + 文笔层(佳句/修辞/意象/词汇/句式/人物语言指纹) + 跨段层(伏笔链/段间关系)。支持断点续跑、层粒度重跑、引文子串校验、span 位置断言、craft层自动修复(v3.8.1)、三项校准功能(v3.8.2：quality_score/confidence/DLUT交叉验证)。适用于：小说精读、故事拆解、叙事分析、文笔拆解。不用于技术文档、论文、代码。
+
+### Q：为什么值得装？
+不是泛泛读后感，而是带位置断言的机器精读：每处批注都锚定原文 span，跨段伏笔链自动串联。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## kindle-highlights
+## Kindle 笔记导出器，连亚马逊截断的划线也捞回来
+URL: https://ourword.ai/skill/i/l3a0-claude-plugins-kindle-highlights/
+Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
+Updated: 2026-09-06
+Tags: work, skill, l3a0
+
+Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
+
+### What does this skill do?
+Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
+
+### Why is it worth installing?
+It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
+
+### How do you install it?
+git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: l3a0/claude-plugins The repository ships 1 skills in total.
+
+========================================================================
 ## pink-elephant-guard
 ## 删掉的词条从此不再溜回成稿
 URL: https://ourword.ai/skill/i/yuzora-yu-project-sixth-pink-elephant-guard/
@@ -144,6 +144,82 @@ git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point yo
 
 ### Where does it come from?
 Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
+
+========================================================================
+## bilingual-term-extract
+## 双语平行文本自动产出可导入术语库的对照表
+URL: https://ourword.ai/skill/i/tanyaqiong31029-bilingual-term-extract/
+URL (中文): https://ourword.ai/skill/zh/i/tanyaqiong31029-bilingual-term-extract/
+Source: https://github.com/tanyaqiong31029/Bilingual-Term-Extract
+Updated: 2026-09-06
+Tags: work, skill, tanyaqiong31029
+
+Feed it parallel DOCX/TXT/SRT/TMX; get back TBX/CSV/JSON glossaries. Statistical recall + LLM screening.
+
+### What does this skill do?
+双语术语提取技能 — 从双语平行文本（DOCX/TXT/Markdown/SRT/TMX）自动提取源语-目标语对照术语表：统计召回（n-gram 候选 + C-value/PMI + Dice 共现投票）+ LLM 精筛 + 定稿导出 TBX（Trados MultiTerm/memoQ 兼容）/CSV/JSON/Markdown。当用户要求提取双语术语、建术语库、生成术语对照表、glossary、term extraction，或要求修改、扩展、修复、重建本工具——即使没提这个名字——都应使用本技能。
+
+### Why is it worth installing?
+C-value/PMI/Dice voting surfaces candidates first; LLM only adjudicates, not hallucinates. Output schema matches mainstream CAT.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tanyaqiong31029/Bilingual-Term-Extract.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tanyaqiong31029/Bilingual-Term-Extract Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+喂它 DOCX/TXT/SRT/TMX，还你 TBX/CSV/JSON 术语表。统计召回 + LLM 精筛。
+
+### Q：这个 skill 做什么？
+双语术语提取技能 — 从双语平行文本（DOCX/TXT/Markdown/SRT/TMX）自动提取源语-目标语对照术语表：统计召回（n-gram 候选 + C-value/PMI + Dice 共现投票）+ LLM 精筛 + 定稿导出 TBX（Trados MultiTerm/memoQ 兼容）/CSV/JSON/Markdown。当用户要求提取双语术语、建术语库、生成术语对照表、glossary、term extraction，或要求修改、扩展、修复、重建本工具——即使没提这个名字——都应使用本技能。
+
+### Q：为什么值得装？
+C-value/PMI/Dice 三重统计投票先捞候选，LLM 只做裁决不空想。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/tanyaqiong31029/Bilingual-Term-Extract.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: tanyaqiong31029/Bilingual-Term-Extract Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## reading-analysis
+## 会拆穿每道错题出题人陷阱的英语阅读陪练
+URL: https://ourword.ai/skill/i/shenquan520-reading-analysis/
+URL (中文): https://ourword.ai/skill/zh/i/shenquan520-reading-analysis/
+Source: https://github.com/shenquan520/reading-analysis
+Updated: 2026-09-06
+Tags: everyday, skill, shenquan520
+
+Not just answers—it decodes how each distractor was built and why you fell for it. Feed it real exam cases, and.
+
+### What does this skill do?
+高考/四六级/考研英语阅读分析助手。拆解命题逻辑、定位推断、干扰项构造，并持续吸收使用者提供的理论资料与真题案例。当用户说"分析这篇阅读""这道题为什么选X""我阅读总错""提交案例/理论""阅读复盘""七选五怎么做""长难句拆一下"时使用。
+
+### Why is it worth installing?
+It treats each question like a case: reconstructs the examiner's trap-laying path, compares it with your reasoning, and learns.
+
+### How do you install it?
+git clone --depth 1 https://github.com/shenquan520/reading-analysis.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
+
+--- 中文 ---
+不只讲答案，更拆命题逻辑：定位句怎么找、干扰项怎么造。你喂真题案例，它越用越懂你常错的那类题。
+
+### Q：这个 skill 做什么？
+高考/四六级/考研英语阅读分析助手。拆解命题逻辑、定位推断、干扰项构造，并持续吸收使用者提供的理论资料与真题案例。当用户说"分析这篇阅读""这道题为什么选X""我阅读总错""提交案例/理论""阅读复盘""七选五怎么做""长难句拆一下"时使用。
+
+### Q：为什么值得装？
+它把阅读题当案件查：先还原出题人设陷路径，再对照你的思路偏差。持续吸收你的错题与理论，陪练越久越贴身。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/shenquan520/reading-analysis.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
 
 ========================================================================
 ## kami
@@ -628,28 +704,6 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
-## hand-drawn-collage
-## 照片变手撕纸拼贴画，原图配色一件不丢
-URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
-Source: https://github.com/xuqser/hand-drawn-collage
-Updated: 2026-09-05
-Tags: images, skill, xuqser
-
-Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
-
-### What does this skill do?
-Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
-
-### Why is it worth installing?
-Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
-
-### How do you install it?
-git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
-
-========================================================================
 ## metro-map
 ## 轨道图式画架构，站点色线分区图例一图齐
 URL: https://ourword.ai/skill/i/erp-lab-5-metro-map-tool-metro-map/
@@ -670,6 +724,28 @@ git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point y
 
 ### Where does it come from?
 Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
+
+========================================================================
+## hand-drawn-collage
+## 照片变手撕纸拼贴画，原图配色一件不丢
+URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
+Source: https://github.com/xuqser/hand-drawn-collage
+Updated: 2026-09-05
+Tags: images, skill, xuqser
+
+Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
+
+### What does this skill do?
+Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
+
+### Why is it worth installing?
+Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
 
 ========================================================================
 ## gba-font-crack
@@ -1668,6 +1744,28 @@ git clone --depth 1 https://github.com/chaogao512/Literature-Deep-Reading-Assist
 
 ### Where does it come from?
 Repository: chaogao512/Literature-Deep-Reading-Assistant Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## homework-tutor
+## 只给台阶不给答案的作业陪练
+URL: https://ourword.ai/skill/i/sja-homeworkclass-skills-homework-tutor/
+Source: https://github.com/SJA-Homeworkclass/skills/tree/HEAD/homework-tutor
+Updated: 2026-09-04
+Tags: everyday, skill, SJA-Homeworkclass
+
+For SEN/NCS students stuck on homework, it breaks problems into step-by-step hints—never answers. Like a teacher.
+
+### What does this skill do?
+Specialized tutoring skill for SEN and NCS students to break down homework into step by step hints without giving answers.
+
+### Why is it worth installing?
+Inverted design: detects the exact sticking point, then offers the smallest viable nudge. Each step advances just.
+
+### How do you install it?
+git clone --depth 1 https://github.com/SJA-Homeworkclass/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: SJA-Homeworkclass/skills The repository ships 1 skills in total.
 
 ========================================================================
 ## verifying-hero-video-on-mobile
@@ -4374,6 +4472,44 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-design.git 然后把智
 Repository: alchaincyf/huashu-design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## ppt-lai
+## 2000年代课件翻新机，逐字冻结你的原文
+URL: https://ourword.ai/skill/i/astro-koko-ppt-lai-ppt-lai/
+URL (中文): https://ourword.ai/skill/zh/i/astro-koko-ppt-lai-ppt-lai/
+Source: https://github.com/astro-koko/ppt-lai/tree/HEAD/skills/ppt-lai
+Updated: 2026-08-24
+Tags: work, skill, astro-koko
+
+Want Y2K-style slides? Turns outlines into editable 4:3 PPTs, L1-L3. Remodels old decks word-for-word frozen.
+
+### What does this skill do?
+当用户要求把主题、提纲或材料做成 2000–2010 年代千禧年风格 PPT，或要求把现有 .pptx 翻新为旧课件视觉时使用。交付原生可编辑的 4:3 .pptx，支持 L1/L2/L3；已有 PPT 的翻新 路径逐字冻结内容。用户追求现代、简洁、商务或高端视觉时不要使用。
+
+### Why is it worth installing?
+Rebuilds era-specific visual grammar, not skins. Remodel path treats text as contract—layout changes, words untouched.
+
+### How do you install it?
+git clone --depth 1 https://github.com/astro-koko/ppt-lai.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: astro-koko/ppt-lai Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+要千禧年复古风？它把提纲变成4:3原生可编辑PPT，L1/L2/L3三档。翻新旧课件时逐字不动，像时光机但内容保鲜。
+
+### Q：这个 skill 做什么？
+当用户要求把主题、提纲或材料做成 2000–2010 年代千禧年风格 PPT，或要求把现有 .pptx 翻新为旧课件视觉时使用。交付原生可编辑的 4:3 .pptx，支持 L1/L2/L3；已有 PPT 的翻新 路径逐字冻结内容。用户追求现代、简洁、商务或高端视觉时不要使用。
+
+### Q：为什么值得装？
+不是套模板，是重建那个年代的视觉语法——渐变标题、像素分割线、低饱和底纹。翻新路径把内容当合同。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/astro-koko/ppt-lai.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: astro-koko/ppt-lai Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## promo-bgm
 ## 纯代码合成宣传片配乐，改一个参数就重出一版
 URL: https://ourword.ai/skill/i/whyubel1eve-promo-bgm-skill/
@@ -4432,44 +4568,6 @@ git clone --depth 1 https://github.com/kennyleung123/photo-paper-scene-zine-v1.g
 
 ### Where does it come from?
 Repository: kennyleung123/photo-paper-scene-zine-v1 The repository ships 1 skills in total.
-
-========================================================================
-## ppt-lai
-## 2000年代课件翻新机，逐字冻结你的原文
-URL: https://ourword.ai/skill/i/astro-koko-ppt-lai-ppt-lai/
-URL (中文): https://ourword.ai/skill/zh/i/astro-koko-ppt-lai-ppt-lai/
-Source: https://github.com/astro-koko/ppt-lai/tree/HEAD/skills/ppt-lai
-Updated: 2026-08-24
-Tags: work, skill, astro-koko
-
-Want Y2K-style slides? Turns outlines into editable 4:3 PPTs, L1-L3. Remodels old decks word-for-word frozen.
-
-### What does this skill do?
-当用户要求把主题、提纲或材料做成 2000–2010 年代千禧年风格 PPT，或要求把现有 .pptx 翻新为旧课件视觉时使用。交付原生可编辑的 4:3 .pptx，支持 L1/L2/L3；已有 PPT 的翻新 路径逐字冻结内容。用户追求现代、简洁、商务或高端视觉时不要使用。
-
-### Why is it worth installing?
-Rebuilds era-specific visual grammar, not skins. Remodel path treats text as contract—layout changes, words untouched.
-
-### How do you install it?
-git clone --depth 1 https://github.com/astro-koko/ppt-lai.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: astro-koko/ppt-lai Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
-
---- 中文 ---
-要千禧年复古风？它把提纲变成4:3原生可编辑PPT，L1/L2/L3三档。翻新旧课件时逐字不动，像时光机但内容保鲜。
-
-### Q：这个 skill 做什么？
-当用户要求把主题、提纲或材料做成 2000–2010 年代千禧年风格 PPT，或要求把现有 .pptx 翻新为旧课件视觉时使用。交付原生可编辑的 4:3 .pptx，支持 L1/L2/L3；已有 PPT 的翻新 路径逐字冻结内容。用户追求现代、简洁、商务或高端视觉时不要使用。
-
-### Q：为什么值得装？
-不是套模板，是重建那个年代的视觉语法——渐变标题、像素分割线、低饱和底纹。翻新路径把内容当合同。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/astro-koko/ppt-lai.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: astro-koko/ppt-lai Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## writing-dna-skill
@@ -4718,28 +4816,6 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## ip-as-logo
-## 圆滚滚小方块角色生成器，自带三种产品方向提案
-URL: https://ourword.ai/skill/i/s1dashu-ip-as-logo-skill/
-Source: https://github.com/s1dashu/ip-as-logo-skill
-Updated: 2026-08-22
-Tags: images, skill, s1dashu
-
-Tired of generic mascots? It proposes 3 product-relevant directions, each with 6 distinct candidates. Chunky.
-
-### What does this skill do?
-Generate extremely simple, cute, personified square character images with rounded heavy forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition. Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including when the agent should infer three product-relevant directions and propose six independent candidate
-
-### Why is it worth installing?
-Not random cute rolls. It reasons from your product to 3 directions, then 6 varied candidates each—with strict composition &.
-
-### How do you install it?
-git clone --depth 1 https://github.com/s1dashu/ip-as-logo-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: s1dashu/ip-as-logo-skill The repository ships 1 skills in total.
-
-========================================================================
 ## creator-distiller
 ## 博主主页蒸馏出的本地专家，每条观点都能跳回原视频
 URL: https://ourword.ai/skill/i/kingkk469-creator-distiller-creator-distiller/
@@ -4776,6 +4852,28 @@ git clone --depth 1 https://github.com/kingkk469/creator-distiller.git 然后把
 
 ### Q：它从哪来？
 Repository: kingkk469/creator-distiller Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## ip-as-logo
+## 圆滚滚小方块角色生成器，自带三种产品方向提案
+URL: https://ourword.ai/skill/i/s1dashu-ip-as-logo-skill/
+Source: https://github.com/s1dashu/ip-as-logo-skill
+Updated: 2026-08-22
+Tags: images, skill, s1dashu
+
+Tired of generic mascots? It proposes 3 product-relevant directions, each with 6 distinct candidates. Chunky.
+
+### What does this skill do?
+Generate extremely simple, cute, personified square character images with rounded heavy forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition. Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including when the agent should infer three product-relevant directions and propose six independent candidate
+
+### Why is it worth installing?
+Not random cute rolls. It reasons from your product to 3 directions, then 6 varied candidates each—with strict composition &.
+
+### How do you install it?
+git clone --depth 1 https://github.com/s1dashu/ip-as-logo-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: s1dashu/ip-as-logo-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## dance-video-to-prompt
@@ -9014,6 +9112,28 @@ git clone --depth 1 https://github.com/cclank/lanshu-awesome-ai-video-kit.git �
 Repository: cclank/lanshu-awesome-ai-video-kit The repository ships 1 skills in total.
 
 ========================================================================
+## xiaohei-infographic
+## 小黑手绘风信息图，一篇笔记变一张可发朋友圈的长图
+URL: https://ourword.ai/skill/i/onpicex-xiaohei-infographic/
+Source: https://github.com/onpicex/xiaohei-infographic
+Updated: 2026-05-31
+Tags: images, skill, onpicex
+
+Drop in an article or outline, get a high-DPI, hand-drawn-style long image. No design skills or templates.
+
+### What does this skill do?
+Create Xiaohei-style Chinese infographics and knowledge cards from articles, notes, tweets, outlines, or structured content. Use when the user asks for 信息图, 知识卡片, 长图, visual summary, shareable image, WeChat/social media card, or wants to combine Ian 小黑 hand-drawn illustration style with infographic structure. Produces one high-DPI PNG shareable long image: pure white background, real hand-drawn Xi
+
+### Why is it worth installing?
+It reflows your content hierarchy, then applies Xiaohei's hand-drawn strokes—not a template collage. Output is one.
+
+### How do you install it?
+git clone --depth 1 https://github.com/onpicex/xiaohei-infographic.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: onpicex/xiaohei-infographic Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## coupon-stacker
 ## 叠券顺序算得比下单页还清楚的小账本
 URL: https://ourword.ai/skill/i/agentsope-smartbuy-skill-coupon-stacker/
@@ -9050,28 +9170,6 @@ git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git 然后把智
 
 ### Q：它从哪来？
 Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## xiaohei-infographic
-## 小黑手绘风信息图，一篇笔记变一张可发朋友圈的长图
-URL: https://ourword.ai/skill/i/onpicex-xiaohei-infographic/
-Source: https://github.com/onpicex/xiaohei-infographic
-Updated: 2026-05-31
-Tags: images, skill, onpicex
-
-Drop in an article or outline, get a high-DPI, hand-drawn-style long image. No design skills or templates.
-
-### What does this skill do?
-Create Xiaohei-style Chinese infographics and knowledge cards from articles, notes, tweets, outlines, or structured content. Use when the user asks for 信息图, 知识卡片, 长图, visual summary, shareable image, WeChat/social media card, or wants to combine Ian 小黑 hand-drawn illustration style with infographic structure. Produces one high-DPI PNG shareable long image: pure white background, real hand-drawn Xi
-
-### Why is it worth installing?
-It reflows your content hierarchy, then applies Xiaohei's hand-drawn strokes—not a template collage. Output is one.
-
-### How do you install it?
-git clone --depth 1 https://github.com/onpicex/xiaohei-infographic.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: onpicex/xiaohei-infographic Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## zan-punct-fix
