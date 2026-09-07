@@ -326,6 +326,28 @@ git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然
 Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## kindle-highlights
+## Kindle 筆記導出器，連亞馬遜截斷的劃線也撈回來
+URL: https://ourword.ai/skill/tw/i/l3a0-claude-plugins-kindle-highlights/
+Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
+Updated: 2026-09-06
+Tags: work, skill, l3a0
+
+Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
+
+### What does this skill do?
+Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
+
+### Why is it worth installing?
+It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
+
+### How do you install it?
+git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: l3a0/claude-plugins The repository ships 1 skills in total.
+
+========================================================================
 ## autosound-tuning
 ## 雙AI輪流審聽，把車內喇叭調到不刺耳為止
 URL: https://ourword.ai/skill/tw/i/ayukhno-autosound-tuning-skill-autosound-tuning/
@@ -384,28 +406,6 @@ git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.gi
 
 ### Q：它從哪來？
 Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
-
-========================================================================
-## kindle-highlights
-## Kindle 筆記導出器，連亞馬遜截斷的劃線也撈回來
-URL: https://ourword.ai/skill/tw/i/l3a0-claude-plugins-kindle-highlights/
-Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
-Updated: 2026-09-06
-Tags: work, skill, l3a0
-
-Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
-
-### What does this skill do?
-Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
-
-### Why is it worth installing?
-It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
-
-### How do you install it?
-git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: l3a0/claude-plugins The repository ships 1 skills in total.
 
 ========================================================================
 ## pink-elephant-guard
@@ -4904,6 +4904,28 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## ip-as-logo
+## 圓滾滾小方塊角色生成器，自帶三種產品方向提案
+URL: https://ourword.ai/skill/tw/i/s1dashu-ip-as-logo-skill/
+Source: https://github.com/s1dashu/ip-as-logo-skill
+Updated: 2026-08-22
+Tags: images, skill, s1dashu
+
+Tired of generic mascots? It proposes 3 product-relevant directions, each with 6 distinct candidates. Chunky.
+
+### What does this skill do?
+Generate extremely simple, cute, personified square character images with rounded heavy forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition. Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including when the agent should infer three product-relevant directions and propose six independent candidate
+
+### Why is it worth installing?
+Not random cute rolls. It reasons from your product to 3 directions, then 6 varied candidates each—with strict composition &.
+
+### How do you install it?
+git clone --depth 1 https://github.com/s1dashu/ip-as-logo-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: s1dashu/ip-as-logo-skill The repository ships 1 skills in total.
+
+========================================================================
 ## creator-distiller
 ## 博主主頁蒸餾出的本地專家，每條觀點都能跳回原視頻
 URL: https://ourword.ai/skill/tw/i/kingkk469-creator-distiller-creator-distiller/
@@ -4940,28 +4962,6 @@ git clone --depth 1 https://github.com/kingkk469/creator-distiller.git 然後把
 
 ### Q：它從哪來？
 Repository: kingkk469/creator-distiller Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## ip-as-logo
-## 圓滾滾小方塊角色生成器，自帶三種產品方向提案
-URL: https://ourword.ai/skill/tw/i/s1dashu-ip-as-logo-skill/
-Source: https://github.com/s1dashu/ip-as-logo-skill
-Updated: 2026-08-22
-Tags: images, skill, s1dashu
-
-Tired of generic mascots? It proposes 3 product-relevant directions, each with 6 distinct candidates. Chunky.
-
-### What does this skill do?
-Generate extremely simple, cute, personified square character images with rounded heavy forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition. Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including when the agent should infer three product-relevant directions and propose six independent candidate
-
-### Why is it worth installing?
-Not random cute rolls. It reasons from your product to 3 directions, then 6 varied candidates each—with strict composition &.
-
-### How do you install it?
-git clone --depth 1 https://github.com/s1dashu/ip-as-logo-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: s1dashu/ip-as-logo-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## dance-video-to-prompt
