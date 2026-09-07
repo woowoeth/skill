@@ -116,11 +116,13 @@ jobs:
           # 09-03 晚：从心选/店长推荐/店主指名/编辑亲挑反推 —— 同作者、同题材词、README 相邻仓。
           # 店主指名的 8 件里 5 件我的系统从来没见过，因为之前两条道都是「按时间捞新的」。
           python scouts/source_refs.py --budget 40 --out /tmp/refs_candidates.json || true
+          # 09-07 店主指的两个市场：colaskill.com（静态站，卡片带 GitHub 链接）
+          python scouts/source_colaskill.py --out /tmp/colaskill_candidates.json || true
           python3 - <<'PY2'
           import json,os
           a=json.load(open('/tmp/stream_new.json')) if os.path.exists('/tmp/stream_new.json') else {}
           # editorial/backfill_backlog.json：本地一次性回填的 21 天积压清单，跑一轮就消化一批
-          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json','/tmp/backfill_deep.json','/tmp/skillsmp_candidates.json','/tmp/refs_candidates.json','editorial/backfill_backlog.json'):
+          for fn in ('/tmp/artifact_candidates.json','/tmp/backfill_candidates.json','/tmp/backfill_deep.json','/tmp/skillsmp_candidates.json','/tmp/refs_candidates.json','/tmp/colaskill_candidates.json','editorial/backfill_backlog.json'):
               b=json.load(open(fn)) if os.path.exists(fn) else {}
               for k,v in b.items(): a.setdefault(k,v)
           json.dump(a,open('/tmp/candidates.json','w'),ensure_ascii=False,indent=1)
@@ -143,7 +145,7 @@ jobs:
         run: |
           mkdir -p /tmp/handoff
           cp /tmp/sweep_keep.json /tmp/handoff/ 2>/dev/null || echo "[]" > /tmp/handoff/sweep_keep.json
-          for f in editorial/sweep_seen.json editorial/stream_seen.json editorial/coverage_log.json editorial/backfill_seen.json editorial/backfill_cursor.json editorial/refs_seen.json editorial/skillsmp_seen.json editorial/discover_seen.json; do
+          for f in editorial/sweep_seen.json editorial/stream_seen.json editorial/coverage_log.json editorial/backfill_seen.json editorial/backfill_cursor.json editorial/refs_seen.json editorial/colaskill_seen.json editorial/skillsmp_seen.json editorial/discover_seen.json; do
             [ -e "$f" ] && cp "$f" /tmp/handoff/ || true
           done
           ls -la /tmp/handoff
@@ -170,7 +172,7 @@ jobs:
       - name: 接过判分结果和各通道的「见过」清单
         run: |
           cp /tmp/handoff/sweep_keep.json /tmp/sweep_keep.json
-          for f in sweep_seen stream_seen coverage_log backfill_seen backfill_cursor refs_seen skillsmp_seen discover_seen; do
+          for f in sweep_seen stream_seen coverage_log backfill_seen backfill_cursor refs_seen colaskill_seen skillsmp_seen discover_seen; do
             [ -e "/tmp/handoff/$f.json" ] && cp "/tmp/handoff/$f.json" "editorial/$f.json" || true
           done
           python3 - <<'PY2'
