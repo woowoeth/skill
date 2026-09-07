@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 326 skills.
+# Full corpus, plain text. 341 skills.
 
 ========================================================================
 ## close-reading-annotator
@@ -628,6 +628,44 @@ git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point y
 Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
 
 ========================================================================
+## gba-font-crack
+## GBA 改版 ROM 中文字库注入，带无头调试器
+URL: https://ourword.ai/skill/i/nkualexlee-pi-gba-fontpatch-gba-font-crack/
+URL (中文): https://ourword.ai/skill/zh/i/nkualexlee-pi-gba-fontpatch-gba-font-crack/
+Source: https://github.com/nkualexlee/pi-gba-fontpatch/tree/HEAD/.pi/skills/gba-font-crack
+Updated: 2026-09-05
+Tags: play, skill, nkualexlee
+
+Chinese-patch your Pokémon hack without blind trial. Trace the font engine, hook rendering, and debug live via.
+
+### What does this skill do?
+GBA 宝可梦改版 ROM 中文字库破解全流程：正向分析范式（定位引擎→控制流→探针实证）、无头调试（romctl/serve 实时交互）、整库插入+渲染 hook 为标准路线（ESC 编码、多字号渲染器），槽位注入仅限验证、字符串修改与 NEW GAME 截图像素校验、回归 vs 模拟器缺陷的对照实验二分法。当需要给 Pokemon 改版 ROM 打中文字库、改菜单文本为中文、分析中文渲染引擎、用 romctl 调试 GBA 内存/hook/截图、处理字形格式（2bpp 压缩、LUT 展开、1bpp 位流）、排查 hook 后乱码/卡死问题时使用。
+
+### Why is it worth installing?
+Treats ROM hacking as science: infer the engine, prove with probes, then inject. Bisects against emulator quirks—saves ten hours.
+
+### How do you install it?
+git clone --depth 1 https://github.com/nkualexlee/pi-gba-fontpatch.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: nkualexlee/pi-gba-fontpatch Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+宝可梦改版想汉化？不用再瞎试补丁。它带你从定位字体引擎到 hook 渲染，全程用 romctl 实时看内存和截图。
+
+### Q：这个 skill 做什么？
+GBA 宝可梦改版 ROM 中文字库破解全流程：正向分析范式（定位引擎→控制流→探针实证）、无头调试（romctl/serve 实时交互）、整库插入+渲染 hook 为标准路线（ESC 编码、多字号渲染器），槽位注入仅限验证、字符串修改与 NEW GAME 截图像素校验、回归 vs 模拟器缺陷的对照实验二分法。当需要给 Pokemon 改版 ROM 打中文字库、改菜单文本为中文、分析中文渲染引擎、用 romctl 调试 GBA 内存/hook/截图、处理字形格式（2bpp 压缩、LUT 展开、1bpp 位流）、排查 hook 后乱码/卡死问题时使用。
+
+### Q：为什么值得装？
+把逆向当科学实验：先推引擎结构，再用探针实证，最后整库注入。对照模拟器缺陷做二分。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/nkualexlee/pi-gba-fontpatch.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: nkualexlee/pi-gba-fontpatch Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## postcard-memory-poster
 ## 上半张照片下半张水彩，旅行记忆变成可寄出的海报
 URL: https://ourword.ai/skill/i/kimberlying-watercolor-memory-poster/
@@ -702,6 +740,88 @@ git clone --depth 1 https://github.com/chyeqinu/my-gptimage-habits.git 然后把
 
 ### Q：它从哪来？
 Repository: chyeqinu/my-gptimage-habits The repository ships 1 skills in total.
+
+========================================================================
+## keepwatching
+## 9:16 竖屏完播率实测库，选题先查再拍
+URL: https://ourword.ai/skill/i/msertdev-keepwatching-keepwatching/
+Source: https://github.com/msertdev/keepwatching/tree/HEAD/skills/keepwatching
+Updated: 2026-09-05
+Tags: work, skill, msertdev
+
+Stop guessing. Every format ships with measured retention & sample size. Pick, render 9:16 MP4s, A/B test—all.
+
+### What does this skill do?
+Use when producing, planning, or critiquing short-form vertical video (TikTok, Reels, Shorts) — choosing a format for a topic, rendering a 9:16 MP4 from a JSON spec, running an A/B test between two formats, or reading retention numbers back into a decision. Provides a library of named formats with measured retention and sample sizes, a deterministic Node + Playwright + ffmpeg renderer, and a CSV-b
+
+### Why is it worth installing?
+Turns 'feels viral' into 'retention at second 3'. Deterministic Node+Playwright+ffmpeg pipeline, so your A/B test isn't polluted.
+
+### How do you install it?
+git clone --depth 1 https://github.com/msertdev/keepwatching.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: msertdev/keepwatching The repository ships 1 skills in total.
+
+========================================================================
+## hk-business-writing
+## 内地稿改港式书面语，连标点都替你换掉
+URL: https://ourword.ai/skill/i/simonsiu2008-bit-hk-business-writing/
+URL (中文): https://ourword.ai/skill/zh/i/simonsiu2008-bit-hk-business-writing/
+Source: https://github.com/simonsiu2008-bit/hk-business-writing
+Updated: 2026-09-05
+Tags: writing, skill, simonsiu2008-bit
+
+Before sending to HK clients, run it through this: converts simplified, mainland-toned text into traditional HK.
+
+### What does this skill do?
+將內地／簡體商業文稿改寫為香港書面語（繁體），或從零撰寫港式商業報道、提案、新聞稿、客戶溝通文案。當用戶提到「改寫成港式」「香港語言習慣」「港式表達」「繁體商業稿」「香港客戶提案」「HK01 風格」時使用。
+
+### Why is it worth installing?
+Not just character conversion—it rewrites sentence flow and vocabulary to match HK business conventions, so locals read it as.
+
+### How do you install it?
+git clone --depth 1 https://github.com/simonsiu2008-bit/hk-business-writing.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: simonsiu2008-bit/hk-business-writing The repository ships 1 skills in total.
+
+--- 中文 ---
+给香港客户发提案前，先过一遍它：把简体、内地腔、普通话句式改成港人惯用的繁体书面语，连「信息」变「資訊」。
+
+### Q：这个 skill 做什么？
+將內地／簡體商業文稿改寫為香港書面語（繁體），或從零撰寫港式商業報道、提案、新聞稿、客戶溝通文案。當用戶提到「改寫成港式」「香港語言習慣」「港式表達」「繁體商業稿」「香港客戶提案」「HK01 風格」時使用。
+
+### Q：为什么值得装？
+不是简单繁简转换，而是按香港商业写作习惯重写句式与用词，让本地读者一眼觉得是同行写的。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/simonsiu2008-bit/hk-business-writing.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: simonsiu2008-bit/hk-business-writing The repository ships 1 skills in total.
+
+========================================================================
+## thai-word-line-fit
+## 泰文 Word 排版工
+URL: https://ourword.ai/skill/i/sriwitsumo-project-skill-thai-word-line-fit/
+Source: https://github.com/sriwitsumo/project-skill/tree/HEAD/skills/thai-word-line-fit
+Updated: 2026-09-05
+Tags: play, skill, sriwitsumo
+
+Tired of ugly Thai Word docs? It reflows paragraphs to TH Sarabun 16 with natural breaks—no stretched spaces, no.
+
+### What does this skill do?
+จัดหรือแก้เอกสาร Microsoft Word ภาษาไทยให้ TH Sarabun New 16 ตัดบรรทัดสวยตามธรรมชาติโดยไม่ยืดช่องว่าง รักษาย่อหน้าและไม่กด Enter กลางย่อหน้า ใช้เมื่อผู้ใช้ต้องการจัดบรรทัด งานรายงาน หรือแก้ข้อความไทยที่ตกคำและมีเครื่องหมายย่อหน้าเกินจำเป็น
+
+### Why is it worth installing?
+It detects Thai word boundaries before breaking lines, unlike naive width-based cuts—preserving indents and only touching what.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sriwitsumo/project-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sriwitsumo/project-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## anime-poster
@@ -1226,6 +1346,126 @@ git clone --depth 1 https://github.com/bryanleeli/sand-animation-first-person-ha
 
 ### Where does it come from?
 Repository: bryanleeli/sand-animation-first-person-hand Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## taxue-halftone
+## 六项不变式先定纸色墨色，再落网点
+URL: https://ourword.ai/skill/i/taxueseek-taxue-halftone/
+URL (中文): https://ourword.ai/skill/zh/i/taxueseek-taxue-halftone/
+Source: https://github.com/taxueseek/taxue-halftone
+Updated: 2026-09-04
+Tags: images, skill, taxueseek
+
+Turn any theme into print-textured covers, not filter skins. Halftone, riso, woodcut, cyanotype, torn-paper all.
+
+### What does this skill do?
+半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
+
+### Why is it worth installing?
+Locks six invariants before rendering—paper, ink role, overprint, mechanism, direction, type-image volume—so styles stay.
+
+### How do you install it?
+git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
+
+--- 中文 ---
+把任意主题做成有印刷质感的封面，不是滤镜套壳。半调、孔版、木刻、蓝晒、撕纸拼贴都按同一套结构出图。
+
+### Q：这个 skill 做什么？
+半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
+
+### Q：为什么值得装？
+出图前先定纸色、墨色角色、叠印、机制、走向、字图音量六项不变式，风格才不散。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
+
+========================================================================
+## handholder
+## ADB 直连掌机，换机迁移不丢存档不重配按键
+URL: https://ourword.ai/skill/i/viticci-handholder/
+Source: https://github.com/viticci/handholder
+Updated: 2026-09-04
+Tags: play, skill, viticci
+
+Tired of reconfiguring emulators and losing saves on a new handheld? This drives ADB to handle Cocoon, RetroArch.
+
+### What does this skill do?
+Set up, migrate, repair, or audit Android gaming handhelds over ADB, including Cocoon, emulators, RetroArch hotkeys and shaders, replacement textures, lawful ROM and save migration, artwork, controls, displays, and launch testing. Includes profiles for AYN Thor and Retroid Pocket Nova; use the generic workflow for other Android handhelds.
+
+### Why is it worth installing?
+It talks ADB directly to the device, preserving original folder structure for lawful ROM/save migration, and archives.
+
+### How do you install it?
+git clone --depth 1 https://github.com/viticci/handholder.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: viticci/handholder The repository ships 1 skills in total.
+
+========================================================================
+## taxue-solar-polaroid
+## 节气不背节气名，只背物候证据的视觉提示词编译器
+URL: https://ourword.ai/skill/i/taxueseek-taxue-solar-polaroid/
+URL (中文): https://ourword.ai/skill/zh/i/taxueseek-taxue-solar-polaroid/
+Source: https://github.com/taxueseek/taxue-solar-polaroid
+Updated: 2026-09-04
+Tags: writing, skill, taxueseek
+
+Say "winter solstice"—no plum blossoms. It checks sunset time, branch density, air clarity, then writes a caption.
+
+### What does this skill do?
+将二十四节气、季节主题、地点记忆或任意短句编译为有真实证据、自然中文文案和动态视觉结构的原创编辑视觉提示词；支持单张、多张解释矩阵、纸本档案、摄影与混合媒介，不把主题硬编码为固定物件、色卡或版式。当用户提到节气海报、季节视觉、编辑海报、节气组图、拍立得、纸本摄影、季节中文文案、美学提示词，或只输入“冬至”“春去秋来”等主题时使用。
+
+### Why is it worth installing?
+No fixed palettes or object libraries. Visual structure grows from real sky & phenology data of that day—every image has a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/taxueseek/taxue-solar-polaroid.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: taxueseek/taxue-solar-polaroid Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+你说「冬至」，它不给你梅花和雪人。它去查那天的日落时间、枯枝密度、空气透明度。
+
+### Q：这个 skill 做什么？
+将二十四节气、季节主题、地点记忆或任意短句编译为有真实证据、自然中文文案和动态视觉结构的原创编辑视觉提示词；支持单张、多张解释矩阵、纸本档案、摄影与混合媒介，不把主题硬编码为固定物件、色卡或版式。当用户提到节气海报、季节视觉、编辑海报、节气组图、拍立得、纸本摄影、季节中文文案、美学提示词，或只输入“冬至”“春去秋来”等主题时使用。
+
+### Q：为什么值得装？
+主题不落成固定色卡或物件库，而是从节气当天的真实天象、物候数据里长出视觉结构。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/taxueseek/taxue-solar-polaroid.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: taxueseek/taxue-solar-polaroid Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## 📝 數學科・極簡步驟工作紙 (課題名稱 / Topic)
+## 数学题拆成三步：题干、算式、答案各占一格
+URL: https://ourword.ai/skill/i/sja-homeworkclass-skills-數學科-極簡步驟工作紙-課題名稱-topic/
+Source: https://github.com/sja-homeworkclass/skills/tree/HEAD/homework-tutor
+Updated: 2026-09-04
+Tags: play, skill, sja-homeworkclass
+
+Stop guessing what your student meant. Each question gets three clear boxes: prompt, working, answer. Marking.
+
+### What does this skill do?
+Stop guessing what your student meant. Each question gets three clear boxes: prompt, working, answer. Marking.
+
+### Why is it worth installing?
+It forces students to separate their thinking from their final answer, so you can see exactly where they went wrong.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sja-homeworkclass/skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sja-homeworkclass/skills The repository ships 1 skills in total.
 
 ========================================================================
 ## podcast-transcribe-local
@@ -1766,6 +2006,44 @@ git clone --depth 1 https://github.com/Zeejay0/gathered-scenes-zine-skill.git Th
 
 ### Where does it come from?
 Repository: Zeejay0/gathered-scenes-zine-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## audio-analysis
+## 音频丢进来，还你原文、导读和思维导图三件套
+URL: https://ourword.ai/skill/i/sayshirak-audio-analysis/
+URL (中文): https://ourword.ai/skill/zh/i/sayshirak-audio-analysis/
+Source: https://github.com/sayshirak/audio-analysis
+Updated: 2026-09-03
+Tags: images, skill, sayshirak
+
+Meetings, interviews, lectures: get a speaker-labeled transcript, keyword summary, chapter overview, and a.
+
+### What does this skill do?
+解析音频文件（m4a/mp3/wav 等），生成三件套：带发言人区分和时间戳的文字记录（原文.md）、导读文档（关键词、全文摘要、章节速览、发言总结、问答回顾）、思维导图图片（jpg）。必须区分音频中的多人说话（发言人1、发言人2…）。Use when the user asks to 解析音频、转写录音、音频转文字、生成导读、生成思维导图、区分说话人, or provides an audio file for analysis.
+
+### Why is it worth installing?
+Turns raw audio into three ready deliverables: verbatim transcript, structured digest, and visual map—auto-separating speakers.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sayshirak/audio-analysis.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sayshirak/audio-analysis The repository ships 1 skills in total.
+
+--- 中文 ---
+开会录音、采访、网课，丢进来就还你带发言人区分的逐字稿，外加关键词摘要和章节速览，最后连思维导图都画好。
+
+### Q：这个 skill 做什么？
+解析音频文件（m4a/mp3/wav 等），生成三件套：带发言人区分和时间戳的文字记录（原文.md）、导读文档（关键词、全文摘要、章节速览、发言总结、问答回顾）、思维导图图片（jpg）。必须区分音频中的多人说话（发言人1、发言人2…）。Use when the user asks to 解析音频、转写录音、音频转文字、生成导读、生成思维导图、区分说话人, or provides an audio file for analysis.
+
+### Q：为什么值得装？
+不止转文字，而是把音频拆成三份可交付物：原文留痕、导读提炼、导图串结构，多人对话自动分发言人。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/sayshirak/audio-analysis.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: sayshirak/audio-analysis The repository ships 1 skills in total.
 
 ========================================================================
 ## huatu
@@ -3458,6 +3736,28 @@ git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git The
 Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
+## fuck-cancer
+## 全家人的癌症病历，你问它答、它问你记
+URL: https://ourword.ai/skill/i/petergyang-fuck-cancer-fuck-cancer/
+Source: https://github.com/petergyang/fuck-cancer/tree/HEAD/skills/fuck-cancer
+Updated: 2026-08-26
+Tags: everyday, skill, petergyang
+
+Scattered pathology, staging, and treatment notes become one structured file. Before each appointment, it hands.
+
+### What does this skill do?
+Create and maintain one family medical brief from reports, notes, or partial information. Use when the user asks any cancer-related question or shares any cancer-related update, including symptoms during a workup, diagnosis, pathology, biomarkers, staging, treatment, recurrence, appointments, trials, second opinions, or caregiving decisions.
+
+### Why is it worth installing?
+It's a curator, not a chatbot. Every update cross-checks old entries and asks what's missing, so you stop digging through chat.
+
+### How do you install it?
+git clone --depth 1 https://github.com/petergyang/fuck-cancer.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: petergyang/fuck-cancer The repository ships 1 skills in total.
+
+========================================================================
 ## figecho
 ## 从一张架构图里抽出整套配色版式，再画十张都不走样
 URL: https://ourword.ai/skill/i/giszzt-figecho/
@@ -4160,6 +4460,28 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 
 ### Where does it come from?
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## ip-as-logo
+## 圆滚滚小方块角色生成器，自带三种产品方向提案
+URL: https://ourword.ai/skill/i/s1dashu-ip-as-logo-skill/
+Source: https://github.com/s1dashu/ip-as-logo-skill
+Updated: 2026-08-22
+Tags: images, skill, s1dashu
+
+Tired of generic mascots? It proposes 3 product-relevant directions, each with 6 distinct candidates. Chunky.
+
+### What does this skill do?
+Generate extremely simple, cute, personified square character images with rounded heavy forms, two purposeful character colors, one solid background color, and a dominant lower-corner composition. Use when creating an animal, creature, robot, ghost, plant, object, or other character image, including when the agent should infer three product-relevant directions and propose six independent candidate
+
+### Why is it worth installing?
+Not random cute rolls. It reasons from your product to 3 directions, then 6 varied candidates each—with strict composition &.
+
+### How do you install it?
+git clone --depth 1 https://github.com/s1dashu/ip-as-logo-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: s1dashu/ip-as-logo-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## creator-distiller
@@ -5110,6 +5432,28 @@ git clone --depth 1 https://github.com/staruhub/ClaudeSkills.git 然后把智能
 
 ### Q：它从哪来？
 Repository: staruhub/ClaudeSkills Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use, evals. The repository ships 1 skills in total. Homepage: https://staruhub.github.io/ClaudeSkills/
+
+========================================================================
+## camera-scan
+## 入住先扫一遍WiFi，把藏在局域网里的摄像头揪出来
+URL: https://ourword.ai/skill/i/noamohev-camera-scan/
+Source: https://github.com/noamohev/camera-scan
+Updated: 2026-08-12
+Tags: work, skill, noamohev
+
+Hotels, Airbnbs, rentals—unknown eyes may be watching. It probes your LAN, fingerprints RTSP/DVR streams, and.
+
+### What does this skill do?
+Detect hidden/networked surveillance cameras on the local WiFi/LAN — discover devices, fingerprint RTSP/DVR streams, identify the vendor, and pull live frames to see what each camera views. For hotels, Airbnbs, rentals you occupy.
+
+### Why is it worth installing?
+Network-level detection, not guesswork: discover devices, fingerprint streams, pull live frames—see exactly what each camera.
+
+### How do you install it?
+git clone --depth 1 https://github.com/noamohev/camera-scan.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: noamohev/camera-scan The repository ships 1 skills in total.
 
 ========================================================================
 ## arch-kele-structure-photo
@@ -6958,6 +7302,44 @@ git clone --depth 1 https://github.com/TexasBedouin/vibe-check.git Then point yo
 Repository: TexasBedouin/vibe-check The repository ships 1 skills in total.
 
 ========================================================================
+## bazi
+## 出生信息逐项问，排盘引经据典批八字
+URL: https://ourword.ai/skill/i/tf1993614-know-your-fate-bazi/
+URL (中文): https://ourword.ai/skill/zh/i/tf1993614-know-your-fate-bazi/
+Source: https://github.com/tf1993614/know-your-fate/tree/HEAD/.claude/skills/bazi
+Updated: 2026-07-15
+Tags: play, skill, tf1993614
+
+No memorized formulas. It asks birth details step by step, then cross-references Qiong Tong, Di Tian Sui, and.
+
+### What does this skill do?
+四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年. Triggers: "算八字", "看八字", "批八字", "排八字", "四柱", "命盘", "算命", "帮我看看八字", "我想算八字", "分析八字", "排盘", "bazi", "bazi analysis", "fortune telling", "birth chart", "算一卦", "看运势
+
+### Why is it worth installing?
+Interactive Q&A prevents birth-time errors; every conclusion cites a specific classic text, so readings are traceable, not.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tf1993614/know-your-fate.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tf1993614/know-your-fate Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+不用背口诀，它按穷通宝典、滴天髓等典籍逐条对照，交互式问清时辰地点，排出四柱再解大运流年，像师傅带徒弟一样一步步看。
+
+### Q：这个 skill 做什么？
+四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi、fortune telling、 birth chart analysis, or wants to know about their 八字命盘、运势、大运、流年. Triggers: "算八字", "看八字", "批八字", "排八字", "四柱", "命盘", "算命", "帮我看看八字", "我想算八字", "分析八字", "排盘", "bazi", "bazi analysis", "fortune telling", "birth chart", "算一卦", "看运势
+
+### Q：为什么值得装？
+交互式收集信息避免时辰错漏；分析时引用具体典籍原文，不是泛泛而谈，结论有出处可查。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/tf1993614/know-your-fate.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: tf1993614/know-your-fate Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## zhuangxiu-laoshi
 ## 报价单先看漏项不看总价的 20 年装修老师傅
 URL: https://ourword.ai/skill/i/zx029w-zhuangxiu-laoshi-skill/
@@ -7508,6 +7890,28 @@ git clone --depth 1 https://github.com/rubyzhu26/see-life-wallpaper-skill.git Th
 
 ### Where does it come from?
 Repository: rubyzhu26/see-life-wallpaper-skill Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## orange-line-illustration
+## 白纸上只留一根橙线的编辑插画师
+URL: https://ourword.ai/skill/i/orange2ai-orange-line-illustration/
+Source: https://github.com/orange2ai/orange-line-illustration
+Updated: 2026-06-15
+Tags: images, skill, orange2ai
+
+Tired of cluttered stock art? It turns abstract ideas into New Yorker-style covers—thin black lines, vast white.
+
+### What does this skill do?
+Generate New Yorker-style minimalist editorial illustrations — thin black ink lines on white, vast negative space, a single orange accent (#F97316) — for articles, principles, covers, concept visuals, and illustrated HTML slide decks. Use when the user asks for 配图, 插图, 封面图, editorial illustrations, concept/metaphor illustrations, article covers, 公众号配图, principle/maxim illustrations, or mentions "橙
+
+### Why is it worth installing?
+It doesn't just draw—it distills your core point into a single visual metaphor, using the lone orange accent as the deliberate.
+
+### How do you install it?
+git clone --depth 1 https://github.com/orange2ai/orange-line-illustration.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: orange2ai/orange-line-illustration The repository ships 1 skills in total.
 
 ========================================================================
 ## cnipa-patent-writer
@@ -8194,6 +8598,28 @@ git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git 然后把智
 
 ### Q：它从哪来？
 Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## xiaohei-infographic
+## 小黑手绘风信息图，一篇笔记变一张可发朋友圈的长图
+URL: https://ourword.ai/skill/i/onpicex-xiaohei-infographic/
+Source: https://github.com/onpicex/xiaohei-infographic
+Updated: 2026-05-31
+Tags: images, skill, onpicex
+
+Drop in an article or outline, get a high-DPI, hand-drawn-style long image. No design skills or templates.
+
+### What does this skill do?
+Create Xiaohei-style Chinese infographics and knowledge cards from articles, notes, tweets, outlines, or structured content. Use when the user asks for 信息图, 知识卡片, 长图, visual summary, shareable image, WeChat/social media card, or wants to combine Ian 小黑 hand-drawn illustration style with infographic structure. Produces one high-DPI PNG shareable long image: pure white background, real hand-drawn Xi
+
+### Why is it worth installing?
+It reflows your content hierarchy, then applies Xiaohei's hand-drawn strokes—not a template collage. Output is one.
+
+### How do you install it?
+git clone --depth 1 https://github.com/onpicex/xiaohei-infographic.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: onpicex/xiaohei-infographic Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## minecraft-ai-generate-bbmodel
