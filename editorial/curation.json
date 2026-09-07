@@ -15772,6 +15772,151 @@
    "hide": false,
    "gate_score": 8,
    "category": "fun"
+  },
+  "wangzan101-zan-punct-fix": {
+   "title_zh": "半角标点全角化，代码和英文原样不动",
+   "why_zh": "它把「改标点」当成一次有纪律的翻译：先识别哪些是代码和英文，再只动真正属于中文的标点。",
+   "limit_zh": "只处理标点字符本身，不改错别字、语序或格式；docx 仅限 .docx 后缀，旧版 .doc 需先转档。",
+   "tagline_zh": "AI 写的中文文档总把，。？写成半角。这个技能扫整个文件夹，自动改对全角标点，同时保护代码、URL。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "war3shenzuo-pebble-mascot": {
+   "title_zh": "纸黏土质感图标生成器，边缘故意裁出画框感",
+   "why_zh": "不是滤镜套壳。它从造型到光影都按纸黏土/剪贴画物理特性生成，边缘裁切是设计决策而非失误。",
+   "limit_zh": "只认纸黏土/剪贴画/哑光/边缘裁切这类视觉方向；普通图标或头像请求不触发。产出为单张图，不负责多尺寸导出或图标排版。",
+   "tagline_zh": "想要毛绒绒的纸黏土或剪贴画图标？它把圆润造型、哑光阴影和故意裁切边缘一次做齐，适合启动器、头像或成套品牌家族。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "wei011-storm-blindspot": {
+   "title_zh": "四十年逐小时降雨极值，还原被官方抹平的暴雨真容",
+   "why_zh": "不只看降雨量，而是用极值分布拟合+实测标定，定量给出“再分析数据低估倍数”——这是别处没有的修正机制。",
+   "limit_zh": "只做降雨极值统计与内涝风险初判，不含管网水力模型。依赖open-meteo免费接口，需联网。",
+   "tagline_zh": "郑州201.9、北京100.3、深圳195.8——拿三个官方实测极值校准ERA5再分析数据。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "whyubel1eve-promo-bgm-skill": {
+   "title_zh": "纯代码合成宣传片配乐，改一个参数就重出一版",
+   "why_zh": "参数即乐谱：改速度、配器或时长，整曲结构自动重排，剪辑点严丝合缝。不是采样拼接，是真正的合成引擎。",
+   "limit_zh": "只认合成音色：木质拨弦、毛毡钢琴、尼龙弦、电钢、铺底、贝斯、沙锤/底鼓/响指。人声、管弦乐、失真吉他、EDM、嘻哈。",
+   "tagline_zh": "不碰第三方素材库，零版权风险。木质拨弦、毛毡钢琴、电钢铺底都能写，长度卡着剪辑点走，音量自动让出人声。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "xianxie6-algorithmic-sublime-poster": {
+   "title_zh": "算法崇高风格海报生成器",
+   "why_zh": "不是滤镜叠加，而是重绘视觉语法：识别主体后，用代码逻辑重排构图，让实物与算法痕迹在同一画面里对峙。",
+   "limit_zh": "只处理单张主体明确的照片；复杂多人或场景会丢失语义。输出为海报排版稿，不负责印刷校色，需自行导出。",
+   "tagline_zh": "拍下桌上的植物或旧书，它把像素转成粒子、网格和故障字，做成能印出来的科技人文海报。自带风格参数，不靠随机生成。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "xiaofenggan01-aigc-reduce": {
+   "title_zh": "扫描定位后逐句重写，降 AIGC 率不碰数据引用",
+   "why_zh": "不是全局洗稿，而是先扫描定位 AI 痕迹，再做确定性替换和句子级重构，最后反查审计，机制上像外科手术。",
+   "limit_zh": "只处理学术论文文本，不适用于代码、散文或口语对话；需要原文可编辑，且检测器版本更新后需重新校准；不保证所有平台零误判。",
+   "tagline_zh": "知网、万方、PaperPass 的检测逻辑它都懂。不整段推翻，只改模板腔，事实、数据、引用、术语原样保留。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "xixicc186-clawd-emotes-skill-clawd-emotes": {
+   "title_zh": "像素小螃蟹动图，纯 SVG+CSS 不碰 GIF 帧",
+   "why_zh": "用 <rect>/<polygon>/<circle> 搭螃蟹，@keyframes 做动画。",
+   "limit_zh": "只认像素螃蟹造型，其他角色得自己改代码；动画只支持 CSS 关键帧，复杂物理效果做不了。",
+   "tagline_zh": "想要一只会举道具、戴帽子、有反应的像素螃蟹？不用逐帧画，CSS 关键帧让它在聊天里活起来，还能导出循环 GIF。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "xuqser-hand-drawn-collage": {
+   "title_zh": "照片变手撕纸拼贴画，原图配色一件不丢",
+   "why_zh": "不是风格迁移的“像”，而是按场景元素逐块重建：每块纸的颜色取自原图对应像素，撕纸边缘随机但构图可控。",
+   "limit_zh": "只吃单张照片，不吃多图合成或文字海报；输出是拼贴插画，不是高清写实图；A/B 版保留原图构图。",
+   "tagline_zh": "别家转插画总把衣服、杯子、树叶的颜色改得妈不认。这版按原图逐块撕纸贴，A/B/C 三种版式，连长宽比都给你留着。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "yanliudesign-dreameryanyan-star": {
+   "title_zh": "蜂蜜黄五角星IP，一张图只讲一个概念的编辑插画",
+   "why_zh": "它把「留白」当构图骨架而非装饰——每张图强制一个概念、三处排线、上下反差。",
+   "limit_zh": "只认 3:4 竖版和 4:3 横版两种画布；只出静态单图，不生成多格漫画或连续叙事；文字排版需在外部工具叠加。",
+   "tagline_zh": "给中文文章配图，不用再翻素材库撞车。Tom Gauld × Christoph Niemann 的极简语法。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "yanliudesign-french-illustration-skill-abstract-line-poster": {
+   "title_zh": "任何主题都能落成一张手绘线条海报",
+   "why_zh": "它不套模板，而是从主题里提取线条语言，保留纸张色板和手写排版，让每张海报都像独立出版物的一页。",
+   "limit_zh": "只输出单张海报的 SVG/PNG 概念稿，不含印刷出血、裁切标记或 CMYK 分色；输入照片时只提取线条结构。",
+   "tagline_zh": "给一句话、一个物件、一张照片，它替你画出有印刷质感的抽象线稿海报。留白、手写字体、不完美笔触。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "ysjsgzq-ai-small-tools-day-08-doc-format-checker": {
+   "title_zh": "标书格式体检：只报事实不改稿，三状态定废标风险",
+   "why_zh": "它只做体检不开药方：不擅自改你的文档，避免好心办坏事。四字段拆解让模糊的「格式不对」变成可执行的清单。",
+   "limit_zh": "只认 docx 格式，不认 PDF、WPS 私有格式；只查字体、字号、行距、页边距、纸张五类，不查目录、页码。",
+   "tagline_zh": "把招标文件的格式要求拆成字体、字号、行距、页边距四字段逐项核对，输出「符合/不符合/需人工确认」三态报告。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "yuandian-ailaw-agent-for-legal-cn-ip-takedown": {
+   "title_zh": "四类处置路径分流侵权通知的版权下架助手",
+   "why_zh": "把《信息网络传播权保护条例》第十四、十六条拆成可执行的分流逻辑，通知来了先定性再动手。",
+   "limit_zh": "只覆盖信息网络传播权侵权场景，不处理商标、专利、商业秘密；不代写律师函，不保证平台必然遵从。",
+   "tagline_zh": "平台收到侵权通知别急着删——先按条例十四条分流：遵从下架、反通知、协商还是不理，每一步都有条文依据，不靠拍脑袋。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "yuzora-yu-project_sixth-pink-elephant-guard": {
+   "title_zh": "删掉的词条从此不再溜回成稿",
+   "why_zh": "不是靠提示词碰运气，而是把「已否决」变成硬约束，在每次产出前过滤。比人肉盯稿省心。",
+   "limit_zh": "只拦「最终交付物」里的主题复现，不拦过程稿、对比稿、合规审查或变更记录里必须点名旧概念的场景。",
+   "tagline_zh": "改稿时你说「这个不要了」，它记进黑名单。之后生成任何对外文案、画面、对话，被否的旧概念都不会再冒头。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "zgyxttk-industry-report-update-skill": {
+   "title_zh": "旧月报喂进去，带审计底稿的最新期端到端出来",
+   "why_zh": "核心是数据流审计而非文本生成：先拆旧报告的结论到数据源/口径/时点，再重建采集链路。",
+   "limit_zh": "需要你提供一份结构完整的旧月报（含章节、表格、数字结论）作为模板；若旧报告口径混乱或缺少数据来源标注，逆向反推会失败。",
+   "tagline_zh": "不靠大模型脑补数字。先逆向反推每个结论的数据源与口径，重新采集、逐条溯源，再格式保真改写。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "zhu930824-photo-animal-transposition-poster": {
+   "title_zh": "动物轮廓里长出的原生纹理，切片错位成海报",
+   "why_zh": "纹理不重绘、不贴图，直接从你的照片里长出来；切片错位是它的语法，不是滤镜。留白比例按动物轮廓自动算。",
+   "limit_zh": "只认清晰、主体居中的人像或静物照；背景太杂或主体过小会切出碎块。产物是海报图，不做印刷排版。",
+   "tagline_zh": "上传一张照片，它替你挑动物、留白、切片错位，做成现代艺术海报；还默认拼一张原图对比图，让你一眼看懂它动了什么。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "zihrou-zz-zz-skills-public-impeccable": {
+   "title_zh": "前端界面先挑刺再动手的改版师傅",
+   "why_zh": "不直接给方案，先拆解界面结构，指出问题根源，再谈优化——避免你被花哨样式带偏，改完更乱。",
+   "limit_zh": "只针对前端界面（网页、仪表盘、表单等），不碰后端逻辑或交互原型；输入需为代码或截图，否则无法分析；产出为文字报告。",
+   "tagline_zh": "改版前先做 UX 审计：视觉层级、信息架构、认知负荷逐项过，专治「看着别扭但说不出哪不对」的界面，附具体修改建议。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · impeccable/scripts/live-copy-edit-agent.mjs: 改你agent的规矩 第467行"
   }
  },
  "gate": {

@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 341 skills.
+# Full corpus, plain text. 356 skills.
 
 ========================================================================
 ## close-reading-annotator
@@ -122,6 +122,28 @@ git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.gi
 
 ### Q：它从哪来？
 Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
+
+========================================================================
+## pink-elephant-guard
+## 删掉的词条从此不再溜回成稿
+URL: https://ourword.ai/skill/i/yuzora-yu-project-sixth-pink-elephant-guard/
+Source: https://github.com/yuzora-yu/project_sixth/tree/HEAD/.agents/skills/pink-elephant-guard
+Updated: 2026-09-06
+Tags: play, skill, yuzora-yu
+
+When you say 'drop this' during edits, it's blacklisted. Future drafts, visuals, or dialogue won't resurrect that.
+
+### What does this skill do?
+Prevent rejected, removed, corrected, or forbidden concepts from resurfacing as the topic of a final deliverable. Use after requests such as 「これは消して」「その案はなし」「入れないで」「そこじゃない」 when revising copy, visuals, dialogue, summaries, labels, UI, or other viewer-facing output; do not use when comparison, compliance, safety, accessibility, or change history explicitly requires naming the excluded item.
+
+### Why is it worth installing?
+Turns 'rejected' into a hard constraint, filtering every output before it's shown. More reliable than eyeballing drafts or.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
 
 ========================================================================
 ## kami
@@ -604,6 +626,28 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## hand-drawn-collage
+## 照片变手撕纸拼贴画，原图配色一件不丢
+URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
+Source: https://github.com/xuqser/hand-drawn-collage
+Updated: 2026-09-05
+Tags: images, skill, xuqser
+
+Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
+
+### What does this skill do?
+Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
+
+### Why is it worth installing?
+Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
 
 ========================================================================
 ## metro-map
@@ -1466,6 +1510,82 @@ git clone --depth 1 https://github.com/sja-homeworkclass/skills.git Then point y
 
 ### Where does it come from?
 Repository: sja-homeworkclass/skills The repository ships 1 skills in total.
+
+========================================================================
+## day-08-doc-format-checker
+## 标书格式体检：只报事实不改稿，三状态定废标风险
+URL: https://ourword.ai/skill/i/ysjsgzq-ai-small-tools-day-08-doc-format-checker/
+URL (中文): https://ourword.ai/skill/zh/i/ysjsgzq-ai-small-tools-day-08-doc-format-checker/
+Source: https://github.com/ysjsgzq/ai-small-tools/tree/HEAD/tools/day-08-doc-format-checker
+Updated: 2026-09-04
+Tags: work, skill, ysjsgzq
+
+Turns spec sheets into checkable fields—font, size, spacing, margins—and flags each as pass/fail/needs-review. No.
+
+### What does this skill do?
+对标书、论文、申报材料等正式文档做格式体检：把格式要求拆成四字段检查项，核对 docx 的字体、字号、行距、页边距、纸张，输出「符合 / 不符合 / 需人工确认」三状态报告。用户提到检查文档格式、核对格式要求、标书格式自查、字体字号行距不对、废标风险、格式体检时使用。只报告事实、不修改文档、全程本地解析。
+
+### Why is it worth installing?
+It diagnoses without prescribing—never touches your file, so no accidental damage. Vague 'formatting issues' become a precise.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ysjsgzq/ai-small-tools.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ysjsgzq/ai-small-tools Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+把招标文件的格式要求拆成字体、字号、行距、页边距四字段逐项核对，输出「符合/不符合/需人工确认」三态报告。
+
+### Q：这个 skill 做什么？
+对标书、论文、申报材料等正式文档做格式体检：把格式要求拆成四字段检查项，核对 docx 的字体、字号、行距、页边距、纸张，输出「符合 / 不符合 / 需人工确认」三状态报告。用户提到检查文档格式、核对格式要求、标书格式自查、字体字号行距不对、废标风险、格式体检时使用。只报告事实、不修改文档、全程本地解析。
+
+### Q：为什么值得装？
+它只做体检不开药方：不擅自改你的文档，避免好心办坏事。四字段拆解让模糊的「格式不对」变成可执行的清单。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ysjsgzq/ai-small-tools.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ysjsgzq/ai-small-tools Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## industry-report-update
+## 旧月报喂进去，带审计底稿的最新期端到端出来
+URL: https://ourword.ai/skill/i/zgyxttk-industry-report-update-skill/
+URL (中文): https://ourword.ai/skill/zh/i/zgyxttk-industry-report-update-skill/
+Source: https://github.com/zgyxttk/industry-report-update-skill
+Updated: 2026-09-04
+Tags: work, skill, zgyxttk
+
+No hallucinated numbers. It reverse-engineers each claim's source and methodology, recollects data with full.
+
+### What does this skill do?
+行业月报更新：以用户提供的旧行业月报为模板，端到端生成最新一期月报。核心方法论＝数据流审计（先逆向反推每个结论的数据源/口径/时点，再重新采集、完整枚举、逐条溯源）＋格式保真（保留格式地改写，非 cell.text 覆写）＋源文件归档（每表对应章节+具体来源源文件、金额标财报期、多源交叉验证）＋工作区归档（全产出镜像到使用者当前对话工作区）。内置可执行门禁脚本（数字提取/章节完整性/字段完整性/空值diff/一致性/交叉一致性/结构diff/合理性/格式diff/数值回读/溯源反查/配置校验）与跨月复用配置（口径/采集/权威源/时点对齐/标的池/端点），支持断点续跑与运行契约。专题对比走独立子Skill（专题研究.skill）；子Agent通道失败由mainagent兜底。触发词：行业月报更新 / 月报更新 / 生成最新月报 / 更新月报。
+
+### Why is it worth installing?
+It's data-flow auditing, not text generation: decomposes old conclusions into sources/methodology/timestamps, rebuilds.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zgyxttk/industry-report-update-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zgyxttk/industry-report-update-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 2 skills in total.
+
+--- 中文 ---
+不靠大模型脑补数字。先逆向反推每个结论的数据源与口径，重新采集、逐条溯源，再格式保真改写。
+
+### Q：这个 skill 做什么？
+行业月报更新：以用户提供的旧行业月报为模板，端到端生成最新一期月报。核心方法论＝数据流审计（先逆向反推每个结论的数据源/口径/时点，再重新采集、完整枚举、逐条溯源）＋格式保真（保留格式地改写，非 cell.text 覆写）＋源文件归档（每表对应章节+具体来源源文件、金额标财报期、多源交叉验证）＋工作区归档（全产出镜像到使用者当前对话工作区）。内置可执行门禁脚本（数字提取/章节完整性/字段完整性/空值diff/一致性/交叉一致性/结构diff/合理性/格式diff/数值回读/溯源反查/配置校验）与跨月复用配置（口径/采集/权威源/时点对齐/标的池/端点），支持断点续跑与运行契约。专题对比走独立子Skill（专题研究.skill）；子Agent通道失败由mainagent兜底。触发词：行业月报更新 / 月报更新 / 生成最新月报 / 更新月报。
+
+### Q：为什么值得装？
+核心是数据流审计而非文本生成：先拆旧报告的结论到数据源/口径/时点，再重建采集链路。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zgyxttk/industry-report-update-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zgyxttk/industry-report-update-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 2 skills in total.
 
 ========================================================================
 ## podcast-transcribe-local
@@ -2640,6 +2760,66 @@ git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Th
 Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## algorithmic-sublime-poster
+## 算法崇高风格海报生成器
+URL: https://ourword.ai/skill/i/xianxie6-algorithmic-sublime-poster/
+URL (中文): https://ourword.ai/skill/zh/i/xianxie6-algorithmic-sublime-poster/
+Source: https://github.com/xianxie6/algorithmic-sublime-poster
+Updated: 2026-09-01
+Tags: images, skill, xianxie6
+
+Feed it a plant or old book photo; it rewrites pixels into particles, grids, and glitch type for print-ready.
+
+### What does this skill do?
+Create or restyle editorial posters in an Algorithmic Sublime aesthetic—physical subjects crossing into code, grids, particles, interfaces, pixel typography, and restrained cyber-glitch. Use for 数据自然主义、算法自然、数字故障、代码视觉、科技人文或“这种风格”的海报; accept either a short concept or a supplied image.
+
+### Why is it worth installing?
+Not a filter—it re-synthesizes composition via code logic, making the physical and the algorithmic confront each other in one.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xianxie6/algorithmic-sublime-poster.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xianxie6/algorithmic-sublime-poster The repository ships 1 skills in total.
+
+--- 中文 ---
+拍下桌上的植物或旧书，它把像素转成粒子、网格和故障字，做成能印出来的科技人文海报。自带风格参数，不靠随机生成。
+
+### Q：这个 skill 做什么？
+Create or restyle editorial posters in an Algorithmic Sublime aesthetic—physical subjects crossing into code, grids, particles, interfaces, pixel typography, and restrained cyber-glitch. Use for 数据自然主义、算法自然、数字故障、代码视觉、科技人文或“这种风格”的海报; accept either a short concept or a supplied image.
+
+### Q：为什么值得装？
+不是滤镜叠加，而是重绘视觉语法：识别主体后，用代码逻辑重排构图，让实物与算法痕迹在同一画面里对峙。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/xianxie6/algorithmic-sublime-poster.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: xianxie6/algorithmic-sublime-poster The repository ships 1 skills in total.
+
+========================================================================
+## abstract-line-poster
+## 任何主题都能落成一张手绘线条海报
+URL: https://ourword.ai/skill/i/yanliudesign-french-illustration-skill-abstract-line-poster/
+Source: https://github.com/yanliudesign/french-illustration-skill/tree/HEAD/abstract-line-poster
+Updated: 2026-09-01
+Tags: images, skill, yanliudesign
+
+Feed it a phrase, object, photo, or idea—it draws an abstract line poster with print texture, white space.
+
+### What does this skill do?
+Generate original abstract hand-drawn line posters from any theme, sentence, event, object, article idea, or supplied image. Always use this skill when the user asks for 抽象线条海报、手绘线稿海报、留白活动海报、wine/coffee/party zine poster, naive editorial line art, or asks to keep this skill's paper palette, conversational typography, sparse layout, and imperfect print character. Preserve the visual system rather t
+
+### Why is it worth installing?
+No templates—it derives line language from each theme, keeping paper palettes and handwritten type so every poster feels like a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yanliudesign/french-illustration-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yanliudesign/french-illustration-skill The repository ships 1 skills in total.
+
+========================================================================
 ## mathmodel-diagram
 ## 论文插图先问清是给哪一章用的示意图师傅
 URL: https://ourword.ai/skill/i/escap1ng-mathmodel-kit-mathmodel-diagram/
@@ -3402,6 +3582,44 @@ git clone --depth 1 https://github.com/carolinaaafy/travel-memory-card-duo.git T
 Repository: carolinaaafy/travel-memory-card-duo The repository ships 1 skills in total.
 
 ========================================================================
+## photo-animal-transposition
+## 动物轮廓里长出的原生纹理，切片错位成海报
+URL: https://ourword.ai/skill/i/zhu930824-photo-animal-transposition-poster/
+URL (中文): https://ourword.ai/skill/zh/i/zhu930824-photo-animal-transposition-poster/
+Source: https://github.com/zhu930824/photo-animal-transposition-poster
+Updated: 2026-08-28
+Tags: images, skill, zhu930824
+
+Upload a photo, it picks the animal, carves whitespace, slices & offsets into an art poster—plus a side-by-side.
+
+### What does this skill do?
+将用户照片转译为大面积留白、动物轮廓承载原生纹理、带切片错位语言的现代艺术海报，并默认输出原图与成品上下各半的对照展示图。用于用户上传照片并希望自动选择动物、制作摄影拼贴或视觉转译海报；不用于普通动物剪影、写实动物插画或单纯照片蒙版。
+
+### Why is it worth installing?
+No redraws, no stock textures—the animal's skin is literally your photo. Slice-offset is structural grammar, not a filter.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zhu930824/photo-animal-transposition-poster.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zhu930824/photo-animal-transposition-poster The repository ships 1 skills in total.
+
+--- 中文 ---
+上传一张照片，它替你挑动物、留白、切片错位，做成现代艺术海报；还默认拼一张原图对比图，让你一眼看懂它动了什么。
+
+### Q：这个 skill 做什么？
+将用户照片转译为大面积留白、动物轮廓承载原生纹理、带切片错位语言的现代艺术海报，并默认输出原图与成品上下各半的对照展示图。用于用户上传照片并希望自动选择动物、制作摄影拼贴或视觉转译海报；不用于普通动物剪影、写实动物插画或单纯照片蒙版。
+
+### Q：为什么值得装？
+纹理不重绘、不贴图，直接从你的照片里长出来；切片错位是它的语法，不是滤镜。留白比例按动物轮廓自动算。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zhu930824/photo-animal-transposition-poster.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zhu930824/photo-animal-transposition-poster The repository ships 1 skills in total.
+
+========================================================================
 ## tare
 ## 查清 Claude Code 额度去哪了的用量审计员
 URL: https://ourword.ai/skill/i/kelviq-tare-tare/
@@ -4156,6 +4374,44 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-design.git 然后把智
 Repository: alchaincyf/huashu-design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## promo-bgm
+## 纯代码合成宣传片配乐，改一个参数就重出一版
+URL: https://ourword.ai/skill/i/whyubel1eve-promo-bgm-skill/
+URL (中文): https://ourword.ai/skill/zh/i/whyubel1eve-promo-bgm-skill/
+Source: https://github.com/whyubel1eve/promo-bgm-skill
+Updated: 2026-08-24
+Tags: images, skill, whyubel1eve
+
+No third-party samples, zero copyright risk. Plucked wood, felt piano, electric piano beds—length locks to your.
+
+### What does this skill do?
+给产品宣传片 / 演示视频 / 更新短片配一支背景音乐 —— 纯代码合成，无第三方素材、 无版权风险，长度与剪辑点严丝合缝，改一个参数就能重出一版。 当用户说「给这支片子配个音乐 / 配个 BGM / 找个背景音乐」、「这段视频缺配乐」、 「音乐节奏跟画面对不上」、「换个更安静 / 更燃 / 更高级的曲子」、「口播底下垫一层」、 「做个 15 秒 / 30 秒 / 60 秒的版本」、「音量太吵 / 压不住人声」时使用。 也用于把已有的配乐重新对齐剪辑点、改长度、出各平台的响度版本、混进视频。 能做：明亮上扬、温暖克制、干净推进、电影感铺陈、轻快俏皮、夜色高级、稳重可信、 手作叙事、口播垫底，以及无缝循环版和 15 秒硬钩子版 —— 木质拨弦、 毛毡钢琴、尼龙弦、电钢、铺底、贝斯、沙锤/底鼓/响指。 不能做：人声与歌词、管弦乐、失真吉他、EDM、嘻哈采样、爵士即兴 —— 需要这些就去买授权，
+
+### Why is it worth installing?
+Parameters are the score: change tempo, timbre, or duration and the whole arrangement reflows to your edit points. True.
+
+### How do you install it?
+git clone --depth 1 https://github.com/whyubel1eve/promo-bgm-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: whyubel1eve/promo-bgm-skill Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+不碰第三方素材库，零版权风险。木质拨弦、毛毡钢琴、电钢铺底都能写，长度卡着剪辑点走，音量自动让出人声。
+
+### Q：这个 skill 做什么？
+给产品宣传片 / 演示视频 / 更新短片配一支背景音乐 —— 纯代码合成，无第三方素材、 无版权风险，长度与剪辑点严丝合缝，改一个参数就能重出一版。 当用户说「给这支片子配个音乐 / 配个 BGM / 找个背景音乐」、「这段视频缺配乐」、 「音乐节奏跟画面对不上」、「换个更安静 / 更燃 / 更高级的曲子」、「口播底下垫一层」、 「做个 15 秒 / 30 秒 / 60 秒的版本」、「音量太吵 / 压不住人声」时使用。 也用于把已有的配乐重新对齐剪辑点、改长度、出各平台的响度版本、混进视频。 能做：明亮上扬、温暖克制、干净推进、电影感铺陈、轻快俏皮、夜色高级、稳重可信、 手作叙事、口播垫底，以及无缝循环版和 15 秒硬钩子版 —— 木质拨弦、 毛毡钢琴、尼龙弦、电钢、铺底、贝斯、沙锤/底鼓/响指。 不能做：人声与歌词、管弦乐、失真吉他、EDM、嘻哈采样、爵士即兴 —— 需要这些就去买授权，
+
+### Q：为什么值得装？
+参数即乐谱：改速度、配器或时长，整曲结构自动重排，剪辑点严丝合缝。不是采样拼接，是真正的合成引擎。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/whyubel1eve/promo-bgm-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: whyubel1eve/promo-bgm-skill Prep work visible in the skill's own text: reference files, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## photo-paper-scene-zine-v1
 ## 照片变纸艺场景志，主体不动四周撕纸重构
 URL: https://ourword.ai/skill/i/kennyleung123-photo-paper-scene-zine-v1/
@@ -4596,6 +4852,28 @@ git clone --depth 1 https://github.com/qianye-wuyu/yueyuan-bazi.git 然后把智
 
 ### Q：它从哪来？
 Repository: qianye-wuyu/yueyuan-bazi The repository ships 1 skills in total.
+
+========================================================================
+## pebble-logo
+## 纸黏土质感图标生成器，边缘故意裁出画框感
+URL: https://ourword.ai/skill/i/war3shenzuo-pebble-mascot/
+Source: https://github.com/war3shenzuo/pebble-mascot
+Updated: 2026-08-21
+Tags: images, skill, war3shenzuo
+
+Round organic mascots with matte shading and intentional edge crops—for launcher icons, avatars, or a coordinated.
+
+### What does this skill do?
+Generate distinctive paper-clay or cut-paper mascot app icons with rounded organic shapes, tactile matte shading, and intentional edge crops. Use when the user names Pebble Logo or requests a paper-clay, cut-paper, tactile matte, edge-peeking mascot style for launcher icons, avatars, or a coordinated logo family. Do not trigger for generic logo or avatar requests without this visual direction.
+
+### Why is it worth installing?
+Not a filter. It models clay/cut-paper physics—rounded forms, matte depth, deliberate crops—so icons feel handmade, not.
+
+### How do you install it?
+git clone --depth 1 https://github.com/war3shenzuo/pebble-mascot.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: war3shenzuo/pebble-mascot The repository ships 2 skills in total.
 
 ========================================================================
 ## wechat-miniprogram-to-xhs-minitool
@@ -7176,6 +7454,28 @@ git clone --depth 1 https://github.com/wr5912/human-allegory-engine.git Then poi
 Repository: wr5912/human-allegory-engine The repository ships 1 skills in total.
 
 ========================================================================
+## clawd-emotes
+## 像素小螃蟹动图，纯 SVG+CSS 不碰 GIF 帧
+URL: https://ourword.ai/skill/i/xixicc186-clawd-emotes-skill-clawd-emotes/
+Source: https://github.com/xixicc186/clawd-emotes-skill/tree/HEAD/clawd-emotes
+Updated: 2026-07-20
+Tags: images, skill, xixicc186
+
+Want a pixel crab holding props, wearing hats, reacting? No frame-by-frame drawing—CSS keyframes bring it alive.
+
+### What does this skill do?
+Create original pixel-art "Clawd" crab emotes as pure SVG + CSS keyframe animations (no frame-by-frame GIFs, no raster sprites), and optionally export them to looping GIFs. Each emote is a tiny pixel crab doing an activity — holding a prop, wearing a hat, reacting — built from / / and animated with @keyframes. Use this skill whenever the user wants to make, add, fix, or exten
+
+### Why is it worth installing?
+Built from rect/polygon/circle, animated via @keyframes—edit one line to change motion, ten times faster than hand-drawn frames.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xixicc186/clawd-emotes-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xixicc186/clawd-emotes-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## ark-ui
 ## 鹰角视觉语言先问产品线再定深度的界面设计器
 URL: https://ourword.ai/skill/i/brandon030722-ark-ui-skill/
@@ -7258,6 +7558,44 @@ git clone --depth 1 https://github.com/EndlessBlueWJL/schengen-visa-guide.git Th
 Repository: EndlessBlueWJL/schengen-visa-guide The repository ships 1 skills in total.
 
 ========================================================================
+## dreamerstar
+## 蜂蜜黄五角星IP，一张图只讲一个概念的编辑插画
+URL: https://ourword.ai/skill/i/yanliudesign-dreameryanyan-star/
+URL (中文): https://ourword.ai/skill/zh/i/yanliudesign-dreameryanyan-star/
+Source: https://github.com/yanliudesign/dreameryanyan-star
+Updated: 2026-07-18
+Tags: images, skill, yanliudesign
+
+Stop hunting stock images for Chinese articles. Tom Gauld × Christoph Niemann minimalism: 3 structural lines +.
+
+### What does this skill do?
+生成"小星妍 · DreamerStar"风格的编辑插画——蜂蜜黄五角星 IP + Tom Gauld × Christoph Niemann 风格的极简概念图。用于给中文文章、公众号、小红书、幻灯片、Notion 文档等生成 3:4 竖版或 4:3 横版正文配图；一张图一个概念 + 大量留白 + 3 处结构性排线 + 上下反差抓手。触发关键词：dreamerstar、Dreamer Star、小星妍、Dreamer 妍妍、星星 IP、蜂蜜黄小星、编辑插画、Tom Gauld、Christoph Niemann、正文配图、爆款封面、认知图解、极简手绘、AI 时代插画、5 角星角色。
+
+### Why is it worth installing?
+It treats whitespace as structural skeleton, not decoration—forcing one concept, three line-groups, and top-bottom contrast per.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yanliudesign/dreameryanyan-star.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yanliudesign/dreameryanyan-star The repository ships 1 skills in total.
+
+--- 中文 ---
+给中文文章配图，不用再翻素材库撞车。Tom Gauld × Christoph Niemann 的极简语法。
+
+### Q：这个 skill 做什么？
+生成"小星妍 · DreamerStar"风格的编辑插画——蜂蜜黄五角星 IP + Tom Gauld × Christoph Niemann 风格的极简概念图。用于给中文文章、公众号、小红书、幻灯片、Notion 文档等生成 3:4 竖版或 4:3 横版正文配图；一张图一个概念 + 大量留白 + 3 处结构性排线 + 上下反差抓手。触发关键词：dreamerstar、Dreamer Star、小星妍、Dreamer 妍妍、星星 IP、蜂蜜黄小星、编辑插画、Tom Gauld、Christoph Niemann、正文配图、爆款封面、认知图解、极简手绘、AI 时代插画、5 角星角色。
+
+### Q：为什么值得装？
+它把「留白」当构图骨架而非装饰——每张图强制一个概念、三处排线、上下反差。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yanliudesign/dreameryanyan-star.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yanliudesign/dreameryanyan-star The repository ships 1 skills in total.
+
+========================================================================
 ## kimi
 ## 设计稿交给它，前端代码拿回来就能跑
 URL: https://ourword.ai/skill/i/oil-oil-kimi/
@@ -7300,6 +7638,44 @@ git clone --depth 1 https://github.com/TexasBedouin/vibe-check.git Then point yo
 
 ### Where does it come from?
 Repository: TexasBedouin/vibe-check The repository ships 1 skills in total.
+
+========================================================================
+## storm-blindspot
+## 四十年逐小时降雨极值，还原被官方抹平的暴雨真容
+URL: https://ourword.ai/skill/i/wei011-storm-blindspot/
+URL (中文): https://ourword.ai/skill/zh/i/wei011-storm-blindspot/
+Source: https://github.com/wei011/storm-blindspot
+Updated: 2026-07-16
+Tags: everyday, skill, wei011
+
+Calibrates ERA5 against Zhengzhou 201.9, Beijing 100.3, Shenzhen 195.8 mm/h official extremes to reveal how much.
+
+### What does this skill do?
+暴雨盲区体检器。当用户问"我家这次暴雨会不会淹"、"XX城市的排水管能扛多大雨"、"再分析/ERA5数据靠不靠谱"、"为什么天气数据看着没事却淹了"、"郑州720/深圳97/北京721那种雨多少年一遇"、想量化某地历史极端小时雨强、想知道气象暴雨预警蓝黄橙红对应多少毫米、或想综合判断某点的内涝风险(降雨+河道流量+洼地地形)时使用。用ERA5四十年逐小时降雨拟合极值分布,拿郑州201.9/北京100.3/深圳195.8三个官方实测极值标定再分析数据的低估倍数,揭示"权威降雨数据把最凶的暴雨抹平了多少倍"。纯标准库,数据来自open-meteo免费接口。
+
+### Why is it worth installing?
+Fits extreme-value distributions to 40y hourly data, then calibrates against 3 official record intensities to quantify the.
+
+### How do you install it?
+git clone --depth 1 https://github.com/wei011/storm-blindspot.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: wei011/storm-blindspot Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+郑州201.9、北京100.3、深圳195.8——拿三个官方实测极值校准ERA5再分析数据。
+
+### Q：这个 skill 做什么？
+暴雨盲区体检器。当用户问"我家这次暴雨会不会淹"、"XX城市的排水管能扛多大雨"、"再分析/ERA5数据靠不靠谱"、"为什么天气数据看着没事却淹了"、"郑州720/深圳97/北京721那种雨多少年一遇"、想量化某地历史极端小时雨强、想知道气象暴雨预警蓝黄橙红对应多少毫米、或想综合判断某点的内涝风险(降雨+河道流量+洼地地形)时使用。用ERA5四十年逐小时降雨拟合极值分布,拿郑州201.9/北京100.3/深圳195.8三个官方实测极值标定再分析数据的低估倍数,揭示"权威降雨数据把最凶的暴雨抹平了多少倍"。纯标准库,数据来自open-meteo免费接口。
+
+### Q：为什么值得装？
+不只看降雨量，而是用极值分布拟合+实测标定，定量给出“再分析数据低估倍数”——这是别处没有的修正机制。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/wei011/storm-blindspot.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: wei011/storm-blindspot Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## bazi
@@ -7414,6 +7790,44 @@ git clone --depth 1 https://github.com/dososo/blcaptain-style-skill.git 然后�
 
 ### Q：它从哪来？
 Repository: dososo/blcaptain-style-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## aigc-reduce
+## 扫描定位后逐句重写，降 AIGC 率不碰数据引用
+URL: https://ourword.ai/skill/i/xiaofenggan01-aigc-reduce/
+URL (中文): https://ourword.ai/skill/zh/i/xiaofenggan01-aigc-reduce/
+Source: https://github.com/xiaofenggan01/aigc-reduce
+Updated: 2026-07-08
+Tags: work, skill, xiaofenggan01
+
+Knows CNKI, Wanfang, PaperPass logic. No full rewrites—only templated phrasing changes. Facts, citations, terms.
+
+### What does this skill do?
+降低学术论文的 AIGC 查重率和 AI 味。适用于 Claude Code 和 Codex。 基于知网、万方、PaperPass、PaperPure 等检测器原理，使用扫描定位、 确定性替换、句子级重构和 Anti-AI 审计，在保持学术语体、事实、数据、 引用和专业术语一致的前提下减少模板化 AI 痕迹。Use when 用户要求降 AI 味、 降低 AIGC 率、去 AI 检测、降低 AI 查重误判、让论文更像人写的，或提到 “去 AI 味”“降重”“AIGC 查重”。
+
+### Why is it worth installing?
+Not a global paraphrase. It scans to locate AI traces, applies deterministic swaps and sentence-level reconstruction, then.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xiaofenggan01/aigc-reduce.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xiaofenggan01/aigc-reduce Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use, evals. The repository ships 1 skills in total.
+
+--- 中文 ---
+知网、万方、PaperPass 的检测逻辑它都懂。不整段推翻，只改模板腔，事实、数据、引用、术语原样保留。
+
+### Q：这个 skill 做什么？
+降低学术论文的 AIGC 查重率和 AI 味。适用于 Claude Code 和 Codex。 基于知网、万方、PaperPass、PaperPure 等检测器原理，使用扫描定位、 确定性替换、句子级重构和 Anti-AI 审计，在保持学术语体、事实、数据、 引用和专业术语一致的前提下减少模板化 AI 痕迹。Use when 用户要求降 AI 味、 降低 AIGC 率、去 AI 检测、降低 AI 查重误判、让论文更像人写的，或提到 “去 AI 味”“降重”“AIGC 查重”。
+
+### Q：为什么值得装？
+不是全局洗稿，而是先扫描定位 AI 痕迹，再做确定性替换和句子级重构，最后反查审计，机制上像外科手术。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/xiaofenggan01/aigc-reduce.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: xiaofenggan01/aigc-reduce Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use, evals. The repository ships 1 skills in total.
 
 ========================================================================
 ## trip-map-builder
@@ -8366,6 +8780,44 @@ git clone --depth 1 https://github.com/zhlmi/script-forging.git 然后把智能�
 Repository: zhlmi/script-forging Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## ip-takedown
+## 四类处置路径分流侵权通知的版权下架助手
+URL: https://ourword.ai/skill/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
+URL (中文): https://ourword.ai/skill/zh/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
+Source: https://github.com/yuandian-ailaw/agent-for-legal-cn/tree/HEAD/legal-skillpack-ip-legal/skills/ip-takedown
+Updated: 2026-06-04
+Tags: play, skill, yuandian-ailaw
+
+Platform got a takedown notice? Don't delete blindly. Route it per Article 14: comply, counter-notice, negotiate.
+
+### What does this skill do?
+依据中国《信息网络传播权保护条例》，可起草该条例第十四条规定的版权侵权通知书；对平台接收的侵权通知开展分流研判，区分采取遵从下架、提交反通知、双方协商、不予处置四类处置方式；亦可依据条例第十六条起草反通知书，申请恢复已下架内容。适用于用户向平台发起版权删除通知、研判侵权通知处置方案、提交反通知申请恢复下架内容等业务场景。
+
+### Why is it worth installing?
+Turns Articles 14 & 16 of China's ISP copyright rules into a decision tree, so you classify before acting—avoiding wrongful.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+平台收到侵权通知别急着删——先按条例十四条分流：遵从下架、反通知、协商还是不理，每一步都有条文依据，不靠拍脑袋。
+
+### Q：这个 skill 做什么？
+依据中国《信息网络传播权保护条例》，可起草该条例第十四条规定的版权侵权通知书；对平台接收的侵权通知开展分流研判，区分采取遵从下架、提交反通知、双方协商、不予处置四类处置方式；亦可依据条例第十六条起草反通知书，申请恢复已下架内容。适用于用户向平台发起版权删除通知、研判侵权通知处置方案、提交反通知申请恢复下架内容等业务场景。
+
+### Q：为什么值得装？
+把《信息网络传播权保护条例》第十四、十六条拆成可执行的分流逻辑，通知来了先定性再动手。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## recomp-coach
 ## 卡路里跟克数打架就按克数重算的增肌减脂教练
 URL: https://ourword.ai/skill/i/wangzhengjun571-alt-recomp-coach/
@@ -8620,6 +9072,44 @@ git clone --depth 1 https://github.com/onpicex/xiaohei-infographic.git Then poin
 
 ### Where does it come from?
 Repository: onpicex/xiaohei-infographic Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## zan-punct-fix
+## 半角标点全角化，代码和英文原样不动
+URL: https://ourword.ai/skill/i/wangzan101-zan-punct-fix/
+URL (中文): https://ourword.ai/skill/zh/i/wangzan101-zan-punct-fix/
+Source: https://github.com/wangzan101/zan-punct-fix
+Updated: 2026-05-31
+Tags: work, skill, wangzan101
+
+AI-written Chinese docs always use half-width , . ?. This skill scans a folder, fixes full-width punctuation.
+
+### What does this skill do?
+审查并修正文件夹中所有文件里用错的中文标点 —— 这是 AI 生成内容最典型的毛病： 本该用全角的「，。？！：；“”（）」却写成了半角的 , . ? ! : ; "" ()。只要用户想 检查、审查、清理、规范、修正文档 / Markdown / 代码注释 / docx / 整个目录里的标点 （尤其是中文标点符号），就应当使用本技能 —— 哪怕用户只是随口说「帮我检查标点」 「标点符号有问题」「这个文件夹的标点很乱」「把半角逗号改成全角」，或者用英文说 「fix the punctuation」「clean up punctuation in this folder」。本技能扫描文本、 代码和 docx 文件，自动保护代码、URL、英文句子和数字，并报告每一处改动。
+
+### Why is it worth installing?
+Disciplined punctuation translation: it identifies code and English first, then only touches Chinese punctuation, delivering a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/wangzan101/zan-punct-fix.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: wangzan101/zan-punct-fix The repository ships 1 skills in total.
+
+--- 中文 ---
+AI 写的中文文档总把，。？写成半角。这个技能扫整个文件夹，自动改对全角标点，同时保护代码、URL。
+
+### Q：这个 skill 做什么？
+审查并修正文件夹中所有文件里用错的中文标点 —— 这是 AI 生成内容最典型的毛病： 本该用全角的「，。？！：；“”（）」却写成了半角的 , . ? ! : ; "" ()。只要用户想 检查、审查、清理、规范、修正文档 / Markdown / 代码注释 / docx / 整个目录里的标点 （尤其是中文标点符号），就应当使用本技能 —— 哪怕用户只是随口说「帮我检查标点」 「标点符号有问题」「这个文件夹的标点很乱」「把半角逗号改成全角」，或者用英文说 「fix the punctuation」「clean up punctuation in this folder」。本技能扫描文本、 代码和 docx 文件，自动保护代码、URL、英文句子和数字，并报告每一处改动。
+
+### Q：为什么值得装？
+它把「改标点」当成一次有纪律的翻译：先识别哪些是代码和英文，再只动真正属于中文的标点。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/wangzan101/zan-punct-fix.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: wangzan101/zan-punct-fix The repository ships 1 skills in total.
 
 ========================================================================
 ## minecraft-ai-generate-bbmodel
