@@ -29,6 +29,10 @@ def main() -> int:
         repos = sorted({m.rstrip(".").removesuffix(".git") for m in re.findall(r"github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)", page)})
         seen[slug] = {"repos": repos, "seen_at": time.strftime("%Y-%m-%d")}
         for r in repos:
+            # 09-07 第一轮：55 条里 20 条是 colaskill 把 ResumeSkills 的子目录当成了仓（gh api 404），核一下仓存在再收
+            ok = subprocess.run(["gh", "api", f"repos/{r}", "--jq", ".full_name"], capture_output=True, text=True)
+            if ok.returncode != 0:
+                continue
             found[r] = {"via": f"colaskill:{slug}", "stars": 0, "path": ""}
         print(f"  {slug}: {repos}", flush=True)
         time.sleep(0.5)

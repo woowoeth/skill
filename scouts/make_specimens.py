@@ -335,6 +335,8 @@ def main(argv):
         mp = argv[argv.index("--motifs") + 1]
         OVERRIDE.update(json.load(io.open(mp, encoding="utf-8")))
         argv = [a for a in argv if a != mp]
+    global PAIR
+    PAIR = "--pair" in argv        # 09-07：主图形 + 类别小图形 + 按 id 微偏，专治 29 个图形背 363 件货的撞脸
     ci = "--ci" in argv
     ids = [a for a in argv if not a.startswith("--")]
     if ids:
