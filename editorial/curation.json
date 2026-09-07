@@ -15295,6 +15295,161 @@
    "cover_motif": "document",
    "cover_verdict": "",
    "cover_verdict_why": "CI 自动出的中性样张（图形 document 按标题正则猜的），待判官过目"
+  },
+  "kimberlying-watercolor-memory-poster": {
+   "title_zh": "上半张照片下半张水彩，旅行记忆变成可寄出的海报",
+   "why_zh": "不是滤镜叠加，而是把照片下半部重绘成记忆的水彩痕迹——地点变色块、动作变笔触，让‘去过’变成‘梦到过’。",
+   "limit_zh": "只认单张照片，输入多图会取第一张；人物系列必须启用 Watercolor Motion 规则否则出图发灰。",
+   "tagline_zh": "别人晒九宫格，你晒一张 3:4 意境海报。真实风景在上，地点或动作在下晕成水彩，城市河流运动家庭都吃。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "kon-on-rimworld-modding-skill": {
+   "title_zh": "从零搓出能上创意工坊的 RimWorld 模组",
+   "why_zh": "不是零散教程堆砌，而是按真实开发顺序排好的完整流程。每一步都有可执行代码和验证点。",
+   "limit_zh": "只认 RimWorld 1.6 的 mod 开发；不涉及游戏内剧本编辑、DLC 专属系统。",
+   "tagline_zh": "别在论坛翻三天帖了。环境、Def、Harmony 补丁、贴图、发布，一条链走完。零基础到能跑。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "zeejay0-gathered-scenes-zine-skill-scenes-gathered-zine-live-flow-v1-0": {
+   "title_zh": "照片到苹果实况壁纸的完整流水线，含撕纸动效",
+   "why_zh": "把「场景理解」和「撕纸动效」绑在同一条流水线上：轮廓低频圆润、撕痕叙事路径由画面内容生成。",
+   "limit_zh": "只吃单张静态照片；输出到 ZIP 为止，导入 iPhone 需本机另有 Live Photo Importer 且仅限…",
+   "tagline_zh": "不用再手动拆步骤：照片进，静态海报和可交互撕纸动图 ZIP 出，还能自动交给本地导入器。撕痕路径按画面内容自适应。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "adityaakr-repo-city-repo-city": {
+   "title_zh": "一座能走进去的代码城，每栋楼都是模块",
+   "why_zh": "不是画示意图，而是把代码度量直接映射成城市尺度——楼高、路网、街区都从仓库里算出来，所见即所测。",
+   "limit_zh": "只接受能克隆的 Git 仓库；产物是单页 HTML，不含交互式代码导航或点击跳转源码。超大仓库（>10万行）生成慢。",
+   "tagline_zh": "每个模块是一栋楼，楼高是真实指标，道路是调用关系。所有结论都标注在源码行旁——新人上手、架构评审、给外行讲清楚。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "agentsope-smartbuy-skill-coupon-stacker": {
+   "title_zh": "叠券顺序算得比下单页还清楚的小账本",
+   "why_zh": "不猜券规则，只按平台真实叠加顺序算；每一步操作都落到下单页具体位置，算完即会买。",
+   "limit_zh": "只覆盖京东自营（平台券+国补+Plus+满减）；天猫/拼多多/苏宁暂不适用。不处理预售、定金膨胀、限时秒杀价。",
+   "tagline_zh": "标价+一堆券丢进去，按平台真实叠加顺序算出实付，还一步步告诉你下单页怎么点。不编规则，不知道就让你去查官方。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "fun"
+  },
+  "ai-safe-lens-vetaskill-vetaskill": {
+   "title_zh": "装任何第三方 Skill 前先让它过一遍安检门",
+   "why_zh": "把 Skill 文件当作不可信输入而非代码，从根上避免「装完才后悔」。它不猜，它读原文。",
+   "limit_zh": "只审文件内容与元数据，不跑动态沙箱；对混淆或加密的 payload 只能标「可疑」不能拆解；不覆盖平台自身漏洞。",
+   "tagline_zh": "你正要装的那个 Skill 可能带着提示注入或恶意指令。它把文件当不可信数据读，逐行查风险，装之前先给你一份判决书。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "angelwzr-linux-phone-porting": {
+   "title_zh": "给安卓手机移植主线 Linux 的硬件调试向导",
+   "why_zh": "不是资料堆，而是把移植流程拆成可验证的步骤，每步都指向硬件证据，逼你按主线社区的方式排查。",
+   "limit_zh": "只覆盖已解锁 bootloader 的安卓手机；锁定的设备直接跳过。不处理 vendor 内核或非主线分支。",
+   "tagline_zh": "每次 bring-up 都从零翻 dts？它按你的机型把 GPIO、时钟、显示链路排成检查单。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "work",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · SKILL.md: 改厂商程序 第126行"
+  },
+  "astro-koko-ppt-lai-ppt-lai": {
+   "title_zh": "2000年代课件翻新机，逐字冻结你的原文",
+   "why_zh": "不是套模板，是重建那个年代的视觉语法——渐变标题、像素分割线、低饱和底纹。翻新路径把内容当合同。",
+   "limit_zh": "只认2000–2010千禧年视觉，现代/商务/极简需求会直接拒绝。翻新只改版式，不重写内容。",
+   "tagline_zh": "要千禧年复古风？它把提纲变成4:3原生可编辑PPT，L1/L2/L3三档。翻新旧课件时逐字不动，像时光机但内容保鲜。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "ayukhno-autosound-tuning-skill-autosound-tuning": {
+   "title_zh": "双AI轮流审听，把车内喇叭调到不刺耳为止",
+   "why_zh": "把调音从一次性操作变成可迭代的审阅循环：生成器与批评者分离，避免自说自话。",
+   "limit_zh": "需要你本机装好 REW 并会导出测量文件；只处理 DSP 调音，不修硬件故障、不教接线。若系统有明显失真或相位问题。",
+   "tagline_zh": "新装或老系统都能调。Claude出方案、Gemini挑毛病、你拍板，REW实测数据说话——不用靠玄学，低频不糊。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "bestbeasthunter-close-reading-annotator": {
+   "title_zh": "四层批注拆开小说，连伏笔链都给你标出来",
+   "why_zh": "不是泛泛读后感，而是带位置断言的机器精读：每处批注都锚定原文 span，跨段伏笔链自动串联。",
+   "limit_zh": "只认小说、剧本等叙事文本；技术文档、论文、代码会误判。需本地跑 Python 环境。",
+   "tagline_zh": "读小说只划金句？它把结构、阐释、情感、文笔拆成四层批注，连伏笔链和叙述者可靠性都标出来，适合精读拆解和写作复盘。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "bryanleeli-sand-animation-first-person-hand": {
+   "title_zh": "第一人称沙画镜头，手一推就是一条故事线",
+   "why_zh": "它把沙画表演拆成「手部轨迹 + 沙粒响应」两层，手推的力度和方向直接决定沙怎么流。",
+   "limit_zh": "只产出分镜脚本、素材描述和手部动作参数，不生成最终渲染视频。需要你接入自己的沙画渲染器或物理引擎。",
+   "tagline_zh": "给参考图或一句话主题，出分镜、沙画素材和可信的手部动作。不用逐帧抠沙粒，手推、抹平、撒沙的物理感它替你算好。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "chyeqinu-my-gptimage-habits": {
+   "title_zh": "记住你每次出图手法的私人美工台",
+   "why_zh": "不是通用生图，是把你零散的创作习惯固化成可复用模板，迭代时只改该改的字，其余参数纹丝不动。",
+   "limit_zh": "只认 gpt-image-2 的 API，需自备 key；只覆盖列出的九类场景，超出会直接停下问你。",
+   "tagline_zh": "视频封面、字幕条、抠图、改字、多图合成——不用再翻聊天记录找上次的提示词，它按你的模板和参数习惯直接出图。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "chyiiiiiiiiiiii-yiibu-yiibu": {
+   "title_zh": "手机素材丢进文件夹，出来就是能发的 9:16 成片",
+   "why_zh": "不是一键出片的花架子，是带质检闸门的流水线：每步不过就停，宁可卡住也不放废片出门。",
+   "limit_zh": "只认手机竖拍素材，横屏或专业摄影机素材不处理；字幕只做中英双语，其他语种需自备词典；B-roll 从本地素材库抽。",
+   "tagline_zh": "剪映里耗两小时的活——静音切除、双语逐词字幕、B-roll、背景乐闪避——它一次跑完，每道关卡卡住不过就不出片。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · skills/yiibu/docs/lesson.html: 剂量 第382行"
+  },
+  "dawnsyo-blip-ttsdirectorskill-chatting": {
+   "title_zh": "给中文稿子标好 Fish Audio 情感括号再交给",
+   "why_zh": "按中文句读与语义走向决定标签位置与密度，避免整段一个情绪到底的机械感。",
+   "limit_zh": "只产出带方括号标签的文本，不含音频试听；只认 Fish Audio s2.1-pro 的标签体系。",
+   "tagline_zh": "不用手动猜 [happy] 该放哪、[sad] 该多长。它按句读和语义自动插好 s2.1-pro 标签。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "dososo-blcaptain-style-skill": {
+   "title_zh": "三套版式引擎，把笔记渲染成小红书 3:4 组图",
+   "why_zh": "视觉风格不是提示词碰运气，而是可复用的确定性引擎。内容理解与排版分离，同一篇笔记换套皮肤即换气质。",
+   "limit_zh": "只输出中文图文卡片，固定 3:4 竖图比例；不生成视频、长图或 HTML 邮件。需要输入内容本身结构清晰。",
+   "tagline_zh": "不靠截图拼贴，Claude 读懂内容后自写 brief，交给确定性引擎出图。静纸、证据层、跨平台桥三套视觉语言。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "erp-lab-5-metro-map-tool-metro-map": {
+   "title_zh": "轨道图式画架构，站点色线分区图例一图齐",
+   "why_zh": "把抽象关系硬塞进地铁图语法：站点网格、线路配色、区域分带、图例命名全按制图规范来。",
+   "limit_zh": "只认两种模式：抽象网格地铁图，或 x 轴为日期的甘特式路线图。不画环线、不画曲线轨道，站点必须落在网格上。",
+   "tagline_zh": "画架构图总被吐槽像蜘蛛网？把模块当站点、依赖当轨道，色线分区图例全自动排好，还能导出 SVG 深色浅色两版。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "fnjialun-cnipa-patent-writer": {
+   "title_zh": "只借版式不借内容的 CNIPA 专利文档生成器",
+   "why_zh": "模板只当尺子用，不当复印机。页眉页脚、分节、字号缩进全对齐，但每个字、每张图都从你的方案重新长出来。",
+   "limit_zh": "只产出申请文档和附图，不查新颖性、不写审查意见答复。需你提供完整技术交底；若方案缺关键实施例或数据，它不会替你编造。",
+   "tagline_zh": "从技术方案到全套 .docx 专利文档，含白底黑线附图。有模板只取版式，无模板按国知局标准排，内容配图全部现写现画。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
   }
  },
  "gate": {
