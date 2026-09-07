@@ -145,7 +145,7 @@ def _score(S, body: str) -> tuple[int, str]:
 
 def _score_once(S, body: str) -> tuple[int, str]:
     import urllib.request
-    prompt = S.TASTE_PROMPT.format(body=body[:6000])
+    prompt = S.TASTE_PROMPT.format(body=body[:6000], rubric=getattr(S, "TASTE_RUBRIC", ""))   # 09-07：提示词加了 {rubric} 占位，这里没跟上，整班判官 KeyError
     ant = S.LLM_KEY.startswith("sk-ant-") or "anthropic" in S.LLM_BASE
     if ant:
         url = (S.LLM_BASE if "anthropic" in S.LLM_BASE else "https://api.anthropic.com") + "/v1/messages"
