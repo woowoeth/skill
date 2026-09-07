@@ -16646,6 +16646,25 @@
    "cover_verdict": "ok",
    "cover_verdict_why": "代理读原文时开过：作者真产出样图，无二维码无人脸（避开 example-humanity 老两口正脸那张）",
    "cover_verdict_at": "2026-09-07"
+  },
+  "ccc333cn-feedback-station": {
+   "title_zh": "手机扫码打勾，测试反馈落本地盘",
+   "why_zh": "反馈不经过聊天记录中转，直接落成本地结构化数据；智能体按盘上文件就能复验、归类、出清单。",
+   "limit_zh": "只覆盖测试反馈采集与落盘，不含缺陷追踪、权限管理或多项目隔离；需测试者与电脑在同一局域网，且电脑端保持服务运行。",
+   "tagline_zh": "真机测试别再截图传群聊了。测试者手机逐条勾选通过/未通过，附截图录屏，新 Bug 新需求随手提。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work",
+   "cover_tried_at": "2026-09-07",
+   "cover": "/skill/assets/covers/ccc333cn-feedback-station.png",
+   "cover_kind": "specimen",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "code",
+   "cover_verdict": "",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 code 按标题正则猜的），待判官过目"
   }
  },
  "gate": {
