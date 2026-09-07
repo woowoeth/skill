@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 359 skills.
+# Full corpus, plain text. 364 skills.
 
 ========================================================================
 ## autosound-tuning
@@ -944,6 +944,28 @@ git clone --depth 1 https://github.com/sriwitsumo/project-skill.git Then point y
 Repository: sriwitsumo/project-skill The repository ships 1 skills in total.
 
 ========================================================================
+## handdraw-style-prompter
+## 编号 001–216 手绘风格，报号即出双语提示词
+URL: https://ourword.ai/skill/i/yang0-handraw-style-handdraw-style-prompter/
+Source: https://github.com/yang0/handraw-style/tree/HEAD/handdraw-style-prompter
+Updated: 2026-09-05
+Tags: images, skill, yang0
+
+Just cite a number from 001–216, get bilingual prompts. It also tells you if your model needs the style reference.
+
+### What does this skill do?
+Turn a 001–216 hand-drawn style number and image theme into bilingual prompts, or generate an image with a model-capability-aware decision about whether the matching numbered image is needed as a style reference.
+
+### Why is it worth installing?
+Turns a style library into a searchable numbering system, and checks model capability before prompting—so a reference image.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yang0/handraw-style.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yang0/handraw-style The repository ships 1 skills in total.
+
+========================================================================
 ## anime-poster
 ## 九宫格拆解人物设定，出整张无字二次元海报提示词
 URL: https://ourword.ai/skill/i/qqy2275583297-stack-anime-poster-skill-anime-poster/
@@ -1274,6 +1296,28 @@ git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: lijigang/ljg-skills The repository ships 1 skills in total.
+
+========================================================================
+## photo-revival
+## 日常快照收成手绘诗意稿
+URL: https://ourword.ai/skill/i/dacnay816y62-hub-photo-revival/
+Source: https://github.com/dacnay816y62-hub/photo-revival
+Updated: 2026-09-05
+Tags: images, skill, dacnay816y62-hub
+
+Tired of filters and beauty modes? This photo wants to be drawn, not edited. Big white space, local color.
+
+### What does this skill do?
+Turn ordinary photos or everyday snapshots into poetic hand-drawn illustrations with large white-paper negative space, vivid localized color, subtle collage accents, and tiny handwritten captions. Use when a user wants a real photo reimagined as an illustration rather than filtered, beautified, or photorealistically edited.
+
+### Why is it worth installing?
+Not style transfer—it recomposes first: strips clutter, redistributes white space and color by poetic logic, then adds collage.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dacnay816y62-hub/photo-revival.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dacnay816y62-hub/photo-revival The repository ships 1 skills in total.
 
 ========================================================================
 ## chinese-style-poster-skill
@@ -3166,6 +3210,28 @@ git clone --depth 1 https://github.com/virgiliojr94/book-to-skill.git Then point
 
 ### Where does it come from?
 Repository: virgiliojr94/book-to-skill The repository ships 1 skills in total.
+
+========================================================================
+## i-have-adhd
+## 把注意力当稀缺资源，让 Claude 一次只说一件事
+URL: https://ourword.ai/skill/i/ayghri-i-have-adhd-i-have-adhd/
+Source: https://github.com/ayghri/i-have-adhd/tree/HEAD/.cursor/skills/i-have-adhd
+Updated: 2026-09-01
+Tags: meta, skill, ayghri
+
+Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.
+
+### What does this skill do?
+Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".
+
+### Why is it worth installing?
+A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
 
 ========================================================================
 ## y2k-pop-poster
@@ -6078,6 +6144,28 @@ git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then poi
 Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
 
 ========================================================================
+## 8bit-pixel-art
+## 把照片或一句话蒸馏成稀疏 8-bit 像素艺术
+URL: https://ourword.ai/skill/i/twentyfivebtea-8bit-pixel-art/
+Source: https://github.com/TwentyfiveBTea/8bit-pixel-art
+Updated: 2026-08-11
+Tags: images, skill, TwentyfiveBTea
+
+Turn a brief or photo into sparse 8-bit art: soft coarse pixels on clean paper, or full-bleed when needed. Drops.
+
+### What does this skill do?
+Create sparse abstract Instagram/editorial 8-bit pixel artwork from a natural-language brief, or distill an uploaded photo into either a soft-edged coarse-pixel subject cluster on a clean portrait paper field or an intentional edge-to-edge pixel composition when the source calls for full bleed. Use for `create` and `fuse`; prioritize dominant subjects, omit low-value detail, and never use a hard p
+
+### Why is it worth installing?
+Not a filter stack—it prioritizes dominant subjects first, then chooses soft-edge or full-bleed, then pixelates. Output feels.
+
+### How do you install it?
+git clone --depth 1 https://github.com/TwentyfiveBTea/8bit-pixel-art.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: TwentyfiveBTea/8bit-pixel-art The repository ships 1 skills in total.
+
+========================================================================
 ## human-writing
 ## 按活人那套改中文长文
 URL: https://ourword.ai/skill/i/kkkkhazix-human-writing-human-writing/
@@ -6294,6 +6382,24 @@ git clone --depth 1 https://github.com/zhlmi/shotsaver.git 然后把智能体指
 
 ### Q：它从哪来？
 Repository: zhlmi/shotsaver Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## photo-ink-echo
+URL: https://ourword.ai/skill/i/zhouaria28-cloud-photo-ink-echo/
+Source: https://github.com/zhouaria28-cloud/photo-ink-echo
+Updated: 2026-08-09
+Tags: images, skill, zhouaria28-cloud
+
+Transform one user-provided photograph into a restrained 9:16 editorial diptych with the untouched original photo above and a very small source-derived watercolor memory motif below. Use for photo-plus-watercolor editorials, quiet archival
+
+### What does this skill do?
+Transform one user-provided photograph into a restrained 9:16 editorial diptych with the untouched original photo above and a very small source-derived watercolor memory motif below. Use for photo-plus-watercolor editorials, quiet archival compositions, and strict 1:1 upper-photo/lower-art layouts that require one clear primary subject, two to four faint supporting cues, transparent unfinished edg
+
+### How do you install it?
+git clone --depth 1 https://github.com/zhouaria28-cloud/photo-ink-echo.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zhouaria28-cloud/photo-ink-echo The repository ships 1 skills in total.
 
 ========================================================================
 ## paper-spirit-zine
