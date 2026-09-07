@@ -43,6 +43,10 @@ for attempt in 1 2 3 4 5 6; do
   fi
   # 合并后的源 → 重生成一次生成物
   python3 scouts/scout_lib.py >/dev/null 2>&1 || python3 -c "import sys;sys.path.insert(0,'scouts');import scout_lib as L;L.refresh()" >/dev/null 2>&1 || true
+  # 09-07 店主：「简英繁三个页面数据没同步」—— 繁体站 tw/ 之前只在 seo.yml 每周一重生成，落后简体最多一周（当时 296 vs 363 件）。
+  # 每次提交都从刚生成的简体树转一份，和 i/ 一样当生成物。opencc 没装就装（CI 上每次是新机器）。
+  python3 -c "import opencc" 2>/dev/null || python3 -m pip install --quiet "opencc==1.4.2" >/dev/null 2>&1 || true
+  python3 scouts/tw.py >/dev/null 2>&1 || echo "[sync] tw.py 没跑成（繁体这次没更新）"
   git add -A
   git diff --cached --quiet || git commit -q -m "${MSG}（rebase 后重生成生成物）"
   if git push -q origin HEAD:main; then echo "[sync] 已推 $(git rev-parse --short HEAD)"; exit 0; fi
