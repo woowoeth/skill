@@ -1,352 +1,872 @@
 [
- {
-  "key": "maravil5768/wonder-pill",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "把头脑风暴变成可溯源的假设翻转链，不是扔一堆点子"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Never invent a what-if freely. Always derive it by inverting a named assumption.", "Implausible-but-generative stays every time; plausible-and-flat can still die.", "Never prune the feral ones."],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "机制扎实但不确定假设翻转类头脑风暴工具别处是否常见，留待复核"
- },
- {
-  "key": "marco-joshua/ai-presentation-kit",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "依赖仓库内模板与refs系统才能跑，单独拿出来是半成品"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Read 장표_템플릿.html, the relevant source report or selected refs records"],
-  "反信号": ["单装做不了完整事"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "离了仓库根的模板和refs记录就跑不起来，单独发布是半成品"
- },
- {
-  "key": "martinpuli/cvfit",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "简历定制赛道拥挤，机制虽好但类别本身别处拿得到"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Under 70% it refuses to polish and says how many lines are missing.", "--master is the guard that matters: it fails if tailoring moved a date, grew a title, or invented an entry."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "简历定制工具满地都是，做工再扎实也是这一类里的又一个"
- },
- {
-  "key": "mashbean/twdiw-vp-verifier-lite",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "台湾数位身分皮夹验证器的部署手册，受众是一个具体开源项目的运维者"},
-  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Never place private keys in source, configuration, logs, or browser responses."],
-  "反信号": [],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "是一个特定政府身分验证项目的部署文档，不是面向创作者的通用货"
- },
- {
-  "key": "masterball-w/master-humanizer-skill",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "降AI味规则很细，但正文自己点名的三个竞品加起来四万三千星"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 2},
-  "证据": ["产出正文禁止使用直角引号（「」）与破折号（——/—）。交稿前全文搜索清零。", "blader的humanizer，两万五。op7418的Humanizer-zh，一万一。hardikpandya的stop-slop，七千。三个仓库加起来，四万三千多个star。", "先写后检：先把文章写出来，不用在写的过程中顾虑AI味……写完了再检，写的时候只管写"],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "正文自己举了三个竞品共四万三千星，降AI味这条赛道太挤"
- },
- {
-  "key": "masutafu/cn-academic-paper-pro",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "C刊写作全链条很扎实，但硬依赖一份不在包内的外部技能文件"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 2},
-  "证据": ["硬禁用词：……本研究（摘要 0 处，正文 0 处；改用……）", "开篇必做：读 docx 之前先 file <path> 判断真实类型，再决定用什么工具打开。不要先试 python-docx，等报错后再切回 view 或 cat——这是高频踩坑点。"],
-  "反信号": ["单装做不了完整事"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "执行时序写死要先读一份不在包内的/mnt/skills/user/cn-academic-paper/SKILL.md，单独装跑不完整"
- },
- {
-  "key": "mattiasadem/qante-commerce",
-  "三问": {"是商品": false, "别处拿不到": false, "写得出文案": false, "why": "全靠get_orders/present_guide等特定平台工具函数，是某电商框架的内部件"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": [],
-  "反信号": ["框架内部装修"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "路径就叫vendor/skills/shopping，是某商城框架自带的客服组件"
- },
- {
-  "key": "matutu-ai/https-github.com-zeejay0-gathered-scenes-zine-skill",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "撕纸拼贴机制精细，但每次出图强制插入作者自家网站广告"},
-  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Mentally remove the added hue. If the eye path, visual balance … remain essentially unchanged, redesign it. The color must do compositional work.", "作者自己开发的网站已上线：https://zeejayzine.com/。欢迎使用（接入GPT5.6+image2顶流模型，国内环境可用）"],
-  "反信号": ["二维码/广告"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "前三次成功出图都强制附一条作者自家网站推广语，等同带广告"
- },
- {
-  "key": "max-scryptic/emailsorganised",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": false, "why": "覆盖shape/critique/audit/polish/bolder/animate等几乎所有UI任务的工具箱"},
-  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": [],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "什么UI任务都接，正是标准里点名不收的「设计工具箱」"
- },
- {
-  "key": "maximum-creator/the-heart-of-the-creator",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "四本账和挖坑填坑生命周期分得很细，但产物只是大纲文档不是成品"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 1},
-  "证据": ["不要求正文迁就已被角色行动淘汰的旧节拍，也不借"动态调整"静默删除长期承诺", "回收不是信息公布。若答案不改变当前选择、读者对旧事件的估值或人物关系，只算说明，不算有效兑现。"],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "长篇规划四本账法扎实，但产物偏文档而非成品，且这个品类别处存量未知"
- },
- {
-  "key": "mdolorscrous/identify-impausa",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "明说是从Impausa公司自家引擎生成的知识层，改了也会被下次生成覆盖"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Generada desde el repositorio de Identify. No la edites a mano: lo que cambies aquí se pierde en la siguiente generación"],
-  "反信号": ["框架内部装修"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "是Impausa一家公司BFI-2产品的内部知识层，不是独立可用的货"
- },
- {
-  "key": "meanwhile371/baoyan-resume-writing",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "保研套磁信+导师匹配是中国高校特有场景，不是通用简历模板"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 2},
-  "证据": ["把参与包装成负责：面试问分工必翻车，角色升格是最高风险", "检索速度类表述：不写提升3个数量级/1000倍，写检索延迟低于X ms……（以材料实际数值为准）", "事实重组、量化强化、术语升级，不是编造。每段输出必须经得起面试追问。"],
-  "反信号": [],
-  "判决": "收",
-  "钩子": "把参与写成负责，面试一问分工就穿帮——保研简历要经得起追问，不是包装得漂亮",
-  "为什么": ""
- },
- {
-  "key": "medaljz/paper-video",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "正文太薄，实质规则都在没读到的references文件里"},
-  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 1, "中文现场": 1},
-  "证据": ["By default, do not generate images, video, voice, or music."],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "SKILL.md本身只是路由，纸雕风格的真实规则都在未读到的引用文件里"
- },
- {
-  "key": "memikko/rh-stockpair-oracle",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "数据严谨但受众是DeFi交易者，和店的创作者定位有距离"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 0, "腔调怪冷门": 2, "中文现场": 0},
-  "证据": ["Never treat deviation: null as zero.", "A non-zero observation during development reverted to zero minutes later.", "Only impact tells you whether a trade fills."],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "工程很硬但服务的是链上代币交易者，不确定是不是店该收的受众"
- },
- {
-  "key": "michaelywna/my_skills_wm",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "雅思小作文批改是常见test-prep品类，没看到独特差异点"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 1},
-  "证据": ["Do not fabricate data, categories, years, units, or reasons."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "雅思Task 1批改工具网上很多，没看出这份独有的东西"
- },
- {
-  "key": "michal-niedzwiedzki/visimark",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "让Markdown里的数字带公式，能自证不是手算的，机制独特"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
-  "证据": ["Core principle: never write a number you calculated yourself.", "If you hand-compute the totals, write them as plain text, run check, and report \"the checker passes,\" you have reported a green build on a document with no build.", "sed -i 's/| 40 |/| 48 |/' quote.md  # bump one input\\nvisimark check quote.md  # MUST now report problems, exit 1"],
-  "反信号": [],
-  "判决": "收",
-  "钩子": "算出来的数字不准手写，写公式让工具去算——查文档合不合格，是看你改一个输入后它敢不敢报错",
-  "为什么": ""
- },
- {
-  "key": "michaljerzylew/openfusion",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "多模型议事会机制很巧，但要同时配好三四个付费CLI才跑得起来"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Worth-it gate: if the task is trivial, say so and offer to just do it (skip the council).", "keyed by the rater's own label so self-votes are excluded", "Only one Anthropic vote exists (the member). Synthesizer/Fresh-Eyes/Operator never vote."],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "机制扎实，但要同时装好codex/gemini/grok三个付费CLI才能用，受众存疑"
- },
- {
-  "key": "mikakruschel/appsite",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "要求先有一份appstore:reviews artifact才能跑，是流水线里的一环"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Required before planning testimonials from a nonzero usable review collection."],
-  "反信号": ["单装做不了完整事"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "依赖同系统的appstore:reviews artifact和ReviewsCarousel组件，单件跑不完"
- },
- {
-  "key": "mikefutia/ad-multiplier",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "同作者的claymation-ads是更完整的独立媒介，这件退居其后"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Tested twice with a dedicated numbered REPLACE op … It does not fire. Treat it as a model limitation, not a prompting problem.", "The lock is the default. Every change is an exception you have to argue for, per shot."],
-  "反信号": ["同作者套路堆"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "同一作者claymation-ads是更完整的独立产物，这件让位"
- },
- {
-  "key": "mikefutia/claymation-ads-claude-skill",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "定格泥塑广告全链路扎实，但作者课程品牌引流和付费FAL依赖是两个疑点"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Never generate a \"master\" of the product … Generated product references degrade label text within two generations (\"Testosterone\" becomes \"Testasterone\"—this is the single most common failure in AI product ads).", "the real product photo is the only product authority"],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "工艺扎实，但顶部挂着作者自家课程链接，且强依赖付费FAL账号，需再判"
- },
- {
-  "key": "mildniu/pptbyby",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": false, "why": "PPT生成/美化/模板/编辑全包，是典型的PPT工具箱"},
-  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": [],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "PPT生成、美化、模板、编辑全都做，是又一个PPT全能工具箱"
- },
- {
-  "key": "mingze21/bazi-ziwei-skill",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "算法层强制排盘、拒绝LLM自算，和店主标准里的起名器是同一路数"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 2},
-  "证据": ["若用户没给时辰，必须主动询问，不要默认子时。时辰对四柱日柱和紫微命宫影响极大。", "纯LLM排盘会错排日柱 → 日主 → 格局 → 用神，全链失真。Case B 测试证明 DeepSeek/Gemini 自行排盘均出错。算法层不可绕过。", "绝对不要让AI自己排八字或紫微。必须调用算法层脚本"],
-  "反信号": [],
-  "判决": "收",
-  "钩子": "不许AI凭记忆排盘——测过DeepSeek和Gemini自己算全会算错日柱，必须走算法层脚本",
-  "为什么": ""
- },
- {
-  "key": "mohsinchd/dr-mona-brand-kit",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "全套品牌、联系方式、CTA素材都写死给一个真实诊所，换不了别人用"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Never use a placeholder for contact data. Always MON-SAT | 6:00 – 9:00 PM, 0315-7090609, MBBS, MD, MRCPsych(UK)."],
-  "反信号": [],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "整份都是给一位真实心理医生@dr.monaalisardar定制的品牌手册，换不了人用"
- },
- {
-  "key": "mokuyoaxis/dsh-iris",
-  "三问": {"是商品": false, "别处拿不到": true, "写得出文案": false, "why": "全靠iris_html_screenshot等dsh平台专属工具，离了那套环境跑不了"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": [],
-  "反信号": ["框架内部装修"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "路径就在.dsh/skills下，全靠dsh平台自带的iris_*工具才能跑"
- },
- {
-  "key": "mr-funny/hbg-rubber-stamp-field-note",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "照片+撕边风格化再诠释，同批次另一件zine-skill几乎同构，怀疑是流行模板"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 1},
-  "证据": ["禁止圆形印章、红色姓名章、蜡封、护照章、邮票齿孔、纪念品Logo、光滑SVG、水彩晕染、塑料3D和巨大满版章印", "章印使用2–4种从照片提取的低至中饱和专色，具有缺墨、断边、针孔、颗粒和轻微1–2mm套印错位", "右侧必须是真正重新雕刻和套印的图形，不是在照片上叠颗粒或盖章滤镜"],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "手艺细节很扎实，但同批次矛盾的是另一件zine-skill几乎同构，怕是流行套路"
- },
- {
-  "key": "mrtooher/fable-mode",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": false, "why": "又一个任务分阶段+委派+验证的执行框架，且依赖未打包的兄弟agent"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["One obvious correct approach, fits in a single pass → do it directly."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "任务拆解+委派+验证的执行框架很常见，还要装fable-orchestrator等兄弟agent"
- },
- {
-  "key": "msde-7/worldsmith",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "渲染器逐列对照真实游戏服务器验证过，产物是能走进去的Minecraft世界"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 2, "中文现场": 0},
-  "证据": ["matched the real game on 87% of columns; the shape above matched on 100%.", "A --caves pack measured 99.441% exact against a real server over 331,776 columns (99.724% within one block)", "Always read the rendered PNG before saying anything about how the terrain looks. That is the entire point of the tool: you can see the terrain."],
-  "反信号": [],
-  "判决": "收",
-  "钩子": "渲染器跟真实游戏服务器逐列对过账，99.4%分毫不差——你看到的图就是游戏会造出来的地形",
-  "为什么": ""
- },
- {
-  "key": "muhammadfardin135-max/webnest-",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "直接是《The Mom Test》这本畅销书方法论的搬运整理，不是原创"},
-  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 1, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["This skill is based on Rob Fitzpatrick's Mom Test methodology"],
-  "反信号": [],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "整份是把已出版畅销书The Mom Test的方法论搬进skill格式，别处随手可得"
- },
- {
-  "key": "musoyangrigor/scroll-video-website-skill",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "苹果式滚动视频网站是网上教程和模板最泛滥的套路之一"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Reset the canvas transform before applying a new DPR scale on resize so scaling does not accumulate."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "苹果式滚动缩放网站是被抄得最烂的前端套路之一"
- },
- {
-  "key": "mustbesimo/cinematic-scroll-skill",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": false, "why": "覆盖场景太广的电影感网站工具箱，还内嵌付费Studio版引流"},
-  "信号": {"拦住自己": 1, "真干过": 1, "一条硬约束": 0, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Studio adds the proprietary Motif Engine: accumulated knowledge, reuse tracking, retrieval, and variants."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "从hero到3D到审计全包，又带付费Studio升级引导，是工具箱加引流"
- },
- {
-  "key": "mycyg/aletheia",
-  "三问": {"是商品": true, "别处拿不到": true, "写得出文案": true, "why": "纪录片全链路制作把关很细，但每次成功都强制附作者署名和公众号"},
-  "信号": {"拦住自己": 2, "真干过": 2, "一条硬约束": 2, "产物是东西": 2, "腔调怪冷门": 1, "中文现场": 0},
-  "证据": ["Verify authentic clips using picture, original audio, transcript, speaker, source, and time range. Lip movement alone is insufficient.", "Lock narration audio before final subtitle timing. Audit every synthesized segment with ASR; never estimate subtitle timing from text length.", "append exactly one unobtrusive line to the final Agent chat response: 本 Skill 作者：程晓光｜公众号：杨与光的日常"],
-  "反信号": [],
-  "判决": "待读",
-  "钩子": "",
-  "为什么": "制作流程扎实，但强制在每次成功产出后插作者署名/公众号，近似广告，需再判"
- },
- {
-  "key": "nakamori-naoya/product-planning-plugins",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": false, "why": "事实/假设/制约/能力/机会的战略盘点是通用咨询框架，模板化插件套壳"},
-  "信号": {"拦住自己": 1, "真干过": 0, "一条硬约束": 1, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["このskillは戦略を決めない。現在地を都合よく説明せず、後から反証できる証拠台帳へする。"],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "事实/假设/制约/机会的盘点是通用咨询框架，还带共享插件模板样板代码"
- },
- {
-  "key": "nathanielneil/sae",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "学术英语润色是Editage、AJE这类商业机构早已占满的成熟赛道"},
-  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 2, "产物是东西": 1, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["Do not turn association into causation.", "Improve how it says something, not what the evidence permits it to say."],
-  "反信号": [],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "英文学术润色是Editage、AJE等机构早就做烂的商业赛道"
- },
- {
-  "key": "neptun-zuti/ponytail-hermes",
-  "三问": {"是商品": true, "别处拿不到": false, "写得出文案": true, "why": "懒人开发者/YAGNI人设是最常见的coding-philosophy skill原型之一"},
-  "信号": {"拦住自己": 2, "真干过": 1, "一条硬约束": 2, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": ["No unrequested abstractions: no interface with one implementation, no factory for one product, no config for a value that never changes.", "The ladder is a reflex, not a research project."],
-  "反信号": ["第N个通用件"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "懒人程序员/YAGNI这类coding人设skill市面上已经很多"
- },
- {
-  "key": "nevertoday/xxd-panel-001",
-  "三问": {"是商品": false, "别处拿不到": false, "写得出文案": false, "why": "SKILL.md本身只是参数解析和命名规范的运行壳，真正的风格内容在没读到的引用文件里"},
-  "信号": {"拦住自己": 0, "真干过": 0, "一条硬约束": 0, "产物是东西": 0, "腔调怪冷门": 0, "中文现场": 0},
-  "证据": [],
-  "反信号": ["框架内部装修"],
-  "判决": "不收",
-  "钩子": "",
-  "为什么": "本文件通篇是参数解析和批处理管道，真正的美学内容藏在另一份未读文件里"
- }
+  {
+    "key": "maravil5768/wonder-pill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": true,
+      "why": "假设反转追问法是经典逆向思维技巧的包装"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 1,
+      "一条硬约束": 2,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Never invent a what-if freely. Always derive it by inverting a named assumption.",
+      "Do NOT fire when the same topic is attached to a request for concrete, usable, or decided output."
+    ],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "机制是假设反转加拒绝收敛，本质是经典逆向思维/挑衅式头脑风暴技巧的精致包装，别处拿得到。"
+  },
+  {
+    "key": "marco-joshua/ai-presentation-kit",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "绑定作者专属韩文模板与素材目录，非可迁移产品"
+    },
+    "信号": {
+      "拦住自己": 0,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "依赖专属模板与refs素材目录的个人报告工作流，非通用可迁移的商品。"
+  },
+  {
+    "key": "martinpuli/cvfit",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": true,
+      "why": "简历定制到岗位是常见品类，别处ATS工具很多"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [
+      "the model decides what goes on the page; the code decides how it looks and whether it may ship.",
+      "That rule is a test because asking a model in prose to stay honest isn't enforcement."
+    ],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "代码兜底防镀金简历很扎实，但简历定制到岗位这个品类别处拿得到，撞了反信号一。"
+  },
+  {
+    "key": "mashbean/twdiw-vp-verifier-lite",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": false,
+      "why": "服务单一政府数字身份系统部署，非一般买家能用上"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Never place private keys in source, configuration, logs, or browser responses.",
+      "A renamed or newly provisioned namespace creates a different did:key and must be treated as a new verifier identity."
+    ],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "工艺扎实，但只服务台湾数位身分皮夹这一政府系统的部署基建，非精选店一般买家用得上的货。"
+  },
+  {
+    "key": "masterball-w/master-humanizer-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "十八条规则加文体分流加反查证竞品的降AI味方法论"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "不执行搜索就直接写对比内容，等同于凭空编造。",
+      "blader的humanizer两万五、op7418的Humanizer-zh一万一、hardikpandya的stop-slop七千。"
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "十八条规则细到字符级，但降AI味本身是最挤的赛道之一，自己都点名三个竞品上万星，独家性存疑。"
+  },
+  {
+    "key": "masutafu/cn-academic-paper-pro",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "C刊全流程加外审人真实点名句式的禁用清单"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "以下句式在本技能项目实践中被外审人明确点名，补入禁用清单。",
+      "硬禁用词：深度、深刻、显著、赋能、恰恰、重塑、本研究（摘要0处，正文0处）。"
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "外审人真实点名的句式都进了禁用清单，证据够硬，但论文润色是中国学术圈极拥挤的存量市场。"
+  },
+  {
+    "key": "mattiasadem/qante-commerce",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "电商售后客服应答模板，各家agent平台都有"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 0,
+      "一条硬约束": 0,
+      "产物是东西": 0,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "电商售后应答流程，各家agent平台都自带同类客服模板，非独家打法。"
+  },
+  {
+    "key": "matutu-ai/https-github.com-zeejay0-gathered-scenes-zine-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": true,
+      "why": "仓库名即原作者Zeejay0的GitHub链接本身"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 1,
+      "一条硬约束": 2,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Never use a detached rectangle, corner patch, generic circle, or brush swatch merely to make the poster feel designed.",
+      "Mentally remove the added hue. If the eye path and visual balance remain essentially unchanged, redesign it."
+    ],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "拼贴风格做得细，但仓库名就是原作者Zeejay0的GitHub链接，这是转存不是原创上架。"
+  },
+  {
+    "key": "max-scryptic/emailsorganised",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "二十余子命令的全能设计工具箱，是什么都做的反例"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 0,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "审查、加粗、减淡、动效、主题提取等二十多个子命令一把抓，撞了「什么都做不收」。"
+  },
+  {
+    "key": "maximum-creator/the-heart-of-the-creator",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "长篇网文总纲与伏笔审计，把烂梗写成硬性反例"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "不能连续循环新敌人出现、系统碾压、众人震惊、奖励结算这套故事发动机。",
+      "回收不是信息公布：答案不改变选择或人物关系，只算说明，不算兑现。"
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "把网文烂梗钉死成反例的功夫很扎实，但网文写作辅助类skill在中文圈已经不少。"
+  },
+  {
+    "key": "mdolorscrous/identify-impausa",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "Impausa自家引擎自动生成的内部配置层"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 0,
+      "一条硬约束": 1,
+      "产物是东西": 0,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "框架内部装修",
+      "单装做不了完整事"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "Impausa自家报告引擎自动生成的内部配置层，编辑无效，离不开公司计分引擎与姊妹skill。"
+  },
+  {
+    "key": "meanwhile371/baoyan-resume-writing",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "保研简历加套磁信，中国高教特有路径别处没有"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "若名单不含用户，停止生成，先向用户确认是否参与、由谁主持，不得默认归入用户简历。",
+      "把参与包装成负责：面试问分工必翻车，角色升格是最高风险。"
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "简历里把参与写成负责，这份工具知道面试会当场拆穿，宁可停下来问你到底是不是你干的。",
+    "为什么": "保研加套磁信是中国高教特有路径，别处没有对应工具；角色升格必翻车的判断来自真实面试场景。"
+  },
+  {
+    "key": "medaljz/paper-video",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "纸雕视频脚本生成，风格具体但全文仅三十余行"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "纸雕治愈视频脚本生成器，风格提示具体但全文仅三十余行，缺一条硬规矩撑品质。"
+  },
+  {
+    "key": "memikko/rh-stockpair-oracle",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "作者自营付费链上报价API文档，本质是商业推广"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "二维码/广告"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "本质是作者自营链上报价API的付费产品文档，按次计费USDC，是给自家商业服务打广告。"
+  },
+  {
+    "key": "michaelywna/my_skills_wm",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": true,
+      "why": "雅思写作批改网上已很多，加分项集中在排版"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 2
+    },
+    "证据": [
+      "Do not over-score to encourage the learner.",
+      "Use Huawen Fangsong (STFANGSO.TTF) when available; fall back to SimFang or another CJK-safe font only if necessary."
+    ],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "雅思批改类工具网上已有很多，这份加分项集中在PDF排版和字体兜底，核心能力别处也有。"
+  },
+  {
+    "key": "michal-niedzwiedzki/visimark",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "让markdown里的数字必须挂公式，检查器能真验证"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 2,
+      "一条硬约束": 2,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Core principle: never write a number you calculated yourself. Write the formula; let the tool do the arithmetic.",
+      "check passes on a document with no formulas. Prove derivation by changing an input."
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "别的报价单工具信你手算的总数，这个不信——数字必须是公式算出来的，交稿前还得真改一个输入验证检查器真会报错。",
+    "为什么": "把检查通过和有公式可查区分开，还能反向验证自己没作假，这种报价单工具很难得。"
+  },
+  {
+    "key": "michaljerzylew/openfusion",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "多模型逐条论断表决，但整体偏重工程编排"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "A council on a one-line fix is the overengineering this skill is built to avoid.",
+      "Only one Anthropic vote exists (the member). Synthesizer, Fresh-Eyes and Operator never vote."
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "多模型分歧点摊开验证的机制设计用心，但整体是偏重工程编排的元框架，独立商品感偏弱。"
+  },
+  {
+    "key": "mikakruschel/appsite",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "落地页生成系统里的一步，离不开配套artifact"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 0,
+      "产物是东西": 0,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "框架内部装修",
+      "单装做不了完整事"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "只是某套自建落地页生成系统里的一步，离不开配套的reviews artifact和组件。"
+  },
+  {
+    "key": "mikefutia/ad-multiplier",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "换脸锁定机制扎实，但同作者另一件媒介身份更强"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Tested twice with a dedicated REPLACE op; it does not fire. Treat it as a model limitation, not a prompting problem.",
+      "kie.ai has no cost preflight; the estimate is computed from measured dollars per second, verified against a real charge."
+    ],
+    "反信号": [
+      "同作者套路堆"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "同作者本片另有claymation-ads-claude-skill，独立媒介身份更完整，二选一保留那件。"
+  },
+  {
+    "key": "mikefutia/claymation-ads-claude-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "从产品图做出完整黏土定格广告，角色锁定自成一套"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Never generate a master of the product; attach the user's actual packshot to every image that shows the product.",
+      "Generated product references degrade label text within two generations: Testosterone becomes Testasterone."
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "AI广告最容易穿帮的是包装文字，生成两轮Testosterone就走样成Testasterone，这份死规矩是包装图只许实拍，绝不重新生成。",
+    "为什么": "五道关卡把黏土定格广告从产品图做到成片，商标文字失真的具体翻车现场是编不出来的。"
+  },
+  {
+    "key": "mildniu/pptbyby",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "PPT生成美化模板编辑六路由一把抓的全能工具箱"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 0,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "六路由一把抓的PPT全能工具箱，符合什么都做的反面，非单一风格单品。"
+  },
+  {
+    "key": "mingze21/bazi-ziwei-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "八字紫微双盘交叉印证加算法层强制排盘"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "绝对不要让AI自己排八字或紫微，必须调用算法层脚本。",
+      "Case B测试证明DeepSeek和Gemini自行排盘均出错。"
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "算命类skill最怕AI自己瞎排盘，这个死规矩摆在那：日柱紫微必须走确定性算法脚本，AI敢凭记忆排盘直接拒绝执行。",
+    "为什么": "实测过DeepSeek和Gemini自行排盘会出错才定下算法层不可绕过的硬约束，双盘交叉更扎实。"
+  },
+  {
+    "key": "mohsinchd/dr-mona-brand-kit",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "为真实客户Dr. Mona诊所定制，非通用产品"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "联系方式、账号、CTA素材全部写死为一位真实客户专属，是定制交付物非可迁移产品。"
+  },
+  {
+    "key": "mokuyoaxis/dsh-iris",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "依赖dsh平台专有iris工具，离开无法运行"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 0,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "框架内部装修"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "整套依赖dsh平台自带的iris专有工具，离开该平台无法运行。"
+  },
+  {
+    "key": "mr-funny/hbg-rubber-stamp-field-note",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "旅行照片配橡皮章对照海报，风格写死且带样图"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 1
+    },
+    "证据": [
+      "禁止圆形印章、红色姓名章、蜡封、护照章、邮票齿孔、纪念品Logo、光滑SVG、水彩晕染、塑料3D和巨大满版章印。",
+      "章印使用二到四种从照片提取的低至中饱和专色，具有缺墨、断边、针孔、颗粒和轻微一到二毫米套印错位。"
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "旅行照片配橡皮章，右边那半不许用滤镜蒙皮糊弄，必须真刻版重新套色，护照章、红名章、蜡封这些讨巧做法全部禁用。",
+    "为什么": "一件一装、风格写死、有样图可校准，禁用清单具体到毫米级套印误差。"
+  },
+  {
+    "key": "mrtooher/fable-mode",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "分阶段委派加校验的元技巧，最佳模式依赖姊妹agent"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "One obvious approach in a single pass should be done directly; staging a trivial task buries the answer in ceremony."
+    ],
+    "反信号": [
+      "单装做不了完整事"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "最佳模式依赖未随附的姊妹agent一整套，本片已有openfusion覆盖同类机制。"
+  },
+  {
+    "key": "msde-7/worldsmith",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "Minecraft地形渲染器逐列比对正版验证到99.7%"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Always read the rendered PNG before saying anything about how the terrain looks.",
+      "Measured 99.441 percent exact against a real server over 331,776 columns, 99.724 percent within one block."
+    ],
+    "反信号": [],
+    "判决": "收",
+    "钩子": "地形JSON写得对不对，别的工具让你读文档猜，这个渲染器跟正版游戏逐列比对到99.7%精确，所见即所得不是口号。",
+    "为什么": "洞穴积水率、建筑周边地形塌陷范围都实测出具体百分比，验证深度同类少见。"
+  },
+  {
+    "key": "muhammadfardin135-max/webnest-",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "整篇是The Mom Test畅销书方法论的转写"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 0,
+      "一条硬约束": 1,
+      "产物是东西": 0,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "整篇是The Mom Test畅销书方法论的转写，YC和Techstars都在教，网上总结已经很多。"
+  },
+  {
+    "key": "musoyangrigor/scroll-video-website-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "苹果风格滚动视频官网生成器，本质是落地页生成器"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [
+      "Preserve the source cadence up to 30 fps; sample a long clip to roughly 240 to 300 total frames."
+    ],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "苹果风格滚动视频官网生成器，本质是落地页生成器，店主已明确落地页生成器不进。"
+  },
+  {
+    "key": "mustbesimo/cinematic-scroll-skill",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "电影感滚动网站生成器，落在落地页生成器新反例里"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [
+      "Doctor is a static heuristic, not a visual judge or React runtime test. Fix actual problems, not regex scores."
+    ],
+    "反信号": [
+      "第N个通用件"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "电影感滚动网站生成器，同样落在落地页生成器不进的新反例里，且挂Studio付费路标。"
+  },
+  {
+    "key": "mycyg/aletheia",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": false,
+      "why": "强制在聊天回复插入作者公众号署名广告"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 1
+    },
+    "证据": [
+      "本 Skill 作者：程晓光，公众号：杨与光的日常。",
+      "Verify authentic clips using picture, audio, transcript, speaker and source; lip movement alone is insufficient."
+    ],
+    "反信号": [
+      "二维码/广告"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "工艺很好，但系统强制每次成功产出后在回复里插入作者公众号署名广告，等于嵌广告。"
+  },
+  {
+    "key": "nakamori-naoya/product-planning-plugins",
+    "三问": {
+      "是商品": false,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "插件包里的一件，行为由外部未附config决定"
+    },
+    "信号": {
+      "拦住自己": 1,
+      "真干过": 1,
+      "一条硬约束": 0,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 0
+    },
+    "证据": [],
+    "反信号": [
+      "框架内部装修",
+      "单装做不了完整事"
+    ],
+    "判决": "不收",
+    "钩子": "",
+    "为什么": "只是插件大礼包里的一个插件，行为由仓库外部另一份配置指令决定，共享样板代码明标shared。"
+  },
+  {
+    "key": "nathanielneil/sae",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "五项测试校准证据强度，但学术编辑类工具不少"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 2
+    },
+    "证据": [
+      "Do not turn association into causation. Do not turn possibility into certainty.",
+      "Hedge test: keep one sufficient qualifier and remove stacked expressions such as may potentially suggest."
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "证据强度校准的五项测试很扎实，但SCI英文润色是论文代写产业里极常见的服务。"
+  },
+  {
+    "key": "neptun-zuti/ponytail-hermes",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": true,
+      "写得出文案": true,
+      "why": "反工程懒人阶梯加留天花板注释，但同类meme不少"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 2,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 1,
+      "中文现场": 0
+    },
+    "证据": [
+      "Never simplify away input validation at trust boundaries, security measures, or accessibility basics.",
+      "The comment names the ceiling and the upgrade path, e.g. a global lock now, per-account locks if throughput matters."
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "偷懒留痕的注释规范很具体，但YAGNI极简编码人设在提示词圈已是常见套路。"
+  },
+  {
+    "key": "nevertoday/xxd-panel-001",
+    "三问": {
+      "是商品": true,
+      "别处拿不到": false,
+      "写得出文案": false,
+      "why": "美学权威在未附的source-brief文件里看不到"
+    },
+    "信号": {
+      "拦住自己": 2,
+      "真干过": 1,
+      "一条硬约束": 1,
+      "产物是东西": 1,
+      "腔调怪冷门": 0,
+      "中文现场": 1
+    },
+    "证据": [
+      "Never create a generic palette, extract extra colours, lock a swatch set, or pre-compose a title."
+    ],
+    "反信号": [],
+    "判决": "待读",
+    "钩子": "",
+    "为什么": "创意与美学的权威在另一份未附文件里，这份只是投递外壳，看不到真实风格。"
+  }
 ]

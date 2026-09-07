@@ -1,0 +1,2531 @@
+{
+ "day": "2026-09-06",
+ "read": 650,
+ "verdicts": {
+  "不收": 437,
+  "待读": 133,
+  "收": 71
+ },
+ "hit_by_band": {
+  "≥80": [
+   13,
+   84
+  ],
+  "70–79": [
+   67,
+   566
+  ]
+ },
+ "anti": {
+  "第N个通用件": 196,
+  "框架内部装修": 41,
+  "单装做不了完整事": 47,
+  "同作者套路堆": 56,
+  "二维码/广告": 7,
+  "官方目录": 4
+ },
+ "bad_files": [],
+ "picks": [
+  {
+   "key": "wei011/storm-blindspot",
+   "_score": 78,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "「回答用户时不得说'排水设计/水文规划/保费定价吃的是ERA5'...用户问'设计院是不是也被这数据骗了'，明确答：不是」",
+    "「实测标定显示（同场同点）：郑州约 9.3×、北京约 4.2×、深圳约 3.4×」",
+    "「κ 在不同城市差一个数量级，不存在一个通用'订正系数'能把再分析数据修回真实——这是本工具最想让你记住的一句话」",
+    "「任意子命令加 --json 输出结构化结果，喂给 agent」",
+    "「回答一个反直觉的问题：我们平时赖以感知风险的那套'权威降雨数据'，到底把最凶的暴雨抹平了多少倍？」",
+    "「郑州7·20、深圳9·7、北京7·21」配合「排水设计重现期来自 GB 50014-2021《室外排水设计标准》」"
+   ],
+   "钩子": "郑州720那种要命的暴雨，官方拿来当风向标的再分析数据能把它抹平9倍——这工具把那个盲区亮出来给你看",
+   "为什么": "三城实测锚点标定出「权威降雨数据系统性低估」的具体倍数，别处未见的反直觉洞察。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "litefreeteam/wechat-miniprogram-to-xhs-minitool",
+   "_score": 75,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "不得调用未列出的Native API，不得绕过SDK直接向bridge发消息",
+    "不要直接把<picker mode='selector'>转成可见<select>。移动WebView的原生<select>高度、样式和系统差异不可控",
+    "核心原则不是'API一一替换'，而是尽最大可能保住用户能完成的事情...HARD_BLOCK是最后一级，不是默认级"
+   ],
+   "钩子": "不等价就判死是最后一级不是默认级——十级最大可用决策树，连微信原生返回键怎么拆、picker滚轮留多少安全边距都算明白。",
+   "为什么": "微信小程序迁小红书MiniTool的完整实战playbook，十级决策树+像素级UI迁移细节，同类没见过第二份。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "megemini/lucky-doctor",
+   "_score": 75,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "所有药物冲突/相互作用分析仅供老年用户参考，绝不替代专业医疗建议",
+    "小更新沿用旧id...全新药品默认生成新id，此时旧贴纸会失效",
+    "Agent视觉直读优先，OCR模型兜底"
+   ],
+   "钩子": "药盒贴纸的二维码不是拍脑袋加的——小更新沿用旧id、换药才换id，这条决定了贴上去的码到底还扫不扫得动。",
+   "为什么": "老年人私人药物助理，认药+验冲突+语音+二维码贴纸打通实体药盒，连贴纸失效规则都想到了。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "alchaincyf/huashu-excel",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "一份内部对账分毫不差、行数与金额全部恒等的报告，可以整体错掉一个财年——只要那一列的列名不是它字面的意思。",
+    "实测过一次：一份典型的中国销售表，用\"找对表头+清千分位\"这种看着挺周全的做法去算总额，结果高出真值 161%，而且零报错、零警告。",
+    "自查为什么不行：你完全可以一边应用 Twyman's Law、一边抓出两个假象、一边把安慰剂对照做完，然后仍然用一个自己挑的窗口，证明一个自己想要的结论...闸门查不到这个，你自己也查不到。"
+   ],
+   "钩子": "看起来正常的数字最危险——同一份中国销售表，用\"找对表头+清千分位\"这种听着挺靠谱的做法算总额，结果比真值高161%，还零报错零警告。",
+   "为什么": "拿真实案例把\"内部对账全对但结论整体错一个财年\"讲透，还强制拉一个没参与创作的人来拆自己的台，不是通用数据分析提示词。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "astro-koko/ppt-lai",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "你对抗的是自己的美化本能。大模型默认会：对齐、留白、统一字体、和谐配色、提炼要点。在本 Skill 中，以上每一条都是被禁止的。",
+    "L1·旧课件感（轻度，2007–2010）/ L2·祖传课件感（浓郁，推荐，2003–2006）/ L3·镇馆文物感（考古级，2000–2002）",
+    "反审美必须有出处：每个视觉决策都要能对应到 references 里的某条参数。",
+    "主交付物：原生可编辑 .pptx（4:3，经 scripts/build_native.py 构建）",
+    "可选（用户要院士/传家宝/老讲座味时）：院士风味包 + slogan\"人没了，PPT还在\"",
+    "视觉可以有年代感，事实仍须准确（事实红线）：meta.visual_era 与 meta.factual_era 必须分开写"
+   ],
+   "钩子": "千禧年课件的丑不是随便丑——六条铁律里第一条就是每处丑都得查得到年代出处，不许瞎丑。",
+   "为什么": "把反审美做成了一套可查证的年代体系，独一份的怪，找不到替代。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "bestbeasthunter/close-reading-annotator",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "D04.core 只能从 v2.9.0 新 20 个枚举词里选...自造词被 validate 直接拒。",
+    "v3.8.3 重要修复：此前版本仅在版本历史中提到这三个脚本，未集成到主工作流，导致外部用户跑完 Phase 1-5 后不知道还需要校准。",
+    "核心原则：每段每层独立落盘 → 断点续跑 → Layer 4 二阶段执行 → 四层合并输出",
+    "产出：{doc_id}_report.md/.html：结构全景 + L2/L3 摘要 + L4 关系清单",
+    "适用于：小说精读、故事拆解、叙事分析、文笔拆解。不用于技术文档、论文、代码。",
+    "基于 DLUT 子集（9,924 词，随包分发）对 segment 原文做情感词频统计...手/猫/上海的狐步舞等文学质量高的作品"
+   ],
+   "钩子": "精读小说别人做到贴标签就停了，这个连'情绪判断和词表统计对不上'都要专门拉出来重新核验一遍。",
+   "为什么": "深度和版本迭代留下的真实用户反馈证据，这批里最扎实的一件。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "dososo/blcaptain-style-skill",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "不接追星粉丝向 / 纯促销硬广 / > 12 屏长教程——开头就劝用户换工具（什么都能做的 Skill 通常什么都做不好）",
+    "技术 PASS 不等于视觉 PASS——机器只证明结构没坏，审美由人工确认",
+    "内容理解是 Claude 的活，不是代码的活……代码只负责确定性的模板渲染 + 质量校验",
+    "选语言不是挑装饰皮肤，是给这份内容认领一个立场",
+    "小红书 / Rednote 3:4 竖图、公众号封面"
+   ],
+   "钩子": "选视觉语言不是挑皮肤，是替内容认领一个立场——技术闸能测出没崩，美不美还是得人来点头",
+   "为什么": "三套独家视觉语言各有专属配色签名，克制与非复制铁律写得极细，是这批里少见的完整视觉身份系统。",
+   "_batch": "batch_09"
+  },
+  {
+   "key": "henryliu0405/njupt-thesis-skill",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "铁律一:先读后写,绝不编造...如果某条公式或数据无法核对,在交付文档中用灰色斜体注释显式标出",
+    "本技能由一位学长的完整毕设项目沉淀而来",
+    "JS 内容字符串一律用反引号模板字符串,中文内容里混排的英文双引号会让普通引号字符串直接 SyntaxError(这是踩过的坑)",
+    "每生成或修改一个 docx,都要...用 soffice.py 转 PDF、pdftoppm 渲染成图片,亲眼逐页查看版式是否正确"
+   ],
+   "钩子": "南邮毕设五个月怎么熬，这份手册是学长自己走完全程、把坑一个个焊死了才敢拿出来的",
+   "为什么": "南邮本科毕设全流程，查重降AI率到MathType公式转换全是真踩过的坑",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "jingyangyuan/paper-mechanigraph-4ss",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "生成代码后绝对不能直接退出,必须在后台严格执行...发现瑕疵/蹭线──全局统筹微调坐标并重写SVG",
+    "严禁在SVG注释中出现双减号--，否则Chrome/Firefox XML解析器会直接触发Double hyphen within comment语法错误导致整图无法渲染",
+    "本技能由...100+张原图提炼出的8大构型几何参数与文本转译指南",
+    "严禁使用深色/黑色背景块(严禁文字反白);严禁使用浅灰色底色填充"
+   ],
+   "钩子": "机制图画完就想交货？这引擎逼自己先渲染成真PNG，一条条对着16条红线挑毛病，挑不干净不准输出",
+   "为什么": "CSSCI/SSCI机制图矢量引擎，渲染自检闭环到零瑕疵，连XML注释双减号的坑都写明了",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "kingkk469/creator-distiller",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "谁被蒸馏，公开内容的主体和归属就指向谁；发起整理的人不获得公开署名、运营权或商业入口",
+    "来源卡始终使用平台原视频地址，不能替换成中转页、短链或自己的落地页"
+   ],
+   "钩子": "蒸馏出来的是能查得到原视频出处的顾问，不是替博主说话的分身，也不归蒸馏者所有。",
+   "为什么": "",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "Kon-on/rimworld-modding-skill",
+   "_score": null,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "techLevel凭记忆写Ultratech实际是Ultra，如果先用模板就不会错",
+    "有模板就不用MCP，模板就是为了消灭凭记忆猜测，无模板才调MCP"
+   ],
+   "钩子": "有模板就不猜，没模板才去查原版，每次翻车都记进错题本，绝不把原版代码抄进你的mod。",
+   "为什么": "",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "lovstudio/publish-event-onto-hdx-skill",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "\"本 Skill 的历史教训：Agent 曾把从 DOM 片段推想出的页面路径、.edit-btn 数量和字段位置当作实测结果写入本文件，路径实为 404\"",
+    "\"任何一次从 /myevent/edit 基本信息页点'保存活动信息'之后，必须立刻再去 ?view=editbase 提交一次，并回读公开页确认三个字段\"",
+    "\"2026-09-02 在真实账号上逐页读取的结果。不要凭记忆推测路径。\""
+   ],
+   "钩子": "活动行的保存活动信息按钮一点，分类就被服务端悄悄清零——这个坑连平台自己都没告诉你，得先hook住请求预演一遍才躲得掉。",
+   "为什么": "重新发现一个活跃中文平台的隐藏保存陷阱，连自己曾经踩过的历史教训都留作反面教材，独此一家。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "shenquan520/reading-analysis",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "作者自曝真实事故:曾把用户口述内容误标成某书章节出处,而那本书正文几乎没读过。",
+    "另一条真实教训:某机构答案串三方核实一致却发现逐题解析是AI批量编造,从此答案与解析分开验证。"
+   ],
+   "钩子": "答案串信第三方,逐题解析永远自己回原文核一遍,这条规矩是被AI编的解析坑过一次换来的。",
+   "为什么": "考研英语阅读分析,真实事故换来核验铁律,是TASTE点名的正例题材。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "sja-homeworkclass/skills",
+   "_score": 72,
+   "_total": 12,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "硬性规定除非老师明确要最终答案,否则严禁给出完整计算结果,只能给引导提问或半成品算式。",
+    "全篇禁用LaTeX语法,留白一律用纯文字底线,因为LaTeX在Google Docs里会变乱码。"
+   ],
+   "钩子": "功课绝不代答,只搭引导框架和填空,读写障碍版直接砍掉六成字,换成方框箭头。",
+   "为什么": "香港SEN/NCS功课辅导,拒绝代答加去LaTeX踩坑都具体,冷门且对的人极有用。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "jakeyhb/football-content-ops-skill",
+   "_score": 82,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "不要用Markdown：**加粗**在小红书会原样显示→全部去掉**",
+    "标题要在语义处换行（别把词拆开，如'安东尼'不要变'安东/尼'）",
+    "图卡里不要写比分/数据（容易错、难改）……这样数据错只改文案、不动图"
+   ],
+   "钩子": "足球号封面按队换色只改三个CSS变量，比分故意不写进图卡——数据错了只改文案，不用重出封面。",
+   "为什么": "全部规则都长在一个真实账号的具体踩坑史上，小红书加粗渲染这种平台级bug只有真发过帖的人才知道。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "yanliudesign/dreameryanyan-star",
+   "_score": 78,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "「永远不要复刻已有7张的构图...除非用户明确说'照这张再画一张'」",
+    "「小星妍太可爱/撒娇 → 检查xiaoxingyan-ip.md的姿态库；活泼≠卖萌」",
+    "「小星妍必须参与画面的核心动作，不能只是站在旁边当装饰」",
+    "「对标：Tom Gauld × Christoph Niemann 的报刊编辑插画」",
+    "「为中文文章 / 公众号 / 小红书 / 幻灯片、Notion 文档等生成 3:4 竖版或 4:3 横版正文配图」"
+   ],
+   "钩子": "一张蜂蜜黄五角星干正事，不装饰不卖萌，一张图只讲一个道理",
+   "为什么": "原创IP+Tom Gauld式编辑插画流派定位，专为中文公众号认知锚点配图设计。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "wangzan101/zan-punct-fix",
+   "_score": 75,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "围栏代码块...URL、邮箱、文件路径...数字：1,000（千分位）、3.14（小数）、12:30（时间）",
+    "不是真问句的？...'有问题找管理员？'其实是陈述句，应该用。结尾",
+    "脚本负责高频、无歧义、每次都一模一样的批量转换...你负责它标记出来的、少数依赖语义的判断"
+   ],
+   "钩子": "AI写中文最容易漏马脚的地方就是标点滑回半角——数字代码URL一律绕道，连'反问句该用句号'这种语义细节都留给人工判断。",
+   "为什么": "专治AI生成中文最典型的半角标点病，千分位、小数点、反问句这些边界情况都真被处理过。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "xuqser/hand-drawn-collage",
+   "_score": 75,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 1
+   },
+   "证据": [
+    "If the host has no image model, return copy-ready prompts and stop. Do not fake an image.",
+    "If the result looks photographic, has a straight panel split, goes circular, drops a scene element, or uses the wrong ratio, regenerate once with the matching repair clause"
+   ],
+   "钩子": "不许照片滑回写实脸、不许两片对半分成死板色块——连'常见翻车成什么样'都替你列好了修复口令，配诗还必须专属这张照片。",
+   "为什么": "手绘拼贴摄影三个版式界限清楚，翻车模式(写实脸/圆形章/掉元素)列得很具体，明显真做过很多次。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "fnjialun/cnipa-patent-writer",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "只借格式、绝不抄技术内容（最重要的红线）...模板里出现的具体技术...只能当\"格式长什么样\"的参照，不能当内容来源",
+    "模板若内嵌了字体子集...克隆后本专利模板没有的字（黑体发明名称最典型）→ □。build_patent.py 的 save() 已自动剥离内嵌字体根治",
+    "结构校验 ≠ 视觉校验（最容易栽的坑）...完稿必须渲染成页面逐页看...这是本技能反复返工后总结出的第一教训"
+   ],
+   "钩子": "套别人的专利模板最容易在发明名称那行现出豆腐块——模板没有的字，它替你把内嵌字体连根拔了。",
+   "为什么": "格式与技术内容严格分离的红线、字体子集导致标题变豆腐块这种具体坑，都不是通用专利写作工具能替代的。",
+   "_batch": "batch_10"
+  },
+  {
+   "key": "haoxilin/cumcm-live-workflow-skill",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "题干明写的物理事实必须建模进去...严禁简化为「中心线/质点间距」判据——后者会漏检真实干涉，导致终止时刻、临界参数等关键结果整体失真",
+    "速度场用弧速法/解析传播，不用位置差分：急弯处差分低估弧速可达 7% 量级",
+    "证据链核查法（不轻信论文自述，每条结论都要「能跑出来」）"
+   ],
+   "钩子": "题干写了物体有厚度，就不许拿质点间距去判碰撞——初始条件错一个，后面全盘连锁皆输，这是真打过国赛摔出来的规矩。",
+   "为什么": "从几何判据到2026 AI使用声明红线、去AIGC痕迹的九类自查，全是真打过国赛才踩出来的具体教训，通用写作助手替代不了。",
+   "_batch": "batch_10"
+  },
+  {
+   "key": "jamesseseforce-ux/labor-rights-practice-strategy",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "辞职、被迫解除、旷工、拒绝工作、签署无争议协议和虚假返岗表达属于高风险或不可逆动作,事实和目标未核实时不得建议",
+    "本Skill只服务劳动者一方,宗旨是全面、尽力、严格地保护劳动者:不充当企业与劳动者之间的中立裁判",
+    "正式通知必须站在劳动者立场明确列出企业的具体违法行为、对应《劳动合同法》第三十八条的具体项",
+    "被迫解除、辞职、放弃权利、竞业解除等不可逆高风险文书继续适用停止门"
+   ],
+   "钩子": "被迫解除这种一发出去就回不了头的文书，它会在正文最前面用加粗字堵着，先劝你别急着发",
+   "为什么": "劳动维权实务方略只站劳动者一边，不可逆文书前有停止门，法条细到第三十八条",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "lusionf/vocational-teaching-interview-prep",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 1,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "\"很多高学历应聘者会不自觉地把试讲讲成学术报告或理论灌输...但职业院校评委想看的恰恰相反\"",
+    "\"核心话术逻辑：把学术能力翻译成教学能力，把高学历从'疑虑点'变成'放心点'\""
+   ],
+   "钩子": "评委不是嫌你懂得不够深，是怕你把高职学生当成没听懂的本科生在教——学情适配这把尺子，硕士生大多数栽在这。",
+   "为什么": "精准命中硕士考高职教师这个窄而真实的群体盲点，给出的诊断和话术都具体到能直接用。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "lyn-77/daxueshenmai",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "\"不要附加重复的'考场精简版'，不要重复同一依据，也不要硬造易错点或写'细心一点'之类空泛提醒\"",
+    "\"若推导与工具、答案册或另一方法不一致，冻结最终答案，从双方最后一致的状态开始审查...仍无法解决就明确说无法可靠确认，不任选一个结果\"",
+    "\"不使用API Key，不保存密钥，不直接调用云端模型接口\""
+   ],
+   "钩子": "推完还要自己把推导审一遍，答案册对不上就冻结重查，绝不为了给个交代硬造一句细心一点。",
+   "为什么": "把考研数学讲题做到可追溯、可审计，连不造安慰话这种反直觉的克制都写进了硬边界。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "onpicex/xiaohei-infographic",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 1
+   },
+   "证据": [
+    "Test: if removing Xiaohei would leave the section fully intact, the metaphor is decorative — redesign it.",
+    ".wrap gap 30→22px, body top/bottom padding 48/40→36/30px... took a 1:1.94 build down to 1:1.79 without touching width or cutting a section",
+    "you generally CANNOT visually parse the semantics of a generated scene... So do NOT claim 'I inspected the image and it's fine.'"
+   ],
+   "钩子": "把小黑摘掉整段还成立，那这个隐喻就是摆设——这条去小黑测试，比任何审美规则都管用。",
+   "为什么": "去小黑测试+像素级调参记录+老实承认自己看不懂图义，同批四件小红书封面里做得最实的一件。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "simonsiu2008-bit/hk-business-writing",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "特别提醒大公报只能学政论结构,书面语其实贴近内地政论腔,不能当港味教材来学。",
+    "给出具体改写心法:把大幅提升效率换成过去需要滞后一天现时是实时,用时间轴对比代替形容词。"
+   ],
+   "钩子": "大公报学不到港味,反而更像内地政论腔,连哪些港媒其实不算数都替你标好了。",
+   "为什么": "港式商业改写,连大公报不能当港味教材这种反直觉坑都点破,识别度极高。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "tanglele110-hash/museum-relic-stamp",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 1
+   },
+   "证据": [
+    "不得虚构年代、作者、窑口、出土地、馆藏机构、文物级别或来源",
+    "青蓝是原系列印色，不是未选择时的自动默认",
+    "背景始终保持暖象牙旧纸 #F0ECE3，不随主题色改变"
+   ],
+   "钩子": "文物图章海报只用暖象牙一张纸，主题色从不替你偷偷选——色卡摆出来，等你点了才敢画。",
+   "为什么": "单一视觉系列做到极致，年代出处没证据宁可空着不写，拒绝替文物编历史。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "whiccx0/dnd-dm-b",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "切勿凭空编造怪物数据或法术效果。开战或施法时先运行 `node scripts/lookup.js <命令> <词条> --brief`，0.2毫秒点查即取即用！",
+    "必须在 HUD 中输出显式增量算式（如 🩸 HP: 8/12 (-4 狼爪挥砍)），严禁直接覆写孤立数字，利用算式充当注意力锚点，杜绝长对话数值漂移。",
+    "敵方回合行動時，若觸發玩家專屬反應條件，必須暫停敵方後續結算，主動向玩家徵詢是否交反應",
+    "当玩家说'继续上次战役'时，读取 summary 与 log 最后一场，给出 3 句话剧情回顾，紧扣悬念无缝复跑！",
+    "你坐拥全量中文 D&D 规则资源库（包含核心三本 2024/2025 译本、全部官方扩展书与 38 部经典官方战役模组）"
+   ],
+   "钩子": "跑团最怕的不是规则记混，是AI记不住你血量掉到哪了——这个专门焊了一道'数值防漂移锁'，扣血必须列算式，不许悄悄改数字。",
+   "为什么": "9284条规则秒查加数值防漂移锁，把'AI跑团记性差'这个真实痛点焊死了，执行完整度这批里最高。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "xiaofenggan01/aigc-reduce",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "当\"达到 40%\"与\"保持学术语体\"冲突时,语体优先。宁可修改率停在 38%,也不能靠口语化把它推到 45%。",
+    "用AI重写AI文本会叠加AI指纹（PaperPure 实测:重写后检测率升至 100%）。",
+    "每次操作只改一小处,保留原文大部分 token 不变。相邻段落的句式结构、开头方式和长度必须不同。",
+    "同篇论文知网 35%、万方 12%,属正常现象"
+   ],
+   "钩子": "用AI重写AI文本只会更像AI——PaperPure实测过，重写后检测率直接冲到100%；这份纪律只做确定性的逐处替换，绝不整段重写。",
+   "为什么": "对着知网/万方/PaperPass的真实检测率做过实测的降AI味纪律，语体优先于修改率，不是通用去AI味模板。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "ysjsgzq/ai-small-tools",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "只报告事实,不修改文档。改字号会牵动分页、目录、交叉引用,是否修改、如何修改由人决定,修改后可再复检。",
+    "预期结果为 3 项不符合、2 项需人工确认,其中第 3 段的宋体来自样式表继承(正是直接格式检查会漏掉的情形)",
+    "生效格式取值顺序:直接格式 > 段落样式链(含 basedOn 继承) > 文档默认(docDefaults)。样式表里埋的错误字体同样能查出。"
+   ],
+   "钩子": "标书废标常常就差一个字号——但错的字体未必是直接改出来的，是从样式表'继承'来的，只查直接格式的工具根本看不出这层。",
+   "为什么": "标书格式体检顺着样式表继承链查起，专抓'继承来的错'这种直接格式检查会漏掉的情形，不是通用文档检查器。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "yuandian-ailaw/agent-for-legal-cn",
+   "_score": 72,
+   "_total": 11,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "\"有争议\"或\"可能成立\"的合理使用结论应停止起草并转交律师审查。",
+    "上述《电子商务法》条款与《信息网络传播权保护条例》的规定应一并考虑,二者在通知要素、处理时限和平台责任方面存在互补与重叠。",
+    "未经与警示门的明确互动,不写入最终输出。",
+    "抖音投诉中心、B站版权投诉通道、微博侵权投诉、微信侵权投诉、小红书投诉通道等"
+   ],
+   "钩子": "发版权反通知不是走个流程——签下去就等于同意接受人民法院管辖，这份技能会在写完最后一个字前先把这句话摆在你面前。",
+   "为什么": "依中国《条例》第14/16条起草通知/反通知，逐项过合理使用12情形与虚假通知责任警示门，不是套壳的DMCA模板。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "goldmetal/skill.unity.localize-game",
+   "_score": 85,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "기존 언어 슬롯의 객체를 새로 만들지 말고 가능한 한 같은 Path ID에서 내용만 교체한다.",
+    "누락 문자를 U+0000으로 치환한 다음 charDict[0]을 검사 없이 읽는 구현도 있다. 따라서 보이지 않는 문자라고 삭제하지 않는다.",
+    "더 최신 Unity 에디터로 resources.assets를 열어 저장하지 않는다."
+   ],
+   "钩子": "十几年前的老Unity游戏,不装编辑器也能把中文字库焊进去——同一个Path ID只换内容,一个字节都不多改",
+   "为什么": "字节级格式知识扎实到编不出来,连看不见的字符也不能删这种反直觉的坑都写清楚,是罕见硬核活。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "nkualexlee/pi-gba-fontpatch",
+   "_score": 85,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "槽位方案与原版渲染同路径必然兼容,但槽位天花板极低...只用于验证;不要用槽位方案堆字数",
+    "Windows定时器粒度(通用坑):所有睡眠原语(setTimeout/Atomics.wait/uv条件变量)在Windows被量化到15.6ms——睡5ms实际睡15.6ms",
+    "每个结论都要静态反汇编+动态运行时证据双重支撑"
+   ],
+   "钩子": "给十几年前的GBA神奇宝贝改版塞中文字库,39条踩坑手记逐条带十六进制地址——这活别处真编不出来",
+   "为什么": "罕见到极点的老掌机ROM改版技术骨灰知识,细到字节级坑位和真实崩溃诊断,是这批里最不可替代的一件。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "swaylq/juexing-skill",
+   "_score": 85,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "「你其实真正想要的是……」——这是这类报告最傲慢的一句,永远不写",
+    "2026年腾讯用DMCA清掉了内存抠密钥那一族工具(PyWxDump、留痕、chatlog作者自己删了库),所以微信数据只有一条稳路可走",
+    "删减量少于25%说明没认真跑"
+   ],
+   "钩子": "别人对你的评价掺着立场,你的记忆掺着美化——这份报告只信你自己打出去的字,还得反着测三遍才敢下笔",
+   "为什么": "反巴纳姆八道闸、真实数据获取困境、可证伪的删减率门槛,是这批里论证最严谨的一件。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "joeseesun/qiaomu-ai-prd",
+   "_score": 82,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "Do not invent current competitor, API, platform, or package facts……mark them as unresolved or use 未知",
+    "uses vague performance language such as 快、流畅、轻量、可扩展 instead of numbers",
+    "Separate each important instruction into 硬约束, 推荐默认, or 发挥空间"
+   ],
+   "钩子": "一句话产品想法秒变11章PRD，'快''轻量'这种空话过不了它自带的检查脚本，必须换成数字和度量方法。",
+   "为什么": "硬约束/推荐默认/发挥空间三分法加脚本强制，把PRD写给实施的AI看，作者乔木是店里点名的中文创作者。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "sayshirak/audio-analysis",
+   "_score": 82,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "撰写时禁止仅凭话题推断身份（如'讲QMT=程序员'）而不核对原文该段的发言人编号",
+    "cam++可能把2人对话拆成3人……cam++编号按首次出现顺序分配，与真实身份无固定对应",
+    "从原文找到≥2个身份锚点……审核后在'发言总结'开头用一句话写清：发言人1=…，发言人2=…"
+   ],
+   "钩子": "cam++经常把两人对话拆成三个人、编号还只按出场顺序发——所以每份导读交付前都要逼自己找两个身份锚点交叉核对。",
+   "为什么": "精准命中cam++模型这个具体已知缺陷，身份审核清单是可执行的交叉验证步骤，不是泛泛的'认真核对'。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "logeaddd/minecraft-ai-generate-bbmodel",
+   "_score": 75,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Never hand-write .bbmodel JSON, and never derive geometry directly from a picture",
+    "the classic failures: broken proportions (ears too tall, body like a column), float noise that looks like an auto-reconstructed mesh, Z-fighting",
+    "The AI fills the spec. The script generate_bbmodel.py does the rest."
+   ],
+   "钩子": "不许模型照图猜尺寸——AI只填规格表，数网格、防撕裂交给脚本，换来的是耳朵不会比头还高的那种翻车。",
+   "为什么": "Minecraft建模的AI+确定性脚本分工范本，'耳朵比头高、身体像柱子'这类翻车列得明明白白。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "tf1993614/know-your-fate",
+   "_score": 75,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 1,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 2
+   },
+   "证据": [
+    "阳历农历都未知→无法排盘，建议用户回家查看出生证明或询问家人",
+    "历史事件校准：提出3-5个该人已经发生的关键事件让用户验证，根据反馈微调对格局和用神的理解"
+   ],
+   "钩子": "时辰不知道就只做六字分析、绝不瞎凑时柱——排完盘还反过来拿你的真实往事验证准不准，这份底气来自真信这套的老师傅。",
+   "为什么": "八字命理少见的诚实边界：没有生辰宁可拒排也不瞎编，还用真实往事反向校准论断。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "adityaakr/repo-city",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "No quote, no quirk. A claim requiring you to infer intent from clean, unremarkable code is not a sharp edge; it is a guess wearing a citation.",
+    "Measured on one real repo: 6,605,994 lines, of which the single largest \"file\" was a 1.4-million-line binary build cache, against ~45,000 lines of actual source.",
+    "xargs splits past ARG_MAX, so wc emits several total lines. The $2 != \"total\" guard is load-bearing -- without it your line counts roughly double on a big repo."
+   ],
+   "钩子": "别信文件树的第一印象——有的仓库里，光是生成出来的客户端代码就能在行数、接口数、被引用次数上全部夺冠，把整仓库画得最高的那栋楼其实没人写也没人读。",
+   "为什么": "把仓库画成每栋楼都要拿原文引用作证的等距城市，连\"别用wc -l数行\"这种实测坑都写明白，不是通用架构图生成器。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "agentsope/smartbuy-skill",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "红线·绝不编造券规则：不编\"应该可以叠\"、不编\"国补 15% 应该适用\"、不编不存在的券名",
+    "2026 国补政策按省份不同（北京/上海/广东 等 23+ 省已恢复，其他可能未覆盖）...没拿到省份前,绝不直接套国补 15%",
+    "叠加顺序：京东自营典型 = 平台满减 → 品类券 → 9 折券 → Plus 满减 → 国补（云闪付支付时）"
+   ],
+   "钩子": "算到手价先问你在哪个省——2026年国补不是全国统一价，套错省份的公式，算出来的\"实付\"就是假的。",
+   "为什么": "京东凑单叠券连国补的省份差异、支付渠道触发条件都验证过，不是拍脑袋公式，绝不编造券规则。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "ayukhno/autosound-tuning-skill",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "STOPPING IS AN EVENT, not a pause in the conversation...The record closes first, and one command says what is still open.",
+    "The skill is normally installed as a symlink, and find does not descend into one — a real session lost minutes to find . -name rew_tool returning nothing.",
+    "State lives on disk, not in context.",
+    "Bank every agreed change via apply.propose — it writes the v_NNN versioned snapshot AND emits the settings sheet the Arbiter enters",
+    "patterns/competition.md | EMMA/AYA/CARMusic SQ prep."
+   ],
+   "钩子": "调音师最怕改完就忘——这套系统把每次调整都写盘存档，连'收工前记得把AB测试音量还原'这种小事都列进清单。",
+   "为什么": "车载音响调音的深度和自省，这批里独一份，找不到同等的对手。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "bryanleeli/sand-animation-first-person-hand",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Never reveal target detail ahead of the active hand. If the target appears before the hand reaches it, the shot fails.",
+    "A single uniform cloud of particles reads as digital confetti and should be avoided.",
+    "Treat the scene as synchronized systems driven by one shared trajectory...Independent tracks drift and create the false impression that the hand is floating over an unrelated completed image.",
+    "Do not use fixed particle count and fixed stroke thickness for all motions.",
+    "Typical width at 1080×1920: about 6–14 px for detail strokes"
+   ],
+   "钩子": "沙画动画最容易穿帮的地方是'手还没到画已经出现了'——这份把这条定成铁律：目标细节抢在手到之前露出来，这镜头就算失败。",
+   "为什么": "把沙画的物理质感拆解到像素级，冷门到独一份，没有替代。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "chyeqinu/my-gptimage-habits",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 1
+   },
+   "证据": [
+    "312 条真实任务（2026-07-21 → 2026-09-03）提炼 + 新端点实测核实（2026-09-04）",
+    "同一图片短时间反复上传会触发中转站临时限制，实测窗口约1小时、自行恢复，非内容拉黑",
+    "失败/效果不好→直接汇报，绝不自行重试（2026-09-04用户规则）"
+   ],
+   "钩子": "312次真实调用喂出来的脚本，连中转站封你一小时的窗口期都替你记牢，绝不替你自作主张重试。",
+   "为什么": "复刻个人真实创作习惯的极致案例，312条历史任务加具体接口踩坑，这套细节别处真拿不到。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "chyiiiiiiiiiiii/yiibu",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "identical settings measured 1.18s of dead tail on one rebuild and 2.93s on the next",
+    "a still grabbed from the final clip satisfied every other check (2026-08-23)",
+    "No gate without a test. A gate added without one rots silently, and that has already happened once in this file's history"
+   ],
+   "钩子": "每条剪辑门禁背后都是一次真实翻车的日期和秒数，规矩写进代码和测试里，不靠人记性。",
+   "为什么": "剪辑规矩全部落进可复测的gate和测试，每条都能倒查出哪次真实翻车逼出来的。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "dawnsyo-blip/ttsdirectorskill-chatting",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "过度标注会让语音听起来像在演戏。默认策略是不标注，只在有充分理由时才插入标签",
+    "实测出问题的写法：[long pause] [inhales softly]、[long pause] [hesitate]、[long pause] [exhales] [low voice]",
+    "一个衔接点上只放一次“呼吸/静默”事件",
+    "中文语气词（啊、呢、吧、嘛、哦、呀）本身携带情感信息"
+   ],
+   "钩子": "标点本身就是韵律信号：呼吸标签别和停顿标签叠着用，叠了就喘成一声失真的假气声",
+   "为什么": "TTS情感标注做到极致克制，每条规则都带实测踩坑证据，中文语气词分析尤其细。",
+   "_batch": "batch_09"
+  },
+  {
+   "key": "erp-lab-5/metro-map-tool",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "A map claiming a format newer than the tool reads is refused",
+    "A linear history draws as a straight line, and that is the honest answer. Say so rather than inventing branches to make it look busier.",
+    "Stations first. Nothing else can reference a station that does not exist.",
+    "A commit graph is already a metro map; it needs no mode and no new fields, only the mapping"
+   ],
+   "钩子": "什么都能画成地铁图：git log就是列车时刻表，merge commit自己变成换乘站，线性历史就画成直线，别硬凑分支充场面",
+   "为什么": "把地铁图这一种视觉隐喻用到landscape/roadmap/git历史等一切“东西连东西”的场景，设计克制、工程完整。",
+   "_batch": "batch_09"
+  },
+  {
+   "key": "kelvinfkr/company_skill",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Treat job-loss risk as a causal resource-allocation problem, not sentiment analysis",
+    "Never advise deception, sabotage, data extraction, or concealment from an employer"
+   ],
+   "钩子": "不算命不看眼缘，用利润池和资源分配的因果链，把会不会被裁算成一道生意题。",
+   "为什么": "",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "Lagom-TA/unprompted",
+   "_score": null,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "empty is not an error, say plainly that there wasn't enough to work with and stop. Do not pad a thin report into a thick one",
+    "The persona is a parody and says so, never as psychology, never as an assessment of ability or character"
+   ],
+   "钩子": "读你自己的Claude/Codex会话，告诉你在不同项目里判若两人，四个字母是绰号不是心理测试。",
+   "为什么": "",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "open-source-modelling/insurance_skills",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "It carries the country-label, coverage and one-curve-per-currency traps that make hand-written queries quietly return wrong or empty answers.",
+    "One curve per currency, not per sovereign. This is the big one... a naive filter on AU silently returns nothing for the early years.",
+    "The pack is a snapshot, and that is the one way this skill can be confidently wrong."
+   ],
+   "钩子": "同货币的两国曲线字节级相同，你要的从来不是价差——EIOPA这些坑，它替你踩过一遍才敢打包。",
+   "为什么": "370KB离线打包全部EIOPA历史收益率曲线，货币共享曲线、国家标签换代等真实陷阱都写明，冷门却精准。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "sasank-desaraju/rct-visualization",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "原文明确写Never invent,查不到就标na,绝不允许瞎猜一个数。",
+    "记录marimo真实踩坑:变量建了却没return会静默NameError,是真被坑过的教训。"
+   ],
+   "钩子": "论文里的每个数字不进数据格就不算数,编不出的地方老实写未报告。",
+   "为什么": "临床试验按CONSORT核对表做交互笔记,真实bug记录扎实,题材极窄。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "tanyaqiong31029/bilingual-term-extract",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "不编造译文——无上下文证据就不写tgt",
+    "Map 用 .size 不是 .length——词对齐初始化曾因 p.tu.length 全程 NaN，译文全军覆没。",
+    "分工原则：统计负责召回，LLM 负责精度"
+   ],
+   "钩子": "术语表宁可留白也不瞎猜——每条译文要么有例句撑腰，要么干脆不写，九条真实踩过的算法陷阱全带着确切阈值记在案。",
+   "为什么": "统计+LLM分工明确，已知陷阱一条条带着确切阈值，专业翻译工具里少见的扎实。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "viticci/handholder",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Never download missing BIOS data.",
+    "An app that returns to onboarding after an update is not configured; stop before supplying BIOS data or keys outside the approved scope.",
+    "Build a verified, console-like Android handheld without assuming a model, host path, storage volume, package version, or controller mapping."
+   ],
+   "钩子": "刷机从不凭上次记忆动手——每次插上设备先探测现场，型号、路径、版本一律重新验证。",
+   "为什么": "掌机改机的安全红线极具体，连「更新后回到引导页=没配置好」这种细节都写明。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "war3shenzuo/pebble-mascot",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Forbid specular hotspots, plastic or rubber sheen, glassy eyes, deep cast shadows, bevels, outlines, photoreal fur, and plush-toy realism.",
+    "Too plastic: remove specular highlights, flatten tonal contrast, widen shadow transitions, and reduce depth before changing color.",
+    "Make an app-icon source first and a character second: one memorable mascot, one bold crop, one soft tactile field.",
+    "Generate one square icon, normally 1024×1024 or larger.",
+    "flat-first paper clay: large simple color fields, shallow relief, soft matte texture"
+   ],
+   "钩子": "别的吉祥物图标要么塑料感要么玻璃眼，这个死磕纸黏土浅浮雕，连'裁到55-85%还是要露出背景'都写成了硬规矩。",
+   "为什么": "单一纸黏土风格锁死到像素级细节，禁用清单和修正表都很具体，同批里视觉体系最完整的一件。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "xixicc186/clawd-emotes-skill",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Do NOT color-key the background away -- the crab's eyes and shadow are also black and would be deleted",
+    "The original eating-crab bug: chopsticks far from the shoulder on a −52°→24° swing — they detached visually. Fixed by anchoring them to the hand and softening to −13°→3°.",
+    "Feet live *inside* the animated body group... This is structural: feet inside the group *cannot* detach."
+   ],
+   "钩子": "帽子为什么老飘在头顶？因为旋转支点钉错了地方——每一种'零件脱体'的bug，连同治它的那条结构性规则，这份技能都替你踩过一遍了。",
+   "为什么": "纯SVG+CSS keyframe做像素蟹表情，五条防脱体规则全部来自真实踩过的具体bug，不是泛泛的可爱吉祥物生成器。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "zgyxttk/industry-report-update-skill",
+   "_score": 72,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "旧月报是「结构模板 + 口径参考」，绝不当数值来源。每个承载数据的单元都按月重新采集、完整枚举、逐条溯源。",
+    "深交所 projectrends/query 的 start 分页参数失效、pageSize 上限 100（连续 2 期实测）——全量枚举改「top100 + 公告逐家核验」，勿反复尝试分页",
+    "生成器只从血缘图取数，禁止写裸文本（禁止 cell.text=\"373家\" 这种无出处写入）",
+    "把本 run 全产出（报告/变更摘要/专题/源文件/门禁报告/输入）镜像到当前对话工作区"
+   ],
+   "钩子": "旧月报的数字不能沿用，连专题选题都不许照抄上个月的——每个数字都得挂血统证明，闯过十三道门禁和一次独立盲审才能出装订。",
+   "为什么": "行业研报自动化做到数据血缘+十三道门禁+独立盲审，专业密度国内少见。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "gfodor/legal-skills",
+   "_score": 70,
+   "_total": 10,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Never let a model do arithmetic or exhaustive cross-referencing... Models find 19 of 20 numerals and report \"all consistent.\"",
+    "A 93-item fatal list with a 20% false-positive rate is worse than a clean 60-item list — attorneys stop reading audits that cry wolf.",
+    "**Silence is not a pass.** Every item ends as pass, fail, cannot_assess, not_applicable, or not_reached. An agent that omits an item has not passed it.",
+    "Every agent returns **only** a JSON array to findings/<agent>.json ... python scripts/synthesize.py findings/ ... -o audit_report.md --json audit_report.json",
+    "26 items are answerable only from intake facts. No document review reaches them: A19 A20 A22–A25 A36 C05 C08–C12 C21 D19–D26 D28 D29 I38 I42."
+   ],
+   "钩子": "查出的致命问题不能自己说了算——得让一个没看过理由的审核者在盲态下重新推翻一遍，活过两票才算数。",
+   "为什么": "316 项法条级检查清单+盲态对抗验证+红队攻防，专业密度和工程设计在同类里少见。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "cccc1ccccc/remodel-model",
+   "_score": 85,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "「改模承诺 = 在真实下载件上做修改」。从零参数化重建只是兑底中的兑底——重建件的结构语言(挂钩形态/镂空位置/公差风格)不等于原作,用户一眼识破",
+    "下载不到原件 → 直接向用户要文件,并且一开始就说清楚...用户原话:「如果你做不到我的需求,你可以直接告诉我,而不是白白做无用的尝试浪费token」",
+    "manifold3d `rotate()` 是角度制(2.x py 绑定实测):`rotate([1,0,0], π/2)` 签名不存在...2026-09-03 摇篮「孔只啃月牙坑」的根因就是它。"
+   ],
+   "钩子": "下载件差5mm卡不进去,能改的绝不重建;真拿不到原件,直接告诉你别浪费token装完成",
+   "为什么": "五道门校验+真实踩坑日志密度极高,边界诚实(拿不到原件就叫停),是这批里最扎实的一件。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "whyubel1eve/promo-bgm-skill",
+   "_score": 85,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "人声、管弦、失真吉他、EDM、嘻哈、爵士即兴一律做不了……配错了乐的推广片，比没配乐伤害大——做不到就别硬凑",
+    "重音离小节线<0.06s；段落切换与画面转折同帧",
+    "'涨'靠加声部，不靠加音量……把gain从0.6拉到1.0换来的不是'更燃'，是'更吵'"
+   ],
+   "钩子": "片子改3秒，配乐跟着改3秒——因为它压根不是一首歌，是一份能重渲的谱子，涨调靠加声部不靠加音量。",
+   "为什么": "全程代码合成、零生成模型、零版权风险，和店里'极简海报'那条硬约束是同一种诚实。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "angelwzr/linux-phone-porting",
+   "_score": 82,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "This skill does not unlock bootloaders and does not provide unlocking steps……do not provide rooting steps — one wrong step here bricks",
+    "DRAM charge retention decays across the unpowered interval — measured at roughly 6.5% of bits on one device",
+    "One variable per flash, falsifier before build……a single module load — returned the refusal that killed a 9.4k-line port premise"
+   ],
+   "钩子": "刷一次机5到10分钟，盲改的假设比对的更容易先通过——所以先把厂商分区当研究材料扒干净，连存储芯片的寿命残值都记下来再动手。",
+   "为什么": "证据密度全场最高：具体测量的比特衰减率、具体验证又推翻的基准分数，是真刷过很多次机的人才写得出来的细节。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "kelviq/tare",
+   "_score": 82,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "Do not conclude 'it's a bug' from local data alone……say that plainly rather than manufacturing a cause",
+    "One API response is written to the transcript as one entry per content block……86% on the data this tool was developed against",
+    "The transcript format is internal to Claude Code and changes between releases……Run this first, every time"
+   ],
+   "钩子": "先自证解析器没读错版本再吐数字，分不清'是bug'还是'只是没清空的5小时窗口'时，它会老实说分不清。",
+   "为什么": "自曝开发时踩过86%的去重误差，又坚持'本地数据证明不了是bug'的诚实边界，对每个Claude用户都直接有用。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "msertdev/keepwatching",
+   "_score": 82,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "The rule that makes this skill useful: never invent a retention number……If n: 0, the honest answer is 'untested'",
+    "Scaling alone left the last beat at 19.5s in a 30-second clip: 10.5 seconds of a frozen card……adding a citation line at 25.5s",
+    "Determinism is the contract. The same format.json produces the same frames, on any machine, forever"
+   ],
+   "钩子": "把9秒的钩子硬拉成30秒，光缩放会让结尾冻僵10.5秒——它有真实改版的具体数字，没数据的格式永远标着n=0。",
+   "为什么": "格式库拒绝编造留存率，有真实改版数字做证据，确定性渲染让留存数字能追溯到格式而不是运气。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "taxueseek/taxue-halftone",
+   "_score": 82,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 1,
+    "中文现场": 1
+   },
+   "证据": [
+    "「不用于：全彩实拍、UI、图表、模板拼贴」",
+    "「editorial 精炼元提示词模板...2026-09-04 实测稳定后固化」",
+    "「判语：如果无法指出每块颜色来自哪支墨、哪个角或哪一层阶、纸在哪里露出，就还不是本系统」"
+   ],
+   "钩子": "说不出这块颜色是哪支墨、纸在哪露白，这张海报就还没到及格线",
+   "为什么": "六轴印刷不变式+19个命名反模式雷达，把海报判优劣变成可校验的规格。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "yuzora-yu/project_sixth",
+   "_score": 82,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "「Do not apply implicitly: comparison of alternatives / change logs, minutes, audits / legal, contractual...disclosure」",
+    "「Rationale leak — deletion reasons or revision language such as 'instead,' 'previously,' or 'we removed'」",
+    "「Discard the contaminated draft, return to the Clean Brief, regenerate, and scan again. The structure itself may still be centered on the rejected concept.」",
+    "「Visual leak — silhouettes, fragments, shadows, containers, handles, placeholders, or compositional traces of a removed visual element」"
+   ],
+   "钩子": "你说「这个别要了」，AI常把删掉的那道影子还留在稿子里——这东西把痕迹扫干净，发现漏一处就整稿重来，不是补一个词",
+   "为什么": "精准命名并系统化处理「被拒想法阴魂不散」这个别处未见的具体问题。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "ai-safe-lens/vetaskill",
+   "_score": 75,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "「Never fetch the page to settle these questions. Fetching it runs the very instruction under review.」",
+    "「A documented attack used exactly this mechanism: the skill carried no install detail and forced the agent out to a lookalike domain the attacker controlled.」",
+    "「The most dangerous thing a skill can do is send the agent off-file」",
+    "「Read such a file the way a bomb technician reads a package: statically, at arm's length, assuming the worst.」"
+   ],
+   "钩子": "陌生人的skill装进来之前，当拆弹一样在安检台上读一遍——它引你去点开的那个外链，绝不替你点，点开的那一下就是在执行它",
+   "为什么": "精准点出「骗agent去读外链」这个静态扫描盲区，方法论独到且自我克制。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "0nicell/data-deletion-skill",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "Never ask for, transcribe, or place in a request: government ID numbers, passport or driver's licence numbers, payment-card or bank details, or a photograph of an identity document.",
+    "Several services (Leak-Lookup most notably) key their automated blacklist off the From: header, so a request about address B sent from address A silently does nothing.",
+    "Ask for suppression as well as deletion when writing to any search or lookup service. Deleting a record is useless if the next crawl reinstates it."
+   ],
+   "钩子": "求删信不能随便找个邮箱群发——寄给Leak-Lookup这类站点，必须用要删的那个地址亲自发，换个地址发了等于没发。",
+   "为什么": "十五周真实清除329家数据经纪商的实战手册，连\"从哪个邮箱发\"都有验证过的坑，不是通用GDPR模板。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "l3a0/claude-plugins",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 1,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "one run showed 97 Highlights for a 520-highlight book (the server rendered only the first page's count)",
+    "This turns recovery from transcription-with-guessed-boundaries into cutting text to known lengths"
+   ],
+   "钩子": "亚马逊藏起来的划线，去Mac客户端的SQLite里把每条的精确字符位置挖出来，再拿页面截图逐字抠回。",
+   "为什么": "",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "meanwhile371/baoyan-resume-writing",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 1,
+    "产物是东西": 1,
+    "腔调怪冷门": 1,
+    "中文现场": 2
+   },
+   "证据": [
+    "若名单不含用户，停止生成，先向用户确认是否参与、由谁主持，不得默认归入用户简历。",
+    "把参与包装成负责：面试问分工必翻车，角色升格是最高风险。"
+   ],
+   "钩子": "简历里把参与写成负责，这份工具知道面试会当场拆穿，宁可停下来问你到底是不是你干的。",
+   "为什么": "保研加套磁信是中国高教特有路径，别处没有对应工具；角色升格必翻车的判断来自真实面试场景。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "noamohev/camera-scan",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 1,
+    "产物是东西": 2,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "Run this only on a network you own or are lawfully occupying... Do not point it at networks or devices you have no right to access.",
+    "grabs a clean late frame per channel (avoids the corrupted-color first-keyframe problem on HEVC)"
+   ],
+   "钩子": "住进陌生房间先扫一遍局域网——避开HEVC首帧花屏的坑，摄像头拍没拍你，截图留证说了算。",
+   "为什么": "扫局域网+RTSP指纹+避开HEVC首帧花屏+隐私分级判读，一条完整取证链，别处没有。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "petergyang/fuck-cancer",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "Do not diagnose cancer from symptoms, imaging, or incomplete pathology... Do not choose treatment, estimate an individualized prognosis without enough evidence, or claim trial eligibility.",
+    "Do not cite search snippets, SEO health sites, unsourced summaries, social posts, AI-generated medical pages, or unofficial copies of copyrighted resources such as UpToDate or NCCN.",
+    "Use `Unknown - ask the care team` only for a gap that could change the next decision."
+   ],
+   "钩子": "永远不替家人拍板治疗方案，只维护一份活的病历摘要——AI理清混乱信息，决定权原样还给你。",
+   "为什么": "证据来源分级严格，明确拒绝诊断、选方案、估个体化预后，把帮忙不越界做到少见的克制程度。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "sriwitsumo/project-skill",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 1,
+    "腔调怪冷门": 2,
+    "中文现场": 0
+   },
+   "证据": [
+    "ห้ามยืดช่องว่างระหว่างคำหรือระยะระหว่างตัวอักษรเพื่อทำให้ขอบขวาเสมอกัน ยอมให้ปลายบรรทัดด้านขวาไม่เท่ากันตามธรรมชาติ",
+    "สภาพแวดล้อมที่ตรวจแล้วคือ Microsoft Word for Mac 16.112 (Build 26081010), Microsoft 365"
+   ],
+   "钩子": "泰文Word排版宁可右边参差不齐，也绝不拉伸字距或加空格去凑对齐。",
+   "为什么": "极窄门类但扎实：连测试用的 Word 具体版本号都写明，规矩具体到编不出来。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "voidforall/your-next-resume",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "remove or weaken the stamp — the header band, the per-bullet + and ~ marks, and the PDF metadata are one stamp in three layers",
+    "Two-column and design-heavy PDFs read back garbled, and everything downstream is built on this text.",
+    "no line appears on the projection unless a milestone earns it",
+    "Name the files you actually produced and where they are — seven when a browser was found, five when it was not"
+   ],
+   "钩子": "别人的职业规划都是先画饼，这份简历每加一行'未来的我'，都得有一个写明日期的里程碑先去挣，挣不到就不许写上去。",
+   "为什么": "投影简历配一条'里程碑不达标就不许写'的硬约束，外加完整的拒绝清单，防伪造机制这批里独一份。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "zihrou-zz/zz-skills-public",
+   "_score": 72,
+   "_total": 9,
+   "信号": {
+    "拦住自己": 2,
+    "真干过": 2,
+    "一条硬约束": 2,
+    "产物是东西": 2,
+    "腔调怪冷门": 1,
+    "中文现场": 0
+   },
+   "证据": [
+    "Match-and-refuse. If you're about to write any of these, rewrite the element with different structure.",
+    "The cream / sand / beige body bg is the saturated AI default of 2026... Token names like --paper, --cream, --sand, --bone, --flour, --linen, --parchment, --wheat, --biscuit, --ivory are tells in themselves.",
+    "If someone could look at this interface and say \"AI made that\" without doubt, it's failed.",
+    "Produce ready-to-ship, production-grade code, not prototypes or starting points."
+   ],
+   "钩子": "奶油色背景、渐变文字、编号小标题——这些「AI 审美」的常见药方，它一条条点名说不，见了就叫停重写。",
+   "为什么": "把「AI做的设计」的具体病征（配色/字体/动效）列成可执行的禁令清单，是罕见的精细度。",
+   "_batch": "batch_20"
+  }
+ ],
+ "pending": [
+  {
+   "key": "aisoftwarely/lianai-fupan",
+   "_score": 85,
+   "_total": 6,
+   "为什么": "框架完整、边界清楚,但更像精心设计的通用情感自助体系,一手伤疤证据不够扎实,拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "alchaincyf/seedance-skill",
+   "_score": 85,
+   "_total": 6,
+   "为什么": "有真实踩坑日期和硬约束,但同批视频生成类目已经不少,是否足够独立拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "bayue-syj/shuixian-manju-skills",
+   "_score": 85,
+   "_total": 7,
+   "为什么": "一致性方法论具体、质量门可执行,但一手伤疤证据偏弱,是否够独特拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "devswha/design-interview",
+   "_score": 85,
+   "_total": 7,
+   "为什么": "强制访谈锁概念的流程扎实,但同批同类反通用设计技能不止一个,是否最该收拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "hao0321/kelly-advisor",
+   "_score": 85,
+   "_total": 7,
+   "为什么": "拒绝回答的立场和防假精确的硬规矩很扎实,但凯利计算器类目本身常见,独特度拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "iiarius/liminal-editorial-posters",
+   "_score": 85,
+   "_total": 6,
+   "为什么": "单一视觉语言执行得很彻底,但海报类生成skill不少,是否足够独立难判断。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "momobo-o/good-boss-prompting",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "强制人在回路里挑选的边界写得极具体(连维护者笔记都留着防止被软化),但没有实体产物,独立度拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "promptprobe/pretend-designer",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "封杀清单具体到令人信服、随机撞色脚本是真硬约束,但同批反通用设计类不止一个,独立度拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "santmun/color-grade-skill",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "逆光肤色修正的技术细节很有说服力,调色类目本身也常见,是否够独立拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "smit-vanani/claude-promo-video",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "反指纹清单和真实翻车教训都很具体,但视频生成类目在这批里已经不少,独立度拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "wbh604/fund-guy-skill",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "门派识别、伪共识拆解等方法论极扎实,但篇幅巨大只读了开头,能否稳得住到底拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "wei011/ai-mianshi-sim",
+   "_score": 85,
+   "_total": 8,
+   "为什么": "击中秋招简历石沉大海这个具体的中文现场痛点,拒绝代写立场也清楚,但ATS类工具本身不算稀缺,拿不准。",
+   "_batch": "batch_01"
+  },
+  {
+   "key": "wei011/robot-companion-check",
+   "_score": 85,
+   "_total": 10,
+   "为什么": "同作者另一件已收（wei011/storm-blindspot）；把'机器人能陪多久'从厂商话术变成可交叉验证的数字，连对机器人有利的假设都写明。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "xixihhhh/ai-short-drama-skill",
+   "_score": 85,
+   "_total": 10,
+   "为什么": "十条铁律和门禁式生成顺序扎实，静音验收原则也是硬功夫，但AI短剧类skill本批和店内都不少，独家性需人工比对。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "yangcodingmaster/journal-analysis-skill",
+   "_score": 85,
+   "_total": 11,
+   "为什么": "CP1-CP4强制停的伦理门禁和CV统计自检严谨，但TASTE.md举过'日记年轮看板'，需核实是否与心选重复。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "yaoleifly/anti-median-chinese",
+   "_score": 85,
+   "_total": 10,
+   "为什么": "六维度诊断和反过度修正自检写得具体，但去AI味/降AI感题材店里已有数件相近命名的作品，独家性拿不准。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "crispjb-ui/crypto-assist",
+   "_score": 82,
+   "_total": 7,
+   "为什么": "术语具体、明确拒绝充当买入信号，但全文仅35行偏薄，且题材贴近金融尽调红线，需人工再判断。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "kgoedecke/ui-mockup-skill",
+   "_score": 82,
+   "_total": 9,
+   "为什么": "'密度即真实感'和大量具体调参是练出来的手艺，但UI mockup生成器面向开发者圈子本身工具很多，需核实独家性。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "kimberlying/watercolor-memory-poster",
+   "_score": 82,
+   "_total": 9,
+   "为什么": "运动模糊须顺真实动作链走、人挤就缩到60%以下让位留白，两条量化规则具体，但同类海报本批已出现多件，需人工比对。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "ksbsjsj/huasheng-shisan-perspective",
+   "_score": 82,
+   "_total": 11,
+   "为什么": "考据极深、诚实边界罕见地细，但语料来自该名师付费课程笔记与付费书OCR，未经同意克隆成免费人格，IP争议需人工权衡。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "olegtestov/page-design-skill",
+   "_score": 82,
+   "_total": 9,
+   "为什么": "图表塌陷、三段令牌这些坑写得准，但'避免AI网页通用感'已是圈内热门话题，类似指南可能不止一份，需人工核实。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "qqy2275583297-stack/anime-poster-skill",
+   "_score": 82,
+   "_total": 8,
+   "为什么": "拒绝维护违禁词替换表、只做合规改写比同类精细，但二次元海报提示词是AI绘图最拥挤的题材之一，独家性拿不准。",
+   "_batch": "batch_02"
+  },
+  {
+   "key": "yajnignez/minimax-h3-prompts",
+   "_score": 82,
+   "_total": 9,
+   "为什么": "两阶段审批+逐段情绪标注写得扎实，但拿不准同类模型的prompt指南别处是否也有。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "jingyi-wu-richael/replicate-video-ad",
+   "_score": 78,
+   "_total": 8,
+   "为什么": "视频广告逐帧拆解复刻流程扎实，但拿不准同类分析工具别处是否已有。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "kajisho5/ffmpeg-skill",
+   "_score": 78,
+   "_total": 8,
+   "为什么": "FFmpeg踩坑判断力深厚具体，但拿不准同类专业级视频工具别处的稀缺程度。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "anti31415/a-share-sentiment-index",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "诚实记录回测失败方法的做法难得，但拿不准与常见量化情绪指数工具的差距。",
+   "_batch": "batch_03"
+  },
+  {
+   "key": "kianzzz/zhouxing-paiban-wx",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "工程深度和诚实边界都够格，但通篇是完备的专业排版工具感，是否够独有留给复读判断。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "nutllwhy/whiteboard-book-video-skill",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "拆书短视频工程做得扎实，但这类赛道本身很拥挤，独有性拿不准，留给复读。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "rajarshib21/remoticon",
+   "_score": 75,
+   "_total": 0,
+   "为什么": "本地存档正文其实是不相关的'unslop'去AI味skill，和repo名对不上，抓取错误，需重抓再判。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "rorpheeyah/colophon",
+   "_score": 75,
+   "_total": 0,
+   "为什么": "本地存档正文其实是不相关的设计系统创建流程skill，和repo名对不上，抓取错误。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "sebaperiesdigit-create/peries-aios-tutorial",
+   "_score": 75,
+   "_total": 0,
+   "为什么": "本地存档正文其实是不相关的方案压力测试skill，和repo名对不上，抓取错误。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "serral828/learning-vault-skills",
+   "_score": 75,
+   "_total": 0,
+   "为什么": "本地存档正文是不相关的教学节点管理skill，是否真属于这个repo存疑，疑似同批次串档。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "shwetankg07/applying-to-jobs",
+   "_score": 75,
+   "_total": 9,
+   "为什么": "'每句必须能在profile.yml查到出处'这条反造假铁律很扎实，但简历/求职类工具同类极多，独有性拿不准。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "taewooopark/scholar-lab-radar",
+   "_score": 75,
+   "_total": 9,
+   "为什么": "学术实验室画像工具工程扎实、诚实边界清楚，但整体更像专业研究工具，留待复核。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "vaelkeep/hermes-paper-agent",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "文笔工程双优，但通篇依赖'../vael-paper/'这个作者自己的系统，是否是能独立拿来用的商品存疑。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "vicox/tonight",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "Mix命名的洞察堪称精妙，但整套依赖用户已有'Tonight'这个特定外部MCP服务，是否人人能装存疑。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "wei011/bama-decoder",
+   "_score": 75,
+   "_total": 11,
+   "为什么": "同作者另一件已收（wei011/storm-blindspot）；把东亚父母话术做成本地词典逐句翻译，连'这和纯吐槽工具的区别'都想清楚，翻译不是为了开庭。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "xdx888999/xdxlab-viral-cards",
+   "_score": 75,
+   "_total": 11,
+   "为什么": "运营深度和踩坑细节是本片同类题材里最扎实的一份，但16个reference文件更像全面运营手册，留待复核。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "xiaoduoya/aevideogen",
+   "_score": 75,
+   "_total": 9,
+   "为什么": "工程严谨度很高(真实DOM取点、预览导出分离确认)，但整体偏商业交付的专业系统，留待复核。",
+   "_batch": "batch_05"
+  },
+  {
+   "key": "zessi-c/biofigure-self-evolve",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "六个信号全部到位、证据扎实，但服务的是生信论文配图这个窄众场景，值不值得进货想再读一轮确认。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "zhoutian1995/love-roommate",
+   "_score": 75,
+   "_total": 10,
+   "为什么": "透明抠图、隐私清零、性能红线执行严谨，但恶搞真人的产品调性是否适合上架还需再斟酌。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "1159733927/jujing",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "边界干净利落，但正文很短且依赖上游命理计算程序，独立成不成一件货还要再看。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "addsumtech/slides_maker",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "工程严谨度罕见（真实token成本实测、强制版本闸门），但PPT生成是常见品类，正文过长只读了一部分，值得再确认独家性。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "afangteam/chatcut-to-fcpxml",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "对着真实FCP反复验证过的坑一个不少，但服务对象窄——绑定在ChatCut这一个具体小众工具的用户身上，值得再权衡受众规模。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "aiiqc/xhs-creator-distill",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "证据分级严谨到近乎苛刻（观察/推断/未知三态），但缺一个一眼记住的独家做法，收不收想再读一遍确认。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "ainosleep/industry-decoder-skill",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "防割意识和证据分级都很扎实，但和同作者的book-distiller-skill是同一套模板换题材，是否算独立媒介身份还想再确认。",
+   "_batch": "batch_06"
+  },
+  {
+   "key": "alfredo-hs/quarto-talks",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "写学术演讲的规矩定得很细，但多数是通用好品味，独家性拿不准。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "anxiong2025/thumbnail-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "护真图这条少见，但封面/缩略图生成器本身是个拥挤品类，拿不准。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "aria1ever/aria-money-come-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "反公式的立场是真见识，但小红书封面标题工具本身太挤，独家性拿不准。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "arnie936/ai-brand-kit",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "自动生效的机制是真聪明，但品牌工具包生成器这个品类本身常见。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "asdfjkl231580/video-slice-factory",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "溯源与独立复核的纪律扎实，但切片剪辑工具本身是个拥挤品类。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "ayanjuwudi66/ayan_game_test_design",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "测试方法论扎实到像内部手册，但偏专业向工具，独家性拿不准。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "biblcontentofficial-art/premiere-pro-edit-bibl",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "'全删语气词像AI'是真发现，但自动粗剪这个品类商业产品已经很多。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "bingchuh/bookkeeping",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "防止AI乱学规则的安全边界很具体，但个人记账类skill这个品类可能不少。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "brianzhu1999/sci-ai-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "门禁和留痕做得很严谨，但是面向科研作图的窄众专业工具。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "browser-use/windows-harness",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "踩坑记录极其硬核，但本质是开发者基建工具，是否是这店的货拿不准。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "buckkkk/bkgz-photo-jp-decorator",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "两声部字体的讲究很细，但'别让AI画字'这个道理正渐渐变成常识。",
+   "_batch": "batch_07"
+  },
+  {
+   "key": "callmetechie/mockingbird",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "德语前端设计对话流程扎实，但生态耦合深、要靠姊妹skill接手写spec，独立商品身份拿不准。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "catacombs666/ml_int-",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "数据审计的坑踩得真实，但整体像资深数据人的职业素养清单，别处拿不到存疑。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "cclank/lanshu-html2video-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "字体子集化和编辑挖掘都见真功夫，但文章转视频赛道本身拥挤，独门程度拿不准。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "charmisuk/screenspec",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "把说明书焊进原型文件、CDN被拦的踩坑都有实测记录，但为更独特的中文件让出名额，暂缓。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "chenzixin1/watchless",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "路由模型和合规边界都扎实，但文中点名的PodSum已是同类产品，独门程度存疑。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "cpp285/agent-reach-ch-travel",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "无登录风险的国内旅居调研思路对、中文现场感强，但整体偏薄，缺一个立得住的硬约束和产物。",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "dmpty/supply-chain-bottleneck-hunter",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "方法论和护栏都扎实，但产出是给候选股票池打分排名，与红线“金融荐股”的边界需要人工复核再定。",
+   "_batch": "batch_09"
+  },
+  {
+   "key": "dptdptdpt1/clarifact",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "取证与不许否认已核实事实的纪律写得扎实，但本质是帮企业向平台施压改稿/撤稿，价值观边界需再议。",
+   "_batch": "batch_09"
+  },
+  {
+   "key": "helibeiqi/salary-diagnosis-cli",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "企业HR专业工具扎实但偏SaaS，是否够独家拿不准，留待复核",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "howshannon/slop-cop",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "AI腔质检打分很有个性，但同类去AI味工具广泛存在，独家性待核",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "huasheng-ai-cut/peanutcut-creator",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "生成专属账号工作流的元技能，工程扎实，是否算单件商品拿不准",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "hub-ki/video-generation",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "演示视频制作管线工程极深，但偏英文SaaS工具，与本片同类视频技能扎堆",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "imraywang/ray-skills",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "VPS加固与代理巡检扎实老练，但涉及科学上网工具，是否收录待商榷",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "isaacbentley/sigint-rf-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "业余无线电信号侦测很硬核，但纯英文小众爱好，与中文受众契合度待定",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "jimmy7892/quant-research-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "量化回测方法论极硬核拒绝话术清楚，但英文金融专业受众与中文现场无关联",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "jinhanbuilds/hoist-the-elephant",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "长对话拉回主线的隐喻很妙很短小，但不产出任何文件，是否算单件商品拿不准",
+   "_batch": "batch_11"
+  },
+  {
+   "key": "JustinChangTW/ai-skills-core",
+   "_score": null,
+   "_total": 10,
+   "为什么": "把巴纳姆效应关进首尾的克制写得漂亮，但演讲教练类目本身competitive，需二次确认独家性。",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "k4vrin/learning-loop",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "闭卷考核的自律设计很好，但依赖同仓库另一套plugin根目录，独立完整性存疑。",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "konglong87/xuanxue-skills",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "执行力和风水顾问、起名器一个路数，做得同样扎实，但架上已有同类型，独家性待核。",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "kos2001/business-web",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "不编造数值这条铁律写得漂亮，但整篇服务韩国合同法场景，中文用户能否落地存疑。",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "kritikmodi/product-video-as-code",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "先配音后定时这条硬约束很扎实，但视频即代码这条路子已有同类工具，独家性再核实。",
+   "_batch": "batch_12"
+  },
+  {
+   "key": "leslieyeo/self-drive-planner-skill",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "工程和证据分层都很扎实，但自驾规划本身是拥挤赛道，独此一家的程度还要再掂量。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "liubo0099/tangi-eye",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "拦住自己的边界写得极具体、极少见，但受众窄（硬件调试），值不值得收要再比较。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "m-romdhani/scholarly-mcp",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "工程和实测证据都极扎实（防幻觉引用），但英文学术向、受众技术门槛高，是否适合这家店还需再看。",
+   "_batch": "batch_13"
+  },
+  {
+   "key": "masterball-w/master-humanizer-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "十八条规则细到字符级，但降AI味本身是最挤的赛道之一，自己都点名三个竞品上万星，独家性存疑。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "masutafu/cn-academic-paper-pro",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "外审人真实点名的句式都进了禁用清单，证据够硬，但论文润色是中国学术圈极拥挤的存量市场。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "maximum-creator/the-heart-of-the-creator",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "把网文烂梗钉死成反例的功夫很扎实，但网文写作辅助类skill在中文圈已经不少。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "michaljerzylew/openfusion",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "多模型分歧点摊开验证的机制设计用心，但整体是偏重工程编排的元框架，独立商品感偏弱。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "nathanielneil/sae",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "证据强度校准的五项测试很扎实，但SCI英文润色是论文代写产业里极常见的服务。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "neptun-zuti/ponytail-hermes",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "偷懒留痕的注释规范很具体，但YAGNI极简编码人设在提示词圈已是常见套路。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "nevertoday/xxd-panel-001",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "创意与美学的权威在另一份未附文件里，这份只是投递外壳，看不到真实风格。",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "oguzhantopgul/skill-security-reviewer",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "威胁模型写得极细，但骨架仍是通用安全审查清单套在skill这个新对象上，独家性没把握。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "ohggbob/shumo-problem-solving",
+   "_score": 72,
+   "_total": 12,
+   "为什么": "工程量惊人、铁律具体，但数学建模这个类目TASTE例子里已提过，怀疑与在架货重复，需核对。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "op7418/guizang-sports-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "闭环路线建议藏首尾定位、拒绝编造运动阈值，判断扎实；但同作者本批已投四件，赛道竞品也不少，先待读。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "othmanadi/celebrate",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "验号必核实源头、原图必留底、CTA判断权还给本人，克制得很；但报喜卡这个题材免费工具已经很多，独家性没把握。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "pengguin/travel-guide-pwa-builder",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "PWA生产坑踩得细，但发布绑定ChatGPT官方Sites，且与在架离线旅行类目重叠，需核对。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "pingqlin/miles-ai-skills",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "护栏字串清单列得极细，技术精确度优先于中文自然度这条也硬；但本片已有俄语版同类文风清理skill，独家性待核。",
+   "_batch": "batch_15"
+  },
+  {
+   "key": "readyagentsil/homebase-kit",
+   "_score": 72,
+   "_total": 5,
+   "为什么": "剪辑坑点具体,但同类短视频剪辑工具较多,独特性拿不准。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "redhiwik/apple-app-store-release",
+   "_score": 72,
+   "_total": 4,
+   "为什么": "上架流程扎实且守住不代点提审边界,但归类偏专业开发工具。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "rlx-better/yarn-rug-reference",
+   "_score": 72,
+   "_total": 5,
+   "为什么": "毛线地毯风格锁得很死,但同类图像风格转换skill这批不止一件。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "sahrizvi/codex-remote-control",
+   "_score": 72,
+   "_total": 4,
+   "为什么": "遥控Codex的点子够怪也测得扎实,但受众窄,需同时装两个CLI。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "severli93/moonland-deck",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "视觉与隐私边界锁得死,但功能是整套演示平台,偏工程全能包。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "sevzq/screenshot-to-html",
+   "_score": 72,
+   "_total": 4,
+   "为什么": "渲染态比对循环有真功夫,但截图转HTML是拥挤品类,独家性存疑。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shainedemo/brief-grid",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "证据核验很严谨,但是在归藏开源项目上的三色板衍生,独立身份待定。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shanliuling/meme-sticker",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "微信表情包生产策略是试错出来的,但同类照片转表情包工具这批也不少。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shaoqing404/deepmatch",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "求职决策证据分级扎实,但落在简历/求职拥挤门类边缘,独家性拿不准。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shine8592/duduexcel",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "中文财务建模配色和公式避坑很扎实,但Excel自动化本身是通用工具品类。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shn2004/adhd-unslop",
+   "_score": 72,
+   "_total": 4,
+   "为什么": "ADHD友好响应结构有specific角度,但去AI味词表本身很拥挤。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "shuchangzhang/case-interview-coach",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "案例面试状态机工程极扎实,但咨询求职面试辅导本身也是常见品类。",
+   "_batch": "batch_16"
+  },
+  {
+   "key": "smixs/mydays-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "个人用量报表做得诚实、有真实踩坑痕迹，但同类本地分析工具不少，独家性拿不准。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "syntaxsmith/humanize-paper",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "论证重建的方法论很扎实，但和「去AI味」这个已经拥挤的赛道边界还需再判断。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "tainguyen091994/receipts",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "克制又锋利，但「逼AI show证据」类技能正在变多，是否别处拿不到还需再看。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "tczyliu/china-travel-kit",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "工程扎实、边界诚实，但面向外国游客的中国旅行规划同类产品线不算稀缺。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "tinqiao-oss/engramory",
+   "_score": 72,
+   "_total": 6,
+   "为什么": "文件式记忆系统设计周全，但「给agent配记忆」类技能正变得常见，独家性待定。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "tsonglew/adhd-md",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "校验门禁做得真扎实，但「让文档更好读」太常见，能否算别处拿不到还需再看。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "vickysy/wechat-article-illustrator-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "公众号配图+推草稿箱的安全边界写得细，但这类流程不少团队都各自搭过一套，独家性待定。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "vivian020806-debug/editorial-watercolor-poster-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "单一风格做得完整，但「照片转单一风格海报」同类生图技能不少，深度略薄于同类佳作。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "vkcvaibhav-eng/agro-popular-science-writer",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "引证极严谨、有真实的语境串味修复记录，但配引用的科普写作助手本身是常见品类。",
+   "_batch": "batch_17"
+  },
+  {
+   "key": "wangyutao0915/pdf-to-chinese-latex",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "踩坑记录（水印、旋转图、公式编号）扎实真实，但论文中译类商业产品已经不少，独家性拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "watsontsai/smart-brief",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "先垫背景再讲结论的写法有真实前后对比案例撑腰，但'帮你写报告'这个品类选手不少，独家性拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "weaiw/design-to-psd",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "拒绝切块造假PSD这条纪律扎实，但AI辅助设计转PSD类工具正在变多，独家性拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "wei011/ai-boss-sim",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "响应真实新闻案例，审计触发vs持续监控的洞察少见；但作者本批23件同模板产品，独立媒介身份拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "whitemo0623/ieee-transactions-review-response-engineer",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "证据链纪律严谨到近乎刻薄，但只服务IEEE Transactions投稿这个窄众场景，是否是这店的货拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "wicanr2/openxcom-cht",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "字型与调色板踩坑记录异常详尽真实，但整篇更像作者自己OpenXcom项目的续接手册，是否算通用的货拿不准。",
+   "_batch": "batch_18"
+  },
+  {
+   "key": "wnallen/dpia-generator",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "跨境合规工程极扎实（防伪引用、特权圈两文件拆分），但DPIA类隐私合规软件已有成熟商用品类，且与中文现场无关，收不收待复核。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "xiaoboooovo/vrchat-world-codex-skills",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "分级风险工作流与事务化Apply设计扎实，但多少内容是VRChat专属、多少是通用agent安全模板的重新包装，值得再读一轮确认。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "xiaoyuan-liu/national-team-position",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "追踪份额而非规模来分辨真加仓与换仓轮动，思路干净，但方法对懂AKShare的人不难自己复现，独家性还想再确认。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "xiongallen40-design/stickman-animation-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "语义图层揭示与四道验收门工程严谨，但火柴人解说视频类skill并非独此一家，独家性值得再掂量。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "xux06814-cell/public-opinion-monitoring-evolution",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "证据分层与覆盖漏斗的诚实克制少见，但舆情监测报告已是成熟商业工具品类，独家性与题材适配都想再看看。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "yanliudesign/mono-color-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "单/双色印刷视觉系统工程化程度很高，但同作者本片还有一件几乎同构的muji-style-skill，像风格生成流水线在批量产出，独家性想再核实。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "ycg-dream/novel-summary",
+   "_score": 72,
+   "_total": 11,
+   "为什么": "子Agent拆分摘要长篇网文的工程解法极扎实，但其中R18内容的分级保留/规避审查策略是否适合公开上架，需要人工复核再定。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "yu-0312/ppt-creator-skills",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "图表验算的四条铁律有真实跨平台对比实测撑腰，工程和克制都到位，只是中文生活现场感比另一件标书格式检查弱一点，放着再对比一轮。",
+   "_batch": "batch_19"
+  },
+  {
+   "key": "zwl827125-glitch/modeling-research-figure-skill",
+   "_score": 72,
+   "_total": 9,
+   "为什么": "35 张图库加诚信规则扎实，但难判断这类数模绘图库别处是否已有替代，留待复核。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "zyrobbie/domain-crash-course-skill",
+   "_score": 72,
+   "_total": 10,
+   "为什么": "会前速成整体思路扎实、有实测数据和知乎分工设计，但与通用「快速学习」工具的边界不够确定，留待复核。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "buluslan/amazon-keyword-strategy",
+   "_score": 70,
+   "_total": 11,
+   "为什么": "打法框架具体、有反向翻车这类实操教训，但与商用选词 SaaS 的边界待确认，且每次调用需口播公众号。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "yuhleo99/reasearch-ppt",
+   "_score": 70,
+   "_total": 9,
+   "为什么": "图表诚信与审批闸把关具体，但「研究 PPT 工具」这一品类是否已有替代仍不够确定，留待复核。",
+   "_batch": "batch_20"
+  },
+  {
+   "key": "mr-funny/hbg-rubber-stamp-field-note",
+   "_score": 72,
+   "_total": 8,
+   "为什么": "主编复核：信号总分 8，证据不够硬，待读",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "citability/claude-code-adhd-skills",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "主编复核：信号总分 7，证据不够硬，待读",
+   "_batch": "batch_08"
+  },
+  {
+   "key": "michal-niedzwiedzki/visimark",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "主编复核：信号总分 7，证据不够硬，待读",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "mikefutia/claymation-ads-claude-skill",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "主编复核：信号总分 7，证据不够硬，待读",
+   "_batch": "batch_14"
+  },
+  {
+   "key": "msde-7/worldsmith",
+   "_score": 72,
+   "_total": 7,
+   "为什么": "主编复核：信号总分 7，证据不够硬，待读",
+   "_batch": "batch_14"
+  }
+ ],
+ "review_dropped": [
+  {
+   "key": "flybirp/trade-buddy",
+   "rule": "红线",
+   "why": "短线技术面给「执行/等确认」的交易结论 —— 荐股红线，无条件拒"
+  },
+  {
+   "key": "soxoj/claude-osint-deploy",
+   "rule": "红线",
+   "why": "OSINT 侦察工具链部署件，读者是普通人和创作者，攻击赋能边缘不收"
+  },
+  {
+   "key": "tmchow/illo-skill",
+   "rule": "风格箱/全能包",
+   "why": "十七种画风换皮 —— 店主定位「一件一装，风格写死」，风格箱不进"
+  },
+  {
+   "key": "mingze21/bazi-ziwei-skill",
+   "rule": "同类已收",
+   "why": "同一批已收 tf1993614/know-your-fate（八字，信号更高）；紫微这件转待读"
+  }
+ ]
+}

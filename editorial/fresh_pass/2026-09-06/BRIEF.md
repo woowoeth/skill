@@ -1,0 +1,401 @@
+# 过堂 · 2026-09-06
+
+读了 **650** 件（机器判官 ≥70 分的候选，有上游正文的）。收 **80** · 不收 **437** · 待读 **133**。
+
+| 判官分数档 | 读 | 收 | 命中率 |
+|---|---|---|---|
+| 70–79 | 566 | 67 | 12% |
+| ≥80 | 84 | 13 | 15% |
+
+反信号出现次数：第N个通用件 196、同作者套路堆 56、单装做不了完整事 47、框架内部装修 41、二维码/广告 7、官方目录 4
+
+## 收（80）
+
+- **wei011/storm-blindspot**（信号 12 · 判官 78）— 郑州720那种要命的暴雨，官方拿来当风向标的再分析数据能把它抹平9倍——这工具把那个盲区亮出来给你看
+  - 「「回答用户时不得说'排水设计/水文规划/保费定价吃的是ERA5'...用户问'设计院是不是也被这数据骗了'，明确答：不是」」
+  - 「「实测标定显示（同场同点）：郑州约 9.3×、北京约 4.2×、深圳约 3.4×」」
+- **litefreeteam/wechat-miniprogram-to-xhs-minitool**（信号 12 · 判官 75）— 不等价就判死是最后一级不是默认级——十级最大可用决策树，连微信原生返回键怎么拆、picker滚轮留多少安全边距都算明白。
+  - 「不得调用未列出的Native API，不得绕过SDK直接向bridge发消息」
+  - 「不要直接把<picker mode='selector'>转成可见<select>。移动WebView的原生<select>高度、样式和系统差异不可控」
+- **megemini/lucky-doctor**（信号 12 · 判官 75）— 药盒贴纸的二维码不是拍脑袋加的——小更新沿用旧id、换药才换id，这条决定了贴上去的码到底还扫不扫得动。
+  - 「所有药物冲突/相互作用分析仅供老年用户参考，绝不替代专业医疗建议」
+  - 「小更新沿用旧id...全新药品默认生成新id，此时旧贴纸会失效」
+- **alchaincyf/huashu-excel**（信号 12 · 判官 72）— 看起来正常的数字最危险——同一份中国销售表，用"找对表头+清千分位"这种听着挺靠谱的做法算总额，结果比真值高161%，还零报错零警告。
+  - 「一份内部对账分毫不差、行数与金额全部恒等的报告，可以整体错掉一个财年——只要那一列的列名不是它字面的意思。」
+  - 「实测过一次：一份典型的中国销售表，用"找对表头+清千分位"这种看着挺周全的做法去算总额，结果高出真值 161%，而且零报错、零警告。」
+- **astro-koko/ppt-lai**（信号 12 · 判官 72）— 千禧年课件的丑不是随便丑——六条铁律里第一条就是每处丑都得查得到年代出处，不许瞎丑。
+  - 「你对抗的是自己的美化本能。大模型默认会：对齐、留白、统一字体、和谐配色、提炼要点。在本 Skill 中，以上每一条都是被禁止的。」
+  - 「L1·旧课件感（轻度，2007–2010）/ L2·祖传课件感（浓郁，推荐，2003–2006）/ L3·镇馆文物感（考古级，2000–2002）」
+- **bestbeasthunter/close-reading-annotator**（信号 12 · 判官 72）— 精读小说别人做到贴标签就停了，这个连'情绪判断和词表统计对不上'都要专门拉出来重新核验一遍。
+  - 「D04.core 只能从 v2.9.0 新 20 个枚举词里选...自造词被 validate 直接拒。」
+  - 「v3.8.3 重要修复：此前版本仅在版本历史中提到这三个脚本，未集成到主工作流，导致外部用户跑完 Phase 1-5 后不知道还需要校准。」
+- **dososo/blcaptain-style-skill**（信号 12 · 判官 72）— 选视觉语言不是挑皮肤，是替内容认领一个立场——技术闸能测出没崩，美不美还是得人来点头
+  - 「不接追星粉丝向 / 纯促销硬广 / > 12 屏长教程——开头就劝用户换工具（什么都能做的 Skill 通常什么都做不好）」
+  - 「技术 PASS 不等于视觉 PASS——机器只证明结构没坏，审美由人工确认」
+- **henryliu0405/njupt-thesis-skill**（信号 12 · 判官 72）— 南邮毕设五个月怎么熬，这份手册是学长自己走完全程、把坑一个个焊死了才敢拿出来的
+  - 「铁律一:先读后写,绝不编造...如果某条公式或数据无法核对,在交付文档中用灰色斜体注释显式标出」
+  - 「本技能由一位学长的完整毕设项目沉淀而来」
+- **jingyangyuan/paper-mechanigraph-4ss**（信号 12 · 判官 72）— 机制图画完就想交货？这引擎逼自己先渲染成真PNG，一条条对着16条红线挑毛病，挑不干净不准输出
+  - 「生成代码后绝对不能直接退出,必须在后台严格执行...发现瑕疵/蹭线──全局统筹微调坐标并重写SVG」
+  - 「严禁在SVG注释中出现双减号--，否则Chrome/Firefox XML解析器会直接触发Double hyphen within comment语法错误导致整图无法渲染」
+- **kingkk469/creator-distiller**（信号 12 · 判官 72）— 蒸馏出来的是能查得到原视频出处的顾问，不是替博主说话的分身，也不归蒸馏者所有。
+  - 「谁被蒸馏，公开内容的主体和归属就指向谁；发起整理的人不获得公开署名、运营权或商业入口」
+  - 「来源卡始终使用平台原视频地址，不能替换成中转页、短链或自己的落地页」
+- **Kon-on/rimworld-modding-skill**（信号 12 · 判官 None）— 有模板就不猜，没模板才去查原版，每次翻车都记进错题本，绝不把原版代码抄进你的mod。
+  - 「techLevel凭记忆写Ultratech实际是Ultra，如果先用模板就不会错」
+  - 「有模板就不用MCP，模板就是为了消灭凭记忆猜测，无模板才调MCP」
+- **lovstudio/publish-event-onto-hdx-skill**（信号 12 · 判官 72）— 活动行的保存活动信息按钮一点，分类就被服务端悄悄清零——这个坑连平台自己都没告诉你，得先hook住请求预演一遍才躲得掉。
+  - 「"本 Skill 的历史教训：Agent 曾把从 DOM 片段推想出的页面路径、.edit-btn 数量和字段位置当作实测结果写入本文件，路径实为 404"」
+  - 「"任何一次从 /myevent/edit 基本信息页点'保存活动信息'之后，必须立刻再去 ?view=editbase 提交一次，并回读公开页确认三个字段"」
+- **shenquan520/reading-analysis**（信号 12 · 判官 72）— 答案串信第三方,逐题解析永远自己回原文核一遍,这条规矩是被AI编的解析坑过一次换来的。
+  - 「作者自曝真实事故:曾把用户口述内容误标成某书章节出处,而那本书正文几乎没读过。」
+  - 「另一条真实教训:某机构答案串三方核实一致却发现逐题解析是AI批量编造,从此答案与解析分开验证。」
+- **sja-homeworkclass/skills**（信号 12 · 判官 72）— 功课绝不代答,只搭引导框架和填空,读写障碍版直接砍掉六成字,换成方框箭头。
+  - 「硬性规定除非老师明确要最终答案,否则严禁给出完整计算结果,只能给引导提问或半成品算式。」
+  - 「全篇禁用LaTeX语法,留白一律用纯文字底线,因为LaTeX在Google Docs里会变乱码。」
+- **jakeyhb/football-content-ops-skill**（信号 11 · 判官 82）— 足球号封面按队换色只改三个CSS变量，比分故意不写进图卡——数据错了只改文案，不用重出封面。
+  - 「不要用Markdown：**加粗**在小红书会原样显示→全部去掉**」
+  - 「标题要在语义处换行（别把词拆开，如'安东尼'不要变'安东/尼'）」
+- **yanliudesign/dreameryanyan-star**（信号 11 · 判官 78）— 一张蜂蜜黄五角星干正事，不装饰不卖萌，一张图只讲一个道理
+  - 「「永远不要复刻已有7张的构图...除非用户明确说'照这张再画一张'」」
+  - 「「小星妍太可爱/撒娇 → 检查xiaoxingyan-ip.md的姿态库；活泼≠卖萌」」
+- **wangzan101/zan-punct-fix**（信号 11 · 判官 75）— AI写中文最容易漏马脚的地方就是标点滑回半角——数字代码URL一律绕道，连'反问句该用句号'这种语义细节都留给人工判断。
+  - 「围栏代码块...URL、邮箱、文件路径...数字：1,000（千分位）、3.14（小数）、12:30（时间）」
+  - 「不是真问句的？...'有问题找管理员？'其实是陈述句，应该用。结尾」
+- **xuqser/hand-drawn-collage**（信号 11 · 判官 75）— 不许照片滑回写实脸、不许两片对半分成死板色块——连'常见翻车成什么样'都替你列好了修复口令，配诗还必须专属这张照片。
+  - 「If the host has no image model, return copy-ready prompts and stop. Do not fake an image.」
+  - 「If the result looks photographic, has a straight panel split, goes circular, drops a scene element, or uses the wrong ra」
+- **flybirp/trade-buddy**（信号 11 · 判官 72）— 喊得再响也不追高——短线技术面一超买，结论就锁死成「等确认」，这规矩是拿两次真实亏损换来的。
+  - 「命中 ≥3 项超买 → 结论自动降级为「等确认」...禁止在超买区给「执行」」
+  - 「前两次教训：内蒙一机 9/2 收盘 13.41（三连板+一字板，RSI_2=98.8、KDJ_J=117.7...）、工行 9/2 收盘 8.22...都是全面超买却给了追高/创新高买点」
+- **fnjialun/cnipa-patent-writer**（信号 11 · 判官 72）— 套别人的专利模板最容易在发明名称那行现出豆腐块——模板没有的字，它替你把内嵌字体连根拔了。
+  - 「只借格式、绝不抄技术内容（最重要的红线）...模板里出现的具体技术...只能当"格式长什么样"的参照，不能当内容来源」
+  - 「模板若内嵌了字体子集...克隆后本专利模板没有的字（黑体发明名称最典型）→ □。build_patent.py 的 save() 已自动剥离内嵌字体根治」
+- **haoxilin/cumcm-live-workflow-skill**（信号 11 · 判官 72）— 题干写了物体有厚度，就不许拿质点间距去判碰撞——初始条件错一个，后面全盘连锁皆输，这是真打过国赛摔出来的规矩。
+  - 「题干明写的物理事实必须建模进去...严禁简化为「中心线/质点间距」判据——后者会漏检真实干涉，导致终止时刻、临界参数等关键结果整体失真」
+  - 「速度场用弧速法/解析传播，不用位置差分：急弯处差分低估弧速可达 7% 量级」
+- **jamesseseforce-ux/labor-rights-practice-strategy**（信号 11 · 判官 72）— 被迫解除这种一发出去就回不了头的文书，它会在正文最前面用加粗字堵着，先劝你别急着发
+  - 「辞职、被迫解除、旷工、拒绝工作、签署无争议协议和虚假返岗表达属于高风险或不可逆动作,事实和目标未核实时不得建议」
+  - 「本Skill只服务劳动者一方,宗旨是全面、尽力、严格地保护劳动者:不充当企业与劳动者之间的中立裁判」
+- **lusionf/vocational-teaching-interview-prep**（信号 11 · 判官 72）— 评委不是嫌你懂得不够深，是怕你把高职学生当成没听懂的本科生在教——学情适配这把尺子，硕士生大多数栽在这。
+  - 「"很多高学历应聘者会不自觉地把试讲讲成学术报告或理论灌输...但职业院校评委想看的恰恰相反"」
+  - 「"核心话术逻辑：把学术能力翻译成教学能力，把高学历从'疑虑点'变成'放心点'"」
+- **lyn-77/daxueshenmai**（信号 11 · 判官 72）— 推完还要自己把推导审一遍，答案册对不上就冻结重查，绝不为了给个交代硬造一句细心一点。
+  - 「"不要附加重复的'考场精简版'，不要重复同一依据，也不要硬造易错点或写'细心一点'之类空泛提醒"」
+  - 「"若推导与工具、答案册或另一方法不一致，冻结最终答案，从双方最后一致的状态开始审查...仍无法解决就明确说无法可靠确认，不任选一个结果"」
+- **onpicex/xiaohei-infographic**（信号 11 · 判官 72）— 把小黑摘掉整段还成立，那这个隐喻就是摆设——这条去小黑测试，比任何审美规则都管用。
+  - 「Test: if removing Xiaohei would leave the section fully intact, the metaphor is decorative — redesign it.」
+  - 「.wrap gap 30→22px, body top/bottom padding 48/40→36/30px... took a 1:1.94 build down to 1:1.79 without touching width or」
+- **simonsiu2008-bit/hk-business-writing**（信号 11 · 判官 72）— 大公报学不到港味,反而更像内地政论腔,连哪些港媒其实不算数都替你标好了。
+  - 「特别提醒大公报只能学政论结构,书面语其实贴近内地政论腔,不能当港味教材来学。」
+  - 「给出具体改写心法:把大幅提升效率换成过去需要滞后一天现时是实时,用时间轴对比代替形容词。」
+- **tanglele110-hash/museum-relic-stamp**（信号 11 · 判官 72）— 文物图章海报只用暖象牙一张纸，主题色从不替你偷偷选——色卡摆出来，等你点了才敢画。
+  - 「不得虚构年代、作者、窑口、出土地、馆藏机构、文物级别或来源」
+  - 「青蓝是原系列印色，不是未选择时的自动默认」
+- **whiccx0/dnd-dm-b**（信号 11 · 判官 72）— 跑团最怕的不是规则记混，是AI记不住你血量掉到哪了——这个专门焊了一道'数值防漂移锁'，扣血必须列算式，不许悄悄改数字。
+  - 「切勿凭空编造怪物数据或法术效果。开战或施法时先运行 `node scripts/lookup.js <命令> <词条> --brief`，0.2毫秒点查即取即用！」
+  - 「必须在 HUD 中输出显式增量算式（如 🩸 HP: 8/12 (-4 狼爪挥砍)），严禁直接覆写孤立数字，利用算式充当注意力锚点，杜绝长对话数值漂移。」
+- **xiaofenggan01/aigc-reduce**（信号 11 · 判官 72）— 用AI重写AI文本只会更像AI——PaperPure实测过，重写后检测率直接冲到100%；这份纪律只做确定性的逐处替换，绝不整段重写。
+  - 「当"达到 40%"与"保持学术语体"冲突时,语体优先。宁可修改率停在 38%,也不能靠口语化把它推到 45%。」
+  - 「用AI重写AI文本会叠加AI指纹（PaperPure 实测:重写后检测率升至 100%）。」
+- **ysjsgzq/ai-small-tools**（信号 11 · 判官 72）— 标书废标常常就差一个字号——但错的字体未必是直接改出来的，是从样式表'继承'来的，只查直接格式的工具根本看不出这层。
+  - 「只报告事实,不修改文档。改字号会牵动分页、目录、交叉引用,是否修改、如何修改由人决定,修改后可再复检。」
+  - 「预期结果为 3 项不符合、2 项需人工确认,其中第 3 段的宋体来自样式表继承(正是直接格式检查会漏掉的情形)」
+- **yuandian-ailaw/agent-for-legal-cn**（信号 11 · 判官 72）— 发版权反通知不是走个流程——签下去就等于同意接受人民法院管辖，这份技能会在写完最后一个字前先把这句话摆在你面前。
+  - 「"有争议"或"可能成立"的合理使用结论应停止起草并转交律师审查。」
+  - 「上述《电子商务法》条款与《信息网络传播权保护条例》的规定应一并考虑,二者在通知要素、处理时限和平台责任方面存在互补与重叠。」
+- **goldmetal/skill.unity.localize-game**（信号 10 · 判官 85）— 十几年前的老Unity游戏,不装编辑器也能把中文字库焊进去——同一个Path ID只换内容,一个字节都不多改
+  - 「기존 언어 슬롯의 객체를 새로 만들지 말고 가능한 한 같은 Path ID에서 내용만 교체한다.」
+  - 「누락 문자를 U+0000으로 치환한 다음 charDict[0]을 검사 없이 읽는 구현도 있다. 따라서 보이지 않는 문자라고 삭제하지 않는다.」
+- **nkualexlee/pi-gba-fontpatch**（信号 10 · 判官 85）— 给十几年前的GBA神奇宝贝改版塞中文字库,39条踩坑手记逐条带十六进制地址——这活别处真编不出来
+  - 「槽位方案与原版渲染同路径必然兼容,但槽位天花板极低...只用于验证;不要用槽位方案堆字数」
+  - 「Windows定时器粒度(通用坑):所有睡眠原语(setTimeout/Atomics.wait/uv条件变量)在Windows被量化到15.6ms——睡5ms实际睡15.6ms」
+- **swaylq/juexing-skill**（信号 10 · 判官 85）— 别人对你的评价掺着立场,你的记忆掺着美化——这份报告只信你自己打出去的字,还得反着测三遍才敢下笔
+  - 「「你其实真正想要的是……」——这是这类报告最傲慢的一句,永远不写」
+  - 「2026年腾讯用DMCA清掉了内存抠密钥那一族工具(PyWxDump、留痕、chatlog作者自己删了库),所以微信数据只有一条稳路可走」
+- **joeseesun/qiaomu-ai-prd**（信号 10 · 判官 82）— 一句话产品想法秒变11章PRD，'快''轻量'这种空话过不了它自带的检查脚本，必须换成数字和度量方法。
+  - 「Do not invent current competitor, API, platform, or package facts……mark them as unresolved or use 未知」
+  - 「uses vague performance language such as 快、流畅、轻量、可扩展 instead of numbers」
+- **sayshirak/audio-analysis**（信号 10 · 判官 82）— cam++经常把两人对话拆成三个人、编号还只按出场顺序发——所以每份导读交付前都要逼自己找两个身份锚点交叉核对。
+  - 「撰写时禁止仅凭话题推断身份（如'讲QMT=程序员'）而不核对原文该段的发言人编号」
+  - 「cam++可能把2人对话拆成3人……cam++编号按首次出现顺序分配，与真实身份无固定对应」
+- **logeaddd/minecraft-ai-generate-bbmodel**（信号 10 · 判官 75）— 不许模型照图猜尺寸——AI只填规格表，数网格、防撕裂交给脚本，换来的是耳朵不会比头还高的那种翻车。
+  - 「Never hand-write .bbmodel JSON, and never derive geometry directly from a picture」
+  - 「the classic failures: broken proportions (ears too tall, body like a column), float noise that looks like an auto-recons」
+- **tf1993614/know-your-fate**（信号 10 · 判官 75）— 时辰不知道就只做六字分析、绝不瞎凑时柱——排完盘还反过来拿你的真实往事验证准不准，这份底气来自真信这套的老师傅。
+  - 「阳历农历都未知→无法排盘，建议用户回家查看出生证明或询问家人」
+  - 「历史事件校准：提出3-5个该人已经发生的关键事件让用户验证，根据反馈微调对格局和用神的理解」
+- **adityaakr/repo-city**（信号 10 · 判官 72）— 别信文件树的第一印象——有的仓库里，光是生成出来的客户端代码就能在行数、接口数、被引用次数上全部夺冠，把整仓库画得最高的那栋楼其实没人写也没人读。
+  - 「No quote, no quirk. A claim requiring you to infer intent from clean, unremarkable code is not a sharp edge; it is a gue」
+  - 「Measured on one real repo: 6,605,994 lines, of which the single largest "file" was a 1.4-million-line binary build cache」
+- **agentsope/smartbuy-skill**（信号 10 · 判官 72）— 算到手价先问你在哪个省——2026年国补不是全国统一价，套错省份的公式，算出来的"实付"就是假的。
+  - 「红线·绝不编造券规则：不编"应该可以叠"、不编"国补 15% 应该适用"、不编不存在的券名」
+  - 「2026 国补政策按省份不同（北京/上海/广东 等 23+ 省已恢复，其他可能未覆盖）...没拿到省份前,绝不直接套国补 15%」
+- **ayukhno/autosound-tuning-skill**（信号 10 · 判官 72）— 调音师最怕改完就忘——这套系统把每次调整都写盘存档，连'收工前记得把AB测试音量还原'这种小事都列进清单。
+  - 「STOPPING IS AN EVENT, not a pause in the conversation...The record closes first, and one command says what is still open」
+  - 「The skill is normally installed as a symlink, and find does not descend into one — a real session lost minutes to find .」
+- **bryanleeli/sand-animation-first-person-hand**（信号 10 · 判官 72）— 沙画动画最容易穿帮的地方是'手还没到画已经出现了'——这份把这条定成铁律：目标细节抢在手到之前露出来，这镜头就算失败。
+  - 「Never reveal target detail ahead of the active hand. If the target appears before the hand reaches it, the shot fails.」
+  - 「A single uniform cloud of particles reads as digital confetti and should be avoided.」
+- **chyeqinu/my-gptimage-habits**（信号 10 · 判官 72）— 312次真实调用喂出来的脚本，连中转站封你一小时的窗口期都替你记牢，绝不替你自作主张重试。
+  - 「312 条真实任务（2026-07-21 → 2026-09-03）提炼 + 新端点实测核实（2026-09-04）」
+  - 「同一图片短时间反复上传会触发中转站临时限制，实测窗口约1小时、自行恢复，非内容拉黑」
+- **chyiiiiiiiiiiii/yiibu**（信号 10 · 判官 72）— 每条剪辑门禁背后都是一次真实翻车的日期和秒数，规矩写进代码和测试里，不靠人记性。
+  - 「identical settings measured 1.18s of dead tail on one rebuild and 2.93s on the next」
+  - 「a still grabbed from the final clip satisfied every other check (2026-08-23)」
+- **dawnsyo-blip/ttsdirectorskill-chatting**（信号 10 · 判官 72）— 标点本身就是韵律信号：呼吸标签别和停顿标签叠着用，叠了就喘成一声失真的假气声
+  - 「过度标注会让语音听起来像在演戏。默认策略是不标注，只在有充分理由时才插入标签」
+  - 「实测出问题的写法：[long pause] [inhales softly]、[long pause] [hesitate]、[long pause] [exhales] [low voice]」
+- **erp-lab-5/metro-map-tool**（信号 10 · 判官 72）— 什么都能画成地铁图：git log就是列车时刻表，merge commit自己变成换乘站，线性历史就画成直线，别硬凑分支充场面
+  - 「A map claiming a format newer than the tool reads is refused」
+  - 「A linear history draws as a straight line, and that is the honest answer. Say so rather than inventing branches to make 」
+- **kelvinfkr/company_skill**（信号 10 · 判官 72）— 不算命不看眼缘，用利润池和资源分配的因果链，把会不会被裁算成一道生意题。
+  - 「Treat job-loss risk as a causal resource-allocation problem, not sentiment analysis」
+  - 「Never advise deception, sabotage, data extraction, or concealment from an employer」
+- **Lagom-TA/unprompted**（信号 10 · 判官 None）— 读你自己的Claude/Codex会话，告诉你在不同项目里判若两人，四个字母是绰号不是心理测试。
+  - 「empty is not an error, say plainly that there wasn't enough to work with and stop. Do not pad a thin report into a thick」
+  - 「The persona is a parody and says so, never as psychology, never as an assessment of ability or character」
+- **open-source-modelling/insurance_skills**（信号 10 · 判官 72）— 同货币的两国曲线字节级相同，你要的从来不是价差——EIOPA这些坑，它替你踩过一遍才敢打包。
+  - 「It carries the country-label, coverage and one-curve-per-currency traps that make hand-written queries quietly return wr」
+  - 「One curve per currency, not per sovereign. This is the big one... a naive filter on AU silently returns nothing for the 」
+- **sasank-desaraju/rct-visualization**（信号 10 · 判官 72）— 论文里的每个数字不进数据格就不算数,编不出的地方老实写未报告。
+  - 「原文明确写Never invent,查不到就标na,绝不允许瞎猜一个数。」
+  - 「记录marimo真实踩坑:变量建了却没return会静默NameError,是真被坑过的教训。」
+- **soxoj/claude-osint-deploy**（信号 10 · 判官 72）— 别人跑完 pip install 就敢说装好了，这个非要拿 README 里的例子跑出真结果才算数——三十多个真实 OSINT 工具的坑全记着。
+  - 「never report success without Phase 5 evidence」
+  - 「holehe's -T takes no type=int, so -T 5 makes all 121 modules report [x] Rate limit — exit 0, zero real output」
+- **tanyaqiong31029/bilingual-term-extract**（信号 10 · 判官 72）— 术语表宁可留白也不瞎猜——每条译文要么有例句撑腰，要么干脆不写，九条真实踩过的算法陷阱全带着确切阈值记在案。
+  - 「不编造译文——无上下文证据就不写tgt」
+  - 「Map 用 .size 不是 .length——词对齐初始化曾因 p.tu.length 全程 NaN，译文全军覆没。」
+- **tmchow/illo-skill**（信号 10 · 判官 72）— 编辑插画不给你自由发挥——一个固定吉祥物用同一套方法论走完全程，十七种画风换皮不换魂。
+  - 「Triggers only when the skill is directly invoked or "illo" is requested; never on generic illustrate / draw / make-an-im」
+  - 「some hosts (Codex observed) collapse a fenced block to one line, turning a newline into a space」
+- **viticci/handholder**（信号 10 · 判官 72）— 刷机从不凭上次记忆动手——每次插上设备先探测现场，型号、路径、版本一律重新验证。
+  - 「Never download missing BIOS data.」
+  - 「An app that returns to onboarding after an update is not configured; stop before supplying BIOS data or keys outside the」
+- **war3shenzuo/pebble-mascot**（信号 10 · 判官 72）— 别的吉祥物图标要么塑料感要么玻璃眼，这个死磕纸黏土浅浮雕，连'裁到55-85%还是要露出背景'都写成了硬规矩。
+  - 「Forbid specular hotspots, plastic or rubber sheen, glassy eyes, deep cast shadows, bevels, outlines, photoreal fur, and 」
+  - 「Too plastic: remove specular highlights, flatten tonal contrast, widen shadow transitions, and reduce depth before chang」
+- **xixicc186/clawd-emotes-skill**（信号 10 · 判官 72）— 帽子为什么老飘在头顶？因为旋转支点钉错了地方——每一种'零件脱体'的bug，连同治它的那条结构性规则，这份技能都替你踩过一遍了。
+  - 「Do NOT color-key the background away -- the crab's eyes and shadow are also black and would be deleted」
+  - 「The original eating-crab bug: chopsticks far from the shoulder on a −52°→24° swing — they detached visually. Fixed by an」
+- **zgyxttk/industry-report-update-skill**（信号 10 · 判官 72）— 旧月报的数字不能沿用，连专题选题都不许照抄上个月的——每个数字都得挂血统证明，闯过十三道门禁和一次独立盲审才能出装订。
+  - 「旧月报是「结构模板 + 口径参考」，绝不当数值来源。每个承载数据的单元都按月重新采集、完整枚举、逐条溯源。」
+  - 「深交所 projectrends/query 的 start 分页参数失效、pageSize 上限 100（连续 2 期实测）——全量枚举改「top100 + 公告逐家核验」，勿反复尝试分页」
+- **gfodor/legal-skills**（信号 10 · 判官 70）— 查出的致命问题不能自己说了算——得让一个没看过理由的审核者在盲态下重新推翻一遍，活过两票才算数。
+  - 「Never let a model do arithmetic or exhaustive cross-referencing... Models find 19 of 20 numerals and report "all consist」
+  - 「A 93-item fatal list with a 20% false-positive rate is worse than a clean 60-item list — attorneys stop reading audits t」
+- **cccc1ccccc/remodel-model**（信号 9 · 判官 85）— 下载件差5mm卡不进去,能改的绝不重建;真拿不到原件,直接告诉你别浪费token装完成
+  - 「「改模承诺 = 在真实下载件上做修改」。从零参数化重建只是兑底中的兑底——重建件的结构语言(挂钩形态/镂空位置/公差风格)不等于原作,用户一眼识破」
+  - 「下载不到原件 → 直接向用户要文件,并且一开始就说清楚...用户原话:「如果你做不到我的需求,你可以直接告诉我,而不是白白做无用的尝试浪费token」」
+- **whyubel1eve/promo-bgm-skill**（信号 9 · 判官 85）— 片子改3秒，配乐跟着改3秒——因为它压根不是一首歌，是一份能重渲的谱子，涨调靠加声部不靠加音量。
+  - 「人声、管弦、失真吉他、EDM、嘻哈、爵士即兴一律做不了……配错了乐的推广片，比没配乐伤害大——做不到就别硬凑」
+  - 「重音离小节线<0.06s；段落切换与画面转折同帧」
+- **angelwzr/linux-phone-porting**（信号 9 · 判官 82）— 刷一次机5到10分钟，盲改的假设比对的更容易先通过——所以先把厂商分区当研究材料扒干净，连存储芯片的寿命残值都记下来再动手。
+  - 「This skill does not unlock bootloaders and does not provide unlocking steps……do not provide rooting steps — one wrong st」
+  - 「DRAM charge retention decays across the unpowered interval — measured at roughly 6.5% of bits on one device」
+- **kelviq/tare**（信号 9 · 判官 82）— 先自证解析器没读错版本再吐数字，分不清'是bug'还是'只是没清空的5小时窗口'时，它会老实说分不清。
+  - 「Do not conclude 'it's a bug' from local data alone……say that plainly rather than manufacturing a cause」
+  - 「One API response is written to the transcript as one entry per content block……86% on the data this tool was developed ag」
+- **msertdev/keepwatching**（信号 9 · 判官 82）— 把9秒的钩子硬拉成30秒，光缩放会让结尾冻僵10.5秒——它有真实改版的具体数字，没数据的格式永远标着n=0。
+  - 「The rule that makes this skill useful: never invent a retention number……If n: 0, the honest answer is 'untested'」
+  - 「Scaling alone left the last beat at 19.5s in a 30-second clip: 10.5 seconds of a frozen card……adding a citation line at 」
+- **taxueseek/taxue-halftone**（信号 9 · 判官 82）— 说不出这块颜色是哪支墨、纸在哪露白，这张海报就还没到及格线
+  - 「「不用于：全彩实拍、UI、图表、模板拼贴」」
+  - 「「editorial 精炼元提示词模板...2026-09-04 实测稳定后固化」」
+- **yuzora-yu/project_sixth**（信号 9 · 判官 82）— 你说「这个别要了」，AI常把删掉的那道影子还留在稿子里——这东西把痕迹扫干净，发现漏一处就整稿重来，不是补一个词
+  - 「「Do not apply implicitly: comparison of alternatives / change logs, minutes, audits / legal, contractual...disclosure」」
+  - 「「Rationale leak — deletion reasons or revision language such as 'instead,' 'previously,' or 'we removed'」」
+- **ai-safe-lens/vetaskill**（信号 9 · 判官 75）— 陌生人的skill装进来之前，当拆弹一样在安检台上读一遍——它引你去点开的那个外链，绝不替你点，点开的那一下就是在执行它
+  - 「「Never fetch the page to settle these questions. Fetching it runs the very instruction under review.」」
+  - 「「A documented attack used exactly this mechanism: the skill carried no install detail and forced the agent out to a look」
+- **0nicell/data-deletion-skill**（信号 9 · 判官 72）— 求删信不能随便找个邮箱群发——寄给Leak-Lookup这类站点，必须用要删的那个地址亲自发，换个地址发了等于没发。
+  - 「Never ask for, transcribe, or place in a request: government ID numbers, passport or driver's licence numbers, payment-c」
+  - 「Several services (Leak-Lookup most notably) key their automated blacklist off the From: header, so a request about addre」
+- **l3a0/claude-plugins**（信号 9 · 判官 72）— 亚马逊藏起来的划线，去Mac客户端的SQLite里把每条的精确字符位置挖出来，再拿页面截图逐字抠回。
+  - 「one run showed 97 Highlights for a 520-highlight book (the server rendered only the first page's count)」
+  - 「This turns recovery from transcription-with-guessed-boundaries into cutting text to known lengths」
+- **meanwhile371/baoyan-resume-writing**（信号 9 · 判官 72）— 简历里把参与写成负责，这份工具知道面试会当场拆穿，宁可停下来问你到底是不是你干的。
+  - 「若名单不含用户，停止生成，先向用户确认是否参与、由谁主持，不得默认归入用户简历。」
+  - 「把参与包装成负责：面试问分工必翻车，角色升格是最高风险。」
+- **mingze21/bazi-ziwei-skill**（信号 9 · 判官 72）— 算命类skill最怕AI自己瞎排盘，这个死规矩摆在那：日柱紫微必须走确定性算法脚本，AI敢凭记忆排盘直接拒绝执行。
+  - 「绝对不要让AI自己排八字或紫微，必须调用算法层脚本。」
+  - 「Case B测试证明DeepSeek和Gemini自行排盘均出错。」
+- **noamohev/camera-scan**（信号 9 · 判官 72）— 住进陌生房间先扫一遍局域网——避开HEVC首帧花屏的坑，摄像头拍没拍你，截图留证说了算。
+  - 「Run this only on a network you own or are lawfully occupying... Do not point it at networks or devices you have no right」
+  - 「grabs a clean late frame per channel (avoids the corrupted-color first-keyframe problem on HEVC)」
+- **petergyang/fuck-cancer**（信号 9 · 判官 72）— 永远不替家人拍板治疗方案，只维护一份活的病历摘要——AI理清混乱信息，决定权原样还给你。
+  - 「Do not diagnose cancer from symptoms, imaging, or incomplete pathology... Do not choose treatment, estimate an individua」
+  - 「Do not cite search snippets, SEO health sites, unsourced summaries, social posts, AI-generated medical pages, or unoffic」
+- **sriwitsumo/project-skill**（信号 9 · 判官 72）— 泰文Word排版宁可右边参差不齐，也绝不拉伸字距或加空格去凑对齐。
+  - 「ห้ามยืดช่องว่างระหว่างคำหรือระยะระหว่างตัวอักษรเพื่อทำให้ขอบขวาเสมอกัน ยอมให้ปลายบรรทัดด้านขวาไม่เท่ากันตามธรรมชาติ」
+  - 「สภาพแวดล้อมที่ตรวจแล้วคือ Microsoft Word for Mac 16.112 (Build 26081010), Microsoft 365」
+- **voidforall/your-next-resume**（信号 9 · 判官 72）— 别人的职业规划都是先画饼，这份简历每加一行'未来的我'，都得有一个写明日期的里程碑先去挣，挣不到就不许写上去。
+  - 「remove or weaken the stamp — the header band, the per-bullet + and ~ marks, and the PDF metadata are one stamp in three 」
+  - 「Two-column and design-heavy PDFs read back garbled, and everything downstream is built on this text.」
+- **zihrou-zz/zz-skills-public**（信号 9 · 判官 72）— 奶油色背景、渐变文字、编号小标题——这些「AI 审美」的常见药方，它一条条点名说不，见了就叫停重写。
+  - 「Match-and-refuse. If you're about to write any of these, rewrite the element with different structure.」
+  - 「The cream / sand / beige body bg is the saturated AI default of 2026... Token names like --paper, --cream, --sand, --bon」
+- **mr-funny/hbg-rubber-stamp-field-note**（信号 8 · 判官 72）— 旅行照片配橡皮章，右边那半不许用滤镜蒙皮糊弄，必须真刻版重新套色，护照章、红名章、蜡封这些讨巧做法全部禁用。
+  - 「禁止圆形印章、红色姓名章、蜡封、护照章、邮票齿孔、纪念品Logo、光滑SVG、水彩晕染、塑料3D和巨大满版章印。」
+  - 「章印使用二到四种从照片提取的低至中饱和专色，具有缺墨、断边、针孔、颗粒和轻微一到二毫米套印错位。」
+- **citability/claude-code-adhd-skills**（信号 7 · 判官 72）— 不夸你，只把git log摆你面前——证据说话，不许空口安慰，也不许唱衰。
+  - 「Reassurance without evidence is empty and the user knows it. Pull the real record first」
+  - 「Flattery. Praise the user can't trace to evidence gets discounted exactly like everything else」
+- **michal-niedzwiedzki/visimark**（信号 7 · 判官 72）— 别的报价单工具信你手算的总数，这个不信——数字必须是公式算出来的，交稿前还得真改一个输入验证检查器真会报错。
+  - 「Core principle: never write a number you calculated yourself. Write the formula; let the tool do the arithmetic.」
+  - 「check passes on a document with no formulas. Prove derivation by changing an input.」
+- **mikefutia/claymation-ads-claude-skill**（信号 7 · 判官 72）— AI广告最容易穿帮的是包装文字，生成两轮Testosterone就走样成Testasterone，这份死规矩是包装图只许实拍，绝不重新生成。
+  - 「Never generate a master of the product; attach the user's actual packshot to every image that shows the product.」
+  - 「Generated product references degrade label text within two generations: Testosterone becomes Testasterone.」
+- **msde-7/worldsmith**（信号 7 · 判官 72）— 地形JSON写得对不对，别的工具让你读文档猜，这个渲染器跟正版游戏逐列比对到99.7%精确，所见即所得不是口号。
+  - 「Always read the rendered PNG before saying anything about how the terrain looks.」
+  - 「Measured 99.441 percent exact against a real server over 331,776 columns, 99.724 percent within one block.」
+
+## 待读（133）
+
+- aisoftwarely/lianai-fupan（判官 85）— 框架完整、边界清楚,但更像精心设计的通用情感自助体系,一手伤疤证据不够扎实,拿不准。
+- alchaincyf/seedance-skill（判官 85）— 有真实踩坑日期和硬约束,但同批视频生成类目已经不少,是否足够独立拿不准。
+- bayue-syj/shuixian-manju-skills（判官 85）— 一致性方法论具体、质量门可执行,但一手伤疤证据偏弱,是否够独特拿不准。
+- devswha/design-interview（判官 85）— 强制访谈锁概念的流程扎实,但同批同类反通用设计技能不止一个,是否最该收拿不准。
+- hao0321/kelly-advisor（判官 85）— 拒绝回答的立场和防假精确的硬规矩很扎实,但凯利计算器类目本身常见,独特度拿不准。
+- iiarius/liminal-editorial-posters（判官 85）— 单一视觉语言执行得很彻底,但海报类生成skill不少,是否足够独立难判断。
+- momobo-o/good-boss-prompting（判官 85）— 强制人在回路里挑选的边界写得极具体(连维护者笔记都留着防止被软化),但没有实体产物,独立度拿不准。
+- promptprobe/pretend-designer（判官 85）— 封杀清单具体到令人信服、随机撞色脚本是真硬约束,但同批反通用设计类不止一个,独立度拿不准。
+- santmun/color-grade-skill（判官 85）— 逆光肤色修正的技术细节很有说服力,调色类目本身也常见,是否够独立拿不准。
+- smit-vanani/claude-promo-video（判官 85）— 反指纹清单和真实翻车教训都很具体,但视频生成类目在这批里已经不少,独立度拿不准。
+- wbh604/fund-guy-skill（判官 85）— 门派识别、伪共识拆解等方法论极扎实,但篇幅巨大只读了开头,能否稳得住到底拿不准。
+- wei011/ai-mianshi-sim（判官 85）— 击中秋招简历石沉大海这个具体的中文现场痛点,拒绝代写立场也清楚,但ATS类工具本身不算稀缺,拿不准。
+- wei011/robot-companion-check（判官 85）— 同作者另一件已收（wei011/storm-blindspot）；把'机器人能陪多久'从厂商话术变成可交叉验证的数字，连对机器人有利的假设都写明。
+- xixihhhh/ai-short-drama-skill（判官 85）— 十条铁律和门禁式生成顺序扎实，静音验收原则也是硬功夫，但AI短剧类skill本批和店内都不少，独家性需人工比对。
+- yangcodingmaster/journal-analysis-skill（判官 85）— CP1-CP4强制停的伦理门禁和CV统计自检严谨，但TASTE.md举过'日记年轮看板'，需核实是否与心选重复。
+- yaoleifly/anti-median-chinese（判官 85）— 六维度诊断和反过度修正自检写得具体，但去AI味/降AI感题材店里已有数件相近命名的作品，独家性拿不准。
+- crispjb-ui/crypto-assist（判官 82）— 术语具体、明确拒绝充当买入信号，但全文仅35行偏薄，且题材贴近金融尽调红线，需人工再判断。
+- kgoedecke/ui-mockup-skill（判官 82）— '密度即真实感'和大量具体调参是练出来的手艺，但UI mockup生成器面向开发者圈子本身工具很多，需核实独家性。
+- kimberlying/watercolor-memory-poster（判官 82）— 运动模糊须顺真实动作链走、人挤就缩到60%以下让位留白，两条量化规则具体，但同类海报本批已出现多件，需人工比对。
+- ksbsjsj/huasheng-shisan-perspective（判官 82）— 考据极深、诚实边界罕见地细，但语料来自该名师付费课程笔记与付费书OCR，未经同意克隆成免费人格，IP争议需人工权衡。
+- olegtestov/page-design-skill（判官 82）— 图表塌陷、三段令牌这些坑写得准，但'避免AI网页通用感'已是圈内热门话题，类似指南可能不止一份，需人工核实。
+- qqy2275583297-stack/anime-poster-skill（判官 82）— 拒绝维护违禁词替换表、只做合规改写比同类精细，但二次元海报提示词是AI绘图最拥挤的题材之一，独家性拿不准。
+- yajnignez/minimax-h3-prompts（判官 82）— 两阶段审批+逐段情绪标注写得扎实，但拿不准同类模型的prompt指南别处是否也有。
+- jingyi-wu-richael/replicate-video-ad（判官 78）— 视频广告逐帧拆解复刻流程扎实，但拿不准同类分析工具别处是否已有。
+- kajisho5/ffmpeg-skill（判官 78）— FFmpeg踩坑判断力深厚具体，但拿不准同类专业级视频工具别处的稀缺程度。
+- anti31415/a-share-sentiment-index（判官 75）— 诚实记录回测失败方法的做法难得，但拿不准与常见量化情绪指数工具的差距。
+- kianzzz/zhouxing-paiban-wx（判官 75）— 工程深度和诚实边界都够格，但通篇是完备的专业排版工具感，是否够独有留给复读判断。
+- nutllwhy/whiteboard-book-video-skill（判官 75）— 拆书短视频工程做得扎实，但这类赛道本身很拥挤，独有性拿不准，留给复读。
+- rajarshib21/remoticon（判官 75）— 本地存档正文其实是不相关的'unslop'去AI味skill，和repo名对不上，抓取错误，需重抓再判。
+- rorpheeyah/colophon（判官 75）— 本地存档正文其实是不相关的设计系统创建流程skill，和repo名对不上，抓取错误。
+- sebaperiesdigit-create/peries-aios-tutorial（判官 75）— 本地存档正文其实是不相关的方案压力测试skill，和repo名对不上，抓取错误。
+- serral828/learning-vault-skills（判官 75）— 本地存档正文是不相关的教学节点管理skill，是否真属于这个repo存疑，疑似同批次串档。
+- shwetankg07/applying-to-jobs（判官 75）— '每句必须能在profile.yml查到出处'这条反造假铁律很扎实，但简历/求职类工具同类极多，独有性拿不准。
+- taewooopark/scholar-lab-radar（判官 75）— 学术实验室画像工具工程扎实、诚实边界清楚，但整体更像专业研究工具，留待复核。
+- vaelkeep/hermes-paper-agent（判官 75）— 文笔工程双优，但通篇依赖'../vael-paper/'这个作者自己的系统，是否是能独立拿来用的商品存疑。
+- vicox/tonight（判官 75）— Mix命名的洞察堪称精妙，但整套依赖用户已有'Tonight'这个特定外部MCP服务，是否人人能装存疑。
+- wei011/bama-decoder（判官 75）— 同作者另一件已收（wei011/storm-blindspot）；把东亚父母话术做成本地词典逐句翻译，连'这和纯吐槽工具的区别'都想清楚，翻译不是为了开庭。
+- xdx888999/xdxlab-viral-cards（判官 75）— 运营深度和踩坑细节是本片同类题材里最扎实的一份，但16个reference文件更像全面运营手册，留待复核。
+- xiaoduoya/aevideogen（判官 75）— 工程严谨度很高(真实DOM取点、预览导出分离确认)，但整体偏商业交付的专业系统，留待复核。
+- zessi-c/biofigure-self-evolve（判官 75）— 六个信号全部到位、证据扎实，但服务的是生信论文配图这个窄众场景，值不值得进货想再读一轮确认。
+- zhoutian1995/love-roommate（判官 75）— 透明抠图、隐私清零、性能红线执行严谨，但恶搞真人的产品调性是否适合上架还需再斟酌。
+- 1159733927/jujing（判官 72）— 边界干净利落，但正文很短且依赖上游命理计算程序，独立成不成一件货还要再看。
+- addsumtech/slides_maker（判官 72）— 工程严谨度罕见（真实token成本实测、强制版本闸门），但PPT生成是常见品类，正文过长只读了一部分，值得再确认独家性。
+- afangteam/chatcut-to-fcpxml（判官 72）— 对着真实FCP反复验证过的坑一个不少，但服务对象窄——绑定在ChatCut这一个具体小众工具的用户身上，值得再权衡受众规模。
+- aiiqc/xhs-creator-distill（判官 72）— 证据分级严谨到近乎苛刻（观察/推断/未知三态），但缺一个一眼记住的独家做法，收不收想再读一遍确认。
+- ainosleep/industry-decoder-skill（判官 72）— 防割意识和证据分级都很扎实，但和同作者的book-distiller-skill是同一套模板换题材，是否算独立媒介身份还想再确认。
+- alfredo-hs/quarto-talks（判官 72）— 写学术演讲的规矩定得很细，但多数是通用好品味，独家性拿不准。
+- anxiong2025/thumbnail-skill（判官 72）— 护真图这条少见，但封面/缩略图生成器本身是个拥挤品类，拿不准。
+- aria1ever/aria-money-come-skill（判官 72）— 反公式的立场是真见识，但小红书封面标题工具本身太挤，独家性拿不准。
+- arnie936/ai-brand-kit（判官 72）— 自动生效的机制是真聪明，但品牌工具包生成器这个品类本身常见。
+- asdfjkl231580/video-slice-factory（判官 72）— 溯源与独立复核的纪律扎实，但切片剪辑工具本身是个拥挤品类。
+- ayanjuwudi66/ayan_game_test_design（判官 72）— 测试方法论扎实到像内部手册，但偏专业向工具，独家性拿不准。
+- biblcontentofficial-art/premiere-pro-edit-bibl（判官 72）— '全删语气词像AI'是真发现，但自动粗剪这个品类商业产品已经很多。
+- bingchuh/bookkeeping（判官 72）— 防止AI乱学规则的安全边界很具体，但个人记账类skill这个品类可能不少。
+- brianzhu1999/sci-ai-skill（判官 72）— 门禁和留痕做得很严谨，但是面向科研作图的窄众专业工具。
+- browser-use/windows-harness（判官 72）— 踩坑记录极其硬核，但本质是开发者基建工具，是否是这店的货拿不准。
+- buckkkk/bkgz-photo-jp-decorator（判官 72）— 两声部字体的讲究很细，但'别让AI画字'这个道理正渐渐变成常识。
+- callmetechie/mockingbird（判官 72）— 德语前端设计对话流程扎实，但生态耦合深、要靠姊妹skill接手写spec，独立商品身份拿不准。
+- catacombs666/ml_int-（判官 72）— 数据审计的坑踩得真实，但整体像资深数据人的职业素养清单，别处拿不到存疑。
+- cclank/lanshu-html2video-skill（判官 72）— 字体子集化和编辑挖掘都见真功夫，但文章转视频赛道本身拥挤，独门程度拿不准。
+- charmisuk/screenspec（判官 72）— 把说明书焊进原型文件、CDN被拦的踩坑都有实测记录，但为更独特的中文件让出名额，暂缓。
+- chenzixin1/watchless（判官 72）— 路由模型和合规边界都扎实，但文中点名的PodSum已是同类产品，独门程度存疑。
+- cpp285/agent-reach-ch-travel（判官 72）— 无登录风险的国内旅居调研思路对、中文现场感强，但整体偏薄，缺一个立得住的硬约束和产物。
+- dmpty/supply-chain-bottleneck-hunter（判官 72）— 方法论和护栏都扎实，但产出是给候选股票池打分排名，与红线“金融荐股”的边界需要人工复核再定。
+- dptdptdpt1/clarifact（判官 72）— 取证与不许否认已核实事实的纪律写得扎实，但本质是帮企业向平台施压改稿/撤稿，价值观边界需再议。
+- helibeiqi/salary-diagnosis-cli（判官 72）— 企业HR专业工具扎实但偏SaaS，是否够独家拿不准，留待复核
+- howshannon/slop-cop（判官 72）— AI腔质检打分很有个性，但同类去AI味工具广泛存在，独家性待核
+- huasheng-ai-cut/peanutcut-creator（判官 72）— 生成专属账号工作流的元技能，工程扎实，是否算单件商品拿不准
+- hub-ki/video-generation（判官 72）— 演示视频制作管线工程极深，但偏英文SaaS工具，与本片同类视频技能扎堆
+- imraywang/ray-skills（判官 72）— VPS加固与代理巡检扎实老练，但涉及科学上网工具，是否收录待商榷
+- isaacbentley/sigint-rf-skill（判官 72）— 业余无线电信号侦测很硬核，但纯英文小众爱好，与中文受众契合度待定
+- jimmy7892/quant-research-skill（判官 72）— 量化回测方法论极硬核拒绝话术清楚，但英文金融专业受众与中文现场无关联
+- jinhanbuilds/hoist-the-elephant（判官 72）— 长对话拉回主线的隐喻很妙很短小，但不产出任何文件，是否算单件商品拿不准
+- JustinChangTW/ai-skills-core（判官 None）— 把巴纳姆效应关进首尾的克制写得漂亮，但演讲教练类目本身competitive，需二次确认独家性。
+- k4vrin/learning-loop（判官 72）— 闭卷考核的自律设计很好，但依赖同仓库另一套plugin根目录，独立完整性存疑。
+- konglong87/xuanxue-skills（判官 72）— 执行力和风水顾问、起名器一个路数，做得同样扎实，但架上已有同类型，独家性待核。
+- kos2001/business-web（判官 72）— 不编造数值这条铁律写得漂亮，但整篇服务韩国合同法场景，中文用户能否落地存疑。
+- kritikmodi/product-video-as-code（判官 72）— 先配音后定时这条硬约束很扎实，但视频即代码这条路子已有同类工具，独家性再核实。
+- leslieyeo/self-drive-planner-skill（判官 72）— 工程和证据分层都很扎实，但自驾规划本身是拥挤赛道，独此一家的程度还要再掂量。
+- liubo0099/tangi-eye（判官 72）— 拦住自己的边界写得极具体、极少见，但受众窄（硬件调试），值不值得收要再比较。
+- m-romdhani/scholarly-mcp（判官 72）— 工程和实测证据都极扎实（防幻觉引用），但英文学术向、受众技术门槛高，是否适合这家店还需再看。
+- masterball-w/master-humanizer-skill（判官 72）— 十八条规则细到字符级，但降AI味本身是最挤的赛道之一，自己都点名三个竞品上万星，独家性存疑。
+- masutafu/cn-academic-paper-pro（判官 72）— 外审人真实点名的句式都进了禁用清单，证据够硬，但论文润色是中国学术圈极拥挤的存量市场。
+- maximum-creator/the-heart-of-the-creator（判官 72）— 把网文烂梗钉死成反例的功夫很扎实，但网文写作辅助类skill在中文圈已经不少。
+- michaljerzylew/openfusion（判官 72）— 多模型分歧点摊开验证的机制设计用心，但整体是偏重工程编排的元框架，独立商品感偏弱。
+- nathanielneil/sae（判官 72）— 证据强度校准的五项测试很扎实，但SCI英文润色是论文代写产业里极常见的服务。
+- neptun-zuti/ponytail-hermes（判官 72）— 偷懒留痕的注释规范很具体，但YAGNI极简编码人设在提示词圈已是常见套路。
+- nevertoday/xxd-panel-001（判官 72）— 创意与美学的权威在另一份未附文件里，这份只是投递外壳，看不到真实风格。
+- oguzhantopgul/skill-security-reviewer（判官 72）— 威胁模型写得极细，但骨架仍是通用安全审查清单套在skill这个新对象上，独家性没把握。
+- ohggbob/shumo-problem-solving（判官 72）— 工程量惊人、铁律具体，但数学建模这个类目TASTE例子里已提过，怀疑与在架货重复，需核对。
+- op7418/guizang-sports-skill（判官 72）— 闭环路线建议藏首尾定位、拒绝编造运动阈值，判断扎实；但同作者本批已投四件，赛道竞品也不少，先待读。
+- othmanadi/celebrate（判官 72）— 验号必核实源头、原图必留底、CTA判断权还给本人，克制得很；但报喜卡这个题材免费工具已经很多，独家性没把握。
+- pengguin/travel-guide-pwa-builder（判官 72）— PWA生产坑踩得细，但发布绑定ChatGPT官方Sites，且与在架离线旅行类目重叠，需核对。
+- pingqlin/miles-ai-skills（判官 72）— 护栏字串清单列得极细，技术精确度优先于中文自然度这条也硬；但本片已有俄语版同类文风清理skill，独家性待核。
+- readyagentsil/homebase-kit（判官 72）— 剪辑坑点具体,但同类短视频剪辑工具较多,独特性拿不准。
+- redhiwik/apple-app-store-release（判官 72）— 上架流程扎实且守住不代点提审边界,但归类偏专业开发工具。
+- rlx-better/yarn-rug-reference（判官 72）— 毛线地毯风格锁得很死,但同类图像风格转换skill这批不止一件。
+- sahrizvi/codex-remote-control（判官 72）— 遥控Codex的点子够怪也测得扎实,但受众窄,需同时装两个CLI。
+- severli93/moonland-deck（判官 72）— 视觉与隐私边界锁得死,但功能是整套演示平台,偏工程全能包。
+- sevzq/screenshot-to-html（判官 72）— 渲染态比对循环有真功夫,但截图转HTML是拥挤品类,独家性存疑。
+- shainedemo/brief-grid（判官 72）— 证据核验很严谨,但是在归藏开源项目上的三色板衍生,独立身份待定。
+- shanliuling/meme-sticker（判官 72）— 微信表情包生产策略是试错出来的,但同类照片转表情包工具这批也不少。
+- shaoqing404/deepmatch（判官 72）— 求职决策证据分级扎实,但落在简历/求职拥挤门类边缘,独家性拿不准。
+- shine8592/duduexcel（判官 72）— 中文财务建模配色和公式避坑很扎实,但Excel自动化本身是通用工具品类。
+- shn2004/adhd-unslop（判官 72）— ADHD友好响应结构有specific角度,但去AI味词表本身很拥挤。
+- shuchangzhang/case-interview-coach（判官 72）— 案例面试状态机工程极扎实,但咨询求职面试辅导本身也是常见品类。
+- smixs/mydays-skill（判官 72）— 个人用量报表做得诚实、有真实踩坑痕迹，但同类本地分析工具不少，独家性拿不准。
+- syntaxsmith/humanize-paper（判官 72）— 论证重建的方法论很扎实，但和「去AI味」这个已经拥挤的赛道边界还需再判断。
+- tainguyen091994/receipts（判官 72）— 克制又锋利，但「逼AI show证据」类技能正在变多，是否别处拿不到还需再看。
+- tczyliu/china-travel-kit（判官 72）— 工程扎实、边界诚实，但面向外国游客的中国旅行规划同类产品线不算稀缺。
+- tinqiao-oss/engramory（判官 72）— 文件式记忆系统设计周全，但「给agent配记忆」类技能正变得常见，独家性待定。
+- tsonglew/adhd-md（判官 72）— 校验门禁做得真扎实，但「让文档更好读」太常见，能否算别处拿不到还需再看。
+- vickysy/wechat-article-illustrator-skill（判官 72）— 公众号配图+推草稿箱的安全边界写得细，但这类流程不少团队都各自搭过一套，独家性待定。
+- vivian020806-debug/editorial-watercolor-poster-skill（判官 72）— 单一风格做得完整，但「照片转单一风格海报」同类生图技能不少，深度略薄于同类佳作。
+- vkcvaibhav-eng/agro-popular-science-writer（判官 72）— 引证极严谨、有真实的语境串味修复记录，但配引用的科普写作助手本身是常见品类。
+- wangyutao0915/pdf-to-chinese-latex（判官 72）— 踩坑记录（水印、旋转图、公式编号）扎实真实，但论文中译类商业产品已经不少，独家性拿不准。
+- watsontsai/smart-brief（判官 72）— 先垫背景再讲结论的写法有真实前后对比案例撑腰，但'帮你写报告'这个品类选手不少，独家性拿不准。
+- weaiw/design-to-psd（判官 72）— 拒绝切块造假PSD这条纪律扎实，但AI辅助设计转PSD类工具正在变多，独家性拿不准。
+- wei011/ai-boss-sim（判官 72）— 响应真实新闻案例，审计触发vs持续监控的洞察少见；但作者本批23件同模板产品，独立媒介身份拿不准。
+- whitemo0623/ieee-transactions-review-response-engineer（判官 72）— 证据链纪律严谨到近乎刻薄，但只服务IEEE Transactions投稿这个窄众场景，是否是这店的货拿不准。
+- wicanr2/openxcom-cht（判官 72）— 字型与调色板踩坑记录异常详尽真实，但整篇更像作者自己OpenXcom项目的续接手册，是否算通用的货拿不准。
+- wnallen/dpia-generator（判官 72）— 跨境合规工程极扎实（防伪引用、特权圈两文件拆分），但DPIA类隐私合规软件已有成熟商用品类，且与中文现场无关，收不收待复核。
+- xiaoboooovo/vrchat-world-codex-skills（判官 72）— 分级风险工作流与事务化Apply设计扎实，但多少内容是VRChat专属、多少是通用agent安全模板的重新包装，值得再读一轮确认。
+- xiaoyuan-liu/national-team-position（判官 72）— 追踪份额而非规模来分辨真加仓与换仓轮动，思路干净，但方法对懂AKShare的人不难自己复现，独家性还想再确认。
+- xiongallen40-design/stickman-animation-skill（判官 72）— 语义图层揭示与四道验收门工程严谨，但火柴人解说视频类skill并非独此一家，独家性值得再掂量。
+- xux06814-cell/public-opinion-monitoring-evolution（判官 72）— 证据分层与覆盖漏斗的诚实克制少见，但舆情监测报告已是成熟商业工具品类，独家性与题材适配都想再看看。
+- yanliudesign/mono-color-skill（判官 72）— 单/双色印刷视觉系统工程化程度很高，但同作者本片还有一件几乎同构的muji-style-skill，像风格生成流水线在批量产出，独家性想再核实。
+- ycg-dream/novel-summary（判官 72）— 子Agent拆分摘要长篇网文的工程解法极扎实，但其中R18内容的分级保留/规避审查策略是否适合公开上架，需要人工复核再定。
+- yu-0312/ppt-creator-skills（判官 72）— 图表验算的四条铁律有真实跨平台对比实测撑腰，工程和克制都到位，只是中文生活现场感比另一件标书格式检查弱一点，放着再对比一轮。
+- zwl827125-glitch/modeling-research-figure-skill（判官 72）— 35 张图库加诚信规则扎实，但难判断这类数模绘图库别处是否已有替代，留待复核。
+- zyrobbie/domain-crash-course-skill（判官 72）— 会前速成整体思路扎实、有实测数据和知乎分工设计，但与通用「快速学习」工具的边界不够确定，留待复核。
+- buluslan/amazon-keyword-strategy（判官 70）— 打法框架具体、有反向翻车这类实操教训，但与商用选词 SaaS 的边界待确认，且每次调用需口播公众号。
+- yuhleo99/reasearch-ppt（判官 70）— 图表诚信与审批闸把关具体，但「研究 PPT 工具」这一品类是否已有替代仍不够确定，留待复核。
+
+## 主编复核（只读证据句）
+
+拿掉 4 件：flybirp/trade-buddy（荐股红线）、soxoj/claude-osint-deploy（OSINT 侦察工具链，攻击赋能边缘）、tmchow/illo-skill（十七种画风 —— 风格箱不进）、mingze21/bazi-ziwei-skill（同批已收八字一件，转待读）。信号总分 ≤8 的 5 件转待读。**最终收 71 件**，全部进 `editorial/editor_picks.json`，走编辑通道上架。
+
+## 店主 09-07 名单（另一份判决文件 `../2026-09-07/owner_list.verdicts.json`）
+
+38 仓里 17 已在架；余 21 仓（拆成 37 个子件）读完：收 14 · 不收 22 · 待读 1。翻案 2 件（taxueseek/taxue-solar-polaroid、orange2ai/renwei-writing，原拒因都是问二「同类已有」）；op7418/logo-generator-skill 维持不收；JimLiu/baoyu-skills 12 件全部不收（版式画廊式全能包或纯开发工具）。
+
+## 一个数字要记住
+
+判官 ≥80 分那档命中 15%，70–79 档命中 12% —— **判官的分在这个区间没有信息**，队列不该按它排。店主名单那 21 仓命中 14/37 = 38%：**好的内容源比任何判据都值钱。**
