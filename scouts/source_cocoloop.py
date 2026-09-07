@@ -35,7 +35,9 @@ def main() -> int:
     a = ap.parse_args()
     seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
     items = []
-    for tab, pages in (("latest", a.pages), ("trending", 1)):
+    # 09-07 第一批 28 件读完：0 选中、5 红线、16 工具链 —— overall/latest/trending 三榜几乎全是 OpenClaw 生态的 agent 基建件。
+    # 改扫它自己的分类榜：设计 / 内容创作 / 办公 / 专业 / 效率，最新榜只留一页兜住新货。
+    for tab, pages in (("design", a.pages), ("content_creation", a.pages), ("office", 1), ("professional", 1), ("efficiency", 1), ("latest", 1)):
         for page in range(1, pages + 1):
             d = get_json(f"{API}?page={page}&page_size=100&sort=downloads&tab={tab}")
             its = ((d.get("data") or {}).get("items")) or []
