@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 361 skills.
+# Full corpus, plain text. 364 skills.
 
 ========================================================================
 ## close-reading-annotator
@@ -2668,6 +2668,44 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
 
 ========================================================================
+## vibeshot-candid-photography
+## 機位歪一點，人像就活了
+URL: https://ourword.ai/skill/tw/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
+URL (中文): https://ourword.ai/skill/tw/zh/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
+Source: https://github.com/vibeshotclub/vsc-skills/tree/HEAD/vibeshot-candid-photography
+Updated: 2026-09-02
+Tags: everyday, skill, vibeshotclub
+
+Tired of stiff poses? It hides the lens in life's cracks—through glass, past foregrounds, over a shoulder. Photos.
+
+### What does this skill do?
+生成具有真實生活攝影感、偶然抓拍感、非常規機位和強烈空間層次的人像寫真提示詞。適用於用戶要求 candid photography、生活感人像、韓系 INS 人像、自然遮擋、非常規構圖或批量攝影提示詞時。
+
+### Why is it worth installing?
+It doesn't stack adjectives—it builds 'candidness' through camera angle, occlusion, and depth layers, giving prompts spatial.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+厭倦了站樁式擺拍？它把鏡頭藏進生活縫隙——隔著玻璃、越過前景、從背後喊一聲回頭，生成的照片像朋友隨手抓的。
+
+### Q：這個 skill 做什麼？
+生成具有真實生活攝影感、偶然抓拍感、非常規機位和強烈空間層次的人像寫真提示詞。適用於用戶要求 candid photography、生活感人像、韓系 INS 人像、自然遮擋、非常規構圖或批量攝影提示詞時。
+
+### Q：為什麼值得裝？
+它不堆形容詞，而是用機位、遮擋、景深三層參數製造“偶然感”，讓提示詞自帶空間敘事，而非單純換濾鏡。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
+
+========================================================================
 ## mono-color
 ## 單色孔版印刷海報生成器，兩色封頂
 URL: https://ourword.ai/skill/tw/i/yanliudesign-mono-color-skill/
@@ -3974,6 +4012,28 @@ git clone --depth 1 https://github.com/phileiny/h3-storyboard-skill.git Then poi
 
 ### Where does it come from?
 Repository: phileiny/h3-storyboard-skill The repository ships 1 skills in total.
+
+========================================================================
+## visual-memory-translator
+## 照片不修圖，重排成能翻的藝術家書頁
+URL: https://ourword.ai/skill/tw/i/tanshilongmario-visual-memory-translator-skill-visual-memory-translator/
+Source: https://github.com/TanShilongMario/visual-memory-translator-SKILL/tree/HEAD/visual-memory-translator
+Updated: 2026-08-27
+Tags: images, skill, TanShilongMario
+
+Editorial layout for snapshots: decide what survives, then set whitespace, grid, and abstraction. Not a filter—a.
+
+### What does this skill do?
+Reinterprets photos into editorial, artist-book memory pages, and can also translate a sentence or concept into a sparse editorial metaphor card. Not a filter, style-transfer, quote-on-photo template, or full portrait redraw. Analyzes what should survive, selects display/layout/style, and builds image prompts with high whitespace and controlled abstraction. When a photo is given and no style is na
+
+### Why is it worth installing?
+It edits by deciding what deserves to remain, then builds layout and abstraction—not by applying a style. Whitespace is its.
+
+### How do you install it?
+git clone --depth 1 https://github.com/TanShilongMario/visual-memory-translator-SKILL.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: TanShilongMario/visual-memory-translator-SKILL The repository ships 1 skills in total.
 
 ========================================================================
 ## magazine-grade-video
@@ -8986,6 +9046,44 @@ git clone --depth 1 https://github.com/helloianneo/ian-xiaohei-illustrations.git
 
 ### Q：它從哪來？
 Repository: helloianneo/ian-xiaohei-illustrations The repository ships 1 skills in total.
+
+========================================================================
+## dynasty-aesthetics
+## 唐宋朝代美學DNA提取器，海報設計語言嫁接
+URL: https://ourword.ai/skill/tw/i/justinqiuck-dynasty-aesthetics/
+URL (中文): https://ourword.ai/skill/tw/zh/i/justinqiuck-dynasty-aesthetics/
+Source: https://github.com/JustinQiuck/dynasty-aesthetics
+Updated: 2026-06-02
+Tags: images, skill, JustinQiuck
+
+Tired of generic guochao posters? Extract Tang/Song/Qin design DNA—color, texture, line, composition—and graft it.
+
+### What does this skill do?
+中國王朝美學設計系統。提取特定朝代的美學DNA（色彩哲學、材質質感、線條氣質、構圖法則、美學精神），將其作為設計語言嫁接到任意主題的海報上。輸出AI圖像提示詞 + 文字層設計規範（書法/現代字體可選）。當前支持唐朝、宋朝、秦朝美學。觸發詞：王朝美學、唐風海報、宋朝美學、宋風海報、秦朝美學、秦風海報、dynasty aesthetic、古風設計、國潮海報。當用戶想用中國古典美學風格做海報（而非畫古風場景）時使用。
+
+### Why is it worth installing?
+Not just adding clouds and calling it heritage. It decomposes dynasty aesthetics into 5 DNA layers—color, texture, line.
+
+### How do you install it?
+git clone --depth 1 https://github.com/JustinQiuck/dynasty-aesthetics.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: JustinQiuck/dynasty-aesthetics Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+做國潮海報總差口氣？把唐朝的配色、宋朝的留白、秦朝的線條直接嫁接到你的主題上，輸出AI圖像提示詞+文字層規範。
+
+### Q：這個 skill 做什麼？
+中國王朝美學設計系統。提取特定朝代的美學DNA（色彩哲學、材質質感、線條氣質、構圖法則、美學精神），將其作為設計語言嫁接到任意主題的海報上。輸出AI圖像提示詞 + 文字層設計規範（書法/現代字體可選）。當前支持唐朝、宋朝、秦朝美學。觸發詞：王朝美學、唐風海報、宋朝美學、宋風海報、秦朝美學、秦風海報、dynasty aesthetic、古風設計、國潮海報。當用戶想用中國古典美學風格做海報（而非畫古風場景）時使用。
+
+### Q：為什麼值得裝？
+不是貼個祥雲就叫國風。它把朝代美學拆成色彩、材質、線條、構圖、精神五層DNA，再按你的主題重組。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/JustinQiuck/dynasty-aesthetics.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: JustinQiuck/dynasty-aesthetics Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## lanshu-awesome-ai-video-kit
