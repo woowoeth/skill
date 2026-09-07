@@ -1774,28 +1774,6 @@ git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git 然后把智
 Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
 
 ========================================================================
-## handholder
-## ADB 直连掌机，换机迁移不丢存档不重配按键
-URL: https://ourword.ai/skill/i/viticci-handholder/
-Source: https://github.com/viticci/handholder
-Updated: 2026-09-04
-Tags: play, skill, viticci
-
-Tired of reconfiguring emulators and losing saves on a new handheld? This drives ADB to handle Cocoon, RetroArch.
-
-### What does this skill do?
-Set up, migrate, repair, or audit Android gaming handhelds over ADB, including Cocoon, emulators, RetroArch hotkeys and shaders, replacement textures, lawful ROM and save migration, artwork, controls, displays, and launch testing. Includes profiles for AYN Thor and Retroid Pocket Nova; use the generic workflow for other Android handhelds.
-
-### Why is it worth installing?
-It talks ADB directly to the device, preserving original folder structure for lawful ROM/save migration, and archives.
-
-### How do you install it?
-git clone --depth 1 https://github.com/viticci/handholder.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: viticci/handholder The repository ships 1 skills in total.
-
-========================================================================
 ## taxue-solar-polaroid
 ## 节气不背节气名，只背物候证据的视觉提示词编译器
 URL: https://ourword.ai/skill/i/taxueseek-taxue-solar-polaroid/
@@ -1832,6 +1810,28 @@ git clone --depth 1 https://github.com/taxueseek/taxue-solar-polaroid.git 然后
 
 ### Q：它从哪来？
 Repository: taxueseek/taxue-solar-polaroid Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## handholder
+## ADB 直连掌机，换机迁移不丢存档不重配按键
+URL: https://ourword.ai/skill/i/viticci-handholder/
+Source: https://github.com/viticci/handholder
+Updated: 2026-09-04
+Tags: play, skill, viticci
+
+Tired of reconfiguring emulators and losing saves on a new handheld? This drives ADB to handle Cocoon, RetroArch.
+
+### What does this skill do?
+Set up, migrate, repair, or audit Android gaming handhelds over ADB, including Cocoon, emulators, RetroArch hotkeys and shaders, replacement textures, lawful ROM and save migration, artwork, controls, displays, and launch testing. Includes profiles for AYN Thor and Retroid Pocket Nova; use the generic workflow for other Android handhelds.
+
+### Why is it worth installing?
+It talks ADB directly to the device, preserving original folder structure for lawful ROM/save migration, and archives.
+
+### How do you install it?
+git clone --depth 1 https://github.com/viticci/handholder.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: viticci/handholder The repository ships 1 skills in total.
 
 ========================================================================
 ## 📝 數學科・極簡步驟工作紙 (課題名稱 / Topic)
@@ -9186,44 +9186,6 @@ git clone --depth 1 https://github.com/onpicex/xiaohei-infographic.git Then poin
 Repository: onpicex/xiaohei-infographic Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
-## coupon-stacker
-## 叠券顺序算得比下单页还清楚的小账本
-URL: https://ourword.ai/skill/i/agentsope-smartbuy-skill-coupon-stacker/
-URL (中文): https://ourword.ai/skill/zh/i/agentsope-smartbuy-skill-coupon-stacker/
-Source: https://github.com/agentsope/smartbuy-skill/tree/HEAD/skills/coupon-stacker
-Updated: 2026-05-31
-Tags: play, skill, agentsope
-
-Drop in the price and every coupon you have—it computes the real final cost and tells you exactly where to click.
-
-### What does this skill do?
-**凑单小账本** —— 帮你算"叠完所有券后实付多少 + 怎么操作"的对话式小工具。 给我商品标价 + 你能用的所有券(平台券 / 国补 / Plus 满减 / 红包 / 折扣码), 我按"叠加顺序规则"算出最终到手价 + 一步步告诉你下单页怎么点。**绝不编造券 规则**,不知道的就让你去查官方,不瞎猜。**默认覆盖京东自营**(平台券 + 国补 + Plus + 满减),天猫官旗 / 拼多多 / 苏宁 看反馈再扩。配合 price-detective 使用:先判断是不是好价(price-detective),再算实付多少(coupon-stacker)。 Use when 用户说"凑单"、"叠券"、"到手多少"、"实付"、"国补怎么用"、 "Plus 满减"、"差多少能用券"、"满 X 减 Y 怎么算"。 触发词:凑单、叠券、到手、实付、Plus 满减、国补、9 折券、红包、立减、
-
-### Why is it worth installing?
-It never fabricates coupon logic—only applies the platform's real stacking order, and walks you through each checkout step so.
-
-### How do you install it?
-git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-标价+一堆券丢进去，按平台真实叠加顺序算出实付，还一步步告诉你下单页怎么点。不编规则，不知道就让你去查官方。
-
-### Q：这个 skill 做什么？
-**凑单小账本** —— 帮你算"叠完所有券后实付多少 + 怎么操作"的对话式小工具。 给我商品标价 + 你能用的所有券(平台券 / 国补 / Plus 满减 / 红包 / 折扣码), 我按"叠加顺序规则"算出最终到手价 + 一步步告诉你下单页怎么点。**绝不编造券 规则**,不知道的就让你去查官方,不瞎猜。**默认覆盖京东自营**(平台券 + 国补 + Plus + 满减),天猫官旗 / 拼多多 / 苏宁 看反馈再扩。配合 price-detective 使用:先判断是不是好价(price-detective),再算实付多少(coupon-stacker)。 Use when 用户说"凑单"、"叠券"、"到手多少"、"实付"、"国补怎么用"、 "Plus 满减"、"差多少能用券"、"满 X 减 Y 怎么算"。 触发词:凑单、叠券、到手、实付、Plus 满减、国补、9 折券、红包、立减、
-
-### Q：为什么值得装？
-不猜券规则，只按平台真实叠加顺序算；每一步操作都落到下单页具体位置，算完即会买。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## zan-punct-fix
 ## 半角标点全角化，代码和英文原样不动
 URL: https://ourword.ai/skill/i/wangzan101-zan-punct-fix/
@@ -9260,6 +9222,44 @@ git clone --depth 1 https://github.com/wangzan101/zan-punct-fix.git 然后把智
 
 ### Q：它从哪来？
 Repository: wangzan101/zan-punct-fix The repository ships 1 skills in total.
+
+========================================================================
+## coupon-stacker
+## 叠券顺序算得比下单页还清楚的小账本
+URL: https://ourword.ai/skill/i/agentsope-smartbuy-skill-coupon-stacker/
+URL (中文): https://ourword.ai/skill/zh/i/agentsope-smartbuy-skill-coupon-stacker/
+Source: https://github.com/agentsope/smartbuy-skill/tree/HEAD/skills/coupon-stacker
+Updated: 2026-05-31
+Tags: play, skill, agentsope
+
+Drop in the price and every coupon you have—it computes the real final cost and tells you exactly where to click.
+
+### What does this skill do?
+**凑单小账本** —— 帮你算"叠完所有券后实付多少 + 怎么操作"的对话式小工具。 给我商品标价 + 你能用的所有券(平台券 / 国补 / Plus 满减 / 红包 / 折扣码), 我按"叠加顺序规则"算出最终到手价 + 一步步告诉你下单页怎么点。**绝不编造券 规则**,不知道的就让你去查官方,不瞎猜。**默认覆盖京东自营**(平台券 + 国补 + Plus + 满减),天猫官旗 / 拼多多 / 苏宁 看反馈再扩。配合 price-detective 使用:先判断是不是好价(price-detective),再算实付多少(coupon-stacker)。 Use when 用户说"凑单"、"叠券"、"到手多少"、"实付"、"国补怎么用"、 "Plus 满减"、"差多少能用券"、"满 X 减 Y 怎么算"。 触发词:凑单、叠券、到手、实付、Plus 满减、国补、9 折券、红包、立减、
+
+### Why is it worth installing?
+It never fabricates coupon logic—only applies the platform's real stacking order, and walks you through each checkout step so.
+
+### How do you install it?
+git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+标价+一堆券丢进去，按平台真实叠加顺序算出实付，还一步步告诉你下单页怎么点。不编规则，不知道就让你去查官方。
+
+### Q：这个 skill 做什么？
+**凑单小账本** —— 帮你算"叠完所有券后实付多少 + 怎么操作"的对话式小工具。 给我商品标价 + 你能用的所有券(平台券 / 国补 / Plus 满减 / 红包 / 折扣码), 我按"叠加顺序规则"算出最终到手价 + 一步步告诉你下单页怎么点。**绝不编造券 规则**,不知道的就让你去查官方,不瞎猜。**默认覆盖京东自营**(平台券 + 国补 + Plus + 满减),天猫官旗 / 拼多多 / 苏宁 看反馈再扩。配合 price-detective 使用:先判断是不是好价(price-detective),再算实付多少(coupon-stacker)。 Use when 用户说"凑单"、"叠券"、"到手多少"、"实付"、"国补怎么用"、 "Plus 满减"、"差多少能用券"、"满 X 减 Y 怎么算"。 触发词:凑单、叠券、到手、实付、Plus 满减、国补、9 折券、红包、立减、
+
+### Q：为什么值得装？
+不猜券规则，只按平台真实叠加顺序算；每一步操作都落到下单页具体位置，算完即会买。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## minecraft-ai-generate-bbmodel
