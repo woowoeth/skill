@@ -116,6 +116,7 @@ def main() -> int:
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--tree", action="store_true", help="README 没图时再翻文件树")
     ap.add_argument("--only-none", action="store_true", help="只跑现在 cover_kind=none/og 的")
+    ap.add_argument("--ids", default="", help="逗号分隔的 id，只跑这些且忽略 cover_tried_at（换图用）")
     a = ap.parse_args()
     feed = json.load(open(os.path.join(ROOT, "skills", "feed.json"), encoding="utf-8"))["skills"]
     cur = json.load(open(os.path.join(ROOT, "editorial", "curation.json"), encoding="utf-8"))
@@ -138,6 +139,11 @@ def main() -> int:
                 e.update({"cover": "/skill/" + os.path.relpath(out, ROOT), "cover_kind": kind, "cover_w": w, "cover_h": h, "cover_src": x["cover"]})
             print(f"  ⇩ 托管外链 {x['id'][:46]:46s} {w}x{h}", flush=True)
     todo = [x for x in feed if (x.get("cover_kind") in ("og", "none", None, "")) or not x.get("cover")]
+    if a.ids:
+        _want = {i.strip() for i in a.ids.split(",") if i.strip()}
+        todo = [x for x in feed if x["id"] in _want]
+        for x in todo:
+            (cur["items"].setdefault(x["id"], {})).pop("cover_tried_at", None)
     # 09-03：CI 每班只跑 --max 40，若每次都从头扫同一批「确实没图」的，新货永远排不到。
     # 试过没取到的记 cover_tried_at，7 天内不再试；没试过的排最前。
     import datetime as _dt
