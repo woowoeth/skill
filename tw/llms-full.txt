@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 366 skills.
+# Full corpus, plain text. 367 skills.
 
 ========================================================================
 ## shijing-paper-zine
@@ -62,6 +62,44 @@ git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.g
 
 ### Q：它從哪來？
 Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## feedback-station
+## 手機掃碼打勾，測試反饋落本地盤
+URL: https://ourword.ai/skill/tw/i/ccc333cn-feedback-station/
+URL (中文): https://ourword.ai/skill/tw/zh/i/ccc333cn-feedback-station/
+Source: https://github.com/ccc333cn/feedback-station
+Updated: 2026-09-07
+Tags: work, skill, ccc333cn
+
+Stop screenshot-storming group chats. Testers tick pass/fail on phones, attach media, file bugs & requests—agent.
+
+### What does this skill do?
+真機測試反饋閉環——在電腦上起一個局域網反饋站,測試者用手機逐條勾「通過 / 未通過 / 未測試」、附截圖錄屏、提新 Bug 與新需求,數據落本地磁盤,智能體直接讀盤處理。每批交付測試版要發複驗清單時、用戶說"測完了 / 看反饋 / 起反饋站 / 接入反饋站"時調用。通用 Agent Skill,不綁定宿主:Claude Code、Codex、Cursor、Gemini CLI、OpenCode 等都能用。Real-device test feedback loop: start a LAN feedback site on the computer; testers mark each checklist item pass / fail / not tested on their phones, attach screenshots and recordings, file new b
+
+### Why is it worth installing?
+Feedback skips chat-log limbo, lands as structured local files; the agent reads disk to verify, triage, and list—no manual.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ccc333cn/feedback-station.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ccc333cn/feedback-station The repository ships 1 skills in total.
+
+--- 中文 ---
+真機測試別再截圖傳群聊了。測試者手機逐條勾選通過/未通過，附截圖錄屏，新 Bug 新需求隨手提。
+
+### Q：這個 skill 做什麼？
+真機測試反饋閉環——在電腦上起一個局域網反饋站,測試者用手機逐條勾「通過 / 未通過 / 未測試」、附截圖錄屏、提新 Bug 與新需求,數據落本地磁盤,智能體直接讀盤處理。每批交付測試版要發複驗清單時、用戶說"測完了 / 看反饋 / 起反饋站 / 接入反饋站"時調用。通用 Agent Skill,不綁定宿主:Claude Code、Codex、Cursor、Gemini CLI、OpenCode 等都能用。Real-device test feedback loop: start a LAN feedback site on the computer; testers mark each checklist item pass / fail / not tested on their phones, attach screenshots and recordings, file new b
+
+### Q：為什麼值得裝？
+反饋不經過聊天記錄中轉，直接落成本地結構化數據；智能體按盤上文件就能複驗、歸類、出清單。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/ccc333cn/feedback-station.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: ccc333cn/feedback-station The repository ships 1 skills in total.
 
 ========================================================================
 ## kami
