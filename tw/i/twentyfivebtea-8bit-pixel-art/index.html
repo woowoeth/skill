@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/twentyfivebtea-8bit-pixel-art/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/twentyfivebtea-8bit-pixel-art/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>把照片或一句話蒸餾成稀疏 8-bit 像素藝術 — 品味</title>
-<meta name="description" content="Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。">
+<!--TW:LANG--><link rel="alternate" hreflang="zh-Hans" href="https://ourword.ai/skill/i/twentyfivebtea-8bit-pixel-art/"><link rel="alternate" hreflang="zh-Hant" href="https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/"><link rel="alternate" hreflang="x-default" href="https://ourword.ai/skill/i/twentyfivebtea-8bit-pixel-art/"><script>(function(){try{var K='hwx_lang',p=location.pathname,tw=/^\/skill\/tw(\/|$)/.test(p);var en=new URLSearchParams(location.search).get('lang')==='en';var cur=en?'en':(tw?'tw':'sc');var to={sc:tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p,tw:tw?p:p.replace(/^\/skill/,'/skill/tw'),en:(tw?(p.replace(/^\/skill\/tw/,'/skill')||'/skill/'):p)+'?lang=en'};var saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(cur!=='sc'){if(!saved){try{localStorage.setItem(K,cur)}catch(e){}}}else{var L=(navigator.languages||[navigator.language||'']).join(',');var want=saved||(/zh-(hant|tw|hk|mo)/i.test(L)?'tw':(/zh/i.test(L)?'sc':'en'));if(want!=='sc'&&to[want]){location.replace(to[want]);return}}document.addEventListener('DOMContentLoaded',function(){var host=document.querySelector('.mast-side');if(!host)return;var old=document.getElementById('langBtn');if(old)old.style.display='none';var sel=document.createElement('select');sel.id='langPick';sel.className='pill';sel.setAttribute('aria-label','\u8bed\u8a00 Language');[['sc','\u7b80'],['tw','\u7e41'],['en','EN']].forEach(function(kv){var o=document.createElement('option');o.value=kv[0];o.textContent=kv[1];if(kv[0]===cur)o.selected=true;sel.appendChild(o)});sel.onchange=function(){if(sel.value===cur)return;try{localStorage.setItem(K,sel.value)}catch(e){};location.href=to[sel.value]};host.insertBefore(sel,host.firstChild)})}catch(e){}})();</script><!--/TW:LANG--><title>稀疏像素畫：大片留白裡只點幾個關鍵色塊 — 品味</title>
+<meta name="description" content="給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="品味, Agent Skill, Claude Code, 做圖, TwentyfiveBTea">
 <link rel="canonical" href="https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/">
@@ -22,14 +22,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="品味">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="把照片或一句話蒸餾成稀疏 8-bit 像素藝術 — 品味">
-<meta property="og:description" content="Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。">
+<meta property="og:title" content="稀疏像素畫：大片留白裡只點幾個關鍵色塊 — 品味">
+<meta property="og:description" content="給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。">
 <meta property="og:url" content="https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/">
 <meta property="og:image" content="https://ourword.ai/skill/tw/assets/covers/twentyfivebtea-8bit-pixel-art.png"><meta name="twitter:image" content="https://ourword.ai/skill/tw/assets/covers/twentyfivebtea-8bit-pixel-art.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把照片或一句話蒸餾成稀疏 8-bit 像素藝術 — 品味">
-<meta name="twitter:description" content="Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"把照片或一句話蒸餾成稀疏 8-bit 像素藝術","description":"Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。","url":"https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"TwentyfiveBTea"},"image":"https://ourword.ai/skill/tw/assets/covers/twentyfivebtea-8bit-pixel-art.png","codeRepository":"https://github.com/TwentyfiveBTea/8bit-pixel-art"}</script>
+<meta name="twitter:title" content="稀疏像素畫：大片留白裡只點幾個關鍵色塊 — 品味">
+<meta name="twitter:description" content="給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"稀疏像素畫：大片留白裡只點幾個關鍵色塊","description":"給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。","url":"https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/","applicationCategory":"做圖","operatingSystem":"Claude Code, Codex, Agent Skills","isPartOf":{"@type":"WebSite","name":"品味","url":"https://ourword.ai/skill/tw/"},"author":{"@type":"Person","name":"TwentyfiveBTea"},"image":"https://ourword.ai/skill/tw/assets/covers/twentyfivebtea-8bit-pixel-art.png","codeRepository":"https://github.com/TwentyfiveBTea/8bit-pixel-art"}</script>
 <meta name="theme-color" content="#f4efe6">
 </head>
 <body>
@@ -60,14 +60,14 @@ img.cover.og{aspect-ratio:2;object-fit:cover}
       <span>TwentyfiveBTea</span>
       <span class="date">2026-08-17</span>
     </div>
-    <h1 class="ttl">把照片或一句話蒸餾成稀疏 8-bit 像素藝術</h1>
-    <p class="lede">Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。</p>
+    <h1 class="ttl">稀疏像素畫：大片留白裡只點幾個關鍵色塊</h1>
+    <p class="lede">給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。</p>
     <div class="tags"><span class="tag">TwentyfiveBTea</span><span class="tag">店長推薦</span></div>
     <img class="cover" src="https://ourword.ai/skill/tw/assets/covers/w800/twentyfivebtea-8bit-pixel-art.webp" alt="" data-full="https://ourword.ai/skill/tw/assets/covers/twentyfivebtea-8bit-pixel-art.png" onerror="if(this.dataset.full){this.src=this.dataset.full;delete this.dataset.full}else{this.remove()}"><p class="shotcap">站方按它的能力做的樣張，<b>不是產出物截圖</b></p>
     
-    <section class="sec"><h2>做什麼用</h2><p>Instagram/編輯風格，軟邊粗像素主體落在乾淨紙面上；或全出血構圖。自動砍掉低價值細節，只留主導物，絕不硬邊。不是濾鏡疊加，而是先做視覺優先級排序——先識別主導物，再決定軟邊或全出血，最後才像素化。</p></section>
-    <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。只認兩種輸入：自然語言 brief 或單張照片。不做多圖合成、不做動畫、不輸出透明背景 PNG。像素塊尺寸固定為 8×。</p></section>
-    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「把照片或一句話蒸餾成稀疏 8-bit 像素藝術」這一件來做，不要中途改風格。</li><li>把我手上這張按它的規矩重做，風格不許換。</li><li>只要成品，過程裡的解釋可以沒有。</li><li>做完對照應用範圍，越界的那一稿丟掉。</li></ul></section>
+    <section class="sec"><h2>做什麼用</h2><p>給抽象文案或一張照片，輸出雜誌感稀疏像素圖。自動去噪、只留主體，邊緣柔化不糊，適合封面或社交配圖，不是滿屏馬賽克。它懂“少即是多”：先識別主體，再刻意省略低價值細節，像素點像手擺的，不是算法硬壓。</p></section>
+    <section class="sec"><h2>應用範圍</h2><p>用在「做圖」這一格。只輸出靜態單幀像素圖，不做動畫、不做多尺寸適配。源圖需主體明確；極端雜亂場景會過度簡化。硬邊像素風格不在其設計內。</p></section>
+    <section class="sec"><h2>如何使用</h2><ul class="uses"><li>就按「稀疏像素畫：大片留白裡只點幾個關鍵色塊」這一件來做，不要中途改風格。</li><li>把我手上這張按它的規矩重做，風格不許換。</li><li>只要成品，過程裡的解釋可以沒有。</li><li>做完對照應用範圍，越界的那一稿丟掉。</li></ul></section>
     <section class="sec"><h2>安裝</h2><div class="cmds"><div class="cmd"><code>git clone --depth 1 https://github.com/TwentyfiveBTea/8bit-pixel-art.git</code><button type="button" data-copy="git clone --depth 1 https://github.com/TwentyfiveBTea/8bit-pixel-art.git">複製</button></div><div class="cmd"><code>mv 8bit-pixel-art ~/.claude/skills/8bit-pixel-art</code><button type="button" data-copy="mv 8bit-pixel-art ~/.claude/skills/8bit-pixel-art">複製</button></div></div></section>
   </article>
   <aside class="aside">
