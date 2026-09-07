@@ -64,6 +64,44 @@ git clone --depth 1 https://github.com/bestbeasthunter/close-reading-annotator.g
 Repository: bestbeasthunter/close-reading-annotator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## cumcm-live-workflow
+## 從讀題到打包全程不踩雷的數模競賽裁判長
+URL: https://ourword.ai/skill/tw/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
+URL (中文): https://ourword.ai/skill/tw/zh/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
+Source: https://github.com/haoxilin/cumcm-live-workflow-skill/tree/HEAD/cumcm-live-workflow
+Updated: 2026-09-07
+Tags: writing, skill, haoxilin
+
+Practice with past problems but lose points on format? It chains env checks, AI-compliance, LaTeX numbering, and.
+
+### What does this skill do?
+CUMCM（全國大學生數學建模競賽）真題全流程實戰手冊。用於完整打一場數模競賽（環境準備→讀題自查→建模出圖→LaTeX論文→交叉審閱→填表→AI自查表終審→清理打包），內含題意理解紅線、數值嚴謹性守則、去AIGC特徵清單、寫作規範、LaTeX編號與圖表規範、2026 AI合規與終審核查框架。觸發於用戶開始完整做真題、備賽訓練、即將正式參賽，或要求按AI自查表對成品論文終審整改。**啟動關鍵詞**：國賽、數學建模競賽、真題全流程、按競賽標準走完流程、備賽、環境檢查/檢查環境/準備環境、按自查表審查——命中任一即啟動，啟用後第一步自動執行環境檢查。
+
+### Why is it worth installing?
+Not loose templates—it hardens the contest flow into executable gates: red-line checklists per step, final review against 2026.
+
+### How do you install it?
+git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+真題練手總在格式上扣分？它把環境檢查、AI合規、LaTeX編號、AIGC去痕全串成一條線，按國賽標準走完。
+
+### Q：這個 skill 做什麼？
+CUMCM（全國大學生數學建模競賽）真題全流程實戰手冊。用於完整打一場數模競賽（環境準備→讀題自查→建模出圖→LaTeX論文→交叉審閱→填表→AI自查表終審→清理打包），內含題意理解紅線、數值嚴謹性守則、去AIGC特徵清單、寫作規範、LaTeX編號與圖表規範、2026 AI合規與終審核查框架。觸發於用戶開始完整做真題、備賽訓練、即將正式參賽，或要求按AI自查表對成品論文終審整改。**啟動關鍵詞**：國賽、數學建模競賽、真題全流程、按競賽標準走完流程、備賽、環境檢查/檢查環境/準備環境、按自查表審查——命中任一即啟動，啟用後第一步自動執行環境檢查。
+
+### Q：為什麼值得裝？
+不是零散模板，而是把競賽流程固化成可執行關卡：每步有紅線清單，終審按2026官方AI規則逐項核對。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## feedback-station
 ## 手機掃碼打勾，測試反饋落本地盤
 URL: https://ourword.ai/skill/tw/i/ccc333cn-feedback-station/
@@ -102,6 +140,28 @@ git clone --depth 1 https://github.com/ccc333cn/feedback-station.git 然後把�
 Repository: ccc333cn/feedback-station The repository ships 1 skills in total.
 
 ========================================================================
+## pink-elephant-guard
+## 刪掉的詞條從此不再溜回成稿
+URL: https://ourword.ai/skill/tw/i/yuzora-yu-project-sixth-pink-elephant-guard/
+Source: https://github.com/yuzora-yu/project_sixth/tree/HEAD/.agents/skills/pink-elephant-guard
+Updated: 2026-09-07
+Tags: play, skill, yuzora-yu
+
+When you say 'drop this' during edits, it's blacklisted. Future drafts, visuals, or dialogue won't resurrect that.
+
+### What does this skill do?
+Prevent rejected, removed, corrected, or forbidden concepts from resurfacing as the topic of a final deliverable. Use after requests such as 「これは消して」「その案はなし」「入れないで」「そこじゃない」 when revising copy, visuals, dialogue, summaries, labels, UI, or other viewer-facing output; do not use when comparison, compliance, safety, accessibility, or change history explicitly requires naming the excluded item.
+
+### Why is it worth installing?
+Turns 'rejected' into a hard constraint, filtering every output before it's shown. More reliable than eyeballing drafts or.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
+
+========================================================================
 ## kami
 ## 羊皮紙底色配墨藍強調的文檔排版師
 URL: https://ourword.ai/skill/tw/i/tw93-kami-kami/
@@ -122,6 +182,66 @@ git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at th
 
 ### Where does it come from?
 Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## photo-to-journal-stickers
+## 照片裡只挑有故事的那幾樣，畫成手帳貼紙
+URL: https://ourword.ai/skill/tw/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
+URL (中文): https://ourword.ai/skill/tw/zh/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
+Source: https://github.com/yvonnechen202608-byte/picture-design/tree/HEAD/photo-to-journal-stickers
+Updated: 2026-09-07
+Tags: everyday, skill, yvonnechen202608-byte
+
+Don't paste whole photos. It picks narrative elements, redraws them warm, low-sat, paper-textured.
+
+### What does this skill do?
+將用戶提供的任意照片提煉為可複用的透明背景 PNG 手帳插畫素材：從場景中選擇敘事性關鍵元素，並統一為暖調低飽和、紙感手繪、復古編輯式視覺。適用於照片轉貼紙、旅行或生活場景素材包、透明 cutout 與配套展示頁；不適用於原樣摳圖、照片修復、精確復刻參考圖或矢量/logo 工作。
+
+### Why is it worth installing?
+Not cutout—translation. It reads the scene for story-bearing objects, then redraws them in hand-drawn language, so stickers.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+旅行照別整張貼——它替你選出敘事性元素，統一成暖調低飽和紙感手繪。復古編輯風，透明 PNG 直接拖進手帳。
+
+### Q：這個 skill 做什麼？
+將用戶提供的任意照片提煉為可複用的透明背景 PNG 手帳插畫素材：從場景中選擇敘事性關鍵元素，並統一為暖調低飽和、紙感手繪、復古編輯式視覺。適用於照片轉貼紙、旅行或生活場景素材包、透明 cutout 與配套展示頁；不適用於原樣摳圖、照片修復、精確復刻參考圖或矢量/logo 工作。
+
+### Q：為什麼值得裝？
+不是摳圖，是翻譯。它先理解場景裡哪幾樣東西在講故事，再用手繪語言重畫，讓貼紙和你的手帳紙面天生一體。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## seedance-prompt-library
+## Seedance 2.5 視頻提示詞模板庫
+URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
+Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
+Updated: 2026-09-07
+Tags: images, skill, LearnPrompt
+
+Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
+
+### What does this skill do?
+Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
+
+### Why is it worth installing?
+Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
+
+### How do you install it?
+git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## speak-human-tw
@@ -320,6 +440,50 @@ git clone --depth 1 https://github.com/deusyu/translate-book.git Then point your
 Repository: deusyu/translate-book The repository ships 1 skills in total.
 
 ========================================================================
+## dnd
+## 一個人也能玩的 D&D 地下城主
+URL: https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/
+Source: https://github.com/neuralinitiative/claude-dnd-skill/tree/HEAD/skills/dnd
+Updated: 2026-09-07
+Tags: play, skill, neuralinitiative
+
+An on-call D&D 5e Dungeon Master — persistent campaigns, character sheets, combat tracking and NPCs, with an optional cinematic display. Solo-play ready.
+
+### What does this skill do?
+v2.4.0 · Dungeon Master assistant for running persistent D&D 5e campaigns. Handles campaign creation/loading, character management, combat tracking, NPC generation, dice rolling, and session state — all persisted across sessions. Invoke with /dm:dnd followed by a subcommand, or just speak naturally once a campaign is loaded.
+
+### Why is it worth installing?
+The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion.
+
+### How do you install it?
+git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## gtm-cofounder
+## 給獨自做產品的技術創始人當 GTM 合夥人
+URL: https://ourword.ai/skill/tw/i/aidevgtm-gtm-cofounder/
+Source: https://github.com/AIDevGTM/gtm-cofounder
+Updated: 2026-09-07
+Tags: work, collection, AIDevGTM
+
+The GTM co-founder you don't have — for solo technical AI/dev-tool founders: positioning, first users, launch and pricing, open-source and forged from real deals.
+
+### What does this skill do?
+The GTM co-founder you don't have. Open-source GTM Agent Skills for technical AI/dev-tool founders building alone: positioning, first users, launch, pricing. Built from real dev-tool GTM experience, sharpened by Frankl & Czakon. MIT.
+
+### Why is it worth installing?
+Technical founders lack GTM instinct most; this turns that gap into an executable process. The "interview you once, then ground every later suggestion in your real business" design is refreshingly honest, not textbook.
+
+### How do you install it?
+git clone --depth 1 https://github.com/AIDevGTM/gtm-cofounder.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: AIDevGTM/gtm-cofounder The repository ships 18 skills in total. Homepage: https://gtmcofounder.com
+
+========================================================================
 ## kinocut
 ## 有護欄的 AI 視頻剪輯
 URL: https://ourword.ai/skill/tw/i/kyanitelabs-kinocut-kinocut/
@@ -444,6 +608,50 @@ git clone --depth 1 https://github.com/dongbeixiaohuo/writing-agent.git 然後�
 
 ### Q：它從哪來？
 Repository: dongbeixiaohuo/writing-agent The repository ships 3 skills in total.
+
+========================================================================
+## novel-to-game
+## 喂進一本小說，產出的不是概念稿是真能玩的遊戲
+URL: https://ourword.ai/skill/tw/i/worldwonderer-novel-to-game-novel-to-game/
+Source: https://github.com/worldwonderer/novel-to-game/tree/HEAD/skills/novel-to-game
+Updated: 2026-09-07
+Tags: play, skill, worldwonderer
+
+Feed it a novel; it extracts the world, art-directs it, and builds a genuinely playable game grounded in the source text.
+
+### What does this skill do?
+Turn a novel into a fully playable game on the selected target platform. Orchestrates the whole adaptation pipeline — requirements intake, gameable deconstruction, concept selection, world and visual design, target-runtime build, and evidence-based QA — for a novel in any language. Use for novel to game, story to game, book to game, adapt this novel into a game, turn this book into a playable prot
+
+### Why is it worth installing?
+Turning a beloved book into a playable game is a childhood dream for a lot of people — this packages the whole pipeline so Claude Code can just get to work.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
+
+========================================================================
+## ponytail
+## 先問「這真的需要做嗎」，能不寫的代碼一行不寫
+URL: https://ourword.ai/skill/tw/i/dietrichgebert-ponytail-ponytail/
+Source: https://github.com/DietrichGebert/ponytail/tree/HEAD/.openclaw/skills/ponytail
+Updated: 2026-09-07
+Tags: dev, skill, DietrichGebert
+
+An unbothered senior engineer moves in — few words, strong opinions, asks before acting, and writes not one line of code that needn't exist.
+
+### What does this skill do?
+Lazy senior dev mode for any coding task (write, refactor, fix, review): YAGNI, stdlib first, no unrequested abstractions. Not for non-coding requests.
+
+### Why is it worth installing?
+Its favorite question is "do we even need this?" — killing overengineering saves more than writing code.
+
+### How do you install it?
+git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
 
 ========================================================================
 ## archify
@@ -692,28 +900,6 @@ git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.gi
 Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
 
 ========================================================================
-## pink-elephant-guard
-## 刪掉的詞條從此不再溜回成稿
-URL: https://ourword.ai/skill/tw/i/yuzora-yu-project-sixth-pink-elephant-guard/
-Source: https://github.com/yuzora-yu/project_sixth/tree/HEAD/.agents/skills/pink-elephant-guard
-Updated: 2026-09-06
-Tags: play, skill, yuzora-yu
-
-When you say 'drop this' during edits, it's blacklisted. Future drafts, visuals, or dialogue won't resurrect that.
-
-### What does this skill do?
-Prevent rejected, removed, corrected, or forbidden concepts from resurfacing as the topic of a final deliverable. Use after requests such as 「これは消して」「その案はなし」「入れないで」「そこじゃない」 when revising copy, visuals, dialogue, summaries, labels, UI, or other viewer-facing output; do not use when comparison, compliance, safety, accessibility, or change history explicitly requires naming the excluded item.
-
-### Why is it worth installing?
-Turns 'rejected' into a hard constraint, filtering every output before it's shown. More reliable than eyeballing drafts or.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
-
-========================================================================
 ## bilingual-term-extract
 ## 雙語平行文本自動產出可導入術語庫的對照表
 URL: https://ourword.ai/skill/tw/i/tanyaqiong31029-bilingual-term-extract/
@@ -812,44 +998,6 @@ git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point
 Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
 
 ========================================================================
-## photo-to-journal-stickers
-## 照片裡只挑有故事的那幾樣，畫成手帳貼紙
-URL: https://ourword.ai/skill/tw/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
-URL (中文): https://ourword.ai/skill/tw/zh/i/yvonnechen202608-byte-picture-design-photo-to-journal-stickers/
-Source: https://github.com/yvonnechen202608-byte/picture-design/tree/HEAD/photo-to-journal-stickers
-Updated: 2026-09-06
-Tags: everyday, skill, yvonnechen202608-byte
-
-Don't paste whole photos. It picks narrative elements, redraws them warm, low-sat, paper-textured.
-
-### What does this skill do?
-將用戶提供的任意照片提煉為可複用的透明背景 PNG 手帳插畫素材：從場景中選擇敘事性關鍵元素，並統一為暖調低飽和、紙感手繪、復古編輯式視覺。適用於照片轉貼紙、旅行或生活場景素材包、透明 cutout 與配套展示頁；不適用於原樣摳圖、照片修復、精確復刻參考圖或矢量/logo 工作。
-
-### Why is it worth installing?
-Not cutout—translation. It reads the scene for story-bearing objects, then redraws them in hand-drawn language, so stickers.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-旅行照別整張貼——它替你選出敘事性元素，統一成暖調低飽和紙感手繪。復古編輯風，透明 PNG 直接拖進手帳。
-
-### Q：這個 skill 做什麼？
-將用戶提供的任意照片提煉為可複用的透明背景 PNG 手帳插畫素材：從場景中選擇敘事性關鍵元素，並統一為暖調低飽和、紙感手繪、復古編輯式視覺。適用於照片轉貼紙、旅行或生活場景素材包、透明 cutout 與配套展示頁；不適用於原樣摳圖、照片修復、精確復刻參考圖或矢量/logo 工作。
-
-### Q：為什麼值得裝？
-不是摳圖，是翻譯。它先理解場景裡哪幾樣東西在講故事，再用手繪語言重畫，讓貼紙和你的手帳紙面天生一體。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## pf2e-gm
 ## 翻開本地規則庫的 PF2e 主持人副駕
 URL: https://ourword.ai/skill/tw/i/milec-towers-of-saeroth-pf2e-gm/
@@ -870,28 +1018,6 @@ git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point yo
 
 ### Where does it come from?
 Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## seedance-prompt-library
-## Seedance 2.5 視頻提示詞模板庫
-URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
-Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
-Updated: 2026-09-06
-Tags: images, skill, LearnPrompt
-
-Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
-
-### What does this skill do?
-Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
-
-### Why is it worth installing?
-Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
-
-### How do you install it?
-git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## antibes-holiday
@@ -1828,28 +1954,6 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
 
 ========================================================================
-## novel-to-game
-## 喂進一本小說，產出的不是概念稿是真能玩的遊戲
-URL: https://ourword.ai/skill/tw/i/worldwonderer-novel-to-game-novel-to-game/
-Source: https://github.com/worldwonderer/novel-to-game/tree/HEAD/skills/novel-to-game
-Updated: 2026-09-05
-Tags: play, skill, worldwonderer
-
-Feed it a novel; it extracts the world, art-directs it, and builds a genuinely playable game grounded in the source text.
-
-### What does this skill do?
-Turn a novel into a fully playable game on the selected target platform. Orchestrates the whole adaptation pipeline — requirements intake, gameable deconstruction, concept selection, world and visual design, target-runtime build, and evidence-based QA — for a novel in any language. Use for novel to game, story to game, book to game, adapt this novel into a game, turn this book into a playable prot
-
-### Why is it worth installing?
-Turning a beloved book into a playable game is a childhood dream for a lot of people — this packages the whole pipeline so Claude Code can just get to work.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/novel-to-game.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/novel-to-game The repository ships 7 skills in total.
-
-========================================================================
 ## video-shotcraft
 ## 照著 106 張分鏡配方卡，把一句話拍成產品宣傳片
 URL: https://ourword.ai/skill/tw/i/vincentwei1021-video-shotcraft/
@@ -2432,28 +2536,6 @@ git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git Then 
 
 ### Where does it come from?
 Repository: lincwang123-bot/moonlit-stories The repository ships 1 skills in total.
-
-========================================================================
-## ponytail
-## 先問「這真的需要做嗎」，能不寫的代碼一行不寫
-URL: https://ourword.ai/skill/tw/i/dietrichgebert-ponytail-ponytail/
-Source: https://github.com/DietrichGebert/ponytail/tree/HEAD/.openclaw/skills/ponytail
-Updated: 2026-09-04
-Tags: dev, skill, DietrichGebert
-
-An unbothered senior engineer moves in — few words, strong opinions, asks before acting, and writes not one line of code that needn't exist.
-
-### What does this skill do?
-Lazy senior dev mode for any coding task (write, refactor, fix, review): YAGNI, stdlib first, no unrequested abstractions. Not for non-coding requests.
-
-### Why is it worth installing?
-Its favorite question is "do we even need this?" — killing overengineering saves more than writing code.
-
-### How do you install it?
-git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
 
 ========================================================================
 ## encoding-hero-video-for-mobile
@@ -3512,28 +3594,6 @@ git clone --depth 1 https://github.com/liangdabiao/enterprise-rag-challenge-rele
 Repository: liangdabiao/enterprise-rag-challenge-release The repository ships 1 skills in total.
 
 ========================================================================
-## gtm-cofounder
-## 給獨自做產品的技術創始人當 GTM 合夥人
-URL: https://ourword.ai/skill/tw/i/aidevgtm-gtm-cofounder/
-Source: https://github.com/AIDevGTM/gtm-cofounder
-Updated: 2026-08-31
-Tags: work, collection, AIDevGTM
-
-The GTM co-founder you don't have — for solo technical AI/dev-tool founders: positioning, first users, launch and pricing, open-source and forged from real deals.
-
-### What does this skill do?
-The GTM co-founder you don't have. Open-source GTM Agent Skills for technical AI/dev-tool founders building alone: positioning, first users, launch, pricing. Built from real dev-tool GTM experience, sharpened by Frankl & Czakon. MIT.
-
-### Why is it worth installing?
-Technical founders lack GTM instinct most; this turns that gap into an executable process. The "interview you once, then ground every later suggestion in your real business" design is refreshingly honest, not textbook.
-
-### How do you install it?
-git clone --depth 1 https://github.com/AIDevGTM/gtm-cofounder.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: AIDevGTM/gtm-cofounder The repository ships 18 skills in total. Homepage: https://gtmcofounder.com
-
-========================================================================
 ## sprite-gen
 ## 組件行流水線出精靈圖集，帶 QA 報告和運行時清單
 URL: https://ourword.ai/skill/tw/i/aldegad-sprite-gen/
@@ -3554,44 +3614,6 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 
 ### Where does it come from?
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
-
-========================================================================
-## cumcm-live-workflow
-## 從讀題到打包全程不踩雷的數模競賽裁判長
-URL: https://ourword.ai/skill/tw/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
-URL (中文): https://ourword.ai/skill/tw/zh/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
-Source: https://github.com/haoxilin/cumcm-live-workflow-skill/tree/HEAD/cumcm-live-workflow
-Updated: 2026-08-30
-Tags: writing, skill, haoxilin
-
-Practice with past problems but lose points on format? It chains env checks, AI-compliance, LaTeX numbering, and.
-
-### What does this skill do?
-CUMCM（全國大學生數學建模競賽）真題全流程實戰手冊。用於完整打一場數模競賽（環境準備→讀題自查→建模出圖→LaTeX論文→交叉審閱→填表→AI自查表終審→清理打包），內含題意理解紅線、數值嚴謹性守則、去AIGC特徵清單、寫作規範、LaTeX編號與圖表規範、2026 AI合規與終審核查框架。觸發於用戶開始完整做真題、備賽訓練、即將正式參賽，或要求按AI自查表對成品論文終審整改。**啟動關鍵詞**：國賽、數學建模競賽、真題全流程、按競賽標準走完流程、備賽、環境檢查/檢查環境/準備環境、按自查表審查——命中任一即啟動，啟用後第一步自動執行環境檢查。
-
-### Why is it worth installing?
-Not loose templates—it hardens the contest flow into executable gates: red-line checklists per step, final review against 2026.
-
-### How do you install it?
-git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-真題練手總在格式上扣分？它把環境檢查、AI合規、LaTeX編號、AIGC去痕全串成一條線，按國賽標準走完。
-
-### Q：這個 skill 做什麼？
-CUMCM（全國大學生數學建模競賽）真題全流程實戰手冊。用於完整打一場數模競賽（環境準備→讀題自查→建模出圖→LaTeX論文→交叉審閱→填表→AI自查表終審→清理打包），內含題意理解紅線、數值嚴謹性守則、去AIGC特徵清單、寫作規範、LaTeX編號與圖表規範、2026 AI合規與終審核查框架。觸發於用戶開始完整做真題、備賽訓練、即將正式參賽，或要求按AI自查表對成品論文終審整改。**啟動關鍵詞**：國賽、數學建模競賽、真題全流程、按競賽標準走完流程、備賽、環境檢查/檢查環境/準備環境、按自查表審查——命中任一即啟動，啟用後第一步自動執行環境檢查。
-
-### Q：為什麼值得裝？
-不是零散模板，而是把競賽流程固化成可執行關卡：每步有紅線清單，終審按2026官方AI規則逐項核對。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## interview-master
@@ -4236,28 +4258,6 @@ git clone --depth 1 https://github.com/anhao/jingtian-style.git 然後把智能�
 
 ### Q：它從哪來？
 Repository: anhao/jingtian-style The repository ships 1 skills in total.
-
-========================================================================
-## dnd
-## 一個人也能玩的 D&D 地下城主
-URL: https://ourword.ai/skill/tw/i/neuralinitiative-claude-dnd-skill-dnd/
-Source: https://github.com/neuralinitiative/claude-dnd-skill/tree/HEAD/skills/dnd
-Updated: 2026-08-27
-Tags: play, skill, neuralinitiative
-
-An on-call D&D 5e Dungeon Master — persistent campaigns, character sheets, combat tracking and NPCs, with an optional cinematic display. Solo-play ready.
-
-### What does this skill do?
-v2.4.0 · Dungeon Master assistant for running persistent D&D 5e campaigns. Handles campaign creation/loading, character management, combat tracking, NPC generation, dice rolling, and session state — all persisted across sessions. Invoke with /dm:dnd followed by a subcommand, or just speak naturally once a campaign is loaded.
-
-### Why is it worth installing?
-The hard part of tabletop is a good DM and a full table; this fills the DM seat — rules, campaign and NPCs managed for solo immersion.
-
-### How do you install it?
-git clone --depth 1 https://github.com/neuralinitiative/claude-dnd-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: neuralinitiative/claude-dnd-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## fuck-cancer
