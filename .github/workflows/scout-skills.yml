@@ -10,6 +10,8 @@ on:
       max_new_repos:
         description: "Max new repos to ingest this run"
         default: "5"
+env:
+  TASTE_MIN: "101"   # 09-07：自动上架全关，只走店主指名/心选/编辑亲挑；判官不再被请
 permissions:
   contents: write
 concurrency:

@@ -32,7 +32,7 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           SAME_DAY_SHELF: "1"
           # 09-03：手动指名的仓里往往有好几个子 skill，只有编辑挑的那件走 editor 通道，其余按 80 线，不按默认 60
-          TASTE_MIN: "80"
+          TASTE_MIN: "101"   # 09-07：自动上架全关，只走店主指名/心选/编辑亲挑；判官不再被请
         run: python scouts/skill_scout.py --suggest ${{ github.event.inputs.repos }}
       - name: 上架之后补扫红线，命中的撤下
         timeout-minutes: 25   # 09-07：这一步在 suggest 里挂了 2.5 小时没输出，把后面的提交步一起拖死；超时就算了，先提交

@@ -1216,6 +1216,10 @@ def _taste_pass(it: dict) -> str:
         return _log(True, f"编辑读过原文挑的 —— {_ed['reason'][:80]}")
     if _ed:
         _log(False, "编辑挑了但理由不到 30 字 → 不算挑过，照常过判官")
+    # 09-07：自动上架已关（TASTE_MIN>100）时不再请判官 —— 之前每趟「补扫红线」都把库房几百件各判 3 票，
+    # 一趟跑 25 分钟以上、gate_log 刷屏，而结果注定是「<101 不过」。三条人工道在上面已经放行过了。
+    if TASTE_MIN > 100:
+        return _log(False, "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道")
     # 品味判据。**读不到正文或判官不通 → 不当作过**（沿用「没扫到不算干净」那条）。
     sc, why = taste_score(it)
     if sc < 0:
