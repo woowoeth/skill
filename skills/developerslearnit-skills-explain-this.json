@@ -2,14 +2,14 @@
  "id": "developerslearnit-skills-explain-this",
  "kind": "skill",
  "name": "explain-this",
- "title_zh": "代码解剖师：从意图到边角料逐层拆给你看",
- "tagline_zh": "别再对着陌生函数发呆。它把一段代码拆成意图、流程、模式、依赖、报错、边界、性能七层。",
- "tagline_en": "Stop staring at unfamiliar code. It dissects any snippet into intent, flow, patterns, deps, errors, edge cases.",
+ "title_zh": "代码拆解到意图、边界与性能的讲解员",
+ "tagline_zh": "不止说“这段代码干嘛”，而是拆到执行流、设计模式、依赖、错误处理、边界情况和性能。适合读陌生代码。",
+ "tagline_en": "Not just 'what it does'—breaks down execution flow, patterns, dependencies, error handling, edge cases, and.",
  "desc_en": "Analyzes and explains what a specific piece of code, method, class, file, or architectural component does. Provides structured, clear breakdowns covering intent, execution flow, design patterns, dependencies, error handling, edge cases, and performance considerations. Use whenever asked to explain, dissect, understand, review, or walk through code.",
- "why_zh": "不是泛泛翻译代码，而是按认知顺序组织：先讲为什么存在，再讲怎么跑，最后才讲坑在哪。每层独立成段。",
- "why_en": "Not a paraphrase—it structures explanation by cognition: why it exists, how it flows, then where it breaks. Each layer stands.",
- "limit_zh": "只解释已存在的代码，不生成新代码、不重构、不比较多个方案。对超长文件（>500行）会漏掉跨函数调用关系，需手动分段喂入。",
- "limit_en": "Only explains existing code—no generation, refactoring, or alternative comparison. Files >500 lines may miss cross-function calls; split them.",
+ "why_zh": "它按固定骨架拆解，不遗漏关键维度；输出结构化，可直接用于文档或复盘。",
+ "why_en": "Follows a fixed analytical skeleton, so nothing important gets skipped. Output is structured and reusable. More like a senior.",
+ "limit_zh": "只针对单段代码或单文件，不处理跨模块架构推演；需要你提供具体代码或文件路径，否则无从开始；不生成修改建议，只做解释。",
+ "limit_en": "Only for a specific code snippet or file, not cross-module architecture. Needs your code or path. Explains only, no refactoring suggestions.",
  "repo": "developerslearnit/skills",
  "owner": "developerslearnit",
  "path": "aspnet-core-scaffolding/.agents/skills/explain-this",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Code anatomist: dissect intent to edge cases"
+ "title_en": "Code Explainer That Covers Intent, Flow, Edge Cases, and."
 }

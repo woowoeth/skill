@@ -2,14 +2,14 @@
  "id": "developerslearnit-skills-aspnet-core-scaffolding",
  "kind": "skill",
  "name": "aspnet-core-scaffolding",
- "title_zh": "从空目录到可演进架构，一次脚手架命令的事",
- "tagline_zh": "新建项目最怕地基歪。它按 DDD+CQRS 分好层，写用 EF Core、读用 Dapper。",
- "tagline_en": "Stop hand-building the same layers. It scaffolds DDD+CQRS with EF Core writes, Dapper reads, Result pattern, and.",
+ "title_zh": "新项目先立 Clean Architecture 骨",
+ "tagline_zh": "新建 ASP.NET Core 方案时，自动铺好 DDD 分层、CQRS 读写分离、Result 模式与验证管道。",
+ "tagline_en": "Spin up a new ASP.NET Core app with DDD layering, CQRS (EF Core writes, Dapper reads), Result pattern, and.",
  "desc_en": "Scaffolds and evolves production-ready ASP.NET Core applications using Clean Architecture, Domain-Driven Design, CQRS, in-process IDispatcher, Result pattern, SQL Server, EF Core for writes, Dapper for reads, Domain-owned interfaces, Infrastructure implementations, FluentValidation, dependency injection, and Central Package Management. Use when creating a new ASP.NET Core solution, establishing it",
- "why_zh": "它把领域层与基础设施彻底解耦：接口归领域，实现归基础设施，再用 IDispatcher 做进程内总线。",
- "why_en": "Domain owns interfaces, infrastructure owns implementations—wired through an in-process dispatcher. You get clean seams for.",
- "limit_zh": "只认 SQL Server + .NET 8+ 目标；不生成认证授权、不配 Docker、不写业务用例。",
- "limit_en": "SQL Server & .NET 8+ only. No auth, no Docker, no business use cases. Output is a wired skeleton—you add migrations and seed data yourself.",
+ "why_zh": "把架构决策固化在脚手架里：写走 EF Core、读走 Dapper，接口归领域、实现归基础设施。",
+ "why_en": "Hard-codes architecture decisions into the scaffold: write/read split, domain-owned interfaces, infra implementations.",
+ "limit_zh": "只认空目录或新解决方案；不处理已有业务代码的迁移。生成的骨架不含认证授权、日志、健康检查等横切关注点，需要自行接入。",
+ "limit_en": "Only for empty dirs or new solutions; won't migrate existing code. No auth, logging, or health checks included—wire those yourself.",
  "repo": "developerslearnit/skills",
  "owner": "developerslearnit",
  "path": "aspnet-core-scaffolding",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Scaffold a Clean Architecture ASP.NET Core solution in one."
+ "title_en": "Scaffold a Clean Architecture ASP.NET Core solution with."
 }

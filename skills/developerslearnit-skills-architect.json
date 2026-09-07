@@ -2,14 +2,14 @@
  "id": "developerslearnit-skills-architect",
  "kind": "skill",
  "name": "architect",
- "title_zh": "先问「删掉哪层抽象」再动手的架构评审",
- "tagline_zh": "写代码前先过一遍主程级追问：边界在哪、谁在耦合、删哪层最疼。专治「能跑就行」和「过度设计」两头摇摆。",
- "tagline_en": "Principal-level design interrogation before you commit: boundaries, coupling, and the one layer worth deleting.",
+ "title_zh": "画架构图前先逼你把权衡写下来的设计陪练",
+ "tagline_zh": "不是又一张白板。它会在你拍板前追问：缓存失效、分区键、回滚路径——像 principal 坐在对面。",
+ "tagline_en": "Not another whiteboard. It grills you on cache invalidation, partition keys, rollback paths before you.",
  "desc_en": "Think through software design and architecture like a principal-level",
- "why_zh": "它不给你画框，而是逼你回答「如果只能留三个模块，留哪三个」——用删除倒逼本质，比任何架构图都诚实。",
- "why_en": "It doesn't hand you a diagram—it forces you to answer 'if only three modules survived, which three?' Deletion as a lens beats.",
- "limit_zh": "只覆盖设计阶段的思考对话，不生成代码、不画 UML、不检查依赖冲突。对已上线系统的存量债务，它只会指出方向。",
- "limit_en": "Design-phase dialogue only. No codegen, no UML, no dependency checks. For legacy debt it points the way but won't refactor for you.",
+ "why_zh": "它不产架构图，产决策记录。每轮对话强制你区分「事实、假设、权衡」，把模糊的「我觉得」逼成可反驳的句子。",
+ "why_en": "It doesn't output diagrams—it outputs decision logs. Each turn forces you to separate facts, assumptions, and trade-offs.",
+ "limit_zh": "只覆盖单体到微服务拆分、事件驱动、数据建模三类场景；不接前端组件设计。产物是 Markdown 决策记录。",
+ "limit_en": "Covers only monolith-to-microservices, event-driven, and data modeling. No frontend component design. Output is a Markdown ADR—no UML or code.",
  "repo": "developerslearnit/skills",
  "owner": "developerslearnit",
  "path": "architect",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Architecture review that asks what to delete first"
+ "title_en": "A design sparring partner that makes you write trade-offs."
 }
