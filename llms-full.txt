@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 313 skills.
+# Full corpus, plain text. 326 skills.
 
 ========================================================================
 ## close-reading-annotator
@@ -62,6 +62,28 @@ git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then p
 
 ### Where does it come from?
 Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
+
+========================================================================
+## kindle-highlights
+## Kindle 笔记导出器，连亚马逊截断的划线也捞回来
+URL: https://ourword.ai/skill/i/l3a0-claude-plugins-kindle-highlights/
+Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
+Updated: 2026-09-06
+Tags: work, skill, l3a0
+
+Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
+
+### What does this skill do?
+Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
+
+### Why is it worth installing?
+It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
+
+### How do you install it?
+git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: l3a0/claude-plugins The repository ships 1 skills in total.
 
 ========================================================================
 ## tts-director
@@ -1604,44 +1626,6 @@ git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git Then 
 Repository: lincwang123-bot/moonlit-stories The repository ships 1 skills in total.
 
 ========================================================================
-## encoding-hero-video-for-mobile
-## 手机竖屏 hero 视频压片台，只管码率不管播放
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
-Updated: 2026-09-04
-Tags: images, skill, ALCHEMINT-INC
-
-Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
-
-### What does this skill do?
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Why is it worth installing?
-Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
-
-### Q：这个 skill 做什么？
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Q：为什么值得装？
-专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
 ## ponytail
 ## 先问「这真的需要做吗」，能不写的代码一行不写
 URL: https://ourword.ai/skill/i/dietrichgebert-ponytail-ponytail/
@@ -1684,6 +1668,44 @@ git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain.git 
 
 ### Where does it come from?
 Repository: eugeniughelbur/obsidian-second-brain Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## encoding-hero-video-for-mobile
+## 手机竖屏 hero 视频压片台，只管码率不管播放
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
+Updated: 2026-09-04
+Tags: images, skill, ALCHEMINT-INC
+
+Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
+
+### What does this skill do?
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Why is it worth installing?
+Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
+
+### Q：这个 skill 做什么？
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Q：为什么值得装？
+专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
 
 ========================================================================
 ## glitch-pixel-collage
@@ -2792,6 +2814,44 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
+## cumcm-live-workflow
+## 从读题到打包全程不踩雷的数模竞赛裁判长
+URL: https://ourword.ai/skill/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
+URL (中文): https://ourword.ai/skill/zh/i/haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow/
+Source: https://github.com/haoxilin/cumcm-live-workflow-skill/tree/HEAD/cumcm-live-workflow
+Updated: 2026-08-30
+Tags: writing, skill, haoxilin
+
+Practice with past problems but lose points on format? It chains env checks, AI-compliance, LaTeX numbering, and.
+
+### What does this skill do?
+CUMCM（全国大学生数学建模竞赛）真题全流程实战手册。用于完整打一场数模竞赛（环境准备→读题自查→建模出图→LaTeX论文→交叉审阅→填表→AI自查表终审→清理打包），内含题意理解红线、数值严谨性守则、去AIGC特征清单、写作规范、LaTeX编号与图表规范、2026 AI合规与终审核查框架。触发于用户开始完整做真题、备赛训练、即将正式参赛，或要求按AI自查表对成品论文终审整改。**启动关键词**：国赛、数学建模竞赛、真题全流程、按竞赛标准走完流程、备赛、环境检查/检查环境/准备环境、按自查表审查——命中任一即启动，启用后第一步自动执行环境检查。
+
+### Why is it worth installing?
+Not loose templates—it hardens the contest flow into executable gates: red-line checklists per step, final review against 2026.
+
+### How do you install it?
+git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+真题练手总在格式上扣分？它把环境检查、AI合规、LaTeX编号、AIGC去痕全串成一条线，按国赛标准走完。
+
+### Q：这个 skill 做什么？
+CUMCM（全国大学生数学建模竞赛）真题全流程实战手册。用于完整打一场数模竞赛（环境准备→读题自查→建模出图→LaTeX论文→交叉审阅→填表→AI自查表终审→清理打包），内含题意理解红线、数值严谨性守则、去AIGC特征清单、写作规范、LaTeX编号与图表规范、2026 AI合规与终审核查框架。触发于用户开始完整做真题、备赛训练、即将正式参赛，或要求按AI自查表对成品论文终审整改。**启动关键词**：国赛、数学建模竞赛、真题全流程、按竞赛标准走完流程、备赛、环境检查/检查环境/准备环境、按自查表审查——命中任一即启动，启用后第一步自动执行环境检查。
+
+### Q：为什么值得装？
+不是零散模板，而是把竞赛流程固化成可执行关卡：每步有红线清单，终审按2026官方AI规则逐项核对。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## interview-master
 ## 从岗位JD反推面试题，练完还带复盘和谈薪
 URL: https://ourword.ai/skill/i/chen3tu-interview-master-skill/
@@ -2904,6 +2964,44 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Ink.git 然后把智�
 
 ### Q：它从哪来？
 Repository: Starryear/Starryear-Ink The repository ships 1 skills in total.
+
+========================================================================
+## dxsm-math
+## 数一数二数三的题，它敢接敢讲敢纠错
+URL: https://ourword.ai/skill/i/lyn-77-daxueshenmai-dxsm-math/
+URL (中文): https://ourword.ai/skill/zh/i/lyn-77-daxueshenmai-dxsm-math/
+Source: https://github.com/lyn-77/daxueshenmai/tree/HEAD/skills/dxsm-math
+Updated: 2026-08-29
+Tags: everyday, skill, lyn-77
+
+Takes screenshots, text, LaTeX, or your own work. Explains theorems, finds your mistakes—more patient than the.
+
+### What does this skill do?
+解答、讲解和纠正中国统考考研数学一、数学二、数学三范围内的具体题目，并推导相关定理原理；适用于题目截图、自然语言题干、LaTeX、纯公式或用户解题过程。纯定义复述、学习规划、估分和明显超纲问题不使用本 Skill。
+
+### Why is it worth installing?
+Not a lookup—it reasons each problem, traces your steps, pinpoints the error, and derives the theorem. Like a TA beside you.
+
+### How do you install it?
+git clone --depth 1 https://github.com/lyn-77/daxueshenmai.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: lyn-77/daxueshenmai Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+截图、文字、LaTeX、纯公式都认。不光给答案，还推导定理原理，揪出你解题过程里的错。统考范围内。
+
+### Q：这个 skill 做什么？
+解答、讲解和纠正中国统考考研数学一、数学二、数学三范围内的具体题目，并推导相关定理原理；适用于题目截图、自然语言题干、LaTeX、纯公式或用户解题过程。纯定义复述、学习规划、估分和明显超纲问题不使用本 Skill。
+
+### Q：为什么值得装？
+不是题库检索，是逐题推理。能顺着你的过程指出哪步错、为什么错，再补上定理推导，像助教坐在旁边。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/lyn-77/daxueshenmai.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: lyn-77/daxueshenmai Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## gudemiao-advertising-creative-director
@@ -3024,6 +3122,28 @@ git clone --depth 1 https://github.com/carolinaaafy/travel-memory-card-duo.git T
 
 ### Where does it come from?
 Repository: carolinaaafy/travel-memory-card-duo The repository ships 1 skills in total.
+
+========================================================================
+## tare
+## 查清 Claude Code 额度去哪了的用量审计员
+URL: https://ourword.ai/skill/i/kelviq-tare-tare/
+Source: https://github.com/kelviq/tare/tree/HEAD/skills/tare
+Updated: 2026-08-28
+Tags: work, skill, kelviq
+
+Hit the 5-hour or weekly cap again? Stop guessing. It pinpoints runaway loops, phantom usage, or long tasks by.
+
+### What does this skill do?
+Diagnose Claude Code usage limits — find out where tokens actually went and why a 5-hour or weekly limit was hit. Use this whenever the user mentions hitting a usage limit, being rate limited, burning through their quota, running out of Claude Code usage, unexpected or suspicious token consumption, "why am I hitting limits", phantom usage, or asks to audit, analyze, or track their Claude Code toke
+
+### Why is it worth installing?
+Breaks down consumption by session, tool, and timeline—turns vague 'suspicious usage' into a named culprit, no log-diving.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kelviq/tare.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kelviq/tare The repository ships 1 skills in total.
 
 ========================================================================
 ## chart-type-chooser
@@ -3578,6 +3698,28 @@ git clone --depth 1 https://github.com/liyue-aigc/seedance-2-5-video-director.gi
 Repository: liyue-aigc/seedance-2-5-video-director The repository ships 1 skills in total.
 
 ========================================================================
+## estimate-layoff-risk
+## 会追问你三遍证据的裁员风险估算师
+URL: https://ourword.ai/skill/i/kelvinfkr-company-skill-estimate-layoff-risk/
+Source: https://github.com/kelvinfkr/company_skill/tree/HEAD/skills/estimate-layoff-risk
+Updated: 2026-08-25
+Tags: work, skill, kelvinfkr
+
+Before your interview, it estimates your 3/6/12-month layoff odds from public filings and role specifics—grilling.
+
+### What does this skill do?
+Estimate an employee, intern, contractor, or role group's 3/6/12-month involuntary job-loss risk from public company evidence and an adaptive candidate interview. Use for questions about layoff probability, role redundancy, business-unit closure, contract non-renewal, performance exits, reorganization exposure, or which jobs are safer during cost cuts. Reconstruct business economics and profit poo
+
+### Why is it worth installing?
+It doesn't just output a number—it rebuilds the profit pool, business unit, and contract type, then interrogates you adaptively.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kelvinfkr/company_skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kelvinfkr/company_skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
 ## smy-seedance-storyboard
 ## 水墨线条矿物色块，把小说整成上美影分镜脚本
 URL: https://ourword.ai/skill/i/liangdabiao-smy-seedance-storyboard/
@@ -3712,6 +3854,28 @@ git clone --depth 1 https://github.com/alchaincyf/huashu-design.git 然后把智
 
 ### Q：它从哪来？
 Repository: alchaincyf/huashu-design Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## photo-paper-scene-zine-v1
+## 照片变纸艺场景志，主体不动四周撕纸重构
+URL: https://ourword.ai/skill/i/kennyleung123-photo-paper-scene-zine-v1/
+Source: https://github.com/kennyleung123/photo-paper-scene-zine-v1
+Updated: 2026-08-24
+Tags: images, skill, kennyleung123
+
+Keep the real subject, rebuild the scene with torn paper, halftone fields, aged fibers, and bilingual editorial.
+
+### What does this skill do?
+Transform a user-supplied photograph into a quiet paper-scene zine poster that preserves the real subject while rebuilding the surrounding scene with layered torn paper, a restrained single-color halftone or risograph field, aged fibers, generous negative space, and small Chinese, English, or bilingual editorial text. Use when the user asks for a vintage photo collage, torn-paper scene poster, blu
+
+### Why is it worth installing?
+It doesn't just filter—it detects the subject, rebuilds surroundings with layered torn paper and restrained halftone, leaving.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kennyleung123/photo-paper-scene-zine-v1.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kennyleung123/photo-paper-scene-zine-v1 The repository ships 1 skills in total.
 
 ========================================================================
 ## ppt-lai
@@ -3998,6 +4162,44 @@ git clone --depth 1 https://github.com/jangviktor-web/wujutong.git Then point yo
 Repository: jangviktor-web/wujutong Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## creator-distiller
+## 博主主页蒸馏出的本地专家，每条观点都能跳回原视频
+URL: https://ourword.ai/skill/i/kingkk469-creator-distiller-creator-distiller/
+URL (中文): https://ourword.ai/skill/zh/i/kingkk469-creator-distiller-creator-distiller/
+Source: https://github.com/kingkk469/creator-distiller/tree/HEAD/creator-distiller
+Updated: 2026-08-22
+Tags: images, skill, kingkk469
+
+Feed it links, transcripts, or local media from Douyin/XHS/Bilibili — get a searchable skill that cites the exact.
+
+### What does this skill do?
+将抖音、小红书等博主主页、视频链接清单、本地音视频、平台字幕或既有转写，整理为可检索、可执行、核心观点可直接回到原视频的本地专家 Skill。适用于“蒸馏一个博主”“把账号做成 Skill”“下载并转写公开视频”“持续同步博主”“生成私人完整版或可分享轻量版”等任务；不用于破解验证码、付费或私密访问，不公开分发完整媒体和逐字稿，也不替换原视频链接。
+
+### Why is it worth installing?
+It doesn't just summarize — it anchors every claim to the source timestamp, so you can always jump back and verify in context.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kingkk469/creator-distiller.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kingkk469/creator-distiller Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+抖音、小红书、B站……一个链接清单丢进去，出来的是可检索、可执行、观点能跳回原视频的私人 Skill。
+
+### Q：这个 skill 做什么？
+将抖音、小红书等博主主页、视频链接清单、本地音视频、平台字幕或既有转写，整理为可检索、可执行、核心观点可直接回到原视频的本地专家 Skill。适用于“蒸馏一个博主”“把账号做成 Skill”“下载并转写公开视频”“持续同步博主”“生成私人完整版或可分享轻量版”等任务；不用于破解验证码、付费或私密访问，不公开分发完整媒体和逐字稿，也不替换原视频链接。
+
+### Q：为什么值得装？
+它不满足于做摘要，而是把观点钉回原视频时间戳——你追问『他哪集说的』时，它直接指给你看。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/kingkk469/creator-distiller.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: kingkk469/creator-distiller Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## dance-video-to-prompt
 ## 模糊帧不编手指，卡点动作拆成七段可生成提示词
 URL: https://ourword.ai/skill/i/cattlez-dance-video-to-prompt-dance-video-to-prompt/
@@ -4072,6 +4274,82 @@ git clone --depth 1 https://github.com/qianye-wuyu/yueyuan-bazi.git 然后把智
 
 ### Q：它从哪来？
 Repository: qianye-wuyu/yueyuan-bazi The repository ships 1 skills in total.
+
+========================================================================
+## wechat-miniprogram-to-xhs-minitool
+## 微信小程序整包迁成小红书离线H5，断网也能跑
+URL: https://ourword.ai/skill/i/litefreeteam-wechat-miniprogram-to-xhs-minitool/
+URL (中文): https://ourword.ai/skill/zh/i/litefreeteam-wechat-miniprogram-to-xhs-minitool/
+Source: https://github.com/litefreeteam/wechat-miniprogram-to-xhs-minitool
+Updated: 2026-08-21
+Tags: images, skill, litefreeteam
+
+Port WXML/WXSS/JS or mini-games to XHS MiniTool offline ZIP. Max-keep semantics, hard-block only on banned APIs.
+
+### What does this skill do?
+将原生微信小程序（WXML/WXSS/JS/TS/JSON）、微信小游戏（Canvas/WebGL）或可输出 H5 的跨端项目迁移为 小红书 MiniTool 小工具离线 H5 ZIP。采用“最大可用”原则：优先保留用户目标，通过标准 Web 等价、XHS Bridge、 OSS/CDN 本地化、构建期快照/预计算、本地数据模拟、手动输入替代、产品语义重写与可探测 Web 增强尽量保住功能； 只有原语义确实依赖小红书明确禁用能力时才 HARD_BLOCK。最终必须断网自包含、只使用官方当前 3 个 Native API、 严格验包，不伪造登录/支付/实时服务端/平台身份。
+
+### Why is it worth installing?
+Not a translator but a semantic migrator. Preserves user intent via Web equivalents, XHS Bridge, local snapshots, manual input.
+
+### How do you install it?
+git clone --depth 1 https://github.com/litefreeteam/wechat-miniprogram-to-xhs-minitool.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: litefreeteam/wechat-miniprogram-to-xhs-minitool Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 1 skills in total.
+
+--- 中文 ---
+不用重写，WXML/WXSS/JS/小游戏都能搬。最大可用保住功能，禁用能力才硬拦。最终断网自包含。
+
+### Q：这个 skill 做什么？
+将原生微信小程序（WXML/WXSS/JS/TS/JSON）、微信小游戏（Canvas/WebGL）或可输出 H5 的跨端项目迁移为 小红书 MiniTool 小工具离线 H5 ZIP。采用“最大可用”原则：优先保留用户目标，通过标准 Web 等价、XHS Bridge、 OSS/CDN 本地化、构建期快照/预计算、本地数据模拟、手动输入替代、产品语义重写与可探测 Web 增强尽量保住功能； 只有原语义确实依赖小红书明确禁用能力时才 HARD_BLOCK。最终必须断网自包含、只使用官方当前 3 个 Native API、 严格验包，不伪造登录/支付/实时服务端/平台身份。
+
+### Q：为什么值得装？
+不是翻译器，是语义迁移器。先保用户目标，用Web等价、Bridge、本地快照、手动输入逐级兜底。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/litefreeteam/wechat-miniprogram-to-xhs-minitool.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: litefreeteam/wechat-miniprogram-to-xhs-minitool Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 1 skills in total.
+
+========================================================================
+## paper-mechanigraph-4ss
+## CSSCI 级矢量机制图，出图前先问你风格偏好
+URL: https://ourword.ai/skill/i/jingyangyuan-paper-mechanigraph-4ss-paper-mechanigraph-4ss/
+URL (中文): https://ourword.ai/skill/zh/i/jingyangyuan-paper-mechanigraph-4ss-paper-mechanigraph-4ss/
+Source: https://github.com/jingyangyuan/paper-mechanigraph-4ss/tree/HEAD/paper-mechanigraph-4ss
+Updated: 2026-08-21
+Tags: images, skill, jingyangyuan
+
+Turn prose hypotheses into submission-ready SVG diagrams. Headless render self-checks every pixel until lines.
+
+### What does this skill do?
+社科学术机制图（理论机制图、分析框架图、演进模型、政策网络、治理体系）的纯矢量 SVG 自动化生成、复刻与自检修复引擎。按 CSSCI/SSCI 期刊出版标准，出图前主动询问用户制图风格偏好，将文字描述/理论假说解析为机制图，或复刻已有原图，出图后后台无头渲染 PNG 视觉自检直至完美。当用户需要生成学术机制图、把机制描述/理论假说转为图示、复刻或重绘某张机制图时使用。
+
+### Why is it worth installing?
+It bakes journal layout rules into a self-check loop: asks style first, parses the mechanism, renders, then pixel-compares and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/jingyangyuan/paper-mechanigraph-4ss.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: jingyangyuan/paper-mechanigraph-4ss Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+把文字假说变成能投稿的 SVG 机制图，后台无头渲染逐像素自检，直到线条、箭头、标注都符合期刊出版规范。
+
+### Q：这个 skill 做什么？
+社科学术机制图（理论机制图、分析框架图、演进模型、政策网络、治理体系）的纯矢量 SVG 自动化生成、复刻与自检修复引擎。按 CSSCI/SSCI 期刊出版标准，出图前主动询问用户制图风格偏好，将文字描述/理论假说解析为机制图，或复刻已有原图，出图后后台无头渲染 PNG 视觉自检直至完美。当用户需要生成学术机制图、把机制描述/理论假说转为图示、复刻或重绘某张机制图时使用。
+
+### Q：为什么值得装？
+它把「制图规范」写进自检循环：先问风格偏好，再解析机制，渲染后逐像素比对，不合格就自动改。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/jingyangyuan/paper-mechanigraph-4ss.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: jingyangyuan/paper-mechanigraph-4ss Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## academic-figures-drawer
@@ -4646,6 +4924,28 @@ git clone --depth 1 https://github.com/Alaric1098/China-Pension-Strategy-Skill.g
 
 ### Where does it come from?
 Repository: Alaric1098/China-Pension-Strategy-Skill Prep work visible in the skill's own text: runnable scripts, stated boundaries, when-to-use, evals. The repository ships 1 skills in total.
+
+========================================================================
+## localize-unity4-tk2d-games
+## 老 Unity 游戏韩化，不装编辑器直接换字库
+URL: https://ourword.ai/skill/i/goldmetal-skill-unity-localize-game-localize-unity4-tk2d-games/
+Source: https://github.com/goldmetal/skill.unity.localize-game/tree/HEAD/skills/game-localize-unity4-tk2d
+Updated: 2026-08-14
+Tags: work, skill, goldmetal
+
+Korean-patch Unity 4.x games: tk2d bitmap fonts, resources.assets, TypeTree. Swap CJK slots to Hangul without the.
+
+### What does this skill do?
+Unity 4.x Windows 게임의 한국어 패치를 분석·제작·검증한다. tk2d/tk2dFontData 비트맵 폰트, resources.assets, Texture2D, Material, MonoBehaviour 타입 트리, Noto Sans KR/CJK KR 글리프 아틀라스, 언어별 문자열 파일을 다룰 때 사용한다. 구형 Unity 에디터 없이 기존 CJK 언어 슬롯을 한국어로 교체하거나, 한글이 네모로 나오거나, 누락 문자 때문에 KeyNotFoundException이 발생하거나, 폰트 패치 후에도 중국어가 표시되는 문제를 진단할 때도 사용한다.
+
+### Why is it worth installing?
+Rewrites tk2dFontData glyph maps and atlases directly, bypassing the Unity 4 editor; aligns Noto Sans KR into existing CJK.
+
+### How do you install it?
+git clone --depth 1 https://github.com/goldmetal/skill.unity.localize-game.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: goldmetal/skill.unity.localize-game The repository ships 1 skills in total.
 
 ========================================================================
 ## deconstructed-duotone-poster
@@ -7362,6 +7662,28 @@ git clone --depth 1 https://github.com/tance-mang/chinese-webnovel-skills.git �
 Repository: tance-mang/chinese-webnovel-skills The repository ships 1 skills in total.
 
 ========================================================================
+## qiaomu-ai-prd
+## AI 能照做的 PRD，从一句话想法开始
+URL: https://ourword.ai/skill/i/joeseesun-qiaomu-ai-prd/
+Source: https://github.com/joeseesun/qiaomu-ai-prd
+Updated: 2026-06-12
+Tags: work, skill, joeseesun
+
+Stop writing PRDs from scratch. Drop in a vague idea, get a structured spec with acceptance criteria and edge.
+
+### What does this skill do?
+Generate AI-implementable product requirement documents (PRDs) from one-line product ideas, vague app/site/tool requests, or feature concepts. Use when the user asks for PRD, 产品需求文档, 需求文档, AI 可执行 PRD, 产品规格, MVP 方案, app/site/tool planning, or developer handoff docs for AI coding assistants.
+
+### Why is it worth installing?
+It doesn't just fill a template—it decomposes a raw idea into user stories, data models, and edge cases, so AI can start coding.
+
+### How do you install it?
+git clone --depth 1 https://github.com/joeseesun/qiaomu-ai-prd.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: joeseesun/qiaomu-ai-prd The repository ships 1 skills in total.
+
+========================================================================
 ## rimworld-modding
 ## 从零搓出能上创意工坊的 RimWorld 模组
 URL: https://ourword.ai/skill/i/kon-on-rimworld-modding-skill/
@@ -7874,6 +8196,28 @@ git clone --depth 1 https://github.com/agentsope/smartbuy-skill.git 然后把智
 Repository: agentsope/smartbuy-skill Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## minecraft-ai-generate-bbmodel
+## 文字或参考图直出可编辑的 Blockbench 方块
+URL: https://ourword.ai/skill/i/logeaddd-minecraft-ai-generate-bbmodel/
+Source: https://github.com/logeaddd/minecraft-ai-generate-bbmodel
+Updated: 2026-05-31
+Tags: images, skill, logeaddd
+
+Skip manual voxel placement and UV math. Describe a 'wooden table with drawers' or drop a reference image—get a.
+
+### What does this skill do?
+Convert a text description or reference image into an editable Minecraft/Blockbench .bbmodel by first authoring a structured asset spec JSON, then running a deterministic generator that validates geometry, hierarchy, UVs, texture details, and outputs a clean .bbmodel. Use when the user asks to generate Minecraft models, Blockbench models, bbmodel assets, cuboid furniture, props, creatures, robots,
+
+### Why is it worth installing?
+Authors a structured asset spec JSON first, then runs a deterministic generator that validates geometry, hierarchy, UVs, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/logeaddd/minecraft-ai-generate-bbmodel.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: logeaddd/minecraft-ai-generate-bbmodel Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## academic-ref-inserter
 ## Word 参考文献乱了，按 GB/T 7714 重排补链接
 URL: https://ourword.ai/skill/i/fuwenhao12-academic-ref-inserter/
@@ -7932,6 +8276,44 @@ git clone --depth 1 https://github.com/ayi-ai/ayi-nonviolent-communication.git �
 
 ### Q：它从哪来？
 Repository: ayi-ai/ayi-nonviolent-communication The repository ships 1 skills in total.
+
+========================================================================
+## vocational-teaching-interview-prep
+## 试讲稿先改教态再改内容的职校面试陪练
+URL: https://ourword.ai/skill/i/lusionf-vocational-teaching-interview-prep-vocational-teaching-interview-prep/
+URL (中文): https://ourword.ai/skill/zh/i/lusionf-vocational-teaching-interview-prep-vocational-teaching-interview-prep/
+Source: https://github.com/lusionf/vocational-teaching-interview-prep/tree/HEAD/skills/vocational-teaching-interview-prep
+Updated: 2026-05-30
+Tags: images, skill, lusionf
+
+No teaching experience? It breaks试讲 into posture, boardwork, pacing—even times each PPT slide so you hold the room.
+
+### What does this skill do?
+帮助应聘大专/高职（高等职业院校）教师岗位的人准备试讲、说课与结构化面试，尤其适合硕士背景、教学经验较少的应聘者。当用户提到高职/大专/职业院校教师招聘、试讲、说课、试讲稿、说课稿、教学设计、教案、结构化面试、面试答辩、应聘老师怎么准备、试讲PPT、教态、板书、模拟课堂等相关内容时，都要使用本技能——即使用户没有明确说出"试讲"二字，只要意图是准备职业院校教师岗位的考核环节，就应主动调用。
+
+### Why is it worth installing?
+No canned scripts—it simulates real polytechnic class pacing, records your run-through, then flags eye contact, pauses, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/lusionf/vocational-teaching-interview-prep.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: lusionf/vocational-teaching-interview-prep The repository ships 1 skills in total.
+
+--- 中文 ---
+硕士毕业、没上过讲台？它把试讲拆成教态、板书、提问节奏逐项抠，连PPT每页讲几秒都给你掐好表，练到考官抬头看你。
+
+### Q：这个 skill 做什么？
+帮助应聘大专/高职（高等职业院校）教师岗位的人准备试讲、说课与结构化面试，尤其适合硕士背景、教学经验较少的应聘者。当用户提到高职/大专/职业院校教师招聘、试讲、说课、试讲稿、说课稿、教学设计、教案、结构化面试、面试答辩、应聘老师怎么准备、试讲PPT、教态、板书、模拟课堂等相关内容时，都要使用本技能——即使用户没有明确说出"试讲"二字，只要意图是准备职业院校教师岗位的考核环节，就应主动调用。
+
+### Q：为什么值得装？
+不背万能模板，按高职课堂真实节奏逐段模拟。先录下你的试讲，再逐帧指出眼神、停顿、手势。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/lusionf/vocational-teaching-interview-prep.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: lusionf/vocational-teaching-interview-prep The repository ships 1 skills in total.
 
 ========================================================================
 ## video-subtitle

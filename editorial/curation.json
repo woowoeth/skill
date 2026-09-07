@@ -15450,6 +15450,173 @@
    "hide": false,
    "gate_score": 8,
    "category": "work"
+  },
+  "gfodor-legal-skills-patent-audit": {
+   "title_zh": "316 项清单逐条过，递交前先拆穿自家专利的致命伤",
+   "why_zh": "不是泛泛润色，而是把 35 U.S.C.、37 CFR、MPEP 编成 316 项确定性预检。",
+   "limit_zh": "只审美国实用专利申请草案，不覆盖外观设计、PCT 或已授权专利的复审。需要完整草案文本（含权利要求和附图）。",
+   "tagline_zh": "别等 USPTO 审查员替你找茬。递交前跑一遍法定门槛、发明人、期限三关，再派并行审查员撕说明书、权利要求。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "fun",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · patent-audit/reference/parts/D_priority_deadlines.md: 破限 第391行"
+  },
+  "goldmetal-skill.unity.localize-game-localize-unity4-tk2d-games": {
+   "title_zh": "老 Unity 游戏韩化，不装编辑器直接换字库",
+   "why_zh": "直接改 tk2dFontData 的 glyph 映射与图集，绕开 Unity 4 编辑器依赖。",
+   "limit_zh": "只认 Unity 4.x + tk2d 位图字体；非 tk2d 的 TextMesh/UGUI 不碰。",
+   "tagline_zh": "Unity 4.x 老游戏韩化：tk2d 位图字体、resources.assets、TypeTree 全包。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "haoxilin-cumcm-live-workflow-skill-cumcm-live-workflow": {
+   "title_zh": "从读题到打包全程不踩雷的数模竞赛裁判长",
+   "why_zh": "不是零散模板，而是把竞赛流程固化成可执行关卡：每步有红线清单，终审按2026官方AI规则逐项核对。",
+   "limit_zh": "只服务CUMCM真题全流程，不接单题求解或论文润色；需自备LaTeX环境和竞赛数据；产物为完整参赛包，不含评委评分。",
+   "tagline_zh": "真题练手总在格式上扣分？它把环境检查、AI合规、LaTeX编号、AIGC去痕全串成一条线，按国赛标准走完。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "writing"
+  },
+  "henryliu0405-njupt-thesis-skill-njupt-thesis": {
+   "title_zh": "南邮毕设从开题到答辩的全程把关老师傅",
+   "why_zh": "不是零散模板堆砌，而是按南邮本科毕设全流程串成一条线，材料间术语、格式、页码互相咬合。",
+   "limit_zh": "只认南邮本科毕设流程与中文学术格式；不处理硕博论文、非南邮模板、英文写作。",
+   "tagline_zh": "开题报告、中期检查、外文翻译、降重降AI、答辩PPT全包。连导师批注怎么逐条回应。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · njupt-thesis/references/writing-workflows.md: 检测规避 第55行"
+  },
+  "jakeyhb-football-content-ops-skill": {
+   "title_zh": "一个账号的足球内容从选题到发布全流程手册",
+   "why_zh": "把内容运营沉淀成可复用的方法论，而非零散灵感。从选题到复盘，每一步都有明确产出物和检查点，换队。",
+   "limit_zh": "只服务中文足球内容账号的既定流程。不含爆款算法、涨粉策略或选题灵感生成；不接入任何发布 API，发布动作仍需手动完成。",
+   "tagline_zh": "小红书、抖音、FlowUs 三端统一打法：每队一套专属配色、固定 IP 吉祥物、图卡模板直接套。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · scripts/douyin-post.py: 绕反爬 第63行"
+  },
+  "jingyangyuan-paper-mechanigraph-4ss-paper-mechanigraph-4ss": {
+   "title_zh": "CSSCI 级矢量机制图，出图前先问你风格偏好",
+   "why_zh": "它把「制图规范」写进自检循环：先问风格偏好，再解析机制，渲染后逐像素比对，不合格就自动改。",
+   "limit_zh": "只认文字描述或已有原图，不认手绘草图；只出 SVG 矢量图，不负责帮你选刊投稿；复杂政策网络超过 20 个节点时。",
+   "tagline_zh": "把文字假说变成能投稿的 SVG 机制图，后台无头渲染逐像素自检，直到线条、箭头、标注都符合期刊出版规范。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "joeseesun-qiaomu-ai-prd": {
+   "title_zh": "AI 能照做的 PRD，从一句话想法开始",
+   "why_zh": "不是模板填空，而是把一句话想法拆解成用户故事、数据模型、异常分支，让 AI 能真正开工，减少来回确认。",
+   "limit_zh": "只处理产品需求文档的生成，不含代码实现或测试；对非软件类需求（如硬件、流程优化）效果有限。",
+   "tagline_zh": "还在为写需求文档熬夜？把模糊想法丢进来，自动生成含验收标准、边界条件的可执行 PRD，AI 开发直接照做。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "kelvinfkr-company_skill-estimate-layoff-risk": {
+   "title_zh": "会追问你三遍证据的裁员风险估算师",
+   "why_zh": "它不给你一个数就完事，而是把公司利润池、业务单元、合同类型拆开重建。",
+   "limit_zh": "只吃公开公司证据（财报、新闻、监管文件），不碰内部消息或小道传闻；输出是概率区间和风险因素清单，不是保命指南。",
+   "tagline_zh": "面试前先拿公开财报、业务线、岗位性质反推你 3/6/12 个月被裁概率。不靠直觉，靠它逐条追问你「这证据哪来的」。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "kelviq-tare-tare": {
+   "title_zh": "查清 Claude Code 额度去哪了的用量审计员",
+   "why_zh": "不只看总量，而是按会话、工具调用、时间轴拆解消耗，把「疑似异常」变成可指认的具体环节。",
+   "limit_zh": "只诊断 Claude Code 的用量数据，不优化代码、不调限额、不跨账号统计；需要本地有 CLI 日志权限。",
+   "tagline_zh": "5 小时限额又爆了？别猜了。它逐条翻出 token 实际流向，定位是长任务拖垮、循环失控还是幽灵消耗。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "kennyleung123-photo-paper-scene-zine-v1": {
+   "title_zh": "照片变纸艺场景志，主体不动四周撕纸重构",
+   "why_zh": "不是无脑滤镜，而是先识别主体再分层撕纸重构，单色半调克制不抢戏，负空间和文字排版让成品直接可印。",
+   "limit_zh": "只接受单张照片输入，输出为单页海报式构图；不处理多图拼贴、不生成可编辑矢量文件，文字排版固定为三种预设样式。",
+   "tagline_zh": "想要复古拼贴却怕丢主体？它只撕掉背景，用单色半调、老化纤维和留白重建场景，附中英双语小字排版，像手工杂志内页。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "kingkk469-creator-distiller-creator-distiller": {
+   "title_zh": "博主主页蒸馏出的本地专家，每条观点都能跳回原视频",
+   "why_zh": "它不满足于做摘要，而是把观点钉回原视频时间戳——你追问『他哪集说的』时，它直接指给你看。",
+   "limit_zh": "只处理公开内容；不破解验证码、付费墙或私密账号。产物不含完整媒体或逐字稿，只保留可分享的轻量版。",
+   "tagline_zh": "抖音、小红书、B站……一个链接清单丢进去，出来的是可检索、可执行、观点能跳回原视频的私人 Skill。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "l3a0-claude-plugins-kindle-highlights": {
+   "title_zh": "Kindle 笔记导出器，连亚马逊截断的划线也捞回来",
+   "why_zh": "它不信任亚马逊的导出接口，而是交叉比对 Mac Kindle 的本地同步位置和云端渲染页。",
+   "limit_zh": "仅限 Mac 上的 Kindle 应用且需已同步该书笔记；只处理已购或借阅的 Kindle 书。",
+   "tagline_zh": "别再手动翻网页复制了。一次导出整本书的划线，带页码和位置引用，还能找回 Kindle 导出上限之外被隐藏的笔记。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "work"
+  },
+  "litefreeteam-wechat-miniprogram-to-xhs-minitool": {
+   "title_zh": "微信小程序整包迁成小红书离线H5，断网也能跑",
+   "why_zh": "不是翻译器，是语义迁移器。先保用户目标，用Web等价、Bridge、本地快照、手动输入逐级兜底。",
+   "limit_zh": "只认原生微信小程序/小游戏或能出H5的跨端项目；产物是离线ZIP，不含服务端。",
+   "tagline_zh": "不用重写，WXML/WXSS/JS/小游戏都能搬。最大可用保住功能，禁用能力才硬拦。最终断网自包含。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "logeaddd-minecraft-ai-generate-bbmodel": {
+   "title_zh": "文字或参考图直出可编辑的 Blockbench 方块",
+   "why_zh": "先产出结构化资产 JSON 再跑确定性生成器，几何、层级、UV、纹理细节逐项校验。",
+   "limit_zh": "只认方块（cuboid）组合，不生成曲面或复杂骨骼动画；纹理细节依赖输入描述或参考图清晰度，模糊草图会得到简化结果。",
+   "tagline_zh": "不用手搭方块、不用记 UV 展开。描述一句“带抽屉的木桌”或丢张参考图，拿到的是结构校验过的 .bbmodel。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "lovstudio-publish-event-onto-hdx-skill": {
+   "title_zh": "活动行后台保存会清空分类，它替你守住并改图提排名",
+   "why_zh": "不是简单改设置，而是把「保存即清空分类」这个平台缺陷当成一等公民处理：每次写入前自动校验并补回分类字段…",
+   "limit_zh": "只针对活动行（huodongxing.com）已发布活动；不处理报名表单、票种价格、SEO标题。",
+   "tagline_zh": "活动已发布才发现分类页找不到？它诊断可见性与排名、替换详情配图，并在每次保存前自动重填分类，防你再踩后台清空陷阱。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 1 处 · SKILL.md: 绕反爬 第264行"
+  },
+  "lusionf-vocational-teaching-interview-prep-vocational-teaching-interview-prep": {
+   "title_zh": "试讲稿先改教态再改内容的职校面试陪练",
+   "why_zh": "不背万能模板，按高职课堂真实节奏逐段模拟。先录下你的试讲，再逐帧指出眼神、停顿、手势。",
+   "limit_zh": "只覆盖大专/高职教师岗的试讲、说课与结构化面试；不适用于中小学或本科高校教职。需要你自备摄像头录试讲视频。",
+   "tagline_zh": "硕士毕业、没上过讲台？它把试讲拆成教态、板书、提问节奏逐项抠，连PPT每页讲几秒都给你掐好表，练到考官抬头看你。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "creative"
+  },
+  "lyn-77-daxueshenmai-dxsm-math": {
+   "title_zh": "数一数二数三的题，它敢接敢讲敢纠错",
+   "why_zh": "不是题库检索，是逐题推理。能顺着你的过程指出哪步错、为什么错，再补上定理推导，像助教坐在旁边。",
+   "limit_zh": "只覆盖数一数二数三统考范围；不背定义、不做规划、不估分。超纲题它会直接说不会，不硬答。",
+   "tagline_zh": "截图、文字、LaTeX、纯公式都认。不光给答案，还推导定理原理，揪出你解题过程里的错。统考范围内。",
+   "hide": false,
+   "gate_score": 8,
+   "category": "life"
+  },
+  "megemini-lucky-doctor-lucky-doctor": {
+   "title_zh": "药盒拍一下，新药和老药冲不冲它先拦",
+   "why_zh": "不是查单盒说明书，而是拿新药撞你的旧药单——重复成分、相互作用在入口就拦下。",
+   "limit_zh": "只认药盒/说明书上的文字，拍不清或非标准药名就识别不了；语音包是合成朗读，不含医生诊断；不替代急诊。",
+   "tagline_zh": "吃药最怕重复吃、冲突吃。拍药盒或说明书，它比对你的用药史，拦下重复成分和相互作用，还能把用法生成语音包，给老人听。",
+   "hide": true,
+   "gate_score": 8,
+   "category": "creative",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 2 处 · skill/scripts/metadata_template.json: 剂量 第11行"
   }
  },
  "gate": {
