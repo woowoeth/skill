@@ -1,0 +1,149 @@
+# 店主认过的货（读原文挑货时，「有品味」就是这个意思）
+
+格式：分类 | 标题 | 一句点评 | 仓库。三段：心选（店主亲手标 ❤）、店长推荐里钉住的、店主指名的。
+
+## 心选
+
+- creative | 植被多就换品红键色，把照片做成能剪下来的贴纸页 | 去背走色度键，绿场景会撞色，所以植被多的图改用品红打底，最后还要验四角 alpha 是不是 0。 | RollingAlei/Sticker-Puzzle-Photo-Memory-Card-Skill
+- creative | Seedance 2.5 专属导演，分镜脚本一次改到 | 它把边界写成硬规则：只产文字、不调用生成、不花积分；时间戳必须严丝合缝铺满时长，眼泪和脸红不许出现在触发之前。 | liyue-aigc/seedance-2-5-video-director
+- life | 会替你删掉一半心愿单的行程地图生成器 | 它认为你列的东西塞不进去，所以替你删；一天最多安排一个需要订位的地方。 | hiyeshu/trip-map-builder
+- learn | 会打断你含糊用词的苏格拉底式陪练 | 分支和真分歧不是一回事：监督对自监督只是分支，数据越多是否伤泛化才是分歧。 | duskyelf/teach-me
+- life | 把吵架说成法言法语，把判决书说回人话 | 误区表逐条对撞常识：定金不退订金可退，食品假货是退一赔十，2N 和 N 不能同时主张。 | Yunpeng192/legal-language-bridge
+- creative | 用豆包自带生图出整套 PPT，一分第三方 API 钱 | 它给字数上限配了反向约束：正文明写「AI 看到 220 字上限就会朝 220 字写」，于是先逼你答这页要人记住哪一句。 | alchaincyf/huashu-slide-doubao
+- fun | 本地星历实算西洋·印度·八字三盘 | 底线只有一条：引擎算天空，模型只负责读。和会胡编行星位置的聊天机器人不是一类东西。 | aryaminus/astro
+- life | 把十年日记摊成一张可下钻的年轮看板 | 它故意不给「自动生成正文」的脚本：统计只说明反复提到什么，跳过精读的必然是换年份也成立的废话。 | PandaDalmore/annual-diary-insight
+- life | 报价单先看漏项不看总价的 20 年装修老师傅 | 它带一节「内在张力」，明写自己也纠结的三处：包死价省心与必钓鱼、大公司保障与靠增项填坑。 | zx029w/zhuangxiu-laoshi-skill
+- life | 离线可读的手机旅行页，地图时间轴订票提醒一页装完 | 「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。 | zexuanw958-svg/travel-plan-viz
+- life | 每一步都告诉你怎么算做好了的菜谱 | 把「判断标准」写进每一步，正是新手和菜谱之间缺的那一层——不是配方不够细，是不知道什么时候该进下一步。 | cclank/recipe-generator
+- creative | 照片蒸馏成可印刷的极简海报，全程代码绘制零生成模型 | 「不用生图模型」是个很硬的自我约束，也正是它出品统一的原因：所有效果都来自可控的代码，而不是抽卡。 | yangcodingmaster/photo-distill
+- work | 给应届生从零做一份可投递的简历 | 乔木出品。「要求—证据映射」这个设计防的正是简历造假式优化——挖你真有的，而不是替你编。 | joeseesun/qiaomu-campus-resume
+- creative | 把手机壁纸变成每天更新的生活观察窗 | 它给引用的诗人定了规矩：小字、低透明度，不能比你自己那句话抢风头。 | rubyzhu26/see-life-wallpaper-skill
+- body | 训练数据自己攒，剧情推进看成绩的 RPG 健身教练 | 把「坚持」这个真问题用游戏机制解决，而不是再给一份训练计划表。全本地存档，数据不外传。 | chenklein26-maker/fitness-coach-rpg
+- creative | 把客户嘴里的“高级感”翻译成能打勾的审美条目 | 它给自己写了 FAIL FAST：方向没确认就出方案、分镜或 HTML，一律判失败。肯拦住自己的 skill 少见。 | zhlmi/moodboard-alignment
+- creative | 一次拍出多套造型的换装视频脚本 | 把「身份一致性」当成硬约束而不是碰运气——先定首帧再派生视频，这个顺序就是它和一堆换装提示词的全部区别。 | liyue-aigc/outfit-director
+- writing | 一个观点经得住反例才肯落笔的写作引擎 | 「经得住反例」是我见过对写作最狠的自我要求，比「高质量」这类词实在得多。作者知道自己在做什么。 | lijigang/ljg-skills
+- writing | 分析某位作者的多篇文章复刻其文风 | 「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。 | redfox-data/redfox-community
+- fun | 先说自己不算命的风水顾问 | 诚实段先引经典说风水辅佐不决定命运。一个会先缩小自己主张的术数，反而更好信。 | voidforall/fengshui.skill
+- work | 被辞退之后，帮你把证据和钱算清楚 | 它明确站在普通员工这一边——不是给 HR 用的合规工具，是给被辞退的人用的取证工具。立场清楚本身就是一种品味。 | wangchangwei/arb-skill
+- body | 按你的训练记录算下一次该练什么 | 它把胸痛、晕厥、放射性麻木写成硬停止条件，还默认只读、不回显任何 key——一个健身件肯写这两条。 | Reluctant2828/System-Fitness-Advisor-skill
+- writing | 短句砍到骨头里，海明威式改稿人 | 「不要用来扮演本人」这条边界划得清醒：它做的是方法迁移，不是角色扮演。这个分寸是品味。 | panmax/hemingway-skill
+- work | 从富途月结单里抠出境外所得报税数据 | 它整篇在讲「数字藏在哪」和「怎么把账单没算的重建出来」，还专列了一节常见坑——这是对着真账单啃过一遍才写得出的东西。 | BH-M87/futu-statement-skill
+- learn | 刘晓艳考研英语真题逐句精讲，不懂的句子当场拆给你看 | 「绝对禁止」那节反着写：不许学术腔、不许翻译腔、不许「首先其次最后」。用规则把课讲得像人话，比堆知识点难。 | tong666-bit/liu-xiaoyan-skill
+- life | 全家为起名吵架时出来当中间人 | 反模式写得清醒：没给出生时刻绝不伪造命盘；不为凑五行去用冷僻字——「孩子要写、要被叫一辈子」。 | Seiya89757/naming-skill
+- fun | LARP 角色卡生成器：从一句话到可扮演的完整人设 | 安全边界写着不泄露核心诡计和凶手、不透露该角色本不该知道的秘密——一个角色扮演工具主动防剧透，说明作者真在玩这个。 | zzzzzzza/larp-skill
+- life | 新手买竿，老手看天：从选位讲起 | 目录本身就是论点：选位写在最前。先讲位置和天气，再谈装备——把老手和新手真正分开的那一层。 | SunnyPanzhen/fishing-skill
+- work | 社保断缴要不要补，用脚本算给你看 | 每个政策数字都走确定性 CLI，明说从不在对话里口算。模型最容易算错社保算术。 | Alaric1098/China-Pension-Strategy-Skill
+- life | 潮水退去后替你扫三遍滩面的拾遗器 | 最难得的是它给自己设了上限：走天文骨架估算时，适用性评分强制压到五档里的第二档，不假装精确。 | fxw-labs/beachcombing
+- life | 查稀有鸟最近落在哪，顺带说清中文名是台湾译名 | 20 个端点逐个实测过，还写明哪两个已经 404/403、别调；观测数据一律来自接口，不许凭训练知识补。 | r0ses1r-dev/BirdSight
+- body | 卡路里跟克数打架就按克数重算的增肌减脂教练 | 「一次只动一根杠杆」被写成硬规则：没有触发行就说「本周无需调整」，不为了显得有用而改方案。 | wangzhengjun571-alt/recomp-coach
+- body | 花粉季出门前查一眼，53 城都有 | 多数天气 app 不报花粉；它用标准库直拉监测站，缺数就明说，不把扩散指数冒充浓度。 | XXXOneChen/pollen-query
+- creative | 给中文文章画手绘感解释图 | 「单一明确风格」的典范：不给你一堆选项，一种腔调做到底，所以全篇视觉统一。 | helloianneo/ian-xiaohei-illustrations
+- docs | 八步把模糊问题走成一份可引用的调研报告 | 作者高校教师出身、常年教研究方法，这八步是真在带学生做研究时用的那套，不是拍脑袋编的流程。 | wshuyi/deep-research
+- meta | 给你装的技能库做体检和减法 | 这个生态罕见的「减法」工具：装得多不等于装得好，它同时管省上下文、防注入、看清成本。 | khendzel/skills-janitor
+- fun | 一个人也能玩的 D&D 地下城主 | 它补上的是 DM 这个最难替代的位置，规则和状态全托管，所以单人玩不塌。 | neuralinitiative/claude-dnd-skill
+- creative | 角色定妆照先于文章，插图全按它来演 | 从照片做出能反复用的角色，再进插图工作流。脸漂了就重来。 | adrianpunk/punk-ip-illustrations
+- docs | 自动选对图表类型再画出来 | 先选型后出图这个顺序，比丢给你一堆模板实用得多。 | 312362115/claude
+- creative | 生成手绘白板风格的示意图 | 产物是可编辑源文件而不是截图——这一点决定了它能进日常工作流，而不只是配图。 | coleam00/excalidraw-diagram-skill
+- work | 在 Obsidian 库里搜、写、改、查，不用开编辑 | 一手权威：没人比作者更懂这个库的数据模型，比任何第三方封装都可靠。 | kepano/obsidian-skills
+- meta | 从手机指挥电脑里跑着的 agent | 歸藏出品，解决的是真痛点：agent 的时间和人的时间从此不用绑在一起。 | op7418/Claude-to-IM-skill
+- work | 从代码反推卖点生成 App Store 截图 | 从代码反推卖点，比对着空白页想文案聪明——素材来自产品本身而不是想象。 | adamlyttleapps/claude-skill-aso-appstore-screenshots
+- writing | 整本书拆给多个分身并行翻译，再拼回原排版 | 并行是关键：把几小时压到几十分钟，而且排版不散——这才让「翻整本书」从设想变成可做的事。 | deusyu/translate-book
+- learn | 三天赛程里做完数学建模竞赛全流程 | 按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。 | XiaoMaColtAI/math-modeling-skill
+- work | 做邮件营销的顾问 | 内容密度惊人且有信源，不是泛泛而谈——这种「细节定成败」的领域，厚知识库就是硬实力。 | CosmoBlk/email-marketing-bible
+- creative | 同一套朋克视觉库，文章、小红书、公众号封面一次生成 | 风格库真下过功夫：选风格像点菜一样准，出的封面有编辑部气质而不是 AI 糊图。 | adrianpunk/Punk-Skill
+- learn | 对着真实课本和考纲突击复习 | 「没材料就不辅导」这条硬约束很诚实：逼你对着真考纲学，而不是听 AI 编一套。 | staruhub/ClaudeSkills
+- creative | 长视频不出本机，剪成带卡拉OK字幕的竖屏爆点 | 「100% 本地」是它最狠的点：碰未公开素材时，这一条比精度更值钱。 | xixihhhh/hotclip
+- creative | 自然语言改工作流，178 个工具随叫随到 | 把「拖节点」变成「说人话」，而且本地跑——碰私密素材时这点关键。 | artokun/comfyui-mcp
+- creative | 给 Go 代码库做地道性评审 | 按维度打分让评审意见特别可落地，不是笼统说「建议重构」。 | dimetron/pi-go
+- creative | 有护栏的 AI 视频剪辑 | 「guarded」是它的灵魂：剪辑指令可追溯、可回退，敢让 agent 碰真素材。 | KyaniteLabs/kinocut
+- writing | 从选题到发布的去 AI 味中文写作系统 | 国产模型友好（DeepSeek/GLM/MiniMax），把「防 AI 味」从口号做成了强制规则——中文写作全家桶里立意很高的一套。 | dongbeixiaohuo/writing-agent
+- fun | 让 Claude 用原始人腔说话，据称省下 65% 的 token | 一个玩笑做成了真产品：token 账单实打实地降（据称 65%），还顺手治好了 AI 的啰嗦病。 | JuliusBrussee/caveman
+- dev | 先问「这真的需要做吗」，能不写的代码一行不写 | 反内卷的工程精髓——它总在问「这真的需要做吗」，治过度设计比写代码更省钱。 | DietrichGebert/ponytail
+- dev | 接上 Figma API，把设计稿拆成一张设计系统知识图谱 | 设计交接的痛点被它按住了：设计系统长什么样，一张图谱看明白。 | Egonex-AI/Understand-Anything
+- creative | 截图变代码时先对齐设计意图，不做像素级复刻 | 难点在还原「设计意图」而非像素级复刻，它在这个取舍上做得很聪明。 | Leonxlnx/taste-skill
+- docs | 13 个子代理组队做研究，互相审稿和事实核查 | 这是「把 deep research 开源自建」的认真尝试，分工和交叉验证的设计相当讲究。 | Imbad0202/academic-research-skills
+- creative | 照片多到选不出就让它自己拼三张动图卡 | 歸藏是中文 AI 设计内容的头部创作者，这套编辑部×瑞士风的版式体系就是他的招牌。 | op7418/guizang-social-card-skill
+- fun | 给 Suno 配上歌词工作流和混音清单，从玩票做到成品 | Suno 玩家众多但成品率低，这套流程补的正是「从段子到作品」的那段路。 | bitwize-music-studio/claude-ai-music-skills
+- creative | 学一次你的品牌，之后 agent 做的每个界面都照着来 | 「品牌一致性」从人肉盯改变成系统保证，小团队也能有大厂级的视觉纪律。 | dominikmartn/hue
+- docs | 画出来的架构图要和代码对得上，导出自带动效的 HTML | 「可验证」是关键词：图和描述对得上号，不是好看但骗人的装饰画。 | tt-a1i/archify
+- meta | 任务拆解写到磁盘，/clear 后自动续上进度 | 长任务的命根子是「状态不丢」，它用最朴素的文件方案解决，比花哨的记忆系统皮实。 | OthmanAdi/planning-with-files
+- meta | 把 PDF 和 EPUB 拆成能装进 Agent 的 | 「书读完就忘」的解法：知识不进脑子没关系，进 agent 也行——这个立意本身就值一颗星。 | virgiliojr94/book-to-skill
+- work | 让新资料改写旧笔记，而不是在 Obsidian 里越堆越多 | 「改写而非堆积」师承 Karpathy 的 LLM Wiki 思路，直击笔记软件越用越乱的死穴。 | eugeniughelbur/obsidian-second-brain
+- meta | 把口头流程变成能跑的跨平台技能，三步内交付 | 跨平台是 skill 生态的下一站。 | FrancyJGLisboa/agent-skill-creator
+- work | 学你的语气排好 14 天日历，再替你按下发布键 | 「学语气 + 排日历 + 真发布」三步闭环，是个人 IP 运营少见的全自动解。 | Hao0321/claude-skill-social-post
+- meta | 带纯新手把模糊点子变成计划，顺手教会他用 GitHub | vibe coding 时代最缺的是「有人扶一把」，这件就是那只手，姿势还很专业。 | TexasBedouin/vibe-check
+- creative | 按专业交易软件的规范设计盯盘界面 | 成体系的交易 UI 资料极其罕见，做行情类产品时这块知识很难自己攒。 | vanillagreencom/vstack
+- work | 给独自做产品的技术创始人当 GTM 合伙人 | 「先访谈再建议」这个设计诚实：不套教科书，而是长在你的业务上。 | AIDevGTM/gtm-cofounder
+- dev | 按调用结构而不是搜字符串，回答改这里会牵动谁 | 比全文搜索聪明一档——它按结构找答案，不是按字符串。 | Egonex-AI/Understand-Anything
+- docs | 每条引用都回数据库核验，揪出 AI 编造的参考文献 | AI 编造引用是学术圈最怕的事，它反其道而行：每条引用都可验证、有出处。 | K-Dense-AI/scientific-agent-skills
+- writing | 删掉「她眸色一暗」的网文去AI味改稿器 | 网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。 | worldwonderer/oh-story-claudecode
+
+## 店长推荐（钉住）
+
+- fun | 审问式追问，直到你交出真需求 | 困难模式会塞进一个指错人的假证人。 | c1375/noir-interrogation
+- life | 替猫拦下云南白药和藿香正气的养猫参谋 | 它把「不给剂量」做成硬规则：连人用药折算、朋友说、写科普这几种绕法都点名堵死。 | chongchonghaoman/feline-health-advisory
+- writing | 按杜蕾斯海报那套双关写文案 | 从 260 张原海报拆出双层语义和视觉公式，不是「写得性感一点」这种空指令。 | crawfordxx/xiaoma-durex-copywriter
+- work | 按 GB/T 9704 规范写党政机关公文 | 极致垂直，而且是国外市场绝不会有的东西。作者引了具体国标号，说明他真的在这行里。 | kagurananaga/official-document-writing-skill
+- fun | 三枚铜钱真随机，卦象不靠编 | 「绝不编造卦象」「凶卦如实直断」——它把占卜里最容易滑坡的那两处堵死了。认真对待玩的东西，本身就是一种品味。 | neallydare-svg/iching-divination
+- body | 体感温度骗过你时，它用湿球温度叫停训练 | 换掉了大家惯用的那把尺子：31℃ 湿球以上一切户外都危险，35℃ 是理论生存极限（PNAS 2010）。 | wei011/heat-risk-calc
+- writing | 把人生事件转成可复用的寓言引擎 | 拒绝模仿任何具体作家的文风，只把要求翻译成冷幽默、荒诞因果、留白这些可迁移技法；结尾掏磨损物件这类套路直接禁止。 | wr5912/human-allegory-engine
+- life | 专防「假托崔玉涛」文章的 0–13 岁育儿参谋 | 它给自己列了一张「AI 可能说的借口」对照表——「症状太典型了基本能确定」在表里是必须叫停的信号。 | yeyulangzi/parenting-advisor
+- work | 白底黑线火柴人，给中文文章配安静小图 | 它不生成华丽插画，而是锁定“普通人视角”的极简火柴人：白底、黑线、低强度表情。默认构图就为正文留白。 | AINoSleep/ainosleep-stickman-illustrations
+- creative | 单色孔版印刷海报生成器，两色封顶 | 不是滤镜套壳——它按孔版印刷的真实逻辑工作：先定纸张底色，再算油墨叠印顺序，网点密度随底纸明度自适应。 | yanliudesign/mono-color-skill
+- work | 图表先问数据语义再选色，报告模板十二套 | 以 Mono 为保底，按数据语义自动挑彩色预设，也可用你给的色板——但同一份交付绝不混色系。 | larashero3-dotcom/lieflat-charts
+- creative | 中文故事稿进，20 种手绘风无声动画出 | 内置 20 种画风库，但默认只走你点头的彩色铅笔日记风——风格是约束出来的，不是随机抽卡。 | gnipbao/story-to-handdrawn-video
+- creative | 照着 106 张分镜配方卡，把一句话拍成产品宣传片 | 把「拍产品宣传片」这种要外包的活变成了本地技能，分镜卡的设计尤其讲究。 | Vincentwei1021/video-shotcraft
+- work | 连续追问直到你自相矛盾的方案压力测试器 | 不是给建议，是专门制造认知失调。每轮追问都基于你上一句回答。 | mattpocock/skills
+- writing | 短剧开拍前先把角色拆开 | 说浩这套里真正能上手的是拆角色：人设、关系、能演的动作，不是「一键写全集」。 | eternityspring/shuohao-skills
+- creative | 照片抽成抽象编辑页 | 日常照片压成杂志里那种抽象编辑页，不是再加一层滤镜。 | ZzzLc0405/photo-abstract-editorial
+- creative | 纸感诗性海报生成器，留白与单色点睛 | 卖的是克制。带自测集，作者在维护风格一致性。 | LiamGvchi/gc-minimal-zine-poster
+- creative | 照片不裁不糊，旁边长出一块记忆残片 | 承认原片是文物，再做成编辑稿，不是滤镜打卡。 | wnby/photo-relic-editorial
+- creative | 照片收成水墨海报 | 按水墨海报的浓淡和空白重做照片，笔是结构不是装饰。 | TwentyfiveBTea/ink-wash-poster
+- creative | 原片还在，下面铺一层纸 | 原照情绪不让位，下面那块纸才是第二句话。 | wnby/paper-spirit-zine
+- creative | 照片收成孔版印刷海报 | 按孔版印刷的套色层数做海报，颜色少、边毛、故意不准。 | luckdvr/photo-riso-poster
+- creative | 上半原片，下半抽成线 | 上面保住照片，下面用线重新说一遍。 | zhu930824/poetic-line-zine-poster
+- life | 旅行照片收成软抽象 | 旅行现场抽成软的色块和边。同一作者纸面刊物之外的一件。 | wnby/travel-photo-soft-abstraction
+
+## 店主指名（可能还没上架）
+
+- touchine-ojo/OJO-Design-Skills  · 
+- kvnkld/aicss  · 
+- hugohe3/ppt-master  · 
+- kacperkapusciak/goldie  · 
+- anthropics/claude-plugins-community  · 
+- Architect-kele/arch-kele-structure-photo  · 
+- CreateLafont/dnr-flat-pic  · 
+- Lixorn/deconstructed-duotone-poster  · 
+- hongfamonvAI/vintage-travel-ticket  · 
+- Starryear/Starryear-Threefold-Memory  · 
+- TaiT-tt/tait-crt-interface-skill  · 
+- BigFish-zZz/bigfish-ink-wash-photo  · 
+- lzs0594/dreamy-motion-editorial  · 
+- fihaaade/skills  · 
+- AINoSleep/ainosleep-stickman-illustrations  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- helloianneo/ian-xiaohei-illustrations  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- gnipbao/story-to-handdrawn-video  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- Vincentwei1021/video-shotcraft  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- yanliudesign/mono-color-skill  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- larashero3-dotcom/lieflat-charts  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- mattpocock/skills  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- liyue-aigc/seedance-2-5-video-director  · 店主 09-03 晚指名 8 件：「这些都可以入库并加入店长推荐」
+- vibeshotclub/vsc-skills  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- deusyu/translate-book  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- eternityspring/shuohao-skills  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- ayghri/i-have-adhd  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- ZzzLc0405/photo-abstract-editorial  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- LiamGvchi/gc-minimal-zine-poster  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- dacnay816y62-hub/photo-revival  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- wnby/photo-relic-editorial  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- yang0/handraw-style  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- TwentyfiveBTea/ink-wash-poster  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- wnby/paper-spirit-zine  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- luckdvr/photo-riso-poster  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- zhu930824/poetic-line-zine-poster  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- TanShilongMario/visual-memory-translator-SKILL  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- TwentyfiveBTea/8bit-pixel-art  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- yangcodingmaster/photo-distill  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- wnby/travel-photo-soft-abstraction  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- JustinQiuck/dynasty-aesthetics  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
+- zhouaria28-cloud/photo-ink-echo  · 店主 09-07 指名 19 件（照片写意/极简海报一类 + 陪读/翻译/ADHD）
