@@ -279,6 +279,24 @@ svg{position:absolute;left:0;top:0;width:%(w)dpx;height:%(h)dpx}</style>
 </svg>"""
 
 
+TPL2 = """<!doctype html><meta charset="utf-8">
+<style>html,body{margin:0;width:%(w)dpx;height:%(h)dpx;background:%(paper)s;overflow:hidden}
+svg{position:absolute;left:0;top:0;width:%(w)dpx;height:%(h)dpx}</style>
+<svg viewBox="-600 -400 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect x="-600" y="-400" width="1200" height="800" fill="%(paper)s"/>
+  <g transform="translate(%(dx)d,%(dy)d) scale(1.00)">%(motif)s</g>
+  <g transform="translate(%(sx)d,%(sy)d) scale(0.26)">%(second)s</g>
+</svg>"""
+
+# 09-07 交接（humanworld-b0 写过、被并发 rebase 冲掉的那段）：253/359 件封面字节相同 —— 29 个图形背 363 件货。
+# --pair：主图形说「它干什么」，右下角一个小图形说「在哪个场子里」（按 category），再按 id 微偏主图形。
+# 不加随机装饰：那是噪声。三条硬规则不变：不要圆角、不要阴影、不要渐变。
+SECOND = {"creative": "poster", "work": "document", "life": "calendar", "fun": "game",
+          "meta": "code", "writing": "font", "docs": "book_to_blocks", "learn": "whiteboard",
+          "body": "fitness", "dev": "code"}
+PAIR = False
+
+
 def render_all(targets: list[dict]) -> list[tuple[str, str, str]]:
     from playwright.sync_api import sync_playwright
     done = []
@@ -288,7 +306,18 @@ def render_all(targets: list[dict]) -> list[tuple[str, str, str]]:
         pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=1)
         for it in targets:
             m = motif_for(it)
-            pg.set_content(TPL % dict(w=W, h=H, paper=PAPER, motif=MOTIFS[m]))
+            if PAIR:
+                import hashlib as _h
+                sec = SECOND.get((it.get("category") or "").strip(), "make")
+                if sec not in MOTIFS:
+                    sec = "make"
+                if sec == m:                       # 主次撞了就退回中性，别画两遍同一个东西
+                    sec = "make" if m != "make" else "document"
+                seed = int(_h.md5(it["id"].encode()).hexdigest()[:8], 16)
+                dx, dy = (seed % 25) - 12, (seed // 25 % 21) - 10
+                pg.set_content(TPL2 % dict(w=W, h=H, paper=PAPER, motif=MOTIFS[m], second=MOTIFS[sec], dx=dx, dy=dy - 26, sx=430, sy=300))
+            else:
+                pg.set_content(TPL % dict(w=W, h=H, paper=PAPER, motif=MOTIFS[m]))
             pg.wait_for_timeout(60)
             out = os.path.join(OUT, "%s.png" % it["id"])
             pg.screenshot(path=out, full_page=False)

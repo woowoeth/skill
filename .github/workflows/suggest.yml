@@ -35,6 +35,7 @@ jobs:
           TASTE_MIN: "80"
         run: python scouts/skill_scout.py --suggest ${{ github.event.inputs.repos }}
       - name: 上架之后补扫红线，命中的撤下
+        timeout-minutes: 25   # 09-07：这一步在 suggest 里挂了 2.5 小时没输出，把后面的提交步一起拖死；超时就算了，先提交
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
