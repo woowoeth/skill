@@ -44,7 +44,7 @@ for attempt in 1 2 3 4 5 6; do
   # 合并后的源 → 重生成一次生成物
   python3 scouts/scout_lib.py >/dev/null 2>&1 || python3 -c "import sys;sys.path.insert(0,'scouts');import scout_lib as L;L.refresh()" >/dev/null 2>&1 || true
   git add -A
-  git diff --cached --quiet || git commit -q -m "$MSG（rebase 后重生成生成物）"
+  git diff --cached --quiet || git commit -q -m "${MSG}（rebase 后重生成生成物）"
   if git push -q origin HEAD:main; then echo "[sync] 已推 $(git rev-parse --short HEAD)"; exit 0; fi
   echo "[sync] 推被拒（第 $attempt 次），重来"; sleep $(( (RANDOM % 5) + 2 ))
 done
