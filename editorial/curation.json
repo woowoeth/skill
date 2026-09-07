@@ -16097,7 +16097,17 @@
    "tagline_zh": "AI 写的中文文档总把，。？写成半角。这个技能扫整个文件夹，自动改对全角标点，同时保护代码、URL。",
    "hide": false,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "cover_motif": "translate",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/wangzan101-zan-punct-fix.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 translate 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "war3shenzuo-pebble-mascot": {
    "title_zh": "纸黏土质感图标生成器，边缘故意裁出画框感",
@@ -16115,7 +16125,13 @@
    "tagline_zh": "郑州201.9、北京100.3、深圳195.8——拿三个官方实测极值校准ERA5再分析数据。",
    "hide": false,
    "gate_score": 8,
-   "category": "life"
+   "category": "life",
+   "cover_real": false,
+   "cover_kind": "hero",
+   "cover": "/skill/assets/covers/wei011-storm-blindspot.png",
+   "cover_h": 973,
+   "cover_src": "https://raw.githubusercontent.com/wei011/storm-blindspot/HEAD/docs/demo.png",
+   "cover_w": 1800
   },
   "whyubel1eve-promo-bgm-skill": {
    "title_zh": "纯代码合成宣传片配乐，改一个参数就重出一版",
@@ -16124,7 +16140,17 @@
    "tagline_zh": "不碰第三方素材库，零版权风险。木质拨弦、毛毡钢琴、电钢铺底都能写，长度卡着剪辑点走，音量自动让出人声。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover_motif": "video_cut",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/whyubel1eve-promo-bgm-skill.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 video_cut 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "xianxie6-algorithmic-sublime-poster": {
    "title_zh": "算法崇高风格海报生成器",
@@ -16140,9 +16166,10 @@
    "why_zh": "不是全局洗稿，而是先扫描定位 AI 痕迹，再做确定性替换和句子级重构，最后反查审计，机制上像外科手术。",
    "limit_zh": "只处理学术论文文本，不适用于代码、散文或口语对话；需要原文可编辑，且检测器版本更新后需重新校准；不保证所有平台零误判。",
    "tagline_zh": "知网、万方、PaperPass 的检测逻辑它都懂。不整段推翻，只改模板腔，事实、数据、引用、术语原样保留。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 6 处 · references/detection-principles.md: 检测规避 第209行"
   },
   "xixicc186-clawd-emotes-skill-clawd-emotes": {
    "title_zh": "像素小螃蟹动图，纯 SVG+CSS 不碰 GIF 帧",
@@ -16151,7 +16178,17 @@
    "tagline_zh": "想要一只会举道具、戴帽子、有反应的像素螃蟹？不用逐帧画，CSS 关键帧让它在聊天里活起来，还能导出循环 GIF。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover_motif": "chat",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/xixicc186-clawd-emotes-skill-clawd-emotes.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 chat 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "xuqser-hand-drawn-collage": {
    "title_zh": "照片变手撕纸拼贴画，原图配色一件不丢",
@@ -16169,7 +16206,17 @@
    "tagline_zh": "给中文文章配图，不用再翻素材库撞车。Tom Gauld × Christoph Niemann 的极简语法。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover_motif": "photo_to_art",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/yanliudesign-dreameryanyan-star.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 photo_to_art 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "yanliudesign-french-illustration-skill-abstract-line-poster": {
    "title_zh": "任何主题都能落成一张手绘线条海报",
@@ -16178,7 +16225,17 @@
    "tagline_zh": "给一句话、一个物件、一张照片，它替你画出有印刷质感的抽象线稿海报。留白、手写字体、不完美笔触。",
    "hide": false,
    "gate_score": 8,
-   "category": "creative"
+   "category": "creative",
+   "cover_motif": "photo_to_art",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/yanliudesign-french-illustration-skill-abstract-line-poster.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 photo_to_art 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "ysjsgzq-ai-small-tools-day-08-doc-format-checker": {
    "title_zh": "标书格式体检：只报事实不改稿，三状态定废标风险",
@@ -16187,7 +16244,17 @@
    "tagline_zh": "把招标文件的格式要求拆成字体、字号、行距、页边距四字段逐项核对，输出「符合/不符合/需人工确认」三态报告。",
    "hide": false,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "cover_motif": "font",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/ysjsgzq-ai-small-tools-day-08-doc-format-checker.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 font 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "yuandian-ailaw-agent-for-legal-cn-ip-takedown": {
    "title_zh": "四类处置路径分流侵权通知的版权下架助手",
@@ -16196,7 +16263,17 @@
    "tagline_zh": "平台收到侵权通知别急着删——先按条例十四条分流：遵从下架、反通知、协商还是不理，每一步都有条文依据，不靠拍脑袋。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover_motif": "make",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/yuandian-ailaw-agent-for-legal-cn-ip-takedown.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 make 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "yuzora-yu-project_sixth-pink-elephant-guard": {
    "title_zh": "删掉的词条从此不再溜回成稿",
@@ -16205,16 +16282,27 @@
    "tagline_zh": "改稿时你说「这个不要了」，它记进黑名单。之后生成任何对外文案、画面、对话，被否的旧概念都不会再冒头。",
    "hide": false,
    "gate_score": 8,
-   "category": "fun"
+   "category": "fun",
+   "cover_motif": "document",
+   "cover_real": false,
+   "cover_kind": "specimen",
+   "cover": "/skill/assets/covers/yuzora-yu-project_sixth-pink-elephant-guard.png",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 document 按标题正则猜的），待判官过目",
+   "cover_h": 800,
+   "cover_tried_at": "2026-09-07",
+   "cover_src": "",
+   "cover_verdict": "",
+   "cover_w": 1200
   },
   "zgyxttk-industry-report-update-skill": {
    "title_zh": "旧月报喂进去，带审计底稿的最新期端到端出来",
    "why_zh": "核心是数据流审计而非文本生成：先拆旧报告的结论到数据源/口径/时点，再重建采集链路。",
    "limit_zh": "需要你提供一份结构完整的旧月报（含章节、表格、数字结论）作为模板；若旧报告口径混乱或缺少数据来源标注，逆向反推会失败。",
    "tagline_zh": "不靠大模型脑补数字。先逆向反推每个结论的数据源与口径，重新采集、逐条溯源，再格式保真改写。",
-   "hide": false,
+   "hide": true,
    "gate_score": 8,
-   "category": "work"
+   "category": "work",
+   "unshelf_reason": "先发后审：上架后补扫命中红线 —— 命中 3 处 · scripts/README.md: 绕反爬 第45行"
   },
   "zhu930824-photo-animal-transposition-poster": {
    "title_zh": "动物轮廓里长出的原生纹理，切片错位成海报",
@@ -16275,6 +16363,18 @@
   "zhouaria28-cloud-photo-ink-echo": {
    "hide": false,
    "unhide_note": "2026-09-07 店主指名，撤销旧的 hide（原因未记录）"
+  },
+  "canine89-hwpxskill": {
+   "cover_tried_at": "2026-09-07",
+   "cover": "/skill/assets/covers/canine89-hwpxskill.png",
+   "cover_kind": "specimen",
+   "cover_real": false,
+   "cover_w": 1200,
+   "cover_h": 800,
+   "cover_src": "",
+   "cover_motif": "seal",
+   "cover_verdict": "",
+   "cover_verdict_why": "CI 自动出的中性样张（图形 seal 按标题正则猜的），待判官过目"
   }
  },
  "gate": {

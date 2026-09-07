@@ -2,6 +2,140 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-07T06:57:22Z",
+   "判了": 16,
+   "过": 0,
+   "明细": [
+    {
+     "id": "kimberlying-tweet-buffer-workflow",
+     "repo": "Kimberlying/tweet-buffer-workflow",
+     "title": "草稿变已审帖，落进 Buffer 前先过你一道",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 将发布流程拆解为可审核步骤，边界清楚，但移入通用工具也可执行。（3 判：[45, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "everettfish-holo-card-studio",
+     "repo": "EverettFish/holo-card-studio",
+     "title": "3D 全息收藏卡网站生成器：草图或参考图进",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 技术扎实，流程明确，但偏向开发者工具链，非大众创作者题材。（3 判：[35, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "dse120071750-layered-paper-cut-design-skill-layered-paper-cut",
+     "repo": "dse120071750/layered-paper-cut-design-skill",
+     "title": "层叠纸雕提示词工坊，八类画面随叫随到",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 设计语言系统完整扎实，但本质是提示词工程模板，非独特交付物。（3 判：[55, 55, 75]）",
+     "分": 55
+    },
+    {
+     "id": "brayonpi-hexstellar",
+     "repo": "brayonpi/hexstellar",
+     "title": "组合爆炸的决策，它给你可验证的答案而非猜测",
+     "过": false,
+     "为什么": "品味 40 分 < 80 —— 技术产品文档，面向开发，题材非生活创作，边界尚清但非精选好货。（3 判：[30, 40, 40]）",
+     "分": 40
+    },
+    {
+     "id": "aiworkskills-wechat-article-skills",
+     "repo": "aiworkskills/wechat-article-skills",
+     "title": "公众号从选题到发布一条龙",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "aiworkskills-wechat-article-skills-aws-wechat-article-images",
+     "repo": "aiworkskills/wechat-article-skills",
+     "title": "按标题自动配画风的公众号封面生成器",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向公众号编辑的生图工具，功能明确但依赖外部API，可被通用工具替代。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "aiworkskills-wechat-article-skills-aws-wechat-article-assets",
+     "repo": "aiworkskills/wechat-article-skills",
+     "title": "公众号素材库按产品归档，预设包合并只留差异不覆盖",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业工具链技能，非生活创作题材，边界清晰但普通用户不可用（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "aiworkskills-wechat-article-skills-aws-wechat-article-writing",
+     "repo": "aiworkskills/wechat-article-skills",
+     "title": "公众号长文初稿生成器，改写续写润色都归它",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 功能扎实但属工具链套件，依赖自家配置体系，普通读者难直接受益。（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "codejunkie99-fable-orchestrator-fable",
+     "repo": "codejunkie99/fable-orchestrator",
+     "title": "本地 Fable 5.1 当总指挥",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 企业工具链编排器，边界明确但读者不符，且依赖外部模型（3 判：[35, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "yanliudesign-saas-illustration",
+     "repo": "yanliudesign/saas-illustration",
+     "title": "真产品 UI 卡叠在线稿场景上",
+     "过": false,
+     "为什么": "品味 75 分 < 80 —— 风格定位清晰，工作流扎实能直接产出，但换通用工具也可实现。（3 判：[72, 75, 85]）",
+     "分": 75
+    },
+    {
+     "id": "kimberlying-literary-book-video",
+     "repo": "Kimberlying/literary-book-video",
+     "title": "黑底衬宋体、旁白压着呼吸声的书籍短视频流水线",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 流程步骤扎实但为特定个人工作流，普通用户难用，边界依赖本地环境。（3 判：[42, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "taxueseek-skill-optimizer-grok-skill-creator",
+     "repo": "taxueseek/skill-optimizer",
+     "title": "从报错到打包一条龙，Grok 技能出厂前的质检台",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 扎实的元技能指南，但面向开发者工具链，非普通受众。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "taxueseek-skill-optimizer-kimi-skill-creator",
+     "repo": "taxueseek/skill-optimizer",
+     "title": "从能跑到好用的 Kimi Skill 打磨台",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 产官方工具链指南，面向开发者制作技能，偏离店主目标读者与题材（3 判：[42, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "taxueseek-skill-optimizer-mimo-skill-creator",
+     "repo": "taxueseek/skill-optimizer",
+     "title": "给 MiMo Code 造 Skill 的质检台",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链的元技能，通用性强，非普通创作者刚需。（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "dse120071750-paper-collage-design-skill-bright-paper-collage",
+     "repo": "dse120071750/paper-collage-design-skill",
+     "title": "亮色纸拼贴画风提示词，海报封面分镜一稿齐",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 设计系统完整扎实，但属通用风格提示词工具，换他法亦可达成。（3 判：[45, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "xianxie6-white-ink-overlay-skill-white-ink-overlay",
+     "repo": "xianxie6/white-ink-overlay-skill",
+     "title": "原图不丢，白墨线稿沿轮廓开蕾丝花",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 工艺扎实、边界清晰，但作为图像处理技能别处亦有替代。（3 判：[72, 72, 82]）",
+     "分": 72
+    }
+   ]
+  },
+  {
    "时间": "2026-09-07T04:48:13Z",
    "判了": 16,
    "过": 16,
@@ -3561,139 +3695,6 @@
      "title": "连续追问直到你自相矛盾的方案压力测试器",
      "过": true,
      "为什么": "店主指名 / 心选 —— 不过判官，直接放行"
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-04T06:55:21Z",
-   "判了": 18,
-   "过": 18,
-   "明细": [
-    {
-     "id": "helloianneo-ian-xiaohei-scenes-ian-xiaohei-scenes",
-     "repo": "helloianneo/ian-xiaohei-scenes",
-     "title": "小黑撞上真实物件，一张图讲完打工人的隐喻",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 小黑 2.0：小黑 + 真实物件 + 物理动作 + 留白叙事的打工人共鸣配图，7 张母版 + 7 份参考；「人名粉丝数时间跨度只能来自用户输入不从母版继承」「至"
-    },
-    {
-     "id": "zhlmi-script-forging",
-     "repo": "zhlmi/script-forging",
-     "title": "故事进，分镜出，中间每一步都留痕的剧本锻造台",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 把成熟故事锻造成可拍的标准剧本、分场大纲、分镜表和数字资产清单：7 份模板 + 完整样例集（提示包、分场、剧本一稿二稿、两份自检报告、三级分镜、资产清单）；「不"
-    },
-    {
-     "id": "zhlmi-tragedy-narrative-guard-tragedy-narrative-guard",
-     "repo": "zhlmi/tragedy-narrative-guard",
-     "title": "悲剧叙事守门员，锁死 BE 不手软",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 悲剧向角色扮演/长会话编剧的哨兵，阻止 AI 本能把 BE 写成甜宠：失败模式编码表每行标注对应一条真实踩坑、四阶段模型、5 处检查点；「没有连接就没有悲剧」「"
-    },
-    {
-     "id": "zhlmi-shotsaver",
-     "repo": "zhlmi/shotsaver",
-     "title": "不动像素只叠 HTML/CSS 层的废片拯救术",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 拯救废片计划：拍废的照片不动像素，只用 HTML/CSS/SVG 叠层做成能发朋友圈的图，9 套风格 5 种画幅，三引擎渲染 + 九宫格预览；「先发内置九宫格不"
-    },
-    {
-     "id": "zhlmi-rhythm-forge-sklii",
-     "repo": "zhlmi/rhythm-forge-sklii",
-     "title": "音频拖进来，出来一个能玩的网页音游",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 任意一首歌做成可玩的单文件网页音游（4 轨下落式三档谱面）：forge/beatmap/build/embed/validate 五个脚本 + 游戏前端；「把音"
-    },
-    {
-     "id": "kagurananaga-kaogong-study-tracker",
-     "repo": "KaguraNanaga/kaogong-study-tracker",
-     "title": "错题截图进来，按原因分类的国考错题本出去",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 朱批录：国考备考追踪，发错题截图/成绩就归档、分类错因、二刷提醒、导出 Excel 错题本：9 个脚本 + 本地 JSON；「追问只问一次按优先级」「不存任何凭"
-    },
-    {
-     "id": "reluctant2828-mlm-crush-coach",
-     "repo": "Reluctant2828/mlm-crush-coach",
-     "title": "男男暧昧聊天，它替你先把话在心里过三遍",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 男男暧昧/约会里的聊天回复军师：5 份知识参考 + 回复剧本 + 红队场景集 + 路由脚本和测试；「只做朋友/拉黑是停止条件不设计翻盘话术」「不根据外貌体型 0"
-    },
-    {
-     "id": "joeseesun-qiaomu-info-card-designer",
-     "repo": "joeseesun/qiaomu-info-card-designer",
-     "title": "网页链接丢进来，吐出一张能发朋友圈的杂志卡片",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 一段文字/一个链接做成杂志质感信息卡并自动截图，超长自动分割：设计规范 + 分割脚本 + 随包字体；「读者只看到主标题就想知道为什么才对，反应是哦就是错的」「图"
-    },
-    {
-     "id": "joeseesun-qiaomu-mondo-poster-design",
-     "repo": "joeseesun/qiaomu-mondo-poster-design",
-     "title": "33位传奇设计师替你选风格，一句话出海报",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— Mondo 另类电影海报美学做海报/书封/专辑封面，33+ 设计师风格各给结构化模板：有限色板 2–5 色、剪影优于脸、图底反转、尺度反差、30% 图形 30%"
-    },
-    {
-     "id": "tw93-kami-kami",
-     "repo": "tw93/kami",
-     "title": "羊皮纸底色配墨蓝强调的文档排版师",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 紙：一套编辑排版语言排简历/一页纸/白皮书/信件/作品集/slides 出 PDF，中英韩三语模板 × 9 种文档类型、18 种 SVG 图表原件、公式和 PD"
-    },
-    {
-     "id": "kagurananaga-document-format-skills",
-     "repo": "KaguraNanaga/document-format-skills",
-     "title": "中文公文排版一步到位，连修订痕迹都替你管好",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 中文 Word 文稿排版清理：GB/T 9704 公文/学术/法律预设，中英标点与空格修复，Markdown 转公文 DOCX，六个脚本 + 两组回归测试；标点"
-    },
-    {
-     "id": "haojae-scipilot-figure-skill",
-     "repo": "Haojae/scipilot-figure-skill",
-     "title": "先查数据再选图，拦下科研绘图的经典错误",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 科研数据可视化顾问：先剖析数据和论证目标再选图，主动拦截经典错误，出期刊级成图：6 个脚本（数据剖析、样式、导出、视觉自检、版面）+ 18 条画图禁忌和期刊规范"
-    },
-    {
-     "id": "geeklee-srt-whiteboard-animation",
-     "repo": "geeklee/srt-whiteboard-animation",
-     "title": "字幕进、笔迹出：SRT 转白板手绘动画的流水线",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— SRT 字幕变暖米黄纸底、连续笔迹的白板手绘动画，纯本地 Python：解析、逐笔渲染、标注预览台、合场；遮罩不变量保证未开始的元素一根线都不露，标注坐标必须是"
-    },
-    {
-     "id": "edu-ai-builders-language-learning-sop-kit-skill-option-anatomy",
-     "repo": "edu-ai-builders/language-learning-sop-kit",
-     "title": "选择题每个选项都标出题人陷阱的解剖器",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 雅思/托福/考研阅读选择题做成「选项解剖器」HTML，让学生看到自己被哪类陷阱抓住：31KB 模板（错题模式仪表盘、原文↔选项同步高亮）+ 陷阱分类 + 解析规"
-    },
-    {
-     "id": "wubing2023-exampass-assistant",
-     "repo": "WUBING2023/ExamPass-Assistant",
-     "title": "章节知识清单带原PPT对照，测完才放你走",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 课程 PPT/Word/PDF 变按章知识清单 + 原始 PPT 对照栏 + 交互式章节测试 + AI 批改：20 个脚本、模板引擎、17 个测试；页码「必须真"
-    },
-    {
-     "id": "milec-towers-of-saeroth-pf2e-gm",
-     "repo": "Milec/Towers-of-Saeroth",
-     "title": "翻开本地规则库的 PF2e 主持人副驾",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— Pathfinder 2e 的 GM 备课助手背着 41000+ 条本地规则库查证数字（装备 11452 / 专长 8799 / 怪物 5509）：「库不是来教"
-    },
-    {
-     "id": "chaogao512-literature-deep-reading-assistant-literature-deep-reading-assistant",
-     "repo": "chaogao512/Literature-Deep-Reading-Assistant",
-     "title": "七段式拆一篇论文，笔记带引用出处可回查",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 一篇学术 PDF/Zotero 条目变七阶段可回溯的 Obsidian 精读笔记，每条判断带页码证据回链：诊断、初始化、证据链审计脚本（退出码 0 才算完成）、"
-    },
-    {
-     "id": "larashero3-dotcom-writing-dna-skill",
-     "repo": "larashero3-dotcom/writing-dna-skill",
-     "title": "20篇原文榨出一份写作DNA，新稿自动对齐老笔锋",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 从 ≥20 篇文章蒸馏写作 DNA 六层（语言/结构/选题/素材/认知/视觉）再按它写：中英六份产物模板 + schema + 边界文档「不要冒充作者本人」；比"
     }
    ]
   }
