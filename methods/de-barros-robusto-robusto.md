@@ -1,0 +1,165 @@
+---
+name: robusto
+description: "Run a reproducible multi-agent audit of an academic economics paper, from a PDF or directly from its LaTeX source. Parses the manuscript deterministically, routes a parser-quality preflight plus 20 specialised auditors (numerical, identification, robustness, sample construction, power and multiple testing, data availability, devil's advocate, and more), validates every result against a schema, and assembles an editor's report. Use when asked to review, referee, audit, or stress-test a paper, manuscript, working paper, or preprint before submission. Do NOT use for a summary, a proofread, a rewrite, code review, or a non-academic document."
+---
+
+# robusto
+
+A panel audit of an economics paper, ending in one report. This is not a
+reading and not a critique: each auditor files findings against a schema, every
+finding names the artifact it rests on, and a reviewer that cannot verify
+something is required to say so rather than guess.
+
+## Locate the repository first
+
+This skill is a wrapper. The work is done by the Python pipeline in the
+robusto repository, which must be cloned and set up locally. The skill may be
+installed globally, so **never assume the working directory is the repo.**
+
+Resolve it before anything else:
+
+```bash
+for d in "$ROBUSTO_HOME" "$HOME/Documents/GitHub/robusto" "$HOME/GitHub/robusto" \
+         "$HOME/code/robusto" "$HOME/src/robusto" "$HOME/robusto" "$PWD"; do
+  [ -n "$d" ] && [ -f "$d/scripts/review_paper.py" ] && echo "ROBUSTO_REPO=$d" && break
+done
+```
+
+If that finds nothing, stop and tell the user where to clone it, or ask where
+it already lives. Do not improvise a path.
+
+Everything below runs with that directory as the working directory. Paper
+paths given by the user are resolved against **their** location, not the
+repo's, so pass an absolute path when the PDF sits outside `inputs/`.
+
+## Before starting
+
+Confirm three things, and stop if any fails.
+
+1. **The input exists.** A bare filename means `<repo>/inputs/<name>`. Any
+   other path is resolved from the user's working directory and passed
+   absolute. For `--source` and `--build` this is a .tex root, not a PDF.
+2. **Disclosure permits it.** Parsed manuscript text goes to Anthropic, and
+   search-enabled auditors send derived queries to web search. If the paper is
+   confidential, unpublished under embargo, or covered by a data agreement that
+   forbids third-party transmission, say so and stop. A public working paper is
+   normally fine; ask if it is unclear.
+3. **The environment is ready.** Run `python scripts/check_environment.py` from
+   the repo. It checks the Claude Code CLI and the Python dependencies. If the
+   repo has a `.venv`, use its interpreter rather than the system one.
+
+   If it reports the CLI is not signed in, relay that: the user runs
+   `claude auth login --claudeai` once, in a real terminal window. Do not run
+   it yourself and do not offer to: it blocks on an interactive browser
+   handoff, so a tool call hangs or bounces with `Please run /login`. Do not treat this as a bug or go
+   looking for a broken session, and do not suggest it can be worked around.
+   Reviewers run as separate `claude -p` processes, and being signed in to the
+   Claude desktop app does not sign in the CLI: the app holds its OAuth session
+   in its own process and never writes the CLI's credential store. The one
+   login uses the same subscription. Meanwhile `--backend mock` still works and
+   needs no credentials at all, so a dry run is always available.
+
+## Choosing a mode
+
+Three inputs, exactly one required. Ask which the user wants if it is not
+obvious, because they answer different questions.
+
+```bash
+cd "$ROBUSTO_REPO"
+python scripts/review_paper.py --pdf    "/abs/path/paper.pdf"       # a finished PDF
+python scripts/review_paper.py --build  "/abs/path/manuscript.tex"  # typeset, then review
+python scripts/review_paper.py --source "/abs/path/manuscript.tex"  # review the source
+```
+
+**`--source` when the manuscript lives in a repository.** Numbers, cross
+references, citations and table bodies come through exactly, because the
+generated snippets and the bibliography are read directly rather than
+recovered from glyphs. It cannot see layout, so a table overrunning its page
+or a figure label below a journal's point floor will not be found.
+
+**`--build` before submitting.** It compiles with latexmk and reviews the
+result, which is what the referee receives. Needs latexmk on PATH.
+
+**`--pdf` when that is all there is**, or when reviewing someone else's paper.
+
+If the user asks for a repository manuscript without saying which, prefer
+`--source` for a substantive check and say plainly that layout is not covered;
+suggest `--build` as a second pass when submission is close.
+
+Add `--paper-id <id>` when the filename is not the identifier you want.
+Add `--model <id>` to override `config/defaults.toml`.
+
+Add `--backend mock` to run the entire pipeline with no model calls. Every
+reply is synthetic and the report says so on its first line; the point is to
+confirm the parse is sound and the machinery holds before anything is spent.
+It takes about fifteen seconds. Offer it as a dry run when the user is unsure
+about the input, the cost, or whether the CLI is logged in.
+
+Add `--stop-after preflight` to make the first real run cost one model call:
+the parse and the parser-quality auditor run, then it stops cleanly, and one
+real reviewer has answered a real prompt on this paper. `--stop-after
+selection` costs two calls and also shows which reviewers would run. Continue
+either with `--resume-after-preflight`, which reuses the parse and the preflight
+output. Prefer this sequence to a full run the first time a manuscript is seen.
+
+After the report, a seeded-defect calibration runs by default: it plants
+defects it knows about into a copy of the parse and checks whether the auditors
+report them, at a cost of three or four extra calls. Result at
+`outputs/<paper_id>/calibration.md`. Relay a miss when reporting, since it means
+silence in that class is unmeasured rather than clean. `--no-calibration` skips
+it.
+
+A full run takes a long time and makes many model calls. Say so before starting, and
+do not begin a run the user has not asked for.
+
+## What comes back
+
+All paths are inside the repo, not the user's working directory.
+
+- `outputs/<paper_id>/report.md` — the editor's report, the deliverable
+- `work/<paper_id>/reviews/` — one JSON file per auditor
+- `work/<paper_id>/reviews/*.raw.txt` — raw model output, kept for inspection
+- `work/<paper_id>/logs/` — stdout and stderr per stage
+- `work/<paper_id>/parsed/` — the deterministic parse; `manifest.json` there
+  records the mode, and in source mode lists what that mode cannot see
+
+Give the user an absolute path to the report; a bare `outputs/...` will not
+resolve from where they are standing.
+
+## When something fails
+
+A failed auditor is usually a schema-contract failure, not a crash. Claude Code
+has no provider-side structured output, so the schema travels in the prompt and
+is enforced afterwards; a reviewer that drifts is asked once more with the
+errors quoted, then fails.
+
+- Read `work/<paper_id>/reviews/<auditor>.json.raw.txt` for what the model
+  actually said.
+- Read `work/<paper_id>/logs/<auditor>.stderr.log` for the validation errors.
+- One auditor failing does not invalidate the rest; the editor works from what
+  validated. Say which auditor dropped out when reporting.
+
+Rerun the editor alone, without redoing the panel:
+
+```bash
+cd "$ROBUSTO_REPO"
+python scripts/refresh_editor.py --paper-id <id> --run-editor
+```
+
+## Reporting to the user
+
+Lead with what the panel found that matters, not with pipeline mechanics.
+Give the devil's advocate its own paragraph: it is the only auditor that
+argues rather than checks, and its ranked objections are the closest thing to
+what a referee will actually write.
+
+Two failure modes to avoid. Do not summarise the report back at length; point
+to it and draw out what changes a decision. And do not present a `cannot_verify`
+as a defect, since it means the artifacts did not support a check, which is
+often a parsing limit rather than a flaw in the paper.
+
+## Boundaries
+
+This skill audits a finished PDF. For drafting prose, rebuilding exhibits,
+checking a bibliography, or auditing analysis code, use the tools suited to
+those; running a full panel to answer a narrow question wastes an hour.
