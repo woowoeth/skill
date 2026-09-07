@@ -23,7 +23,7 @@ import argparse, json, os, re, subprocess, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scouts"))
-BAD = re.compile(r"(logo|icon|favicon|avatar|头像|personal|selfie|portrait|badge|shield|qr|wechat|weixin|donate|sponsor|alipay|pay|banner-?small)", re.I)
+BAD = re.compile(r"(logo|icon|favicon|avatar|头像|personal|selfie|portrait|badge|shield|qr|wechat|weixin|donate|sponsor|alipay|pay|banner-?small|recharge|代充|广告|/brand/|ad-|-ad\b|promo)", re.I)   # 09-07：zeejay0 的 assets/brand/…recharge.png 是代充广告，被取成了封面
 GOOD = re.compile(r"(example|demo|screenshot|preview|output|sample|showcase|result|cover|hero|poster)", re.I)
 IMG = re.compile(r"!\[[^\]]*\]\(([^)\s]+)|<img[^>]+src=[\"']([^\"']+)", re.I)
 EXTS = ("png", "jpg", "jpeg", "webp")
