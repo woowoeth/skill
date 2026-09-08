@@ -26,6 +26,28 @@ git clone --depth 1 https://github.com/didrod205/claude-astra.git Then point you
 Repository: didrod205/claude-astra Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
+## hand-drawn-collage
+## 照片变手撕纸拼贴画，原图配色一件不丢
+URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
+Source: https://github.com/xuqser/hand-drawn-collage
+Updated: 2026-09-08
+Tags: images, skill, xuqser
+
+Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
+
+### What does this skill do?
+Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
+
+### Why is it worth installing?
+Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
+
+========================================================================
 ## metro-map
 ## 轨道图式画架构，站点色线分区图例一图齐
 URL: https://ourword.ai/skill/i/erp-lab-5-metro-map-tool-metro-map/
@@ -46,6 +68,28 @@ git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point y
 
 ### Where does it come from?
 Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
+
+========================================================================
+## autosound-tuning
+## 双AI轮流审听，把车内喇叭调到不刺耳为止
+URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
+Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
+Updated: 2026-09-08
+Tags: images, skill, ayukhno
+
+From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
+
+### What does this skill do?
+Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
+
+### Why is it worth installing?
+Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## tts-director
@@ -182,6 +226,28 @@ git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后�
 
 ### Q：它从哪来？
 Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## dnr-flat-pic
+## 不描边不追光影，只留身份与空间关系的扁平化压缩
+URL: https://ourword.ai/skill/i/createlafont-dnr-flat-pic/
+Source: https://github.com/CreateLafont/dnr-flat-pic
+Updated: 2026-09-08
+Tags: images, skill, CreateLafont
+
+Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
+
+### What does this skill do?
+Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
+
+### Why is it worth installing?
+It defines simplification as checkable rules — fixed-HSB solid fills, crisp edges, no light effects — so a set stays in one language.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CreateLafont/dnr-flat-pic The repository ships 1 skills in total.
 
 ========================================================================
 ## html-to-pptx
@@ -594,6 +660,28 @@ git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Th
 Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
+## i-have-adhd
+## 把注意力当稀缺资源，让 Claude 一次只说一件事
+URL: https://ourword.ai/skill/i/ayghri-i-have-adhd-i-have-adhd/
+Source: https://github.com/ayghri/i-have-adhd/tree/HEAD/.cursor/skills/i-have-adhd
+Updated: 2026-09-08
+Tags: meta, skill, ayghri
+
+Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.
+
+### What does this skill do?
+Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".
+
+### Why is it worth installing?
+A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
+
+========================================================================
 ## planning-with-files
 ## 任务拆解写到磁盘，/clear 后自动续上进度
 URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
@@ -734,28 +822,6 @@ git clone --depth 1 https://github.com/haoxilin/cumcm-live-workflow-skill.git �
 
 ### Q：它从哪来？
 Repository: haoxilin/cumcm-live-workflow-skill Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## autosound-tuning
-## 双AI轮流审听，把车内喇叭调到不刺耳为止
-URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
-Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
-Updated: 2026-09-07
-Tags: images, skill, ayukhno
-
-From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
-
-### What does this skill do?
-Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
-
-### Why is it worth installing?
-Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## feedback-station
@@ -1456,28 +1522,6 @@ git clone --depth 1 https://github.com/blader/humanizer.git Then point your agen
 
 ### Where does it come from?
 Repository: blader/humanizer The repository ships 1 skills in total.
-
-========================================================================
-## hand-drawn-collage
-## 照片变手撕纸拼贴画，原图配色一件不丢
-URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
-Source: https://github.com/xuqser/hand-drawn-collage
-Updated: 2026-09-05
-Tags: images, skill, xuqser
-
-Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
-
-### What does this skill do?
-Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
-
-### Why is it worth installing?
-Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
-
-### How do you install it?
-git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
 
 ========================================================================
 ## gba-font-crack
@@ -3496,28 +3540,6 @@ git clone --depth 1 https://github.com/fxw-labs/easy-humanizer-zh.git 然后把�
 Repository: fxw-labs/easy-humanizer-zh The repository ships 1 skills in total.
 
 ========================================================================
-## i-have-adhd
-## 把注意力当稀缺资源，让 Claude 一次只说一件事
-URL: https://ourword.ai/skill/i/ayghri-i-have-adhd-i-have-adhd/
-Source: https://github.com/ayghri/i-have-adhd/tree/HEAD/.cursor/skills/i-have-adhd
-Updated: 2026-09-01
-Tags: meta, skill, ayghri
-
-Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.
-
-### What does this skill do?
-Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".
-
-### Why is it worth installing?
-A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
-
-========================================================================
 ## y2k-pop-poster
 ## 照片认出主体，直接剪成撞色描边 Y2K 海报
 URL: https://ourword.ai/skill/i/koinu32-y2k-pop-poster/
@@ -4072,28 +4094,6 @@ git clone --depth 1 https://github.com/Starryear/Starryear-Threefold-Memory.git 
 
 ### Where does it come from?
 Repository: Starryear/Starryear-Threefold-Memory The repository ships 1 skills in total.
-
-========================================================================
-## dnr-flat-pic
-## 不描边不追光影，只留身份与空间关系的扁平化压缩
-URL: https://ourword.ai/skill/i/createlafont-dnr-flat-pic/
-Source: https://github.com/CreateLafont/dnr-flat-pic
-Updated: 2026-08-28
-Tags: images, skill, CreateLafont
-
-Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
-
-### What does this skill do?
-Semantic compression, not tracing: keep identity and spatial relations, remove gradients, glow, texture, text and logos, cap complexity at 6/10.
-
-### Why is it worth installing?
-It defines simplification as checkable rules — fixed-HSB solid fills, crisp edges, no light effects — so a set stays in one language.
-
-### How do you install it?
-git clone --depth 1 https://github.com/CreateLafont/dnr-flat-pic.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: CreateLafont/dnr-flat-pic The repository ships 1 skills in total.
 
 ========================================================================
 ## h3-storyboard
