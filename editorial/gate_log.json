@@ -2,65 +2,392 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-08T18:08:46Z",
-   "判了": 8,
+   "时间": "2026-09-08T20:01:23Z",
+   "判了": 49,
    "过": 0,
    "明细": [
     {
-     "id": "s1dashu-listful-personal-home-skill",
-     "repo": "s1dashu/listful-personal-home-skill",
-     "title": "读本地 Chrome 足迹，生成专属新标签页启动台",
+     "id": "martinvibes-skin-in-the-game-skin-in-the-game",
+     "repo": "martinvibes/skin-in-the-game",
+     "title": "真金白银押注的AI分析师，每笔预测都晒实盘",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 62 分 < 80 —— 机制独特但依赖特定工具链，边界清楚，核心价值可被替代方案弱化。（3 判：[62, 62, 65]）",
+     "分": 62
     },
     {
-     "id": "s1dashu-director",
-     "repo": "s1dashu/director",
-     "title": "从一句话到成片，三个已验证视频模式全流程导演",
+     "id": "tack0628-ai-skills",
+     "repo": "tack0628/ai-skills",
+     "title": "十件套装的 Agent 技能货架，按需取用不重复",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
     },
     {
-     "id": "fcakyon-claude-codex-settings",
-     "repo": "fcakyon/claude-codex-settings",
-     "title": "三款 CLI 共用的同一套调校好的钩子与智能体",
+     "id": "tack0628-ai-skills-story-to-manga",
+     "repo": "tack0628/ai-skills",
+     "title": "文字转漫画，分镜对白字稿一步到位",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 流程缜密，交付明确；但类似漫画化工具链亦可行，非独有境界。（3 判：[45, 72, 72]）",
+     "分": 72
     },
     {
-     "id": "coldteadotai-pr-lens-pr-lens",
-     "repo": "coldteadotai/pr-lens",
-     "title": "代码改动自动长成会动的架构图，PR 里直接看",
+     "id": "tack0628-ai-skills-article-quality-editor",
+     "repo": "tack0628/ai-skills",
+     "title": "总编视角通读一遍，给出可执行的发表前修改清单",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 65 分 < 80 —— 编辑审查流程扎实，可替代性强，非独家但界限清晰。（3 判：[62, 65, 72]）",
+     "分": 65
     },
     {
-     "id": "tigerless-labs-agent-memory-agent-memory",
-     "repo": "tigerless-labs/agent-memory",
-     "title": "开工前先翻共享记忆库的搭档",
+     "id": "tack0628-ai-skills-content-cannibalization-finder",
+     "repo": "tack0628/ai-skills",
+     "title": "同一站内谁在跟谁抢搜索词，它按证据排座次",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 45 分 < 80 —— 模板/工具链，面向开发者SEO场景，题材偏离店主受众，边界虽清但非别处难寻。（3 判：[35, 45, 45]）",
+     "分": 45
     },
     {
-     "id": "drogers0-gh-image-github-image-upload",
-     "repo": "drogers0/gh-image",
-     "title": "本地图片直传 GitHub 讨论串，回帖即显图",
+     "id": "mikeboysen-job-map-express-skill-job-map-express",
+     "repo": "mikeboysen/job-map-express-skill",
+     "title": "先问清客户再画步骤的 JTBD 任务地图生成器",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 65 分 < 80 —— 方法清晰有边界，但属专业工具，普通读者难用上，非独家。（3 判：[45, 65, 72]）",
+     "分": 65
     },
     {
-     "id": "alchaincyf-feynman-skill",
-     "repo": "alchaincyf/feynman-skill",
-     "title": "专抓「命名式理解」的费曼思维顾问",
+     "id": "agenticben-d-dcollective",
+     "repo": "AgenticBen/D-DCollective",
+     "title": "照着品牌手册长出来的界面，连原型都带正版色板",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 45 分 < 80 —— 品牌设计指南实用，但仅适用于特定团队，边界清晰但替代性强。（3 判：[40, 45, 65]）",
+     "分": 45
     },
     {
-     "id": "alchaincyf-trump-skill",
-     "repo": "alchaincyf/trump-skill",
-     "title": "六维调研提炼的懂王决策模拟器",
+     "id": "azpiero-shiori-shiori-notes",
+     "repo": "azpiero/shiori",
+     "title": "给 Shiori 笔记库写 HTML 的排版师傅",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 针对特定工具链的规范扎实清晰，但适用范围窄且可替代。（3 判：[62, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "luishindelang-pinit-pinit-lesen",
+     "repo": "luishindelang/pinit",
+     "title": "Pinit 白板一读即成带编号的 Markdown ",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 扎实的专属格式读取方案，边界清晰，但可被通用工具替代。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "luishindelang-pinit-pinit-schreiben",
+     "repo": "luishindelang/pinit",
+     "title": "白板草图一句话变成可点可存的数据画布",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 针对特定工具的操作规范扎实，但换用其他白板工具也可实现类似流程，不可替代性一般。（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "luishindelang-pinit-pinit-veroeffentlichen",
+     "repo": "luishindelang/pinit",
+     "title": "不点名就全量发布，点名就只动那一个的 Pinit 看",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 操作流程清晰，但高度绑定个人Claude环境，泛用性低，只是个人工具的使用说明。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "sameersabirdev-chaos-monkey-ux-sandbox-chaos-monkey-ux-sandbox",
+     "repo": "sameersabirdev/chaos-monkey-ux-sandbox",
+     "title": "专挑刚做完的前端下手，把缺的兜底全补齐",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 针对前端健壮性测试，方案系统扎实，但此工具链题材对普通用户价值有限。（3 判：[45, 55, 68]）",
+     "分": 55
+    },
+    {
+     "id": "cockpitclaw-claw-agent",
+     "repo": "CockpitClaw/claw-agent",
+     "title": "车机里一句话跑完订票流程的本地 Agent",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "cockpitclaw-claw-agent-fallback-webview",
+     "repo": "CockpitClaw/claw-agent",
+     "title": "车机里没点名要哪个 App 的查询，都交给它开网页",
+     "过": false,
+     "为什么": "品味 40 分 < 80 —— 是车机开发工具的详细操作手册，边界清晰但属开发工具链题材，非普通用户可用的生活/（3 判：[30, 40, 45]）",
+     "分": 40
+    },
+    {
+     "id": "cockpitclaw-claw-agent-summarize",
+     "repo": "CockpitClaw/claw-agent",
+     "title": "播客视频没字幕也能出逐字稿的本地提取器",
+     "过": false,
+     "为什么": "品味 63 分 < 80 —— 工具封装清晰，但多家API可实现，替代性高。（3 判：[45, 63, 65]）",
+     "分": 63
+    },
+    {
+     "id": "cockpitclaw-claw-agent-car-native",
+     "repo": "CockpitClaw/claw-agent",
+     "title": "车机屏上真点原生 App，不绕浏览器",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 车机原生操作具体扎实，但属开发工具链文档，非生活题材，读者受限。（3 判：[45, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "hamc-skills-spec-explainer",
+     "repo": "hamc/skills",
+     "title": "一份 spec 配一条人声解说，没写过它的人也能听懂",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 泛用的开发工具链说明，受众窄且非标，缺不可替代的独特交付。（3 判：[35, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "claredz-cumcm-team-ai",
+     "repo": "Claredz/cumcm-team-ai",
+     "title": "建模赛三人并行求解的DAG总调度",
+     "过": false,
+     "为什么": "品味 63 分 < 80 —— 数学建模全流程细致扎实，但专业性过强，非建模用户难用。（3 判：[45, 63, 65]）",
+     "分": 63
+    },
+    {
+     "id": "tunghahuy-brainrotbot",
+     "repo": "TungHaHuy/brainrotbot",
+     "title": "12 个脑洞技能打包，专治「不知道还能这么玩」",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "tunghahuy-brainrotbot-music-prompt",
+     "repo": "TungHaHuy/brainrotbot",
+     "title": "听一段音频就吐出能复刻它的音乐生成提示词",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 流程严谨、边界清楚，但属开发者工具链场景，普通用户难直接受用。（3 判：[45, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "tunghahuy-brainrotbot-sanity-check",
+     "repo": "TungHaHuy/brainrotbot",
+     "title": "视频生成前先查四类硬伤的质检员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 内部工具链，流程清晰，但仅限特定产品生态，非通用生活题材。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "parasdoshicom-getchatdata",
+     "repo": "parasdoshicom/getchatdata",
+     "title": "16 件套聊天记录取证包，导出即带时间戳与元数据",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "parasdoshicom-getchatdata-causal-inference",
+     "repo": "parasdoshicom/getchatdata",
+     "title": "因果推断先亮假设再给结论的审稿人",
+     "过": false,
+     "为什么": "品味 48 分 < 80 —— 对因果推断方法论边界清楚，但属专业工具链，非大众生活创作题材，限40-65区间（3 判：[42, 48, 55]）",
+     "分": 48
+    },
+    {
+     "id": "parasdoshicom-getchatdata-experiment-design",
+     "repo": "parasdoshicom/getchatdata",
+     "title": "A/B 测试开工前先替你算好样本量和停手时机的实验设",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 专业扎实，但属工具链流程，非创作者题材，泛用性受限（3 判：[45, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "parasdoshicom-getchatdata-analysis-review",
+     "repo": "parasdoshicom/getchatdata",
+     "title": "专挑分析报告里算错数和编证据的审计员",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 审查方法论扎实，但换资深审计也能做，非独家。（3 判：[25, 35, 65]）",
+     "分": 35
+    },
+    {
+     "id": "tryguile-guile-pentesting",
+     "repo": "tryguile/guile-pentesting",
+     "title": "9 个渗透测试技能，按攻击链排好序的即插即用包",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "tryguile-guile-pentesting-owasp-top-10-testing",
+     "repo": "tryguile/guile-pentesting",
+     "title": "按 OWASP 2025 十大项逐条真打一遍的渗透测",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 专业扎实地指导OWASP测试，但更偏向开发工具链，非普通用户所需，换个专业工具也（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "tryguile-guile-pentesting-api-security-testing",
+     "repo": "tryguile/guile-pentesting",
+     "title": "照着 OWASP Top 10 逐条打 API 的自",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— API安全测试工具，面向开发者，替换工具多，虽具体但非创作者题材。（3 判：[45, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "tryguile-guile-pentesting-application-security-testing",
+     "repo": "tryguile/guile-pentesting",
+     "title": "每个漏洞都先打穿再排修复顺序的AppSec测试员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 清晰的流程编排，但本质是工具链的文档/入口，换个工具也能做。（3 判：[45, 45, 48]）",
+     "分": 45
+    },
+    {
+     "id": "iishortyii-vtt",
+     "repo": "IIShortyII/VTT",
+     "title": "七件套装配式技能包，按任务拆开即用",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "iishortyii-vtt-openspec-propose",
+     "repo": "IIShortyII/VTT",
+     "title": "需求一句话，设计·规格·任务三件套当场齐活",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 是工具CLI的官方工作流说明，交付物为通用计划文档，非普通人的独特货品。（3 判：[25, 35, 35]）",
+     "分": 35
+    },
+    {
+     "id": "iishortyii-vtt-feature-loop",
+     "repo": "IIShortyII/VTT",
+     "title": "一个 OpenSpec 变更自动跑完 TDD 三角色",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 企业开发工具链，或可类比官方CI示例，交付物个人化不足。（3 判：[42, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "iishortyii-vtt-openspec-apply-change",
+     "repo": "IIShortyII/VTT",
+     "title": "从 OpenSpec 变更单直接开工，任务拆到能动手",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 仅适配单一专有工具链，面向开发者，普通人无法使用，边界属官方示例而非独到做法。（3 判：[35, 35, 45]）",
+     "分": 35
+    },
+    {
+     "id": "catidegla-skillbelt-i18n-parity",
+     "repo": "catidegla/skillbelt",
+     "title": "英法翻译文件对不齐时，逐键比对并修复的校对员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具链，扎实但属换工具可做的硬核工程指南。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "catidegla-skillbelt-laravel-security-review",
+     "repo": "catidegla/skillbelt",
+     "title": "上线前拦下 SQL 注入和越权的 Laravel 代",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者安全审查，读者不适配，内容专业但定位偏离精选店方向。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "catidegla-skillbelt-nextjs-security-review",
+     "repo": "catidegla/skillbelt",
+     "title": "在合并前替你揪出 Next.js 越权与泄密点的代码",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 专业扎实但面向开发工具链，非普通读者，功能易被其他安全审计工具替代。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "ikeasven69-dsh-intelhub",
+     "repo": "IKEASven69/dsh-intelhub",
+     "title": "刷过的信息自动长成带出处的个人知识库",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 个人知识库工具集成，功能完备但边界技法普通，换其他方案也能实现。（3 判：[42, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "kaunaingul-ai-flyrank-ml-internship",
+     "repo": "Kaunaingul-ai/flyrank-ml-internship",
+     "title": "面试作品集里能直接跑通的机器学习实习档案",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "kaunaingul-ai-flyrank-ml-internship-flyrank-context",
+     "repo": "Kaunaingul-ai/flyrank-ml-internship",
+     "title": "面试前先读的公司内部背景卡",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 企业内部背景文档，面向特定实习生项目，非通用生活创作题材，交付物不明确。（3 判：[35, 35, 42]）",
+     "分": 35
+    },
+    {
+     "id": "kaunaingul-ai-flyrank-ml-internship-writing-honest-claims",
+     "repo": "Kaunaingul-ai/flyrank-ml-internship",
+     "title": "证据撑不起的词，一个都不写进结论",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 扎实的写作规范，但核心是通用原则，可被替代，边界清晰度一般。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "kaunaingul-ai-flyrank-ml-internship-auditing-signals",
+     "repo": "Kaunaingul-ai/flyrank-ml-internship",
+     "title": "先看分布再谈相关的数据审计员",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 数据审计方法论扎实，但属可替代工具，非生活题材（3 判：[62, 68, 68]）",
+     "分": 68
+    },
+    {
+     "id": "hanfeer-visual-style-dna-replicator",
+     "repo": "hanfeer/visual-style-dna-replicator",
+     "title": "参考图拆成可调参数，新主体照着复现的视觉基因提取器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 方法扎实，输出契约清晰，但风格拆解工具竞品可替代。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "ranahaani-i-hate-editing",
+     "repo": "ranahaani/i-hate-editing",
+     "title": "丢进素材文件夹，还你一条带字幕配乐调色的成片",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 扎实的剪辑工具方案，但依赖Chrome DevTools等开发工具链，深度有限。（3 判：[60, 65, 75]）",
+     "分": 65
+    },
+    {
+     "id": "wodelt-tishellor-web-3d-modeling-workflow",
+     "repo": "wodelt-tishellor/web-3d-modeling-workflow",
+     "title": "浏览器里搭三维场景，改到跟参考图严丝合缝",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 专业细致的3D建模流程，但属开发工具链，对普通读者偏冷。（3 判：[62, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "minazih-genesys-demo",
+     "repo": "minazih/genesys-demo",
+     "title": "在自有 Genesys Cloud 租户里搭演示对象",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "greenchennai-artboard",
+     "repo": "GreenChennai/artboard",
+     "title": "输入文案直出海报，复刻参考图也能换风格重做",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 海报设计工具链扎实，边界清晰，但本质是HTML渲染替代，非不可替代的独特判断。（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "keyneszeng-bagbot-bagbot",
+     "repo": "keyneszeng/bagbot",
+     "title": "Agent 没钱续命时自己从链上钱包充值",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向特定开发者工具，实操具体但受众狭窄，难以推广。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "tylerdurrett-think-bigger",
+     "repo": "tylerdurrett/think-bigger",
+     "title": "29 个思维脚手架，专治想问题只想一层",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "swondev-gamemaker-biblioteca-gamemaker-biblioteca",
+     "repo": "SwonDev/gamemaker-biblioteca",
+     "title": "写 GML 前先翻它，GameMaker LTS 2",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 扎实的工具型技能，但依赖私有库与CLI，生态受限且面向专业开发者。（3 判：[60, 65, 65]）",
+     "分": 65
     }
    ]
   },
