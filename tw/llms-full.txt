@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 367 skills.
+# Full corpus, plain text. 366 skills.
 
 ========================================================================
 ## playable-prototype
@@ -24,6 +24,88 @@ git clone --depth 1 https://github.com/didrod205/claude-astra.git Then point you
 
 ### Where does it come from?
 Repository: didrod205/claude-astra Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## metro-map
+## 軌道圖式畫架構，站點色線分區圖例一圖齊
+URL: https://ourword.ai/skill/tw/i/erp-lab-5-metro-map-tool-metro-map/
+Source: https://github.com/erp-lab-5/metro-map-tool/tree/HEAD/.claude/skills/metro-map
+Updated: 2026-09-08
+Tags: images, skill, erp-lab-5
+
+Tired of messy architecture diagrams? Draw modules as stations, deps as colored lines, zones & legend.
+
+### What does this skill do?
+Draw transit-map style diagrams — stations on a grid, coloured lines routed through them, zones banding groups of stations, a legend naming the lines and short notes riding the track between two stops — and render them to a standalone light/dark SVG. Two modes: a metro map on an abstract grid, or a roadmap whose x axis is a dated Gantt-style calendar. Use for landscape, migration, architecture, pi
+
+### Why is it worth installing?
+Forces abstract relations into metro-map grammar: grid stations, colored routes, zone bands, legend, and track-side notes—all.
+
+### How do you install it?
+git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
+
+========================================================================
+## tts-director
+## 給中文稿子標好 Fish Audio 情感括號再交給
+URL: https://ourword.ai/skill/tw/i/dawnsyo-blip-ttsdirectorskill-chatting/
+URL (中文): https://ourword.ai/skill/tw/zh/i/dawnsyo-blip-ttsdirectorskill-chatting/
+Source: https://github.com/dawnsyo-blip/ttsdirectorskill-chatting
+Updated: 2026-09-08
+Tags: images, skill, dawnsyo-blip
+
+Stop guessing where [happy] or [sad] goes. It places s2.1-pro tags by clause and meaning, so the output is.
+
+### What does this skill do?
+為中文文本自動插入 Fish Audio s2.1-pro 的情感和韻律標籤（方括號標籤），輸出可直接用於 TTS API 調用的標註文本。 當用戶提到以下任何場景時觸發此 skill：TTS 標註、Fish Audio 標籤、語音合成標籤、 讓文本"聽起來更自然"、給文本加情感標記、為語音合成做預處理、 中文 TTS 情感控制、s2.1-pro 標籤、語音表現力優化。 即使用戶沒有明確說"TTS"，只要意圖是讓一段中文文本在被朗讀時更有情感表現力，也應觸發。
+
+### Why is it worth installing?
+Places tags by clause rhythm and semantic flow, not keyword matching, so the emotional arc breathes instead of flattening out.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
+
+--- 中文 ---
+不用手動猜 [happy] 該放哪、[sad] 該多長。它按句讀和語義自動插好 s2.1-pro 標籤。
+
+### Q：這個 skill 做什麼？
+為中文文本自動插入 Fish Audio s2.1-pro 的情感和韻律標籤（方括號標籤），輸出可直接用於 TTS API 調用的標註文本。 當用戶提到以下任何場景時觸發此 skill：TTS 標註、Fish Audio 標籤、語音合成標籤、 讓文本"聽起來更自然"、給文本加情感標記、為語音合成做預處理、 中文 TTS 情感控制、s2.1-pro 標籤、語音表現力優化。 即使用戶沒有明確說"TTS"，只要意圖是讓一段中文文本在被朗讀時更有情感表現力，也應觸發。
+
+### Q：為什麼值得裝？
+按中文句讀與語義走向決定標籤位置與密度，避免整段一個情緒到底的機械感。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
+
+========================================================================
+## kami
+## 羊皮紙底色配墨藍強調的文檔排版師
+URL: https://ourword.ai/skill/tw/i/tw93-kami-kami/
+Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
+Updated: 2026-09-08
+Tags: everyday, skill, tw93
+
+Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
+
+### What does this skill do?
+Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一頁紙 / 白皮書 / 作品集 / 簡歷 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地頁 / 官網 / landing page / p
+
+### Why is it worth installing?
+Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-to-journal-stickers
@@ -140,6 +222,104 @@ git clone --depth 1 https://github.com/yejy53/Editable-Design.git 然後把智�
 Repository: yejy53/Editable-Design The repository ships 1 skills in total.
 
 ========================================================================
+## desktop-control
+## 不看屏幕也能看見桌面的盲操手
+URL: https://ourword.ai/skill/tw/i/sagirimo-biodsh-desktop-control/
+Source: https://github.com/sagirimo/BioDSH/tree/HEAD/biodsh-core/skills/desktop-control
+Updated: 2026-09-08
+Tags: work, skill, sagirimo
+
+Windows UI Automation or OCR turns every control into JSON with coordinates—click, type, hotkey, and paste tables.
+
+### What does this skill do?
+See and drive the user's desktop without vision - list and focus windows, read on-screen controls and text as JSON with coordinates (UI Automation on Windows, OCR elsewhere), then click, type, send hotkeys, open apps and paste tables into Excel/SPSS/GraphPad Prism/Zotero.
+
+### Why is it worth installing?
+Reduces 'seeing' to structured JSON—coordinates are ground truth, OCR only a fallback. Gives headless agents desktop-grade.
+
+### How do you install it?
+git clone --depth 1 https://github.com/sagirimo/BioDSH.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: sagirimo/BioDSH The repository ships 1 skills in total.
+
+========================================================================
+## travel-plan-viz
+## 離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完
+URL: https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/
+URL (中文): https://ourword.ai/skill/tw/zh/i/zexuanw958-svg-travel-plan-viz/
+Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
+Updated: 2026-09-08
+Tags: everyday, skill, zexuanw958-svg
+
+The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
+
+### What does this skill do?
+把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
+
+### Why is it worth installing?
+Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+--- 中文 ---
+到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。
+
+### Q：這個 skill 做什麼？
+把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
+
+### Q：為什麼值得裝？
+「離線可讀、手機優先、單文件」——這三個約束是真在國外用過才想得到的。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+========================================================================
+## ljg-writes
+## 一個觀點經得住反例才肯落筆的寫作引擎
+URL: https://ourword.ai/skill/tw/i/lijigang-ljg-skills/
+URL (中文): https://ourword.ai/skill/tw/zh/i/lijigang-ljg-skills/
+Source: https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes
+Updated: 2026-09-08
+Tags: writing, skill, lijigang
+
+AI opinion pieces default to being correct and empty. This one sets a specific bar: 1000–1500 words, understandable, transferable, and able to survive counterexamples — and it explicitly refuses to write summaries.
+
+### What does this skill do?
+"寫作引擎。把一個觀點寫成可理解、可遷移、經得住反例的 1000-1500 字中文文章。USE WHEN 寫文章 OR 優化思想內容 OR 展開觀點 OR 改寫成邏輯遞進的中文。NOT FOR 普通摘要、事實查詢或結構風洞（用 ljg-structure）。"
+
+### Why is it worth installing?
+'Survives counterexamples' is the most demanding thing I've seen a writing skill ask of itself. Far more concrete than claiming 'high quality'.
+
+### How do you install it?
+git clone --depth 1 https://github.com/lijigang/ljg-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: lijigang/ljg-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+AI 寫觀點文最容易變成正確的廢話。它的目標很具體：1000-1500 字，可理解、可遷移、經得住反例——而且明說不做普通摘要。
+
+### Q：這個 skill 做什麼？
+"寫作引擎。把一個觀點寫成可理解、可遷移、經得住反例的 1000-1500 字中文文章。USE WHEN 寫文章 OR 優化思想內容 OR 展開觀點 OR 改寫成邏輯遞進的中文。NOT FOR 普通摘要、事實查詢或結構風洞（用 ljg-structure）。"
+
+### Q：為什麼值得裝？
+「經得住反例」是我見過對寫作最狠的自我要求，比「高質量」這類詞實在得多。作者知道自己在做什麼。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: lijigang/ljg-skills The repository ships 1 skills in total.
+
+========================================================================
 ## multi-copywrite-alchemy
 ## 分析某位作者的多篇文章復刻其文風
 URL: https://ourword.ai/skill/tw/i/redfox-data-redfox-community/
@@ -178,6 +358,28 @@ git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然後�
 Repository: redfox-data/redfox-community The repository ships 1 skills in total.
 
 ========================================================================
+## email-marketing-bible
+## 做郵件營銷的顧問
+URL: https://ourword.ai/skill/tw/i/cosmoblk-email-marketing-bible/
+Source: https://github.com/CosmoBlk/email-marketing-bible
+Updated: 2026-09-08
+Tags: work, skill, CosmoBlk
+
+A 55K-word, 908-source, 19-playbook email-marketing skill — install it and your agent becomes an email consultant, from automation to diagnostics.
+
+### What does this skill do?
+Data-backed email marketing skill for AI agents. Use when building or running email automation, driving an ESP from an agent (MCP/connectors), diagnosing deliverability, writing or de-slopping email copy, designing emails, choosing a platform, or pulling benchmarks. Covers AI email automation, flows, deliverability, copywriting, segmentation, compliance, cold email, WhatsApp, SMS and RCS, and 19 i
+
+### Why is it worth installing?
+Staggering density (55K words, 908 sources), not hand-waving; in email marketing where details decide outcomes, a thick knowledge base is real muscle.
+
+### How do you install it?
+git clone --depth 1 https://github.com/CosmoBlk/email-marketing-bible.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: CosmoBlk/email-marketing-bible The repository ships 1 skills in total.
+
+========================================================================
 ## kinocut
 ## 有護欄的 AI 視頻剪輯
 URL: https://ourword.ai/skill/tw/i/kyanitelabs-kinocut-kinocut/
@@ -200,6 +402,28 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
+## design-review
+## 給 Go 代碼庫做地道性評審
+URL: https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-08
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
+
+========================================================================
 ## trading-design
 ## 按專業交易軟件的規範設計盯盤界面
 URL: https://ourword.ai/skill/tw/i/vanillagreencom-vstack-trading-design/
@@ -220,6 +444,28 @@ git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point you
 
 ### Where does it come from?
 Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## sprite-gen
+## 組件行流水線出精靈圖集，帶 QA 報告和運行時清單
+URL: https://ourword.ai/skill/tw/i/aldegad-sprite-gen/
+Source: https://github.com/aldegad/sprite-gen
+Updated: 2026-09-08
+Tags: images, skill, aldegad
+
+One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
+
+### What does this skill do?
+Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
+
+### Why is it worth installing?
+Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
 ## archify
@@ -304,6 +550,28 @@ git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然
 Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## caveman
+## 讓 Claude 用原始人腔說話，據稱省下 65% 的 token
+URL: https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/
+Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
+Updated: 2026-09-08
+Tags: play, skill, JuliusBrussee
+
+Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
+
+### What does this skill do?
+Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
+
+### Why is it worth installing?
+A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
+
+### How do you install it?
+git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
+
+========================================================================
 ## deep-research
 ## 13 個子代理組隊做研究，互相審稿和事實核查
 URL: https://ourword.ai/skill/tw/i/imbad0202-academic-research-skills-deep-research/
@@ -324,6 +592,28 @@ git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Th
 
 ### Where does it come from?
 Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
+## planning-with-files
+## 任務拆解寫到磁盤，/clear 後自動續上進度
+URL: https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/
+Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
+Updated: 2026-09-08
+Tags: meta, skill, OthmanAdi
+
+Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
+
+### What does this skill do?
+Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
+
+### Why is it worth installing?
+Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
+
+### How do you install it?
+git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## understand-figma
@@ -528,28 +818,6 @@ git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point yo
 Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
 
 ========================================================================
-## kami
-## 羊皮紙底色配墨藍強調的文檔排版師
-URL: https://ourword.ai/skill/tw/i/tw93-kami-kami/
-Source: https://github.com/tw93/kami/tree/HEAD/skills/kami
-Updated: 2026-09-07
-Tags: everyday, skill, tw93
-
-Resumes, whitepapers, landing pages, slides — all set in one warm, bookish style. Auto CJK fonts, serif-led.
-
-### What does this skill do?
-Typeset professional documents and product landing pages: resumes, one-pagers, white papers, letters, portfolios, slide decks, landing pages. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一頁紙 / 白皮書 / 作品集 / 簡歷 / PPT / slides / Marp / markdown slides / マークダウンのスライド / 落地頁 / 官網 / landing page / p
-
-### Why is it worth installing?
-Not a template pack: it maps content structure to type scale and spacing, so every document looks like it left the same quality.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tw93/kami.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tw93/kami Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## seedance-prompt-library
 ## Seedance 2.5 視頻提示詞模板庫
 URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
@@ -570,28 +838,6 @@ git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then poi
 
 ### Where does it come from?
 Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
-
-========================================================================
-## desktop-control
-## 不看屏幕也能看見桌面的盲操手
-URL: https://ourword.ai/skill/tw/i/sagirimo-biodsh-desktop-control/
-Source: https://github.com/sagirimo/BioDSH/tree/HEAD/biodsh-core/skills/desktop-control
-Updated: 2026-09-07
-Tags: work, skill, sagirimo
-
-Windows UI Automation or OCR turns every control into JSON with coordinates—click, type, hotkey, and paste tables.
-
-### What does this skill do?
-See and drive the user's desktop without vision - list and focus windows, read on-screen controls and text as JSON with coordinates (UI Automation on Windows, OCR elsewhere), then click, type, send hotkeys, open apps and paste tables into Excel/SPSS/GraphPad Prism/Zotero.
-
-### Why is it worth installing?
-Reduces 'seeing' to structured JSON—coordinates are ground truth, OCR only a fallback. Gives headless agents desktop-grade.
-
-### How do you install it?
-git clone --depth 1 https://github.com/sagirimo/BioDSH.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: sagirimo/BioDSH The repository ships 1 skills in total.
 
 ========================================================================
 ## textile-toy-portrait
@@ -630,44 +876,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然後把智能�
 
 ### Q：它從哪來？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## travel-plan-viz
-## 離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完
-URL: https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/
-URL (中文): https://ourword.ai/skill/tw/zh/i/zexuanw958-svg-travel-plan-viz/
-Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
-Updated: 2026-09-07
-Tags: everyday, skill, zexuanw958-svg
-
-The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
-
-### What does this skill do?
-把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
-
-### Why is it worth installing?
-Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
---- 中文 ---
-到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。
-
-### Q：這個 skill 做什麼？
-把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
-
-### Q：為什麼值得裝？
-「離線可讀、手機優先、單文件」——這三個約束是真在國外用過才想得到的。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## translate-book
@@ -796,28 +1004,6 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
-## design-review
-## 給 Go 代碼庫做地道性評審
-URL: https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-07
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
 ## writing-agent
 ## 從選題到發布的去 AI 味中文寫作系統
 URL: https://ourword.ai/skill/tw/i/dongbeixiaohuo-writing-agent/
@@ -900,28 +1086,6 @@ git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point yo
 Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
 
 ========================================================================
-## caveman
-## 讓 Claude 用原始人腔說話，據稱省下 65% 的 token
-URL: https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/
-Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
-Updated: 2026-09-07
-Tags: play, skill, JuliusBrussee
-
-Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
-
-### What does this skill do?
-Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
-
-### Why is it worth installing?
-A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
-
-### How do you install it?
-git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
-
-========================================================================
 ## gstack
 ## YC 掌門的 Claude Code 全套配置，23 個角色分工
 URL: https://ourword.ai/skill/tw/i/garrytan-gstack/
@@ -964,28 +1128,6 @@ git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Th
 
 ### Where does it come from?
 Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## planning-with-files
-## 任務拆解寫到磁盤，/clear 後自動續上進度
-URL: https://ourword.ai/skill/tw/i/othmanadi-planning-with-files-planning-with-files/
-Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
-Updated: 2026-09-07
-Tags: meta, skill, OthmanAdi
-
-Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
-
-### What does this skill do?
-Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
-
-### Why is it worth installing?
-Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
-
-### How do you install it?
-git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## glitch-pixel-collage
@@ -1046,44 +1188,6 @@ git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your a
 
 ### Where does it come from?
 Repository: l3a0/claude-plugins The repository ships 1 skills in total.
-
-========================================================================
-## tts-director
-## 給中文稿子標好 Fish Audio 情感括號再交給
-URL: https://ourword.ai/skill/tw/i/dawnsyo-blip-ttsdirectorskill-chatting/
-URL (中文): https://ourword.ai/skill/tw/zh/i/dawnsyo-blip-ttsdirectorskill-chatting/
-Source: https://github.com/dawnsyo-blip/ttsdirectorskill-chatting
-Updated: 2026-09-06
-Tags: images, skill, dawnsyo-blip
-
-Stop guessing where [happy] or [sad] goes. It places s2.1-pro tags by clause and meaning, so the output is.
-
-### What does this skill do?
-為中文文本自動插入 Fish Audio s2.1-pro 的情感和韻律標籤（方括號標籤），輸出可直接用於 TTS API 調用的標註文本。 當用戶提到以下任何場景時觸發此 skill：TTS 標註、Fish Audio 標籤、語音合成標籤、 讓文本"聽起來更自然"、給文本加情感標記、為語音合成做預處理、 中文 TTS 情感控制、s2.1-pro 標籤、語音表現力優化。 即使用戶沒有明確說"TTS"，只要意圖是讓一段中文文本在被朗讀時更有情感表現力，也應觸發。
-
-### Why is it worth installing?
-Places tags by clause rhythm and semantic flow, not keyword matching, so the emotional arc breathes instead of flattening out.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
-
---- 中文 ---
-不用手動猜 [happy] 該放哪、[sad] 該多長。它按句讀和語義自動插好 s2.1-pro 標籤。
-
-### Q：這個 skill 做什麼？
-為中文文本自動插入 Fish Audio s2.1-pro 的情感和韻律標籤（方括號標籤），輸出可直接用於 TTS API 調用的標註文本。 當用戶提到以下任何場景時觸發此 skill：TTS 標註、Fish Audio 標籤、語音合成標籤、 讓文本"聽起來更自然"、給文本加情感標記、為語音合成做預處理、 中文 TTS 情感控制、s2.1-pro 標籤、語音表現力優化。 即使用戶沒有明確說"TTS"，只要意圖是讓一段中文文本在被朗讀時更有情感表現力，也應觸發。
-
-### Q：為什麼值得裝？
-按中文句讀與語義走向決定標籤位置與密度，避免整段一個情緒到底的機械感。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/dawnsyo-blip/ttsdirectorskill-chatting.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: dawnsyo-blip/ttsdirectorskill-chatting The repository ships 1 skills in total.
 
 ========================================================================
 ## bilingual-term-extract
@@ -1374,28 +1478,6 @@ git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point 
 
 ### Where does it come from?
 Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
-
-========================================================================
-## metro-map
-## 軌道圖式畫架構，站點色線分區圖例一圖齊
-URL: https://ourword.ai/skill/tw/i/erp-lab-5-metro-map-tool-metro-map/
-Source: https://github.com/erp-lab-5/metro-map-tool/tree/HEAD/.claude/skills/metro-map
-Updated: 2026-09-05
-Tags: images, skill, erp-lab-5
-
-Tired of messy architecture diagrams? Draw modules as stations, deps as colored lines, zones & legend.
-
-### What does this skill do?
-Draw transit-map style diagrams — stations on a grid, coloured lines routed through them, zones banding groups of stations, a legend naming the lines and short notes riding the track between two stops — and render them to a standalone light/dark SVG. Two modes: a metro map on an abstract grid, or a roadmap whose x axis is a dated Gantt-style calendar. Use for landscape, migration, architecture, pi
-
-### Why is it worth installing?
-Forces abstract relations into metro-map grammar: grid stations, colored routes, zone bands, legend, and track-side notes—all.
-
-### How do you install it?
-git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
 
 ========================================================================
 ## gba-font-crack
@@ -1908,44 +1990,6 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 
 ### Where does it come from?
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
-
-========================================================================
-## ljg-writes
-## 一個觀點經得住反例才肯落筆的寫作引擎
-URL: https://ourword.ai/skill/tw/i/lijigang-ljg-skills/
-URL (中文): https://ourword.ai/skill/tw/zh/i/lijigang-ljg-skills/
-Source: https://github.com/lijigang/ljg-skills/tree/HEAD/skills/ljg-writes
-Updated: 2026-09-05
-Tags: writing, skill, lijigang
-
-AI opinion pieces default to being correct and empty. This one sets a specific bar: 1000–1500 words, understandable, transferable, and able to survive counterexamples — and it explicitly refuses to write summaries.
-
-### What does this skill do?
-"寫作引擎。把一個觀點寫成可理解、可遷移、經得住反例的 1000-1500 字中文文章。USE WHEN 寫文章 OR 優化思想內容 OR 展開觀點 OR 改寫成邏輯遞進的中文。NOT FOR 普通摘要、事實查詢或結構風洞（用 ljg-structure）。"
-
-### Why is it worth installing?
-'Survives counterexamples' is the most demanding thing I've seen a writing skill ask of itself. Far more concrete than claiming 'high quality'.
-
-### How do you install it?
-git clone --depth 1 https://github.com/lijigang/ljg-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: lijigang/ljg-skills The repository ships 1 skills in total.
-
---- 中文 ---
-AI 寫觀點文最容易變成正確的廢話。它的目標很具體：1000-1500 字，可理解、可遷移、經得住反例——而且明說不做普通摘要。
-
-### Q：這個 skill 做什麼？
-"寫作引擎。把一個觀點寫成可理解、可遷移、經得住反例的 1000-1500 字中文文章。USE WHEN 寫文章 OR 優化思想內容 OR 展開觀點 OR 改寫成邏輯遞進的中文。NOT FOR 普通摘要、事實查詢或結構風洞（用 ljg-structure）。"
-
-### Q：為什麼值得裝？
-「經得住反例」是我見過對寫作最狠的自我要求，比「高質量」這類詞實在得多。作者知道自己在做什麼。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: lijigang/ljg-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## photo-revival
@@ -3592,28 +3636,6 @@ git clone --depth 1 https://github.com/liangdabiao/enterprise-rag-challenge-rele
 
 ### Q：它從哪來？
 Repository: liangdabiao/enterprise-rag-challenge-release The repository ships 1 skills in total.
-
-========================================================================
-## sprite-gen
-## 組件行流水線出精靈圖集，帶 QA 報告和運行時清單
-URL: https://ourword.ai/skill/tw/i/aldegad-sprite-gen/
-Source: https://github.com/aldegad/sprite-gen
-Updated: 2026-08-31
-Tags: images, skill, aldegad
-
-One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
-
-### What does this skill do?
-Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
-
-### Why is it worth installing?
-Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
-
-### How do you install it?
-git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
 ## interview-master
@@ -6204,28 +6226,6 @@ git clone --depth 1 https://github.com/liigoQi/photo-to-travel-sketch.git Then p
 Repository: liigoQi/photo-to-travel-sketch The repository ships 1 skills in total.
 
 ========================================================================
-## parenting-advisor
-## 專防「假託崔玉濤」文章的 0–13 歲育兒參謀
-URL: https://ourword.ai/skill/tw/i/yeyulangzi-parenting-advisor/
-Source: https://github.com/yeyulangzi/parenting-advisor
-Updated: 2026-08-11
-Tags: everyday, skill, yeyulangzi
-
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### What does this skill do?
-Fever, biting, refusing food — the real hazard is landing on a convincing article falsely bylined to a famous pediatrician. This forces two independent authoritative sources per conclusion, or downgrades its own confidence out loud.
-
-### Why is it worth installing?
-It keeps a table of the excuses an AI is likely to make. "The symptoms are textbook, I can basically confirm it" is listed there as a signal to stop, not to proceed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yeyulangzi/parenting-advisor.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yeyulangzi/parenting-advisor The repository ships 1 skills in total.
-
-========================================================================
 ## 8bit-pixel-art
 ## 稀疏像素畫：大片留白裡只點幾個關鍵色塊
 URL: https://ourword.ai/skill/tw/i/twentyfivebtea-8bit-pixel-art/
@@ -8250,28 +8250,6 @@ git clone --depth 1 https://github.com/wangling-miao/mathmodel-latex-skill.git T
 
 ### Where does it come from?
 Repository: wangling-miao/mathmodel-latex-skill The repository ships 1 skills in total.
-
-========================================================================
-## email-marketing-bible
-## 做郵件營銷的顧問
-URL: https://ourword.ai/skill/tw/i/cosmoblk-email-marketing-bible/
-Source: https://github.com/CosmoBlk/email-marketing-bible
-Updated: 2026-06-30
-Tags: work, skill, CosmoBlk
-
-A 55K-word, 908-source, 19-playbook email-marketing skill — install it and your agent becomes an email consultant, from automation to diagnostics.
-
-### What does this skill do?
-Data-backed email marketing skill for AI agents. Use when building or running email automation, driving an ESP from an agent (MCP/connectors), diagnosing deliverability, writing or de-slopping email copy, designing emails, choosing a platform, or pulling benchmarks. Covers AI email automation, flows, deliverability, copywriting, segmentation, compliance, cold email, WhatsApp, SMS and RCS, and 19 i
-
-### Why is it worth installing?
-Staggering density (55K words, 908 sources), not hand-waving; in email marketing where details decide outcomes, a thick knowledge base is real muscle.
-
-### How do you install it?
-git clone --depth 1 https://github.com/CosmoBlk/email-marketing-bible.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: CosmoBlk/email-marketing-bible The repository ships 1 skills in total.
 
 ========================================================================
 ## exampass
