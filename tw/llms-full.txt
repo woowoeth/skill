@@ -1,7 +1,45 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 366 skills.
+# Full corpus, plain text. 367 skills.
+
+========================================================================
+## short-drama-script
+## 豎屏短劇全流程編劇臺本，從立項到每集鉤子
+URL: https://ourword.ai/skill/tw/i/yooooohyou-dw-novel-short-drama-script/
+URL (中文): https://ourword.ai/skill/tw/zh/i/yooooohyou-dw-novel-short-drama-script/
+Source: https://github.com/yooooohyou/dw_novel/tree/HEAD/.claude/skills/short-drama-script
+Updated: 2026-09-09
+Tags: writing, skill, yooooohyou
+
+From genre selection, characters, synopsis, episode beats to full scene scripts. Diagnoses weak hooks, thin.
+
+### What does this skill do?
+寫豎屏微短劇（網絡微短劇、小程序短劇、抖音/快手/紅果那種一集一兩分鐘的劇）的劇本，覆蓋賽道立項、人物設定、故事大綱、分集梗概到單集完整分場劇本的全流程。只要用戶提到短劇、微短劇、豎屏劇、小程序劇、分集劇本、爽劇、逆襲/重生/復仇/戰神/贅婿/閃婚/馬甲/穿越這類題材，或者要寫"每集一兩分鐘、結尾留鉤子"的連續劇內容，就該用這個 skill；用戶說"幫我寫個短劇""寫個爽文劇本""把這個小說改成短劇""這集節奏太拖了幫我改"時同樣適用。也用於診斷和改寫已有短劇劇本——鉤子無力、爽點稀、臺詞太長、場景超預算。
+
+### Why is it worth installing?
+Not a template filler. It calculates hook density and payoff spacing per vertical-screen episode, even times dialogue to.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yooooohyou/dw_novel.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yooooohyou/dw_novel Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+--- 中文 ---
+賽道立項、人設、大綱、分集梗概、單集分場一次給全。專治鉤子無力、爽點稀、臺詞拖沓。
+
+### Q：這個 skill 做什麼？
+寫豎屏微短劇（網絡微短劇、小程序短劇、抖音/快手/紅果那種一集一兩分鐘的劇）的劇本，覆蓋賽道立項、人物設定、故事大綱、分集梗概到單集完整分場劇本的全流程。只要用戶提到短劇、微短劇、豎屏劇、小程序劇、分集劇本、爽劇、逆襲/重生/復仇/戰神/贅婿/閃婚/馬甲/穿越這類題材，或者要寫"每集一兩分鐘、結尾留鉤子"的連續劇內容，就該用這個 skill；用戶說"幫我寫個短劇""寫個爽文劇本""把這個小說改成短劇""這集節奏太拖了幫我改"時同樣適用。也用於診斷和改寫已有短劇劇本——鉤子無力、爽點稀、臺詞太長、場景超預算。
+
+### Q：為什麼值得裝？
+不是模板堆砌，而是按豎屏節奏逐集算鉤子密度和爽點間隔，連臺詞長度都按秒卡。改寫舊稿時先診斷再下刀。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/yooooohyou/dw_novel.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: yooooohyou/dw_novel Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## autosound-tuning
