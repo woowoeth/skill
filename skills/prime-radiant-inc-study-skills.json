@@ -2,14 +2,14 @@
  "id": "prime-radiant-inc-study-skills",
  "kind": "collection",
  "name": "study-skills",
- "title_zh": "读完的书会自己长成一张可检索的笔记网",
- "tagline_zh": "不靠意志力复习，靠分析阅读+双向链接卡片+可证伪信念，让知识在下次用之前就自动串好。附赠一个本地 CLI。",
- "tagline_en": "No willpower reviews. Analytical reading + bidirectional cards + falsifiable beliefs wire knowledge together.",
+ "title_zh": "读过的书会自己长成第二大脑的阅读插件",
+ "tagline_zh": "不满足于划线高亮？它把分析阅读、卡片笔记、信念纠错串成一条流水线，读完一本书，笔记自动连成网。",
+ "tagline_en": "Tired of just highlighting? It turns analytical reading, Zettelkasten notes, and belief-checking into one.",
  "desc_en": "A Claude Code plugin for durable agent learning: analytical reading, a cross-linked Zettelkasten slip-box with a bundled CLI, first-person beliefs with falsifiers, experience capture, and deliberation forks.",
- "why_zh": "它把「记住」改成「长出来」：每张卡片必须带出处和反例，信念必须写清什么能推翻它——知识不是收藏。",
- "why_en": "It turns memorizing into growing: every card needs a source and a counterexample; beliefs must state what falsifies them.",
- "limit_zh": "只覆盖个人学习流程，不接团队知识库；需要你已有 Zettelkasten 习惯或愿意从零搭；CLI 只做检索和链接。",
- "limit_en": "Personal learning only, no team KB. Requires existing Zettelkasten habit or willingness to start from scratch. CLI searches/links only—no.",
+ "why_zh": "不是笔记工具，是学习操作系统：每本书都拆成可验证的信念和反例，卡片自动交叉引用。",
+ "why_en": "Not a note app but a learning OS: every book becomes testable beliefs with falsifiers, cards cross-link themselves, and even.",
+ "limit_zh": "只覆盖阅读→笔记→信念检验的闭环，不做任务管理或复习提醒；需要你主动运行 CLI 命令，且卡片链接依赖你遵循既定格式。",
+ "limit_en": "Only covers reading-to-notes-to-belief-checking loop; no task management or review reminders. Requires manual CLI runs and strict card format.",
  "repo": "prime-radiant-inc/study-skills",
  "owner": "prime-radiant-inc",
  "path": "",
@@ -31,6 +31,9 @@
   "browse": "https://github.com/prime-radiant-inc/study-skills/tree/HEAD/skills",
   "note": "clone 下来，挑你要的那件复制进 ~/.claude/skills/。这是一个合集，没有「装它」这个动作。"
  },
- "cover": "https://opengraph.githubassets.com/1/prime-radiant-inc/study-skills",
- "title_en": "Books you read grow into a searchable note web"
+ "cover": "/skill/assets/covers/prime-radiant-inc-study-skills.png",
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "title_en": "Reading plugin that grows a second brain from books"
 }

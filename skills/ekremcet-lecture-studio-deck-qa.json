@@ -2,14 +2,14 @@
  "id": "ekremcet-lecture-studio-deck-qa",
  "kind": "skill",
  "name": "deck-qa",
- "title_zh": "导出前先查溢出、缺图、字距的 Marp 幻灯片质检员",
- "tagline_zh": "写完后、导出前，它逐页扫溢出、缺图、密度、字距和结构，当场修给你看。别等投到屏幕上才发现字被截了。",
- "tagline_en": "After writing, before export, it scans every slide for overflow, missing images, density, and typography—and.",
+ "title_zh": "Marp 幻灯片交稿前先过一遍溢出、缺图",
+ "tagline_zh": "导出前总担心文字溢出、图片失踪？它逐页查溢出、缺图、密度、排版和结构，发现问题直接动手修，不用自己翻几十页。",
+ "tagline_en": "Worried about text overflow or broken images before export? It scans every slide for overflow, missing images.",
  "desc_en": "Check a Marp deck for overflow, missing images, density, typography, and structure, and fix what it finds. Use after writing or editing slides, before an export, or when the user says QA, check, review, lint, overflow, \"does it fit\", or \"clean up the deck\".",
- "why_zh": "不是只报错，而是直接动手改。它懂 Marp 的 CSS 和 Markdown 边界。",
- "why_en": "It doesn't just flag issues—it edits the Markdown. Built for Marp's CSS quirks, it tells real overflow from acceptable crowding.",
- "limit_zh": "只认 Marp 格式的 Markdown 幻灯片；不处理 PDF、PPTX 或 HTML 输出。修复限于文本和结构。",
- "limit_en": "Only works on Marp Markdown decks; no PDF/PPTX/HTML. Fixes text and structure, not image placement or chart redraws.",
+ "why_zh": "不只是报错，而是定位后直接改文件；按溢出、缺图、密度、排版、结构五类逐页扫，修完再查一轮，直到干净。",
+ "why_en": "It doesn't just report—it edits the source directly. Scans per slide across five categories, applies fixes, then re-checks until.",
+ "limit_zh": "只认 Marp 的 Markdown 源文件，不碰 PPTX/PDF；修图只处理缺失引用，不重绘或压缩图片。",
+ "limit_en": "Only works on Marp Markdown source; not for PPTX/PDF. Fixes missing image refs but doesn't redraw or compress. Complex custom CSS may cause false.",
  "repo": "ekremcet/lecture-studio",
  "owner": "ekremcet",
  "path": "skill-pack/skills/deck-qa",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Marp deck QA that catches overflow, missing images, and."
+ "title_en": "Marp deck pre-export checker that fixes overflow, missing."
 }

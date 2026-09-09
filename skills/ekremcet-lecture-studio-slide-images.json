@@ -2,14 +2,14 @@
  "id": "ekremcet-lecture-studio-slide-images",
  "kind": "skill",
  "name": "slide-images",
- "title_zh": "缺图就现找现画，还顺手把 Marp 指令写对",
- "tagline_zh": "做课件卡在没图？它去翻梗图、截屏、画图表，Graphviz/matplotlib 都行。",
- "tagline_en": "Stuck on a slide with no visual? It hunts memes, screenshots, charts, or draws via Graphviz/matplotlib, then.",
+ "title_zh": "讲稿里缺图就现场造一张，Marp 指令顺手写好",
+ "tagline_zh": "讲着讲着发现这页没图？它去翻 meme、截屏、画图表，或现场调 Graphviz/matplotlib 出图。",
+ "tagline_en": "Slide needs a visual mid-lecture? It hunts memes, screenshots, charts, or renders Graphviz/matplotlib on the.",
  "desc_en": "Find or make an image for a slide - a meme, a screenshot, a chart, or a diagram (Graphviz, matplotlib) - and place it in the week's assets folder with the right Marp image directive. Use when a slide needs a visual, when the user asks for a meme, figure, diagram, chart, or picture, or when deck QA reports a missing image.",
- "why_zh": "不是只给图，而是把「找图/生图 + 放对文件夹 + 写对 Marp 语法」打包成一条流水线。",
- "why_en": "It's not just an image finder—it chains sourcing, saving to the right folder, and emitting correct Marp syntax, even fixing.",
- "limit_zh": "只认 Marp 幻灯片项目，且需要 week 目录结构已存在；不会自动安装 Graphviz/matplotlib。",
- "limit_en": "Only for Marp decks with an existing week/ folder; won't install Graphviz/matplotlib or vet image licenses; meme sources limited to publicly.",
+ "why_zh": "不是丢给你一张图就完事——它认 deck 的目录结构、按周归档、生成正确的图片指令。",
+ "why_en": "Doesn't just hand you an image—it respects the deck's folder layout, files by week, and emits the exact Marp directive, closing.",
+ "limit_zh": "只处理单张幻灯片配图需求；不批量补全整个 deck 的缺图，不重绘已有图片，也不负责图片版权核查。",
+ "limit_en": "Handles one slide's visual at a time; won't batch-fill a deck, redraw existing images, or check copyright. Stops and asks if a source sits behind a.",
  "repo": "ekremcet/lecture-studio",
  "owner": "ekremcet",
  "path": "skill-pack/skills/slide-images",
@@ -33,5 +33,5 @@
  "cover_kind": "og",
  "cover_w": 1200,
  "cover_h": 600,
- "title_en": "Find or draw slide visuals, then wire up Marp"
+ "title_en": "Make or find slide images, Marp directive included"
 }

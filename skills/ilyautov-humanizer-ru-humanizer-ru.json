@@ -2,14 +2,14 @@
  "id": "ilyautov-humanizer-ru-humanizer-ru",
  "kind": "skill",
  "name": "humanizer-ru",
- "title_zh": "俄语文本去AI味，改到母语者看不出",
- "tagline_zh": "专治俄语稿子那股'机翻腔'：砍掉模板连接词、塞回口语语气词、重排句子呼吸。",
- "tagline_en": "Kills the 'machine-translated' feel in Russian copy: strips template connectors, restores colloquial particles.",
+ "title_zh": "俄语文本去AI味，先删套话再换活人句式",
+ "tagline_zh": "一眼认出「как уже было сказано」「в целом」这类AI高频套话。",
+ "tagline_en": "Spots AI-favorite fillers like «как уже было сказано» or «в целом», swaps them for short clauses and colloquial.",
  "desc_en": "Скилл для очеловечивания русскоязычного текста. Убирает признаки AI-генерации, делает текст живым. Используй ВСЕГДА, когда пользователь просит: очеловечить текст, убрать следы нейросети, сделать текст живым/естественным, переписать как человек, humanize на русском, убрать канцелярит, убрать водянистость, сделать текст менее формальным. Также используй если пользователь вставляет русскоязычный текс",
- "why_zh": "不是简单换同义词，而是按俄语母语者的节奏重写：该断句就断句，该用破折号就用，该上口语词就上。",
- "why_en": "Not synonym-swapping—it rewrites to native rhythm: breaks sentences where a human would, uses dashes, drops colloquialisms.",
- "limit_zh": "只处理俄语文本；不负责事实核查、数据准确性和风格统一（若原文是学术/法律文书，改完可能显得过于随意）。",
- "limit_en": "Russian text only; no fact-checking, data accuracy, or style consistency (academic/legal docs may become too casual). Requires source text, not.",
+ "why_zh": "不是换同义词，而是按俄语口语韵律重排句子重心：删冗余从句、补语气词、把被动语态掰回主动。",
+ "why_en": "Not synonym swapping—it re-centers sentences by Russian speech rhythm: trims subordinate clauses, adds discourse particles.",
+ "limit_zh": "只处理俄语文本，不碰其他语言。需要输入是完整段落而非零散短语，否则无法判断上下文韵律。不负责事实核查。",
+ "limit_en": "Russian only. Needs full paragraphs, not fragments—no context, no rhythm analysis. Won't fact-check, and it deliberately lowers formality, so don't.",
  "repo": "ilyautov/humanizer-ru",
  "owner": "ilyautov",
  "path": "skills/humanizer-ru",
@@ -30,5 +30,5 @@
   "dir": "~/.claude/skills/humanizer-ru"
  },
  "cover": "/skill/assets/covers/ilyautov-humanizer-ru-humanizer-ru.png",
- "title_en": "Russian text de-AI'd until natives can't tell"
+ "title_en": "De-AI Russian text: kill clichés, add human rhythm"
 }
