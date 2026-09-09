@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 367 skills.
+# Full corpus, plain text. 368 skills.
 
 ========================================================================
 ## short-drama-script
@@ -472,6 +472,44 @@ git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then po
 
 ### Where does it come from?
 Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
+
+========================================================================
+## xiaxia
+## 分镜脚本直接落到 Seedance 2.5 可执行的
+URL: https://ourword.ai/skill/i/luanyi824-hash-xiaxia/
+URL (中文): https://ourword.ai/skill/zh/i/luanyi824-hash-xiaxia/
+Source: https://github.com/luanyi824-hash/xiaxia
+Updated: 2026-09-08
+Tags: images, skill, luanyi824-hash
+
+Once the script is locked, it hands you framing, light, acting, and action logic in one pass—without touching.
+
+### What does this skill do?
+夏夏 Skill。默认用于中文电影、动画、短剧与 AI 视频的导演分镜，把确认剧本转为构图、光影、表演、动作因果和 Seedance 2.5 执行都完整的生成组。凡用户提出分镜、镜头脚本、21:9 构图、机位焦段、人物调度、动作连续性或视频提示词，即使未点名夏夏也使用；除非用户明确要求，不改写剧情、台词或事件顺序。
+
+### Why is it worth installing?
+It owns the Chinese shot-listing lane, translating narrative intent into Seedance 2.5-ready camera logic with causal continuity.
+
+### How do you install it?
+git clone --depth 1 https://github.com/luanyi824-hash/xiaxia.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: luanyi824-hash/xiaxia Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
+
+--- 中文 ---
+确认剧本后，构图、光影、表演、动作因果一次给全。不碰剧情和台词，只把文字变成导演能拍、AI 能懂的完整分镜组。
+
+### Q：这个 skill 做什么？
+夏夏 Skill。默认用于中文电影、动画、短剧与 AI 视频的导演分镜，把确认剧本转为构图、光影、表演、动作因果和 Seedance 2.5 执行都完整的生成组。凡用户提出分镜、镜头脚本、21:9 构图、机位焦段、人物调度、动作连续性或视频提示词，即使未点名夏夏也使用；除非用户明确要求，不改写剧情、台词或事件顺序。
+
+### Q：为什么值得装？
+默认接管中文影视分镜，把叙事意图翻译成 Seedance 2.5 的镜头语言，动作因果不漏拍。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/luanyi824-hash/xiaxia.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: luanyi824-hash/xiaxia Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
 ## playable-prototype

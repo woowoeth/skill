@@ -3,13 +3,13 @@
  "kind": "skill",
  "name": "xiaxia",
  "title_zh": "分镜脚本直接落到 Seedance 2.5 可执行的",
- "tagline_zh": "从确认剧本到构图、光影、表演、动作因果，一步到位生成组。默认接管中文影视与 AI 视频分镜，不点名也出手。",
- "tagline_en": "Turns locked scripts into full shot groups—framing, lighting, acting, causality—ready for Seedance 2.5.",
+ "tagline_zh": "确认剧本后，构图、光影、表演、动作因果一次给全。不碰剧情和台词，只把文字变成导演能拍、AI 能懂的完整分镜组。",
+ "tagline_en": "Once the script is locked, it hands you framing, light, acting, and action logic in one pass—without touching.",
  "desc_en": "夏夏 Skill。默认用于中文电影、动画、短剧与 AI 视频的导演分镜，把确认剧本转为构图、光影、表演、动作因果和 Seedance 2.5 执行都完整的生成组。凡用户提出分镜、镜头脚本、21:9 构图、机位焦段、人物调度、动作连续性或视频提示词，即使未点名夏夏也使用；除非用户明确要求，不改写剧情、台词或事件顺序。",
- "why_zh": "它把导演的视觉判断拆成可验证的因果链，再编译成 Seedance 2.5 的指令语言。不是给建议。",
- "why_en": "It compiles directorial intent into causal shot chains, then into Seedance 2.5's execution language. Not advice—runnable specs.",
- "limit_zh": "只认中文影视与 AI 视频的分镜场景；不处理纪录片、广告口播或游戏过场。产物是生成组与提示词，不含实际渲染或剪辑。",
- "limit_en": "Chinese film/AI-video storyboards only; no docs, ads, or game cutscenes. Outputs prompt groups, not renders. Requires a locked script first.",
+ "why_zh": "默认接管中文影视分镜，把叙事意图翻译成 Seedance 2.5 的镜头语言，动作因果不漏拍。",
+ "why_en": "It owns the Chinese shot-listing lane, translating narrative intent into Seedance 2.5-ready camera logic with causal continuity.",
+ "limit_zh": "只认已确认剧本，不负责改剧情或台词；产物是分镜生成组而非成片；未装 Seedance 2.5 或不用中文内容时。",
+ "limit_en": "Requires a locked script; outputs shot groups, not footage. Its Chinese-first defaults feel redundant without Seedance 2.5 or non-Chinese material.",
  "repo": "luanyi824-hash/xiaxia",
  "owner": "luanyi824-hash",
  "path": "",
@@ -21,7 +21,7 @@
  "category": "creative",
  "fun_score": 4.93,
  "pick": false,
- "hide": true,
+ "hide": false,
  "source": "human-suggested",
  "added_at": "2026-09-09",
  "install": {
@@ -29,6 +29,9 @@
   "copy": "mv xiaxia ~/.claude/skills/xiaxia",
   "dir": "~/.claude/skills/xiaxia"
  },
- "cover": "https://opengraph.githubassets.com/1/luanyi824-hash/xiaxia",
- "title_en": "Shot lists that compile into Seedance 2.5-ready prompts"
+ "cover": "/skill/assets/covers/luanyi824-hash-xiaxia.png",
+ "cover_kind": "og",
+ "cover_w": 1200,
+ "cover_h": 600,
+ "title_en": "Shot lists that compile straight into Seedance 2.5 prompts"
 }
