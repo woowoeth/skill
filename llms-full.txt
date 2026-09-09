@@ -4,6 +4,236 @@
 # Full corpus, plain text. 366 skills.
 
 ========================================================================
+## autosound-tuning
+## 双AI轮流审听，把车内喇叭调到不刺耳为止
+URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
+Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
+Updated: 2026-09-09
+Tags: images, skill, ayukhno
+
+From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
+
+### What does this skill do?
+Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
+
+### Why is it worth installing?
+Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
+
+========================================================================
+## handdraw-style-prompter
+## 编号 001–216 手绘风格，报号即出双语提示词
+URL: https://ourword.ai/skill/i/yang0-handraw-style-handdraw-style-prompter/
+Source: https://github.com/yang0/handraw-style/tree/HEAD/handdraw-style-prompter
+Updated: 2026-09-09
+Tags: images, skill, yang0
+
+Just cite a number from 001–216, get bilingual prompts. It also tells you if your model needs the style reference.
+
+### What does this skill do?
+Turn a 001–216 hand-drawn style number and image theme into bilingual prompts, or generate an image with a model-capability-aware decision about whether the matching numbered image is needed as a style reference.
+
+### Why is it worth installing?
+Turns a style library into a searchable numbering system, and checks model capability before prompting—so a reference image.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yang0/handraw-style.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yang0/handraw-style The repository ships 1 skills in total.
+
+========================================================================
+## pf2e-gm
+## 翻开本地规则库的 PF2e 主持人副驾
+URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
+Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
+Updated: 2026-09-09
+Tags: play, skill, Milec
+
+41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
+
+### What does this skill do?
+Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
+
+### Why is it worth installing?
+It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## speak-human-tw
+## 繁體中文去 AI 味：把「綜上所述」改回人話
+URL: https://ourword.ai/skill/i/raymondhou0917-speak-human-tw/
+URL (中文): https://ourword.ai/skill/zh/i/raymondhou0917-speak-human-tw/
+Source: https://github.com/Raymondhou0917/speak-human-tw
+Updated: 2026-09-09
+Tags: writing, skill, Raymondhou0917
+
+Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+
+### What does this skill do?
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Why is it worth installing?
+Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+--- 中文 ---
+一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
+
+### Q：这个 skill 做什么？
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Q：为什么值得装？
+不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## multi-copywrite-alchemy
+## 分析某位作者的多篇文章复刻其文风
+URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
+URL (中文): https://ourword.ai/skill/zh/i/redfox-data-redfox-community/
+Source: https://github.com/redfox-data/redfox-community/tree/HEAD/skills/multi-copywrite-alchemy
+Updated: 2026-09-09
+Tags: writing, skill, redfox-data
+
+Reading ten pieces still won't tell you how someone actually writes. This takes a body of one author's work apart, reconstructs how they think, and gives you a writing persona plus style prompts.
+
+### What does this skill do?
+复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+
+### Why is it worth installing?
+Reconstructing the thinking beats mimicking the sentences — the first transfers to new subjects, the second falls apart the moment the topic changes.
+
+### How do you install it?
+git clone --depth 1 https://github.com/redfox-data/redfox-community.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+
+--- 中文 ---
+想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。
+
+### Q：这个 skill 做什么？
+复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+
+### Q：为什么值得装？
+「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+
+========================================================================
+## trading-design
+## 按专业交易软件的规范设计盯盘界面
+URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
+Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+Updated: 2026-09-09
+Tags: images, skill, vanillagreencom
+
+A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+
+### What does this skill do?
+Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+
+### Why is it worth installing?
+Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## sprite-gen
+## 组件行流水线出精灵图集，带 QA 报告和运行时清单
+URL: https://ourword.ai/skill/i/aldegad-sprite-gen/
+Source: https://github.com/aldegad/sprite-gen
+Updated: 2026-09-09
+Tags: images, skill, aldegad
+
+One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
+
+### What does this skill do?
+Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
+
+### Why is it worth installing?
+Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aldegad/sprite-gen The repository ships 1 skills in total.
+
+========================================================================
+## video-shotcraft
+## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
+URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
+Source: https://github.com/Vincentwei1021/video-shotcraft
+Updated: 2026-09-09
+Tags: images, skill, Vincentwei1021
+
+Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
+
+### What does this skill do?
+Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
+
+### Why is it worth installing?
+Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## gstack
+## YC 掌门的 Claude Code 全套配置，23 个角色分工
+URL: https://ourword.ai/skill/i/garrytan-gstack/
+Source: https://github.com/garrytan/gstack
+Updated: 2026-09-09
+Tags: work, skill, garrytan
+
+YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
+
+### What does this skill do?
+Router for the gstack skill suite. (gstack)
+
+### Why is it worth installing?
+How a top investor actually runs agents — the role division alone is worth the install.
+
+### How do you install it?
+git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: garrytan/gstack The repository ships 59 skills in total.
+
+========================================================================
 ## playable-prototype
 ## 一次出五个能玩的游戏原型，机器人替你按过键
 URL: https://ourword.ai/skill/i/didrod205-claude-astra-playable-prototype/
@@ -70,26 +300,26 @@ git clone --depth 1 https://github.com/erp-lab-5/metro-map-tool.git Then point y
 Repository: erp-lab-5/metro-map-tool The repository ships 1 skills in total.
 
 ========================================================================
-## autosound-tuning
-## 双AI轮流审听，把车内喇叭调到不刺耳为止
-URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
-Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
+## kindle-highlights
+## Kindle 笔记导出器，连亚马逊截断的划线也捞回来
+URL: https://ourword.ai/skill/i/l3a0-claude-plugins-kindle-highlights/
+Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
 Updated: 2026-09-08
-Tags: images, skill, ayukhno
+Tags: work, skill, l3a0
 
-From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
+Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
 
 ### What does this skill do?
-Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
+Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
 
 ### Why is it worth installing?
-Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
+It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
+Repository: l3a0/claude-plugins The repository ships 1 skills in total.
 
 ========================================================================
 ## tts-director
@@ -190,42 +420,26 @@ git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 
 Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## speak-human-tw
-## 繁體中文去 AI 味：把「綜上所述」改回人話
-URL: https://ourword.ai/skill/i/raymondhou0917-speak-human-tw/
-URL (中文): https://ourword.ai/skill/zh/i/raymondhou0917-speak-human-tw/
-Source: https://github.com/Raymondhou0917/speak-human-tw
+## seedance-prompt-library
+## Seedance 2.5 视频提示词模板库
+URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
+Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
 Updated: 2026-09-08
-Tags: writing, skill, Raymondhou0917
+Tags: images, skill, LearnPrompt
 
-Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
 
 ### What does this skill do?
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
 
 ### Why is it worth installing?
-Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
-
---- 中文 ---
-一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
-
-### Q：这个 skill 做什么？
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
-
-### Q：为什么值得装？
-不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## dnr-flat-pic
@@ -386,42 +600,42 @@ git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然后把智能�
 Repository: lijigang/ljg-skills The repository ships 1 skills in total.
 
 ========================================================================
-## multi-copywrite-alchemy
-## 分析某位作者的多篇文章复刻其文风
-URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
-URL (中文): https://ourword.ai/skill/zh/i/redfox-data-redfox-community/
-Source: https://github.com/redfox-data/redfox-community/tree/HEAD/skills/multi-copywrite-alchemy
+## math-modeling
+## 三天赛程里做完数学建模竞赛全流程
+URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
+URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
+Source: https://github.com/XiaoMaColtAI/math-modeling-skill
 Updated: 2026-09-08
-Tags: writing, skill, redfox-data
+Tags: learn, skill, XiaoMaColtAI
 
-Reading ten pieces still won't tell you how someone actually writes. This takes a body of one author's work apart, reconstructs how they think, and gives you a writing persona plus style prompts.
+A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
 
 ### What does this skill do?
-复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
 
 ### Why is it worth installing?
-Reconstructing the thinking beats mimicking the sentences — the first transfers to new subjects, the second falls apart the moment the topic changes.
+Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/redfox-data/redfox-community.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 --- 中文 ---
-想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。
+建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
 
 ### Q：这个 skill 做什么？
-复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
 
 ### Q：为什么值得装？
-「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。
+按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
 
 ### Q：怎么装？
-git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后把智能体指向这个 skill 目录即可。
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
 
 ### Q：它从哪来？
-Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
 ## email-marketing-bible
@@ -488,50 +702,6 @@ git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent 
 
 ### Where does it come from?
 Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
-## trading-design
-## 按专业交易软件的规范设计盯盘界面
-URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
-Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
-Updated: 2026-09-08
-Tags: images, skill, vanillagreencom
-
-A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
-
-### What does this skill do?
-Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
-
-### Why is it worth installing?
-Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
-
-### How do you install it?
-git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
-
-========================================================================
-## sprite-gen
-## 组件行流水线出精灵图集，带 QA 报告和运行时清单
-URL: https://ourword.ai/skill/i/aldegad-sprite-gen/
-Source: https://github.com/aldegad/sprite-gen
-Updated: 2026-09-08
-Tags: images, skill, aldegad
-
-One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
-
-### What does this skill do?
-Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
-
-### Why is it worth installing?
-Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
-
-### How do you install it?
-git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
 ## archify
@@ -884,28 +1054,6 @@ git clone --depth 1 https://github.com/yuzora-yu/project_sixth.git Then point yo
 Repository: yuzora-yu/project_sixth The repository ships 1 skills in total.
 
 ========================================================================
-## seedance-prompt-library
-## Seedance 2.5 视频提示词模板库
-URL: https://ourword.ai/skill/i/learnprompt-awesome-seedance-seedance-prompt-library/
-Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
-Updated: 2026-09-07
-Tags: images, skill, LearnPrompt
-
-Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
-
-### What does this skill do?
-Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
-
-### Why is it worth installing?
-Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
-
-### How do you install it?
-git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
-
-========================================================================
 ## textile-toy-portrait
 ## 照片变颗粒绒玩偶，毛绒质感直接出图
 URL: https://ourword.ai/skill/i/vieeeeeee-wibi-style-textile-toy-portrait/
@@ -964,44 +1112,6 @@ git clone --depth 1 https://github.com/deusyu/translate-book.git Then point your
 
 ### Where does it come from?
 Repository: deusyu/translate-book The repository ships 1 skills in total.
-
-========================================================================
-## math-modeling
-## 三天赛程里做完数学建模竞赛全流程
-URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
-URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
-Source: https://github.com/XiaoMaColtAI/math-modeling-skill
-Updated: 2026-09-07
-Tags: learn, skill, XiaoMaColtAI
-
-A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
-
-### What does this skill do?
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Why is it worth installing?
-Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
-
-### How do you install it?
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
---- 中文 ---
-建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
-
-### Q：这个 skill 做什么？
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Q：为什么值得装？
-按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
 ## dnd
@@ -1152,28 +1262,6 @@ git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point yo
 Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
 
 ========================================================================
-## gstack
-## YC 掌门的 Claude Code 全套配置，23 个角色分工
-URL: https://ourword.ai/skill/i/garrytan-gstack/
-Source: https://github.com/garrytan/gstack
-Updated: 2026-09-07
-Tags: work, skill, garrytan
-
-YC president Garry Tan's exact Claude Code setup — 23 opinionated tools playing CEO, designer, EM, release manager and QA.
-
-### What does this skill do?
-Router for the gstack skill suite. (gstack)
-
-### Why is it worth installing?
-How a top investor actually runs agents — the role division alone is worth the install.
-
-### How do you install it?
-git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: garrytan/gstack The repository ships 59 skills in total.
-
-========================================================================
 ## citation-management
 ## 每条引用都回数据库核验，揪出 AI 编造的参考文献
 URL: https://ourword.ai/skill/i/k-dense-ai-scientific-agent-skills-citation-management/
@@ -1232,28 +1320,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## kindle-highlights
-## Kindle 笔记导出器，连亚马逊截断的划线也捞回来
-URL: https://ourword.ai/skill/i/l3a0-claude-plugins-kindle-highlights/
-Source: https://github.com/l3a0/claude-plugins/tree/HEAD/skills/kindle-highlights
-Updated: 2026-09-06
-Tags: work, skill, l3a0
-
-Stop copy-pasting from the web. Export a whole book's highlights with page & location cites, and recover notes.
-
-### What does this skill do?
-Extract a book's highlights from the Kindle notebook (read.amazon.com/notebook) into one verbatim, location-cited Markdown file, and recover highlights that Amazon's export limit truncated or hid — using the Mac Kindle app's synced annotation positions plus the Cloud Reader's rendered pages. Use when the user wants to export, extract, copy, or save Kindle book notes/highlights.
-
-### Why is it worth installing?
-It doesn't trust Amazon's export API. It cross-references your Mac Kindle's synced positions with Cloud Reader pages to restore.
-
-### How do you install it?
-git clone --depth 1 https://github.com/l3a0/claude-plugins.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: l3a0/claude-plugins The repository ships 1 skills in total.
 
 ========================================================================
 ## bilingual-term-extract
@@ -1352,28 +1418,6 @@ git clone --depth 1 https://github.com/kangarooking/cangjie-skill.git Then point
 
 ### Where does it come from?
 Repository: kangarooking/cangjie-skill Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 28 skills in total.
-
-========================================================================
-## pf2e-gm
-## 翻开本地规则库的 PF2e 主持人副驾
-URL: https://ourword.ai/skill/i/milec-towers-of-saeroth-pf2e-gm/
-Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
-Updated: 2026-09-06
-Tags: play, skill, Milec
-
-41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
-
-### What does this skill do?
-Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
-
-### Why is it worth installing?
-It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## antibes-holiday
@@ -1718,28 +1762,6 @@ git clone --depth 1 https://github.com/sriwitsumo/project-skill.git Then point y
 
 ### Where does it come from?
 Repository: sriwitsumo/project-skill The repository ships 1 skills in total.
-
-========================================================================
-## handdraw-style-prompter
-## 编号 001–216 手绘风格，报号即出双语提示词
-URL: https://ourword.ai/skill/i/yang0-handraw-style-handdraw-style-prompter/
-Source: https://github.com/yang0/handraw-style/tree/HEAD/handdraw-style-prompter
-Updated: 2026-09-05
-Tags: images, skill, yang0
-
-Just cite a number from 001–216, get bilingual prompts. It also tells you if your model needs the style reference.
-
-### What does this skill do?
-Turn a 001–216 hand-drawn style number and image theme into bilingual prompts, or generate an image with a model-capability-aware decision about whether the matching numbered image is needed as a style reference.
-
-### Why is it worth installing?
-Turns a style library into a searchable numbering system, and checks model capability before prompting—so a reference image.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yang0/handraw-style.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yang0/handraw-style The repository ships 1 skills in total.
 
 ========================================================================
 ## anime-poster
@@ -2100,28 +2122,6 @@ git clone --depth 1 https://github.com/xixihhhh/hotclip.git Then point your agen
 
 ### Where does it come from?
 Repository: xixihhhh/hotclip The repository ships 1 skills in total. Homepage: https://xixihhhh.github.io/hotclip/
-
-========================================================================
-## video-shotcraft
-## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
-URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
-Source: https://github.com/Vincentwei1021/video-shotcraft
-Updated: 2026-09-05
-Tags: images, skill, Vincentwei1021
-
-Cinematic product videos via Remotion — 106 shot recipe cards and 161 motion presets; describe the product in one line, get a finished film.
-
-### What does this skill do?
-Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says "use video-shotcraft to make a video/promo", names the Ink Press template or asks to reproduce its effect, or wants a sing
-
-### Why is it worth installing?
-Turns "hire a studio" into a local skill; the shot recipe cards are unusually well crafted.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## social-post
