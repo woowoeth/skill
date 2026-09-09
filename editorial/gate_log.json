@@ -2,72 +2,287 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-09T06:49:19Z",
-   "判了": 9,
+   "时间": "2026-09-09T06:59:21Z",
+   "判了": 35,
    "过": 0,
    "明细": [
     {
-     "id": "cxcxy-doodle-frames",
-     "repo": "cxcxy/doodle-frames",
-     "title": "三帧累加不重画，白纸黑豆讲清一个知识点",
+     "id": "paladinknightmaster-ai-image-prompt-factory",
+     "repo": "PaladinKnightMaster/ai-image-prompt-factory",
+     "title": "先锁死画面再动笔的 GPT Image 提示词工厂",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 证据驱动提示词工程扎实，自有限制清晰，但核心仍是工具链题材，非大众生活场景。（3 判：[68, 72, 72]）",
+     "分": 72
     },
     {
-     "id": "resciencelab-super-prototyping-clone-prototype",
-     "repo": "ReScienceLab/super-prototyping",
-     "title": "像素级克隆真实 App 界面",
+     "id": "kiri603-to-sheet-music-skill",
+     "repo": "kiri603/To-Sheet-Music-Skill",
+     "title": "五件乐器各占一行，混音歌进、总谱出",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 流程严谨清晰，但本质是可替换的音频转谱工具链，非独家判断。（3 判：[62, 72, 72]）",
+     "分": 72
     },
     {
-     "id": "resciencelab-super-prototyping-prototype-canvas",
-     "repo": "ReScienceLab/super-prototyping",
-     "title": "本地画布上摆 HTML 稿，截图批注回传改稿闭环",
+     "id": "qingyuna-agent-html-agent-html",
+     "repo": "QingYunA/agent-html",
+     "title": "零构建单文件网页母版，双击秒开不白屏",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 62 分 < 80 —— 面向开发工具链，规范扎实但属基建模板，非创作者题材，边界清晰但非独有。（3 判：[42, 62, 65]）",
+     "分": 62
     },
     {
-     "id": "resciencelab-super-prototyping-new-ui-mock",
-     "repo": "ReScienceLab/super-prototyping",
-     "title": "新界面先画在原型画布上，用现成设计令牌而非拍脑袋配色",
+     "id": "feitangyuan-motion-web",
+     "repo": "feitangyuan/motion-web",
+     "title": "动效先行的创意网站，从版式到滚动动画一气呵成",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 覆盖广但边界清晰，对创意网站构建有独到实践，但偏工具链，普通用户门槛高。（3 判：[55, 72, 78]）",
+     "分": 72
     },
     {
-     "id": "zju-real-easel",
-     "repo": "ZJU-REAL/Easel",
-     "title": "跨平台发帖前先问你要发哪个平台的社媒管家",
+     "id": "staryyyzx-ai-project-learning-skill",
+     "repo": "StarYYYzx/ai-project-learning-skill",
+     "title": "指定项目就自动拆成需求增量，逼你动手实现再对照验证",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 项目学习法设计扎实，但可被通用教程流程替代，缺独门边界。（3 判：[55, 72, 72]）",
+     "分": 72
     },
     {
-     "id": "mouredev-hello-sdd-spec-generator",
-     "repo": "mouredev/hello-sdd",
-     "title": "先问清需求再落笔的规格说明书起草器",
+     "id": "raymondhou0917-ai-level-check",
+     "repo": "Raymondhou0917/ai-level-check",
+     "title": "读本机 agent 日志定你 AI 几级",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 75 分 < 80 —— 边界清晰、方法扎实，但核心是工具链评估，读者面偏窄。（3 判：[72, 75, 78]）",
+     "分": 75
     },
     {
-     "id": "squirrelscan-squirrelscan-squirrelscan",
-     "repo": "squirrelscan/squirrelscan",
-     "title": "260 条规则扫完网站，健康分和问题清单一起给",
+     "id": "tlennon-ie-tone3000-presetbuilder-tone3000-preset-builder",
+     "repo": "tlennon-ie/Tone3000-PresetBuilder",
+     "title": "给 TONE3000 吉他插件生成整条信号链预设",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 55 分 < 80 —— 面向特定软件用户，工具链属性强，用途明确但非普适题材。（3 判：[37, 55, 65]）",
+     "分": 55
     },
     {
-     "id": "gnipbao-dao-skill",
-     "repo": "gnipbao/dao-skill",
-     "title": "从一句模糊需求归根出可运行 Skill 的元设计器",
+     "id": "songzhufu-experience-finder",
+     "repo": "songzhufu/experience-finder",
+     "title": "小红书面经抓取器：登录一次，按公司/岗位/批次归档",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 55 分 < 80 —— 功能扎实流程清楚，但本质是小红书面经采集工具，换个自动化工具也能做。（3 判：[45, 55, 65]）",
+     "分": 55
     },
     {
-     "id": "blader-schematic",
-     "repo": "blader/schematic",
-     "title": "从 git 分支倒推产品规格书的逆向文档师",
+     "id": "abyr1206-claude-skill-hand-drawn-slides-hand-drawn-chapter-slides",
+     "repo": "ABYR1206/claude-skill-hand-drawn-slides",
+     "title": "手绘涂鸦风章节分隔页，黑粗线框配低饱和底色",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 72 分 < 80 —— 设计规范详尽，但主要依靠通用库实现，独特产出有限。（3 判：[70, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "kcchien-hc-reasoning",
+     "repo": "kcchien/hc-reasoning",
+     "title": "专挑报告里「证据撑不住结论」那几行的审稿人",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 认知检查框架实用，但作为独立skill边界不清晰，方法可被通用推理替代（3 判：[45, 55, 72]）",
+     "分": 55
+    },
+    {
+     "id": "lj350201364-minimaxh3_single_dancer_prompt_skill",
+     "repo": "lj350201364/MiniMaxH3_Single_Dancer_Prompt_Skill",
+     "title": "MiniMax H3 单舞者提示词生成器：照片进",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 交互流程扎实严密，但视频生成类需求用ChatGPT等工具也能达成。（3 判：[63, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "santoinspace-zotero-project-papers-zotero-project-papers",
+     "repo": "Santoinspace/zotero-project-papers",
+     "title": "Zotero 文献库里的顶会顶刊检索器，你点名才动",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具链，非普通受众，功能扎实但换工具可替代。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "vsh5dvsch7-png-yueying-yueying",
+     "repo": "vsh5dvsch7-png/yueying",
+     "title": "本地视频转文字稿加关键帧，AI 才能接得住",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 工具扎实且边界清晰，但换开源方案也能实现，非独家。（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "kazprose-threads-qaz",
+     "repo": "kazprose/threads-qaz",
+     "title": "哈萨克语 Threads 内容从草稿到发布前质检一条",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 针对哈萨克语Threads的细分领域做得扎实，有独特方法论，但工具性强，非必备。（3 判：[72, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "tomosia-vietnam-webapp-evidence-recording",
+     "repo": "TOMOSIA-VIETNAM/webapp-evidence",
+     "title": "录屏、截图、操作手册一次打包的交付证据生成器",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 工具链题材，流程清晰但边界模糊，非它不可理由不足。（3 判：[45, 55, 55]）",
+     "分": 55
+    },
+    {
+     "id": "tomosia-vietnam-webapp-evidence-vision",
+     "repo": "TOMOSIA-VIETNAM/webapp-evidence",
+     "title": "带时间戳的视频帧联系表，读图就知道录像里发生了什么",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 实用工具，但可被截图序列替代，边界清晰但非独有。（3 判：[65, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "tomosia-vietnam-webapp-evidence-feedback",
+     "repo": "TOMOSIA-VIETNAM/webapp-evidence",
+     "title": "录坏了别忍，直接去官方工单骂一句",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具链题材且读者限定，边界清晰但非通用好货。（3 判：[40, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "tahodev-kurashi-skill-bosai-alert",
+     "repo": "tahodev/kurashi-skill",
+     "title": "气象厅公开JSON直读地震·海啸·警报，不绕第三方",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 日本灾害查询工具，实现扎实边界清晰，但换API工具也能做，且题材偏基建。（3 判：[65, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "tahodev-kurashi-skill-calil-books",
+     "repo": "tahodev/kurashi-skill",
+     "title": "借书前先查附近哪家图书馆有货",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 扎实的API使用指南，但相当于官方文档示范，且读者需自备日本图书馆API密钥。（3 判：[45, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "tahodev-kurashi-skill-furusato-nozei",
+     "repo": "tahodev/kurashi-skill",
+     "title": "年薪和税额一报，算出你今年能捐的上限",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 计算方法及边界（目安、复杂情形降级）极清楚，但题材属他国税制，对国内读者偏冷。（3 判：[52, 65, 82]）",
+     "分": 65
+    },
+    {
+     "id": "ethan-wang-dev-ew-skills-ew-repo-scout",
+     "repo": "Ethan-Wang-dev/EW-Skills",
+     "title": "GitHub 上替你翻遍 Skill 仓库的选型买手",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具链，模板化流程，无独特洞察，非生活创作题材。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "huxiaoli888-java-skills",
+     "repo": "huxiaoli888/java-skills",
+     "title": "",
+     "过": false,
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "huxiaoli888-java-skills-java-multi-module-architecture",
+     "repo": "huxiaoli888/java-skills",
+     "title": "先画依赖箭头再写 POM 的多模块架构师",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业开发工具链，做法扎实有边界，但题材冷在读者而非大众（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "huxiaoli888-java-skills-netty-handler-dispatcher",
+     "repo": "huxiaoli888/java-skills",
+     "title": "Netty 入口协议设计评审，从握手到背压一次看清",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 开发工具链类技能，虽组织清晰但属企业后端基建，非生活创作题材。（3 判：[35, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "huxiaoli888-java-skills-java-backend-api-standard",
+     "repo": "huxiaoli888/java-skills",
+     "title": "API 契约先于代码的 Spring Boot 接口",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业开发规范，边界清晰但题材冷门，非独特做法，同类工具可替代。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "radeonbm-co-builder-skill-ai-collaboration-protocol",
+     "repo": "radeonbm/co-builder-skill",
+     "title": "开工前先立契约的 AI 协作模式开关",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 流程方法论扎实，但偏重通用工作协议，非具体场景的独家做法。（3 判：[45, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "terryduan-chn-resume-refiner",
+     "repo": "terryduan-chn/resume-refiner",
+     "title": "逐行核对经历数字与动词的简历改稿师",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 逻辑清晰，方法具体，但核心能力通用文本编辑工具可替代。（3 判：[62, 65, 72]）",
+     "分": 65
+    },
+    {
+     "id": "jia140431-png-deep-interview",
+     "repo": "jia140431-png/deep-interview",
+     "title": "需求没想全时，它用一问一答帮你补齐遗漏并生成需求卡",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 访谈方法论扎实，边界清晰，但可被通用对话流替代。（3 判：[72, 72, 75]）",
+     "分": 72
+    },
+    {
+     "id": "zhiblll-ai-grad-sop-workflow-sop-development",
+     "repo": "zhiblll/AI-Grad-SOP-Workflow",
+     "title": "先访谈挖透经历再动笔的 SOP 初稿师",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 方法论扎实，访谈流程清晰，但属于顾问技能可被替代（3 判：[72, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "jhjacobson-agent-homelab-intake",
+     "repo": "jhjacobson/agent-homelab",
+     "title": "草稿一句话，还你一份能直接开工的 AWS 项目简报",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 扎实的AWS脚手架前置流程，技能特定于个人环境，替代工具可完成（3 判：[45, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "jhjacobson-agent-homelab-kit-setup",
+     "repo": "jhjacobson/agent-homelab",
+     "title": "新机器认领整套工作区，写环境变量前先问你要指哪台服务",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 技术工具链配置技能，扎实但非独特，读者定位偏差。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "jhjacobson-agent-homelab-publish-to-wiki",
+     "repo": "jhjacobson/agent-homelab",
+     "title": "研究稿写完全文，一键落进自家 Wiki 待审区",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 功能扎实但属个人工具链，非普通创作者题材，边界清晰但换工具可做（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "jolexxa-bestie",
+     "repo": "jolexxa/bestie",
+     "title": "会先问你要不要改的编程搭子，不擅自碰你代码",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "jolexxa-bestie-hunt-leaks",
+     "repo": "jolexxa/bestie",
+     "title": "专挑代码里漏出来的抽象裂缝",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 诊断方法扎实，但属开发工具，且边界陈述不够突出（3 判：[35, 42, 65]）",
+     "分": 42
+    },
+    {
+     "id": "jolexxa-bestie-architecture",
+     "repo": "jolexxa/bestie",
+     "title": "新代码该住哪层，它先问再答",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 泛用开发架构指南，非独特题材，换工具亦可行，边界清晰但无独家价值（3 判：[45, 45, 45]）",
+     "分": 45
     }
    ]
   },
