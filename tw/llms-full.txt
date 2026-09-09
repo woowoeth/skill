@@ -1,7 +1,45 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 368 skills.
+# Full corpus, plain text. 369 skills.
+
+========================================================================
+## novel-writing
+## 每章三千字寫完就停，等你改完再續的長篇引擎
+URL: https://ourword.ai/skill/tw/i/roxy1103200-novel-novel-writing/
+URL (中文): https://ourword.ai/skill/tw/zh/i/roxy1103200-novel-novel-writing/
+Source: https://github.com/roxy1103200/novel/tree/HEAD/.claude/skills/novel-writing
+Updated: 2026-09-09
+Tags: writing, skill, roxy1103200
+
+Dropped your draft because you lost the thread? It tracks world, cast, and loose ends in layers, writes one.
+
+### What does this skill do?
+長篇小說的結構化創作與連載管理，採用「作者在環」的批次工作流。當用戶要求「創建/開始一本小說、寫/繼續/續寫、生成大綱、新增角色、查看未解決伏筆、檢查時間線/人物/一致性/風格、修繕某章後回填記憶」等與長篇幅虛構寫作相關的操作時使用。每次只按作者確認過的方向生成一個批次（默認 3,000 字，即一章），隨後輸出故事變化總結並停下等作者修繕，絕不未經確認自動把全書內容大批量推出。依靠世界觀/人物/大綱/章節 + 分層記憶 + 有界讀取與寫回協議維持跨章一致性，而非通讀全本。
+
+### Why is it worth installing?
+Author-in-the-loop batching: one chapter per pass, no auto-pilot. Layered memory and bounded read/write keep continuity by.
+
+### How do you install it?
+git clone --depth 1 https://github.com/roxy1103200/novel.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: roxy1103200/novel The repository ships 1 skills in total.
+
+--- 中文 ---
+追更到一半棄書？多半是作者忘了前文。它把世界觀、人物、伏筆分層記憶，每章寫完只報變化不硬推。
+
+### Q：這個 skill 做什麼？
+長篇小說的結構化創作與連載管理，採用「作者在環」的批次工作流。當用戶要求「創建/開始一本小說、寫/繼續/續寫、生成大綱、新增角色、查看未解決伏筆、檢查時間線/人物/一致性/風格、修繕某章後回填記憶」等與長篇幅虛構寫作相關的操作時使用。每次只按作者確認過的方向生成一個批次（默認 3,000 字，即一章），隨後輸出故事變化總結並停下等作者修繕，絕不未經確認自動把全書內容大批量推出。依靠世界觀/人物/大綱/章節 + 分層記憶 + 有界讀取與寫回協議維持跨章一致性，而非通讀全本。
+
+### Q：為什麼值得裝？
+作者在環的批次協議：每批只產一章，改完才繼續。記憶分層、讀寫有界，一致性靠機制而非重讀全文。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/roxy1103200/novel.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: roxy1103200/novel The repository ships 1 skills in total.
 
 ========================================================================
 ## short-drama-script
