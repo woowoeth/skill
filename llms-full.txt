@@ -42,6 +42,44 @@ git clone --depth 1 https://github.com/yooooohyou/dw_novel.git 然后把智能�
 Repository: yooooohyou/dw_novel Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
+## taxue-halftone
+## 六项不变式先定纸色墨色，再落网点
+URL: https://ourword.ai/skill/i/taxueseek-taxue-halftone/
+URL (中文): https://ourword.ai/skill/zh/i/taxueseek-taxue-halftone/
+Source: https://github.com/taxueseek/taxue-halftone
+Updated: 2026-09-09
+Tags: images, skill, taxueseek
+
+Turn any theme into print-textured covers, not filter skins. Halftone, riso, woodcut, cyanotype, torn-paper all.
+
+### What does this skill do?
+半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
+
+### Why is it worth installing?
+Locks six invariants before rendering—paper, ink role, overprint, mechanism, direction, type-image volume—so styles stay.
+
+### How do you install it?
+git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
+
+--- 中文 ---
+把任意主题做成有印刷质感的封面，不是滤镜套壳。半调、孔版、木刻、蓝晒、撕纸拼贴都按同一套结构出图。
+
+### Q：这个 skill 做什么？
+半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
+
+### Q：为什么值得装？
+出图前先定纸色、墨色角色、叠印、机制、走向、字图音量六项不变式，风格才不散。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
+
+========================================================================
 ## autosound-tuning
 ## 双AI轮流审听，把车内喇叭调到不刺耳为止
 URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
@@ -146,6 +184,44 @@ git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后�
 Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
 
 ========================================================================
+## travel-plan-viz
+## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
+URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
+URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
+Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
+Updated: 2026-09-09
+Tags: everyday, skill, zexuanw958-svg
+
+The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
+
+### What does this skill do?
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Why is it worth installing?
+Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+--- 中文 ---
+到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
+
+### Q：这个 skill 做什么？
+把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
+
+### Q：为什么值得装？
+「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+========================================================================
 ## multi-copywrite-alchemy
 ## 分析某位作者的多篇文章复刻其文风
 URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
@@ -182,6 +258,28 @@ git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后�
 
 ### Q：它从哪来？
 Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+
+========================================================================
+## design-review
+## 给 Go 代码库做地道性评审
+URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-09
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## trading-design
@@ -228,6 +326,44 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
+## story-deslop
+## 删掉「她眸色一暗」的网文去AI味改稿器
+URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
+URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
+Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
+Updated: 2026-09-09
+Tags: writing, skill, worldwonderer
+
+Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
+
+### What does this skill do?
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Why is it worth installing?
+Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
+
+### Q：这个 skill 做什么？
+网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
+
+### Q：为什么值得装？
+网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## video-shotcraft
 ## 照着 106 张分镜配方卡，把一句话拍成产品宣传片
 URL: https://ourword.ai/skill/i/vincentwei1021-video-shotcraft/
@@ -250,6 +386,50 @@ git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then p
 Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## caveman
+## 让 Claude 用原始人腔说话，据称省下 65% 的 token
+URL: https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/
+Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
+Updated: 2026-09-09
+Tags: play, skill, JuliusBrussee
+
+Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
+
+### What does this skill do?
+Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
+
+### Why is it worth installing?
+A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
+
+### How do you install it?
+git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
+
+========================================================================
+## deep-research
+## 13 个子代理组队做研究，互相审稿和事实核查
+URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
+Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
+Updated: 2026-09-09
+Tags: docs, skill, Imbad0202
+
+A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
+
+### What does this skill do?
+Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
+
+### Why is it worth installing?
+A serious open-source take on deep research — the division of labor and cross-checks are well designed.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
+
+========================================================================
 ## gstack
 ## YC 掌门的 Claude Code 全套配置，23 个角色分工
 URL: https://ourword.ai/skill/i/garrytan-gstack/
@@ -270,6 +450,28 @@ git clone --depth 1 https://github.com/garrytan/gstack.git Then point your agent
 
 ### Where does it come from?
 Repository: garrytan/gstack The repository ships 59 skills in total.
+
+========================================================================
+## planning-with-files
+## 任务拆解写到磁盘，/clear 后自动续上进度
+URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
+Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
+Updated: 2026-09-09
+Tags: meta, skill, OthmanAdi
+
+Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
+
+### What does this skill do?
+Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
+
+### Why is it worth installing?
+Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
+
+### How do you install it?
+git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## playable-prototype
@@ -562,44 +764,6 @@ git clone --depth 1 https://github.com/sagirimo/BioDSH.git Then point your agent
 Repository: sagirimo/BioDSH The repository ships 1 skills in total.
 
 ========================================================================
-## travel-plan-viz
-## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
-URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
-URL (中文): https://ourword.ai/skill/zh/i/zexuanw958-svg-travel-plan-viz/
-Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
-Updated: 2026-09-08
-Tags: everyday, skill, zexuanw958-svg
-
-The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
-
-### What does this skill do?
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Why is it worth installing?
-Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
---- 中文 ---
-到了当地没网、翻聊天记录找攻略最抓狂。它出单文件 HTML：交互地图 + 每日时间轴 + 出发前订票提醒，存手机上离线可读。
-
-### Q：这个 skill 做什么？
-把旅行行程做成美观、离线可读、手机优先的单文件 HTML（交互地图+每日时间轴+出发前订票提醒）。两种用法——只给目的地和天数让它帮你规划，或丢一份现成计划让它直接出页面。触发：旅行计划可视化、做旅行攻略网页、行程 HTML、travel plan visualization。
-
-### Q：为什么值得装？
-「离线可读、手机优先、单文件」——这三个约束是真在国外用过才想得到的。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
-========================================================================
 ## ljg-writes
 ## 一个观点经得住反例才肯落笔的写作引擎
 URL: https://ourword.ai/skill/i/lijigang-ljg-skills/
@@ -720,28 +884,6 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
-## design-review
-## 给 Go 代码库做地道性评审
-URL: https://ourword.ai/skill/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-08
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
 ## archify
 ## 画出来的架构图要和代码对得上，导出自带动效的 HTML
 URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
@@ -786,88 +928,6 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
 
 ========================================================================
-## story-deslop
-## 删掉「她眸色一暗」的网文去AI味改稿器
-URL: https://ourword.ai/skill/i/worldwonderer-oh-story-claudecode-story-deslop/
-URL (中文): https://ourword.ai/skill/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
-Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
-Updated: 2026-09-08
-Tags: writing, skill, worldwonderer
-
-Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
-
-### What does this skill do?
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Why is it worth installing?
-Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-检测并清除网文里的 AI 写作痕迹：模板化开头、翻译腔、排比堆砌，让文字回归人写的自然感。
-
-### Q：这个 skill 做什么？
-网文去AI味。检测并清除文本中的AI写作痕迹，让文字回归自然、非模板化。触发方式：/story-deslop、/去AI味、「去AI味」「这篇太AI了」「网文去AI味」。
-
-### Q：为什么值得装？
-网文读者对 AI 味极其敏感，平台也在查；这是全家桶里最保命的一件。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## caveman
-## 让 Claude 用原始人腔说话，据称省下 65% 的 token
-URL: https://ourword.ai/skill/i/juliusbrussee-caveman-caveman/
-Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
-Updated: 2026-09-08
-Tags: play, skill, JuliusBrussee
-
-Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
-
-### What does this skill do?
-Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
-
-### Why is it worth installing?
-A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
-
-### How do you install it?
-git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
-
-========================================================================
-## deep-research
-## 13 个子代理组队做研究，互相审稿和事实核查
-URL: https://ourword.ai/skill/i/imbad0202-academic-research-skills-deep-research/
-Source: https://github.com/Imbad0202/academic-research-skills/tree/HEAD/deep-research
-Updated: 2026-09-08
-Tags: docs, skill, Imbad0202
-
-A 13-agent research team with 8 modes — full studies, quick briefs, paper review, fact-checks and three-way literature scans on demand.
-
-### What does this skill do?
-Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 8 modes: full research, quick brief, paper review, lit-review, fact-check, three-way literature scan, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, sourc
-
-### Why is it worth installing?
-A serious open-source take on deep research — the division of labor and cross-checks are well designed.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Imbad0202/academic-research-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Imbad0202/academic-research-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
 ## i-have-adhd
 ## 把注意力当稀缺资源，让 Claude 一次只说一件事
 URL: https://ourword.ai/skill/i/ayghri-i-have-adhd-i-have-adhd/
@@ -888,28 +948,6 @@ git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your ag
 
 ### Where does it come from?
 Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
-
-========================================================================
-## planning-with-files
-## 任务拆解写到磁盘，/clear 后自动续上进度
-URL: https://ourword.ai/skill/i/othmanadi-planning-with-files-planning-with-files/
-Source: https://github.com/OthmanAdi/planning-with-files/tree/HEAD/.agents/skills/planning-with-files
-Updated: 2026-09-08
-Tags: meta, skill, OthmanAdi
-
-Plans live as Markdown on disk — surviving crashes, /clear and compaction; work resumes from the exact checkpoint every time.
-
-### What does this skill do?
-Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.
-
-### Why is it worth installing?
-Long tasks live or die on durable state; plain files beat fancy memory systems for robustness.
-
-### How do you install it?
-git clone --depth 1 https://github.com/OthmanAdi/planning-with-files.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: OthmanAdi/planning-with-files Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 18 skills in total.
 
 ========================================================================
 ## understand-figma
@@ -2198,44 +2236,6 @@ git clone --depth 1 https://github.com/Hao0321/claude-skill-social-post.git 然�
 
 ### Q：它从哪来？
 Repository: Hao0321/claude-skill-social-post The repository ships 1 skills in total.
-
-========================================================================
-## taxue-halftone
-## 六项不变式先定纸色墨色，再落网点
-URL: https://ourword.ai/skill/i/taxueseek-taxue-halftone/
-URL (中文): https://ourword.ai/skill/zh/i/taxueseek-taxue-halftone/
-Source: https://github.com/taxueseek/taxue-halftone
-Updated: 2026-09-04
-Tags: images, skill, taxueseek
-
-Turn any theme into print-textured covers, not filter skins. Halftone, riso, woodcut, cyanotype, torn-paper all.
-
-### What does this skill do?
-半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
-
-### Why is it worth installing?
-Locks six invariants before rendering—paper, ink role, overprint, mechanism, direction, type-image volume—so styles stay.
-
-### How do you install it?
-git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
-
---- 中文 ---
-把任意主题做成有印刷质感的封面，不是滤镜套壳。半调、孔版、木刻、蓝晒、撕纸拼贴都按同一套结构出图。
-
-### Q：这个 skill 做什么？
-半调海报：用限墨+网点把任意主题做成有结构、有质感、可复用的艺术封面。支持多种印刷语言（半调/孔版/双色/木刻/蓝晒/蓝染/复印机、1-bit 剪影、撕纸拼贴），按风格给出一致又有特色的封面。六项不变式出图前先定：纸色、墨色角色、叠印方式、印刷机制、主体走向、字图音量。触发词：半调海报、艺术封面、网点、孔版、双色、Riso、duotone、木刻、蓝晒、蓝染、蓝染海报、复印机美学、不完美印刷拼贴、撕纸拼贴、编辑型印刷拼贴、有意不完美、点阵解构、丝网海报、剪纸、窗花、中式剪纸、网点剪纸、经典致敬、风格模仿、致敬、名画、艺术流派、年代美学、视觉风格转译、平台封面（B站/小红书/抖音/公众号/头像/超宽）、主题结构印刷封面、限墨封面。不用于：全彩实拍、UI、图表、模板拼贴。
-
-### Q：为什么值得装？
-出图前先定纸色、墨色角色、叠印、机制、走向、字图音量六项不变式，风格才不散。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/taxueseek/taxue-halftone.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: taxueseek/taxue-halftone Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use, evals. The repository ships 1 skills in total.
 
 ========================================================================
 ## taxue-solar-polaroid
