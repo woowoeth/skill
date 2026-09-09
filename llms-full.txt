@@ -1,7 +1,45 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 368 skills.
+# Full corpus, plain text. 369 skills.
+
+========================================================================
+## novel-writing
+## 每章三千字写完就停，等你改完再续的长篇引擎
+URL: https://ourword.ai/skill/i/roxy1103200-novel-novel-writing/
+URL (中文): https://ourword.ai/skill/zh/i/roxy1103200-novel-novel-writing/
+Source: https://github.com/roxy1103200/novel/tree/HEAD/.claude/skills/novel-writing
+Updated: 2026-09-09
+Tags: writing, skill, roxy1103200
+
+Dropped your draft because you lost the thread? It tracks world, cast, and loose ends in layers, writes one.
+
+### What does this skill do?
+长篇小说的结构化创作与连载管理，采用「作者在环」的批次工作流。当用户要求「创建/开始一本小说、写/继续/续写、生成大纲、新增角色、查看未解决伏笔、检查时间线/人物/一致性/风格、修缮某章后回填记忆」等与长篇幅虚构写作相关的操作时使用。每次只按作者确认过的方向生成一个批次（默认 3,000 字，即一章），随后输出故事变化总结并停下等作者修缮，绝不未经确认自动把全书内容大批量推出。依靠世界观/人物/大纲/章节 + 分层记忆 + 有界读取与写回协议维持跨章一致性，而非通读全本。
+
+### Why is it worth installing?
+Author-in-the-loop batching: one chapter per pass, no auto-pilot. Layered memory and bounded read/write keep continuity by.
+
+### How do you install it?
+git clone --depth 1 https://github.com/roxy1103200/novel.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: roxy1103200/novel The repository ships 1 skills in total.
+
+--- 中文 ---
+追更到一半弃书？多半是作者忘了前文。它把世界观、人物、伏笔分层记忆，每章写完只报变化不硬推。
+
+### Q：这个 skill 做什么？
+长篇小说的结构化创作与连载管理，采用「作者在环」的批次工作流。当用户要求「创建/开始一本小说、写/继续/续写、生成大纲、新增角色、查看未解决伏笔、检查时间线/人物/一致性/风格、修缮某章后回填记忆」等与长篇幅虚构写作相关的操作时使用。每次只按作者确认过的方向生成一个批次（默认 3,000 字，即一章），随后输出故事变化总结并停下等作者修缮，绝不未经确认自动把全书内容大批量推出。依靠世界观/人物/大纲/章节 + 分层记忆 + 有界读取与写回协议维持跨章一致性，而非通读全本。
+
+### Q：为什么值得装？
+作者在环的批次协议：每批只产一章，改完才继续。记忆分层、读写有界，一致性靠机制而非重读全文。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/roxy1103200/novel.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: roxy1103200/novel The repository ships 1 skills in total.
 
 ========================================================================
 ## short-drama-script
