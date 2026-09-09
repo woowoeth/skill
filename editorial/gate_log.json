@@ -2,58 +2,380 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-09T18:05:51Z",
-   "判了": 7,
+   "时间": "2026-09-09T19:31:48Z",
+   "判了": 47,
    "过": 0,
    "明细": [
     {
-     "id": "gnipbao-mirage-tank-creator",
-     "repo": "gnipbao/mirage-tank-creator",
-     "title": "白底隐身、深底显形的双状态 PNG 生成器",
+     "id": "kraaxiom-securecode-ai",
+     "repo": "kraaxiom/securecode-ai",
+     "title": "代码刚写完就报 OWASP 漏洞清单的安全评审",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 45 分 < 80 —— 安全审计工具链，面向开发场景，虽专业扎实，但受众偏开发者，非店主目标人群。（3 判：[42, 45, 45]）",
+     "分": 45
     },
     {
-     "id": "jnmetacode-ai-shortfilm-prompts-shortfilm-prompt",
-     "repo": "jnMetaCode/ai-shortfilm-prompts",
-     "title": "五段式电影级短片提示词生成器",
+     "id": "nic69han-zenote",
+     "repo": "Nic69Han/ZeNote",
+     "title": "七件套一次装齐，笔记从采集到回看全包圆",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
     },
     {
-     "id": "eze-is-web-access",
-     "repo": "eze-is/web-access",
-     "title": "所有联网动作都从这一个门进出",
+     "id": "nic69han-zenote-caveman",
+     "repo": "Nic69Han/ZeNote",
+     "title": "省 75% token 的穴居人语模式",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 55 分 < 80 —— 沟通风格压缩，做法具体，但类似工具不少，非独有。（3 判：[45, 55, 62]）",
+     "分": 55
     },
     {
-     "id": "j178-prek-prek",
-     "repo": "j178/prek",
-     "title": "Rust 写的 pre-commit 平替",
+     "id": "nic69han-zenote-openspec-propose",
+     "repo": "Nic69Han/ZeNote",
+     "title": "设计、规格、任务清单一次到齐的变更提案生成器",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 45 分 < 80 —— 是开发工具链的官方流程模板，非创作者可用场景，交付物不明确。（3 判：[25, 45, 58]）",
+     "分": 45
     },
     {
-     "id": "geekjourneyx-ai-daily-skill-ai-daily-news",
-     "repo": "geekjourneyx/ai-daily-skill",
-     "title": "AI 新闻 RSS 进来，分类摘要和苹果风网页出去",
+     "id": "nic69han-zenote-openspec-apply-change",
+     "repo": "Nic69Han/ZeNote",
+     "title": "OpenSpec 变更单拆成可执行任务清单",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 45 分 < 80 —— 面向开发者工具链，虽专注但非普通人题材，价值有限。（3 判：[25, 45, 45]）",
+     "分": 45
     },
     {
-     "id": "qdrant-skills",
-     "repo": "qdrant/skills",
-     "title": "向量库调优前先问一句：你的搜索是慢在召回还是慢在重排",
+     "id": "ces0491-tokenwise-route",
+     "repo": "ces0491/tokenwise",
+     "title": "换模型前先告诉你便宜的那档放弃了什么",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "品味 47 分 < 80 —— 模型路由工具，对企业开发者有用但非大众题材，边界清楚但替代方案多。（3 判：[47, 47, 72]）",
+     "分": 47
     },
     {
-     "id": "jimliu-science-skills",
-     "repo": "JimLiu/science-skills",
-     "title": "29 个科学技能，按学科分类随取随用",
+     "id": "isaigonseo-abc",
+     "repo": "isaigonseo/abc",
+     "title": "",
      "过": false,
-     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "isaigonseo-abc-app-design-system",
+     "repo": "isaigonseo/abc",
+     "title": "Material 3 与 Apple HIG 双轨合",
+     "过": false,
+     "为什么": "品味 63 分 < 80 —— 设计系统通用方法论，边界清晰但非独家，如官方文档整理。（3 判：[35, 63, 65]）",
+     "分": 63
+    },
+    {
+     "id": "isaigonseo-abc-design-review",
+     "repo": "isaigonseo/abc",
+     "title": "交付前替你过一遍可访问性清单的 UI 质检员",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 扎实的UI审查清单，具体可执行，但属通用工作流，其他工具或团队规范也能达成。（3 判：[52, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "isaigonseo-abc-web-design",
+     "repo": "isaigonseo/abc",
+     "title": "落地页先问转化漏斗再谈配色的网站设计稿",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 落地的转化型网站设计指南，结构实用，但业界通用原则居多，非独有。（3 判：[55, 65, 65]）",
+     "分": 65
+    },
+    {
+     "id": "miguelz80-peticao-inicial-elaborador-inicial",
+     "repo": "Miguelz80/peticao-inicial",
+     "title": "补医险诉讼的起诉状初稿，按律所格式出 DOCX",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向特定律所的业务流程自动化，普通用户难以直接使用，但边界和流程清晰。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "lbeltramino-ledge-ledge",
+     "repo": "lbeltramino/ledge",
+     "title": "长任务进行到哪一步，它替你实时写进笔记",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 工具用法清晰扎实，但本质是官方文档，换其他笔记工具也可实现类似效果。（3 判：[45, 62, 82]）",
+     "分": 62
+    },
+    {
+     "id": "devalees-ai_system_template-cost_monitor",
+     "repo": "devalees/ai_system_template",
+     "title": "会话日志里揪出最烧钱的十次调用",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具链内部监控，功能明确但换工具可替代，非生活创作场景。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "devalees-ai_system_template-django_handshake",
+     "repo": "devalees/ai_system_template",
+     "title": "Django 后端握手器",
+     "过": false,
+     "为什么": "品味 25 分 < 80 —— 针对特定产品内部的开发工具链流程，无通用生活创作价值，仅限专属环境。（3 判：[25, 25, 35]）",
+     "分": 25
+    },
+    {
+     "id": "devalees-ai_system_template-output_validator",
+     "repo": "devalees/ai_system_template",
+     "title": "交付物过 QA 门禁前，先让它自检语法与合规",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 面向开发工具链的模板化技能，换工具也能做，缺乏独到且清晰的边界。（3 判：[40, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "levme-skills-chinese-docx-format",
+     "repo": "LevMe/skills",
+     "title": "中文论文排版工，字体版心目录页码一次到位",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 面向工具链过窄，虽规则清晰，但替代性强，无独特边界。（3 判：[45, 62, 62]）",
+     "分": 62
+    },
+    {
+     "id": "aviralmathur-enterprise-brain-enterprise-brain",
+     "repo": "aviralmathur/enterprise-brain",
+     "title": "问一句就知道该派哪个AI员工干活的调度台",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业级Agent编排框架，实用但属开发工具链，题材受限且模板性强。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "monteiro-consulting-deck-reader-deck-reader",
+     "repo": "monteiro-consulting/deck-reader",
+     "title": "按融资阶段逐格核对路演PPT的查漏员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 这是给特定AI工具做的工程流程说明，普通读者难用，且更像内部文档而非可独立交付的（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "rob1104-tracex-testing-best-practices",
+     "repo": "rob1104/tracex",
+     "title": "测试用例先问删掉哪条才心疼的 Laravel 评审",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链且偏官方文档，专业但非普通用户刚需，有边界但替代品多。（3 判：[42, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "rob1104-tracex-deploying-to-cloud",
+     "repo": "rob1104/tracex",
+     "title": "Laravel 应用一键上云，从部署到账单全接管",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 官方产品CLI操作指南，扎实但属于产品文档范畴，读者限定开发者。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "rob1104-tracex-infer-conventions",
+     "repo": "rob1104/tracex",
+     "title": "一份会随代码库长大的「我们这儿这么写」活文档",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Laravel开发工具，功能扎实，但题材与边界对普通读者偏冷。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "kevin8634-insurance-content-growth",
+     "repo": "kevin8634/insurance-content-growth",
+     "title": "保险内容从选题到成片只差这七步的陪跑教练",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 面向从业者的工具，场景具体但边界受限于行业，非普通人直接可用。（3 判：[62, 68, 72]）",
+     "分": 68
+    },
+    {
+     "id": "haveaniceday-code-core-e-commerce-generate-unit-tests",
+     "repo": "haveaniceday-code/core-e-commerce",
+     "title": "专测折扣与结账边界的单测生成器",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 工程测试生成指南，目标明确，但工具链属性强，同质化，普通人不适用。（3 判：[42, 42, 42]）",
+     "分": 42
+    },
+    {
+     "id": "john-ezra-null-stack",
+     "repo": "john-ezra/null-stack",
+     "title": "空仓库起步的 Agent 技能全家桶，装完即用",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "john-ezra-null-stack-agent-prose",
+     "repo": "john-ezra/null-stack",
+     "title": "给 Agent 写说明书的人，先过一遍这双眼睛",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 有方法有步骤，但本质是给写代理文档的指南，换个工具也能做。（3 判：[45, 55, 72]）",
+     "分": 55
+    },
+    {
+     "id": "john-ezra-null-stack-how",
+     "repo": "john-ezra/null-stack",
+     "title": "从触发点到效果，一条路径讲清代码怎么跑",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 对开发者有用但非普通用户题材，方法清晰但工具可替代（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "john-ezra-null-stack-shakedown",
+     "repo": "john-ezra/null-stack",
+     "title": "专找方案里最脆的那条缝的破坏性测试员",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 对压力测试的流程与边界定义清晰，方法独特，非泛泛而谈。（3 判：[62, 72, 82]）",
+     "分": 72
+    },
+    {
+     "id": "alexandrbasis-codex-mem-maintenance",
+     "repo": "alexandrbasis/codex-mem",
+     "title": "记忆系统体检大夫，哪儿堵了当场给你通开",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 技术维护技能，面向开发者，边界清晰但受众冷门，非生活创作题材。（3 判：[42, 55, 65]）",
+     "分": 55
+    },
+    {
+     "id": "alexandrbasis-codex-mem-memory",
+     "repo": "alexandrbasis/codex-mem",
+     "title": "会先问你要不要存档的会话记忆管家",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 工具操作指南，实用但泛泛，边界模糊，非独特方法论。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "fmbento-ai-agents-skills-for-academic-use",
+     "repo": "fmbento/AI-Agents-SKILLS-for-Academic-Use",
+     "title": "学术全流程技能包：从读文献到可视化输出",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "fmbento-ai-agents-skills-for-academic-use-arquiteto-mermaid",
+     "repo": "fmbento/AI-Agents-SKILLS-for-Academic-Use",
+     "title": "讲义笔记扔进去，出来一张能直接贴进论文的 Merma",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 生成Mermaid图的规则清晰，但依赖外部规范且输出形式受工具链限制，价值有限。（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "fmbento-ai-agents-skills-for-academic-use-matplotlib",
+     "repo": "fmbento/AI-Agents-SKILLS-for-Academic-Use",
+     "title": "连坐标轴刻度密度都要亲手指定的科研绘图底层库",
+     "过": false,
+     "为什么": "品味 41 分 < 80 —— 官方库使用指南，功能罗列，无独特判断或边界说明。（3 判：[30, 41, 45]）",
+     "分": 41
+    },
+    {
+     "id": "fmbento-ai-agents-skills-for-academic-use-scientific-slides",
+     "repo": "fmbento/AI-Agents-SKILLS-for-Academic-Use",
+     "title": "答辩前夜把PPT从60页砍到18页的学术排版师",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 提供了流程和模板，但泛泛，视觉效果或结构设计不独特，其他工具可替代。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "ischaa-cog-coach-k-credit",
+     "repo": "ischaa-cog/coach-k-credit",
+     "title": "只引 Coach K 原文作答的信贷顾问",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 题材偏专业，交付边界清晰但对普通/创作者读者太冷，属工具类，难上80。（3 判：[52, 52, 72]）",
+     "分": 52
+    },
+    {
+     "id": "balerdis-darq-estandar-versiones-asi",
+     "repo": "balerdis/darq",
+     "title": "版本号报上来先查组织 ASI 政策再放行的门卫",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业内部版本管控规范，边界清晰但仅适用于特定组织，读者狭窄。（3 判：[42, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "balerdis-darq-laravel-security",
+     "repo": "balerdis/darq",
+     "title": "审 Laravel 先查路由与中间件漏配的安审员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向开发工具链的实操指南，内容扎实但题材冷在读者而非生活，难达精选。（3 判：[45, 45, 52]）",
+     "分": 45
+    },
+    {
+     "id": "iksnae-agent-commons-agent-commons",
+     "repo": "iksnae/agent-commons",
+     "title": "跨会话找回 Agent 收件箱的共享记忆接线员",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 基于开发工具链的技能，功能明确但边界抽象，价值依赖配置，非普通用户刚需。（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "thewhiteword-hermes-story-architect-story-editor",
+     "repo": "TheWhiteWord/hermes-story-architect",
+     "title": "改剧本时每次落笔都先过一遍审校关",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 通用编辑工作流，具体做法不明显，换工具可做。（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "thewhiteword-hermes-story-architect-story-loader",
+     "repo": "TheWhiteWord/hermes-story-architect",
+     "title": "打开故事项目先装好记忆与索引的存档读取器",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 工具链功能，读者面向开发者，实用但非不可替代的生活题材（3 判：[45, 62, 65]）",
+     "分": 62
+    },
+    {
+     "id": "jennitong-statistics-skill-creator",
+     "repo": "Jennitong/statistics-skill-creator",
+     "title": "访谈你一次，生成一个带R脚本的统计检验Skill文件",
+     "过": false,
+     "为什么": "品味 65 分 < 80 —— 面向开发者工具链题材冷门，虽具流程性但普通读者难用，价值有限。（3 判：[45, 65, 75]）",
+     "分": 65
+    },
+    {
+     "id": "lemonberrylabs-lemonvite-plugin-lemonvite-invitations",
+     "repo": "lemonberrylabs/lemonvite-plugin",
+     "title": "聊天里说清聚会，它就出邀请函和 RSVP 页",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 有清晰流程但本质是自家MCP产品接入指南，读者面窄，换官网也能做。（3 判：[42, 45, 60]）",
+     "分": 45
+    },
+    {
+     "id": "jasc66-scroll-flyover",
+     "repo": "jasc66/scroll-flyover",
+     "title": "滚动即飞行，纯代码生成 3D 场景页",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 手法扎实可行，但可被手动实现，非独家且边界尚清。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "mowafymxis-blend-blend",
+     "repo": "mowafymxis/blend",
+     "title": "先做一小时设计访谈再动手改界面的前端管家",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 组织精密、边界清楚，但本质是技能协调框架，非独立成品，类似方法论。（3 判：[45, 45, 65]）",
+     "分": 45
+    },
+    {
+     "id": "entropy-student-spike.skill",
+     "repo": "entropy-student/spike.skill",
+     "title": "8 个技能一包拆，专治「装完吃灰」的精选集",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "entropy-student-spike.skill-meme-music-router",
+     "repo": "entropy-student/spike.skill",
+     "title": "先锁定梗核再决定用歌还是用图演的 Meme 编排器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 流程设计扎实边界清晰，但属创作工具链，可替代性较高。（3 判：[65, 72, 72]）",
+     "分": 72
+    },
+    {
+     "id": "entropy-student-spike.skill-video-talkcraft-design-orchestrator",
+     "repo": "entropy-student/spike.skill",
+     "title": "动态读取上游流程，只加两个确认点的视频编排器",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 编排器合理但依赖外部，自身交付物与价值边界模糊，非独立可复用成品。（3 判：[35, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "entropy-student-spike.skill-music-quality-radar-音乐质量雷达",
+     "repo": "entropy-student/spike.skill",
+     "title": "同一首歌，先听出它被压到几成再决定要不要换源",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 判断框架清晰、拒绝术语堆砌，但本质是方法论，替代工具易实现。（3 判：[72, 72, 72]）",
+     "分": 72
     }
    ]
   },
