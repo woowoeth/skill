@@ -4,6 +4,192 @@
 # Full corpus, plain text. 369 skills.
 
 ========================================================================
+## playable-prototype
+## 一次出五個能玩的遊戲原型，機器人替你按過鍵
+URL: https://ourword.ai/skill/tw/i/didrod205-claude-astra-playable-prototype/
+Source: https://github.com/didrod205/claude-astra/tree/HEAD/playable-prototype
+Updated: 2026-09-10
+Tags: work, skill, didrod205
+
+Stop describing game ideas in words. Drop one in, get several divergent, playable prototypes—each self-contained.
+
+### What does this skill do?
+Turn a game idea into several genuinely different, genuinely playable browser prototypes in one pass, each self-contained and each provably working — headlessly playtested by a bot that presses the buttons and checks the game responds. Use when asked to prototype, mock up, or spike a game or an interactive toy; to explore a mechanic in a few directions before committing; to build a small browser g
+
+### Why is it worth installing?
+It doesn't ship static mockups that look like games—it ships runnable prototypes, verified by a headless bot that interacts for.
+
+### How do you install it?
+git clone --depth 1 https://github.com/didrod205/claude-astra.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: didrod205/claude-astra Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## ip-takedown
+## 四類處置路徑分流侵權通知的版權下架助手
+URL: https://ourword.ai/skill/tw/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
+URL (中文): https://ourword.ai/skill/tw/zh/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
+Source: https://github.com/yuandian-ailaw/agent-for-legal-cn/tree/HEAD/legal-skillpack-ip-legal/skills/ip-takedown
+Updated: 2026-09-10
+Tags: play, skill, yuandian-ailaw
+
+Platform got a takedown notice? Don't delete blindly. Route it per Article 14: comply, counter-notice, negotiate.
+
+### What does this skill do?
+依據中國《信息網絡傳播權保護條例》，可起草該條例第十四條規定的版權侵權通知書；對平臺接收的侵權通知開展分流研判，區分採取遵從下架、提交反通知、雙方協商、不予處置四類處置方式；亦可依據條例第十六條起草反通知書，申請恢復已下架內容。適用於用戶向平臺發起版權刪除通知、研判侵權通知處置方案、提交反通知申請恢復下架內容等業務場景。
+
+### Why is it worth installing?
+Turns Articles 14 & 16 of China's ISP copyright rules into a decision tree, so you classify before acting—avoiding wrongful.
+
+### How do you install it?
+git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+平臺收到侵權通知別急著刪——先按條例十四條分流：遵從下架、反通知、協商還是不理，每一步都有條文依據，不靠拍腦袋。
+
+### Q：這個 skill 做什麼？
+依據中國《信息網絡傳播權保護條例》，可起草該條例第十四條規定的版權侵權通知書；對平臺接收的侵權通知開展分流研判，區分採取遵從下架、提交反通知、雙方協商、不予處置四類處置方式；亦可依據條例第十六條起草反通知書，申請恢復已下架內容。適用於用戶向平臺發起版權刪除通知、研判侵權通知處置方案、提交反通知申請恢復下架內容等業務場景。
+
+### Q：為什麼值得裝？
+把《信息網絡傳播權保護條例》第十四、十六條拆成可執行的分流邏輯，通知來了先定性再動手。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## speak-human-tw
+## 繁體中文去 AI 味：把「綜上所述」改回人話
+URL: https://ourword.ai/skill/tw/i/raymondhou0917-speak-human-tw/
+URL (中文): https://ourword.ai/skill/tw/zh/i/raymondhou0917-speak-human-tw/
+Source: https://github.com/Raymondhou0917/speak-human-tw
+Updated: 2026-09-10
+Tags: writing, skill, Raymondhou0917
+
+Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+
+### What does this skill do?
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Why is it worth installing?
+Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+--- 中文 ---
+一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
+
+### Q：這個 skill 做什麼？
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Q：為什麼值得裝？
+不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## comfyui-mcp
+## 自然語言改工作流，178 個工具隨叫隨到
+URL: https://ourword.ai/skill/tw/i/artokun-comfyui-mcp/
+Source: https://github.com/artokun/comfyui-mcp
+Updated: 2026-09-10
+Tags: images, collection, artokun
+
+A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
+
+### What does this skill do?
+Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
+
+### Why is it worth installing?
+ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
+
+### How do you install it?
+git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
+## trading-design
+## 按專業交易軟件的規範設計盯盤界面
+URL: https://ourword.ai/skill/tw/i/vanillagreencom-vstack-trading-design/
+Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+Updated: 2026-09-10
+Tags: images, skill, vanillagreencom
+
+A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+
+### What does this skill do?
+Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+
+### Why is it worth installing?
+Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## sprite-gen
+## 組件行流水線出精靈圖集，帶 QA 報告和運行時清單
+URL: https://ourword.ai/skill/tw/i/aldegad-sprite-gen/
+Source: https://github.com/aldegad/sprite-gen
+Updated: 2026-09-10
+Tags: images, skill, aldegad
+
+One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
+
+### What does this skill do?
+Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
+
+### Why is it worth installing?
+Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aldegad/sprite-gen The repository ships 1 skills in total.
+
+========================================================================
+## i-have-adhd
+## 把注意力當稀缺資源，讓 Claude 一次只說一件事
+URL: https://ourword.ai/skill/tw/i/ayghri-i-have-adhd-i-have-adhd/
+Source: https://github.com/ayghri/i-have-adhd/tree/HEAD/.cursor/skills/i-have-adhd
+Updated: 2026-09-10
+Tags: meta, skill, ayghri
+
+Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.
+
+### What does this skill do?
+Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".
+
+### Why is it worth installing?
+A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
+
+========================================================================
 ## novel-writing
 ## 每章三千字寫完就停，等你改完再續的長篇引擎
 URL: https://ourword.ai/skill/tw/i/roxy1103200-novel-novel-writing/
@@ -260,42 +446,26 @@ git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point yo
 Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## speak-human-tw
-## 繁體中文去 AI 味：把「綜上所述」改回人話
-URL: https://ourword.ai/skill/tw/i/raymondhou0917-speak-human-tw/
-URL (中文): https://ourword.ai/skill/tw/zh/i/raymondhou0917-speak-human-tw/
-Source: https://github.com/Raymondhou0917/speak-human-tw
+## seedance-prompt-library
+## Seedance 2.5 視頻提示詞模板庫
+URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
+Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
 Updated: 2026-09-09
-Tags: writing, skill, Raymondhou0917
+Tags: images, skill, LearnPrompt
 
-Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
 
 ### What does this skill do?
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
 
 ### Why is it worth installing?
-Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
 
 ### How do you install it?
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
 
 ### Where does it come from?
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
-
---- 中文 ---
-一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
-
-### Q：這個 skill 做什麼？
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
-
-### Q：為什麼值得裝？
-不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
 
 ========================================================================
 ## textile-toy-portrait
@@ -412,6 +582,44 @@ git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然後�
 Repository: redfox-data/redfox-community The repository ships 1 skills in total.
 
 ========================================================================
+## math-modeling
+## 三天賽程裡做完數學建模競賽全流程
+URL: https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/
+URL (中文): https://ourword.ai/skill/tw/zh/i/xiaomacoltai-math-modeling-skill/
+Source: https://github.com/XiaoMaColtAI/math-modeling-skill
+Updated: 2026-09-09
+Tags: learn, skill, XiaoMaColtAI
+
+A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
+
+### What does this skill do?
+當用戶要求數學建模、建模競賽、建模分析、代碼求解、結果可視化或生成數學建模論文時使用。支持完整三階段流程、單獨執行任一角色，以及在關鍵節點使用獨立 Subagent 進行階段內質檢；默認只啟用質檢 Subagent，用戶可明確選擇額外協作。
+
+### Why is it worth installing?
+Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
+
+### How do you install it?
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+--- 中文 ---
+建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。
+
+### Q：這個 skill 做什麼？
+當用戶要求數學建模、建模競賽、建模分析、代碼求解、結果可視化或生成數學建模論文時使用。支持完整三階段流程、單獨執行任一角色，以及在關鍵節點使用獨立 Subagent 進行階段內質檢；默認只啟用質檢 Subagent，用戶可明確選擇額外協作。
+
+### Q：為什麼值得裝？
+按競賽真實節奏設計的，不是把「數學建模」當學科名詞做個通用助手。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+========================================================================
 ## punk-cover
 ## 同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成
 URL: https://ourword.ai/skill/tw/i/adrianpunk-punk-skill-punk-cover/
@@ -454,50 +662,6 @@ git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent 
 
 ### Where does it come from?
 Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
-## trading-design
-## 按專業交易軟件的規範設計盯盤界面
-URL: https://ourword.ai/skill/tw/i/vanillagreencom-vstack-trading-design/
-Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
-Updated: 2026-09-09
-Tags: images, skill, vanillagreencom
-
-A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
-
-### What does this skill do?
-Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
-
-### Why is it worth installing?
-Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
-
-### How do you install it?
-git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
-
-========================================================================
-## sprite-gen
-## 組件行流水線出精靈圖集，帶 QA 報告和運行時清單
-URL: https://ourword.ai/skill/tw/i/aldegad-sprite-gen/
-Source: https://github.com/aldegad/sprite-gen
-Updated: 2026-09-09
-Tags: images, skill, aldegad
-
-One line, one clean sprite sheet — state rows, alpha cleanup, frame extraction and runtime atlases, ready to drop straight into your engine.
-
-### What does this skill do?
-Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, numeric sprite-request SSoT, per-state layout guides, image-gen row strips, chroma-key alpha cleanup, connected-component frame extraction, cell-based atlas composition, QA reports, and runtime manifest frame_layout. Its curation webview also serves ANY image-candidate set (icons, logos, generated dr
-
-### Why is it worth installing?
-Art is indie dev's biggest wall; this turns "draw me a sprite" into a one-liner with engine-ready output.
-
-### How do you install it?
-git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: aldegad/sprite-gen The repository ships 1 skills in total.
 
 ========================================================================
 ## story-deslop
@@ -724,28 +888,6 @@ git clone --depth 1 https://github.com/luanyi824-hash/xiaxia.git 然後把智能
 Repository: luanyi824-hash/xiaxia Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
 
 ========================================================================
-## playable-prototype
-## 一次出五個能玩的遊戲原型，機器人替你按過鍵
-URL: https://ourword.ai/skill/tw/i/didrod205-claude-astra-playable-prototype/
-Source: https://github.com/didrod205/claude-astra/tree/HEAD/playable-prototype
-Updated: 2026-09-08
-Tags: work, skill, didrod205
-
-Stop describing game ideas in words. Drop one in, get several divergent, playable prototypes—each self-contained.
-
-### What does this skill do?
-Turn a game idea into several genuinely different, genuinely playable browser prototypes in one pass, each self-contained and each provably working — headlessly playtested by a bot that presses the buttons and checks the game responds. Use when asked to prototype, mock up, or spike a game or an interactive toy; to explore a mechanic in a few directions before committing; to build a small browser g
-
-### Why is it worth installing?
-It doesn't ship static mockups that look like games—it ships runnable prototypes, verified by a headless bot that interacts for.
-
-### How do you install it?
-git clone --depth 1 https://github.com/didrod205/claude-astra.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: didrod205/claude-astra Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
-
-========================================================================
 ## hand-drawn-collage
 ## 照片變手撕紙拼貼畫，原圖配色一件不丟
 URL: https://ourword.ai/skill/tw/i/xuqser-hand-drawn-collage/
@@ -910,28 +1052,6 @@ git clone --depth 1 https://github.com/yvonnechen202608-byte/picture-design.git 
 Repository: yvonnechen202608-byte/picture-design Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## seedance-prompt-library
-## Seedance 2.5 視頻提示詞模板庫
-URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
-Source: https://github.com/LearnPrompt/awesome-seedance/tree/HEAD/agents/skills/seedance-prompt-library
-Updated: 2026-09-08
-Tags: images, skill, LearnPrompt
-
-Tired of prompts that miss the mark? Each template is reverse-engineered from top-rated Seedance cases on.
-
-### What does this skill do?
-Verified prompt templates and structures for Seedance 2.5 / 2.0 video generation, distilled from the highest-performing published cases on goodcase.ai. Use when the user asks to write, revise, or review a Seedance video prompt, or asks how to prompt Seedance for a specific kind of shot (narrative short, ad/commercial, UGC talk-to-camera, dialogue with lip-sync, action, product reveal, and similar)
-
-### Why is it worth installing?
-Not generic tips—real structures pulled from winning outputs. It tells you which sentence pattern fits which shot type, saving.
-
-### How do you install it?
-git clone --depth 1 https://github.com/LearnPrompt/awesome-seedance.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: LearnPrompt/awesome-seedance The repository ships 1 skills in total.
-
-========================================================================
 ## dnr-flat-pic
 ## 不描邊不追光影，只留身份與空間關係的扁平化壓縮
 URL: https://ourword.ai/skill/tw/i/createlafont-dnr-flat-pic/
@@ -1052,44 +1172,6 @@ git clone --depth 1 https://github.com/lijigang/ljg-skills.git 然後把智能�
 Repository: lijigang/ljg-skills The repository ships 1 skills in total.
 
 ========================================================================
-## math-modeling
-## 三天賽程裡做完數學建模競賽全流程
-URL: https://ourword.ai/skill/tw/i/xiaomacoltai-math-modeling-skill/
-URL (中文): https://ourword.ai/skill/tw/zh/i/xiaomacoltai-math-modeling-skill/
-Source: https://github.com/XiaoMaColtAI/math-modeling-skill
-Updated: 2026-09-08
-Tags: learn, skill, XiaoMaColtAI
-
-A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
-
-### What does this skill do?
-當用戶要求數學建模、建模競賽、建模分析、代碼求解、結果可視化或生成數學建模論文時使用。支持完整三階段流程、單獨執行任一角色，以及在關鍵節點使用獨立 Subagent 進行階段內質檢；默認只啟用質檢 Subagent，用戶可明確選擇額外協作。
-
-### Why is it worth installing?
-Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
-
-### How do you install it?
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
---- 中文 ---
-建模競賽最難的是三天內同時搞定建模、編程、寫論文。它按三階段分工推進，每階段還有獨立質檢 subagent 把關。
-
-### Q：這個 skill 做什麼？
-當用戶要求數學建模、建模競賽、建模分析、代碼求解、結果可視化或生成數學建模論文時使用。支持完整三階段流程、單獨執行任一角色，以及在關鍵節點使用獨立 Subagent 進行階段內質檢；默認只啟用質檢 Subagent，用戶可明確選擇額外協作。
-
-### Q：為什麼值得裝？
-按競賽真實節奏設計的，不是把「數學建模」當學科名詞做個通用助手。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
-========================================================================
 ## email-marketing-bible
 ## 做郵件營銷的顧問
 URL: https://ourword.ai/skill/tw/i/cosmoblk-email-marketing-bible/
@@ -1176,28 +1258,6 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
-
-========================================================================
-## i-have-adhd
-## 把注意力當稀缺資源，讓 Claude 一次只說一件事
-URL: https://ourword.ai/skill/tw/i/ayghri-i-have-adhd-i-have-adhd/
-Source: https://github.com/ayghri/i-have-adhd/tree/HEAD/.cursor/skills/i-have-adhd
-Updated: 2026-09-08
-Tags: meta, skill, ayghri
-
-Claude tuned for ADHD brains — short lines, one thing at a time, zero rambling; conversation designed around attention as a scarce resource.
-
-### What does this skill do?
-Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".
-
-### Why is it worth installing?
-A rare skill that takes neurodivergence seriously — and its anti-rambling rules help everyone.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
 
 ========================================================================
 ## understand-figma
@@ -1444,28 +1504,6 @@ git clone --depth 1 https://github.com/AIDevGTM/gtm-cofounder.git Then point you
 
 ### Where does it come from?
 Repository: AIDevGTM/gtm-cofounder The repository ships 18 skills in total. Homepage: https://gtmcofounder.com
-
-========================================================================
-## comfyui-mcp
-## 自然語言改工作流，178 個工具隨叫隨到
-URL: https://ourword.ai/skill/tw/i/artokun-comfyui-mcp/
-Source: https://github.com/artokun/comfyui-mcp
-Updated: 2026-09-07
-Tags: images, collection, artokun
-
-A local-first control plane for ComfyUI — an MCP server plus sidebar agent that generates media, authors and runs workflows, and edits your live graph in plain language.
-
-### What does this skill do?
-Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.
-
-### Why is it worth installing?
-ComfyUI's node-wiring scares people off; this turns dragging nodes into plain talk, fully local, nothing uploaded.
-
-### How do you install it?
-git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
 
 ========================================================================
 ## writing-agent
@@ -9122,44 +9160,6 @@ git clone --depth 1 https://github.com/zhlmi/script-forging.git 然後把智能�
 
 ### Q：它從哪來？
 Repository: zhlmi/script-forging Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## ip-takedown
-## 四類處置路徑分流侵權通知的版權下架助手
-URL: https://ourword.ai/skill/tw/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
-URL (中文): https://ourword.ai/skill/tw/zh/i/yuandian-ailaw-agent-for-legal-cn-ip-takedown/
-Source: https://github.com/yuandian-ailaw/agent-for-legal-cn/tree/HEAD/legal-skillpack-ip-legal/skills/ip-takedown
-Updated: 2026-06-04
-Tags: play, skill, yuandian-ailaw
-
-Platform got a takedown notice? Don't delete blindly. Route it per Article 14: comply, counter-notice, negotiate.
-
-### What does this skill do?
-依據中國《信息網絡傳播權保護條例》，可起草該條例第十四條規定的版權侵權通知書；對平臺接收的侵權通知開展分流研判，區分採取遵從下架、提交反通知、雙方協商、不予處置四類處置方式；亦可依據條例第十六條起草反通知書，申請恢復已下架內容。適用於用戶向平臺發起版權刪除通知、研判侵權通知處置方案、提交反通知申請恢復下架內容等業務場景。
-
-### Why is it worth installing?
-Turns Articles 14 & 16 of China's ISP copyright rules into a decision tree, so you classify before acting—avoiding wrongful.
-
-### How do you install it?
-git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-平臺收到侵權通知別急著刪——先按條例十四條分流：遵從下架、反通知、協商還是不理，每一步都有條文依據，不靠拍腦袋。
-
-### Q：這個 skill 做什麼？
-依據中國《信息網絡傳播權保護條例》，可起草該條例第十四條規定的版權侵權通知書；對平臺接收的侵權通知開展分流研判，區分採取遵從下架、提交反通知、雙方協商、不予處置四類處置方式；亦可依據條例第十六條起草反通知書，申請恢復已下架內容。適用於用戶向平臺發起版權刪除通知、研判侵權通知處置方案、提交反通知申請恢復下架內容等業務場景。
-
-### Q：為什麼值得裝？
-把《信息網絡傳播權保護條例》第十四、十六條拆成可執行的分流邏輯，通知來了先定性再動手。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## recomp-coach
