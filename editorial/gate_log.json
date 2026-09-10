@@ -2,449 +2,107 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
-   "时间": "2026-09-10T11:24:29Z",
-   "判了": 56,
-   "过": 7,
+   "时间": "2026-09-10T12:25:26Z",
+   "判了": 14,
+   "过": 0,
    "明细": [
     {
-     "id": "mirzaaghazadeh-iphone-duo-skills",
-     "repo": "mirzaaghazadeh/iphone-duo-skills",
-     "title": "折叠 iPhone 上写 App：铰链、竖条",
+     "id": "gnipbao-openai-image-prompt-writer",
+     "repo": "gnipbao/openai-image-prompt-writer",
+     "title": "按 OpenAI 官方指南把生图需求写成 GPT I",
      "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "mirzaaghazadeh-iphone-duo-skills-iphone-duo-games",
-     "repo": "mirzaaghazadeh/iphone-duo-skills",
-     "title": "折叠屏展开后，你的游戏 UI 还压在摄像头下面吗",
+     "id": "obra-scan-to-model-scan-to-model",
+     "repo": "obra/scan-to-model",
+     "title": "扫描照片图纸实测，拼成一栋能审的 Blender 建",
      "过": false,
-     "为什么": "品味 58 分 < 80 —— 折叠屏游戏适配写得扎实，但读者是开发者，题材偏窄（3 判：[55, 58, 62]）",
-     "分": 58
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "mirzaaghazadeh-iphone-duo-skills-iphone-duo-camera",
-     "repo": "mirzaaghazadeh/iphone-duo-skills",
-     "title": "折叠开合时前摄该切哪颗，双屏预览怎么摆正",
+     "id": "activeloopai-hivemind-hivemind",
+     "repo": "activeloopai/hivemind",
+     "title": "团队记忆外挂：跨会话记住谁定过什么规矩",
      "过": false,
-     "为什么": "品味 30 分 < 80 —— 苹果官方设备相机API文档，开发者向，非普通创作者（3 判：[12, 30, 65]）",
-     "分": 30
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "mirzaaghazadeh-iphone-duo-skills-iphone-duo-design-review",
-     "repo": "mirzaaghazadeh/iphone-duo-skills",
-     "title": "折叠 iPhone 五种姿态下，这块屏该怎么排",
+     "id": "donvito-codex-astra-luna-orchestrator-astra-orchestrator",
+     "repo": "donvito/codex-astra-luna-orchestrator",
+     "title": "主脑规划、Luna 干活",
      "过": false,
-     "为什么": "品味 28 分 < 80 —— 面向开发/平台方的iPhone折叠屏设计规范，题材太冷，非目标读者。（3 判：[18, 28, 42]）",
-     "分": 28
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "li2711-ai-learning-lab-concept-study-guide",
-     "repo": "Li2711/ai-learning-lab",
-     "title": "给一个概念名，还你一份带出处链接的自学网页",
+     "id": "inclusionai-choruz",
+     "repo": "inclusionAI/Choruz",
+     "title": "十一个各管一段的 Agent 技能打包上架",
      "过": false,
-     "为什么": "品味 58 分 < 80 —— 结构扎实但属通用学习模板，产出物可替换，非它不可的理由不足（3 判：[42, 58, 58]）",
-     "分": 58
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "littleanti-heybit-notion-llm-wiki-notion-draft",
-     "repo": "littleanti/heybit-notion-llm-wiki",
-     "title": "缺字段就停下来问你的 Notion 草稿机",
+     "id": "inclusionai-choruz-choruz-ci-test-reliability",
+     "repo": "inclusionAI/Choruz",
+     "title": "共享一个数据库的并行测试，谁在偷偷改你的数据",
      "过": false,
-     "为什么": "品味 62 分 < 80 —— 企业内部Notion工作流工具链，读者是开发者不是普通创作者（3 判：[28, 62, 70]）",
-     "分": 62
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "littleanti-heybit-notion-llm-wiki-notion-llm-wiki",
-     "repo": "littleanti/heybit-notion-llm-wiki",
-     "title": "Notion 文档变成带出处",
+     "id": "inclusionai-choruz-choruz-record-demo",
+     "repo": "inclusionAI/Choruz",
+     "title": "录屏前先跑通一遍，再让镜头跟着真实 Agent 走",
      "过": false,
-     "为什么": "品味 42 分 < 80 —— Notion自家工作流的基建，做得细但属开发工具链，普通读者用不上（3 判：[42, 42, 55]）",
-     "分": 42
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "xykong36-bili-skills-digesting-bilibili-videos",
-     "repo": "xykong36/bili-skills",
-     "title": "B站视频存下来，顺手变成能搜的中文 PDF",
-     "过": true,
-     "为什么": "品味 88 分 —— 只做B站字幕消化，边界极清：拒绝转录、批量和老API，实测坑全写透（3 判：[78, 88, 88]）",
-     "分": 88
-    },
-    {
-     "id": "ricardo-se-university-survival-skill",
-     "repo": "Ricardo-SE/university-survival-skill",
-     "title": "上百位学长学姐口述的大学规则说明书",
+     "id": "inclusionai-choruz-choruz-archive-agent-notes",
+     "repo": "inclusionAI/Choruz",
+     "title": "Agent Notes 增删改查前先查有没有被新记录",
      "过": false,
-     "为什么": "品味 62 分 < 80 —— 认知真切边界清楚，但属经验汇编，换工具也能得，且夹带引流（3 判：[58, 62, 62]）",
-     "分": 62
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "vladimirkhrapal-claude-video-editing-video-editing",
-     "repo": "vladimirkhrapal/claude-video-editing",
-     "title": "命令行剪片：切、拼、转竖屏、烧字幕一条龙",
+     "id": "moonlin1213-codex-dream-skin-studio-skill-codex-dream-skin-studio",
+     "repo": "moonlin1213/codex-dream-skin-studio-skill",
+     "title": "参考图变 Codex 皮肤，装坏了还能一键还原",
      "过": false,
-     "为什么": "品味 62 分 < 80 —— 扎实的ffmpeg实操工作流，但换个工具/模型也能做（3 判：[50, 62, 68]）",
-     "分": 62
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "hisham-walid-flyrank-ml-internship",
-     "repo": "Hisham-Walid/flyrank-ml-internship",
-     "title": "13 个技能拼出一条从数据到部署的 ML 实习流水线",
+     "id": "taisly-agent",
+     "repo": "taisly/agent",
+     "title": "AI 剪完的竖屏短片，一句话发去五个平台",
      "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "hisham-walid-flyrank-ml-internship-flyrank-context",
-     "repo": "Hisham-Walid/flyrank-ml-internship",
-     "title": "FlyRank 实习作业前该补的那段公司背景",
+     "id": "scarletkc-agents",
+     "repo": "scarletkc/agents",
+     "title": "给 Claude Code 和 Codex CLI ",
      "过": false,
-     "为什么": "品味 20 分 < 80 —— 内部产品背景文档，非可复用的判断交付物（3 判：[15, 20, 28]）",
-     "分": 20
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "hisham-walid-flyrank-ml-internship-writing-honest-claims",
-     "repo": "Hisham-Walid/flyrank-ml-internship",
-     "title": "证据撑到哪句，结论就写到哪句的措辞阶梯",
+     "id": "scarletkc-agents-talk-like-scarletkc",
+     "repo": "scarletkc/agents",
+     "title": "写完直接能发，读起来还是你自己在说话",
      "过": false,
-     "为什么": "品味 63 分 < 80 —— 有真实判断与具体替换词表，但受众是分析师，非普通创作者（3 判：[58, 63, 72]）",
-     "分": 63
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "hisham-walid-flyrank-ml-internship-auditing-signals",
-     "repo": "Hisham-Walid/flyrank-ml-internship",
-     "title": "先看分布再谈相关性的信号审计员",
+     "id": "scarletkc-agents-codex-cli",
+     "repo": "scarletkc/agents",
+     "title": "什么时候值得把活交给 Codex CLI，跑多大",
      "过": false,
-     "为什么": "品味 62 分 < 80 —— EDA流程扎实但泛用，换任何统计工具都能做，缺专属交付物（3 判：[52, 62, 68]）",
-     "分": 62
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     },
     {
-     "id": "e3559179-spec---classic-reading-companion",
-     "repo": "e3559179-spec/-",
-     "title": "读原著时随时喊停提问，读完它逐段回讲给你听",
-     "过": true,
-     "为什么": "品味 82 分 —— 对伴读场景的边界极清楚，状态追踪、纠偏、反附和都是真想过（3 判：[68, 82, 84]）",
-     "分": 82
-    },
-    {
-     "id": "jordanvalnet-exalthon26",
-     "repo": "jordanvalnet/exalthon26",
-     "title": "黑客松现场拼出的 agent 加 MCP GitHu",
+     "id": "scarletkc-agents-marketing-copy",
+     "repo": "scarletkc/agents",
+     "title": "对外文案先过一遍「这句能公开吗」的发布闸",
      "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "jordanvalnet-exalthon26-gh-project-authors",
-     "repo": "jordanvalnet/exalthon26",
-     "title": "仓库署名页：谁写的、谁在维护、许可证白话版",
-     "过": false,
-     "为什么": "品味 45 分 < 80 —— 开发工具链的子模块，非目标读者，交付面窄（3 判：[37, 45, 52]）",
-     "分": 45
-    },
-    {
-     "id": "jordanvalnet-exalthon26-gh-project-cost",
-     "repo": "jordanvalnet/exalthon26",
-     "title": "文档没写成本就老实写「未记录」的尽调成本栏",
-     "过": false,
-     "为什么": "品味 38 分 < 80 —— GitHub 仓库成本报告的子组件，开发者工具链，普通人用不上。（3 判：[28, 38, 42]）",
-     "分": 38
-    },
-    {
-     "id": "jordanvalnet-exalthon26-gh-project-goals",
-     "repo": "jordanvalnet/exalthon26",
-     "title": "一份 GitHub 项目优化目标说明书",
-     "过": false,
-     "为什么": "品味 39 分 < 80 —— 报告子模块，依赖内部facts.json与MCP，非通用可交付（3 判：[15, 39, 47]）",
-     "分": 39
-    },
-    {
-     "id": "progannewbie-suger-sugar-motion",
-     "repo": "progannewbie/suger",
-     "title": "坐标点进来，Kawasaki 手臂的 LMOVE/J",
-     "过": true,
-     "为什么": "品味 82 分 —— 糖画机器人运动规划，边界清楚、有实测数据支撑决策（3 判：[82, 82, 89]）",
-     "分": 82
-    },
-    {
-     "id": "progannewbie-suger-sugar-points",
-     "repo": "progannewbie/suger",
-     "title": "笔画 SVG 到机械臂点位，曲率自适应砍到最少点",
-     "过": true,
-     "为什么": "品味 82 分 —— 糖畫機械臂座標轉換，容差判準與速度換檔點保留都有實作細節（3 判：[68, 82, 88]）",
-     "分": 82
-    },
-    {
-     "id": "progannewbie-suger-sugar-stroke",
-     "repo": "progannewbie/suger",
-     "title": "一笔到底的糖画毛笔路径，连每点粗细都算好",
-     "过": true,
-     "为什么": "品味 87 分 —— 糖画机械臂专用,边界清晰:只做中心线、拒绝轮廓、速度即粗细、验收三数字（3 判：[82, 87, 88]）",
-     "分": 87
-    },
-    {
-     "id": "milklong888-chemical-engineering-skills",
-     "repo": "milklong888/chemical-engineering-skills",
-     "title": "离线也能跑Aspen的化工设计分层知识库",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "milklong888-chemical-engineering-skills-chemical-engineering-expert",
-     "repo": "milklong888/chemical-engineering-skills",
-     "title": "从流程到设备逐层过筛的化工设计评审官",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 面向化工工程师的专业推理框架，非普通人可用的具体交付物（3 判：[28, 42, 45]）",
-     "分": 42
-    },
-    {
-     "id": "milklong888-chemical-engineering-skills-aspen-adaptive-generalization-loop",
-     "repo": "milklong888/chemical-engineering-skills",
-     "title": "会自己长出新规则的 Aspen 通用流程模板",
-     "过": false,
-     "为什么": "品味 45 分 < 80 —— 化工流程专业但面向开发者工具链，交付物与边界含糊（3 判：[38, 45, 45]）",
-     "分": 45
-    },
-    {
-     "id": "milklong888-chemical-engineering-skills-aspen-edr-rating-delivery",
-     "repo": "milklong888/chemical-engineering-skills",
-     "title": "换热器逐台补 EDR 评级，零警告交 BKP/APW",
-     "过": false,
-     "为什么": "品味 32 分 < 80 —— 化工EDR自动化专业扎实，但读者是企业工程师，非普通人（3 判：[15, 32, 47]）",
-     "分": 32
-    },
-    {
-     "id": "yujieying-prototype-compressor",
-     "repo": "yujieying/prototype-compressor",
-     "title": "单文件 HTML 原型里的图片压到能发出去",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 内部原型压缩脚本，读者是开发者；边界清楚但换个工具也能做（3 判：[42, 42, 55]）",
-     "分": 42
-    },
-    {
-     "id": "vincentbiragnet-cadence-harness-scaffold",
-     "repo": "VincentBiragnet/cadence",
-     "title": "新项目目录自带一套规格追踪脚手架",
-     "过": false,
-     "为什么": "品味 25 分 < 80 —— 内部开发工具链脚手架，读者是开发者而非普通创作者（3 判：[18, 25, 28]）",
-     "分": 25
-    },
-    {
-     "id": "dogadurak-aquacast-failure-modes",
-     "repo": "dogadurak/AquaCast",
-     "title": "写设计决策前先翻这本踩坑错题集",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 工程内部的失败模式清单，通用经验，非普通人或创作者场景（3 判：[18, 42, 88]）",
-     "分": 42
-    },
-    {
-     "id": "dogadurak-aquacast-cds-access",
-     "repo": "dogadurak/AquaCast",
-     "title": "哥白尼数据下载前先过许可和排队这关",
-     "过": false,
-     "为什么": "品味 58 分 < 80 —— 数据集专属的实操坑，具体但仅对CDS用户有价值（3 判：[58, 58, 62]）",
-     "分": 58
-    },
-    {
-     "id": "dogadurak-aquacast-forecast-eval",
-     "repo": "dogadurak/AquaCast",
-     "title": "预报分数算得再高，也先过被封锁的验证集",
-     "过": false,
-     "为什么": "品味 62 分 < 80 —— 时空预测评估方法论扎实，但偏科研工具链受众（3 判：[52, 62, 68]）",
-     "分": 62
-    },
-    {
-     "id": "jyecusch-skills",
-     "repo": "jyecusch/skills",
-     "title": "工程师手边那几把顺手的螺丝刀",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "jyecusch-skills-type-driven-design",
-     "repo": "jyecusch/skills",
-     "title": "类型定义评审搭档，专挑靠注释和运行时校验兜底的地方",
-     "过": false,
-     "为什么": "品味 62 分 < 80 —— 方法扎实但属通用编程技巧，开发者向，非普通人题材（3 判：[30, 62, 72]）",
-     "分": 62
-    },
-    {
-     "id": "jyecusch-skills-abstraction-and-coupling",
-     "repo": "jyecusch/skills",
-     "title": "重复代码该不该抽出来，先算一笔账再动手",
-     "过": false,
-     "为什么": "品味 62 分 < 80 —— 判断扎实有立场，但是通用软件工程原则，非普通人题材（3 判：[62, 62, 62]）",
-     "分": 62
-    },
-    {
-     "id": "jyecusch-skills-code-critique",
-     "repo": "jyecusch/skills",
-     "title": "先删掉一半代码再谈架构的代码审查员",
-     "过": false,
-     "为什么": "品味 45 分 < 80 —— 评审原则扎实清晰，但面向开发者工具链，非店主受众，且依赖外部skill（3 判：[42, 45, 62]）",
-     "分": 45
-    },
-    {
-     "id": "admind-ai-marcel-agent-marcel-agent",
-     "repo": "AdMind-ai/marcel-agent",
-     "title": "Marcel Agent 的上手、换皮",
-     "过": false,
-     "为什么": "品味 20 分 < 80 —— 官方产品文档兼索引，读者是开发者，不是普通创作者题材（3 判：[18, 20, 22]）",
-     "分": 20
-    },
-    {
-     "id": "loki5512344-jmove-jmove-skill-for-ai-agents",
-     "repo": "loki5512344/jmove",
-     "title": "搬完文件顺手把全项目 import 改对的命令行工具",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 开发者工具链，读者是企业/开发，非普通人；功能扎实但换IDE重构也能做（3 判：[28, 42, 45]）",
-     "分": 42
-    },
-    {
-     "id": "nayeemurrehman-parquet-explorer-skill",
-     "repo": "NayeemUrRehman/parquet-explorer-skill",
-     "title": "丢来个 parquet 先告诉你每列脏在哪",
-     "过": false,
-     "为什么": "品味 32 分 < 80 —— 面向开发者的parquet工具脚本，非普通人题材，属基础设施（3 判：[32, 32, 38]）",
-     "分": 32
-    },
-    {
-     "id": "sue692045978-alt-english-basics-builder-english-basics-builder",
-     "repo": "sue692045978-alt/english-basics-builder",
-     "title": "喊一声「批改」就接着上次进度走的英语基本功陪练",
-     "过": false,
-     "为什么": "品味 55 分 < 80 —— 学习流程与边界很扎实，但属自建工具链，非普通人可即用（3 判：[42, 55, 62]）",
-     "分": 55
-    },
-    {
-     "id": "andreworia-claude-excel-skills",
-     "repo": "andreworia/claude-excel-skills",
-     "title": "十二个技能把财务模型从骨架搭到敏感性分析",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "andreworia-claude-excel-skills-inputs-calcs-outputs-design",
-     "repo": "andreworia/claude-excel-skills",
-     "title": "三张表分家的 Excel 模型设计稿",
-     "过": false,
-     "为什么": "品味 58 分 < 80 —— Excel建模范式扎实但通用，换本建模书也能得到（3 判：[45, 58, 58]）",
-     "分": 58
-    },
-    {
-     "id": "andreworia-claude-excel-skills-assumption-registry-builder",
-     "repo": "andreworia/claude-excel-skills",
-     "title": "给 Excel 模型建一张假设登记表",
-     "过": false,
-     "为什么": "品味 58 分 < 80 —— 财务建模审计场景扎实专业，但属企业工具链，普通人和创作者用不上（3 判：[55, 58, 62]）",
-     "分": 58
-    },
-    {
-     "id": "andreworia-claude-excel-skills-data-cleaning-for-excel",
-     "repo": "andreworia/claude-excel-skills",
-     "title": "粘进表格的脏数据，先洗成能直接透视的一片区域",
-     "过": false,
-     "为什么": "品味 48 分 < 80 —— 通用清洗清单，换任何表格工具都能做，无独特交付（3 判：[46, 48, 62]）",
-     "分": 48
-    },
-    {
-     "id": "bjdenghao-cn-codex-video-creation-agent-video-creation-agent",
-     "repo": "bjdenghao-cn/codex-video-creation-agent",
-     "title": "说一句剧情，它把剧本首帧和成片一路跑完",
-     "过": false,
-     "为什么": "品味 58 分 < 80 —— 流程边界清晰，但通用创作助手，别处也能做（3 判：[45, 58, 62]）",
-     "分": 58
-    },
-    {
-     "id": "ameemaiqbal-flyrank-ml-internship",
-     "repo": "ameemaiqbal/flyrank-ml-internship",
-     "title": "十三份 FlyRank 机器学习实习任务包",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "ameemaiqbal-flyrank-ml-internship-flyrank-context",
-     "repo": "ameemaiqbal/flyrank-ml-internship",
-     "title": "入职前先补 FlyRank 这家公司到底在搜什么的背",
-     "过": false,
-     "为什么": "品味 25 分 < 80 —— 项目内部背景说明，非交付物，读者是企业实习生而非普通创作者（3 判：[18, 25, 30]）",
-     "分": 25
-    },
-    {
-     "id": "ameemaiqbal-flyrank-ml-internship-writing-honest-claims",
-     "repo": "ameemaiqbal/flyrank-ml-internship",
-     "title": "结论写到证据撑得住的那一级就停笔",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 把主张分级与证据匹配讲透，换工具也能做但少有替代（3 判：[68, 72, 75]）",
-     "分": 72
-    },
-    {
-     "id": "ameemaiqbal-flyrank-ml-internship-auditing-signals",
-     "repo": "ameemaiqbal/flyrank-ml-internship",
-     "title": "先看分布再谈相关性的信号审计员",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— EDA审计方法论扎实有边界，但通用技艺，换工具也能做（3 判：[72, 72, 78]）",
-     "分": 72
-    },
-    {
-     "id": "pu11en-blotato-automations",
-     "repo": "Pu11en/blotato-automations",
-     "title": "先查清平台规则再动手的 Blotato 自动化研究集",
-     "过": false,
-     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
-    },
-    {
-     "id": "pu11en-blotato-automations-openspec-propose",
-     "repo": "Pu11en/blotato-automations",
-     "title": "需求说一句，设计规格任务三件套一起交",
-     "过": false,
-     "为什么": "品味 18 分 < 80 —— OpenSpec官方CLI工作流基建，面向开发者工具链，非普通人题材。（3 判：[18, 18, 20]）",
-     "分": 18
-    },
-    {
-     "id": "pu11en-blotato-automations-pinterest-research",
-     "repo": "Pu11en/blotato-automations",
-     "title": "从 Pinterest 找选题到复盘落地页的本地免费",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 企业级Pinterest运营工具链，规范严密但普通人用不上（3 判：[20, 42, 62]）",
-     "分": 42
-    },
-    {
-     "id": "pu11en-blotato-automations-blotato-brand-content",
-     "repo": "Pu11en/blotato-automations",
-     "title": "先出参考图再动视频，每步等你点头的品牌内容流水线",
-     "过": false,
-     "为什么": "品味 45 分 < 80 —— 流程管控扎实但面向DevOps/API工具链，普通创作者用不上（3 判：[28, 45, 55]）",
-     "分": 45
-    },
-    {
-     "id": "plexito-de-honed-skills-human-review",
-     "repo": "Plexito-de/honed-skills",
-     "title": "发出去之前先让本人拿笔在你稿子上划一遍",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 给创作者/写作者的真人审稿闭环，边界清晰，但属可替代流程工具（3 判：[72, 72, 88]）",
-     "分": 72
-    },
-    {
-     "id": "plexito-de-honed-skills-excalidraw",
-     "repo": "Plexito-de/honed-skills",
-     "title": "先写规格再算字宽，手绘风图表一次成型的 Excali",
-     "过": true,
-     "为什么": "品味 82 分 —— 实测字体度量、真实布局、强制渲染，边界与拒绝都写得很清楚（3 判：[78, 82, 84]）",
-     "分": 82
-    },
-    {
-     "id": "plexito-de-honed-skills-comb-pdf-form-filling",
-     "repo": "Plexito-de/honed-skills",
-     "title": "一格一字，把 IBAN 税号填进德国官方表格的方框里",
-     "过": false,
-     "为什么": "品味 60 分 < 80 —— 德国官方表格梳状框填写，几何定位加渲染验证很硬核，但读者窄到德语区行政表格（3 判：[55, 60, 71]）",
-     "分": 60
-    },
-    {
-     "id": "aeboli-zhongguose-palette",
-     "repo": "aEboli/zhongguose-palette",
-     "title": "526 个中国传统色里挑出能直接落地的三层配色",
-     "过": true,
-     "为什么": "品味 92 分 —— 对配色边界极清醒：只出库内色、三色不等权、术语不外泄、零提问先交付（3 判：[88, 92, 93]）",
-     "分": 92
+     "为什么": "自动上架已关（TASTE_MIN>100），不请判官；只走店主指名 / 心选 / 编辑亲挑三条道"
     }
    ]
   },
