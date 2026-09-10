@@ -86,44 +86,6 @@ git clone --depth 1 https://github.com/xykong36/bili-skills.git Then point your 
 Repository: xykong36/bili-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## jianming-zhongwen
-## 短句、實義動詞、條件在前的中文技術寫作規範
-URL: https://ourword.ai/skill/tw/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
-URL (中文): https://ourword.ai/skill/tw/zh/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
-Source: https://github.com/heichaowo/jianming-zhongwen/tree/HEAD/skills/jianming-zhongwen
-Updated: 2026-09-10
-Tags: writing, skill, heichaowo
-
-Strips filler like "of great significance" from READMEs and error text: modals tiered must/should/may, every term.
-
-### What does this skill do?
-用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
-
-### Why is it worth installing?
-It hands you checkable rewrite rules, not style advice: condition clauses first, one word one meaning, replies capped at 5 prose.
-
-### How do you install it?
-git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
-
---- 中文 ---
-README 和報錯文本里那些「具有重要意義」「進行了優化」被逐句拆掉：情態詞按必須/應該/可以分三級。
-
-### Q：這個 skill 做什麼？
-用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
-
-### Q：為什麼值得裝？
-它給的是可執行的改寫規則，不是風格建議：條件從句前置、一詞一義、回覆限 5 句散文。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
-
-========================================================================
 ## classic-reading-companion
 ## 讀原著時隨時喊停提問，讀完它逐段回講給你聽
 URL: https://ourword.ai/skill/tw/i/e3559179-spec-classic-reading-companion/
@@ -162,28 +124,6 @@ git clone --depth 1 https://github.com/e3559179-spec/-.git 然後把智能體指
 Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## devil-advocate
-## 在你拍板前把方案拆開找裂縫的紅隊陪練
-URL: https://ourword.ai/skill/tw/i/hadicancatak-coder-devils-advocate-devil-advocate/
-Source: https://github.com/hadicancatak-coder/devils-advocate/tree/HEAD/skills/devil-advocate
-Updated: 2026-09-10
-Tags: work, skill, hadicancatak-coder
-
-The more everyone agrees, the more sunk cost and deadline pressure push you to yes, the harder it pushes back.
-
-### What does this skill do?
-Use when about to commit to a decision, plan, conclusion, or recommendation and it needs to be attacked before anyone acts on it — especially when everyone already agrees, money or time is already sunk, a deadline is pushing toward yes, or the user says "poke holes", "stress test", "red team", "what am I missing".
-
-### Why is it worth installing?
-It doesn't hand you a pros-and-cons list. It assumes the decision already failed, works backward to the cause, then interrogates.
-
-### How do you install it?
-git clone --depth 1 https://github.com/hadicancatak-coder/devils-advocate.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: hadicancatak-coder/devils-advocate The repository ships 1 skills in total.
-
-========================================================================
 ## sugar-motion
 ## 座標點進來，Kawasaki 手臂的 LMOVE/J
 URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-motion/
@@ -220,6 +160,66 @@ git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體
 
 ### Q：它從哪來？
 Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## jianming-zhongwen
+## 短句、實義動詞、條件在前的中文技術寫作規範
+URL: https://ourword.ai/skill/tw/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+URL (中文): https://ourword.ai/skill/tw/zh/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+Source: https://github.com/heichaowo/jianming-zhongwen/tree/HEAD/skills/jianming-zhongwen
+Updated: 2026-09-10
+Tags: writing, skill, heichaowo
+
+Strips filler like "of great significance" from READMEs and error text: modals tiered must/should/may, every term.
+
+### What does this skill do?
+用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
+
+### Why is it worth installing?
+It hands you checkable rewrite rules, not style advice: condition clauses first, one word one meaning, replies capped at 5 prose.
+
+### How do you install it?
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+--- 中文 ---
+README 和報錯文本里那些「具有重要意義」「進行了優化」被逐句拆掉：情態詞按必須/應該/可以分三級。
+
+### Q：這個 skill 做什麼？
+用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
+
+### Q：為什麼值得裝？
+它給的是可執行的改寫規則，不是風格建議：條件從句前置、一詞一義、回覆限 5 句散文。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+========================================================================
+## devil-advocate
+## 在你拍板前把方案拆開找裂縫的紅隊陪練
+URL: https://ourword.ai/skill/tw/i/hadicancatak-coder-devils-advocate-devil-advocate/
+Source: https://github.com/hadicancatak-coder/devils-advocate/tree/HEAD/skills/devil-advocate
+Updated: 2026-09-10
+Tags: work, skill, hadicancatak-coder
+
+The more everyone agrees, the more sunk cost and deadline pressure push you to yes, the harder it pushes back.
+
+### What does this skill do?
+Use when about to commit to a decision, plan, conclusion, or recommendation and it needs to be attacked before anyone acts on it — especially when everyone already agrees, money or time is already sunk, a deadline is pushing toward yes, or the user says "poke holes", "stress test", "red team", "what am I missing".
+
+### Why is it worth installing?
+It doesn't hand you a pros-and-cons list. It assumes the decision already failed, works backward to the cause, then interrogates.
+
+### How do you install it?
+git clone --depth 1 https://github.com/hadicancatak-coder/devils-advocate.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: hadicancatak-coder/devils-advocate The repository ships 1 skills in total.
 
 ========================================================================
 ## debate-prep
@@ -320,6 +320,120 @@ git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git 然
 Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
+## podcast-transcribe-local
+## 本地 70 倍速轉完一期播客，不燒一分 API 額度
+URL: https://ourword.ai/skill/tw/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
+URL (中文): https://ourword.ai/skill/tw/zh/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
+Source: https://github.com/peggykangkang02/podcast-pipeline/tree/HEAD/podcast-transcribe-local
+Updated: 2026-09-10
+Tags: work, skill, peggykangkang02
+
+Drop a Xiaoyuzhou/Ximalaya link or audio file. A 76-min episode becomes ~25k words in ~70s on Apple Silicon.
+
+### What does this skill do?
+把小宇宙、喜馬拉雅播客單集（或任意音頻文件/直鏈）在本地離線轉成逐字稿，不聯網、不燒 API 額度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 實測 60-70 倍實時（一期 76 分鐘播客約 70 秒轉完，輸出約 2.5 萬字）。當用戶給出小宇宙鏈接（xiaoyuzhoufm.com/episode/...）、喜馬拉雅鏈接（ximalaya.com/sound/...）、音頻文件或音頻直鏈，想要逐字稿、轉錄、轉文字、字幕時，使用本技能。也可作為 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交給它生成結構化筆記落 Obsidian。
+
+### Why is it worth installing?
+Runs SenseVoiceSmall via onnxruntime, moving transcription from cloud APIs to your machine. Speed impresses, but the real edge.
+
+### How do you install it?
+git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
+
+--- 中文 ---
+小宇宙/喜馬拉雅鏈接丟進來，76 分鐘節目約 70 秒出 2.5 萬字逐字稿。
+
+### Q：這個 skill 做什麼？
+把小宇宙、喜馬拉雅播客單集（或任意音頻文件/直鏈）在本地離線轉成逐字稿，不聯網、不燒 API 額度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 實測 60-70 倍實時（一期 76 分鐘播客約 70 秒轉完，輸出約 2.5 萬字）。當用戶給出小宇宙鏈接（xiaoyuzhoufm.com/episode/...）、喜馬拉雅鏈接（ximalaya.com/sound/...）、音頻文件或音頻直鏈，想要逐字稿、轉錄、轉文字、字幕時，使用本技能。也可作為 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交給它生成結構化筆記落 Obsidian。
+
+### Q：為什麼值得裝？
+用 onnxruntime 跑 SenseVoiceSmall，把轉錄從雲端 API 搬回本地。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
+
+========================================================================
+## reading-analysis
+## 會拆穿每道錯題出題人陷阱的英語閱讀陪練
+URL: https://ourword.ai/skill/tw/i/shenquan520-reading-analysis/
+URL (中文): https://ourword.ai/skill/tw/zh/i/shenquan520-reading-analysis/
+Source: https://github.com/shenquan520/reading-analysis
+Updated: 2026-09-10
+Tags: everyday, skill, shenquan520
+
+Not just answers—it decodes how each distractor was built and why you fell for it. Feed it real exam cases, and.
+
+### What does this skill do?
+高考/四六級/考研英語閱讀分析助手。拆解命題邏輯、定位推斷、干擾項構造，並持續吸收使用者提供的理論資料與真題案例。當用戶說"分析這篇閱讀""這道題為什麼選X""我閱讀總錯""提交案例/理論""閱讀復盤""七選五怎麼做""長難句拆一下"時使用。
+
+### Why is it worth installing?
+It treats each question like a case: reconstructs the examiner's trap-laying path, compares it with your reasoning, and learns.
+
+### How do you install it?
+git clone --depth 1 https://github.com/shenquan520/reading-analysis.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
+
+--- 中文 ---
+不只講答案，更拆命題邏輯：定位句怎麼找、干擾項怎麼造。你喂真題案例，它越用越懂你常錯的那類題。
+
+### Q：這個 skill 做什麼？
+高考/四六級/考研英語閱讀分析助手。拆解命題邏輯、定位推斷、干擾項構造，並持續吸收使用者提供的理論資料與真題案例。當用戶說"分析這篇閱讀""這道題為什麼選X""我閱讀總錯""提交案例/理論""閱讀復盤""七選五怎麼做""長難句拆一下"時使用。
+
+### Q：為什麼值得裝？
+它把閱讀題當案件查：先還原出題人設陷路徑，再對照你的思路偏差。持續吸收你的錯題與理論，陪練越久越貼身。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/shenquan520/reading-analysis.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
+
+========================================================================
+## huatu
+## 先讀圖再落筆的AI矢量稿，路徑文字豎排都驗過
+URL: https://ourword.ai/skill/tw/i/ccxx1835-huatu-skill/
+URL (中文): https://ourword.ai/skill/tw/zh/i/ccxx1835-huatu-skill/
+Source: https://github.com/ccxx1835/huatu-skill
+Updated: 2026-09-10
+Tags: images, skill, ccxx1835
+
+Recreate charts, flows, and infographics as native Illustrator-editable vectors. Beyond visual similarity, it.
+
+### What does this skill do?
+先理解參考圖片的語義、文字置信度與幾何結構，再按需高保真重繪為 Adobe Illustrator 原生可編輯 AI 矢量稿，並通過 Illustrator 實際導出、對象統計、疊圖和差異圖驗證路徑文字、中文豎排、視覺居中、對稱關係及版式誤差。適用於分析或復刻圖表、流程圖、信息圖、報告插圖和 Illustrator 風格畫面，以及需要 AI/SVG/EPS/PDF 交付、物理尺寸、字體或顏色模式約束、或分階段先讀圖後繪製的任務。
+
+### Why is it worth installing?
+Two-phase pipeline: semantic/structural parsing before drawing, then verifies via actual export and object stats—not just a.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+圖表、流程圖、信息圖，復刻成Illustrator原生可編輯稿。不只畫得像，還逐項核對文字置信度、幾何結構。
+
+### Q：這個 skill 做什麼？
+先理解參考圖片的語義、文字置信度與幾何結構，再按需高保真重繪為 Adobe Illustrator 原生可編輯 AI 矢量稿，並通過 Illustrator 實際導出、對象統計、疊圖和差異圖驗證路徑文字、中文豎排、視覺居中、對稱關係及版式誤差。適用於分析或復刻圖表、流程圖、信息圖、報告插圖和 Illustrator 風格畫面，以及需要 AI/SVG/EPS/PDF 交付、物理尺寸、字體或顏色模式約束、或分階段先讀圖後繪製的任務。
+
+### Q：為什麼值得裝？
+把「看懂圖」和「畫矢量」拆成兩階段，先解析語義與版式約束，再高保真重建；用實際導出和對象統計驗證。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## speak-human-tw
 ## 繁體中文去 AI 味：把「綜上所述」改回人話
 URL: https://ourword.ai/skill/tw/i/raymondhou0917-speak-human-tw/
@@ -396,6 +510,50 @@ git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體
 Repository: progannewbie/suger The repository ships 1 skills in total.
 
 ========================================================================
+## kimi
+## 設計稿交給它，前端代碼拿回來就能跑
+URL: https://ourword.ai/skill/tw/i/oil-oil-kimi/
+Source: https://github.com/oil-oil/kimi
+Updated: 2026-09-10
+Tags: work, skill, oil-oil
+
+A non-interactive wrapper for the local Kimi Code CLI, strong at visual direction, design systems, UI critique.
+
+### What does this skill do?
+Delegate design-heavy UI/UX work, frontend implementation, coding, repository exploration, review, and media-aware analysis to the local Kimi Code CLI through a bundled non-interactive wrapper. Kimi is a design-strong Agent suited to visual direction, design systems, interface critique, and frontend polish. It can inspect local images and videos but cannot generate or edit image assets. Invoke onl
+
+### Why is it worth installing?
+Bridges Kimi's design judgment straight into your pipeline—no IDE, no chit-chat. It critiques UI, explores repos, and writes.
+
+### How do you install it?
+git clone --depth 1 https://github.com/oil-oil/kimi.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: oil-oil/kimi The repository ships 1 skills in total.
+
+========================================================================
+## oil-motion
+## 一套切開的網頁動效
+URL: https://ourword.ai/skill/tw/i/oil-oil-oil-motion/
+Source: https://github.com/oil-oil/oil-motion
+Updated: 2026-09-10
+Tags: images, skill, oil-oil
+
+Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
+
+### What does this skill do?
+Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
+
+### Why is it worth installing?
+It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
+
+### How do you install it?
+git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: oil-oil/oil-motion The repository ships 1 skills in total.
+
+========================================================================
 ## sugar-stroke
 ## 一筆到底的糖畫毛筆路徑，連每點粗細都算好
 URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-stroke/
@@ -432,6 +590,44 @@ git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體
 
 ### Q：它從哪來？
 Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## travel-plan-viz
+## 離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完
+URL: https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/
+URL (中文): https://ourword.ai/skill/tw/zh/i/zexuanw958-svg-travel-plan-viz/
+Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
+Updated: 2026-09-10
+Tags: everyday, skill, zexuanw958-svg
+
+The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
+
+### What does this skill do?
+把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
+
+### Why is it worth installing?
+Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
+
+### How do you install it?
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+--- 中文 ---
+到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。
+
+### Q：這個 skill 做什麼？
+把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
+
+### Q：為什麼值得裝？
+「離線可讀、手機優先、單文件」——這三個約束是真在國外用過才想得到的。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## comfyui-mcp
@@ -498,6 +694,50 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 
 ### Where does it come from?
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
+
+========================================================================
+## archify
+## 畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML
+URL: https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/
+Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
+Updated: 2026-09-10
+Tags: docs, skill, tt-a1i
+
+Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
+
+### What does this skill do?
+Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
+
+### Why is it worth installing?
+"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## caveman
+## 讓 Claude 用原始人腔說話，據稱省下 65% 的 token
+URL: https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/
+Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
+Updated: 2026-09-10
+Tags: play, skill, JuliusBrussee
+
+Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
+
+### What does this skill do?
+Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
+
+### Why is it worth installing?
+A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
+
+### How do you install it?
+git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
 ## i-have-adhd
@@ -756,44 +996,6 @@ git clone --depth 1 https://github.com/yang0/handraw-style.git Then point your a
 Repository: yang0/handraw-style The repository ships 1 skills in total.
 
 ========================================================================
-## reading-analysis
-## 會拆穿每道錯題出題人陷阱的英語閱讀陪練
-URL: https://ourword.ai/skill/tw/i/shenquan520-reading-analysis/
-URL (中文): https://ourword.ai/skill/tw/zh/i/shenquan520-reading-analysis/
-Source: https://github.com/shenquan520/reading-analysis
-Updated: 2026-09-09
-Tags: everyday, skill, shenquan520
-
-Not just answers—it decodes how each distractor was built and why you fell for it. Feed it real exam cases, and.
-
-### What does this skill do?
-高考/四六級/考研英語閱讀分析助手。拆解命題邏輯、定位推斷、干擾項構造，並持續吸收使用者提供的理論資料與真題案例。當用戶說"分析這篇閱讀""這道題為什麼選X""我閱讀總錯""提交案例/理論""閱讀復盤""七選五怎麼做""長難句拆一下"時使用。
-
-### Why is it worth installing?
-It treats each question like a case: reconstructs the examiner's trap-laying path, compares it with your reasoning, and learns.
-
-### How do you install it?
-git clone --depth 1 https://github.com/shenquan520/reading-analysis.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
-
---- 中文 ---
-不只講答案，更拆命題邏輯：定位句怎麼找、干擾項怎麼造。你喂真題案例，它越用越懂你常錯的那類題。
-
-### Q：這個 skill 做什麼？
-高考/四六級/考研英語閱讀分析助手。拆解命題邏輯、定位推斷、干擾項構造，並持續吸收使用者提供的理論資料與真題案例。當用戶說"分析這篇閱讀""這道題為什麼選X""我閱讀總錯""提交案例/理論""閱讀復盤""七選五怎麼做""長難句拆一下"時使用。
-
-### Q：為什麼值得裝？
-它把閱讀題當案件查：先還原出題人設陷路徑，再對照你的思路偏差。持續吸收你的錯題與理論，陪練越久越貼身。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/shenquan520/reading-analysis.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
-
-========================================================================
 ## pf2e-gm
 ## 翻開本地規則庫的 PF2e 主持人副駕
 URL: https://ourword.ai/skill/tw/i/milec-towers-of-saeroth-pf2e-gm/
@@ -874,44 +1076,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然後把智能�
 
 ### Q：它從哪來？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## travel-plan-viz
-## 離線可讀的手機旅行頁，地圖時間軸訂票提醒一頁裝完
-URL: https://ourword.ai/skill/tw/i/zexuanw958-svg-travel-plan-viz/
-URL (中文): https://ourword.ai/skill/tw/zh/i/zexuanw958-svg-travel-plan-viz/
-Source: https://github.com/zexuanw958-svg/travel-plan-viz/tree/HEAD/travel-plan-viz
-Updated: 2026-09-09
-Tags: everyday, skill, zexuanw958-svg
-
-The worst moment abroad is standing on a corner with no data, scrolling chat history for the plan. It emits one HTML file: interactive map, day-by-day timeline, pre-departure booking reminders — saved to your phone, readable offline.
-
-### What does this skill do?
-把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
-
-### Why is it worth installing?
-Offline-readable, phone-first, single file. Those three constraints only occur to someone who has actually needed them abroad.
-
-### How do you install it?
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
-
---- 中文 ---
-到了當地沒網、翻聊天記錄找攻略最抓狂。它出單文件 HTML：交互地圖 + 每日時間軸 + 出發前訂票提醒，存手機上離線可讀。
-
-### Q：這個 skill 做什麼？
-把旅行行程做成美觀、離線可讀、手機優先的單文件 HTML（交互地圖+每日時間軸+出發前訂票提醒）。兩種用法——只給目的地和天數讓它幫你規劃，或丟一份現成計劃讓它直接出頁面。觸發：旅行計劃可視化、做旅行攻略網頁、行程 HTML、travel plan visualization。
-
-### Q：為什麼值得裝？
-「離線可讀、手機優先、單文件」——這三個約束是真在國外用過才想得到的。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
 ## multi-copywrite-alchemy
@@ -1092,28 +1256,6 @@ git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft.git Then p
 
 ### Where does it come from?
 Repository: Vincentwei1021/video-shotcraft Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## caveman
-## 讓 Claude 用原始人腔說話，據稱省下 65% 的 token
-URL: https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/
-Source: https://github.com/JuliusBrussee/caveman/tree/HEAD/plugins/caveman/skills/caveman
-Updated: 2026-09-09
-Tags: play, skill, JuliusBrussee
-
-Claude talks caveman — "why use many token when few token do trick." Claimed 65% token savings in practice, and weirdly addictive.
-
-### What does this skill do?
-Ultra-compressed communication mode. Cuts output tokens 65% (measured) by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is reques
-
-### Why is it worth installing?
-A joke that became a product — real token savings (claimed 65%), and it cures verbosity as a side effect.
-
-### How do you install it?
-git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
 
 ========================================================================
 ## deep-research
@@ -1584,28 +1726,6 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 
 ### Where does it come from?
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
-
-========================================================================
-## archify
-## 畫出來的架構圖要和代碼對得上，導出自帶動效的 HTML
-URL: https://ourword.ai/skill/tw/i/tt-a1i-archify-archify/
-Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
-Updated: 2026-09-08
-Tags: docs, skill, tt-a1i
-
-Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
-
-### What does this skill do?
-Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
-
-### Why is it worth installing?
-"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## understand-chat
@@ -2634,28 +2754,6 @@ git clone --depth 1 https://github.com/larashero3-dotcom/lieflat-charts.git 然�
 Repository: larashero3-dotcom/lieflat-charts Prep work visible in the skill's own text: bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## oil-motion
-## 一套切開的網頁動效
-URL: https://ourword.ai/skill/tw/i/oil-oil-oil-motion/
-Source: https://github.com/oil-oil/oil-motion
-Updated: 2026-09-05
-Tags: images, skill, oil-oil
-
-Scroll, drag, gyro, audio, state—all can drive motion. Design, build, optimize, explain in one flow. Stop.
-
-### What does this skill do?
-Design, implement, optimize, and explain interactive web animations driven by scroll, pointer, drag, touch, device orientation, audio, data, or component state. Use when a webpage needs responsive visual motion for products, interfaces, diagrams, characters, or scene transitions.
-
-### Why is it worth installing?
-It links design intent to implementation, performance tuning, and explanation—not just snippets. Handles many input sources in.
-
-### How do you install it?
-git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: oil-oil/oil-motion The repository ships 1 skills in total.
-
-========================================================================
 ## photo-revival
 ## 日常快照收成手繪詩意稿
 URL: https://ourword.ai/skill/tw/i/dacnay816y62-hub-photo-revival/
@@ -2862,44 +2960,6 @@ git clone --depth 1 https://github.com/ysjsgzq/ai-small-tools.git 然後把智�
 
 ### Q：它從哪來？
 Repository: ysjsgzq/ai-small-tools Prep work visible in the skill's own text: runnable scripts, bundled assets, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## podcast-transcribe-local
-## 本地 70 倍速轉完一期播客，不燒一分 API 額度
-URL: https://ourword.ai/skill/tw/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
-URL (中文): https://ourword.ai/skill/tw/zh/i/peggykangkang02-podcast-pipeline-podcast-transcribe-local/
-Source: https://github.com/peggykangkang02/podcast-pipeline/tree/HEAD/podcast-transcribe-local
-Updated: 2026-09-04
-Tags: work, skill, peggykangkang02
-
-Drop a Xiaoyuzhou/Ximalaya link or audio file. A 76-min episode becomes ~25k words in ~70s on Apple Silicon.
-
-### What does this skill do?
-把小宇宙、喜馬拉雅播客單集（或任意音頻文件/直鏈）在本地離線轉成逐字稿，不聯網、不燒 API 額度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 實測 60-70 倍實時（一期 76 分鐘播客約 70 秒轉完，輸出約 2.5 萬字）。當用戶給出小宇宙鏈接（xiaoyuzhoufm.com/episode/...）、喜馬拉雅鏈接（ximalaya.com/sound/...）、音頻文件或音頻直鏈，想要逐字稿、轉錄、轉文字、字幕時，使用本技能。也可作為 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交給它生成結構化筆記落 Obsidian。
-
-### Why is it worth installing?
-Runs SenseVoiceSmall via onnxruntime, moving transcription from cloud APIs to your machine. Speed impresses, but the real edge.
-
-### How do you install it?
-git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
-
---- 中文 ---
-小宇宙/喜馬拉雅鏈接丟進來，76 分鐘節目約 70 秒出 2.5 萬字逐字稿。
-
-### Q：這個 skill 做什麼？
-把小宇宙、喜馬拉雅播客單集（或任意音頻文件/直鏈）在本地離線轉成逐字稿，不聯網、不燒 API 額度。本地 onnxruntime 跑 SenseVoiceSmall，Apple Silicon 實測 60-70 倍實時（一期 76 分鐘播客約 70 秒轉完，輸出約 2.5 萬字）。當用戶給出小宇宙鏈接（xiaoyuzhoufm.com/episode/...）、喜馬拉雅鏈接（ximalaya.com/sound/...）、音頻文件或音頻直鏈，想要逐字稿、轉錄、轉文字、字幕時，使用本技能。也可作為 xiaoyuzhou-podcast-notes 的上游：先本地出逐字稿，再交給它生成結構化筆記落 Obsidian。
-
-### Q：為什麼值得裝？
-用 onnxruntime 跑 SenseVoiceSmall，把轉錄從雲端 API 搬回本地。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/peggykangkang02/podcast-pipeline.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: peggykangkang02/podcast-pipeline The repository ships 1 skills in total.
 
 ========================================================================
 ## grilling
@@ -3244,44 +3304,6 @@ git clone --depth 1 https://github.com/sayshirak/audio-analysis.git 然後把智
 
 ### Q：它從哪來？
 Repository: sayshirak/audio-analysis The repository ships 1 skills in total.
-
-========================================================================
-## huatu
-## 先讀圖再落筆的AI矢量稿，路徑文字豎排都驗過
-URL: https://ourword.ai/skill/tw/i/ccxx1835-huatu-skill/
-URL (中文): https://ourword.ai/skill/tw/zh/i/ccxx1835-huatu-skill/
-Source: https://github.com/ccxx1835/huatu-skill
-Updated: 2026-09-03
-Tags: images, skill, ccxx1835
-
-Recreate charts, flows, and infographics as native Illustrator-editable vectors. Beyond visual similarity, it.
-
-### What does this skill do?
-先理解參考圖片的語義、文字置信度與幾何結構，再按需高保真重繪為 Adobe Illustrator 原生可編輯 AI 矢量稿，並通過 Illustrator 實際導出、對象統計、疊圖和差異圖驗證路徑文字、中文豎排、視覺居中、對稱關係及版式誤差。適用於分析或復刻圖表、流程圖、信息圖、報告插圖和 Illustrator 風格畫面，以及需要 AI/SVG/EPS/PDF 交付、物理尺寸、字體或顏色模式約束、或分階段先讀圖後繪製的任務。
-
-### Why is it worth installing?
-Two-phase pipeline: semantic/structural parsing before drawing, then verifies via actual export and object stats—not just a.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-圖表、流程圖、信息圖，復刻成Illustrator原生可編輯稿。不只畫得像，還逐項核對文字置信度、幾何結構。
-
-### Q：這個 skill 做什麼？
-先理解參考圖片的語義、文字置信度與幾何結構，再按需高保真重繪為 Adobe Illustrator 原生可編輯 AI 矢量稿，並通過 Illustrator 實際導出、對象統計、疊圖和差異圖驗證路徑文字、中文豎排、視覺居中、對稱關係及版式誤差。適用於分析或復刻圖表、流程圖、信息圖、報告插圖和 Illustrator 風格畫面，以及需要 AI/SVG/EPS/PDF 交付、物理尺寸、字體或顏色模式約束、或分階段先讀圖後繪製的任務。
-
-### Q：為什麼值得裝？
-把「看懂圖」和「畫矢量」拆成兩階段，先解析語義與版式約束，再高保真重建；用實際導出和對象統計驗證。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## college-resume-coach
@@ -8384,28 +8406,6 @@ git clone --depth 1 https://github.com/yanliudesign/dreameryanyan-star.git 然�
 
 ### Q：它從哪來？
 Repository: yanliudesign/dreameryanyan-star The repository ships 1 skills in total.
-
-========================================================================
-## kimi
-## 設計稿交給它，前端代碼拿回來就能跑
-URL: https://ourword.ai/skill/tw/i/oil-oil-kimi/
-Source: https://github.com/oil-oil/kimi
-Updated: 2026-07-18
-Tags: work, skill, oil-oil
-
-A non-interactive wrapper for the local Kimi Code CLI, strong at visual direction, design systems, UI critique.
-
-### What does this skill do?
-Delegate design-heavy UI/UX work, frontend implementation, coding, repository exploration, review, and media-aware analysis to the local Kimi Code CLI through a bundled non-interactive wrapper. Kimi is a design-strong Agent suited to visual direction, design systems, interface critique, and frontend polish. It can inspect local images and videos but cannot generate or edit image assets. Invoke onl
-
-### Why is it worth installing?
-Bridges Kimi's design judgment straight into your pipeline—no IDE, no chit-chat. It critiques UI, explores repos, and writes.
-
-### How do you install it?
-git clone --depth 1 https://github.com/oil-oil/kimi.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: oil-oil/kimi The repository ships 1 skills in total.
 
 ========================================================================
 ## vibe-check
