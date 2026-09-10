@@ -1,7 +1,121 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 帮你发现有品位的 Skills
 # https://ourword.ai/skill/
-# Full corpus, plain text. 369 skills.
+# Full corpus, plain text. 372 skills.
+
+========================================================================
+## jianming-zhongwen
+## 短句、实义动词、条件在前的中文技术写作规范
+URL: https://ourword.ai/skill/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+URL (中文): https://ourword.ai/skill/zh/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+Source: https://github.com/heichaowo/jianming-zhongwen/tree/HEAD/skills/jianming-zhongwen
+Updated: 2026-09-10
+Tags: writing, skill, heichaowo
+
+Strips filler like "of great significance" from READMEs and error text: modals tiered must/should/may, every term.
+
+### What does this skill do?
+用简明技术中文写作或改写：短句、实义动词、条件在前、情态词按阶梯、 一词一义、术语首次出现时定义、只说事实不说重要性。用于 README、 操作手册、故障排查、报错文本、发布说明、事故报告、接口说明，以及给 领域外读者的技术说明。用户说「简明中文」「简明技术中文」「写得简单点」 「去掉废话」「说人话」「改成技术文档风格」「检查这段中文」时也启用。 回复同样遵守：第一句给答案，最多 5 句，只用散文。
+
+### Why is it worth installing?
+It hands you checkable rewrite rules, not style advice: condition clauses first, one word one meaning, replies capped at 5 prose.
+
+### How do you install it?
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+--- 中文 ---
+README 和报错文本里那些「具有重要意义」「进行了优化」被逐句拆掉：情态词按必须/应该/可以分三级。
+
+### Q：这个 skill 做什么？
+用简明技术中文写作或改写：短句、实义动词、条件在前、情态词按阶梯、 一词一义、术语首次出现时定义、只说事实不说重要性。用于 README、 操作手册、故障排查、报错文本、发布说明、事故报告、接口说明，以及给 领域外读者的技术说明。用户说「简明中文」「简明技术中文」「写得简单点」 「去掉废话」「说人话」「改成技术文档风格」「检查这段中文」时也启用。 回复同样遵守：第一句给答案，最多 5 句，只用散文。
+
+### Q：为什么值得装？
+它给的是可执行的改写规则，不是风格建议：条件从句前置、一词一义、回复限 5 句散文。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+========================================================================
+## debate-prep
+## 正反双方都替你备到能上场，华语辩论赛全套
+URL: https://ourword.ai/skill/i/waverlyowen-ustc-debate-debate-prep/
+URL (中文): https://ourword.ai/skill/zh/i/waverlyowen-ustc-debate-debate-prep/
+Source: https://github.com/WaverlyOwen/ustc-debate/tree/HEAD/.claude/skills/debate-prep
+Updated: 2026-09-10
+Tags: work, skill, WaverlyOwen
+
+Both sides prepped: definitions, criteria, arguments, rebuttal bank, and per-format docs in Markdown and PDF.
+
+### What does this skill do?
+华语辩论赛备赛助手。给定辩题（可选题解、赛制、我方持方），始终对称地为正反双方完成备赛：关键词定义调研（正方有利 / 反方有利 / 中立三版及反驳）、判准与论证义务（三版及反驳）、经多轮对抗迭代的 2–3 个精炼论点（每个配学理、数据、案例，注明出处与研究方法）、覆盖对方全部可能论点的反驳库、持方优劣评估、全队口径表，并按赛制产出三类文档：备赛文档、正赛速查、正赛文稿，全部输出 Markdown 与 PDF。只要用户提到辩题、辩论赛、立论、质询、驳论、盘问、自由辩、结辩、持方、正方/反方、新生辩论赛、辩论备赛、陪练、模辩，或贴出一个"XX是/不是YY""应该/不应该""利大于弊/弊大于利""A比B更……"式的题目，就使用本技能，即使用户没有明说"备赛"或只想要某一个环节的稿子。Chinese (Mandarin) competitive debate preparation for bot
+
+### Why is it worth installing?
+It never picks a side: both cases get built and cross-attacked, arguments survive rounds of sparring, every claim cited.
+
+### How do you install it?
+git clone --depth 1 https://github.com/WaverlyOwen/ustc-debate.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: WaverlyOwen/ustc-debate Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+--- 中文 ---
+抽到哪边都不慌：定义、判准、论点、反驳库、口径表一次备齐，连正赛速查和结辩文稿都按赛制排好版。
+
+### Q：这个 skill 做什么？
+华语辩论赛备赛助手。给定辩题（可选题解、赛制、我方持方），始终对称地为正反双方完成备赛：关键词定义调研（正方有利 / 反方有利 / 中立三版及反驳）、判准与论证义务（三版及反驳）、经多轮对抗迭代的 2–3 个精炼论点（每个配学理、数据、案例，注明出处与研究方法）、覆盖对方全部可能论点的反驳库、持方优劣评估、全队口径表，并按赛制产出三类文档：备赛文档、正赛速查、正赛文稿，全部输出 Markdown 与 PDF。只要用户提到辩题、辩论赛、立论、质询、驳论、盘问、自由辩、结辩、持方、正方/反方、新生辩论赛、辩论备赛、陪练、模辩，或贴出一个"XX是/不是YY""应该/不应该""利大于弊/弊大于利""A比B更……"式的题目，就使用本技能，即使用户没有明说"备赛"或只想要某一个环节的稿子。Chinese (Mandarin) competitive debate preparation for bot
+
+### Q：为什么值得装？
+它不站队，始终对称地给正反各出一套并互相攻击，论点经多轮对抗才留下，每条都标出处和研究方法。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/WaverlyOwen/ustc-debate.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: WaverlyOwen/ustc-debate Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## whiteboard-explainer
+## 讲到哪画到哪的白板手绘讲解视频生成器
+URL: https://ourword.ai/skill/i/liangdabiao-whiteboard-explainer/
+URL (中文): https://ourword.ai/skill/zh/i/liangdabiao-whiteboard-explainer/
+Source: https://github.com/liangdabiao/whiteboard-explainer
+Updated: 2026-09-09
+Tags: images, skill, liangdabiao
+
+Record your narration, and the whiteboard draws itself stroke by stroke in sync with your voice. Local CPU.
+
+### What does this skill do?
+白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
+
+### Why is it worth installing?
+Strokes are computed against the audio timeline, not faked with templates. Deterministic rendering means the same script always.
+
+### How do you install it?
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+录完旁白，白板上的图形和文字会跟着你的声音一笔笔长出来，讲到哪画到哪，帧级对齐。本地 CPU 渲染。
+
+### Q：这个 skill 做什么？
+白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
+
+### Q：为什么值得装？
+手绘过程是引擎按音频时间轴真算出来的笔迹，不是套模板的假动画。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## playable-prototype
