@@ -86,82 +86,6 @@ git clone --depth 1 https://github.com/xykong36/bili-skills.git Then point your 
 Repository: xykong36/bili-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## classic-reading-companion
-## 讀原著時隨時喊停提問，讀完它逐段回講給你聽
-URL: https://ourword.ai/skill/tw/i/e3559179-spec-classic-reading-companion/
-URL (中文): https://ourword.ai/skill/tw/zh/i/e3559179-spec-classic-reading-companion/
-Source: https://github.com/e3559179-spec/-/tree/HEAD/skills/classic-reading-companion
-Updated: 2026-09-10
-Tags: writing, skill, e3559179-spec
-
-Stuck on Chapter 1 of Capital? Ask and get an answer. After each session it re-teaches the passage, quizzes you.
-
-### What does this skill do?
-輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
-
-### Why is it worth installing?
-It never reads for you. It only works the passage you just finished: explain, quiz, correct, log the doubt — all four before.
-
-### How do you install it?
-git clone --depth 1 https://github.com/e3559179-spec/-.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-讀《資本論》卡在第一章商品二重性，問一句就有人接；讀完它按段回講，還逼你複述一遍看是真懂還是順下來了。
-
-### Q：這個 skill 做什麼？
-輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
-
-### Q：為什麼值得裝？
-它不替你讀書，只在你讀完的那一段上做檢查：講解、追問、糾偏、記疑，四步走完才算過。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/e3559179-spec/-.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## sugar-motion
-## 座標點進來，Kawasaki 手臂的 LMOVE/J
-URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-motion/
-URL (中文): https://ourword.ai/skill/tw/zh/i/progannewbie-suger-sugar-motion/
-Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-motion
-Updated: 2026-09-10
-Tags: play, skill, progannewbie
-
-You have sugar-drawing coordinates but the arm doesn't know straight or joint moves. It picks interpolation per.
-
-### What does this skill do?
-把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
-
-### Why is it worth installing?
-Interpolation is decided per segment, not globally: LMOVE where straight, JMOVE where jointed, speed and dwell tied to sugar.
-
-### How do you install it?
-git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
---- 中文 ---
-手上只有一串糖畫座標，手臂卻不知道該走直線還是轉關節？它逐段判斷插補方式，算好速度、抬筆落筆和糖點停留。
-
-### Q：這個 skill 做什麼？
-把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
-
-### Q：為什麼值得裝？
-插補方式不是全局設定，是逐段判的：該直的 LMOVE、該轉的 JMOVE，速度和停留時間跟著糖量走。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
-========================================================================
 ## jianming-zhongwen
 ## 短句、實義動詞、條件在前的中文技術寫作規範
 URL: https://ourword.ai/skill/tw/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
@@ -200,6 +124,44 @@ git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然後把
 Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
 
 ========================================================================
+## classic-reading-companion
+## 讀原著時隨時喊停提問，讀完它逐段回講給你聽
+URL: https://ourword.ai/skill/tw/i/e3559179-spec-classic-reading-companion/
+URL (中文): https://ourword.ai/skill/tw/zh/i/e3559179-spec-classic-reading-companion/
+Source: https://github.com/e3559179-spec/-/tree/HEAD/skills/classic-reading-companion
+Updated: 2026-09-10
+Tags: writing, skill, e3559179-spec
+
+Stuck on Chapter 1 of Capital? Ask and get an answer. After each session it re-teaches the passage, quizzes you.
+
+### What does this skill do?
+輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
+
+### Why is it worth installing?
+It never reads for you. It only works the passage you just finished: explain, quiz, correct, log the doubt — all four before.
+
+### How do you install it?
+git clone --depth 1 https://github.com/e3559179-spec/-.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+讀《資本論》卡在第一章商品二重性，問一句就有人接；讀完它按段回講，還逼你複述一遍看是真懂還是順下來了。
+
+### Q：這個 skill 做什麼？
+輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
+
+### Q：為什麼值得裝？
+它不替你讀書，只在你讀完的那一段上做檢查：講解、追問、糾偏、記疑，四步走完才算過。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/e3559179-spec/-.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## devil-advocate
 ## 在你拍板前把方案拆開找裂縫的紅隊陪練
 URL: https://ourword.ai/skill/tw/i/hadicancatak-coder-devils-advocate-devil-advocate/
@@ -220,6 +182,44 @@ git clone --depth 1 https://github.com/hadicancatak-coder/devils-advocate.git Th
 
 ### Where does it come from?
 Repository: hadicancatak-coder/devils-advocate The repository ships 1 skills in total.
+
+========================================================================
+## sugar-motion
+## 座標點進來，Kawasaki 手臂的 LMOVE/J
+URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-motion/
+URL (中文): https://ourword.ai/skill/tw/zh/i/progannewbie-suger-sugar-motion/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-motion
+Updated: 2026-09-10
+Tags: play, skill, progannewbie
+
+You have sugar-drawing coordinates but the arm doesn't know straight or joint moves. It picks interpolation per.
+
+### What does this skill do?
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Why is it worth installing?
+Interpolation is decided per segment, not globally: LMOVE where straight, JMOVE where jointed, speed and dwell tied to sugar.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+手上只有一串糖畫座標，手臂卻不知道該走直線還是轉關節？它逐段判斷插補方式，算好速度、抬筆落筆和糖點停留。
+
+### Q：這個 skill 做什麼？
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Q：為什麼值得裝？
+插補方式不是全局設定，是逐段判的：該直的 LMOVE、該轉的 JMOVE，速度和停留時間跟著糖量走。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: progannewbie/suger The repository ships 1 skills in total.
 
 ========================================================================
 ## debate-prep
@@ -396,6 +396,28 @@ git clone --depth 1 https://github.com/shenquan520/reading-analysis.git 然後�
 Repository: shenquan520/reading-analysis The repository ships 1 skills in total.
 
 ========================================================================
+## pf2e-gm
+## 翻開本地規則庫的 PF2e 主持人副駕
+URL: https://ourword.ai/skill/tw/i/milec-towers-of-saeroth-pf2e-gm/
+Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
+Updated: 2026-09-10
+Tags: play, skill, Milec
+
+41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
+
+### What does this skill do?
+Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
+
+### Why is it worth installing?
+It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## huatu
 ## 先讀圖再落筆的AI矢量稿，路徑文字豎排都驗過
 URL: https://ourword.ai/skill/tw/i/ccxx1835-huatu-skill/
@@ -532,6 +554,44 @@ git clone --depth 1 https://github.com/oil-oil/kimi.git Then point your agent at
 Repository: oil-oil/kimi The repository ships 1 skills in total.
 
 ========================================================================
+## huashu-report
+## 42份頂級機構報告實測出的排版骨架
+URL: https://ourword.ai/skill/tw/i/alchaincyf-huashu-report/
+URL (中文): https://ourword.ai/skill/tw/zh/i/alchaincyf-huashu-report/
+Source: https://github.com/alchaincyf/huashu-report
+Updated: 2026-09-10
+Tags: work, skill, alchaincyf
+
+Tired of reports that don't look 'consulting-grade'? Built from 42實測 top-firm reports (Stanford/BCG/McKinsey), it.
+
+### What does this skill do?
+做機構級研究報告與學術論文——行業報告、白皮書、年度調研、數據洞察、arXiv論文。定結構、寫發現、建圖表視覺系統。規範提煉自2026年42份頂級機構報告實測（Stanford/BCG/McKinsey/OpenAI/Reuters等）。單篇文章、PPT不適用。
+
+### Why is it worth installing?
+Not generic templates—reverse-engineered from 42 top-firm reports (2026), so structure, wording, and chart specs come from real.
+
+### How do you install it?
+git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
+
+--- 中文 ---
+寫行業報告總被說'不像諮詢出品'？從Stanford到BCG的42份實測規範，幫你定結構、寫發現、建圖表視覺系統。
+
+### Q：這個 skill 做什麼？
+做機構級研究報告與學術論文——行業報告、白皮書、年度調研、數據洞察、arXiv論文。定結構、寫發現、建圖表視覺系統。規範提煉自2026年42份頂級機構報告實測（Stanford/BCG/McKinsey/OpenAI/Reuters等）。單篇文章、PPT不適用。
+
+### Q：為什麼值得裝？
+不是泛泛模板，是2026年42份頂級機構報告的逆向工程——結構、措辭、圖表規範都來自真實樣本。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
+
+========================================================================
 ## oil-motion
 ## 一套切開的網頁動效
 URL: https://ourword.ai/skill/tw/i/oil-oil-oil-motion/
@@ -630,6 +690,28 @@ git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然後
 Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
 
 ========================================================================
+## punk-cover
+## 同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成
+URL: https://ourword.ai/skill/tw/i/adrianpunk-punk-skill-punk-cover/
+Source: https://github.com/adrianpunk/Punk-Skill/tree/HEAD/skills/punk-cover
+Updated: 2026-09-10
+Tags: images, skill, adrianpunk
+
+Turn any article, note or tweet into a cover image in one line — 11 finely tuned styles (magazine front page, torn-paper collage, giant Chinese title…) for Xiaohongshu, WeChat and X.
+
+### What does this skill do?
+Generate cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, confirm platform/aspect ratio and visual style, sa
+
+### Why is it worth installing?
+The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.
+
+### How do you install it?
+git clone --depth 1 https://github.com/adrianpunk/Punk-Skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: adrianpunk/Punk-Skill The repository ships 1 skills in total.
+
+========================================================================
 ## comfyui-mcp
 ## 自然語言改工作流，178 個工具隨叫隨到
 URL: https://ourword.ai/skill/tw/i/artokun-comfyui-mcp/
@@ -650,6 +732,28 @@ git clone --depth 1 https://github.com/artokun/comfyui-mcp.git Then point your a
 
 ### Where does it come from?
 Repository: artokun/comfyui-mcp The repository ships 39 skills in total. Homepage: https://comfyui-mcp.artokun.io/docs
+
+========================================================================
+## design-review
+## 給 Go 代碼庫做地道性評審
+URL: https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/
+Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
+Updated: 2026-09-10
+Tags: images, skill, dimetron
+
+Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
+
+### What does this skill do?
+Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
+
+### Why is it worth installing?
+In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
 ## trading-design
@@ -718,6 +822,44 @@ git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent 
 Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
+## story-deslop
+## 刪掉「她眸色一暗」的網文去AI味改稿器
+URL: https://ourword.ai/skill/tw/i/worldwonderer-oh-story-claudecode-story-deslop/
+URL (中文): https://ourword.ai/skill/tw/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
+Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
+Updated: 2026-09-10
+Tags: writing, skill, worldwonderer
+
+Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
+
+### What does this skill do?
+網文去AI味。檢測並清除文本中的AI寫作痕跡，讓文字迴歸自然、非模板化。觸發方式：/story-deslop、/去AI味、「去AI味」「這篇太AI了」「網文去AI味」。
+
+### Why is it worth installing?
+Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
+
+### How do you install it?
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+檢測並清除網文裡的 AI 寫作痕跡：模板化開頭、翻譯腔、排比堆砌，讓文字迴歸人寫的自然感。
+
+### Q：這個 skill 做什麼？
+網文去AI味。檢測並清除文本中的AI寫作痕跡，讓文字迴歸自然、非模板化。觸發方式：/story-deslop、/去AI味、「去AI味」「這篇太AI了」「網文去AI味」。
+
+### Q：為什麼值得裝？
+網文讀者對 AI 味極其敏感，平臺也在查；這是全家桶裡最保命的一件。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## caveman
 ## 讓 Claude 用原始人腔說話，據稱省下 65% 的 token
 URL: https://ourword.ai/skill/tw/i/juliusbrussee-caveman-caveman/
@@ -738,6 +880,28 @@ git clone --depth 1 https://github.com/JuliusBrussee/caveman.git Then point your
 
 ### Where does it come from?
 Repository: JuliusBrussee/caveman The repository ships 11 skills in total.
+
+========================================================================
+## claude-ai-music-skills
+## 給 Suno 配上歌詞工作流和混音清單，從玩票做到成品
+URL: https://ourword.ai/skill/tw/i/bitwize-music-studio-claude-ai-music-skills/
+Source: https://github.com/bitwize-music-studio/claude-ai-music-skills
+Updated: 2026-09-10
+Tags: play, collection, bitwize-music-studio
+
+A human-plus-AI Suno production line — style templates, lyric workflows and mix checklists; from toying to producing.
+
+### What does this skill do?
+Human + AI music production workflow for Suno - skills, templates, and tools
+
+### Why is it worth installing?
+Plenty of Suno players, few finished tracks — this pack covers exactly that gap.
+
+### How do you install it?
+git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: bitwize-music-studio/claude-ai-music-skills The repository ships 44 skills in total.
 
 ========================================================================
 ## i-have-adhd
@@ -996,28 +1160,6 @@ git clone --depth 1 https://github.com/yang0/handraw-style.git Then point your a
 Repository: yang0/handraw-style The repository ships 1 skills in total.
 
 ========================================================================
-## pf2e-gm
-## 翻開本地規則庫的 PF2e 主持人副駕
-URL: https://ourword.ai/skill/tw/i/milec-towers-of-saeroth-pf2e-gm/
-Source: https://github.com/Milec/Towers-of-Saeroth/tree/HEAD/.claude/skills/pf2e-gm
-Updated: 2026-09-09
-Tags: play, skill, Milec
-
-41,000+ spell, monster, and item notes in your Obsidian vault—look up rules, balance encounters, and keep the.
-
-### What does this skill do?
-Game mastering and worldbuilding assistant for Pathfinder Second Edition, backed by a local Obsidian vault of the full PF2e rules (41,000+ notes covering spells, feats, creatures, hazards, equipment, deities and rules). Use this whenever the user is preparing or running a Pathfinder 2e game — building or balancing an encounter, looking up a spell, feat, item, monster or rule, statting an NPC, pick
-
-### Why is it worth installing?
-It reads your full local ruleset offline, not a cloud API; couples rule lookup with GM decisions, offering balance nudges as you.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Milec/Towers-of-Saeroth.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Milec/Towers-of-Saeroth Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## seedance-prompt-library
 ## Seedance 2.5 視頻提示詞模板庫
 URL: https://ourword.ai/skill/tw/i/learnprompt-awesome-seedance-seedance-prompt-library/
@@ -1152,88 +1294,6 @@ git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然�
 
 ### Q：它從哪來？
 Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
-========================================================================
-## punk-cover
-## 同一套朋克視覺庫，文章、小紅書、公眾號封面一次生成
-URL: https://ourword.ai/skill/tw/i/adrianpunk-punk-skill-punk-cover/
-Source: https://github.com/adrianpunk/Punk-Skill/tree/HEAD/skills/punk-cover
-Updated: 2026-09-09
-Tags: images, skill, adrianpunk
-
-Turn any article, note or tweet into a cover image in one line — 11 finely tuned styles (magazine front page, torn-paper collage, giant Chinese title…) for Xiaohongshu, WeChat and X.
-
-### What does this skill do?
-Generate cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, confirm platform/aspect ratio and visual style, sa
-
-### Why is it worth installing?
-The style library is genuinely crafted — each one tagged with what content it fits, so picking feels like ordering off a menu; covers land with editorial polish, not AI mush.
-
-### How do you install it?
-git clone --depth 1 https://github.com/adrianpunk/Punk-Skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: adrianpunk/Punk-Skill The repository ships 1 skills in total.
-
-========================================================================
-## design-review
-## 給 Go 代碼庫做地道性評審
-URL: https://ourword.ai/skill/tw/i/dimetron-pi-go-design-review/
-Source: https://github.com/dimetron/pi-go/tree/HEAD/.pi-go/skills/design-review
-Updated: 2026-09-09
-Tags: images, skill, dimetron
-
-Deep design review for Go codebases — naming, structure, consistency, interfaces and error handling scored, with fixes.
-
-### What does this skill do?
-Deep design review of Go codebase — naming, structure, consistency, interfaces, error handling. Scores each dimension and provides actionable fixes.
-
-### Why is it worth installing?
-In Go, "works" and "idiomatic" are far apart; per-dimension scoring makes the feedback actionable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
-
-========================================================================
-## story-deslop
-## 刪掉「她眸色一暗」的網文去AI味改稿器
-URL: https://ourword.ai/skill/tw/i/worldwonderer-oh-story-claudecode-story-deslop/
-URL (中文): https://ourword.ai/skill/tw/zh/i/worldwonderer-oh-story-claudecode-story-deslop/
-Source: https://github.com/worldwonderer/oh-story-claudecode/tree/HEAD/skills/story-deslop
-Updated: 2026-09-09
-Tags: writing, skill, worldwonderer
-
-Detects and scrubs AI fingerprints from web fiction — template openings, stilted phrasing, parallelism piles — back to human.
-
-### What does this skill do?
-網文去AI味。檢測並清除文本中的AI寫作痕跡，讓文字迴歸自然、非模板化。觸發方式：/story-deslop、/去AI味、「去AI味」「這篇太AI了」「網文去AI味」。
-
-### Why is it worth installing?
-Web-fiction readers (and platforms) smell AI instantly; this is the pack's survival tool.
-
-### How do you install it?
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-檢測並清除網文裡的 AI 寫作痕跡：模板化開頭、翻譯腔、排比堆砌，讓文字迴歸人寫的自然感。
-
-### Q：這個 skill 做什麼？
-網文去AI味。檢測並清除文本中的AI寫作痕跡，讓文字迴歸自然、非模板化。觸發方式：/story-deslop、/去AI味、「去AI味」「這篇太AI了」「網文去AI味」。
-
-### Q：為什麼值得裝？
-網文讀者對 AI 味極其敏感，平臺也在查；這是全家桶裡最保命的一件。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/worldwonderer/oh-story-claudecode.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: worldwonderer/oh-story-claudecode Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## video-shotcraft
@@ -3404,44 +3464,6 @@ git clone --depth 1 https://github.com/KaguraNanaga/format-agent-01.git 然後�
 Repository: KaguraNanaga/format-agent-01 The repository ships 1 skills in total.
 
 ========================================================================
-## huashu-report
-## 42份頂級機構報告實測出的排版骨架
-URL: https://ourword.ai/skill/tw/i/alchaincyf-huashu-report/
-URL (中文): https://ourword.ai/skill/tw/zh/i/alchaincyf-huashu-report/
-Source: https://github.com/alchaincyf/huashu-report
-Updated: 2026-09-03
-Tags: work, skill, alchaincyf
-
-Tired of reports that don't look 'consulting-grade'? Built from 42實測 top-firm reports (Stanford/BCG/McKinsey), it.
-
-### What does this skill do?
-做機構級研究報告與學術論文——行業報告、白皮書、年度調研、數據洞察、arXiv論文。定結構、寫發現、建圖表視覺系統。規範提煉自2026年42份頂級機構報告實測（Stanford/BCG/McKinsey/OpenAI/Reuters等）。單篇文章、PPT不適用。
-
-### Why is it worth installing?
-Not generic templates—reverse-engineered from 42 top-firm reports (2026), so structure, wording, and chart specs come from real.
-
-### How do you install it?
-git clone --depth 1 https://github.com/alchaincyf/huashu-report.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
-
---- 中文 ---
-寫行業報告總被說'不像諮詢出品'？從Stanford到BCG的42份實測規範，幫你定結構、寫發現、建圖表視覺系統。
-
-### Q：這個 skill 做什麼？
-做機構級研究報告與學術論文——行業報告、白皮書、年度調研、數據洞察、arXiv論文。定結構、寫發現、建圖表視覺系統。規範提煉自2026年42份頂級機構報告實測（Stanford/BCG/McKinsey/OpenAI/Reuters等）。單篇文章、PPT不適用。
-
-### Q：為什麼值得裝？
-不是泛泛模板，是2026年42份頂級機構報告的逆向工程——結構、措辭、圖表規範都來自真實樣本。
-
-### Q：怎麼裝？
-git clone --depth 1 https://github.com/alchaincyf/huashu-report.git 然後把智能體指向這個 skill 目錄即可。
-
-### Q：它從哪來？
-Repository: alchaincyf/huashu-report The repository ships 1 skills in total.
-
-========================================================================
 ## whiteboard-video
 ## 線稿只准本地模型抽、不許 AI 生成的白板手繪視頻
 URL: https://ourword.ai/skill/tw/i/gnipbao-codex-whiteboard-video-skill/
@@ -3794,28 +3816,6 @@ git clone --depth 1 https://github.com/kacperkapusciak/goldie.git Then point you
 
 ### Where does it come from?
 Repository: kacperkapusciak/goldie The repository ships 1 skills in total.
-
-========================================================================
-## claude-ai-music-skills
-## 給 Suno 配上歌詞工作流和混音清單，從玩票做到成品
-URL: https://ourword.ai/skill/tw/i/bitwize-music-studio-claude-ai-music-skills/
-Source: https://github.com/bitwize-music-studio/claude-ai-music-skills
-Updated: 2026-09-02
-Tags: play, collection, bitwize-music-studio
-
-A human-plus-AI Suno production line — style templates, lyric workflows and mix checklists; from toying to producing.
-
-### What does this skill do?
-Human + AI music production workflow for Suno - skills, templates, and tools
-
-### Why is it worth installing?
-Plenty of Suno players, few finished tracks — this pack covers exactly that gap.
-
-### How do you install it?
-git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: bitwize-music-studio/claude-ai-music-skills The repository ships 44 skills in total.
 
 ========================================================================
 ## algorithmic-sublime-poster
