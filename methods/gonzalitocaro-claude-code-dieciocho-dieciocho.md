@@ -1,0 +1,247 @@
+---
+name: dieciocho
+description: Dibuja el bichito de Claude Code vestido de huaso (chupalla negra, poncho, volantín) y prende o apaga la estética dieciochera — verbos chilenos en el spinner y huaso en la statusline. Úsala cuando el usuario escriba /dieciocho, o pida "el bicho dieciochero", "modo dieciochero", "modo fiestas patrias", "ponme el huaso", "sácame el huaso", "apaga lo del 18", o quiera cambiar de dibujo.
+---
+
+# Modo dieciochero
+
+Viste de huaso al bicho pixelado de Claude Code y pone el terminal en modo
+18 de septiembre. Todo es local, todo es reversible, y la skill es
+autocontenida: se puede copiar a otro computador tal cual.
+
+## Al invocarla sin instrucciones
+
+Primero mira si el hook ya dibujó. Cuando el hook `UserPromptSubmit` está
+instalado (ver más abajo), al escribir `/dieciocho` el banner dieciochero se
+pinta solo arriba de tu respuesta, y en tu contexto llega un aviso del hook que
+dice "El hook dieciocho ya dibujo el banner en pantalla".
+
+**Si ese aviso está: no corras ningún comando.** El monito ya salió. Si además
+lo dibujas tú, sale "Ran 1 shell command" y el usuario ve el ruido en vez del
+monito. Responde una línea corta y nada más, **sin emoji**. La bandera chilena se forma
+con dos indicadores regionales y Windows Terminal no los sabe componer: en vez
+de la bandera queda una `c` suelta al medio de la frase. Lo mismo con el
+volantín y compañía. Si quieres un adorno, usa la estrella `★`, que sí se ve.
+
+**Si el aviso no está, el hook no está instalado.** Pasa en cualquier
+computador donde la skill se acaba de clonar. Ahí sí dibujas tú con el
+renderizador (sale colapsado en "Ran 1 shell command", pero sale), y después
+del dibujo le ofreces al usuario instalar el hook en una frase: con el hook
+`/dieciocho` dibuja solo y sin ruido. Si acepta, sigue la sección "Que el
+comando dibuje el banner" de más abajo. No lo instales sin que diga que sí.
+
+Si el usuario pide otro sprite, corres el renderizador aunque el hook esté:
+
+**Windows:**
+```powershell
+& "<BASE>\render-monito.ps1" -Sprite volantin -Banner -Modelo "<MODELO>"
+```
+
+**macOS / Linux:**
+```bash
+bash "<BASE>/render-monito.sh" volantin --banner --modelo "<MODELO>"
+```
+
+Ojo igual: la salida de un comando la colapsa Claude Code a "Ran 1 shell
+command" y el usuario no ve el dibujo salvo que la expanda. El único canal que
+dibuja de verdad en pantalla es el `systemMessage` de un hook.
+
+`<BASE>` es el directorio base de esta skill, que Claude Code entrega al
+invocarla. **Nunca escribas rutas absolutas de un usuario en particular**: esta
+skill se comparte.
+
+`<MODELO>` es la línea del modelo tal como sale en el banner de arranque, por
+ejemplo `Opus 5 (1M context) with high effort · Claude Team`. El script no
+tiene cómo saberla — la sabes tú, que estás corriendo en esa sesión. Ármala con
+el modelo actual y, si no estás seguro del plan o del nivel de esfuerzo, pon
+solo el nombre del modelo o omite el parámetro: esa línea simplemente no sale.
+
+La versión y la ruta las saca el script solo. La cuenta regresiva se calcula
+contra el 18 de septiembre; pasado el 19 apunta al del año siguiente.
+
+Después de dibujar, no expliques el dibujo. Si el usuario quiere otro, vuelve a
+correrlo con `-Sprite` / el primer argumento.
+
+## Los dibujos
+
+Un monito se arma de tres piezas, y de ahi salen 12 combinaciones. Todas entran al
+sorteo, asi que `aleatorio` puede devolver cualquiera.
+
+| Pieza | Opciones |
+|---|---|
+| Poncho | `huaso` (azul con franja roja), `bandera` (canton azul con estrella, blanco, franja roja), `chamanto` (rayado, rojo sobre lana) |
+| Sombrero | `negra` (chupalla negra con cinta), `paja` (chupalla de paja) |
+| Volantin | se agrega con el sufijo `-volantin` |
+
+El nombre es `<poncho>-<sombrero>[-volantin]`. Por ejemplo `chamanto-paja-volantin`.
+
+Nombres viejos que siguen sirviendo: `huaso`, `bandera`, `chamanto`, `volantin`,
+`huaso-paja`, `bandera-paja`, `chamanto-paja`, `volantin-paja`, `volantin-negro`.
+
+```powershell
+& "<BASE>ender-monito.ps1" -Sprite chamanto-paja-volantin -Sangria 2
+```
+```bash
+bash "<BASE>/render-monito.sh" chamanto-paja-volantin --sangria 2
+```
+
+Las piezas estan definidas por separado en los dos renderizadores. Para agregar un
+poncho o un sombrero nuevo basta con sumarlo a su tabla, en los dos, y las
+combinaciones salen solas.
+
+### Cómo está dibujado
+
+**Un píxel por celda de terminal**, con `█`. Una celda es el doble de alta que
+de ancha, así que los píxeles son rectángulos parados — y esa es justamente la
+geometría del bicho original. Los sprites tienen 7 filas: las 5 del bicho más
+dos de sombrero.
+
+No uses medio bloque (`▀`) para esto. Da píxeles cuadrados, que se ven más
+"correctos" en abstracto pero dejan al monito **achatado a la mitad** al lado
+del original. Ya lo probamos y hubo que deshacerlo.
+
+Para agregar un sprite nuevo, edítalo en los dos renderizadores (`.ps1` y
+`.sh`) con las mismas letras: `c` coral, `p` paja, `a` azul, `r` rojo,
+`b` lana, `h` hilo, `n` negro, `w` blanco, `.` fondo.
+
+## Qué se puede y qué no
+
+| Pieza | Se puede |
+|---|---|
+| Dibujar el monito al invocar la skill | Sí |
+| Verbos del spinner ("Rayueleando…") | Sí — `spinnerVerbs` en `settings.json` |
+| Huaso permanente en la statusline | Sí — la statusline acepta multilínea |
+| **Reemplazar el bicho del banner de inicio** | **No** — está hardcodeado en el binario |
+
+Sobre lo último: en el binario, `BannerConfig` es el banner corporativo de
+texto (color de fondo, link, 200 caracteres), no el sprite. No hay setting
+para el dibujo. Si el usuario lo pide, dile esto derecho en vez de buscar un
+truco: lo más cerca que se llega es la statusline, que sí se ve siempre.
+
+## Que el comando dibuje el banner (hook UserPromptSubmit)
+
+Es la pieza clave. El banner de arranque lo pinta el binario y no se puede
+tocar; y la salida de un comando la colapsa Claude Code a "Ran 1 shell
+command". El unico canal que dibuja de verdad en pantalla es el campo
+`systemMessage` de la salida JSON de un hook.
+
+Entonces: un hook `UserPromptSubmit` detecta que el usuario escribio
+`/dieciocho` y pinta el banner dieciochero ahi mismo.
+
+Va en `~/.claude/settings.json`. Es el mismo comando en Windows, macOS y Linux.
+Si el archivo ya tiene `hooks` o ya tiene `UserPromptSubmit`, agrega esta
+entrada a lo que hay; nunca reemplaces lo que el usuario ya tenia, y antes de
+escribir haz una copia `settings.json.bak-pre18`:
+
+```json
+"hooks": {
+  "UserPromptSubmit": [
+    { "hooks": [ { "type": "command",
+        "command": "bash \"$HOME/.claude/skills/dieciocho/gate-dieciocho.sh\"",
+        "timeout": 20 } ] }
+  ]
+}
+```
+
+En Windows tambien va el `.sh`: Claude Code corre los hooks dentro del bash de
+Git, no en `cmd` ni en PowerShell. De ahi salen las dos reglas que mas caro han
+costado:
+
+- **Nada de backslashes en el comando.** Bash se los come como escape y la ruta
+  llega pegoteada. Un comando que empieza con `C:\PROGRA~1\Git\bin\bash.exe`
+  falla con `C:PROGRA~1Gitbinbash.exe: command not found`. Slash normal y
+  comillas.
+- **`$HOME`, no `$USERPROFILE`**, porque el que lee la ruta es bash: en el bash
+  de Git `$HOME` ya es `/c/Users/...`. Al reves cuando el comando es
+  `powershell -File`: ahi va `$USERPROFILE`, que es el unico que PowerShell
+  sabe leer.
+
+Queda un `gate-dieciocho.cmd` con `findstr` por si alguna version vuelve a
+correr los hooks por `cmd`. Hoy no hace falta.
+
+### Por que hay un "gate" y no se llama al script directo
+
+Este hook corre en **cada** prompt, no solo en `/dieciocho`. Levantar
+PowerShell cada vez cuesta ~380 ms, que se sienten. El `gate` filtra primero
+con `grep` (~119 ms con el bash de Git, ~5 ms en Unix) y recien ahi levanta lo
+pesado. El filtro consume el stdin, por eso el renderizador va directo y no lo
+vuelve a leer.
+
+Para sacarlo, borra el bloque `UserPromptSubmit`.
+
+### Si lo quieres tambien al arrancar
+
+Hay un `sessionstart-monito.ps1` / `.sh` que hace lo mismo en el evento
+`SessionStart`. Dibuja el monito con solo la cuenta regresiva, debajo del
+banner real. No viene activado.
+
+Aviso: Claude Code le pone a todo mensaje de hook una etiqueta del tipo
+`SessionStart:startup says:` y **esa etiqueta no se puede quitar**.
+
+## Verbos del spinner
+
+Están en `verbos.json`, en esta misma carpeta. **Con el plugin instalado se
+prenden solos**: el hook `SessionStart` (`prender-verbos.sh`) copia ese objeto
+como la clave `spinnerVerbs` de `~/.claude/settings.json` la primera vez que
+arranca una sesión, y deja la marca `~/.claude/dieciocho-verbos.hecho` para no
+volver a tocar el archivo. Si el usuario ya tenía `spinnerVerbs`, no se pisa.
+
+Si la skill se copió a mano (sin plugin), el hook no corre y hay que ponerlos
+uno mismo:
+
+```json
+"spinnerVerbs": { "mode": "replace", "verbs": ["Dieciocheando", "..."] }
+```
+
+- `replace` → solo los chilenos.
+- `append` → mezclados con los de fábrica.
+
+Para apagarlos, saca la clave de `settings.json` y listo: la marca queda, así
+que el hook no la vuelve a poner. Para volver a prenderlos, borra la marca o
+pega la clave de nuevo. Toman efecto al toque; no hace falta reiniciar.
+
+## Huaso en la statusline (opcional)
+
+Solo si el usuario lo pide. **Antes de tocar nada, respalda la statusline que
+ya tenga** — mucha gente tiene la suya armada:
+
+```powershell
+Copy-Item "$HOME\.claude\statusline.ps1" "$HOME\.claude\statusline.ps1.bak-pre18" -ErrorAction SilentlyContinue
+```
+
+El interruptor es un archivo: si existe `~/.claude/dieciocho.on`, la statusline
+dibuja el huaso; si no existe, se comporta normal. Su contenido elige el
+tamaño: `cuerpo` (tres líneas) o `compacto` (una).
+
+```powershell
+Set-Content -Path "$HOME\.claude\dieciocho.on" -Value "cuerpo" -NoNewline -Encoding utf8
+Remove-Item "$HOME\.claude\dieciocho.on"   # apagar
+```
+
+## Compartir la skill
+
+Copiar la carpeta completa a `~/.claude/skills/dieciocho/` en el otro
+computador. No hay nada más que instalar: los renderizadores son un `.ps1` y
+un `.sh` sin dependencias. Con eso, `/dieciocho` ya dibuja.
+
+Si además quiere los verbos o la statusline, que los pida — son los dos pasos
+opcionales de arriba.
+
+## Gotchas que ya costaron una vuelta
+
+- **Encoding de salida en Windows**: PowerShell 5.1 escribe en la codepage del
+  sistema y convierte los bloques en `?`. Los scripts fuerzan UTF-8 con
+  `[Console]::OutputEncoding`. Si aparecen interrogantes, esa línea se cayó.
+- **Encoding del archivo**: los glifos se generan con `[char]0xNNNN` (y con
+  `printf '\xe2\x96\x80'` en sh) a propósito, para que los scripts queden ASCII
+  puros. Si editas uno, no pegues los caracteres literales.
+- **macOS trae bash 3.2**: nada de `mapfile` ni de arrays asociativos en el
+  `.sh`. Por eso el color va en un `case` y no en un diccionario.
+- **Los hooks en Windows corren en el bash de Git**, no en PowerShell. Si el
+  comando de un hook trae backslashes, bash se los come como escape y sale
+  `command not found` con la ruta pegoteada. Las rutas van con slash normal y
+  entre comillas, y con `$USERPROFILE` en vez de `$HOME` (en el bash de Git
+  `$HOME` es `/c/Users/...`, que PowerShell no sabe leer).
+- **Color de 24 bits**: los sprites usan `ESC[38;2;R;G;Bm`. Windows Terminal,
+  iTerm2 y la mayoría de los modernos lo soportan; la consola vieja de Windows
+  (conhost) no, y ahí se ve plano.
