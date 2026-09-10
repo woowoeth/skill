@@ -2,6 +2,416 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-10T08:57:56Z",
+   "判了": 51,
+   "过": 1,
+   "明细": [
+    {
+     "id": "openpageagent-pageagent-khazix-writer",
+     "repo": "openpageagent/pageagent",
+     "title": "丢来一份 PDF 或语音，还你一篇公众号长文",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 写手风格调教扎实，但属通用写作skill，换工具也能做，非不可替代（3 判：[50, 72, 88]）",
+     "分": 72
+    },
+    {
+     "id": "priscananjehe1996-priezent-agent-session-world",
+     "repo": "priscananjehe1996/priezent",
+     "title": "编程会话变成一座会动的 3D 小世界",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 把agent会话状态映射成3D世界，边界和取舍都想过，创作者题材（3 判：[62, 68, 83]）",
+     "分": 68
+    },
+    {
+     "id": "ashwani90-newspaper-agent-newspaper",
+     "repo": "ashwani90/newspaper-agent",
+     "title": "整份报纸 PDF 拆成带话题标签的摘要库",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 把报纸PDF摘要流程做得很细，锚点、话题校验都想到，但绑定个人路径和私有工具链，（3 判：[62, 62, 68]）",
+     "分": 62
+    },
+    {
+     "id": "wuyongjin007-hash-gongwen-format-gongwen-format",
+     "repo": "wuyongjin007-hash/gongwen-format",
+     "title": "仿宋三号、28磅行距，公文排版一次到位",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 版式参数清单，企业公文专用，读者窄且纯规格无判断（3 判：[45, 52, 55]）",
+     "分": 52
+    },
+    {
+     "id": "bbora-min-se-web-toolkit",
+     "repo": "bbora-min/se-web-toolkit",
+     "title": "十个前端小工具，从打包到部署一次配齐",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "bbora-min-se-web-toolkit-review",
+     "repo": "bbora-min/se-web-toolkit",
+     "title": "截图跑一遍设计评审再跑一遍代码评审，产出修改清单",
+     "过": false,
+     "为什么": "品味 32 分 < 80 —— 是某产品自家内部工作流，普通读者读不懂也不交付可用物（3 判：[22, 32, 55]）",
+     "分": 32
+    },
+    {
+     "id": "bbora-min-se-web-toolkit-se-design",
+     "repo": "bbora-min/se-web-toolkit",
+     "title": "写代码前先交设计方案的 SE 界面规划器",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 具体设计判断与实战缺陷，非通用清单；但绑定自家项目，换工具也难复现（3 判：[58, 72, 78]）",
+     "分": 72
+    },
+    {
+     "id": "bbora-min-se-web-toolkit-se-ui",
+     "repo": "bbora-min/se-web-toolkit",
+     "title": "写 SE 设计系统页面时先查它的组件与令牌手册",
+     "过": false,
+     "为什么": "品味 28 分 < 80 —— 某个内部设计系统自家文档，外人拿不到上下文，只值基建分（3 判：[20, 28, 30]）",
+     "分": 28
+    },
+    {
+     "id": "aadhithyanak47-ak-vip-care-supabase-postgres-best-practices",
+     "repo": "AADHITHYANAK47/AK-VIP-CARE",
+     "title": "动 Postgres 之前先读的 Supabase ",
+     "过": false,
+     "为什么": "品味 38 分 < 80 —— 官方数据库工具链文档索引，读者是开发者，非店主受众（3 判：[35, 38, 42]）",
+     "分": 38
+    },
+    {
+     "id": "aadhithyanak47-ak-vip-care-supabase",
+     "repo": "AADHITHYANAK47/AK-VIP-CARE",
+     "title": "Supabase 全栈排障手册",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 官方自家文档型技能，扎实但只服务Supabase用户，非通用创作题材（3 判：[45, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "formify-e-sign-formify-skills-formify-pdf-forms",
+     "repo": "formify-e-sign/formify-skills",
+     "title": "静态 PDF 变成能填能签的表单模板",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 流程和边界很扎实，但绑定Formify私有字段，属产品文档（3 判：[58, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "formify-e-sign-formify-skills-formify-send-contract",
+     "repo": "formify-e-sign/formify-skills",
+     "title": "合同发出去等签字，模板、PDF、刚聊完的草稿都行",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 对发送签约流程考虑细致，但属企业工具链，非普通人创作题材（3 判：[45, 52, 62]）",
+     "分": 52
+    },
+    {
+     "id": "formify-e-sign-formify-skills-formify-track-signatures",
+     "repo": "formify-e-sign/formify-skills",
+     "title": "签名发出后谁签了、谁没签、怎么催怎么撤",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 签名后流程写得扎实，但绑定Formify产品，非通用选题，缺独立价值（3 判：[32, 55, 58]）",
+     "分": 55
+    },
+    {
+     "id": "andriishramko-suno-ai-agent-automation-skill-suno",
+     "repo": "AndriiShramko/suno-ai-agent-automation-skill",
+     "title": "不截图不花钱，用 DOM 把歌词直接填进 Suno ",
+     "过": false,
+     "为什么": "品味 51 分 < 80 —— Suno自家DOM自动化，读者窄，深但非通用手艺（3 判：[42, 51, 62]）",
+     "分": 51
+    },
+    {
+     "id": "tzachbon-srulik-toolkit",
+     "repo": "tzachbon/srulik-toolkit",
+     "title": "七个各管一段的 Claude Code 交付小工具",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "tzachbon-srulik-toolkit-agent-swarm",
+     "repo": "tzachbon/srulik-toolkit",
+     "title": "按当前 harness 能开几个子代理就开几个",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 编排流程通用模板，换个工具也能写，无场景化交付（3 判：[45, 45, 47]）",
+     "分": 45
+    },
+    {
+     "id": "tzachbon-srulik-toolkit-create-plan",
+     "repo": "tzachbon/srulik-toolkit",
+     "title": "动手前先把你追问到没话说的计划书生成器",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 工程规划协议扎实但偏基建，普通人用不上，换工具也能做（3 判：[34, 58, 58]）",
+     "分": 58
+    },
+    {
+     "id": "tzachbon-srulik-toolkit-fix-ci",
+     "repo": "tzachbon/srulik-toolkit",
+     "title": "红叉的 PR 检查，它顺着日志改到全绿为止",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 开发工具链题材，但流程边界和证据纪律写得扎实（3 判：[42, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "watt-mind-openkrx-openkrx",
+     "repo": "watt-mind/openKRX",
+     "title": "拆开匈牙利政府公文包 .krx，附件原样取出来",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 对自身边界极清晰的KRX工具，但题材属匈牙利行政对接，偏专业窄众（3 判：[30, 55, 62]）",
+     "分": 55
+    },
+    {
+     "id": "hadicancatak-coder-devils-advocate-devil-advocate",
+     "repo": "hadicancatak-coder/devils-advocate",
+     "title": "在你拍板前把方案拆开找裂缝的红队陪练",
+     "过": true,
+     "为什么": "品味 82 分 —— 拒绝和稀泥、强制裁决、校验分步、边界清晰，别处难有（3 判：[78, 82, 82]）",
+     "分": 82
+    },
+    {
+     "id": "anoopsignature123-ops-dextrade-testing-best-practices",
+     "repo": "anoopsignature123-ops/dextrade",
+     "title": "写测试前先问这条断言值不值钱的 Laravel 评审",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Laravel 框架测试规范，开发者工具，非普通读者货（3 判：[30, 45, 45]）",
+     "分": 45
+    },
+    {
+     "id": "anoopsignature123-ops-dextrade-infer-conventions",
+     "repo": "anoopsignature123-ops/dextrade",
+     "title": "翻遍代码库，把你们实际在用的写法写成 .ai/rul",
+     "过": false,
+     "为什么": "品味 34 分 < 80 —— 方法论扎实但纯属Laravel开发工具链，面向代理非普通人（3 判：[25, 34, 55]）",
+     "分": 34
+    },
+    {
+     "id": "anoopsignature123-ops-dextrade-laravel-best-practices",
+     "repo": "anoopsignature123-ops/dextrade",
+     "title": "写 Laravel 时顺手把 N+1 和越权堵在提交",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 官方出品，是规则索引/基建，读者是开发者而非普通人，无独立交付（3 判：[42, 45, 46]）",
+     "分": 45
+    },
+    {
+     "id": "adiolk98-clean-diagram-clean-diagram",
+     "repo": "adiolk98/clean-diagram",
+     "title": "代码库扫一遍，吐出一张能拖能改的架构图",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 开发工具链，工程受众，店里的普通读者用不上（3 判：[42, 78, 78]）",
+     "分": 78
+    },
+    {
+     "id": "1nwz-split-screen-scrapbook",
+     "repo": "1NWZ/split-screen-scrapbook",
+     "title": "一屏留脸一屏留字，上下双屏复古手账拼贴",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 身份保真边界极清晰，降级路径与验收都可执行，非通用拼贴（3 判：[78, 78, 84]）",
+     "分": 78
+    },
+    {
+     "id": "isthislee-claude-korean-writing",
+     "repo": "IsthisLee/claude-korean-writing",
+     "title": "韩语职场写作按收件人和文种自动换腔调",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 韩语AI腔判别颗粒度罕见，边界清楚，但读者面偏窄、属写作规则类（3 判：[68, 68, 74]）",
+     "分": 68
+    },
+    {
+     "id": "520liyangzi-log-analyze-logscope",
+     "repo": "520liyangzi/log-analyze",
+     "title": "多节点日志包先按流水号串起来再找慢请求",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 内部日志排查工具，边界清楚但仅限本产品用户（3 判：[42, 52, 52]）",
+     "分": 52
+    },
+    {
+     "id": "shngmsw-explainer-kit-html-to-deliverable",
+     "repo": "shngmsw/explainer-kit",
+     "title": "单页 HTML 连图带文转成能交出去的 Word 和",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 自认知边界、交付清楚，但面向开发者工具链，非普通创作者场景（3 判：[58, 62, 72]）",
+     "分": 62
+    },
+    {
+     "id": "shngmsw-explainer-kit-zukai-onepager",
+     "repo": "shngmsw/explainer-kit",
+     "title": "外行也能看懂的单页 HTML 图解说明书",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 工艺扎实但题材工具向，交付HTML图解释义，非独家判断（3 判：[30, 55, 68]）",
+     "分": 55
+    },
+    {
+     "id": "faiqsadan793-eng-absensi-app-syahdan-testing-best-practices",
+     "repo": "faiqsadan793-eng/absensi-app-syahdan",
+     "title": "先问这条测试删掉会不会有人哭的 Laravel 测试",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— Laravel测试规范扎实但属开发工具链，同类指南多（3 判：[55, 58, 58]）",
+     "分": 58
+    },
+    {
+     "id": "faiqsadan793-eng-absensi-app-syahdan-inertia-react-development",
+     "repo": "faiqsadan793-eng/absensi-app-syahdan",
+     "title": "Inertia v2 的 React 页面",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— Inertia官方React文档搬运，开发者工具链，非普通创作者受众（3 判：[42, 55, 55]）",
+     "分": 55
+    },
+    {
+     "id": "faiqsadan793-eng-absensi-app-syahdan-infer-conventions",
+     "repo": "faiqsadan793-eng/absensi-app-syahdan",
+     "title": "翻完整个 Laravel 仓库",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Laravel 官方工具链的 Agent 规则，开发者圈内冷门，普通人用不上（3 判：[45, 45, 62]）",
+     "分": 45
+    },
+    {
+     "id": "owocc-front-skills-figma-implement-design",
+     "repo": "owocc/front-skills",
+     "title": "Figma 链接一贴，代码按稿子长出来",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— Figma MCP 移植流程，服务开发者工具链，换工具教程也能做（3 判：[38, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "owocc-front-skills-pixel-perfect-restore",
+     "repo": "owocc/front-skills",
+     "title": "设计稿还原到像素级，还附截图对比证据",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 像素还原流程扎实，工具坑与截图对比经验具体，但题材属开发链、可替代（3 判：[58, 62, 62]）",
+     "分": 62
+    },
+    {
+     "id": "drs76-larry-al-pipeline-bc-webservice-audit",
+     "repo": "drs76/larry-al-pipeline",
+     "title": "微软要停 SOAP 和 OData 了",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 企业BC审计工具链，扎实但受众是开发者/内部顾问，非普通创作者（3 判：[42, 45, 55]）",
+     "分": 45
+    },
+    {
+     "id": "drs76-larry-al-pipeline-doc-convert",
+     "repo": "drs76/larry-al-pipeline",
+     "title": "本地把 Markdown 变成带图的 PDF 和 W",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 个人基建味重，绑定~/larry-setup和house配色，换人换机就散架（3 判：[42, 42, 55]）",
+     "分": 42
+    },
+    {
+     "id": "drs76-larry-al-pipeline-ste-writing",
+     "repo": "drs76/larry-al-pipeline",
+     "title": "AI 腔文档过一遍航空级受控英语改写",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 标准化英语，边界清晰，拒绝营销文案与代码，但换工具也能做（3 判：[38, 55, 72]）",
+     "分": 55
+    },
+    {
+     "id": "aiebrain-katok-windows-skill-katok-windows",
+     "repo": "aiebrain/katok-windows-skill",
+     "title": "在 Windows 上替你翻聊天记录",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 韩国Windows端KakaoTalk GUI操作，边界清楚但受众窄，属企业工具（3 判：[55, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "mrafaelz-librechat-modificado",
+     "repo": "mrafaelz/LibreChat-Modificado",
+     "title": "七件套 LibreChat 魔改技能包",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "mrafaelz-librechat-modificado-codebase-design",
+     "repo": "mrafaelz/LibreChat-Modificado",
+     "title": "深模块接口设计词汇表，接缝该切在哪它先问你",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 给开发者的代码设计术语表，题材冷在读者，泛概念非交付物（3 判：[38, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "mrafaelz-librechat-modificado-improve-codebase-architecture",
+     "repo": "mrafaelz/LibreChat-Modificado",
+     "title": "扫出代码里该深挖的模块，再陪你把它聊透",
+     "过": false,
+     "为什么": "品味 40 分 < 80 —— 开发工具链题材，且依赖/grilling等多个别处skill，非独立交付。（3 判：[35, 40, 55]）",
+     "分": 40
+    },
+    {
+     "id": "mrafaelz-librechat-modificado-arex-acceso-comercial",
+     "repo": "mrafaelz/LibreChat-Modificado",
+     "title": "选定市场里，产品该走哪条渠道、找哪几个枢纽",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 渠道方法论扎实，但纯B2B商业拓展，与普通人创作者无关（3 判：[52, 62, 62]）",
+     "分": 62
+    },
+    {
+     "id": "quine-rq-functional-acceptance-functional-acceptance",
+     "repo": "Quine-rq/functional-acceptance",
+     "title": "从用户视角验收功能，而不是替代码找通过理由",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 验收方法论扎实，但面向开发者工具链，非普通创作者题材（3 判：[42, 55, 58]）",
+     "分": 55
+    },
+    {
+     "id": "qbs784-ledger",
+     "repo": "qbs784/ledger",
+     "title": "17 条工程纪律，专治 Agent 说「已验证」",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "qbs784-ledger-recording-ui-evidence",
+     "repo": "qbs784/ledger",
+     "title": "界面改动录成 GIF 证据，直接贴进变更单",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 录 UI GIF 的严谨方法论，但读者是开发者工具链，非普通人题材（3 判：[58, 58, 68]）",
+     "分": 58
+    },
+    {
+     "id": "qbs784-ledger-curating-decision-records",
+     "repo": "qbs784/ledger",
+     "title": "决策记录越攒越厚时，替你判谁该被取代",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 开发工具链的决策记录治理，规则扎实但读者窄（3 判：[45, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "qbs784-ledger-diagnosing-flakes",
+     "repo": "qbs784/ledger",
+     "title": "复现不了的红色 CI，从失败日志倒推竞态根因",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— 面向CI/开发工具链的运维流程，非普通创作者读者，且正文被截断（3 判：[40, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "bimasulistyaw-hash-survey_360",
+     "repo": "bimasulistyaw-hash/survey_360",
+     "title": "",
+     "过": false,
+     "为什么": "文案不齐：缺 title_zh/why_zh/limit_zh"
+    },
+    {
+     "id": "bimasulistyaw-hash-survey_360-pembuat-blueprint-profesional",
+     "repo": "bimasulistyaw-hash/survey_360",
+     "title": "访谈问完就出两份蓝图：给 AI 看的和给客户签的",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 印尼语开发者需求文档流程，泛用且工具链导向，非普通人题材（3 判：[15, 42, 42]）",
+     "分": 42
+    },
+    {
+     "id": "bimasulistyaw-hash-survey_360-pembuat-user-manual-profesional",
+     "repo": "bimasulistyaw-hash/survey_360",
+     "title": "按 ISO 26514 逐屏截图生成可打印用户手册",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 印度尼西亚语企业级用户手册生成器，工具链导向，普通读者无关（3 判：[42, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "bimasulistyaw-hash-survey_360-auditor-blueprint-profesional",
+     "repo": "bimasulistyaw-hash/survey_360",
+     "title": "Blueprint.md 五层文档互掐",
+     "过": false,
+     "为什么": "品味 38 分 < 80 —— 印尼语政府项目审计清单，读者是开发者/公务员，非普通人（3 判：[35, 38, 45]）",
+     "分": 38
+    }
+   ]
+  },
+  {
    "时间": "2026-09-10T07:05:36Z",
    "判了": 29,
    "过": 3,
@@ -4660,93 +5070,6 @@
      "title": "只借版式不借内容的 CNIPA 专利文档生成器",
      "过": true,
      "为什么": "编辑读过原文挑的 —— 套别人的专利模板最容易在发明名称那行现出豆腐块——模板没有的字，它替你把内嵌字体连根拔了。 格式与技术内容严格分离的红线、字体子集导致标题变豆腐块这种具体坑，都"
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-06T17:09:47Z",
-   "判了": 10,
-   "过": 0,
-   "明细": [
-    {
-     "id": "alchaincyf-huashu-mac-use",
-     "repo": "alchaincyf/huashu-mac-use",
-     "title": "后台被遮挡的窗口也能截给你看",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 深度极高，边界清晰，但受众偏开发者/技术用户，非普通创作者。（3 判：[72, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "leishifu666-lsf-trend-merch-poster",
-     "repo": "leishifu666/lsf-trend-merch-poster",
-     "title": "七种实体造物模态，一张参考图转成杂志视觉",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 流程严谨边界清晰，但核心是模板化生图，替代工具可行。（3 判：[72, 72, 75]）",
-     "分": 72
-    },
-    {
-     "id": "petergyang-no-ai-slop-no-ai-slop",
-     "repo": "petergyang/no-ai-slop",
-     "title": "改稿去AI腔，保你人味儿",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 编辑准则具体可执行，但核心是通用写作技巧，替代工具多。（3 判：[72, 72, 85]）",
-     "分": 72
-    },
-    {
-     "id": "kucherenko-jscpd-jscpd",
-     "repo": "kucherenko/jscpd",
-     "title": "220 种语言里揪出复制粘贴的代码猎犬",
-     "过": false,
-     "为什么": "品味 42 分 < 80 —— 工具链文档扎实但场景冷门，更换工具亦可实现（3 判：[42, 42, 45]）",
-     "分": 42
-    },
-    {
-     "id": "xiaoduoya-codex-with-chatgpt-codex-with-chatgpt",
-     "repo": "XiaoDuoYa/codex-with-chatgpt",
-     "title": "ChatGPT 当军师、Codex 当执行",
-     "过": false,
-     "为什么": "品味 45 分 < 80 —— 这是开发工具链的配置流程，非普通用户题材，功能虽扎实但偏离店铺读者定位。（3 判：[45, 45, 45]）",
-     "分": 45
-    },
-    {
-     "id": "yanliudesign-offer-toolkit-skill",
-     "repo": "yanliudesign/offer-toolkit-skill",
-     "title": "从岗位搜索到薪资谈判的六段式求职流水线",
-     "过": false,
-     "为什么": "品味 60 分 < 80 —— 求职流程拆解扎实，但简历美化等环节通用工具也能替代，差异化中等。（3 判：[55, 60, 72]）",
-     "分": 60
-    },
-    {
-     "id": "yanliudesign-behavior-question-skill",
-     "repo": "yanliudesign/behavior-question-skill",
-     "title": "一份能扛住任何追问的 STAR 故事库",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 方法论扎实，流程清晰，但核心问答可被通用对话完成，非不可替代。（3 判：[42, 72, 72]）",
-     "分": 72
-    },
-    {
-     "id": "lazypay-archscribe",
-     "repo": "lazypay/Archscribe",
-     "title": "手绘风架构图，落笔即带霓虹或纸纹，源文件还能改",
-     "过": false,
-     "为什么": "品味 72 分 < 80 —— 功能扎实全面，但主要服务于开发者，工具链属性强，非普通用户刚需品。（3 判：[65, 72, 75]）",
-     "分": 72
-    },
-    {
-     "id": "yanliudesign-design-style-skill",
-     "repo": "yanliudesign/design-style-skill",
-     "title": "67 套视觉风格任你挑，挑完直接落成 CSS",
-     "过": false,
-     "为什么": "品味 55 分 < 80 —— 风格库扎实可用，但决策自动化较强，类似工具可替代，边界清晰度一般。（3 判：[40, 55, 55]）",
-     "分": 55
-    },
-    {
-     "id": "orange2ai-renwei-writing",
-     "repo": "orange2ai/renwei-writing",
-     "title": "改完还像你写的，不是像AI写的",
-     "过": false,
-     "为什么": "品味 75 分 < 80 —— 写作打磨理念清晰，操作规则具体可执行，但竞品工具也能提供类似功能。（3 判：[72, 75, 82]）",
-     "分": 75
     }
    ]
   }
