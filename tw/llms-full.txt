@@ -1,7 +1,89 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 373 skills.
+# Full corpus, plain text. 380 skills.
+
+========================================================================
+## excalidraw
+## 先寫規格再算字寬，手繪風圖表一次成型的 Excali
+URL: https://ourword.ai/skill/tw/i/plexito-de-honed-skills-excalidraw/
+Source: https://github.com/Plexito-de/honed-skills/tree/HEAD/skills/excalidraw
+Updated: 2026-09-10
+Tags: images, skill, Plexito-de
+
+Tired of AI diagrams with arrows pointing nowhere and text spilling out of boxes? It writes a short spec.
+
+### What does this skill do?
+Use when producing a diagram as a .excalidraw file, or when asked for an architecture, flow, sequence, tree, mind map, org chart, timeline, network, ERD, swimlane, kanban or wireframe drawing that should look hand-drawn. Writes a short spec and expands it deterministically with measured font metrics, real layout and correct arrow bindings, then lints and renders it. Triggers on excalidraw, diagram
+
+### Why is it worth installing?
+Deterministic expansion: layout and arrow bindings are computed, not improvised, so the same spec renders the same diagram every.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Plexito-de/honed-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Plexito-de/honed-skills The repository ships 1 skills in total.
+
+========================================================================
+## zhongguose-palette
+## 526 箇中國傳統色裡挑出能直接落地的三層配色
+URL: https://ourword.ai/skill/tw/i/aeboli-zhongguose-palette/
+URL (中文): https://ourword.ai/skill/tw/zh/i/aeboli-zhongguose-palette/
+Source: https://github.com/aEboli/zhongguose-palette
+Updated: 2026-09-10
+Tags: work, skill, aEboli
+
+Say "make it Chinese-style" and stop there. It splits colors into base, block and accent roles, then hands you.
+
+### What does this skill do?
+中國傳統色調色板。從 zhongguose.com 的 526 個具名色裡選出能直接落地的配色， 按「鋪滿的底 / 成塊的那層 / 最小面積那一點」分配角色，輸出 CSS 變量與 UI token。 用戶提到配色、色板、中國色、傳統色、國風、故宮、青花、水墨、敦煌、宋瓷、江南、 漆器、年畫，或要給網站/App/海報/服裝/空間選中國風顏色時使用。 也在用戶做前端、artifact、圖表而需要一套中國風顏色時被組合調用——本技能是顏色的 唯一真源，先出色再交給 frontend-design / artifact-design / dataviz 做版式。 用戶說「配箇中國風的顏色」這種沒有細節的話也要直接給方案，不要反問專有名稱。 禁止發明 hex，禁止輸出泛稱「中國紅」。
+
+### Why is it worth installing?
+Others hand you swatches; this assigns roles — what fills, what blocks, what accents. Names traceable, hex never invented.
+
+### How do you install it?
+git clone --depth 1 https://github.com/aEboli/zhongguose-palette.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: aEboli/zhongguose-palette Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+說一句「配箇中國風」就夠，不用報色名。它按鋪底、成塊、點睛三層分好角色，直接吐 CSS 變量和 UI token。
+
+### Q：這個 skill 做什麼？
+中國傳統色調色板。從 zhongguose.com 的 526 個具名色裡選出能直接落地的配色， 按「鋪滿的底 / 成塊的那層 / 最小面積那一點」分配角色，輸出 CSS 變量與 UI token。 用戶提到配色、色板、中國色、傳統色、國風、故宮、青花、水墨、敦煌、宋瓷、江南、 漆器、年畫，或要給網站/App/海報/服裝/空間選中國風顏色時使用。 也在用戶做前端、artifact、圖表而需要一套中國風顏色時被組合調用——本技能是顏色的 唯一真源，先出色再交給 frontend-design / artifact-design / dataviz 做版式。 用戶說「配箇中國風的顏色」這種沒有細節的話也要直接給方案，不要反問專有名稱。 禁止發明 hex，禁止輸出泛稱「中國紅」。
+
+### Q：為什麼值得裝？
+別處給的是色卡，它給的是角色分配：誰鋪滿、誰成塊、誰只佔一點。色名可溯源，禁編 hex。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/aEboli/zhongguose-palette.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: aEboli/zhongguose-palette Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## digesting-bilibili-videos
+## B站視頻存下來，順手變成能搜的中文 PDF
+URL: https://ourword.ai/skill/tw/i/xykong36-bili-skills-digesting-bilibili-videos/
+Source: https://github.com/xykong36/bili-skills/tree/HEAD/skills/digesting-bilibili-videos
+Updated: 2026-09-10
+Tags: images, skill, xykong36
+
+Your Bilibili watch-later pile never gets watched. This pulls the official AI subtitles into plain text, then.
+
+### What does this skill do?
+Downloads bilibili videos and turns their official AI subtitles into readable transcripts, OPML mindmaps, outlines and searchable Chinese PDFs. Use when downloading, saving or archiving a B站/BV號/嗶哩嗶哩 video locally, grabbing its cover image or metadata, getting a video's subtitles or transcript, turning an episode into a readable article, mindmap, outline or PDF, when a downloaded mp4 turns out cor
+
+### Why is it worth installing?
+It uses Bilibili's own AI subtitles instead of running speech recognition, so it's fast and GPU-free. Sentence breaks.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xykong36/bili-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xykong36/bili-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## jianming-zhongwen
@@ -42,6 +124,44 @@ git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然後把
 Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
 
 ========================================================================
+## classic-reading-companion
+## 讀原著時隨時喊停提問，讀完它逐段回講給你聽
+URL: https://ourword.ai/skill/tw/i/e3559179-spec-classic-reading-companion/
+URL (中文): https://ourword.ai/skill/tw/zh/i/e3559179-spec-classic-reading-companion/
+Source: https://github.com/e3559179-spec/-/tree/HEAD/skills/classic-reading-companion
+Updated: 2026-09-10
+Tags: writing, skill, e3559179-spec
+
+Stuck on Chapter 1 of Capital? Ask and get an answer. After each session it re-teaches the passage, quizzes you.
+
+### What does this skill do?
+輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
+
+### Why is it worth installing?
+It never reads for you. It only works the passage you just finished: explain, quiz, correct, log the doubt — all four before.
+
+### How do you install it?
+git clone --depth 1 https://github.com/e3559179-spec/-.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+讀《資本論》卡在第一章商品二重性，問一句就有人接；讀完它按段回講，還逼你複述一遍看是真懂還是順下來了。
+
+### Q：這個 skill 做什麼？
+輔助馬克思主義及其他理論經典原著的細讀，提供隨讀答疑、讀後逐段講解、理解檢查與糾偏、疑問記錄、文件保存與續讀、章節復盤和全書總結。適用於用戶主導的原著伴讀和理解追蹤；泛泛介紹一本書或代寫讀書報告時不默認啟動追蹤流程。
+
+### Q：為什麼值得裝？
+它不替你讀書，只在你讀完的那一段上做檢查：講解、追問、糾偏、記疑，四步走完才算過。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/e3559179-spec/-.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: e3559179-spec/- Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
 ## devil-advocate
 ## 在你拍板前把方案拆開找裂縫的紅隊陪練
 URL: https://ourword.ai/skill/tw/i/hadicancatak-coder-devils-advocate-devil-advocate/
@@ -62,6 +182,44 @@ git clone --depth 1 https://github.com/hadicancatak-coder/devils-advocate.git Th
 
 ### Where does it come from?
 Repository: hadicancatak-coder/devils-advocate The repository ships 1 skills in total.
+
+========================================================================
+## sugar-motion
+## 座標點進來，Kawasaki 手臂的 LMOVE/J
+URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-motion/
+URL (中文): https://ourword.ai/skill/tw/zh/i/progannewbie-suger-sugar-motion/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-motion
+Updated: 2026-09-10
+Tags: play, skill, progannewbie
+
+You have sugar-drawing coordinates but the arm doesn't know straight or joint moves. It picks interpolation per.
+
+### What does this skill do?
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Why is it worth installing?
+Interpolation is decided per segment, not globally: LMOVE where straight, JMOVE where jointed, speed and dwell tied to sugar.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+手上只有一串糖畫座標，手臂卻不知道該走直線還是轉關節？它逐段判斷插補方式，算好速度、抬筆落筆和糖點停留。
+
+### Q：這個 skill 做什麼？
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機臺時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Q：為什麼值得裝？
+插補方式不是全局設定，是逐段判的：該直的 LMOVE、該轉的 JMOVE，速度和停留時間跟著糖量走。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: progannewbie/suger The repository ships 1 skills in total.
 
 ========================================================================
 ## debate-prep
@@ -198,6 +356,82 @@ git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然後�
 
 ### Q：它從哪來？
 Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## sugar-points
+## 筆畫 SVG 到機械臂點位，曲率自適應砍到最少點
+URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-points/
+URL (中文): https://ourword.ai/skill/tw/zh/i/progannewbie-suger-sugar-points/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-points
+Updated: 2026-09-10
+Tags: images, skill, progannewbie
+
+Leg two of the sugar-painting pipeline: takes Skill 1's stroke SVG, samples by curvature so straight runs stay.
+
+### What does this skill do?
+把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機臺座標並控制點數的場合。
+
+### Why is it worth installing?
+Not uniform sampling — point density follows curvature. The count is computed, not guessed, so shapes stay faithful without.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+糖畫流程第二棒：Skill 1 給的筆畫 SVG，這裡按曲率疏密取樣，直線段少給點、拐彎處才加密。
+
+### Q：這個 skill 做什麼？
+把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機臺座標並控制點數的場合。
+
+### Q：為什麼值得裝？
+不是等距撒點，是按曲率決定哪裡該密。點數是算出來的，不是拍腦袋定的，所以既不失真也不塞爆封包。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## sugar-stroke
+## 一筆到底的糖畫毛筆路徑，連每點粗細都算好
+URL: https://ourword.ai/skill/tw/i/progannewbie-suger-sugar-stroke/
+URL (中文): https://ourword.ai/skill/tw/zh/i/progannewbie-suger-sugar-stroke/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-stroke
+Updated: 2026-09-10
+Tags: images, skill, progannewbie
+
+Robot sugar-painting breaks on lifted strokes and flat width. This flattens a glyph or image into one unbroken.
+
+### What does this skill do?
+把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
+
+### Why is it worth installing?
+It solves for one connected centerline first, then paints thickness back per point — instead of tracing outlines and guessing.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+機械臂畫糖畫最怕斷筆和粗細一樣。它把字或圖壓成一條不斷開的中心線，每個點帶粗細值，手臂照著走就是毛筆味。
+
+### Q：這個 skill 做什麼？
+把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
+
+### Q：為什麼值得裝？
+先求一筆連通的中心線，再在每點回填粗細，而不是先描輪廓再猜筆鋒。糖絲斷不斷，取決於這一步。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: progannewbie/suger The repository ships 1 skills in total.
 
 ========================================================================
 ## comfyui-mcp
