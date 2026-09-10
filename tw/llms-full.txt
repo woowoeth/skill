@@ -1,7 +1,83 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 369 skills.
+# Full corpus, plain text. 372 skills.
+
+========================================================================
+## jianming-zhongwen
+## 短句、實義動詞、條件在前的中文技術寫作規範
+URL: https://ourword.ai/skill/tw/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+URL (中文): https://ourword.ai/skill/tw/zh/i/heichaowo-jianming-zhongwen-jianming-zhongwen/
+Source: https://github.com/heichaowo/jianming-zhongwen/tree/HEAD/skills/jianming-zhongwen
+Updated: 2026-09-10
+Tags: writing, skill, heichaowo
+
+Strips filler like "of great significance" from READMEs and error text: modals tiered must/should/may, every term.
+
+### What does this skill do?
+用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
+
+### Why is it worth installing?
+It hands you checkable rewrite rules, not style advice: condition clauses first, one word one meaning, replies capped at 5 prose.
+
+### How do you install it?
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+--- 中文 ---
+README 和報錯文本里那些「具有重要意義」「進行了優化」被逐句拆掉：情態詞按必須/應該/可以分三級。
+
+### Q：這個 skill 做什麼？
+用簡明技術中文寫作或改寫：短句、實義動詞、條件在前、情態詞按階梯、 一詞一義、術語首次出現時定義、只說事實不說重要性。用於 README、 操作手冊、故障排查、報錯文本、發布說明、事故報告、接口說明，以及給 領域外讀者的技術說明。用戶說「簡明中文」「簡明技術中文」「寫得簡單點」 「去掉廢話」「說人話」「改成技術文檔風格」「檢查這段中文」時也啟用。 回覆同樣遵守：第一句給答案，最多 5 句，只用散文。
+
+### Q：為什麼值得裝？
+它給的是可執行的改寫規則，不是風格建議：條件從句前置、一詞一義、回覆限 5 句散文。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/heichaowo/jianming-zhongwen.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: heichaowo/jianming-zhongwen The repository ships 1 skills in total.
+
+========================================================================
+## debate-prep
+## 正反雙方都替你備到能上場，華語辯論賽全套
+URL: https://ourword.ai/skill/tw/i/waverlyowen-ustc-debate-debate-prep/
+URL (中文): https://ourword.ai/skill/tw/zh/i/waverlyowen-ustc-debate-debate-prep/
+Source: https://github.com/WaverlyOwen/ustc-debate/tree/HEAD/.claude/skills/debate-prep
+Updated: 2026-09-10
+Tags: work, skill, WaverlyOwen
+
+Both sides prepped: definitions, criteria, arguments, rebuttal bank, and per-format docs in Markdown and PDF.
+
+### What does this skill do?
+華語辯論賽備賽助手。給定辯題（可選題解、賽制、我方持方），始終對稱地為正反雙方完成備賽：關鍵詞定義調研（正方有利 / 反方有利 / 中立三版及反駁）、判準與論證義務（三版及反駁）、經多輪對抗迭代的 2–3 個精煉論點（每個配學理、數據、案例，註明出處與研究方法）、覆蓋對方全部可能論點的反駁庫、持方優劣評估、全隊口徑表，並按賽制產出三類文檔：備賽文檔、正賽速查、正賽文稿，全部輸出 Markdown 與 PDF。只要用戶提到辯題、辯論賽、立論、質詢、駁論、盤問、自由辯、結辯、持方、正方/反方、新生辯論賽、辯論備賽、陪練、模辯，或貼出一個"XX是/不是YY""應該/不應該""利大於弊/弊大於利""A比B更……"式的題目，就使用本技能，即使用戶沒有明說"備賽"或只想要某一個環節的稿子。Chinese (Mandarin) competitive debate preparation for bot
+
+### Why is it worth installing?
+It never picks a side: both cases get built and cross-attacked, arguments survive rounds of sparring, every claim cited.
+
+### How do you install it?
+git clone --depth 1 https://github.com/WaverlyOwen/ustc-debate.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: WaverlyOwen/ustc-debate Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+--- 中文 ---
+抽到哪邊都不慌：定義、判準、論點、反駁庫、口徑表一次備齊，連正賽速查和結辯文稿都按賽制排好版。
+
+### Q：這個 skill 做什麼？
+華語辯論賽備賽助手。給定辯題（可選題解、賽制、我方持方），始終對稱地為正反雙方完成備賽：關鍵詞定義調研（正方有利 / 反方有利 / 中立三版及反駁）、判準與論證義務（三版及反駁）、經多輪對抗迭代的 2–3 個精煉論點（每個配學理、數據、案例，註明出處與研究方法）、覆蓋對方全部可能論點的反駁庫、持方優劣評估、全隊口徑表，並按賽制產出三類文檔：備賽文檔、正賽速查、正賽文稿，全部輸出 Markdown 與 PDF。只要用戶提到辯題、辯論賽、立論、質詢、駁論、盤問、自由辯、結辯、持方、正方/反方、新生辯論賽、辯論備賽、陪練、模辯，或貼出一個"XX是/不是YY""應該/不應該""利大於弊/弊大於利""A比B更……"式的題目，就使用本技能，即使用戶沒有明說"備賽"或只想要某一個環節的稿子。Chinese (Mandarin) competitive debate preparation for bot
+
+### Q：為什麼值得裝？
+它不站隊，始終對稱地給正反各出一套並互相攻擊，論點經多輪對抗才留下，每條都標出處和研究方法。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/WaverlyOwen/ustc-debate.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: WaverlyOwen/ustc-debate Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## playable-prototype
@@ -188,6 +264,44 @@ git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your ag
 
 ### Where does it come from?
 Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
+
+========================================================================
+## whiteboard-explainer
+## 講到哪畫到哪的白板手繪講解視頻生成器
+URL: https://ourword.ai/skill/tw/i/liangdabiao-whiteboard-explainer/
+URL (中文): https://ourword.ai/skill/tw/zh/i/liangdabiao-whiteboard-explainer/
+Source: https://github.com/liangdabiao/whiteboard-explainer
+Updated: 2026-09-09
+Tags: images, skill, liangdabiao
+
+Record your narration, and the whiteboard draws itself stroke by stroke in sync with your voice. Local CPU.
+
+### What does this skill do?
+白板講解動畫 skill：把知識講解/科普/推導內容變成「真手繪過程」視頻——白板圖上的圖形被一筆筆描出來、文字逐筆寫出、講到哪畫到哪（幀級音畫對齊）。基於 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、確定性可重渲）。當用戶要做知識講解視頻、概念科普、數學/流程推導、數據圖表講解，或要求"手繪白板動畫"、"講解畫面逐筆繪製"、"講到哪畫到哪"時使用。觸發詞：白板動畫、白板講解、手繪講解、explainer、知識科普視頻、講到哪畫到哪、逐筆繪製、whiteboard。
+
+### Why is it worth installing?
+Strokes are computed against the audio timeline, not faked with templates. Deterministic rendering means the same script always.
+
+### How do you install it?
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+錄完旁白，白板上的圖形和文字會跟著你的聲音一筆筆長出來，講到哪畫到哪，幀級對齊。本地 CPU 渲染。
+
+### Q：這個 skill 做什麼？
+白板講解動畫 skill：把知識講解/科普/推導內容變成「真手繪過程」視頻——白板圖上的圖形被一筆筆描出來、文字逐筆寫出、講到哪畫到哪（幀級音畫對齊）。基於 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、確定性可重渲）。當用戶要做知識講解視頻、概念科普、數學/流程推導、數據圖表講解，或要求"手繪白板動畫"、"講解畫面逐筆繪製"、"講到哪畫到哪"時使用。觸發詞：白板動畫、白板講解、手繪講解、explainer、知識科普視頻、講到哪畫到哪、逐筆繪製、whiteboard。
+
+### Q：為什麼值得裝？
+手繪過程是引擎按音頻時間軸真算出來的筆跡，不是套模板的假動畫。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## novel-writing

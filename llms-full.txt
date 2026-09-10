@@ -80,44 +80,6 @@ git clone --depth 1 https://github.com/WaverlyOwen/ustc-debate.git 然后把智�
 Repository: WaverlyOwen/ustc-debate Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
-## whiteboard-explainer
-## 讲到哪画到哪的白板手绘讲解视频生成器
-URL: https://ourword.ai/skill/i/liangdabiao-whiteboard-explainer/
-URL (中文): https://ourword.ai/skill/zh/i/liangdabiao-whiteboard-explainer/
-Source: https://github.com/liangdabiao/whiteboard-explainer
-Updated: 2026-09-09
-Tags: images, skill, liangdabiao
-
-Record your narration, and the whiteboard draws itself stroke by stroke in sync with your voice. Local CPU.
-
-### What does this skill do?
-白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
-
-### Why is it worth installing?
-Strokes are computed against the audio timeline, not faked with templates. Deterministic rendering means the same script always.
-
-### How do you install it?
-git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
---- 中文 ---
-录完旁白，白板上的图形和文字会跟着你的声音一笔笔长出来，讲到哪画到哪，帧级对齐。本地 CPU 渲染。
-
-### Q：这个 skill 做什么？
-白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
-
-### Q：为什么值得装？
-手绘过程是引擎按音频时间轴真算出来的笔迹，不是套模板的假动画。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
 ## playable-prototype
 ## 一次出五个能玩的游戏原型，机器人替你按过键
 URL: https://ourword.ai/skill/i/didrod205-claude-astra-playable-prototype/
@@ -302,6 +264,44 @@ git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your ag
 
 ### Where does it come from?
 Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
+
+========================================================================
+## whiteboard-explainer
+## 讲到哪画到哪的白板手绘讲解视频生成器
+URL: https://ourword.ai/skill/i/liangdabiao-whiteboard-explainer/
+URL (中文): https://ourword.ai/skill/zh/i/liangdabiao-whiteboard-explainer/
+Source: https://github.com/liangdabiao/whiteboard-explainer
+Updated: 2026-09-09
+Tags: images, skill, liangdabiao
+
+Record your narration, and the whiteboard draws itself stroke by stroke in sync with your voice. Local CPU.
+
+### What does this skill do?
+白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
+
+### Why is it worth installing?
+Strokes are computed against the audio timeline, not faked with templates. Deterministic rendering means the same script always.
+
+### How do you install it?
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+--- 中文 ---
+录完旁白，白板上的图形和文字会跟着你的声音一笔笔长出来，讲到哪画到哪，帧级对齐。本地 CPU 渲染。
+
+### Q：这个 skill 做什么？
+白板讲解动画 skill：把知识讲解/科普/推导内容变成「真手绘过程」视频——白板图上的图形被一笔笔描出来、文字逐笔写出、讲到哪画到哪（帧级音画对齐）。基于 whiteboard-animator 引擎（本地 CPU 渲染、零 API 成本、确定性可重渲）。当用户要做知识讲解视频、概念科普、数学/流程推导、数据图表讲解，或要求"手绘白板动画"、"讲解画面逐笔绘制"、"讲到哪画到哪"时使用。触发词：白板动画、白板讲解、手绘讲解、explainer、知识科普视频、讲到哪画到哪、逐笔绘制、whiteboard。
+
+### Q：为什么值得装？
+手绘过程是引擎按音频时间轴真算出来的笔迹，不是套模板的假动画。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/liangdabiao/whiteboard-explainer.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: liangdabiao/whiteboard-explainer Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## novel-writing
