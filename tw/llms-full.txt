@@ -1,7 +1,7 @@
 # Pinwei — discover agent skills with taste
 # 品味 — 幫你發現有品位的 Skills
 # https://ourword.ai/skill/tw/
-# Full corpus, plain text. 382 skills.
+# Full corpus, plain text. 384 skills.
 
 ========================================================================
 ## metryky
@@ -520,6 +520,66 @@ git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then po
 
 ### Where does it come from?
 Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## image2-manga-page
+## 一段人物關係，落成一頁能讀的黑白漫畫
+URL: https://ourword.ai/skill/tw/i/anhe2021212-spec-mangaweave-image2-manga-page/
+Source: https://github.com/anhe2021212-spec/MangaWeave/tree/HEAD/image2-manga-page
+Updated: 2026-09-10
+Tags: images, skill, anhe2021212-spec
+
+You give characters, relationship, scene, mood. It decides panel cuts, which frame breathes, screentone density.
+
+### What does this skill do?
+Turn simple user-provided character, relationship, scene, and mood information into a readable one-page black-and-white manga image. The skill couples narrative, paneling, art direction, page hierarchy, density control, background density, character acting, screentone, black/white structure, and dialogue rhythm.
+
+### Why is it worth installing?
+Paneling, page hierarchy, density and B/W structure are one decision, not art-then-layout. Pacing follows the mood, not the grid.
+
+### How do you install it?
+git clone --depth 1 https://github.com/anhe2021212-spec/MangaWeave.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: anhe2021212-spec/MangaWeave The repository ships 1 skills in total.
+
+========================================================================
+## deerpark
+## 漢文大藏經全文檢索與經文直讀
+URL: https://ourword.ai/skill/tw/i/briansun-deerpark-skill/
+URL (中文): https://ourword.ai/skill/tw/zh/i/briansun-deerpark-skill/
+Source: https://github.com/briansun/deerpark-skill
+Updated: 2026-09-10
+Tags: work, skill, briansun
+
+Trace a Buddhist phrase to its CBETA source, read the sutra as Markdown, and pull in catalog, AI intro.
+
+### What does this skill do?
+查詢與閱讀漢文大藏經（CBETA 佛經）— 透過 https://deerpark.app 的公開 URL 搜索經題、全文檢索經文出處、讀取經文（Markdown）、查目錄與 AI 導讀、查佛學辭典、找佛經故事與精華教授。當用戶問到佛經、佛教經典、某句話出自哪部經、某部經講什麼、佛教名相解釋、譯者作品、想引用或下載佛經時使用。Use for Chinese Buddhist Canon / CBETA / Tripitaka / sutra lookup, full-text search, and reading.
+
+### Why is it worth installing?
+Uses deerpark.app public URLs instead of scraping: separate endpoints for search, reading, dictionary and AI intro, so citation.
+
+### How do you install it?
+git clone --depth 1 https://github.com/briansun/deerpark-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: briansun/deerpark-skill The repository ships 1 skills in total.
+
+--- 中文 ---
+想知道「應無所住而生其心」出自哪一卷、哪一版、上下文怎麼講。
+
+### Q：這個 skill 做什麼？
+查詢與閱讀漢文大藏經（CBETA 佛經）— 透過 https://deerpark.app 的公開 URL 搜索經題、全文檢索經文出處、讀取經文（Markdown）、查目錄與 AI 導讀、查佛學辭典、找佛經故事與精華教授。當用戶問到佛經、佛教經典、某句話出自哪部經、某部經講什麼、佛教名相解釋、譯者作品、想引用或下載佛經時使用。Use for Chinese Buddhist Canon / CBETA / Tripitaka / sutra lookup, full-text search, and reading.
+
+### Q：為什麼值得裝？
+走 deerpark.app 公開 URL，不爬站不抓頁，檢索、讀經、辭釋、導讀各走各的接口。
+
+### Q：怎麼裝？
+git clone --depth 1 https://github.com/briansun/deerpark-skill.git 然後把智能體指向這個 skill 目錄即可。
+
+### Q：它從哪來？
+Repository: briansun/deerpark-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## excalidraw
