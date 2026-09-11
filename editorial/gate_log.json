@@ -2,6 +2,312 @@
  "_说明": "每轮门闸的判决：谁过了、谁没过、为什么。**留在仓里**，不只在 Actions 日志里 —— 日志要点进去才看得到。只留最近 20 轮。",
  "rounds": [
   {
+   "时间": "2026-09-11T08:48:47Z",
+   "判了": 38,
+   "过": 2,
+   "明细": [
+    {
+     "id": "anhe2021212-spec-mangaweave-image2-manga-page",
+     "repo": "anhe2021212-spec/MangaWeave",
+     "title": "一段人物关系，落成一页能读的黑白漫画",
+     "过": true,
+     "为什么": "品味 82 分 —— 漫画页叙事与分镜耦合系统，边界清晰，但偏创作者工具（3 判：[78, 82, 88]）",
+     "分": 82
+    },
+    {
+     "id": "briansun-deerpark-skill",
+     "repo": "briansun/deerpark-skill",
+     "title": "汉文大藏经全文检索与经文直读",
+     "过": true,
+     "为什么": "品味 88 分 —— 端點決策樹與原文取捨寫得極清楚，佛經檢索場景別處難有替代（3 判：[68, 88, 88]）",
+     "分": 88
+    },
+    {
+     "id": "qiao13822919184-byte-customerbackground-overseas-lead-research",
+     "repo": "qiao13822919184-byte/CustomerBackground",
+     "title": "海外询盘先查公司再回信，顺手把广告主档案补全",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 做的是给广告投放团队用的B2B背调工具链，专业但读者是运营岗，非普通人题材。（3 判：[45, 55, 58]）",
+     "分": 55
+    },
+    {
+     "id": "jiy2745-ntdrive",
+     "repo": "jiy2745/ntdrive",
+     "title": "开机、快照、连 kd.exe 调内核的 VMware",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— VMware驱动调试做得细，但读者是内核开发者，非本店受众（3 判：[42, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "ero-qt-laconic-laconic",
+     "repo": "ero-qt/laconic",
+     "title": "回话前先删掉三成形容词的写作插件",
+     "过": false,
+     "为什么": "品味 71 分 < 80 —— 对文风边界抠得很细，但主要是编辑规则，换工具也能套用（3 判：[58, 71, 71]）",
+     "分": 71
+    },
+    {
+     "id": "yanhangqi77-hub-influencer-gmv-monthly-update",
+     "repo": "yanhangqi77-hub/Influencer-GMV-Monthly-Update",
+     "title": "TikTok 订单表进，飞书达人 GMV 月度表出",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 业务逻辑扎实，但绑定飞书/TikTok内部工具链，普通创作者用不上（3 判：[42, 52, 58]）",
+     "分": 52
+    },
+    {
+     "id": "b3nguang-asc-rs-asc-rs",
+     "repo": "b3nguang/ASC-RS",
+     "title": "按需拆开一个 APK 的局部，不整包反编译",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 工程扎实、边界清楚，但纯开发者工具链，普通人用不上（3 判：[42, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "carterlasalle-bugcorpus",
+     "repo": "carterlasalle/bugcorpus",
+     "title": "踩过的坑自动变成常驻检测器，下次改代码它先拦你",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "carterlasalle-bugcorpus-bug-corpus",
+     "repo": "carterlasalle/bugcorpus",
+     "title": "修完一个 bug，顺手把它变成永久静态检测规则",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 开发者工具链内部流程，交付物是检测规则，非大众题材（3 判：[40, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "carterlasalle-bugcorpus-traceability",
+     "repo": "carterlasalle/bugcorpus",
+     "title": "代码里埋了 trace:v1 标记",
+     "过": false,
+     "为什么": "品味 28 分 < 80 —— TraceLayer自家工具链的agent基建文档，非普通读者题材（3 判：[25, 28, 42]）",
+     "分": 28
+    },
+    {
+     "id": "igoraidev-myskilforsitebuilding",
+     "repo": "IgorAIdev/MySkilforSiteBuilding",
+     "title": "从零搭站的一套技能包，按顺序走不返工",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "bergamett-steve-jobs-skill-steve",
+     "repo": "bergamett/steve-jobs-skill",
+     "title": "乔布斯会怎么砍你的产品，这里能问",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 乔布斯人设扮演，产出为表演式点评，非独有工具方法（3 判：[58, 68, 85]）",
+     "分": 68
+    },
+    {
+     "id": "xxxjcsama-inkline-stories",
+     "repo": "XXXJCSAMA/inkline-stories",
+     "title": "竖版手绘故事短片，从选题到发布自查的一条龙产线",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 手绘故事短片全流程产线，边界清晰、确认点硬、降级路径明确（3 判：[78, 78, 88]）",
+     "分": 78
+    },
+    {
+     "id": "atulfalle-easy-screen-recorder",
+     "repo": "AtulFalle/easy-screen-recorder",
+     "title": "按一下就开始录屏，录完直接给你 MP4 文件",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "atulfalle-easy-screen-recorder-rust-api-design",
+     "repo": "AtulFalle/easy-screen-recorder",
+     "title": "按 Rust API Guidelines 逐条审你",
+     "过": false,
+     "为什么": "品味 44 分 < 80 —— 开发者工具链题材，规则清单搬运，圈子外无人需要（3 判：[42, 44, 55]）",
+     "分": 44
+    },
+    {
+     "id": "atulfalle-easy-screen-recorder-rust-cargo-build",
+     "repo": "AtulFalle/easy-screen-recorder",
+     "title": "Cargo 从报错到发布",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Cargo 官方文档的系统转述，扎实但换谁都行，且读者是开发者（3 判：[45, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "atulfalle-easy-screen-recorder-rust-cli",
+     "repo": "AtulFalle/easy-screen-recorder",
+     "title": "从命令契约到进程级测试的 Rust CLI 全流程",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Rust CLI工程规范扎实，但属开发工具链，且偏清单式无独门判断（3 判：[42, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "jim540-browser-skill",
+     "repo": "jim540/browser-skill",
+     "title": "后台开你自己的浏览器，登录态现成还能多开不抢焦点",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 开发工具链题材，虽工程扎实但对普通读者太冷（3 判：[42, 58, 71]）",
+     "分": 58
+    },
+    {
+     "id": "fan1214-mind-blowing-skills-career-learning-exam",
+     "repo": "fan1214/mind-blowing-Skills",
+     "title": "从岗位倒推学习路径，学完真给你出一张卷子",
+     "过": false,
+     "为什么": "品味 68 分 < 80 —— 学习路径+考试闭环设计扎实，但换通用Agent也能做，非别处拿不到（3 判：[62, 68, 72]）",
+     "分": 68
+    },
+    {
+     "id": "iqbalfhz-masjid",
+     "repo": "iqbalfhz/masjid",
+     "title": "六件一套的清真寺日常事务小工具包",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "iqbalfhz-masjid-testing-best-practices",
+     "repo": "iqbalfhz/masjid",
+     "title": "先问这条测试值不值得写",
+     "过": false,
+     "为什么": "品味 48 分 < 80 —— Laravel 测试规范扎实，但题材偏开发工具链，普通读者不对口（3 判：[38, 48, 58]）",
+     "分": 48
+    },
+    {
+     "id": "iqbalfhz-masjid-deploying-to-cloud",
+     "repo": "iqbalfhz/masjid",
+     "title": "Laravel Cloud 上从建库到定时任务的命令",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 厂商自家云平台的CLI文档，读者是Laravel开发者，非普通人。（3 判：[42, 42, 45]）",
+     "分": 42
+    },
+    {
+     "id": "iqbalfhz-masjid-infer-conventions",
+     "repo": "iqbalfhz/masjid",
+     "title": "翻遍代码库，把你们实际写法写成 .ai/rules ",
+     "过": false,
+     "为什么": "品味 45 分 < 80 —— Laravel 专属开发工具链规则，题材与读者都在开发者侧（3 判：[45, 45, 58]）",
+     "分": 45
+    },
+    {
+     "id": "alekseikondratenko-photo-to-bim-photo-to-ifc-building",
+     "repo": "alekseikondratenko/photo-to-bim",
+     "title": "单张建筑照片变成可量测的 IFC 模型",
+     "过": false,
+     "为什么": "品味 72 分 < 80 —— 专业且边界清楚，但读者是BIM开发者/建筑流程，非普通人（3 判：[55, 72, 76]）",
+     "分": 72
+    },
+    {
+     "id": "system1970-agent-webmcp-agent-webmcp",
+     "repo": "system1970/agent-webmcp",
+     "title": "网页自己交出工具清单，不再靠截图点按钮",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— 开发者工具链 CLI，非普通人/创作者题材；交付物是协议客户端，非某场景做法（3 判：[28, 35, 42]）",
+     "分": 35
+    },
+    {
+     "id": "jyedi1257-max-interactive-lesson-skill-padlet-lesson-board",
+     "repo": "jyedi1257-max/interactive-lesson-skill",
+     "title": "课时教案一键铺成带投票和画板的 Padlet 互动墙",
+     "过": false,
+     "为什么": "品味 78 分 < 80 —— 教学板设计有主张、边界清楚，但受众偏教师且绑定单一产品（3 判：[74, 78, 82]）",
+     "分": 78
+    },
+    {
+     "id": "jyedi1257-max-interactive-lesson-skill-redesign-interactive-lessons",
+     "repo": "jyedi1257-max/interactive-lesson-skill",
+     "title": "一份活动纸进来，一份带学生互动的分时教案出去",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— 教学设计领域扎实，但偏通用方法论，非别处拿不到（3 判：[42, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "leozcc-bit-layered-memory-system",
+     "repo": "leozcc-bit/layered-memory-system",
+     "title": "常驻记忆被静默截断前，先给工作线搬家的四层记忆架构",
+     "过": false,
+     "为什么": "品味 46 分 < 80 —— 运维一个自指的AI记忆系统，普通人用不上，边界清楚但题材太窄（3 判：[30, 46, 50]）",
+     "分": 46
+    },
+    {
+     "id": "oranblock-android-test-harness-android-test-harness",
+     "repo": "oranblock/Android-test-harness",
+     "title": "没有真机也能跑安卓，每步截图发回 Telegram",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— CI硬核经验扎实，但读者是开发者，非普通创作者（3 判：[62, 62, 68]）",
+     "分": 62
+    },
+    {
+     "id": "oranblock-ios-test-harness-ios-test-harness",
+     "repo": "oranblock/ios-test-harness",
+     "title": "没 Mac 也能在 Actions 里跑起 iOS ",
+     "过": false,
+     "为什么": "品味 58 分 < 80 —— CI基建工具链，面向开发者非普通创作者，硬核但受众窄（3 判：[46, 58, 62]）",
+     "分": 58
+    },
+    {
+     "id": "larsakerlund-pimctl-pimctl",
+     "repo": "larsakerlund/pimctl",
+     "title": "Azure 资源角色没激活？先查再开再关的那条命令",
+     "过": false,
+     "为什么": "品味 35 分 < 80 —— Azure企业CLI工具说明，读者是云运维，普通人用不上（3 判：[20, 35, 42]）",
+     "分": 35
+    },
+    {
+     "id": "pmj520-boss-zhipin-mcp-boss-agent-cli-ops",
+     "repo": "PMJ520/boss-zhipin-mcp",
+     "title": "装完 boss 命令行还要验登录",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 企业招聘工具链基建，受众窄且依赖特定CLI，非普通人创作题材（3 判：[42, 42, 48]）",
+     "分": 42
+    },
+    {
+     "id": "pmj520-boss-zhipin-mcp-boss-candidate-screening",
+     "repo": "PMJ520/boss-zhipin-mcp",
+     "title": "搜完候选人先打分再免费收藏的招聘工作流",
+     "过": false,
+     "为什么": "品味 42 分 < 80 —— 工作流写得很细，但读者是招聘方，且被自家CLI与特定产品绑死（3 判：[42, 42, 58]）",
+     "分": 42
+    },
+    {
+     "id": "pmj520-boss-zhipin-mcp-boss-recommend-greet",
+     "repo": "PMJ520/boss-zhipin-mcp",
+     "title": "推荐牛人刷到 85 分就替你打招呼的招聘助手",
+     "过": false,
+     "为什么": "品味 50 分 < 80 —— 招聘工具链内部件，题材冷在读者外；但边界与风控考量扎实（3 判：[46, 50, 62]）",
+     "分": 50
+    },
+    {
+     "id": "sutergabriel-aptum",
+     "repo": "SuterGabriel/Aptum",
+     "title": "六个技能凑成一套，先看它们怎么互相接活",
+     "过": false,
+     "为什么": "品味判不了 —— 没有上游正文存档 → 留库房"
+    },
+    {
+     "id": "sutergabriel-aptum-a11y-grid",
+     "repo": "SuterGabriel/Aptum",
+     "title": "键盘 Tab 走完日历网格，焦点不丢",
+     "过": false,
+     "为什么": "品味 62 分 < 80 —— 日历网格无障碍做法扎实，但属企业前端工具链，非普通创作者。（3 判：[58, 62, 68]）",
+     "分": 62
+    },
+    {
+     "id": "sutergabriel-aptum-adr",
+     "repo": "SuterGabriel/Aptum",
+     "title": "每条架构决策都留一份可撤销的书面记录",
+     "过": false,
+     "为什么": "品味 52 分 < 80 —— 德文工程流程，扎实但属开发工具链，非本店读者（3 判：[52, 52, 52]）",
+     "分": 52
+    },
+    {
+     "id": "sutergabriel-aptum-angular-rxjs",
+     "repo": "SuterGabriel/Aptum",
+     "title": "Angular 组件里不许手动 subscribe ",
+     "过": false,
+     "为什么": "品味 55 分 < 80 —— 扎实的项目内前端规范，但只服务自家代码库，换项目即失效（3 判：[45, 55, 58]）",
+     "分": 55
+    }
+   ]
+  },
+  {
    "时间": "2026-09-11T07:06:48Z",
    "判了": 38,
    "过": 2,
@@ -6032,20 +6338,6 @@
      "过": false,
      "为什么": "品味 45 分 < 80 —— 开发工具链流程，扎实但属专业领域，读者受限，非生活创作题材。（3 判：[35, 45, 45]）",
      "分": 45
-    }
-   ]
-  },
-  {
-   "时间": "2026-09-07T08:38:06Z",
-   "判了": 1,
-   "过": 1,
-   "明细": [
-    {
-     "id": "kangarooking-kangarooking-skills-shijing-paper-zine",
-     "repo": "kangarooking/kangarooking-skills",
-     "title": "随手拍变杂志留白页，照片只留一角",
-     "过": true,
-     "为什么": "编辑读过原文挑的 —— 拾景纸刊：手机随手照变一页撕边照片碎片 + 原片简化线描 + 一种套印色 + 大留白的纸刊，3:4 单张或三张一组；默认像素保真不让模型重造人脸招牌，「恰好一种"
     }
    ]
   }
