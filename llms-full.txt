@@ -4,6 +4,480 @@
 # Full corpus, plain text. 380 skills.
 
 ========================================================================
+## digesting-bilibili-videos
+## B站视频存下来，顺手变成能搜的中文 PDF
+URL: https://ourword.ai/skill/i/xykong36-bili-skills-digesting-bilibili-videos/
+Source: https://github.com/xykong36/bili-skills/tree/HEAD/skills/digesting-bilibili-videos
+Updated: 2026-09-11
+Tags: images, skill, xykong36
+
+Your Bilibili watch-later pile never gets watched. This pulls the official AI subtitles into plain text, then.
+
+### What does this skill do?
+Downloads bilibili videos and turns their official AI subtitles into readable transcripts, OPML mindmaps, outlines and searchable Chinese PDFs. Use when downloading, saving or archiving a B站/BV号/哔哩哔哩 video locally, grabbing its cover image or metadata, getting a video's subtitles or transcript, turning an episode into a readable article, mindmap, outline or PDF, when a downloaded mp4 turns out cor
+
+### Why is it worth installing?
+It uses Bilibili's own AI subtitles instead of running speech recognition, so it's fast and GPU-free. Sentence breaks.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xykong36/bili-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xykong36/bili-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## sugar-motion
+## 坐标点进来，Kawasaki 手臂的 LMOVE/J
+URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-motion/
+URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-motion/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-motion
+Updated: 2026-09-11
+Tags: play, skill, progannewbie
+
+You have sugar-drawing coordinates but the arm doesn't know straight or joint moves. It picks interpolation per.
+
+### What does this skill do?
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機台時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Why is it worth installing?
+Interpolation is decided per segment, not globally: LMOVE where straight, JMOVE where jointed, speed and dwell tied to sugar.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+手上只有一串糖画坐标，手臂却不知道该走直线还是转关节？它逐段判断插补方式，算好速度、抬笔落笔和糖点停留。
+
+### Q：这个 skill 做什么？
+把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機台時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
+
+### Q：为什么值得装？
+插补方式不是全局设定，是逐段判的：该直的 LMOVE、该转的 JMOVE，速度和停留时间跟着糖量走。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## hand-drawn-collage
+## 照片变手撕纸拼贴画，原图配色一件不丢
+URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
+Source: https://github.com/xuqser/hand-drawn-collage
+Updated: 2026-09-11
+Tags: images, skill, xuqser
+
+Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
+
+### What does this skill do?
+Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
+
+### Why is it worth installing?
+Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
+
+### How do you install it?
+git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
+
+========================================================================
+## vibeshot-candid-photography
+## 机位歪一点，人像就活了
+URL: https://ourword.ai/skill/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
+URL (中文): https://ourword.ai/skill/zh/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
+Source: https://github.com/vibeshotclub/vsc-skills/tree/HEAD/vibeshot-candid-photography
+Updated: 2026-09-11
+Tags: everyday, skill, vibeshotclub
+
+Tired of stiff poses? It hides the lens in life's cracks—through glass, past foregrounds, over a shoulder. Photos.
+
+### What does this skill do?
+生成具有真实生活摄影感、偶然抓拍感、非常规机位和强烈空间层次的人像写真提示词。适用于用户要求 candid photography、生活感人像、韩系 INS 人像、自然遮挡、非常规构图或批量摄影提示词时。
+
+### Why is it worth installing?
+It doesn't stack adjectives—it builds 'candidness' through camera angle, occlusion, and depth layers, giving prompts spatial.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
+
+--- 中文 ---
+厌倦了站桩式摆拍？它把镜头藏进生活缝隙——隔着玻璃、越过前景、从背后喊一声回头，生成的照片像朋友随手抓的。
+
+### Q：这个 skill 做什么？
+生成具有真实生活摄影感、偶然抓拍感、非常规机位和强烈空间层次的人像写真提示词。适用于用户要求 candid photography、生活感人像、韩系 INS 人像、自然遮挡、非常规构图或批量摄影提示词时。
+
+### Q：为什么值得装？
+它不堆形容词，而是用机位、遮挡、景深三层参数制造“偶然感”，让提示词自带空间叙事，而非单纯换滤镜。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
+
+========================================================================
+## speak-human-tw
+## 繁體中文去 AI 味：把「綜上所述」改回人話
+URL: https://ourword.ai/skill/i/raymondhou0917-speak-human-tw/
+URL (中文): https://ourword.ai/skill/zh/i/raymondhou0917-speak-human-tw/
+Source: https://github.com/Raymondhou0917/speak-human-tw
+Updated: 2026-09-11
+Tags: writing, skill, Raymondhou0917
+
+Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
+
+### What does this skill do?
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Why is it worth installing?
+Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+--- 中文 ---
+一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
+
+### Q：这个 skill 做什么？
+「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
+
+### Q：为什么值得装？
+不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
+
+========================================================================
+## sugar-points
+## 笔画 SVG 到机械臂点位，曲率自适应砍到最少点
+URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-points/
+URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-points/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-points
+Updated: 2026-09-11
+Tags: images, skill, progannewbie
+
+Leg two of the sugar-painting pipeline: takes Skill 1's stroke SVG, samples by curvature so straight runs stay.
+
+### What does this skill do?
+把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機台座標並控制點數的場合。
+
+### Why is it worth installing?
+Not uniform sampling — point density follows curvature. The count is computed, not guessed, so shapes stay faithful without.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+糖画流程第二棒：Skill 1 给的笔画 SVG，这里按曲率疏密取样，直线段少给点、拐弯处才加密。
+
+### Q：这个 skill 做什么？
+把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機台座標並控制點數的場合。
+
+### Q：为什么值得装？
+不是等距撒点，是按曲率决定哪里该密。点数是算出来的，不是拍脑袋定的，所以既不失真也不塞爆封包。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## verifying-hero-video-on-mobile
+## 手机上看不见的卡顿，它替你分帧证明
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/verifying-hero-video-on-mobile
+Updated: 2026-09-11
+Tags: images, skill, ALCHEMINT-INC
+
+No physical phone? It isolates decode vs. autoplay failures frame-by-frame, so you stop guessing and start fixing.
+
+### What does this skill do?
+當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
+
+### Why is it worth installing?
+Splits 'video won't play' into two falsifiable claims, using frame callbacks for hard evidence instead of eyeballing and tweaking.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+没有实体手机也能验证自动播放？它把「没动静」拆成解码失败和播放策略两类，逐帧取证，不让你瞎改代码。
+
+### Q：这个 skill 做什么？
+當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
+
+### Q：为什么值得装？
+把「视频不动」拆成两个可证伪的假设，用浏览器帧回调拿硬证据，而不是靠肉眼和运气调参。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
+## sugar-stroke
+## 一笔到底的糖画毛笔路径，连每点粗细都算好
+URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-stroke/
+URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-stroke/
+Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-stroke
+Updated: 2026-09-11
+Tags: images, skill, progannewbie
+
+Robot sugar-painting breaks on lifted strokes and flat width. This flattens a glyph or image into one unbroken.
+
+### What does this skill do?
+把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
+
+### Why is it worth installing?
+It solves for one connected centerline first, then paints thickness back per point — instead of tracing outlines and guessing.
+
+### How do you install it?
+git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+--- 中文 ---
+机械臂画糖画最怕断笔和粗细一样。它把字或图压成一条不断开的中心线，每个点带粗细值，手臂照着走就是毛笔味。
+
+### Q：这个 skill 做什么？
+把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
+
+### Q：为什么值得装？
+先求一笔连通的中心线，再在每点回填粗细，而不是先描轮廓再猜笔锋。糖丝断不断，取决于这一步。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: progannewbie/suger The repository ships 1 skills in total.
+
+========================================================================
+## video-clip-stitching
+## 接缝诊断师：专治AI分段影片的卡顿与重复
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
+Updated: 2026-09-11
+Tags: images, skill, ALCHEMINT-INC
+
+Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
+
+### What does this skill do?
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Why is it worth installing?
+It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
+
+### Q：这个 skill 做什么？
+把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
+
+### Q：为什么值得装？
+它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
+## multi-copywrite-alchemy
+## 分析某位作者的多篇文章复刻其文风
+URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
+URL (中文): https://ourword.ai/skill/zh/i/redfox-data-redfox-community/
+Source: https://github.com/redfox-data/redfox-community/tree/HEAD/skills/multi-copywrite-alchemy
+Updated: 2026-09-11
+Tags: writing, skill, redfox-data
+
+Reading ten pieces still won't tell you how someone actually writes. This takes a body of one author's work apart, reconstructs how they think, and gives you a writing persona plus style prompts.
+
+### What does this skill do?
+复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+
+### Why is it worth installing?
+Reconstructing the thinking beats mimicking the sentences — the first transfers to new subjects, the second falls apart the moment the topic changes.
+
+### How do you install it?
+git clone --depth 1 https://github.com/redfox-data/redfox-community.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+
+--- 中文 ---
+想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。
+
+### Q：这个 skill 做什么？
+复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
+
+### Q：为什么值得装？
+「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: redfox-data/redfox-community The repository ships 1 skills in total.
+
+========================================================================
+## trading-design
+## 按专业交易软件的规范设计盯盘界面
+URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
+Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
+Updated: 2026-09-11
+Tags: images, skill, vanillagreencom
+
+A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
+
+### What does this skill do?
+Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
+
+### Why is it worth installing?
+Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
+
+### How do you install it?
+git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
+
+========================================================================
+## archify
+## 画出来的架构图要和代码对得上，导出自带动效的 HTML
+URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
+Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
+Updated: 2026-09-11
+Tags: docs, skill, tt-a1i
+
+Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
+
+### What does this skill do?
+Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
+
+### Why is it worth installing?
+"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
+
+### How do you install it?
+git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
+
+========================================================================
+## understand-chat
+## 按调用结构而不是搜字符串，回答改这里会牵动谁
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
+Updated: 2026-09-11
+Tags: dev, skill, Egonex-AI
+
+Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
+
+### What does this skill do?
+Use when you need to ask questions about a codebase or understand code using a knowledge graph
+
+### Why is it worth installing?
+A tier above grep: answers by structure, not string match.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
+## encoding-hero-video-for-mobile
+## 手机竖屏 hero 视频压片台，只管码率不管播放
+URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
+Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
+Updated: 2026-09-11
+Tags: images, skill, ALCHEMINT-INC
+
+Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
+
+### What does this skill do?
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Why is it worth installing?
+Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+--- 中文 ---
+母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
+
+### Q：这个 skill 做什么？
+當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
+
+### Q：为什么值得装？
+专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
+
+========================================================================
+## understand-figma
+## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
+URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
+Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
+Updated: 2026-09-11
+Tags: dev, skill, Egonex-AI
+
+Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
+
+### What does this skill do?
+Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
+
+### Why is it worth installing?
+Design handoff, solved visually — the whole system in one graph.
+
+### How do you install it?
+git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
+
+========================================================================
 ## excalidraw
 ## 先写规格再算字宽，手绘风图表一次成型的 Excali
 URL: https://ourword.ai/skill/i/plexito-de-honed-skills-excalidraw/
@@ -62,28 +536,6 @@ git clone --depth 1 https://github.com/aEboli/zhongguose-palette.git 然后把�
 
 ### Q：它从哪来？
 Repository: aEboli/zhongguose-palette Prep work visible in the skill's own text: reference files, runnable scripts, when-to-use. The repository ships 1 skills in total.
-
-========================================================================
-## digesting-bilibili-videos
-## B站视频存下来，顺手变成能搜的中文 PDF
-URL: https://ourword.ai/skill/i/xykong36-bili-skills-digesting-bilibili-videos/
-Source: https://github.com/xykong36/bili-skills/tree/HEAD/skills/digesting-bilibili-videos
-Updated: 2026-09-10
-Tags: images, skill, xykong36
-
-Your Bilibili watch-later pile never gets watched. This pulls the official AI subtitles into plain text, then.
-
-### What does this skill do?
-Downloads bilibili videos and turns their official AI subtitles into readable transcripts, OPML mindmaps, outlines and searchable Chinese PDFs. Use when downloading, saving or archiving a B站/BV号/哔哩哔哩 video locally, grabbing its cover image or metadata, getting a video's subtitles or transcript, turning an episode into a readable article, mindmap, outline or PDF, when a downloaded mp4 turns out cor
-
-### Why is it worth installing?
-It uses Bilibili's own AI subtitles instead of running speech recognition, so it's fast and GPU-free. Sentence breaks.
-
-### How do you install it?
-git clone --depth 1 https://github.com/xykong36/bili-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: xykong36/bili-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## jianming-zhongwen
@@ -184,44 +636,6 @@ git clone --depth 1 https://github.com/hadicancatak-coder/devils-advocate.git Th
 Repository: hadicancatak-coder/devils-advocate The repository ships 1 skills in total.
 
 ========================================================================
-## sugar-motion
-## 坐标点进来，Kawasaki 手臂的 LMOVE/J
-URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-motion/
-URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-motion/
-Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-motion
-Updated: 2026-09-10
-Tags: play, skill, progannewbie
-
-You have sugar-drawing coordinates but the arm doesn't know straight or joint moves. It picks interpolation per.
-
-### What does this skill do?
-把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機台時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
-
-### Why is it worth installing?
-Interpolation is decided per segment, not globally: LMOVE where straight, JMOVE where jointed, speed and dwell tied to sugar.
-
-### How do you install it?
-git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
---- 中文 ---
-手上只有一串糖画坐标，手臂却不知道该走直线还是转关节？它逐段判断插补方式，算好速度、抬笔落笔和糖点停留。
-
-### Q：这个 skill 做什么？
-把手臂座標點位轉成實際的運動指令 —— 決定每一段用 LMOVE 直線還是 JMOVE 關節插補,算出每點速度、下筆抬筆時機、糖點停留時間,再包成 TCP 字串即時串流給 Kawasaki 手臂。糖畫流程的 Skill 3,吃 sugar-points(Skill 2)的座標 JSON。當使用者提到手臂怎麼走、動作型態、插補方式、LMOVE/JMOVE/CMOVE、速度規劃、抬筆落筆、停留時間、糖要多一點、通訊協定、串流給手臂、Ethernet 傳點位,或手上有座標要送上機台時,都要使用這個 skill。也適用於任何需要把路徑點轉成機械手臂運動指令並即時通訊的場合。
-
-### Q：为什么值得装？
-插补方式不是全局设定，是逐段判的：该直的 LMOVE、该转的 JMOVE，速度和停留时间跟着糖量走。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
-========================================================================
 ## debate-prep
 ## 正反双方都替你备到能上场，华语辩论赛全套
 URL: https://ourword.ai/skill/i/waverlyowen-ustc-debate-debate-prep/
@@ -318,6 +732,28 @@ git clone --depth 1 https://github.com/yuandian-ailaw/agent-for-legal-cn.git 然
 
 ### Q：它从哪来？
 Repository: yuandian-ailaw/agent-for-legal-cn Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
+
+========================================================================
+## autosound-tuning
+## 双AI轮流审听，把车内喇叭调到不刺耳为止
+URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
+Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
+Updated: 2026-09-10
+Tags: images, skill, ayukhno
+
+From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
+
+### What does this skill do?
+Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
+
+### Why is it worth installing?
+Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
+
+### How do you install it?
+git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
 
 ========================================================================
 ## podcast-transcribe-local
@@ -456,82 +892,6 @@ git clone --depth 1 https://github.com/ccxx1835/huatu-skill.git 然后把智能�
 Repository: ccxx1835/huatu-skill Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## speak-human-tw
-## 繁體中文去 AI 味：把「綜上所述」改回人話
-URL: https://ourword.ai/skill/i/raymondhou0917-speak-human-tw/
-URL (中文): https://ourword.ai/skill/zh/i/raymondhou0917-speak-human-tw/
-Source: https://github.com/Raymondhou0917/speak-human-tw
-Updated: 2026-09-10
-Tags: writing, skill, Raymondhou0917
-
-Catches AI tells like 總而言之 & 此外, fixes China-isms and half-width punctuation. For newsletters, support emails.
-
-### What does this skill do?
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
-
-### Why is it worth installing?
-Not a synonym swap—it judges each line for humanness. Keeps your voice, strips AI's parallel structures, hollow connectors, and.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
-
---- 中文 ---
-一眼揪出「總而言之」「此外」「值得注意的是」這類 AI 慣用腔，順手校正中國用語與半形標點。電子報、客服信。
-
-### Q：这个 skill 做什么？
-「說人話」：繁體中文的去 AI 味改寫 skill。審查與改寫文字，去除 AI 味道、校正中國用語與半形標點，讓文字讀起來像真人寫的。 觸發時機：用戶說「去 AI 味」「說人話」「這段好 AI」「改自然一點」「幫我潤稿去掉 AI 感」「校對一下再發」，或要求檢查電子報、社群貼文、銷售頁、課程文案、客服回信、簡報、公告、Email 等對外文字的語感。 不要觸發：逐字翻譯、模仿特定品牌 voice、事實查核（非風格問題）、程式碼／log／設定檔、要求「潤成雷蒙的語氣」（那是 content-writing skill 的事，本 skill 只去 AI 味、不加個人風格）。
-
-### Q：为什么值得装？
-不是換詞表，是逐句判斷「這句人會不會這樣講」。保留你的語氣，只拆掉 AI 的排比。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/Raymondhou0917/speak-human-tw.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: Raymondhou0917/speak-human-tw The repository ships 1 skills in total.
-
-========================================================================
-## sugar-points
-## 笔画 SVG 到机械臂点位，曲率自适应砍到最少点
-URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-points/
-URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-points/
-Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-points
-Updated: 2026-09-10
-Tags: images, skill, progannewbie
-
-Leg two of the sugar-painting pipeline: takes Skill 1's stroke SVG, samples by curvature so straight runs stay.
-
-### What does this skill do?
-把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機台座標並控制點數的場合。
-
-### Why is it worth installing?
-Not uniform sampling — point density follows curvature. The count is computed, not guessed, so shapes stay faithful without.
-
-### How do you install it?
-git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
---- 中文 ---
-糖画流程第二棒：Skill 1 给的笔画 SVG，这里按曲率疏密取样，直线段少给点、拐弯处才加密。
-
-### Q：这个 skill 做什么？
-把筆劃 SVG 轉成機械手臂要走的座標點位,並用曲率自適應把點數壓到最少而不失真。糖畫流程的 Skill 2,吃 sugar-stroke(Skill 1)產出的 SVG,吐座標 JSON 給 Skill 3。當使用者提到把 SVG 轉座標、路徑點、點位、取樣、要幾個點才夠、點太多太少、精簡路徑、減少封包量、路徑離散化、手臂要走的座標,或手上有 Skill 1 的 SVG 要往下接時,都要使用這個 skill。也適用於任何需要把向量路徑轉成機台座標並控制點數的場合。
-
-### Q：为什么值得装？
-不是等距撒点，是按曲率决定哪里该密。点数是算出来的，不是拍脑袋定的，所以既不失真也不塞爆封包。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
-========================================================================
 ## kimi
 ## 设计稿交给它，前端代码拿回来就能跑
 URL: https://ourword.ai/skill/i/oil-oil-kimi/
@@ -614,44 +974,6 @@ git clone --depth 1 https://github.com/oil-oil/oil-motion.git Then point your ag
 Repository: oil-oil/oil-motion The repository ships 1 skills in total.
 
 ========================================================================
-## sugar-stroke
-## 一笔到底的糖画毛笔路径，连每点粗细都算好
-URL: https://ourword.ai/skill/i/progannewbie-suger-sugar-stroke/
-URL (中文): https://ourword.ai/skill/zh/i/progannewbie-suger-sugar-stroke/
-Source: https://github.com/progannewbie/suger/tree/HEAD/.claude/skills/sugar-stroke
-Updated: 2026-09-10
-Tags: images, skill, progannewbie
-
-Robot sugar-painting breaks on lifted strokes and flat width. This flattens a glyph or image into one unbroken.
-
-### What does this skill do?
-把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
-
-### Why is it worth installing?
-It solves for one connected centerline first, then paints thickness back per point — instead of tracing outlines and guessing.
-
-### How do you install it?
-git clone --depth 1 https://github.com/progannewbie/suger.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
---- 中文 ---
-机械臂画糖画最怕断笔和粗细一样。它把字或图压成一条不断开的中心线，每个点带粗细值，手臂照着走就是毛笔味。
-
-### Q：这个 skill 做什么？
-把中文字或圖片轉成「一筆到底」的毛筆風格 SVG 筆劃路徑,給糖畫機械手臂使用。輸出含每點粗細的中心線 SVG,是糖畫流程 Skill 1 的產出。當使用者提到糖畫、糖人、機械手臂寫字/畫圖、一筆到底、連筆、牽絲、毛筆路徑、把字或圖轉成手臂走的路徑、單線稿、中心線、筆劃座標,或給了一個字/一張圖說要讓手臂畫出來時,都要使用這個 skill —— 即使他們沒有講「SVG」或「路徑」這些字。也適用於任何需要把圖形轉成單線連續路徑的場合(繪圖機、雕刻、CNC 刻字)。
-
-### Q：为什么值得装？
-先求一笔连通的中心线，再在每点回填粗细，而不是先描轮廓再猜笔锋。糖丝断不断，取决于这一步。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/progannewbie/suger.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: progannewbie/suger The repository ships 1 skills in total.
-
-========================================================================
 ## travel-plan-viz
 ## 离线可读的手机旅行页，地图时间轴订票提醒一页装完
 URL: https://ourword.ai/skill/i/zexuanw958-svg-travel-plan-viz/
@@ -688,6 +1010,66 @@ git clone --depth 1 https://github.com/zexuanw958-svg/travel-plan-viz.git 然后
 
 ### Q：它从哪来？
 Repository: zexuanw958-svg/travel-plan-viz The repository ships 1 skills in total.
+
+========================================================================
+## obsidian-cli
+## 在 Obsidian 库里搜、写、改、查，不用开编辑
+URL: https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/
+Source: https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli
+Updated: 2026-09-10
+Tags: work, skill, kepano
+
+Drive your Obsidian vault from the CLI — read, create, search notes and manage tasks and properties. Built by kepano, Obsidian's own creator.
+
+### What does this skill do?
+Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from
+
+### Why is it worth installing?
+Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly.
+
+### How do you install it?
+git clone --depth 1 https://github.com/kepano/obsidian-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: kepano/obsidian-skills The repository ships 1 skills in total.
+
+========================================================================
+## math-modeling
+## 三天赛程里做完数学建模竞赛全流程
+URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
+URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
+Source: https://github.com/XiaoMaColtAI/math-modeling-skill
+Updated: 2026-09-10
+Tags: learn, skill, XiaoMaColtAI
+
+A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
+
+### What does this skill do?
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+
+### Why is it worth installing?
+Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
+
+### How do you install it?
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
+
+--- 中文 ---
+建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
+
+### Q：这个 skill 做什么？
+当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+
+### Q：为什么值得装？
+按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
+
+### Q：怎么装？
+git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
+
+### Q：它从哪来？
+Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
 ## punk-cover
@@ -756,28 +1138,6 @@ git clone --depth 1 https://github.com/dimetron/pi-go.git Then point your agent 
 Repository: dimetron/pi-go The repository ships 1 skills in total. Homepage: https://pi-go.sh
 
 ========================================================================
-## trading-design
-## 按专业交易软件的规范设计盯盘界面
-URL: https://ourword.ai/skill/i/vanillagreencom-vstack-trading-design/
-Source: https://github.com/vanillagreencom/vstack/tree/HEAD/skills/trading-design
-Updated: 2026-09-10
-Tags: images, skill, vanillagreencom
-
-A design system for trading software — panel layouts, data density, market color semantics and interaction rules.
-
-### What does this skill do?
-Professional trading UI design system. Load when designing or implementing panels, layouts, typography, color, data display, or interactions for trading applications.
-
-### Why is it worth installing?
-Trading UI is special-forces design — color semantics, millisecond density; systematic references are rare.
-
-### How do you install it?
-git clone --depth 1 https://github.com/vanillagreencom/vstack.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: vanillagreencom/vstack The repository ships 1 skills in total. Homepage: http://vanillagreen.com
-
-========================================================================
 ## sprite-gen
 ## 组件行流水线出精灵图集，带 QA 报告和运行时清单
 URL: https://ourword.ai/skill/i/aldegad-sprite-gen/
@@ -798,28 +1158,6 @@ git clone --depth 1 https://github.com/aldegad/sprite-gen.git Then point your ag
 
 ### Where does it come from?
 Repository: aldegad/sprite-gen The repository ships 1 skills in total.
-
-========================================================================
-## archify
-## 画出来的架构图要和代码对得上，导出自带动效的 HTML
-URL: https://ourword.ai/skill/i/tt-a1i-archify-archify/
-Source: https://github.com/tt-a1i/archify/tree/HEAD/archify
-Updated: 2026-09-10
-Tags: docs, skill, tt-a1i
-
-Validated architecture, sequence, data-flow and lifecycle diagrams — self-contained HTML with motion, crisp exports.
-
-### What does this skill do?
-Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. U
-
-### Why is it worth installing?
-"Verifiable" is the keyword — diagrams that match reality, not pretty fiction.
-
-### How do you install it?
-git clone --depth 1 https://github.com/tt-a1i/archify.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: tt-a1i/archify Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets. The repository ships 1 skills in total.
 
 ========================================================================
 ## story-deslop
@@ -924,6 +1262,28 @@ git clone --depth 1 https://github.com/ayghri/i-have-adhd.git Then point your ag
 
 ### Where does it come from?
 Repository: ayghri/i-have-adhd The repository ships 2 skills in total.
+
+========================================================================
+## citation-management
+## 每条引用都回数据库核验，揪出 AI 编造的参考文献
+URL: https://ourword.ai/skill/i/k-dense-ai-scientific-agent-skills-citation-management/
+Source: https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management
+Updated: 2026-09-10
+Tags: docs, skill, K-Dense-AI
+
+Searches OpenAlex, PubMed and Scholar, extracts clean metadata, validates and formats citations — the reference-error killer.
+
+### What does this skill do?
+Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.
+
+### Why is it worth installing?
+Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.
+
+### How do you install it?
+git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Then point your agent at the skill directory.
+
+### Where does it come from?
+Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## whiteboard-explainer
@@ -1116,28 +1476,6 @@ git clone --depth 1 https://github.com/taxueseek/taxue-solar-polaroid.git 然后
 Repository: taxueseek/taxue-solar-polaroid Prep work visible in the skill's own text: reference files, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
-## autosound-tuning
-## 双AI轮流审听，把车内喇叭调到不刺耳为止
-URL: https://ourword.ai/skill/i/ayukhno-autosound-tuning-skill-autosound-tuning/
-Source: https://github.com/ayukhno/autosound-tuning-skill/tree/HEAD/skills/autosound-tuning
-Updated: 2026-09-09
-Tags: images, skill, ayukhno
-
-From fresh install to stubborn rig: Claude proposes, Gemini critiques, you decide, REW measures. No voodoo—just.
-
-### What does this skill do?
-Orchestrates car-audio DSP tuning for ANY car/system — from a brand-new project (intake: equipment + goals interview, target-curve choice, install verification) to deep iterative tuning — using REW + a Claude(Generator)↔Gemini(Critic/Advisor)↔User(Arbiter) review loop. Use whenever the user wants to (e.g. "help me set up my car audio", "tune my speakers/system"): set up or tune a car-audio system
-
-### Why is it worth installing?
-Turns tuning into an adversarial loop: generator and critic are separate, so it can't fool itself. Every change passes both.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ayukhno/autosound-tuning-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ayukhno/autosound-tuning-skill The repository ships 1 skills in total.
-
-========================================================================
 ## handdraw-style-prompter
 ## 编号 001–216 手绘风格，报号即出双语提示词
 URL: https://ourword.ai/skill/i/yang0-handraw-style-handdraw-style-prompter/
@@ -1218,82 +1556,6 @@ git clone --depth 1 https://github.com/Vieeeeeee/wibi-style.git 然后把智能�
 
 ### Q：它从哪来？
 Repository: Vieeeeeee/wibi-style The repository ships 1 skills in total.
-
-========================================================================
-## multi-copywrite-alchemy
-## 分析某位作者的多篇文章复刻其文风
-URL: https://ourword.ai/skill/i/redfox-data-redfox-community/
-URL (中文): https://ourword.ai/skill/zh/i/redfox-data-redfox-community/
-Source: https://github.com/redfox-data/redfox-community/tree/HEAD/skills/multi-copywrite-alchemy
-Updated: 2026-09-09
-Tags: writing, skill, redfox-data
-
-Reading ten pieces still won't tell you how someone actually writes. This takes a body of one author's work apart, reconstructs how they think, and gives you a writing persona plus style prompts.
-
-### What does this skill do?
-复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
-
-### Why is it worth installing?
-Reconstructing the thinking beats mimicking the sentences — the first transfers to new subjects, the second falls apart the moment the topic changes.
-
-### How do you install it?
-git clone --depth 1 https://github.com/redfox-data/redfox-community.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: redfox-data/redfox-community The repository ships 1 skills in total.
-
---- 中文 ---
-想学某个人的写法，读十篇也说不清他到底怎么写的。它拆解一位作者的多篇文章还原其思维方式，生成专属写作分身和风格提示词。
-
-### Q：这个 skill 做什么？
-复刻蒸馏写作技能 —— 分析一位作者的多篇文章，深度还原其思维方式与写作风格，生成专属写作分身子技能与风格提示词。支持公众号、抖音多平台自动采集素材，也可手动粘贴文章或指定文件路径。触发词：蒸馏写作风格、写作分身、克隆写作风格、复刻蒸馏写作技能。
-
-### Q：为什么值得装？
-「还原思维方式」比「模仿句式」高一档——前者能迁移到新题材，后者换个题目就露馅。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/redfox-data/redfox-community.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: redfox-data/redfox-community The repository ships 1 skills in total.
-
-========================================================================
-## math-modeling
-## 三天赛程里做完数学建模竞赛全流程
-URL: https://ourword.ai/skill/i/xiaomacoltai-math-modeling-skill/
-URL (中文): https://ourword.ai/skill/zh/i/xiaomacoltai-math-modeling-skill/
-Source: https://github.com/XiaoMaColtAI/math-modeling-skill
-Updated: 2026-09-09
-Tags: learn, skill, XiaoMaColtAI
-
-A full-pipeline assistant for math-modeling contests — modeling, solving in code, visualization and paper writing, with an independent QA subagent per stage.
-
-### What does this skill do?
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Why is it worth installing?
-Contest pain is doing modeling, coding and writing in three days; this splits the roles and adds QA gates — designed to the real contest rhythm.
-
-### How do you install it?
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
-
---- 中文 ---
-建模竞赛最难的是三天内同时搞定建模、编程、写论文。它按三阶段分工推进，每阶段还有独立质检 subagent 把关。
-
-### Q：这个 skill 做什么？
-当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
-
-### Q：为什么值得装？
-按竞赛真实节奏设计的，不是把「数学建模」当学科名词做个通用助手。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/XiaoMaColtAI/math-modeling-skill.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: XiaoMaColtAI/math-modeling-skill Prep work visible in the skill's own text: reference files, bundled assets, stated boundaries. The repository ships 10 skills in total. Homepage: https://mms.weseeworld.cn
 
 ========================================================================
 ## video-shotcraft
@@ -1458,28 +1720,6 @@ git clone --depth 1 https://github.com/luanyi824-hash/xiaxia.git 然后把智能
 
 ### Q：它从哪来？
 Repository: luanyi824-hash/xiaxia Prep work visible in the skill's own text: reference files, runnable scripts, stated boundaries. The repository ships 1 skills in total.
-
-========================================================================
-## hand-drawn-collage
-## 照片变手撕纸拼贴画，原图配色一件不丢
-URL: https://ourword.ai/skill/i/xuqser-hand-drawn-collage/
-Source: https://github.com/xuqser/hand-drawn-collage
-Updated: 2026-09-08
-Tags: images, skill, xuqser
-
-Other tools recolor your shirt, mug, leaves beyond recognition. This one tears paper per region, keeps original.
-
-### What does this skill do?
-Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2).
-
-### Why is it worth installing?
-Not style-transfer 'resemblance'—it rebuilds scene element by element, sampling each paper piece's color from the source pixels.
-
-### How do you install it?
-git clone --depth 1 https://github.com/xuqser/hand-drawn-collage.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: xuqser/hand-drawn-collage The repository ships 1 skills in total.
 
 ========================================================================
 ## metro-map
@@ -1788,50 +2028,6 @@ git clone --depth 1 https://github.com/KyaniteLabs/kinocut.git Then point your a
 Repository: KyaniteLabs/kinocut The repository ships 3 skills in total. Homepage: https://kinocut.dev/
 
 ========================================================================
-## understand-chat
-## 按调用结构而不是搜字符串，回答改这里会牵动谁
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-chat/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-chat
-Updated: 2026-09-08
-Tags: dev, skill, Egonex-AI
-
-Ask the codebase graph directly — where's this logic, who calls whom, what breaks if I touch this; answers by structure, not grep.
-
-### What does this skill do?
-Use when you need to ask questions about a codebase or understand code using a knowledge graph
-
-### Why is it worth installing?
-A tier above grep: answers by structure, not string match.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
-
-========================================================================
-## understand-figma
-## 接上 Figma API，把设计稿拆成一张设计系统知识图谱
-URL: https://ourword.ai/skill/i/egonex-ai-understand-anything-understand-figma/
-Source: https://github.com/Egonex-AI/Understand-Anything/tree/HEAD/understand-anything-plugin/skills/understand-figma
-Updated: 2026-09-08
-Tags: dev, skill, Egonex-AI
-
-Hooks the Figma REST API and maps a file into pages, components, variants and tokens — the whole design system legible in one graph.
-
-### What does this skill do?
-Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.
-
-### Why is it worth installing?
-Design handoff, solved visually — the whole system in one graph.
-
-### How do you install it?
-git clone --depth 1 https://github.com/Egonex-AI/Understand-Anything.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: Egonex-AI/Understand-Anything The repository ships 1 skills in total.
-
-========================================================================
 ## shijing-paper-zine
 ## 随手拍变杂志留白页，照片只留一角
 URL: https://ourword.ai/skill/i/kangarooking-kangarooking-skills-shijing-paper-zine/
@@ -2136,28 +2332,6 @@ git clone --depth 1 https://github.com/DietrichGebert/ponytail.git Then point yo
 
 ### Where does it come from?
 Repository: DietrichGebert/ponytail The repository ships 12 skills in total.
-
-========================================================================
-## citation-management
-## 每条引用都回数据库核验，揪出 AI 编造的参考文献
-URL: https://ourword.ai/skill/i/k-dense-ai-scientific-agent-skills-citation-management/
-Source: https://github.com/K-Dense-AI/scientific-agent-skills/tree/HEAD/skills/citation-management
-Updated: 2026-09-07
-Tags: docs, skill, K-Dense-AI
-
-Searches OpenAlex, PubMed and Scholar, extracts clean metadata, validates and formats citations — the reference-error killer.
-
-### What does this skill do?
-Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.
-
-### Why is it worth installing?
-Fabricated citations are academia's nightmare; this does the opposite — every reference verifiable.
-
-### How do you install it?
-git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: K-Dense-AI/scientific-agent-skills Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, when-to-use. The repository ships 1 skills in total.
 
 ========================================================================
 ## bilingual-term-extract
@@ -3088,44 +3262,6 @@ git clone --depth 1 https://github.com/SJA-Homeworkclass/skills.git Then point y
 Repository: SJA-Homeworkclass/skills The repository ships 1 skills in total.
 
 ========================================================================
-## verifying-hero-video-on-mobile
-## 手机上看不见的卡顿，它替你分帧证明
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-verifying-hero-video-on-mobile/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/verifying-hero-video-on-mobile
-Updated: 2026-09-04
-Tags: images, skill, ALCHEMINT-INC
-
-No physical phone? It isolates decode vs. autoplay failures frame-by-frame, so you stop guessing and start fixing.
-
-### What does this skill do?
-當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
-
-### Why is it worth installing?
-Splits 'video won't play' into two falsifiable claims, using frame callbacks for hard evidence instead of eyeballing and tweaking.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-没有实体手机也能验证自动播放？它把「没动静」拆成解码失败和播放策略两类，逐帧取证，不让你瞎改代码。
-
-### Q：这个 skill 做什么？
-當網頁的背景／hero 要在手機上自動播放而且要順時用——新影片上線前、使用者回報手機「卡住」「一頓一頓」「沒有自動播放」「出現 ▶」、或手邊沒有實體手機卻要證明它在手機上能播的時候，一定要用這個 skill。適用於任何 muted autoplay 背景影片（H.264 mp4、R2／S3／CDN 託管），不限框架。手機上影片不動只有兩種原因，這裡把它們分開證明，不要猜著改程式。
-
-### Q：为什么值得装？
-把「视频不动」拆成两个可证伪的假设，用浏览器帧回调拿硬证据，而不是靠肉眼和运气调参。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
-========================================================================
 ## chinese-lesson-plan
 ## 先问教材版本再落笔的备课助手，连分层作业一起出
 URL: https://ourword.ai/skill/i/sanhuang520-ship-it-awesome-chinese-ai-tools-chinese-lesson-plan/
@@ -3184,44 +3320,6 @@ git clone --depth 1 https://github.com/Hchen1218/heytea-style.git Then point you
 
 ### Where does it come from?
 Repository: Hchen1218/heytea-style The repository ships 1 skills in total.
-
-========================================================================
-## video-clip-stitching
-## 接缝诊断师：专治AI分段影片的卡顿与重复
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-video-clip-stitching/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-video-clip-stitching/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/video-clip-stitching
-Updated: 2026-09-04
-Tags: images, skill, ALCHEMINT-INC
-
-Splice Dreamina/Runway/Seedance segments into one smooth cut. No guessing—cut formulas, seam taxonomy, and 3.
-
-### What does this skill do?
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
-
-### Why is it worth installing?
-It doesn't reinvent criteria—it bakes in field-hardened seam rules: container FPS lies, tail-frame continuation always leaves.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-把Dreamina、Runway、Seedance的01/02/03段接成顺滑一支。不靠猜——切点公式、接缝分类。
-
-### Q：这个 skill 做什么？
-把多段 AI 生成的影片（Dreamina、Runway、Higgsfield、Seedance 等）串成一支，並診斷接縫問題。當使用者要把 01／02／03 這類分段生成的片接起來、抱怨兩段之間「卡住」「重複」「不順」「有 overlap」、或要驗收生成素材規格時，一定要用這個 skill。也適用於任何「拿前一段的尾幀去續生下一段」的工作流——那種接法必然在接縫留下緩啟動死水，而且容器標記的幀率經常騙人。不要自己重推判準：切點公式、接縫分類法、三個 ffmpeg 地雷，這裡每一條都是實際撞出來的。
-
-### Q：为什么值得装？
-它不重新发明判准，而是把实际撞出来的接缝规律直接固化：容器帧率会骗人。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
 
 ========================================================================
 ## skills
@@ -3288,44 +3386,6 @@ git clone --depth 1 https://github.com/lincwang123-bot/moonlit-stories.git Then 
 
 ### Where does it come from?
 Repository: lincwang123-bot/moonlit-stories The repository ships 1 skills in total.
-
-========================================================================
-## encoding-hero-video-for-mobile
-## 手机竖屏 hero 视频压片台，只管码率不管播放
-URL: https://ourword.ai/skill/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-URL (中文): https://ourword.ai/skill/zh/i/alchemint-inc-curtoom-encoding-hero-video-for-mobile/
-Source: https://github.com/ALCHEMINT-INC/curtoom/tree/HEAD/skills/encoding-hero-video-for-mobile
-Updated: 2026-09-04
-Tags: images, skill, ALCHEMINT-INC
-
-Compress master to 9:16 web bg mp4, or re-encode choppy mobile video. Handles encoding & bitrate only, no.
-
-### What does this skill do?
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Why is it worth installing?
-Single-purpose encoding tool. No playback verification mixed in. Tuned for mobile portrait, precise bitrate control, fewer.
-
-### How do you install it?
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
-
---- 中文 ---
-母带压成 9:16 网页背景 mp4，或现有手机片码率太高卡顿要重压。只做压制与码率，不碰播放验证，省心不越界。
-
-### Q：这个 skill 做什么？
-當要把一支影片母帶壓成手機用（9:16 直式）的網頁背景／hero mp4、或現有手機片碼率太高在手機上會卡而要重壓的時候用。只管壓制與碼率，不含播放驗證（那是 verifying-hero-video-on-mobile）。
-
-### Q：为什么值得装？
-专注单一动作：压片。不掺播放验证，避免职责混淆。预设针对手机竖屏场景，码率控制精准，减少反复试错。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/ALCHEMINT-INC/curtoom.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: ALCHEMINT-INC/curtoom The repository ships 1 skills in total.
 
 ========================================================================
 ## audio-analysis
@@ -3506,44 +3566,6 @@ git clone --depth 1 https://github.com/FrancyJGLisboa/agent-skill-creator.git Th
 
 ### Where does it come from?
 Repository: FrancyJGLisboa/agent-skill-creator Prep work visible in the skill's own text: reference files, runnable scripts, bundled assets, stated boundaries, evals. The repository ships 4 skills in total.
-
-========================================================================
-## vibeshot-candid-photography
-## 机位歪一点，人像就活了
-URL: https://ourword.ai/skill/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
-URL (中文): https://ourword.ai/skill/zh/i/vibeshotclub-vsc-skills-vibeshot-candid-photography/
-Source: https://github.com/vibeshotclub/vsc-skills/tree/HEAD/vibeshot-candid-photography
-Updated: 2026-09-02
-Tags: everyday, skill, vibeshotclub
-
-Tired of stiff poses? It hides the lens in life's cracks—through glass, past foregrounds, over a shoulder. Photos.
-
-### What does this skill do?
-生成具有真实生活摄影感、偶然抓拍感、非常规机位和强烈空间层次的人像写真提示词。适用于用户要求 candid photography、生活感人像、韩系 INS 人像、自然遮挡、非常规构图或批量摄影提示词时。
-
-### Why is it worth installing?
-It doesn't stack adjectives—it builds 'candidness' through camera angle, occlusion, and depth layers, giving prompts spatial.
-
-### How do you install it?
-git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
-
---- 中文 ---
-厌倦了站桩式摆拍？它把镜头藏进生活缝隙——隔着玻璃、越过前景、从背后喊一声回头，生成的照片像朋友随手抓的。
-
-### Q：这个 skill 做什么？
-生成具有真实生活摄影感、偶然抓拍感、非常规机位和强烈空间层次的人像写真提示词。适用于用户要求 candid photography、生活感人像、韩系 INS 人像、自然遮挡、非常规构图或批量摄影提示词时。
-
-### Q：为什么值得装？
-它不堆形容词，而是用机位、遮挡、景深三层参数制造“偶然感”，让提示词自带空间叙事，而非单纯换滤镜。
-
-### Q：怎么装？
-git clone --depth 1 https://github.com/vibeshotclub/vsc-skills.git 然后把智能体指向这个 skill 目录即可。
-
-### Q：它从哪来？
-Repository: vibeshotclub/vsc-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## mono-color
@@ -9410,28 +9432,6 @@ git clone --depth 1 https://github.com/aryaminus/astro.git Then point your agent
 
 ### Where does it come from?
 Repository: aryaminus/astro The repository ships 1 skills in total. Homepage: https://astro-api-a2rc.onrender.com
-
-========================================================================
-## obsidian-cli
-## 在 Obsidian 库里搜、写、改、查，不用开编辑
-URL: https://ourword.ai/skill/i/kepano-obsidian-skills-obsidian-cli/
-Source: https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-cli
-Updated: 2026-06-08
-Tags: work, skill, kepano
-
-Drive your Obsidian vault from the CLI — read, create, search notes and manage tasks and properties. Built by kepano, Obsidian's own creator.
-
-### What does this skill do?
-Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from
-
-### Why is it worth installing?
-Written by Obsidian's CEO — nobody knows the vault data model better; your agent can finally read and write your second brain properly.
-
-### How do you install it?
-git clone --depth 1 https://github.com/kepano/obsidian-skills.git Then point your agent at the skill directory.
-
-### Where does it come from?
-Repository: kepano/obsidian-skills The repository ships 1 skills in total.
 
 ========================================================================
 ## tianming-novel-system
